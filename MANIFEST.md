@@ -1,6 +1,6 @@
 # MANIFEST — large artifacts held on Longleaf
 
-Generated: 2026-09-13T19:22:48
+Generated: 2026-09-13T19:41:08
 Host path root: `/work/users/w/e/weiyang/hest_replication`
 
 These files are deliberately **not** committed: GitHub's 100 MB per-file limit, and
@@ -352,6 +352,23 @@ Stage 4 joined tables
 | `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/READ/virchow/split1/inference_dump.pkl` | 2.9 MB | `b3b2f11ac10bf96a340b8e785248957a847f88102161eb9c00ef2dca1a5752fc` |
 | `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/SKCM/virchow/split0/inference_dump.pkl` | 1010.4 KB | `5fe8870e75af9ae124e3c129ebed356e2256e3132e22794d19d4819ba46b75ae` |
 | `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/SKCM/virchow/split1/inference_dump.pkl` | 1.3 MB | `e98074dd82baa9342fb8d15c38e611b06e0c194caa423801ab3eb21c9394533e` |
+| `results/faithful/faithful_ridge__ctranspath::26-09-13-19-25-45/CCRCC/ctranspath/split0/inference_dump.pkl` | 10.5 MB | `1eb643db0d1e3ff30a98383e03b87339d458f5f08118364ae24f61d10ca6e157` |
+| `results/faithful/faithful_ridge__ctranspath::26-09-13-19-25-45/CCRCC/ctranspath/split1/inference_dump.pkl` | 3.8 MB | `5c74b972db1f9a20c16e8c0fb4f3fcc65c254861369e40398bacb38193a172ce` |
+| `results/faithful/faithful_ridge__ctranspath::26-09-13-19-25-45/COAD/ctranspath/split0/inference_dump.pkl` | 6.0 MB | `1c623f178043e5066d9269caa122ed064d0a5986ff349bf8a7a7cf4cb42a0328` |
+| `results/faithful/faithful_ridge__ctranspath::26-09-13-19-25-45/COAD/ctranspath/split1/inference_dump.pkl` | 2.9 MB | `29ce4f3c64fa64827d4d179620642903e5e6a3c778db29f231b03bfcc42cb10a` |
+| `results/faithful/faithful_ridge__ctranspath::26-09-13-19-25-45/IDC/ctranspath/split0/inference_dump.pkl` | 11.9 MB | `46ffe92221014cf1a524d0b796fe84f5b76bfc6a5e2e27fd05f46da1455c6720` |
+| `results/faithful/faithful_ridge__ctranspath::26-09-13-19-25-45/IDC/ctranspath/split1/inference_dump.pkl` | 4.4 MB | `7ada05739d9224253dabcf8ace5e3bab6ccfef0ba48fbd1c5dda78149cedd715` |
+| `results/faithful/faithful_ridge__ctranspath::26-09-13-19-25-45/IDC/ctranspath/split2/inference_dump.pkl` | 2.3 MB | `0034a77bddf7cb5143691308f80ede6f825d1510c3fc22825a285a4752e6b3ce` |
+| `results/faithful/faithful_ridge__ctranspath::26-09-13-19-25-45/IDC/ctranspath/split3/inference_dump.pkl` | 1.7 MB | `833099218f2e4fb55632082c3a90d4001fea74f80a7b4bf15928557fef5d8945` |
+| `results/faithful/faithful_ridge__ctranspath::26-09-13-19-25-45/PAAD/ctranspath/split0/inference_dump.pkl` | 1.2 MB | `93d578e39a35301425c4a6d0e91b534346785dbe04135e6b9768ae1b64e08e70` |
+| `results/faithful/faithful_ridge__ctranspath::26-09-13-19-25-45/PAAD/ctranspath/split1/inference_dump.pkl` | 2.1 MB | `c2b9a070f3a118755d162b73947129e3e3fc2a02a5ee018eb92833410d0aa062` |
+| `results/faithful/faithful_ridge__ctranspath::26-09-13-19-25-45/PAAD/ctranspath/split2/inference_dump.pkl` | 1.1 MB | `2c77245ac112870a5028f84e8d299cb9e73396d7f0a3d096bbd5d57562cafdb9` |
+| `results/faithful/faithful_ridge__ctranspath::26-09-13-19-25-45/PRAD/ctranspath/split0/inference_dump.pkl` | 14.8 MB | `923fa5cdfca7a6d1f9b7b481ee064da12772ac1f9d613c2118df214b27776fe0` |
+| `results/faithful/faithful_ridge__ctranspath::26-09-13-19-25-45/PRAD/ctranspath/split1/inference_dump.pkl` | 21.1 MB | `ec8a697c348b120b2870287d3ece82de310b4148ee28fe2ff9b39dfafb4e9471` |
+| `results/faithful/faithful_ridge__ctranspath::26-09-13-19-25-45/READ/ctranspath/split0/inference_dump.pkl` | 2.6 MB | `00fd508f1dc5488061ba3df8df66d41303dfbc5fc5f5e0500aa4422d986d3c5d` |
+| `results/faithful/faithful_ridge__ctranspath::26-09-13-19-25-45/READ/ctranspath/split1/inference_dump.pkl` | 2.2 MB | `184bf8df9166bcf1894cef6bae147898e33266d1356e82c47df6aa4c0f67808f` |
+| `results/faithful/faithful_ridge__ctranspath::26-09-13-19-25-45/SKCM/ctranspath/split0/inference_dump.pkl` | 757.9 KB | `50c9ce1d053c0003b9fb1cd1a4c8716cc4d89d9e98466c32ba69e764ce570108` |
+| `results/faithful/faithful_ridge__ctranspath::26-09-13-19-25-45/SKCM/ctranspath/split1/inference_dump.pkl` | 1020.4 KB | `ff60b836b9ddfca561e779b0a683992bf42ec80e7e81680510a07f5ba4f1305b` |
 | `results/faithful/faithful_ridge__resnet50::26-09-13-18-41-51/CCRCC/resnet50/split0/inference_dump.pkl` | 10.5 MB | `8b391a8b7bf97ba6e34b506926fb080e15a848629d2a5b091c6dbb89459a8207` |
 | `results/faithful/faithful_ridge__resnet50::26-09-13-18-41-51/CCRCC/resnet50/split1/inference_dump.pkl` | 3.8 MB | `f42daa9b4fbe63952ce02c29fe3d914dd06290cb44db1dbf9103b79bce46cff3` |
 | `results/faithful/faithful_ridge__resnet50::26-09-13-18-41-51/CCRCC/resnet50/split2/inference_dump.pkl` | 6.2 MB | `e1430c8e64033f0a4f6ebd2d2721726392958e69e34955db8d4450d56c22161a` |
@@ -386,6 +403,6 @@ Stage 4 joined tables
 | `results/faithful/smoke_resnet50_IDC::26-09-13-14-30-02/IDC/resnet50/split2/inference_dump.pkl` | 3.1 MB | `b31ccd3a048b11e275b20df9f1d72dab13a4ce1ca2bc2fd721f7f91a84140fd1` |
 | `results/faithful/smoke_resnet50_IDC::26-09-13-14-30-02/IDC/resnet50/split3/inference_dump.pkl` | 2.3 MB | `683c5a07df1cae8e1a57277025ca6d9b6c43edc844afc036a695f2b3d909e27e` |
 
-**352 dump files hashed.**
+**369 dump files hashed.**
 
-Grand total across all untracked artifacts: 2,032 files, 54.2 GB.
+Grand total across all untracked artifacts: 2,049 files, 54.3 GB.

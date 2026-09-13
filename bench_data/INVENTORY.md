@@ -59,10 +59,10 @@ Visium tasks use 10x barcodes (`AAACACCAATAACTGC-1`).
 | # | Handoff says | Actual | Impact |
 |---|---|---|---|
 | 1 | 9 tasks | **10** — `HCC` (2 NCBI Visium samples, 4,196 patches, 2 folds) ships in hest-bench and is absent from both the handoff and `bench_config.yaml` | Scope decision needed |
-| 2 | ccRCC `INT1..INT24`, splits = n patients | 24 samples but **6 folds** (4 test / 20 train each) | Confirms handoff's STFlow footnote |
-| 3 | PRAD `MEND139..MEND162`, 23 samples | 23 samples but **2 folds** (8/15 and 15/8), not 23 | Fold count assumption wrong |
+| 2 | ccRCC splits = n patients | 24 samples, **6 folds** (4 test each). Paper Table A11: 24 patients, and §5.1 says ccRCC uses k/2-fold, i.e. 12 folds. Shipped splits give 6, so the release uses **k/4** | Genuine drift from the paper |
+| 3 | ~~PRAD 23 samples should give 23 folds~~ | **RETRACTED — not a discrepancy.** Paper Table A11 lists PRAD as **2 patients / 23 samples**; folds are patients, not samples, so 2 folds is correct. Same for COAD and READ (2 patients / 4 samples) | None — my error |
 | 4 | ~100k benchmark patches | **236,495** | Extraction cost ~2.4x the estimate |
-| 5 | COAD is Xenium (updated post-paper) | Confirmed — 4 TENX Xenium samples, 541-gene panel | Paper Table 1 COAD will not match |
+| 5 | ~~COAD was Visium in the paper, now Xenium~~ | **RETRACTED — handoff was wrong.** Paper Table A11 lists COAD as **Xenium, 2 patients, 4 samples**, exactly what ships. Our COAD values match the paper (ResNet50 0.2500 vs 0.2528) | None — COAD is directly comparable |
 | 6 | `normalize_adata` is log1p only | Confirmed — docstring claims total-count normalization, body calls only `sc.pp.log1p` | Faithful run must not add normalization |
 | 7 | Ridge `fit_intercept=False`, alpha=100/(256x50) | Confirmed — `alpha = 100/(X.shape[1]*y.shape[1])`, `solver='lsqr'` | As specified |
 | 8 | (not mentioned) | **CCRCC spans two gene spaces**: INT1-12 have 36,601 vars, INT13-24 have 17,943 | All 50 target genes present in both; no action needed |
@@ -147,3 +147,19 @@ Visium tasks use 10x barcodes (`AAACACCAATAACTGC-1`).
 | READ | ZEN49 | ZEN | 2,203 | 2,203 | 100.0% | 36,601 | float32 |
 | SKCM | TENX115 | TENX | 3,886 | 1,741 | 44.8% | 541 | uint16 |
 | SKCM | TENX117 | TENX | 1,830 | 1,293 | 70.7% | 541 | uint16 |
+
+## Post-hoc corrections after reading the paper (2026-09-13)
+
+Items 3 and 5 above are **retracted**. Both came from the handoff's description rather than
+the paper, and the paper contradicts them:
+
+- **Folds are patients, not samples** (Table A11 lists patients and samples separately).
+  PRAD is 2 patients / 23 samples, COAD and READ are 2 patients / 4 samples. Every shipped
+  fold count matches `k` = patients except ccRCC.
+- **COAD is Xenium in the paper** (Table A11), not Visium. There was no post-paper technology
+  change, and COAD is directly comparable to Table 1.
+
+Verified against the paper and unchanged: log1p-only normalization (§5.2 "log1p-normalized
+expression"), variance-ranked top-50 genes (§5.1 "top 50 genes with the highest normalized
+variance"), 112x112 um = 224x224 px at 20x, PCA with 256 factors, ridge with adaptive
+regularization, XGBoost with 100 estimators and max depth 3.
