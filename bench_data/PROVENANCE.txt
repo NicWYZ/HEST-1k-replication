@@ -1,0 +1,12 @@
+dir              : /work/users/w/e/weiyang/hest_replication/bench_data
+created          : 2026-09-13T14:24:35-04:00
+created_by       : Claude Science session df0be6b9 (HEST-1k replication, Stage 0-1)
+operator         : weiyang (Nicolas Weiyang Zhang)
+HEST_commit      : 3ddb5eaf5bd2a8133e0c0e8015816489a3d99dc3
+TRIDENT_commit   : f3eb7f301ce34f875306b545e6cfefc5d3335a5c (v0.3.2)
+conda_env        : /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest (python 3.11.16)
+HF_HOME          : /work/users/w/e/weiyang/hf_cache
+HF_user          : weiyangz
+bench_data_src   : HuggingFace MahmoodLab/hest-bench, ignore_patterns=['fm_v1/*']
+slurm_jobs       : env=1027400 dl=1027662 inv=1027799 bcchk/genechk (see reports/)
+content          : hest-bench snapshot, 40GB, 10 tasks, 72 samples, 236495 patches

@@ -1,7 +1,13 @@
 # ---- Gated / large data: NEVER commit ----
 # hest-bench is a GATED HuggingFace dataset. inference_dump.pkl contains targets_all,
 # i.e. measured expression from that dataset. Committing these redistributes gated data.
-bench_data/
+# NOTE: use 'bench_data/*' not 'bench_data/' - a trailing-slash ignore stops git
+# descending into the directory, so the negations below would never be considered.
+bench_data/*
+!bench_data/INVENTORY.md
+!bench_data/inventory.json
+!bench_data/hest_bench_sample_inventory.csv
+!bench_data/PROVENANCE.txt
 embeddings/
 *.pkl
 *.h5
@@ -35,4 +41,6 @@ logs/
 .ipynb_checkpoints/
 
 # Anything above the size guard should be added deliberately, never by wildcard
-code/HEST/
+
+# Keep empty deliverable dirs visible
+!.gitkeep

@@ -1,0 +1,15 @@
+# Stage 2 faithful run - PCA256 + ridge
+bench_data_root: /work/users/w/e/weiyang/hest_replication/bench_data
+results_dir:     /work/users/w/e/weiyang/hest_replication/results/faithful
+embed_dataroot:  /work/users/w/e/weiyang/hest_replication/embeddings
+exp_code: faithful_pca_ridge__virchow2
+seed: 1
+batch_size: 128
+num_workers: 8
+gene_list: var_50genes.json
+method: ridge
+normalize: True
+dimreduce: "PCA"
+latent_dim: 256
+encoders: ["virchow2"]
+datasets: ["IDC", "PRAD", "PAAD", "SKCM", "COAD", "READ", "CCRCC", "LUNG", "LYMPH_IDC", "HCC"]

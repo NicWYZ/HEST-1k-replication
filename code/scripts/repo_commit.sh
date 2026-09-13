@@ -12,6 +12,7 @@ python "$ROOT/code/scripts/make_manifest.py"
 
 git add -A
 
+
 # --- size guard: block a large file that slipped past .gitignore ---
 BIG=$(git diff --cached --name-only --diff-filter=AM | while read -r f; do
         [ -f "$f" ] || continue
@@ -33,6 +34,6 @@ if [ -n "$BAD" ]; then
 fi
 
 if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
-git -c user.name="$GIT_AUTHOR_NAME" -c user.email="$GIT_AUTHOR_EMAIL" commit -q -m "$MSG"
+git commit -q -m "$MSG"   # identity comes from repo-local git config
 echo "committed: $(git log -1 --oneline)"
 git diff --stat HEAD~1 HEAD 2>/dev/null | tail -3 || true

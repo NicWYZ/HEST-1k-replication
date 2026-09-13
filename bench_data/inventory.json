@@ -1,0 +1,4040 @@
+{
+ "CCRCC": {
+  "task": "CCRCC",
+  "subdirs": [
+   "adata",
+   "patches",
+   "splits"
+  ],
+  "loose_files": [
+   "mean_50genes.json",
+   "var_50genes.json"
+  ],
+  "n_adata": 24,
+  "n_patches": 24,
+  "n_splits": 12,
+  "jsons": [
+   "mean_50genes.json",
+   "var_50genes.json"
+  ],
+  "sample_ids": [
+   "INT1",
+   "INT10",
+   "INT11",
+   "INT12",
+   "INT13",
+   "INT14",
+   "INT15",
+   "INT16",
+   "INT17",
+   "INT18",
+   "INT19",
+   "INT2",
+   "INT20",
+   "INT21",
+   "INT22",
+   "INT23",
+   "INT24",
+   "INT3",
+   "INT4",
+   "INT5",
+   "INT6",
+   "INT7",
+   "INT8",
+   "INT9"
+  ],
+  "gene_list_file": "mean_50genes.json",
+  "n_genes_in_list": 50,
+  "genes_head": [
+   "IGKC",
+   "UBC",
+   "FTL",
+   "B2M",
+   "TMSB4X"
+  ],
+  "samples": [
+   {
+    "sample_id": "INT1",
+    "n_spots": 1084,
+    "n_vars": 36601,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 688.0,
+    "obs_cols": [
+     "in_tissue",
+     "array_row",
+     "array_col",
+     "pxl_row_in_fullres",
+     "pxl_col_in_fullres",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 1084,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     1084,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     1084,
+     2
+    ],
+    "n_barcodes_h5": 1084,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "INT10",
+    "n_spots": 1983,
+    "n_vars": 36601,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 5858.0,
+    "obs_cols": [
+     "in_tissue",
+     "array_row",
+     "array_col",
+     "pxl_row_in_fullres",
+     "pxl_col_in_fullres",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 1983,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     1983,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     1983,
+     2
+    ],
+    "n_barcodes_h5": 1983,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "INT11",
+    "n_spots": 1439,
+    "n_vars": 36601,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 3540.0,
+    "obs_cols": [
+     "in_tissue",
+     "array_row",
+     "array_col",
+     "pxl_row_in_fullres",
+     "pxl_col_in_fullres",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 1439,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     1439,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     1439,
+     2
+    ],
+    "n_barcodes_h5": 1439,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "INT12",
+    "n_spots": 1451,
+    "n_vars": 36601,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 5845.0,
+    "obs_cols": [
+     "in_tissue",
+     "array_row",
+     "array_col",
+     "pxl_row_in_fullres",
+     "pxl_col_in_fullres",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 1451,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     1451,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     1451,
+     2
+    ],
+    "n_barcodes_h5": 1451,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "INT13",
+    "n_spots": 4359,
+    "n_vars": 17943,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 4356.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 4359,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     4359,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     4359,
+     2
+    ],
+    "n_barcodes_h5": 4359,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "INT14",
+    "n_spots": 4562,
+    "n_vars": 17943,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 328.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 4562,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     4562,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     4562,
+     2
+    ],
+    "n_barcodes_h5": 4562,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "INT15",
+    "n_spots": 4940,
+    "n_vars": 17943,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 551.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 4940,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     4940,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     4940,
+     2
+    ],
+    "n_barcodes_h5": 4940,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "INT16",
+    "n_spots": 3206,
+    "n_vars": 17943,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 354.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 3206,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     3206,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     3206,
+     2
+    ],
+    "n_barcodes_h5": 3206,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "INT17",
+    "n_spots": 3585,
+    "n_vars": 17943,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 6861.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 3585,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     3585,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     3585,
+     2
+    ],
+    "n_barcodes_h5": 3585,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "INT18",
+    "n_spots": 4915,
+    "n_vars": 17943,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 915.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 4915,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     4915,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     4915,
+     2
+    ],
+    "n_barcodes_h5": 4915,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "INT19",
+    "n_spots": 4948,
+    "n_vars": 17943,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 282.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 4948,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     4948,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     4948,
+     2
+    ],
+    "n_barcodes_h5": 4948,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "INT2",
+    "n_spots": 2580,
+    "n_vars": 36601,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 203.0,
+    "obs_cols": [
+     "in_tissue",
+     "array_row",
+     "array_col",
+     "pxl_row_in_fullres",
+     "pxl_col_in_fullres",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 2580,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     2580,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     2580,
+     2
+    ],
+    "n_barcodes_h5": 2580,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "INT20",
+    "n_spots": 4860,
+    "n_vars": 17943,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 778.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 4860,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     4860,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     4860,
+     2
+    ],
+    "n_barcodes_h5": 4860,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "INT21",
+    "n_spots": 4975,
+    "n_vars": 17943,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 2199.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 4975,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     4975,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     4975,
+     2
+    ],
+    "n_barcodes_h5": 4975,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "INT22",
+    "n_spots": 3829,
+    "n_vars": 17943,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 3851.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 3829,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     3829,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     3829,
+     2
+    ],
+    "n_barcodes_h5": 3829,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "INT23",
+    "n_spots": 4755,
+    "n_vars": 17943,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 5200.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 4755,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     4755,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     4755,
+     2
+    ],
+    "n_barcodes_h5": 4755,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "INT24",
+    "n_spots": 4510,
+    "n_vars": 17943,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 1543.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 4510,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     4510,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     4510,
+     2
+    ],
+    "n_barcodes_h5": 4510,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "INT3",
+    "n_spots": 2007,
+    "n_vars": 36601,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 938.0,
+    "obs_cols": [
+     "in_tissue",
+     "array_row",
+     "array_col",
+     "pxl_row_in_fullres",
+     "pxl_col_in_fullres",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 2007,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     2007,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     2007,
+     2
+    ],
+    "n_barcodes_h5": 2007,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "INT4",
+    "n_spots": 1349,
+    "n_vars": 36601,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 427.0,
+    "obs_cols": [
+     "in_tissue",
+     "array_row",
+     "array_col",
+     "pxl_row_in_fullres",
+     "pxl_col_in_fullres",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 1349,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     1349,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     1349,
+     2
+    ],
+    "n_barcodes_h5": 1349,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "INT5",
+    "n_spots": 1186,
+    "n_vars": 36601,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 18438.0,
+    "obs_cols": [
+     "in_tissue",
+     "array_row",
+     "array_col",
+     "pxl_row_in_fullres",
+     "pxl_col_in_fullres",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 1186,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     1186,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     1186,
+     2
+    ],
+    "n_barcodes_h5": 1186,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "INT6",
+    "n_spots": 1678,
+    "n_vars": 36601,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 1300.0,
+    "obs_cols": [
+     "in_tissue",
+     "array_row",
+     "array_col",
+     "pxl_row_in_fullres",
+     "pxl_col_in_fullres",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 1678,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     1678,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     1678,
+     2
+    ],
+    "n_barcodes_h5": 1678,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "INT7",
+    "n_spots": 2374,
+    "n_vars": 36601,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 2032.0,
+    "obs_cols": [
+     "in_tissue",
+     "array_row",
+     "array_col",
+     "pxl_row_in_fullres",
+     "pxl_col_in_fullres",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 2374,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     2374,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     2374,
+     2
+    ],
+    "n_barcodes_h5": 2374,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "INT8",
+    "n_spots": 1949,
+    "n_vars": 36601,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 7118.0,
+    "obs_cols": [
+     "in_tissue",
+     "array_row",
+     "array_col",
+     "pxl_row_in_fullres",
+     "pxl_col_in_fullres",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 1949,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     1949,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     1949,
+     2
+    ],
+    "n_barcodes_h5": 1949,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "INT9",
+    "n_spots": 1696,
+    "n_vars": 36601,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 409.0,
+    "obs_cols": [
+     "in_tissue",
+     "array_row",
+     "array_col",
+     "pxl_row_in_fullres",
+     "pxl_col_in_fullres",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 1696,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     1696,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     1696,
+     2
+    ],
+    "n_barcodes_h5": 1696,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   }
+  ],
+  "total_spots": 74220,
+  "splits": [
+   {
+    "file": "test_0.csv",
+    "n_rows": 4,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "test_1.csv",
+    "n_rows": 4,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "test_2.csv",
+    "n_rows": 4,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "test_3.csv",
+    "n_rows": 4,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "test_4.csv",
+    "n_rows": 4,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "test_5.csv",
+    "n_rows": 4,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_0.csv",
+    "n_rows": 20,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_1.csv",
+    "n_rows": 20,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_2.csv",
+    "n_rows": 20,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_3.csv",
+    "n_rows": 20,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_4.csv",
+    "n_rows": 20,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_5.csv",
+    "n_rows": 20,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   }
+  ]
+ },
+ "COAD": {
+  "task": "COAD",
+  "subdirs": [
+   "adata",
+   "patches",
+   "patches_vis",
+   "splits"
+  ],
+  "loose_files": [
+   "var_50genes.json"
+  ],
+  "n_adata": 4,
+  "n_patches": 4,
+  "n_splits": 4,
+  "jsons": [
+   "var_50genes.json"
+  ],
+  "sample_ids": [
+   "TENX111",
+   "TENX147",
+   "TENX148",
+   "TENX149"
+  ],
+  "gene_list_file": "var_50genes.json",
+  "n_genes_in_list": 50,
+  "genes_head": [
+   "AQP8",
+   "AREG",
+   "BANK1",
+   "CA1",
+   "CA4"
+  ],
+  "samples": [
+   {
+    "sample_id": "TENX111",
+    "n_spots": 6138,
+    "n_vars": 541,
+    "X_dtype": "uint16",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 2961.0,
+    "obs_cols": [
+     "in_tissue",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "array_col",
+     "array_row",
+     "n_counts",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes"
+    ],
+    "n_obs_names": 6138,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     5079,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     5079,
+     2
+    ],
+    "n_barcodes_h5": 5079,
+    "barcodes_match_exact": false,
+    "barcodes_match_asset": false
+   },
+   {
+    "sample_id": "TENX147",
+    "n_spots": 3997,
+    "n_vars": 541,
+    "X_dtype": "uint16",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 2124.0,
+    "obs_cols": [
+     "in_tissue",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "array_col",
+     "array_row",
+     "n_counts",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes"
+    ],
+    "n_obs_names": 3997,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     3417,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     3417,
+     2
+    ],
+    "n_barcodes_h5": 3417,
+    "barcodes_match_exact": false,
+    "barcodes_match_asset": false
+   },
+   {
+    "sample_id": "TENX148",
+    "n_spots": 4379,
+    "n_vars": 541,
+    "X_dtype": "uint16",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 1885.0,
+    "obs_cols": [
+     "in_tissue",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "array_col",
+     "array_row",
+     "n_counts",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes"
+    ],
+    "n_obs_names": 4379,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     3535,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     3535,
+     2
+    ],
+    "n_barcodes_h5": 3535,
+    "barcodes_match_exact": false,
+    "barcodes_match_asset": false
+   },
+   {
+    "sample_id": "TENX149",
+    "n_spots": 4009,
+    "n_vars": 541,
+    "X_dtype": "uint16",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 2026.0,
+    "obs_cols": [
+     "in_tissue",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "array_col",
+     "array_row",
+     "n_counts",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes"
+    ],
+    "n_obs_names": 4009,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     3620,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     3620,
+     2
+    ],
+    "n_barcodes_h5": 3620,
+    "barcodes_match_exact": false,
+    "barcodes_match_asset": false
+   }
+  ],
+  "total_spots": 18523,
+  "splits": [
+   {
+    "file": "test_0.csv",
+    "n_rows": 3,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "test_1.csv",
+    "n_rows": 1,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_0.csv",
+    "n_rows": 1,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_1.csv",
+    "n_rows": 3,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   }
+  ]
+ },
+ "HCC": {
+  "task": "HCC",
+  "subdirs": [
+   "adata",
+   "patches",
+   "splits"
+  ],
+  "loose_files": [
+   "mean_50genes.json",
+   "var_50genes.json"
+  ],
+  "n_adata": 2,
+  "n_patches": 2,
+  "n_splits": 4,
+  "jsons": [
+   "mean_50genes.json",
+   "var_50genes.json"
+  ],
+  "sample_ids": [
+   "NCBI642",
+   "NCBI643"
+  ],
+  "gene_list_file": "mean_50genes.json",
+  "n_genes_in_list": 50,
+  "genes_head": [
+   "ALB",
+   "FTL",
+   "APOA2",
+   "APOC1",
+   "MT-CO1"
+  ],
+  "samples": [
+   {
+    "sample_id": "NCBI642",
+    "n_spots": 1987,
+    "n_vars": 36601,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 5307.0,
+    "obs_cols": [
+     "in_tissue",
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 1987,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     1941,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     1941,
+     2
+    ],
+    "n_barcodes_h5": 1941,
+    "barcodes_match_exact": false,
+    "barcodes_match_asset": false
+   },
+   {
+    "sample_id": "NCBI643",
+    "n_spots": 2261,
+    "n_vars": 36601,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 5863.0,
+    "obs_cols": [
+     "in_tissue",
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 2261,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     2255,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     2255,
+     2
+    ],
+    "n_barcodes_h5": 2255,
+    "barcodes_match_exact": false,
+    "barcodes_match_asset": false
+   }
+  ],
+  "total_spots": 4248,
+  "splits": [
+   {
+    "file": "test_0.csv",
+    "n_rows": 1,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "test_1.csv",
+    "n_rows": 1,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_0.csv",
+    "n_rows": 1,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_1.csv",
+    "n_rows": 1,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   }
+  ]
+ },
+ "IDC": {
+  "task": "IDC",
+  "subdirs": [
+   "adata",
+   "old",
+   "patches",
+   "splits"
+  ],
+  "loose_files": [
+   "mean_50genes.json",
+   "var_50genes.json"
+  ],
+  "n_adata": 4,
+  "n_patches": 4,
+  "n_splits": 8,
+  "jsons": [
+   "mean_50genes.json",
+   "var_50genes.json"
+  ],
+  "sample_ids": [
+   "NCBI783",
+   "NCBI785",
+   "TENX95",
+   "TENX99"
+  ],
+  "gene_list_file": "mean_50genes.json",
+  "n_genes_in_list": 50,
+  "genes_head": [
+   "LUM",
+   "GATA3",
+   "TPD52",
+   "POSTN",
+   "TACSTD2"
+  ],
+  "samples": [
+   {
+    "sample_id": "NCBI783",
+    "n_spots": 3869,
+    "n_vars": 541,
+    "X_dtype": "uint16",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 624.0,
+    "obs_cols": [
+     "in_tissue",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "array_col",
+     "array_row",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 3869,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     3005,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     3005,
+     2
+    ],
+    "n_barcodes_h5": 3005,
+    "barcodes_match_exact": false,
+    "barcodes_match_asset": false
+   },
+   {
+    "sample_id": "NCBI785",
+    "n_spots": 4180,
+    "n_vars": 541,
+    "X_dtype": "uint16",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 2167.0,
+    "obs_cols": [
+     "in_tissue",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "array_col",
+     "array_row",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 4180,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     4010,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     4010,
+     2
+    ],
+    "n_barcodes_h5": 4010,
+    "barcodes_match_exact": false,
+    "barcodes_match_asset": false
+   },
+   {
+    "sample_id": "TENX95",
+    "n_spots": 11845,
+    "n_vars": 541,
+    "X_dtype": "uint16",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 24.0,
+    "obs_cols": [
+     "in_tissue",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "array_col",
+     "array_row",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 11845,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     7760,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     7760,
+     2
+    ],
+    "n_barcodes_h5": 7760,
+    "barcodes_match_exact": false,
+    "barcodes_match_asset": false
+   },
+   {
+    "sample_id": "TENX99",
+    "n_spots": 25080,
+    "n_vars": 541,
+    "X_dtype": "uint16",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 498.0,
+    "obs_cols": [
+     "in_tissue",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "array_col",
+     "array_row",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 25080,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     20761,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     20761,
+     2
+    ],
+    "n_barcodes_h5": 20761,
+    "barcodes_match_exact": false,
+    "barcodes_match_asset": false
+   }
+  ],
+  "total_spots": 44974,
+  "splits": [
+   {
+    "file": "test_0.csv",
+    "n_rows": 1,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "test_1.csv",
+    "n_rows": 1,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "test_2.csv",
+    "n_rows": 1,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "test_3.csv",
+    "n_rows": 1,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_0.csv",
+    "n_rows": 3,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_1.csv",
+    "n_rows": 3,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_2.csv",
+    "n_rows": 3,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_3.csv",
+    "n_rows": 3,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   }
+  ]
+ },
+ "LUNG": {
+  "task": "LUNG",
+  "subdirs": [
+   "adata",
+   "patches",
+   "splits"
+  ],
+  "loose_files": [
+   "var_50genes.json"
+  ],
+  "n_adata": 2,
+  "n_patches": 2,
+  "n_splits": 4,
+  "jsons": [
+   "var_50genes.json"
+  ],
+  "sample_ids": [
+   "TENX118",
+   "TENX141"
+  ],
+  "gene_list_file": "var_50genes.json",
+  "n_genes_in_list": 50,
+  "genes_head": [
+   "ACE2",
+   "ALDH1A3",
+   "BBOX1",
+   "CAPN8",
+   "CCL19"
+  ],
+  "samples": [
+   {
+    "sample_id": "TENX118",
+    "n_spots": 3115,
+    "n_vars": 541,
+    "X_dtype": "uint16",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 1442.0,
+    "obs_cols": [
+     "in_tissue",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "array_col",
+     "array_row",
+     "n_counts",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes"
+    ],
+    "n_obs_names": 3115,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     1944,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     1944,
+     2
+    ],
+    "n_barcodes_h5": 1944,
+    "barcodes_match_exact": false,
+    "barcodes_match_asset": false
+   },
+   {
+    "sample_id": "TENX141",
+    "n_spots": 4390,
+    "n_vars": 541,
+    "X_dtype": "uint16",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 890.0,
+    "obs_cols": [
+     "in_tissue",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "array_col",
+     "array_row",
+     "n_counts",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes"
+    ],
+    "n_obs_names": 4390,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     3262,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     3262,
+     2
+    ],
+    "n_barcodes_h5": 3262,
+    "barcodes_match_exact": false,
+    "barcodes_match_asset": false
+   }
+  ],
+  "total_spots": 7505,
+  "splits": [
+   {
+    "file": "test_0.csv",
+    "n_rows": 1,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "test_1.csv",
+    "n_rows": 1,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_0.csv",
+    "n_rows": 1,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_1.csv",
+    "n_rows": 1,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   }
+  ]
+ },
+ "LYMPH_IDC": {
+  "task": "LYMPH_IDC",
+  "subdirs": [
+   "adata",
+   "patches",
+   "splits"
+  ],
+  "loose_files": [
+   "mean_50genes.json",
+   "var_50genes.json"
+  ],
+  "n_adata": 4,
+  "n_patches": 4,
+  "n_splits": 8,
+  "jsons": [
+   "mean_50genes.json",
+   "var_50genes.json"
+  ],
+  "sample_ids": [
+   "NCBI681",
+   "NCBI682",
+   "NCBI683",
+   "NCBI684"
+  ],
+  "gene_list_file": "mean_50genes.json",
+  "n_genes_in_list": 50,
+  "genes_head": [
+   "SERF1A",
+   "IGKC",
+   "IGHG1",
+   "TMSB10",
+   "MUCL1"
+  ],
+  "samples": [
+   {
+    "sample_id": "NCBI681",
+    "n_spots": 4992,
+    "n_vars": 33931,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 7425.0,
+    "obs_cols": [
+     "in_tissue",
+     "array_row",
+     "array_col",
+     "pxl_row_in_fullres",
+     "pxl_col_in_fullres",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 4992,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     4992,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     4992,
+     2
+    ],
+    "n_barcodes_h5": 4992,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "NCBI682",
+    "n_spots": 4988,
+    "n_vars": 33931,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 8834.0,
+    "obs_cols": [
+     "in_tissue",
+     "array_row",
+     "array_col",
+     "pxl_row_in_fullres",
+     "pxl_col_in_fullres",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 4988,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     4988,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     4988,
+     2
+    ],
+    "n_barcodes_h5": 4988,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "NCBI683",
+    "n_spots": 4992,
+    "n_vars": 33931,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 2229.0,
+    "obs_cols": [
+     "in_tissue",
+     "array_row",
+     "array_col",
+     "pxl_row_in_fullres",
+     "pxl_col_in_fullres",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 4992,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     4992,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     4992,
+     2
+    ],
+    "n_barcodes_h5": 4992,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "NCBI684",
+    "n_spots": 4992,
+    "n_vars": 33931,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 4421.0,
+    "obs_cols": [
+     "in_tissue",
+     "array_row",
+     "array_col",
+     "pxl_row_in_fullres",
+     "pxl_col_in_fullres",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 4992,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     4992,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     4992,
+     2
+    ],
+    "n_barcodes_h5": 4992,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   }
+  ],
+  "total_spots": 19964,
+  "splits": [
+   {
+    "file": "test_0.csv",
+    "n_rows": 1,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "test_1.csv",
+    "n_rows": 1,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "test_2.csv",
+    "n_rows": 1,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "test_3.csv",
+    "n_rows": 1,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_0.csv",
+    "n_rows": 3,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_1.csv",
+    "n_rows": 3,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_2.csv",
+    "n_rows": 3,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_3.csv",
+    "n_rows": 3,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   }
+  ]
+ },
+ "PAAD": {
+  "task": "PAAD",
+  "subdirs": [
+   "adata",
+   "patches",
+   "splits"
+  ],
+  "loose_files": [
+   "mean_50genes.json",
+   "var_50genes.json"
+  ],
+  "n_adata": 3,
+  "n_patches": 3,
+  "n_splits": 6,
+  "jsons": [
+   "mean_50genes.json",
+   "var_50genes.json"
+  ],
+  "sample_ids": [
+   "TENX116",
+   "TENX126",
+   "TENX140"
+  ],
+  "gene_list_file": "mean_50genes.json",
+  "n_genes_in_list": 50,
+  "genes_head": [
+   "AMY2A",
+   "GATM",
+   "CFTR",
+   "CFB",
+   "VCAN"
+  ],
+  "samples": [
+   {
+    "sample_id": "TENX116",
+    "n_spots": 3090,
+    "n_vars": 538,
+    "X_dtype": "uint16",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 4681.0,
+    "obs_cols": [
+     "in_tissue",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "array_col",
+     "array_row",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 3090,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     2010,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     2010,
+     2
+    ],
+    "n_barcodes_h5": 2010,
+    "barcodes_match_exact": false,
+    "barcodes_match_asset": false
+   },
+   {
+    "sample_id": "TENX126",
+    "n_spots": 2190,
+    "n_vars": 541,
+    "X_dtype": "uint16",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 938.0,
+    "obs_cols": [
+     "in_tissue",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "array_col",
+     "array_row",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 2190,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     1951,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     1951,
+     2
+    ],
+    "n_barcodes_h5": 1951,
+    "barcodes_match_exact": false,
+    "barcodes_match_asset": false
+   },
+   {
+    "sample_id": "TENX140",
+    "n_spots": 4513,
+    "n_vars": 541,
+    "X_dtype": "uint16",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 532.0,
+    "obs_cols": [
+     "in_tissue",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "array_col",
+     "array_row",
+     "n_counts",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes"
+    ],
+    "n_obs_names": 4513,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     3610,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     3610,
+     2
+    ],
+    "n_barcodes_h5": 3610,
+    "barcodes_match_exact": false,
+    "barcodes_match_asset": false
+   }
+  ],
+  "total_spots": 9793,
+  "splits": [
+   {
+    "file": "test_0.csv",
+    "n_rows": 1,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "test_1.csv",
+    "n_rows": 1,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "test_2.csv",
+    "n_rows": 1,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_0.csv",
+    "n_rows": 2,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_1.csv",
+    "n_rows": 2,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_2.csv",
+    "n_rows": 2,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   }
+  ]
+ },
+ "PRAD": {
+  "task": "PRAD",
+  "subdirs": [
+   "adata",
+   "patches",
+   "splits"
+  ],
+  "loose_files": [
+   "mean_50genes.json",
+   "var_50genes.json"
+  ],
+  "n_adata": 23,
+  "n_patches": 23,
+  "n_splits": 4,
+  "jsons": [
+   "mean_50genes.json",
+   "var_50genes.json"
+  ],
+  "sample_ids": [
+   "MEND139",
+   "MEND140",
+   "MEND141",
+   "MEND142",
+   "MEND143",
+   "MEND144",
+   "MEND145",
+   "MEND146",
+   "MEND147",
+   "MEND148",
+   "MEND149",
+   "MEND150",
+   "MEND151",
+   "MEND152",
+   "MEND153",
+   "MEND154",
+   "MEND156",
+   "MEND157",
+   "MEND158",
+   "MEND159",
+   "MEND160",
+   "MEND161",
+   "MEND162"
+  ],
+  "gene_list_file": "mean_50genes.json",
+  "n_genes_in_list": 50,
+  "genes_head": [
+   "MSMB",
+   "KLK3",
+   "MT-CO3",
+   "MT-CO2",
+   "RPL41"
+  ],
+  "samples": [
+   {
+    "sample_id": "MEND139",
+    "n_spots": 3749,
+    "n_vars": 33538,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 1446.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 3749,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     3749,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     3749,
+     2
+    ],
+    "n_barcodes_h5": 3749,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "MEND140",
+    "n_spots": 1935,
+    "n_vars": 33538,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 1605.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 1935,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     1935,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     1935,
+     2
+    ],
+    "n_barcodes_h5": 1935,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "MEND141",
+    "n_spots": 1794,
+    "n_vars": 33538,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 3898.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 1794,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     1794,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     1794,
+     2
+    ],
+    "n_barcodes_h5": 1794,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "MEND142",
+    "n_spots": 2997,
+    "n_vars": 33538,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 3105.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 2997,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     2997,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     2997,
+     2
+    ],
+    "n_barcodes_h5": 2997,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "MEND143",
+    "n_spots": 3816,
+    "n_vars": 33538,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 1247.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 3816,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     3816,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     3816,
+     2
+    ],
+    "n_barcodes_h5": 3816,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "MEND144",
+    "n_spots": 4074,
+    "n_vars": 33538,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 671.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 4074,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     4074,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     4074,
+     2
+    ],
+    "n_barcodes_h5": 4074,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "MEND145",
+    "n_spots": 1418,
+    "n_vars": 33538,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 1716.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 1418,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     1418,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     1418,
+     2
+    ],
+    "n_barcodes_h5": 1418,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "MEND146",
+    "n_spots": 1964,
+    "n_vars": 33538,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 925.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 1964,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     1964,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     1964,
+     2
+    ],
+    "n_barcodes_h5": 1964,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "MEND147",
+    "n_spots": 2335,
+    "n_vars": 33538,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 1839.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 2335,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     2335,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     2335,
+     2
+    ],
+    "n_barcodes_h5": 2335,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "MEND148",
+    "n_spots": 1633,
+    "n_vars": 33538,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 1146.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 1633,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     1633,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     1633,
+     2
+    ],
+    "n_barcodes_h5": 1633,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "MEND149",
+    "n_spots": 1851,
+    "n_vars": 33538,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 1281.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 1851,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     1851,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     1851,
+     2
+    ],
+    "n_barcodes_h5": 1851,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "MEND150",
+    "n_spots": 1751,
+    "n_vars": 33538,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 2068.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 1751,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     1751,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     1751,
+     2
+    ],
+    "n_barcodes_h5": 1751,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "MEND151",
+    "n_spots": 2600,
+    "n_vars": 33538,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 716.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 2600,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     2600,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     2600,
+     2
+    ],
+    "n_barcodes_h5": 2600,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "MEND152",
+    "n_spots": 3082,
+    "n_vars": 33538,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 513.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 3082,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     3082,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     3082,
+     2
+    ],
+    "n_barcodes_h5": 3082,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "MEND153",
+    "n_spots": 1820,
+    "n_vars": 33538,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 900.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 1820,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     1820,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     1820,
+     2
+    ],
+    "n_barcodes_h5": 1820,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "MEND154",
+    "n_spots": 2736,
+    "n_vars": 33538,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 4018.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 2736,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     2736,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     2736,
+     2
+    ],
+    "n_barcodes_h5": 2736,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "MEND156",
+    "n_spots": 3554,
+    "n_vars": 33538,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 5975.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 3554,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     3554,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     3554,
+     2
+    ],
+    "n_barcodes_h5": 3554,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "MEND157",
+    "n_spots": 3190,
+    "n_vars": 33538,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 6244.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 3190,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     3190,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     3190,
+     2
+    ],
+    "n_barcodes_h5": 3190,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "MEND158",
+    "n_spots": 3092,
+    "n_vars": 33538,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 4740.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 3092,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     3092,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     3092,
+     2
+    ],
+    "n_barcodes_h5": 3092,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "MEND159",
+    "n_spots": 3856,
+    "n_vars": 33538,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 1439.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 3856,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     3856,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     3856,
+     2
+    ],
+    "n_barcodes_h5": 3856,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "MEND160",
+    "n_spots": 4079,
+    "n_vars": 33538,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 966.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 4079,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     4079,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     4079,
+     2
+    ],
+    "n_barcodes_h5": 4079,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "MEND161",
+    "n_spots": 2775,
+    "n_vars": 33538,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 14177.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 2775,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     2775,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     2775,
+     2
+    ],
+    "n_barcodes_h5": 2775,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "MEND162",
+    "n_spots": 2609,
+    "n_vars": 33538,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 895.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 2609,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     2609,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     2609,
+     2
+    ],
+    "n_barcodes_h5": 2609,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   }
+  ],
+  "total_spots": 62710,
+  "splits": [
+   {
+    "file": "test_0.csv",
+    "n_rows": 8,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "test_1.csv",
+    "n_rows": 15,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_0.csv",
+    "n_rows": 15,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_1.csv",
+    "n_rows": 8,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   }
+  ]
+ },
+ "READ": {
+  "task": "READ",
+  "subdirs": [
+   "adata",
+   "patches",
+   "splits"
+  ],
+  "loose_files": [
+   "mean_50genes.json",
+   "var_50genes.json"
+  ],
+  "n_adata": 4,
+  "n_patches": 4,
+  "n_splits": 4,
+  "jsons": [
+   "mean_50genes.json",
+   "var_50genes.json"
+  ],
+  "sample_ids": [
+   "ZEN36",
+   "ZEN40",
+   "ZEN48",
+   "ZEN49"
+  ],
+  "gene_list_file": "mean_50genes.json",
+  "n_genes_in_list": 50,
+  "genes_head": [
+   "IGKC",
+   "IGHA1",
+   "MT-CO2",
+   "PIGR",
+   "MT-CO3"
+  ],
+  "samples": [
+   {
+    "sample_id": "ZEN36",
+    "n_spots": 1691,
+    "n_vars": 36601,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 3733.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 1691,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     1691,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     1691,
+     2
+    ],
+    "n_barcodes_h5": 1691,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "ZEN40",
+    "n_spots": 2128,
+    "n_vars": 36601,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 2294.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 2128,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     2128,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     2128,
+     2
+    ],
+    "n_barcodes_h5": 2128,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "ZEN48",
+    "n_spots": 2385,
+    "n_vars": 36601,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 2104.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 2385,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     2385,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     2385,
+     2
+    ],
+    "n_barcodes_h5": 2385,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   },
+   {
+    "sample_id": "ZEN49",
+    "n_spots": 2203,
+    "n_vars": 36601,
+    "X_dtype": "float32",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 1840.0,
+    "obs_cols": [
+     "array_row",
+     "array_col",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "in_tissue",
+     "pxl_row_in_fullres_old",
+     "pxl_col_in_fullres_old",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes"
+    ],
+    "n_obs_names": 2203,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     2203,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     2203,
+     2
+    ],
+    "n_barcodes_h5": 2203,
+    "barcodes_match_exact": true,
+    "barcodes_match_asset": true
+   }
+  ],
+  "total_spots": 8407,
+  "splits": [
+   {
+    "file": "test_0.csv",
+    "n_rows": 2,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "test_1.csv",
+    "n_rows": 2,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_0.csv",
+    "n_rows": 2,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_1.csv",
+    "n_rows": 2,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   }
+  ]
+ },
+ "SKCM": {
+  "task": "SKCM",
+  "subdirs": [
+   "adata",
+   "patches",
+   "splits"
+  ],
+  "loose_files": [
+   "mean_50genes.json",
+   "var_50genes.json"
+  ],
+  "n_adata": 2,
+  "n_patches": 2,
+  "n_splits": 4,
+  "jsons": [
+   "mean_50genes.json",
+   "var_50genes.json"
+  ],
+  "sample_ids": [
+   "TENX115",
+   "TENX117"
+  ],
+  "gene_list_file": "mean_50genes.json",
+  "n_genes_in_list": 50,
+  "genes_head": [
+   "VIM",
+   "PMEL",
+   "S100B",
+   "APOD",
+   "TYR"
+  ],
+  "samples": [
+   {
+    "sample_id": "TENX115",
+    "n_spots": 3886,
+    "n_vars": 541,
+    "X_dtype": "uint16",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 3131.0,
+    "obs_cols": [
+     "in_tissue",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "array_col",
+     "array_row",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 3886,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     1741,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     1741,
+     2
+    ],
+    "n_barcodes_h5": 1741,
+    "barcodes_match_exact": false,
+    "barcodes_match_asset": false
+   },
+   {
+    "sample_id": "TENX117",
+    "n_spots": 1830,
+    "n_vars": 541,
+    "X_dtype": "uint16",
+    "X_is_integer": true,
+    "X_min": 0.0,
+    "X_max": 3212.0,
+    "obs_cols": [
+     "in_tissue",
+     "pxl_col_in_fullres",
+     "pxl_row_in_fullres",
+     "array_col",
+     "array_row",
+     "n_genes_by_counts",
+     "log1p_n_genes_by_counts",
+     "total_counts",
+     "log1p_total_counts",
+     "pct_counts_in_top_50_genes",
+     "pct_counts_in_top_100_genes",
+     "pct_counts_in_top_200_genes"
+    ],
+    "n_obs_names": 1830,
+    "patch_keys": [
+     "barcode",
+     "coords",
+     "img"
+    ],
+    "img_shape": [
+     1293,
+     224,
+     224,
+     3
+    ],
+    "img_dtype": "uint8",
+    "coords_shape": [
+     1293,
+     2
+    ],
+    "n_barcodes_h5": 1293,
+    "barcodes_match_exact": false,
+    "barcodes_match_asset": false
+   }
+  ],
+  "total_spots": 5716,
+  "splits": [
+   {
+    "file": "test_0.csv",
+    "n_rows": 1,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "test_1.csv",
+    "n_rows": 1,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_0.csv",
+    "n_rows": 1,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   },
+   {
+    "file": "train_1.csv",
+    "n_rows": 1,
+    "cols": [
+     "sample_id",
+     "patches_path",
+     "expr_path"
+    ]
+   }
+  ]
+ }
+}
