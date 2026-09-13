@@ -1,0 +1,107 @@
+{
+    "average": {
+        "gigapath": 0.3558
+    },
+    "results": [
+        {
+            "dataset_name": "IDC",
+            "results": [
+                {
+                    "encoder_name": "gigapath",
+                    "pearson_mean": 0.5515,
+                    "pearson_std": 0.0728
+                }
+            ]
+        },
+        {
+            "dataset_name": "PRAD",
+            "results": [
+                {
+                    "encoder_name": "gigapath",
+                    "pearson_mean": 0.3699,
+                    "pearson_std": 0.0214
+                }
+            ]
+        },
+        {
+            "dataset_name": "PAAD",
+            "results": [
+                {
+                    "encoder_name": "gigapath",
+                    "pearson_mean": 0.4747,
+                    "pearson_std": 0.048
+                }
+            ]
+        },
+        {
+            "dataset_name": "SKCM",
+            "results": [
+                {
+                    "encoder_name": "gigapath",
+                    "pearson_mean": 0.5621,
+                    "pearson_std": 0.0615
+                }
+            ]
+        },
+        {
+            "dataset_name": "COAD",
+            "results": [
+                {
+                    "encoder_name": "gigapath",
+                    "pearson_mean": 0.2993,
+                    "pearson_std": 0.0212
+                }
+            ]
+        },
+        {
+            "dataset_name": "READ",
+            "results": [
+                {
+                    "encoder_name": "gigapath",
+                    "pearson_mean": 0.1961,
+                    "pearson_std": 0.0618
+                }
+            ]
+        },
+        {
+            "dataset_name": "CCRCC",
+            "results": [
+                {
+                    "encoder_name": "gigapath",
+                    "pearson_mean": 0.243,
+                    "pearson_std": 0.0327
+                }
+            ]
+        },
+        {
+            "dataset_name": "LUNG",
+            "results": [
+                {
+                    "encoder_name": "gigapath",
+                    "pearson_mean": 0.5411,
+                    "pearson_std": 0.0363
+                }
+            ]
+        },
+        {
+            "dataset_name": "LYMPH_IDC",
+            "results": [
+                {
+                    "encoder_name": "gigapath",
+                    "pearson_mean": 0.25,
+                    "pearson_std": 0.0504
+                }
+            ]
+        },
+        {
+            "dataset_name": "HCC",
+            "results": [
+                {
+                    "encoder_name": "gigapath",
+                    "pearson_mean": 0.0708,
+                    "pearson_std": 0.0131
+                }
+            ]
+        }
+    ]
+}

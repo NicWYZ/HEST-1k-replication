@@ -1,6 +1,6 @@
 # MANIFEST — large artifacts held on Longleaf
 
-Generated: 2026-09-13T16:57:12
+Generated: 2026-09-13T18:38:32
 Host path root: `/work/users/w/e/weiyang/hest_replication`
 
 These files are deliberately **not** committed: GitHub's 100 MB per-file limit, and
@@ -19,8 +19,8 @@ hest-bench snapshot (GATED - MahmoodLab/hest-bench)
 
 per-encoder per-sample patch embeddings (HDF5)
 
-- files: 481
-- total size: 7.2 GB
+- files: 733
+- total size: 12.5 GB
 
 ## `instrumentation/`
 
@@ -33,12 +33,30 @@ Stage 4 joined tables
 
 | path (relative to root) | size | sha256 |
 |---|---|---|
+| `results/faithful/faithful_pca_ridge__conch_v15::26-09-13-18-29-40/IDC/conch_v15/split0/inference_dump.pkl` | 15.8 MB | `e9d1ce7376e9f9d069e7f0a0f26b82b854a20c261df4050bd77f2fa452a2b2e9` |
+| `results/faithful/faithful_pca_ridge__conch_v15::26-09-13-18-29-40/IDC/conch_v15/split1/inference_dump.pkl` | 5.9 MB | `c43249a748a34589adad6cb21966b79f8ef233a039a7f68b296e6c685e262a28` |
+| `results/faithful/faithful_pca_ridge__conch_v15::26-09-13-18-29-40/IDC/conch_v15/split2/inference_dump.pkl` | 3.1 MB | `1520ddf3713809f79e382a9ca0e5aef5b19b4289e8f0cf325919876987a1febc` |
+| `results/faithful/faithful_pca_ridge__conch_v15::26-09-13-18-29-40/IDC/conch_v15/split3/inference_dump.pkl` | 2.3 MB | `4ed82f8eb875513e4a5bdc15bb4eca32f3274ffdf9fb02e2b6589a8c8c7aa4bf` |
+| `results/faithful/faithful_pca_ridge__conch_v1::26-09-13-16-30-44/CCRCC/conch_v1/split0/inference_dump.pkl` | 14.0 MB | `4f027c1d9ee97f7fdb86d9baa53b67cf0ef0e104101072d4ffa44aaab68ca5a6` |
+| `results/faithful/faithful_pca_ridge__conch_v1::26-09-13-16-30-44/CCRCC/conch_v1/split1/inference_dump.pkl` | 5.0 MB | `50effcc623a0aab20f5139e1f5376f058f03563bef6995187c55d6522346d543` |
+| `results/faithful/faithful_pca_ridge__conch_v1::26-09-13-16-30-44/CCRCC/conch_v1/split2/inference_dump.pkl` | 8.2 MB | `bc4a688ea1d4474ce4618d21dfc7ee7f21a9f70767a8f244950901e1093c0c26` |
+| `results/faithful/faithful_pca_ridge__conch_v1::26-09-13-16-30-44/CCRCC/conch_v1/split3/inference_dump.pkl` | 5.4 MB | `539a261a3a48190a5d429ed6c84bc5973ffc4c5d2cd5000c0cc535bde8accccd` |
+| `results/faithful/faithful_pca_ridge__conch_v1::26-09-13-16-30-44/CCRCC/conch_v1/split4/inference_dump.pkl` | 11.3 MB | `6d07d707b351f2c5595d2b4720e74a46db3921e42c3ec81af1f2c2bf7cc9c67d` |
+| `results/faithful/faithful_pca_ridge__conch_v1::26-09-13-16-30-44/CCRCC/conch_v1/split5/inference_dump.pkl` | 12.7 MB | `1bcca68bc7503aaf2ae4f7df3498995b5fbafd30e8ab4a4cbbcf89b425744f22` |
 | `results/faithful/faithful_pca_ridge__conch_v1::26-09-13-16-30-44/COAD/conch_v1/split0/inference_dump.pkl` | 8.1 MB | `eb1e183a349600da9d07088eb88cde3e613dec64247c1878f77d413ffc0d9164` |
 | `results/faithful/faithful_pca_ridge__conch_v1::26-09-13-16-30-44/COAD/conch_v1/split1/inference_dump.pkl` | 3.9 MB | `49e15199f309b7469ff0566e057cbaac02248a6dbd425128e3d3ad8ea4985613` |
+| `results/faithful/faithful_pca_ridge__conch_v1::26-09-13-16-30-44/HCC/conch_v1/split0/inference_dump.pkl` | 1.7 MB | `56448c812db4c0dfb721bf7b34801bd61c2dd85727eccc152194897c8e6773b6` |
+| `results/faithful/faithful_pca_ridge__conch_v1::26-09-13-16-30-44/HCC/conch_v1/split1/inference_dump.pkl` | 1.5 MB | `98b7effe7c081abafec67e11b6c305bc3a98fbce2482c7912b9a238c4955bbcf` |
 | `results/faithful/faithful_pca_ridge__conch_v1::26-09-13-16-30-44/IDC/conch_v1/split0/inference_dump.pkl` | 15.8 MB | `9bb2bea5497023add54721dbd98dee1ae50fdf00d20ec383a458d62ba2559365` |
 | `results/faithful/faithful_pca_ridge__conch_v1::26-09-13-16-30-44/IDC/conch_v1/split1/inference_dump.pkl` | 5.9 MB | `ae70ce3120661a8b9493a851149461cca3ad7f4998f3aaa51c5ac2ad1a69844e` |
 | `results/faithful/faithful_pca_ridge__conch_v1::26-09-13-16-30-44/IDC/conch_v1/split2/inference_dump.pkl` | 3.1 MB | `ba3eee3f0a45827f426b6bda9d0d30c5154be1f6fa563df11b0f84fbc81f7e17` |
 | `results/faithful/faithful_pca_ridge__conch_v1::26-09-13-16-30-44/IDC/conch_v1/split3/inference_dump.pkl` | 2.3 MB | `0acf736952db1e2e7695be20e613479c8067c499358ecaf151d421453c91d554` |
+| `results/faithful/faithful_pca_ridge__conch_v1::26-09-13-16-30-44/LUNG/conch_v1/split0/inference_dump.pkl` | 2.5 MB | `204e3bd70d293dbd59c4c16cfec4d9fd455cf762f5c0bda6777d67cad9b908b5` |
+| `results/faithful/faithful_pca_ridge__conch_v1::26-09-13-16-30-44/LUNG/conch_v1/split1/inference_dump.pkl` | 1.5 MB | `4697e22095acbfa1407ffc37ed1e9425f0cba6c42511ed35aa1a9f04fd8a2e70` |
+| `results/faithful/faithful_pca_ridge__conch_v1::26-09-13-16-30-44/LYMPH_IDC/conch_v1/split0/inference_dump.pkl` | 3.8 MB | `ff5b271e9fd4be054116425413d16b50fceba89954d3b6acb6bc1d578c5ef031` |
+| `results/faithful/faithful_pca_ridge__conch_v1::26-09-13-16-30-44/LYMPH_IDC/conch_v1/split1/inference_dump.pkl` | 3.8 MB | `78614742169d8201ade8bf62eba9346a7cf57c645a78026974c5dd98ce9c053f` |
+| `results/faithful/faithful_pca_ridge__conch_v1::26-09-13-16-30-44/LYMPH_IDC/conch_v1/split2/inference_dump.pkl` | 3.8 MB | `998dec30cb6ac5eb4c15ac19879671bd78bbd736e5ad9a63d05d177df7523337` |
+| `results/faithful/faithful_pca_ridge__conch_v1::26-09-13-16-30-44/LYMPH_IDC/conch_v1/split3/inference_dump.pkl` | 3.8 MB | `b681ddb76a10f89784fe93c7a72a5d1e7f6b2b3c67ddb35922d85983b25cd259` |
 | `results/faithful/faithful_pca_ridge__conch_v1::26-09-13-16-30-44/PAAD/conch_v1/split0/inference_dump.pkl` | 1.5 MB | `0542758ff4599298d0bbbc735d051df6d163deb45475233f4270d8e2539791c8` |
 | `results/faithful/faithful_pca_ridge__conch_v1::26-09-13-16-30-44/PAAD/conch_v1/split1/inference_dump.pkl` | 2.8 MB | `a310915fb8c07f69273590c534f08636b0a5b85e4a2b30674311ea76d950d891` |
 | `results/faithful/faithful_pca_ridge__conch_v1::26-09-13-16-30-44/PAAD/conch_v1/split2/inference_dump.pkl` | 1.5 MB | `9d1c65b1a9c3d12861bf5c58ad94620915f9c543ad9cbe45d6468a85d49869a6` |
@@ -77,12 +95,26 @@ Stage 4 joined tables
 | `results/faithful/faithful_pca_ridge__ctranspath::26-09-13-16-30-55/READ/ctranspath/split1/inference_dump.pkl` | 2.9 MB | `ca97e5cabd0266ff94c98c3e67c3e387c80f55890a9b34b580cb699c48eddb6a` |
 | `results/faithful/faithful_pca_ridge__ctranspath::26-09-13-16-30-55/SKCM/ctranspath/split0/inference_dump.pkl` | 1010.4 KB | `295613de3b458972c52d57bbaf593bfbb9876dcf23fa80a3fec517751a4aca24` |
 | `results/faithful/faithful_pca_ridge__ctranspath::26-09-13-16-30-55/SKCM/ctranspath/split1/inference_dump.pkl` | 1.3 MB | `7f8c4e1b283390895dfb9c67996c6c7089e4114bb50d46e8b37b13d4a719bcfa` |
+| `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/CCRCC/gigapath/split0/inference_dump.pkl` | 14.0 MB | `5c01d7280934a3829a870e6727792dd3174ce498d76ac6b62f3b8e1259660d27` |
+| `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/CCRCC/gigapath/split1/inference_dump.pkl` | 5.0 MB | `bbdce387f441f7d1c75e8ec704452f3462dc547d0a200c8ec8f7382c1ef6525f` |
+| `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/CCRCC/gigapath/split2/inference_dump.pkl` | 8.2 MB | `aa15ef327590ddcb124b4989d78d1406efcec66b9726108997eeee2e9abdaede` |
+| `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/CCRCC/gigapath/split3/inference_dump.pkl` | 5.4 MB | `ea52404252882e604da02170e64d432d003f3d3ce739c4b42e8440f9b2b2a152` |
+| `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/CCRCC/gigapath/split4/inference_dump.pkl` | 11.3 MB | `bf9e6098619e74ece192af3b34688698dd6ff18de91ede6cd54f48b0748ecc23` |
+| `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/CCRCC/gigapath/split5/inference_dump.pkl` | 12.7 MB | `7d27631f33d12d63948903b2e90f87d960c10a7c34f0168f83abe4196ae47401` |
 | `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/COAD/gigapath/split0/inference_dump.pkl` | 8.1 MB | `d8a93d05af5f11d81423bf35a3543f83dfd8df0876042e0debdcad44328a52c5` |
 | `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/COAD/gigapath/split1/inference_dump.pkl` | 3.9 MB | `cc867a4b9f8c9ea78f141a64b5f6e66b0bef013b66ec69ad5567731983621acd` |
+| `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/HCC/gigapath/split0/inference_dump.pkl` | 1.7 MB | `2f3f9ab267ea4c9af6f317835b4b431761abcb01e468e404d6ea81a7d984c1cb` |
+| `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/HCC/gigapath/split1/inference_dump.pkl` | 1.5 MB | `9198e938763b0fe62658076665934ad2bb1be362a0d2d4dfd3a3f81545a9af96` |
 | `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/IDC/gigapath/split0/inference_dump.pkl` | 15.8 MB | `953b2d8f99820459f6c3465b6591e6bd2b0cbc22c445c0f02a9cf5fc3f641ec6` |
 | `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/IDC/gigapath/split1/inference_dump.pkl` | 5.9 MB | `2b172fa60949f7c3022253d568443ccb6b3926b6220b4c33d0a812a0ed35fe85` |
 | `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/IDC/gigapath/split2/inference_dump.pkl` | 3.1 MB | `6c5ded8d3156e4c045a510787f5cd8b83375d8d5908b3300095a34fbf1c59fd4` |
 | `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/IDC/gigapath/split3/inference_dump.pkl` | 2.3 MB | `8bf5ea7d3553f090bb475e19cca94842aff893df87946a4f3f1defcf141a8d54` |
+| `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/LUNG/gigapath/split0/inference_dump.pkl` | 2.5 MB | `d2fd45febc006486ae1cff11345bf4e3aa131d4e8da554660ba3f36b909b6fb7` |
+| `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/LUNG/gigapath/split1/inference_dump.pkl` | 1.5 MB | `88e340dd629afe7809487e02d8f3e55415c02c2fc202f104369e724334fb0002` |
+| `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/LYMPH_IDC/gigapath/split0/inference_dump.pkl` | 3.8 MB | `fe1a9b14d82f1c757db3b58734c1dcdb7aa19a1843c2bc688d63fdf396e9a691` |
+| `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/LYMPH_IDC/gigapath/split1/inference_dump.pkl` | 3.8 MB | `0d448117ea0cce3b3c30deb9f2156265ce7e00b49d1614e9e06319be0b857e69` |
+| `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/LYMPH_IDC/gigapath/split2/inference_dump.pkl` | 3.8 MB | `5a90d9b13f8e08a5da9300f03ec8dfe98f2574de61f623b75010e2c5806055a8` |
+| `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/LYMPH_IDC/gigapath/split3/inference_dump.pkl` | 3.8 MB | `5c0b54535b6db61b468242d494d78b8fa9dd521eed983dd90f21eed272b30ae8` |
 | `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/PAAD/gigapath/split0/inference_dump.pkl` | 1.5 MB | `12056685e58b79e920e02ee9e86dbd2b6b150e30dd4a0aeab5198a60904fcba5` |
 | `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/PAAD/gigapath/split1/inference_dump.pkl` | 2.8 MB | `27914bb9507234e51db152ad0caa42b191090c6c6c3cb62a609dc87e6f710b20` |
 | `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/PAAD/gigapath/split2/inference_dump.pkl` | 1.5 MB | `a99eebbe6365706e2f9dc24de7f90b467e663ac25745830205e81af56246203b` |
@@ -92,6 +124,35 @@ Stage 4 joined tables
 | `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/READ/gigapath/split1/inference_dump.pkl` | 2.9 MB | `49bffbea96b8db75bec786e4d72772f19b21085afe1ad69681b0913adb2b2b39` |
 | `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/SKCM/gigapath/split0/inference_dump.pkl` | 1010.4 KB | `393f28d5266b3b726bafc14132a0fd0e887ee5cc6223c78b3229be76290ff341` |
 | `results/faithful/faithful_pca_ridge__gigapath::26-09-13-16-30-32/SKCM/gigapath/split1/inference_dump.pkl` | 1.3 MB | `a43ea0a882885fbac959b8c1d4d06cec5fa578115530794e695a593ecaab05b7` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/CCRCC/hoptimus0/split0/inference_dump.pkl` | 14.0 MB | `35410158c2447c98b9c44fa7f15f4c6e74aad68a264ca09518de0c547c794bd9` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/CCRCC/hoptimus0/split1/inference_dump.pkl` | 5.0 MB | `ab7348ea997606d83f9314df96b8d9a8d30542a159025657df2d09c4318dcc23` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/CCRCC/hoptimus0/split2/inference_dump.pkl` | 8.2 MB | `7efe97d4521e571d576acf21f0208bac4777e97985b49d001eb2b2d98c71b713` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/CCRCC/hoptimus0/split3/inference_dump.pkl` | 5.4 MB | `5652fbd65ab9deed8da81e99d832439b44afaffe355654c9d63b67ca33e49a04` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/CCRCC/hoptimus0/split4/inference_dump.pkl` | 11.3 MB | `e2995e07a504ca2736fe32bd86ea0cc4caeb2d7821907ba87721a33174cad1c8` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/CCRCC/hoptimus0/split5/inference_dump.pkl` | 12.7 MB | `a02ca3791ea39e7e436e0b973d5cf5a9428eef24f8250ec834e7e6cf30216871` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/COAD/hoptimus0/split0/inference_dump.pkl` | 8.1 MB | `89bd679e4ea0ba1e8f8d048ebc179c57b140c1d18c32d91c1931c2b6918c97d8` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/COAD/hoptimus0/split1/inference_dump.pkl` | 3.9 MB | `3b235ecb3edd432dbb1237634f357b63a039f27111f64a6865e05105797b988c` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/HCC/hoptimus0/split0/inference_dump.pkl` | 1.7 MB | `03b366188550809a5a418af034a1af410f119353efe377d0bd193c9e8b41c326` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/HCC/hoptimus0/split1/inference_dump.pkl` | 1.5 MB | `14d3437113ead3a3453f5dfeaa243896e1d9050ae076d526e44a32336aabbb34` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/IDC/hoptimus0/split0/inference_dump.pkl` | 15.8 MB | `0d2832becf88eb9c2623c95d05726e349cf5844c7416c1e539f4c1a755c0c4ef` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/IDC/hoptimus0/split1/inference_dump.pkl` | 5.9 MB | `44c0f8a3c0008d7d44b6f1d5d2d67e6e140c514c38d4d59984f313ef969c38e7` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/IDC/hoptimus0/split2/inference_dump.pkl` | 3.1 MB | `eb9dc985b295af3699cbc037bfb9450ffcf7d27067173e5b70f60a97945e9aff` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/IDC/hoptimus0/split3/inference_dump.pkl` | 2.3 MB | `4d97dab70d4d08e858e97e6eaa059c272372cdc7b4d4c9c78105459825ae463a` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/LUNG/hoptimus0/split0/inference_dump.pkl` | 2.5 MB | `a7a63cebf7848e180d2f61425d6a4ec727244c9af0220c5e1092e710b14cefba` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/LUNG/hoptimus0/split1/inference_dump.pkl` | 1.5 MB | `3e04f9d18b66978bd65968adff6245d0d46b503ddbb8da86012cd80cd2885713` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/LYMPH_IDC/hoptimus0/split0/inference_dump.pkl` | 3.8 MB | `31aa5f6e436496fb63798e7db8c56ffc66ce057aae56bbd104fc45604e8a1814` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/LYMPH_IDC/hoptimus0/split1/inference_dump.pkl` | 3.8 MB | `3af766a4e91c486c4c2a7aeaeac5d3f6e904c689c066ca8ca982bcd6a8515b1c` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/LYMPH_IDC/hoptimus0/split2/inference_dump.pkl` | 3.8 MB | `7894d42426a216d1c93c9b3302a434122c57e6b0f56ba103979943dd92292da2` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/LYMPH_IDC/hoptimus0/split3/inference_dump.pkl` | 3.8 MB | `ae77c957819bd51226ee65596b8fc5442fc67b914a7a4df0acb93b285000d807` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/PAAD/hoptimus0/split0/inference_dump.pkl` | 1.5 MB | `6f88a2aa78b4fbc25e1b5e45a6a15f8945df2ef36b86a4b85fab6535ecef3a9a` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/PAAD/hoptimus0/split1/inference_dump.pkl` | 2.8 MB | `c44d744b6d85713d5c18355eeb9ca0cf6fa1f395a54a4ba8fccaa51c81409f04` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/PAAD/hoptimus0/split2/inference_dump.pkl` | 1.5 MB | `38a490cba69fac1933b7da4ff762bf9d350d9e9573a26a78b75f67d14e5da501` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/PRAD/hoptimus0/split0/inference_dump.pkl` | 19.8 MB | `d0dd4fedd087a006d1faa4e8a61a762df6020a1331ee655a2c936b01733b75fd` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/PRAD/hoptimus0/split1/inference_dump.pkl` | 28.1 MB | `75902eb0ea12132d0235c82c314928675feab1b5b48ae41a985394b96a0a6821` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/READ/hoptimus0/split0/inference_dump.pkl` | 3.5 MB | `edf16847293c88d2bf46a4d4d29e38dca8955cc71d7a81888fa40acb0a7c39df` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/READ/hoptimus0/split1/inference_dump.pkl` | 2.9 MB | `53d1c6e53055eaef2bece373e7d21991ba084761832f3e13da9a477401d3e7e7` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/SKCM/hoptimus0/split0/inference_dump.pkl` | 1010.4 KB | `74ce3dcd6dce30b2fe69f2b93882eb44bd98cdcceb51587d4a39797e01ce5ef2` |
+| `results/faithful/faithful_pca_ridge__hoptimus0::26-09-13-16-57-38/SKCM/hoptimus0/split1/inference_dump.pkl` | 1.3 MB | `f91d59e1ab52f89121b780a39fd4c1b747637a1ad6e684f7943cc4a4427d998d` |
 | `results/faithful/faithful_pca_ridge__phikon::26-09-13-16-30-45/CCRCC/phikon/split0/inference_dump.pkl` | 14.0 MB | `c064da0687146f951c4953955a3404d138408c1a56ce92f0147132d47d6df195` |
 | `results/faithful/faithful_pca_ridge__phikon::26-09-13-16-30-45/CCRCC/phikon/split1/inference_dump.pkl` | 5.0 MB | `380472d843fa411870cfc63c31a89d57af67e6df54ba7e12a1fff3d1e9591879` |
 | `results/faithful/faithful_pca_ridge__phikon::26-09-13-16-30-45/CCRCC/phikon/split2/inference_dump.pkl` | 8.2 MB | `490ba59645bc3e00b3b13003f9a0475244391392e54ac4c54a5b02ed522fcba9` |
@@ -179,24 +240,84 @@ Stage 4 joined tables
 | `results/faithful/faithful_pca_ridge__uni_v1::26-09-13-16-30-32/READ/uni_v1/split1/inference_dump.pkl` | 2.9 MB | `975cafce8deac62bf77210375d505cbcdf8d087b6a934f971613dc4909c22608` |
 | `results/faithful/faithful_pca_ridge__uni_v1::26-09-13-16-30-32/SKCM/uni_v1/split0/inference_dump.pkl` | 1010.4 KB | `d165b6221f339b3af128f45d7820b8b93c3fb54115536cf45e04e5415f553bcf` |
 | `results/faithful/faithful_pca_ridge__uni_v1::26-09-13-16-30-32/SKCM/uni_v1/split1/inference_dump.pkl` | 1.3 MB | `f90910531e04d523d00ee3aa615651bb9069a9850db7814102827eed1873d757` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/CCRCC/uni_v2/split0/inference_dump.pkl` | 14.0 MB | `b1126f36f56c7859ab5b7130ac6233763336c16c7b7da6fdb2f483eac6643813` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/CCRCC/uni_v2/split1/inference_dump.pkl` | 5.0 MB | `86bfca85c80fee3fd147f5d2acbabcd2b0022acb63b29b47db829a7809b76ade` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/CCRCC/uni_v2/split2/inference_dump.pkl` | 8.2 MB | `6fede8bbabf48b57d283332a24a815056771dca1f710b3d31da9a68100e2c5c9` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/CCRCC/uni_v2/split3/inference_dump.pkl` | 5.4 MB | `821645afedec28214e7f9da696dfdca2684804606affd1720983842436658b4c` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/CCRCC/uni_v2/split4/inference_dump.pkl` | 11.3 MB | `2ac9b1043fffa009a33b9787f6508558996661bf9c3ce5ec4b47d4eea0eb5d97` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/CCRCC/uni_v2/split5/inference_dump.pkl` | 12.7 MB | `f82882f74ce9e1c718acbb6bd9cea50168752916d2421fb114f1985cc69b5afd` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/COAD/uni_v2/split0/inference_dump.pkl` | 8.1 MB | `ae0e7ba46ad5f6e81828f7ed21f1888590cc24b19adcc9f98c8007988cb90414` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/COAD/uni_v2/split1/inference_dump.pkl` | 3.9 MB | `e10bf650ddafd521d3747c2db1463729b92745a8847342337e2e263f153c9c2c` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/HCC/uni_v2/split0/inference_dump.pkl` | 1.7 MB | `132d2e8df15f9d60565e45ce2cd85493dc314149104ab8fdfe9a36f78f412afd` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/HCC/uni_v2/split1/inference_dump.pkl` | 1.5 MB | `2e8d6ef3bb85f78098d4b5286897ed198249eb19f704879abd159bc026f5b84f` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/IDC/uni_v2/split0/inference_dump.pkl` | 15.8 MB | `1f54df93663e1166871f96916430f9278cf4a8773218aa5a13a1cf9b1a0205bb` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/IDC/uni_v2/split1/inference_dump.pkl` | 5.9 MB | `d8fa23804320fa03f94744d5485ab45d84dba210f6eab046a93ef10c8d485ab2` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/IDC/uni_v2/split2/inference_dump.pkl` | 3.1 MB | `85acb0851c19822613a6e6ccedd37d23b04fc7c57bb96e93b9f7659dcead3d52` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/IDC/uni_v2/split3/inference_dump.pkl` | 2.3 MB | `14bbe23b6dbbabad81171d1830be3c6d5ca72355ee4c47ba3b232b38743fe688` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/LUNG/uni_v2/split0/inference_dump.pkl` | 2.5 MB | `35a119578dc4b9d3c5190e05a15f85fce9c519b5ffba965328b8d7d46c4e9a2c` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/LUNG/uni_v2/split1/inference_dump.pkl` | 1.5 MB | `228632d88d2a9710dcfdc1fa5d9caed00fbee0effeff73b4ce598d7f8b439deb` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/LYMPH_IDC/uni_v2/split0/inference_dump.pkl` | 3.8 MB | `96069b10c8aec1d43e797640369146bb84ae60722745630ea79067f19a52f946` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/LYMPH_IDC/uni_v2/split1/inference_dump.pkl` | 3.8 MB | `96824470940c178e00703abaf206a33cf70214e750c7fab41e546e1a609de5f0` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/LYMPH_IDC/uni_v2/split2/inference_dump.pkl` | 3.8 MB | `5782b3cdfc2a4a49a33fb5b10edb878b96bd7e104d7b30b0c14e6df18b92d8d4` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/LYMPH_IDC/uni_v2/split3/inference_dump.pkl` | 3.8 MB | `b021b99575645c49e77f46fd95392868cb0e3a7a5d9a97328a57829122c7e061` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/PAAD/uni_v2/split0/inference_dump.pkl` | 1.5 MB | `2b99ce89d88a9e4c7bf6e041931ad232f5b4755cbb2f416d9764d6c1581505b8` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/PAAD/uni_v2/split1/inference_dump.pkl` | 2.8 MB | `f0bd35f7e4a63122d1c60251fba5c281b56495dd03a5812950860c3a2e743001` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/PAAD/uni_v2/split2/inference_dump.pkl` | 1.5 MB | `4a86cbc89f53d6eb532a00357c481cb93bfdfd2de47f4ec1ce55c309852418d4` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/PRAD/uni_v2/split0/inference_dump.pkl` | 19.8 MB | `d9ecc1e9df94b76d6fe9cc46f0fa3977725157bf652c2deff52379c18ab13b17` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/PRAD/uni_v2/split1/inference_dump.pkl` | 28.1 MB | `85b632717f753b2be589e889791ade2623583c27d76bffb2e3ab2690e3ee720b` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/READ/uni_v2/split0/inference_dump.pkl` | 3.5 MB | `69d6b321190771b410b28c26af5348d4694cdc583328c02e3bca630a83f24aa9` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/READ/uni_v2/split1/inference_dump.pkl` | 2.9 MB | `1248ca56087946742ad2821b32aec94357c838d65f1c4c8fdb19944b8ed0fd14` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/SKCM/uni_v2/split0/inference_dump.pkl` | 1010.4 KB | `0968a6186f669a0b24433725aad236a2f9cc52853f8493d0c2027a0d828a6f4d` |
+| `results/faithful/faithful_pca_ridge__uni_v2::26-09-13-17-27-49/SKCM/uni_v2/split1/inference_dump.pkl` | 1.3 MB | `4a9a09246776466e23077389fd8c14883b1370354021534553784b2064d861ea` |
+| `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/CCRCC/virchow2/split0/inference_dump.pkl` | 14.0 MB | `1c413daf38fa07c02d60569b638a244762e989714e0d5b3659874875a4642190` |
+| `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/CCRCC/virchow2/split1/inference_dump.pkl` | 5.0 MB | `aaa54232971d9e4c417867da132b4e0cbc2f112d7e7e8a279bdd6ff3c029ca6a` |
+| `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/CCRCC/virchow2/split2/inference_dump.pkl` | 8.2 MB | `24e4f209b9de45acd151fe95f45e3dc17317f638c2e543606d479dbf5c08f0ab` |
+| `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/CCRCC/virchow2/split3/inference_dump.pkl` | 5.4 MB | `cac6569eb2472c76b87fb86adff25834a39f67b54e0f10cd736397efe5245388` |
+| `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/CCRCC/virchow2/split4/inference_dump.pkl` | 11.3 MB | `5a8221a5694e82e763be8b56d6beb04b83a361d5a948d6ae4785cbf21be36884` |
+| `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/CCRCC/virchow2/split5/inference_dump.pkl` | 12.7 MB | `3ce2d87d3b8da5ecb35e80f7dcda9f71f21c9aa21d0a77a36da815437f687ba9` |
 | `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/COAD/virchow2/split0/inference_dump.pkl` | 8.1 MB | `30ae5e397359a7e5492809d94229c6c6001e5c53ef9fcd28612adef916438e20` |
+| `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/COAD/virchow2/split1/inference_dump.pkl` | 3.9 MB | `7aa0e73b487460cc33ff74c1e2a0a09370aef676f5874fc6f3eacd8dbb23e0ec` |
+| `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/HCC/virchow2/split0/inference_dump.pkl` | 1.7 MB | `23e4156babd3409c88a167d107ffe80238fa68f3aa847296ab33a49d52cdddf1` |
+| `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/HCC/virchow2/split1/inference_dump.pkl` | 1.5 MB | `ee8b2aac539b06dd1b9666d2913d46a6c24d161f2cf7a5f2cb8939113d5dd475` |
 | `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/IDC/virchow2/split0/inference_dump.pkl` | 15.8 MB | `72a5b814f36dc5c3fe8ec259b20101babc8c283d606acdb3e8d375b6d356a962` |
 | `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/IDC/virchow2/split1/inference_dump.pkl` | 5.9 MB | `c1b8563136dc38eee2efe477c8b1035321982342fedb52cc7214cc1c3fa3eb8a` |
 | `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/IDC/virchow2/split2/inference_dump.pkl` | 3.1 MB | `1eafd78484bee480b409e8db16dc2effcce56ec0d782e0683e28a44278820fb3` |
 | `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/IDC/virchow2/split3/inference_dump.pkl` | 2.3 MB | `b2136564da5b5f99d2e76da51140751d42ff1e835c84ecc3c36fde2affce996a` |
+| `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/LUNG/virchow2/split0/inference_dump.pkl` | 2.5 MB | `cd6bbb9ca554fe06d911fe867774aa04b29185f635caeabbd79b87eaefe5bafa` |
+| `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/LUNG/virchow2/split1/inference_dump.pkl` | 1.5 MB | `c9e9f70c92e18ec5126d60342c68b4013b42e270afd63dd7f3f8e3a4ab62eab1` |
+| `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/LYMPH_IDC/virchow2/split0/inference_dump.pkl` | 3.8 MB | `1715c4625568cf3daf241e2d101566dbf31dbe5d98739c9bca1ef2685983b293` |
+| `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/LYMPH_IDC/virchow2/split1/inference_dump.pkl` | 3.8 MB | `773db9f3365cbcdd2df69cae1d87ca3105aa0458bdf8c9a0a8a39e72a8411714` |
+| `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/LYMPH_IDC/virchow2/split2/inference_dump.pkl` | 3.8 MB | `18b60479056c938ae6ff6ecc6ad95699783e9ff6a4dee5c60bd59ac0df28aca2` |
+| `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/LYMPH_IDC/virchow2/split3/inference_dump.pkl` | 3.8 MB | `ccb2f837b7f998def44fd40fb43b8fde4ca6994950cb9e49ad358e8cf1c36b77` |
 | `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/PAAD/virchow2/split0/inference_dump.pkl` | 1.5 MB | `d92bef2a1c6c678ffd132f73713f93793d7937208dc0fd05f0e053547f2178f7` |
 | `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/PAAD/virchow2/split1/inference_dump.pkl` | 2.8 MB | `9619c65ade9fae264fc19ed2cbaa4f07518511396fd77a68487e64cc2f32bbea` |
 | `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/PAAD/virchow2/split2/inference_dump.pkl` | 1.5 MB | `af1f5c3f70b1fbee7ca72027415988041c2eae3b340560ed7cd9f48138c885cc` |
 | `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/PRAD/virchow2/split0/inference_dump.pkl` | 19.8 MB | `cd6d44b60e71f0187c4885438c4fb3535ec5dce28b771bbb2b91c8ea06e39c23` |
 | `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/PRAD/virchow2/split1/inference_dump.pkl` | 28.1 MB | `146114bb93225a7eb29721228d51dcea7ca2389b84ebd4b32f6b3c156ec2c6a7` |
+| `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/READ/virchow2/split0/inference_dump.pkl` | 3.5 MB | `0973b561873c4b94b880c808d985a1510eb26c1d856e370d55854d677fa795e9` |
+| `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/READ/virchow2/split1/inference_dump.pkl` | 2.9 MB | `b0b1b09854519cdd13362d572f294fa5e5383eec932adfd865b8607033a67877` |
 | `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/SKCM/virchow2/split0/inference_dump.pkl` | 1010.4 KB | `69be0cb73030276a198b8bd2717086405115339d5990d257050721e68f02dd44` |
 | `results/faithful/faithful_pca_ridge__virchow2::26-09-13-16-42-49/SKCM/virchow2/split1/inference_dump.pkl` | 1.3 MB | `666eb823877a2aa83d75bf267b4a4a8faf9d1c9fe090364ed20142955307800b` |
+| `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/CCRCC/virchow/split0/inference_dump.pkl` | 14.0 MB | `52bd7f56b946ec93401eeff516d7fb8bfd2bee05d3674ac5331665b8d2a712c4` |
+| `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/CCRCC/virchow/split1/inference_dump.pkl` | 5.0 MB | `1a15fa8b1541ed588242ba0a637314fe84b99eac2fa2c10bde9bf1d423e4870b` |
+| `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/CCRCC/virchow/split2/inference_dump.pkl` | 8.2 MB | `39d0f6a1c97e80b5f029d4693062fba783096f0fa3bc42ee7d595adf48146d4a` |
+| `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/CCRCC/virchow/split3/inference_dump.pkl` | 5.4 MB | `b8de62d7ecf3b58d0bf1f4d0cc20a9d93a55d52e29ab1d50b8e9f63add4830b7` |
+| `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/CCRCC/virchow/split4/inference_dump.pkl` | 11.3 MB | `281f68c780c499800d607783d50c1dc14641b3bc0427f47aa8e962a5520fdc2d` |
+| `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/CCRCC/virchow/split5/inference_dump.pkl` | 12.7 MB | `eac0e6b0dc24156e2de892f41000afd303a2923d386b9249b95f3f02a602878c` |
 | `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/COAD/virchow/split0/inference_dump.pkl` | 8.1 MB | `963e3da675a4b61b42381e197c34911540f3b99d2a8dc444e6fcda9d5ec2fca5` |
 | `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/COAD/virchow/split1/inference_dump.pkl` | 3.9 MB | `2dc8a8a34fb33f277535260f43510c61a0d1f840c530047a971ccf8d95fc152a` |
+| `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/HCC/virchow/split0/inference_dump.pkl` | 1.7 MB | `e7125d6a0eba30d74dfa633525bc1151208fa3a222246f44d9e88374d9e2e0b9` |
+| `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/HCC/virchow/split1/inference_dump.pkl` | 1.5 MB | `a652c6331371067976f0cf174eaacb16e24ccac4afa6f7f11ee187da65d65308` |
 | `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/IDC/virchow/split0/inference_dump.pkl` | 15.8 MB | `5a3c272e0466916dee0a9ba83b68692c5376547c2907816d6a1604f92029b61b` |
 | `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/IDC/virchow/split1/inference_dump.pkl` | 5.9 MB | `9af64e53afcbc5604621b87f413be34c0b2d8f1cbd6967314d92a0f1c4c64aa8` |
 | `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/IDC/virchow/split2/inference_dump.pkl` | 3.1 MB | `0857b400c0bf1970c90a20e6235df58e54ed0af1d7147167d74c9ff05d83a90f` |
 | `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/IDC/virchow/split3/inference_dump.pkl` | 2.3 MB | `235030b0e478a687ef1ff59320404429b67f3bdcfee3dfbc93cc1254eef1f2cc` |
+| `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/LUNG/virchow/split0/inference_dump.pkl` | 2.5 MB | `ac75ca1540c3087263b460ccdaad0045387c722ce9da2f010d7dc9e38c6606b3` |
+| `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/LUNG/virchow/split1/inference_dump.pkl` | 1.5 MB | `910ad0d33aa5fdcb801eeeff3eafca4aae0cf202a18e64dd239a312eb3283018` |
+| `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/LYMPH_IDC/virchow/split0/inference_dump.pkl` | 3.8 MB | `11be9366531e2977da5f78b68f038b62fe5287d0a371750889380445d659824a` |
+| `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/LYMPH_IDC/virchow/split1/inference_dump.pkl` | 3.8 MB | `78d48b7c66feac8347cb4590febfcd4563b8fe5e6fbdf4e5ae00f9f449134488` |
+| `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/LYMPH_IDC/virchow/split2/inference_dump.pkl` | 3.8 MB | `4314559f1b47dbded36fd16e0dbca384a33df990ab98d8a4c2136231567b913e` |
+| `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/LYMPH_IDC/virchow/split3/inference_dump.pkl` | 3.8 MB | `f6bee5d1f48791edc9df0e75e92c4f19b0886dc11f41477d86206bd854e500d4` |
 | `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/PAAD/virchow/split0/inference_dump.pkl` | 1.5 MB | `7c2a7088d96a0eb7e65f78ac701373b57df387f6201d122ec7bff3bf7656201c` |
 | `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/PAAD/virchow/split1/inference_dump.pkl` | 2.8 MB | `af2e3afa73f11f1aea8bf5e5dbba78c81c7a868f8eafdf483f15eeb0ac7cbe00` |
 | `results/faithful/faithful_pca_ridge__virchow::26-09-13-16-41-05/PAAD/virchow/split2/inference_dump.pkl` | 1.5 MB | `ad49bc2957b486168e8b77bd1b98d189ceafc221dcf649c372d9a18b05314e01` |
@@ -211,6 +332,6 @@ Stage 4 joined tables
 | `results/faithful/smoke_resnet50_IDC::26-09-13-14-30-02/IDC/resnet50/split2/inference_dump.pkl` | 3.1 MB | `b31ccd3a048b11e275b20df9f1d72dab13a4ce1ca2bc2fd721f7f91a84140fd1` |
 | `results/faithful/smoke_resnet50_IDC::26-09-13-14-30-02/IDC/resnet50/split3/inference_dump.pkl` | 2.3 MB | `683c5a07df1cae8e1a57277025ca6d9b6c43edc844afc036a695f2b3d909e27e` |
 
-**177 dump files hashed.**
+**298 dump files hashed.**
 
-Grand total across all untracked artifacts: 1,546 files, 47.4 GB.
+Grand total across all untracked artifacts: 1,919 files, 53.4 GB.

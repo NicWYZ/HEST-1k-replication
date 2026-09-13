@@ -1,0 +1,34 @@
+{
+    "alpha": null,
+    "batch_size": 128,
+    "bench_data_root": "/work/users/w/e/weiyang/hest_replication/bench_data",
+    "benchmark_encoders": false,
+    "config": "/work/users/w/e/weiyang/hest_replication/code/configs/faithful_pca_ridge__hoptimus0.yaml",
+    "datasets": [
+        "IDC",
+        "PRAD",
+        "PAAD",
+        "SKCM",
+        "COAD",
+        "READ",
+        "CCRCC",
+        "LUNG",
+        "LYMPH_IDC",
+        "HCC"
+    ],
+    "dimreduce": "PCA",
+    "embed_dataroot": "/work/users/w/e/weiyang/hest_replication/embeddings",
+    "encoders": [
+        "hoptimus0"
+    ],
+    "exp_code": "faithful_pca_ridge__hoptimus0",
+    "gene_list": "var_50genes.json",
+    "kfold": false,
+    "latent_dim": 256,
+    "method": "ridge",
+    "normalize": true,
+    "num_workers": 8,
+    "overwrite": false,
+    "results_dir": "/work/users/w/e/weiyang/hest_replication/results/faithful",
+    "seed": 1
+}
