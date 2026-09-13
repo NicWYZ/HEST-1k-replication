@@ -1,0 +1,27 @@
+# Environment record - generated 2026-09-13T14:00:36-04:00
+host=c151418.ll.unc.edu  slurm_job=1027400  partition=hov
+HEST_commit=3ddb5eaf5bd2a8133e0c0e8015816489a3d99dc3
+HEST_describe=2026-04-16 09:48:46 +0200 hotfix: enable wsi factory to create cucim (#135)
+python=Python 3.11.16
+conda=conda 26.7.2
+--- pip versions of interest ---
+anndata==0.12.19
+einops==0.8.2
+einops-exts==0.0.4
+numpy==2.4.6
+openslide-bin==4.0.1.2
+openslide-python @ file:///home/conda/feedstock_root/build_artifacts/openslide-python_1780926599145/work
+pandas==2.3.3
+pyvips @ file:///home/conda/feedstock_root/build_artifacts/pyvips_1788694615668/work
+scanpy==1.11.5
+scikit-learn==1.9.1
+timm==1.0.29
+timm_ctp==0.5.4
+torch==2.14.0
+torchmetrics==1.9.0
+torchvision==0.29.0
+transformers==4.57.6
+trident @ git+https://github.com/mahmoodlab/TRIDENT.git@f3eb7f301ce34f875306b545e6cfefc5d3335a5c
+--- trident source commit ---
+trident_version= 0.3.2
+trident_direct_url= {"url": "https://github.com/mahmoodlab/TRIDENT.git", "vcs_info": {"commit_id": "f3eb7f301ce34f875306b545e6cfefc5d3335a5c", "vcs": "git"}}

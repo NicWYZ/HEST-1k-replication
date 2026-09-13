@@ -1,0 +1,38 @@
+# ---- Gated / large data: NEVER commit ----
+# hest-bench is a GATED HuggingFace dataset. inference_dump.pkl contains targets_all,
+# i.e. measured expression from that dataset. Committing these redistributes gated data.
+bench_data/
+embeddings/
+*.pkl
+*.h5
+*.h5ad
+*.parquet
+*.zarr/
+*.npz
+*.npy
+
+# Model weights / HF cache
+hf_cache/
+env/miniforge3/
+*.pt
+*.pth
+*.safetensors
+*.bin
+
+# CellViT segmentation downloads (Stage 4e)
+instrumentation/cellvit_seg/
+instrumentation/*.geojson
+instrumentation/*.zip
+
+# SLURM / scratch
+*.out
+*.err
+slurm-*.out
+.claude-science-scratch/
+logs/
+**/__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Anything above the size guard should be added deliberately, never by wildcard
+code/HEST/
