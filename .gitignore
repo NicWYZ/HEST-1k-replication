@@ -30,6 +30,10 @@ instrumentation/cellvit_seg/
 instrumentation/*.geojson
 instrumentation/*.zip
 
+# Upstream HEST clone - an embedded git repo. Its exact commit is pinned in
+# env/REBUILD.md and env/requirements.lock, so vendoring it would only add noise.
+code/HEST/
+
 # SLURM / scratch
 *.out
 *.err
