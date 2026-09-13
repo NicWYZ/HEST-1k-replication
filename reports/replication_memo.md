@@ -10,7 +10,9 @@ Repo: https://github.com/NicWYZ/HEST-1k-replication
 tasks) the mean absolute difference from Table 1 is **0.0053**, median
 0.0030, max **0.0284**. 83% of cells agree within
 0.01 and **100% within 0.03**. No comparison approaches the pre-registered investigation
-threshold of 0.05, so no per-cell investigation was triggered.
+threshold of 0.05, so no per-cell investigation was triggered. The COAD column carries a
+caveat about which assay the paper used for it (S6.1); excluding COAD leaves the statistics
+unchanged (mean |diff| 0.0054, max 0.0284).
 
 Encoder-level averages agree to **0.0026** mean absolute difference
 (max 0.0083), with Spearman rank correlation **0.976**. The paper's
@@ -60,11 +62,11 @@ rather than a protocol difference: the mean signed difference over all 90 cells 
 | item | paper source | status |
 |---|---|---|
 | log1p-only normalization | S5.2 "log1p-normalized expression" | confirmed; `normalize_adata` calls only `sc.pp.log1p` despite a docstring claiming total-count normalization |
-| Variance-ranked top-50 genes | S5.1 "top 50 genes with the highest normalized variance" | confirmed; `var_50genes.json` is the dataclass default |
+| Variance-ranked top-50 genes, **with a 10% non-zero prefilter** | Appendix C.3: "we select the 50 most variable genes across all spots and samples after excluding the genes that have non-zero counts in less than 10% of the spots" | confirmed; `var_50genes.json` is the dataclass default. The prefilter was not in the handoff and has a Stage 4 consequence — see S10 |
 | Patch geometry | S5.1 "112x112 um ... 224x224-pixel patches at 20x" | confirmed; all 72 patch arrays are n x 224 x 224 x 3 |
-| PCA 256 + ridge, adaptive regularization | Table 1 caption, S5.2 | confirmed; alpha = 100/(n_features x n_genes) |
+| PCA 256 + ridge, adaptive regularization | Appendix C.3: lambda = 100/MC, M = embedding dimension, C = 50 targets | confirmed exactly; this also confirms S8's point that lambda is a function of M and therefore changes when PCA is removed |
 | Patient-stratified k-fold, k = patients | S5.1 | confirmed via Table A11 (see S5) |
-| XGBoost 100 estimators, max depth 3 | S5.2 | confirmed in `trainer.py`; paper does not state subsample/colsample, code uses 0.8/0.8 |
+| XGBoost hyperparameters | Appendix C.3 | confirmed, and more fully specified than S5.2 suggests: the paper states 100 estimators, 0.1 learning rate, max depth 3, **0.8 subsampling**, gamma 0.0, reg alpha 0.0, reg lambda 1.0 — all seven match `trainer.py` exactly. Only `colsample_bytree` (code 0.8, XGBoost default 1.0 — an undocumented non-default) and `min_child_weight` (code 1 = default) are unstated |
 | Raw integer counts | S3.4 "No additional normalization was conducted" | confirmed; all 72 matrices integral |
 
 ## 5. Discrepancies found
@@ -102,18 +104,41 @@ paper's UNIv1.5 (0.4090), which is consistent with the same or a closely related
 but **we have not verified the parameter count of the loaded model**. Treat this row as
 provisional. All other encoder identifications are unambiguous.
 
-## 6. Two handoff claims the paper contradicts
+## 6. COAD: the paper contradicts itself, and one handoff claim was mine to retract
 
-Both were recorded as discrepancies in `bench_data/INVENTORY.md` on the handoff's authority
-and are now **retracted**:
+**6.1 COAD — the paper is internally inconsistent, and my earlier retraction was wrong.**
+An earlier draft of this memo retracted the handoff's claim that "COAD was Visium in the paper
+and is now Xenium", on the strength of Table A11 alone. That retraction was incorrect and is
+itself withdrawn. The full picture:
 
-1. **"COAD was Visium in the paper and is now Xenium."** Table A11 lists COAD as **Xenium, 2
-   patients, 4 samples** - exactly what ships. There was no post-paper technology change, and
-   COAD is directly comparable (ResNet50 0.2500 vs 0.2528 published).
-2. **"Fold counts should equal sample counts."** Table A11 reports patients and samples as
-   separate columns. PRAD is 2 patients / 23 samples; COAD and READ are 2 patients / 4
-   samples. Folds are patients, so every shipped fold count is correct except ccRCC (S5.2).
-   This one was my error rather than the handoff's.
+- **Table A11 (p26) lists COAD as Xenium.** Verified by reading the rendered table, not the
+  text layer.
+- **Appendix C.3 (p15) states the opposite**: "We used 4 COAD samples from 2 different patients
+  available on 10x Genomics (TENX111, TENX147, TENX148, TENX149). All samples are fresh frozen
+  sections processed with **Visium**."
+- **The shipped data is unambiguously Xenium.** Our COAD samples are exactly those four IDs,
+  and they carry **541 genes in uint16** — the targeted-panel signature shared by every Xenium
+  task here (IDC, PAAD, SKCM, LUAD). All five Visium tasks ship 17,943-36,601 genes in float32.
+
+So the paper asserts both technologies in different places, and the data sides with Table A11.
+The handoff was right that COAD's technology is contested; it was wrong only in framing this as
+a post-publication change rather than a contradiction inside the paper.
+
+**Does this invalidate the COAD comparison?** Empirically, no. If Table 1's COAD column had been
+computed on whole-transcriptome Visium data, its top-50 variable genes would be drawn from a
+~36k gene space rather than a 541-gene panel, so the two runs would be predicting different gene
+sets and close agreement would be a coincidence. Instead COAD ranks **4th of 9 tasks** by
+agreement (mean |diff| 0.0046 against an all-task mean of 0.0053, max 0.0097 — the *smallest*
+max of any task). Dropping COAD moves the headline statistics not at all (mean |diff| 0.0053 to
+0.0054; max unchanged at 0.0284). The most economical reading is that Table 1's COAD run used
+the Xenium data we have, and C.3's "Visium" is the error. **This is inference from agreement,
+not direct evidence**, so the COAD row is reported as comparable-with-caveat rather than
+confirmed.
+
+**6.2 Fold counts equalling sample counts — retracted, my error.** Table A11 reports patients and
+samples as separate columns, and C.3 confirms per task: PRAD is 2 patients / 23 samples
+(MEND139-MEND162), COAD and READ are 2 patients / 4 samples. Folds are patients, so every
+shipped fold count is correct except ccRCC (S5.2). This retraction stands.
 
 ## 7. Open item: which head Table A14 used
 
@@ -150,3 +175,23 @@ systematic error in splits, gene selection, normalization, or the regression hea
 Proceed to Stage 4 instrumentation. The two head-variant tables (A13, A14) are worth
 completing for the record but are not a gate: they vary the probe, not the data pipeline, and
 the pipeline is what Stage 4 depends on.
+
+## 10. Consequence of the gene-selection prefilter for Stage 4
+
+Appendix C.3 specifies that the 50 target genes are the most variable **among genes with
+non-zero counts in at least 10% of spots**. The handoff described only the variance ranking.
+This does not affect any run — the gene lists ship precomputed in `var_50genes.json` — but it
+changes the interpretation of two planned Stage 4 analyses:
+
+- **Stage 4b (count diagnostics).** The 50 targets are not a random sample of the
+  transcriptome. They are pre-screened for detection in >=10% of spots and then ranked by
+  variance, so their zero fractions are bounded above by construction and will be
+  systematically lower than transcriptome-wide. A zero-fraction or ZINB-vs-NB comparison
+  computed on these 50 genes describes the benchmark's target panel, not spatial
+  transcriptomics counts in general, and must be captioned that way.
+- **Stage 4 gene-level inference generally.** Selecting targets on variance computed across all
+  spots and samples — including the test folds — means the target panel is chosen using
+  information from the held-out data. This is a property of the published benchmark rather than
+  a bug in our replication, and it does not affect the encoder comparison (all encoders face the
+  same panel). It does mean gene-level effect estimates carry a selection-induced optimism, which
+  is worth stating explicitly given Topic B concerns valid inference for population quantities.

@@ -62,7 +62,7 @@ Visium tasks use 10x barcodes (`AAACACCAATAACTGC-1`).
 | 2 | ccRCC splits = n patients | 24 samples, **6 folds** (4 test each). Paper Table A11: 24 patients, and §5.1 says ccRCC uses k/2-fold, i.e. 12 folds. Shipped splits give 6, so the release uses **k/4** | Genuine drift from the paper |
 | 3 | ~~PRAD 23 samples should give 23 folds~~ | **RETRACTED — not a discrepancy.** Paper Table A11 lists PRAD as **2 patients / 23 samples**; folds are patients, not samples, so 2 folds is correct. Same for COAD and READ (2 patients / 4 samples) | None — my error |
 | 4 | ~100k benchmark patches | **236,495** | Extraction cost ~2.4x the estimate |
-| 5 | ~~COAD was Visium in the paper, now Xenium~~ | **RETRACTED — handoff was wrong.** Paper Table A11 lists COAD as **Xenium, 2 patients, 4 samples**, exactly what ships. Our COAD values match the paper (ResNet50 0.2500 vs 0.2528) | None — COAD is directly comparable |
+| 5 | COAD technology is contested **within the paper** | Table A11 (p26) says **Xenium**; Appendix C.3 (p15) says the same four samples (TENX111/147/148/149) are "processed with **Visium**". Shipped data is unambiguously Xenium: 541 genes, uint16, matching IDC/PAAD/SKCM/LUAD; all Visium tasks ship 17,943-36,601 genes float32 | COAD comparable-with-caveat: it ranks 4/9 tasks by agreement (mean \|diff\| 0.0046), which whole-transcriptome targets could not produce |
 | 6 | `normalize_adata` is log1p only | Confirmed — docstring claims total-count normalization, body calls only `sc.pp.log1p` | Faithful run must not add normalization |
 | 7 | Ridge `fit_intercept=False`, alpha=100/(256x50) | Confirmed — `alpha = 100/(X.shape[1]*y.shape[1])`, `solver='lsqr'` | As specified |
 | 8 | (not mentioned) | **CCRCC spans two gene spaces**: INT1-12 have 36,601 vars, INT13-24 have 17,943 | All 50 target genes present in both; no action needed |
@@ -156,10 +156,17 @@ the paper, and the paper contradicts them:
 - **Folds are patients, not samples** (Table A11 lists patients and samples separately).
   PRAD is 2 patients / 23 samples, COAD and READ are 2 patients / 4 samples. Every shipped
   fold count matches `k` = patients except ccRCC.
-- **COAD is Xenium in the paper** (Table A11), not Visium. There was no post-paper technology
-  change, and COAD is directly comparable to Table 1.
+- **COAD's technology is contradictory inside the paper**: Table A11 says Xenium, Appendix C.3
+  says Visium for the same four sample IDs. The shipped data is Xenium (541-gene uint16 panel).
+  An earlier version of this file retracted the handoff's COAD claim outright on Table A11 alone;
+  that retraction was wrong and has been withdrawn. See replication_memo.md S6.1.
 
-Verified against the paper and unchanged: log1p-only normalization (§5.2 "log1p-normalized
-expression"), variance-ranked top-50 genes (§5.1 "top 50 genes with the highest normalized
-variance"), 112x112 um = 224x224 px at 20x, PCA with 256 factors, ridge with adaptive
-regularization, XGBoost with 100 estimators and max depth 3.
+Verified against the paper and unchanged: log1p-only normalization, 112x112 um = 224x224 px at
+20x, PCA with 256 factors, ridge with lambda = 100/MC (Appendix C.3, M = embedding dim, C = 50),
+and the full XGBoost parameter set (the paper states subsampling 0.8, gamma 0, reg alpha 0,
+reg lambda 1 — all matching the code; only colsample_bytree and min_child_weight are unstated).
+
+Newly recorded from Appendix C.3: the 50 targets are the most variable genes **after excluding
+genes with non-zero counts in under 10% of spots**. The handoff described only the variance
+ranking. No effect on any run, but it bounds the zero fractions of the target panel and so
+changes the interpretation of the Stage 4b count diagnostics.
