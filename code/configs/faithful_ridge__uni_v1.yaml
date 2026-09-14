@@ -1,14 +1,14 @@
 bench_data_root: /work/users/w/e/weiyang/hest_replication/bench_data
 results_dir: /work/users/w/e/weiyang/hest_replication/results/faithful
 embed_dataroot: /work/users/w/e/weiyang/hest_replication/embeddings
-exp_code: faithful_xgb__resnet50
+exp_code: faithful_ridge__uni_v1
 seed: 1
 batch_size: 128
 num_workers: 4
 gene_list: var_50genes.json
 normalize: True
-dimreduce: "PCA"
+dimreduce: null
 latent_dim: 256
-method: xgboost
-encoders: ["resnet50"]
+method: ridge
+encoders: ["uni_v1"]
 datasets: ["IDC", "PRAD", "PAAD", "SKCM", "COAD", "READ", "CCRCC", "LUNG", "LYMPH_IDC", "HCC"]
