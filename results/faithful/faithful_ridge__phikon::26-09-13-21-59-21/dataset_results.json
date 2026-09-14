@@ -1,0 +1,107 @@
+{
+    "average": {
+        "phikon": 0.2715
+    },
+    "results": [
+        {
+            "dataset_name": "IDC",
+            "results": [
+                {
+                    "encoder_name": "phikon",
+                    "pearson_mean": 0.5259,
+                    "pearson_std": 0.079
+                }
+            ]
+        },
+        {
+            "dataset_name": "PRAD",
+            "results": [
+                {
+                    "encoder_name": "phikon",
+                    "pearson_mean": 0.2489,
+                    "pearson_std": 0.1265
+                }
+            ]
+        },
+        {
+            "dataset_name": "PAAD",
+            "results": [
+                {
+                    "encoder_name": "phikon",
+                    "pearson_mean": 0.3594,
+                    "pearson_std": 0.0707
+                }
+            ]
+        },
+        {
+            "dataset_name": "SKCM",
+            "results": [
+                {
+                    "encoder_name": "phikon",
+                    "pearson_mean": 0.3684,
+                    "pearson_std": 0.1056
+                }
+            ]
+        },
+        {
+            "dataset_name": "COAD",
+            "results": [
+                {
+                    "encoder_name": "phikon",
+                    "pearson_mean": 0.1699,
+                    "pearson_std": 0.056
+                }
+            ]
+        },
+        {
+            "dataset_name": "READ",
+            "results": [
+                {
+                    "encoder_name": "phikon",
+                    "pearson_mean": 0.1133,
+                    "pearson_std": 0.075
+                }
+            ]
+        },
+        {
+            "dataset_name": "CCRCC",
+            "results": [
+                {
+                    "encoder_name": "phikon",
+                    "pearson_mean": 0.2531,
+                    "pearson_std": 0.0486
+                }
+            ]
+        },
+        {
+            "dataset_name": "LUNG",
+            "results": [
+                {
+                    "encoder_name": "phikon",
+                    "pearson_mean": 0.4225,
+                    "pearson_std": 0.0578
+                }
+            ]
+        },
+        {
+            "dataset_name": "LYMPH_IDC",
+            "results": [
+                {
+                    "encoder_name": "phikon",
+                    "pearson_mean": 0.2151,
+                    "pearson_std": 0.0418
+                }
+            ]
+        },
+        {
+            "dataset_name": "HCC",
+            "results": [
+                {
+                    "encoder_name": "phikon",
+                    "pearson_mean": 0.0385,
+                    "pearson_std": 0.0149
+                }
+            ]
+        }
+    ]
+}
