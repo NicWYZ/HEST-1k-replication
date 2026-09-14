@@ -1,0 +1,107 @@
+{
+    "average": {
+        "uni_v2": 0.2503
+    },
+    "results": [
+        {
+            "dataset_name": "IDC",
+            "results": [
+                {
+                    "encoder_name": "uni_v2",
+                    "pearson_mean": 0.5739,
+                    "pearson_std": 0.0737
+                }
+            ]
+        },
+        {
+            "dataset_name": "PRAD",
+            "results": [
+                {
+                    "encoder_name": "uni_v2",
+                    "pearson_mean": 0.3376,
+                    "pearson_std": 0.0527
+                }
+            ]
+        },
+        {
+            "dataset_name": "PAAD",
+            "results": [
+                {
+                    "encoder_name": "uni_v2",
+                    "pearson_mean": 0.3484,
+                    "pearson_std": 0.0131
+                }
+            ]
+        },
+        {
+            "dataset_name": "SKCM",
+            "results": [
+                {
+                    "encoder_name": "uni_v2",
+                    "pearson_mean": 0.1973,
+                    "pearson_std": 0.0398
+                }
+            ]
+        },
+        {
+            "dataset_name": "COAD",
+            "results": [
+                {
+                    "encoder_name": "uni_v2",
+                    "pearson_mean": 0.1825,
+                    "pearson_std": 0.0571
+                }
+            ]
+        },
+        {
+            "dataset_name": "READ",
+            "results": [
+                {
+                    "encoder_name": "uni_v2",
+                    "pearson_mean": 0.1187,
+                    "pearson_std": 0.0432
+                }
+            ]
+        },
+        {
+            "dataset_name": "CCRCC",
+            "results": [
+                {
+                    "encoder_name": "uni_v2",
+                    "pearson_mean": 0.2333,
+                    "pearson_std": 0.0519
+                }
+            ]
+        },
+        {
+            "dataset_name": "LUNG",
+            "results": [
+                {
+                    "encoder_name": "uni_v2",
+                    "pearson_mean": 0.2897,
+                    "pearson_std": 0.1262
+                }
+            ]
+        },
+        {
+            "dataset_name": "LYMPH_IDC",
+            "results": [
+                {
+                    "encoder_name": "uni_v2",
+                    "pearson_mean": 0.2074,
+                    "pearson_std": 0.0198
+                }
+            ]
+        },
+        {
+            "dataset_name": "HCC",
+            "results": [
+                {
+                    "encoder_name": "uni_v2",
+                    "pearson_mean": 0.0144,
+                    "pearson_std": 0.0021
+                }
+            ]
+        }
+    ]
+}

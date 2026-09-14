@@ -1,0 +1,107 @@
+{
+    "average": {
+        "conch_v1": 0.3227
+    },
+    "results": [
+        {
+            "dataset_name": "IDC",
+            "results": [
+                {
+                    "encoder_name": "conch_v1",
+                    "pearson_mean": 0.5278,
+                    "pearson_std": 0.0797
+                }
+            ]
+        },
+        {
+            "dataset_name": "PRAD",
+            "results": [
+                {
+                    "encoder_name": "conch_v1",
+                    "pearson_mean": 0.3604,
+                    "pearson_std": 0.0137
+                }
+            ]
+        },
+        {
+            "dataset_name": "PAAD",
+            "results": [
+                {
+                    "encoder_name": "conch_v1",
+                    "pearson_mean": 0.4225,
+                    "pearson_std": 0.077
+                }
+            ]
+        },
+        {
+            "dataset_name": "SKCM",
+            "results": [
+                {
+                    "encoder_name": "conch_v1",
+                    "pearson_mean": 0.5087,
+                    "pearson_std": 0.0295
+                }
+            ]
+        },
+        {
+            "dataset_name": "COAD",
+            "results": [
+                {
+                    "encoder_name": "conch_v1",
+                    "pearson_mean": 0.247,
+                    "pearson_std": 0.0034
+                }
+            ]
+        },
+        {
+            "dataset_name": "READ",
+            "results": [
+                {
+                    "encoder_name": "conch_v1",
+                    "pearson_mean": 0.145,
+                    "pearson_std": 0.0456
+                }
+            ]
+        },
+        {
+            "dataset_name": "CCRCC",
+            "results": [
+                {
+                    "encoder_name": "conch_v1",
+                    "pearson_mean": 0.2356,
+                    "pearson_std": 0.0387
+                }
+            ]
+        },
+        {
+            "dataset_name": "LUNG",
+            "results": [
+                {
+                    "encoder_name": "conch_v1",
+                    "pearson_mean": 0.4952,
+                    "pearson_std": 0.0211
+                }
+            ]
+        },
+        {
+            "dataset_name": "LYMPH_IDC",
+            "results": [
+                {
+                    "encoder_name": "conch_v1",
+                    "pearson_mean": 0.2462,
+                    "pearson_std": 0.0342
+                }
+            ]
+        },
+        {
+            "dataset_name": "HCC",
+            "results": [
+                {
+                    "encoder_name": "conch_v1",
+                    "pearson_mean": 0.0382,
+                    "pearson_std": 0.0062
+                }
+            ]
+        }
+    ]
+}

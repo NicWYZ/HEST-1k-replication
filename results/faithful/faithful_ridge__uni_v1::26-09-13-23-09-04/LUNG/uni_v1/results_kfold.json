@@ -1,0 +1,460 @@
+{
+    "mean_per_split": [
+        0.2611,
+        0.481
+    ],
+    "pearson_corrs": [
+        {
+            "mean": 0.7924,
+            "name": "PTPRC",
+            "pearson_corrs": [
+                0.7753,
+                0.8095
+            ],
+            "std": 0.0171
+        },
+        {
+            "mean": 0.7519,
+            "name": "GPRC5A",
+            "pearson_corrs": [
+                0.6991,
+                0.8046
+            ],
+            "std": 0.0527
+        },
+        {
+            "mean": 0.7439,
+            "name": "CAPN8",
+            "pearson_corrs": [
+                0.6674,
+                0.8203
+            ],
+            "std": 0.0765
+        },
+        {
+            "mean": 0.7248,
+            "name": "COL5A2",
+            "pearson_corrs": [
+                0.6965,
+                0.7532
+            ],
+            "std": 0.0283
+        },
+        {
+            "mean": 0.7193,
+            "name": "MALL",
+            "pearson_corrs": [
+                0.576,
+                0.8626
+            ],
+            "std": 0.1433
+        },
+        {
+            "mean": 0.6792,
+            "name": "PECAM1",
+            "pearson_corrs": [
+                0.68,
+                0.6784
+            ],
+            "std": 0.0008
+        },
+        {
+            "mean": 0.6676,
+            "name": "CXCR4",
+            "pearson_corrs": [
+                0.6169,
+                0.7183
+            ],
+            "std": 0.0507
+        },
+        {
+            "mean": 0.6165,
+            "name": "CTSK",
+            "pearson_corrs": [
+                0.5344,
+                0.6987
+            ],
+            "std": 0.0822
+        },
+        {
+            "mean": 0.6152,
+            "name": "TOP2A",
+            "pearson_corrs": [
+                0.4973,
+                0.7332
+            ],
+            "std": 0.1179
+        },
+        {
+            "mean": 0.6075,
+            "name": "CD2",
+            "pearson_corrs": [
+                0.5076,
+                0.7074
+            ],
+            "std": 0.0999
+        },
+        {
+            "mean": 0.5903,
+            "name": "CD163",
+            "pearson_corrs": [
+                0.5212,
+                0.6595
+            ],
+            "std": 0.0691
+        },
+        {
+            "mean": 0.5874,
+            "name": "MET",
+            "pearson_corrs": [
+                0.4656,
+                0.7091
+            ],
+            "std": 0.1217
+        },
+        {
+            "mean": 0.5796,
+            "name": "PLA2G7",
+            "pearson_corrs": [
+                0.4993,
+                0.66
+            ],
+            "std": 0.0804
+        },
+        {
+            "mean": 0.572,
+            "name": "CDK1",
+            "pearson_corrs": [
+                0.3877,
+                0.7564
+            ],
+            "std": 0.1844
+        },
+        {
+            "mean": 0.4823,
+            "name": "CXCL9",
+            "pearson_corrs": [
+                0.4932,
+                0.4713
+            ],
+            "std": 0.011
+        },
+        {
+            "mean": 0.4644,
+            "name": "ACE2",
+            "pearson_corrs": [
+                0.3619,
+                0.567
+            ],
+            "std": 0.1025
+        },
+        {
+            "mean": 0.4633,
+            "name": "CNN1",
+            "pearson_corrs": [
+                0.4116,
+                0.515
+            ],
+            "std": 0.0517
+        },
+        {
+            "mean": 0.4515,
+            "name": "MKI67",
+            "pearson_corrs": [
+                0.2224,
+                0.6805
+            ],
+            "std": 0.2291
+        },
+        {
+            "mean": 0.4256,
+            "name": "INMT",
+            "pearson_corrs": [
+                0.3965,
+                0.4548
+            ],
+            "std": 0.0291
+        },
+        {
+            "mean": 0.4211,
+            "name": "ALDH1A3",
+            "pearson_corrs": [
+                0.2576,
+                0.5846
+            ],
+            "std": 0.1635
+        },
+        {
+            "mean": 0.4197,
+            "name": "SNTN",
+            "pearson_corrs": [
+                0.1745,
+                0.6649
+            ],
+            "std": 0.2452
+        },
+        {
+            "mean": 0.4124,
+            "name": "UBE2C",
+            "pearson_corrs": [
+                0.1745,
+                0.6503
+            ],
+            "std": 0.2379
+        },
+        {
+            "mean": 0.3631,
+            "name": "SRPX",
+            "pearson_corrs": [
+                0.3373,
+                0.389
+            ],
+            "std": 0.0259
+        },
+        {
+            "mean": 0.3438,
+            "name": "CXCL10",
+            "pearson_corrs": [
+                0.3215,
+                0.3662
+            ],
+            "std": 0.0224
+        },
+        {
+            "mean": 0.3393,
+            "name": "CD19",
+            "pearson_corrs": [
+                0.2571,
+                0.4215
+            ],
+            "std": 0.0822
+        },
+        {
+            "mean": 0.3332,
+            "name": "MARCO",
+            "pearson_corrs": [
+                0.2202,
+                0.4462
+            ],
+            "std": 0.113
+        },
+        {
+            "mean": 0.3298,
+            "name": "MEDAG",
+            "pearson_corrs": [
+                0.2905,
+                0.3691
+            ],
+            "std": 0.0393
+        },
+        {
+            "mean": 0.3207,
+            "name": "CD79A",
+            "pearson_corrs": [
+                0.1221,
+                0.5194
+            ],
+            "std": 0.1986
+        },
+        {
+            "mean": 0.318,
+            "name": "CCR7",
+            "pearson_corrs": [
+                0.1213,
+                0.5147
+            ],
+            "std": 0.1967
+        },
+        {
+            "mean": 0.3138,
+            "name": "OGN",
+            "pearson_corrs": [
+                0.1695,
+                0.458
+            ],
+            "std": 0.1443
+        },
+        {
+            "mean": 0.2864,
+            "name": "CCL19",
+            "pearson_corrs": [
+                0.1939,
+                0.3789
+            ],
+            "std": 0.0925
+        },
+        {
+            "mean": 0.2846,
+            "name": "MS4A1",
+            "pearson_corrs": [
+                0.1208,
+                0.4484
+            ],
+            "std": 0.1638
+        },
+        {
+            "mean": 0.2687,
+            "name": "SPIB",
+            "pearson_corrs": [
+                0.0941,
+                0.4434
+            ],
+            "std": 0.1746
+        },
+        {
+            "mean": 0.2673,
+            "name": "DNAAF1",
+            "pearson_corrs": [
+                0.2252,
+                0.3095
+            ],
+            "std": 0.0421
+        },
+        {
+            "mean": 0.2585,
+            "name": "MZB1",
+            "pearson_corrs": [
+                0.0565,
+                0.4604
+            ],
+            "std": 0.2019
+        },
+        {
+            "mean": 0.2182,
+            "name": "SNCG",
+            "pearson_corrs": [
+                0.2872,
+                0.1492
+            ],
+            "std": 0.069
+        },
+        {
+            "mean": 0.2052,
+            "name": "MCEMP1",
+            "pearson_corrs": [
+                0.1281,
+                0.2824
+            ],
+            "std": 0.0771
+        },
+        {
+            "mean": 0.2046,
+            "name": "PCSK2",
+            "pearson_corrs": [
+                0.1445,
+                0.2647
+            ],
+            "std": 0.0601
+        },
+        {
+            "mean": 0.1981,
+            "name": "BBOX1",
+            "pearson_corrs": [
+                0.2695,
+                0.1266
+            ],
+            "std": 0.0715
+        },
+        {
+            "mean": 0.1878,
+            "name": "FCER1A",
+            "pearson_corrs": [
+                0.111,
+                0.2647
+            ],
+            "std": 0.0768
+        },
+        {
+            "mean": 0.1489,
+            "name": "LIF",
+            "pearson_corrs": [
+                -0.1357,
+                0.4335
+            ],
+            "std": 0.2846
+        },
+        {
+            "mean": 0.1377,
+            "name": "CTSG",
+            "pearson_corrs": [
+                0.0932,
+                0.1822
+            ],
+            "std": 0.0445
+        },
+        {
+            "mean": 0.1077,
+            "name": "SOX2",
+            "pearson_corrs": [
+                -0.1333,
+                0.3487
+            ],
+            "std": 0.241
+        },
+        {
+            "mean": 0.0963,
+            "name": "CYP2A7",
+            "pearson_corrs": [
+                0.0181,
+                0.1745
+            ],
+            "std": 0.0782
+        },
+        {
+            "mean": 0.0844,
+            "name": "CD1A",
+            "pearson_corrs": [
+                -0.0135,
+                0.1824
+            ],
+            "std": 0.0979
+        },
+        {
+            "mean": 0.0829,
+            "name": "FGFBP1",
+            "pearson_corrs": [
+                -0.2016,
+                0.3673
+            ],
+            "std": 0.2844
+        },
+        {
+            "mean": 0.0726,
+            "name": "DMBT1",
+            "pearson_corrs": [
+                -0.058,
+                0.2032
+            ],
+            "std": 0.1306
+        },
+        {
+            "mean": 0.0484,
+            "name": "TCL1A",
+            "pearson_corrs": [
+                -0.156,
+                0.2528
+            ],
+            "std": 0.2044
+        },
+        {
+            "mean": -0.0092,
+            "name": "CD274",
+            "pearson_corrs": [
+                -0.2816,
+                0.2633
+            ],
+            "std": 0.2724
+        },
+        {
+            "mean": -0.0444,
+            "name": "SERPINB2",
+            "pearson_corrs": [
+                -0.1611,
+                0.0723
+            ],
+            "std": 0.1167
+        }
+    ],
+    "pearson_mean": 0.371,
+    "pearson_std": 0.1099
+}
