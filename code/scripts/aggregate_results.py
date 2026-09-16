@@ -8,38 +8,63 @@ Reads results/faithful/<exp_code>::<ts>/<task>/<encoder>/results_kfold.json and 
   reports/results_encoder.csv  head x encoder -> average over tasks (paper-9 and all-10)
 
 The smoke run is excluded: it duplicates faithful_pca_ridge__resnet50.
-Where an exp_code was run more than once, the LATEST timestamp wins (and is reported).
+
+MERGING ACROSS RUNS. A wide-embedding run that hit its wall was finished by a second job whose
+exp_code carries a `_part2` suffix and covers only the tasks the first run never reached. Those
+land in a SEPARATE `<exp>::<ts>` directory. Resolution is therefore per (head, encoder, TASK),
+not per (head, encoder): every matching directory is scanned and, for a task present in more
+than one, the newest timestamp wins. Taking `sorted(dirs)[-1]` per exp_code -- the previous
+behaviour -- would have silently kept only the 4-task completion run and discarded the 6 tasks
+from the original, yielding a plausible but wrong encoder average.
 """
 import os, json, glob, re, sys
 import pandas as pd
 
 ROOT = "/work/users/w/e/weiyang/hest_replication"
 RES  = os.path.join(ROOT, "results", "faithful")
+TAILORED = os.path.join(ROOT, "results", "tailored")   # probe_* experiments live here
 OUT  = os.path.join(ROOT, "reports")
 os.makedirs(OUT, exist_ok=True)
 
 PAPER_TASKS = ["IDC","PRAD","PAAD","SKCM","COAD","READ","CCRCC","LUNG","LYMPH_IDC"]  # HCC excluded
-HEAD_MAP = {"faithful_pca_ridge": "pca_ridge", "faithful_ridge": "ridge_nopca", "faithful_xgb": "xgb_pca"}
-
-# ---- resolve exp dirs, keeping only the newest timestamp per exp_code ----
-newest = {}
-for d in sorted(glob.glob(os.path.join(RES, "*::*"))):
-    base = os.path.basename(d)
-    exp, ts = base.split("::", 1)
-    if exp.startswith("smoke_"):
-        continue
-    m = re.match(r"^(faithful_pca_ridge|faithful_ridge|faithful_xgb)__(.+)$", exp)
-    if not m:
-        print(f"[skip] unrecognised exp_code: {exp}", file=sys.stderr); continue
-    head, enc = HEAD_MAP[m.group(1)], m.group(2)
-    key = (head, enc)
-    if key not in newest or ts > newest[key][0]:
-        newest[key] = (ts, d)
+# `a14_xgb_raw` is the exp_code the ten-encoder Table A14 fan-out used, after the resnet50 pilot
+# (`probe_xgb_nopca`) established that the paper fed RAW embeddings to XGBoost. Both prefixes map to
+# the same head so the pilot and the fan-out MERGE rather than one shadowing the other. Omitting it
+# silently routed all ten encoders to the [skip] branch below, which reports to stderr -- so the
+# table showed xgb_nopca with 1 encoder instead of 11 and looked plausible.
+HEAD_MAP = {"faithful_pca_ridge": "pca_ridge", "faithful_ridge": "ridge_nopca",
+            "faithful_xgb": "xgb_pca", "probe_xgb_nopca": "xgb_nopca",
+            "a14_xgb_raw": "xgb_nopca"}
+# a `_part2` suffix marks a completion run for the same head; it is stripped before mapping
+# Alternation derived from HEAD_MAP rather than written out, so adding a head cannot leave the
+# regex behind. Longest-first ordering matters: bare alternation would let a shorter prefix win.
+_ALT = "|".join(sorted(HEAD_MAP, key=len, reverse=True))
+EXP_RE = re.compile(r"^(" + _ALT + r")(?:_part\d+)?__(.+)$")
+# ---- resolve results per (head, encoder, TASK); newest timestamp wins ----
+# Keyed on task as well as encoder so a `_part2` completion run MERGES with the original
+# instead of replacing it. An empty directory (a run that died before writing anything)
+# contributes nothing and cannot shadow a good one, because only files found are recorded.
+chosen = {}
+scanned = 0
+for base_dir in (RES, TAILORED):
+    for d in sorted(glob.glob(os.path.join(base_dir, "*::*"))):
+        exp, ts = os.path.basename(d).split("::", 1)
+        if exp.startswith("smoke_"):
+            continue
+        m = EXP_RE.match(exp)
+        if not m:
+            print(f"[skip] unrecognised exp_code: {exp}", file=sys.stderr); continue
+        head, enc = HEAD_MAP[m.group(1)], m.group(2)
+        scanned += 1
+        for kf in sorted(glob.glob(os.path.join(d, "*", "*", "results_kfold.json"))):
+            task = os.path.basename(os.path.dirname(os.path.dirname(kf)))
+            key = (head, enc, task)
+            if key not in chosen or ts > chosen[key][0]:
+                chosen[key] = (ts, kf)
 
 split_rows, gene_rows = [], []
-for (head, enc), (ts, d) in sorted(newest.items()):
-    for kf in sorted(glob.glob(os.path.join(d, "*", "*", "results_kfold.json"))):
-        task = os.path.basename(os.path.dirname(os.path.dirname(kf)))
+for (head, enc, task), (ts, kf) in sorted(chosen.items()):
+    if True:
         with open(kf) as f:
             r = json.load(f)
         for i, v in enumerate(r.get("mean_per_split", [])):
@@ -81,7 +106,7 @@ gene_df.to_csv(os.path.join(OUT, "results_gene.csv"), index=False)
 enc_df.sort_values(["head","avg_paper9"], ascending=[True, False]).to_csv(
     os.path.join(OUT, "results_encoder.csv"), index=False)
 
-print(f"exp dirs used: {len(newest)}")
+print(f"exp dirs scanned: {scanned}; (head,encoder,task) results resolved: {len(chosen)}")
 print(f"rows -> split {len(split_df)}, task {len(task_df)}, gene {len(gene_df)}, encoder {len(enc_df)}")
 print()
 for head in sorted(enc_df["head"].unique()):

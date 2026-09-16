@@ -1,0 +1,22 @@
+STFlow, cloned for the Stage 5 stronger-baseline comparison.
+  upstream : https://github.com/Graph-and-Geometric-Learning/STFlow.git
+  commit   : 880c2eeaa64aaf64ffcd30f3c3278bdab4ab1dbe
+  cloned   : 2026-09-14, shallow (--depth 1), into code/stage5/STFlow (gitignored)
+  paper    : Huang, Liu, Babadi, Jin, Ying (2025), arXiv 2506.05361
+
+Integration facts established by READING THE SOURCE, not the README:
+  * hest_utils/encoder.py defines only ciga_loader, ibot_uni, gigapath, gigapathslide.
+    'uni_v1_official' is NOT an extractor: it appears only as a path component under
+    embed_dataroot and as a key in app/flow/train.py's dim table ("uni_v1_official": 1024).
+    STFlow consumes whatever 1024-dim embeddings sit at that path, so our HEST-pipeline
+    UNI v1 features are the INTENDED input, not a substitution.
+  * Expected layout: {embed}/{task}/{encoder}/fp32/{sample}.h5. Ours are one level
+    shallower; bridged by symlinks under code/stage5/embed_shim (gitignored).
+  * h5 keys match ours exactly: embeddings (float32), barcodes, coords.
+  * app/flow/train.py takes --device as an int and calls .to(device): CUDA is REQUIRED.
+  * setup.py declares NO install_requires. Measured against our hest env, the imports that
+    are missing AND on the uni_v1 path: torch_geometric, scprep, wandb. 'gigapath' is used
+    only by hest_utils/gigapath_slide_encoder.py (a different encoder). 'trainer' is the
+    LOCAL module stflow/app/hest/trainer.py, not a PyPI package.
+  * scprep pins pandas<2.1, INCOMPATIBLE with this project's pandas 2.3.3. See
+    env/ENV_NOTES.txt. STFlow requires its own conda env; the two cannot share one.

@@ -48,3 +48,8 @@ logs/
 
 # Keep empty deliverable dirs visible
 !.gitkeep
+
+# Stage 5: third-party STFlow clone and symlink shim trees. Provenance (upstream URL, pinned
+# commit, integration findings) is committed at code/stage5_provenance/STFLOW_SOURCE.txt.
+code/stage5/
+*.bak

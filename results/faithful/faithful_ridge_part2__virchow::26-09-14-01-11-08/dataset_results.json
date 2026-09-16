@@ -1,0 +1,47 @@
+{
+    "average": {
+        "virchow": 0.1812
+    },
+    "results": [
+        {
+            "dataset_name": "CCRCC",
+            "results": [
+                {
+                    "encoder_name": "virchow",
+                    "pearson_mean": 0.2313,
+                    "pearson_std": 0.0372
+                }
+            ]
+        },
+        {
+            "dataset_name": "LUNG",
+            "results": [
+                {
+                    "encoder_name": "virchow",
+                    "pearson_mean": 0.2913,
+                    "pearson_std": 0.053
+                }
+            ]
+        },
+        {
+            "dataset_name": "LYMPH_IDC",
+            "results": [
+                {
+                    "encoder_name": "virchow",
+                    "pearson_mean": 0.1706,
+                    "pearson_std": 0.0152
+                }
+            ]
+        },
+        {
+            "dataset_name": "HCC",
+            "results": [
+                {
+                    "encoder_name": "virchow",
+                    "pearson_mean": 0.0316,
+                    "pearson_std": 0.0092
+                }
+            ]
+        }
+    ]
+}

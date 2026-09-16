@@ -1,0 +1,34 @@
+{
+    "alpha": null,
+    "batch_size": 128,
+    "bench_data_root": "/work/users/w/e/weiyang/hest_replication/bench_data",
+    "benchmark_encoders": false,
+    "config": "/work/users/w/e/weiyang/hest_replication/code/configs/a14_xgb_raw__hoptimus0.yaml",
+    "datasets": [
+        "IDC",
+        "PRAD",
+        "PAAD",
+        "SKCM",
+        "COAD",
+        "READ",
+        "CCRCC",
+        "LUNG",
+        "LYMPH_IDC",
+        "HCC"
+    ],
+    "dimreduce": null,
+    "embed_dataroot": "/work/users/w/e/weiyang/hest_replication/embeddings",
+    "encoders": [
+        "hoptimus0"
+    ],
+    "exp_code": "a14_xgb_raw__hoptimus0",
+    "gene_list": "var_50genes.json",
+    "kfold": false,
+    "latent_dim": 256,
+    "method": "xgboost",
+    "normalize": true,
+    "num_workers": 4,
+    "overwrite": false,
+    "results_dir": "/work/users/w/e/weiyang/hest_replication/results/faithful",
+    "seed": 1
+}

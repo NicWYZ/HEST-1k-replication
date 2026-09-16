@@ -1,0 +1,14 @@
+bench_data_root: /work/users/w/e/weiyang/hest_replication/bench_data
+results_dir: /work/users/w/e/weiyang/hest_replication/results/faithful
+embed_dataroot: /work/users/w/e/weiyang/hest_replication/embeddings
+exp_code: faithful_pca_ridge__hoptimus1
+seed: 1
+batch_size: 64
+num_workers: 4
+gene_list: var_50genes.json
+method: ridge
+normalize: True
+dimreduce: "PCA"
+latent_dim: 256
+encoders: ["hoptimus1"]
+datasets: ["SKCM"]

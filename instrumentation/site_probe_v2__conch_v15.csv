@@ -1,0 +1,10 @@
+encoder,probe,n_classes,n_folds,n_slides,balanced_acc,acc_std,chance,lift,excess,mean_n_train,mean_n_test,confounded
+conch_v15,technology,2,5,72,0.9871392045454546,0.014352483538323964,0.5,1.9742784090909091,0.48713920454545456,46080,11520,yes: Xenium and Visium tasks are different organs
+conch_v15,cohort_source,5,5,72,0.9350647916666667,0.043366171954246496,0.2,4.675323958333333,0.7350647916666666,46080,11520,"yes: INT/MEND/ZEN each occur in one task only, so tissue is a proxy"
+conch_v15,idc_institution,2,4,4,0.49124999999999996,0.401692707489195,0.5,0.9824999999999999,-0.008750000000000036,2400,800,"no: same tissue, same 541-gene Xenium assay, differs only by source"
+uni_v1,technology,2,5,72,0.9971647727272728,0.003789007170946378,0.5,1.9943295454545455,0.4971647727272728,46080,11520,yes: Xenium and Visium tasks are different organs
+uni_v1,cohort_source,5,5,72,0.94144375,0.04737049293277877,0.2,4.70721875,0.74144375,46080,11520,"yes: INT/MEND/ZEN each occur in one task only, so tissue is a proxy"
+uni_v1,idc_institution,2,4,4,0.5959375,0.39536313904908993,0.5,1.191875,0.09593750000000001,2400,800,"no: same tissue, same 541-gene Xenium assay, differs only by source"
+uni_v2,technology,2,5,72,0.9976164772727273,0.003185870660650118,0.5,1.9952329545454546,0.4976164772727273,46080,11520,yes: Xenium and Visium tasks are different organs
+uni_v2,cohort_source,5,5,72,0.9547789583333334,0.051024919226962576,0.2,4.773894791666667,0.7547789583333333,46080,11520,"yes: INT/MEND/ZEN each occur in one task only, so tissue is a proxy"
+uni_v2,idc_institution,2,4,4,0.7153125,0.31742417278580093,0.5,1.430625,0.21531250000000002,2400,800,"no: same tissue, same 541-gene Xenium assay, differs only by source"

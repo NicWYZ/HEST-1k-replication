@@ -1,0 +1,47 @@
+{
+    "average": {
+        "resnet50": 0.2376
+    },
+    "results": [
+        {
+            "dataset_name": "CCRCC",
+            "results": [
+                {
+                    "encoder_name": "resnet50",
+                    "pearson_mean": 0.1814,
+                    "pearson_std": 0.0494
+                }
+            ]
+        },
+        {
+            "dataset_name": "LUNG",
+            "results": [
+                {
+                    "encoder_name": "resnet50",
+                    "pearson_mean": 0.5009,
+                    "pearson_std": 0.0102
+                }
+            ]
+        },
+        {
+            "dataset_name": "LYMPH_IDC",
+            "results": [
+                {
+                    "encoder_name": "resnet50",
+                    "pearson_mean": 0.2294,
+                    "pearson_std": 0.0493
+                }
+            ]
+        },
+        {
+            "dataset_name": "HCC",
+            "results": [
+                {
+                    "encoder_name": "resnet50",
+                    "pearson_mean": 0.0388,
+                    "pearson_std": 0.0055
+                }
+            ]
+        }
+    ]
+}

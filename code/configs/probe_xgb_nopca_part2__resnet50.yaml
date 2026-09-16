@@ -1,0 +1,14 @@
+bench_data_root: /work/users/w/e/weiyang/hest_replication/bench_data
+results_dir: /work/users/w/e/weiyang/hest_replication/results/tailored
+embed_dataroot: /work/users/w/e/weiyang/hest_replication/embeddings
+exp_code: probe_xgb_nopca_part2__resnet50
+seed: 1
+batch_size: 128
+num_workers: 4
+gene_list: var_50genes.json
+normalize: True
+dimreduce: null
+latent_dim: 256
+method: xgboost
+encoders: ["resnet50"]
+datasets: ["CCRCC", "LUNG", "LYMPH_IDC", "HCC"]

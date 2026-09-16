@@ -1,0 +1,4 @@
+encoder,arm,task,held_out,n_train,n_test,n_genes,pearson,train_sources,note
+resnet50,within_task_leave_cohort_out,IDC,NCBI,28521.0,7015.0,50,0.4179363250732422,TENX,"same tissue, same 541-gene Xenium panel; differs only by institution"
+resnet50,within_task_leave_cohort_out,IDC,TENX,7015.0,28521.0,50,0.364681214094162,NCBI,"same tissue, same 541-gene Xenium panel; differs only by institution"
+resnet50,across_task_xenium,ALL_XENIUM,,,,0,,,INFEASIBLE: only 0 genes shared across the five Xenium panels (need >= 10); a score on so few genes is not comparable to the 50-gene benchmark numbers

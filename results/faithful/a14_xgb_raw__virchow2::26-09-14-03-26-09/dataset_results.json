@@ -1,0 +1,107 @@
+{
+    "average": {
+        "virchow2": 0.3593
+    },
+    "results": [
+        {
+            "dataset_name": "IDC",
+            "results": [
+                {
+                    "encoder_name": "virchow2",
+                    "pearson_mean": 0.5491,
+                    "pearson_std": 0.0723
+                }
+            ]
+        },
+        {
+            "dataset_name": "PRAD",
+            "results": [
+                {
+                    "encoder_name": "virchow2",
+                    "pearson_mean": 0.3769,
+                    "pearson_std": 0.0037
+                }
+            ]
+        },
+        {
+            "dataset_name": "PAAD",
+            "results": [
+                {
+                    "encoder_name": "virchow2",
+                    "pearson_mean": 0.4486,
+                    "pearson_std": 0.0552
+                }
+            ]
+        },
+        {
+            "dataset_name": "SKCM",
+            "results": [
+                {
+                    "encoder_name": "virchow2",
+                    "pearson_mean": 0.595,
+                    "pearson_std": 0.0101
+                }
+            ]
+        },
+        {
+            "dataset_name": "COAD",
+            "results": [
+                {
+                    "encoder_name": "virchow2",
+                    "pearson_mean": 0.2912,
+                    "pearson_std": 0.0222
+                }
+            ]
+        },
+        {
+            "dataset_name": "READ",
+            "results": [
+                {
+                    "encoder_name": "virchow2",
+                    "pearson_mean": 0.1796,
+                    "pearson_std": 0.0775
+                }
+            ]
+        },
+        {
+            "dataset_name": "CCRCC",
+            "results": [
+                {
+                    "encoder_name": "virchow2",
+                    "pearson_mean": 0.2507,
+                    "pearson_std": 0.0361
+                }
+            ]
+        },
+        {
+            "dataset_name": "LUNG",
+            "results": [
+                {
+                    "encoder_name": "virchow2",
+                    "pearson_mean": 0.5763,
+                    "pearson_std": 0.0111
+                }
+            ]
+        },
+        {
+            "dataset_name": "LYMPH_IDC",
+            "results": [
+                {
+                    "encoder_name": "virchow2",
+                    "pearson_mean": 0.2602,
+                    "pearson_std": 0.0502
+                }
+            ]
+        },
+        {
+            "dataset_name": "HCC",
+            "results": [
+                {
+                    "encoder_name": "virchow2",
+                    "pearson_mean": 0.0658,
+                    "pearson_std": 0.0004
+                }
+            ]
+        }
+    ]
+}

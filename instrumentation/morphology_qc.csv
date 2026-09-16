@@ -1,0 +1,11 @@
+task,morph_rows,in_patch,pred_spots,join_matched,join_complete,dup_keys,cov_all_adata,cov_predicted,median_nuc,zero_nuc_predicted,frac_sum_ok,neo_nan_when_absent
+CCRCC,74220,74220,74220,74220,True,0,0.9118,0.9118,33.0,6547,True,True
+COAD,18523,15651,15651,15651,True,0,0.8686,0.9961,99.0,61,True,True
+HCC,4248,4196,4196,4196,True,0,0.9699,0.9752,28.0,104,True,True
+IDC,44974,35536,35536,35536,True,0,0.7895,0.983,49.0,603,True,True
+LUNG,7505,5206,5206,5206,True,0,0.6897,0.9616,56.0,200,True,True
+LYMPH_IDC,19964,19964,19964,19964,True,0,0.9253,0.9253,52.0,1491,True,True
+PAAD,9793,7571,7571,7571,True,0,0.789,0.9906,69.0,71,True,True
+PRAD,62710,62710,62710,62710,True,0,0.9961,0.9961,61.0,245,True,True
+READ,8407,8407,8407,8407,True,0,0.9977,0.9977,78.0,19,True,True
+SKCM,5716,3034,3034,3034,True,0,0.5056,0.9479,66.0,158,True,True

@@ -1,0 +1,11 @@
+
+2026-09-15  DO NOT install STFlow's dependencies into the `hest` env.
+scprep (required by STFlow data/normalize_utils.py) declares pandas<2.1. Installing it downgrades
+pandas 2.3.3 -> 2.0.3, and 2.0.3 is ABI-incompatible with this env's numpy 2.4.6, so EVERY import
+of pandas/anndata/sklearn/xgboost dies with:
+  ValueError: numpy.dtype size changed ... Expected 96 from C header, got 88 from PyObject
+The whole replication stack breaks and stays broken until something imports pandas, so a job can
+sit in the queue for days and then fail instantly for a reason unrelated to its own code.
+Recovery: pip install pandas==2.3.3 (the locked version), then pip uninstall scprep wandb
+torch_geometric. Verified restored 2026-09-15.
+STFlow needs its OWN env with pandas<2.1; the two requirements are mutually exclusive.
