@@ -148,8 +148,16 @@ if os.path.isdir(INST):
             if b.startswith(k): hit = k; break
         if hit is None:
             act("SKIP_UNCLASSIFIED", sp); continue
-        # drop the now-meaningless _v2 marker: the v1 outputs are being removed
-        nb = b.replace("_v2", "", 1) if "_v2" in b else b
+        # Drop the now-meaningless _v2 marker (the v1 outputs are being removed) -- but ONLY
+        # from the SCRIPT-NAME stem, never blanket. A bare b.replace("_v2","",1) corrupted
+        # `split_decomposition__uni_v2.csv` into `__uni.csv`, because the first "_v2" in that
+        # name is the ENCODER uni_v2, not a version marker. Strip by matching known stems.
+        V2_STEMS = ("count_diagnostics_v2", "morphology_summary_v2", "site_probe_v2")
+        nb = b
+        for st in V2_STEMS:
+            if b.startswith(st):
+                nb = st.replace("_v2", "") + b[len(st):]
+                break
         act("MOVE_FILE", sp, f"{ROOT}/results/tailored/{AREA[hit]}/{nb}")
 
 # ---------------------------------------------------------------- reports -> summary / delete
