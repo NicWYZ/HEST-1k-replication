@@ -100,9 +100,12 @@ piloting both on resnet50 settled it by measurement (raw 0.3278 vs the printed 0
 Each is reproducible from the named table; the reasoning lives with the script that produced it.
 
 **1. Split design matters more than encoder choice.** The entire between-encoder spread on the
-benchmark's own protocol is **0.0898** Pearson. Ignoring slide boundaries is worth **0.1575** —
-1.75× that spread, positive in 30 of 30 encoder–task cells — decomposing into spatial adjacency
-(0.0335) and a slide-level signature (0.1241). Crossing institutions costs a further 0.0419.
+benchmark's own protocol is **0.0977** Pearson (hoptimus1 0.4229 to resnet50 0.3252, 12 encoders).
+Ignoring slide boundaries is worth **0.1575** — 1.61× that spread, positive in 30 of 30 encoder–task
+cells — decomposing into spatial adjacency (0.0335) and a slide-level signature (0.1241).
+Crossing institutions costs a further 0.0419. The decomposition itself was run on three encoders
+(hoptimus0, uni_v2, virchow), so it does not include hoptimus1; the spread it is compared against is
+the current 12-encoder one.
 [`results/tailored/splits/`](results/tailored/splits)
 
 **2. Pooled Pearson is not a constant yardstick.** Correlation computed on a pooled test set
@@ -195,5 +198,6 @@ present is current. They remain recoverable from git history.
    with in-domain sample size, so any single number describes the reference task chosen.
 3. **Institution shift rests on one task** (4 slides), the only one with two cohort sources of the
    same tissue and assay.
-4. **`hoptimus1` covers `pca_ridge` only**; the other three heads have 11 encoders.
+4. **`hoptimus1` covers `pca_ridge` only.** `raw_ridge` and `raw_xgb` have 11 encoders each;
+   `pca_xgb` has 1 (resnet50), by design.
 5. **Stage 5 training has not run** — CUDA-only against a saturated GPU queue.
