@@ -1,0 +1,14 @@
+Round 2, stage R0 — scan-resolution columns
+slurm_job_id      : 1381177
+slurm_partition   : spill
+node              : c0312
+date              : 2026-09-16T19:50:11-0400
+repo_commit       : eb670fa23b2e704d02a50393cd67c09d476b69d0
+script            : code/scripts/round2_r0_resolution_columns.py
+command_line      : /work/users/w/e/weiyang/hest_replication/code/scripts/round2_r0_resolution_columns.py
+bin_edges         : [0.0, 0.15, 0.23, 0.3, 0.4, 0.5, inf]
+bin_labels        : ['<=0.15', '0.15-0.23', '0.23-0.30', '0.30-0.40', '0.40-0.50', '>0.50']
+plan              : round2_execution_plan.md stage R0 item 2 (artifact 584a9657-b0a0-4a50-bdfd-7099414273a6)
+review            : HEST_replication_review.md section 5.3 (artifact 63c03ac9-4a17-4fc0-892f-eb7860f1cba9)
+files_updated     : 20
+prediction_rows   : 130072250

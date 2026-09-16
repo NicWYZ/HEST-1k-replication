@@ -4,7 +4,7 @@ Replication of the HEST-1k benchmark (Jaume et al., NeurIPS 2024, arXiv:2406.161
 Longleaf, instrumented so its byproducts support downstream work on calibrated uncertainty for
 histology-to-expression prediction.
 
-**Private repository. Contains no gated data** — see [What is not here](#what-is-not-here).
+**Contains no gated data** — see [What is not here](#what-is-not-here).
 
 This repository holds results, code and reference documentation only. Narrative write-ups and
 working documents are kept outside it; this README is the entry point.
@@ -23,7 +23,8 @@ working documents are kept outside it; this README is the entry point.
 ## Headline result
 
 Against the live leaderboard snapshot, the `pca_ridge` head agrees to **mean |diff| 0.0002**
-over 99 encoder–task cells, with **0 of 99** exceeding the 0.03 acceptance threshold. ResNet50
+over 108 encoder–task cells (12 encoders × 9 paper tasks), with **0 of 108** exceeding the 0.03
+acceptance threshold. ResNet50
 reproduces Table 1 **exactly** (0.3252) — the informative case, since it has no gated weights,
 no version ambiguity and no transform drift.
 
@@ -80,7 +81,7 @@ Named `<features>_<model>`:
 `pca_xgb` is kept on purpose. The paper does not state which feature scale Table A14 used;
 piloting both on resnet50 settled it by measurement (raw 0.3278 vs the printed 0.326; PCA
 0.3046). That mismatch is the *evidence for the selection*, not a replication failure, and
-`results/summary/discrepancy_table_v2.csv` flags it with a `config_role` column.
+`results/summary/discrepancy_table.csv` flags it with a `config_role` column.
 
 ### The diagnostics
 
@@ -103,7 +104,11 @@ Each is reproducible from the named table; the reasoning lives with the script t
 benchmark's own protocol is **0.0977** Pearson (hoptimus1 0.4229 to resnet50 0.3252, 12 encoders).
 Ignoring slide boundaries is worth **0.1575** — 1.61× that spread, positive in 30 of 30 encoder–task
 cells — decomposing into spatial adjacency (0.0335) and a slide-level signature (0.1241).
-Crossing institutions costs a further 0.0419. The decomposition itself was run on three encoders
+The `blocked − patient` term is reported per task rather than pooled, because in multi-slide tasks
+it contains same-patient-other-slide information as well as slide identity (COAD 0.294 against
+0.03–0.16 elsewhere). The contrast previously labelled "institution shift, 0.0419" is **not** an
+institution contrast and has been withdrawn as a scalar — see limitation 3.
+The decomposition itself was run on three encoders
 (hoptimus0, uni_v2, virchow), so it does not include hoptimus1; the spread it is compared against is
 the current 12-encoder one.
 [`results/tailored/splits/`](results/tailored/splits)
@@ -111,8 +116,13 @@ the current 12-encoder one.
 **2. Pooled Pearson is not a constant yardstick.** Correlation computed on a pooled test set
 carries between-patient variance in its denominator, so the same model scores higher on a more
 heterogeneous test set — **exactly 0.0000** inflation when the test set is one patient, **+0.19**
-when it spans nine. All split results therefore use within-patient Pearson, with the pooled value
-retained so the artefact is measured rather than assumed.
+when it spans nine. All split results therefore use **within-slide** Pearson (the correlation is
+computed per sample, then averaged over genes and over slides), with the pooled value retained so
+the artefact is measured rather than assumed. On the three tasks where a patient contributes more
+than one slide — PRAD (23 slides, 2 patients), COAD (4, 2) and READ (4, 2) — within-slide is not
+the same as within-patient and does not equal the benchmark's own Table 1 number. On the other
+seven tasks, including LYMPH_IDC (4 slides, 4 distinct patients), each patient contributes exactly
+one slide and the two metrics coincide.
 
 **3. Table A13's encoder ranking tracks embedding width, not representation quality.**
 Spearman(dim, score) = **−0.954** (p = 5.4 × 10⁻⁶) for `raw_ridge`, against **+0.735** for
@@ -131,10 +141,15 @@ imaging-based tasks vs 0.61 for sequencing-based).
 
 **5. Slides are identifiable from frozen features; institutions are not resolved.** A linear probe
 recovers slide identity at **0.980** balanced accuracy under spatial block cross-validation (0.990
-under random splitting), with the nearest-training-spot distance verified to widen 2.83×. But the
-only confound-free site contrast — two institutions, same tissue, same gene panel — reaches
-**0.682** with just **2 of 11** encoders distinguishable from chance. The consequence of site shift
-is measured; the mechanism is not established for institutions.
+under random splitting), with the nearest-training-spot distance verified to widen 2.83×. What that
+separability is made of is **not** established: two patients' tumours, two scan resolutions and two
+stain batches all separate, and the probe cannot tell them apart. The IDC TENX-versus-NCBI probe,
+previously described here as a confound-free institution contrast, is neither confound-free nor an
+institution contrast (both halves were generated by the same company, and the two halves differ in
+scan resolution); at **0.682** balanced accuracy on four slides with **2 of 11** encoders
+distinguishable from chance it is **inconclusive**. The technology (0.994) and cohort-source
+(0.938) probes are confounded by construction — each task is one technology and most sources occur
+in one task only — so they measure tissue, not site.
 [`results/tailored/site_probes/`](results/tailored/site_probes)
 
 **6. Patch geometry must be calibrated per sample.** Patch extents span **163–818 px** across the
@@ -196,8 +211,56 @@ present is current. They remain recoverable from git history.
    check establishes only that the ridge fit does not couple targets, a different question.
 2. **Across-task shift is not a scalar.** Even with training volume matched it varies monotonically
    with in-domain sample size, so any single number describes the reference task chosen.
-3. **Institution shift rests on one task** (4 slides), the only one with two cohort sources of the
-   same tissue and assay.
+3. **There is no clean institution contrast in HEST-bench, and the IDC one has been withdrawn.**
+   The contrast used in round 1 — TENX95/TENX99 against NCBI783/NCBI785 within IDC — was labelled
+   "differing only in source institution." Both halves were in fact generated by 10x Genomics (the
+   NCBI pair is the GEO deposit of Janesick et al. 2023, whose authors are 10x staff), and they
+   also differ in scan resolution (0.2125 µm/px against 0.274 and 0.364). The four per-slide gaps
+   are asymmetric in the direction a resolution explanation predicts, not the symmetric pattern an
+   institution effect would give:
+
+   | held-out slide | µm/px | gap (source seen − unseen) |
+   |---|---|---|
+   | NCBI783 | 0.274 | 0.002 |
+   | NCBI785 | 0.364 | 0.014 |
+   | TENX95 | 0.2125 | 0.052 |
+   | TENX99 | 0.2125 | 0.099 |
+
+   The mean of these four, 0.0419, is therefore **not** reported as a site-shift effect. The
+   correct description of the contrast is "novel slide, same generating lab, different scan
+   resolution." An institution axis needs full HEST-1k, not the benchmark subset.
 4. **`hoptimus1` covers `pca_ridge` only.** `raw_ridge` and `raw_xgb` have 11 encoders each;
    `pca_xgb` has 1 (resnet50), by design.
 5. **Stage 5 training has not run** — CUDA-only against a saturated GPU queue.
+
+### Scan resolution
+
+The estimated pixel size of the source image varies **5.02-fold across the 72 benchmark samples**
+(0.137 to 0.688 µm/px) and, in three tasks, varies *within* the task in a way that is aligned with
+patient identity. Computed from
+[`results/tailored/integrity/sample_metadata.csv`](results/tailored/integrity/sample_metadata.csv)
+(`pixel_size_um`, `resolution_group`) and
+[`results/tailored/morphology/patch_scale_sources.csv`](results/tailored/morphology/patch_scale_sources.csv).
+
+| task | samples | patients | distinct µm/px (count) | within-task spread | consequence |
+|---|---|---|---|---|---|
+| PRAD | 23 | 2 | 0.172 (1), 0.341–0.349 (15), 0.573–0.574 (5), 0.688 (2) | 4.00× | no resolution group contains both patients, so resolution predicts patient perfectly |
+| PAAD | 3 | 3 | 0.137 (1), 0.274 (2) | 2.00× | one of three patients differs two-fold |
+| SKCM | 2 | 2 | 0.137 (1), 0.274 (1) | 2.00× | the two patients differ two-fold; resolution predicts patient |
+| IDC | 4 | 4 | 0.2125 (2), 0.274 (1), 0.364 (1) | 1.71× | cohort source is aligned with resolution (TENX 0.2125; NCBI 0.274 and 0.364) |
+| COAD | 4 | 2 | 0.250 (1), 0.274 (3) | 1.10× | small, and hidden inside a single resolution bin |
+| CCRCC, HCC, LUNG, LYMPH_IDC, READ | 24, 2, 2, 4, 4 | — | uniform within task | ≤ 1.01× | no confound |
+
+Three consequences, none of which round 1 accounted for:
+
+- **In PRAD, SKCM and PAAD the shipped patient folds are also resolution folds.** Part of what
+  Table 1 calls generalisation to a new patient in those tasks is generalisation to a new scan
+  resolution. This is a property of the public benchmark, not of this replication.
+- **Every slide-identity and cohort-source probe is partly a resolution probe**, and every
+  slide-signature term includes it. Seven PRAD slides come from source regions of about 195 px
+  upsampled to 224, and one from a 652 px region downsampled; interpolation leaves a per-slide
+  signature in sharpness and texture statistics that an encoder will represent and a linear probe
+  will read.
+- **Resolution is a per-slide technical covariate that is neither biology nor institution.** It is
+  joined to every prediction row (`pixel_size_um`, `resolution_group`) and is used as a covariate
+  or stratification variable in every probe and shift analysis from round 2 onward.
