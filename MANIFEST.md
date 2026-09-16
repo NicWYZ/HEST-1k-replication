@@ -1,6 +1,6 @@
 # MANIFEST — large artifacts held on Longleaf
 
-Generated: 2026-09-15T22:34:23
+Generated: 2026-09-15T22:35:50
 Host path root: `/work/users/w/e/weiyang/hest_replication`
 
 These files are deliberately **not** committed: GitHub's 100 MB per-file limit, and
