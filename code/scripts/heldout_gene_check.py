@@ -39,7 +39,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.linear_model import Ridge
 
 ROOT = "/work/users/w/e/weiyang/hest_replication"
-BD, EMB, OUT = f"{ROOT}/bench_data", f"{ROOT}/embeddings", f"{ROOT}/instrumentation"
+BD, EMB, OUT = f"{ROOT}/bench_data", f"{ROOT}/embeddings", f"{ROOT}/results/tailored/genes"
 SEED, LATENT, N_DROP = 1, 256, 10
 task, enc = sys.argv[1], sys.argv[2]
 

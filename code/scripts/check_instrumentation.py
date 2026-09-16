@@ -11,7 +11,8 @@ import os, json, glob
 import numpy as np, pandas as pd
 
 ROOT = "/work/users/w/e/weiyang/hest_replication"
-OUT  = f"{ROOT}/instrumentation"
+DATA = f"{ROOT}/instrumentation"                       # gitignored: the big parquets
+OUT  = f"{ROOT}/results/tailored/integrity"
 inv  = json.load(open(f"{ROOT}/bench_data/inventory.json"))
 inv_patches = {t: sum(r.get("n_barcodes_h5", 0) for r in i["samples"]) for t, i in inv.items()}
 
@@ -26,7 +27,7 @@ for task in sorted(os.listdir(OUT)):
     n_spots = pair.nunique()
     per_spot = s.groupby(pair, observed=True).size()
     fold_per_spot = s.groupby(pair, observed=True)["fold"].nunique()
-    p = pd.read_parquet(f"{OUT}/{task}/preds.parquet", columns=["encoder","sample_id","barcode","gene"])
+    p = pd.read_parquet(f"{DATA}/{task}/preds.parquet", columns=["encoder","sample_id","barcode","gene"])
     rows.append(dict(
         task=task,
         n_spots=int(n_spots),

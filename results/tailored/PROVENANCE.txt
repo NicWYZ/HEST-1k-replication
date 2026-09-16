@@ -1,12 +1,22 @@
-dir              : /work/users/w/e/weiyang/hest_replication/results/tailored
-created          : 2026-09-13T14:24:35-04:00
-created_by       : Claude Science session df0be6b9 (HEST-1k replication, Stage 0-1)
-operator         : weiyang (Nicolas Weiyang Zhang)
-HEST_commit      : 3ddb5eaf5bd2a8133e0c0e8015816489a3d99dc3
-TRIDENT_commit   : f3eb7f301ce34f875306b545e6cfefc5d3335a5c (v0.3.2)
-conda_env        : /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest (python 3.11.16)
-HF_HOME          : /work/users/w/e/weiyang/hf_cache
-HF_user          : weiyangz
-bench_data_src   : HuggingFace MahmoodLab/hest-bench, ignore_patterns=['fm_v1/*']
-slurm_jobs       : env=1027400 dl=1027662 inv=1027799 bcchk/genechk (see reports/)
-content          : (empty) reserved for Stage 4 tailored runs
+results/tailored - diagnostics we designed, not configurations from the paper.
+
+Grouped by the question each answers; every file is produced by the same-named script under
+code/scripts/.
+
+  splits/          what a split design costs. Four designs x 5 repeats x 10 tasks, reported in
+                   WITHIN-PATIENT Pearson because pooled Pearson scales with test-set
+                   heterogeneity and is not a constant yardstick across designs.
+  site_probes/     whether slide, institution, assay and cohort are recoverable from frozen
+                   features (the exchangeability test). Includes the spatial-block variant that
+                   removes the adjacent-tissue shortcut.
+  shift/           distribution shift: leave-cohort-source-out, size-matched slide novelty, and
+                   across-task, each a different contrast and reported separately.
+  counts/          per-gene Poisson / NB / ZINB fits by AIC - which observation model the target
+                   counts support.
+  morphology/      per-spot CellViT nuclear features over the true patch box, plus the HEST
+                   Figure 3.e reproduction gate and the patch-scale calibration sources.
+  regularization/  ridge penalty sweep with Gram condition numbers.
+  genes/           held-out-gene check, with the penalty held fixed so gene subsetting is
+                   separated from the regularisation change the benchmark's formula induces.
+  integrity/       verification of the instrumentation layer against independent references,
+                   the sample-metadata join, and the Stage 5 integration check.

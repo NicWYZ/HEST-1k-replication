@@ -3,7 +3,7 @@
 
 Row identity in inference_dump.pkl is reconstructed from splits/test_<k>.csv plus the
 barcode order in each embedding HDF5. That mapping is PROVEN in
-instrumentation/row_identity_check.csv: reconstructing targets_all independently agrees to
+results/tailored/integrity/row_identity_check.csv: reconstructing targets_all independently agrees to
 4.4e-7 (below float32 eps x max value = 9.6e-7) while any row permutation registers ~8.0.
 
 Writes, per task, under instrumentation/<task>/:
@@ -17,7 +17,8 @@ import numpy as np, pandas as pd, h5py, anndata as ad, scanpy as sc
 
 ROOT = "/work/users/w/e/weiyang/hest_replication"
 BD, EMB, RES = f"{ROOT}/bench_data", f"{ROOT}/embeddings", f"{ROOT}/results/faithful"
-OUT = f"{ROOT}/instrumentation"
+DATA = f"{ROOT}/instrumentation"                       # gitignored: the big parquets
+OUT = f"{ROOT}/results/tailored/integrity"
 HEAD = "faithful_pca_ridge"
 
 def read_emb(path):
@@ -125,9 +126,9 @@ for task in tasks:
         worst = max(worst, float(np.max(np.abs(blk.target.to_numpy(np.float64) - ref.to_numpy()))))
     del key
 
-    os.makedirs(f"{OUT}/{task}", exist_ok=True)
+    os.makedirs(f"{DATA}/{task}", exist_ok=True)
     for df_, nm in ((spots,"spots"), (preds,"preds")):
-        df_.to_parquet(f"{OUT}/{task}/{nm}.parquet", index=False, compression="snappy")
+        df_.to_parquet(f"{DATA}/{task}/{nm}.parquet", index=False, compression="snappy")
     # unique (sample_id, barcode) pairs -- NOT barcode.nunique(), which counts barcode
     # strings and undercounts badly: Xenium tasks reuse pseudo-Visium grid barcodes
     # (000x002 etc.) in every sample, and Visium barcodes recur across samples.

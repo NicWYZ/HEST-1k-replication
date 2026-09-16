@@ -1,0 +1,17 @@
+results/summary - the official aggregated tables. Regenerate with:
+    python code/scripts/aggregate_results.py
+
+  results_encoder.csv   head x encoder -> average over tasks (paper-9 and all-10)
+  results_task.csv      head x encoder x task -> mean/std over folds  [per-task table of record]
+  results_split.csv     head x encoder x task x split -> per-fold Pearson
+  results_gene.csv      head x encoder x task x gene -> mean Pearson
+
+  head_comparison_paper9.csv          all heads side by side with embedding dimension
+  faithful_pca_ridge_task_matrix.csv  encoder x task matrix for the Table 1 protocol
+  discrepancy_table_v2.csv            ours vs paper vs live leaderboard, with a config_role
+                                      column flagging pca_xgb as a rejected candidate
+  scaling_law_inputs.csv              parameter count vs score (Figure 2a), raw and log10
+  hest_leaderboard_030426.csv         the leaderboard snapshot compared against
+
+The first four are rebuilt from results/faithful by the aggregation script. The rest are
+analysis products; regenerating them is described in the script that produced each.

@@ -32,7 +32,7 @@ from sklearn.metrics import balanced_accuracy_score
 from scipy.spatial import cKDTree
 
 ROOT = "/work/users/w/e/weiyang/hest_replication"
-BD, EMB, OUT = f"{ROOT}/bench_data", f"{ROOT}/embeddings", f"{ROOT}/instrumentation"
+BD, EMB, OUT = f"{ROOT}/bench_data", f"{ROOT}/embeddings", f"{ROOT}/results/tailored/site_probes"
 SEED, LATENT, GRID, TEST_FRAC = 1, 256, 6, 0.30
 rng_global = np.random.default_rng(SEED)
 

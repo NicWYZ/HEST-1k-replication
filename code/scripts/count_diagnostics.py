@@ -5,7 +5,14 @@ Per (task, gene), on the RAW integer counts stored in instrumentation/<task>/spo
   - zero fraction
   - mean, variance, Fano factor (var/mean); Poisson implies Fano = 1
   - method-of-moments NB dispersion
-  - marginal (intercept-only) NB vs ZINB fit, compared by BIC
+  - marginal (intercept-only) POISSON, NB and ZINB fits, compared by AIC
+
+Handoff 4c specifies "per-gene maximum-likelihood fits of Poisson, NB, and ZINB with AIC" and
+"tabulate how often ZINB is preferred over NB". A first version fit only NB and ZINB and compared
+them by BIC. Both are now corrected: Poisson is included as the no-overdispersion reference, and
+AIC is the reported criterion. BIC is retained alongside because it penalises the extra ZINB
+parameter more heavily, so reporting both shows whether the NB-vs-ZINB verdict is criterion-
+dependent -- it should not be, and saying so requires having computed it.
 
 IMPORTANT SCOPE CAVEAT (paper Appendix C.3): these 50 genes per task are the most variable
 genes AFTER excluding genes with non-zero counts in under 10% of spots. They are therefore
@@ -20,23 +27,37 @@ import statsmodels.api as sm
 from statsmodels.discrete.count_model import ZeroInflatedNegativeBinomialP
 
 ROOT = "/work/users/w/e/weiyang/hest_replication"
-OUT  = f"{ROOT}/instrumentation"
+DATA = f"{ROOT}/instrumentation"                       # gitignored: spots.parquet
+OUT  = f"{ROOT}/results/tailored/counts"
 
-def fit_bic(y):
-    """Intercept-only NB and ZINB; return (bic_nb, bic_zinb, converged flags)."""
+def fit_ic(y):
+    """Intercept-only Poisson, NB and ZINB. Returns AIC and BIC for each plus converged flags.
+
+    Poisson has no dispersion parameter, so AIC_poisson - AIC_nb quantifies the evidence for
+    overdispersion; the Fano factor says the same thing without a likelihood."""
     X = np.ones((len(y), 1))
-    bic_nb = bic_zi = np.nan; c_nb = c_zi = False
+    out = dict(aic_pois=np.nan, bic_pois=np.nan, aic_nb=np.nan, bic_nb=np.nan,
+               aic_zinb=np.nan, bic_zinb=np.nan,
+               pois_converged=False, nb_converged=False, zinb_converged=False)
+    try:
+        p = sm.Poisson(y, X).fit(disp=0, maxiter=200)
+        out.update(aic_pois=float(p.aic), bic_pois=float(p.bic),
+                   pois_converged=bool(p.mle_retvals.get("converged", False)))
+    except Exception:
+        pass
     try:
         m = sm.NegativeBinomial(y, X).fit(disp=0, maxiter=200)
-        bic_nb, c_nb = float(m.bic), bool(m.mle_retvals.get("converged", False))
+        out.update(aic_nb=float(m.aic), bic_nb=float(m.bic),
+                   nb_converged=bool(m.mle_retvals.get("converged", False)))
     except Exception:
         pass
     try:
         z = ZeroInflatedNegativeBinomialP(y, X, exog_infl=X).fit(disp=0, maxiter=200)
-        bic_zi, c_zi = float(z.bic), bool(z.mle_retvals.get("converged", False))
+        out.update(aic_zinb=float(z.aic), bic_zinb=float(z.bic),
+                   zinb_converged=bool(z.mle_retvals.get("converged", False)))
     except Exception:
         pass
-    return bic_nb, bic_zi, c_nb, c_zi
+    return out
 
 rows = []
 for task in sorted(os.listdir(OUT)):
@@ -53,16 +74,21 @@ for task in sorted(os.listdir(OUT)):
         fano = var / mu if mu > 0 else np.nan
         # method-of-moments NB dispersion: var = mu + alpha*mu^2
         alpha = (var - mu) / (mu**2) if mu > 0 and var > mu else 0.0
-        bn, bz, cn, cz = fit_bic(yi)
+        ic = fit_ic(yi)
         rows.append(dict(task=task, gene=gene, n=len(yi), mean=mu, var=var,
                          zero_frac=zf, fano=fano, nb_alpha_mom=alpha,
-                         bic_nb=bn, bic_zinb=bz, nb_converged=cn, zinb_converged=cz,
-                         delta_bic=(bn - bz) if np.isfinite(bn) and np.isfinite(bz) else np.nan,
+                         **ic,
+                         delta_aic=(ic["aic_nb"] - ic["aic_zinb"]),
+                         delta_bic=(ic["bic_nb"] - ic["bic_zinb"]),
+                         delta_aic_overdisp=(ic["aic_pois"] - ic["aic_nb"]),
                          mean_depth=float(g.spot_total_counts.mean())))
     print(f"[done] {task}: {s.gene.nunique()} genes", flush=True)
 
 d = pd.DataFrame(rows)
-d["zinb_preferred"] = d.delta_bic > 0          # BIC_NB - BIC_ZINB > 0 favours ZINB
+# handoff 4c reports the AIC verdict; BIC is kept to show the verdict is not criterion-dependent
+d["zinb_preferred"]     = d.delta_aic > 0      # AIC_NB - AIC_ZINB > 0 favours ZINB
+d["zinb_preferred_bic"] = d.delta_bic > 0
+d["nb_beats_poisson"]   = d.delta_aic_overdisp > 0
 d["both_converged"] = d.nb_converged & d.zinb_converged
 d.to_csv(f"{OUT}/count_diagnostics.csv", index=False)
 
@@ -75,7 +101,16 @@ q = d.groupby("task").agg(
 print(q.to_string())
 print("\ngenes with Fano > 1 (overdispersed vs Poisson):",
       int((d.fano > 1).sum()), "/", len(d))
+print("genes where NB beats Poisson by AIC (overdispersion):",
+      int((d.nb_beats_poisson & d.pois_converged & d.nb_converged).sum()), "/",
+      int((d.pois_converged & d.nb_converged).sum()))
+print("genes where ZINB beats NB by AIC (both converged):",
+      int((d.zinb_preferred & d.both_converged).sum()), "/", int(d.both_converged.sum()))
+print("same verdict under BIC:",
+      int((d.zinb_preferred == d.zinb_preferred_bic).sum()), "/", len(d))
 print("genes where ZINB beats NB by BIC (both converged):",
       int((d.zinb_preferred & d.both_converged).sum()), "/", int(d.both_converged.sum()))
-print("median delta_BIC (NB - ZINB), converged only:",
-      round(float(d.loc[d.both_converged, "delta_bic"].median()), 2))
+print("median delta_AIC (NB - ZINB), converged only:",
+      round(float(d.loc[d.both_converged, "delta_aic"].median()), 2))
+print("median delta_AIC (Poisson - NB):",
+      round(float(d.loc[d.pois_converged & d.nb_converged, "delta_aic_overdisp"].median()), 1))

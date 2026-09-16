@@ -1,12 +1,30 @@
-dir              : /work/users/w/e/weiyang/hest_replication/results/faithful
-created          : 2026-09-13T14:24:35-04:00
-created_by       : Claude Science session df0be6b9 (HEST-1k replication, Stage 0-1)
-operator         : weiyang (Nicolas Weiyang Zhang)
-HEST_commit      : 3ddb5eaf5bd2a8133e0c0e8015816489a3d99dc3
-TRIDENT_commit   : f3eb7f301ce34f875306b545e6cfefc5d3335a5c (v0.3.2)
-conda_env        : /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest (python 3.11.16)
-HF_HOME          : /work/users/w/e/weiyang/hf_cache
-HF_user          : weiyangz
-bench_data_src   : HuggingFace MahmoodLab/hest-bench, ignore_patterns=['fm_v1/*']
-slurm_jobs       : env=1027400 dl=1027662 inv=1027799 bcchk/genechk (see reports/)
-content          : (empty) reserved for Stage 2 faithful benchmark runs
+results/faithful - the four regression heads the HEST paper reports.
+
+LAYOUT   <head>/<encoder>/<task>/{results_kfold.json, enc_results.json, split<N>/...}
+
+HEADS    named <features>_<model>
+  pca_ridge  PCA-256 + ridge      the Table 1 protocol; 12 encoders
+  raw_ridge  raw embeddings + ridge   Table A13; 11 encoders
+  raw_xgb    raw embeddings + XGBoost Table A14 as the paper ran it; 11 encoders
+  pca_xgb    PCA-256 + XGBoost    Table A14's REJECTED candidate, resnet50 only. Retained
+             deliberately: its 0.3046 against A14's printed 0.326, versus raw_xgb's 0.3278,
+             is the evidence identifying which feature scale the paper used. It is not a
+             replication failure and must not be read as one.
+
+RECONSTRUCTED FROM RAW OUTPUT. HEST's benchmark.py writes <exp_code>::<timestamp> directories
+and exp_code was chosen per submission wave, so the same head appeared under several names
+(faithful_pca_ridge, faithful_ridge, faithful_xgb, a14_xgb_raw, probe_xgb_nopca). Runs killed
+at their wall limit were completed by a second job with a _part2 exp_code, leaving one
+(head, encoder) split across two directories, and the interrupted parent additionally held a
+PARTIAL task directory with no results_kfold.json. code/scripts/reorganize_repo.py resolved
+this per (head, encoder, task): the directory that actually contains results_kfold.json wins,
+newest timestamp breaking ties, partial task directories dropped. The redundant inner encoder
+level was flattened. Configuration for each run is code/configs/<head>__<encoder>.yaml.
+
+NOT PRESENT. dataset_results.{csv,json} were removed. They are per-RUN summaries, so for
+hoptimus1 - executed as 10 single-task jobs to fit the GPU queue - each covered one task and
+the surviving copy advertised a single-task average as the encoder's score. The authoritative
+per-task table is results/summary/results_task.csv.
+
+hoptimus1 was run as 10 separate single-task jobs; code/configs/pca_ridge__hoptimus1.yaml is
+the equivalent single config.

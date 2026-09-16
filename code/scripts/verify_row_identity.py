@@ -56,7 +56,7 @@ for task, enc in CASES:
               f"max|diff|={maxdiff:.3e}  exact={rows[-1]['exact']}", flush=True)
 
 df = pd.DataFrame(rows)
-df.to_csv(f"{ROOT}/instrumentation/row_identity_check.csv", index=False)
+df.to_csv(f"{ROOT}/results/tailored/integrity/row_identity_check.csv", index=False)
 print()
 print("cases checked      :", len(df))
 print("all shapes match   :", bool(df.shape_match.all()))

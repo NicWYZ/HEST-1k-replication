@@ -32,7 +32,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.linear_model import Ridge
 
 ROOT = "/work/users/w/e/weiyang/hest_replication"
-BD, EMB, OUT = f"{ROOT}/bench_data", f"{ROOT}/embeddings", f"{ROOT}/instrumentation"
+BD, EMB, OUT = f"{ROOT}/bench_data", f"{ROOT}/embeddings", f"{ROOT}/results/tailored/shift"
 SEED, LATENT, MIN_GENES = 1, 256, 10
 XENIUM = ["COAD","IDC","LUNG","PAAD","SKCM"]
 enc = sys.argv[1]

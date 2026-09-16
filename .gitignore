@@ -53,3 +53,8 @@ logs/
 # commit, integration findings) is committed at code/stage5_provenance/STFLOW_SOURCE.txt.
 code/stage5/
 *.bak
+
+# Working data, NOT a deliverable: the 130M-row prediction parquets, CellViT segmentations and
+# per-task morphology parquets. Scripts write large intermediates here (DATA) and their small
+# summary CSVs to results/tailored/<question> (OUT). See code/scripts/reorganize_repo.py.
+instrumentation/

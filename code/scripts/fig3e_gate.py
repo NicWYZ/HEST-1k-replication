@@ -28,14 +28,15 @@ from scipy.spatial import cKDTree
 from huggingface_hub import hf_hub_download
 
 ROOT = "/work/users/w/e/weiyang/hest_replication"
-BD, OUT = f"{ROOT}/bench_data", f"{ROOT}/instrumentation"
+BD, OUT = f"{ROOT}/bench_data", f"{ROOT}/results/tailored/morphology"
+DATA = f"{ROOT}/instrumentation"   # gitignored: CellViT segmentations, per-spot parquet
 # NO hardcoded micron-per-pixel. The v1.1.0 metadata ships no pixel-size column, so a constant
 # would silently apply the wrong physical patch size to any sample not scanned at 0.5 um/px.
 # Both the CellViT polygons and adata.obsm['spatial'] live in the SAME WSI pixel space, so the
 # assignment needs no micron conversion at all -- only a spot territory radius, which is
 # calibrated per sample from the spot grid's own median nearest-neighbour spacing.
 SPOT_FRAC = 0.5                        # a nucleus belongs to a spot within half the grid pitch
-os.makedirs(f"{OUT}/cellvit", exist_ok=True)
+os.makedirs(f"{DATA}/cellvit", exist_ok=True)
 
 meta = pd.read_csv(f"{ROOT}/code/HEST/assets/HEST_v1_1_0.csv")
 idcols = [c for c in meta.columns if c.lower() in ("id","sample_id","hest_id")]
@@ -116,7 +117,7 @@ for p in sorted(glob.glob(f"{BD}/IDC/adata/*.h5ad")):
 
 d = pd.DataFrame(rows)
 d.to_csv(f"{OUT}/fig3e_gate.csv", index=False)
-pd.concat(per_spot_all, ignore_index=True).to_parquet(f"{OUT}/fig3e_per_spot.parquet", index=False)
+pd.concat(per_spot_all, ignore_index=True).to_parquet(f"{DATA}/fig3e_per_spot.parquet", index=False)
 print("\n=== Figure 3.e gate ===")
 print(d[["sample_id","n_nuclei_total","n_nuclei_neoplastic","n_spots_with_neoplastic",
          "spot_pitch_px","frac_nuclei_assigned","pearson_raw","pearson_log1p",

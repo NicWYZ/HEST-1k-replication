@@ -29,7 +29,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.linear_model import Ridge
 
 ROOT = "/work/users/w/e/weiyang/hest_replication"
-BD, EMB, OUT = f"{ROOT}/bench_data", f"{ROOT}/embeddings", f"{ROOT}/instrumentation"
+BD, EMB, OUT = f"{ROOT}/bench_data", f"{ROOT}/embeddings", f"{ROOT}/results/tailored/regularization"
 SEED, LATENT = 1, 256
 task, enc = sys.argv[1], sys.argv[2]
 ALPHAS = [0.0, 1e-4, 1e-3, 1e-2, 1e-1, 1.0, 1e1, 1e2, 1e3, 1e4, 1e5, 1e6]

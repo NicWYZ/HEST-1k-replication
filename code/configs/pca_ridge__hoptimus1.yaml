@@ -1,0 +1,18 @@
+# Faithful run - PCA256 + ridge (the paper's Table 1 protocol)
+# NOTE batch_size 64, not the 128 used for the other encoders: H-optimus-1 is a ViT-giant and
+# 64 keeps inference inside a 16 GB card, widening the eligible GPU pool. The head is fitted on
+# cached embeddings, so batch size affects extraction throughput only, not the result.
+bench_data_root: /work/users/w/e/weiyang/hest_replication/bench_data
+results_dir:     /work/users/w/e/weiyang/hest_replication/results/faithful
+embed_dataroot:  /work/users/w/e/weiyang/hest_replication/embeddings
+exp_code: pca_ridge__hoptimus1
+seed: 1
+batch_size: 64
+num_workers: 4
+gene_list: var_50genes.json
+method: ridge
+normalize: True
+dimreduce: "PCA"
+latent_dim: 256
+encoders: ["hoptimus1"]
+datasets: ["IDC", "PRAD", "PAAD", "SKCM", "COAD", "READ", "CCRCC", "LUNG", "LYMPH_IDC", "HCC"]

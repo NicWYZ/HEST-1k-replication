@@ -1,33 +1,53 @@
 #!/usr/bin/env python
-"""Stage 4e: per-spot CellViT morphology features for all benchmark samples.
+"""Stage 4e (v2): per-spot CellViT morphology features over the ACTUAL patch the encoder saw.
 
-handoff 4e: "per spot compute nuclear count, mean and median nuclear area, and the fraction of
-nuclei in each of the five CellViT classes within the 112um patch. Join to 4a."
+handoff 4e asks for nuclei "within the 112um patch". v1 of this script assigned each nucleus to
+its nearest spot within half the spot-grid pitch. That was wrong in two ways, both found by
+reading the patch HDF5 attributes rather than inferring geometry:
 
-Coordinate handling is the validated version from fig3e_gate.py, which reproduced HEST Figure 3.e
-at r=0.4578 vs the paper's 0.47 on NCBI785. Two points carried over, both load-bearing:
+1. WRONG REGION. The patch extent in WSI pixels is 224 * factor, where `factor` is stored as an
+   attribute on the patches/<sample>.h5 'img' dataset. It is NOT half the spot pitch. Across the
+   benchmark the patch is consistently ~1.12x the spot spacing, so a pitch/2 radius under-covered
+   the patch and also used a disc where the patch is a square. The morphology features must
+   describe the same pixels the encoder embedded, otherwise the join to predictions relates two
+   different image regions.
+   The `patch_size` attribute is NOT reliable: it records the source extent for 68 of 72 samples
+   and the OUTPUT size (224) for the other 4, so reading it directly would put a 224px box where
+   409px was correct. 224 * factor is consistent for all 72.
+   Verified against the metadata across all 72 samples (patch_scale_sources.csv):
+     112 / pixel_size_um_estimated  -- agrees with 224*factor to 0.000 px on 72/72, i.e. `factor`
+                                       IS this quantity; either source is correct
+     112 / pixel_size_um_embedded   -- present for 45/72 only and disagrees by up to 415 px on 4
+                                       of those, so the embedded scan metadata is sometimes wrong
+                                       and HEST used the estimated value
+     inter_spot_dist                -- populated for the 57 Visium samples, empty for all 15
+                                       Xenium ones, so unusable as a general scale source
+   The patch attribute is preferred simply because it is the value the extraction actually used,
+   so it cannot drift from the pixels the encoder saw. Patch extents span 244-818 px across the
+   benchmark (PAAD/TENX116 is scanned at 0.137 um/px), which is why no constant works.
 
-  * NO micron conversion. CellViT polygons and adata.obsm['spatial'] share the WSI pixel space,
-    and the v1.1.0 metadata ships no pixel-size column. The spot territory radius is calibrated
-    per sample from that sample's own median nearest-neighbour spot spacing, which varies widely
-    even within one task (IDC: 275-471 px across four samples), so a constant would be wrong.
-  * Area and centroid are DERIVED from the polygon via geopandas; the parquet stores only
-    geometry, class and cell_id.
+2. NUCLEI CAN BELONG TO SEVERAL SPOTS. Because patches are ~1.12x the spot spacing, adjacent
+   patches OVERLAP. A nucleus in an overlap region was genuinely inside both patches and was seen
+   by the encoder for both spots, so it must count toward both. v1's nearest-spot assignment gave
+   each nucleus to exactly one spot, undercounting in overlap regions.
 
-The five classes are taken from the data rather than hardcoded, and asserted to be a subset of
-the expected set so a CellViT version change surfaces as an error instead of silent NaN columns.
+So: for each spot, every nucleus whose centroid lies in the square [cx +- 112*factor,
+cy +- 112*factor]. Implemented as a KD-tree ball query at the circumscribing radius followed by
+an exact box filter, chunked so the dense samples (COAD averages ~214 nuclei per spot) stay in
+memory.
 """
 import os, glob, sys
-import numpy as np, pandas as pd, anndata as ad
+import numpy as np, pandas as pd, anndata as ad, h5py
 import geopandas as gpd
 from scipy.spatial import cKDTree
 from huggingface_hub import hf_hub_download
 
 ROOT = "/work/users/w/e/weiyang/hest_replication"
-BD, OUT = f"{ROOT}/bench_data", f"{ROOT}/instrumentation"
-SPOT_FRAC = 0.5
+BD, OUT = f"{ROOT}/bench_data", f"{ROOT}/results/tailored/morphology"
+DATA = f"{ROOT}/instrumentation"   # gitignored: per-task morphology parquet
 EXPECTED = {"neoplastic","inflammatory","connective","epithelial","dead"}
-os.makedirs(f"{OUT}/morphology", exist_ok=True)
+CHUNK = 20000
+os.makedirs(f"{DATA}/morphology", exist_ok=True)
 
 tasks = sorted([d for d in os.listdir(BD) if os.path.isdir(f"{BD}/{d}") and not d.startswith('.')])
 if len(sys.argv) > 1:
@@ -35,25 +55,34 @@ if len(sys.argv) > 1:
 
 summary = []
 for task in tasks:
-    out_p = f"{OUT}/morphology/{task}_morph.parquet"
+    out_p = f"{DATA}/morphology/{task}_morph.parquet"
     if os.path.isfile(out_p):
         print(f"[skip] {task}: exists", flush=True); continue
     frames = []
     for p in sorted(glob.glob(f"{BD}/{task}/adata/*.h5ad")):
         sid = os.path.basename(p)[:-5]
+        # patch geometry, straight from the file the benchmark actually read
+        with h5py.File(f"{BD}/{task}/patches/{sid}.h5", "r") as f:
+            at = dict(f["img"].attrs)
+            factor = float(at["factor"])
+            pbar = np.asarray(f["barcode"][:]).reshape(-1)
+            patch_bc = set(x.decode() if isinstance(x,(bytes,np.bytes_)) else str(x) for x in pbar)
+        half = 112.0 * factor          # patch half-width in WSI pixels
+        assert half > 0
+
         try:
-            f = hf_hub_download("MahmoodLab/hest", f"cellvit_seg/{sid}_cellvit_seg.parquet",
-                                repo_type="dataset", cache_dir=os.environ.get("HF_HOME"))
+            fp = hf_hub_download("MahmoodLab/hest", f"cellvit_seg/{sid}_cellvit_seg.parquet",
+                                 repo_type="dataset", cache_dir=os.environ.get("HF_HOME"))
         except Exception as e:
-            print(f"[warn] {task}/{sid}: cellvit unavailable ({type(e).__name__})", flush=True)
-            continue
-        nuc = gpd.read_parquet(f)
+            print(f"[warn] {task}/{sid}: cellvit unavailable ({type(e).__name__})", flush=True); continue
+        nuc = gpd.read_parquet(fp)
         assert nuc.geometry.notna().all(), f"{sid}: null geometry"
-        cls = nuc["class"].astype(str).str.lower()
-        unknown = set(cls.unique()) - EXPECTED
-        assert not unknown, f"{sid}: unexpected CellViT classes {unknown}"
+        cls = nuc["class"].astype(str).str.lower().to_numpy()
+        unknown = set(np.unique(cls)) - EXPECTED
+        assert not unknown, f"{sid}: unexpected classes {unknown}"
         cent = nuc.geometry.centroid
-        cx, cy, area = cent.x.to_numpy(), cent.y.to_numpy(), nuc.geometry.area.to_numpy()
+        cx, cy = cent.x.to_numpy(), cent.y.to_numpy()
+        area = nuc.geometry.area.to_numpy()
         assert (area > 0).all(), f"{sid}: non-positive area"
 
         A = ad.read_h5ad(p, backed="r")
@@ -62,38 +91,44 @@ for task in tasks:
         try: A.file.close()
         except Exception: pass
 
-        tree = cKDTree(xy)
-        nn, _ = tree.query(xy, k=2)
-        pitch = float(np.median(nn[:, 1])); radius = SPOT_FRAC * pitch
-        d, j = tree.query(np.c_[cx, cy], k=1)
-        keep = d <= radius
-        assert keep.any(), f"{sid}: no nucleus fell inside any spot territory"
-
-        df = pd.DataFrame(dict(spot=j[keep], area=area[keep], cls=cls.to_numpy()[keep]))
-        g = df.groupby("spot")
-        feat = pd.DataFrame(dict(n_nuclei=g.size(), area_mean=g.area.mean(), area_median=g.area.median()))
-        # class fractions: reindexed over the full expected set so every sample has every column
-        fr = (df.pivot_table(index="spot", columns="cls", values="area", aggfunc="size")
-                .reindex(columns=sorted(EXPECTED)).fillna(0.0))
-        fr = fr.div(fr.sum(axis=1).replace(0, np.nan), axis=0)
-        fr.columns = [f"frac_{c}" for c in fr.columns]
-        feat = feat.join(fr)
-        # neoplastic-only area, the quantity Figure 3.e uses
-        neo = df[df.cls == "neoplastic"].groupby("spot").area
-        feat["neo_area_mean"] = neo.mean(); feat["n_neoplastic"] = neo.size()
-
+        tree = cKDTree(np.c_[cx, cy])
+        recs = []
+        for s0 in range(0, len(xy), CHUNK):
+            block = xy[s0:s0+CHUNK]
+            balls = tree.query_ball_point(block, r=half*np.sqrt(2.0), workers=-1)
+            for li, idxs in enumerate(balls):
+                if not idxs: continue
+                ii = np.asarray(idxs)
+                inbox = (np.abs(cx[ii]-block[li,0]) <= half) & (np.abs(cy[ii]-block[li,1]) <= half)
+                ii = ii[inbox]
+                if ii.size == 0: continue
+                a_, c_ = area[ii], cls[ii]
+                rec = dict(spot=s0+li, n_nuclei=int(ii.size),
+                           area_mean=float(a_.mean()), area_median=float(np.median(a_)))
+                for k_ in sorted(EXPECTED):
+                    rec[f"frac_{k_}"] = float((c_ == k_).mean())
+                neo = a_[c_ == "neoplastic"]
+                rec["n_neoplastic"] = int(neo.size)
+                rec["neo_area_mean"] = float(neo.mean()) if neo.size else np.nan
+                recs.append(rec)
+        feat = pd.DataFrame(recs).set_index("spot") if recs else pd.DataFrame()
         full = pd.DataFrame(index=np.arange(len(xy))).join(feat)
         full.insert(0, "barcode", bc); full.insert(0, "sample_id", sid); full.insert(0, "task", task)
-        full["n_nuclei"] = full.n_nuclei.fillna(0).astype(int)
-        full["n_neoplastic"] = full.n_neoplastic.fillna(0).astype(int)
+        full["in_patch_set"] = [b in patch_bc for b in bc]   # the 4a join key subset
+        for col in ("n_nuclei","n_neoplastic"):
+            full[col] = full[col].fillna(0).astype(int)
         frames.append(full.reset_index(drop=True))
-        summary.append(dict(task=task, sample_id=sid, n_spots=len(xy), n_nuclei=len(nuc),
-                            spot_pitch_px=pitch, frac_assigned=float(keep.mean()),
+
+        n_assigned = int(full.n_nuclei.sum())
+        summary.append(dict(task=task, sample_id=sid, n_spots=len(xy), n_patch_spots=len(patch_bc),
+                            n_nuclei=len(nuc), factor=factor, patch_px=2*half,
+                            nucleus_spot_pairs=n_assigned,
                             spots_with_nuclei=int((full.n_nuclei > 0).sum()),
-                            classes="|".join(sorted(cls.unique()))))
-        print(f"  {task}/{sid}: {len(nuc):,} nuclei, pitch {pitch:.0f}px, "
-              f"{100*keep.mean():.0f}% assigned, {int((full.n_nuclei>0).sum())}/{len(xy)} spots covered",
-              flush=True)
+                            mean_nuclei_per_spot=float(full.n_nuclei.mean()),
+                            classes="|".join(sorted(np.unique(cls)))))
+        print(f"  {task}/{sid}: {len(nuc):,} nuclei, patch {2*half:.0f}px (factor {factor:.4f}), "
+              f"{n_assigned:,} nucleus-spot pairs, "
+              f"{int((full.n_nuclei>0).sum())}/{len(xy)} spots covered", flush=True)
     if frames:
         out = pd.concat(frames, ignore_index=True)
         out.to_parquet(out_p, index=False)
@@ -101,12 +136,5 @@ for task in tasks:
 
 if summary:
     s = pd.DataFrame(summary)
-    # ONE WRITER PER FILE. Five of these run concurrently, one per task group; appending to a
-    # shared CSV would race on the header check and interleave rows. Each job writes its own
-    # file keyed by its task list, and the reader concatenates the glob.
-    tag = "_".join(tasks)
-    s.to_csv(f"{OUT}/morphology_summary__{tag}.csv", index=False)
+    s.to_csv(f"{OUT}/morphology_summary__{'_'.join(tasks)}.csv", index=False)
     print("\n" + s.to_string(index=False))
-    print(f"\nsamples: {len(s)} | median pitch {s.spot_pitch_px.median():.0f}px "
-          f"(range {s.spot_pitch_px.min():.0f}-{s.spot_pitch_px.max():.0f}) | "
-          f"mean assigned {s.frac_assigned.mean():.3f}")

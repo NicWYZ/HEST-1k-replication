@@ -28,7 +28,7 @@ import os, glob, re
 import numpy as np, pandas as pd
 
 ROOT = "/work/users/w/e/weiyang/hest_replication"
-BD, OUT = f"{ROOT}/bench_data", f"{ROOT}/instrumentation"
+BD, OUT = f"{ROOT}/bench_data", f"{ROOT}/results/tailored/integrity"
 META = f"{ROOT}/code/HEST/assets/HEST_v1_1_0.csv"
 KEEP = ["patient","st_technology","organ","oncotree_code","species","preservation_method",
         "tissue","disease_state","dataset_title","subseries","pixel_size_um_estimated",

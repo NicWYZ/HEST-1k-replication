@@ -69,7 +69,7 @@ for t in TASKS:
         print(f"  {t}/{sid}: {E.shape[0]:6d} x {E.shape[1]}  finite={np.isfinite(E).all()}", flush=True)
 
 d = pd.DataFrame(rows)
-d.to_csv(f"{ROOT}/instrumentation/stage5_integration.csv", index=False)
+d.to_csv(f"{ROOT}/results/tailored/integrity/stage5_integration.csv", index=False)
 print()
 print(d.to_string(index=False))
 print(f"\nsamples wired {len(d)} over {d.task.nunique()} tasks | all 1024-dim "

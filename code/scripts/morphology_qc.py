@@ -13,7 +13,8 @@ only the patch subset has embeddings/predictions:
 import glob, os
 import numpy as np, pandas as pd
 ROOT = "/work/users/w/e/weiyang/hest_replication"
-IN, INST = f"{ROOT}/instrumentation/morphology_v2", f"{ROOT}/instrumentation"
+IN, DATA = f"{ROOT}/instrumentation/morphology", f"{ROOT}/instrumentation"
+OUT = f"{ROOT}/results/tailored/morphology"
 FEATS = ["n_nuclei","area_mean","area_median","n_neoplastic","neo_area_mean",
          "frac_neoplastic","frac_inflammatory","frac_connective","frac_epithelial","frac_dead"]
 rows = []
@@ -21,7 +22,7 @@ for p in sorted(glob.glob(f"{IN}/*_morph.parquet")):
     task = os.path.basename(p).replace("_morph.parquet","")
     m = pd.read_parquet(p)
     inp = m[m.in_patch_set]
-    sp = pd.read_parquet(f"{INST}/{task}/spots.parquet", columns=["sample_id","barcode"])
+    sp = pd.read_parquet(f"{DATA}/{task}/spots.parquet", columns=["sample_id","barcode"])
     sp_keys = set(zip(sp.sample_id.astype(str), sp.barcode.astype(str)))
     m_keys  = set(zip(inp.sample_id.astype(str), inp.barcode.astype(str)))
     rows.append(dict(
@@ -42,7 +43,7 @@ for p in sorted(glob.glob(f"{IN}/*_morph.parquet")):
           f"coverage {(inp.n_nuclei>0).mean():.3f} vs {(m.n_nuclei>0).mean():.3f} over all adata",
           flush=True)
 d = pd.DataFrame(rows)
-d.to_csv(f"{INST}/morphology_qc.csv", index=False)
+d.to_csv(f"{OUT}/morphology_qc.csv", index=False)
 print()
 print(d[["task","in_patch","pred_spots","join_matched","join_complete","dup_keys",
          "cov_predicted","cov_all_adata","zero_nuc_predicted"]].to_string(index=False))

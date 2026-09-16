@@ -55,7 +55,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.linear_model import Ridge
 
 ROOT = "/work/users/w/e/weiyang/hest_replication"
-BD, EMB, OUT = f"{ROOT}/bench_data", f"{ROOT}/embeddings", f"{ROOT}/instrumentation"
+BD, EMB, OUT = f"{ROOT}/bench_data", f"{ROOT}/embeddings", f"{ROOT}/results/tailored/splits"
 SEED, LATENT, GRID, N_REPEATS, MIN_SPOTS = 1, 256, 6, 5, 50
 enc = sys.argv[1]
 
