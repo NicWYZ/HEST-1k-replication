@@ -1,0 +1,9 @@
+encoder,solver,check,value,threshold,passed
+virchow2,lsqr (faithful),A1 max|dPearson(int-noint)|,0.009959936141967773,1e-06,False
+virchow2,lsqr (faithful),A2 max|pred(int)-pred(ycent)|,0.013330340385437012,0.0001,False
+virchow2,lsqr (faithful),A3 max|train mean pred - target|,0.00036895275115966797,1e-06,False
+virchow2,lsqr (faithful),A2b max|(int-noint) - ybar|,0.10266828536987305,0.0001,False
+virchow2,cholesky (exact),A1 max|dPearson(int-noint)|,6.198883056640625e-06,1e-06,False
+virchow2,cholesky (exact),A2 max|pred(int)-pred(ycent)|,6.67572021484375e-06,0.0001,True
+virchow2,cholesky (exact),A3 max|train mean pred - target|,0.00036895275115966797,1e-06,False
+virchow2,cholesky (exact),A2b max|(int-noint) - ybar|,0.0001690387725830078,0.0001,False

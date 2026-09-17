@@ -1,0 +1,12 @@
+Round 2, stage R1 - intercept refit, encoder hoptimus0
+slurm_job_id    : 1387525
+slurm_partition : spill
+node            : c1134
+date            : 2026-09-16T22:47:48-0400
+repo_commit     : 145ba91626da52392f8187022d02f7ea63f5e0c0
+script          : code/scripts/round2_head_intercept.py
+command_line    : /work/users/w/e/weiyang/hest_replication/code/scripts/round2_head_intercept.py hoptimus0
+pipeline        : StandardScaler -> PCA(256, random_state=1) on train only
+alpha           : 100/(256*50)
+heads           : ('nointercept', 'intercept', 'ycentered')
+plan            : round2_execution_plan.md stage R1
