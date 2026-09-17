@@ -12,3 +12,6 @@ plan              : round2_execution_plan.md stage R0 item 2 (artifact 584a9657-
 review            : HEST_replication_review.md section 5.3 (artifact 63c03ac9-4a17-4fc0-892f-eb7860f1cba9)
 files_updated     : 20
 prediction_rows   : 130072250
+config_hash       : d69f1db8e24e03d1
+config            : {"bin_closure": "right-closed (an edge value falls in the lower group)", "bin_edges": [0.0, 0.15, 0.23, 0.3, 0.4, 0.5, null], "bin_labels": ["<=0.15", "0.15-0.23", "0.23-0.30", "0.30-0.40", "0.40-0.50", ">0.50"], "source_column": "pixel_size_um_estimated"}
+note              : config_hash backfilled 2026-09-17; the round-2 ground rules require it and the original file omitted it.

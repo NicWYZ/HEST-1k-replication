@@ -10,3 +10,6 @@ pipeline        : StandardScaler -> PCA(256, random_state=1) on train only
 alpha           : 100/(256*50)
 heads           : ('nointercept', 'intercept', 'ycentered')
 plan            : round2_execution_plan.md stage R1
+config_hash       : abc798bf1e4975d8
+config            : {"dtype": "float32 (inherited from the cached embeddings and AnnData reads)", "folds": "shipped bench_data/<task>/splits/test_*.csv", "heads": ["nointercept", "intercept", "ycentered"], "metric": "Pearson pooled over the test fold (the faithful Table-1 convention)", "pipeline": "StandardScaler -> PCA(n_components=256, random_state=1), fit on train only", "ridge_alpha": "100/(256*50)", "ridge_kwargs": {"max_iter": 1000, "random_state": 0}, "solvers": ["lsqr", "cholesky"]}
+note              : config_hash backfilled 2026-09-17; the round-2 ground rules require it and the original file omitted it.

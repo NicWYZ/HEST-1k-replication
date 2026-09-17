@@ -152,7 +152,9 @@ sm = pd.read_csv(META)
 pxmap = dict(zip(sm["sample_id"], sm.get("pixel_size_um", sm["pixel_size_um_estimated"])))
 grpmap = dict(zip(sm["sample_id"], sm["resolution_group"])) if "resolution_group" in sm else {}
 
-# Align the shard schema to round 1's preds.parquet wherever the column is reproducible.
+# Read round 1's preds.parquet schema. It is asserted against every shard before writing
+# (see the write block below), which is what enforces the plan's "same schema as round 1
+# plus a head column".
 ref_cols = None
 for t in sorted(os.listdir(f"{ROOT}/instrumentation")):
     rp = f"{ROOT}/instrumentation/{t}/preds.parquet"
@@ -219,8 +221,10 @@ for task in tasks:
                 "barcode": np.repeat(bc[te], ng),
                 "gene": np.tile(np.asarray(genes, dtype=object), ns),
                 "head": hname,
-                "y_true_log1p": Y[te].ravel().astype(np.float32),
-                "y_pred": P.ravel().astype(np.float32),
+                # column names match round 1's instrumentation/<task>/preds.parquet
+                # exactly (`pred`, `target`); y_raw_count is a declared addition.
+                "pred": P.ravel().astype(np.float32),
+                "target": Y[te].ravel().astype(np.float32),
                 "y_raw_count": R[te].ravel().astype(np.float32),
             })
             sh["pixel_size_um"] = sh["sample_id"].map(pxmap).astype(np.float64)
@@ -231,6 +235,12 @@ for task in tasks:
               f"max|int-noint|={d_ni:.3e} max|int-ycent|={d_yc:.3e}", flush=True)
 
     tab = pa.Table.from_pandas(pd.concat(shards, ignore_index=True), preserve_index=False)
+    if ref_cols is not None:
+        want = set(ref_cols) | {"head", "y_raw_count"}
+        got = set(tab.column_names)
+        assert got == want, (f"{task}: shard schema does not match round 1 plus "
+                             f"{{head, y_raw_count}}; symmetric difference "
+                             f"{sorted(got ^ want)}")
     pq.write_table(tab, f"{PARQ}/{task}/preds__{enc}.parquet", compression="snappy")
     print(f"[{task}] {tab.num_rows:,} rows written, {time.time()-t0:.0f}s", flush=True)
     del X, Y, R, shards
