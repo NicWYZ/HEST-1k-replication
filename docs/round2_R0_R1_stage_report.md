@@ -14,16 +14,20 @@ scan-resolution columns, README relabelling"), parent `eb670fa`.
 | stage | status |
 |---|---|
 | R0 · housekeeping and relabelling | **complete**, committed and pushed |
-| R1 · intercept refit | **complete on 11 of 12 encoders**; `conch_v15` still queued |
+| R1 · intercept refit | **complete on 11 of 12 encoders**; `conch_v15` deferred to the R2 submission |
 | R1 acceptance | **three of four checks FAIL as written.** The cause is established and is numerical, not a pipeline difference. Details in § 3. Report-and-wait triggered. |
 
-Two things need a decision from the oversight chat before R2 starts. Both are in § 5.
+Three things need a decision from the oversight chat: the acceptance thresholds against the measured
+float32 floor (§ 5.1), the framing of the A4 result (§ 5.2), and the `slide_out` task list for R3
+(§ 5.3). The first two block R2; the third blocks R3.
 
 `conch_v15` is not a failure: its job hit a 50-minute wall while sharing the job with `conch_v1`,
-and the rerun has been sitting in `PENDING (Priority)` for about 100 minutes. Diagnosis in § 5.4.
-Every number below is over the 11 encoders that completed, and every per-encoder table shows a
-spread small enough that the twelfth cannot move a conclusion: the median-$R^2$ result holds in
-11/11 encoders and the across-encoder standard deviation is 0.055.
+and the rerun then sat in `PENDING (Priority)` for about three hours without starting. Diagnosis in
+§ 5.4. I cancelled it rather than leave a queued job nobody was waiting to harvest, and it will be
+submitted once, with a generous wall, alongside the R2 jobs. Every number below is over the 11
+encoders that completed, and every per-encoder table shows a spread small enough that the twelfth
+cannot move a conclusion: the median-$R^2$ result holds in 11/11 encoders and the across-encoder
+standard deviation is 0.055.
 
 ---
 
@@ -47,7 +51,7 @@ spread small enough that the twelfth cannot move a conclusion: the median-$R^2$ 
 | R1 | `1387549` | gigapath, uni_v1 | < 50 min |
 | R1 | `1387550` | conch_v1 (+ conch_v15 killed at wall) | 50 min, exit 143 |
 | R1 | `1387551` | phikon, ctranspath | < 50 min |
-| R1 | `1408698` | conch_v15 | **still PENDING** |
+| R1 | `1408698` | conch_v15 | **never started; cancelled after ~3 h pending** |
 
 Three earlier R1 submissions (`1381730`, `1381735`, `1381736`) ran to completion but were
 discarded: they predate the fix described in § 3.1, and their outputs were deleted before the
@@ -343,8 +347,13 @@ and once to shorten walls from 2 h to 50 min in the belief that backfill was the
 was a mistake: it cost the accumulated age and it is what caused `conch_v15` to hit a wall. The
 50-minute wall was also simply too short at ~25 min per encoder under this contention.
 
+The `conch_v15` rerun then never started at all — about three hours in `PENDING (Priority)` — so I
+cancelled it rather than leave a queued job whose completion nobody was waiting to harvest, and
+folded it into the R2 submission.
+
 Consequence for the rest of the round: R3 is the expensive stage (five designs × three grid sizes ×
-repeats), and it should be submitted **once**, with a generous wall, and left alone.
+repeats), and it should be submitted **once**, with a generous wall, and left alone. The same
+applies to R2, which now also carries `conch_v15`.
 
 ### 5.5 Two edits beyond the letter of R0
 
@@ -368,7 +377,7 @@ COAD's two folds are one slide against three slides of the same patient.
 
 ## 6. What was not checked
 
-1. **`conch_v15`** — queued, not run. 11 of 12 encoders.
+1. **`conch_v15`** — not run. 11 of 12 encoders. Deferred to the R2 submission (§ 5.4).
 2. **float64 R1** — not run; see § 5.1. The float32 floor is measured, not removed.
 3. **The `xgb` and `raw_ridge` heads** — R1 refits `pca_ridge` only, as specified. Whether the
    missing intercept has the same consequence for the other three heads is untested; `xgb` has no
@@ -391,7 +400,9 @@ COAD's two folds are one slide against three slides of the same patient.
 
 Waiting on § 5.1, § 5.2 and § 5.3. Assuming those are resolved as proposed:
 
-1. `conch_v15` completes on its own and its row is appended to the R1 tables. No action.
+1. `conch_v15` is resubmitted **in the same batch as the R2 jobs**, once, with a 3-hour wall, and
+   its row appended to the R1 tables. Submitting it on its own again would only reset its queue age
+   a third time.
 2. **R2** next, as the plan orders it. One note from reading HEST's actual `get_k_genes`
    (`code/HEST/src/hest/utils.py:671`) rather than the plan's paraphrase: the common-gene
    intersection uses `np.intersect1d`, which **sorts** the gene order, so the shipped
