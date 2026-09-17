@@ -1,27 +1,8 @@
 # HEST-1k replication and instrumentation — final stage report
 
-*Revision 3, 2026-09-16. Revision 2 generated from the saved result tables; revision 3 applies the
-relabelling required by the oversight review of the same date (stage R0 of the round-2 plan).*
+*Revision 2, generated 2026-09-16 from the saved result tables.*
 
 **Repository:** `NicWYZ/HEST-1k-replication`, branch `main`.
-
-**What changed in revision 3 (relabelling only — no number was recomputed and no result changed).**
-
-1. The split metric is renamed **within-slide** Pearson throughout. `score()` in
-   `split_decomposition.py` correlates per *sample*, so on PRAD, COAD and READ — the three tasks
-   where a patient contributes more than one slide — it is not within-patient and does not equal
-   the benchmark's Table 1 number.
-2. The `blocked − patient` term is reported **per task** and renamed, because in multi-slide tasks
-   it contains same-patient-other-slide information as well as slide identity. The pooled 0.1241
-   averages over tasks whose terms mean different things.
-3. **The "institution shift 0.0419" row is withdrawn.** It is not an institution contrast; it is
-   replaced by the four per-slide gaps (§ 3.4).
-4. The technology and cohort-source probes move to Appendix A as confounded by construction; the
-   IDC institution probe is reported as **inconclusive**.
-5. One error inherited from the review is corrected here rather than propagated: the review lists
-   LYMPH_IDC among the tasks with two slides per patient. It is not — its four samples
-   (NCBI681–684) come from four distinct patients, one slide each, verified in
-   `sample_metadata.csv`. The multi-slide tasks are PRAD, COAD and READ only.
 
 **What changed since revision 1.** Three things, all material to an audit:
 
@@ -244,54 +225,19 @@ random repeats, 1,077 rows. [`results/tailored/splits/split_decomposition.csv`](
 test set*, so the same model scores higher on a more heterogeneous test set. Measured against how
 many patients the test set spans: **exactly 0.0000** inflation for the single-patient
 arms, **+0.1920** for the nine-patient random arms. All numbers below therefore use
-**within-slide** Pearson — `score()` correlates per sample, then averages over genes and over
-slides — with the pooled value retained so the artefact is measured rather than assumed. On PRAD,
-COAD and READ this is *not* within-patient, and on those tasks it does not equal the benchmark's
-own Table 1 number.
+**within-patient** Pearson, with the pooled value retained so the artefact is measured rather than
+assumed.
 
-| mechanism | contrast | within-slide Pearson | vs encoder spread |
+| mechanism | contrast | within-patient Pearson | vs encoder spread |
 |---|---|---|---|
 | spatial adjacency | random − blocked | **0.0335** | 0.34× |
-| slide novelty, **pooled term withheld** | blocked − patient | 0.1241 | 1.27× |
+| slide-level signature | blocked − patient | **0.1241** | 1.27× |
 | **total slide leakage** | random − patient | **0.1575** | **1.61×** |
+| institution shift | source-seen − source-unseen | **0.0419** | 0.43× |
 
-Both terms are consistently signed: adjacency positive in 30/30 cells, `blocked − patient` in
-30/30.
-
-**Why the `blocked − patient` term is not reported as one number.** The blocked design trains on
-the other blocks of *every* slide; the patient design trains on other patients only. Where each
-patient contributes one slide the difference is slide identity. Where a patient contributes several
-— PRAD, COAD, READ — it is slide identity *plus* same-patient-other-slide information, and COAD
-shows how large the second part can be. Per task, recomputed from
-[`results/tailored/splits/split_decomposition.csv`](https://github.com/NicWYZ/HEST-1k-replication/blob/main/results/tailored/splits/split_decomposition.csv):
-
-| task | adjacency | blocked − patient | total | patient design (mean ± sd, n) |
-|---|---|---|---|---|
-| CCRCC | 0.0310 | 0.0258 | 0.0568 | 0.2030 ± 0.0572 (18) |
-| COAD | 0.0343 | **0.2938** | 0.3281 | 0.3073 ± 0.0017 (6) |
-| HCC | 0.0629 | 0.1075 | 0.1703 | 0.0790 ± 0.0127 (6) |
-| IDC | 0.0267 | 0.0965 | 0.1232 | 0.5907 ± 0.0912 (12) |
-| LUNG | 0.0204 | 0.1627 | 0.1831 | 0.5614 ± 0.0280 (6) |
-| LYMPH_IDC | 0.0311 | 0.0711 | 0.1022 | 0.2643 ± 0.0418 (12) |
-| PAAD | 0.0227 | 0.1300 | 0.1527 | 0.5024 ± 0.0544 (9) |
-| PRAD | 0.0244 | 0.0897 | 0.1141 | 0.3040 ± 0.0547 (6) |
-| READ | 0.0514 | 0.1197 | 0.1710 | 0.2333 ± 0.0305 (6) |
-| SKCM | 0.0300 | 0.1439 | 0.1739 | 0.6436 ± 0.0575 (6) |
-
-COAD's 0.2938 against 0.026–0.163 everywhere else is the signature: its two folds are one slide
-against three slides of a single patient, so the blocked arm trains on three slides of the *test
-patient*. That is patient leakage, not stain memorisation. COAD's ±0.0017 across two folds and
-three encoders is also anomalously tight and is flagged for a look. Separating the slide and
-patient components where they differ requires a leave-one-slide-out-within-patient arm, which is
-stage R3 of the round-2 plan.
-
-**The adjacency term is a lower bound.** The blocked design holds out whole grid cells but imposes
-no buffer, so test spots on a block edge still have training neighbours one pitch away. The
-nearest-training-spot distance widens by a median 2.83×, which is real, but adjacency is only
-partially broken; one grid size (6×6) was used. A buffered design and a grid sweep are also R3.
-
-**The site-shift row has been withdrawn.** What round 1 reported as "institution shift 0.0419" is
-the mean of four per-slide gaps within IDC, and it is not an institution effect — see § 3.6.
+The two mechanisms are additive and consistently signed: adjacency positive in
+30/30 cells, slide identity in 30/30. The slide-level
+term is about four fifths of the total, which the probe in 3.5 corroborates independently.
 
 **So the dominant determinant of a measured score is not which foundation model supplies the
 features — it is which slides the test set may contain.**
@@ -304,13 +250,9 @@ slide off frozen embeddings, the information is unambiguously present. [`results
 
 | probe | balanced accuracy | chance | verdict |
 |---|---|---|---|
-| slide identity, spatial-block CV | **0.9805** | 1/n slides | slides are linearly separable in embedding space |
-| slide identity, random within-slide split | 0.9898 | 1/n slides | upper bound (adjacent tissue on both sides) |
-| TENX vs NCBI within IDC | 0.6818 | 0.50 | **inconclusive** at four slides — and mislabelled, see § 3.6 |
-
-The assay-technology (0.9940) and cohort-source (0.9378) probes are **confounded by construction**
-and have moved to Appendix A: each task is one technology and most sources occur in one task only,
-so those probes measure tissue, not site.
+| assay technology | 0.9940 | 0.50 | trivially separable |
+| cohort source | 0.9378 | 0.20 | **confounded** — most sources occur in one task only |
+| institution, within IDC | 0.6818 | 0.50 | the only confound-free contrast |
 
 **Slide identity survives a spatial-block design.** Under random within-slide splitting the probe
 reaches 0.9898, which is an upper bound: adjacent tissue lands on both sides. Holding out
@@ -318,28 +260,10 @@ contiguous grid blocks widens the nearest-training-spot distance by a verified m
 2.83× and accuracy falls only to **0.9805** — so this is a genuine slide-wide
 signature (stain, scanner, section), not local appearance matching.
 
-**But what the signature is made of is not established.** The probe shows the information is
-present; it cannot say what carries it. Two patients' tumours look different, two scan resolutions
-look different, and two stain batches look different, and a slide-identity probe cannot separate
-those. Round 1 read the 0.9805 as "stain, scanner, section"; scan resolution is a fourth candidate
-and, in PRAD, SKCM and PAAD, the dominant one (see *Scan resolution* below). The design that can
-decide it is a slide probe *within one patient at one resolution* — PRAD patient 2 has fifteen
-slides at 0.341–0.349 µm/px — which is stage R4 of the round-2 plan.
-
-**And the IDC contrast is not an institution contrast.** It reaches 0.6818 with only **2 of 11**
-encoders distinguishable from chance at 95% on four folds, which is uninformative at this sample
-size; § 3.6 explains why the label is wrong as well. This is Q1, now reframed.
-
-### Scan resolution is a per-slide technical covariate, and in three tasks it is aligned with patient
-
-Estimated source pixel size varies **5.02-fold** across the 72 samples (0.137–0.688 µm/px) and
-varies *within* task in five of them. In PRAD, SKCM and PAAD no resolution group contains more than
-one patient, so the shipped patient folds in those tasks are also resolution folds: part of what
-Table 1 calls generalisation to a new patient there is generalisation to a new scan resolution.
-This is a property of the public benchmark and was not stated in revision 2. The per-task table is
-in the README's *Scan resolution* section and in
-[`results/round2/R0_resolution/resolution_by_task.csv`](https://github.com/NicWYZ/HEST-1k-replication/blob/main/results/round2/R0_resolution/resolution_by_task.csv);
-`pixel_size_um` and `resolution_group` are now joined to every prediction row.
+**But institution is not resolved.** The one confound-free contrast — two institutions, same
+tissue, same assay, same gene panel — reaches 0.6818 with only **2 of
+11** encoders distinguishable from chance at 95% on four folds. The *consequence* of
+site shift is measured (3.4); the *mechanism* is not established for institutions. This is Q1.
 
 ### 3.6 Distribution shift, three designs
 
@@ -349,38 +273,8 @@ Reported separately because they are different contrasts, not three estimates of
 | design | result | interpretability |
 |---|---|---|
 | leave-cohort-source-out | smaller than slide novelty but still exceeds the encoder spread | training-set sizes differ between directions, so each direction is not individually interpretable |
-| size-matched slide novelty within IDC | four per-slide gaps, **0.0022 to 0.0992**; the mean 0.0419 is **withdrawn** as a scalar | free of aggregation artefact by construction, but **not** an institution contrast |
+| size-matched slide novelty | **0.0419** on IDC, both arms evaluated on a single slide | clean: carries no aggregation artefact by construction |
 | across-task | varies monotonically with in-domain size; IDC loses most (+0.1453), the smallest tasks go slightly negative | **not a scalar** (Q2) |
-
-**The IDC contrast, relabelled.** Round 1 called TENX-versus-NCBI within IDC "the only
-confound-free contrast: same tissue, same assay, same panel, differing only in source
-institution." The repository's own metadata contradicts that on two counts. First, the cohort
-prefix is the *repository the file was downloaded from*, not the lab that generated it: NCBI783 and
-NCBI785 are the GEO deposit of Janesick et al. (2023), whose authors are 10x Genomics staff, and
-TENX95/TENX99 come from 10x's own portal — both halves were generated by the same company. Second,
-resolution differs: the TENX slides are at 0.2125 µm/px, the NCBI slides at 0.274 and 0.364. The
-four per-slide gaps are asymmetric in exactly the way a resolution explanation predicts and an
-institution effect would not be:
-
-| held-out slide | µm/px | gap (source seen − unseen) |
-|---|---|---|
-| NCBI783 | 0.274 | 0.0022 |
-| NCBI785 | 0.364 | 0.0143 |
-| TENX95 | 0.2125 | 0.0518 |
-| TENX99 | 0.2125 | 0.0992 |
-
-Adding the other TENX slide (same resolution) to training helps predict a TENX slide by 0.05–0.10;
-adding the other NCBI slide (different resolution, 0.274 against 0.364) helps by almost nothing.
-The honest description of the contrast is **"novel slide, same generating lab, different scan
-resolution"**, and the mean 0.0419 is withdrawn as a scalar site-shift effect.
-
-One possibility cannot be settled from the repository: 10x reused one breast cancer FFPE block
-across several public Xenium demos. HEST assigns these four samples four distinct patient labels,
-but if any two are serial sections of the same block, the IDC task's own folds contain patient
-leakage and its Pearson of 0.5907 is inflated. Stage R5 of the round-2 plan checks this against the
-Janesick methods and the 10x dataset pages; until it reports, **IDC is not used as a site-shift
-headline for anything**. The consequence for the project is already clear: HEST-bench contains no
-clean institution contrast at all, so an institution axis must come from full HEST-1k.
 
 The across-task arm also hit a structural obstacle worth recording: **the five imaging-based tasks'
 top-50 gene lists are completely disjoint**, and their underlying panels share only 14 real genes
@@ -521,20 +415,11 @@ paper's Table 1, which reports 10 encoders. `conch_v15` and `hoptimus1` postdate
 `hoptimus1` is on the live leaderboard but not in Table 1 — so there are no paper values to add,
 and inventing them is what the table exists to guard against.
 
-### Q1 · Do embeddings encode institution specifically? — NOT TESTABLE ON THIS BENCHMARK (reframed in revision 3)
+### Q1 · Do embeddings encode institution specifically? — UNRESOLVED
 
-Revision 2 recorded this as "unresolved" on the basis of a confound-free contrast with low power.
-That framing was wrong: **there is no confound-free institution contrast in HEST-bench at all.**
-The contrast revision 2 relied on — TENX95/TENX99 against NCBI783/NCBI785 within IDC — moves the
-generating lab not at all (both halves are 10x Genomics; the NCBI pair is the GEO deposit of
-Janesick et al. 2023) and moves scan resolution by up to 1.7× (§ 3.6). So the question is not
-awaiting more power on an existing design; it is awaiting a design, and HEST-bench cannot supply
-one. The 0.6818 probe is reported as **inconclusive** and the 0.0419 gap is **withdrawn**.
-
-What this settles for the project: an institution axis has to come from full HEST-1k, where breast
-appears on Visium across several labs and brain has over two hundred samples from many sources. The
-axis HEST-bench *does* support is slide novelty and scan resolution, which is what rounds 2 and
-onward measure.
+See 3.5. The confound-free contrast has 4 slides and 2 of 11 encoders
+distinguishable from chance. Resolving it needs more institutions per tissue-and-assay stratum than
+HEST-bench contains.
 
 ### Q2 · Across-task shift as a scalar — NOT IDENTIFIED
 
@@ -560,10 +445,7 @@ Stated explicitly so absence is not read as a negative result.
 4. **Assumption diagnostics** for the ridge fits (residual structure, influence) — not assessed.
 5. **Spatial-block sensitivity to block size.** One 6×6 grid was used; the design was verified by
    measuring buffer width, not by sweeping the block size.
-6. **Institution shift, at all.** Revision 2 listed this as "beyond one task — 4 slides, the only
-   confound-free stratum available." That was wrong: the IDC stratum is not confound-free and not
-   an institution contrast (§ 3.6, Q1), so institution shift is not measured anywhere in this
-   report. It needs full HEST-1k.
+6. **Institution shift beyond one task** — 4 slides, the only confound-free stratum available.
 7. **STFlow training.** Setup and data-path validation are complete; training is CUDA-only against
    a saturated GPU queue.
 
@@ -628,7 +510,7 @@ substitution, so it is listed rather than assumed.
 | [`figures/fig_replication_fidelity.png`](https://github.com/NicWYZ/HEST-1k-replication/blob/main/figures/fig_replication_fidelity.png) | ours vs paper vs leaderboard |
 | [`figures/fig_split_decomposition.png`](https://github.com/NicWYZ/HEST-1k-replication/blob/main/figures/fig_split_decomposition.png) | the metric artefact, the two mechanisms, both vs the encoder spread |
 | [`figures/fig_count_diagnostics.png`](https://github.com/NicWYZ/HEST-1k-replication/blob/main/figures/fig_count_diagnostics.png) | zero fraction, Fano, NB-vs-ZINB by AIC |
-| [`figures/fig_site_predictability.png`](https://github.com/NicWYZ/HEST-1k-replication/blob/main/figures/fig_site_predictability.png) | probe accuracy by encoder. **Caption stale as of revision 3:** its "confound-free" series is the IDC TENX-vs-NCBI probe, now reported as inconclusive and mislabelled (§ 3.6, Q1). The figure is regenerated in stage R4. |
+| [`figures/fig_site_predictability.png`](https://github.com/NicWYZ/HEST-1k-replication/blob/main/figures/fig_site_predictability.png) | probe accuracy by encoder, confounded vs confound-free |
 
 Note: `fig_split_decomposition.png` predates `hoptimus1`, so its encoder-spread reference line is
 the 11-encoder 0.0898 rather than the current 0.0977. The mechanism terms it plots are
@@ -640,7 +522,7 @@ unaffected — the decomposition was run on three encoders, none of them `hoptim
 
 Revision 1 of this report initially quoted **0.3143** as the leakage gap. That figure
 was inflated by **0.1568** of pooled-Pearson aggregation artefact — 50% of it — and
-was retracted. The corrected figure is the within-slide
+was retracted. The corrected figure is the within-patient
 **0.1575** reported in § 3.4.
 
 The artefact's size is measured rather than asserted: pooled-minus-within inflation is exactly
@@ -650,20 +532,3 @@ fixed across designs is also what made the decomposition into named mechanisms p
 
 Separately, the encoder-spread denominator was **0.0977** once `hoptimus1` landed, not
 the 11-encoder 0.0898 quoted in revision 1, so the ratio in § 3.4 is 1.61×, not 1.75×.
-
----
-
-## Appendix A. Probes that are confounded by construction
-
-Moved out of § 3.5 in revision 3. Both are correct measurements of the wrong thing, and neither
-belongs in a site narrative. Source:
-[`results/tailored/site_probes/site_probe.csv`](https://github.com/NicWYZ/HEST-1k-replication/blob/main/results/tailored/site_probes/site_probe.csv).
-
-| probe | balanced accuracy | chance | what it actually measures |
-|---|---|---|---|
-| assay technology (Visium vs Xenium) | 0.9940 | 0.50 | tissue and task — each task is a single technology |
-| cohort source (TENX/MEND/NCBI/ZEN/INT) | 0.9378 | 0.20 | tissue and task — most sources occur in one task only |
-
-The confound is structural, not a matter of sample size: because technology and source are nested
-inside task, no amount of held-out data makes these probes informative about site. They are
-retained because they bound what the embeddings carry, not because they identify a mechanism.

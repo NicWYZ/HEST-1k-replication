@@ -408,19 +408,29 @@ Consequence for the rest of the round: R3 is the expensive stage (five designs �
 repeats), and it should be submitted **once**, with a generous wall, and left alone. The same
 applies to R2, which now also carries `conch_v15`.
 
-### 5.5 Two edits beyond the letter of R0
+### 5.5 Which document R0's relabelling belongs in
 
-R0 items 4 and 5 name the stage report. I applied the same relabelling to the README as well, and
-also withdrew there the stale claims the review invalidated. Leaving the README asserting what the
-report retracts would reproduce the exact failure the review identified. Both files were then swept
-case-insensitively for `confound-free`, `within-patient`, `0.0419`, `institution` and `LYMPH_IDC`;
-that sweep caught three further stale statements the targeted edits had missed — the Q1 answer
-section, a "not checked" item, and a figure caption — which are now corrected or explicitly marked
-stale.
+R0 items 4 and 5 say "in the stage report", and at the time the plan was written the only stage
+report was round 1's. I read it as that document and edited it to a revision 3. **That was the wrong
+target.** Round 1's report exists only because round 1 had no report-and-wait gates and so produced
+one comprehensive document at the end; it records what that round completed and is kept as history.
+Turning it into a maintained running report destroys its value as a record and, worse, means the
+round-2 relabelling would live in a document nobody reads per stage.
+
+Corrected: round 1's `final_stage_report.md` is restored verbatim to revision 2, and round 2's
+relabelling lives in **this report** and in the README, which is the repository's living entry
+point. The appendix table records where each change now sits. Round 1's report consequently still
+contains the withdrawn claims; that is what a historical record is, and the appendix says so
+explicitly so no reader mistakes it for current.
+
+The relabelling itself was applied by sweeping for `confound-free`, `within-patient`, `0.0419`,
+`institution` and `LYMPH_IDC` case-insensitively rather than by targeted edits alone; that sweep
+caught three stale statements the targeted edits had missed — the institution-question answer, a
+"not checked" item, and a figure caption. The sweep, not the edits, is the procedure worth keeping.
 
 ### 5.6 COAD's dispersion
 
-Recomputing round 1's per-task terms to write § 3.4 of the stage report surfaced the anomaly the
+Recomputing round 1's per-task terms for this report's appendix surfaced the anomaly the
 review flagged: COAD's patient design has mean 0.3073 with sd **0.0017** across two folds and three
 encoders. That is far tighter than any other task (next tightest HCC, 0.0127; typical 0.03–0.09).
 Not investigated. It is a candidate symptom of the same-patient structure described in § 5.3, since
@@ -503,21 +513,54 @@ where one group does contain two patients. And the global spread across all benc
 
 ![R0: scan resolution by task]({{artifact:art_fa8b7e85-e07d-4271-898f-c5e21086e494}})
 
-**The relabelling.** README and `final_stage_report.md` (now revision 3):
+**The relabelling, and where it lives.** Round 1's `final_stage_report.md` is a closed historical
+record and is not edited; see § 5.5. Round 2's relabelling lives in **this report**, the maintained
+document for this stage, and in the README, the repository's living entry point:
 
-| change | where |
+| change | where it now lives |
 |---|---|
 | "Private repository" line removed | README |
 | 99 → **108** encoder-task cells (12 encoders × 9 paper tasks) | README |
-| split metric renamed **within-slide** Pearson, with the three multi-slide tasks named | both |
-| pooled `blocked − patient` withheld; replaced by a per-task table | report § 3.4 |
-| "institution shift 0.0419" **withdrawn**; replaced by the four per-slide gaps | both |
-| IDC probe reported **inconclusive** and mislabelled | both |
-| technology and cohort-source probes moved to **Appendix A** as confounded by construction | report |
-| Q1 rewritten from "UNRESOLVED" to **"NOT TESTABLE ON THIS BENCHMARK"** | report |
-| new **Scan resolution** subsection under known limitations | both |
-| LYMPH_IDC multi-slide claim corrected (§ 5.3) | both |
+| split metric renamed **within-slide** Pearson, with the three multi-slide tasks named | README; this report § 4 and appendix |
+| pooled `blocked − patient` withheld; replaced by a per-task table | README; this report's appendix table above |
+| "institution shift 0.0419" **withdrawn**; replaced by the four per-slide gaps | README; this report § 4 and appendix |
+| IDC probe reported **inconclusive** and mislabelled | README; this report § 4 |
+| technology and cohort-source probes reported as confounded by construction | README; this report § 4 |
+| the institution question reframed from "unresolved" to **not testable on this benchmark** | README; this report § 4 |
+| new **Scan resolution** subsection under known limitations | README; this report's appendix |
+| LYMPH_IDC multi-slide claim corrected | README; this report § 5.3 |
 | stale `discrepancy_table_v2.csv` path fixed | README |
+
+One consequence to be explicit about: round 1's report still contains the claims this stage
+withdrew — the pooled slide-signature term, the "institution shift 0.0419" row, the
+"confound-free" description of the IDC contrast, and the within-patient metric label. That is what
+a historical record is: it says what round 1 concluded. Anyone reading it should read this report
+beside it, and the README reflects only the current state.
+
+**The pooled `blocked − patient` term, replaced by a per-task table.** Round 1 reported a single
+0.1241 for what it called the slide-level signature. That pooled figure averages over tasks whose
+terms do not mean the same thing (§ 4), so R0 withdraws it in favour of the per task values.
+Recomputed here from `results/tailored/splits/split_decomposition.csv`, in within-slide Pearson,
+over 3 encoders × folds × 5 repeats:
+
+| task | adjacency (random − blocked) | blocked − patient | total (random − patient) | patient-design mean | sd | n |
+|---|---|---|---|---|---|---|
+| COAD | 0.0343 | **0.2938** | 0.3281 | 0.3073 | 0.0017 | 6 |
+| LUNG | 0.0204 | 0.1627 | 0.1831 | 0.5614 | 0.0280 | 6 |
+| SKCM | 0.0300 | 0.1439 | 0.1739 | 0.6436 | 0.0575 | 6 |
+| PAAD | 0.0227 | 0.1300 | 0.1527 | 0.5024 | 0.0544 | 9 |
+| READ | 0.0514 | 0.1197 | 0.1710 | 0.2333 | 0.0305 | 6 |
+| HCC | 0.0629 | 0.1075 | 0.1703 | 0.0790 | 0.0127 | 6 |
+| IDC | 0.0267 | 0.0965 | 0.1232 | 0.5907 | 0.0912 | 12 |
+| PRAD | 0.0244 | 0.0897 | 0.1141 | 0.3040 | 0.0547 | 6 |
+| LYMPH_IDC | 0.0311 | 0.0711 | 0.1022 | 0.2643 | 0.0418 | 12 |
+| CCRCC | 0.0310 | 0.0258 | 0.0568 | 0.2030 | 0.0572 | 18 |
+
+COAD's `blocked − patient` is **0.2938** against 0.026–0.163 everywhere else, and COAD is one of
+the three tasks where a patient contributes several slides — its two folds are one slide against
+three slides of the same patient. That is the review's prediction, and it is why the term is
+reported per task. The adjacency term, by contrast, means the same thing in every task
+(0.0204–0.0629) and may legitimately be pooled.
 
 The four per-slide IDC gaps that replace the withdrawn scalar, recomputed from
 `results/tailored/splits/split_decomposition.csv` (mean over 3 encoders × 5 repeats):
