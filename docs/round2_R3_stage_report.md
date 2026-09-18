@@ -590,9 +590,16 @@ will be reported with the results.
 - **R3 on more than three encoders.** `hoptimus0`, `uni_v2`, `resnet50`. The plan permits deciding
   the encoder set alone; three was chosen to span the quality range (best, mid, ImageNet baseline)
   at the cost of a 47-hour wall each.
-- ~~The per-gene R3 table~~ — **now complete.** `pergene__{hoptimus0,resnet50,uni_v2}.parquet`,
-  851,050 rows each, explicit schema verified on read (`fold` string, `grid` nullable int32,
-  no nulls in `pearson`, all 7 designs, 10 tasks, 430 genes). R7's input exists.
+- ~~The per-gene R3 table~~ — **now complete.** `pergene__{hoptimus0,resnet50,uni_v2}.parquet`.
+  All three were read in full and checked individually, each giving 851,050 rows, 7 of 7 designs,
+  10 tasks, 430 genes, 0 nulls in `pearson`, `fold` stored as string with `grid` as nullable
+  `Int32`, `fold == slide` on every `slide_out` row and zero-padded two-digit folds everywhere
+  else. R7's input exists.
+
+  (An earlier revision of this line said "explicit schema verified on read" for all three when
+  only the row counts — read from each file's parquet metadata — had been checked on all three;
+  the schema, design, task, gene and null checks had been run on `hoptimus0` alone. Now run on
+  each file, with the design list and null count asserted rather than printed.)
 - **Whether the R2 gap survives holding the gene set fixed.** The proposed clean design in § 4.5 is
   specified and not run.
 - **Probe 2's binned variant** is reported as undefined for PRAD patient 1 rather than computed.
