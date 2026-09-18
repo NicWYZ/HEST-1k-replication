@@ -15,23 +15,33 @@ Probe 1 -- slide identity WITHIN one patient.
   Near chance => round 1's 0.98 across-patient figure was mostly biology and resolution.
 
 Probe 2 -- resolution WITHIN one patient.
-  PRAD patient 1: 8 slides. Grouping the raw pixel sizes by nominal value gives
-  {0.57: MEND154/156/157/158/160 (5), 0.69: MEND159/161 (2), 0.17: MEND162 (1)}, which is
-  the plan's own breakdown. Target: that nominal group, evaluated leave-one-slide-out so the
-  held-out slide's group is always represented in training by another slide.
-  DEVIATION, reported: the plan says "chance is 1/3 balanced", but its own instruction to
-  exclude the single 0.172 slide from leave-one-slide-out leaves TWO evaluable classes over
-  7 slides, so balanced chance is 1/2. Both are reported: `probe2_2class` is the primary
-  result (7 held-out slides, chance 1/2), and `probe2_3class` keeps the 0.172 slide in
-  training only, never held out, where chance is not well defined and which is reported for
-  completeness only. Note also that under R0's binning these 8 slides occupy only TWO bins
-  (0.15-0.23 and >0.50, since 0.573 and 0.688 both exceed 0.50), so the binned version of
-  this probe is undefined for this patient; nominal raw values are used instead.
+  PRAD patient 1. Grouping the raw pixel sizes by nominal value gives
+  {0.57: MEND154/156/157/158/160 (5), 0.69: MEND159/161 (2), 0.17: MEND162 (1)}.
+  Per oversight decision 1.1 the single 0.17 slide is excluded from BOTH training and
+  evaluation -- it cannot be held out with its class present, and left in training it only
+  adds a class that is never tested. Two classes, leave-one-slide-out over the remaining
+  seven slides, balanced chance 0.5. The binned variant is dropped entirely, not reported:
+  under R0's bins these eight slides occupy only two bins, since 0.573 and 0.688 both
+  exceed 0.50, so the binned form of this probe is undefined for this patient.
+  PRAD carries no embedded pixel size, so the class labels rest on the spot-spacing
+  estimate alone. For Visium that is the more reliable of the two sources, being derived
+  from the known 100 um pitch, so the probe is well defined and the flag is a caveat.
   RULE: high accuracy => scan resolution is decodable from the embeddings independently of
   patient, and every slide-identity probe is partly a resolution probe.
 
+Probe 1b -- the scan sub-cluster (oversight decision 2.1).
+  PRAD patient 2's fifteen slides fall in two tight sub-clusters, verified from the
+  metadata rather than from the slide-id ranges: eight at 0.3412-0.3418 (MEND139-MEND146)
+  and seven at 0.3484-0.3492 (MEND147-MEND153), separated by 0.0066 um/px. Target that
+  membership, leave-one-slide-out, chance 0.5. Probe 1's confusion matrix is also written
+  out and its off-diagonal mass split into within- against between-sub-cluster.
+  RULE: if slide identity is decodable but the confusion is mostly WITHIN sub-cluster, the
+  signature is per-slide; if it is BETWEEN sub-clusters, part of it is a scan-session
+  effect.
+
 Probe 3 -- composition-adjusted slide probe.
-  IDC, PAAD, LUNG, SKCM (single-slide patients, Xenium). The PCA-256 features are regressed
+  IDC, PAAD, LUNG, SKCM (single-slide patients, Xenium), plus PRAD patient 2 per decision
+  2.1 so that Probe 1 has an adjusted counterpart. The PCA-256 features are regressed
   on per-spot morphology covariates (n_nuclei, neo_area_mean, and the five CellViT class
   fractions) with the regression FIT ON TRAINING SPOTS ONLY, and the slide probe is rerun on
   the residuals. Accuracy is reported before and after.
@@ -53,7 +63,7 @@ from scipy.spatial import cKDTree
 from sklearn.decomposition import PCA
 from sklearn.discriminant_analysis import StandardScaler
 from sklearn.linear_model import LinearRegression, LogisticRegression
-from sklearn.metrics import balanced_accuracy_score
+from sklearn.metrics import balanced_accuracy_score, confusion_matrix
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 
@@ -149,6 +159,21 @@ def nn_dist(slide_of, xy, test):
     return float(np.median(np.concatenate(d))) if d else np.nan
 
 
+def probe_pred(X, y, tr, te, resid_cov=None):
+    """As probe(), but returns (balanced_accuracy, y_true, y_pred) for the confusion matrix."""
+    pipe = Pipeline([("scaler", StandardScaler()),
+                     ("PCA", PCA(n_components=min(LATENT, X.shape[1]), random_state=SEED))])
+    Z, Zt = pipe.fit_transform(X[tr]), pipe.transform(X[te])
+    if resid_cov is not None:
+        ok = np.isfinite(resid_cov).all(axis=1)
+        lr = LinearRegression().fit(resid_cov[tr][ok[tr]], Z[ok[tr]])
+        Z = Z - lr.predict(np.nan_to_num(resid_cov[tr], nan=0.0))
+        Zt = Zt - lr.predict(np.nan_to_num(resid_cov[te], nan=0.0))
+    clf = LogisticRegression(max_iter=2000).fit(Z, y[tr])
+    pred = clf.predict(Zt)
+    return float(balanced_accuracy_score(y[te], pred)), y[te], pred
+
+
 def probe(X, y, tr, te, resid_cov=None):
     """PCA-256 fit on train, logistic regression, balanced accuracy.
 
@@ -167,7 +192,7 @@ def probe(X, y, tr, te, resid_cov=None):
         lr = LinearRegression().fit(resid_cov[tr][ok[tr]], Z[ok[tr]])
         Z = Z - lr.predict(np.nan_to_num(resid_cov[tr], nan=0.0))
         Zt = Zt - lr.predict(np.nan_to_num(resid_cov[te], nan=0.0))
-    clf = LogisticRegression(max_iter=2000, n_jobs=-1).fit(Z, y[tr])
+    clf = LogisticRegression(max_iter=2000).fit(Z, y[tr])
     return float(balanced_accuracy_score(y[te], clf.predict(Zt)))
 
 
@@ -184,6 +209,9 @@ TASKC = next(c for c in meta.columns if c.lower() == "task")
 patient_of = {(t, str(s)): str(p).strip() for t, s, p
               in zip(meta[TASKC], meta[SID], meta[PAT])}
 px_of = {(t, str(s)): float(v) for t, s, v in zip(meta[TASKC], meta[SID], meta[PX])}
+UNCC = next((c for c in meta.columns if c.lower() == "resolution_uncertain"), None)
+unc_of = ({(t, str(s)): bool(v) for t, s, v in zip(meta[TASKC], meta[SID], meta[UNCC])}
+          if UNCC else {})
 
 
 def pat_norm(task, s):
@@ -224,12 +252,78 @@ for enc in sys.argv[1:]:
             te_r = np.zeros(len(Xs), bool); te_r[ite] = True
             acc_r = probe(Xs, ys, ~te_r, te_r)
             te_b = block_split(ys, xys, np.random.default_rng(SEED))
-            acc_b = probe(Xs, ys, ~te_b, te_b)
+            acc_b, y_true, y_pred = probe_pred(Xs, ys, ~te_b, te_b)
+
+            # Confusion matrix, and how much of the confusion mass is WITHIN a scan
+            # sub-cluster versus BETWEEN them (decision 2.1). Sub-cluster membership is
+            # derived from the pixel sizes themselves, not from the slide-id ranges, so it
+            # cannot silently disagree with the metadata.
+            labs = sorted(str(v) for v in set(ys))
+            CM = confusion_matrix(y_true, y_pred, labels=labs)
+            pxv = np.array([px_of[("PRAD", s)] for s in labs])
+            cut = (pxv.min() + pxv.max()) / 2.0
+            sub = np.where(pxv < cut, "A", "B")
+            off = CM.copy()
+            np.fill_diagonal(off, 0)
+            same = float(off[np.equal.outer(sub, sub)].sum())
+            diff = float(off[~np.equal.outer(sub, sub)].sum())
+            # If the two sub-clusters were interchangeable, off-diagonal mass would split in
+            # proportion to the number of available (i != j) cells in each group.
+            n_same_cells = int(np.equal.outer(sub, sub).sum() - len(labs))
+            n_diff_cells = int((~np.equal.outer(sub, sub)).sum())
+            exp_same = n_same_cells / (n_same_cells + n_diff_cells)
+            pd.DataFrame(CM, index=labs, columns=labs).to_csv(
+                f"{OUT}/probe1_confusion__{enc}.csv")
+            print(f"  probe1 confusion {enc}: off-diagonal mass within sub-cluster "
+                  f"{same/(same+diff):.3f} (chance {exp_same:.3f}); "
+                  f"sub-cluster A={sorted(np.array(labs)[sub=='A'])[:3]}... "
+                  f"B={sorted(np.array(labs)[sub=='B'])[:3]}...", flush=True)
+
+            # --- Probe 1b: the scan sub-cluster itself, leave-one-slide-out, chance 0.5
+            ysub = np.array([("A" if px_of[("PRAD", s)] < cut else "B") for s in ys])
+            # Held-out spots all share one sub-cluster label, so per-fold balanced accuracy is
+            # degenerate (single class in y_true) and sklearn warns. Pool the leave-one-slide-out
+            # predictions across folds and score ONCE on the pooled pair, which contains both
+            # classes, and separately record the per-slide majority vote -- the quantity the
+            # decision-2.1 rule is actually about ("is this slide placed in the right session").
+            pool_true, pool_pred, maj = [], [], []
+            for s in p2:
+                te = ys == s
+                tr = ~te
+                if te.sum() < 50 or len(set(ysub[tr])) < 2:
+                    continue
+                _, yt, yp = probe_pred(Xs, ysub, tr, te)
+                pool_true.append(yt); pool_pred.append(yp)
+                vals, cnts = np.unique(yp, return_counts=True)
+                maj.append(bool(vals[cnts.argmax()] == ysub[te][0]))
+            accs_sc = ([balanced_accuracy_score(np.concatenate(pool_true),
+                                                np.concatenate(pool_pred))]
+                       if pool_true else [])
+            rows.append(dict(
+                probe="probe1b_scan_subcluster", encoder=enc, task="PRAD",
+                unit="PRAD patient 2", n_classes=2, chance=0.5, n_folds=len(maj),
+                acc_blocked=float(accs_sc[0]) if accs_sc else np.nan,
+                acc_sd=np.nan,
+                n_slides_majority_correct=int(sum(maj)), n_slides_scored=len(maj),
+                majority_vote_acc=float(np.mean(maj)) if maj else np.nan,
+                px_values=f"cut at {cut:.4f}",
+                all_resolution_uncertain=True,
+                rule="decision 2.1: high accuracy means part of the slide signature is a "
+                     "scan-session effect rather than per-slide"))
+            print(f"  probe1b {enc}: scan sub-cluster, {len(maj)} LOSO folds, chance 0.500, "
+                  f"pooled balanced acc {accs_sc[0] if accs_sc else float('nan'):.4f}, "
+                  f"majority vote {sum(maj)}/{len(maj)} slides correct", flush=True)
             rows.append(dict(
                 probe="probe1_slide_within_patient", encoder=enc, task="PRAD",
                 unit="PRAD patient 2", n_classes=len(p2), chance=1.0 / len(p2),
                 n_spots=int(keep.sum()), spots_per_slide=SUBSAMPLE,
                 acc_random_split=acc_r, acc_blocked=acc_b, acc_drop=acc_r - acc_b,
+                confusion_within_subcluster_frac=same / (same + diff) if (same + diff) else np.nan,
+                confusion_within_subcluster_chance=exp_same,
+                confusion_off_diagonal_mass=int(same + diff),
+                subcluster_A=";".join(sorted(np.array(labs)[sub == "A"])),
+                subcluster_B=";".join(sorted(np.array(labs)[sub == "B"])),
+                all_resolution_uncertain=True,
                 nn_dist_random=nn_dist(ys, xys, te_r), nn_dist_blocked=nn_dist(ys, xys, te_b),
                 px_values=";".join(f"{v}" for v in pxs),
                 rule="blocked>0.8 => technical origin; near chance => round 1's 0.98 was biology+resolution",
@@ -247,10 +341,14 @@ for enc in sys.argv[1:]:
         multi = {g for g, n_ in sizes.items() if n_ >= 2}
         print(f"  probe2 groups: {sizes}; evaluable classes {sorted(multi)}", flush=True)
 
-        for variant, classes in (("probe2_2class", multi),
-                                 ("probe2_3class", set(sizes))):
-            ev = [s for s in p1 if grp.get(s) in multi]        # only these can be held out
-            keepmask = np.isin(slide_of, [s for s in p1 if grp.get(s) in classes])
+        # Decision 1.1: nominal pixel-size groups, NOT R0's bins; the single 0.17 slide is
+        # excluded from BOTH training and evaluation, since it cannot be held out with its
+        # class present and adds only an untested class if left in training. Two classes,
+        # leave-one-slide-out over the 7 remaining slides, chance 0.5. The binned variant is
+        # dropped entirely rather than reported, per the same decision.
+        for variant, classes in (("probe2_2class", multi),):
+            ev = [s for s in p1 if grp.get(s) in multi]        # the 7 evaluable slides
+            keepmask = np.isin(slide_of, ev)                   # training pool is those 7 only
             accs, held = [], []
             for s in ev:
                 te = keepmask & (slide_of == s)
@@ -263,29 +361,40 @@ for enc in sys.argv[1:]:
                     idx = np.flatnonzero(mm)
                     sl = subsample(slide_of[mm], SUBSAMPLE, rng)
                     sub[idx[sl]] = True
-                yy = np.array([grp[x] for x in slide_of])
+                # grp is keyed by patient-1 slides only, while slide_of spans the whole task,
+                # so a direct lookup KeyErrors on patient-2 slides. Only entries under `sub`
+                # (a subset of keepmask, itself a subset of the 7 evaluable slides) are ever
+                # read, and the assert makes that explicit rather than implicit.
+                yy = np.array([grp.get(x, "?") for x in slide_of])
+                assert not (yy[sub] == "?").any(), "unlabelled slide inside the probe-2 sample"
                 a = probe(X[sub], yy[sub], (tr & sub)[sub], (te & sub)[sub])
                 accs.append(a); held.append(s)
             if accs:
                 rows.append(dict(
                     probe=variant, encoder=enc, task="PRAD", unit="PRAD patient 1",
-                    n_classes=len(classes), chance=1.0 / len(multi),
+                    n_classes=len(multi), chance=1.0 / len(multi),
                     n_folds=len(accs), acc_blocked=float(np.mean(accs)),
                     acc_sd=float(np.std(accs, ddof=1)) if len(accs) > 1 else np.nan,
                     held_out_slides=";".join(held),
                     px_values=";".join(f"{g}:{n_}" for g, n_ in sorted(sizes.items())),
+                    excluded_slides=";".join(sorted(s for s in p1 if grp.get(s) not in multi)),
+                    all_resolution_uncertain=True,
                     rule="high accuracy => resolution is decodable independently of patient",
-                    note=("primary; the single 0.17 slide is excluded from hold-out per the "
-                          "plan, which leaves 2 evaluable classes and chance 1/2, not the "
-                          "1/3 the plan states" if variant == "probe2_2class" else
-                          "0.17 slide in training only, never held out; chance not well "
-                          "defined for this variant, reported for completeness")))
+                    note=("decision 1.1: nominal pixel-size groups, not R0's bins; the single "
+                          "0.17 slide is excluded from BOTH training and evaluation; 2 classes "
+                          "over 7 slides, chance 0.5. PRAD carries no embedded pixel size, so "
+                          "these labels rest on the spot-spacing estimate alone - for Visium "
+                          "the more reliable of the two sources, being derived from the known "
+                          "100um pitch, so a caveat and not a blocker.")))
                 print(f"  {variant} {enc}: {len(accs)} LOSO folds, chance {1/len(multi):.3f}, "
                       f"acc {np.mean(accs):.4f}", flush=True)
         del X
 
     # ------------------------------------------------------- Probe 3: composition adjustment
-    for task in PROBE3_TASKS:
+    # Decision 2.1 adds PRAD patient 2, so Probe 1 has an adjusted counterpart. PRAD is
+    # handled as a special case because it is restricted to one patient's 15 slides rather
+    # than using every slide in the task.
+    for task in PROBE3_TASKS + ["PRAD"]:
         X, slide_of, xy, bc = load(task, enc)
         if X is None:
             print(f"[skip] {task}/{enc}: no embeddings", flush=True)
@@ -295,6 +404,10 @@ for enc in sys.argv[1:]:
             print(f"[skip] probe3 {task}: no morphology parquet", flush=True)
             del X
             continue
+        if task == "PRAD":
+            keep_slides = sorted({s for s in set(slide_of) if pat_norm("PRAD", s) == "patient2"})
+            m_ = np.isin(slide_of, keep_slides)
+            X, slide_of, xy, bc = X[m_], slide_of[m_], xy[m_], bc[m_]
         M = pd.read_parquet(mp)
         M["key"] = M.sample_id.astype(str) + "|" + M.barcode.astype(str)
         key = pd.Series([f"{s}|{b}" for s, b in zip(slide_of, bc)])
@@ -319,13 +432,19 @@ for enc in sys.argv[1:]:
         a_after_plan = probe(Xs, ys, ~te_b, te_b, resid_cov=cs[:, idx_plan])
         rows.append(dict(
             probe="probe3_composition_adjusted", encoder=enc, task=task,
-            unit=f"{task}, single-slide patients", n_classes=len(set(ys)),
+            unit=("PRAD patient 2 (adjusted counterpart to probe 1)" if task == "PRAD"
+                  else f"{task}, single-slide patients"),
+            all_resolution_uncertain=bool(task == "PRAD"),
+            n_classes=len(set(ys)),
             chance=1.0 / len(set(ys)), n_spots=int(keep.sum()),
             morph_match_frac=float(matched.mean()),
             acc_blocked=a_before, acc_blocked_adjusted=a_after,
             acc_drop=a_before - a_after,
             acc_blocked_adjusted_planset=a_after_plan,
             acc_drop_planset=a_before - a_after_plan,
+            n_slides_resolution_uncertain=int(sum(unc_of.get((task, s), False)
+                                                  for s in sorted(set(ys)))),
+            n_slides_total=len(set(ys)),
             covariates=";".join(MORPH_COVS),
             covariates_planset=";".join(MORPH_COVS_PLAN),
             rule="large drop => composition explains separability; no drop => it does not",
@@ -363,7 +482,10 @@ with open(f"{OUT}/PROVENANCE__{tag}.txt", "w") as f:
         f"seed/latent/grid/test_frac/subsample : {SEED}/{LATENT}/{GRID}/{TEST_FRAC}/{SUBSAMPLE}\n"
         f"morph_covariates: {MORPH_COVS}\n"
         f"morph_covariates_planset : {MORPH_COVS_PLAN}\n"
-        f"probe3_tasks    : {PROBE3_TASKS}\n"
+        f"probe3_tasks    : {PROBE3_TASKS + ['PRAD (patient 2, decision 2.1)']}\n"
+        f"probe2_design   : decision 1.1 - nominal groups, 0.17 slide excluded from "
+        f"training AND evaluation, 2 classes over 7 slides, chance 0.5, binned variant dropped\n"
+        f"pythonhashseed  : {os.environ.get('PYTHONHASHSEED', 'unset')}\n"
         f"config_hash     : {config_hash(SEED, LATENT, GRID, TEST_FRAC, SUBSAMPLE, tuple(MORPH_COVS)):08x}\n"
         "plan            : round2_execution_plan.md stage R4 / plan phase R4\n"
-        "deviation       : probe 2 balanced chance is 1/2 not 1/3, see script docstring\n")
+        "decisions       : round2_R3_decisions.md sections 1.1 and 2.1\n")
