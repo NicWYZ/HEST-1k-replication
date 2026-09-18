@@ -88,8 +88,29 @@ Two consequences, the second of which corrects an earlier note in this file:
 What still holds: if a stage is too long for one job, split it by unit and submit the pieces
 together, because that is about wall-clock and failure isolation rather than priority.
 
+**The submission harness has its own clock, and it counts queue time.** `run_timeout_s` is
+measured from submission, not from the job starting, and when it expires the harness cancels the
+Slurm job. In round 2 a two-minute D3/D4 check was submitted with a 2 h ceiling, waited longer than
+that in `PENDING`, and was killed before it ever ran (`error_kind: timeout_ceiling`, no outputs)
+while its siblings with 10 h and 25 h ceilings survived the same wait. Set the ceiling from
+**expected queue time plus runtime**, not from runtime; on this cluster that means hours even for
+a job that computes for seconds. The Slurm `--time` wall is a separate limit and should still be
+sized to the work.
+
 **Record the partition the job actually ran on.** Jobs requesting `general` routinely land on
 `spill`. `$SLURM_JOB_PARTITION`, not the request, belongs in provenance.
+
+**`-p` is a request, not a destination, and the rerouting is driven by the memory ask.** Measured
+in round 2: nine jobs submitted with `#SBATCH -p general_big` landed as five on `spill`, three on
+`general` and only one on `general_big` — the one asking for 96 GB. The 48 GB and 64 GB jobs were
+rerouted. So `general_big` is reachable only by asking for memory in the hundreds of GB.
+
+**Do not inflate a memory request to reach an emptier partition.** It is available capacity on
+1.5 TB nodes where memory, not cores, is the scarce resource, so an inflated ask displaces jobs that
+genuinely need those nodes. When `general` is saturated (round 2 saw 18,294 pending against 4,569
+running, with 5,320 cores idle but no schedulable memory), the honest options are to wait, to ask
+the PI about an account with better fairshare, or to cut the work — not to misreport what the job
+needs.
 
 **Do not compute on the login node.** Its system python has no pandas or pyarrow, and a monitoring
 daemon kills work there. Send inspection through the scheduler like everything else.
