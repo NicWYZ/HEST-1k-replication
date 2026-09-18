@@ -192,3 +192,26 @@ file it came from, in the same cell that reads the file — never from recollect
 computation printed, and never carried across a table rebuild. When a table is recomputed on more
 data, every number already written from it is stale until re-read: R3's total sd stayed at the
 two-encoder value after the third encoder landed.
+
+## Seeding
+
+**Never seed an RNG from `hash()` on a string.** Python randomises `str` hashing per process unless
+`PYTHONHASHSEED` is set, so `default_rng(SEED + hash(slide_id) % 1000)` draws a different sample on
+every run. The same slide id gives `213`, `700`, `780` on three successive interpreters. In R3 this
+made the `slide_out` arm the only non-reproducible design in the script — 450 of 6138 rows moved
+between two runs, up to 0.046 — while every integer-seeded design reproduced bit-exactly. Use
+`zlib.crc32(s.encode())`, which is stable across processes and versions.
+
+The same applies to any **identifier** derived by hashing, not just seeds: a `config_hash` computed
+over a tuple containing strings is randomised per run and identifies nothing, which is the opposite
+of what a provenance record is for.
+
+**Compare a rerun against the previous run whenever a rerun happens anyway.** R3's per-gene
+regeneration reran the whole computation, so diffing its summary CSVs against the reported ones cost
+nothing and caught this. A rerun for any reason is a free determinism check; take it.
+
+**Do not quote a ratio whose denominator is within noise of zero.** COAD's
+patient-to-novel-slide ratio read 199x, then ~115x on a rerun, then 117x recomputed from the
+4-decimal saved table rather than the full-precision column — because its denominator is 0.11 of its
+own standard deviation. A quantity that moves with rounding alone is not a result. Report the
+numerator and denominator with their dispersion, and say which one is resolved from zero.
