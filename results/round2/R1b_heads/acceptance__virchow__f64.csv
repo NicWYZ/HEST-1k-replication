@@ -1,0 +1,5 @@
+encoder,solver,check,value,threshold,passed,is_hard_stop
+virchow,cholesky float64 (Topic A head),A1 max|dPearson(int-noint)|,2.0951990142847876e-14,1e-09,True,True
+virchow,cholesky float64 (Topic A head),A2 max|pred(int)-pred(ycent)|,1.0658141036401503e-14,1e-09,True,True
+virchow,cholesky float64 (Topic A head),A3 max|train mean pred - target| (relative),2.737076719919203e-15,1e-10,True,True
+virchow,cholesky float64 (Topic A head),A2b max|(int-noint) - ybar|,2.788880237858393e-13,1e-09,True,True

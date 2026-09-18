@@ -1,0 +1,13 @@
+encoder,solver,check,value,threshold,passed,is_hard_stop
+virchow,lsqr float32 (faithful),A1 max|dPearson(int-noint)|,0.01144498586654663,1e-06,False,False
+virchow,lsqr float32 (faithful),A2 max|pred(int)-pred(ycent)|,0.018259525299072266,0.0001,False,False
+virchow,lsqr float32 (faithful),A3 max|train mean pred - target|,0.0003675222396850586,1e-06,False,False
+virchow,lsqr float32 (faithful),A2b max|(int-noint) - ybar|,0.10860824584960938,0.0001,False,False
+virchow,cholesky float32,A1 max|dPearson(int-noint)|,8.046627044677734e-06,1e-06,False,False
+virchow,cholesky float32,A2 max|pred(int)-pred(ycent)|,6.198883056640625e-06,0.0001,True,False
+virchow,cholesky float32,A3 max|train mean pred - target|,0.0003675222396850586,1e-06,False,False
+virchow,cholesky float32,A2b max|(int-noint) - ybar|,0.0001430511474609375,0.0001,False,False
+virchow,cholesky float64 (Topic A head),A1 max|dPearson(int-noint)|,8.263039082911927e-06,1e-09,False,True
+virchow,cholesky float64 (Topic A head),A2 max|pred(int)-pred(ycent)|,4.95278178913594e-07,1e-09,False,True
+virchow,cholesky float64 (Topic A head),A3 max|train mean pred - target| (relative),1.509276838406914e-07,1e-10,False,True
+virchow,cholesky float64 (Topic A head),A2b max|(int-noint) - ybar|,0.0001446271090816964,1e-09,False,True

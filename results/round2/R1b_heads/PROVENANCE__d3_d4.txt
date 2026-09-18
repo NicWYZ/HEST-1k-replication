@@ -1,0 +1,10 @@
+Round 2, R1b - directives D3 and D4
+slurm_job_id      : 1535733
+slurm_partition   : spill
+node              : c151417
+date              : 2026-09-18T02:12:18-0400
+repo_commit       : 4d0663dcb2c1d5b2c28a2d4e9917bb2e49a00bc2
+script            : code/scripts/round2_r1b_d3_d4.py
+config_hash       : d3d4-v1-embedded5pct
+config            : flag threshold 5 percent on |embedded/estimated - 1|; D3 reads /work/users/w/e/weiyang/hest_replication/results/tailored/splits/split_decomposition.csv; D4 reads /work/users/w/e/weiyang/hest_replication/code/HEST/assets/HEST_v1_1_0.csv
+decisions         : round2_R1_decisions.md directives D3, D4

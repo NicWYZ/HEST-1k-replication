@@ -1,0 +1,13 @@
+encoder,solver,check,value,threshold,passed,is_hard_stop
+gigapath,lsqr float32 (faithful),A1 max|dPearson(int-noint)|,0.004167870080620362,1e-06,False,False
+gigapath,lsqr float32 (faithful),A2 max|pred(int)-pred(ycent)|,0.008572578430175781,0.0001,False,False
+gigapath,lsqr float32 (faithful),A3 max|train mean pred - target|,0.0003677041618486143,1e-06,False,False
+gigapath,lsqr float32 (faithful),A2b max|(int-noint) - ybar|,0.0588068962097168,0.0001,False,False
+gigapath,cholesky float32,A1 max|dPearson(int-noint)|,5.6332251638646635e-06,1e-06,False,False
+gigapath,cholesky float32,A2 max|pred(int)-pred(ycent)|,5.4836273193359375e-06,0.0001,True,False
+gigapath,cholesky float32,A3 max|train mean pred - target|,0.00036769544595038894,1e-06,False,False
+gigapath,cholesky float32,A2b max|(int-noint) - ybar|,0.00013208389282226562,0.0001,False,False
+gigapath,cholesky float64 (Topic A head),A1 max|dPearson(int-noint)|,1.887379141862766e-14,1e-09,True,True
+gigapath,cholesky float64 (Topic A head),A2 max|pred(int)-pred(ycent)|,1.1546319456101628e-14,1e-09,True,True
+gigapath,cholesky float64 (Topic A head),A3 max|train mean pred - target| (relative),2.6188282827951293e-15,1e-10,True,True
+gigapath,cholesky float64 (Topic A head),A2b max|(int-noint) - ybar|,2.318145675417327e-13,1e-09,True,True

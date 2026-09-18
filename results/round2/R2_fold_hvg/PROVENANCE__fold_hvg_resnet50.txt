@@ -1,0 +1,12 @@
+Round 2, R2 step 2 - within-fold gene selection, encoder resnet50
+slurm_job_id      : 1561365
+slurm_partition   : spill
+node              : c0511
+date              : 2026-09-18T04:17:05-0400
+repo_commit       : 64f5838166db001372c24ce06271a2349f87e15a
+script            : code/scripts/round2_r2_fold_hvg.py
+command_line      : /work/users/w/e/weiyang/hest_replication/code/scripts/round2_r2_fold_hvg.py resnet50
+config_hash       : foldhvg-k50-intercept-f64-cholesky-latent256
+config            : head=Ridge(fit_intercept=True, solver=cholesky, float64), alpha=100/(256*50); features=StandardScaler->PCA(256,random_state=1) train only; gene selection=get_k_genes(criteria=var,k=50,min_cells_pct=0.10) on TRAINING samples only; metrics=pooled and within-slide Pearson
+gate              : requires round2_r2_gene_check.py exact reproduction (D2)
+decisions         : round2_R1_decisions.md directive D2

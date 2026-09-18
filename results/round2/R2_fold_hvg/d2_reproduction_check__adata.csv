@@ -1,0 +1,11 @@
+task,spot_set,n_samples,n_spots_total,n_common_genes,n_shipped,n_reproduced,n_intersect,set_equal,order_equal,missing,extra,seconds
+CCRCC,adata,24,74220,2248,50,50,50,True,True,,,42.6
+COAD,adata,4,18523,351,50,50,50,True,True,,,0.9
+HCC,adata,2,4248,9940,50,50,50,True,True,,,5.1
+IDC,adata,4,44974,278,50,50,50,True,True,,,1.4
+LUNG,adata,2,7505,197,50,50,50,True,True,,,0.3
+LYMPH_IDC,adata,4,19964,10276,50,50,50,True,True,,,21.9
+PAAD,adata,3,9793,98,50,50,50,True,True,,,0.4
+PRAD,adata,23,62710,1228,50,50,50,True,True,,,27.6
+READ,adata,4,8407,8828,50,50,50,True,True,,,7.7
+SKCM,adata,2,5716,281,50,50,50,True,True,,,0.3

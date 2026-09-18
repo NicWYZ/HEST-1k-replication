@@ -1,0 +1,12 @@
+Round 2, stage R1b - intercept refit incl. float64 head, encoder resnet50
+slurm_job_id    : 1535729
+slurm_partition : spill
+node            : c0906
+date            : 2026-09-18T02:57:07-0400
+repo_commit     : 4d0663dcb2c1d5b2c28a2d4e9917bb2e49a00bc2
+script          : code/scripts/round2_head_intercept.py
+command_line    : /work/users/w/e/weiyang/hest_replication/code/scripts/round2_r1b_heads.py resnet50
+pipeline        : StandardScaler -> PCA(256, random_state=1) on train only
+alpha           : 100/(256*50)
+heads           : ('nointercept', 'intercept', 'ycentered')
+plan            : round2_execution_plan.md stage R1

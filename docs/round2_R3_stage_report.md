@@ -174,14 +174,15 @@ are unaffected at the precision Table 1 reports.
 metadata table (`HEST_v1_1_0.csv`, column `pixel_size_um_embedded`).
 
 An embedded value exists for **45 of 72** samples. Where both exist the agreement is near-exact:
-median absolute difference **0.052%**, 95th percentile 19.8%. Three samples disagree at the
-`resolution_group` level:
+median absolute difference **0.052%**, 95th percentile 19.8%. Four samples are flagged, of which
+three disagree at the `resolution_group` level and one differs in magnitude without crossing a bin:
 
-| task | sample | estimated | embedded | % diff | verdict |
-|---|---|---|---|---|---|
-| IDC | TENX95 | 0.2125 | 1.0000 | +370.6 | embedded value is a header default, not a measurement |
-| IDC | TENX99 | 0.2125 | 1.0000 | +370.6 | same |
-| COAD | TENX111 | 0.2738 | 0.2125 | −22.4 | genuine discrepancy; crosses a bin boundary |
+| task | sample | estimated | embedded | % diff | crosses a bin? | verdict |
+|---|---|---|---|---|---|---|
+| IDC | TENX95 | 0.2125 | 1.0000 | +370.6 | yes | embedded value is a header default, not a measurement |
+| IDC | TENX99 | 0.2125 | 1.0000 | +370.6 | yes | same |
+| COAD | TENX111 | 0.2738 | 0.2125 | −22.4 | yes | genuine discrepancy |
+| COAD | TENX147 | 0.2497 | 0.2738 | +9.6 | no — both `0.23-0.30` | genuine but immaterial to the covariate as used |
 
 1.0000 µm/px is not a plausible Xenium or Visium resolution, so the two IDC rows are a placeholder
 rather than a conflict — which also means my first flagging rule, which treated *missing* and
@@ -191,10 +192,14 @@ The consequential finding is what has **no** second source at all: **PRAD (23 sa
 LYMPH_IDC (4) carry no embedded pixel size whatsoever.** PRAD is precisely the task where
 resolution matters most — it is the task with the 4× within-task spread aligned with patient
 identity that motivated R0 in the first place. So the resolution covariate is corroborated
-everywhere except the one task whose conclusions most depend on it. All 31 samples in that position
-(PRAD 23, LYMPH_IDC 4, plus the 4 disagreeing or placeholder rows above) carry
-`resolution_uncertain = True` on every prediction row, and any R4-onward result that conditions on
-resolution must report the flagged subset separately.
+everywhere except the one task whose conclusions most depend on it.
+
+The `resolution_uncertain = True` flag therefore covers **31 of 72** samples, and the count closes
+exactly: **27** with no embedded value at all (PRAD 23, LYMPH_IDC 4) **+ 3** disagreeing at the
+group level **+ 1** disagreeing in magnitude only = 31. It is set on every prediction row, and any
+R4-onward result that conditions on resolution must report the flagged subset separately. Only the
+COAD/TENX111 row is a discrepancy that would change a resolution *group*; the two IDC rows are a
+placeholder and TENX147 stays within its bin.
 
 ### 4.5 R2 — the gene-selection contrast, and a benchmark property that reframes it
 
@@ -351,7 +356,7 @@ The three tasks with a multi-slide patient, where the last row splits, 9 cells:
 | adjacency past the block edge | +0.0107 | 0.0034 |
 | `blocked_buffered − slide_out` — **novel slide** | **+0.0138** | 0.0175 |
 | `slide_out − patient` — **patient identity** | **+0.1367** | 0.0962 |
-| **total** | **+0.2064** | 0.0873 |
+| **total** | **+0.2064** | 0.0900 |
 
 ### 6.3 Three things this changes about round 1
 

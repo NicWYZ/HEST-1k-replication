@@ -1,0 +1,13 @@
+Round 2, R2 step 1 - D2 reproduction check, spot set 'adata'
+slurm_job_id      : 1535735
+slurm_partition   : general_big
+node              : t0604
+date              : 2026-09-18T02:24:18-0400
+repo_commit       : 4d0663dcb2c1d5b2c28a2d4e9917bb2e49a00bc2
+script            : code/scripts/round2_r2_gene_check.py
+command_line      : /work/users/w/e/weiyang/hest_replication/code/scripts/round2_r2_gene_check.py --adata-dir-name adata
+config_hash       : getkgenes-var-k50-mincells0.10-adata
+config            : criteria=var k=50 min_cells_pct=0.10 intersect=np.intersect1d(sorted) dtype=float32 selection=var_names[highly_variable][:50]
+scanpy_version    : 1.11.5
+exact_tasks       : 10/10
+decisions         : round2_R1_decisions.md directive D2

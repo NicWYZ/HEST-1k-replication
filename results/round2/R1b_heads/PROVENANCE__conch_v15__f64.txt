@@ -1,0 +1,12 @@
+Round 2, stage R1b - intercept refit incl. float64 head, encoder conch_v15
+slurm_job_id    : 1561185
+slurm_partition : spill
+node            : c0818
+date            : 2026-09-18T03:48:53-0400
+repo_commit     : 64f5838166db001372c24ce06271a2349f87e15a
+script          : code/scripts/round2_head_intercept.py
+command_line    : /work/users/w/e/weiyang/hest_replication/code/scripts/round2_r1b_heads.py conch_v15 f64
+pipeline        : StandardScaler -> PCA(256, random_state=1) on train only
+alpha           : 100/(256*50)
+heads           : ('nointercept', 'intercept', 'ycentered')
+plan            : round2_execution_plan.md stage R1

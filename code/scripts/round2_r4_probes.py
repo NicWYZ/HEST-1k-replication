@@ -64,8 +64,17 @@ OUT = f"{ROOT}/results/round2/R4_probes"
 
 # Carried over from round 1 unchanged, so that accuracies are comparable to it.
 SEED, LATENT, GRID, TEST_FRAC, SUBSAMPLE = 1, 256, 6, 0.30, 800
-MORPH_COVS = ["n_nuclei", "neo_area_mean", "frac_connective", "frac_dead",
-              "frac_epithelial", "frac_inflammatory", "frac_neoplastic"]
+# The plan specifies "nuclear count, mean nuclear area, the five CellViT class fractions".
+# morphology_v2 carries BOTH a generic `area_mean` over all nuclei and a neoplastic-only
+# `neo_area_mean`. "Mean nuclear area" is the generic one, so `area_mean` is what the plan
+# asks for; an earlier draft of this script used `neo_area_mean`, which is a different
+# covariate and would have silently narrowed the adjustment to neoplastic nuclei.
+# `neo_area_mean` is appended as an EXTRA covariate rather than a substitute, so the
+# adjustment is at least as strong as specified, and both are named in the output.
+MORPH_COVS = ["n_nuclei", "area_mean", "frac_connective", "frac_dead",
+              "frac_epithelial", "frac_inflammatory", "frac_neoplastic",
+              "neo_area_mean"]
+MORPH_COVS_PLAN = MORPH_COVS[:7]   # exactly the plan's list, reported alongside
 PROBE3_TASKS = ["IDC", "PAAD", "LUNG", "SKCM"]
 
 
@@ -293,6 +302,10 @@ for enc in sys.argv[1:]:
         te_b = block_split(ys, xys, np.random.default_rng(SEED))
         a_before = probe(Xs, ys, ~te_b, te_b)
         a_after = probe(Xs, ys, ~te_b, te_b, resid_cov=cs)
+        # The plan-exact covariate set as well, so the reported drop cannot be an artefact
+        # of the one covariate this script adds beyond the plan.
+        idx_plan = [MORPH_COVS.index(c) for c in MORPH_COVS_PLAN]
+        a_after_plan = probe(Xs, ys, ~te_b, te_b, resid_cov=cs[:, idx_plan])
         rows.append(dict(
             probe="probe3_composition_adjusted", encoder=enc, task=task,
             unit=f"{task}, single-slide patients", n_classes=len(set(ys)),
@@ -300,13 +313,17 @@ for enc in sys.argv[1:]:
             morph_match_frac=float(matched.mean()),
             acc_blocked=a_before, acc_blocked_adjusted=a_after,
             acc_drop=a_before - a_after,
+            acc_blocked_adjusted_planset=a_after_plan,
+            acc_drop_planset=a_before - a_after_plan,
             covariates=";".join(MORPH_COVS),
+            covariates_planset=";".join(MORPH_COVS_PLAN),
             rule="large drop => composition explains separability; no drop => it does not",
             verdict=("composition explains most" if a_before - a_after > 0.15 else
                      "composition explains little" if a_before - a_after < 0.05 else
                      "partial")))
         print(f"  probe3 {enc} {task}: {len(set(ys))} slides, before {a_before:.4f}, "
-              f"after {a_after:.4f}, drop {a_before-a_after:+.4f} -> {rows[-1]['verdict']}",
+              f"after {a_after:.4f} (drop {a_before-a_after:+.4f}), plan-set after "
+              f"{a_after_plan:.4f} (drop {a_before-a_after_plan:+.4f}) -> {rows[-1]['verdict']}",
               flush=True)
         del X
 
@@ -334,6 +351,7 @@ with open(f"{OUT}/PROVENANCE__{tag}.txt", "w") as f:
         f"command_line    : {' '.join(sys.argv)}\n"
         f"seed/latent/grid/test_frac/subsample : {SEED}/{LATENT}/{GRID}/{TEST_FRAC}/{SUBSAMPLE}\n"
         f"morph_covariates: {MORPH_COVS}\n"
+        f"morph_covariates_planset : {MORPH_COVS_PLAN}\n"
         f"probe3_tasks    : {PROBE3_TASKS}\n"
         f"config_hash     : {abs(hash((SEED,LATENT,GRID,TEST_FRAC,SUBSAMPLE,tuple(MORPH_COVS)))):016x}\n"
         "plan            : round2_execution_plan.md stage R4 / plan phase R4\n"
