@@ -112,6 +112,13 @@ running, with 5,320 cores idle but no schedulable memory), the honest options ar
 the PI about an account with better fairshare, or to cut the work — not to misreport what the job
 needs.
 
+**Size memory from `sacct`, not from a guess.** `sacct -o MaxRSS --units=G` on the completed R1
+encoder jobs gives a peak of **16.7 GB**, most between 11 and 13 GB, for the head-fitting stages
+over this benchmark (largest task 74k spots x 1536-dim embeddings). Round 2's R1b and R3 were
+requested at 48-64 GB, which is a 3-4x over-ask; 32 GB with the float64 arms would be honest. An
+over-ask does not slow scheduling much here — priority dominates — but it does make the job fit
+fewer backfill gaps, so right-size at submission rather than after.
+
 **Do not compute on the login node.** Its system python has no pandas or pyarrow, and a monitoring
 daemon kills work there. Send inspection through the scheduler like everything else.
 
@@ -139,3 +146,49 @@ sitting in the same directory. The list is cheap and it is the only thing that c
 slide-signature number averaged over tasks where the contrast was slide identity and tasks where it
 also carried same-patient information; per task, the term ranges from 0.026 to 0.294. A term is
 poolable only if its arm-difference list is the same in every stratum.
+
+## Writing outputs, and watching a job run
+
+**Name the schema for anything written after expensive compute.** All three R3 runs completed
+every design and fold — about 35 CPU-hours across three jobs — and then died on the final
+`pq.write_table`, because the per-gene `fold` column holds an integer for the shipped-split designs
+and a slide id for `slide_out`, and pandas-to-arrow type inference read `int64` from the leading
+rows and failed on the first `slide_out` row. Pass an explicit `pa.schema` and cast the columns to
+match. This is not belt-and-braces: the failure is **pyarrow version-dependent** — on a newer
+pyarrow the same frame infers `string` and writes fine, so a local smoke test passes while the
+cluster run dies. Naming the types removes the version dependence rather than making the failure
+less likely.
+
+**Write the cheapest outputs first.** R3's summary CSVs survived that crash only because they
+happen to be written before the parquet, so the stage's reported results were intact and only the
+per-gene table needed regenerating. That was luck. Order the writes deliberately: summaries and
+acceptance tables before bulk per-row tables.
+
+**Never pipe a long job's output through `tail`.** `python script.py | tail -40` buffers everything
+until the process exits, so there is no progress visibility for the whole run — for a five-hour job
+that means five hours blind. Let stdout go to the log in full and `tail` the *file* when inspecting.
+(A traceback does survive in the last 40 lines, so failure diagnosis is preserved; it is progress
+monitoring that is lost.)
+
+**`sacct` `TotalCPU` reads `00:00:00` for running jobs on this cluster**, so it cannot be used to
+tell a working job from a hung one. Use `srun --jobid=<id> --overlap -n1 ps -eo pid,etime,time,pcpu,rss,args`
+and read the process's own `TIME` and `%CPU`. A job at ~99% CPU with process CPU time tracking
+elapsed time is working.
+
+**The submission harness's run clock counts queue time.** A 10-second harvest job given
+`run_timeout_s=3600` was killed before it ran, because it sat in the queue longer than that. Set
+generous ceilings on every job regardless of how long it runs.
+
+**Commit messages go through a file, not `-m`.** A message containing embedded double quotes broke
+the shell quoting and staged the files without committing — silently, since the failure surfaced
+only as a non-zero exit with empty output. Write the message to a file and use `git commit -F`.
+
+## Quoting a number
+
+**Read it back from the artifact, every time.** Two corrections in this round were the same
+failure: a number typed from memory into prose that the saved table did not contain. The second was
+in a message *correcting the first*. A number in a report, a message or a commit is quoted from the
+file it came from, in the same cell that reads the file — never from recollection of what the
+computation printed, and never carried across a table rebuild. When a table is recomputed on more
+data, every number already written from it is stale until re-read: R3's total sd stayed at the
+two-encoder value after the third encoder landed.
