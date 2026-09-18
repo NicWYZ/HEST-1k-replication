@@ -61,6 +61,14 @@ SEED, LATENT = 1, 256
 HEADS = ("nointercept", "intercept", "ycentered")
 
 enc = sys.argv[1]
+# FAMILY: 'all' (default), 'f32' (the two float32 families), or 'f64' (the float64 family
+# only). The f64-only mode exists because the first R1b run built the float64 arm on
+# float32-derived features, which is a bug in the arm and not in the float32 results; the
+# corrected pass redoes only what was wrong. Outputs are suffixed so a partial pass cannot
+# overwrite the arms it did not recompute.
+FAMILY = sys.argv[2] if len(sys.argv) > 2 else "all"
+assert FAMILY in ("all", "f32", "f64"), FAMILY
+SUF = "" if FAMILY == "all" else f"__{FAMILY}"
 os.makedirs(OUT, exist_ok=True)
 
 
@@ -90,13 +98,25 @@ def load_task(task):
             np.array(samp), np.array(bcs, dtype=object), genes)
 
 
-def features(Xtr, Xte):
+def features(Xtr, Xte, dtype=np.float32):
+    """Round 1's feature pipeline, with the working dtype exposed.
+
+    The dtype is load-bearing and getting it wrong was a real bug in the first R1b run.
+    The three-head identity rests on PCA centring the training features exactly, so that
+    A'1 = 0 and the intercept fit has the same coefficients as the no-intercept fit. Running
+    the scaler and PCA in float32 and casting the RESULT to float64 does not buy that: the
+    column means of A land at ~5e-08 rather than ~1e-16, w_int and w_noint then differ at
+    ~3e-08, and the identity holds only to ~7e-07 no matter how exact the ridge solve is.
+    Casting X BEFORE the scaler drops the column means to ~1e-16 and the identity to
+    ~2e-15. Measured both ways; see the R3 report.
+    """
     pipe = Pipeline([("scaler", StandardScaler()),
                      ("PCA", PCA(n_components=min(LATENT, Xtr.shape[1]), random_state=SEED))])
-    return pipe.fit_transform(Xtr), pipe.transform(Xte)
+    return (pipe.fit_transform(Xtr.astype(dtype, copy=False)),
+            pipe.transform(Xte.astype(dtype, copy=False)))
 
 
-def fit_heads(A, B, Ytr):
+def fit_heads(A, B, Ytr, A64=None, B64=None):
     """Three heads x two solvers on the same features. Returns {head: (pred_test, pred_train)}.
 
     The `lsqr` family is the faithful head (round 1 used solver='lsqr', max_iter=1000 at
@@ -122,13 +142,26 @@ def fit_heads(A, B, Ytr):
     """
     alpha = 100 / (A.shape[1] * Ytr.shape[1])
     out = {}
-    families = (
-        ("", np.float32, dict(solver="lsqr", max_iter=1000)),      # the faithful head
-        ("_exact", np.float32, dict(solver="cholesky")),           # exact, still float32
-        ("_f64", np.float64, dict(solver="cholesky")),             # exact, double precision
-    )
-    for tag, dt, kw in families:
-        Ad, Bd, Yd = A.astype(dt, copy=False), B.astype(dt, copy=False), Ytr.astype(dt, copy=False)
+    # (tag, which feature matrix, ridge kwargs). The f64 family must use features built by a
+    # float64 scaler/PCA -- casting the float32 features here is what broke the identity in
+    # the first run. A64/B64 are None when only the float32 families are requested.
+    families = [
+        ("", "f32", dict(solver="lsqr", max_iter=1000)),      # the faithful head
+        ("_exact", "f32", dict(solver="cholesky")),           # exact, still float32
+        ("_f64", "f64", dict(solver="cholesky")),             # exact, double precision
+    ]
+    if FAMILY == "f64":
+        families = [f for f in families if f[0] == "_f64"]
+    elif FAMILY == "f32":
+        families = [f for f in families if f[1] == "f32"]
+    for tag, which, kw in families:
+        if which == "f64":
+            assert A64 is not None, "f64 family requested without float64 features"
+            Ad, Bd = A64, B64
+            Yd = Ytr.astype(np.float64, copy=False)
+        else:
+            Ad, Bd = A.astype(np.float32, copy=False), B.astype(np.float32, copy=False)
+            Yd = Ytr.astype(np.float32, copy=False)
         mu = Yd.mean(axis=0, keepdims=True)
 
         r = Ridge(alpha=alpha, random_state=0, fit_intercept=False, **kw).fit(Ad, Yd)
@@ -145,6 +178,10 @@ def fit_heads(A, B, Ytr):
 def per_gene(P, Y, Ptr, Ytr, genes):
     """Faithful-way (pooled over the fold) per-gene metrics, plus training-fold means."""
     rows = []
+    P = P.astype(np.float64, copy=False)
+    Y = Y.astype(np.float64, copy=False)
+    Ptr = Ptr.astype(np.float64, copy=False)
+    Ytr = Ytr.astype(np.float64, copy=False)
     sst = ((Y - Y.mean(axis=0, keepdims=True)) ** 2).sum(axis=0)
     ssr = ((Y - P) ** 2).sum(axis=0)
     for j, g in enumerate(genes):
@@ -157,6 +194,10 @@ def per_gene(P, Y, Ptr, Ytr, genes):
             pearson=r,
             r2=float(1.0 - ssr[j] / sst[j]) if sst[j] > 0 else np.nan,
             mse=float(ssr[j] / len(Y)),
+            # Means and sds are accumulated in float64 regardless of the array's storage
+            # dtype. Y is stored float32, and np.mean on a float32 array accumulates in
+            # float32, which puts a ~5e-06 relative floor on the train-mean check for
+            # reasons that have nothing to do with the head being tested.
             mean_pred=float(P[:, j].mean()),
             mean_target=float(Y[:, j].mean()),
             # std_pred / std_target give the scale ratio rho = s_yhat / s_y that the
@@ -207,8 +248,15 @@ for task in tasks:
         tr = ~te
         assert te.sum() > 0 and tr.sum() > 0, f"{task} fold {k}: empty arm"
 
-        A, B = features(X[tr], X[te])
-        preds = fit_heads(A, B, Y[tr])
+        if FAMILY in ("all", "f32"):
+            A, B = features(X[tr], X[te], dtype=np.float32)
+        else:
+            A = B = np.empty((0, LATENT), np.float32)
+        if FAMILY in ("all", "f64"):
+            A64, B64 = features(X[tr], X[te], dtype=np.float64)
+        else:
+            A64 = B64 = None
+        preds = fit_heads(A if A.size else A64, B if B.size else B64, Y[tr], A64, B64)
 
         for head, (P, Ptr) in preds.items():
             for row in per_gene(P, Y[te], Ptr, Y[tr], genes):
@@ -218,7 +266,8 @@ for task in tasks:
 
         # max |delta| between heads' predictions, per solver family, for the acceptance checks
         rec = dict(encoder=enc, task=task, fold=k)
-        for tag in ("", "_exact", "_f64"):
+        for tag in [t for t in ("", "_exact", "_f64")
+                    if ("intercept" + t) in preds]:
             ybar = Y[tr].astype(np.float64 if tag == "_f64" else np.float32).mean(
                 axis=0, keepdims=True)
             rec[f"max_abs_intercept_minus_ycentered{tag}"] = float(
@@ -234,7 +283,8 @@ for task in tasks:
 
         # prediction shards: the faithful-solver intercept head and the exact-solver one,
         # distinguished by the `head` column so downstream work can choose.
-        for hname in ("intercept", "intercept_exact", "intercept_f64"):
+        for hname in [h for h in ("intercept", "intercept_exact", "intercept_f64")
+                      if h in preds]:
             P = preds[hname][0]
             ns, ng = P.shape
             sh = pd.DataFrame({
@@ -265,19 +315,21 @@ for task in tasks:
         assert got == want, (f"{task}: shard schema does not match round 1 plus "
                              f"{{head, y_raw_count}}; symmetric difference "
                              f"{sorted(got ^ want)}")
-    pq.write_table(tab, f"{PARQ}/{task}/preds__{enc}.parquet", compression="snappy")
+    # Suffixed by family: an f64-only corrected pass must not overwrite the float32 shards
+    # written by the full pass, which remain valid.
+    pq.write_table(tab, f"{PARQ}/{task}/preds__{enc}{SUF}.parquet", compression="snappy")
     print(f"[{task}] {tab.num_rows:,} rows written, {time.time()-t0:.0f}s", flush=True)
     del X, Y, R, shards
 
 d = pd.DataFrame(rows)
-d.to_csv(f"{OUT}/head_intercept__{enc}.csv", index=False)
+d.to_csv(f"{OUT}/head_intercept__{enc}{SUF}.csv", index=False)
 
 # ------------------------------------------------------------------- acceptance
 piv = d.pivot_table(index=["task", "fold", "gene"], columns="head",
                     values=["pearson", "r2", "mean_pred", "mean_target",
                             "train_mean_pred", "train_mean_target"])
 dd = pd.DataFrame(deltas)
-dd.to_csv(f"{OUT}/head_deltas__{enc}.csv", index=False)
+dd.to_csv(f"{OUT}/head_deltas__{enc}{SUF}.csv", index=False)
 
 print("\n=== R1 acceptance, by solver family ===")
 print("(`lsqr` is the faithful head; `cholesky` is the exact solve. The three heads are "
@@ -293,9 +345,10 @@ THRESH = {
     "_exact": dict(a1=1e-6, a2=1e-4, a3=1e-6,  shift=1e-4, relative=False),
     "_f64":   dict(a1=1e-9, a2=1e-9, a3=1e-10, shift=1e-9, relative=True),
 }
-for tag, fam in (("", "lsqr float32 (faithful)"),
-                 ("_exact", "cholesky float32"),
-                 ("_f64", "cholesky float64 (Topic A head)")):
+FAMS = [("", "lsqr float32 (faithful)"),
+        ("_exact", "cholesky float32"),
+        ("_f64", "cholesky float64 (Topic A head)")]
+for tag, fam in [f for f in FAMS if ("pearson", "intercept" + f[0]) in piv.columns]:
     T = THRESH[tag]
     dp = (piv[("pearson", "intercept" + tag)] - piv[("pearson", "nointercept" + tag)]).abs()
     dtm = (piv[("train_mean_pred", "intercept" + tag)]
@@ -317,7 +370,7 @@ for tag, fam in (("", "lsqr float32 (faithful)"),
         print(f"  {fam:<34} {name:<44} = {val:.3e}  [thr {thr:.0e}]  "
               f"{'PASS' if val < thr else 'FAIL'}")
 accdf = pd.DataFrame(acc)
-accdf.to_csv(f"{OUT}/acceptance__{enc}.csv", index=False)
+accdf.to_csv(f"{OUT}/acceptance__{enc}{SUF}.csv", index=False)
 
 # Oversight Decision 1: a float64 identity failure is a bug, not a floor, and stops the run.
 f64_fail = accdf[accdf.is_hard_stop & ~accdf.passed]
@@ -329,17 +382,22 @@ if len(f64_fail):
 # Under exact arithmetic the intercept and nointercept solutions are identical, so the whole
 # lsqr-vs-cholesky gap is solver non-convergence in one or both fits. Quantify how much
 # solver noise an individual per-gene Pearson in the faithful protocol carries.
-ss = (piv[("pearson", "nointercept")] - piv[("pearson", "nointercept_exact")]).abs()
-ss = ss.reset_index().rename(columns={0: "abs_dpearson"})
-ss.columns = ["task", "fold", "gene", "abs_dpearson"]
-sens = (ss.groupby("task")["abs_dpearson"].agg(["mean", "max", "count"])
-          .rename(columns={"mean": "mean_abs_dpearson", "max": "max_abs_dpearson"}))
-sens["encoder"] = enc
-sens["verdict"] = np.where(sens.mean_abs_dpearson > 5e-3, "known-limitation",
-                    np.where(sens.mean_abs_dpearson <= 1e-3, "footnote", "between"))
-sens.to_csv(f"{OUT}/solver_sensitivity__{enc}.csv")
-print("\n=== solver sensitivity, nointercept head in float32, |Pearson(lsqr)-Pearson(cholesky)| ===")
-print(sens.round(6).to_string())
+have_f32 = all(("pearson", h) in piv.columns for h in ("nointercept", "nointercept_exact"))
+if not have_f32:
+    print("\n[solver sensitivity] skipped: needs both float32 families")
+ss = ((piv[("pearson", "nointercept")] - piv[("pearson", "nointercept_exact")]).abs()
+      if have_f32 else None)
+if have_f32:
+    ss = ss.reset_index().rename(columns={0: "abs_dpearson"})
+    ss.columns = ["task", "fold", "gene", "abs_dpearson"]
+    sens = (ss.groupby("task")["abs_dpearson"].agg(["mean", "max", "count"])
+              .rename(columns={"mean": "mean_abs_dpearson", "max": "max_abs_dpearson"}))
+    sens["encoder"] = enc
+    sens["verdict"] = np.where(sens.mean_abs_dpearson > 5e-3, "known-limitation",
+                        np.where(sens.mean_abs_dpearson <= 1e-3, "footnote", "between"))
+    sens.to_csv(f"{OUT}/solver_sensitivity__{enc}{SUF}.csv")
+    print("\n=== solver sensitivity, nointercept head in float32, |Pearson(lsqr)-Pearson(cholesky)| ===")
+    print(sens.round(6).to_string())
 
 # A5: the `nointercept` control must reproduce round 1's faithful pca_ridge per-task Pearson.
 # This is the check that actually establishes the pipeline is the faithful one.
@@ -347,11 +405,12 @@ rt_path = f"{ROOT}/results/summary/results_task.csv"
 if os.path.exists(rt_path):
     rt = pd.read_csv(rt_path)
     rt = rt[(rt["head"] == "pca_ridge") & (rt["encoder"] == enc)][["task", "pearson_mean"]]
-    ours = (d[d["head"] == "nointercept"].groupby(["task", "fold"])["pearson"].mean()
+    ANCHOR = "nointercept" if (d["head"] == "nointercept").any() else "nointercept_f64"
+    ours = (d[d["head"] == ANCHOR].groupby(["task", "fold"])["pearson"].mean()
               .groupby("task").mean().rename("ours").reset_index())
     cmp = ours.merge(rt, on="task", how="outer")
     cmp["abs_diff"] = (cmp["ours"] - cmp["pearson_mean"]).abs()
-    cmp.to_csv(f"{OUT}/faithful_check__{enc}.csv", index=False)
+    cmp.to_csv(f"{OUT}/faithful_check__{enc}{SUF}.csv", index=False)
     print(f"A5 nointercept vs round-1 faithful pca_ridge, per task: "
           f"max |diff| = {cmp['abs_diff'].max():.3e}, mean {cmp['abs_diff'].mean():.3e} "
           f"over {cmp['abs_diff'].notna().sum()} tasks   [expect < 1e-3]  "
@@ -362,15 +421,15 @@ else:
 
 fm = d.groupby(["task", "fold", "head"])["r2"].median().reset_index()
 fp = fm.pivot_table(index=["task", "fold"], columns="head", values="r2")
-print(f"A4 fold-median R^2 > 0: intercept {int((fp['intercept'] > 0).sum())}/{len(fp)} folds, "
-      f"nointercept {int((fp['nointercept'] > 0).sum())}/{len(fp)} folds, "
-      f"intercept_f64 {int((fp['intercept_f64'] > 0).sum())}/{len(fp)} folds")
+print("A4 fold-median R^2 > 0, by head: " + "  ".join(
+    f"{h} {int((fp[h] > 0).sum())}/{len(fp)}" for h in fp.columns))
 print("\nfold-median R^2 by task (mean over folds):")
 print(fp.groupby(level=0).mean().round(4).to_string())
-print("\nmean Pearson by task (intercept head, faithful pooled metric):")
-print(d[d["head"] == "intercept"].groupby("task")["pearson"].mean().round(4).to_string())
+PRIMARY = "intercept" if (d["head"] == "intercept").any() else "intercept_f64"
+print(f"\nmean Pearson by task ({PRIMARY} head, faithful pooled metric):")
+print(d[d["head"] == PRIMARY].groupby("task")["pearson"].mean().round(4).to_string())
 
-with open(f"{OUT}/PROVENANCE__{enc}.txt", "w") as f:
+with open(f"{OUT}/PROVENANCE__{enc}{SUF}.txt", "w") as f:
     f.write(
         f"Round 2, stage R1b - intercept refit incl. float64 head, encoder {enc}\n"
         f"slurm_job_id    : {os.environ.get('SLURM_JOB_ID','NA')}\n"
