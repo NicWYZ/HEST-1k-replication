@@ -231,9 +231,16 @@ rows, pergene, diag = [], [], []
 
 
 def record(task, design, fold, rep, grid, P, Y, samp, te, tr, genes):
+    # `fold` is an int for the shipped-split designs and a slide id for slide_out, which
+    # made the per-gene column object-typed and killed the parquet write AFTER a full run.
+    # Stored as a string throughout, with the integer folds zero-padded so they sort, and
+    # the numeric value kept separately for the designs that have one.
+    fold_num = fold if isinstance(fold, (int, np.integer)) else None
+    fold = f"{int(fold):02d}" if fold_num is not None else str(fold)
     po, wi, ns, pg = score_pergene(P, Y[te], samp[te], genes)
     grp, same_grp, unc = res_flags(samp[te], samp[tr])
-    rows.append(dict(encoder=enc, task=task, design=design, fold=fold, repeat=rep, grid=grid,
+    rows.append(dict(encoder=enc, task=task, design=design, fold=fold, fold_num=fold_num,
+                     repeat=rep, grid=grid,
                      n_train=int(tr.sum()), n_test=int(te.sum()), n_eval_samples=ns,
                      pearson_pooled=po, pearson_within=wi,
                      test_resolution_group=grp, train_has_same_resolution_group=same_grp,
@@ -345,7 +352,22 @@ pd.DataFrame(diag).to_csv(f"{OUT}/buffer_diagnostics__{enc}.csv", index=False)
 pg = pd.DataFrame(pergene, columns=["task", "design", "fold", "repeat", "grid",
                                     "slide", "gene", "pearson"])
 pg["encoder"] = enc
-pq.write_table(pa.Table.from_pandas(pg, preserve_index=False),
+# Explicit schema rather than pandas type inference. Inference read `fold` as int64 from
+# the shipped-split rows and then failed on the first slide_out row, at the very end of a
+# five-hour run; naming the types makes that class of failure impossible rather than
+# merely unlikely. `grid` is nullable because the non-blocked designs have no grid.
+PG_SCHEMA = pa.schema([("task", pa.string()), ("design", pa.string()),
+                       ("fold", pa.string()), ("repeat", pa.int32()),
+                       ("grid", pa.int32()), ("slide", pa.string()),
+                       ("gene", pa.string()), ("pearson", pa.float32()),
+                       ("encoder", pa.string())])
+for col in ("task", "design", "fold", "slide", "gene", "encoder"):
+    pg[col] = pg[col].astype(str)
+pg["repeat"] = pg["repeat"].astype("int32")
+pg["grid"] = pg["grid"].astype("Int32")
+pg["pearson"] = pg["pearson"].astype("float32")
+pq.write_table(pa.Table.from_pandas(pg[[f.name for f in PG_SCHEMA]],
+                                    schema=PG_SCHEMA, preserve_index=False),
                f"{OUT}/pergene__{enc}.parquet", compression="snappy")
 print(f"\n[pergene] {len(pg):,} rows -> pergene__{enc}.parquet")
 
