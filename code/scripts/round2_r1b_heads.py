@@ -278,8 +278,10 @@ for task in tasks:
             rec[f"max_abs_shift_minus_ybar{tag}"] = float(np.max(np.abs(
                 (preds["intercept" + tag][0] - preds["nointercept" + tag][0]) - ybar)))
         deltas.append(rec)
-        d_ni = rec["max_abs_intercept_minus_nointercept"]
-        d_yc = rec["max_abs_intercept_minus_ycentered"]
+        # progress line reads whichever family was actually fitted
+        PTAG = "" if "intercept" in preds else "_f64"
+        d_ni = rec[f"max_abs_intercept_minus_nointercept{PTAG}"]
+        d_yc = rec[f"max_abs_intercept_minus_ycentered{PTAG}"]
 
         # prediction shards: the faithful-solver intercept head and the exact-solver one,
         # distinguished by the `head` column so downstream work can choose.

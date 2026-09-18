@@ -59,7 +59,8 @@ def load_raw(task):
             b = np.asarray(f[key][:]).reshape(-1)
             bc = [x.decode() if isinstance(x, (bytes, np.bytes_)) else str(x) for x in b]
             Xe = np.asarray(f["embeddings"][:], dtype=np.float32)
-        out.append(dict(sid=sid, adata=ad.read_h5ad(p), bc=bc, X=Xe))
+        A = ad.read_h5ad(p)
+        out.append(dict(sid=sid, adata=A, bc=bc, X=Xe, panel=set(map(str, A.var_names))))
     return out
 
 
@@ -104,7 +105,7 @@ def score(P, Yte, samp_te, genes):
             float(np.mean(list(gw.values()))) if gw else np.nan, gw)
 
 
-rows = []
+rows, panel_rows = [], []
 tasks = sorted(d for d in os.listdir(BD)
                if os.path.isdir(f"{BD}/{d}") and not d.startswith("."))
 for task in tasks:
@@ -119,6 +120,21 @@ for task in tasks:
     samp = np.concatenate([[q["sid"]] * len(q["bc"]) for q in parts])
     Y_ship = targets(parts, shipped)
 
+    # panel heterogeneity within the task
+    PANEL_ALL = set.intersection(*[q["panel"] for q in parts])
+    psz = {q["sid"]: len(q["panel"]) for q in parts}
+    print(f"[{task}] panels: sizes {sorted(set(psz.values()))}, "
+          f"intersection {len(PANEL_ALL)}, union {len(set().union(*[q['panel'] for q in parts]))}, "
+          f"identical across samples: {len(set(map(frozenset, (q['panel'] for q in parts)))) == 1}",
+          flush=True)
+    panel_rows.append(dict(task=task, n_samples=len(parts),
+                           panel_min=min(psz.values()), panel_max=max(psz.values()),
+                           panel_intersection=len(PANEL_ALL),
+                           panel_union=len(set().union(*[q["panel"] for q in parts])),
+                           panels_identical=len(set(map(frozenset,
+                                                        (q["panel"] for q in parts)))) == 1,
+                           shipped_all_on_panel=all(g in PANEL_ALL for g in shipped)))
+
     for sp in sorted(glob.glob(f"{BD}/{task}/splits/test_*.csv")):
         k = int(os.path.basename(sp).split("_")[1].split(".")[0])
         test_ids = {os.path.basename(x).replace(".h5ad", "") for x in pd.read_csv(sp)["expr_path"]}
@@ -129,7 +145,18 @@ for task in tasks:
         # --- fold-selected genes: training samples only ---
         train_ads = [q["adata"] for q in parts if q["sid"] not in test_ids]
         assert train_ads, f"{task} fold {k}: no training samples"
-        fold_genes, n_common = get_k_genes(train_ads, k=K)
+        fold_raw, n_common = get_k_genes(train_ads, k=K)
+
+        # A gene selected from the TRAINING samples need not be measured on the test slide:
+        # HEST-bench samples within a task can carry different gene panels, and the shipped
+        # 50-gene list is the intersection over ALL samples, test included. So a genuinely
+        # leakage-free selection can name genes the test slide cannot report, and those are
+        # dropped here rather than silently failing. Recording the count is the point: it is
+        # the sense in which leakage-free gene selection is not merely unperformed on this
+        # benchmark but not well defined without the test slide's panel.
+        dropped = [g for g in fold_raw if g not in PANEL_ALL]
+        fold_genes = [g for g in fold_raw if g in PANEL_ALL]
+        assert fold_genes, f"{task} fold {k}: every fold-selected gene is off-panel somewhere"
         Y_fold = targets(parts, fold_genes)
 
         P_ship = fit_intercept_head(X[tr], X[te], Y_ship[tr])
@@ -148,6 +175,9 @@ for task in tasks:
             encoder=enc, task=task, fold=k, n_train=int(tr.sum()), n_test=int(te.sum()),
             n_train_samples=len(train_ads), n_common_genes=n_common,
             n_genes_shared=len(set(shipped) & set(fold_genes)),
+            n_fold_genes_used=len(fold_genes),
+            n_fold_genes_off_panel=len(dropped),
+            genes_off_panel=";".join(dropped),
             pearson_pooled_shipped=po_s, pearson_pooled_fold=po_f,
             pearson_within_shipped=wi_s, pearson_within_fold=wi_f,
             delta_pooled=po_s - po_f, delta_within=wi_s - wi_f,
@@ -163,6 +193,17 @@ for task in tasks:
 
 d = pd.DataFrame(rows)
 d.to_csv(f"{OUT}/fold_hvg__{enc}.csv", index=False)
+pn = pd.DataFrame(panel_rows)
+pn.to_csv(f"{OUT}/panel_heterogeneity__{enc}.csv", index=False)
+print("\n=== gene-panel heterogeneity within each task ===")
+print(pn.to_string(index=False))
+print(f"\ntasks whose samples do NOT share one panel: "
+      f"{pn[~pn.panels_identical].task.tolist()}")
+print(f"shipped 50 genes all on the common panel, every task: {bool(pn.shipped_all_on_panel.all())}")
+print(f"\nfold-selected genes dropped as off-panel: total {int(d.n_fold_genes_off_panel.sum())} "
+      f"over {len(d)} folds; folds with any {int((d.n_fold_genes_off_panel>0).sum())}; "
+      f"worst fold {int(d.n_fold_genes_off_panel.max())}/50")
+print(d.groupby("task").n_fold_genes_off_panel.agg(["mean","max"]).round(2).to_string())
 
 print(f"\n=== R2: shipped minus fold-selected, encoder {enc} ===")
 agg = d.groupby("task").agg(
