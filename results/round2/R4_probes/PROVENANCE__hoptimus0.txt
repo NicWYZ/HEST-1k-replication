@@ -1,0 +1,17 @@
+Round 2, stage R4 - probes v2, encoders hoptimus0 uni_v2 resnet50
+slurm_job_id    : 1635685
+slurm_partition : general
+node            : c1116
+date            : 2026-09-18T19:42:19-0400
+repo_commit     : 4062fecfceec3d6fbf5ee45f9fc2bd8760db890d
+script          : code/scripts/round2_r4_probes.py
+command_line    : /work/users/w/e/weiyang/hest_replication/code/scripts/round2_r4_probes.py hoptimus0 uni_v2 resnet50
+seed/latent/grid/test_frac/subsample : 1/256/6/0.3/800
+morph_covariates: ['n_nuclei', 'area_mean', 'frac_connective', 'frac_dead', 'frac_epithelial', 'frac_inflammatory', 'frac_neoplastic', 'neo_area_mean']
+morph_covariates_planset : ['n_nuclei', 'area_mean', 'frac_connective', 'frac_dead', 'frac_epithelial', 'frac_inflammatory', 'frac_neoplastic']
+probe3_tasks    : ['IDC', 'PAAD', 'LUNG', 'SKCM', 'PRAD (patient 2, decision 2.1)']
+probe2_design   : decision 1.1 - nominal groups, 0.17 slide excluded from training AND evaluation, 2 classes over 7 slides, chance 0.5, binned variant dropped
+pythonhashseed  : 0
+config_hash     : 466edd50
+plan            : round2_execution_plan.md stage R4 / plan phase R4
+decisions       : round2_R3_decisions.md sections 1.1 and 2.1

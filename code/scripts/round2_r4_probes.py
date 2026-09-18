@@ -349,7 +349,17 @@ for enc in sys.argv[1:]:
         for variant, classes in (("probe2_2class", multi),):
             ev = [s for s in p1 if grp.get(s) in multi]        # the 7 evaluable slides
             keepmask = np.isin(slide_of, ev)                   # training pool is those 7 only
+            # Scored the same way as probe 1b, and for the same reason. Each held-out slide
+            # carries ONE resolution class, so a per-fold balanced accuracy is recall on that
+            # class and a classifier that always predicts the majority class scores
+            # n_majority/n_slides -- here 5/7 = 0.714 -- with no resolution signal whatsoever.
+            # The first run of this probe returned 0.712, 0.683, 0.669 against exactly that
+            # baseline, which is uninterpretable. So: pool the leave-one-slide-out predictions
+            # and score once on the pooled pair (both classes present), record the per-slide
+            # majority vote, and carry the trivial baseline in the output so no reader has to
+            # reconstruct it.
             accs, held = [], []
+            pool_t, pool_p, maj2 = [], [], []
             for s in ev:
                 te = keepmask & (slide_of == s)
                 tr = keepmask & (slide_of != s)
@@ -367,14 +377,25 @@ for enc in sys.argv[1:]:
                 # read, and the assert makes that explicit rather than implicit.
                 yy = np.array([grp.get(x, "?") for x in slide_of])
                 assert not (yy[sub] == "?").any(), "unlabelled slide inside the probe-2 sample"
-                a = probe(X[sub], yy[sub], (tr & sub)[sub], (te & sub)[sub])
+                a, yt2, yp2 = probe_pred(X[sub], yy[sub], (tr & sub)[sub], (te & sub)[sub])
                 accs.append(a); held.append(s)
+                pool_t.append(yt2); pool_p.append(yp2)
+                v2, c2 = np.unique(yp2, return_counts=True)
+                maj2.append(bool(str(v2[c2.argmax()]) == str(yy[te][0])))
             if accs:
                 rows.append(dict(
                     probe=variant, encoder=enc, task="PRAD", unit="PRAD patient 1",
                     n_classes=len(multi), chance=1.0 / len(multi),
-                    n_folds=len(accs), acc_blocked=float(np.mean(accs)),
+                    n_folds=len(accs),
+                    acc_blocked=float(balanced_accuracy_score(np.concatenate(pool_t),
+                                                              np.concatenate(pool_p))),
+                    acc_pooled_balanced=float(balanced_accuracy_score(
+                        np.concatenate(pool_t), np.concatenate(pool_p))),
+                    acc_mean_per_slide_recall=float(np.mean(accs)),
                     acc_sd=float(np.std(accs, ddof=1)) if len(accs) > 1 else np.nan,
+                    majority_class_baseline=float(max(sizes[g] for g in multi) / len(ev)),
+                    n_slides_majority_correct=int(sum(maj2)), n_slides_scored=len(maj2),
+                    majority_vote_acc=float(np.mean(maj2)) if maj2 else np.nan,
                     held_out_slides=";".join(held),
                     px_values=";".join(f"{g}:{n_}" for g, n_ in sorted(sizes.items())),
                     excluded_slides=";".join(sorted(s for s in p1 if grp.get(s) not in multi)),
