@@ -33,6 +33,7 @@ import json
 import os
 import sys
 import time
+import zlib
 
 import anndata as ad
 import numpy as np
@@ -40,6 +41,16 @@ import pandas as pd
 import pyarrow as pa
 import pyarrow.parquet as pq
 from scipy.stats import spearmanr
+
+
+def config_hash(*parts):
+    """Stable across processes and Python versions.
+
+    NOT `hash()`: Python randomises str hashing per process unless PYTHONHASHSEED is
+    set, so a config_hash over anything containing a string identified nothing — it
+    differed on every run, which defeats the point of recording it in PROVENANCE.
+    """
+    return zlib.crc32(repr(parts).encode()) & 0xFFFFFFFF
 
 ROOT = "/work/users/w/e/weiyang/hest_replication"
 BD = f"{ROOT}/bench_data"
@@ -263,5 +274,5 @@ with open(f"{OUT}/PROVENANCE.txt", "w") as f:
         f"command_line    : {' '.join(sys.argv)}\n"
         f"tasks           : {tasks}\n"
         f"seed/n_boot/min_spots/neo_hi/neo_lo : {SEED}/{N_BOOT}/{MIN_SPOTS}/{NEO_HI}/{NEO_LO}\n"
-        f"config_hash     : {abs(hash((SEED,N_BOOT,MIN_SPOTS,NEO_HI,NEO_LO))):016x}\n"
+        f"config_hash     : {config_hash(SEED, N_BOOT, MIN_SPOTS, NEO_HI, NEO_LO):08x}\n"
         "plan            : round2_execution_plan.md stage R6 / plan phase R6\n")

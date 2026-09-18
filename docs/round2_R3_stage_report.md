@@ -354,8 +354,8 @@ The three tasks with a multi-slide patient, where the last row splits, 9 cells:
 | training-set size | +0.0133 | 0.0090 |
 | spatial adjacency | +0.0320 | 0.0089 |
 | adjacency past the block edge | +0.0107 | 0.0034 |
-| `blocked_buffered − slide_out` — **novel slide** | **+0.0138** | 0.0175 |
-| `slide_out − patient` — **patient identity** | **+0.1367** | 0.0962 |
+| `blocked_buffered − slide_out` — **novel slide** | **+0.0148** | 0.0179 |
+| `slide_out − patient` — **patient identity** | **+0.1357** | 0.0962 |
 | **total** | **+0.2064** | 0.0900 |
 
 ### 6.3 Three things this changes about round 1
@@ -369,35 +369,50 @@ trains on fewer spots than the `random` arm, and that alone is worth **+0.0126**
 effect, a site effect, or biology; it is $n$. Round 1's 0.1241 "slide-level signature" contains it.
 
 **The dominant term is patient, not slide.** Once another slide from the same patient is in
-training, holding out a whole further slide costs only **+0.0138** — smaller than the adjacency
-term. Losing the patient entirely costs **+0.1367**, an order of magnitude more. So the review's
+training, holding out a whole further slide costs only **+0.0148** — smaller than the adjacency
+term, and resolved from zero on only one of the three tasks (§ 6.4). Losing the patient entirely
+costs **+0.1357**, an order of magnitude more. So the review's
 framing that "the slide, not the spot, is the unit of inference" is directionally right but names
 the wrong level: on this evidence the **patient** is the unit of inference, and slide novelty is a
 minor cost on top.
 
 ### 6.4 The COAD prediction, and why its number cannot be read as a patient effect
 
-Per task, from `r3_per_task_terms.csv`:
+Per task, from `r3_per_task_terms.csv`. The novel-slide column carries its own dispersion because
+**two of the three tasks cannot resolve it from zero**, which changes what can be claimed:
 
-| task | novel slide | patient identity | ratio | patient-label status (D3) |
-|---|---|---|---|---|
-| COAD | +0.0013 | **+0.2588** | 199× | **labels collapse distinct patients** |
-| READ | +0.0131 | +0.0921 | 7.0× | pairs are same-specimen replicates |
-| PRAD | +0.0269 | +0.0594 | 2.2× | labels confirmed from subseries strings |
+| task | novel slide | sd | in sd units | patient identity | patient-label status (D3) |
+|---|---|---|---|---|---|
+| COAD | +0.0022 | 0.0198 | **0.11** | **+0.2578** | **labels collapse distinct patients** |
+| READ | +0.0141 | 0.0196 | **0.72** | +0.0910 | pairs are same-specimen replicates |
+| PRAD | +0.0280 | 0.0019 | **14.4** | +0.0583 | labels confirmed from subseries strings |
 
-The review predicted COAD would stand out, and it does — by far the most, at 199× — but the v4
-arms explain it rather than confirming a biological reading. Because COAD's patient field collapses
-several distinct patients into one label (§ 5.1), its `patient` arm holds out **more than one
-patient's** slides while its `slide_out` arm holds out one slide. The two arms therefore differ in
-how many patients leave training, not only in whether the same patient's other slides remain. COAD's
-0.2588 is a multi-patient holdout penalty wearing a same-patient label, and round 1's 0.294 was the
-same quantity.
+**An earlier draft of this report quoted a "199×" ratio for COAD. That number was meaningless and
+has been withdrawn**, because COAD's novel-slide term — the denominator — is 0.11 of its own
+standard deviation, i.e. indistinguishable from zero. A ratio against a zero denominator is
+unstable by construction, and it duly moved to 115× when the arm was recomputed (§ 6.6). No ratio
+is quoted for COAD or READ.
 
-**PRAD is the only clean instance**, and it gives the honest version of the effect: **2.2×**, not
-199×. READ sits between at 7.0×, but its "same patient" pairs are replicate sections of one
-specimen, so its term is a same-specimen effect and an upper bound on a patient effect.
+What survives, stated in terms the data supports:
 
-So the Topic B motivation survives, at a smaller and defensible size, resting on PRAD.
+- **Only PRAD resolves a novel-slide cost at all**, at +0.0280 with sd 0.0019 — **14 sd**, and the
+  only task where the term is distinguishable from zero. There, patient identity is **2.1×** the
+  novel-slide cost.
+- **COAD's and READ's novel-slide terms are within noise of zero**, so on those tasks the evidence
+  is that holding out a whole further slide costs *nothing measurable* once the patient's other
+  slides remain in training. That is the stronger form of the same conclusion, not a weaker one.
+- **COAD's large patient-identity term is a label artefact.** Because its patient field collapses
+  several distinct patients into one label (§ 5.1), its `patient` arm holds out **more than one
+  patient's** slides while its `slide_out` arm holds out one slide. The arms differ in how many
+  patients leave training, not only in whether the same patient's other slides remain. COAD's
+  0.2578 is a multi-patient holdout penalty wearing a same-patient label, and round 1's 0.294 was
+  the same quantity. The review nominated this as one of its two clearest demonstrations that the
+  slide is the unit of inference; **that demonstration is withdrawn.**
+- READ's term is a same-*specimen* effect, since its pairs are replicate sections of one specimen,
+  so it is an upper bound on a patient effect.
+
+So the Topic B motivation survives and rests on PRAD, at 2.1× rather than any of the larger figures
+round 1 or this report's first draft suggested.
 
 ### 6.5 The buffer makes the adjacency term well defined
 
@@ -423,7 +438,54 @@ monotone trend. **Without a buffer, a blocked-split result is partly a statement
 size chosen**, which is an arbitrary parameter. This is why the arm was added and it should be
 standard in any spatial-CV result this project reports.
 
-### 6.6 Figures
+### 6.6 A determinism failure found by an unplanned check, and what it cost
+
+The per-gene regeneration reran the entire computation with the same seeds, so it also rewrote
+`split_v4__*.csv`. Comparing those against the files the reported numbers came from was free, so I
+ran it as a determinism check. **It failed**, and finding out why changed one reported claim.
+
+**450 of 6138 rows differed**, up to 0.046 — and every one of them was the `slide_out` design, on
+all three encoders, all three tasks and all five repeats. `n_train` and `n_test` matched exactly, so
+the splits were identical and only the scores moved. The cause was line 338 of
+`round2_split_v4.py`:
+
+```python
+rng = np.random.default_rng(SEED + 4441 * rep + hash(s) % 1000)   # s is a slide id
+```
+
+**Python randomises `str` hashing per process** unless `PYTHONHASHSEED` is set, so this reseeded the
+training-size-matching subsample differently on every run. The same slide id gives `213`, `700`,
+`780` on three successive interpreters; `zlib.crc32` gives `14622` every time. The two other RNGs
+in the script seed from integers only (`rep`, `k`, `grid`), which is precisely why every other
+design reproduced bit-exactly.
+
+What it did and did not affect:
+
+| quantity | reproduces? | first draw | second draw |
+|---|---|---|---|
+| training-set size, adjacency, buffer residual | **exactly** | — | spread 0.0000 |
+| total `random − patient`, both task sets | **exactly** | — | spread 0.0000 |
+| novel slide | no | +0.0138 | **+0.0148** |
+| patient identity | no | +0.1367 | **+0.1357** |
+
+Both totals are unaffected because `slide_out` cancels out of `random − patient`. The two affected
+terms moved by 0.0010, which is 0.06 and 0.01 of their own standard deviations — so no conclusion
+turns on it. The exception is the COAD **ratio**, which fell from 199× to roughly 115× — and is so
+ill-conditioned that recomputing it from the 4-decimal saved table rather than the full-precision
+column shifts it again, to 117×. A quantity that moves with rounding alone is not a result.
+Chasing that instability is what exposed that the ratio should never have been quoted (§ 6.4).
+
+**Fixed** by seeding from `zlib.crc32(s.encode())`, which is stable across processes and versions.
+The same defect was then found in a second place by sweeping every round-2 script for `hash()`:
+`round2_r4_probes.py` computed its `PROVENANCE` `config_hash` over a tuple containing strings, so
+that hash was randomised per run and **identified nothing** — the opposite of a provenance record's
+purpose. Both now use a `config_hash()` helper built on `crc32`.
+
+**The regenerated run is canonical** in this report and in the saved `r3_split_v4.csv`, because it
+is the run the per-gene parquet was computed alongside, so R7's inputs and R3's reported summaries
+describe the same draw.
+
+### 6.7 Figures
 
 ![The benchmark head's R² deficit assigned to three fixable causes and a pattern ceiling]({{artifact:art_7caa60fe-1a11-45e7-98d3-7e61e020f5e9}})
 
@@ -483,8 +545,10 @@ will be reported with the results.
    PRAD +0.0402 against the plan's 0.02. Escalated. My reading is that the number should be
    escalated but not called leakage, and that the clean design in § 4.5 is what would settle it.
 2. **COAD's patient labels are wrong in the benchmark** (§ 5.1), and the v4 arms independently
-   confirm it (§ 6.4): COAD's patient-identity step is 199× its novel-slide step, against 2.2× on
-   the only task with verified labels. Escalated as a benchmark issue.
+   confirm it (§ 6.4): COAD's novel-slide step is 0.11 of its own sd, i.e. indistinguishable from
+   zero, while its patient-identity step is +0.2578 — the signature of a holdout that removes
+   more than one patient. On PRAD, the only task with verified labels and the only one whose
+   novel-slide term is resolved from zero (14 sd), patient identity is 2.1× the novel-slide cost. Escalated as a benchmark issue.
 3. **HEST-bench samples within a task carry different gene panels** (§ 4.5), so leakage-free gene
    selection is not well defined without the held-out slide's panel. Escalated as a benchmark
    issue. PAAD is the extreme: 159 genes common to its three samples against a 919 union.
@@ -526,8 +590,9 @@ will be reported with the results.
 - **R3 on more than three encoders.** `hoptimus0`, `uni_v2`, `resnet50`. The plan permits deciding
   the encoder set alone; three was chosen to span the quality range (best, mid, ImageNet baseline)
   at the cost of a 47-hour wall each.
-- **The per-gene R3 table**, which R5 and R7 consume. The original runs completed every design and
-  fold and then died writing it (§ 10); regeneration is in flight.
+- ~~The per-gene R3 table~~ — **now complete.** `pergene__{hoptimus0,resnet50,uni_v2}.parquet`,
+  851,050 rows each, explicit schema verified on read (`fold` string, `grid` nullable int32,
+  no nulls in `pearson`, all 7 designs, 10 tasks, 430 genes). R7's input exists.
 - **Whether the R2 gap survives holding the gene set fixed.** The proposed clean design in § 4.5 is
   specified and not run.
 - **Probe 2's binned variant** is reported as undefined for PRAD patient 1 rather than computed.
@@ -564,7 +629,7 @@ explicit schema and the cheapest outputs get written first.
    alongside a report-and-wait gate). Both are one-line answers and both block work that is ready.
 2. **Decide whether to run the clean gene-selection design** in § 4.5. It is cheap and it converts
    an escalated number that I do not think means what its label says into one that does.
-3. Let the per-gene regeneration finish, which completes R3 and unblocks R7.
+3. ~~Let the per-gene regeneration finish~~ — done; R3 is complete and R7's input exists.
 4. Then R4 and R6 as the plan has them, with Probe 2 per the § 8.5 decision.
 5. R5 is a reading task and needs no compute; it can run whenever.
 
@@ -572,7 +637,8 @@ On the two topics, what this block establishes: **Topic A** has its intercept, a
 deficit is now assigned — two thirds level, then a slide-level mean shift, then scale, against a
 pattern ceiling of +0.0997. The over-dispersion result ($\rho/r$ = 1.84, ordering with encoder
 quality) is the concrete target for a calibration layer. **Topic B**'s premise survives but must be
-restated: the unit of inference is the **patient**, not the slide — novel-slide cost +0.0138 against
-patient-identity +0.1367 — and the COAD result the review nominated as one of its two clearest
+restated: the unit of inference is the **patient**, not the slide — novel-slide cost +0.0148 against
+patient-identity +0.1357 — and the COAD result the review nominated as one of its two clearest
 demonstrations has to be withdrawn, because that task's patient labels do not separate patients.
-PRAD at 2.2× is the honest version.
+PRAD at 2.1× is the honest version, and it is the only task whose novel-slide term is resolved from
+zero at all.

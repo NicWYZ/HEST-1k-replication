@@ -44,6 +44,7 @@ import glob
 import os
 import sys
 import time
+import zlib
 
 import h5py
 import numpy as np
@@ -55,6 +56,16 @@ from sklearn.linear_model import LinearRegression, LogisticRegression
 from sklearn.metrics import balanced_accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
+
+
+def config_hash(*parts):
+    """Stable across processes and Python versions.
+
+    NOT `hash()`: Python randomises str hashing per process unless PYTHONHASHSEED is
+    set, so a config_hash over anything containing a string identified nothing — it
+    differed on every run, which defeats the point of recording it in PROVENANCE.
+    """
+    return zlib.crc32(repr(parts).encode()) & 0xFFFFFFFF
 
 ROOT = "/work/users/w/e/weiyang/hest_replication"
 BD, EMB = f"{ROOT}/bench_data", f"{ROOT}/embeddings"
@@ -353,6 +364,6 @@ with open(f"{OUT}/PROVENANCE__{tag}.txt", "w") as f:
         f"morph_covariates: {MORPH_COVS}\n"
         f"morph_covariates_planset : {MORPH_COVS_PLAN}\n"
         f"probe3_tasks    : {PROBE3_TASKS}\n"
-        f"config_hash     : {abs(hash((SEED,LATENT,GRID,TEST_FRAC,SUBSAMPLE,tuple(MORPH_COVS)))):016x}\n"
+        f"config_hash     : {config_hash(SEED, LATENT, GRID, TEST_FRAC, SUBSAMPLE, tuple(MORPH_COVS)):08x}\n"
         "plan            : round2_execution_plan.md stage R4 / plan phase R4\n"
         "deviation       : probe 2 balanced chance is 1/2 not 1/3, see script docstring\n")

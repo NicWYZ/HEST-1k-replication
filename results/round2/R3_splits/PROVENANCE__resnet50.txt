@@ -1,0 +1,11 @@
+Round 2, R3 - split decomposition v4, encoder resnet50
+slurm_job_id      : 1579601
+slurm_partition   : general
+node              : c0912
+date              : 2026-09-18T17:10:08-0400
+repo_commit       : 9bdb753f6feaa32f4380c6b655673a9c9b2da7f2
+script            : code/scripts/round2_split_v4.py
+command_line      : /work/users/w/e/weiyang/hest_replication/code/scripts/round2_split_v4.py resnet50
+config_hash       : v4-grids4-6-10-buf2.5-rep5-seed1-latent256
+config            : designs=random,blocked,blocked_buffered,slide_out,patient (+blocked_matched,random_matched); grids=(4, 6, 10); buffer=2.5 spot pitches; repeats=5; slide_out_tasks=('PRAD', 'COAD', 'READ'); metric=within-slide Pearson (min 50 spots per slide); fit=v3 verbatim
+decisions         : round2_R1_decisions.md decision 3, directive D5

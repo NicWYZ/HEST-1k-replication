@@ -38,6 +38,7 @@ import json
 import os
 import sys
 import time
+import zlib
 
 import anndata as ad
 import h5py
@@ -335,7 +336,14 @@ for task in tasks:
             n_pat_train = int((~same_pat).sum())
             n_match = min(n_pat_train, len(pool))
             for rep in range(N_REPEATS):
-                rng = np.random.default_rng(SEED + 4441 * rep + hash(s) % 1000)
+                # zlib.crc32, NOT hash(). Python randomises str hashing per process unless
+                # PYTHONHASHSEED is set, so `hash(s) % 1000` reseeded this subsample
+                # differently on every run: the slide_out arm was the ONLY design that moved
+                # between the first run and the per-gene regeneration (450 of 6138 rows,
+                # max 0.046), while every integer-seeded design reproduced exactly. crc32 is
+                # stable across processes and versions.
+                rng = np.random.default_rng(SEED + 4441 * rep
+                                            + zlib.crc32(s.encode()) % 100000)
                 sel = np.zeros(n, bool)
                 sel[rng.choice(pool, size=n_match, replace=False)] = True
                 assert not (sel & te).any()
