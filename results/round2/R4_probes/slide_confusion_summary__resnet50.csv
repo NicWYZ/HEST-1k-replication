@@ -1,0 +1,5 @@
+encoder,task,n_slides,chance,balanced_acc,off_diagonal_mass,slides,TENX95_off_diag,TENX95_onto_partner,TENX95_frac_onto_partner,TENX95_chance_share,TENX99_off_diag,TENX99_onto_partner,TENX99_frac_onto_partner,TENX99_chance_share,tenx_pair_mass,tenx_pair_frac_of_off_diag
+resnet50,IDC,4,0.25,0.9869533761803168,123,NCBI783;NCBI785;TENX95;TENX99,61.0,59.0,0.9672131147540983,0.3333333333333333,39.0,39.0,1.0,0.3333333333333333,98.0,0.7967479674796748
+resnet50,PAAD,3,0.3333333333333333,0.9842147435897436,39,TENX116;TENX126;TENX140,,,,,,,,,,
+resnet50,LUNG,2,0.5,0.9864119963533492,18,TENX118;TENX141,,,,,,,,,,
+resnet50,SKCM,2,0.5,0.9991181657848325,1,TENX115;TENX117,,,,,,,,,,

@@ -1,0 +1,11 @@
+Round 2, stage R5c - replicate leak generalised, encoder uni_v2
+slurm_job_id    : 1652064
+node            : c1122
+date            : 2026-09-19T01:09:06-0400
+repo_commit     : 041bd929481fb0c3fd726cb2362232bbc4f40c65
+script          : code/scripts/round2_r5c_replicate_leak.py
+command_line    : /work/users/w/e/weiyang/hest_replication/code/scripts/round2_r5c_replicate_leak.py uni_v2
+pythonhashseed  : 0
+pairs           : {'IDC': [['TENX95', 'TENX99']], 'READ': [['ZEN48', 'ZEN49'], ['ZEN36', 'ZEN40']]}
+n_repeats/seed  : 5/1
+plan            : round2_R5_decisions.md directive 2.2 / plan phase-5c

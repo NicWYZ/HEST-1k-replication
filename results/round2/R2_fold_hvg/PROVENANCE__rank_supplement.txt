@@ -1,0 +1,10 @@
+Round 2, R2 supplement - fixed-list ranking sensitivity
+slurm_job_id    : 1652298
+node            : b1006
+date            : 2026-09-19T01:16:12-0400
+repo_commit     : 041bd929481fb0c3fd726cb2362232bbc4f40c65
+script          : code/scripts/round2_r2_rank_supplement.py
+command_line    : /work/users/w/e/weiyang/hest_replication/code/scripts/round2_r2_rank_supplement.py hoptimus0
+pythonhashseed  : 0
+statistic       : scanpy normalised dispersion, as get_k_genes uses it
+plan            : round2_R5_decisions.md directive 2.6 / plan phase-4b

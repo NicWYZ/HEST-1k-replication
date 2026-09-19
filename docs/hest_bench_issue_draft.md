@@ -4,6 +4,19 @@
 be made on a finished text rather than a summary. Sending it is Nicolas's call with David, not the
 analysis session's. Nothing here has been communicated to anyone outside the project.
 
+**One thing to settle before this is sent.** Item 1's evidence is the "FFPE Human Breast using the
+Entire Sample Area" page, which states `donorCount: 1` and frames its two sections as Replicate 1
+and Replicate 2. HEST's own metadata assigns **only TENX99** to that dataset (subseries "Replicate
+1"); it assigns TENX95 to a different product, "FFPE Human Breast with Pre-designed Panel"
+(subseries "Tissue sample 1"). The two pages could not be re-fetched to close this (10x returned
+HTTP 429 on every attempt). The supporting evidence is mixed: TENX95 and TENX99 carry
+byte-identical 541-entry panels, the only such pair in IDC, but their spot counts differ 2.1-fold
+(25,080 against 11,845), which two replicates of one imaged area should not. **The measurement in
+item 1 does not depend on this** — it measures what TENX95 in training is worth for predicting
+TENX99, whatever the two are called — but the *claim* that they are one donor does, and that
+sentence should not be sent until the Pre-designed Panel page has been read. This is exactly why
+the draft is a draft.
+
 Written for HEST-1k's GitHub issue tracker, which the project README names as the preferred
 channel. Every number cites the file in `NicWYZ/HEST-1k-replication` that establishes it.
 
@@ -62,25 +75,46 @@ Source: `results/round2/R3_splits/replicate_leak__*.csv`, `docs/r5_idc_provenanc
 The IDC task itself remains a valid prediction task and the shipped 50 target genes are unaffected.
 What is affected is reading IDC's patient-split score as cross-patient generalisation.
 
-### 2. COAD: the patient field collapses distinct patients and leaves one sample unlabelled
+### 2. COAD: already fixed in the metadata, but the split consequence may be worth documenting
 
-TENX147, TENX148 and TENX149 all carry `Patient 1`, and TENX111 carries no patient label at all.
-The consequence is that COAD's shipped patient split does not separate patients, and any per-task
-term computed from it cannot be read as a patient effect. In our decomposition COAD's
-patient-identity term came out as by far the largest of any task, which was initially reported as a
-striking same-patient result until the labels were checked — it is an artefact of the holdout
-removing more than one patient's slides.
+**This one you already know about, and we are not reporting it as new.** Issue #126 reported it,
+#133 asked about it, and you answered there that the patient information for this cohort was wrong
+in v1.1.0 and was corrected in v1.3.0 — TENX147 → patient 5, TENX148 → patient 2, TENX149 →
+patient 1 — and that you chose not to update the HEST-bench COAD splits because the core
+requirement, that no patient appears in both train and test of a fold, is still satisfied.
 
-Source: `results/round2/R1b_heads/d3_coad_patient_rows.csv`, `r3_per_task_terms.csv`.
+We agree it is satisfied. The point we would add is about what the fold then measures. COAD's
+`test_0` holds out TENX147, TENX148 and TENX149 — now known to be three different donors — and
+therefore trains on TENX111 alone; `test_1` holds out TENX111 and trains on the other three. So
+COAD's patient split is a three-donor holdout trained on one donor, in a benchmark whose other
+tasks hold out one donor at a time.
 
-### 3. READ: the "patients" are same-specimen replicate pairs
+That shows up in the numbers. COAD's patient-identity term is by far the largest of any task
+(0.2938, against 0.026–0.163 elsewhere), which is what a single-donor training set predicts rather
+than anything about colorectal tissue. A reader comparing COAD's patient-split score with another
+task's is not comparing like with like, and a one-line note in the task table would prevent that.
+
+Sources: HEST issues #126 and #133; `r3_per_task_terms.csv`;
+`results/round2/R1b_heads/d3_coad_patient_rows.csv`.
+
+### 3. READ: correctly grouped, and it shows what the IDC grouping is worth
 
 ZEN36/ZEN40 (`Patient 7`) and ZEN48/ZEN49 (`Patient 1`) are replicate sections of one specimen
-rather than merely two slides from one patient. The label is not wrong, but a same-patient term
-computed on READ is a same-*specimen* term and an upper bound on a patient effect. Documenting this
-would prevent the reading we initially made.
+rather than merely two slides from one patient, and **READ's folds group each pair** — `test_0` is
+ZEN48+ZEN49, `test_1` is ZEN36+ZEN40. No replicate is ever in its partner's training set, so READ
+has no leak. We mention it only because it gives the counterfactual that makes item 1 concrete.
 
-Source: `r3_per_task_terms.csv`.
+Running the same controlled design on READ — hold out one slide, fix the training size, vary only
+whether the partner section is available — gives **+0.0901** (12 of 12 encoder–slide cells
+positive, range +0.033 to +0.150). Without its partner, ResNet50 on ZEN40 scores −0.017, below
+predicting the mean. That is what your READ grouping is preventing, and it is a second, independent
+estimate of the same quantity IDC's split exposes (+0.0651). One task would be an anecdote; two
+make it a property of same-specimen sections in this data.
+
+The only caveat we would note for READ is a reading one: a same-patient term computed on it is a
+same-*specimen* term, so it is an upper bound on a patient effect rather than an estimate of one.
+
+Sources: `r5c_replicate_leak.csv`, `r5c_leak_summary.csv`, `r3_per_task_terms.csv`.
 
 ### 4. Samples within a task do not share a gene panel
 
