@@ -89,10 +89,13 @@ therefore trains on TENX111 alone; `test_1` holds out TENX111 and trains on the 
 COAD's patient split is a three-donor holdout trained on one donor, in a benchmark whose other
 tasks hold out one donor at a time.
 
-That shows up in the numbers. COAD's patient-identity term is by far the largest of any task
-(0.2938, against 0.026–0.163 elsewhere), which is what a single-donor training set predicts rather
-than anything about colorectal tissue. A reader comparing COAD's patient-split score with another
-task's is not comparing like with like, and a one-line note in the task table would prevent that.
+That shows up in the numbers. COAD's total `random − patient` gap is **0.3172**, the largest of the
+ten tasks, where the other nine run 0.0504 (CCRCC) to 0.1931 (SKCM). Decomposed, almost all of it
+is the same-patient-other-slide term, **0.2578** against 0.0910 for READ and 0.0583 for PRAD, the
+only other tasks where that term is defined — which is what a single-donor training set predicts
+rather than anything about colorectal tissue. A reader comparing COAD's patient-split score with
+another task's is not comparing like with like, and a one-line note in the task table would prevent
+that.
 
 Sources: HEST issues #126 and #133; `r3_per_task_terms.csv`;
 `results/round2/R1b_heads/d3_coad_patient_rows.csv`.

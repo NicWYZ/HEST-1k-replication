@@ -105,8 +105,12 @@ benchmark's own protocol is **0.0977** Pearson (hoptimus1 0.4229 to resnet50 0.3
 Ignoring slide boundaries is worth **0.1575** — 1.61× that spread, positive in 30 of 30 encoder–task
 cells — decomposing into spatial adjacency (0.0335) and a slide-level signature (0.1241).
 The `blocked − patient` term is reported per task rather than pooled, because in multi-slide tasks
-it contains same-patient-other-slide information as well as slide identity (COAD 0.294 against
-0.03–0.16 elsewhere). The contrast previously labelled "institution shift, 0.0419" is **not** an
+it contains same-patient-other-slide information as well as slide identity. In R3's v4
+decomposition COAD's same-patient-other-slide term is **0.2578**, against 0.0910 for READ and
+0.0583 for PRAD — the only other two tasks where that term is defined — and its total
+`random − patient` gap is **0.3172**, the largest of the ten, where the other nine run 0.0504 to
+0.1931 ([`r3_per_task_terms.csv`](r3_per_task_terms.csv)). COAD's figure is a labelling artefact:
+its fold 0 holds out three donors at once and trains on one (see benchmark properties). The contrast previously labelled "institution shift, 0.0419" is **not** an
 institution contrast and has been withdrawn as a scalar — see limitation 3.
 
 Round 2 remeasured this with a buffered, size-matched design and found the dominant term is
