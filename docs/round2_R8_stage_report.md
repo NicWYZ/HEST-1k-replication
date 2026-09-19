@@ -47,8 +47,16 @@ a project collaborator states the patient information for this cohort was wrong 
 corrected in v1.3.0 (TENX147 → patient 5, TENX148 → patient 2, TENX149 → patient 1), and that the
 bench splits were **deliberately** not updated because no patient spans train and test of a fold.
 The issue body and the collaborator's reply are saved verbatim at
-`results/round2/R5b_audit/r5b_issue133_evidence.md` so the citation is checkable without
-re-fetching.
+`results/round2/R5b_audit/r5b_issue133_evidence.md`, and #126 — which that reply cites — at
+`r5b_issue126_evidence.md`. The cross-reference needs one word of explanation: **#126 reports the
+same study's *Visium HD* samples** (TENX153–156, TENX128, none of them in HEST-bench, corrected in
+v1.2.1); our three are that study's **Xenium In Situ** arm, added in v1.3.0.
+
+**And the mapping does not depend on the issue thread at all.** `HEST_v1_1_0.csv` labels all three
+`Patient 1` while its own `subseries` field, in the same row, reads "Xenium In Situ, Sample **P5**
+CRC", "Sample **P2** CRC" and "Sample **P1** CRC" — reproducing the v1.3.0 mapping exactly
+(`r5b_coad_subseries_confirmation.csv`). The three-donor reading is therefore established from the
+shipped metadata alone, with the issue as corroboration rather than as the source.
 That is true. The consequence it leaves is ours to state: COAD's `test_0` holds out all three of
 those samples — three donors — and trains on TENX111 alone. COAD's `random − patient` gap is
 **0.3172**, the largest of the ten, where the other nine run

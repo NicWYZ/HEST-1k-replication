@@ -77,11 +77,18 @@ What is affected is reading IDC's patient-split score as cross-patient generalis
 
 ### 2. COAD: already fixed in the metadata, but the split consequence may be worth documenting
 
-**This one you already know about, and we are not reporting it as new.** Issue #126 reported it,
-#133 asked about it, and you answered there that the patient information for this cohort was wrong
-in v1.1.0 and was corrected in v1.3.0 — TENX147 → patient 5, TENX148 → patient 2, TENX149 →
-patient 1 — and that you chose not to update the HEST-bench COAD splits because the core
-requirement, that no patient appears in both train and test of a fold, is still satisfied.
+**This one you already know about, and we are not reporting it as new.** In issue #133 you
+answered that the patient information for this cohort was wrong in v1.1.0 and was corrected in
+v1.3.0 — TENX147 → patient 5, TENX148 → patient 2, TENX149 → patient 1 — and that you chose not to
+update the HEST-bench COAD splits because the core requirement, that no patient appears in both
+train and test of a fold, is still satisfied. (Your reply cites #126, which reported the same
+study's *Visium HD* samples, TENX153–156 and TENX128, none of which are in HEST-bench; our three
+are that study's Xenium In Situ arm.)
+
+The correction is independently visible in the shipped metadata, so nothing here rests on reading
+the issue thread: `HEST_v1_1_0.csv` labels all three `Patient 1` while its own `subseries` field
+reads "Xenium In Situ, Sample **P5** CRC", "Sample **P2** CRC" and "Sample **P1** CRC" — the exact
+v1.3.0 mapping, sitting in the same row as the wrong label.
 
 We agree it is satisfied. The point we would add is about what the fold then measures. COAD's
 `test_0` holds out TENX147, TENX148 and TENX149 — now known to be three different donors — and
