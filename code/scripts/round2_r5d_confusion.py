@@ -227,6 +227,11 @@ os.makedirs(OUT, exist_ok=True)
 #
 # Same probe as R4's: PCA-256 fit on training rows, logistic regression, spatial block split.
 # No morphology adjustment here - the question is what the raw embedding carries.
+# The encoder comes from argv. round2_r4_probes.py sets it in a `for enc in sys.argv[1:]`
+# loop that sits below the point this file was lifted from, so it has to be set here.
+enc = sys.argv[1]
+os.makedirs(OUT, exist_ok=True)
+
 CONF_TASKS = ["IDC", "PAAD", "LUNG", "SKCM"]
 rows, mats = [], {}
 for task in CONF_TASKS:
