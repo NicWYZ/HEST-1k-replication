@@ -1,0 +1,23 @@
+# Round 2, stage R8 (R5 decisions directive 2.5): the falsification test of D2.
+# D2 says Table A13's encoder ranking tracks prediction WIDTH rather than accuracy. H-optimus-1
+# is a ViT-giant with 1536-dimensional embeddings, the same width as H-optimus-0, so on the raw
+# heads it should land near H-optimus-0 rather than near its pca_ridge position if the width
+# explanation holds. Reported as where it lands, not as confirmation.
+#
+# batch_size 64, matching pca_ridge__hoptimus1: H-optimus-1 is a ViT-giant and 64 keeps inference
+# inside a 16 GB card. All 72 embeddings are already cached under embeddings/<task>/hoptimus1/,
+# so this run fits heads only and needs no GPU; batch size affects extraction throughput alone.
+bench_data_root: /work/users/w/e/weiyang/hest_replication/bench_data
+results_dir:     /work/users/w/e/weiyang/hest_replication/results/faithful
+embed_dataroot:  /work/users/w/e/weiyang/hest_replication/embeddings
+exp_code: raw_ridge__hoptimus1
+seed: 1
+batch_size: 64
+num_workers: 4
+gene_list: var_50genes.json
+method: ridge
+normalize: True
+dimreduce: null
+latent_dim: 256
+encoders: ["hoptimus1"]
+datasets: ["IDC", "PRAD", "PAAD", "SKCM", "COAD", "READ", "CCRCC", "LUNG", "LYMPH_IDC", "HCC"]
