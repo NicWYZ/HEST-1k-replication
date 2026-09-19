@@ -1,0 +1,4 @@
+definition,value,note
+directive 2.3 as written: CCRCC + PRAD,0.1217,"PRAD contributes df_donor=1 and a component of 0.000 that is truncation, negative raw for 68% of genes, so this pools one well-determined value with one uninformative zero"
+"well-powered only: CCRCC + LYMPH_IDC (df_donor>=3, verified labels)",0.3761,the substitution I made; both components rest on >=3 donor degrees of freedom
+sensitivity: all ten tasks,0.0846,five of ten tasks have df_donor=1

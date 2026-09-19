@@ -46,6 +46,9 @@ COAD went the other way and was **upgraded**. HEST issue #133, read directly fro
 a project collaborator states the patient information for this cohort was wrong in v1.1.0, was
 corrected in v1.3.0 (TENX147 → patient 5, TENX148 → patient 2, TENX149 → patient 1), and that the
 bench splits were **deliberately** not updated because no patient spans train and test of a fold.
+The issue body and the collaborator's reply are saved verbatim at
+`results/round2/R5b_audit/r5b_issue133_evidence.md` so the citation is checkable without
+re-fetching.
 That is true. The consequence it leaves is ours to state: COAD's `test_0` holds out all three of
 those samples — three donors — and trains on TENX111 alone. COAD's `random − patient` gap is
 **0.3172**, the largest of the ten, where the other nine run
@@ -135,12 +138,34 @@ uninformative rather than as small effects.
 | PRAD | 2 / 23 | 1 | 0.000 | 0.140 | 0.854 | verified |
 
 Only **CCRCC (24 donors) and LYMPH_IDC (4)** have `df_donor ≥ 3` with verified labels, at
-0.393 and 0.335; pooled median
-**0.376**. Five tasks rest on one degree of freedom. PRAD's between-donor
+0.393 and 0.335. Five tasks rest on one degree of freedom. PRAD's between-donor
 point estimate of 0.000 is truncation, not a small effect — its raw moment estimate is negative
 for 68% of genes.
 
-### 4.1 The PRAD caveat directive 2.3 asked for reverses
+### 4.1 The pooled estimate: what the directive specified, and what I substituted
+
+Directive 2.3 asks for "a pooled between-donor estimate that uses **CCRCC and PRAD** with the rest
+as a sensitivity check." I substituted CCRCC and LYMPH_IDC on a power filter, which is a deviation
+from a directive I was told to follow precisely. Both are reported here
+(`r6_pooled_between_donor.csv`):
+
+| definition | pooled between-donor fraction |
+|---|---|
+| **directive 2.3 as written: CCRCC + PRAD** | **0.1217** |
+| well-powered only: CCRCC + LYMPH_IDC (`df_donor ≥ 3`, verified labels) | 0.3761 |
+| sensitivity, all ten tasks | 0.0846 (range 0.0000–0.3932) |
+
+The two differ threefold for one reason. PRAD has **two** donors, so `df_donor = 1`, and its
+between-donor component of 0.000 is truncation — the raw moment estimate is negative for 68% of
+its genes. The directive's pairing therefore averages one well-determined value with one
+uninformative zero, and 0.1217 is an artefact of that pairing rather than an estimate of anything.
+LYMPH_IDC has four donors and `df_donor = 3`.
+
+I should have flagged this at the point of substitution instead of quietly choosing the better
+pair; the directive's number is the one that was asked for and it is now stated. **Recommendation:
+use 0.3761, and treat 0.1217 as showing why PRAD cannot carry a between-donor term.**
+
+### 4.2 The PRAD caveat directive 2.3 asked for reverses
 
 The directive asked me to state that PRAD's between-slide-within-donor component contains the
 scan-session effect R4 measured. Repeating the decomposition inside PRAD patient 2 with **scan
@@ -160,7 +185,7 @@ variation — not what the directive expected it to contain. This sharpens rathe
 earlier resolution findings: resolution is still aligned with patient identity in PRAD, SKCM and
 PAAD, and still confounds those folds on the feature side.
 
-### 4.2 The theta acceptance check: diagnosed, and the threshold is what is wrong
+### 4.3 The theta acceptance check: diagnosed, and the threshold is what is wrong
 
 The plan requires IDC/GATA3/NCBI785 to reproduce round 1's 0.458 to 1e-3. It came out
 **0.4106** (log1p) / **0.4209** (raw). The cause is not the computation.
@@ -303,7 +328,7 @@ Per the memo these are recorded rather than halting work. None was acted on outs
    from `r3_per_task_terms.csv`; both documents then swept, nine quoted terms all verified. This is
    the second occurrence of the same failure mode — a number typed from memory into a sentence
    whose *citation* was accurate — and it is now the most recurrent defect in this project.
-5. **The theta acceptance threshold is defined against a superseded morphology build** (§ 4.2).
+5. **The theta acceptance threshold is defined against a superseded morphology build** (§ 4.3).
    Not a failure of the computation; needs restating.
 6. **R8's first submission never scheduled.** 8 CPUs / 64 GB / 24 h sat 5.5 hours at `(Priority)`
    while every other job ran. `sacct` shows my heaviest job ever peaked at 8.8 GB on 4 CPUs, so the
