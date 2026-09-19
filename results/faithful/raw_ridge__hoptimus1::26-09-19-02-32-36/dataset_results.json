@@ -1,0 +1,107 @@
+{
+    "average": {
+        "hoptimus1": 0.259
+    },
+    "results": [
+        {
+            "dataset_name": "IDC",
+            "results": [
+                {
+                    "encoder_name": "hoptimus1",
+                    "pearson_mean": 0.5774,
+                    "pearson_std": 0.0804
+                }
+            ]
+        },
+        {
+            "dataset_name": "PRAD",
+            "results": [
+                {
+                    "encoder_name": "hoptimus1",
+                    "pearson_mean": 0.2986,
+                    "pearson_std": 0.0112
+                }
+            ]
+        },
+        {
+            "dataset_name": "PAAD",
+            "results": [
+                {
+                    "encoder_name": "hoptimus1",
+                    "pearson_mean": 0.3061,
+                    "pearson_std": 0.0836
+                }
+            ]
+        },
+        {
+            "dataset_name": "SKCM",
+            "results": [
+                {
+                    "encoder_name": "hoptimus1",
+                    "pearson_mean": 0.2687,
+                    "pearson_std": 0.0221
+                }
+            ]
+        },
+        {
+            "dataset_name": "COAD",
+            "results": [
+                {
+                    "encoder_name": "hoptimus1",
+                    "pearson_mean": 0.2152,
+                    "pearson_std": 0.0363
+                }
+            ]
+        },
+        {
+            "dataset_name": "READ",
+            "results": [
+                {
+                    "encoder_name": "hoptimus1",
+                    "pearson_mean": 0.1363,
+                    "pearson_std": 0.0373
+                }
+            ]
+        },
+        {
+            "dataset_name": "CCRCC",
+            "results": [
+                {
+                    "encoder_name": "hoptimus1",
+                    "pearson_mean": 0.2436,
+                    "pearson_std": 0.0362
+                }
+            ]
+        },
+        {
+            "dataset_name": "LUNG",
+            "results": [
+                {
+                    "encoder_name": "hoptimus1",
+                    "pearson_mean": 0.3175,
+                    "pearson_std": 0.0958
+                }
+            ]
+        },
+        {
+            "dataset_name": "LYMPH_IDC",
+            "results": [
+                {
+                    "encoder_name": "hoptimus1",
+                    "pearson_mean": 0.2094,
+                    "pearson_std": 0.0167
+                }
+            ]
+        },
+        {
+            "dataset_name": "HCC",
+            "results": [
+                {
+                    "encoder_name": "hoptimus1",
+                    "pearson_mean": 0.0168,
+                    "pearson_std": 0.0144
+                }
+            ]
+        }
+    ]
+}
