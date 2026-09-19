@@ -1,0 +1,11 @@
+task,donors,slides,df_slide,df_donor,var_spot,var_slide,var_donor,frac_spot,frac_slide,frac_donor,status
+CCRCC,24,24,0,23,0.2604,,0.1816,0.6068,,0.3932,verified
+COAD,4,4,0,3,1.1786,,0.1105,0.8839,,0.1161,contradicted;verified
+HCC,2,2,0,1,0.1974,,0.0213,0.9103,,0.0897,verified
+IDC,3,4,1,2,1.3064,0.0908,0.3581,0.7083,0.0628,0.1651,contradicted;unverifiable
+LUNG,2,2,0,1,1.218,,0.0817,0.9375,,0.0625,unverifiable
+LYMPH_IDC,4,4,0,3,0.2826,,0.156,0.6646,,0.3354,verified
+PAAD,3,3,0,2,0.8555,,0.0503,0.9521,,0.0479,unverifiable
+PRAD,2,23,21,1,0.36,0.063,0.0,0.8539,0.1399,0.0,verified
+READ,2,4,2,1,0.2255,0.0086,0.0197,0.8785,0.0387,0.0795,verified
+SKCM,2,2,0,1,1.3695,,0.0203,0.9854,,0.0146,unverifiable

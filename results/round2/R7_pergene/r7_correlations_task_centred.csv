@@ -1,0 +1,6 @@
+x,y,n,pooled,within_task,p_within,between_task,n_tasks,interpretation
+random_minus_patient,frac_donor,1500,-0.2338,0.0441,0.0875,-0.5879,10,between-donor variance does NOT explain the patient-split penalty at gene level; the pooled negative value is a between-task effect
+blocked_minus_patient,frac_donor,1500,-0.2475,0.0661,0.0105,-0.6485,10,"same, for the blocked contrast"
+same_patient_other_slide,frac_donor,450,0.2915,0.0398,0.3991,,3,"not determined: 3 tasks, n.s."
+replicate_leak,random_minus_patient,300,0.3803,0.3774,0.0,,2,the genes that lose most from the patient split are the genes a same-donor replicate rescues most — robust to task centring
+novel_slide,frac_slide,300,-0.2218,0.2096,0.0003,,2,SIGN FLIP: genes with more between-slide-within-donor variance DO lose more from slide novelty; the pooled negative is a between-task artefact

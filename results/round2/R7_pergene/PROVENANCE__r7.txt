@@ -1,0 +1,9 @@
+Round 2, stage R7 - per-gene decomposition
+slurm_job_id    : 1656102
+date            : 2026-09-19T02:24:10-0400
+repo_commit     : 1bba22b7172f4b3f2623a41d851673870b7bc524
+script          : code/scripts/round2_r7_pergene.py
+pythonhashseed  : 0
+inputs          : R3 pergene__*.parquet, R5c pergene_replicate_leak__*.parquet, R6 donor_variance_components.csv
+join            : BETWEEN-DONOR variance per directive 2.4, not between-patient
+plan            : round2_R5_decisions.md directive 2.4 / plan phase-7

@@ -1,0 +1,12 @@
+Round 2, stage R6 - slide-level estimands
+slurm_job_id    : 1654541
+slurm_partition : general_big
+node            : t0602
+date            : 2026-09-19T01:50:44-0400
+repo_commit     : 1bba22b7172f4b3f2623a41d851673870b7bc524
+script          : code/scripts/round2_r6_theta.py
+command_line    : /work/users/w/e/weiyang/hest_replication/code/scripts/round2_r6_theta.py
+tasks           : ['CCRCC', 'COAD', 'HCC', 'IDC', 'LUNG', 'LYMPH_IDC', 'PAAD', 'PRAD', 'READ', 'SKCM']
+seed/n_boot/min_spots/neo_hi/neo_lo : 1/200/500/0.7/0.3
+config_hash     : 5a477dcb
+plan            : round2_execution_plan.md stage R6 / plan phase R6

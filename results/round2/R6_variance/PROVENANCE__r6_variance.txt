@@ -1,0 +1,11 @@
+Round 2, stage R6 - nested variance components grouped by donor
+slurm_job_id    : 1654540
+node            : c0838
+date            : 2026-09-19T02:08:34-0400
+repo_commit     : 1bba22b7172f4b3f2623a41d851673870b7bc524
+script          : code/scripts/round2_r6_donor_variance.py
+command_line    : /work/users/w/e/weiyang/hest_replication/code/scripts/round2_r6_donor_variance.py
+pythonhashseed  : 0
+grouping        : donor_id from results/round2/R5b_audit/donor_audit.csv
+estimator       : unbalanced nested ANOVA, Henderson method of moments
+plan            : round2_R5_decisions.md directive 2.3 / plan phase-6
