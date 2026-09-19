@@ -302,10 +302,12 @@ So the `pca_ridge` ranking reflects encoder quality and the `raw_ridge` ranking 
 dimensionality. **D2's reading of Table A13 is confirmed, not falsified.** The plan asked me to
 report where H-optimus-1 lands rather than whether it confirms, and it lands 7th.
 
-**`raw_xgb` did not finish, and I did not resubmit it.** It runs at 55 minutes per split — about
-27 hours for 29 splits, against the 8-hour wall I gave it. It completed IDC and was still running
-at the wall. The D2 falsification hinges on `raw_ridge`, which is complete, so I let the job run
-out rather than churn the queue for a secondary result. What would be needed is recorded in § 10.
+**`raw_xgb` did not finish, and I cancelled it rather than resubmit.** It completed **2 of 29
+splits in 2 h 25 min** — about 70 minutes per split, so roughly 34 hours for the full set against
+the 8-hour wall I gave it. At that rate it would have reached one task of ten by the wall, which
+cannot support a leaderboard comparison, and the D2 falsification hinges on `raw_ridge`, which is
+complete across all ten tasks. Continuing would have spent the group's allocation on an output
+this report already records as not obtained. What would finish it is in § 10.
 
 ---
 
@@ -349,8 +351,9 @@ Per the memo these are recorded rather than halting work. None was acted on outs
 
 ## 10. What was not checked
 
-- **`raw_xgb` for H-optimus-1** — 10 of 10 task cells still missing. Needs either ~27 CPU-hours in
-  one job or a per-task fan-out of ten short jobs, which would also backfill better.
+- **`raw_xgb` for H-optimus-1** — 10 of 10 task cells still missing (2 IDC splits exist and are
+  not enough for a task value). At the measured 70 min/split this needs ~34 CPU-hours; a fan-out
+  of ten per-task jobs is the right shape, and would backfill far better than one long job.
 - **The IDC attribution** — needs the "FFPE Human Breast with Pre-designed Panel" page read. Every
   fetch returned HTTP 429.
 - **Donor identity for the 9 unverifiable samples** (LUNG 2, PAAD 3, SKCM 2, and 2 others). The
