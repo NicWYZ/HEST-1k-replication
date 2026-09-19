@@ -132,7 +132,8 @@ both a generic `area_mean` and a neoplastic-only `neo_area_mean`; the earlier dr
 by mistake. The verdicts are identical under either set, so no conclusion depends on that choice.
 
 The contrast that matters is PRAD against the rest. On tasks whose slides come from *different*
-patients, 13–27% of the slide signature is tissue composition — as expected, since different
+patients, 17–27% of the slide signature is tissue composition (task means: LUNG 16.9%, PAAD
+21.2%, SKCM 27.4%; the per-encoder cells span 13–30%) — as expected, since different
 patients have different tissue. Within **one** patient it is 1.4%. What remains there is not
 composition, and by § 3.3 it is not resolution either.
 
