@@ -114,7 +114,7 @@ rather than merely two slides from one patient, and **READ's folds group each pa
 ZEN48+ZEN49, `test_1` is ZEN36+ZEN40. No replicate is ever in its partner's training set, so READ
 has no leak. We mention it only because it gives the counterfactual that makes item 1 concrete.
 
-Running the same controlled design on READ — hold out one slide, fix the training size, vary only
+Running the same controlled design on READ ([`r5_idc_replicate_leak.csv`](results/round2/R5c_leak/r5_idc_replicate_leak.csv)) — hold out one slide, fix the training size, vary only
 whether the partner section is available — gives **+0.0901** (12 of 12 encoder–slide cells
 positive, range +0.033 to +0.150). Without its partner, ResNet50 on ZEN40 scores −0.017, below
 predicting the mean. That is what your READ grouping is preventing, and it is a second, independent

@@ -114,7 +114,7 @@ what a correctly grouped split looks like. The summary now carries a
 `leak_realised_in_shipped_split` flag and the share is NaN for READ.
 
 Worth keeping: without its partner, ResNet50 on ZEN40 scores **−0.0174** — below predicting the
-mean. And IDC reproduces the standalone R5 run (0.0652 against 0.0651) under a different subsample
+mean. And IDC reproduces the standalone R5 run ([`r5_idc_replicate_leak.csv`](r5_idc_replicate_leak.csv)) (0.0652 against 0.0651) under a different subsample
 seed, an unplanned reproducibility check on the design.
 
 ---
@@ -126,7 +126,7 @@ seed, an unplanned reproducibility check on the design.
 `r6_variance_by_task.csv`, `donor_variance_components.csv`. Unbalanced nested ANOVA (Henderson
 moments) of log1p expression, per gene, grouped by `donor_id` from R5b.
 
-**The estimator was validated before use.** Against known components over 40 unbalanced
+**The estimator was validated before use** ([`r6_estimator_validation.csv`](r6_estimator_validation.csv))**.** Against known components over 40 unbalanced
 simulations at 24 donors it recovers 0.494 / 0.202 / 0.998 against true 0.500 / 0.200 / 1.000, all
 z within ±2. The same check showed the donor component's sampling sd is 0.13 at 24 donors and
 larger below — which is why `df_donor` is in every row and why five tasks are reported as
@@ -159,9 +159,9 @@ from a directive I was told to follow precisely. Both are reported here
 
 | definition | pooled between-donor fraction |
 |---|---|
-| **directive 2.3 as written: CCRCC + PRAD** | **0.1217** |
-| well-powered only: CCRCC + LYMPH_IDC (`df_donor ≥ 3`, verified labels) | 0.3761 |
-| sensitivity, all ten tasks | 0.0846 (range 0.0000–0.3932) |
+| **the estimate: CCRCC + LYMPH_IDC** (`df_donor ≥ 3`, verified labels) | **0.3761** |
+| directive 2.3 as written: CCRCC + PRAD | 0.1217 |
+| sensitivity, all ten tasks ([`r6_variance_by_task.csv`](r6_variance_by_task.csv)) | 0.0846 (range 0.0000–0.3932) |
 
 The two differ threefold for one reason. PRAD has **two** donors, so `df_donor = 1`, and its
 between-donor component of 0.000 is truncation — the raw moment estimate is negative for 68% of
@@ -170,8 +170,13 @@ uninformative zero, and 0.1217 is an artefact of that pairing rather than an est
 LYMPH_IDC has four donors and `df_donor = 3`.
 
 I should have flagged this at the point of substitution instead of quietly choosing the better
-pair; the directive's number is the one that was asked for and it is now stated. **Recommendation:
-use 0.3761, and treat 0.1217 as showing why PRAD cannot carry a between-donor term.**
+pair; the directive's number is the one that was asked for and it is now stated.
+
+**Settled by the
+closeout memo § 1.2: the pooled between-donor estimate is 0.376**, the CCRCC + LYMPH_IDC pairing,
+with 0.1217 reported beside it as an artefact of averaging one well-determined value with a
+truncated zero. The memo records that the substitution was right *and* that flagging it was
+right, so the flag stays.
 
 ### 4.2 The PRAD caveat directive 2.3 asked for reverses
 
@@ -186,18 +191,21 @@ clustering rather than hard-coded — an 8/7 split at a 0.0066 µm/px gap):
 | between slide, within session | 0.04660 — positive for 50/50 genes |
 | within slide (spot) | 0.27606 |
 
-R4 found these same two sessions separable at **0.977** balanced accuracy in the image features.
+R4 found these same two sessions separable at **0.977** balanced accuracy in the image features
+([`r4_probes_v2.csv`](r4_probes_v2.csv)).
 They contribute **no measurable variance to the expression**. The session signature lives in the
 images and does not reach the targets, so PRAD's slide component is within-session slide-to-slide
 variation — not what the directive expected it to contain. This sharpens rather than overturns the
 earlier resolution findings: resolution is still aligned with patient identity in PRAD, SKCM and
 PAAD, and still confounds those folds on the feature side.
 
-### 4.3 The theta acceptance check: diagnosed, and the threshold is what is wrong
+### 4.3 The theta acceptance value, restated against morphology_v2
 
-The plan requires IDC/GATA3/NCBI785 to reproduce round 1's 0.458 to 1e-3. It came out
-**0.4106** (log1p) / **0.4209** (raw). The cause is not the computation.
+*Closed by the closeout memo § 1.3: restated, not recorded as a failure.* The plan required
+IDC/GATA3/NCBI785 to reproduce round 1's 0.458 to 1e-3; it came out **0.4106** (log1p) /
+**0.4209** (raw). The cause is not the computation.
 
+Build statistics below are in [`r6_theta_build_stats.csv`](r6_theta_build_stats.csv).
 Round 1's 0.458 is the **raw** correlation on `instrumentation/morphology`; R6 reads
 `morphology_v2`, the later build, which assigns ~60% more neoplastic nuclei per spot (mean 17.8
 against 11.1) and qualifies 2,195 spots where v1 qualified 1,980. Run against the build the check
@@ -215,8 +223,13 @@ The substantive round-1 finding survives the build change (`r6_theta_build_compa
 
 Rank order identical; between-slide spread 0.486 against 0.506. θ₁ remains a slide-level quantity
 with large between-slide variance, which is the claim the review called Topic B's strongest single
-motivation. **Recommendation: restate the acceptance value against v2 rather than record a
-failure.**
+motivation.
+
+**Restated.** The acceptance value is now **0.410577 (log1p) / 0.420947 (raw) on
+`morphology_v2`**, tolerance 1e-3, carried in [`round2_r6_theta.py`](code/scripts/round2_r6_theta.py) and
+[`r6_theta_acceptance.csv`](r6_theta_acceptance.csv). Round 1's 0.457791 is retained as a historical value with one line
+recording that the difference is the morphology build and not the computation. No failure is
+recorded against this check.
 
 ---
 
@@ -300,7 +313,8 @@ H-optimus-1 is the sharpest available test because it is the strongest encoder i
 - **raw_ridge: rank 7 of 12** at 0.2590 — mid-table, exactly where 1536
   dimensions places it.
 
-And the pattern is not confined to it. Spearman(width, raw_ridge) = **-0.950**
+And the pattern is not confined to it ([`r8_width_correlations.csv`](r8_width_correlations.csv)).
+Spearman(width, raw_ridge) = **-0.950**
 (p < 1e-4, n = 12); equalising width at 256 with PCA reverses the sign to **+0.727**
 (p = 0.007). Every encoder of ≥1536 dimensions occupies raw_ridge ranks 7–12, every encoder of
 ≤1024 dimensions occupies ranks 1–6, with no exceptions. The two orderings correlate

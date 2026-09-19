@@ -238,3 +238,55 @@ or `shutil.move` it back, then re-verify the whole directory compiles at the end
 carry `pythonhashseed` alongside the job id, node, commit and config hash. It should always have
 been there — the determinism failure that cost a withdrawn ratio was invisible precisely because
 nothing recorded whether the interpreter's seed was fixed.
+
+## Required before any document is handed over
+
+**Run the numeric-claim sweep and fix what it flags.** This is a required step, not advisory.
+
+```
+python code/scripts/verify_numeric_claims.py README.md docs/*.md \
+    --search-dir . --exceptions .verify-exceptions
+```
+
+It exits non-zero if any claim is unresolved, so it can gate a handover.
+
+**Why.** The most recurrent defect of round 2 was a number typed from memory into a sentence
+whose *citation was accurate* — the named file was the right file, the value beside it was not in
+it. Review caught it twice: the COAD decomposition terms in the authors' draft (0.2938 and a
+0.026–0.163 range, both carried from round 1's superseded v3 decomposition), and two gene-set
+predictability values in an escalation message. Both read as checked, because the citation had
+been. Nothing else in the process catches this; re-reading your own prose does not, because the
+sentence looks right.
+
+**What it does.** For each claim scope — a paragraph, list item or table row — it pools the file
+paths cited anywhere in the enclosing subsection, extracts the numeric claims, loads each cited
+file, and reports any value it cannot find. A claim is satisfied by a literal value, a whole-column
+aggregate (mean, median, min, max, sum, std), or a group-wise aggregate over a low-cardinality key
+— because "mean over the three encoders for probe X" is a legitimate quotation that appears nowhere
+in the file as a cell. Comparison is at the document's own precision, so 0.376 matches a stored
+0.37610.
+
+**What it does NOT do, and this is the more dangerous half.** It cannot tell you the cited file is
+the *right* file for the claim. A value can be present in the cited file and still be the wrong
+quantity. The second review finding of round 2 turned on exactly that, and no script settles it.
+It also cannot verify a ratio of two files' values, a scheduler fact, or a figure from a source
+outside the repository.
+
+**`.verify-exceptions`** carries those, one `value<TAB>reason` per line. A value belongs there only
+if it is genuinely underivable from a cited file — a ratio, an accounting fact, a withdrawn figure
+quoted *as* erroneous, a round-1 result whose source file was not carried forward. It is not a
+place to silence a number you have not checked. Every number in a handover document is then either
+present in a cited file or has a written reason why not, which is the property worth having.
+
+**Read the `uncited` count, not just the failures.** A claim in a section that cites nothing is not
+verified — it is unchecked. At the round-2 freeze the three documents carried 286 verified claims,
+0 unresolved, and 102 uncited; the uncited ones are concentrated in summary prose and are the
+honest remaining gap, not a clean bill.
+
+**Two things it found at the round-2 freeze that were not wrong numbers, and mattered more.**
+Fifteen files the documents cite were not in the repository at all — they existed only as session
+artifacts — so a reader cloning the repo could not open the evidence for those claims. And the
+README and the R8 report quoted *different* values for the same width–score correlation (−0.954
+against −0.950) because one used round 1's 11-encoder cohort and the other round 2's 12; both were
+right and neither said which. Broken citations and unlabelled cohorts are the failure modes a
+numeric sweep surfaces on the way to checking the numbers.

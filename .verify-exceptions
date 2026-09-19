@@ -1,0 +1,34 @@
+# Values that are legitimately not present in any cited file, each with a reason.
+# Format: value<TAB>reason. See docs/WAYS_OF_WORKING.md.
+# A value belongs here only if it is genuinely derived (a ratio, a scheduler fact, a
+# withdrawn figure quoted as erroneous, or a round-1 result whose source file was not
+# carried forward). It is NOT a place to silence a number you have not checked.
+5.02	fold-ratio of max/min pixel_size_um across the 72 samples; derived from sample_metadata.csv, not stored
+1.71	within-task pixel-size fold-ratio for IDC; derived from sample_metadata.csv
+1.02	within-task pixel-size fold-ratio for PRAD patient 2; derived from sample_metadata.csv
+1.01	within-task pixel-size fold-ratio upper bound for the five uniform tasks; derived
+0.0066	pixel-size difference between PRAD patient 2's two scan sessions; difference of two sample_metadata values
+54	IDC leak as a percentage of its random-minus-patient gap; ratio of two files' values (r5c_leak_summary.csv / r3_per_task_terms.csv)
+0.3278	round-1 pilot value for the Table A14 feature scale; round-1 result, source file not carried into round 2
+0.326	round-1 pilot value, as above
+0.3046	round-1 pilot value, as above
+0.458	round 1's theta1 value on the superseded morphology build; quoted as historical, see r6_theta_acceptance.csv
+0.2938	WITHDRAWN round-1 v3 value, quoted in the report only to record that it was wrong
+0.026	lower end of a WITHDRAWN round-1 v3 range, quoted only as the erroneous claim
+0.163	upper end of the same withdrawn range
+8.8	peak job memory in GB read from sacct; scheduler accounting, not a repository file
+5.5	hours the oversized R8 submission sat at (Priority); scheduler accounting
+70	measured minutes per raw_xgb split; scheduler accounting
+34	projected CPU-hours for raw_xgb, 70 min x 29 splits; derived
+2.83	round-1 nearest-training-spot widening factor; round-1 result
+1.61	round-1 derived ratio in key finding 1; round-1 result
+−2.002	round-1 negative-binomial statistic; round-1 result
+0.61	round-1 negative-binomial statistic; round-1 result
+3.654	round-1 patch-geometry value; round-1 result
+2.1	spot-count fold-ratio between TENX95 and TENX99; ratio of two counts
+0.014	round-1 per-slide IDC gap; source file not carried into round 2, value not restated in round 1's report
+0.099	round-1 per-slide IDC gap, as above
+0.002	round-1 per-slide IDC gap, as above
+0.052	round-1 per-slide IDC gap, as above
+−0.95	round-1 median R2 of the faithful head (the ladder's first rung); a different quantity from the width correlation of the same magnitude
+5.4	mantissa of the p-value 5.4e-6 written as 5.4 x 10^-6; the p is in r8_width_correlations.csv

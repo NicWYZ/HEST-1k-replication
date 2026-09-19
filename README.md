@@ -98,6 +98,10 @@ piloting both on resnet50 settled it by measurement (raw 0.3278 vs the printed 0
 
 ## Key findings
 
+Round-1 figures in this section are established in
+[`docs/round1_final_stage_report.md`](docs/round1_final_stage_report.md); round-2 figures cite
+their own result files inline.
+
 Each is reproducible from the named table; the reasoning lives with the script that produced it.
 
 **1. Split design matters more than encoder choice.** The entire between-encoder spread on the
@@ -151,6 +155,11 @@ benchmark's `alpha = 100/(d × n_genes)` the fit is indistinguishable from unpen
 (|diff| ≤ 2.7e-4), and at raw width the Gram matrix is numerically singular (condition number
 3.0 × 10¹⁵ at 1536 dims). That head is measuring conditioning.
 [`results/tailored/regularization/`](results/tailored/regularization)
+   These are the **11-encoder** figures, round 1's cohort. R8 added H-optimus-1's raw-head
+   cells, and on all **12** the same statistics are **−0.950** and **+0.727**
+   ([`r8_width_correlations.csv`](results/round2/R8_raw_heads/r8_width_correlations.csv)), which
+   is where the report's figures come from — the two documents quote different cohorts of the
+   same statistic, not different results.
 
 **4. Negative binomial is the right observation model; zero-inflation buys nothing.** NB beats
 Poisson for **478 of 488** converged genes, and all 500 are overdispersed. ZINB beats NB for only
@@ -286,7 +295,9 @@ and 9 are the candidates for reporting upstream.
    NCBI pair is the GEO deposit of Janesick et al. 2023, whose authors are 10x staff), and they
    also differ in scan resolution (0.2125 µm/px against 0.274 and 0.364). The four per-slide gaps
    are asymmetric in the direction a resolution explanation predicts, not the symmetric pattern an
-   institution effect would give:
+   institution effect would give (gaps from
+   [`docs/round1_final_stage_report.md`](docs/round1_final_stage_report.md); pixel sizes from
+   [`sample_metadata.csv`](results/tailored/integrity/sample_metadata.csv)):
 
    | held-out slide | µm/px | gap (source seen − unseen) |
    |---|---|---|
@@ -301,6 +312,22 @@ and 9 are the candidates for reporting upstream.
 6. **`hoptimus1` covers `pca_ridge` only.** `raw_ridge` and `raw_xgb` have 11 encoders each;
    `pca_xgb` has 1 (resnet50), by design.
 7. **Stage 5 training has not run** — CUDA-only against a saturated GPU queue.
+
+8. **`raw_xgb` for H-optimus-1 was deliberately not run.** All ten of its `raw_xgb` task cells are
+   missing, and this is a decision rather than an omission. The falsification test it would have
+   contributed to is settled by `raw_ridge` alone, where H-optimus-1 is best of twelve on
+   `pca_ridge` (0.3891) and 7th of twelve on `raw_ridge` (0.2590), with Spearman −0.95 between
+   embedding width and raw-head score reversing to +0.73 once PCA equalises width at 256
+   ([`r8_raw_head_leaderboard.csv`](r8_raw_head_leaderboard.csv)). The cost of confirming the same
+   conclusion on a second head was measured before stopping: **70 minutes per split, so about 34
+   CPU-hours for the 29 splits**, against an 8-hour wall. A future session wanting it should
+   fan out ten per-task jobs rather than submit one long one — this queue schedules short,
+   small-memory jobs far sooner, which is the same lesson as limitation 9.
+
+9. **Resource asks were oversized for most of round 2, and that cost queue time.** `sacct` over the
+   round shows the heaviest job peaked at **8.8 GB on 4 CPUs**; asks of 64 GB and 8 CPUs sat at
+   `(Priority)` for 5.5 hours while every right-sized job ran. Size from the accounting record,
+   not from intuition.
 
 ### Scan resolution
 

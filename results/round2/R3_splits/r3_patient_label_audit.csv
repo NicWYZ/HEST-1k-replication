@@ -1,0 +1,10 @@
+task,samples,hest_patient_label,subseries,verdict,note
+PRAD,MEND139-153,patient 2,patient_2_V2_2 ... patient_2_H2_1 (15 slides),CORRECT,subseries encode patient_2 explicitly; 15 slides of one patient is real
+PRAD,MEND154-162,patient 1,patient_1_V1_2 ... patient_1_H1_1 (8 slides),CORRECT,subseries encode patient_1 explicitly
+READ,"ZEN36, ZEN40",Patient 7,"A938797_Rep2, A938797_Rep1",CORRECT BUT UNDERSTATED,"same specimen ID A938797, two replicates: same BLOCK, not merely same patient"
+READ,"ZEN48, ZEN49",Patient 1,"A121573_Rep2, A121573_Rep1",CORRECT BUT UNDERSTATED,"same specimen ID A121573, two replicates: same BLOCK"
+COAD,"TENX147, TENX148, TENX149",Patient 1,"Sample P5 CRC, Sample P2 CRC, Sample P1 CRC",WRONG,"three DIFFERENT patients (P1, P2, P5) collapsed into one label"
+COAD,TENX111,(missing),"Cancer, pre-designed + add-on panel",MISSING,different dataset (Human Colon Preview Data); no patient label at all
+LYMPH_IDC,NCBI681-684,Patient 8/7/6/3,PT_8/7/6/3 LNM ST,CORRECT,"four distinct patients, one slide each"
+IDC,"NCBI783, NCBI785","patient 5, patient 4",spatial and in situ analysis [Xenium],UNVERIFIED,generic subseries; block identity is what R5 investigates
+IDC,"TENX95, TENX99","patient 2, patient 1","Tissue sample 1, Replicate 1",UNVERIFIED,'Replicate 1' is suggestive; R5 must settle it

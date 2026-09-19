@@ -10,7 +10,10 @@ Three parts, per the plan.
    with a spot bootstrap (200 resamples) giving the within-slide sampling standard error
    sigma_hat(s,g). Computed on log1p counts AND on raw counts, since round 1 found the raw
    version matched the paper's own figure more closely.
-   ACCEPTANCE: for IDC and GATA3, r_hat on NCBI785 reproduces round 1's 0.458 to 1e-3.
+   ACCEPTANCE: for IDC and GATA3, r_hat on NCBI785 reproduces 0.410577 (log1p) and
+   0.420947 (raw) to 1e-3, the values on the morphology_v2 build this script reads.
+   Round 1's 0.458 was computed on the superseded morphology build and is retained as
+   a historical value only; see the acceptance block for why they differ.
 
 2. Variance components. Per (task, gene), method-of-moments between-slide variance
        tau2_hat(g) = max(0, Var_s(r_hat(s,g)) - mean_s(sigma_hat^2(s,g)))
@@ -207,12 +210,27 @@ pq.write_table(pa.Table.from_pandas(TH[[f.name for f in TH_SCHEMA]], schema=TH_S
 print(f"\n[theta] {len(TH):,} (slide, gene) rows -> theta_by_slide.parquet")
 
 # ---------------------------------------------------------------- acceptance check
+# Restated against morphology_v2 per the closeout memo section 1.3. Round 1's 0.458 was
+# computed on instrumentation/morphology, the earlier CellViT build; this script reads
+# morphology_v2, which detects ~60% more neoplastic nuclei per spot and qualifies 2,195
+# spots for this cell against v1's 1,980, so the same computation on different inputs
+# gives a different number. That is not a reproduction failure: run against v1 this code
+# returns 0.457791, matching round 1 to six decimals (r6_theta_build_comparison.csv), and
+# the substantive finding is unchanged -- the rank order across the four IDC slides is
+# identical and the between-slide spread is 0.4859 (v2) against 0.5058 (v1).
+ACCEPT = {"r_hat": (0.410577, "log1p"), "r_hat_raw": (0.420947, "raw counts")}
+ACCEPT_TOL = 1e-3
+HISTORICAL_V1_RAW = 0.457791   # round 1's value, on the superseded morphology build
+
 acc = TH[(TH.task == "IDC") & (TH.gene == "GATA3") & (TH.sample_id == "NCBI785")]
 if len(acc):
-    for col, lab in (("r_hat", "log1p"), ("r_hat_raw", "raw counts")):
+    for col, (ref, lab) in ACCEPT.items():
         v = float(acc[col].iloc[0])
-        print(f"ACCEPTANCE IDC/GATA3/NCBI785 ({lab}): {v:.6f} against round 1's 0.458 "
-              f"-> |diff| {abs(v-0.458):.6f} {'PASS' if abs(v-0.458) < 1e-3 else 'CHECK'}")
+        print(f"ACCEPTANCE IDC/GATA3/NCBI785 ({lab}): {v:.6f} against morphology_v2's "
+              f"{ref:.6f} -> |diff| {abs(v-ref):.2e} "
+              f"{'PASS' if abs(v-ref) < ACCEPT_TOL else 'FAIL'}")
+    print(f"  (historical: round 1 reported {HISTORICAL_V1_RAW:.6f} on the v1 morphology "
+          f"build; the difference is the build, not the computation)")
 else:
     print("ACCEPTANCE IDC/GATA3/NCBI785: row absent -- reporting as not reproduced")
 

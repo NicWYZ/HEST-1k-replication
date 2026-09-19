@@ -1,0 +1,6 @@
+relation,n_encoders,spearman,p,cohort,pca_latent_dim
+embedding width vs raw_ridge mean Pearson,11,-0.9537,5.3896388466572685e-06,"round 1's cohort, before H-optimus-1 had raw-head cells",256
+embedding width vs pca_ridge mean Pearson,11,0.7351,0.00995452023899483,"round 1's cohort, before H-optimus-1 had raw-head cells",256
+embedding width vs raw_ridge mean Pearson,12,-0.95,2.2548624661317193e-06,"round 2, with H-optimus-1 added by R8",256
+embedding width vs pca_ridge mean Pearson,12,0.7269,0.007397898232092023,"round 2, with H-optimus-1 added by R8",256
+raw_ridge rank vs pca_ridge rank,12,-0.6014,0.03858845292201946,"round 2, with H-optimus-1",256
