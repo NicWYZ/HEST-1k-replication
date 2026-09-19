@@ -309,8 +309,11 @@ and 9 are the candidates for reporting upstream.
    The mean of these four, 0.0419, is therefore **not** reported as a site-shift effect. The
    correct description of the contrast is "novel slide, same generating lab, different scan
    resolution." An institution axis needs full HEST-1k, not the benchmark subset.
-6. **`hoptimus1` covers `pca_ridge` only.** `raw_ridge` and `raw_xgb` have 11 encoders each;
-   `pca_xgb` has 1 (resnet50), by design.
+6. **Head coverage is uneven across encoders.** `pca_ridge` has all 12. `raw_ridge` now has
+   all 12 as well — R8 added H-optimus-1's ten task cells
+   ([`r8_hoptimus1_raw_ridge_by_task.csv`](results/round2/R8_raw_heads/r8_hoptimus1_raw_ridge_by_task.csv)).
+   `raw_xgb` has 11, missing H-optimus-1 by the decision in item 8. `pca_xgb` has 1
+   (`resnet50`), by design.
 7. **Stage 5 training has not run** — CUDA-only against a saturated GPU queue.
 
 8. **`raw_xgb` for H-optimus-1 was deliberately not run.** All ten of its `raw_xgb` task cells are
@@ -328,6 +331,28 @@ and 9 are the candidates for reporting upstream.
    round shows the heaviest job peaked at **8.8 GB on 4 CPUs**; asks of 64 GB and 8 CPUs sat at
    `(Priority)` for 5.5 hours while every right-sized job ran. Size from the accounting record,
    not from intuition.
+
+10. **The IDC same-donor attribution is unresolved, and the round-2 close did not resolve it.**
+    The `donorCount: 1` and "Replicate 1 / Replicate 2" language that motivated reading TENX95 and
+    TENX99 as one donor belongs to the "FFPE Human Breast using the Entire Sample Area" page,
+    which HEST's `download_page_link1` associates with **TENX99 only**; TENX95 is attributed to a
+    different product, "FFPE Human Breast with Pre-designed Panel". Three attempts to read that
+    second page returned HTTP 429, and no other route was tried. The evidence is genuinely mixed:
+    the two carry byte-identical 541-entry panels, the only such pair in IDC, and 123 of 128
+    (96.1%) of the TENX slides' classification errors land on the partner against 33.3% expected
+    ([`r5d_idc_partner_confusion.csv`](results/round2/R5c_leak/r5d_idc_partner_confusion.csv));
+    but their spot counts differ 2.1-fold (25,080 against 11,845), which two replicate sections of
+    one imaged area should not show, and Janesick et al. is the source for neither, since its
+    Xenium runs used the 280-gene breast panel plus 33 add-on genes while both samples carry
+    exactly 280 real genes
+    ([`r5_idc_panels_observed.csv`](results/round2/R5b_audit/r5_idc_panels_observed.csv)).
+
+    **The measurement does not depend on the label.** The +0.0652 replicate leak
+    ([`r5c_leak_summary.csv`](results/round2/R5c_leak/r5c_leak_summary.csv)) is what having TENX95
+    in training is worth for predicting TENX99, whatever the relationship between them is called.
+    What is unresolved is the *explanation* — one donor, or two donors sharing a lab, panel and
+    scanner. The draft issue to the HEST authors carries a blocking note on this item and has not
+    been sent.
 
 ### Scan resolution
 

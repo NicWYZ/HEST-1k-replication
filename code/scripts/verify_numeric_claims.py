@@ -60,7 +60,7 @@ NUM_RE = re.compile(r"(?<![\w.])([+\-\u2212\u2013]?\d{1,3}(?:,\d{3})+|[+\-\u2212
 SKIP_BEFORE = re.compile(
     r"(§|Section|section|Table|table|Figure|figure|Fig\.|issue|Issue|#|item|Item|step|Step|"
     r"round|Round|v|V|[Dd]irectives?|[Mm]emos?|[Dd]ecisions?|[Pp]robes?|[Ll]imitations?|"
-    r"[Ss]tages?|and|,|"
+    r"[Ss]tages?|and|,|HTTP|HTTP Error|code|"
     r"[Pp]roperty|[Pp]hase|R)\s*$")
 # Stage and directive identifiers written bare in a table cell or at the start of a line:
 # "| 2.7 IDC confusion |", "2.3 asks for ...". They look like data and are not.

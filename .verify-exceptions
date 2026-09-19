@@ -32,3 +32,5 @@
 0.052	round-1 per-slide IDC gap, as above
 −0.95	round-1 median R2 of the faithful head (the ladder's first rung); a different quantity from the width correlation of the same magnitude
 5.4	mantissa of the p-value 5.4e-6 written as 5.4 x 10^-6; the p is in r8_width_correlations.csv
+96.1	share of TENX misclassifications landing on the partner; 123/128, a ratio of two summed counts in r5d_idc_partner_confusion.csv rather than a stored value
+429	HTTP status code returned by the 10x page fetches, not a measurement
