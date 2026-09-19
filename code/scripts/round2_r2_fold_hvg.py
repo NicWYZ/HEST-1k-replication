@@ -231,6 +231,7 @@ with open(f"{OUT}/PROVENANCE__fold_hvg_{enc}.txt", "w") as f:
             f"repo_commit       : {os.popen(f'git -C {ROOT} rev-parse HEAD').read().strip()}\n"
             f"script            : code/scripts/round2_r2_fold_hvg.py\n"
             f"command_line      : {' '.join(sys.argv)}\n"
+            f"pythonhashseed  : {os.environ.get('PYTHONHASHSEED', 'unset')}\n"
             f"config_hash       : foldhvg-k50-intercept-f64-cholesky-latent256\n"
             f"config            : head=Ridge(fit_intercept=True, solver=cholesky, float64), "
             f"alpha=100/(256*50); features=StandardScaler->PCA(256,random_state=1) train only; "

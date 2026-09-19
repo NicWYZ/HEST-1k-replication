@@ -441,6 +441,7 @@ with open(f"{OUT}/PROVENANCE__{enc}{SUF}.txt", "w") as f:
         f"repo_commit     : {os.popen(f'git -C {ROOT} rev-parse HEAD').read().strip()}\n"
         f"script          : code/scripts/round2_head_intercept.py\n"
         f"command_line    : {' '.join(sys.argv)}\n"
+        f"pythonhashseed  : {os.environ.get('PYTHONHASHSEED', 'unset')}\n"
         f"pipeline        : StandardScaler -> PCA({LATENT}, random_state={SEED}) on train only\n"
         f"alpha           : 100/(256*50)\n"
         f"heads           : {HEADS}\n"

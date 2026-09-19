@@ -139,7 +139,8 @@ to three decimals. Sparsity follows the assay, not the tissue (median zero fract
 imaging-based tasks vs 0.61 for sequencing-based).
 [`results/tailored/counts/`](results/tailored/counts)
 
-**5. Slides are identifiable from frozen features; institutions are not resolved.** A linear probe
+**5. Slides are identifiable from frozen features; what makes them identifiable is not established,
+and institution cannot be tested here at all.** A linear probe
 recovers slide identity at **0.980** balanced accuracy under spatial block cross-validation (0.990
 under random splitting), with the nearest-training-spot distance verified to widen 2.83×. What that
 separability is made of is **not** established: two patients' tumours, two scan resolutions and two
@@ -203,15 +204,54 @@ pandas 2.3.3. STFlow needs its own environment.
 Superseded outputs were removed rather than kept alongside their replacements, so that every file
 present is current. They remain recoverable from git history.
 
+## Properties of HEST-bench found in this replication
+
+Findings about the **public benchmark itself**, as distinct from this replication's own results.
+Maintained as they are found; this is the list that goes to David and, where appropriate, to the
+HEST-1k authors. Each entry names the file that establishes it.
+
+| # | property | established by |
+|---|---|---|
+| 1 | **The ridge penalty is inert.** The benchmark's α leaves the fit essentially unregularised, and Table A13's encoder ranking tracks prediction *width* rather than accuracy. | `results/tailored/alpha/`, Table A13 reproduction |
+| 2 | **The head has no intercept**, so its predictions have training mean zero per gene while `log1p(y)` does not. Pearson hides this; R², CRPS and interval width do not. Median R² is **−0.95**, rising to **−0.16** with an intercept alone. | [`r1b_ladder_by_task.csv`](r1b_ladder_by_task.csv) |
+| 3 | **Per-gene Pearson carries ~1e-3 of solver noise** under the shipped `lsqr` head, up to 3e-3 on four encoders; the head's A2b residual of 0.35 means it is not the ridge solution to any tight tolerance. | [`r1b_solver_sensitivity.csv`](r1b_solver_sensitivity.csv) |
+| 4 | **Scan resolution varies 5.02× across the 72 samples** and is aligned with patient identity in PRAD, SKCM and PAAD, so those shipped patient folds are also resolution folds. What the encoders read, though, is the slide and the scan session — not pixel size. | [`r4_probes_v2.csv`](r4_probes_v2.csv), sample metadata |
+| 5 | **Samples within a task do not share a gene panel.** PAAD's three samples share 159 genes against a 919 union; the shipped 50 are the intersection over *all* samples, held-out ones included, so leakage-free selection is not well defined without the held-out slide's panel. | [`r2_panel_heterogeneity.csv`](r2_panel_heterogeneity.csv) |
+| 6 | **COAD's patient labels collapse distinct patients** into one label and leave another sample unlabelled, so COAD's shipped patient split does not separate patients. | [`r3_patient_label_audit.csv`](r3_patient_label_audit.csv) |
+| 7 | **IDC's patient labels split one donor into two.** TENX95 and TENX99 are two 5 µm sections of one resected tumour mass (10x reports `donorCount: 1`), but carry distinct patient labels. Measured cost: **+0.065** within-slide Pearson, **54%** of IDC's whole reported patient gap. | [`r5_idc_replicate_leak.csv`](r5_idc_replicate_leak.csv), [`r5_idc_provenance.md`](r5_idc_provenance.md) |
+| 8 | **READ's "patients" are same-specimen replicate pairs**, so its patient-identity term is a same-specimen term and an upper bound on a patient effect. | [`r3_per_task_terms.csv`](r3_per_task_terms.csv) |
+| 9 | **The IDC gene panels differ between samples.** NCBI785 measures 41 real genes none of the other three measure; NCBI783 adds 8 `antisense_*` probes; only TENX95/TENX99 match. | [`r5_idc_panels_observed.csv`](r5_idc_panels_observed.csv) |
+| 10 | **The scan-resolution differences have no documented cause.** No 10x dataset page, GEO record or published Methods reached in this work states an H&E scanner model or nominal magnification for any IDC sample. | [`r5_idc_provenance.md`](r5_idc_provenance.md) §4.3 |
+| 11 | **Selection-protocol sensitivity of the target list** — see known limitation 1. | [`r2_leakage_summary.csv`](r2_leakage_summary.csv) |
+
+Entries 4 through 11 concern the benchmark's *design and metadata* rather than its code, and 6, 7
+and 9 are the candidates for reporting upstream.
+
 ## Known limitations
 
-1. **Gene-selection leakage, which no refit can detect.** The 50 target genes per task were
+1. **Selection-protocol sensitivity of the target list.** The 50 target genes per task were
    variance-ranked over *every* spot, test folds included — a property of the shipped benchmark
-   data. A leakage-free evaluation would recompute the ranking inside each fold. The held-out-gene
-   check establishes only that the ridge fit does not couple targets, a different question.
-2. **Across-task shift is not a scalar.** Even with training volume matched it varies monotonically
+   data. Recomputing the ranking inside each fold changes the list by roughly half its members and
+   changes measured Pearson by +0.009 on average, up to +0.044 on individual tasks
+   ([`r2_leakage_summary.csv`](r2_leakage_summary.csv)). This is **not** reported as leakage:
+   selection acts *through* which genes are chosen, so gene-set composition is the mechanism rather
+   than a confound, and no design comparing two different gene lists can separate the two. On four
+   Xenium tasks a training-only selection can name genes the held-out slide does not measure at all.
+2. **Per-gene Pearson under the faithful head carries solver noise.** The benchmark's `lsqr` head
+   leaves about 1e-3 of run-to-run noise in a per-gene Pearson for most encoders and up to 3e-3 for
+   `conch_v1`, `conch_v15`, `ctranspath` and `virchow`, so a per-gene value should not be quoted
+   beyond three decimals; task-level means, averaging 50 genes, are unaffected at the precision
+   Table 1 reports. Relatedly, the faithful head's A2b residual of **0.35** means its predictions
+   are not the ridge solution to any tight tolerance, which is why the Topic A work builds on
+   `intercept_f64` rather than on the shipped head
+   ([`r1b_solver_sensitivity.csv`](r1b_solver_sensitivity.csv)).
+3. **The R² ladder's scale rung is an upper bound, not an achievable gain.** It uses the test
+   fold's own optimal ρ, so the +0.070 it reports is the most any level-and-scale recalibration
+   could recover; what a calibration fitted on training or calibration data actually delivers is
+   necessarily less ([`r1b_ladder_by_task.csv`](r1b_ladder_by_task.csv)).
+4. **Across-task shift is not a scalar.** Even with training volume matched it varies monotonically
    with in-domain sample size, so any single number describes the reference task chosen.
-3. **There is no clean institution contrast in HEST-bench, and the IDC one has been withdrawn.**
+5. **There is no clean institution contrast in HEST-bench, and the IDC one has been withdrawn.**
    The contrast used in round 1 — TENX95/TENX99 against NCBI783/NCBI785 within IDC — was labelled
    "differing only in source institution." Both halves were in fact generated by 10x Genomics (the
    NCBI pair is the GEO deposit of Janesick et al. 2023, whose authors are 10x staff), and they
@@ -229,9 +269,9 @@ present is current. They remain recoverable from git history.
    The mean of these four, 0.0419, is therefore **not** reported as a site-shift effect. The
    correct description of the contrast is "novel slide, same generating lab, different scan
    resolution." An institution axis needs full HEST-1k, not the benchmark subset.
-4. **`hoptimus1` covers `pca_ridge` only.** `raw_ridge` and `raw_xgb` have 11 encoders each;
+6. **`hoptimus1` covers `pca_ridge` only.** `raw_ridge` and `raw_xgb` have 11 encoders each;
    `pca_xgb` has 1 (resnet50), by design.
-5. **Stage 5 training has not run** — CUDA-only against a saturated GPU queue.
+7. **Stage 5 training has not run** — CUDA-only against a saturated GPU queue.
 
 ### Scan resolution
 

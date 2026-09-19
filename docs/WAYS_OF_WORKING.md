@@ -215,3 +215,26 @@ patient-to-novel-slide ratio read 199x, then ~115x on a rerun, then 117x recompu
 4-decimal saved table rather than the full-precision column — because its denominator is 0.11 of its
 own standard deviation. A quantity that moves with rounding alone is not a result. Report the
 numerator and denominator with their dispersion, and say which one is resolved from zero.
+
+## Sweeping for a defect, and the guard that makes it safe
+
+**Sweep with an AST, not a regex.** Checking whether any script still depended on Python's
+randomised string hashing, a regex for `hash(` returned four hits in four scripts — and all four
+were the *comments and docstrings of the fixes themselves*, explaining why `crc32` replaced
+`hash()`. A regex cannot tell code from prose about code. `ast.walk` looking for a `Call` whose
+`func` is `Name(id="hash")` returned **none**, which is the answer: the codebase is seed-independent
+by construction. Prefer that to setting `PYTHONHASHSEED=0` at submission, which only holds for as
+long as whoever submits remembers.
+
+**Every automated multi-file edit gets a compile-and-revert guard.** Adding one provenance line to
+seven scripts, the first attempt sliced the payload string twice and wrote a broken fragment into a
+multi-line implicit concatenation, breaking five files. Nothing was lost, because the patch copied
+each file, applied the edit, compiled it, and moved the backup back on failure. The run reported
+five reversions and every script still compiled. Write the guard before the edit, not after the
+first breakage: `shutil.copy` → edit → `py_compile.compile(doraise=True)` → `os.remove` the backup
+or `shutil.move` it back, then re-verify the whole directory compiles at the end.
+
+**Record the ambient state a result could depend on, not just the code.** Provenance files now
+carry `pythonhashseed` alongside the job id, node, commit and config hash. It should always have
+been there — the determinism failure that cost a withdrawn ratio was invisible precisely because
+nothing recorded whether the interpreter's seed was fixed.

@@ -138,6 +138,7 @@ def main():
                 f"repo_commit       : {os.popen(f'git -C {ROOT} rev-parse HEAD').read().strip()}\n"
                 f"script            : code/scripts/round2_r2_gene_check.py\n"
                 f"command_line      : {' '.join(sys.argv)}\n"
+                f"pythonhashseed  : {os.environ.get('PYTHONHASHSEED', 'unset')}\n"
                 f"config_hash       : getkgenes-var-k50-mincells0.10-{tag}\n"
                 f"config            : criteria=var k=50 min_cells_pct=0.10 "
                 f"intersect=np.intersect1d(sorted) dtype=float32 "

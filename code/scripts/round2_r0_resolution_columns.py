@@ -208,6 +208,7 @@ def main():
             f"repo_commit       : {os.popen(f'git -C {ROOT} rev-parse HEAD').read().strip()}\n"
             f"script            : code/scripts/round2_r0_resolution_columns.py\n"
             f"command_line      : {' '.join(sys.argv)}\n"
+            f"pythonhashseed  : {os.environ.get('PYTHONHASHSEED', 'unset')}\n"
             f"bin_edges         : {BIN_EDGES}\n"
             f"bin_labels        : {BIN_LABELS}\n"
             "plan              : round2_execution_plan.md stage R0 item 2 "
