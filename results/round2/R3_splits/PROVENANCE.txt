@@ -1,9 +1,9 @@
 Round 2, stage R3_splits — Five split designs, buffered blocks, leave-one-slide-out
 
 memo clause     : round2_execution_plan.md stage R3
-repo_commit     : 70262789630a0506059e916efc0304edb2eb3ba2
+repo_commit     : 6acbef2aae0778926570ad46ca7d123a3001f1d5
 scripts         : code/scripts/round2_split_v4.py
-files           : 21
+files           : 23
 per-run provenance: 6 PROVENANCE__* files in this directory
 
 What distinguishes files that look alike:
@@ -32,9 +32,11 @@ Files and checksums (sha256, first 16 hex):
   6cb0558d54c214e0        17,811  pergene_replicate_leak__hoptimus0.parquet
   f53eb5f1e1d1cc8d        17,806  pergene_replicate_leak__resnet50.parquet
   8c00b3f8f4adf3f8        17,796  pergene_replicate_leak__uni_v2.parquet
+  a2f1a89b322572cf           352  r3_buffer_grid_sweep.csv
   a0c6448f57f9f0d8           380  r3_decomposition_terms.csv
   aa9791155dff02d8         1,317  r3_patient_label_audit.csv
   7875a16670aba950           623  r3_per_task_terms.csv
+  a14d6b9418d6e6cf     1,062,612  r3_split_v4.csv
   596872d1bd69bd66         7,353  replicate_leak_v2__hoptimus0.csv
   935d10cb537070fd         7,357  replicate_leak_v2__resnet50.csv
   c08bd48e6e51c442         7,201  replicate_leak_v2__uni_v2.csv

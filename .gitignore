@@ -66,3 +66,6 @@ instrumentation/
 # job scratch left by the closeout sweep
 sweep_final.tsv
 out_sweep_final.tsv
+
+# on-disk cache of extracted file values (see verify_numeric_claims.py)
+.verify-cache/

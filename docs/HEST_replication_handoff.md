@@ -1,3 +1,5 @@
+> **Closed record, dated 2026-09-12.** This handoff is not maintained; numbers in it may have been superseded by round 1, round 2, and later work.
+
 # Handoff: HEST-1k Benchmark Replication and First-Year Spatial Transcriptomics Project
 
 Prepared 12 September 2026 for a Claude Science session with SSH access to UNC Longleaf. Companion file: the HEST-1k paper (Jaume et al., NeurIPS 2024, arXiv:2406.16192v2). Read this document fully before running anything.

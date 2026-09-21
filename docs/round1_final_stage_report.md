@@ -1,3 +1,5 @@
+> **Closed record, dated 2026-09-16 (revision 2).** This report is not maintained; numbers in it may have been superseded by round 2 and later work.
+
 # HEST-1k replication and instrumentation — final stage report
 
 *Revision 2, generated 2026-09-16 from the saved result tables.*

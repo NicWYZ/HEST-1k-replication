@@ -1,9 +1,9 @@
 Round 2, stage R8_raw_heads — H-Optimus-1 on the raw-embedding heads, and the width correlations
 
 memo clause     : round2_R5_decisions.md directive 2.5 / execution plan stage R8
-repo_commit     : 70262789630a0506059e916efc0304edb2eb3ba2
+repo_commit     : 6acbef2aae0778926570ad46ca7d123a3001f1d5
 scripts         : code/configs/raw_ridge__hoptimus1.yaml, code/scripts/build_deck_numbers.py
-files           : 4
+files           : 5
 per-run provenance: none (single-run stage)
 
 What distinguishes files that look alike:
@@ -18,6 +18,7 @@ Files and checksums (sha256, first 16 hex):
   7460c2964ce38cac       238,502  fig_r8_raw_heads.png
   8a5f4ccf3d1b2146           152  r8_hoptimus1_raw_ridge_by_task.csv
   538011bcfbf7312d           548  r8_raw_head_leaderboard.csv
+  3457d23768438e23           227  r8_task_set_convention.csv
   b3664bd31272c89d           656  r8_width_correlations.csv
 
 plan            : deck_figures_and_repo_update.md section 2.3

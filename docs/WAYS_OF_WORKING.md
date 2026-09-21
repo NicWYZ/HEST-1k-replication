@@ -201,6 +201,22 @@ generous ceilings on every job regardless of how long it runs.
 the shell quoting and staged the files without committing — silently, since the failure surfaced
 only as a non-zero exit with empty output. Write the message to a file and use `git commit -F`.
 
+**A commit message that summarises a gate states the full table, or points to the file that does.
+Never a subset.** Commit `a220974`'s message named four documents as failing the numeric-claim
+sweep and presented that as the complete accounting. Eleven documents had unresolved claims that
+day. The two largest counts — `round2_R3_stage_report` and `round2_R5_stage_report` — went
+unmentioned, and one document, `round2_R0_R1_stage_report`, had never been assessed at all and was
+not disclosed as such. The per-document data was available when that message was written, so this
+was an omission, not something the sweep failed to surface. Corrected in `2f20dc4` and
+`docs/closeout_gate_report.md`.
+
+There is a second, sharper lesson from the same episode. The correcting file itself then said
+"roughly `350` unresolved entries across twelve documents" where summing its own table
+(`results/summary/closeout_gate_sweep.tsv`) gives 437 across eleven — an estimate where a sum was
+available, understating by about 20%, in the file written to fix an inaccurate accounting. So the
+rule has two halves: state the full table, **and sum it rather than estimating it.** Fixed in
+`6acbef2`.
+
 ## Quoting a number
 
 **Read it back from the artifact, every time.** Two corrections in this round were the same
@@ -230,9 +246,10 @@ nothing and caught this. A rerun for any reason is a free determinism check; tak
 
 **Do not quote a ratio whose denominator is within noise of zero.** COAD's
 patient-to-novel-slide ratio read 199x, then ~115x on a rerun, then 117x recomputed from the
-4-decimal saved table rather than the full-precision column — because its denominator is 0.11 of its
-own standard deviation. A quantity that moves with rounding alone is not a result. Report the
-numerator and denominator with their dispersion, and say which one is resolved from zero.
+4-decimal saved table rather than the full-precision column (`results/round2/R3_splits/r3_per_task_terms.csv`)
+— because its denominator is 0.11 of its own standard deviation. A quantity that moves with
+rounding alone is not a result. Report the numerator and denominator with their dispersion, and say
+which one is resolved from zero.
 
 ## Sweeping for a defect, and the guard that makes it safe
 
@@ -256,6 +273,59 @@ or `shutil.move` it back, then re-verify the whole directory compiles at the end
 carry `pythonhashseed` alongside the job id, node, commit and config hash. It should always have
 been there — the determinism failure that cost a withdrawn ratio was invisible precisely because
 nothing recorded whether the interpreter's seed was fixed.
+
+## When the checker is wrong
+
+A checker that reports a failure which is not one is worse than no checker: it trains
+whoever reads it to skim past the output, and the one real failure goes with the rest. So
+when a claim fails a check, the first question is which of the two is at fault, and the
+answer is not always the document.
+
+The numeric-claim sweep reached **688 unresolved claims across thirteen documents**
+(`/tmp/sweep_before.csv`, reproduced by `code/scripts/sweep_table.py before`). Five
+defects in the sweep accounted for most of them, and each was found the same way — by a
+triage pass refusing to paper a claim over with a declared exception and reporting it as
+a tool limitation instead:
+
+1. **Citation scoping was flat, not hierarchical.** A file named once in a `##` section's
+   preamble was invisible to every `###` subsection beneath it, so a report that says
+   "all numbers in this section come from X" and then discusses X in subsections had every
+   one of those numbers flagged. This was the single largest cause. Sibling sections still
+   do not share citations — that direction *was* the original bug, where one section's file
+   was carried across later unrelated paragraphs and values were checked against the wrong
+   source. Both directions have a fixture: hierarchical inheritance verifies, sibling
+   inheritance is refused.
+2. **Scientific notation was unreadable.** `3.15e-02` parsed as two claims, `3.15` and
+   `02`. The fix has to carry the precision as well as the value, because the exponent sets
+   how finely the mantissa's digits pin the number down, so the tolerance has to
+   follow the exponent. Without that the window would
+   have been ±0.005, 150 times the value's own precision and wide enough to match almost
+   anything — a check that passes everything, which is the same as no check.
+3. **Comma-grouped integers in a cited record split.** a grouped integer became two separate numbers at the comma.
+4. **The derived formula language could not express a group-filtered statistic.** "The
+   mean over the three encoders for PAAD" was neither a single cell nor a whole column, so
+   a computable quantity had no way to be checked.
+5. **A digit run inside a UUID was read as a claim** — `4142` out of
+   `art_5d580e1c-1647-4142-…` in a figure link. Fixing it exposed a second fault: the
+   window the token test searched was ±8 characters, far narrower than a 36-character
+   UUID, so that test had silently never fired for any long token.
+
+Three rules come out of this.
+
+**A false failure is a defect in the checker, and it is fixed in the checker.** Not with a
+declared exception per claim: an exception says "this number is legitimately unverifiable",
+and using it to silence a tool bug makes that statement false 100 times over and leaves
+the bug for the next document.
+
+**Report the limitation rather than working around it.** Four of the five above were found
+because a triage pass left claims open and said why, against an instruction to reach zero.
+Reaching zero by declaration would have looked better and fixed nothing.
+
+**A check that fires on everything identifies nothing — and so does one that fires on
+nothing.** Both failure directions need a fixture. Every fix above ships with a test that
+the intended case now passes *and* that a planted genuine error is still caught; the UUID
+fix in particular had to prove that a wrong value sitting beside a UUID was not swallowed
+by the wider window.
 
 ## Required before any document is handed over
 

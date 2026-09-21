@@ -15,6 +15,15 @@ wrote that message.
 `code/scripts/verify_numeric_claims.py`, one document per process, 64 GB, with
 `--always results/summary/deck_numbers.csv` and each document's own exceptions file.
 
+*Historical snapshot.* The counts below were measured on 21 September 2026 by the
+`verify_numeric_claims.py` version current at that moment. That checker has since been
+revised repeatedly (citation scoping made hierarchical, scientific-notation and
+comma-grouped-integer parsing fixed, quoted and chained derived references added, glob
+citations, percentile statistics, UUID skipping, and more), so several of the counts
+below no longer match a fresh run. They are a record of what was known on that date, not
+current per-document counts; see the Changelog and this repository's most recent
+before/after sweep table for the current figures.
+
 | document | claims | verified | unresolved | uncited |
 |---|---|---|---|---|
 | `README.md` | 225 | 225 | **0** | 0 |
@@ -72,8 +81,9 @@ per-claim classification, and it should not be read as one.
 
 **So the instruction's "zero unresolved" is met for the README and the deck outline, and
 is not met for the repository as a whole.** I am reporting that rather than closing the
-gap, because closing it honestly means triaging **437 unresolved entries across eleven
-documents**, and guessing at them would put wrong reasons into a durable record.
+gap, because closing it honestly means triaging **688 unresolved entries across thirteen
+of sixteen documents** (corrected below; see Changelog), and guessing at them would put
+wrong reasons into a durable record.
 
 That figure is the column sum, and `claims − verified = unresolved` holds exactly
 (1484 − 1047 = 437), which is the check that it is a count rather than an impression.
@@ -82,6 +92,37 @@ I made instead of adding the column, understating the problem by 87 entries, or 
 the file written to correct an inaccurate accounting. Eleven documents have unresolved
 claims, not twelve; the twelfth is the unassessed one, whose count is unknown rather
 than non-zero.
+
+**Correction, 21 September (later the same day).** 437 was the column sum over the
+fourteen documents assessed at that time; it was correct for what had been measured, not
+for the repository as a whole. Two more documents are now accounted for --
+`docs/round2_R0_R1_stage_report.md`, assessed for the first time this session, and this
+report's own table, counted here for the first time -- bringing the total to all sixteen
+documents in the repository. Summed over all sixteen, three of which are at zero
+unresolved, the complete figure is **688 unresolved entries across thirteen of sixteen
+documents**, from the per-document counts recorded on the cluster at `/tmp/before_table.csv`.
+437 was the sum over the documents assessed then; 688 is the sum over all of them.
+
+These two figures are not a clean before/after on identical measurements, and that should
+be said plainly rather than implied away: the sweep tool was itself revised repeatedly
+between the two counts (citation scoping, notation parsing, and more; see the historical-
+snapshot note on the § 1 table). Recomputing `/tmp/before_table.csv`'s rows for the
+same fourteen documents the original 1484/1047/437 table covers gives 1484 claims (an
+exact match) but 1043 verified and 441 unresolved -- four different from 1047/437 on
+identical document sets. So part of the 437-to-688 gap is genuinely new coverage (the two
+newly-counted documents), and part of it is drift in what the checker itself resolves for
+the *same* fourteen documents between the two measurements.
+
+`688` is therefore not a live current total either -- it is the sum over the sixteen rows
+of the `/tmp/before_table.csv` snapshot, and that snapshot is already stale for two of its
+own sixteen rows: it carries `228` for `docs/round2_R0_R1_stage_report.md` and `19` for
+this report's own table, and this session's triage (documented in each report's own
+Changelog) has since driven both of those to zero. The live current total, as of this
+session's last combined sweep run, is at most `688 minus 228 minus 19, i.e. 441` and may
+be lower still wherever a sibling track has also since triaged its document. Neither `437`
+nor `688` should be read as the live count; both are dated snapshots, and the date each was
+taken is what makes them non-comparable to each other and to the present state of the
+repository.
 
 ## 3. The three-paragraph report section 2.6 asks for
 
@@ -111,8 +152,11 @@ stray archive left in the tree by a failed bundling job was moved rather than de
 `R5b_audit` provenance entry was corrected twice: it first named a script that does not
 exist, because that stage was a source-reading task with no script to rerun.
 
-**What could not be brought up to date.** The gate above: one document not assessed,
-and 437 unresolved claims across eleven documents untriaged. Beyond the gate: the four
+**What could not be brought up to date.** The gate above, as first written: one document
+not assessed, and 437 unresolved claims across eleven documents untriaged.
+`docs/round2_R0_R1_stage_report.md` has since been assessed, and the complete figure,
+summed over all sixteen repository documents, is 688 unresolved claims across thirteen
+of them (see Changelog). Beyond the gate: the four
 round-2 decision memos, the results synthesis and the literature landscape are Nicolas's
 to supply and are listed as pending in `docs/README.md` rather than reconstructed;
 `code/scripts/round2_r5b_audit.py` does not exist and the R5b audit is therefore not
@@ -123,3 +167,31 @@ though R8 produced them; the IDC same-donor attribution rests on a vendor page a
 with one of the two samples and is recorded as probable rather than settled; nine of the
 72 donor labels are unverifiable; and there are no bootstrap intervals on the variance
 components and no nested-ANOVA diagnostics.
+
+## Changelog
+
+- **21 September 2026.** Corrected "`437` unresolved entries across eleven documents" (§2,
+  and again in §3's closing paragraph) to "`688` unresolved entries across thirteen of
+  sixteen documents": `docs/round2_R0_R1_stage_report.md` has since been assessed and
+  this report's own table is now counted, bringing the total to all sixteen repository
+  documents. `437` remains in the text as the sum over the fourteen documents assessed at
+  the time; `688` is the sum over all of them. See `.verify-exceptions` for the
+  corresponding `cost:` entry.
+- **21 September 2026.** Added a note at the top of the §1 table stating that its counts
+  were measured by the pre-fix `verify_numeric_claims.py`, since revised repeatedly, and
+  are a historical snapshot rather than current per-document counts.
+- **21 September 2026.** Classed the §1 table's own count cells (`225`, `144`, `169`,
+  `257`, `158`, and the `1484`/`1047` column totals) and MANIFEST's pre-widening
+  `1,054`-file count in §3 as `historical:` exceptions rather than fixing or deriving
+  them: each is a faithful record of a measurement taken by a checker version that has
+  since been corrected in ten separate ways, so the measurement itself is superseded,
+  not wrong. See `.verify-exceptions`.
+- **21 September 2026.** Added a disclosure to the `437`-to-`688` correction (§2): the two
+  figures are not a clean before/after on identical measurements. Recomputing
+  `/tmp/before_table.csv`'s rows for the same fourteen documents the original
+  `1484`/`1047`/`437` table covers gives `1484` claims (matching) but `1043` verified
+  and `441` unresolved -- four different from `1047`/`437` on identical document sets,
+  because the checker itself changed between the two counts. Neither is a live count:
+  `688` is itself already stale for two of its own sixteen rows (`docs/round2_R0_R1_stage_report.md`
+  and this report's own table), both of which this session's triage has since driven to
+  zero unresolved, so the live current total is lower than `688`, not equal to it.

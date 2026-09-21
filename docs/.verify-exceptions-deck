@@ -5,14 +5,14 @@
 # so an exception is a stated decision rather than a silenced check. Nothing this
 # project measured belongs here.
 #
-1,229	HEST-1k sample count from the paper's abstract; this project uses the 72-sample bench subset
-153	HEST-1k cohort count, stated in the paper
-112	patch side in micrometres, a benchmark protocol constant from the paper
-224	patch side in pixels, a benchmark protocol constant from the paper
-0.41	the paper's own reported average Pearson, quoted from the publication
-25	encoders on the public leaderboard, a property of that page
-0.42	accuracy ceiling quoted from the leaderboard and the literature
-0.415	STFlow's reported average, from that paper
-0.47	HEST Figure 3's printed correlation; this project's reproduction of it IS checked as theta1 on NCBI785
-2.5	buffer width in spot pitches, a design choice recorded in the R3 script rather than a measurement
-474	round 1's ZINB denominator after excluding falsely-converged NB fits; the exclusion rule is not a column in count_diagnostics.csv, so this cannot be re-derived and the outline now says so in place of quoting it as a result
+1,229	external: HEST-1k sample count from the paper's abstract; this project uses the 72-sample bench subset
+153	external: HEST-1k cohort count, stated in the paper
+112	external: patch side in micrometres, a benchmark protocol constant from the paper
+224	external: patch side in pixels, a benchmark protocol constant from the paper
+0.41	external: the paper's own reported average Pearson, quoted from the publication
+25	external: encoders on the public leaderboard, a property of that page
+0.42	external: accuracy ceiling quoted from the leaderboard and the literature
+0.415	external: STFlow's reported average, from that paper
+0.47	external: HEST Figure 3's printed correlation; this project's reproduction of it IS checked as theta1 on NCBI785
+2.5	external: buffer width in spot pitches, a design choice recorded in the R3 script rather than a measurement
+474	historical: round 1's ZINB denominator after excluding falsely-converged NB fits; the exclusion rule is not a column in count_diagnostics.csv, so this cannot be re-derived and the outline now says so in place of quoting it as a result

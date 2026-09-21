@@ -48,6 +48,8 @@ Three encoders (`hoptimus0`, `uni_v2`, `resnet50`). Source: `r4_probes_v2.csv`.
 
 ### 3.1 The headline
 
+Values in this subsection are from `r4_probes_v2.csv`.
+
 | probe | unit | chance | accuracy (min–max over encoders) | verdict |
 |---|---|---|---|---|
 | slide identity | PRAD patient 2, 15 slides | 0.067 | **0.871 – 0.949** | far above chance |
@@ -62,14 +64,16 @@ probe was not reading tissue.**
 
 ### 3.2 Where the signature lives
 
-The confusion matrix locates it. Off-diagonal mass falling inside a scan sub-cluster is **0.933,
-0.964, 0.945** for the three encoders, against **0.467** expected if the sub-clusters were
-interchangeable. Sub-cluster membership is itself decodable at **0.977** on average, with **15 of
-15** slides assigned to the correct session by majority vote, for every encoder.
+The confusion matrix locates it (`r4_probes_v2.csv`). Off-diagonal mass falling inside a scan
+sub-cluster is **0.933, 0.964, 0.945** for the three encoders, against **0.467** expected if the
+sub-clusters were interchangeable. Sub-cluster membership is itself decodable at **0.977** on
+average, with **15 of 15** slides assigned to the correct session by majority vote, for every
+encoder.
 
-The two sub-clusters were verified from the metadata rather than taken from the memo: eight slides
-at 0.3413–0.3418 µm/px (MEND139–MEND146) and seven at 0.3484–0.3492 (MEND147–MEND153), separated by
-0.0066 µm/px, with contiguous ID blocks — consistent with two scan sessions.
+The two sub-clusters were verified from the metadata (`results/tailored/integrity/sample_metadata.csv`)
+rather than taken from the memo: eight slides at 0.3413–0.3418 µm/px (MEND139–MEND146) and seven at
+0.3484–0.3492 (MEND147–MEND153), separated by 0.0066 µm/px, with contiguous ID blocks — consistent
+with two scan sessions.
 
 **A note on the decision rule.** Memo § 2.1 framed this as a choice: confusion mostly within
 sub-cluster means the signature is per-slide, confusion between sub-clusters means a scan-session
@@ -82,10 +86,11 @@ component the stronger. The either/or phrasing should be retired rather than ans
 
 This is the result that changes an earlier reading, so the withdrawal comes first.
 
-**Withdrawn:** probe 2's run-2 values of 0.712, 0.683 and 0.669. They are not evidence of anything.
-Each leave-one-slide-out fold holds out one slide, whose spots all carry one resolution class, so a
-per-fold balanced accuracy is recall on a single class. With 5 slides at 0.573 and 2 at 0.688, a
-classifier that always predicts the majority class scores **5/7 = 0.714** — and the three values sit
+**Withdrawn:** probe 2's run-2 values of 0.712, 0.683 and 0.669 (`r4_probes_v2.csv`). They are not
+evidence of anything. Each leave-one-slide-out fold holds out one slide, whose spots all carry one
+resolution class, so a per-fold balanced accuracy is recall on a single class. With 5 slides at
+0.573 and 2 at 0.688 (`results/tailored/integrity/sample_metadata.csv`), a classifier that always
+predicts the majority class scores **5/7 = 0.714** — and the three values sit
 at or *below* it. The statistic could not distinguish a resolution signal from a constant
 prediction. This is the same defect as probe 1b's, which had been fixed; leaving it in probe 2 was
 an inconsistency on my part.
@@ -117,14 +122,14 @@ a small one; it is not evidence that resolution is undetectable in general.
 
 Regressing the PCA-256 features on the morphology covariates, with the regression fit on training
 spots only so the adjustment cannot itself move slide information between arms. Mean accuracy lost
-over the three encoders:
+over the three encoders (`r4_probes_v2.csv`):
 
 | task | unit | blocked accuracy | lost to adjustment | under the plan-exact covariates | verdict |
 |---|---|---|---|---|---|
 | PRAD | patient 2, 15 slides | 0.877 | **0.014** | 0.011 | composition explains almost none |
 | IDC | 4 samples | 0.998 | 0.030 | 0.023 | little |
 | LUNG | 2 samples | 0.996 | 0.169 | 0.161 | partial to most |
-| PAAD | 3 samples | 0.990 | 0.212 | 0.214 | most |
+| PAAD | 3 samples | 0.989 | 0.212 | 0.214 | most |
 | SKCM | 2 samples | 0.996 | 0.274 | 0.279 | most |
 
 Both covariate sets are reported because the plan names "mean nuclear area" and the parquet carries
@@ -147,7 +152,8 @@ there is no unflagged comparison to make. Of the probe-3 tasks, only IDC contain
 (2 of 4); PAAD, LUNG and SKCM contain none.
 
 This is a caveat on the *labels*, not on the probes. PRAD is Visium, so its pixel size is derived
-from the known 100 µm spot pitch, which memo § 1.1 accepts as the more reliable of the two sources.
+from the known 100 µm spot pitch (`results/tailored/integrity/sample_metadata.csv`), which memo
+§ 1.1 accepts as the more reliable of the two sources.
 Probe 1 and probe 1b do not depend on the pixel values being right in absolute terms — only on the
 two sub-clusters being distinct, which holds under any monotone rescaling.
 
@@ -187,13 +193,15 @@ says "serial". What is sourced is *two 5 µm sections of one resected tumour mas
 
 **So IDC has three donors, not four.** The NCBI pair, by contrast, is a genuine two-patient
 contrast: they map to different GEO records in the Janesick et al. 2023 deposit
-(doi:10.1038/s41467-023-43458-x) with different collection dates (2009 against 2021) and different
+(`doi:10.1038/s41467-023-43458-x`) with different collection dates (2009 against 2021) and different
 receptor and stage profiles.
 
 ### 4.2 The gene panels differ, and the difference is real
 
-Computed from each sample's own `var_names`, not from any metadata table. All four files carry
-exactly **541 entries**, but entries are not genes — they include Xenium control probes (`BLANK_`,
+Computed from each sample's own `var_names`, not from any metadata table
+(`results/round2/R5b_audit/r5_idc_panels_observed.csv`,
+`results/round2/R5b_audit/r5_idc_panel_pairs.csv`). All four files carry exactly **541 entries**,
+but entries are not genes — they include Xenium control probes (`BLANK_`,
 `NEGCONTROLCODEWORD_`, `NEGCONTROLPROBE_`):
 
 | sample | entries | control probes | real genes | extras over the 500-entry intersection |
@@ -229,14 +237,14 @@ an H&E scanner model or a nominal objective magnification for any of the four sa
 `Sample_scan_protocol` field reads only "Xenium In Situ Analyzer", which is the fluorescence
 instrument, not the brightfield scan.
 
-**The cause of the 0.2125 against 0.2740 against 0.3639 µm/px difference is therefore not
-established.** It is not inferred from the pixel-size ratios, which would have been easy and
-unjustified.
+**The cause of the 0.2125 against 0.2740 against 0.3639 µm/px difference
+(`results/round2/R5b_audit/r5_idc_panels_observed.csv`) is therefore not established.** It is not
+inferred from the pixel-size ratios, which would have been easy and unjustified.
 
 ### 4.4 The IDC contrast, fully enumerated
 
 Listing every variable that differs, which is what this project requires before a contrast is
-named:
+named (pairwise entry-overlap counts from `results/round2/R5b_audit/r5_idc_panel_pairs.csv`):
 
 | pair | donor | block | panel | pixel size | instrument generation |
 |---|---|---|---|---|---|
@@ -259,6 +267,8 @@ block, panel, pixel size and instrument generation simultaneously.
 
 The project's rule is that no term is named before every variable that moves between its arms is
 written out. Doing that here is what exposed probe 2's baseline problem and the IDC donor fault.
+Values are from `r4_probes_v2.csv`, `results/tailored/integrity/sample_metadata.csv`, and
+`results/round2/R3_splits/donor_out__hoptimus0.csv`.
 
 | probe / term | arm A | arm B | what differs | what does NOT |
 |---|---|---|---|---|
@@ -267,7 +277,7 @@ written out. Doing that here is what exposed probe 2's baseline problem and the 
 | probe 2, resolution class | 5 slides at 0.573 | 2 slides at 0.688 | nominal pixel size, slide identity, and **class size, 5 against 2** | patient, tissue, assay, panel |
 | probe 3, adjusted | unadjusted features | features with morphology regressed out | 8 morphology covariates | everything else, since the regression is fit on training spots only |
 | IDC `patient` (shipped) | 3 samples train | 1 sample held out | sample; **and on 2 of 4 folds, nothing else — the held-out sample's own donor is still represented** | — |
-| IDC `donor_out` | 2 donors train | 1 donor held out | donor, block, panel, pixel size, **and training-set size, 7,015 against ~32,000** | tissue type, assay |
+| IDC `donor_out` | 2 donors train | 1 donor held out | donor, block, panel, pixel size, **and training-set size, 7,015 against 31,526–32,531** | tissue type, assay |
 | IDC `replicate_leak` | replicate available | replicate withheld | **only whether the same-donor replicate is in training** | test set, training-set size, everything else |
 
 The class-size asymmetry in probe 2 is the entry that mattered: writing it down is what prompted
@@ -290,25 +300,28 @@ by whatever that replicate is worth.
 loading, fitting, scoring and within-slide metric unchanged, so the comparison is like-for-like,
 and it re-runs the shipped arm as `patient_recheck` to prove equivalence before changing anything.
 
-**Reproduction check first.** `patient_recheck` reproduces R3's IDC patient arm exactly —
+**Reproduction check first.** `patient_recheck` reproduces R3's IDC patient arm exactly
+(`results/round2/R3_splits/donor_out__hoptimus0.csv`, `donor_out__resnet50.csv`,
+`donor_out__uni_v2.csv`) —
 0.597598, 0.473880, 0.589765 for `hoptimus0`, `resnet50`, `uni_v2`, against R3's 0.597598, 0.473880,
 0.589765; maximum absolute difference **0.000000**. The new script is R3's pipeline.
 
-**Result.** From `donor_out__*.csv`:
+**Result.** From `results/round2/R3_splits/donor_out__hoptimus0.csv`,
+`donor_out__resnet50.csv` and `donor_out__uni_v2.csv`:
 
 | encoder | shipped `patient` (4 folds) | `donor_out` (3 donors) | difference |
 |---|---|---|---|
 | hoptimus0 | 0.5976 | 0.5789 | −0.0187 |
 | uni_v2 | 0.5898 | 0.5784 | −0.0114 |
 | resnet50 | 0.4739 | 0.4587 | −0.0152 |
-| **pooled** | **0.5538** | **0.5387** | **−0.0151** |
+| **pooled** | **0.5537** | **0.5387** | **−0.0151** |
 
 Correcting the donor labels lowers IDC's held-out accuracy by 0.0151, which raises IDC's
 `random − patient` total from 0.1210 to about 0.1361.
 
 **But that number is confounded, and I am not reporting it as the leak.** Holding out both TENX
-samples removes 28,521 of 35,536 spots, so the corrected fold trains on 7,015 spots against roughly
-32,000 for the single-sample folds. Less training data lowers accuracy on its own. The
+samples removes 28,521 of 35,536 spots, so the corrected fold trains on 7,015 spots against
+31,526–32,531 for the single-sample folds. Less training data lowers accuracy on its own. The
 `donor_out_matched` arm in the same file does not fix this either: it matches downward to the
 patient arm's mean training size, which only applies to the two NCBI folds and silently drops the
 TENX fold entirely — so its higher value, 0.5815 pooled, is an average over an easier subset and
@@ -321,8 +334,9 @@ the same-donor replicate is available — see § 6.1.
 ### 6.1 The replicate leak, measured cleanly
 
 `code/scripts/round2_r5_replicate_leak.py`, results in `r5_idc_replicate_leak.csv`. For each TENX
-sample as the held-out test set, two training arms drawn at **the same size, 7,015 spots** — the
-size of the NCBI-only pool, which is the binding constraint:
+sample as the held-out test set, two training arms drawn at **the same size, 7,015 spots**
+(`results/round2/R3_splits/replicate_leak_v2__hoptimus0.csv`) — the size of the NCBI-only pool,
+which is the binding constraint:
 
 - **with_replicate** — drawn from the other TENX sample plus NCBI783 and NCBI785;
 - **without_replicate** — drawn from NCBI783 and NCBI785 only.
@@ -364,7 +378,7 @@ The controlled comparison, and the leak against IDC's whole reported gap.
 
 Under memo § 0 these are recorded rather than halting work.
 
-**7.1 TENX95 and TENX99 are not two patients, and the IDC patient split leaks.** This is a
+**§7.1 TENX95 and TENX99 are not two patients, and the IDC patient split leaks.** This is a
 benchmark issue of the same kind as COAD's labels, and it is the one I would raise with the HEST
 authors first, because unlike COAD it comes with a measured cost. HEST's metadata gives the two
 samples distinct patient labels; 10x's own dataset page states `donorCount: 1` and describes them
@@ -376,16 +390,16 @@ Note what this does **not** affect: the IDC *task* remains a valid prediction ta
 50 genes are unaffected. What is affected is the interpretation of IDC's patient-split score as
 cross-patient generalisation, and any use of TENX95/TENX99 as two independent samples.
 
-**7.2 IDC's four samples do not share a gene panel.** NCBI785 measures 41 real genes that none of
+**§7.2 IDC's four samples do not share a gene panel.** NCBI785 measures 41 real genes that none of
 the other three measure; NCBI783 adds 8 `antisense_*` probes; only TENX95 and TENX99 match. Real
 difference, confirmed against the raw GEO panel-designer files, not a control-probe artefact
 (§ 4.2). This is the IDC instance of the panel-heterogeneity issue R2 found across tasks.
 
-**7.3 The scan-resolution difference within IDC has no stated cause** in any source consulted
+**§7.3 The scan-resolution difference within IDC has no stated cause** in any source consulted
 (§ 4.3). Worth raising with the authors as a documentation gap, since resolution is aligned with
 patient identity in three tasks and the benchmark gives no provenance for it.
 
-**7.4 A number in the R3 report changes.** IDC's `random − patient` total moves from 0.1210 to
+**§7.4 A number in the R3 report changes.** IDC's `random − patient` total moves from 0.1210 to
 about 0.1361 under corrected donor labels — though as § 6 says, that particular figure is
 confounded by training-set size and the clean statement is the 0.0651 of § 6.1. The R3 report is a
 delivered document; I have not edited it, and this report supersedes it on that number.
@@ -401,7 +415,7 @@ delivered document; I have not edited it, and this report supersedes it on that 
    determinable from the sources reached, and it affects no conclusion, since both carry the same
    panel.
 3. **HEST-1k's Table A4 reports n = 4 Xenium samples for the Janesick publication** while GEO's
-   subseries lists 3 and HEST's own `atlas.py` names 3 (NCBI783/784/785). Noted, unresolved.
+   subseries lists 3 and HEST's own `atlas.py` names 3 (NCBI783/NCBI784/NCBI785). Noted, unresolved.
 4. **NCBI784 exists in HEST-1k but is excluded from the 4-sample IDC task.** If it is the other
    Sample #1 replicate, then the benchmark already excludes one same-donor replicate pair while
    including another — worth asking the authors about, since it suggests the issue was partly
@@ -437,8 +451,8 @@ delivered document; I have not edited it, and this report supersedes it on that 
 
 For the oversight chat to rule on. My proposal, in order:
 
-1. **Report 7.1 to the HEST authors.** It is concrete, sourced to their data's own provenance, and
-   quantified. I would send 7.1 and 7.2 together, with the panel table.
+1. **Report §7.1 to the HEST authors.** It is concrete, sourced to their data's own provenance, and
+   quantified. I would send §7.1 and §7.2 together, with the panel table.
 2. **Audit the remaining tasks for undeclared same-donor structure** before R6 builds variance
    components on patient labels. R6's whole design rests on the patient being the unit; two of the
    tasks examined so far have patient labels that do not mean what they say. This is a reading task
@@ -453,3 +467,38 @@ between-patient estimate. On the evidence of § 6.1, IDC needs the same treatmen
 reason — its labels split one donor rather than merging several — so its between-patient component
 would be estimated across 3 donors, not 4 samples, and its within-patient component becomes
 estimable for the first time using the TENX pair.
+
+---
+
+## Changelog
+
+- **§3.4 table, PAAD row:** blocked accuracy corrected from `0.990` to **0.989**. The reported
+  figure is the mean of the three encoders' `acc_blocked` for the PAAD row of
+  `probe3_composition_adjusted` in `r4_probes_v2.csv` (0.998084, 0.998084, 0.972191 → mean
+  0.989453), which rounds to 0.989, not `0.990`. Does not change the row's verdict ("composition
+  explains most"), which rests on the 21.2% drop figure, unaffected.
+- **§6 result table, pooled shipped-`patient` column:** corrected the fourth decimal place (see
+  the table row itself for the new value). The pooled figure is the mean of the three encoders'
+  patient_recheck means computed at full precision, which rounds down at the fourth decimal; the
+  previous figure came from rounding each encoder's mean to four decimals first and then averaging
+  those roundings, a rounding-order artefact rather than a different quantity. Does not change the
+  difference row beside it, which is computed independently and rounds the same either way.
+- **§5 table and §6 prose:** the IDC `donor_out` training-set size, previously given as a vague
+  rounded approximation for the two single-sample folds, is now stated as the exact range
+  **31,526–32,531** (`results/round2/R3_splits/donor_out__hoptimus0.csv`, n_train for the
+  `donor_NCBI785` and `donor_NCBI783` folds respectively). Same quantity, stated precisely instead
+  of rounded.
+- **Citation completeness:** subsections §3.1–§3.5, §4.2–§4.4, §5 and the reproduction-check/result
+  paragraphs of §6 previously relied on a file named only in the parent section's opening paragraph
+  or in a sibling subsection; the numeric-claims checker pools citations per `##`/`###` subsection
+  and does not inherit across that boundary, so these subsections' own numbers were technically
+  uncited. Added the specific file citation to each (`r4_probes_v2.csv`,
+  `results/tailored/integrity/sample_metadata.csv`, `results/round2/R5b_audit/r5_idc_panels_observed.csv`,
+  `results/round2/R5b_audit/r5_idc_panel_pairs.csv`, `results/round2/R3_splits/donor_out__*.csv`,
+  `results/round2/R3_splits/replicate_leak_v2__hoptimus0.csv`). No values changed.
+- **Formatting to avoid false numeric-claim matches, no content change:** wrapped the Janesick et
+  al. DOI in backticks so its digit run is not parsed as a claim; spelled out the sample-id list in
+  §8 item 3 in full (`NCBI` prefix on all three ids, not just the first) instead of eliding the
+  repeated prefix; and prefixed the four escalation item numbers with a section marker, matching
+  this document's own convention for every other in-document section reference, so they are not
+  misread as measurements.

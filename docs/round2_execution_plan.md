@@ -1,3 +1,5 @@
+> **Closed record, dated 2026-09-16.** This plan is not maintained; numbers in it may have been superseded by later execution and results.
+
 # Round 2 execution plan: from replication to project motivation
 
 Prepared 16 September 2026 for the Claude Science session that produced `NicWYZ/HEST-1k-replication` (commit `eb670fa`). Companion document: the review of that repository dated the same day. Read the review first; this plan implements its Sections 6 and 7 and adds the specifications needed to run them without guessing.

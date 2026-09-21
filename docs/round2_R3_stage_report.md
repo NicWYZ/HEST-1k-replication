@@ -71,7 +71,9 @@ holding everything else fixed — before any code was changed. With both fixed, 
 pass on real data across all 12 encoders**, by six to seven orders of magnitude. No threshold was
 weakened.
 
-From `results/round2/R1b_heads/acceptance__*__f64.csv`, worst over 12 encoders:
+From `results/round2/R1b_heads/acceptance__*__f64.csv` (worst over 12 encoders; the four entries
+below are individually the literal worst-encoder values, found in `acceptance__resnet50__f64.csv`
+(A1, A2, A2b) and `acceptance__phikon__f64.csv` (A3)):
 
 | check | threshold | worst observed | verdict |
 |---|---|---|---|
@@ -82,8 +84,11 @@ From `results/round2/R1b_heads/acceptance__*__f64.csv`, worst over 12 encoders:
 
 The float32 families are retained as the round-1-comparable record and are **not** held to these
 thresholds, for the reason R1 established (a float32 accumulation floor, median relative error
-1.265e-05, 106× float32 epsilon and 0.87× the $\sqrt n \epsilon$ prediction). Their worst values,
-same source files:
+1.265e-05 — about 106× float32 epsilon (the exact multiple is 106.12×) and 0.87× the $\sqrt n
+\epsilon$ prediction; a measured value from that stage's diagnostics, not checkpointed to a
+results file — see Changelog). Their worst values
+(literal worst-encoder cells, found in `acceptance__conch_v1.csv`, `acceptance__conch_v15.csv`,
+`acceptance__virchow2.csv`, `acceptance__uni_v1.csv` and `acceptance__resnet50.csv`):
 
 | family | A1 | A2 | A2b | A3 (absolute) |
 |---|---|---|---|---|
@@ -98,18 +103,20 @@ across both (3.69e-04), which is the dtype floor and nothing else.
 ### 3.2 A5, reproduction of the faithful result
 
 `results/round2/R1b_heads/faithful_check__*__f64.csv`: the float64 no-intercept head reproduces
-round 1's per-task faithful Pearson over 120 encoder-task cells with mean absolute difference
-1.49e-04 and maximum 1.24e-03; 1 cell of 120 exceeds 1e-03. That is the expected order — the
+round 1's per-task faithful Pearson over 120 encoder-task cells (12 encoders × 10 tasks) with mean
+absolute difference 1.49e-04 (pooled over all 12 per-encoder files) and maximum 1.24e-03 — the
+literal worst cell, in `faithful_check__conch_v15__f64.csv`; 1 cell of 120 exceeds 1e-03. That is the expected order — the
 float64 exact pipeline is a *different, more exact* computation than round 1's float32 `lsqr`, and
 the discrepancy sits inside the solver sensitivity measured in § 4.3.
 
 The float32 `lsqr` arm, which must match round 1 tightly, does. Recomputed over the **same
 12-encoder, 120-cell set** from `results/round2/R1b_heads/faithful_check__*.csv` (not the
-11-encoder R1 figure): mean absolute difference 7.05e-05, maximum **3.728e-04**, **0 of 120** cells
-above 1e-03. The worst cell is `conch_v1` on CCRCC (0.217627 against the shipped 0.2180), and
-`conch_v1` and `conch_v15` supply all three worst cells — the same two encoders that top the
-solver-sensitivity table in § 4.3, which is the expected pattern if the residual is `lsqr`
-tolerance.
+11-encoder R1 figure, pooled over all 12 per-encoder files): mean absolute difference 6.84e-05,
+maximum **3.28e-04** (literal worst cell, in `faithful_check__conch_v1.csv`), **0 of 120** cells
+above 1e-03. The worst cell is `conch_v1` on CCRCC (0.217672 against the shipped 0.2180), and
+`conch_v1` and `conch_v15` supply two of the three worst cells, with `virchow2` the third — the
+same encoders that top the solver-sensitivity table in § 4.3, which is the expected pattern if the
+residual is `lsqr` tolerance.
 
 ---
 
@@ -117,7 +124,8 @@ tolerance.
 
 ### 4.1 The head has no intercept, and that is most of its $R^2$ deficit
 
-`r1b_ladder_by_task.csv`, `r1b_ladder_by_encoder.csv`. Computed by exact algebra on the stored
+`r1b_ladder_by_task.csv`, `r1b_ladder_by_encoder.csv`, `r1b_ladder_pooled.csv` (the pooled-over-all
+row quoted below). Computed by exact algebra on the stored
 per-gene columns, with no refitting: with $b$ the level offset, $\rho = s_{\hat y}/s_y$ the scale
 ratio and $r$ the correlation,
 
@@ -143,7 +151,7 @@ pass.
 
 ### 4.2 The head is over-dispersed, and the over-dispersion orders with encoder quality
 
-Median $\rho$ = 0.5796 against median $r$ = 0.3150, so $\rho/r$ = 1.84: the head's predictions vary
+From `r1b_ladder_pooled.csv`, median $\rho$ = 0.5796 against median $r$ = 0.3150, so $\rho/r$ = 1.84: the head's predictions vary
 1.84× more than is optimal given how well they correlate. This is a new result and it is the
 quantity a calibration layer would target. From `r1b_ladder_by_encoder.csv` it orders with encoder
 quality — `resnet50` 2.17, `conch_v1` 2.04, `ctranspath` 2.03, down to `uni_v2` 1.65, `hoptimus1`
@@ -265,7 +273,7 @@ review:
 
 1. whether test-fold spots informed the variance ranking — the **intended** contrast;
 2. **which genes are the targets**, and hence their intrinsic predictability. The arms share only
-   27.2 of 50 genes on average, and on PRAD just 11;
+   25.2 of 50 genes on average (`r2_leakage_summary.csv`, mean `shared`), and on PRAD just 11;
 3. on COAD, LUNG, PAAD and SKCM, **the number of genes**, because off-panel genes are dropped —
    which also changes the ridge penalty, since $\alpha = 100/(256 \cdot n_{\text{genes}})$;
 4. on those same tasks, which genes the held-out slide can measure at all.
@@ -320,7 +328,12 @@ description, where the v4 decomposition independently confirms the fault.
 
 Three encoders (`hoptimus0`, `uni_v2`, `resnet50`) × 10 tasks × 29 folds × five designs, plus the
 buffered arm, a three-point grid sweep and leave-one-slide-out on the three tasks verified to have
-a patient contributing more than one slide. 6,138 rows in `r3_split_v4.csv`.
+a patient contributing more than one slide. 6,138 rows in `r3_split_v4.csv` (the union of the three
+per-encoder `split_v4__hoptimus0.csv`, `split_v4__resnet50.csv` and `split_v4__uni_v2.csv` files,
+2,046 rows each; `r3_split_v4.csv` existed only as a session artifact and had not been committed to
+the repository — restored to `results/round2/R3_splits/`, see Changelog). The step-level summary
+tables in this section draw on `results/round2/R3_splits/r3_decomposition_terms.csv` and
+`results/round2/R3_splits/r3_per_task_terms.csv`.
 
 ### 6.1 Acceptance: v4 reproduces v3 exactly
 
@@ -344,7 +357,7 @@ All ten tasks, 30 encoder-task cells:
 | `random − random_matched` — training-set size | +0.0126 | 0.0111 |
 | `random_matched − blocked_matched` — spatial adjacency | +0.0327 | 0.0090 |
 | `blocked_matched − blocked_buffered` — adjacency past the block edge | +0.0115 | 0.0059 |
-| `blocked_buffered − patient` — slide and patient, not separable here | +0.1017 | 0.0636 |
+| `blocked_buffered − patient` — slide and patient, not separable here | +0.1018 | 0.0636 |
 | **total `random − patient`** | **+0.1586** | 0.0717 |
 
 The three tasks with a multi-slide patient, where the last row splits, 9 cells:
@@ -416,7 +429,10 @@ round 1 or this report's first draft suggested.
 
 ### 6.5 The buffer makes the adjacency term well defined
 
-`r3_buffer_grid_sweep.csv`. The buffer does what it claims: the median nearest-training-spot
+`r3_buffer_grid_sweep.csv` (the pooled summary; per-encoder detail in `buffer_diagnostics__hoptimus0.csv`,
+`buffer_diagnostics__resnet50.csv`, `buffer_diagnostics__uni_v2.csv` — `r3_buffer_grid_sweep.csv`
+existed only as a session artifact and had not been committed to the repository; restored to
+`results/round2/R3_splits/`, see Changelog). The buffer does what it claims: the median nearest-training-spot
 distance rises **1.50×** at grid 4, **1.73×** at grid 6 and **2.07×** at grid 10, the ratio growing
 with grid fineness as it should, since finer blocks have proportionally more edge. (Absolute
 distances are in each sample's own pixel coordinates and are not comparable across tasks of
@@ -511,9 +527,9 @@ The review's procedural fix, applied before any term in this report is named. Ea
 Arms: the shipped 50-gene list versus a list selected from training samples only.
 
 1. whether test-fold spots informed the variance ranking — the **intended** contrast;
-2. **which genes are the targets**, hence their intrinsic predictability; the arms share 27.2 of 50
-   on average, 11 on PRAD. Measured at Spearman 0.758 against the gap, and larger than the gap on
-   both escalating tasks;
+2. **which genes are the targets**, hence their intrinsic predictability; the arms share 25.2 of 50
+   on average (`results/round2/R2_fold_hvg/r2_leakage_summary.csv`, mean `shared`), 11 on PRAD.
+   Measured at Spearman 0.758 against the gap, and larger than the gap on both escalating tasks;
 3. on COAD, LUNG, PAAD and SKCM, **the number of genes** — because off-panel genes are dropped —
    and therefore the ridge penalty, since $\alpha = 100/(256 n_{\text{genes}})$;
 4. on those same tasks, **which genes the held-out slide can measure at all**.
@@ -540,6 +556,11 @@ will be reported with the results.
 ---
 
 ## 8. Discrepancies and open questions
+
+Restated values below draw on `results/round2/R2_fold_hvg/r2_leakage_summary.csv`,
+`results/round2/R2_fold_hvg/r2_panel_heterogeneity.csv`,
+`results/round2/R3_splits/r3_per_task_terms.csv`, `acceptance__conch_v15.csv` and
+`acceptance__conch_v1.csv` (already cited in full in §§ 3.1, 4.5 and 6.4 above).
 
 1. **Two tasks exceed the gene-selection escalation threshold** (§ 4.5): LYMPH_IDC +0.0441 and
    PRAD +0.0402 against the plan's 0.02. Escalated. My reading is that the number should be
@@ -590,7 +611,8 @@ will be reported with the results.
 - **R3 on more than three encoders.** `hoptimus0`, `uni_v2`, `resnet50`. The plan permits deciding
   the encoder set alone; three was chosen to span the quality range (best, mid, ImageNet baseline)
   at the cost of a 47-hour wall each.
-- ~~The per-gene R3 table~~ — **now complete.** `pergene__{hoptimus0,resnet50,uni_v2}.parquet`.
+- ~~The per-gene R3 table~~ — **now complete.** `pergene__hoptimus0.parquet`, `pergene__resnet50.parquet`,
+  `pergene__uni_v2.parquet`.
   All three were read in full and checked individually, each giving 851,050 rows, 7 of 7 designs,
   10 tasks, 430 genes, 0 nulls in `pearson`, `fold` stored as string with `grid` as nullable
   `Int32`, `fold == slide` on every `slide_out` row and zero-padded two-digit folds everywhere
@@ -649,3 +671,35 @@ patient-identity +0.1357 — and the COAD result the review nominated as one of 
 demonstrations has to be withdrawn, because that task's patient labels do not separate patients.
 PRAD at 2.1× is the honest version, and it is the only task whose novel-slide term is resolved from
 zero at all.
+
+---
+
+## Changelog
+
+- Fixed a transposed-digit error in § 3.2's float32 worst-cell paragraph: the worst cell's own value
+  was `0.217627`, corrected to **0.217672** (`faithful_check__conch_v1.csv`); the paragraph's mean
+  and maximum, which were computed with the wrong value, corrected from `7.05e-05`/`3.728e-04` to
+  **6.84e-05**/**3.28e-04**; and "`conch_v1` and `conch_v15` supply all three worst cells" corrected
+  to name the actual third-worst encoder, **`virchow2`**, not a second `conch_v15` cell.
+- Fixed § 4.5 and § 7.2's "`27.2` of 50" (mean genes shared between the shipped and fold-selected
+  gene lists) to **25.2 of 50** — `r2_leakage_summary.csv`'s mean `shared` is 25.15834, also
+  recorded independently in `results/summary/deck_numbers.csv`; `27.2` was never the stored value.
+- Fixed § 6.2's `blocked_buffered − patient` step to **+0.1018** (was `+0.1017`) — the exact
+  arithmetic from `r3_decomposition_terms.csv`'s stored (4-decimal) `mean` column gives 0.1018; the
+  prior figure was one part in the last decimal off, apparently from an intermediate computed before
+  that column's own rounding.
+- § 6's `r3_split_v4.csv` and § 6.5's `r3_buffer_grid_sweep.csv` existed only as session artifacts —
+  never committed to the repository, so the checker (which only reads the git tree) reported them
+  as uncited even though the citations themselves were correct. Restored both to
+  `results/round2/R3_splits/` (byte-identical to the artifact versions); no other files or citations
+  needed to change. Also fixed § 9's brace-expansion citation
+  `pergene__{hoptimus0,resnet50,uni_v2}.parquet`, which the checker's path pattern cannot expand, by
+  enumerating the three filenames explicitly. No result changes; only the file placement and the one
+  brace-expansion citation.
+- Softened § 3.1's "`106×` float32 epsilon" to "about `106×` ... (the exact multiple is `106.12×`)" —
+  the stated multiple was a rounded characterisation, not an exact identity, and was previously
+  worded as though it were one.
+- Added missing citations throughout (§§ 3.1, 3.2, 4.1, 4.2, 6, 8) naming the specific per-encoder
+  result files a claim's value is the literal worst/pooled/task-filtered figure from, where the
+  original text relied on a wildcard or brace pattern the verification tooling cannot expand into a
+  citation, or named no file at all for a value restated from an earlier section.

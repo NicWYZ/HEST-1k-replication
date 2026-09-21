@@ -41,8 +41,20 @@ os.makedirs(OUT, exist_ok=True)
 PAPER_TASKS = ["IDC", "PRAD", "PAAD", "SKCM", "COAD", "READ", "CCRCC", "LUNG", "LYMPH_IDC"]
 EXPECTED_TASKS = set(PAPER_TASKS) | {"HCC"}
 
-split_rows, gene_rows, missing = [], [], []
+# A head is one of the four named configurations. HEST writes its own raw output
+# as `<exp_code>::<timestamp>`; reorganize_repo.py folds those into the fixed tree
+# this script walks. A run landing after that reorganisation leaves its raw
+# directory in place, and enumerating it as a head parsed <task> as the encoder
+# and produced ten junk rows per raw directory, e.g.
+#   raw_ridge__hoptimus1::26-09-19-02-32-36,CCRCC,,0.0,0.2436,1.0
+# unnoticed because the committed tables predated the run that created it.
+RAW_RUN_DIR = "::"
+
+split_rows, gene_rows, missing, skipped_raw = [], [], [], []
 for head in sorted(d for d in os.listdir(RES) if os.path.isdir(os.path.join(RES, d))):
+    if RAW_RUN_DIR in head:
+        skipped_raw.append(head)
+        continue
     for enc in sorted(os.listdir(os.path.join(RES, head))):
         ep = os.path.join(RES, head, enc)
         if not os.path.isdir(ep):
@@ -84,6 +96,9 @@ def enc_avg(g):
                       "n_tasks_all": int(len(g))})
 enc_df = task_df.groupby(["head", "encoder"]).apply(enc_avg, include_groups=False).reset_index()
 
+if skipped_raw:
+    print("skipped un-reorganised HEST raw output directories: "
+          + ", ".join(skipped_raw))
 split_df.to_csv(os.path.join(OUT, "results_split.csv"), index=False)
 task_df.to_csv(os.path.join(OUT, "results_task.csv"), index=False)
 gene_df.to_csv(os.path.join(OUT, "results_gene.csv"), index=False)

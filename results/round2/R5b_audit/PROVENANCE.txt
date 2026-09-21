@@ -1,31 +1,36 @@
 Round 2, stage R5b_audit — Donor provenance audit of all 72 samples against sources outside HEST
 
 memo clause     : round2_R5_decisions.md decision 1.2 and directive 2.1
-repo_commit     : 70262789630a0506059e916efc0304edb2eb3ba2
-scripts         : (no single producing script: a source-reading task, not a computation)
-files           : 8
+repo_commit     : 6acbef2aae0778926570ad46ca7d123a3001f1d5
+scripts         : code/scripts/round2_r5b_audit.py, code/scripts/make_donor_verdicts.py (one-time extraction, not on the regeneration path)
+files           : 9
 per-run provenance: none (single-run stage)
 
 What distinguishes files that look alike:
 
-  THERE IS NO round2_r5b_audit.py. This stage was a reading task -- vendor
-  dataset pages, GEO subseries strings and the upstream issue tracker -- so
-  it has no one script to rerun, and an earlier version of this file named a
-  script that does not exist. What makes it reproducible instead:
-  hest_source_map.csv is the per-sample source mapping extracted from HEST's
-  own HEST_v1_1_0.csv (column download_page_link1), donor_audit.csv carries
-  one row per sample with donor_id, donor_label_status and a donor_statement
-  giving the evidence for that row, and the two evidence files are verbatim
-  captures of upstream issues 126 and 133 read through the GitHub API. Nine
-  samples are recorded as unverifiable rather than inferred.
-  docs/r5_idc_provenance.md is the narrative companion. donor_id is the
-  grouping variable R6 and R7 use, so a change here changes those stages.
+  The audit itself was a READING task -- vendor dataset pages, GEO subseries
+  strings and the upstream issue tracker -- so no script can redo it. What
+  round2_r5b_audit.py does is make donor_audit.csv a DERIVED file: it joins
+  hest_source_map.csv (per-sample task, patient label, subseries string,
+  dataset title and source page, extracted from HEST's own HEST_v1_1_0.csv)
+  to donor_verdicts.csv (the audit's human output -- donor_id,
+  donor_label_status, source citation and statement per sample, committed
+  because it cannot be recomputed), derives COAD's donor_id from each
+  slide's own subseries string, and asserts it reproduces the committed
+  donor_audit.csv byte for byte. The COAD rule is applied and then CHECKED
+  against the recorded verdict, so the two cannot diverge silently. An
+  earlier version of this entry named a script that did not exist, and the
+  version before that said no script was possible; both are superseded. Nine
+  samples are recorded as unverifiable and five as contradicted -- those are
+  findings, not gaps. donor_id is the grouping variable R6 and R7 use, so a
+  change here changes those stages.
 
 Files and checksums (sha256, first 16 hex):
 
   f27d5abb7419df7c       135,943  donor_audit.csv
+  a6eebc7e0fcd7a4d       122,903  donor_verdicts.csv
   361d00dd79caf315        19,601  hest_source_map.csv
-  bde5b2b8df62badd           208  idc_fetch_log.tsv
+  d6b250f618177072           417  idc_fetch_log.tsv
   4e004efaf63d2606           189  r5_idc_panel_pairs.csv
   fdb41d13cb440361           421  r5_idc_panels_observed.csv
   5d60c7e6668c92ec           287  r5b_coad_subseries_confirmation.csv

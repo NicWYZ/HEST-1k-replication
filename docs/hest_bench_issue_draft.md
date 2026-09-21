@@ -11,7 +11,8 @@ and Replicate 2. HEST's own metadata assigns **only TENX99** to that dataset (su
 (subseries "Tissue sample 1"). The two pages could not be re-fetched to close this (10x returned
 HTTP 429 on every attempt). The supporting evidence is mixed: TENX95 and TENX99 carry
 byte-identical 541-entry panels, the only such pair in IDC, but their spot counts differ 2.1-fold
-(25,080 against 11,845), which two replicates of one imaged area should not. **The measurement in
+(25,080 against 11,845, `results/tailored/integrity/sample_metadata.csv`), which two replicates of
+one imaged area should not. **The measurement in
 item 1 does not depend on this** — it measures what TENX95 in training is worth for predicting
 TENX99, whatever the two are called — but the *claim* that they are one donor does, and that
 sentence should not be sent until the Pre-designed Panel page has been read. This is exactly why
@@ -70,7 +71,9 @@ We measured what that is worth. Holding the test slide fixed and the training-se
 Positive in 6 of 6 encoder–slide cells. IDC's whole `random − patient` gap is 0.1210, so the
 replicate accounts for **54%** of what the patient split scores as generalisation to a new patient.
 
-Source: `results/round2/R3_splits/replicate_leak_v2__*.csv`, `docs/r5_idc_provenance.md`.
+Source: `results/round2/R5c_leak/r5_idc_replicate_leak.csv` (aggregated from
+`results/round2/R3_splits/replicate_leak_v2__hoptimus0.csv`, `replicate_leak_v2__resnet50.csv`,
+`replicate_leak_v2__uni_v2.csv`); provenance in `docs/r5_idc_provenance.md`.
 
 The IDC task itself remains a valid prediction task and the shipped 50 target genes are unaffected.
 What is affected is reading IDC's patient-split score as cross-patient generalisation.

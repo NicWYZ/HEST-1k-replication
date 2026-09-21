@@ -178,6 +178,16 @@ for label, (rel, cur_col, old_col, note, ctx) in VERSIONED.items():
                 continue          # the builds agree at this precision; uninformative
             for ln, l in relevant:
                 if to in l and tc not in l:
+                    # Same rule as check 1: a line that NAMES the superseded value while
+                    # explaining that it is superseded is the correct way to carry the
+                    # record, and flagging it would push the document towards deleting
+                    # its own history. A changelog entry is the commonest such line, and
+                    # without this the check fires on the very entry that documents the
+                    # correction it asked for.
+                    if RETRACTION.search(l):
+                        print(f"  L{ln}: {label} ({sid}) names {to} inside a retraction "
+                              f"or changelog line -- not a stale quotation")
+                        continue
                     msg = (f"{label} ({sid}): line quotes {to}, the SUPERSEDED "
                            f"value; the current build gives {tc} ({note})")
                     print(f"  L{ln}: {msg}")

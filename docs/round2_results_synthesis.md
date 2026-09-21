@@ -22,7 +22,7 @@ READ's two pairs are replicate sections of the same specimens. Its folds group t
 
 **Why it matters.** For the benchmark, absolute Pearson on COAD and IDC is inflated and the per-task numbers are not comparable across tasks in the way Table 1 presents them. For the project, this is the empirical version of Topic B's premise. The unit that carries shared information is the tumour section, and having another section of the same tumour in training recovers more than half of what a patient split calls generalisation. Any inference that treats spots, or even slides, as the sampling unit will understate its uncertainty by that much.
 
-**How it was obtained.** The first sign was in round 1, where COAD's blocked-minus-patient term (0.29) was three times any other task's and its fold-to-fold dispersion was implausibly tight. The review read that as same-patient leakage, which was the right mechanism and the wrong direction. In round 2 the split decomposition was redesigned with a leave-one-slide-out arm for multi-slide patients, and COAD's novel-slide term came out at 0.11 of its own standard deviation while its patient term stayed at 0.26, which is the signature of a holdout that removes several donors at once. That prompted a metadata check, which found the subseries strings. A provenance audit of all 72 samples followed, reading each sample's 10x or GEO source rather than HEST's `patient` field. It found IDC, corrected three of its own verdicts when the assumed source pages turned out not to be the ones HEST cites, and produced a `donor_id` column that every later stage uses in place of `patient`.
+**How it was obtained.** The first sign was in round 1, where COAD's blocked-minus-patient term (0.29, per `docs/round2_R0_R1_stage_report.md`'s R0/R1 appendix table) was three times any other task's and its fold-to-fold dispersion was implausibly tight. The review read that as same-patient leakage, which was the right mechanism and the wrong direction. In round 2 the split decomposition was redesigned with a leave-one-slide-out arm for multi-slide patients, and COAD's novel-slide term came out at 0.11 of its own standard deviation while its patient term stayed at 0.26 (both from `results/round2/R3_splits/r3_per_task_terms.csv`), which is the signature of a holdout that removes several donors at once. That prompted a metadata check, which found the subseries strings. A provenance audit of all 72 samples followed, reading each sample's 10x or GEO source rather than HEST's `patient` field. It found IDC, corrected three of its own verdicts when the assumed source pages turned out not to be the ones HEST cites, and produced a `donor_id` column that every later stage uses in place of `patient`.
 
 The replicate-leak design went through one wrong version. The first attempt held out both TENX slides together, which removed 80% of the training spots, so the drop it measured was mostly training size. A size-matched variant silently dropped the fold that mattered. The version that stands draws two equal-size training sets, one with the partner and one without, for the same test slide, so nothing but the partner's presence differs.
 
@@ -54,7 +54,7 @@ The benchmark-level fact that motivated this line is that scan resolution varies
 
 The scale term has a direct reading. The head's predictions vary 1.84 times more than is optimal given how well they correlate ($\rho / r$), and the ratio orders with encoder quality, from 2.17 for ResNet50 down to 1.65 for UNI2-h.
 
-**Why it matters.** Every quantity Topic A works with (absolute residuals, interval width, CRPS, log score) is on the absolute scale, so the intercept is mandatory before any calibration and was missing. The over-dispersion ratio is the concrete target a calibration layer has to hit. And the slide-level mean shift, worth $+0.185$ of $R^2$ that only the test slide's own mean recovers, is the same slide-level structure that result 1 found from the other side.
+**Why it matters.** Every quantity Topic A works with (absolute residuals, interval width, CRPS, log score) is on the absolute scale, so the intercept is mandatory before any calibration and was missing. The over-dispersion ratio is the concrete target a calibration layer has to hit. And the slide-level mean shift, worth $+0.185$ of $R^2$ that only the test slide's own mean recovers (`results/round2/R1b_heads/r1b_ladder_pooled.csv`, column `gain_2`), is the same slide-level structure that result 1 found from the other side.
 
 **How it was obtained.** The review noticed the `fit_intercept=False` line while reading the trainer for the replication and predicted that the per-fold $R^2$ the benchmark already stores would be negative; it was, in 28 of 29 folds. Three heads were refit (no intercept, intercept, target-centred) and shown algebraically to share one slope vector, so the change is a per-gene constant and Pearson is untouched. The identity checks failed in float32 at a level consistent with accumulation error, and were redone in a float64 exact-solver head, which passed by six orders of magnitude and is the base predictor Topic A will use. The ladder was computed from stored columns without refitting.
 
@@ -68,7 +68,7 @@ The scale term has a direct reading. The head's predictions vary 1.84 times more
 
 ### 6. Gene panels differ between samples within a task, the target genes were selected on test spots, and the selection protocol moves the answer
 
-**What was found.** In every Xenium task the samples do not share a gene panel. PAAD's three samples have 159 genes in common out of a union of 919; LUNG 259 of 823; IDC 280 real genes in common, with one sample measuring 41 that the others do not. The benchmark's 50 target genes per task were selected from the all-sample intersection using all spots, test folds included. Selecting instead from training samples only changes the target list by roughly half its members (27 of 50 shared on average, 11 on PRAD), changes measured Pearson by $+0.009$ on average and up to $+0.044$ on individual tasks, and on four Xenium tasks names genes the held-out slide cannot measure at all. Holding the gene set fixed and varying only whether the ranking sees test spots, the Spearman rank correlation between the two rankings is 0.51, with 32 of 50 genes moving more than five ranks.
+**What was found.** In every Xenium task the samples do not share a gene panel (`results/round2/R2_fold_hvg/r2_panel_heterogeneity.csv`). PAAD's three samples have 159 genes in common out of a union of 919; LUNG 259 of 823; IDC 280 real genes in common (`results/round2/R2_fold_hvg/r2_rank_supplement.csv`'s `n_common_genes` column), with one sample measuring 41 that the others do not. The benchmark's 50 target genes per task were selected from the all-sample intersection using all spots, test folds included. Selecting instead from training samples only changes the target list by roughly half its members (27 of 50 shared on average, 11 on PRAD), changes measured Pearson by $+0.009$ on average and up to $+0.044$ on individual tasks, and on four Xenium tasks names genes the held-out slide cannot measure at all. Holding the gene set fixed and varying only whether the ranking sees test spots, the Spearman rank correlation between the two rankings is 0.51, with 32 of 50 genes moving more than five ranks.
 
 **Why it matters.** Leakage-free target selection is not well defined on this benchmark without knowing the held-out slide's panel, which is itself test-set information. Absolute Pearson carries an unquantifiable selection component. Across-task transfer is blocked outright, since the five Xenium tasks' target lists are disjoint and their panels share 14 genes. For Topic A, the target list is a fixed given and coverage claims are conditional on it.
 
@@ -131,3 +131,21 @@ Topic B follows, using Topic A's predictor and the replicate-leak design as its 
 Present Monday with the ranked list above and the $R^2$ ladder as the opening figure. Ask for two decisions: what to do with the benchmark findings, and whether to pull full HEST-1k breast and brain for an institution axis. Then open round 3 as Topic A's first experiment.
 
 Round 2 is closed. The one item left open is the IDC same-donor attribution, which needs a single page that 10x has been rate-limiting; it affects one label in the authors' draft and no measurement, and the draft carries a blocking note until it is settled.
+
+## Changelog
+
+- 22 September 2026: added four inline file citations that the numeric-claim verifier
+  flagged as missing (the document previously carried no per-claim citations at all,
+  relying only on the repository-wide `results/summary/deck_numbers.csv` reference table).
+  No values were changed. Citations added: `docs/round2_R0_R1_stage_report.md` for the
+  round-1 pilot COAD blocked-minus-patient figure in result 1; `results/round2/R3_splits/r3_per_task_terms.csv`
+  for COAD's round-2 novel-slide and patient-identity terms in result 1;
+  `results/round2/R1b_heads/r1b_ladder_pooled.csv` for the +0.185 slide-level-shift figure in
+  result 4; and `results/round2/R2_fold_hvg/r2_panel_heterogeneity.csv` plus
+  `results/round2/R2_fold_hvg/r2_rank_supplement.csv` for the gene-panel-size figures in result 6.
+  Four further claims (the abandoned first-attempt replicate-leak design's 80% figure, the
+  withdrawn first-version 0.31 leakage gap, the 0.76 gene-set/gap correlation, and the 0.29
+  median Xenium zero-fraction) were triaged into `.verify-exceptions` as diagnostic, historical,
+  and derived (not expressible in the checker's formula language) respectively; the +0.009
+  mean-Pearson-change figure was added to `.verify-derived` as a formula over the four reported
+  encoders' `fold_hvg__*.csv` files.

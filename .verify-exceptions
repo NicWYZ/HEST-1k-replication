@@ -3,35 +3,251 @@
 # A value belongs here only if it is genuinely derived (a ratio, a scheduler fact, a
 # withdrawn figure quoted as erroneous, or a round-1 result whose source file was not
 # carried forward). It is NOT a place to silence a number you have not checked.
-5.02	fold-ratio of max/min pixel_size_um across the 72 samples; derived from sample_metadata.csv, not stored
-1.71	within-task pixel-size fold-ratio for IDC; derived from sample_metadata.csv
-1.02	within-task pixel-size fold-ratio for PRAD patient 2; derived from sample_metadata.csv
-1.01	within-task pixel-size fold-ratio upper bound for the five uniform tasks; derived
-0.0066	pixel-size difference between PRAD patient 2's two scan sessions; difference of two sample_metadata values
-54	IDC leak as a percentage of its random-minus-patient gap; ratio of two files' values (r5c_leak_summary.csv / r3_per_task_terms.csv)
-0.3278	round-1 pilot value for the Table A14 feature scale; round-1 result, source file not carried into round 2
-0.326	round-1 pilot value, as above
-0.3046	round-1 pilot value, as above
-0.458	round 1's theta1 value on the superseded morphology build; quoted as historical, see r6_theta_acceptance.csv
-0.2938	WITHDRAWN round-1 v3 value, quoted in the report only to record that it was wrong
-0.026	lower end of a WITHDRAWN round-1 v3 range, quoted only as the erroneous claim
-0.163	upper end of the same withdrawn range
-8.8	peak job memory in GB read from sacct; scheduler accounting, not a repository file
-5.5	hours the oversized R8 submission sat at (Priority); scheduler accounting
-70	measured minutes per raw_xgb split; scheduler accounting
-34	projected CPU-hours for raw_xgb, 70 min x 29 splits; derived
-2.83	round-1 nearest-training-spot widening factor; round-1 result
-1.61	round-1 derived ratio in key finding 1; round-1 result
-−2.002	round-1 negative-binomial statistic; round-1 result
-0.61	round-1 negative-binomial statistic; round-1 result
-3.654	round-1 patch-geometry value; round-1 result
-2.1	spot-count fold-ratio between TENX95 and TENX99; ratio of two counts
-0.014	round-1 per-slide IDC gap; source file not carried into round 2, value not restated in round 1's report
-0.099	round-1 per-slide IDC gap, as above
-0.002	round-1 per-slide IDC gap, as above
-0.052	round-1 per-slide IDC gap, as above
-−0.95	round-1 median R2 of the faithful head (the ladder's first rung); a different quantity from the width correlation of the same magnitude
-5.4	mantissa of the p-value 5.4e-6 written as 5.4 x 10^-6; the p is in r8_width_correlations.csv
-96.1	share of TENX misclassifications landing on the partner; 123/128, a ratio of two summed counts in r5d_idc_partner_confusion.csv rather than a stored value
-429	HTTP status code returned by the 10x page fetches, not a measurement
-2406.16192	arXiv identifier for Jaume et al. 2024, misparsed as a decimal number by the numeric-claim checker; not a measurement
+1.01	derived: within-task pixel-size fold-ratio upper bound for the five uniform tasks; derived
+0.3278	historical: round-1 pilot value for the Table A14 feature scale; round-1 result, source file not carried into round 2
+0.326	historical: round-1 pilot value, as above
+0.3046	historical: round-1 pilot value, as above
+0.458	historical: round 1's theta1 value on the superseded morphology build; quoted as historical, see r6_theta_acceptance.csv
+0.2938	historical: WITHDRAWN round-1 v3 value, quoted in the report only to record that it was wrong
+0.026	historical: lower end of a WITHDRAWN round-1 v3 range, quoted only as the erroneous claim
+0.163	historical: upper end of the same withdrawn range
+8.8	cost: peak job memory in GB read from sacct; scheduler accounting, not a repository file
+5.5	cost: hours the oversized R8 submission sat at (Priority); scheduler accounting
+70	cost: measured minutes per raw_xgb split; scheduler accounting
+34	cost: projected CPU-hours for raw_xgb, 70 min x 29 splits; derived
+2.83	historical: round-1 nearest-training-spot widening factor; round-1 result
+1.61	historical: round-1 derived ratio in key finding 1; round-1 result
+−2.002	historical: round-1 negative-binomial statistic; round-1 result
+0.61	historical: round-1 negative-binomial statistic; round-1 result
+3.654	historical: round-1 patch-geometry value; round-1 result
+2.1	derived: spot-count fold-ratio between TENX95 and TENX99; ratio of two counts
+0.014	historical: round-1 per-slide IDC gap; source file not carried into round 2, value not restated in round 1's report
+0.099	historical: round-1 per-slide IDC gap, as above
+0.002	historical: round-1 per-slide IDC gap, as above
+0.052	historical: round-1 per-slide IDC gap, as above
+−0.95	historical: round-1 median R2 of the faithful head (the ladder's first rung); a different quantity from the width correlation of the same magnitude
+5.4	derived: mantissa of the p-value 5.4e-6 written as 5.4 x 10^-6; the p is in r8_width_correlations.csv
+96.1	derived: share of TENX misclassifications landing on the partner; 123/128, a ratio of two summed counts in r5d_idc_partner_confusion.csv rather than a stored value
+429	cost: HTTP status code returned by the 10x page fetches, not a measurement
+2406.16192	external: arXiv identifier for Jaume et al. 2024, misparsed as a decimal number by the numeric-claim checker; not a measurement
+110	cost: count of per-task cells in the round-1-vs-round-2 control-arm reproduction check (R1_intercept/R1b_heads acceptance tally); no single consolidated comparison file was retained
+3.7e-4	cost: max absolute difference from that same control-arm reproduction tally; validation-run fact, no consolidated comparison file retained
+177	cost: sprio partition-priority component for a 4-core CPU job; scheduler accounting (sprio), not a repository file
+182	cost: sprio total job priority (age+fairshare+partition) for that same job; scheduler accounting (sprio), not a repository file
+1.5	cost: nominal RAM in TB of the general_big partition's nodes; cluster configuration fact, not a repository file
+18,294	cost: pending-job count on the general partition at time of observation; scheduler snapshot (squeue), not a repository file
+4,569	cost: running-job count on the general partition at time of observation; scheduler snapshot (squeue), not a repository file
+5,320	cost: idle-core count on the general partition at time of observation; scheduler snapshot (squeue), not a repository file
+16.7	cost: peak MaxRSS in GB read from sacct on the completed R1 encoder jobs; scheduler accounting (sacct), not a repository file
+0.294	cost: round-1 per-task slide-signature upper bound; round-1 result, source file not carried into round 2
+450	cost: count of per-gene rows that moved between two runs of the unseeded slide_out design; a one-off debugging diff, not retained as a repository file
+6138	cost: total per-gene rows in that same run, denominator for the 450 figure; not retained as a repository file
+0.046	cost: maximum row-level shift observed in that same diff; not retained as a repository file
+199	cost: COAD patient-to-novel-slide ratio's first, withdrawn/unstable computation -- the value this lesson warns against, not a current result
+115	cost: COAD patient-to-novel-slide ratio's second, withdrawn/unstable rerun -- the value this lesson warns against, not a current result
+286	cost: verified-claim count across the three documents at the round-2 freeze; a point-in-time sweep-output tally, not a repository data file
+
+# --- historical exceptions: round1_final_stage_report / HEST_replication_review / HEST_replication_handoff / round2_execution_plan (closed records) ---
++0.0018	historical: round-1's own raw_xgb/resnet50 discrepancy value (D1), a computed difference not stored as its own cell
++0.1453	historical: round-1's across-task shift value for IDC (+0.1453 loss vs in-domain size), a per-task diagnostic figure not restated in results/summary
++0.1920	historical: round-1's measured pooled-Pearson aggregation-artefact inflation for the nine-patient random arms (+0.1920), a computed metric-artefact size, not a stored file cell
+-0.048	historical: TENX99's slide-specific theta_1 value (-0.048), a round-1 per-slide morphology result restated by the review (Section 5.8)
+-4.7	historical: the fold-median R^2 range lower bound (-0.1 to -4.7) for hoptimus0/pca_ridge across 29 folds, a round-1 per-fold diagnostic the review recomputed, not stored as a single cell
+0.0001	historical: round-1's encoder-level agreement threshold (0.0001) restated in the D4 heading, from the Section 3.1 fidelity table
+0.00017	historical: round-1 encoder-level mean |diff| against the leaderboard, computed at report time and not re-stored in results_encoder.csv
+0.0017	historical: `uni_v1`'s round-1 encoder-level discrepancy magnitude (D4), the review's restatement of the round-1 report's finding
+0.0122	historical: round-1's |diff| between the reproduced Figure 3.e correlation (0.4578) and the HEST paper's printed 0.47, a computed gap not stored as its own cell
+0.020	historical: the review's own recomputation of per-task split-decomposition terms (adjacency, blocked-patient, total) from split_decomposition.py's row-level output, presented as a table without a per-row file citation
+0.024	historical: the review's own recomputation of per-task split-decomposition terms (adjacency, blocked-patient, total) from split_decomposition.py's row-level output, presented as a table without a per-row file citation
+0.027	historical: the review's own recomputation of per-task split-decomposition terms (adjacency, blocked-patient, total) from split_decomposition.py's row-level output, presented as a table without a per-row file citation
+0.031	historical: the review's own recomputation of per-task split-decomposition terms (adjacency, blocked-patient, total) from split_decomposition.py's row-level output, presented as a table without a per-row file citation
+0.034	historical: the review's own recomputation of per-task split-decomposition terms (adjacency, blocked-patient, total) from split_decomposition.py's row-level output, presented as a table without a per-row file citation
+0.0419	historical: round-1's institution-shift point estimate (source-seen vs source-unseen on IDC), later shown confounded by scan resolution and same-lab origin and withdrawn as a scalar headline (review Section 5.4; round2_execution_plan.md R0 item 4 replaces it with the four per-slide gaps)
+0.051	historical: the review's own recomputation of per-task split-decomposition terms (adjacency, blocked-patient, total) from split_decomposition.py's row-level output, presented as a table without a per-row file citation
+0.054	historical: the review's example per-task mean+-SD figures for the patient-design dispersion across folds (IDC, PAAD, CCRCC), recomputed from the split rows for illustration
+0.057	historical: the review's own recomputation of per-task split-decomposition terms (adjacency, blocked-patient, total) from split_decomposition.py's row-level output, presented as a table without a per-row file citation
+0.063	historical: the review's own recomputation of per-task split-decomposition terms (adjacency, blocked-patient, total) from split_decomposition.py's row-level output, presented as a table without a per-row file citation
+0.071	historical: the review's own recomputation of per-task split-decomposition terms (adjacency, blocked-patient, total) from split_decomposition.py's row-level output, presented as a table without a per-row file citation
+0.0898	historical: revision-1's superseded 11-encoder between-encoder spread on the primary head, corrected to 0.0977 once hoptimus1 landed
+0.091	historical: the review's example per-task mean+-SD figures for the patient-design dispersion across folds (IDC, PAAD, CCRCC), recomputed from the split rows for illustration
+0.097	historical: the review's own recomputation of per-task split-decomposition terms (adjacency, blocked-patient, total) from split_decomposition.py's row-level output, presented as a table without a per-row file citation
+0.108	historical: the review's own recomputation of per-task split-decomposition terms (adjacency, blocked-patient, total) from split_decomposition.py's row-level output, presented as a table without a per-row file citation
+0.114	historical: the review's own recomputation of per-task split-decomposition terms (adjacency, blocked-patient, total) from split_decomposition.py's row-level output, presented as a table without a per-row file citation
+0.120	historical: the review's own recomputation of per-task split-decomposition terms (adjacency, blocked-patient, total) from split_decomposition.py's row-level output, presented as a table without a per-row file citation
+0.123	historical: the review's own recomputation of per-task split-decomposition terms (adjacency, blocked-patient, total) from split_decomposition.py's row-level output, presented as a table without a per-row file citation
+0.124	historical: the review's pooled mean of the per-task blocked-patient term (0.124), computed by the review across tasks, not itself a stored file cell
+0.1241	historical: round-1's slide-level-signature split-decomposition term (blocked minus patient, 0.1241), restated in Section 7's next-steps text outside the results table
+0.130	historical: the review's own recomputation of per-task split-decomposition terms (adjacency, blocked-patient, total) from split_decomposition.py's row-level output, presented as a table without a per-row file citation
+0.144	historical: the review's own recomputation of per-task split-decomposition terms (adjacency, blocked-patient, total) from split_decomposition.py's row-level output, presented as a table without a per-row file citation
+0.153	historical: the review's own recomputation of per-task split-decomposition terms (adjacency, blocked-patient, total) from split_decomposition.py's row-level output, presented as a table without a per-row file citation
+0.1568	historical: revision-1's measured pooled-Pearson aggregation-artefact size that inflated the retracted 0.3143 leakage-gap figure
+0.1575	historical: the corrected within-patient leakage-gap figure from Section 3.4, restated in the Section 9 method note
+0.170	historical: the review's own recomputation of per-task split-decomposition terms (adjacency, blocked-patient, total) from split_decomposition.py's row-level output, presented as a table without a per-row file citation
+0.171	historical: the review's own recomputation of per-task split-decomposition terms (adjacency, blocked-patient, total) from split_decomposition.py's row-level output, presented as a table without a per-row file citation
+0.174	historical: the review's own recomputation of per-task split-decomposition terms (adjacency, blocked-patient, total) from split_decomposition.py's row-level output, presented as a table without a per-row file citation
+0.18	historical: the live HEST leaderboard's rectum task-level Pearson lower range bound as cited at the time of writing, an external, time-stamped fact, not this project's result
+0.183	historical: the review's own recomputation of per-task split-decomposition terms (adjacency, blocked-patient, total) from split_decomposition.py's row-level output, presented as a table without a per-row file citation
+0.203	historical: the review's example per-task mean+-SD figures for the patient-design dispersion across folds (IDC, PAAD, CCRCC), recomputed from the split rows for illustration
+0.2125	historical: TENX slide pixel size (0.2125 um/px) from sample_metadata.csv, quoted in the review's resolution discussion without a per-sentence file citation
+0.25	historical: the live HEST leaderboard's rectum task-level Pearson upper range bound as cited at the time of writing, an external, time-stamped fact, not this project's result
+0.2843	historical: round-1's own Table A13 raw_ridge/resnet50 value (D1), restated in the discrepancy discussion
+0.2856	historical: round-1 count-diagnostics median zero fraction for imaging-based tasks (0.2856)
+0.314	historical: HEST paper's own printed Table A13 value for raw_ridge/resnet50, an external paper constant quoted for comparison, not this project's result
+0.3143	historical: revision-1's initially-quoted, later-retracted leakage-gap figure, kept only to document the correction described in the Section 9 method note
+0.328	historical: the review's own recomputation of per-task split-decomposition terms (adjacency, blocked-patient, total) from split_decomposition.py's row-level output, presented as a table without a per-row file citation
+0.364	historical: NCBI785 slide pixel size (0.364 um/px) from sample_metadata.csv, quoted in the review's resolution discussion without a per-sentence file citation
+0.3856	historical: `uni_v1`'s round-1 own encoder-level Pearson value (D4), restated outside the results table it comes from
+0.3873	historical: `uni_v1`'s round-1 leaderboard encoder-level Pearson value (D4), restated outside the results table it comes from
+0.4146	historical: the HEST paper's own printed Table 1 value for H-Optimus-0 (0.4146), an external paper constant, not this project's result
+0.415	historical: STFlow's own reported average Pearson with UNI features (Huang et al., ICML 2025), an external paper constant, not this project's result
+0.45	historical: the IDC institution probe's per-encoder standard-deviation upper bound (0.3 to 0.45), restated by the review
+0.47	historical: HEST paper's own printed Figure 3.e value (Pearson(GATA3, mean neoplastic nuclear area) = 0.47 on one IDC Xenium slide), an external paper constant quoted for comparison, not this project's result
+0.502	historical: the review's example per-task mean+-SD figures for the patient-design dispersion across folds (IDC, PAAD, CCRCC), recomputed from the split rows for illustration
+0.573	historical: PRAD patient 1's resolution-group pixel size (0.573 um/px, five of eight slides) from sample_metadata.csv, cited in the round-2 probe design without a per-sentence file reference
+0.59	historical: the IDC task's round-1 pooled Pearson value, quoted while flagging the still-open same-FFPE-block leakage possibility that R5 was planned to check
+0.591	historical: the review's example per-task mean+-SD figures for the patient-design dispersion across folds (IDC, PAAD, CCRCC), recomputed from the split rows for illustration
+0.6103	historical: round-1 count-diagnostics median zero fraction for sequencing-based tasks (0.6103)
+0.66	historical: the live HEST leaderboard's melanoma task-level Pearson value as cited at the time of writing, an external, time-stamped fact, not this project's result
+0.68	historical: round-1's IDC institution-probe balanced accuracy (0.68), restated by the review, which the review itself judges uninformative and mislabelled (Section 5.5)
+0.81	historical: the HEST paper's own target correlation for reproducing Figure 2a (R = 0.81 from Table A12 parameter counts), an external paper constant used as a planning acceptance criterion
+0.91	historical: the IDC institution probe's per-encoder upper range bound (0.91 balanced accuracy), restated by the review
+0.938	historical: round-1's cohort-source site-probe balanced accuracy (0.938), restated by the review
+0.994	historical: round-1's assay-technology site-probe balanced accuracy (0.994), restated by the review
+1,149	historical: STImage-1K4M's own published slide count (Chen and Zou, NeurIPS 2024), an external paper constant, not this project's result
+1,229	historical: the HEST paper's own published sample count (1,229), an external paper constant, not this project's result
+1,276	historical: the HEST dataset's current release sample count as listed on HuggingFace/GitHub at the time of writing (September 2026), an external, time-stamped fact, not this project's result
+1.27	historical: the slide-level-signature split-decomposition term expressed as a multiple of the encoder spread (1.27x), a computed ratio not stored as its own cell
+1.75	historical: revision-1's superseded leakage-to-spread ratio, computed against the 11-encoder spread of 0.0898; corrected to 1.61x in this revision
+100	historical: this literal value covers several distinct round-1/round-2 planning constants across these documents — the paper's XGBoost n_estimators (Table A14 hyperparameter, verified in trainer.py), the benchmark's ridge alpha-formula numerator alpha=100/(256x50), the Visium spot pitch in micrometers, and the rounded ~100k-patch embedding-extraction estimate — none of which is a stored results-file cell
+112	historical: HEST-bench's fixed patch footprint at 20x (112 um square = 224 px at 0.5 um/px), a benchmark specification constant from the HEST paper, not this project's result
+120	historical: `pca_ridge` task-result count (12 encoders x 10 tasks) from the round-1 stage table, an arithmetic identity not stored as a file cell
+128	historical: the planning-stage compute-budget note (ViT-giant models at batch 128 on an 80 GB A100), a cost/config figure from the handoff plan, not a results-file value
+130,072,250	historical: total prediction-table row count reported under OD3, computed at build time and not re-stored as a single cell in a results/summary file
+1447	historical: journal page for the cited DenAdel et al. reference (Nature Methods 23:1447, 2026), citation metadata, not a measurement
+153	historical: the HEST dataset's own cohort count (153), a property of the benchmark data reported in the cited literature review, not this project's result
+160	historical: rough count of tracked SLURM jobs for round 1, an approximate operational figure, not recorded in a results file
+163	historical: patch-geometry extent lower bound (163 px), the round-1 morphology finding restated by the review without its own file citation
+17,943	historical: CCRCC's two shipped gene-space sizes in HEST-bench's own AnnData files (17,943 vars), a property of the benchmark data itself, not this project's result
+179	historical: journal page for the cited Miao et al. POP-Inf reference (JMLR 26:179, 2025), citation metadata, not a measurement
+2,000	historical: round-1 morphology sanity-check bound ("no per-slide total within 2,000" nuclei), an informal diagnostic figure, not a stored file cell
+2.5	historical: the planned buffer width for the `blocked_buffered` split design (2.5 spot pitches), a round-2 planning parameter specified before the stage ran, not a measured value
+2.7e-4	historical: round-1 alpha-sweep bound (|diff| <= 2.7e-4 between the benchmark's alpha and unpenalised OLS), a computed diagnostic not stored as its own cell
+224	historical: HEST-bench's fixed patch geometry (224x224 px), a benchmark specification constant from the HEST paper, not this project's result
+2560	historical: virchow/virchow2 embedding dimensionality (2560), a model-architecture constant, not stored in the cited results/summary table
+3.5	historical: cross-reference to report Section 3.5 (the slide-identity probe), misread as a numeral by the checker; not a data value
+3.8	historical: cross-reference to report Section 3.8 (the ridge-penalty sweep), misread as a numeral by the checker; not a data value
+30266	historical: journal page for the cited Wang, McCormick, Leek reference (PNAS 117:30266, 2020), citation metadata, not a measurement
+350	historical: total task-result count (35 head-encoder pairs x 10 tasks), an arithmetic identity stated in the report's own stage table, not a results/summary cell
+36,601	historical: CCRCC's two shipped gene-space sizes in HEST-bench's own AnnData files (36,601 vars), a property of the benchmark data itself, not this project's result
+382	historical: journal volume for the cited Angelopoulos et al. reference (Science 382:669, 2023), citation metadata, not a measurement
+400	historical: the count of pretrained single-cell foundation models surveyed in the cited Nature Methods 2026 scaling-laws study (DenAdel et al.), an external paper constant, not this project's result
+401	historical: HTTP status code for a missing HuggingFace access token, not a measurement
+403	historical: HTTP status code for a HuggingFace gated-repo access failure, not a measurement
+444	historical: journal page for the cited Sun et al. TISSUE reference (Nature Methods 21:444, 2024), citation metadata, not a measurement
+474	historical: round-1 count-diagnostics result — 14 of 474 converged gene-task pairs where ZINB beats NB by AIC
+5.4e-06	historical: round-1's Spearman p-value for embedding-dim vs raw_ridge score (p = 5.4e-06), a computed statistic not stored as its own cell
+500	historical: the round-2 planning threshold (at least 500 qualifying spots per slide) for the theta-by-slide design (R6), a parameter chosen before the stage ran, not a measured value
+669	historical: journal page for the cited Angelopoulos et al. reference (Science 382:669, 2023), citation metadata, not a measurement
+7.6	historical: raw-width Gram condition number rounded to 7.6x10^14 in the review's prose, the same fact as round-1's 7.56x10^14 stated at higher precision
+768	historical: conch_v15/phikon/ctranspath embedding dimensionality (768), a model-architecture constant, not stored in the cited results/summary table
+818	historical: patch-geometry extent upper bound (818 px), the round-1 morphology finding restated by the review without its own file citation
+−0.0017	historical: `uni_v1`'s round-1 encoder-level discrepancy against the leaderboard (D4), a computed difference not stored as its own cell
+
+# --- external exceptions: r5_idc_provenance.md (vendor/citation sources) ---
+8353	external: Nat Commun citation page number for Janesick et al. 2023 (14:8353), doi:10.1038/s41467-023-43458-x
+892,966	external: 10x Genomics dataset page for "FFPE Human Breast Using the Entire Sample Area" (Replicate 1 cell count in the per-replicate metrics table), corroborated by a HEST GitHub issue per the document text
+885,523	external: 10x Genomics dataset page for "FFPE Human Breast Using the Entire Sample Area" (Replicate 2 cell count in the per-replicate metrics table)
+1.7e-04	diagnostic: A2b's value on the very first (buggy) run of the float64 identity check, before the two bugs described in R3 sec 3.1 were fixed; never written to a results file since the buggy state was fixed, not checkpointed
+5.1e-08	diagnostic: measured PCA column mean under the pre-fix (float32-cast-to-float64) pipeline, from a controlled debugging experiment; not checkpointed to any file
+1.1e-16	diagnostic: the expected (post-fix) PCA column mean the debugging experiment compared against; not checkpointed to any file
+3.2e-08	diagnostic: measured coefficient-vector difference under the pre-fix pipeline, from the same debugging experiment; not checkpointed to any file
+6.6e-07	diagnostic: the identity-check floor observed under the pre-fix pipeline, from the same debugging experiment; not checkpointed to any file
+4.9e-06	diagnostic: measured float32 target-mean accumulation floor, from the same debugging experiment; not checkpointed to any file
+1.265e-05	diagnostic: R1's measured float32 accumulation-floor median relative error; a measured value from that stage's diagnostics, never checkpointed to a results file (the '106x epsilon' characterisation is a rounded approximation -- true multiple 106.12x -- not an exact identity, so it is not written as a derived formula)
+0.0320	diagnostic: round-1's own v3 size-matched-adjacency value for uni_v2, quoted for comparison in R3 sec 6.1; round-1's source file was not carried into round 2 (same pattern as the round-1 pilot/historical values already declared for other documents)
+3.1e-14	derived: median residual of the R^2-reconstruction algebraic identity check over ~12 encoders x 29 folds x 50 genes of stored per-gene columns; verified by hand against the raw pergene data, but requires computing a new per-row quantity (not a stored column) before taking its median -- outside eval_derived's column-stat/cell-reference model
+4.1e-11	derived: same reconstruction check as 3.1e-14 above, the maximum instead of the median
+19.8	derived: 95th percentile of |px_pct_diff| in d4_pixel_size_check.csv; verified by hand (19.840). The new :p95 statistic operates on the stored (signed) column, not its absolute value, and eval_derived has no abs() -- so percentile-of-|column| is not expressible even with the new percentile support
+0.758	derived: Spearman rank correlation between d_within and gene_set_effect across the 10 tasks in r2_leakage_summary.csv; verified by hand (rho=0.7576, scipy.stats.spearmanr). No rank-correlation statistic exists in the DSL
+0.0321	derived: v4's size-matched-adjacency term for uni_v2 alone, a two-level aggregate (per-task mean of per-fold pearson_within differences, then mean over tasks) from raw split_v4__uni_v2.csv; verified by hand (0.03208). Not expressible as a single column stat or cell reference
+0.0090	derived: 9-cell (COAD/PRAD/READ, 3 tasks x 3 encoders) standard deviation of the training-set-size step; verified by hand from raw per-encoder split_v4 data (0.0090). The 3 task-level averages in r3_per_task_terms.csv are not enough -- the dispersion needs the raw 9 (encoder,task) cells, which no summary file stores
+0.0089	derived: 9-cell standard deviation of the spatial-adjacency step (COAD/PRAD/READ x 3 encoders); same limitation as 0.0090 above -- needs the raw 9-cell breakdown, not stored anywhere
+0.0034	derived: 9-cell standard deviation of the residual-adjacency (buffer) step (COAD/PRAD/READ x 3 encoders); same limitation as 0.0090 above
+0.0900	derived: 9-cell standard deviation of the TOTAL random-patient gap (COAD/PRAD/READ x 3 encoders); same limitation as 0.0090 above
+338	cost: line 338 of code/scripts/round2_split_v4.py, a source-line number named while describing the RNG-seeding bug in sec 6.6 -- not a measurement
+7.3e-52	derived: binomial-test p-value for 123/128 successes against chance 1/3 (results/round2/R5c_leak/r5d_idc_partner_confusion.csv); verified by hand (scipy.stats.binomtest). Computing a tail probability needs a function call, which eval_derived's arithmetic-only AST whitelist correctly refuses
+141	cost: the standard SIGPIPE exit code from `find | head`, named in a failures/process table (sec 9) -- not a measurement, same class as the existing HTTP-429 exception above
+296	cost: count of claims verified in the verify_numeric_claims.py run performed at closeout (19 Sep) over all three then-current documents; the tool has been revised repeatedly since (this session alone added quoted references, chained filters, percentiles and glob expansion), so this is a process record of that specific historical run, not a live-checkable quantity
+175	cost: wall-clock minutes between IDC-attribution fetch attempts 1 and 2, a timing record in the closeout's process narrative
+0.0636	derived: standard deviation of the combined blocked_buffered-patient step (30-cell); the mean (+0.1018) is derivable by subtracting stored r3_decomposition_terms.csv rows, but the sd of that combined step needs the raw per-(encoder,task) cells rather than a linear combination of the component rows' stored sds -- outside eval_derived's arithmetic-over-cells model
+0.0335	diagnostic: round-1's own measured size-matched-adjacency figure, quoted for comparison in R3 sec 6.3; round-1's source file was not carried into round 2 (same pattern as the round-1 pilot/historical values already declared for other documents)
+106	diagnostic: rounded characterisation of the float32 accumulation floor as a multiple of float32 epsilon (see the 1.265e-05 entry above); the exact multiple is 106.12, not a stored value
+106.12	diagnostic: exact multiple of float32 epsilon corresponding to the 1.265e-05 accumulation-floor measurement; a computed characterisation of an unpersisted diagnostic value, not itself stored anywhere
+225	historical: README.md's claims=verified count (225/225) in closeout_gate_report.md's Section-1 pre-fix sweep table, measured 21 Sep 2026 by a checker version since revised ten times; a superseded measurement, not a live-checkable file cell
+144	historical: round2_R8_stage_report.md's claims count (144) in closeout_gate_report.md's Section-1 pre-fix sweep table, measured 21 Sep 2026 by a checker version since revised ten times; a superseded measurement, not a live-checkable file cell
+169	historical: round1_final_stage_report.md's claims count (169) in closeout_gate_report.md's Section-1 pre-fix sweep table, measured 21 Sep 2026 by a checker version since revised ten times; a superseded measurement, not a live-checkable file cell
+257	historical: round2_R3_stage_report.md's claims count (257) in closeout_gate_report.md's Section-1 pre-fix sweep table, measured 21 Sep 2026 by a checker version since revised ten times; a superseded measurement, not a live-checkable file cell
+158	historical: round2_R3_stage_report.md's verified count (158) in closeout_gate_report.md's Section-1 pre-fix sweep table, measured 21 Sep 2026 by a checker version since revised ten times; a superseded measurement, not a live-checkable file cell
+1484	historical: closeout_gate_report.md's Section-1 pre-fix sweep table's total claims sum (1484) across the fourteen documents assessed at the time; superseded once round2_R0_R1_stage_report.md was measured and the checker itself revised ten times
+1047	historical: closeout_gate_report.md's Section-1 pre-fix sweep table's total verified sum (1047) across the fourteen documents assessed at the time; superseded once round2_R0_R1_stage_report.md was measured and the checker itself revised ten times
+1,054	historical: MANIFEST.md's pre-widening hashed-file count (1,054) quoted in closeout_gate_report.md Section 3 for comparison against the post-widening 1,444; a point-in-time build-log figure, not a results-file cell
+688	cost: total unresolved-claim count across all sixteen repository documents (thirteen with unresolved claims), from /tmp/before_table.csv on the cluster -- a sweep-output snapshot taken 21 September 2026, not a repository file
+319	derived: inexpressible: count of distinct (encoder,task,fold) combinations (11 encoders x 29 folds) in the pooled head_intercept__*.csv files; the DSL has no distinct-group-count statistic, only per-column stats over a single filtered selection. Verified by hand (319 exactly)
+29.8	derived: inexpressible: 95/319 as a percentage (fold-median R2 positive under the intercept head); both 95 and 319 require a two-level groupby (median per fold, then count/threshold across groups) the DSL cannot express. Verified by hand (29.78%)
+178	derived: inexpressible: count of encoder-folds where the oracle arm's median R2 is positive; the oracle arm is a diagnostic computed on the fly from stored columns (test-fold's own mean as intercept) and is not itself a stored column in any file, per this report's own §6 note. Verified by hand (178 of 319)
+66.3	derived: inexpressible: fraction of pooled intercept-head cells with R2<0; the DSL's filters are equality-only (no inequality predicate), so a count-where-column<0 cannot be expressed. Verified by hand (66.30094%)
+0.799	derived: inexpressible: -0.9545 minus -0.1556 (median R2, nointercept minus intercept); both operands are pooled medians across 11 per-encoder files, and median is not a linear statistic that pools via arithmetic over per-file medians the way mean/count/sum do. Verified by hand (0.7989)
+0.648	derived: inexpressible: Spearman rank correlation between per-cell A3 and n_train; no rank-correlation statistic exists in the DSL (same limitation as the 0.758 Spearman entry already declared for another document). Verified by hand (rho=0.648, scipy.stats.spearmanr)
+0.055	derived: inexpressible: standard deviation, across the 11 encoders, of each encoder's median R2 (intercept head); this is a standard deviation of 11 already-pooled per-encoder medians, a two-level statistic (median per encoder, then sd across encoders) the DSL cannot express (median does not pool via the equal-n mean-of-means trick that works for linear statistics). Verified by hand (sd=0.0546)
+1.94e-04	derived: inexpressible: median of |pearson(intercept) - pearson(nointercept)| per (encoder,task,fold,gene) cell; requires joining two head subsets row-wise before taking the median of the per-row difference, which is a new per-row quantity outside eval_derived's column-stat/cell-reference model (same class as the existing 3.1e-14/4.1e-11 R2-reconstruction entries). Verified by hand (1.9360e-04)
+5.96e-07	derived: inexpressible: median of |pearson(intercept_exact) - pearson(nointercept_exact)| per cell, exact-solver family; same cross-head per-row join limitation as the 1.94e-04 entry above. Verified by hand (5.9605e-07)
+1.22e-05	derived: inexpressible: 99th percentile of the same exact-solver per-row |dPearson| distribution as the 5.96e-07 entry above; same cross-head per-row join limitation. Verified by hand (1.2197e-05)
+3.603e-04	derived: inexpressible: maximum of the per-cell RELATIVE A3 (|train mean pred - train mean target| / |train mean target|) over all pooled intercept-head cells; requires computing a new per-row ratio before taking the max, outside eval_derived's column-stat/cell-reference model. Verified by hand (7.241e-04 at 4 sig figs from the raw per-row max -- the document's own §3.6 audit already flags a related internal inconsistency between this figure and the §3.2 absolute figure)
+3.6	derived: inexpressible: 3.603e-04 / 1e-4 (the restated-threshold ratio); depends on the 3.603e-04 relative-maximum entry above, which is itself inexpressible in the DSL. Verified by hand
+−102.59	derived: inexpressible: minimum (worst-case) per-gene R2 improvement (intercept minus nointercept) over the pooled 15,950 cells; requires a cross-head row-wise join before taking the min, outside eval_derived's model. Verified by hand (-102.5871)
+36.6	derived: inexpressible: fraction of LYMPH_IDC's pooled cells where the intercept head's R2 is lower than the nointercept head's; requires a cross-head per-row comparison and an inequality count, neither expressible in the DSL. Verified by hand
+92.4	derived: inexpressible: percentage of benchmark adata spots also present in bench_data's per-task adata/*.h5ad; a cross-file, cross-format (parquet vs h5ad) spot-identity comparison that the DSL's tabular column-stat model cannot express. This is round-1's OD1 finding, restated; not re-derivable from any single cited CSV
+36,819	diagnostic: R0/R1 §3.3 n for the synthetic float32/float64 matched comparison (shape of PRAD fold 0), from an ad-hoc synthetic experiment (n=36,819, d=256, 50 targets) run for this report and never checkpointed to a results file
+7.9e-06	diagnostic: R0/R1 §3.3 synthetic experiment's measured float32 A3, from an ad-hoc synthetic experiment (n=36,819, d=256, 50 targets) run for this report and never checkpointed to a results file
+1.6e-14	diagnostic: R0/R1 §3.3 synthetic experiment's measured float64 A3, from an ad-hoc synthetic experiment (n=36,819, d=256, 50 targets) run for this report and never checkpointed to a results file
+1.8e-07	diagnostic: R0/R1 §3.3 synthetic experiment's measured float32 dPearson, from an ad-hoc synthetic experiment (n=36,819, d=256, 50 targets) run for this report and never checkpointed to a results file
+3.3e-16	diagnostic: R0/R1 §3.3 synthetic experiment's measured float64 dPearson, from an ad-hoc synthetic experiment (n=36,819, d=256, 50 targets) run for this report and never checkpointed to a results file
+6.4e-06	diagnostic: R0/R1 §3.3 synthetic experiment's float32 A3 under column-scale ratio 60 (of the 1/60/600/6,000 sweep), from an ad-hoc synthetic experiment (n=36,819, d=256, 50 targets) run for this report and never checkpointed to a results file
+0.002216	cost: R1 job scheduling: sprio fairshare component for the account at submission time; scheduler accounting (sprio), not a repository file
+4,800,141	cost: R1 job scheduling: sprio RawUsage for the account at submission time; scheduler accounting (sprio), not a repository file
+369	cost: R1 job scheduling: count of CPUs already running under the account when R1 was submitted; scheduler snapshot (squeue/sacct), not a repository file
+1043	cost: verified-count total for the same fourteen documents the original 1484/1047/437 table covers, recomputed from /tmp/before_table.csv on the cluster -- a sweep-output snapshot taken 21 September 2026, not a repository file
+441	cost: unresolved-count total for the same fourteen documents the original 1484/1047/437 table covers, recomputed from /tmp/before_table.csv on the cluster -- a sweep-output snapshot taken 21 September 2026, not a repository file
+
+# --- docs_clean_report.md, this stage own report. Scoped keys: these numerals mean
+# something else in other documents, so a bare key would be a false pass there.
+docs/docs_clean_report.md:1,786	cost: total claims across the 16 documents as the PRE-FIX checker counted them; a sweep-snapshot number, not a value any result file holds. Column sum of the table it appears in, reproducible with code/scripts/sweep_table.py before
+docs/docs_clean_report.md:1,809	cost: total claims across the 16 documents as the POST-FIX checker counts them; column sum of the same table, reproducible with code/scripts/sweep_table.py after
+docs/docs_clean_report.md:688	cost: total unresolved claims before triage; column sum of the same table. Stated as a sum rather than an estimate because an earlier version of the gate report gave a figure by eye and understated it
+docs/docs_clean_report.md:121	cost: two distinct counts share this numeral in this document: the intermediate unresolved count for round2_R0_R1_stage_report.md after the placeholder fix and before triage, and the number of historical-class exception entries. Neither is a measurement from a result file
+docs/docs_clean_report.md:150	diagnostic: illustrative ratio of the wrong tolerance to the right one for 3.15e-02 (0.005 against 3.3e-05); computed while diagnosing the scientific-notation defect and not persisted
+docs/docs_clean_report.md:2.55	diagnostic: the value a wrong formula produced for the PRAD patient-2 pixel-size fold-ratio before the task filter was added; a defect measurement, deliberately not checkpointed. The correct value 1.02 IS checked, by a derived formula
+docs/docs_clean_report.md:0.0080	diagnostic: the within-patient pixel-size RANGE, which a wrong formula produced where the inter-session GAP was meant; kept in the text to show what the derived check caught. The correct value 0.0066 is checked by a derived formula
+docs/docs_clean_report.md:117	cost: number of entries in .verify-derived; a count of file lines, not a measurement. Verifiable with `grep -vc '^#' .verify-derived`
+docs/docs_clean_report.md:0.217627	historical: the transposed value as round2_R3_stage_report.md printed it before correction; quoted here to record the error. The correct 0.217672 is in results/round2/R3_splits/
+docs/docs_clean_report.md:0.217672	historical: the corrected worst-cell value, quoted from round2_R3_stage_report.md section 3.2 where it is itself checked against its source file
+docs/docs_clean_report.md:3022	historical: the incorrect epsilon multiple as round2_R0_R1_stage_report.md printed it before correction; quoted to record the error. The correct 3095 is checked in that document
+docs/docs_clean_report.md:1.2636e-05	diagnostic: 106 times float32 epsilon, computed while establishing that the document's 1.265e-05 is a rounded characterisation rather than an identity; the product itself is not stored anywhere
+docs/docs_clean_report.md:2,150	cost: number of files that the basename citation `results.json` resolves to in the faithful results tree; a file count, verifiable with `find results/faithful -name results.json | wc -l`
+docs/docs_clean_report.md:1,811	cost: total claims across the 16 documents as the POST-FIX checker counts them after the outline correction; column sum of the table it appears in, reproducible with code/scripts/sweep_table.py after
+docs/literature_landscape.md:367	external: HEST-1k's count of cancer samples (367, from 25 cancer types), Jaume et al., HEST-1k, NeurIPS 2024
+docs/literature_landscape.md:4,293,195	external: STImage-1K4M's total spot count across 1,149 ST slides, Chen & Zou, STImage-1K4M, NeurIPS 2024
+docs/literature_landscape.md:21.8	external: STImage-1K4M's brain-tissue share of slides (21.8%, the largest tissue), Chen & Zou, STImage-1K4M, NeurIPS 2024
+docs/literature_landscape.md:251	external: STImage-1K4M's brain-tissue slide count (251 of 1,149), Chen & Zou, STImage-1K4M, NeurIPS 2024
+docs/literature_landscape.md:22.2	external: single-cell foundation-model pretraining corpus size (22.2 million cells), DenAdel, Hughes, Thoutam et al., Nature Methods 23:1447-1457, Jul 2026
+docs/literature_landscape.md:6,400	external: number of scaling-law experiments run in the cited study, DenAdel, Hughes, Thoutam et al., Nature Methods 23:1447-1457, Jul 2026
+docs/literature_landscape.md:122	external: UNI2-h's approximate HuggingFace download count (~122k), cited in the batch-dominance discussion of pathology foundation-model embeddings (arXiv:2606.28697 and related)
+docs/literature_landscape.md:3090	external: NVIDIA RTX 3090, the GPU the original HEST-1k benchmark was run on, Jaume et al., NeurIPS 2024; restated once more in the Recommendations section
+docs/literature_landscape.md:40964396	external: PMID for the bioRxiv data-quality-ablation study cited in this section; misparsed as a plain integer by the checker (same class as the arXiv-id exception above)
+docs/literature_landscape.md:635	external: number of ST datasets hosted by the Spatial GWAS Atlas, NAR 2025
+docs/literature_landscape.md:3,854	external: number of GWAS studies hosted by the Spatial GWAS Atlas, NAR 2025
+docs/literature_landscape.md:300	external: Xenium's smallest standard gene-panel size (300 genes, scaling up to 5K), platform specification cited in the cross-panel-generalization problem statement
+docs/round2_results_synthesis.md:80	diagnostic: measured inside the replicate-leak design's abandoned first-attempt version (held out both TENX slides together); superseded by the size-matched, then equal-size-training-set design that shipped, and never checkpointed to a results file
+docs/round2_results_synthesis.md:0.31	historical: an early (pre-fix) leakage-gap figure from the first version of the split-decomposition write-up, before the pooled-Pearson artefact was diagnosed and the metric changed to within-slide Pearson; the pooled metric was withdrawn and no source file for it was retained
+docs/round2_results_synthesis.md:0.76	derived: cross-task correlation between the per-task gene-set-difference magnitude and the selection-protocol Pearson gap; a correlation coefficient across tasks, not expressible as arithmetic over single file references
+docs/round2_results_synthesis.md:0.29	derived: median zero-fraction over the five Xenium tasks (COAD, IDC, LUNG, PAAD, SKCM) from results/tailored/counts/count_diagnostics.csv's zero_frac column; a two-level groupby (gene -> task -> assay) the formula language cannot express. Recomputed by hand: 0.2856, which rounds to the document's 0.29

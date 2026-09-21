@@ -1,3 +1,5 @@
+> **Closed record, dated 2026-09-16.** This review is not maintained; numbers in it may have been superseded by round 2 and later work.
+
 # Review of the HEST-1k replication and instrumentation
 
 Written 16 September 2026 against `NicWYZ/HEST-1k-replication` at commit `eb670fa` and the final stage report (revision 2). Everything asserted below was checked in the repository files; where a claim rests on something I could not verify from the repository, that is stated.

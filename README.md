@@ -293,15 +293,29 @@ python code/scripts/build_deck_numbers.py                 # results/summary/deck
 python code/figures/make_all.py                           # figures/deck/fig01-fig07, PNG+PDF
 ```
 
-**Note on `R5b_audit`:** its stage `PROVENANCE.txt` names `code/scripts/round2_r5b_audit.py` as
-the producing script, but no file of that name exists under `code/scripts/` in this checkout (nor
-`code/figures/`) — confirmed by a repository-wide search, not merely a missing `ls` hit. The
-stage's eight output files (`donor_audit.csv` and its companions) are committed and current;
-whatever produced them was not committed, or was renamed or removed since. Anyone needing to
-rerun this stage should treat it as **not reproducible from this repository** until the script is
-restored, and should not assume the two donor-audit scripts elsewhere
-(`round2_r6_donor_variance.py`, `round2_provenance_and_dedup.py`) are substitutes — neither
-regenerates `donor_audit.csv`.
+**Note on `R5b_audit`:** the R5b donor provenance audit was a *reading* task — vendor dataset
+pages, GEO subseries strings and an upstream issue thread — so no script can redo it, and for a
+while none existed to regenerate its output either, which the closeout report recorded as a
+reproducibility gap. That gap is now closed, though not by making the reading reproducible.
+`donor_audit.csv` is a **derived** file, rebuilt by
+[`code/scripts/round2_r5b_audit.py`](code/scripts/round2_r5b_audit.py) from the two inputs that
+together determine it:
+
+| input | what it is | reproducible? |
+|---|---|---|
+| [`hest_source_map.csv`](results/round2/R5b_audit/hest_source_map.csv) | per-sample task, patient label, subseries string, dataset title and source page, extracted from HEST's own `HEST_v1_1_0.csv` | yes, from HEST |
+| [`donor_verdicts.csv`](results/round2/R5b_audit/donor_verdicts.csv) | the audit's human output — `donor_id`, `donor_label_status`, and the source citation and statement per sample | **no** — this is the reading, and it is committed because it cannot be recomputed |
+
+The script asserts it reproduces the committed `donor_audit.csv` **byte for byte**, and it
+*derives* rather than copies the one field that follows a rule: COAD's `donor_id` comes from each
+slide's own subseries string (`"Xenium In Situ, Sample P5 CRC"` → `COAD_Oliveira_P5`; a COAD slide
+whose subseries carries no such identifier is its own donor). The rule is applied and then checked
+against the recorded verdict, so if the two ever disagree the script fails rather than silently
+preferring one — verified by perturbing a verdict and confirming it refuses.
+
+This matters beyond tidiness: `donor_id` is the grouping variable R6 and R7 use, and a grouping
+variable with no regeneration path is one nobody can check. Nine of the 72 labels remain
+`unverifiable` and five `contradicted`; those are audit findings, not gaps in the regeneration.
 
 `code/figures/make_all.py` renders all seven deck figures at 300 dpi (PNG and PDF) and fails if
 any figure reports a text overlap; see [`figures/deck/README.md`](figures/deck/README.md) for the

@@ -75,10 +75,12 @@ product, "FFPE Human Breast with Pre-designed Panel". 10x returned HTTP 429 on e
 Evidence now on both sides, none of it decisive:
 
 - **For**: TENX95 and TENX99 carry byte-identical 541-entry panels, the only such pair in IDC.
-- **For**: of the TENX slides' classification errors, **123 of 128
-  (96.1%)** land on the partner TENX slide against 33.3%
-  expected if spread over the other three (binomial p = 7.3e-52), in all three
+- **For**: of the TENX slides' classification errors (`results/round2/R5c_leak/r5d_idc_partner_confusion.csv`),
+  **123 of 128 (96.1%)** land on the partner TENX slide against 33.3%
+  expected if spread over the other three (binomial p = 7.3e-52 against chance 1/3; a binomial-test
+  p-value, not a stored cell — see Changelog), in all three
   encoders — though slide identity is decodable at 0.987–0.997
+  (`results/round2/R5c_leak/r5d_slide_confusion_summary.csv`, `balanced_acc` for IDC)
   so this reads only the 0.49% of spots that are
   misclassified at all.
 - **Against**: spot counts differ 2.1-fold (25,080 against 11,845), which two replicates of one
@@ -311,18 +313,26 @@ H-optimus-1 is the sharpest available test because it is the strongest encoder i
 
 - **pca_ridge: rank 1 of 12** at 0.3891 — the best encoder there is.
 - **raw_ridge: rank 7 of 12** at 0.2590 — mid-table, exactly where 1536
-  dimensions places it.
+  dimensions places it. This is on the **all-10-task convention** (`r8_raw_head_leaderboard.csv`'s
+  `raw_ridge`/`pca_ridge` columns average over all ten tasks, HCC included); on the paper's own
+  nine-task convention (HCC excluded, `avg_paper9` in `results/summary/results_encoder.csv`) it is
+  **rank 6 of 12** instead — both conventions are recorded side by side in
+  `results/round2/R8_raw_heads/r8_task_set_convention.csv`, and the offset between them is about
+  0.027 per encoder (`results/summary/results_encoder.csv`, mean `avg_paper9` − `avg_all10` for
+  `head`=`raw_ridge`). Everything below uses the all-10-task convention unless noted.
 
 And the pattern is not confined to it ([`r8_width_correlations.csv`](r8_width_correlations.csv)).
 Spearman(width, raw_ridge) = **-0.950**
-(p < 1e-4, n = 12); equalising width at 256 with PCA reverses the sign to **+0.727**
+(p < 1e-4, n = 12, all-10-task convention; -0.932 on the paper's nine-task convention); equalising
+width at 256 with PCA reverses the sign to **+0.727**
 (p = 0.007). Every encoder of ≥1536 dimensions occupies raw_ridge ranks 7–12, every encoder of
 ≤1024 dimensions occupies ranks 1–6, with no exceptions. The two orderings correlate
 **-0.60**.
 
 So the `pca_ridge` ranking reflects encoder quality and the `raw_ridge` ranking reflects
 dimensionality. **D2's reading of Table A13 is confirmed, not falsified.** The plan asked me to
-report where H-optimus-1 lands rather than whether it confirms, and it lands 7th.
+report where H-optimus-1 lands rather than whether it confirms, and it lands 7th on the all-10-task
+convention (6th on the paper's own nine-task convention) — mid-table either way.
 
 **`raw_xgb` did not finish, and I cancelled it rather than resubmit.** It completed **2 of 29
 splits in 2 h 25 min** — about 70 minutes per split, so roughly 34 hours for the full set against
@@ -403,3 +413,16 @@ Per the memo these are recorded rather than halting work. None was acted on outs
 5. **For Topic A**, R7's within-task result (§ 5) says between-donor biological variance does not
    explain which genes a patient split costs most — so a donor-level random effect alone will not
    absorb the penalty, and the replicate result points at what does.
+
+---
+
+## Changelog
+
+- § 8 now states explicitly that H-optimus-1's "rank 7 of 12" on `raw_ridge` is on the **all-10-task**
+  convention (`r8_raw_head_leaderboard.csv`); on the paper's own nine-task convention (HCC excluded,
+  `avg_paper9` in `results/summary/results_encoder.csv`) it is rank 6 of 12 instead. Both conventions
+  are recorded side by side in `results/round2/R8_raw_heads/r8_task_set_convention.csv`. No ranking or
+  score changed — only the convention is now named, per the parent's explicit guidance for this doc.
+- Added citations in § 2.1 to `r5d_idc_partner_confusion.csv` (the 33.3%-chance-share figure) and
+  `r5d_slide_confusion_summary.csv` (the 0.987–0.997 decodability range), which the text discussed
+  without naming.
