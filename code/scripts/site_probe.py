@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Stage 4d (CORRECTED): site-predictability probe as the handoff specifies.
 
+Stage: tailored analysis, first site/cohort probe; its labelling was withdrawn in round 2 (see the README's benchmark-properties section).
+
 Handoff 4d: "train a logistic-regression probe (with the same PCA-256 preprocessing) to predict
 COHORT SOURCE and TECHNOLOGY from embeddings; evaluate with SAMPLE-LEVEL cross-validation so no
 slide appears in both train and test. Report accuracy against a chance baseline."

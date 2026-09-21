@@ -70,7 +70,7 @@ We measured what that is worth. Holding the test slide fixed and the training-se
 Positive in 6 of 6 encoder–slide cells. IDC's whole `random − patient` gap is 0.1210, so the
 replicate accounts for **54%** of what the patient split scores as generalisation to a new patient.
 
-Source: `results/round2/R3_splits/replicate_leak__*.csv`, `docs/r5_idc_provenance.md`.
+Source: `results/round2/R3_splits/replicate_leak_v2__*.csv`, `docs/r5_idc_provenance.md`.
 
 The IDC task itself remains a valid prediction task and the shipped 50 target genes are unaffected.
 What is affected is reading IDC's patient-split score as cross-patient generalisation.

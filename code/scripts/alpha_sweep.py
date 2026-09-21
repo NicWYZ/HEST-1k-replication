@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Does the benchmark's ridge penalty do anything? An alpha sweep at both feature scales.
 
+Stage: tailored analysis, ridge-penalty sweep establishing the benchmark's fixed alpha is far from optimal.
+
 WHY. Earlier in this replication I reported that the Table A13 no-PCA comparison "conflates
 removing PCA with a 4x change in regularisation strength", because benchmark.py sets
 alpha = 100/(d * n_genes) and d goes from 256 (PCA) to the raw embedding width. Stage 4f then

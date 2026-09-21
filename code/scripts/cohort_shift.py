@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Stage 4b(iii) (CORRECTED): site shift as LEAVE-COHORT-SOURCE-OUT, per the handoff.
 
+Stage: tailored analysis, cohort-source probe; confounded by construction, since most sources occur in one task only.
+
 Handoff 4b: "(iii) leave-cohort-source-out where a task contains more than one source (IDC has
 TENX and NCBI; also run across-task, training on all Xenium tasks and testing on a held-out
 Xenium task). Report Pearson under each. The (i) minus (ii) gap is leakage; the (ii) minus (iii)

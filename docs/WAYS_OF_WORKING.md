@@ -147,6 +147,24 @@ slide-signature number averaged over tasks where the contrast was slide identity
 also carried same-patient information; per task, the term ranges from 0.026 to 0.294. A term is
 poolable only if its arm-difference list is the same in every stratum.
 
+## Auditing a grouping variable
+
+**Audit a grouping variable against something outside the dataset before grouping by it.** Every
+term in this project that separates "same X" from "different X" is only as good as the column that
+says which X a sample belongs to, and HEST's `patient` field is wrong in both directions. In COAD
+it collapses three distinct patients into one label and leaves a fourth sample unlabelled, so the
+shipped patient split does not separate patients at all and the per-task term computed on it cannot
+be read as a patient effect -- it was round 2's largest such term and was reported as a striking
+same-patient result before the labels were checked. In IDC it does the mirror image: two samples
+carry different patient labels and are sections of one specimen from one donor, which the
+originating vendor's own page states. In READ the labels are right but understate themselves, since
+each pair is a replicate of one specimen rather than merely one patient. Nothing in the files
+reveals any of this; it took reading the upstream issue tracker, the GEO subseries strings and the
+vendor dataset pages. The audit is now a stage of its own (`R5b_audit`), its verdicts carry a
+`donor_label_status` column rather than being assumed, and nine of the 72 samples are recorded as
+unverifiable rather than inferred. Budget for it: the audit found something in three of the ten
+tasks, and two of the three findings invalidated a number already written down.
+
 ## Writing outputs, and watching a job run
 
 **Name the schema for anything written after expensive compute.** All three R3 runs completed

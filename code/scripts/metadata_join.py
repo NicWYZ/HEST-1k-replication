@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Stage 4a: join real HEST sample metadata onto the instrumentation tables.
 
+Stage: faithful replication stage 4, joining HEST sample metadata onto the prediction tables.
+
 handoff 4a requires sample metadata from HEST's metadata CSV: patient, cohort source, technology,
 organ, oncotree code, tissue preparation, species. Until now the instrumentation tables carried
 cohort and technology DERIVED by me -- cohort from the sample-ID letter prefix, technology from a

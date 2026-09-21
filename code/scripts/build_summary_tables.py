@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Rebuild the analysis tables in results/summary/ that the aggregation script does not produce.
 
+Stage: faithful replication, derived summary tables (HEST_replication_handoff.md stage 4); rerun after any results change.
+
 aggregate_results.py rebuilds results_{split,task,gene,encoder}.csv straight from
 results/faithful. The three tables below are ANALYSIS products layered on top of those, and
 were previously hand-maintained -- which is how they came to carry stale head names

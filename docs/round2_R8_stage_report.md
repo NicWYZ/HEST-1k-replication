@@ -17,7 +17,7 @@ Numbers come from files, with the path. Dispersion accompanies every mean.
 |---|---|---|
 | R5b donor audit | complete, with three of the audit's own verdicts corrected by me | `results/round2/R5b_audit/donor_audit.csv` |
 | R5c replicate leak | complete | `results/round2/R5c_leak/r5c_replicate_leak.csv` |
-| R6 variance components | complete | `results/round2/R6_variance/donor_variance_components.csv` |
+| R6 variance components | complete | `results/round2/R6_variance/r6_donor_variance_components.csv` |
 | R6 theta | complete; acceptance check diagnosed, not passed as written | `results/round2/R6_theta/`, `r6_theta_build_comparison.csv` |
 | R7 per-gene | complete | `results/round2/R7_pergene/` |
 | R8 raw heads | see § 8 | `results/faithful/raw_{ridge,xgb}__hoptimus1::*` |
@@ -123,7 +123,7 @@ seed, an unplanned reproducibility check on the design.
 
 ![R6: variance components on audited donor labels]({{artifact:fbb07f6e-bdc8-4200-b6a4-e25c5952e621}})
 
-`r6_variance_by_task.csv`, `donor_variance_components.csv`. Unbalanced nested ANOVA (Henderson
+`r6_variance_by_task.csv`, `r6_donor_variance_components.csv`. Unbalanced nested ANOVA (Henderson
 moments) of log1p expression, per gene, grouped by `donor_id` from R5b.
 
 **The estimator was validated before use** ([`r6_estimator_validation.csv`](r6_estimator_validation.csv))**.** Against known components over 40 unbalanced

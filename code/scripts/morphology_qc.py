@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Stage 4e QC + join key check, restricted to the spots that actually carry predictions.
 
+Stage: tailored analysis, quality control on the morphology features.
+
 Two things the per-sample summary CANNOT answer, because it counts over all AnnData spots while
 only the patch subset has embeddings/predictions:
   1. spot coverage -- what fraction of PREDICTED spots have >=1 nucleus. The summary's

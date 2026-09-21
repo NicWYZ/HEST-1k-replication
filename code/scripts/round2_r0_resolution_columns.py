@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Round 2, stage R0: standardise the scan-resolution columns.
 
+Stage: R0, adding pixel_size_um and resolution_group (round2_execution_plan.md stage R0 item 2).
+
 Adds `pixel_size_um` (a standardised copy of `pixel_size_um_estimated`) and
 `resolution_group` to `results/tailored/integrity/sample_metadata.csv` and to every
 joined prediction parquet under `instrumentation/<task>/`.

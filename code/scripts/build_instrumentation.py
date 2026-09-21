@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Stage 4a: join predictions to spot identity, covariates and raw counts.
 
+Stage: faithful replication stage 4, building the joined per-spot prediction tables.
+
 Row identity in inference_dump.pkl is reconstructed from splits/test_<k>.csv plus the
 barcode order in each embedding HDF5. That mapping is PROVEN in
 results/tailored/integrity/row_identity_check.csv: reconstructing targets_all independently agrees to

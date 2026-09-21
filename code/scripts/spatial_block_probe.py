@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Stage 4d': site separability under SPATIAL BLOCK cross-validation.
 
+Stage: tailored analysis, slide-identity probe under spatial-block cross-validation.
+
 The original probe (site_predictability.py) split spots at random within each slide, so a test
 patch's immediate neighbours sat in training. Two mechanisms can then produce a correct slide
 prediction:

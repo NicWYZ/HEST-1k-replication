@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Round 2, stage R6: nested variance components of expression, grouped by DONOR.
 
+Stage: R6, nested variance components on the audited donor labels (round2_R5_decisions.md directive 2.3).
+
 Decision 1.3: the grouping variable is `donor_id` from the R5b audit, NOT HEST's `patient`
 field. The audit found the field merges donors in COAD and splits one in IDC, so a
 decomposition built on `patient` would be a well-estimated decomposition of the wrong

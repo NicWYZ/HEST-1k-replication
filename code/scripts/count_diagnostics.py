@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Stage 4b: count-distribution diagnostics on the benchmark's target panel.
 
+Stage: tailored analysis, the observation model: Poisson against negative binomial against zero-inflated NB.
+
 Per (task, gene), on the RAW integer counts stored in instrumentation/<task>/spots.parquet:
   - zero fraction
   - mean, variance, Fano factor (var/mean); Poisson implies Fano = 1

@@ -1,0 +1,31 @@
+Round 2, stage R6_variance — Nested variance components on the audited donor labels
+
+memo clause     : round2_R5_decisions.md directive 2.3
+repo_commit     : 70262789630a0506059e916efc0304edb2eb3ba2
+scripts         : code/scripts/round2_r6_donor_variance.py
+files           : 7
+per-run provenance: 1 PROVENANCE__* files in this directory
+
+What distinguishes files that look alike:
+
+  r6_variance_by_task.csv is the per-task summary;
+  r6_donor_variance_components.csv is the per-gene detail behind it.
+  r6_pooled_between_donor.csv records THREE pooled definitions, because the
+  directive's own definition mixes a well-determined component with an
+  uninformative zero.
+
+Retired to superseded/:
+
+  donor_variance_components.csv
+
+Files and checksums (sha256, first 16 hex):
+
+  c762a7ee77ed8e33       237,577  fig_r6_variance.png
+  a210d4278ee10470       132,810  r6_donor_variance_components.csv
+  68e1c868bd7b1a28           113  r6_estimator_validation.csv
+  802614ec77a53da2           465  r6_pooled_between_donor.csv
+  1e10df810926370e         2,045  r6_prad_session_variance.csv
+  c7a07cef4d008e5e           271  r6_theta_build_comparison.csv
+  f6a931cc8eaa4350           701  r6_variance_by_task.csv
+
+plan            : deck_figures_and_repo_update.md section 2.3

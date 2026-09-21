@@ -1,0 +1,27 @@
+Round 2, stage R7_pergene — Per-gene decomposition: does the split penalty track donor biology
+
+memo clause     : round2_R5_decisions.md directive 2.5
+repo_commit     : 70262789630a0506059e916efc0304edb2eb3ba2
+scripts         : code/scripts/round2_r7_pergene.py
+files           : 4
+per-run provenance: 1 PROVENANCE__* files in this directory
+
+What distinguishes files that look alike:
+
+  r7_correlations_task_centred.csv is the file to read: the pooled
+  correlations in r7_pergene_correlations.csv are confounded by task, and
+  the within-task column is the estimate.
+
+Retired to superseded/:
+
+  pergene_correlations.csv
+  pergene_decomposition.csv
+
+Files and checksums (sha256, first 16 hex):
+
+  668233fe0714e9f2       304,256  fig_r7_pergene.png
+  28d5f0f5627611b1           854  r7_correlations_task_centred.csv
+  daa4cf1ecb06dd45         4,491  r7_pergene_correlations.csv
+  bac349461ece6784       225,868  r7_pergene_decomposition.csv
+
+plan            : deck_figures_and_repo_update.md section 2.3

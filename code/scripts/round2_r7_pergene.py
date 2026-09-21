@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Round 2, stage R7: per-gene decomposition, joined to the donor-level variance.
 
+Stage: R7, the per-gene decomposition (round2_R5_decisions.md directive 2.5).
+
 Directive 2.4 changes two things from the original R7 spec:
   - the join to R6 uses the BETWEEN-DONOR variance, not between-patient, because the R5b
     audit showed HEST's patient field merges donors in COAD and splits one in IDC;

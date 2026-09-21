@@ -1,0 +1,38 @@
+Round 2, stage R4_probes — Slide, session, resolution and composition-adjusted probes
+
+memo clause     : round2_R3_decisions.md decision 2.1 and directives 2.2 to 2.4
+repo_commit     : 70262789630a0506059e916efc0304edb2eb3ba2
+scripts         : code/scripts/round2_r4_probes.py
+files           : 20
+per-run provenance: 1 PROVENANCE__* files in this directory
+
+What distinguishes files that look alike:
+
+  probes_v2__hoptimus0.csv holds ALL THREE encoders: the script names its
+  output after its first argument but accumulates every encoder it was
+  given.
+
+Files and checksums (sha256, first 16 hex):
+
+  e279c62de82b0c9e           725  probe1_confusion__hoptimus0.csv
+  a50319cc967c377f           737  probe1_confusion__resnet50.csv
+  9c596aa87606f92f           727  probe1_confusion__uni_v2.csv
+  8f3e9939295d02fe        13,207  probes_v2__hoptimus0.csv
+  126672922e2dd8d0        10,229  r4_probes_v2.csv
+  57294b8fc8465a55           105  slide_confusion__IDC__hoptimus0.csv
+  a21ba1960190b1e1           107  slide_confusion__IDC__resnet50.csv
+  ea8e49916e17dcfb           105  slide_confusion__IDC__uni_v2.csv
+  ec3e46b8580c3f31            46  slide_confusion__LUNG__hoptimus0.csv
+  74812181e94502aa            47  slide_confusion__LUNG__resnet50.csv
+  fcf32d256fc3b54f            46  slide_confusion__LUNG__uni_v2.csv
+  acd722f542346ef6            74  slide_confusion__PAAD__hoptimus0.csv
+  bf33274722384f76            76  slide_confusion__PAAD__resnet50.csv
+  523a2431d4eb4d4e            74  slide_confusion__PAAD__uni_v2.csv
+  20bdbc8076f46582            45  slide_confusion__SKCM__hoptimus0.csv
+  503607d0ffa8a371            45  slide_confusion__SKCM__resnet50.csv
+  6a2a782565575647            46  slide_confusion__SKCM__uni_v2.csv
+  44fb5831d07dfec7           657  slide_confusion_summary__hoptimus0.csv
+  f3c563f4f59a6e19           675  slide_confusion_summary__resnet50.csv
+  b2c49e8f9437aa0c           663  slide_confusion_summary__uni_v2.csv
+
+plan            : deck_figures_and_repo_update.md section 2.3

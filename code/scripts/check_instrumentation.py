@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Integrity check on the Stage 4a tables, and a corrected spot count.
 
+Stage: faithful replication stage 4, verification of the joined tables against the raw predictions.
+
 The build's n_spots column used barcode.nunique(), which counts unique barcode STRINGS.
 Xenium tasks use pseudo-Visium grid barcodes (000x002 etc.) that recur in every sample, and
 Visium barcodes recur across samples too, so that column undercounts. The correct unit is the

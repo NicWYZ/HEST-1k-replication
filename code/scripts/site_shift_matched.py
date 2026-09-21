@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Stage 4c': site shift, with test-set AND training-set size held fixed.
 
+Stage: tailored analysis, the matched site-shift contrast whose 0.0419 scalar round 2 withdrew as not an institution contrast.
+
 The earlier three-design comparison (split_comparison.py) could not identify site shift: for
 6/10 tasks leave-one-sample equals the shipped design by construction, and where a contrast did
 exist the grouping change also changed test-set size (CCRCC 12,370 -> 3,092 test spots), giving

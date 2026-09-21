@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Round 2, stage R1: refit the benchmark head WITH an intercept.
 
+Stage: R1, the three-head intercept refit (round2_execution_plan.md stage R1); superseded by round2_r1b_heads.py, which adds the exact and float64 solver families.
+
 Why. The benchmark head is `Ridge(fit_intercept=False)` on PCA features that are centred
 by construction, so its predictions have training mean zero for each gene while log1p(y)
 has a positive mean. Pearson is invariant to that shift, so the benchmark never noticed;

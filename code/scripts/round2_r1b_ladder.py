@@ -1,5 +1,7 @@
 """Round 2 R1b, Decision 2: the four-rung R2 ladder and the four-cause deficit figure.
 
+Stage: R1b, the four-rung R2 ladder (round2_R1_decisions.md Decision 2).
+
 Reads the per-(encoder, task, fold, gene) metrics written by round2_r1b_heads.py and
 decomposes the R2 deficit without refitting anything. Expects a DataFrame `D` in scope with
 columns: encoder, task, fold, head, pearson, r2, mse, mean_pred, mean_target, std_pred,

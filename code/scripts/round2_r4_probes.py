@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Round 2, stage R4: probes v2.
 
+Stage: R4, the slide, session, resolution and composition-adjusted probes (round2_R3_decisions.md decision 2.1).
+
 Three probes, each with its interpretation rule fixed in this docstring BEFORE the run,
 per the plan's acceptance requirement. Probe 4 is a relabelling with no new compute and is
 handled in the report, not here.

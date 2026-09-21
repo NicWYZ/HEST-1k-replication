@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Round 2, R1b: oversight directives D3 and D4.
 
+Stage: R1b, directives D3 and D4 (round2_R1_decisions.md) -- the COAD patient-label audit and the pixel-size cross-check against HEST's embedded values.
+
 D3. COAD's patient-design dispersion is sd 0.0017 across two folds and three encoders,
     far tighter than any other task. Print the six underlying values. If the two folds
     agree to four decimals for each encoder, something in the fold construction or the

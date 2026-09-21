@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Round 2, stage R6: slide-level estimands for Topic B.
 
+Stage: R6, the slide-level estimand theta1 (round2_R5_decisions.md directive 2.4).
+
 Three parts, per the plan.
 
 1. theta1 per slide. For each task, each of its 50 target genes, and each slide with at

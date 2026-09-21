@@ -18,17 +18,26 @@ working documents are kept outside it; this README is the entry point.
 | 2 · faithful runs, four heads | complete — 35 (head, encoder) pairs × 10 tasks |
 | 3 · verification vs paper and leaderboard | complete |
 | 4 · instrumentation and diagnostics | complete |
-| 5 · STFlow stronger baseline | setup complete; training blocked on GPU availability |
+| 5 · STFlow stronger baseline | setup complete; training not yet run (CUDA-only, GPU queue) |
+| round 2 · replication extensions (splits, probes, θ₁, variance) | complete |
+| round 2 closeout (freeze, numeric-claim sweep, IDC-attribution note) | complete |
+
+Repository tagged [`round2-final`](../../releases/tag/round2-final) at the closeout commit; `HEAD`
+is five commits past the tag (the closeout report and IDC fetch log, a documentation cleanup, the
+seven-figure deck under committed scripts, and two AppleDouble-sidecar removals) — no results
+changed in those five commits.
 
 ## Headline result
 
 Against the live leaderboard snapshot, the `pca_ridge` head agrees to **mean |diff| 0.0002**
 over 108 encoder–task cells (12 encoders × 9 paper tasks), with **0 of 108** exceeding the 0.03
-acceptance threshold. ResNet50
-reproduces Table 1 **exactly** (0.3252) — the informative case, since it has no gated weights,
-no version ambiguity and no transform drift.
+acceptance threshold ([`results/summary/discrepancy_table.csv`](results/summary/discrepancy_table.csv)).
+ResNet50 reproduces Table 1 **exactly** (0.3252) — the informative case, since it has no gated
+weights, no version ambiguity and no transform drift.
 
-Average Pearson over the nine paper tasks (HCC excluded, the paper's convention):
+Average Pearson over the nine paper tasks (HCC excluded, the paper's convention;
+[`results/summary/results_encoder.csv`](results/summary/results_encoder.csv); encoder dimension from
+[`r8_raw_head_leaderboard.csv`](results/round2/R8_raw_heads/r8_raw_head_leaderboard.csv), column `width`):
 
 | encoder | dim | `pca_ridge` | `raw_ridge` | `raw_xgb` |
 |---|---|---|---|---|
@@ -45,7 +54,9 @@ Average Pearson over the nine paper tasks (HCC excluded, the paper's convention)
 | ctranspath | 768 | **0.3468** | 0.2984 | 0.3463 |
 | resnet50 | 1024 | **0.3252** | 0.2843 | 0.3278 |
 
-`pca_xgb` (Table A14's rejected candidate, resnet50 only): 0.3046. Full tables in
+`pca_xgb` (Table A14's rejected candidate, resnet50 only): 0.3046. hoptimus1's raw-embedding
+cells were measured separately in round 2 ([known limitation 8](#known-limitations)) and are not
+yet folded into this table. Full tables in
 [`results/summary/`](results/summary).
 
 ## Repository layout
@@ -54,14 +65,22 @@ Average Pearson over the nine paper tasks (HCC excluded, the paper's convention)
 results/
   faithful/<head>/<encoder>/<task>/   the paper's four configurations
   tailored/<question>/                our own diagnostics, grouped by question
-  summary/                            aggregated official tables
+  summary/                            aggregated official tables, incl. deck_numbers.csv
+  round2/<STAGE>/                     round-2 extensions, one directory per stage,
+                                       each with a PROVENANCE.txt
 code/
   scripts/                            one script per experiment, all rerunnable
   configs/<head>__<encoder>.yaml      one config per faithful run
+  figures/                            one script per deck figure, plus make_all.py
   stage5_provenance/                  upstream commit + integration findings for STFlow
 bench_data/                           benchmark inventory and provenance (no gated data)
 env/                                  pinned environment and rebuild recipe
-figures/                              fig_<topic>.png
+figures/                              fig_<topic>.png (round 1), deck/ (round 2, see below)
+figures/deck/                         seven round-2 deck figures, 300 dpi PNG + PDF, and a
+                                       generated README listing each figure's sources
+docs/                                 narrative stage reports and the closeout report
+docs/decisions/                       round-2 decision memos — not yet added to the
+                                       repository; pending from the project lead
 ```
 
 Every directory under `results/` carries a `PROVENANCE.txt` explaining what is in it, how it
@@ -98,105 +117,131 @@ piloting both on resnet50 settled it by measurement (raw 0.3278 vs the printed 0
 
 ## Key findings
 
-Round-1 figures in this section are established in
+Reordered to the synthesis ranking (patient split and replicate leak; split design vs encoder;
+session signature; intercept and ladder; A13 width; panels and selection; NB; θ₁ and variance
+components). Round-1 figures are established in
 [`docs/round1_final_stage_report.md`](docs/round1_final_stage_report.md); round-2 figures cite
-their own result files inline.
+their own result files inline, each checked against its file with
+`code/scripts/verify_numeric_claims.py`.
 
-Each is reproducible from the named table; the reasoning lives with the script that produced it.
+**1. Patient identity, not slide novelty, drives the split penalty — and part of what the
+benchmark scores as losing a patient is losing a replicate.** Holding training-set size and test
+spots fixed and varying only whether another slide from the same patient is in training, a novel
+slide costs **+0.0148** against **+0.1357** for losing the patient altogether, averaged over the
+three multi-slide tasks
+([`r3_decomposition_terms.csv`](results/round2/R3_splits/r3_decomposition_terms.csv)). IDC's
+TENX95 and TENX99 are two sections that HEST-bench's own `donorCount: 1` field and 10x's
+"Replicate 1 / Replicate 2" language describe as one specimen, but they carry distinct patient
+labels; holding
+the test slide and training-set size fixed and varying only whether the same-donor section is
+available, the replicate is worth **+0.0652** within-slide Pearson, positive in all 6
+encoder–slide cells — **54%** of IDC's reported random-minus-patient gap of 0.1210
+([`r5c_leak_summary.csv`](results/round2/R5c_leak/r5c_leak_summary.csv)). READ's two replicate
+pairs are worth **+0.0901**, positive in all 12 cells, but READ's shipped folds hold each pair out
+together, so the leak there is a counterfactual, not a property of the published benchmark
+(`leak_realised_in_shipped_split` is `False` for READ, `True` for IDC, same file). The **+0.0652**
+measurement does not depend on how the IDC pair is attributed — see [property 1](#properties-of-hest-bench-found-in-this-replication)
+and [known limitation 2](#known-limitations).
 
-**1. Split design matters more than encoder choice.** The entire between-encoder spread on the
-benchmark's own protocol is **0.0977** Pearson (hoptimus1 0.4229 to resnet50 0.3252, 12 encoders).
-Ignoring slide boundaries is worth **0.1575** — 1.61× that spread, positive in 30 of 30 encoder–task
-cells — decomposing into spatial adjacency (0.0335) and a slide-level signature (0.1241).
-The `blocked − patient` term is reported per task rather than pooled, because in multi-slide tasks
-it contains same-patient-other-slide information as well as slide identity. In R3's v4
-decomposition COAD's same-patient-other-slide term is **0.2578**, against 0.0910 for READ and
-0.0583 for PRAD — the only other two tasks where that term is defined — and its total
-`random − patient` gap is **0.3172**, the largest of the ten, where the other nine run 0.0504 to
-0.1931 ([`r3_per_task_terms.csv`](r3_per_task_terms.csv)). COAD's figure is a labelling artefact:
-its fold 0 holds out three donors at once and trains on one (see benchmark properties). The contrast previously labelled "institution shift, 0.0419" is **not** an
-institution contrast and has been withdrawn as a scalar — see limitation 3.
+**2. Split design costs more than encoder choice.** Over ten tasks, the benchmark's own
+random-minus-patient gap averages **0.1586** Pearson
+([`r3_decomposition_terms.csv`](results/round2/R3_splits/r3_decomposition_terms.csv), row `TOTAL
+random - patient`) against a between-encoder spread of **0.0977** on the same protocol (H-Optimus-1
+0.4229 to ResNet50 0.3252,
+[`results_encoder.csv`](results/summary/results_encoder.csv)) — 1.6× the spread. Decomposing the
+gap: training-set size **0.0126**, spatial adjacency **0.0327**, a residual adjacency term removed
+only by a spatial buffer **0.0115**, and a slide-and-patient identity term of **0.1018** that
+absorbs the rest
+([`r3_decomposition_terms.csv`](results/round2/R3_splits/r3_decomposition_terms.csv)). COAD is the
+outlier at 0.3172 (finding 1's decomposition attributes most of it to the mislabelled patients in
+[property 3](#properties-of-hest-bench-found-in-this-replication)), against 0.0504–0.1931 for the
+other nine tasks ([`r3_per_task_terms.csv`](results/round2/R3_splits/r3_per_task_terms.csv)).
 
-Round 2 remeasured this with a buffered, size-matched design and found the dominant term is
-**patient identity, not slide novelty**: once another slide from the same patient is in training, a
-novel slide costs only **+0.0148** against **+0.1357** for losing the patient
-([`r3_decomposition_terms.csv`](r3_decomposition_terms.csv)).
+**3. Slides are identifiable from frozen features, and the signature is the scan session, not
+tissue or resolution.** Holding one PRAD patient fixed (patient 2, 15 slides, pixel size spanning
+only 1.02×), a linear probe recovers slide identity at **0.871–0.949** against a chance of 1/15,
+with a confusion-mass share landing inside the correct scan session of **0.9326–0.9639**
+against a chance share of **0.4667**
+([`r4_probes_v2.csv`](results/round2/R4_probes/r4_probes_v2.csv), `probe1_slide_within_patient`).
+The two scan sessions themselves (0.0066 µm/px apart) are separable at **0.967–0.991**, while a
+20% *resolution* difference within a different PRAD patient is not decodable at all (pooled
+balanced accuracy **0.489–0.511** against chance 0.5, majority-class baseline **0.714**; same
+file, `probe1b_scan_subcluster` and `probe2_2class`). Regressing out nuclear count, mean nuclear
+area and the five CellViT class fractions removes only **1.4%** of the signature within that one
+patient, against **17–27%** on tasks whose slides come from different patients — except IDC at
+**3.0%**, the smallest cross-patient value in the table (same file, `probe3_composition_adjusted`).
+At the gene level, 28 of the 50 PRAD target genes show a between-session variance component at or
+below zero
+([`r6_prad_session_variance.csv`](results/round2/R6_variance/r6_prad_session_variance.csv)) — the
+probe-level separability is real but does not translate one-to-one into every gene's variance
+decomposition. This result rests on **one PRAD patient**; see
+[known limitation 6](#known-limitations).
 
-**And part of what the benchmark scores as losing a patient is losing a replicate.** IDC's TENX95
-and TENX99 are two 5 µm sections of one resected tumour mass — 10x's own dataset page reports
-`donorCount: 1` — but carry distinct HEST patient labels, so on 2 of IDC's 4 patient folds the
-held-out sample's own donor is still in training. Holding the test slide and the training-set size
-fixed and varying only whether the same-donor section is available, the replicate is worth
-**+0.0651** within-slide Pearson, positive in 6 of 6 encoder–slide cells — **54% of IDC's entire
-reported `random − patient` gap of 0.1210**
-([`r5_idc_replicate_leak.csv`](r5_idc_replicate_leak.csv),
-[`r5_idc_provenance.md`](r5_idc_provenance.md)).
+**4. The benchmark head has no intercept, and most of its apparent skill is scale, not level.**
+Pooled fold-median R² for the head as shipped is **−0.953**; adding a training-mean intercept
+alone brings it to **−0.155**; giving the test fold its own mean (an oracle upper bound) reaches
+**+0.030**; adding the test fold's own optimal scale on top reaches **+0.100**, the per-cell R²
+ceiling
+([`r1b_ladder_pooled.csv`](results/round2/R1b_heads/r1b_ladder_pooled.csv)). The last step alone
+is worth **+0.070** ([same file], column `gain_3`) — the model's predictions are correlated with
+truth (that is what Pearson credits) but at the wrong scale, with a pooled prediction-to-target
+ratio of **1.840** (ResNet50 worst at 2.165, UNI2-h best at 1.650,
+[`r1b_ladder_by_encoder.csv`](results/round2/R1b_heads/r1b_ladder_by_encoder.csv)).
 
-The decomposition itself was run on three encoders
-(hoptimus0, uni_v2, virchow), so it does not include hoptimus1; the spread it is compared against is
-the current 12-encoder one.
-[`results/tailored/splits/`](results/tailored/splits)
+**5. Table A13's raw-embedding ranking tracks embedding width, not representation quality.**
+Spearman(width, score) is **−0.950** on the raw head against **+0.727** on the PCA-256 head, over
+the current 12-encoder cohort
+([`r8_width_correlations.csv`](results/round2/R8_raw_heads/r8_width_correlations.csv)).
+H-Optimus-1 ranks **1st of 12** on the PCA head and **7th of 12** on the raw head
+([`r8_raw_head_leaderboard.csv`](results/round2/R8_raw_heads/r8_raw_head_leaderboard.csv)); the
+512-dimensional CONCH v1 wins the raw head outright. (Round 1's 11-encoder cohort, before
+H-Optimus-1 had raw-head cells, gives −0.954 / +0.735 on the same statistic — both figures are
+correct, they are different cohorts; same file, `n_encoders` column.)
 
-**2. Pooled Pearson is not a constant yardstick.** Correlation computed on a pooled test set
-carries between-patient variance in its denominator, so the same model scores higher on a more
-heterogeneous test set — **exactly 0.0000** inflation when the test set is one patient, **+0.19**
-when it spans nine. All split results therefore use **within-slide** Pearson (the correlation is
-computed per sample, then averaged over genes and over slides), with the pooled value retained so
-the artefact is measured rather than assumed. On the three tasks where a patient contributes more
-than one slide — PRAD (23 slides, 2 patients), COAD (4, 2) and READ (4, 2) — within-slide is not
-the same as within-patient and does not equal the benchmark's own Table 1 number. On the other
-seven tasks, including LYMPH_IDC (4 slides, 4 distinct patients), each patient contributes exactly
-one slide and the two metrics coincide.
+**6. Gene panels and gene selection are both sources of leakage-shaped variation the benchmark
+does not control.** Samples within one task do not always share a gene panel: PAAD's three
+samples intersect on only **159** genes against a **919**-gene union, so its shipped 50-gene
+target list is not well defined without the held-out slide's own panel
+([`r2_panel_heterogeneity.csv`](results/round2/R2_fold_hvg/r2_panel_heterogeneity.csv)). Separately,
+the 50 target genes are variance-ranked over every spot, test folds included; recomputing the
+ranking inside each fold changes the list by roughly half its members (mean **25.2** of 50 genes
+shared, as few as **11** on PRAD) and changes measured Pearson by a mean of **+0.0048**, up to
+**+0.0441** on the most affected task
+([`r2_leakage_summary.csv`](results/round2/R2_fold_hvg/r2_leakage_summary.csv)). This is not
+reported as leakage in the usual sense — selection acts *through* which genes are chosen, so
+gene-set composition is the mechanism rather than a confound removable by re-running the same
+design (see [known limitation 1](#known-limitations)).
 
-**3. Table A13's encoder ranking tracks embedding width, not representation quality.**
-Spearman(dim, score) = **−0.954** (p = 5.4 × 10⁻⁶) for `raw_ridge`, against **+0.735** for
-`pca_ridge`. The 512-dim CONCH v1 wins the raw head. The penalty sweep explains why: at the
-benchmark's `alpha = 100/(d × n_genes)` the fit is indistinguishable from unpenalised OLS
-(|diff| ≤ 2.7e-4), and at raw width the Gram matrix is numerically singular (condition number
-3.0 × 10¹⁵ at 1536 dims). That head is measuring conditioning.
-[`results/tailored/regularization/`](results/tailored/regularization)
-   These are the **11-encoder** figures, round 1's cohort. R8 added H-optimus-1's raw-head
-   cells, and on all **12** the same statistics are **−0.950** and **+0.727**
-   ([`r8_width_correlations.csv`](results/round2/R8_raw_heads/r8_width_correlations.csv)), which
-   is where the report's figures come from — the two documents quote different cohorts of the
-   same statistic, not different results.
+**7. Negative binomial is the right observation model; zero-inflation buys almost nothing.** NB
+beats Poisson for **478 of 488** converged gene–task pairs, and all 500 gene–task pairs are
+overdispersed (smallest Fano factor **1.638**,
+[`count_diagnostics.csv`](results/tailored/counts/count_diagnostics.csv)). ZINB beats NB for only
+**28 of 488** — with median ΔAIC **−2.002**, matching AIC's exact penalty for one unused parameter
+to three decimals (same file). Sparsity follows the assay, not the tissue: the median zero
+fraction across the five Xenium (imaging-panel) tasks (COAD, IDC, LUNG, PAAD, SKCM) is **0.29**,
+against **0.61** across the five Visium (sequencing-panel) tasks (CCRCC, HCC, LYMPH_IDC, PRAD,
+READ) — assay from the `st_technology` column of
+[`sample_metadata.csv`](results/tailored/integrity/sample_metadata.csv), zero fractions from
+[`count_diagnostics.csv`](results/tailored/counts/count_diagnostics.csv).
 
-**4. Negative binomial is the right observation model; zero-inflation buys nothing.** NB beats
-Poisson for **478 of 488** converged genes, and all 500 are overdispersed. ZINB beats NB for only
-**14 of 474** — with median ΔAIC **−2.002**, matching AIC's exact penalty for one unused parameter
-to three decimals. Sparsity follows the assay, not the tissue (median zero fraction 0.29 for
-imaging-based tasks vs 0.61 for sequencing-based).
-[`results/tailored/counts/`](results/tailored/counts)
-
-**5. Slides are identifiable from frozen features, and round 2 established that the signature is
-technical rather than tissue.** A linear probe
-recovers slide identity at **0.980** balanced accuracy under spatial block cross-validation (0.990
-under random splitting), with the nearest-training-spot distance verified to widen 2.83×. Round 1
-could not say what that separability was made of, because patient, resolution and stain batch all
-varied together. Round 2's probes hold the patient fixed and answer it
-([`r4_probes_v2.csv`](r4_probes_v2.csv)): within **one** PRAD patient, across 15 slides at a
-1.02× pixel-size spread, slide identity is still decodable at **0.871–0.949** against 1/15;
-**93–96%** of the confusion mass falls inside a scan session against 46.7% expected; and
-regressing out nuclear count, mean nuclear area and the five CellViT class fractions removes only
-**1.4%** of it, against 17–27% on tasks whose slides come from different patients. So the
-signature is neither tissue composition nor — by the resolution probe above — sampling
-resolution: it is the slide and the scan session. This is the clearest evidence in the repository
-that pathology encoders carry a technical signature independent of tissue. The IDC
-TENX-versus-NCBI probe,
-previously described here as a confound-free institution contrast, is neither confound-free nor an
-institution contrast (both halves were generated by the same company, and the two halves differ in
-scan resolution); at **0.682** balanced accuracy on four slides with **2 of 11** encoders
-distinguishable from chance it is **inconclusive**. The technology (0.994) and cohort-source
-(0.938) probes are confounded by construction — each task is one technology and most sources occur
-in one task only — so they measure tissue, not site.
-[`results/tailored/site_probes/`](results/tailored/site_probes)
-
-**6. Patch geometry must be calibrated per sample.** Patch extents span **163–818 px** across the
-72 samples (scale factor 0.727–3.654), including a factor-of-two difference between two samples of
-the same task and assay, and 7 samples whose source region is *smaller* than 224 px. No constant
-patch size — in pixels or microns — is correct. Validated by reproducing HEST Figure 3.e at
-r = 0.4578 against the paper's 0.47 before any features were built.
-[`results/tailored/morphology/`](results/tailored/morphology)
+**8. θ₁ is sensitive to the morphology build, and the pooled between-donor variance share depends
+on which tasks are pooled.** IDC's slide-level estimand θ₁ (a GATA3 read on NCBI785) moved from
+0.4578 under round 1's morphology build to **0.4106** (log1p) / **0.4209** (raw) under the current
+one, tolerance 1e-3 either way — the same computation, a different input
+([`r6_theta_acceptance.csv`](results/round2/R6_theta/r6_theta_acceptance.csv)); its spot bootstrap
+(200 resamples) gives a 95% interval of **[0.377, 0.472]**
+([`r6_theta_bootstrap_ci.csv`](results/round2/R6_theta/r6_theta_bootstrap_ci.csv)). The
+method-of-moments variance-component estimator recovers simulated donor/slide/spot shares to
+within 1–2% (true 0.5/0.2/1.0, recovered 0.494/0.202/0.998 over 40 simulations,
+[`r6_estimator_validation.csv`](results/round2/R6_variance/r6_estimator_validation.csv)), but the
+donor share itself ranges **0.061–0.393** across tasks
+([`r6_variance_by_task.csv`](results/round2/R6_variance/r6_variance_by_task.csv)) and pooling it
+is not a single number: the directive's own CCRCC+PRAD pairing gives **0.122**, but PRAD's donor
+degrees of freedom is 1 and its raw component is negative for 68% of genes, so that pools one
+well-determined value with a truncated zero; restricting to the two tasks with ≥3 donor degrees of
+freedom and verified labels (CCRCC+LYMPH_IDC) gives **0.376**; pooling all ten tasks gives
+**0.085** ([`r6_pooled_between_donor.csv`](results/round2/R6_variance/r6_pooled_between_donor.csv)).
+See [known limitations 4–5](#known-limitations).
 
 ## Reproducing
 
@@ -217,6 +262,51 @@ python code/scripts/aggregate_results.py           # writes results/summary/
 `_part2` completions. `reorganize_repo.py` resolves that per (head, encoder, task) — the directory
 holding `results_kfold.json` wins, partial task directories are dropped — so `aggregate_results.py`
 walks a fixed tree and reports genuine gaps instead of hiding them behind a naming mismatch.
+
+### Round 2, from cached embeddings
+
+Each script reads `bench_data/` inventory and cached embeddings/results from steps 1–3 above and
+writes to its own `results/round2/<STAGE>/` directory (see that directory's `PROVENANCE.txt`); run
+in this order:
+
+```bash
+python code/scripts/round2_r0_resolution_columns.py     # R0_resolution
+python code/scripts/round2_r1b_heads.py                 # R1b_heads: 12-encoder intercept refit
+python code/scripts/round2_r1b_ladder.py                 #   the four-rung R2 ladder
+python code/scripts/build_r1b_ladder_by_encoder.py        #   per-encoder ladder summary
+python code/scripts/round2_r2_gene_check.py              # R2_fold_hvg: reproduction check
+python code/scripts/round2_r2_fold_hvg.py                 #   per-fold training-only selection
+python code/scripts/round2_r2_rank_supplement.py          #   ranking-only supplement
+python code/scripts/round2_split_v4.py                    # R3_splits: five split designs
+# R5b_audit's donor_audit.csv and its companions were produced by a script that is not
+# present under code/scripts/ in this checkout (see Reproducing note below); its outputs are
+# committed, but it cannot currently be rerun from this repository.
+python code/scripts/round2_r4_probes.py                  # R4_probes
+python code/scripts/round2_r5c_replicate_leak.py          # R5c_leak: generalised replicate leak
+python code/scripts/round2_r5d_confusion.py                #   IDC partner-confusion detail
+python code/scripts/round2_r6_theta.py                    # R6_theta: theta1 and its acceptance
+python code/scripts/build_r6_theta_bootstrap.py            #   spot bootstrap CI
+python code/scripts/round2_r6_donor_variance.py           # R6_variance: nested variance components
+python code/scripts/round2_r7_pergene.py                  # R7_pergene: per-gene decomposition
+python code/scripts/build_summary_tables.py               # results/summary/ tables
+python code/scripts/build_deck_numbers.py                 # results/summary/deck_numbers.csv
+python code/figures/make_all.py                           # figures/deck/fig01-fig07, PNG+PDF
+```
+
+**Note on `R5b_audit`:** its stage `PROVENANCE.txt` names `code/scripts/round2_r5b_audit.py` as
+the producing script, but no file of that name exists under `code/scripts/` in this checkout (nor
+`code/figures/`) — confirmed by a repository-wide search, not merely a missing `ls` hit. The
+stage's eight output files (`donor_audit.csv` and its companions) are committed and current;
+whatever produced them was not committed, or was renamed or removed since. Anyone needing to
+rerun this stage should treat it as **not reproducible from this repository** until the script is
+restored, and should not assume the two donor-audit scripts elsewhere
+(`round2_r6_donor_variance.py`, `round2_provenance_and_dedup.py`) are substitutes — neither
+regenerates `donor_audit.csv`.
+
+`code/figures/make_all.py` renders all seven deck figures at 300 dpi (PNG and PDF) and fails if
+any figure reports a text overlap; see [`figures/deck/README.md`](figures/deck/README.md) for the
+per-figure source and number list, generated from `results/summary/deck_numbers.csv` by
+`code/figures/make_readme.py`.
 
 ## Environment
 
@@ -250,109 +340,97 @@ HEST-1k authors. Each entry names the file that establishes it.
 
 | # | property | established by |
 |---|---|---|
-| 1 | **The ridge penalty is inert.** The benchmark's α leaves the fit essentially unregularised, and Table A13's encoder ranking tracks prediction *width* rather than accuracy. | `results/tailored/alpha/`, Table A13 reproduction |
-| 2 | **The head has no intercept**, so its predictions have training mean zero per gene while `log1p(y)` does not. Pearson hides this; R², CRPS and interval width do not. Median R² is **−0.95**, rising to **−0.16** with an intercept alone. | [`r1b_ladder_by_task.csv`](r1b_ladder_by_task.csv) |
-| 3 | **Per-gene Pearson carries ~1e-3 of solver noise** under the shipped `lsqr` head, up to 3e-3 on four encoders; the head's A2b residual of 0.35 means it is not the ridge solution to any tight tolerance. | [`r1b_solver_sensitivity.csv`](r1b_solver_sensitivity.csv) |
-| 4 | **Scan resolution varies 5.02× across the 72 samples** and is aligned with patient identity in PRAD, SKCM and PAAD, so those shipped patient folds are also resolution folds. The mechanism is not resolution, though: within one patient a 0.0066 µm/px scan-session difference is decodable at 0.977 while a 20% resolution difference is at chance (0.489–0.511), so `pixel_size_um` is a proxy for scan session. | [`r4_probes_v2.csv`](r4_probes_v2.csv), sample metadata |
-| 5 | **Samples within a task do not share a gene panel.** PAAD's three samples share 159 genes against a 919 union; the shipped 50 are the intersection over *all* samples, held-out ones included, so leakage-free selection is not well defined without the held-out slide's panel. | [`r2_panel_heterogeneity.csv`](r2_panel_heterogeneity.csv) |
-| 6 | **COAD's patient labels collapse distinct patients** into one label and leave another sample unlabelled, so COAD's shipped patient split does not separate patients. | [`r3_patient_label_audit.csv`](r3_patient_label_audit.csv) |
-| 7 | **IDC's patient labels split one donor into two.** TENX95 and TENX99 are two 5 µm sections of one resected tumour mass (10x reports `donorCount: 1`), but carry distinct patient labels. Measured cost: **+0.065** within-slide Pearson, **54%** of IDC's whole reported patient gap. | [`r5_idc_replicate_leak.csv`](r5_idc_replicate_leak.csv), [`r5_idc_provenance.md`](r5_idc_provenance.md) |
-| 8 | **READ's "patients" are same-specimen replicate pairs**, so its patient-identity term is a same-specimen term and an upper bound on a patient effect. | [`r3_per_task_terms.csv`](r3_per_task_terms.csv) |
-| 9 | **The IDC gene panels differ between samples.** NCBI785 measures 41 real genes none of the other three measure; NCBI783 adds 8 `antisense_*` probes; only TENX95/TENX99 match. | [`r5_idc_panels_observed.csv`](r5_idc_panels_observed.csv) |
-| 10 | **The scan-resolution differences have no documented cause.** No 10x dataset page, GEO record or published Methods reached in this work states an H&E scanner model or nominal magnification for any IDC sample. | [`r5_idc_provenance.md`](r5_idc_provenance.md) §4.3 |
-| 11 | **Selection-protocol sensitivity of the target list** — see known limitation 1. | [`r2_leakage_summary.csv`](r2_leakage_summary.csv) |
+| 1 | **IDC's TENX95/TENX99 pair is probably one donor, and the question is unresolved.** HEST-bench's `donorCount: 1` and "Replicate 1 / Replicate 2" language belong to the page HEST's `download_page_link1` associates with TENX99 only; TENX95 is attributed to a different product page, three fetches of which returned HTTP 429. The two carry byte-identical 541-entry gene panels — the only such pair in IDC — and 123 of 128 (96.1%) of the TENX slides' classification errors land on the partner against 33.3% expected; but their spot counts differ 2.1-fold (25,080 vs 11,845), which two sections of one imaged area should not show, and Janesick et al. 2023 is the source for neither, since its Xenium runs used the 280-gene breast panel plus 33 add-on genes while both samples carry exactly 280 real genes. The **+0.0652** replicate-leak measurement does not depend on which reading is right. | [`donor_audit.csv`](results/round2/R5b_audit/donor_audit.csv), [`r5d_idc_partner_confusion.csv`](results/round2/R5c_leak/r5d_idc_partner_confusion.csv), [`r5_idc_panels_observed.csv`](results/round2/R5b_audit/r5_idc_panels_observed.csv), [`sample_metadata.csv`](results/tailored/integrity/sample_metadata.csv) |
+| 2 | **COAD's patient labels collapse three distinct patients into one.** TENX147/148/149 are Patient 1/2/5 in the source subseries but share one HEST patient label; TENX111 has no patient label at all. Confirmed upstream at HEST issue #133: a collaborator states it was wrong in v1.1.0 and fixed in v1.3.0, and that this benchmark's splits were deliberately not updated. | [`r3_patient_label_audit.csv`](results/round2/R3_splits/r3_patient_label_audit.csv), [`r5b_issue133_evidence.md`](results/round2/R5b_audit/r5b_issue133_evidence.md) |
+| 3 | **READ's "patients" are same-specimen replicate pairs, not distinct donors.** ZEN36/ZEN40 share specimen A938797 and ZEN48/ZEN49 share specimen A121573 — same block, not merely same patient — so READ's patient-identity term is a same-specimen term and an upper bound on any patient effect. | [`r3_patient_label_audit.csv`](results/round2/R3_splits/r3_patient_label_audit.csv) |
+| 4 | **Samples within a task do not share a gene panel.** PAAD's three samples intersect on 159 genes against a 919-gene union; the shipped 50 targets are the intersection over *all* samples, held-out ones included, so leakage-free selection is not well defined without the held-out slide's panel. IDC's own panels differ too: NCBI785 measures 41 real genes none of the other three measure, and NCBI783 adds 8 `antisense_*` probes. | [`r2_panel_heterogeneity.csv`](results/round2/R2_fold_hvg/r2_panel_heterogeneity.csv), [`r5_idc_panels_observed.csv`](results/round2/R5b_audit/r5_idc_panels_observed.csv) |
+| 5 | **Selection-protocol sensitivity of the target list.** The 50 target genes were variance-ranked over every spot, test folds included; recomputing inside each fold changes the list by roughly half its members and measured Pearson by a mean of +0.0048, up to +0.0441 on the most affected task. | [`r2_leakage_summary.csv`](results/round2/R2_fold_hvg/r2_leakage_summary.csv) |
+| 6 | **Scan resolution is aligned with patient identity in PRAD, SKCM and PAAD**, so those shipped patient folds are also resolution folds — but the mechanism is scan *session*, not sampling resolution: within one PRAD patient a 0.0066 µm/px session difference is decodable at up to 0.991, while a 20% resolution difference in a different patient is at chance (0.489–0.511 against 0.5). | [`resolution_by_task.csv`](results/round2/R0_resolution/resolution_by_task.csv), [`r4_probes_v2.csv`](results/round2/R4_probes/r4_probes_v2.csv) |
+| 7 | **The ridge penalty is inert, and Table A13's raw-head ranking tracks embedding width.** At the benchmark's α = 100/(d·n_genes) (0.0078 at d=256) the Gram matrix at raw width is ill-conditioned (condition number ≈3.0×10¹⁵ at 1536 dimensions, against ≈544 after PCA-256), and Spearman(width, raw-head score) is −0.950 against +0.727 on the PCA head. | [`alpha_sweep.csv`](results/tailored/regularization/alpha_sweep.csv), [`r8_width_correlations.csv`](results/round2/R8_raw_heads/r8_width_correlations.csv) |
+| 8 | **The benchmark head has no intercept.** Its predictions have training-mean zero per gene while `log1p(y)` does not; Pearson hides this, R² does not. Pooled fold-median R² is −0.953 as shipped, −0.155 with an intercept alone. | [`r1b_ladder_pooled.csv`](results/round2/R1b_heads/r1b_ladder_pooled.csv) |
+| 9 | **Per-gene Pearson under the shipped `lsqr` solver carries measurable solver noise.** Median per-gene noise across encoder–task cells is 0.0005, rising to 0.0276 for the single noisiest gene (PAAD); the shipped head's A2b residual reaches 0.352 (CONCH v1.5), meaning it is not the ridge solution to any tight tolerance, which is why round 2's Topic-A work builds on the float64 `cholesky` head instead. | [`r1b_solver_sensitivity.csv`](results/round2/R1b_heads/r1b_solver_sensitivity.csv), [`acceptance__conch_v15.csv`](results/round2/R1b_heads/acceptance__conch_v15.csv) |
+| 10 | **Nine of the 72 samples' donor labels cannot be verified against any source outside HEST, and five are contradicted by one.** A systematic audit against 10x/GEO/journal sources classified 58 of 72 sample-level donor labels as verified, 9 as unverifiable, and 5 as contradicted. | [`donor_audit.csv`](results/round2/R5b_audit/donor_audit.csv) |
 
-Entries 4 through 11 concern the benchmark's *design and metadata* rather than its code, and 6, 7
-and 9 are the candidates for reporting upstream.
+Properties 2, 3 and 10 are the strongest candidates for reporting upstream; property 1 is not
+reported upstream while the attribution stays unresolved (see [known limitation 3](#known-limitations)).
 
 ## Known limitations
 
 1. **Selection-protocol sensitivity of the target list.** The 50 target genes per task were
    variance-ranked over *every* spot, test folds included — a property of the shipped benchmark
-   data. Recomputing the ranking inside each fold changes the list by roughly half its members and
-   changes measured Pearson by +0.009 on average, up to +0.044 on individual tasks
-   ([`r2_leakage_summary.csv`](r2_leakage_summary.csv)). This is **not** reported as leakage:
-   selection acts *through* which genes are chosen, so gene-set composition is the mechanism rather
-   than a confound, and no design comparing two different gene lists can separate the two. On four
-   Xenium tasks a training-only selection can name genes the held-out slide does not measure at all.
+   data. Recomputing the ranking inside each fold changes the list by roughly half its members
+   (mean 25.2 of 50 genes shared) and changes measured Pearson by a mean of **+0.0048**, up to
+   **+0.0441** on individual tasks
+   ([`r2_leakage_summary.csv`](results/round2/R2_fold_hvg/r2_leakage_summary.csv)). This is
+   **not** reported as leakage: selection acts *through* which genes are chosen, so gene-set
+   composition is the mechanism rather than a confound, and no design comparing two different
+   gene lists can separate the two. On four Xenium tasks a training-only selection can name genes
+   the held-out slide does not measure at all.
 2. **Per-gene Pearson under the faithful head carries solver noise.** The benchmark's `lsqr` head
-   leaves about 1e-3 of run-to-run noise in a per-gene Pearson for most encoders and up to 3e-3 for
-   `conch_v1`, `conch_v15`, `ctranspath` and `virchow`, so a per-gene value should not be quoted
-   beyond three decimals; task-level means, averaging 50 genes, are unaffected at the precision
-   Table 1 reports. Relatedly, the faithful head's A2b residual of **0.35** means its predictions
-   are not the ridge solution to any tight tolerance, which is why the Topic A work builds on
-   `intercept_f64` rather than on the shipped head
-   ([`r1b_solver_sensitivity.csv`](r1b_solver_sensitivity.csv)).
-3. **The R² ladder's scale rung is an upper bound, not an achievable gain.** It uses the test
-   fold's own optimal ρ, so the +0.070 it reports is the most any level-and-scale recalibration
-   could recover; what a calibration fitted on training or calibration data actually delivers is
-   necessarily less ([`r1b_ladder_by_task.csv`](r1b_ladder_by_task.csv)).
-4. **Across-task shift is not a scalar.** Even with training volume matched it varies monotonically
+   leaves a median of about 0.0005 per-gene noise, rising to 0.0276 for the single noisiest gene
+   ([`r1b_solver_sensitivity.csv`](results/round2/R1b_heads/r1b_solver_sensitivity.csv)).
+   Relatedly, the faithful head's A2b residual reaches **0.352** (CONCH v1.5,
+   [`acceptance__conch_v15.csv`](results/round2/R1b_heads/acceptance__conch_v15.csv)), meaning its
+   predictions are not the ridge solution to any tight tolerance, which is why the Topic A work
+   builds on the float64 `cholesky` head rather than on the shipped one.
+3. **The IDC same-donor attribution is unresolved.** The evidence is genuinely mixed — identical
+   541-entry panels and 96.1% of TENX misclassifications landing on the partner slide, against a
+   2.1-fold spot-count difference and Janesick et al. 2023 being the source for neither sample —
+   and the page that would settle it returned HTTP 429 on all three fetch attempts, spaced
+   unevenly (175 minutes, then 12 minutes) rather than the intended even spacing, so this is weaker
+   evidence of a persistent block than three properly spaced failures would be. The **+0.0652**
+   replicate-leak measurement does not depend on the label; the authors' draft issue carries a
+   blocking note on this item and has not been sent
+   ([`donor_audit.csv`](results/round2/R5b_audit/donor_audit.csv),
+   [`round2_closeout_report.md`](docs/round2_closeout_report.md)).
+4. **Nine of the 72 samples' donor labels cannot be verified against any source outside HEST, and
+   five are contradicted by one.** A systematic audit against 10x/GEO/journal sources classified
+   58 of 72 sample-level donor labels as verified, 9 as unverifiable, and 5 as contradicted
+   ([`donor_audit.csv`](results/round2/R5b_audit/donor_audit.csv)). The variance-component and θ₁
+   work in finding 8 is built on these labels; the 9 unverifiable and 5 contradicted samples are a
+   standing source of uncertainty in any donor-level quantity.
+5. **The variance-component shares have no bootstrap or other interval.** θ₁ has a 200-resample
+   spot bootstrap ([`r6_theta_bootstrap_ci.csv`](results/round2/R6_theta/r6_theta_bootstrap_ci.csv)),
+   but the per-task donor/slide/spot variance shares
+   ([`r6_variance_by_task.csv`](results/round2/R6_variance/r6_variance_by_task.csv)) and the three
+   pooled between-donor definitions
+   ([`r6_pooled_between_donor.csv`](results/round2/R6_variance/r6_pooled_between_donor.csv)) are
+   point estimates only; the method-of-moments estimator is validated against simulation
+   ([`r6_estimator_validation.csv`](results/round2/R6_variance/r6_estimator_validation.csv)), not
+   against a resampled interval on the real data. Nor does the decomposition carry any nested-ANOVA
+   diagnostics (F-tests, residual checks, a normality assumption on the random effects) — the
+   variance shares are method-of-moments point estimates and nothing in the pipeline tests whether
+   the nested model itself fits.
+6. **The session-signature result rests on one patient.** Finding 3's session/resolution
+   separation ([`r4_probes_v2.csv`](results/round2/R4_probes/r4_probes_v2.csv),
+   [`r6_prad_session_variance.csv`](results/round2/R6_variance/r6_prad_session_variance.csv)) holds
+   the patient fixed within PRAD patient 2, the only task and patient with two scan sessions and
+   enough slides to test it; it has not been replicated in a second patient or a second task.
+7. **Across-task shift is not a scalar.** Even with training volume matched it varies monotonically
    with in-domain sample size, so any single number describes the reference task chosen.
-5. **There is no clean institution contrast in HEST-bench, and the IDC one has been withdrawn.**
-   The contrast used in round 1 — TENX95/TENX99 against NCBI783/NCBI785 within IDC — was labelled
-   "differing only in source institution." Both halves were in fact generated by 10x Genomics (the
-   NCBI pair is the GEO deposit of Janesick et al. 2023, whose authors are 10x staff), and they
-   also differ in scan resolution (0.2125 µm/px against 0.274 and 0.364). The four per-slide gaps
-   are asymmetric in the direction a resolution explanation predicts, not the symmetric pattern an
-   institution effect would give (gaps from
-   [`docs/round1_final_stage_report.md`](docs/round1_final_stage_report.md); pixel sizes from
-   [`sample_metadata.csv`](results/tailored/integrity/sample_metadata.csv)):
-
-   | held-out slide | µm/px | gap (source seen − unseen) |
-   |---|---|---|
-   | NCBI783 | 0.274 | 0.002 |
-   | NCBI785 | 0.364 | 0.014 |
-   | TENX95 | 0.2125 | 0.052 |
-   | TENX99 | 0.2125 | 0.099 |
-
-   The mean of these four, 0.0419, is therefore **not** reported as a site-shift effect. The
-   correct description of the contrast is "novel slide, same generating lab, different scan
-   resolution." An institution axis needs full HEST-1k, not the benchmark subset.
-6. **Head coverage is uneven across encoders.** `pca_ridge` has all 12. `raw_ridge` now has
-   all 12 as well — R8 added H-optimus-1's ten task cells
-   ([`r8_hoptimus1_raw_ridge_by_task.csv`](results/round2/R8_raw_heads/r8_hoptimus1_raw_ridge_by_task.csv)).
-   `raw_xgb` has 11, missing H-optimus-1 by the decision in item 8. `pca_xgb` has 1
+8. **Head coverage is uneven across encoders and across summary files.** `pca_ridge` has all 12 in
+   [`results_encoder.csv`](results/summary/results_encoder.csv). `raw_ridge` has 11 there;
+   H-Optimus-1's ten `raw_ridge` task cells were measured separately in round 2
+   ([`r8_hoptimus1_raw_ridge_by_task.csv`](results/round2/R8_raw_heads/r8_hoptimus1_raw_ridge_by_task.csv),
+   0.2590 average over all ten tasks) but have not been folded into
+   `results_encoder.csv`, so the headline table above still shows H-Optimus-1's `raw_ridge` cell as
+   "—". `raw_xgb` has 11, missing H-Optimus-1 by the decision in item 9. `pca_xgb` has 1
    (`resnet50`), by design.
-7. **Stage 5 training has not run** — CUDA-only against a saturated GPU queue.
-
-8. **`raw_xgb` for H-optimus-1 was deliberately not run.** All ten of its `raw_xgb` task cells are
-   missing, and this is a decision rather than an omission. The falsification test it would have
-   contributed to is settled by `raw_ridge` alone, where H-optimus-1 is best of twelve on
-   `pca_ridge` (0.3891) and 7th of twelve on `raw_ridge` (0.2590), with Spearman −0.95 between
-   embedding width and raw-head score reversing to +0.73 once PCA equalises width at 256
-   ([`r8_raw_head_leaderboard.csv`](r8_raw_head_leaderboard.csv)). The cost of confirming the same
-   conclusion on a second head was measured before stopping: **70 minutes per split, so about 34
-   CPU-hours for the 29 splits**, against an 8-hour wall. A future session wanting it should
-   fan out ten per-task jobs rather than submit one long one — this queue schedules short,
-   small-memory jobs far sooner, which is the same lesson as limitation 9.
-
-9. **Resource asks were oversized for most of round 2, and that cost queue time.** `sacct` over the
-   round shows the heaviest job peaked at **8.8 GB on 4 CPUs**; asks of 64 GB and 8 CPUs sat at
-   `(Priority)` for 5.5 hours while every right-sized job ran. Size from the accounting record,
-   not from intuition.
-
-10. **The IDC same-donor attribution is unresolved, and the round-2 close did not resolve it.**
-    The `donorCount: 1` and "Replicate 1 / Replicate 2" language that motivated reading TENX95 and
-    TENX99 as one donor belongs to the "FFPE Human Breast using the Entire Sample Area" page,
-    which HEST's `download_page_link1` associates with **TENX99 only**; TENX95 is attributed to a
-    different product, "FFPE Human Breast with Pre-designed Panel". Three attempts to read that
-    second page returned HTTP 429, and no other route was tried. The evidence is genuinely mixed:
-    the two carry byte-identical 541-entry panels, the only such pair in IDC, and 123 of 128
-    (96.1%) of the TENX slides' classification errors land on the partner against 33.3% expected
-    ([`r5d_idc_partner_confusion.csv`](results/round2/R5c_leak/r5d_idc_partner_confusion.csv));
-    but their spot counts differ 2.1-fold (25,080 against 11,845), which two replicate sections of
-    one imaged area should not show, and Janesick et al. is the source for neither, since its
-    Xenium runs used the 280-gene breast panel plus 33 add-on genes while both samples carry
-    exactly 280 real genes
-    ([`r5_idc_panels_observed.csv`](results/round2/R5b_audit/r5_idc_panels_observed.csv)).
-
-    **The measurement does not depend on the label.** The +0.0652 replicate leak
-    ([`r5c_leak_summary.csv`](results/round2/R5c_leak/r5c_leak_summary.csv)) is what having TENX95
-    in training is worth for predicting TENX99, whatever the relationship between them is called.
-    What is unresolved is the *explanation* — one donor, or two donors sharing a lab, panel and
-    scanner. The draft issue to the HEST authors carries a blocking note on this item and has not
-    been sent.
+9. **`raw_xgb` for H-Optimus-1 was deliberately not run.** All ten of its `raw_xgb` task cells are
+   missing, and this is a decision rather than an omission: the falsification test it would have
+   contributed to is settled by `raw_ridge` alone, where H-Optimus-1 is best of twelve on
+   `pca_ridge` and 7th of twelve on `raw_ridge`, with Spearman −0.950 between embedding width and
+   raw-head score reversing to +0.727 once PCA equalises width at 256
+   ([`r8_raw_head_leaderboard.csv`](results/round2/R8_raw_heads/r8_raw_head_leaderboard.csv)). The
+   cost of confirming the same conclusion on a second head was measured before stopping: **70
+   minutes per split**, so about **34 CPU-hours** for the 29 splits, against an 8-hour wall. A
+   future session wanting it should fan out ten per-task jobs rather than submit one long one —
+   the same right-sizing lesson as item 10.
+10. **Resource asks were oversized for most of round 2, and that cost queue time.** `sacct` over
+    the round shows the heaviest job peaked at **8.8 GB on 4 CPUs**; asks of 64 GB and 8 CPUs sat
+    at `(Priority)` for **5.5 hours** while every right-sized job ran. Size from the accounting
+    record, not from intuition.
+11. **Stage 5 (STFlow) training has not run** — CUDA-only against a saturated GPU queue.
 
 ### Scan resolution
 
@@ -388,7 +466,7 @@ Three consequences, none of which round 1 accounted for:
 
 **What the encoders actually read is the scan session, not the pixel size.** Round 2's probes
 separated the two by holding the patient fixed
-([`r4_probes_v2.csv`](r4_probes_v2.csv)):
+([`r4_probes_v2.csv`](results/round2/R4_probes/r4_probes_v2.csv)):
 
 - Within PRAD **patient 2** — 15 slides, one patient, pixel size spanning only 1.02× — slide
   identity is decodable at **0.871–0.949** against a chance of 1/15, and the two scan sessions

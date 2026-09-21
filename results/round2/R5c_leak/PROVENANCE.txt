@@ -1,0 +1,25 @@
+Round 2, stage R5c_leak — Replicate leak generalised to every known same-donor pair
+
+memo clause     : round2_R5_decisions.md directive 2.2
+repo_commit     : 70262789630a0506059e916efc0304edb2eb3ba2
+scripts         : code/scripts/round2_r5c_replicate_leak.py, code/scripts/round2_r5d_confusion.py
+files           : 6
+per-run provenance: none (single-run stage)
+
+What distinguishes files that look alike:
+
+  r5c_leak_summary.csv carries leak_realised_in_shipped_split, which is the
+  distinction that matters: IDC's folds split its pair so the leak is
+  realised in the published benchmark, READ's folds group each pair so
+  READ's figure is a counterfactual.
+
+Files and checksums (sha256, first 16 hex):
+
+  f5fcdc6bf2f34a1e       204,869  fig_r5c_replicate_leak.png
+  317c2f260aa77fdd           266  r5_idc_replicate_leak.csv
+  2f3f23d9326b7c07           478  r5c_leak_summary.csv
+  b9334a8a7be83afe           838  r5c_replicate_leak.csv
+  344369800dc49e7c           486  r5d_idc_partner_confusion.csv
+  61f7d5bf8bcd087e         1,452  r5d_slide_confusion_summary.csv
+
+plan            : deck_figures_and_repo_update.md section 2.3

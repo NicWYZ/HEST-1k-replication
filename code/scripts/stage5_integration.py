@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Stage 5 pilot, part 1: does STFlow load OUR cached HEST embeddings correctly?
 
+Stage: faithful replication stage 5, fine-tuning integration; never ran (CUDA-only against a saturated GPU queue) and is kept as the unexecuted plan.
+
 Checked before spending GPU time, because integration bugs live here and the GPU queue is 1,266 deep.
 
 WHY REUSING OUR EMBEDDINGS IS LEGITIMATE, not a substitution: STFlow's hest_utils/encoder.py defines

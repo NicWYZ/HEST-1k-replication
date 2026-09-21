@@ -1,0 +1,61 @@
+Round 2, stage R1_intercept — Intercept refit, float32 families only (11 encoders)
+
+memo clause     : round2_execution_plan.md stage R1
+repo_commit     : 70262789630a0506059e916efc0304edb2eb3ba2
+scripts         : code/scripts/round2_head_intercept.py
+files           : 44
+per-run provenance: 11 PROVENANCE__* files in this directory
+
+What distinguishes files that look alike:
+
+  Superseded by R1b_heads, which covers 12 encoders and three solver
+  families. Kept as the record reported at the R1 gate.
+
+Files and checksums (sha256, first 16 hex):
+
+  6781fc0cb62cb29d           753  acceptance__conch_v1.csv
+  bf5e12a1d04aed34           773  acceptance__ctranspath.csv
+  522e40b16fb58df0           757  acceptance__gigapath.csv
+  93ae86a03d10c24b           763  acceptance__hoptimus0.csv
+  a7619724d94e947d           767  acceptance__hoptimus1.csv
+  ac658ca3f0feeebf           741  acceptance__phikon.csv
+  f80f8ce57a6421ec           754  acceptance__resnet50.csv
+  dc9a71a3254496fe           741  acceptance__uni_v1.csv
+  4f52d40700354e80           736  acceptance__uni_v2.csv
+  508b6eb0ff2de936           752  acceptance__virchow.csv
+  56a582ae5922fe40           758  acceptance__virchow2.csv
+  21afda80dfbf16a8           573  faithful_check__conch_v1.csv
+  c6ed771f0c0c9048           579  faithful_check__ctranspath.csv
+  9ebd721e2a687c6d           574  faithful_check__gigapath.csv
+  579e5f7c54b0b8d7           570  faithful_check__hoptimus0.csv
+  56d65cccb4d6ccc0           568  faithful_check__hoptimus1.csv
+  fd71492fae4a14ef           577  faithful_check__phikon.csv
+  fcd992f841797447           575  faithful_check__resnet50.csv
+  d870429e3e2dd2d2           572  faithful_check__uni_v1.csv
+  341e6aa942694344           570  faithful_check__uni_v2.csv
+  910c58ff3cf9f5ac           569  faithful_check__virchow.csv
+  48184471d1a55807           573  faithful_check__virchow2.csv
+  1292172d56b3c833         4,241  head_deltas__conch_v1.csv
+  401ed05cd06c30a0         4,316  head_deltas__ctranspath.csv
+  44728786c6eb046b         4,288  head_deltas__gigapath.csv
+  86775af0326a3ce8         4,320  head_deltas__hoptimus0.csv
+  990241e19bd50a22         4,305  head_deltas__hoptimus1.csv
+  67d3ec1d63c6b51a         4,203  head_deltas__phikon.csv
+  c6f177d2277a7317         4,272  head_deltas__resnet50.csv
+  fb661ea1d848b129         4,219  head_deltas__uni_v1.csv
+  d91e11491c5952ae         4,221  head_deltas__uni_v2.csv
+  78d671d469fc8817         4,222  head_deltas__virchow.csv
+  df3cbf5155b37a9c         4,269  head_deltas__virchow2.csv
+  e45263360d767dbb     1,614,659  head_intercept__conch_v1.csv
+  aa259e9266a4adcf     1,631,473  head_intercept__ctranspath.csv
+  85cdb1db6a9bafef     1,612,046  head_intercept__gigapath.csv
+  bbea496c889e1c8e     1,620,077  head_intercept__hoptimus0.csv
+  99fb957a5f75b631     1,620,836  head_intercept__hoptimus1.csv
+  b2560f9152b6fd34     1,595,806  head_intercept__phikon.csv
+  7752ea74e9b10de6     1,613,879  head_intercept__resnet50.csv
+  ccd11278db960bb3     1,594,521  head_intercept__uni_v1.csv
+  fbf2834ecdb965bf     1,594,335  head_intercept__uni_v2.csv
+  c499d50b5db43e1d     1,602,000  head_intercept__virchow.csv
+  8f47f09e4449bea8     1,611,250  head_intercept__virchow2.csv
+
+plan            : deck_figures_and_repo_update.md section 2.3

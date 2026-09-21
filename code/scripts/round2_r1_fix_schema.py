@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Round 2, R1 follow-up: align the shard schema to round 1, and backfill config_hash.
 
+Stage: R1, one-off schema repair of the prediction parquets after the mixed-type fold column killed a write; kept as the record of the fix.
+
 Two defects found in review of the R1 outputs.
 
 1. SCHEMA. The plan requires the intercept parquets to carry "the same schema as round 1

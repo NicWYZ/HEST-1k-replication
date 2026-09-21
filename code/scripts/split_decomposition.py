@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Stage 4b (v3): four split designs giving a THREE-TERM decomposition, metric held fixed.
 
+Stage: tailored analysis, the v3 split decomposition; extended by round2_split_v4.py, which adds the buffered and size-matched arms.
+
 Supersedes the two-gap version in the handoff and in split_comparison.py. Four defects in that
 version, each of which inflates or confounds a reported gap:
 

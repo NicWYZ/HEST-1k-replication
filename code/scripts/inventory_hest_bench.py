@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 """Stage 1 inventory of MahmoodLab/hest-bench. Verifies structure against the
-HEST replication handoff expectations. Writes INVENTORY.md + inventory.json."""
+HEST replication handoff expectations. Writes INVENTORY.md + inventory.json.
+
+Stage: faithful replication stage 1, inventory of the hest-bench snapshot.
+"""
 import os, json, glob, sys
 import numpy as np, h5py, anndata as ad, pandas as pd
 

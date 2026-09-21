@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Round 2, R2 step 1: reproduce HEST's shipped 50-gene lists exactly.
 
+Stage: R2, verbatim reimplementation of the benchmark's gene selection, run as a gate before the fold comparison (round2_R1_decisions.md directive D2).
+
 Oversight directive D2. The within-fold comparison is uninterpretable unless the
 reimplementation can reproduce the shipped `var_50genes.json`, so this runs first.
 

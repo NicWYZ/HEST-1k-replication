@@ -53,6 +53,11 @@ import sys
 
 # Signed decimals and comma-grouped integers, with an optional trailing percent sign.
 # Unicode minus and en-dash are both used as minus signs in these documents.
+# Resource caps, set from what actually failed rather than guessed: a 32 GB job was
+# OOM-killed reading a cited per-spot parquet.
+MAX_READ_BYTES = 200 * 1024 * 1024
+MAX_CELLS = 3_000_000
+
 NUM_RE = re.compile(r"(?<![\w.])([+\-\u2212\u2013]?\d{1,3}(?:,\d{3})+|[+\-\u2212\u2013]?\d*\.\d+|"
                     r"[+\-\u2212\u2013]?\d+)(%?)")
 
@@ -78,7 +83,10 @@ YEAR_UNIT_AFTER = re.compile(
     r"dimensions?|\u00b5m|um|px|pixels?|GB|MB|encoders?|pairs?|%)\b")
 
 SKIP_TOKEN = re.compile(r"""
-      \d{4}-\d{2}-\d{2}            # dates
+      10\.\d{4,9}/[^\s)\]]+        # DOIs: 10.1038/s41467-023-43458-x parses as 10.1038 and 43458
+    | (?:GSE|GSM|SRR|SRP|PRJNA|SAMN|E-MTAB)[-\d]+   # database accessions
+    | arXiv:\s*\d{4}\.\d{4,5}     # arXiv ids
+    | \d{4}-\d{2}-\d{2}            # dates
     | v?\d+\.\d+\.\d+              # version strings
     | \d+e[+\-]?\d+                # scientific thresholds such as 1e-3
     | [A-Za-z]+\d+                 # identifiers such as TENX95, NCBI785, INT23
@@ -170,10 +178,24 @@ def file_values(path: str):
     """
     ext = os.path.splitext(path)[1].lower()
     vals = []
+    # Size cap. Some documents cite per-spot parquets of several hundred megabytes;
+    # expanding one into a list of every cell plus per-column and group-wise
+    # aggregates exhausted 32 GB and the sweep was OOM-killed. A file over the cap
+    # is reported as skipped rather than silently read, because a claim that would
+    # have resolved only inside a skipped file must not pass as verified -- it
+    # comes back as NOT FOUND with the reason.
+    try:
+        if os.path.getsize(path) > MAX_READ_BYTES:
+            return [("skipped:too-large", None)]
+    except OSError:
+        return []
     if ext in (".csv", ".tsv", ".parquet"):
         import pandas as pd
         df = (pd.read_parquet(path) if ext == ".parquet"
               else pd.read_csv(path, sep="\t" if ext == ".tsv" else ","))
+        # A wide-and-long table also blows up per-cell expansion. Cells are still
+        # read, but the quadratic group-wise pass below is skipped above this size.
+        big = df.shape[0] * max(1, df.shape[1]) > MAX_CELLS
         for col in df.columns:
             s = pd.to_numeric(df[col], errors="coerce").dropna()
             if s.empty:
@@ -190,6 +212,8 @@ def file_values(path: str):
             # quote "mean over the three encoders for probe X", which is a mean of a few
             # rows and is nowhere in the file as a cell or as a whole-column statistic.
             # Restricted to keys with few levels so this stays bounded.
+            if big:
+                continue
             for key in df.columns:
                 if key == col:
                     continue
@@ -246,6 +270,11 @@ def matches(claim: float, dec: int, pct: bool, vals):
     """
     tol = 0.5 * (10 ** -dec) * 1.000001
     for prov, v in vals:
+        # A file that was too large to read contributes a (provenance, None) marker
+        # rather than silently contributing nothing, so the report can say the
+        # claim went unchecked because its source was skipped.
+        if v is None:
+            continue
         if abs(v - claim) <= tol:
             return prov
         # A percentage may be stored as a proportion. Compare on the PERCENT scale, at the
@@ -362,7 +391,7 @@ SKIP_DIRS = {".git", "env", "miniforge3", "node_modules", "__pycache__", ".venv"
              "site-packages", "embeddings", "bench_data"}
 
 
-def make_resolver(search_dirs, max_files=400000):
+def make_resolver(search_dirs, max_files=400000, exclude_dirs=()):
     """Resolve a cited path against the tree, by exact path first then by basename.
 
     Documents in this repository cite files by bare name (`r3_per_task_terms.csv`) while
@@ -374,9 +403,14 @@ def make_resolver(search_dirs, max_files=400000):
     """
     index = {}
     n = 0
+    # exclude_dirs is how the currency check is run: a claim that resolves ONLY
+    # inside superseded/ has matched a retired file, which the plain sweep cannot
+    # distinguish from a live match because two of this repository's retired
+    # files are byte-level re-writes with identical values.
     for d in search_dirs:
         for root, dirs, files in os.walk(d):
-            dirs[:] = [x for x in dirs if x not in SKIP_DIRS and not x.startswith(".")]
+            dirs[:] = [x for x in dirs if x not in SKIP_DIRS and not x.startswith(".")
+                       and x not in exclude_dirs]
             for f in files:
                 if os.path.splitext(f)[1].lower() in (".csv", ".tsv", ".parquet", ".json"):
                     index.setdefault(f, []).append(os.path.join(root, f))
@@ -384,15 +418,25 @@ def make_resolver(search_dirs, max_files=400000):
                     if n > max_files:
                         break
 
+    def blocked(p):
+        """True if any directory component of p is excluded.
+
+        Applied to the direct-path branches as well as the index, because a
+        document cites paths EXPLICITLY -- filtering only the basename index
+        would let a cited superseded/ path resolve and defeat the check.
+        """
+        return bool(exclude_dirs) and any(
+            part in exclude_dirs for part in os.path.normpath(p).split(os.sep))
+
     def resolve(path):
         for c in (path, os.path.basename(path)):
-            if os.path.isfile(c):
+            if os.path.isfile(c) and not blocked(c):
                 return [c]
         for d in search_dirs:
             p = os.path.join(d, path)
-            if os.path.isfile(p):
+            if os.path.isfile(p) and not blocked(p):
                 return [p]
-        return index.get(os.path.basename(path), [])
+        return [p for p in index.get(os.path.basename(path), []) if not blocked(p)]
     return resolve
 
 
@@ -485,10 +529,12 @@ def main():
     # without citing it line by line, so without this the table is invisible to
     # the sweep and 30 checkable claims read as uncited.
     ap.add_argument("--always", action="append", default=[])
+    ap.add_argument("--exclude-dir", action="append", default=[],
+                    help="directory NAME to keep out of the index (e.g. superseded)")
     a = ap.parse_args()
     global ALWAYS
     ALWAYS = list(a.always)
-    resolver = make_resolver(a.search_dir)
+    resolver = make_resolver(a.search_dir, exclude_dirs=set(a.exclude_dir))
     ex = load_exceptions(a.exceptions)
     allrows, stats = [], []
     for d in a.docs:

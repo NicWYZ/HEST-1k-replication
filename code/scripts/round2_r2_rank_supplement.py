@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Round 2, R2 supplement: selection-protocol sensitivity with the GENE SET HELD FIXED.
 
+Stage: R2 supplement, ranking sensitivity on a FIXED gene set (round2_R5_decisions.md directive 2.6).
+
 Why this exists. R2 compared the shipped 50 genes against 50 selected inside each fold, and
 found a gap of +0.009 on average. That gap is NOT interpretable as leakage, because the two
 arms have different targets: they share only about 27 of 50 genes, and the difference in

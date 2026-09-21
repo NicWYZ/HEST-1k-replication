@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Stage 4e gate: reproduce HEST Figure 3.e before any morphology feature is used.
 
+Stage: faithful replication, the Figure 3e acceptance gate.
+
 Paper text (Section 5, Figure 3.e): "we measured the Pearson correlation between the expression
 of GATA3 and nuclear area in NEOPLASTIC cells (Figure 3.e). We observe a moderate correlation
 (R=0.47, P-value < ...)". Two details that a looser reading would get wrong:

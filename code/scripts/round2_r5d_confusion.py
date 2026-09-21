@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Round 2, stage R4: probes v2.
 
+Stage: R5d, the IDC partner-confusion probe (round2_R5_decisions.md directive 2.2).
+
 Three probes, each with its interpretation rule fixed in this docstring BEFORE the run,
 per the plan's acceptance requirement. Probe 4 is a relabelling with no new compute and is
 handled in the report, not here.

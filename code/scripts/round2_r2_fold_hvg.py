@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Round 2, R2 step 2: within-fold gene selection versus the shipped lists.
 
+Stage: R2, per-fold training-only gene selection (round2_R1_decisions.md directive D2).
+
 The shipped 50 target genes per task were variance-ranked over EVERY spot, test folds
 included. A leakage-free evaluation recomputes the ranking inside each fold from training
 samples only. This measures the difference.

@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Round 2, R3: split decomposition v4. Five designs, a grid sweep, per-gene storage.
 
+Stage: R5, corrected donor-grouped split arm after the audit found two samples labelled as separate patients are one donor.
+
 Extends v3 (`code/scripts/split_decomposition.py`). The within-slide metric and the
 training-size matching are carried over UNCHANGED, so v4 must reproduce v3's per-task means
 on the shared designs to within 1e-3; that is the acceptance check.

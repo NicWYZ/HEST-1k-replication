@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Stage 4e (v2): per-spot CellViT morphology features over the ACTUAL patch the encoder saw.
 
+Stage: tailored analysis, per-spot nuclear morphology (v1); superseded by morphology_features_v2.py.
+
 handoff 4e asks for nuclei "within the 112um patch". v1 of this script assigned each nucleus to
 its nearest spot within half the spot-grid pitch. That was wrong in two ways, both found by
 reading the patch HDF5 attributes rather than inferring geometry:

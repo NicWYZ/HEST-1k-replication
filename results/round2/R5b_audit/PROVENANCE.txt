@@ -1,0 +1,35 @@
+Round 2, stage R5b_audit — Donor provenance audit of all 72 samples against sources outside HEST
+
+memo clause     : round2_R5_decisions.md decision 1.2 and directive 2.1
+repo_commit     : 70262789630a0506059e916efc0304edb2eb3ba2
+scripts         : (no single producing script: a source-reading task, not a computation)
+files           : 8
+per-run provenance: none (single-run stage)
+
+What distinguishes files that look alike:
+
+  THERE IS NO round2_r5b_audit.py. This stage was a reading task -- vendor
+  dataset pages, GEO subseries strings and the upstream issue tracker -- so
+  it has no one script to rerun, and an earlier version of this file named a
+  script that does not exist. What makes it reproducible instead:
+  hest_source_map.csv is the per-sample source mapping extracted from HEST's
+  own HEST_v1_1_0.csv (column download_page_link1), donor_audit.csv carries
+  one row per sample with donor_id, donor_label_status and a donor_statement
+  giving the evidence for that row, and the two evidence files are verbatim
+  captures of upstream issues 126 and 133 read through the GitHub API. Nine
+  samples are recorded as unverifiable rather than inferred.
+  docs/r5_idc_provenance.md is the narrative companion. donor_id is the
+  grouping variable R6 and R7 use, so a change here changes those stages.
+
+Files and checksums (sha256, first 16 hex):
+
+  f27d5abb7419df7c       135,943  donor_audit.csv
+  361d00dd79caf315        19,601  hest_source_map.csv
+  bde5b2b8df62badd           208  idc_fetch_log.tsv
+  4e004efaf63d2606           189  r5_idc_panel_pairs.csv
+  fdb41d13cb440361           421  r5_idc_panels_observed.csv
+  5d60c7e6668c92ec           287  r5b_coad_subseries_confirmation.csv
+  752c93ace2356789         3,434  r5b_issue126_evidence.md
+  252def70d156a491         2,460  r5b_issue133_evidence.md
+
+plan            : deck_figures_and_repo_update.md section 2.3

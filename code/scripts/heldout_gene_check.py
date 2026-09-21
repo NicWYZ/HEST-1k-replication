@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Stage 4f: held-out-gene sanity check, with the regularisation confound separated.
 
+Stage: tailored analysis, first look at gene-selection leakage; superseded by round2_r2_fold_hvg.py, which measures selection and ranking separately.
+
 handoff 4f: "for one task, hold out 10 of the 50 genes from the ridge fit and confirm the
 remaining 40 give a comparable average, guarding against per-gene leakage in the HVG selection
 step."

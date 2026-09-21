@@ -1,0 +1,135 @@
+Round 2, stage R1b_heads — Intercept refit including the float64 exact-solver head (12 encoders)
+
+memo clause     : round2_R1_decisions.md Decision 1 and Decision 2
+repo_commit     : 70262789630a0506059e916efc0304edb2eb3ba2
+scripts         : code/scripts/round2_r1b_heads.py, code/scripts/round2_r1b_ladder.py, code/scripts/build_r1b_ladder_by_encoder.py
+files           : 114
+per-run provenance: 26 PROVENANCE__* files in this directory
+
+What distinguishes files that look alike:
+
+  head_intercept__<encoder>.csv holds the two FLOAT32 families;
+  head_intercept__<encoder>__f64.csv holds the float64 family and is the one
+  the ladder and every Topic A quantity are built from. The unsuffixed files
+  also contain a superseded float64 arm from the first pass, which was built
+  on float32-derived features and must not be used; see the commit that
+  added the family argument.
+
+Files and checksums (sha256, first 16 hex):
+
+  fb18b60c2080d964         1,301  acceptance__conch_v1.csv
+  bfc07427094dc62b         1,311  acceptance__conch_v15.csv
+  e386bc39a5f80605           509  acceptance__conch_v15__f64.csv
+  c80904ee3f7d1485           504  acceptance__conch_v1__f64.csv
+  49ded8754776a233         1,324  acceptance__ctranspath.csv
+  09b9eb9a51dcbe59           514  acceptance__ctranspath__f64.csv
+  80b99561fe6f5f08         1,301  acceptance__gigapath.csv
+  f5cba12b55422b49           505  acceptance__gigapath__f64.csv
+  f0854b78ec954c6d         1,310  acceptance__hoptimus0.csv
+  d1f4dcca170bb33a           509  acceptance__hoptimus0__f64.csv
+  87cca0c3c2972714         1,315  acceptance__hoptimus1.csv
+  116bf4f2b323c267           506  acceptance__hoptimus1__f64.csv
+  010a661cc4d58bcb         1,271  acceptance__phikon.csv
+  ea4580a2fdd94596           494  acceptance__phikon__f64.csv
+  054aa18ca3a54a72         1,298  acceptance__resnet50.csv
+  53f7e049d0d1c5e5           506  acceptance__resnet50__f64.csv
+  66586f1dcc5da170         1,279  acceptance__uni_v1.csv
+  5abcf52dd3feea17           497  acceptance__uni_v1__f64.csv
+  32875f6f73e30eff         1,279  acceptance__uni_v2.csv
+  eaf23965deeaf165           496  acceptance__uni_v2__f64.csv
+  cec975105939c33c         1,286  acceptance__virchow.csv
+  ebdd6022969baf45         1,300  acceptance__virchow2.csv
+  51ab8249da044562           506  acceptance__virchow2__f64.csv
+  1460ad3bcc5eff0d           501  acceptance__virchow__f64.csv
+  50f1cdaaf7e0d63d           467  d3_coad_patient_rows.csv
+  02da32b5b65258fc         8,163  d4_pixel_size_check.csv
+  bc85c94e96b71d17           574  faithful_check__conch_v1.csv
+  2ddfd8797844cabc           574  faithful_check__conch_v15.csv
+  9990b79e844e5b90           574  faithful_check__conch_v15__f64.csv
+  196417b80eadad2e           573  faithful_check__conch_v1__f64.csv
+  18aa58eef8d026cd           577  faithful_check__ctranspath.csv
+  ea5423fe5d8af77e           574  faithful_check__ctranspath__f64.csv
+  f6c37eaf4749836a           569  faithful_check__gigapath.csv
+  1c79b7cda9d547a8           576  faithful_check__gigapath__f64.csv
+  579e5f7c54b0b8d7           570  faithful_check__hoptimus0.csv
+  011814b6284a808b           571  faithful_check__hoptimus0__f64.csv
+  3be996fb35eddeb0           571  faithful_check__hoptimus1.csv
+  997a59f023b60993           571  faithful_check__hoptimus1__f64.csv
+  ecb3e19919f579fc           579  faithful_check__phikon.csv
+  2010eb5cf8f49c1c           576  faithful_check__phikon__f64.csv
+  fcd992f841797447           575  faithful_check__resnet50.csv
+  6ff800649dc79617           568  faithful_check__resnet50__f64.csv
+  65cceb6f7455be5b           565  faithful_check__uni_v1.csv
+  4e1b6d86c9ce4018           574  faithful_check__uni_v1__f64.csv
+  a0d25d28d6a7d8d3           568  faithful_check__uni_v2.csv
+  2547667f8065af83           569  faithful_check__uni_v2__f64.csv
+  0a99b34824beef3b           568  faithful_check__virchow.csv
+  30f7a05e0b576e7b           568  faithful_check__virchow2.csv
+  c216020ad8881a05           570  faithful_check__virchow2__f64.csv
+  b88544cc633bc0e5           571  faithful_check__virchow__f64.csv
+  41810d628faa0e21         6,170  head_deltas__conch_v1.csv
+  df796d5c0479c8bf         6,176  head_deltas__conch_v15.csv
+  11b77ba2e4361cbb         2,460  head_deltas__conch_v15__f64.csv
+  725214b3d0e8b3aa         2,432  head_deltas__conch_v1__f64.csv
+  c553a1835b36ec10         6,249  head_deltas__ctranspath.csv
+  37e3ca845b3565c4         2,493  head_deltas__ctranspath__f64.csv
+  6a76991161f88937         6,233  head_deltas__gigapath.csv
+  cc5bb245787f1c20         2,444  head_deltas__gigapath__f64.csv
+  e44ff940291d2ec0         6,275  head_deltas__hoptimus0.csv
+  fbd2bbc264aa6bee         2,468  head_deltas__hoptimus0__f64.csv
+  2afde4404496f203         6,258  head_deltas__hoptimus1.csv
+  fd36e0b1ad8b34a5         2,465  head_deltas__hoptimus1__f64.csv
+  10ec6767ce32a9da         6,129  head_deltas__phikon.csv
+  ae3d5b288aaa0ccd         2,370  head_deltas__phikon__f64.csv
+  1bbe0f45dfe41ed1         6,213  head_deltas__resnet50.csv
+  c1593f935ac1cf9a         2,433  head_deltas__resnet50__f64.csv
+  ba0cdd93f9700459         6,173  head_deltas__uni_v1.csv
+  166845e11c48399e         2,387  head_deltas__uni_v1__f64.csv
+  2e7ad646ffc7f8e7         6,153  head_deltas__uni_v2.csv
+  4236410e6186825a         2,383  head_deltas__uni_v2__f64.csv
+  fed5ad062160fe30         6,171  head_deltas__virchow.csv
+  e532d6a6e2ad02b3         6,211  head_deltas__virchow2.csv
+  a9dc656208d41fd6         2,447  head_deltas__virchow2__f64.csv
+  152d4d67a81ec6f9         2,408  head_deltas__virchow__f64.csv
+  387f5a78f9b9a4f9     2,925,404  head_intercept__conch_v1.csv
+  a0a0fbeefe6bc44f     2,939,534  head_intercept__conch_v15.csv
+  44fb6ffa513aca4a       982,455  head_intercept__conch_v15__f64.csv
+  55f9eaec230e634f       978,096  head_intercept__conch_v1__f64.csv
+  bfb2729a7afe1172     2,952,355  head_intercept__ctranspath.csv
+  7756e883213a267d       986,636  head_intercept__ctranspath__f64.csv
+  2e94d0397757b103     2,925,487  head_intercept__gigapath.csv
+  f4b8e19d8fcdadcd       977,361  head_intercept__gigapath__f64.csv
+  6a086c6346f9d76d     2,935,021  head_intercept__hoptimus0.csv
+  e0c72d4296bed0d8       981,256  head_intercept__hoptimus0__f64.csv
+  60950b742df05166     2,935,893  head_intercept__hoptimus1.csv
+  73410236722dbce1       981,091  head_intercept__hoptimus1__f64.csv
+  0e0d80591880f8b5     2,899,359  head_intercept__phikon.csv
+  1ec05ea40efb0b1e       969,173  head_intercept__phikon__f64.csv
+  4c2cc691c9f3a945     2,925,102  head_intercept__resnet50.csv
+  e98ad4ca00441b53       977,928  head_intercept__resnet50__f64.csv
+  1aa9e61c72e88129     2,897,495  head_intercept__uni_v1.csv
+  03ff3ed9fc70fe04       968,256  head_intercept__uni_v1__f64.csv
+  6f8e55b6a2fec6ff     2,896,950  head_intercept__uni_v2.csv
+  d21532fd2a275d49       968,599  head_intercept__uni_v2__f64.csv
+  26ff1786e21802fe     2,908,189  head_intercept__virchow.csv
+  080a24af8f85a7f1     2,923,139  head_intercept__virchow2.csv
+  109f5fe8a2417d5e       976,163  head_intercept__virchow2__f64.csv
+  9a85ed36a33cad0b       971,991  head_intercept__virchow__f64.csv
+  414554dcf59c8c05         1,425  r1b_ladder_by_encoder.csv
+  5ee961cab37da3e5         1,340  r1b_ladder_by_task.csv
+  23ff03ca50ec1ce6           311  r1b_ladder_pooled.csv
+  dcef093a983fae5d         2,930  r1b_solver_sensitivity.csv
+  e164681627cbd0b5           751  solver_sensitivity__conch_v1.csv
+  ae47b2827ca86cc7           761  solver_sensitivity__conch_v15.csv
+  6ba182f32b6784de           783  solver_sensitivity__ctranspath.csv
+  08ea22e2af990749           776  solver_sensitivity__gigapath.csv
+  b2471301761b0f63           784  solver_sensitivity__hoptimus0.csv
+  24eaf6113e496b4b           788  solver_sensitivity__hoptimus1.csv
+  55fd1c68234566b4           751  solver_sensitivity__phikon.csv
+  63ca80595fc82258           777  solver_sensitivity__resnet50.csv
+  c9a78e9166b87ad3           757  solver_sensitivity__uni_v1.csv
+  f49dfad340bd06f9           759  solver_sensitivity__uni_v2.csv
+  7dfe4c93eba7bb7b           755  solver_sensitivity__virchow.csv
+  55a6c606cd52f6de           770  solver_sensitivity__virchow2.csv
+
+plan            : deck_figures_and_repo_update.md section 2.3

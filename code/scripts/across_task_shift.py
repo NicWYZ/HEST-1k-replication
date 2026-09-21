@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Stage 4b(iii), arm B: across-task shift on a SHARED gene panel.
 
+Stage: tailored analysis, cross-task generalisation.
+
 Handoff 4b(iii) asks to "also run across-task, training on all Xenium tasks and testing on a
 held-out Xenium task". A first attempt found 0 genes shared across the five Xenium tasks' top-50
 variance-ranked lists and reported the arm infeasible. That was the wrong gene set to test: the

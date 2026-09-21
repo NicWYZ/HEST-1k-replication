@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Round 2, R3: split decomposition v4. Five designs, a grid sweep, per-gene storage.
 
+Stage: R5, first replicate-leak measurement on IDC; superseded for coverage by round2_r5c_replicate_leak.py, which extends the same design to READ.
+
 Extends v3 (`code/scripts/split_decomposition.py`). The within-slide metric and the
 training-size matching are carried over UNCHANGED, so v4 must reproduce v3's per-task means
 on the shared designs to within 1e-3; that is the acceptance check.

@@ -1,0 +1,45 @@
+Round 2, stage R3_splits — Five split designs, buffered blocks, leave-one-slide-out
+
+memo clause     : round2_execution_plan.md stage R3
+repo_commit     : 70262789630a0506059e916efc0304edb2eb3ba2
+scripts         : code/scripts/round2_split_v4.py
+files           : 21
+per-run provenance: 6 PROVENANCE__* files in this directory
+
+What distinguishes files that look alike:
+
+  replicate_leak_v2__<encoder>.csv is the current file: IDC and READ, six
+  slides. replicate_leak__<encoder>.csv covered IDC only and is under
+  superseded/.
+
+Retired to superseded/:
+
+  replicate_leak__hoptimus0.csv
+  replicate_leak__resnet50.csv
+  replicate_leak__uni_v2.csv
+
+Files and checksums (sha256, first 16 hex):
+
+  aba7608b31d1d933        45,624  buffer_diagnostics__hoptimus0.csv
+  2758bb087bc6c8ca        44,760  buffer_diagnostics__resnet50.csv
+  99d65b4d86ab6f8e        43,032  buffer_diagnostics__uni_v2.csv
+  3ebe3722e4b5f422         2,380  donor_out__hoptimus0.csv
+  5587f6141f1f03c4         2,369  donor_out__resnet50.csv
+  de1df6d5749e9ff9         2,326  donor_out__uni_v2.csv
+  814c2999224f5071     4,058,316  pergene__hoptimus0.parquet
+  a13c085341d55248     4,058,520  pergene__resnet50.parquet
+  22b54a8f63e1003d     4,057,969  pergene__uni_v2.parquet
+  6cb0558d54c214e0        17,811  pergene_replicate_leak__hoptimus0.parquet
+  f53eb5f1e1d1cc8d        17,806  pergene_replicate_leak__resnet50.parquet
+  8c00b3f8f4adf3f8        17,796  pergene_replicate_leak__uni_v2.parquet
+  a0c6448f57f9f0d8           380  r3_decomposition_terms.csv
+  aa9791155dff02d8         1,317  r3_patient_label_audit.csv
+  7875a16670aba950           623  r3_per_task_terms.csv
+  596872d1bd69bd66         7,353  replicate_leak_v2__hoptimus0.csv
+  935d10cb537070fd         7,357  replicate_leak_v2__resnet50.csv
+  c08bd48e6e51c442         7,201  replicate_leak_v2__uni_v2.csv
+  c88683a1b4efe070       357,974  split_v4__hoptimus0.csv
+  beddcbc9e4567ffc       356,146  split_v4__resnet50.csv
+  82a60595028864c1       351,815  split_v4__uni_v2.csv
+
+plan            : deck_figures_and_repo_update.md section 2.3

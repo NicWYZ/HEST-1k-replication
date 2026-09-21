@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Prove that inference_dump.pkl rows can be mapped back to (sample_id, barcode).
 
+Stage: faithful replication stage 4, row-identity check between the joined tables and their sources.
+
 inference_dump.pkl stores only preds_all / targets_all. benchmark.py builds the test
 matrix by reading barcodes from each test sample's embedding HDF5 and indexing
 adata[barcodes], so row order == concatenation of embedding-file barcode order over the

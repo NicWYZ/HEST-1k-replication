@@ -1,0 +1,41 @@
+Round 2, stage R2_fold_hvg — Gene-selection reproduction and per-fold training-only selection
+
+memo clause     : round2_R1_decisions.md directive D2 and round2_execution_plan.md stage R2
+repo_commit     : 70262789630a0506059e916efc0304edb2eb3ba2
+scripts         : code/scripts/round2_r2_gene_check.py, code/scripts/round2_r2_fold_hvg.py, code/scripts/round2_r2_rank_supplement.py
+files           : 23
+per-run provenance: 6 PROVENANCE__* files in this directory
+
+What distinguishes files that look alike:
+
+  r2_leakage_summary.csv measures the SELECTION effect (which genes);
+  r2_rank_supplement.csv isolates the RANKING effect on a fixed gene set.
+  They answer different questions and both are current.
+
+Files and checksums (sha256, first 16 hex):
+
+  32661c824ec15038           621  d2_reproduction_check__adata.csv
+  16ff2ab7d07ceaaf        14,284  fold_hvg__hoptimus0.csv
+  6680c7e7564d09ec        14,277  fold_hvg__resnet50.csv
+  f05a1133a45a0837        14,182  fold_hvg__uni_v2.csv
+  01fd48d66fef5b43        14,227  fold_hvg__virchow.csv
+  6c757a1e602e5f55           486  panel_heterogeneity__hoptimus0.csv
+  6c757a1e602e5f55           486  panel_heterogeneity__resnet50.csv
+  6c757a1e602e5f55           486  panel_heterogeneity__uni_v2.csv
+  6c757a1e602e5f55           486  panel_heterogeneity__virchow.csv
+  1e39fe584fd0e426           860  r2_leakage_summary.csv
+  6c757a1e602e5f55           486  r2_panel_heterogeneity.csv
+  3b286b7b2eef9ac9         2,791  r2_rank_supplement.csv
+  47f7077db3da5e88         2,812  rank_supplement__hoptimus0.csv
+  7904b9b94dc63a84           469  reproduced__adata__CCRCC.json
+  7561694ee96cd2d0           459  reproduced__adata__COAD.json
+  db0b7f5bee19cb63           474  reproduced__adata__HCC.json
+  a1ebf65cd82a700b           457  reproduced__adata__IDC.json
+  2b98217cf4a3a321           452  reproduced__adata__LUNG.json
+  5625bb9dd1bbc36c           472  reproduced__adata__LYMPH_IDC.json
+  c09959130a59c07b           446  reproduced__adata__PAAD.json
+  fc132527ba972c2d           462  reproduced__adata__PRAD.json
+  6ec7c33820209e04           465  reproduced__adata__READ.json
+  f2cbf87006c77d8d           448  reproduced__adata__SKCM.json
+
+plan            : deck_figures_and_repo_update.md section 2.3

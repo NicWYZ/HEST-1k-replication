@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Reorganise the HEST replication repository into a canonical layout.
 
+Stage: round-1 closeout, one-off repository reorganisation; kept as the record of how the current layout was produced.
+
 WHY. The repo grew organically and accumulated four problems:
   1. Experiment directory names were inconsistent. HEST's benchmark.py names output
      `<exp_code>::<timestamp>`, and exp_code was chosen ad hoc per wave, so the same

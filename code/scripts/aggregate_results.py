@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 """Aggregate the faithful-run results into the official summary tables.
 
+Stage: faithful replication, results aggregation (HEST_replication_handoff.md stage 4).
+
 INPUT   results/faithful/<head>/<encoder>/<task>/results_kfold.json
 OUTPUT  results/summary/results_split.csv    head x encoder x task x split -> per-fold Pearson
         results/summary/results_task.csv     head x encoder x task        -> mean/std over folds
