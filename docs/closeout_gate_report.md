@@ -32,6 +32,7 @@ wrote that message.
 | `docs/round2_R5_stage_report.md` | 162 | 72 | 90 | 0 |
 | `docs/round2_R3_stage_report.md` | 257 | 158 | 99 | 0 |
 | `docs/round2_R0_R1_stage_report.md` | — | — | — | **not assessed** |
+| **total, the 14 assessed** | **1484** | **1047** | **437** | **0** |
 
 The uncited column is **zero for every document**, which is the one property the sweep
 was built to enforce: there is no claim anywhere whose enclosing subsection cites no file
@@ -71,8 +72,16 @@ per-claim classification, and it should not be read as one.
 
 **So the instruction's "zero unresolved" is met for the README and the deck outline, and
 is not met for the repository as a whole.** I am reporting that rather than closing the
-gap, because closing it honestly means triaging roughly 350 unresolved entries across
-twelve documents, and guessing at them would put wrong reasons into a durable record.
+gap, because closing it honestly means triaging **437 unresolved entries across eleven
+documents**, and guessing at them would put wrong reasons into a durable record.
+
+That figure is the column sum, and `claims − verified = unresolved` holds exactly
+(1484 − 1047 = 437), which is the check that it is a count rather than an impression.
+The first version of this file said "roughly 350 across twelve documents" — an estimate
+I made instead of adding the column, understating the problem by 87 entries, or 20%, in
+the file written to correct an inaccurate accounting. Eleven documents have unresolved
+claims, not twelve; the twelfth is the unassessed one, whose count is unknown rather
+than non-zero.
 
 ## 3. The three-paragraph report section 2.6 asks for
 
@@ -102,8 +111,8 @@ stray archive left in the tree by a failed bundling job was moved rather than de
 `R5b_audit` provenance entry was corrected twice: it first named a script that does not
 exist, because that stage was a source-reading task with no script to rerun.
 
-**What could not be brought up to date.** The gate above: one document not assessed, and
-roughly 350 unresolved claims across twelve documents untriaged. Beyond the gate: the four
+**What could not be brought up to date.** The gate above: one document not assessed,
+and 437 unresolved claims across eleven documents untriaged. Beyond the gate: the four
 round-2 decision memos, the results synthesis and the literature landscape are Nicolas's
 to supply and are listed as pending in `docs/README.md` rather than reconstructed;
 `code/scripts/round2_r5b_audit.py` does not exist and the R5b audit is therefore not
