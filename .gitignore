@@ -58,3 +58,7 @@ code/stage5/
 # per-task morphology parquets. Scripts write large intermediates here (DATA) and their small
 # summary CSVs to results/tailored/<question> (OUT). See code/scripts/reorganize_repo.py.
 instrumentation/
+
+# macOS AppleDouble sidecars, created when a bundle is tarred on a Mac
+._*
+.DS_Store
