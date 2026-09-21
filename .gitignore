@@ -62,3 +62,7 @@ instrumentation/
 # macOS AppleDouble sidecars, created when a bundle is tarred on a Mac
 ._*
 .DS_Store
+
+# job scratch left by the closeout sweep
+sweep_final.tsv
+out_sweep_final.tsv
