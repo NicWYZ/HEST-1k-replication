@@ -1,0 +1,13 @@
+Round 2 R1b - ladder by encoder and pooled
+slurm_job_id    : NA
+node            : NA
+date            : 2026-09-20T23:26:21-0400
+repo_commit     : 30029df5da9168c12316c645b4b6343548c843d6
+script          : code/scripts/build_r1b_ladder_by_encoder.py
+methodology     : imports ladder() from code/scripts/round2_r1b_ladder.py, the
+                  script that produced r1b_ladder_by_task.csv, so the three files
+                  are consistent by construction
+pythonhashseed  : unset
+inputs          : 12 x head_intercept__<encoder>__f64.csv
+identity_check  : median 3.096e-14 max 4.052e-11
+plan            : deck_figures_and_repo_update.md section 1.2 fig05

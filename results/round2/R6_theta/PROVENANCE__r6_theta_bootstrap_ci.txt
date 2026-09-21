@@ -1,0 +1,14 @@
+Round 2 R6 - spot-bootstrap 95% intervals for theta1
+slurm_job_id    : NA
+node            : NA
+date            : 2026-09-20T23:34:34-0400
+repo_commit     : 30029df5da9168c12316c645b4b6343548c843d6
+script          : code/scripts/build_r6_theta_bootstrap.py
+command_line    : code/scripts/build_r6_theta_bootstrap.py
+task/gene       : IDC/GATA3
+seed/n_boot     : 1/200
+pythonhashseed  : unset
+estimand        : Pearson(neo_area_mean, raw counts) per slide
+estimator_check : bootstrap SD reproduces se_hat_raw in
+                  theta_by_slide.parquet to 0.0e+00; point estimate to 0.0e+00
+plan            : deck_figures_and_repo_update.md section 1.2 fig07

@@ -65,6 +65,18 @@ SKIP_BEFORE = re.compile(
 # Stage and directive identifiers written bare in a table cell or at the start of a line:
 # "| 2.7 IDC confusion |", "2.3 asks for ...". They look like data and are not.
 SKIP_BARE_REF = re.compile(r"^\s*\|?\s*\d\.\d+\s")
+# A bare four-digit number in 1900-2100 is read as a calendar year rather than a
+# measurement, UNLESS a unit or countable noun follows it. Enumerating venues and
+# month names was tried first and kept missing cases ("Nat Methods 2026", "Jan
+# 2026"); the range test with a unit guard is both shorter and harder to evade.
+# Counts of that magnitude are comma-grouped in these documents ("1,229 samples",
+# "2,195 spots"), so they are matched by a different branch of NUM_RE and are
+# unaffected.
+YEAR_RE = re.compile(r"^(19|20)\d{2}$")
+YEAR_UNIT_AFTER = re.compile(
+    r"^\s*(spots?|genes?|cells?|samples?|slides?|rows?|folds?|patients?|donors?|"
+    r"dimensions?|\u00b5m|um|px|pixels?|GB|MB|encoders?|pairs?|%)\b")
+
 SKIP_TOKEN = re.compile(r"""
       \d{4}-\d{2}-\d{2}            # dates
     | v?\d+\.\d+\.\d+              # version strings
@@ -94,6 +106,13 @@ def numbers_in(text: str):
                for t in SKIP_TOKEN.finditer(window)):
             continue
         if re.match(r"^\s*(?:st|nd|rd|th)\b", after):      # ordinals: 7th of 12
+            continue
+        # A calendar year, recognised by what precedes it: a month name, a venue,
+        # "as of", or a day number. Bare four-digit numbers elsewhere are left
+        # alone, so a genuine count of 1229 samples is still checked.
+        # `after` is only six characters, too short for " samples"; the year test
+        # needs its own wider lookahead.
+        if YEAR_RE.match(raw) and not YEAR_UNIT_AFTER.match(text[m.end():m.end() + 16]):
             continue
         # The upper end of an identifier range ("TENX153-156") is part of the identifier,
         # not a measurement. Only treat a post-dash number as a claim when what precedes
@@ -328,7 +347,7 @@ def scopes(md: str):
                 if c not in pool:
                     pool.append(c)
         for ln, text in g:
-            resolved.append((ln, text, list(pool)))
+            resolved.append((ln, text, list(pool) + list(ALWAYS)))
     return resolved
 
 
@@ -450,6 +469,9 @@ def verify(doc, resolver, verbose=False, exceptions=None):
     return rows, dict(doc=doc, claims=n_claims, ok=n_ok)
 
 
+ALWAYS = []
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("docs", nargs="+")
@@ -457,7 +479,15 @@ def main():
     ap.add_argument("--tsv")
     ap.add_argument("--verbose", action="store_true")
     ap.add_argument("--exceptions", default=".verify-exceptions")
+    # A file consulted for EVERY claim, regardless of what the enclosing
+    # subsection cites. This exists for a single-source-of-truth table such as
+    # results/summary/deck_numbers.csv: the document quotes its numbers in prose
+    # without citing it line by line, so without this the table is invisible to
+    # the sweep and 30 checkable claims read as uncited.
+    ap.add_argument("--always", action="append", default=[])
     a = ap.parse_args()
+    global ALWAYS
+    ALWAYS = list(a.always)
     resolver = make_resolver(a.search_dir)
     ex = load_exceptions(a.exceptions)
     allrows, stats = [], []

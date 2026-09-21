@@ -1,0 +1,136 @@
+slide,label,value,source_file,source_column_or_query
+3,encoder-task cells compared with the live leaderboard,108.0,results/summary/discrepancy_table.csv,rows with compare_to_leaderboard true and a non-null diff_vs_leaderboard
+3,mean absolute difference from the leaderboard,0.0002,results/summary/discrepancy_table.csv,mean |diff_vs_leaderboard|
+3,largest absolute difference from the leaderboard,0.0155,results/summary/discrepancy_table.csv,max |diff_vs_leaderboard|
+3,cells exceeding the 0.03 acceptance threshold,0.0,results/summary/discrepancy_table.csv,count |diff_vs_leaderboard| > 0.03
+3,ResNet50 raw-ridge average minus the published Table A13 value,-0.040911111111111106,results/summary/discrepancy_table.csv,"mean diff_vs_leaderboard where head=raw_ridge, encoder=resnet50, config_role=replicates Table A13"
+6,mean absolute per-task difference from the published Table A13,0.08942626262626262,results/summary/discrepancy_table.csv,mean |diff_vs_leaderboard| where config_role=replicates Table A13
+6,largest per-task difference from the published Table A13,0.4632,results/summary/discrepancy_table.csv,max |diff_vs_leaderboard| where config_role=replicates Table A13
+3,ResNet50 average over the nine paper tasks,0.3252,results/summary/results_encoder.csv,avg_paper9 where encoder=resnet50
+3,H-Optimus-1 average over the nine paper tasks,0.4229,results/summary/results_encoder.csv,avg_paper9 where encoder=hoptimus1
+5,between-encoder spread on the benchmark protocol,0.09770000000000001,results/summary/results_encoder.csv,max(avg_paper9) - min(avg_paper9)
+5,best encoder average (H-Optimus-1),0.4229,results/summary/results_encoder.csv,max(avg_paper9)
+5,worst encoder average (ResNet50),0.3252,results/summary/results_encoder.csv,min(avg_paper9)
+4,COAD random-minus-patient gap,0.3172,results/round2/R3_splits/r3_per_task_terms.csv,"TOTAL random - patient, COAD"
+4,smallest random-minus-patient gap among the other nine tasks,0.0504,results/round2/R3_splits/r3_per_task_terms.csv,min over tasks except COAD
+4,largest random-minus-patient gap among the other nine tasks,0.1931,results/round2/R3_splits/r3_per_task_terms.csv,max over tasks except COAD
+4,IDC random-minus-patient gap,0.121,results/round2/R3_splits/r3_per_task_terms.csv,"TOTAL random - patient, IDC"
+11,"novel-slide term, multi-slide tasks",0.014766666666666666,results/round2/R3_splits/r3_per_task_terms.csv,mean of novel slide
+11,"novel-patient term, multi-slide tasks",0.13570000000000002,results/round2/R3_splits/r3_per_task_terms.csv,"mean of same patient, other slide"
+5,COAD novel-slide term standard deviation from zero,0.0022,results/round2/R3_splits/r3_per_task_terms.csv,"novel slide, COAD"
+5,training-set size term,0.0126,results/round2/R3_splits/r3_decomposition_terms.csv,mean where term=training-set size
+5,spatial adjacency term,0.0327,results/round2/R3_splits/r3_decomposition_terms.csv,"mean where term=spatial adjacency, size matched"
+5,residual adjacency term removed only by a buffer,0.0115,results/round2/R3_splits/r3_decomposition_terms.csv,mean where term=residual adjacency (buffer)
+5,novel-slide term,0.0148,results/round2/R3_splits/r3_decomposition_terms.csv,mean where term=novel slide
+5,novel-patient term,0.1357,results/round2/R3_splits/r3_decomposition_terms.csv,"mean where term=same patient, other slide"
+5,total random-minus-patient gap,0.1586,results/round2/R3_splits/r3_decomposition_terms.csv,mean where term=TOTAL random - patient
+5,slide-and-patient identity term,0.10179999999999999,results/round2/R3_splits/r3_decomposition_terms.csv,mean(TOTAL random - patient) minus the sum of the three earlier steps
+4,"IDC replicate leak, mean over encoder-slide cells",0.0652,results/round2/R5c_leak/r5c_leak_summary.csv,mean where task=IDC
+4,IDC encoder-slide cells measured,6.0,results/round2/R5c_leak/r5c_leak_summary.csv,count where task=IDC
+4,IDC cells with a positive leak,6.0,results/round2/R5c_leak/r5c_leak_summary.csv,n_positive where task=IDC
+4,"READ replicate leak, mean over encoder-slide cells",0.0901,results/round2/R5c_leak/r5c_leak_summary.csv,mean where task=READ
+4,READ encoder-slide cells measured,12.0,results/round2/R5c_leak/r5c_leak_summary.csv,count where task=READ
+4,READ cells with a positive leak,12.0,results/round2/R5c_leak/r5c_leak_summary.csv,n_positive where task=READ
+4,IDC leak as a share of its random-minus-patient gap,0.5385,results/round2/R5c_leak/r5c_leak_summary.csv,share_of_gap where task=IDC
+5,grid-size spread of the unbuffered blocked split,0.02806579924815572,results/round2/R3_splits/split_v4__*.csv,"max-min of mean pearson_within over grid, design=blocked"
+5,grid-size spread of the buffered blocked split,0.010426398991556729,results/round2/R3_splits/split_v4__*.csv,"max-min of mean pearson_within over grid, design=blocked_buffered"
+6,the benchmark's ridge penalty at d=256,0.0078125,results/tailored/regularization/alpha_sweep.csv,formula_alpha where d=256
+6,"Gram condition number on raw embeddings, median",40747.486328125,results/tailored/regularization/alpha_sweep.csv,median gram_cond where scale=raw
+6,"Gram condition number on raw embeddings, largest",3177604978835456.0,results/tailored/regularization/alpha_sweep.csv,max gram_cond where scale=raw
+6,"Gram condition number after PCA to 256 dimensions, median",543.580810546875,results/tailored/regularization/alpha_sweep.csv,median gram_cond where scale=pca256
+6,"Spearman(embedding width, score) on the raw ridge head, 11-encoder cohort",-0.9537,results/round2/R8_raw_heads/r8_width_correlations.csv,spearman where relation contains 'raw_ridge mean Pearson' and n_encoders=11
+6,"Spearman(embedding width, score) on the PCA ridge head, 11-encoder cohort",0.7351,results/round2/R8_raw_heads/r8_width_correlations.csv,spearman where relation contains 'pca_ridge mean Pearson' and n_encoders=11
+6,"Spearman(embedding width, score) on the raw ridge head, 12-encoder cohort",-0.95,results/round2/R8_raw_heads/r8_width_correlations.csv,spearman where relation contains 'raw_ridge mean Pearson' and n_encoders=12
+6,"Spearman(embedding width, score) on the PCA ridge head, 12-encoder cohort",0.7269,results/round2/R8_raw_heads/r8_width_correlations.csv,spearman where relation contains 'pca_ridge mean Pearson' and n_encoders=12
+6,H-Optimus-1 rank on the PCA-256 head,1.0,results/round2/R8_raw_heads/r8_raw_head_leaderboard.csv,rank_pca where encoder=hoptimus1
+6,H-Optimus-1 rank on the raw-embedding head,7.0,results/round2/R8_raw_heads/r8_raw_head_leaderboard.csv,rank_raw where encoder=hoptimus1
+6,best raw-head rank among encoders of 1536 dimensions or more,7.0,results/round2/R8_raw_heads/r8_raw_head_leaderboard.csv,min rank_raw where width>=1536
+6,worst raw-head rank among encoders of 1024 dimensions or fewer,6.0,results/round2/R8_raw_heads/r8_raw_head_leaderboard.csv,max rank_raw where width<=1024
+6,embedding width of the raw-head winner (CONCH v1),512.0,results/round2/R8_raw_heads/r8_raw_head_leaderboard.csv,width where rank_raw is 1
+9,"pooled fold-median R2, head as shipped",-0.953196,results/round2/R1b_heads/r1b_ladder_pooled.csv,faithful
+9,pooled fold-median R2 with a training-mean intercept,-0.155216,results/round2/R1b_heads/r1b_ladder_pooled.csv,train-mean intercept
+9,pooled fold-median R2 with the test fold's own mean,0.03005,results/round2/R1b_heads/r1b_ladder_pooled.csv,oracle level
+9,pooled fold-median R2 with an oracle level and optimal scale,0.099708,results/round2/R1b_heads/r1b_ladder_pooled.csv,oracle level and optimal scale
+9,"prediction-to-target scale ratio, pooled",1.840111,results/round2/R1b_heads/r1b_ladder_pooled.csv,rho_over_r
+9,largest scale ratio (ResNet50),2.165389,results/round2/R1b_heads/r1b_ladder_by_encoder.csv,max rho_over_r
+9,smallest scale ratio (UNI2-h),1.650025,results/round2/R1b_heads/r1b_ladder_by_encoder.csv,min rho_over_r
+9,folds with a negative fold-median R2 as shipped,29.0,results/round2/R1b_heads/head_intercept__*__f64.csv,"count of (task,fold) with median r2 < 0 over all encoders, head nointercept_f64"
+9,folds in total,29.0,results/round2/R1b_heads/head_intercept__*__f64.csv,"distinct (task,fold)"
+9,least negative fold-median R2 as shipped,-0.134617078482191,results/round2/R1b_heads/head_intercept__*__f64.csv,max of the per-fold median r2
+9,median of the log1p target over all cells,0.6051169901716937,results/round2/R1b_heads/head_intercept__*__f64.csv,median train_mean_target
+9,mean of the log1p target over all cells,0.9395459422765687,results/round2/R1b_heads/head_intercept__*__f64.csv,mean train_mean_target
+A1,"typical per-gene solver noise, median over encoder-task cells",0.0004898732155561,results/round2/R1b_heads/r1b_solver_sensitivity.csv,median over encoder columns
+A1,largest per-gene solver noise,0.0276471972465515,results/round2/R1b_heads/r1b_solver_sensitivity.csv,max of max_single_gene
+10,"slide identity probe, lowest of three encoders",0.871248977389449,results/round2/R4_probes/r4_probes_v2.csv,min acc_blocked where probe=probe1_slide_within_patient
+10,"slide identity probe, highest of three encoders",0.9493983585762718,results/round2/R4_probes/r4_probes_v2.csv,max acc_blocked where probe=probe1_slide_within_patient
+10,slide identity probe chance level,0.0666666666666666,results/round2/R4_probes/r4_probes_v2.csv,"chance, probe1"
+10,classes in the slide-identity probe,15.0,results/round2/R4_probes/r4_probes_v2.csv,"n_classes, probe1"
+10,share of slide-probe errors landing in the same session,0.9470943949356662,results/round2/R4_probes/r4_probes_v2.csv,"mean confusion_within_subcluster_frac, probe1"
+10,"session probe, lowest of three encoders",0.9671316964285714,results/round2/R4_probes/r4_probes_v2.csv,min acc_blocked where probe=probe1b_scan_subcluster
+10,"session probe, highest of three encoders",0.9909375,results/round2/R4_probes/r4_probes_v2.csv,max acc_blocked where probe=probe1b_scan_subcluster
+10,"resolution probe, lowest of three encoders",0.4888125,results/round2/R4_probes/r4_probes_v2.csv,min acc_pooled_balanced where probe=probe2_2class
+10,"resolution probe, highest of three encoders",0.5111875,results/round2/R4_probes/r4_probes_v2.csv,max acc_pooled_balanced where probe=probe2_2class
+10,resolution probe majority-class baseline,0.7142857142857143,results/round2/R4_probes/r4_probes_v2.csv,"majority_class_baseline, probe2"
+10,"morphology adjustment removes, within PRAD patient 2",0.013642263083550566,results/round2/R4_probes/r4_probes_v2.csv,mean acc_drop where probe=probe3 and task=PRAD
+10,"morphology adjustment removes, smallest cross-patient task",0.0303087270570172,results/round2/R4_probes/r4_probes_v2.csv,min mean acc_drop over cross-patient tasks
+10,"morphology adjustment removes, largest cross-patient task",0.274134043861447,results/round2/R4_probes/r4_probes_v2.csv,max mean acc_drop over cross-patient tasks
+10,genes whose between-session variance is at or below zero,28.0,results/round2/R6_variance/r6_prad_session_variance.csv,count between_session_raw <= 0
+10,target genes in the decomposition,50.0,results/round2/R6_variance/r6_prad_session_variance.csv,row count
+10,smallest pixel size across the 72 samples,0.1369,results/round2/R0_resolution/resolution_by_task.csv,min px_min
+10,largest pixel size across the 72 samples,0.6876,results/round2/R0_resolution/resolution_by_task.csv,max px_max
+10,pixel-size spread across the 72 samples,5.022644265887509,results/round2/R0_resolution/resolution_by_task.csv,max px_max / min px_min
+10,PRAD within-task pixel-size spread,4.004,results/round2/R0_resolution/resolution_by_task.csv,spread where task=PRAD
+10,slides in PRAD patient 2,15.0,results/tailored/integrity/sample_metadata.csv,row count where task=PRAD and patient=patient 2
+10,PRAD patient 2 smallest pixel size,0.3412434442674936,results/tailored/integrity/sample_metadata.csv,"min pixel_size_um, patient 2"
+10,PRAD patient 2 largest pixel size,0.3492472495860312,results/tailored/integrity/sample_metadata.csv,"max pixel_size_um, patient 2"
+10,PRAD patient 2 within-patient pixel-size spread,1.023454825149003,results/tailored/integrity/sample_metadata.csv,"max/min pixel_size_um, patient 2"
+10,PRAD patient 2 largest gap between consecutive pixel sizes,0.00660712843183392,results/tailored/integrity/sample_metadata.csv,"max of diff(sorted pixel_size_um), patient 2"
+10,PRAD patient 2 slides in the lower cluster,8.0,results/tailored/integrity/sample_metadata.csv,"count below the largest gap in sorted pixel_size_um, patient 2"
+10,PRAD patient 2 slides in the upper cluster,7.0,results/tailored/integrity/sample_metadata.csv,"count above the largest gap in sorted pixel_size_um, patient 2"
+10,slides in PRAD patient 1,8.0,results/tailored/integrity/sample_metadata.csv,row count where task=PRAD and patient=patient 1
+10,PRAD patient 1 smallest pixel size,0.171728445418549,results/tailored/integrity/sample_metadata.csv,"min pixel_size_um, patient 1"
+10,PRAD patient 1 largest pixel size,0.6875667793808392,results/tailored/integrity/sample_metadata.csv,"max pixel_size_um, patient 1"
+10,PRAD patient 1 within-patient pixel-size spread,4.003802501705827,results/tailored/integrity/sample_metadata.csv,"max/min pixel_size_um, patient 1"
+10,PRAD patient 1 largest gap between consecutive pixel sizes,0.4012364847199128,results/tailored/integrity/sample_metadata.csv,"max of diff(sorted pixel_size_um), patient 1"
+10,PRAD patient 1 slides in the lower cluster,1.0,results/tailored/integrity/sample_metadata.csv,"count below the largest gap in sorted pixel_size_um, patient 1"
+10,PRAD patient 1 slides in the upper cluster,7.0,results/tailored/integrity/sample_metadata.csv,"count above the largest gap in sorted pixel_size_um, patient 1"
+10,PRAD patient 1 pixel-size spread excluding the lone outlier,1.2000154690352216,results/tailored/integrity/sample_metadata.csv,"max/second-smallest pixel_size_um, patient 1"
+A2,"slide identity under spatial-block cross-validation, all tasks",0.9804960070191459,results/tailored/site_probes/spatial_block_probe.csv,mean acc_block
+11,"theta1 on NCBI785, current morphology build",0.420947,results/round2/R6_variance/r6_theta_build_comparison.csv,v2_theta1_raw where sample_id=NCBI785
+11,"theta1 on NCBI783, current morphology build",0.1515,results/round2/R6_variance/r6_theta_build_comparison.csv,v2_theta1_raw where sample_id=NCBI783
+11,"theta1 on TENX95, current morphology build",0.0116,results/round2/R6_variance/r6_theta_build_comparison.csv,v2_theta1_raw where sample_id=TENX95
+11,"theta1 on TENX99, current morphology build",-0.0649,results/round2/R6_variance/r6_theta_build_comparison.csv,v2_theta1_raw where sample_id=TENX99
+11,"theta1 on NCBI785, round-1 morphology build",0.457791,results/round2/R6_variance/r6_theta_build_comparison.csv,v1_theta1_raw where sample_id=NCBI785
+A2,"between-slide spread of theta1, current build",0.48584700000000003,results/round2/R6_variance/r6_theta_build_comparison.csv,max-min of v2_theta1_raw
+A2,"between-slide spread of theta1, round-1 build",0.505791,results/round2/R6_variance/r6_theta_build_comparison.csv,max-min of v1_theta1_raw
+11,"between-donor variance share, CCRCC",0.3932,results/round2/R6_variance/r6_variance_by_task.csv,frac_donor where task=CCRCC
+11,"between-donor variance share, LYMPH_IDC",0.3354,results/round2/R6_variance/r6_variance_by_task.csv,frac_donor where task=LYMPH_IDC
+11,donors in CCRCC,24.0,results/round2/R6_variance/r6_variance_by_task.csv,donors where task=CCRCC
+11,smallest within-slide variance share over the ten tasks,0.6068,results/round2/R6_variance/r6_variance_by_task.csv,min frac_spot
+11,largest within-slide variance share over the ten tasks,0.9854,results/round2/R6_variance/r6_variance_by_task.csv,max frac_spot
+11,pooled between-donor share over the well-powered tasks,0.3761,results/round2/R6_variance/r6_pooled_between_donor.csv,value where definition starts with 'well-powered'
+11,samples audited,72.0,results/round2/R5b_audit/donor_audit.csv,row count
+11,samples with verified donor labels,58.0,results/round2/R5b_audit/donor_audit.csv,count donor_label_status containing 'verified'
+11,samples whose donor labels are unverifiable,9.0,results/round2/R5b_audit/donor_audit.csv,count donor_label_status containing 'unverifiable'
+11,samples whose donor labels are contradicted,5.0,results/round2/R5b_audit/donor_audit.csv,count donor_label_status containing 'contradicted'
+11,"within-task correlation, random_minus_patient against frac_donor",0.0441,results/round2/R7_pergene/r7_correlations_task_centred.csv,within_task where x=random_minus_patient and y=frac_donor
+11,"within-task correlation, blocked_minus_patient against frac_donor",0.0661,results/round2/R7_pergene/r7_correlations_task_centred.csv,within_task where x=blocked_minus_patient and y=frac_donor
+11,"within-task correlation, same_patient_other_slide against frac_donor",0.0398,results/round2/R7_pergene/r7_correlations_task_centred.csv,within_task where x=same_patient_other_slide and y=frac_donor
+11,"within-task correlation, replicate_leak against random_minus_patient",0.3774,results/round2/R7_pergene/r7_correlations_task_centred.csv,within_task where x=replicate_leak and y=random_minus_patient
+11,"within-task correlation, novel_slide against frac_slide",0.2096,results/round2/R7_pergene/r7_correlations_task_centred.csv,within_task where x=novel_slide and y=frac_slide
+4,share of TENX slide confusion landing on the partner slide,0.9609375,results/round2/R5c_leak/r5d_idc_partner_confusion.csv,sum onto_partner / sum off_diag
+4,that share at chance,1.6666666666666667,results/round2/R5c_leak/r5d_idc_partner_confusion.csv,expected_at_chance
+A1,PAAD panel intersection,159.0,results/round2/R2_fold_hvg/r2_panel_heterogeneity.csv,panel_intersection where task=PAAD
+A1,PAAD largest single-sample panel,541.0,results/round2/R2_fold_hvg/r2_panel_heterogeneity.csv,panel_max where task=PAAD
+A1,IDC panel span between the smallest and largest sample panels,0.0,results/round2/R2_fold_hvg/r2_panel_heterogeneity.csv,panel_max - panel_min where task=IDC
+A1,mean gene-selection effect over tasks,0.004809999999999999,results/round2/R2_fold_hvg/r2_leakage_summary.csv,mean d_within
+A1,largest gene-selection effect,0.0441,results/round2/R2_fold_hvg/r2_leakage_summary.csv,max d_within
+A1,"genes shared between the shipped and training-only lists, mean",25.15834,results/round2/R2_fold_hvg/r2_leakage_summary.csv,mean shared
+A1,genes shared on PRAD,11.0,results/round2/R2_fold_hvg/r2_leakage_summary.csv,shared where task=PRAD
+A1,Spearman between the fold ranking and the all-spot ranking,0.510194677897326,results/round2/R2_fold_hvg/r2_rank_supplement.csv,mean spearman_rank
+A2,gene-task pairs where NB beats Poisson,478.0,results/tailored/counts/count_diagnostics.csv,count nb_beats_poisson among both_converged
+A2,gene-task pairs with both fits converged,488.0,results/tailored/counts/count_diagnostics.csv,count both_converged
+A2,"gene-task pairs where ZINB beats NB, stored flags",28.0,results/tailored/counts/count_diagnostics.csv,count zinb_preferred among both_converged
+A2,median AIC change from NB to ZINB,-2.0018739156848824,results/tailored/counts/count_diagnostics.csv,median delta_aic
+A2,smallest Fano factor over all gene-task pairs,1.6378774803923113,results/tailored/counts/count_diagnostics.csv,min fano
+A2,worst float32 identity residual,1.4432011141707337e-11,results/round2/R1b_heads/acceptance__*__f64.csv,"max value, float32 families"

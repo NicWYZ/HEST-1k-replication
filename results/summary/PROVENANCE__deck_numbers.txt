@@ -1,0 +1,12 @@
+Deck numbers, single source of truth
+slurm_job_id    : NA
+date            : 2026-09-21T00:08:15-0400
+repo_commit     : 30029df5da9168c12316c645b4b6343548c843d6
+script          : code/scripts/build_deck_numbers.py
+command_line    : code/scripts/build_deck_numbers.py
+rows            : 135
+slides covered  : ['10', '11', '3', '4', '5', '6', '9', 'A1', 'A2']
+sources missing : none
+out of scope    : slide 7 is a literature slide; its figures come from
+                  published papers, not this repository, and are absent
+plan            : deck_figures_and_repo_update.md section 1.3
