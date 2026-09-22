@@ -117,9 +117,7 @@ the *same* fourteen documents between the two measurements.
 of the `/tmp/before_table.csv` snapshot, and that snapshot is already stale for two of its
 own sixteen rows: it carries `228` for `docs/round2_R0_R1_stage_report.md` and `19` for
 this report's own table, and this session's triage (documented in each report's own
-Changelog) has since driven both of those to zero. The live current total, as of this
-session's last combined sweep run, is at most `688 minus 228 minus 19, i.e. 441` and may
-be lower still wherever a sibling track has also since triaged its document. Neither `437`
+Changelog) has since driven both of those to zero. The live current total is **zero**: every document in the repository has since been triaged to zero unresolved and zero uncited, verified in a final combined sweep of 1,992 claims across nineteen documents. This sentence previously gave an upper bound of `441`, which was the honest statement while the triage was still running; the measured figure replaces it. The per-document table is in `docs_clean_report.md`. Neither `437`
 nor `688` should be read as the live count; both are dated snapshots, and the date each was
 taken is what makes them non-comparable to each other and to the present state of the
 repository.
@@ -195,3 +193,6 @@ components and no nested-ANOVA diagnostics.
   `688` is itself already stale for two of its own sixteen rows (`docs/round2_R0_R1_stage_report.md`
   and this report's own table), both of which this session's triage has since driven to
   zero unresolved, so the live current total is lower than `688`, not equal to it.
+- 22 September 2026: replaced the `at most 441` upper bound on the live unresolved
+  count with the measured figure, zero, now that every document has been triaged and
+  re-swept. The bound was correct when written and is superseded, not wrong.
