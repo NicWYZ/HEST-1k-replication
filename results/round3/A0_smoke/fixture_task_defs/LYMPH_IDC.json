@@ -1,0 +1,290 @@
+{
+  "task_def_version": 1,
+  "task": "LYMPH_IDC",
+  "label_set": "shipped",
+  "source": "hest_bench",
+  "st_technology": "Visium",
+  "repo_root_relative": true,
+  "paths": {
+    "adata": "bench_data/LYMPH_IDC/adata/{sample_id}.h5ad",
+    "patches": "bench_data/LYMPH_IDC/patches/{sample_id}.h5",
+    "embeddings": "embeddings/LYMPH_IDC/{encoder}/{sample_id}.h5",
+    "target_genes": "bench_data/LYMPH_IDC/var_50genes.json"
+  },
+  "target_genes": {
+    "list": [
+      "AAMDC",
+      "AKR1E2",
+      "ANKS1B",
+      "ANO8",
+      "AREG",
+      "CCL28",
+      "CCNO",
+      "CD22",
+      "CD72",
+      "CLNS1A",
+      "CROT",
+      "CSTA",
+      "CXCL10",
+      "CXCL11",
+      "CYP4Z1",
+      "DAPK1",
+      "EPHB3",
+      "FABP4",
+      "GTPBP3",
+      "HAAO",
+      "HAUS8",
+      "IFI44L",
+      "IFIT2",
+      "IGHV3-11",
+      "IGHV6-1",
+      "IGLV9-49",
+      "MAPK8IP2",
+      "MX1",
+      "MX2",
+      "MYH11",
+      "NARS2",
+      "NUDT1",
+      "OASL",
+      "PARD6B",
+      "PATZ1",
+      "PDZK1IP1",
+      "POLD3",
+      "PTRH2",
+      "QSOX1",
+      "RAB38",
+      "RSAD2",
+      "RSF1",
+      "SCRN1",
+      "SERPINI1",
+      "SHANK2",
+      "SNCG",
+      "SPP1",
+      "TCF7",
+      "TMEM64",
+      "ZMAT5"
+    ],
+    "n": 50,
+    "selection": "The benchmark's shipped 50-gene list, read verbatim from bench_data/LYMPH_IDC/var_50genes.json in file order. HEST-bench chose it as the 50 most expressed genes over ALL spots of the task, test spots included, so selection_used_test_spots is true; this is the benchmark's property, not a choice of this project, and it is why round 3 track D selects gene lists on training samples only.",
+    "selection_used_test_spots": true
+  },
+  "samples": [
+    {
+      "sample_id": "NCBI681",
+      "donor_id": "Patient_8",
+      "hest_patient": "Patient 8",
+      "donor_label_status": "verified",
+      "lab": "NCBI",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "0.23-0.30",
+      "pixel_size_um": 0.2738919090219516,
+      "resolution_uncertain": true,
+      "n_spots": 4992
+    },
+    {
+      "sample_id": "NCBI682",
+      "donor_id": "Patient_7",
+      "hest_patient": "Patient 7",
+      "donor_label_status": "verified",
+      "lab": "NCBI",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "0.23-0.30",
+      "pixel_size_um": 0.2738759539500113,
+      "resolution_uncertain": true,
+      "n_spots": 4988
+    },
+    {
+      "sample_id": "NCBI683",
+      "donor_id": "Patient_6",
+      "hest_patient": "Patient 6",
+      "donor_label_status": "verified",
+      "lab": "NCBI",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "0.23-0.30",
+      "pixel_size_um": 0.2734232337203853,
+      "resolution_uncertain": true,
+      "n_spots": 4992
+    },
+    {
+      "sample_id": "NCBI684",
+      "donor_id": "Patient_3",
+      "hest_patient": "Patient 3",
+      "donor_label_status": "verified",
+      "lab": "NCBI",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "0.23-0.30",
+      "pixel_size_um": 0.2734752041027168,
+      "resolution_uncertain": true,
+      "n_spots": 4992
+    }
+  ],
+  "flags": {
+    "patient_labels_unreliable": false,
+    "same_specimen_pairs": false,
+    "idc_attribution_unresolved": false
+  },
+  "folds": {
+    "patient": [
+      {
+        "fold": "0",
+        "train": [
+          "NCBI681",
+          "NCBI682",
+          "NCBI683"
+        ],
+        "test": [
+          "NCBI684"
+        ]
+      },
+      {
+        "fold": "1",
+        "train": [
+          "NCBI681",
+          "NCBI682",
+          "NCBI684"
+        ],
+        "test": [
+          "NCBI683"
+        ]
+      },
+      {
+        "fold": "2",
+        "train": [
+          "NCBI681",
+          "NCBI683",
+          "NCBI684"
+        ],
+        "test": [
+          "NCBI682"
+        ]
+      },
+      {
+        "fold": "3",
+        "train": [
+          "NCBI682",
+          "NCBI683",
+          "NCBI684"
+        ],
+        "test": [
+          "NCBI681"
+        ]
+      }
+    ],
+    "donor": [
+      {
+        "fold": "Patient_3",
+        "train": [
+          "NCBI681",
+          "NCBI682",
+          "NCBI683"
+        ],
+        "test": [
+          "NCBI684"
+        ]
+      },
+      {
+        "fold": "Patient_6",
+        "train": [
+          "NCBI681",
+          "NCBI682",
+          "NCBI684"
+        ],
+        "test": [
+          "NCBI683"
+        ]
+      },
+      {
+        "fold": "Patient_7",
+        "train": [
+          "NCBI681",
+          "NCBI683",
+          "NCBI684"
+        ],
+        "test": [
+          "NCBI682"
+        ]
+      },
+      {
+        "fold": "Patient_8",
+        "train": [
+          "NCBI682",
+          "NCBI683",
+          "NCBI684"
+        ],
+        "test": [
+          "NCBI681"
+        ]
+      }
+    ],
+    "slide_out": [
+      {
+        "fold": "NCBI681",
+        "train": [
+          "NCBI682",
+          "NCBI683",
+          "NCBI684"
+        ],
+        "test": [
+          "NCBI681"
+        ]
+      },
+      {
+        "fold": "NCBI682",
+        "train": [
+          "NCBI681",
+          "NCBI683",
+          "NCBI684"
+        ],
+        "test": [
+          "NCBI682"
+        ]
+      },
+      {
+        "fold": "NCBI683",
+        "train": [
+          "NCBI681",
+          "NCBI682",
+          "NCBI684"
+        ],
+        "test": [
+          "NCBI683"
+        ]
+      },
+      {
+        "fold": "NCBI684",
+        "train": [
+          "NCBI681",
+          "NCBI682",
+          "NCBI683"
+        ],
+        "test": [
+          "NCBI684"
+        ]
+      }
+    ],
+    "random": {
+      "n_repeats": 5,
+      "test_size_from_fold": "patient",
+      "seed_source": "crc32"
+    }
+  },
+  "provenance": {
+    "generated_by": "code/scripts/round3_a0_fixture_taskdefs.py (FIXTURE, stage A0; NOT the S0 generator for results/round3/task_defs/)",
+    "generated_at": "2026-09-22T10:51:25-0400",
+    "commit": "fce1ad88f8af50cd09cdec6362bb8791cc075961",
+    "inputs": [
+      "bench_data/LYMPH_IDC/adata/*.h5ad (sample list and order)",
+      "bench_data/LYMPH_IDC/var_50genes.json",
+      "bench_data/LYMPH_IDC/splits/train_*.csv",
+      "bench_data/LYMPH_IDC/splits/test_*.csv",
+      "results/tailored/integrity/sample_metadata.csv",
+      "results/round2/R5b_audit/donor_audit.csv",
+      "bench_data/hest_bench_sample_inventory.csv (n_spots_adata -> n_spots)"
+    ],
+    "pythonhashseed": "0"
+  }
+}

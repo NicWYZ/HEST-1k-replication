@@ -1,0 +1,118 @@
+{
+  "repo_id": "MahmoodLab/hest",
+  "resolved_revision_sha": "7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec",
+  "last_modified": "2026-02-08 12:55:58+00:00",
+  "gated": "auto",
+  "private": false,
+  "downloads": 35062,
+  "whoami": "weiyangz",
+  "branches": [
+    {
+      "name": "main",
+      "target_commit": "7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec"
+    }
+  ],
+  "tags": [
+    {
+      "name": "1.0",
+      "target_commit": "faadd940ff721d07b0438fb090fee197f3cc3764"
+    }
+  ],
+  "card_data": {
+    "language": [
+      "en"
+    ],
+    "license": "cc-by-nc-sa-4.0",
+    "size_categories": [
+      "100B<n<1T"
+    ],
+    "task_categories": [
+      "image-classification",
+      "feature-extraction",
+      "image-segmentation"
+    ],
+    "tags": [
+      "spatial-transcriptomics",
+      "histology",
+      "pathology"
+    ]
+  },
+  "n_tree_entries": 15620,
+  "n_files": 15608,
+  "n_files_missing_size": 0,
+  "total_bytes_all_components": 2014174999406,
+  "top_level": {
+    "cellvit_seg": 2552,
+    "tissue_seg": 2405,
+    "patches_vis": 1277,
+    "pixel_size_vis": 1276,
+    "metadata": 1276,
+    "patches": 1276,
+    "st": 1276,
+    "spatial_plots": 1276,
+    "wsis": 1276,
+    "thumbnails": 1276,
+    "xenium_seg": 344,
+    "transcripts": 86,
+    "HEST_v1_1_0.csv": 1,
+    "HEST_v1_1_1.csv": 1,
+    ".gitattributes": 1,
+    "HEST_v1_2_0.csv": 1,
+    "README.md": 1,
+    "HEST_v1_3_0.csv": 1,
+    "HEST_v1_2_1.csv": 1,
+    "human_gene_db.parquet": 1,
+    "fig1_preview.jpg": 1,
+    "fig1a.jpg": 1,
+    "fig1a.png": 1,
+    "hest.py": 1
+  },
+  "root_level_files": [
+    ".gitattributes",
+    "HEST_v1_1_0.csv",
+    "HEST_v1_1_1.csv",
+    "HEST_v1_2_0.csv",
+    "HEST_v1_2_1.csv",
+    "HEST_v1_3_0.csv",
+    "README.md",
+    "fig1_preview.jpg",
+    "fig1a.jpg",
+    "fig1a.png",
+    "hest.py",
+    "human_gene_db.parquet"
+  ],
+  "release_csvs_in_repo": [
+    "HEST_v1_1_0.csv",
+    "HEST_v1_1_1.csv",
+    "HEST_v1_2_0.csv",
+    "HEST_v1_2_1.csv",
+    "HEST_v1_3_0.csv"
+  ],
+  "release_tables_fetched": {
+    "HEST_v1_1_0.csv": {
+      "path": "/work/users/w/e/weiyang/hest_replication/results/round3/D0_inventory/release_tables/HEST_v1_1_0.csv",
+      "n_data_lines": 1229,
+      "sha256": "240b336dadd46a1dada38b568c961bd5f0e6d53f023df69653f1b4ce9608ed77"
+    },
+    "HEST_v1_1_1.csv": {
+      "path": "/work/users/w/e/weiyang/hest_replication/results/round3/D0_inventory/release_tables/HEST_v1_1_1.csv",
+      "n_data_lines": 1229,
+      "sha256": "e06339e21a1a99acfb74cb0c2438ffc92db2770e2c22ee41fd4597df01028f23"
+    },
+    "HEST_v1_2_0.csv": {
+      "path": "/work/users/w/e/weiyang/hest_replication/results/round3/D0_inventory/release_tables/HEST_v1_2_0.csv",
+      "n_data_lines": 1255,
+      "sha256": "db817b718fc1b70caae74dd366d478761bac9d98c2e09258302221bab8811ae6"
+    },
+    "HEST_v1_2_1.csv": {
+      "path": "/work/users/w/e/weiyang/hest_replication/results/round3/D0_inventory/release_tables/HEST_v1_2_1.csv",
+      "n_data_lines": 1255,
+      "sha256": "bce648a9322b4f76eaf34a2abdec922e291716d4c69a6f1fab3ce23858e09017"
+    },
+    "HEST_v1_3_0.csv": {
+      "path": "/work/users/w/e/weiyang/hest_replication/results/round3/D0_inventory/release_tables/HEST_v1_3_0.csv",
+      "n_data_lines": 1276,
+      "sha256": "5703d7169c7a31aa4cc74a900df9179326e0cc51bda617a1cf7ac179b6ed5d63"
+    }
+  }
+}

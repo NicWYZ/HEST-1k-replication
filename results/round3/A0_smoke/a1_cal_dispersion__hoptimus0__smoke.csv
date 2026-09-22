@@ -1,0 +1,17 @@
+task,label_set,encoder,design,score,fold,calibration_unit,n_cal_draws,coverage_mean,coverage_sd_across_cal_draws,width_sd_across_cal_draws
+READ,shipped,hoptimus0,donor,abs,READ_specimen1,slide,1,0.8959820789451396,,
+READ,shipped,hoptimus0,donor,abs,READ_specimen7,slide,1,0.7659014636309875,,
+READ,shipped,hoptimus0,donor,scaled,READ_specimen1,slide,1,0.8956338973631346,,
+READ,shipped,hoptimus0,donor,scaled,READ_specimen7,slide,1,0.8025927177494298,,
+READ,shipped,hoptimus0,patient,abs,0,slide,1,0.8959820789451396,,
+READ,shipped,hoptimus0,patient,abs,1,slide,1,0.7640442574131958,,
+READ,shipped,hoptimus0,patient,scaled,0,slide,1,0.8956338973631346,,
+READ,shipped,hoptimus0,patient,scaled,1,slide,1,0.794372201571344,,
+READ,shipped,hoptimus0,random,abs,0,spot,1,0.8963378113865946,0.0012541516956646181,0.006721174955223932
+READ,shipped,hoptimus0,random,abs,1,spot,1,0.898609799483084,0.0025111537856294217,0.011436517309742301
+READ,shipped,hoptimus0,random,scaled,0,spot,1,0.9015905514655167,0.0019452420148705083,0.018376903303287954
+READ,shipped,hoptimus0,random,scaled,1,spot,1,0.9027750651756034,0.0022728647070419756,0.03236212807107788
+READ,shipped,hoptimus0,slide_out,abs,ZEN36,slide,3,0.784963532426572,0.029091979678979116,0.16584966785480748
+READ,shipped,hoptimus0,slide_out,abs,ZEN40,slide,3,0.7837155388471179,0.006783405490352587,0.02555820912929507
+READ,shipped,hoptimus0,slide_out,scaled,ZEN36,slide,3,0.8348511728760103,0.022782589954636417,12.795139547510164
+READ,shipped,hoptimus0,slide_out,scaled,ZEN40,slide,3,0.8824028822055139,0.015811324986037226,0.26872623689692976

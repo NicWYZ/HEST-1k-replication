@@ -1,0 +1,268 @@
+{
+  "task_def_version": 1,
+  "task": "COAD",
+  "label_set": "shipped",
+  "source": "hest_bench",
+  "st_technology": "Xenium",
+  "repo_root_relative": true,
+  "paths": {
+    "adata": "bench_data/COAD/adata/{sample_id}.h5ad",
+    "patches": "bench_data/COAD/patches/{sample_id}.h5",
+    "embeddings": "embeddings/COAD/{encoder}/{sample_id}.h5",
+    "target_genes": "bench_data/COAD/var_50genes.json"
+  },
+  "target_genes": {
+    "list": [
+      "AQP8",
+      "AREG",
+      "BANK1",
+      "CA1",
+      "CA4",
+      "CALB2",
+      "CCL20",
+      "CCR7",
+      "CD177",
+      "CEACAM6",
+      "CEACAM7",
+      "CHGA",
+      "CHGB",
+      "CHI3L2",
+      "CLCA1",
+      "CLCA4",
+      "COL11A1",
+      "CTSE",
+      "CXCL10",
+      "CXCL13",
+      "DMBT1",
+      "DUOX2",
+      "FCRL1",
+      "GATA2",
+      "GCG",
+      "GUCA2A",
+      "GUCA2B",
+      "HEPACAM2",
+      "IL1B",
+      "INSL5",
+      "ITLN1",
+      "LCN2",
+      "MMP1",
+      "MMP3",
+      "MS4A1",
+      "MS4A12",
+      "NXPE4",
+      "OLFM4",
+      "OTOP2",
+      "PI3",
+      "PRPH",
+      "RETNLB",
+      "SCG2",
+      "SCGN",
+      "SLC26A3",
+      "SPIB",
+      "TCL1A",
+      "TMIGD1",
+      "TYMS",
+      "UGT2B17"
+    ],
+    "n": 50,
+    "selection": "The benchmark's shipped 50-gene list, read verbatim from bench_data/COAD/var_50genes.json in file order. HEST-bench chose it as the 50 most expressed genes over ALL spots of the task, test spots included, so selection_used_test_spots is true; this is the benchmark's property, not a choice of this project, and it is why round 3 track D selects gene lists on training samples only.",
+    "selection_used_test_spots": true
+  },
+  "samples": [
+    {
+      "sample_id": "TENX111",
+      "donor_id": "COAD_donor_TENX111",
+      "hest_patient": null,
+      "donor_label_status": "verified",
+      "lab": "TENX",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "0.23-0.30",
+      "pixel_size_um": 0.2738047666871285,
+      "resolution_uncertain": true,
+      "n_spots": 6138
+    },
+    {
+      "sample_id": "TENX147",
+      "donor_id": "COAD_Oliveira_P5",
+      "hest_patient": "Patient 1",
+      "donor_label_status": "contradicted",
+      "lab": "TENX",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "0.23-0.30",
+      "pixel_size_um": 0.2497022099084696,
+      "resolution_uncertain": true,
+      "n_spots": 3997
+    },
+    {
+      "sample_id": "TENX148",
+      "donor_id": "COAD_Oliveira_P2",
+      "hest_patient": "Patient 1",
+      "donor_label_status": "contradicted",
+      "lab": "TENX",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "0.23-0.30",
+      "pixel_size_um": 0.2737603571635976,
+      "resolution_uncertain": false,
+      "n_spots": 4379
+    },
+    {
+      "sample_id": "TENX149",
+      "donor_id": "COAD_Oliveira_P1",
+      "hest_patient": "Patient 1",
+      "donor_label_status": "contradicted",
+      "lab": "TENX",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "0.23-0.30",
+      "pixel_size_um": 0.2740308880582206,
+      "resolution_uncertain": false,
+      "n_spots": 4009
+    }
+  ],
+  "flags": {
+    "patient_labels_unreliable": true,
+    "same_specimen_pairs": false,
+    "idc_attribution_unresolved": false
+  },
+  "folds": {
+    "patient": [
+      {
+        "fold": "0",
+        "train": [
+          "TENX111"
+        ],
+        "test": [
+          "TENX147",
+          "TENX148",
+          "TENX149"
+        ]
+      },
+      {
+        "fold": "1",
+        "train": [
+          "TENX147",
+          "TENX148",
+          "TENX149"
+        ],
+        "test": [
+          "TENX111"
+        ]
+      }
+    ],
+    "donor": [
+      {
+        "fold": "COAD_Oliveira_P1",
+        "train": [
+          "TENX111",
+          "TENX147",
+          "TENX148"
+        ],
+        "test": [
+          "TENX149"
+        ]
+      },
+      {
+        "fold": "COAD_Oliveira_P2",
+        "train": [
+          "TENX111",
+          "TENX147",
+          "TENX149"
+        ],
+        "test": [
+          "TENX148"
+        ]
+      },
+      {
+        "fold": "COAD_Oliveira_P5",
+        "train": [
+          "TENX111",
+          "TENX148",
+          "TENX149"
+        ],
+        "test": [
+          "TENX147"
+        ]
+      },
+      {
+        "fold": "COAD_donor_TENX111",
+        "train": [
+          "TENX147",
+          "TENX148",
+          "TENX149"
+        ],
+        "test": [
+          "TENX111"
+        ]
+      }
+    ],
+    "slide_out": [
+      {
+        "fold": "TENX111",
+        "train": [
+          "TENX147",
+          "TENX148",
+          "TENX149"
+        ],
+        "test": [
+          "TENX111"
+        ]
+      },
+      {
+        "fold": "TENX147",
+        "train": [
+          "TENX111",
+          "TENX148",
+          "TENX149"
+        ],
+        "test": [
+          "TENX147"
+        ]
+      },
+      {
+        "fold": "TENX148",
+        "train": [
+          "TENX111",
+          "TENX147",
+          "TENX149"
+        ],
+        "test": [
+          "TENX148"
+        ]
+      },
+      {
+        "fold": "TENX149",
+        "train": [
+          "TENX111",
+          "TENX147",
+          "TENX148"
+        ],
+        "test": [
+          "TENX149"
+        ]
+      }
+    ],
+    "random": {
+      "n_repeats": 5,
+      "test_size_from_fold": "patient",
+      "seed_source": "crc32"
+    }
+  },
+  "provenance": {
+    "generated_by": "code/scripts/round3_a0_fixture_taskdefs.py (FIXTURE, stage A0; NOT the S0 generator for results/round3/task_defs/)",
+    "generated_at": "2026-09-22T10:51:25-0400",
+    "commit": "fce1ad88f8af50cd09cdec6362bb8791cc075961",
+    "inputs": [
+      "bench_data/COAD/adata/*.h5ad (sample list and order)",
+      "bench_data/COAD/var_50genes.json",
+      "bench_data/COAD/splits/train_*.csv",
+      "bench_data/COAD/splits/test_*.csv",
+      "results/tailored/integrity/sample_metadata.csv",
+      "results/round2/R5b_audit/donor_audit.csv",
+      "bench_data/hest_bench_sample_inventory.csv (n_spots_adata -> n_spots)"
+    ],
+    "pythonhashseed": "0"
+  }
+}

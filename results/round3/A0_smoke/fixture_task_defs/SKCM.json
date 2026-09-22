@@ -1,0 +1,167 @@
+{
+  "task_def_version": 1,
+  "task": "SKCM",
+  "label_set": "shipped",
+  "source": "hest_bench",
+  "st_technology": "Xenium",
+  "repo_root_relative": true,
+  "paths": {
+    "adata": "bench_data/SKCM/adata/{sample_id}.h5ad",
+    "patches": "bench_data/SKCM/patches/{sample_id}.h5",
+    "embeddings": "embeddings/SKCM/{encoder}/{sample_id}.h5",
+    "target_genes": "bench_data/SKCM/var_50genes.json"
+  },
+  "target_genes": {
+    "list": [
+      "ACER1",
+      "AHNAK2",
+      "AQP3",
+      "BIRC3",
+      "CAPNS2",
+      "CCL19",
+      "CCL22",
+      "CD1B",
+      "CD52",
+      "COL17A1",
+      "CRABP2",
+      "DEFB1",
+      "DMKN",
+      "DSC1",
+      "DSP",
+      "FGFBP1",
+      "GZMK",
+      "HAPLN1",
+      "HBD",
+      "IDO1",
+      "IL1B",
+      "ITM2A",
+      "KRT16",
+      "KRT17",
+      "KRT2",
+      "KRT5",
+      "KRTDAP",
+      "LAMB3",
+      "LCK",
+      "LY6D",
+      "LYZ",
+      "MAL2",
+      "MGP",
+      "MIR205HG",
+      "MMRN1",
+      "MYH11",
+      "POSTN",
+      "RHOV",
+      "S100A14",
+      "SBSN",
+      "SELE",
+      "SERPINB2",
+      "SERPINB5",
+      "SLPI",
+      "TFF3",
+      "TP63",
+      "TYRP1",
+      "VIM",
+      "VWF",
+      "WDFY4"
+    ],
+    "n": 50,
+    "selection": "The benchmark's shipped 50-gene list, read verbatim from bench_data/SKCM/var_50genes.json in file order. HEST-bench chose it as the 50 most expressed genes over ALL spots of the task, test spots included, so selection_used_test_spots is true; this is the benchmark's property, not a choice of this project, and it is why round 3 track D selects gene lists on training samples only.",
+    "selection_used_test_spots": true
+  },
+  "samples": [
+    {
+      "sample_id": "TENX115",
+      "donor_id": "SKCM_hest_patient_2",
+      "hest_patient": "patient 2",
+      "donor_label_status": "unverifiable",
+      "lab": "TENX",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "0.23-0.30",
+      "pixel_size_um": 0.2736897890251921,
+      "resolution_uncertain": false,
+      "n_spots": 3886
+    },
+    {
+      "sample_id": "TENX117",
+      "donor_id": "SKCM_hest_patient_1",
+      "hest_patient": "patient 1",
+      "donor_label_status": "unverifiable",
+      "lab": "TENX",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "<=0.15",
+      "pixel_size_um": 0.1368527629551209,
+      "resolution_uncertain": false,
+      "n_spots": 1830
+    }
+  ],
+  "flags": {
+    "patient_labels_unreliable": false,
+    "same_specimen_pairs": false,
+    "idc_attribution_unresolved": false
+  },
+  "folds": {
+    "patient": [
+      {
+        "fold": "0",
+        "train": [
+          "TENX115"
+        ],
+        "test": [
+          "TENX117"
+        ]
+      },
+      {
+        "fold": "1",
+        "train": [
+          "TENX117"
+        ],
+        "test": [
+          "TENX115"
+        ]
+      }
+    ],
+    "donor": [
+      {
+        "fold": "SKCM_hest_patient_1",
+        "train": [
+          "TENX115"
+        ],
+        "test": [
+          "TENX117"
+        ]
+      },
+      {
+        "fold": "SKCM_hest_patient_2",
+        "train": [
+          "TENX117"
+        ],
+        "test": [
+          "TENX115"
+        ]
+      }
+    ],
+    "slide_out": [],
+    "random": {
+      "n_repeats": 5,
+      "test_size_from_fold": "patient",
+      "seed_source": "crc32"
+    }
+  },
+  "provenance": {
+    "generated_by": "code/scripts/round3_a0_fixture_taskdefs.py (FIXTURE, stage A0; NOT the S0 generator for results/round3/task_defs/)",
+    "generated_at": "2026-09-22T10:51:25-0400",
+    "commit": "fce1ad88f8af50cd09cdec6362bb8791cc075961",
+    "inputs": [
+      "bench_data/SKCM/adata/*.h5ad (sample list and order)",
+      "bench_data/SKCM/var_50genes.json",
+      "bench_data/SKCM/splits/train_*.csv",
+      "bench_data/SKCM/splits/test_*.csv",
+      "results/tailored/integrity/sample_metadata.csv",
+      "results/round2/R5b_audit/donor_audit.csv",
+      "bench_data/hest_bench_sample_inventory.csv (n_spots_adata -> n_spots)"
+    ],
+    "pythonhashseed": "0"
+  }
+}

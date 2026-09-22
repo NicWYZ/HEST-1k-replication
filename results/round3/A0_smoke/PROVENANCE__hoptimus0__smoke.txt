@@ -1,0 +1,21 @@
+==============================================================================
+Round 3, stage A0 - conformal harness, encoder hoptimus0
+tasks           : READ/shipped
+slurm_job_id    : 2037951
+slurm_partition : spill
+node            : c151404
+date            : 2026-09-22T10:51:59-0400
+repo_commit     : fce1ad88f8af50cd09cdec6362bb8791cc075961
+script          : code/scripts/round3_a0_harness.py
+command_line    : code/scripts/round3_a0_harness.py hoptimus0 --task-def results/round3/A0_smoke/fixture_task_defs/READ.json --out-dir results/round3/A0_smoke --tag __smoke --max-folds 2
+pythonhashseed  : 0
+task_defs       : results/round3/A0_smoke/fixture_task_defs/READ.json   (FIXTURE, not results/round3/task_defs/)
+n_spots_by_task : {"READ": 8407}
+embedding_dim   : {"READ": 1536}
+n_cells_run     : 20 (design, fold, repeat, cal draw)
+wall_seconds    : 25
+wall_by_task    : {"READ/shipped": 24.8}
+exit            : 0
+config_hash     : sha256/16 ec2df262395eb12d
+config          : {"alpha": 0.1, "alpha_num": 100.0, "alpha_store": 0.2, "base_predictor": "intercept_f64: StandardScaler -> PCA(256, random_state=1) -> Ridge(alpha=100/(256*50), fit_intercept=True, solver=cholesky), float64 from the raw embeddings", "block_grid": 6, "buffer_pitches": 2.5, "cal_block_frac": 0.2, "cal_spot_frac": 0.2, "cal_unit_frac": 0.25, "designs": ["random", "patient", "donor", "slide_out"], "encoder": "hoptimus0", "h1_anchor": false, "h2_check": false, "latent": 256, "max_folds": 2, "min_C_spots": 9, "min_T_spots": 512, "min_slide_spots": 50, "n_cal_draws": 3, "n_repeats": null, "scores": ["abs", "scaled"], "script": "code/scripts/round3_a0_harness.py", "seed_source": "zlib.crc32", "sigma_floor": 0.001, "size_match": "task", "spot_cal_draws": 1, "stage": "round3_A0", "task_def_is_fixture": true, "task_defs": ["results/round3/A0_smoke/fixture_task_defs/READ.json"], "tasks": ["READ/shipped"]}
+plan            : round3_execution_plan.md section 4.2

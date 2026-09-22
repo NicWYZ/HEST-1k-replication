@@ -1,0 +1,19 @@
+dir              : /work/users/w/e/weiyang/hest_replication/results/round3/D0_inventory
+stage            : round3 D0 (inventory of full HEST-1k, expansion proposal)
+script           : code/scripts/round3_d0_inventory.py
+created          : 2026-09-22T10:52:08.405331-04:00
+operator         : weiyang (Nicolas Weiyang Zhang)
+slurm_job_id     : 2041332
+slurm_partition  : spill
+slurm_nodelist   : c151415
+node             : c151415.ll.unc.edu
+platform         : Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python           : 3.11.16
+executable       : /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+commit           : fce1ad88f8af50cd09cdec6362bb8791cc075961
+command_line     : /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python code/scripts/round3_d0_inventory.py --stage listing --project-root /work/users/w/e/weiyang/hest_replication
+pythonhashseed   : 0
+config           : {"metadata_rel": "code/HEST/assets/HEST_v1_1_0.csv", "repo_id": "MahmoodLab/hest", "stages": ["listing"], "wanted_components": ["patches", "st", "cellvit_seg", "metadata"]}
+config_hash      : sha256:cdfee93507e8d1b0b09517e593fc1e5c crc32:9c189bc0
+downloads        : NONE. HuggingFace API listing only (paths + byte sizes).
+hf_revision      : 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec

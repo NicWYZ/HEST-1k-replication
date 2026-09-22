@@ -1,0 +1,246 @@
+{
+  "task_def_version": 1,
+  "task": "READ",
+  "label_set": "shipped",
+  "source": "hest_bench",
+  "st_technology": "Visium",
+  "repo_root_relative": true,
+  "paths": {
+    "adata": "bench_data/READ/adata/{sample_id}.h5ad",
+    "patches": "bench_data/READ/patches/{sample_id}.h5",
+    "embeddings": "embeddings/READ/{encoder}/{sample_id}.h5",
+    "target_genes": "bench_data/READ/var_50genes.json"
+  },
+  "target_genes": {
+    "list": [
+      "AC010883.3",
+      "ADAMDEC1",
+      "ANGPTL2",
+      "APOC1",
+      "BTNL3",
+      "CA1",
+      "CA2",
+      "CCL14",
+      "CCL21",
+      "CD177",
+      "CEMIP",
+      "CHI3L1",
+      "CLCA1",
+      "CLU",
+      "CXCL10",
+      "CXCL8",
+      "CXCL9",
+      "EFEMP1",
+      "EGLN3",
+      "FRZB",
+      "GUCA2A",
+      "HMOX1",
+      "IGHG2",
+      "IGHG4",
+      "ITGB2",
+      "ITIH5",
+      "LAMA3",
+      "LOX",
+      "MMP28",
+      "MMP7",
+      "MMP9",
+      "MT1F",
+      "MT1M",
+      "MXI1",
+      "P3H3",
+      "PADI2",
+      "PDE9A",
+      "PLAAT3",
+      "PRRG3",
+      "PTGDS",
+      "SECTM1",
+      "SGK1",
+      "SLC26A2",
+      "SLC26A3",
+      "SMPDL3A",
+      "SPHK1",
+      "SPP1",
+      "TPSB2",
+      "TSPAN9",
+      "UBD"
+    ],
+    "n": 50,
+    "selection": "The benchmark's shipped 50-gene list, read verbatim from bench_data/READ/var_50genes.json in file order. HEST-bench chose it as the 50 most expressed genes over ALL spots of the task, test spots included, so selection_used_test_spots is true; this is the benchmark's property, not a choice of this project, and it is why round 3 track D selects gene lists on training samples only.",
+    "selection_used_test_spots": true
+  },
+  "samples": [
+    {
+      "sample_id": "ZEN36",
+      "donor_id": "READ_specimen7",
+      "hest_patient": "Patient 7",
+      "donor_label_status": "verified",
+      "lab": "ZEN",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "0.40-0.50",
+      "pixel_size_um": 0.459363338,
+      "resolution_uncertain": false,
+      "n_spots": 1691
+    },
+    {
+      "sample_id": "ZEN40",
+      "donor_id": "READ_specimen7",
+      "hest_patient": "Patient 7",
+      "donor_label_status": "verified",
+      "lab": "ZEN",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "0.40-0.50",
+      "pixel_size_um": 0.4598401833465827,
+      "resolution_uncertain": false,
+      "n_spots": 2128
+    },
+    {
+      "sample_id": "ZEN48",
+      "donor_id": "READ_specimen1",
+      "hest_patient": "Patient 1",
+      "donor_label_status": "verified",
+      "lab": "ZEN",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "0.40-0.50",
+      "pixel_size_um": 0.4591296732864132,
+      "resolution_uncertain": false,
+      "n_spots": 2385
+    },
+    {
+      "sample_id": "ZEN49",
+      "donor_id": "READ_specimen1",
+      "hest_patient": "Patient 1",
+      "donor_label_status": "verified",
+      "lab": "ZEN",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "0.40-0.50",
+      "pixel_size_um": 0.4596361645691399,
+      "resolution_uncertain": false,
+      "n_spots": 2203
+    }
+  ],
+  "flags": {
+    "patient_labels_unreliable": false,
+    "same_specimen_pairs": true,
+    "idc_attribution_unresolved": false
+  },
+  "folds": {
+    "patient": [
+      {
+        "fold": "0",
+        "train": [
+          "ZEN36",
+          "ZEN40"
+        ],
+        "test": [
+          "ZEN48",
+          "ZEN49"
+        ]
+      },
+      {
+        "fold": "1",
+        "train": [
+          "ZEN48",
+          "ZEN49"
+        ],
+        "test": [
+          "ZEN36",
+          "ZEN40"
+        ]
+      }
+    ],
+    "donor": [
+      {
+        "fold": "READ_specimen1",
+        "train": [
+          "ZEN36",
+          "ZEN40"
+        ],
+        "test": [
+          "ZEN48",
+          "ZEN49"
+        ]
+      },
+      {
+        "fold": "READ_specimen7",
+        "train": [
+          "ZEN48",
+          "ZEN49"
+        ],
+        "test": [
+          "ZEN36",
+          "ZEN40"
+        ]
+      }
+    ],
+    "slide_out": [
+      {
+        "fold": "ZEN36",
+        "train": [
+          "ZEN40",
+          "ZEN48",
+          "ZEN49"
+        ],
+        "test": [
+          "ZEN36"
+        ]
+      },
+      {
+        "fold": "ZEN40",
+        "train": [
+          "ZEN36",
+          "ZEN48",
+          "ZEN49"
+        ],
+        "test": [
+          "ZEN40"
+        ]
+      },
+      {
+        "fold": "ZEN48",
+        "train": [
+          "ZEN36",
+          "ZEN40",
+          "ZEN49"
+        ],
+        "test": [
+          "ZEN48"
+        ]
+      },
+      {
+        "fold": "ZEN49",
+        "train": [
+          "ZEN36",
+          "ZEN40",
+          "ZEN48"
+        ],
+        "test": [
+          "ZEN49"
+        ]
+      }
+    ],
+    "random": {
+      "n_repeats": 5,
+      "test_size_from_fold": "patient",
+      "seed_source": "crc32"
+    }
+  },
+  "provenance": {
+    "generated_by": "code/scripts/round3_a0_fixture_taskdefs.py (FIXTURE, stage A0; NOT the S0 generator for results/round3/task_defs/)",
+    "generated_at": "2026-09-22T10:51:25-0400",
+    "commit": "fce1ad88f8af50cd09cdec6362bb8791cc075961",
+    "inputs": [
+      "bench_data/READ/adata/*.h5ad (sample list and order)",
+      "bench_data/READ/var_50genes.json",
+      "bench_data/READ/splits/train_*.csv",
+      "bench_data/READ/splits/test_*.csv",
+      "results/tailored/integrity/sample_metadata.csv",
+      "results/round2/R5b_audit/donor_audit.csv",
+      "bench_data/hest_bench_sample_inventory.csv (n_spots_adata -> n_spots)"
+    ],
+    "pythonhashseed": "0"
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "task_def_version": 1,
+  "task": "HCC",
+  "label_set": "shipped",
+  "source": "hest_bench",
+  "st_technology": "Visium",
+  "repo_root_relative": true,
+  "paths": {
+    "adata": "bench_data/HCC/adata/{sample_id}.h5ad",
+    "patches": "bench_data/HCC/patches/{sample_id}.h5",
+    "embeddings": "embeddings/HCC/{encoder}/{sample_id}.h5",
+    "target_genes": "bench_data/HCC/var_50genes.json"
+  },
+  "target_genes": {
+    "list": [
+      "AC092069.1",
+      "ACTA2",
+      "AEBP1",
+      "ASPM",
+      "BEST1",
+      "C11orf96",
+      "CAVIN3",
+      "CCL21",
+      "CCN1",
+      "CXCL10",
+      "CXCL9",
+      "CYP2E1",
+      "ELN",
+      "ETNPPL",
+      "FBLN2",
+      "FBLN5",
+      "GJA4",
+      "HAMP",
+      "HBB",
+      "IGFBP5",
+      "IGHA1",
+      "IGHG1",
+      "IGHM",
+      "IGKC",
+      "IGLC1",
+      "IGLC2",
+      "JAG1",
+      "LRRC75A",
+      "LTBP2",
+      "MCAM",
+      "MFAP4",
+      "MGP",
+      "MUSTN1",
+      "MYL9",
+      "NDUFA4L2",
+      "PDE9A",
+      "PDZK1IP1",
+      "PHKG1",
+      "PPP1R14A",
+      "PRELP",
+      "PTGDS",
+      "RBP7",
+      "RND1",
+      "S100A4",
+      "SPARCL1",
+      "TAGLN",
+      "TCEAL9",
+      "TPM2",
+      "TRBC2",
+      "TSPAN13"
+    ],
+    "n": 50,
+    "selection": "The benchmark's shipped 50-gene list, read verbatim from bench_data/HCC/var_50genes.json in file order. HEST-bench chose it as the 50 most expressed genes over ALL spots of the task, test spots included, so selection_used_test_spots is true; this is the benchmark's property, not a choice of this project, and it is why round 3 track D selects gene lists on training samples only.",
+    "selection_used_test_spots": true
+  },
+  "samples": [
+    {
+      "sample_id": "NCBI642",
+      "donor_id": "CHC20",
+      "hest_patient": "Patient b",
+      "donor_label_status": "verified",
+      "lab": "NCBI",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "0.40-0.50",
+      "pixel_size_um": 0.4534062331416454,
+      "resolution_uncertain": false,
+      "n_spots": 1987
+    },
+    {
+      "sample_id": "NCBI643",
+      "donor_id": "CHC23",
+      "hest_patient": "Patient a",
+      "donor_label_status": "verified",
+      "lab": "NCBI",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "0.40-0.50",
+      "pixel_size_um": 0.4539563409112828,
+      "resolution_uncertain": false,
+      "n_spots": 2261
+    }
+  ],
+  "flags": {
+    "patient_labels_unreliable": false,
+    "same_specimen_pairs": false,
+    "idc_attribution_unresolved": false
+  },
+  "folds": {
+    "patient": [
+      {
+        "fold": "0",
+        "train": [
+          "NCBI642"
+        ],
+        "test": [
+          "NCBI643"
+        ]
+      },
+      {
+        "fold": "1",
+        "train": [
+          "NCBI643"
+        ],
+        "test": [
+          "NCBI642"
+        ]
+      }
+    ],
+    "donor": [
+      {
+        "fold": "CHC20",
+        "train": [
+          "NCBI643"
+        ],
+        "test": [
+          "NCBI642"
+        ]
+      },
+      {
+        "fold": "CHC23",
+        "train": [
+          "NCBI642"
+        ],
+        "test": [
+          "NCBI643"
+        ]
+      }
+    ],
+    "slide_out": [],
+    "random": {
+      "n_repeats": 5,
+      "test_size_from_fold": "patient",
+      "seed_source": "crc32"
+    }
+  },
+  "provenance": {
+    "generated_by": "code/scripts/round3_a0_fixture_taskdefs.py (FIXTURE, stage A0; NOT the S0 generator for results/round3/task_defs/)",
+    "generated_at": "2026-09-22T10:51:25-0400",
+    "commit": "fce1ad88f8af50cd09cdec6362bb8791cc075961",
+    "inputs": [
+      "bench_data/HCC/adata/*.h5ad (sample list and order)",
+      "bench_data/HCC/var_50genes.json",
+      "bench_data/HCC/splits/train_*.csv",
+      "bench_data/HCC/splits/test_*.csv",
+      "results/tailored/integrity/sample_metadata.csv",
+      "results/round2/R5b_audit/donor_audit.csv",
+      "bench_data/hest_bench_sample_inventory.csv (n_spots_adata -> n_spots)"
+    ],
+    "pythonhashseed": "0"
+  }
+}

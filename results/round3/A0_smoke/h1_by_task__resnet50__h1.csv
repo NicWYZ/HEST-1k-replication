@@ -1,0 +1,11 @@
+task,ours,r1b_intercept_f64,abs_diff,tol,passed,encoder,r1b_source
+CCRCC,0.2251083298970513,0.22510832989705123,5.551115123125783e-17,1e-06,True,resnet50,results/round2/R1b_heads/head_intercept__resnet50__f64.csv
+COAD,0.2500762172796863,0.2500762172796863,0.0,1e-06,True,resnet50,results/round2/R1b_heads/head_intercept__resnet50__f64.csv
+HCC,0.060494673988449016,0.060494673988448995,2.0816681711721685e-17,1e-06,True,resnet50,results/round2/R1b_heads/head_intercept__resnet50__f64.csv
+IDC,0.47393087956289065,0.47393087956289065,0.0,1e-06,True,resnet50,results/round2/R1b_heads/head_intercept__resnet50__f64.csv
+LUNG,0.4947811544247007,0.4947811544247007,0.0,1e-06,True,resnet50,results/round2/R1b_heads/head_intercept__resnet50__f64.csv
+LYMPH_IDC,0.23039139203839695,0.23039139203839692,2.7755575615628914e-17,1e-06,True,resnet50,results/round2/R1b_heads/head_intercept__resnet50__f64.csv
+PAAD,0.3877855807656927,0.3877855807656927,0.0,1e-06,True,resnet50,results/round2/R1b_heads/head_intercept__resnet50__f64.csv
+PRAD,0.30437041399482323,0.30437041399482323,0.0,1e-06,True,resnet50,results/round2/R1b_heads/head_intercept__resnet50__f64.csv
+READ,0.07825129674135796,0.07825129674135795,1.3877787807814457e-17,1e-06,True,resnet50,results/round2/R1b_heads/head_intercept__resnet50__f64.csv
+SKCM,0.4821924156920161,0.4821924156920161,0.0,1e-06,True,resnet50,results/round2/R1b_heads/head_intercept__resnet50__f64.csv
