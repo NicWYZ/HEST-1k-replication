@@ -1,0 +1,21 @@
+==============================================================================
+Round 3, stage A0 - conformal harness, encoder virchow2
+tasks           : PRAD/shipped, READ/shipped, IDC/audited
+slurm_job_id    : 2108127
+slurm_partition : spill
+node            : c0904
+date            : 2026-09-22T17:51:46-0400
+repo_commit     : c5f71821e3ed4f98cca3baec94def2fffde79d9a
+script          : code/scripts/round3_a0_harness.py
+command_line    : code/scripts/round3_a0_harness.py virchow2 --task-def results/round3/task_defs/PRAD.json --task-def results/round3/task_defs/READ.json --task-def results/round3/task_defs/IDC_audited.json --out-dir results/round3/A1_coverage --tag __slideout --designs slide_out
+pythonhashseed  : 0
+task_defs       : results/round3/task_defs/PRAD.json; results/round3/task_defs/READ.json; results/round3/task_defs/IDC_audited.json
+n_spots_by_task : {"IDC": 35536, "PRAD": 62710, "READ": 8407}
+embedding_dim   : {"IDC": 2560, "PRAD": 2560, "READ": 2560}
+n_cells_run     : 93 (design, fold, repeat, cal draw)
+wall_seconds    : 1876
+wall_by_task    : {"IDC/audited": 73.1, "PRAD/shipped": 1765.2, "READ/shipped": 37.0}
+exit            : 0
+config_hash     : sha256/16 49bc18b9f2e44d17
+config          : {"alpha": 0.1, "alpha_num": 100.0, "alpha_store": 0.2, "base_predictor": "intercept_f64: StandardScaler -> PCA(256, random_state=1) -> Ridge(alpha=100/(256*50), fit_intercept=True, solver=cholesky), float64 from the raw embeddings", "block_grid": 6, "buffer_pitches": 2.5, "cal_block_frac": 0.2, "cal_spot_frac": 0.2, "cal_unit_frac": 0.25, "designs": ["slide_out"], "encoder": "virchow2", "h1_anchor": false, "h2_check": false, "latent": 256, "max_folds": null, "min_C_spots": 9, "min_T_spots": 512, "min_slide_spots": 50, "n_cal_draws": 3, "n_repeats": null, "scores": ["abs", "scaled"], "script": "code/scripts/round3_a0_harness.py", "seed_source": "zlib.crc32", "sigma_floor": 0.001, "size_match": "task", "spot_cal_draws": 1, "stage": "round3_A0", "task_def_is_fixture": false, "task_defs": ["results/round3/task_defs/PRAD.json", "results/round3/task_defs/READ.json", "results/round3/task_defs/IDC_audited.json"], "tasks": ["PRAD/shipped", "READ/shipped", "IDC/audited"]}
+plan            : round3_execution_plan.md section 4.2

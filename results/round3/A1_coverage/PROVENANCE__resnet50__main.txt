@@ -1,0 +1,21 @@
+==============================================================================
+Round 3, stage A0 - conformal harness, encoder resnet50
+tasks           : CCRCC/shipped, COAD/shipped, HCC/shipped, IDC/shipped, IDC/audited, LUNG/shipped, LYMPH_IDC/shipped, PAAD/shipped, PRAD/shipped, READ/shipped, SKCM/shipped
+slurm_job_id    : 2108050
+slurm_partition : spill
+node            : b1011
+date            : 2026-09-22T16:36:17-0400
+repo_commit     : c5f71821e3ed4f98cca3baec94def2fffde79d9a
+script          : code/scripts/round3_a0_harness.py
+command_line    : code/scripts/round3_a0_harness.py resnet50 --task-def results/round3/task_defs/CCRCC.json --task-def results/round3/task_defs/COAD.json --task-def results/round3/task_defs/HCC.json --task-def results/round3/task_defs/IDC.json --task-def results/round3/task_defs/IDC_audited.json --task-def results/round3/task_defs/LUNG.json --task-def results/round3/task_defs/LYMPH_IDC.json --task-def results/round3/task_defs/PAAD.json --task-def results/round3/task_defs/PRAD.json --task-def results/round3/task_defs/READ.json --task-def results/round3/task_defs/SKCM.json --out-dir results/round3/A1_coverage --tag __main --designs random,patient,donor
+pythonhashseed  : 0
+task_defs       : results/round3/task_defs/CCRCC.json; results/round3/task_defs/COAD.json; results/round3/task_defs/HCC.json; results/round3/task_defs/IDC.json; results/round3/task_defs/IDC_audited.json; results/round3/task_defs/LUNG.json; results/round3/task_defs/LYMPH_IDC.json; results/round3/task_defs/PAAD.json; results/round3/task_defs/PRAD.json; results/round3/task_defs/READ.json; results/round3/task_defs/SKCM.json
+n_spots_by_task : {"CCRCC": 74220, "COAD": 15651, "HCC": 4196, "IDC": 35536, "LUNG": 5206, "LYMPH_IDC": 19964, "PAAD": 7571, "PRAD": 62710, "READ": 8407, "SKCM": 3034}
+embedding_dim   : {"CCRCC": 1024, "COAD": 1024, "HCC": 1024, "IDC": 1024, "LUNG": 1024, "LYMPH_IDC": 1024, "PAAD": 1024, "PRAD": 1024, "READ": 1024, "SKCM": 1024}
+n_cells_run     : 394 (design, fold, repeat, cal draw)
+wall_seconds    : 1616
+wall_by_task    : {"CCRCC/shipped": 1125.3, "COAD/shipped": 30.6, "HCC/shipped": 10.7, "IDC/audited": 43.5, "IDC/shipped": 91.5, "LUNG/shipped": 9.0, "LYMPH_IDC/shipped": 122.4, "PAAD/shipped": 13.7, "PRAD/shipped": 146.4, "READ/shipped": 13.6, "SKCM/shipped": 6.9}
+exit            : 0
+config_hash     : sha256/16 ec9ec8c41605c90c
+config          : {"alpha": 0.1, "alpha_num": 100.0, "alpha_store": 0.2, "base_predictor": "intercept_f64: StandardScaler -> PCA(256, random_state=1) -> Ridge(alpha=100/(256*50), fit_intercept=True, solver=cholesky), float64 from the raw embeddings", "block_grid": 6, "buffer_pitches": 2.5, "cal_block_frac": 0.2, "cal_spot_frac": 0.2, "cal_unit_frac": 0.25, "designs": ["random", "patient", "donor"], "encoder": "resnet50", "h1_anchor": false, "h2_check": false, "latent": 256, "max_folds": null, "min_C_spots": 9, "min_T_spots": 512, "min_slide_spots": 50, "n_cal_draws": 3, "n_repeats": null, "scores": ["abs", "scaled"], "script": "code/scripts/round3_a0_harness.py", "seed_source": "zlib.crc32", "sigma_floor": 0.001, "size_match": "task", "spot_cal_draws": 1, "stage": "round3_A0", "task_def_is_fixture": false, "task_defs": ["results/round3/task_defs/CCRCC.json", "results/round3/task_defs/COAD.json", "results/round3/task_defs/HCC.json", "results/round3/task_defs/IDC.json", "results/round3/task_defs/IDC_audited.json", "results/round3/task_defs/LUNG.json", "results/round3/task_defs/LYMPH_IDC.json", "results/round3/task_defs/PAAD.json", "results/round3/task_defs/PRAD.json", "results/round3/task_defs/READ.json", "results/round3/task_defs/SKCM.json"], "tasks": ["CCRCC/shipped", "COAD/shipped", "HCC/shipped", "IDC/shipped", "IDC/audited", "LUNG/shipped", "LYMPH_IDC/shipped", "PAAD/shipped", "PRAD/shipped", "READ/shipped", "SKCM/shipped"]}
+plan            : round3_execution_plan.md section 4.2

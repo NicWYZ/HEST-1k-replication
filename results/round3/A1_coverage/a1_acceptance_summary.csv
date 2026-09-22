@@ -1,0 +1,7 @@
+check,scope,n_cells,n_passed,statistic,value,tolerance,encoders,passed
+H1_anchor_to_R1b,A0,30,30,max |per-task Pearson - R1b intercept_f64|,1.1102230246251565e-16,1e-06,hoptimus0;resnet50;uni_v2,True
+H2_random_marginal_coverage_pooled,A0,30,30,max |pooled coverage - 0.90|,0.0017502383222116613,0.02,hoptimus0;resnet50;uni_v2,True
+H2_pooled_coverage_min,A0,30,30,min pooled coverage,0.8986394199077126,,hoptimus0;resnet50;uni_v2,True
+H2_pooled_coverage_max,A0,30,30,max pooled coverage,0.9017502383222117,,hoptimus0;resnet50;uni_v2,True
+H3_disjointness,A0,542,542,"fold rows with T,C,E disjoint and scaler/PCA fit rows == |T|",542,,hoptimus0;resnet50;uni_v2,True
+H3_disjointness,A1,5844,5844,"fold rows with T,C,E disjoint and scaler/PCA fit rows == |T|",5844,,conch_v1;conch_v15;ctranspath;gigapath;hoptimus0;hoptimus1;phikon;resnet50;uni_v1;uni_v2;virchow;virchow2,True
