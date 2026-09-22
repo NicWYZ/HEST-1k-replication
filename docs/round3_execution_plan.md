@@ -229,7 +229,7 @@ designs within a fold by subsampling to the smallest, as R3 did, and the sizes a
 | `random` | a random draw of the shipped fold's test size over all spots of the task, 5 repeats | the rest | spot; $C$ is a random 20% of the pool |
 | `patient` | the shipped fold's test slides | the shipped fold's training slides | highest available level using HEST `patient` |
 | `donor` | leave-one-donor-out by `donor_id` (COAD four folds; IDC three folds under audited labels plus the shipped four-fold version) | all other donors | highest available level using `donor_id` |
-| `slide_out` | one slide, on the multi-slide tasks PRAD, COAD, READ, LYMPH_IDC, and IDC under audited labels | all other slides, including the donor's other slides | slide; record `cal_shares_donor_with_test` |
+| `slide_out` | one slide, on PRAD, READ and IDC under audited labels only (corrected at the A1 gate, see § 12.1; the handoff's list also named COAD and LYMPH_IDC, where each donor has one slide and the design is the `donor` partition exactly) | all other slides, including the donor's other slides | slide; record `cal_shares_donor_with_test` |
 
 **Calibration-unit rule.** Within the pool, hold out about 25% of the units at the highest level the
 pool supports, rounding up to at least one unit. Use the donor if the pool has at least two donors
@@ -759,5 +759,313 @@ than acted on beyond what is noted.
 - Angelopoulos, Bates, Fannjiang, Jordan, Zrnic. Prediction-powered inference. Science 2023.
   Angelopoulos, Duchi, Zrnic. PPI++. arXiv:2311.01453. Zrnic and Candès.
   Cross-prediction-powered inference. PNAS 2024.
-- Hierarchical conformal and PPI under clustering: to be supplied by the oversight chat's memo
-  before interval 2, if any.
+- Hierarchical conformal and PPI under clustering: supplied by the A1 decision memo, and listed in
+  § 12.3 below.
+
+---
+
+## 12. Interval 2, transcribed from the A1 decision memo
+
+Transcribed from `docs/decisions/round3_A1_decisions.md` (22 September 2026) before anything in it
+was run, as the memo and Nicolas's standing rule both require. Where this section and §§ 3 to 8
+above differ, this section governs, because it is the later instruction. §§ 3 to 8 are left as
+transcribed at the start of the round, since they are the record of what the handoff said.
+
+### 12.1 The gate, and what it opened
+
+- **A1 is accepted.** Interval 2 opens on receipt of the memo. Nothing in the A1 report is
+  withdrawn; the oversight review read the same files differently in places and those readings
+  change A2 and A3.
+- **D1's second condition is met.** Nicolas approved the expansion on 22 September with the sets
+  in § 12.6 and stated that storage is not a constraint on Longleaf. D1 runs without waiting for
+  anything further.
+- **Remaining gates are A3 and B2.** The gate rule, restated in the memo in the wording Nicolas
+  approved: report-and-wait means that no stage after the gated stage starts until the oversight
+  chat has reviewed the report and replied; every stage, not only the dependent or expensive ones;
+  nothing after the gate is set up, staged or piloted. Inside an interval there are no interim
+  reports and no interim stop conditions; anything that would have halted work is handled under the
+  decision boundaries, recorded in an Escalations section of the next report, and work continues.
+  Contact with anyone outside the project is never this session's decision.
+- **`slide_out` is defined only on PRAD, READ and IDC under audited labels.** The handoff's
+  multi-slide list was wrong for COAD and LYMPH_IDC. § 4.2's design table is corrected in place.
+- **Job sizing for every interval-2 job: 16 GB on 4 CPUs**, from A1's peak of 11.98 GB in
+  `results/round3/A1_coverage/a1_job_accounting.csv`. Wall as the
+  work needs, harness ceiling from queue time plus runtime, the partition actually used recorded.
+
+### 12.2 How the oversight review reads A1, and what each reading changes
+
+1. **The calibration-unit table mixes two mechanisms, and $K$ is the missing column.** $K$ is the
+   number of calibration units per fold. Mechanism (a) is too few units at the right level: in every
+   task except CCRCC and PRAD, calibrating at donor level means calibrating on one donor, so fold
+   coverage is a unit-level draw that scatters rather than a systematic shortfall. Mechanism (b) is
+   calibration below the level of the test unit: in the two-sample tasks and COAD's fold that trains
+   on TENX111 alone, calibration scores are within-slide residuals and test scores are new-slide
+   residuals, which fails systematically and cannot be repaired inside those tasks. The arithmetic
+   bounding (a): with one exchangeable score per unit, split conformal at level $1-\alpha$ needs
+   $K \ge (1-\alpha)/\alpha$ for a finite interval, which is $K \ge 9$ at $\alpha = 0.1$ and $K \ge 4$
+   at $\alpha = 0.2$. No benchmark fold clears the first. This makes track D a Topic A need too.
+   **Changes:** A2 adds the experiments that separate (a) from (b), items A2b and A2c in § 12.4. The
+   COAD recovery of 0.145 is re-read as a change in both labels and fold structure, not labels alone.
+2. **`scaled` under `random` is a conditional-coverage finding.** Its slide-mean coverage is
+   0.898 to 0.902 on every task with across-encoder sd under 0.001, where `abs` varies across
+   slides. **Change:** A2a adds the across-slide sd of coverage per task and score under `random`.
+3. **`scaled` width explodes under shift,** with means set by a few cells. **Change:** A3 and A4
+   carry `scaled_clip`, $\hat\sigma$ clipped to the 1st and 99th percentiles of the calibration
+   set's $\hat\sigma$, and every report gives median width beside mean width.
+4. **Encoder quality is reported as ranges, not correlations.** The $+0.74$ under `random` is over a
+   coverage range of 0.0018, which is noise. Coverage is a property of the calibration design;
+   encoder quality changes width. **Change:** A2e reports width by encoder.
+5. **The within-PRAD donor-sharing contrast exists** in the 120 folds A1 excluded, where one draw's
+   calibration set contains a same-donor slide and another's does not with the training set fixed.
+   **Change:** A2d.
+6. **PRAD's two folds are not alike.** The fold calibrated on four of patient 2's slides
+   under-covers at a narrower width than the fold calibrated on two of patient 1's, so $K$ does not
+   explain it; the calibration set's own between-slide spread does. **Change:** an A2a stratum.
+7. **The D0 kidney set is not a laboratory contrast.** Its three arms are ccRCC tumour, healthy and
+   injured cortex, and stone-disease papilla, so a source term there is tumour against non-tumour
+   first. Holding organ, technology, oncotree code and disease fixed, no HEST cell has three
+   laboratories with three donors each. The closest cell is breast Xenium IDC, 18 samples from two
+   sources with four donors each, disease, platform and preservation fixed. The IDC attribution
+   question is reopened by the `TENX97` and `TENX98` siblings. **Changes:** § 12.6 and D4's renaming
+   in § 12.5.
+
+### 12.3 Literature supplied
+
+- Lee, Barber and Willett, "Distribution-free inference with hierarchical data", arXiv:2306.06342,
+  ACM Journal of Data Science, DOI 10.1145/3786352. Hierarchical conformal prediction (HCP). The
+  oversight handoff named the third author as Tibshirani; that was wrong.
+- Dunn, Wasserman and Ramdas, "Distribution-free prediction sets for two-layer hierarchical models",
+  JASA 118(544), 2023, arXiv:1809.07441.
+- Salerno, Wu and McCormick, "Spatially robust inference with predicted and missing at random
+  labels", arXiv:2603.11368, March 2026.
+- Shirota, "Design-based prediction-powered inference for spatial data", arXiv:2608.10356, August
+  2026.
+- Cameron and Miller, "A practitioner's guide to cluster-robust inference", Journal of Human
+  Resources 50(2), 2015.
+- MacKinnon, Nielsen and Webb, "Cluster-robust inference: a guide to empirical practice", Journal
+  of Econometrics 232(2), 2023.
+- Fisch et al., "Stratified prediction-powered inference for hybrid language model evaluation",
+  arXiv:2406.04291, 2024. To be read before B1.
+
+The memo's verdict on the pivot trigger: neither 2026 PPI paper treats units nested in groups or a
+donor-level unit of inference, and neither mentions spatial transcriptomics, so there is no pivot.
+B1 and B2 position against both by name.
+
+### 12.4 Interval 2 stages
+
+**H0, housekeeping from the A1 escalations, capped at one day in total.**
+
+1. Fix the sweep command printed in `docs/WAYS_OF_WORKING.md` to the one
+   `code/scripts/sweep_table.py` runs. Fifteen minutes.
+2. `docs/r5_idc_provenance.md`: two hours of triage, then stop. Fix what that allows, banner the
+   document as a closed record of a reading task, sweep it under the `historical` class, and put the
+   per-document sweep table for the whole docs tree into the A3 report.
+3. README known limitations gain two lines: the derived-claim formula in `round2_R3_stage_report.md`
+   that cites a gitignored parquet, and COAD `TENX111`'s spot count after a one-hour check of where
+   6,643 came from against the AnnData's 6,138, recording both and the likely cause if the hour does
+   not settle it.
+4. README properties: property 2 (COAD) gains that HEST v1.3.0 corrects the labels upstream, which
+   corroborates the audit; property 1 (IDC) gains the sibling observation, marked pending D3.
+5. **Determinism.** Rerun the `resnet50` A1 job unchanged and diff every summary CSV and the
+   per-gene parquet against the committed run. Report byte-identical or not, and if not, which
+   columns moved. This closes H4.
+6. This section.
+
+**A2, conditional coverage and the anatomy of failure, two days, no gate.** Everything in § 4.4
+stands: strata, the level-versus-scale decomposition, the R7 per-gene join, `fig_a2_anatomy.png`.
+Six items are added, of which A2b and A2c are the important ones.
+
+- **A2a, strata, as planned plus three.** The `random` design by test slide for `abs` against
+  `scaled`, as the across-slide sd of coverage per task and score. PRAD by fold, with the held-out
+  patient, its session structure and its resolution class written out. $K$ as a stratum for every
+  fold.
+- **A2b, the calibration-unit intervention.** On every task file with at least two units in the
+  training pool (CCRCC, LYMPH_IDC, PAAD, COAD under `donor_id`, IDC under both label sets, PRAD,
+  READ), for each `donor` fold and three encoders (`hoptimus0`, `uni_v2`, `resnet50`): hold $E$
+  fixed; build one proper-training set $T$ and two calibration sets from the same pool.
+  $C_{\text{unit}}$ is the A1 calibration set. $C_{\text{block}}$ is buffered spatial blocks (grid 6,
+  2.5-pitch buffer, about 20% of blocks) carved out of the slides that form $T$. $T$ is the A1
+  proper-training set minus $C_{\text{block}}$, the same for both arms, so head, scaler and PCA are
+  fit once per fold. Size-match $C_{\text{block}}$ to $C_{\text{unit}}$ by subsampling the larger.
+  Report coverage and width per arm per fold, and the difference with its across-fold dispersion.
+  A fold where $T$ falls below 1,000 spots after carving is dropped and listed, not shrunk further.
+- **A2c, coverage against $K$ and the between-unit share of the score.** A harness flag writes, per
+  (fold, calibration draw, unit, gene), count, mean, variance and the 0.5 and 0.9 quantiles of the
+  calibration scores, and the same for the test unit, to `a2_score_moments__<enc>.parquet` with an
+  explicit schema. From it, the between-unit share of calibration-score variance per (fold, gene),
+  and observed coverage tabulated against $K$ and that share for `abs` over all `patient`, `donor`
+  and `slide_out` folds. Then a location-shift simulation, 1,000 replicates per fold, reporting
+  simulated expected coverage beside observed per fold and pooled by $K$. Moments come from the A1
+  harness rerun in moments-only mode for the three encoders.
+- **A2d, donor sharing within PRAD.** From the A1 per-draw files, per PRAD `slide_out` test slide,
+  coverage between draws that include a same-donor slide and draws that do not, with the test slide
+  fixed, as a paired difference. Then one new arm, `slide_out_cal_other_donor`, calibration drawn
+  only from the other donor's slides, three draws, on PRAD, three encoders. The arms differ in
+  whether calibration shares the test slide's donor and, in PRAD, in resolution class and session.
+- **A2e, width by encoder.** Mean and median `abs` width per encoder per design, joined to benchmark
+  Pearson.
+- **A2f, the level-versus-scale decomposition as planned,** run separately for block-calibrated and
+  unit-calibrated folds.
+
+Outputs under `results/round3/A2_conditional/`: `a2_by_stratum.csv`, `a2_level_scale.csv`,
+`a2_pergene_join.csv`, `a2_unit_intervention.csv`, `a2_coverage_vs_K.csv`,
+`a2_simulated_coverage.csv`, `a2_prad_donor_sharing.csv`, `a2_width_by_encoder.csv`,
+`fig_a2_anatomy.png`, `fig_a2_coverage_vs_K.png`. Summaries before parquets.
+
+**A3, weighted and hierarchical conformal, two days, gate.** § 4.5 stands in structure, with four
+changes.
+
+- **Scores.** `abs` primary; `scaled_clip` in place of `scaled`; median width beside mean width.
+- **Weights.** W1 as specified. **W1b**, new: the same classifier on the eight `morphology_v2`
+  covariates only (nuclear count, mean and median area, five class fractions). W2 as specified.
+  **W3 is HCP**: for calibration spot $i$ in unit $k$ with $N_k$ spots, $w_i = 1/N_k$, the test
+  point's own weight 1, so each unit and the test point carry $1/(K+1)$; the unit is the fold's
+  recorded `calibration_unit`. Run W3 at $\alpha = 0.10$ and $0.20$. Where the weighted quantile is
+  infinite, record the interval as infinite, count it, and also report the interval at the largest
+  feasible level $1 - 1/(K+1)$, which is the maximum calibration score, with its realised coverage
+  against its guaranteed level. **Never substitute a finite interval for an infinite one silently.**
+- **Difference lists.** W1 sees everything the encoder represents, including the slide signature;
+  W1b composition only; W2 resolution group and session; W3 the unit structure and no features.
+- **Acceptance** as specified, plus: on `random`, W3 at $\alpha = 0.1$ has $K$ equal to the spot
+  count and reproduces the unweighted interval to $10^{-6}$ in coverage and width.
+
+A3 predictions, quoted from the memo so the report can set outcomes beside them: W1's AUC above 0.9
+on every different-slide fold, $n_{\text{eff}}$ under 5% of calibration size, and little coverage
+movement except on CCRCC and PRAD `slide_out`; W1b keeps $n_{\text{eff}}$ above 30% and moves
+coverage slightly toward nominal, most on IDC and CCRCC; W2 has no support on PRAD and SKCM
+`patient`; W3 infinite at $\alpha = 0.1$ on folds with $K \le 8$, finite at $\alpha = 0.2$ on CCRCC,
+PRAD's $K = 4$ fold and PRAD `slide_out` with coverage at or above 0.80 and an upper bound near
+$0.80 + 2/(K+1)$, the feasible-level fallback covering at or above $K/(K+1)$ in the mean,
+and W3 inert on block folds; no weighting repairs the two-sample tasks.
+
+Outputs under `results/round3/A3_weighted/`: `a3_by_task.csv` with weighting in
+{none, W1, W1b, W2, W3}, score, $\alpha$, coverage, mean and median width, interval score,
+`neff_median`, `clip_rate`, `auc`, `no_support` count, `n_infinite`, `feasible_level`;
+`a3_by_slide.csv`; `fig_a3_coverage_vs_neff.png`; `fig_a3_hcp_by_K.png`.
+
+**D3 starts now,** reading, capped at two days, and may run into interval 3. In priority order:
+breast Xenium IDC (the eleven `TENX191` to `TENX202` samples, then the seven 10x samples with two
+hours on the `TENX95`/`TENX97`/`TENX98`/`TENX99` question); kidney Visium for the Washington
+University and Indiana samples; `resolution_uncertain` re-derived from source for every sample in
+the two analysis sets; the four held-out kidney samples if time remains. Output
+`results/round3/D3_audit/donor_lab_audit_ext.csv`, a citation per row. No grouping by donor, source
+or laboratory on expansion data before that file exists.
+
+**D1 and D2.** Covered in § 12.6.
+
+### 12.5 Interval-3 changes, recorded now and specified in full at the A3 gate
+
+- **A4.** Adds `scaled` unclipped against `scaled_clip` as the first comparison, and W3 at
+  $\alpha = 0.2$ on CCRCC in the width-at-matched-coverage table.
+- **B1.** Uses the harness's calibration-fraction-zero `donor` predictions (the H1 mode), so every
+  spot's prediction comes from a head trained on all other donors. Cites the § 12.3 references,
+  positions against Salerno et al. and Shirota in its opening paragraph, and derives the parallel
+  between the donor-limited effective sample size and the $K \ge 9$ condition.
+- **B2.** As planned.
+- **D4.** `lab_out` is renamed **`source_out`**, and no report calls it a laboratory term unless D3
+  establishes that the sources differ in laboratory and agree in disease, tissue, preservation and
+  platform. On the kidney set, a **`population_out`** arm (Sorbonne tumour against Washington
+  University non-tumour, both directions), named as a population-shift term with its difference list
+  written out. On breast Xenium, `source_out` is a two-arm contrast and described as such. No D4 arm
+  on the platform-pair set.
+
+### 12.6 Track D
+
+**Sets, approved.** Verified by this session against `results/round3/D0_inventory/hest_inventory.csv`
+before transcription, after removing flagged duplicates; every figure matches the memo.
+
+| set | samples | GB | in benchmark | round-3 use |
+|---|---|---|---|---|
+| kidney Visium, the whole human cell | 58 | 23.3 | 24 | Topic B's second donor set; Topic A's `population_out` arm; the Washington University against Indiana pair |
+| breast Xenium IDC | 18 | 22.9 | 4 | the two-source contrast with disease, platform and preservation fixed; extends IDC from 4 to 18 samples |
+| platform-pair | 32 | 25.8 | 5 | none this round; downloaded and left on disk for round 4 |
+| union | 105 | 70.3 | 31 | |
+
+The three breast samples `NCBI783`, `NCBI784` and `NCBI785` sit in both the breast Xenium and
+platform-pair sets, which is why the union is 105 rather than 108. The kidney cell's four additions
+over D0's 54 are `NCBI538`, `NCBI539`, `NCBI540` (KTH, `Treated`) and `TENX71` (a 10x vendor page);
+they are downloaded, kept out of every set definition, and left for D3.
+
+Before D1, write the 18 breast ids into `expansion_set_members.csv` as `institution_breast_xenium`
+with the selection rule, and the four kidney additions as `kidney_visium_cell_extras` with the reason
+each was excluded from the analysis set.
+
+**D1** downloads all 105 in HEST-1k's own layout, including the 31 already in the benchmark, without
+reusing the benchmark copies. Order kidney, then breast Xenium, then platform-pair. Four components
+only, no `wsis/`. HuggingFace revision and sample list in `PROVENANCE.txt`; filesystem checked
+before and after; every expected file verified present; patch counts checked against the expression
+files' spot counts.
+
+**D2** embeds the kidney and breast Xenium sets only, 76 samples, with `hoptimus0`, `uni_v2` and
+`resnet50`. The platform-pair set stays unembedded. **Anchor check:** for the 24 CCRCC and 4 IDC
+samples present in both layouts, the new embeddings from HEST-1k patches must equal the cached
+benchmark embeddings for the same encoder to the float32 floor, about $10^{-5}$ relative. If they do
+not, the two layouts' patches differ, and that is understood before any expansion result is read.
+
+**What the advisors are told** is Nicolas's to say; this session contacts no one. Every round-3
+document that reports a source term states that HEST-1k contains no organ-by-technology cell with
+three laboratories at three or more donors each once disease state is held fixed, checked across all
+46 cells, so the institution axis this round is a two-source contrast.
+
+### 12.7 The A3 report, and decision boundaries
+
+The A3 report follows § 9's nine items with A2's results in full and D3's status, and adds, as item
+4, the difference list for every weighting and for the A2b and A2d arms, plus H0's per-document
+sweep table. The sweep runs with the corrected command over the README and `docs/round3_*.md`.
+Tag `round3-A3`.
+
+Decision boundaries are § 8's with two additions. An A2b fold whose $T$ falls below 1,000 spots is
+dropped and listed. A D3 finding that changes a benchmark donor label is an escalation recorded in
+the A3 report and does not change `donor_audit.csv` inside the interval; the round-2 file is frozen,
+and a round-3 audit file supersedes it explicitly only if the decision goes that way.
+
+### 12.8 How the interval is cut into parallel tracks
+
+Per Nicolas's standing rule, parallel work goes to sub-agents. The cut, and why it falls where it does:
+
+| track | stages | writes |
+|---|---|---|
+| Housekeeping | H0 items 1 to 4 | `docs/WAYS_OF_WORKING.md`, `docs/r5_idc_provenance.md`, `README.md`, the per-document sweep table |
+| Anatomy | the parts of A2 answerable from A1's committed outputs: A2a's slide, session, resolution, calibration-sharing, gene, `donor_label_status`, $K$, `random` `abs`-against-`scaled` and PRAD-by-fold strata; A2d's paired within-PRAD comparison; A2e; the R7 per-gene join | `a2_by_stratum__anatomy.csv`, `a2_prad_donor_sharing__paired.csv`, `a2_width_by_encoder.csv`, `a2_pergene_join.csv` |
+| Mechanisms | H0 item 5, then the parts of A2 that need a harness rerun: A2a's predicted-value decile and neoplastic-fraction strata; A2b; A2c; A2d's new arm; A2f; both A2 figures. Then A3 | the harness, `a2_by_stratum__spot.csv`, `a2_prad_donor_sharing__arm.csv`, and every other A2 and A3 output |
+| Expansion | the set-member additions, D1, then D2 with its anchor check | `expansion_set_members.csv`, `hest_ext/`, `embeddings_ext/` |
+| Audit | D3 | `results/round3/D3_audit/` |
+
+A2 splits where it does because the A1 per-gene parquet carries coverage and misses per slide and
+gene but not the slide offset $b_s$, the oracle width $w^\star$, or anything at spot level, so the
+predicted-value, neoplastic-fraction and level-versus-scale analyses need a rerun and the others do
+not. The two tracks that both contribute to `a2_by_stratum.csv` and `a2_prad_donor_sharing.csv`
+write fragments, and the lead merges them with collision reporting.
+
+A3 goes to the Mechanisms track after A2, rather than to a fresh sub-agent, because the memo says A3
+needs A2's per-fold tables and because both stages extend the same harness file. Only one track
+edits `code/scripts/round3_a0_harness.py`.
+
+### 12.9 Points in the memo flagged for the A3 report rather than changed
+
+Recorded here so they are not changed silently.
+
+1. **§ 4's opening says D1 and D2 run "once Nicolas approves the sets";** §§ 1 and 6.1 say he has.
+   Read as a leftover from an earlier draft; D1 runs.
+2. **A3 prediction 4 and consolidated prediction 7 say W3 is infinite at $\alpha = 0.1$ on every fold
+   "outside CCRCC's donor design".** By the memo's own condition in §§ 2.1 and 3, a finite HCP
+   interval at $\alpha = 0.1$ needs $K \ge 9$, and CCRCC's `donor` folds have $K = 6$, so W3 is
+   infinite there too. § 2.1 itself says no fold clears the bar at $\alpha = 0.1$. A3 runs as
+   specified and reports the outcome against both readings.
+3. **§ 2.1 says "the two task files that clear the bar" at $\alpha = 0.2$ and then lists three
+   items,** and CCRCC's `patient` design, with $K = 5$, also clears $K \ge 4$. No effect on any
+   stage.
+4. **A2c's between-unit share is not estimable from calibration scores alone when $K = 1$,** which
+   is most folds, since one unit has no between-unit variance. This session computes the share over
+   the $K$ calibration units together with the test unit, labels it a test-label diagnostic in the
+   same way § 4.4 labels $b_s$, and uses the same estimate in the simulation. This is a change needed
+   to make the item computable, and it is recorded as an escalation.
+5. **A2b's $C_{\text{unit}}$ arm is fit on $T$ minus $C_{\text{block}}$,** so it will not reproduce
+   A1 exactly and the prediction that unit calibration "reproduces A1" can hold only approximately.
+   A third arm is added as an anchor, per the rule that every refit has one arm anchored to the prior
+   result: A1's own $T$ with A1's $C_{\text{unit}}$, which must reproduce A1's per-fold coverage to
+   floating-point resolution. This adds a check and changes no arm.
+6. **§ 4 orders the interval as H0, then A2.** Read as requiring the determinism rerun, which is the
+   H0 item that bears on the harness A2 extends, to go first on the harness track, while H0's
+   document items run in parallel under Nicolas's fan-out rule. If the memo meant all of H0 first,
+   the cost of this reading is that A2 starts some hours earlier than it would have.
