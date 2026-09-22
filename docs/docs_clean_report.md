@@ -173,8 +173,8 @@ citations — that direction was the original bug.
 | `diagnostic` | 11 | measured inside a debugging experiment and deliberately not checkpointed |
 | `external` | 4 | a value whose source is outside this repository |
 
-Plus **117 derived formulas**, which are evaluated rather than declared — checked by
-[`code/scripts/check_derived.py`](../code/scripts/check_derived.py), all 117 agreeing with
+Plus **118 derived formulas**, which are evaluated rather than declared — checked by
+[`code/scripts/check_derived.py`](../code/scripts/check_derived.py), all 118 agreeing with
 the claims they stand for.
 
 `historical`, `cost`, `derived` and `external` are the four the instruction names.
@@ -288,5 +288,5 @@ identity to the rounded characterisation it actually is: 106 × float32 epsilon 
   with collision reporting, and the merged file was then verified to contain every writer's
   entries. The cause was mine: several concurrent writers on one file with no protocol.
   The fix for next time is one writer per file, or a per-track fragment merged at the end.
-- **Not assessed:** whether any of the 117 derived formulas is the *most natural* expression
+- **Not assessed:** whether any of the 118 derived formulas is the *most natural* expression
   of its claim, as opposed to a correct one. They are checked, not reviewed for elegance.
