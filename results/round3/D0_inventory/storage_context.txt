@@ -1,0 +1,11 @@
+# storage context for the round-3 D0 ask, read on 2026-09-22T11:40:34-04:00 from c130503
+## quota -s (home filesystem; no per-user /work quota is reported by any tool on this host)
+Disk quotas for user weiyang (uid 375767): 
+     Filesystem   space   quota   limit   grace   files   quota   limit   grace
+rc-data-ll:/vol/sas1a
+                  4163M  51200M  76800M            8044   4295m   4295m        
+## df -h /work
+Filesystem                      Size  Used Avail Use% Mounted on
+hpc.loblolly.its.unc.edu:/work  3.6P  3.0P  559T  85% /work
+## du -s --block-size=1 (bytes) of the project tree and bench_data
+82232314368	/work/users/w/e/weiyang/hest_replication

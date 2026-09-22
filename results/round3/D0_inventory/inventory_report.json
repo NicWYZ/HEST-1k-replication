@@ -1,0 +1,39 @@
+{
+  "release_used": "HEST_v1_3_0.csv",
+  "release_sha256": "5703d7169c7a31aa4cc74a900df9179326e0cc51bda617a1cf7ac179b6ed5d63",
+  "hf_revision": "7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec",
+  "n_samples": 1276,
+  "n_files_listed": 15608,
+  "n_listing_files_unmatched_to_a_sample": 12,
+  "unmatched_paths": [
+    ".gitattributes",
+    "HEST_v1_1_0.csv",
+    "HEST_v1_1_1.csv",
+    "HEST_v1_2_0.csv",
+    "HEST_v1_2_1.csv",
+    "HEST_v1_3_0.csv",
+    "README.md",
+    "fig1_preview.jpg",
+    "fig1a.jpg",
+    "fig1a.png",
+    "hest.py",
+    "human_gene_db.parquet"
+  ],
+  "bytes_four_components_all_samples": 443802803691,
+  "bytes_all_components_all_samples": 2014162991885,
+  "patient_label_status": {
+    "missing": 870,
+    "labelled": 292,
+    "blank_whitespace": 114
+  },
+  "n_resolution_uncertain": 1074,
+  "n_duplicate_ids_sharing_expression": 15,
+  "n_blob_groups_shared_across_ids": 40,
+  "benchmark_samples_expected": 72,
+  "benchmark_samples_found": 72,
+  "benchmark_samples_missing": [],
+  "benchmark_mismatched_cells": 2,
+  "benchmark_resolution_flag_agreement": "72/72",
+  "studies_resolved_to_affiliation": 41,
+  "studies_total": 58
+}
