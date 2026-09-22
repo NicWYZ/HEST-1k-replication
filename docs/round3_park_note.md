@@ -83,3 +83,36 @@ from `results/round3/A0_smoke/` and `results/round3/D0_inventory/` on Longleaf.
    IDC under audited labels, for the reason in `docs/round3_execution_plan.md` § 10 item 3.
 
 Then stop at the gate and wait for the decision memo.
+
+## D0 leads, not yet verified against files
+
+The D0 track established these before it was stopped, and its inventory tables were not built, so
+they are recorded here as leads rather than as results. Each is to be re-derived from
+`results/round3/D0_inventory/` once job 2044616 lands, and none of them should be quoted in the A1
+report until it has been. They are written down now because they bear on a decision Nicolas owns.
+
+**The institution set's stated criterion may not be satisfiable anywhere in HEST.** No
+organ-by-technology cell is reported to support three distinct generating institutions with three
+or more labelled donors each. The best case is two: human kidney on Visium, with a Sorbonne cohort
+at 24 donors and a WashU/KPMP cohort at 22. Human breast on Visium, which the earlier review named
+as a candidate, is reported as only eight unlabelled 10x product-page samples, and human breast on
+legacy Spatial Transcriptomics as a single Stockholm lab with byte-identical section pairs across
+its cohorts, which is the IDC trap again rather than an institution contrast. If that holds, the
+handoff's institution set cannot be built as specified and the choice, between two institutions,
+a different organ, or a different axis, is Nicolas's to make on the D0 proposal.
+
+**HEST has moved on from the release on disk.** Releases v1_1_0 through v1_3_0 exist at the
+repository root, growing from 1,229 to 1,276 samples; the project's table is v1_1_0. From v1_2_1
+onward HEST corrected the COAD patient labels to TENX147 as Patient 5, TENX148 as Patient 2 and
+TENX149 as Patient 1. That matches round 2's R5b donor audit exactly, which reached the same
+three-donor mapping from the 10x and GEO records rather than from HEST. The audit was right, and
+upstream now agrees with it. TENX111 is reported as still unlabelled upstream, which is also what
+the audit found.
+
+**The upstream patient field is worse than the benchmark subset suggested.** Of 1,276 samples,
+870 are reported to carry no patient label, 114 to carry a whitespace-only label that is
+nonetheless non-null, and only 292 to be usable. Twenty-seven of 78 human label strings are reused
+across cohorts, so a donor has to be keyed on the pair (dataset_title, patient) rather than on the
+label alone. Fifteen pairs of sample ids are reported byte-identical including their expression,
+one of them across two different kidney cohorts. If these hold, D3's audit is not a formality on
+the expansion sets, and the donor-power set's donor count has to be built from the keyed pair.
