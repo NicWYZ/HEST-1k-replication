@@ -62,11 +62,13 @@ Reproduce with `python code/scripts/sweep_table.py before|after|compare`.
 | `README.md` | 225 | 0 | 225 | 0 |
 | `docs/README.md` | 0 | 0 | 0 | 0 |
 | `docs/deck_master_outline.md` | 160 | 0 | 162 | 0 |
-| **total, 16 documents** | **1,786** | **688** | **1,806** | **0** |
+| **total, 16 documents** | **1,786** | **688** | **1,809** | **0** |
 | `docs/literature_landscape.md` † | — | — | 20 | 0 |
 | `docs/round2_results_synthesis.md` † | — | — | 105 | 0 |
 | `docs/docs_clean_report.md` † | — | — | 58 | 0 |
 | **total, 19 documents** | | | **1,992** | **0** |
+
+**A note on this table's own totals.** The 16-document subtotal was first typed rather than computed, and typed wrong -- 1,806 where the rows give 1,809. That is the exact fault this exercise exists to catch, in the report about the exercise, and it was caught by review rather than by me. Both totals are now derived from the table's own rows by `code/scripts/fix_subtotal.py`, which asserts that the subtotal plus the three late rows equals the total, so they cannot drift apart again.
 
 † Not in the sixteen and so not in the before column. The first two arrived on the remote
 while this work was finishing — two of the three documents originally withheld — and were
