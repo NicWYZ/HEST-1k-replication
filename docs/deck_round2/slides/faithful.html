@@ -1,0 +1,12 @@
+<section id="faithful" data-transition="fade" style="background:#f7f5ef">
+  <p id="e1-dz9dre" style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; color:#6b7480">results/summary/discrepancy_table.csv · results/summary/results_encoder.csv</p>
+  <h2 id="5a66b17b" style="position:absolute; top:80px; left:128px; width:1664px; font-family:'Source Serif 4', Georgia, serif; font-size:50px; font-weight:600; line-height:1.12; color:#1e2a38">Faithful replication</h2>
+  <ul id="3b049655" style="position:absolute; top:181.85px; right:27.56px; width:625.05px; height:601.15px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:30px; line-height:1.42; color:#3a4552">
+    <li>12 encoders × 3 heads × 9 tasks, on HEST's own code with pinned weights</li>
+    <li>108 cells vs the live leaderboard: mean |diff| 0.0002, max 0.016, 0 above 0.03</li>
+    <li>ResNet50 exact at 0.3252; H-Optimus-1 exact at 0.4229 on its first run</li>
+    <li>The pipeline is the benchmark's pipeline; everything downstream inherits this</li>
+  </ul>
+  <img src="/_blob/378d64adc69edf2e8749da795784f476" alt="Average Pearson per encoder over nine tasks: ours, the paper's Table 1, and the live leaderboard" id="ce6bec54" style="position:absolute; top:181.85px; left:128px; width:1133px; height:652px; background:#ffffff; border:1px solid #ddd8cc; border-radius:8px; object-fit:contain">
+  <aside>The replication is exact to the precision the current leaderboard reports. Twelve encoders (we added HO-1), 3 regression heads, ten tasks, using their own code with encoder weights loaded through their TRIDENT library on Huggingface. Against the live leaderboard, the 108 encoder and task combos all have a mean absolute difference of 0.0002. Two cells carry most of the evidential weight. ResNet50 and H-Optimus-1 both reproduces exactly. Overall I would say that the splits, gene lists, normalisation, PCA and ridge head are all wired the way the authors had them, and this is the most trivial part of the presentation.&nbsp;</aside>
+</section>

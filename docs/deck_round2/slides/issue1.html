@@ -1,0 +1,16 @@
+<section id="issue1" data-transition="fade" style="display:flex; flex-direction:column; gap:28px; padding:80px 128px 160px; background:#f7f5ef">
+  <h2 style="font-family:'Source Serif 4', Georgia, serif; font-size:50px; font-weight:600; line-height:1.12; color:#1e2a38">Issue 1 · The patient split does not measure what it says on two of ten tasks</h2>
+  <div style="display:flex; flex-direction:row; gap:40px; align-items:start">
+    <img src="/_blob/4cb0394f90d36b04c32d8e7c0a16e937" alt="Within-slide Pearson with and without the same-donor partner in training, per held-out slide and encoder, IDC and READ" style="width:1100px; height:619px; background:#ffffff; border:1px solid #ddd8cc; border-radius:8px; object-fit:contain">
+    <div style="display:flex; flex-direction:column; gap:10px; flex:1">
+      <ul style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:30px; line-height:1.42; color:#3a4552">
+        <li>COAD: three patients under one label; the fold trains on one donor, tests on three. Gap 0.317 vs 0.05–0.19 elsewhere</li>
+        <li>IDC: two 10x samples are probably two sections of one tumour, labelled as two patients</li>
+        <li>Same-tumour section in training, all else fixed: +0.065 on IDC (6/6), 54% of its gap; +0.090 on READ (12/12)</li>
+        <li>GitHub: COAD's labels are known (#133); the rest is not in the tracker</li>
+      </ul>
+    </div>
+  </div>
+  <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; color:#6b7480">results/round2/R5b_audit/donor_audit.csv · R5c_leak/r5c_leak_summary.csv · R3_splits/r3_per_task_terms.csv</p>
+  <aside>The patient split is meant to score generalisation to an unseen patient. On two of the ten tasks it does not. In COAD, three patients share one label, so its patient fold trains on one donor and tests on three. Its gap of 0.317 is far above the 0.05 to 0.19 of the other tasks, and reflects the fold, not the tissue. IDC is the reverse: two samples are probably two sections of one tumour, labelled as different patients. The figure measures what that is worth. With the test slide and training size held fixed, adding the partner section to training raises Pearson by 0.065 on IDC, in all six cells, which is more than half of IDC's gap. READ gives a second estimate of the same effect, 0.090. COAD's labels are already known on HEST's GitHub; the rest is not reported there. The implication for us: the unit that carries shared information is the tumour, not the spot.</aside>
+</section>

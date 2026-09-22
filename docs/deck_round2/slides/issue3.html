@@ -1,0 +1,16 @@
+<section id="issue3" data-transition="fade" style="display:flex; flex-direction:column; gap:28px; padding:80px 128px 160px; background:#f7f5ef">
+  <h2 style="font-family:'Source Serif 4', Georgia, serif; font-size:50px; font-weight:600; line-height:1.12; color:#1e2a38">Issue 3 · Table A13 ranks encoders by embedding width</h2>
+  <div style="display:flex; flex-direction:row; gap:40px; align-items:start">
+    <img src="/_blob/a5cc2eb8cbe776794cb6ecd46302656c" alt="Rank on PCA ridge against rank on raw ridge for twelve encoders, coloured by embedding width; H-Optimus-1 highlighted" style="width:1193px; height:683px; flex:0 0 auto; background:#ffffff; border:1px solid #ddd8cc; border-radius:8px; object-fit:contain">
+    <div style="display:flex; flex-direction:column; gap:10px; flex:1">
+      <ul style="width:505px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:30px; line-height:1.42; color:#3a4552">
+        <li>Penalty α = 100/(d·n_genes) ≈ 0.008 at d = 256: unpenalised least squares in effect</li>
+        <li>Raw embeddings: Gram condition number up to 3.0 × 10¹⁵; the same α leaves the solve singular</li>
+        <li>Spearman(width, score): −0.95 raw ridge, +0.73 PCA ridge. ≥1536 dims rank 7–12; ≤1024 rank 1–6</li>
+        <li>H-Optimus-1: rank 1 with PCA, rank 7 without</li>
+      </ul>
+    </div>
+  </div>
+  <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; color:#6b7480">results/tailored/regularization/alpha_sweep.csv · results/round2/R8_raw_heads/r8_raw_head_leaderboard.csv</p>
+  <aside>This is something I found along the way. The benchmark sets its ridge penalty as 100 divided by the number of features times the number of genes. On 256 PCA components that is about 0.008, which makes the fit indistinguishable from unpenalized least squares; a sweep over the penalty shows it is about five orders of magnitude below where it starts to matter. On raw embeddings of 1,500 to 2,500 dimensions the same tiny penalty does nothing either, and the Gram matrix has condition number near 10^15. So the raw head is effectively unregularized least squares on an ill-conditioned design, and the more dimensions an encoder has, the more noise the fit absorbs. That is why Table A13, the paper's comparison on raw embeddings, ranks encoders by width: Spearman correlation between width and score is negative 0.95. Every encoder with 1,536 or more dimensions sits in ranks 7 through 12, every encoder with 1,024 or fewer in ranks 1 through 6, and the 512-dimensional CONCH v1 wins. PCA to 256 gives every encoder the same number of features, which removes that penalty for width. The correlation then flips to plus 0.73: with width held equal, the wider, larger encoders are actually the better ones. That reversal is what shows Table A13 measures width, not representation quality. As a falsification test I ran H-Optimus-1, the strongest encoder, on the raw head: rank 1 with PCA, seventh without.</aside>
+</section>

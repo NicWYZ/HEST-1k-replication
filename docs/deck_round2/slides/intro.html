@@ -1,0 +1,16 @@
+<section id="intro" data-transition="fade" style="display:flex; flex-direction:column; gap:28px; padding:80px 128px 160px; background:#f7f5ef">
+  <h2 style="font-family:'Source Serif 4', Georgia, serif; font-size:50px; font-weight:600; line-height:1.12; color:#1e2a38">HEST-1k and its benchmark</h2>
+  <div style="display:flex; flex-direction:row; gap:40px; align-items:start">
+    <img src="/_blob/12da76d8b5abf506c75da5097195a112" alt="HEST paper Figure 1: dataset overview, library, benchmark, biomarker and multimodal use cases" style="width:1000px; height:673px; background:#ffffff; border:1px solid #ddd8cc; border-radius:8px; object-fit:contain">
+    <div style="display:flex; flex-direction:column; gap:10px; flex:1">
+      <ul style="font-family:'IBM Plex Sans', Arial, sans-serif; font-size:30px; line-height:1.42; color:#3a4552">
+        <li>1,229 ST samples aligned to H&amp;E whole-slide images; 153 cohorts, 26 organs</li>
+        <li>Task: predict 50 highly variable genes from a 112 µm H&amp;E patch per spot</li>
+        <li>Frozen encoder → PCA-256 → ridge; Pearson per gene; patient-level folds; nine cancer tasks</li>
+        <li>Leaderboard of 25 encoders; best average Pearson ≈ 0.42</li>
+      </ul>
+    </div>
+  </div>
+  <p style="position:absolute; bottom:64px; left:128px; width:1664px; font-family:'IBM Plex Sans', Arial, sans-serif; font-size:24px; color:#6b7480">Jaume et al., HEST-1k, NeurIPS 2024, Figure 1. github.com/mahmoodlab/HEST</p>
+  <aside>HEST-1k. Its data contribution is scale and alignment: 1,229 spatial transcriptomics samples from 153 cohorts, each one aligned to an H&amp;E whole-slide image, harmonised across Visium, Xenium and the older ST platform. Its second contribution is a benchmark, which is a fixed protocol for asking the question of whether image features can predict gene expression. The way it works is each spatial transcriptomics spot has a count vector over genes and a 224-pixel H&amp;E patch at 20x centered on it, which is 112 micrometer on a side. A frozen pathology foundation model turns the patch into an embedding, which then goes through PCA to 256 dimensions and then a ridge regression head predicts the log counts of the 50 most variable genes for that task. There are nine cancer tasks. The metric is Pearson correlation per gene between predicted and true values, averaged over the 50 genes, and the cross-validation uses patients as folds so the test patient is never in training. The headline of the paper is an encoder ranking. H-Optimus-0 tops the 11 encoders in the paper, and H-Optimus-1 tops the current leaderboard of 25 encoders.&nbsp;</aside>
+</section>

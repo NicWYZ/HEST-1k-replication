@@ -1,0 +1,16 @@
+<section id="backup1" data-transition="fade" style="background:#F7F5EF; color:#3A4552; font-family:'IBM Plex Sans', Arial, sans-serif; padding:96px 128px 160px; display:flex; flex-direction:column; gap:40px">
+  <h2 style="font-family:'Source Serif 4', Georgia, serif; font-size:50px; font-weight:600; line-height:1.12; color:#1E2A38">Backup · Other benchmark properties found</h2>
+  <ul style="font-size:32px; line-height:1.45; color:#3A4552"><li>Gene panels differ within a task (PAAD: 159 genes common of 919; IDC: one sample measures 41 genes the others don't); leakage-free target selection is not well defined</li><li>Targets were selected on all spots incl. test folds; training-only selection changes the list by half, Pearson by +0.009 mean (up to +0.044); fixed-list rank Spearman 0.51</li><li>Xenium tasks' target lists are pairwise disjoint (14 genes common across all 15 Xenium samples)</li><li>Scan resolution 0.137–0.688 µm/px across 72 samples; aligned exactly with patient in PRAD and SKCM; 31 of 72 uncorroborated</li><li>Per-gene Pearson carries ~10⁻³ solver noise under the benchmark's iterative solver; predictions differ from the exact solution by up to 0.35</li><li>READ's pairs are replicate sections of one specimen; folds group them correctly</li></ul>
+  <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-size:24px; color:#6B7480">results/round2/R2_fold_hvg · R0_resolution · R1b_heads/r1b_solver_sensitivity.csv · R5b_audit/donor_audit.csv</p>
+  <aside>Xenium gene panels are set per study, so within a task the samples do not measure the same genes. PAAD's three samples share 159 genes out of a union of 919. The benchmark's 50 targets sit on the intersection across all samples, which means selection used the test slide's panel. When I selected targets from training samples only, some of the chosen genes were not on the test slide's panel at all and could not be evaluated. So leakage-free target selection is not well defined here.
+
+On selection sensitivity: I reimplemented the benchmark's selection and reproduced all ten shipped lists exactly before changing anything. Training-only selection shares 27 of 50 genes with the shipped list on average, 11 on PRAD, and moves Pearson by 0.009 on average with a task range from minus 0.07 to plus 0.04. Most of that is which genes are picked rather than the ranking having seen test spots; holding the gene set fixed, the two rankings correlate at 0.51.
+
+The five Xenium tasks' target lists are pairwise disjoint, with 14 genes common to all fifteen Xenium samples, so across-task transfer is blocked outright.
+
+Scan resolution spans a five-fold range and lines up exactly with patient in PRAD and SKCM; 31 of 72 samples have no independent corroboration of their pixel size.
+
+Per-gene Pearson under the benchmark's iterative solver carries about a thousandth of solver noise, and the faithful head's predictions differ from the exact ridge solution by up to 0.35 in the worst cell. Task means are unaffected.
+
+READ's two pairs are replicate sections of one specimen each; the folds group them correctly.</aside>
+</section>
