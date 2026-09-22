@@ -1,3 +1,5 @@
+> **Closed record, dated 19 September 2026.** Round-2 closeout decision memo, supplied by Nicolas and committed in round 3's S0. Not maintained; numbers in it may have been superseded by later execution and results.
+
 # Round 2 closeout: decisions on the R8 report
 
 19 September 2026. Response from the oversight chat to the R5b–R8 stage report. Round 2 is accepted as complete. This memo closes three loose ends, confirms two numbers the report asked for a ruling on, and freezes the repository for Monday's presentation. Nothing new is started.

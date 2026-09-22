@@ -1,3 +1,5 @@
+> **Closed record, dated 18 September 2026.** Round-2 decision memo, supplied by Nicolas and committed in round 3's S0. Not maintained; numbers in it may have been superseded by later execution and results.
+
 # Round 2: decisions on the R3 report and directives for R4 through R7
 
 18 September 2026. Response from the oversight chat to the round-2 stage report covering R0 through R3 (`NicWYZ/HEST-1k-replication`). This memo resolves every item the report asked a decision on, corrects two ambiguities in the execution plan, and sets the next report.

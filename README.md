@@ -41,7 +41,7 @@ Average Pearson over the nine paper tasks (HCC excluded, the paper's convention;
 
 | encoder | dim | `pca_ridge` | `raw_ridge` | `raw_xgb` |
 |---|---|---|---|---|
-| hoptimus1 | 1536 | **0.4229** | — | — |
+| hoptimus1 | 1536 | **0.4229** | 0.2859 | — |
 | hoptimus0 | 1536 | **0.4150** | 0.2756 | 0.3955 |
 | uni_v2 | 1536 | **0.4142** | 0.2765 | 0.3932 |
 | virchow | 2560 | **0.4060** | 0.2654 | 0.3967 |
@@ -54,9 +54,10 @@ Average Pearson over the nine paper tasks (HCC excluded, the paper's convention;
 | ctranspath | 768 | **0.3468** | 0.2984 | 0.3463 |
 | resnet50 | 1024 | **0.3252** | 0.2843 | 0.3278 |
 
-`pca_xgb` (Table A14's rejected candidate, resnet50 only): 0.3046. hoptimus1's raw-embedding
-cells were measured separately in round 2 ([known limitation 8](#known-limitations)) and are not
-yet folded into this table. Full tables in
+`pca_xgb` (Table A14's rejected candidate, resnet50 only): 0.3046. hoptimus1's `raw_ridge` cell is
+now folded in from `results/summary/results_encoder.csv`, which carries it as `avg_paper9` on nine
+tasks, the convention this table uses. Its `raw_xgb` cell stays empty because that head was never
+run for this encoder ([known limitation 8](#known-limitations)). Full tables in
 [`results/summary/`](results/summary).
 
 ## Repository layout

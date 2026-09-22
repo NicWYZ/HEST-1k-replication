@@ -1,3 +1,5 @@
+> **Closed record, dated 20 September 2026.** Instruction memo for the round-2 deck-and-repository work, supplied by Nicolas and committed in round 3's S0. Closed; the work it directed is complete.
+
 # Instructions: deck figures and a full repository refresh
 
 20 September 2026. For the execution session on `NicWYZ/HEST-1k-replication`. Two jobs, both due before Monday morning. No new analysis; everything here is rendering existing results and bringing the repository up to date with them. One short report when done.

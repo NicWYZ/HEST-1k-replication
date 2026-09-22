@@ -6,9 +6,11 @@
 # Round 3 operating plan
 
 Transcribed from the round-3 execution handoff (22 September 2026), which starts the round from tag
-`round2-docs-clean`, commit `4da6b86`. The handoff's companion, `round3_oversight_handoff.md`, is
-context rather than instruction and was not supplied to this session; it is listed in
-`docs/README.md` as not in the repository.
+`round2-docs-clean`, commit `4da6b86`. Its companion, `round3_oversight_handoff.md`, is context
+rather than instruction; it was committed by Nicolas in `80f1ae5` together with the six round-2
+decision memos, and its action items that bear on execution are transcribed here too, in § 1.1
+and § 10. An earlier revision of this section said the oversight handoff had not been supplied,
+which stopped being true when that commit landed.
 
 The transcription rule that produced this document is itself a standing instruction from Nicolas:
 every instruction or decision document is transcribed into the operating plan before anything in it
@@ -92,6 +94,35 @@ this round.
 - Do not reconstruct or revise a past working document that has served its purpose. A memo that was
   not saved is listed as absent, not rewritten.
 - Put a time cap on anything that is not analysis. Round 3's caps are in § 7.
+
+Three more from the oversight handoff's own standing list (its § 10) that the execution handoff
+does not restate:
+
+- State an acceptance threshold in the units the arithmetic supports, and when a check fails,
+  decide whether the threshold or the claim is wrong before restating either.
+- Every refit has one arm anchored to the prior result. In round 3 that arm is A0's H1 check
+  against R1b.
+- Do not quote a ratio whose denominator is within noise of zero. Report the numerator and the
+  denominator with their dispersion and say which one is resolved from zero.
+
+### 1.1 How the reports are written, from the oversight handoff § 0.1
+
+These are Nicolas's stated preferences, several of them repeated after a correction, so they bind
+every report and message this session writes.
+
+- Plain, natural writing. No em-dashes, no colon-then-explanation constructions, no compressed or
+  clever phrasing. Maths as rendered LaTeX rather than code blocks or plain-text notation.
+- Numbers at the precision the comparison needs. What matters in prose is the relative scale, that
+  one effect is 1.6 times another or that a term is an order of magnitude smaller, not the fourth
+  decimal. Full precision belongs in the computations and the files.
+- When he asks how something works, derive it slowly. The compressed version has not been enough
+  any of the times he has asked.
+- Do not inflate length anywhere, including speaker notes, which cover only what is on the slide.
+- Minimal biology by design. Expression is a signal to predict, calibrate and use for inference;
+  do not introduce gene-level biology.
+- The skills the project is chosen for are calibration, distribution shift, semi-supervised
+  inference and cluster-robust variance, and the venue preference is ML conferences or statistics
+  journals. Keep that framing when choosing between options.
 
 ---
 
@@ -684,6 +715,36 @@ are reported rather than changed silently, per § 4.1 item 1.
    any document.
 
 Numbers for both go in the A1 report, read back from the sweep output at the time it is run.
+
+Four more found while building the task-definition files, all recorded here and reported rather
+than acted on beyond what is noted.
+
+3. **The `slide_out` design is degenerate on more tasks than the handoff's list implies.** The
+   handoff § 6.2 names PRAD, COAD, READ, LYMPH_IDC and IDC-audited as the multi-slide tasks that
+   carry `slide_out`. Read back from the task files, eight of the eleven have exactly one slide per
+   donor, including COAD and LYMPH_IDC, so on those `slide_out` and `donor` are the same partition
+   and the arm adds nothing. The three where the design is genuinely distinct are PRAD (23 slides,
+   2 donors), READ (4 slides, 2 donors) and IDC-audited (4 slides, 3 donors). The task files
+   enumerate `slide_out` folds everywhere, which is harmless; `results/round3/task_defs/task_def_validation.csv`
+   carries a `slide_out_equals_donor_design` column marking the eight. Under § 8 this is a change
+   to a design's arm definitions, so it is an escalation: A1 runs `slide_out` where it is not
+   degenerate and the report says so, rather than reporting eight duplicate rows as a result.
+4. **COAD's TENX111 spot count disagrees between two sources in the repository.** The AnnData has
+   6,138 rows against `spots_under_tissue` 6,643 in `sample_metadata.csv`, a difference of 505.
+   The task files carry the AnnData count, which is also the count round 2's per-gene table was
+   computed on. Which of the two is right is not resolved here. This is a new property of the
+   benchmark found along the way, so § 8 makes it an escalation.
+5. **`lab` in the benchmark task files is a cohort title, not an audited institution.** It is the
+   `dataset_title` column of `sample_metadata.csv`, copied verbatim, and `lab_label_status` is
+   `unverified` on all 72 samples. By that column IDC and PAAD carry three distinct values and COAD
+   and LUNG two, which does not match the handoff's description of one lab per task. Nothing is
+   grouped by lab before D3 audits it, so this changes no round-3 result; it is recorded because
+   the D4 lab term will be read against it.
+6. **Three tasks have no verified donor label at all.** LUNG, PAAD and SKCM are `unverifiable` on
+   every sample, and COAD is `contradicted` on three of four. The `donor` design still runs on
+   them, since `donor_id` is the audit's best reading, but a donor-design coverage number on those
+   tasks rests on labels the audit could not confirm, and the A1 table carries
+   `donor_label_status` so that is visible rather than implied.
 
 ---
 

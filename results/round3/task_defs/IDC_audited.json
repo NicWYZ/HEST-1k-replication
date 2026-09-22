@@ -1,0 +1,278 @@
+{
+  "task_def_version": 1,
+  "task": "IDC",
+  "label_set": "audited",
+  "source": "hest_bench",
+  "st_technology": "Xenium",
+  "repo_root_relative": true,
+  "paths": {
+    "adata": "bench_data/IDC/adata/{sample_id}.h5ad",
+    "patches": "bench_data/IDC/patches/{sample_id}.h5",
+    "embeddings": "embeddings/IDC/{encoder}/{sample_id}.h5",
+    "target_genes": "bench_data/IDC/var_50genes.json"
+  },
+  "target_genes": {
+    "list": [
+      "ABCC11",
+      "ADH1B",
+      "ADIPOQ",
+      "ANKRD30A",
+      "AQP1",
+      "AQP3",
+      "CCR7",
+      "CD3E",
+      "CEACAM6",
+      "CEACAM8",
+      "CLIC6",
+      "CYTIP",
+      "DST",
+      "ERBB2",
+      "ESR1",
+      "FASN",
+      "GATA3",
+      "IL2RG",
+      "IL7R",
+      "KIT",
+      "KLF5",
+      "KRT14",
+      "KRT5",
+      "KRT6B",
+      "MMP1",
+      "MMP12",
+      "MS4A1",
+      "MUC6",
+      "MYBPC1",
+      "MYH11",
+      "MYLK",
+      "OPRPN",
+      "OXTR",
+      "PIGR",
+      "PTGDS",
+      "PTN",
+      "PTPRC",
+      "SCD",
+      "SCGB2A1",
+      "SERHL2",
+      "SERPINA3",
+      "SFRP1",
+      "SLAMF7",
+      "TACSTD2",
+      "TCL1A",
+      "TENT5C",
+      "TOP2A",
+      "TPSAB1",
+      "TRAC",
+      "VWF"
+    ],
+    "n": 50,
+    "selection": "The benchmark's own 50 target genes for this task, read verbatim and in file order from bench_data/IDC/var_50genes.json as shipped with HEST-bench. This generator neither selected nor reordered them. Round 2 stage R2 (results/round2/R2_fold_hvg/) established that HEST ranked these genes over the all-sample gene intersection using all spots, test folds included, which is why selection_used_test_spots is true.",
+    "selection_used_test_spots": true
+  },
+  "samples": [
+    {
+      "sample_id": "NCBI783",
+      "donor_id": "NCBI783",
+      "hest_patient": "patient 5",
+      "donor_label_status": "unverifiable",
+      "lab": "High resolution mapping of the tumor microenvironment using integrated single-cell, spatial and in situ analysis [Xenium]",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "0.23-0.30",
+      "pixel_size_um": 0.2739598559774087,
+      "resolution_uncertain": false,
+      "n_spots": 3869
+    },
+    {
+      "sample_id": "NCBI785",
+      "donor_id": "NCBI785",
+      "hest_patient": "patient 4",
+      "donor_label_status": "unverifiable",
+      "lab": "High resolution mapping of the tumor microenvironment using integrated single-cell, spatial and in situ analysis [Xenium]",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "0.30-0.40",
+      "pixel_size_um": 0.3639107956749145,
+      "resolution_uncertain": false,
+      "n_spots": 4180
+    },
+    {
+      "sample_id": "TENX95",
+      "donor_id": "IDC_JanesickSample1",
+      "hest_patient": "patient 2",
+      "donor_label_status": "contradicted",
+      "lab": "FFPE Human Breast with Pre-designed Panel",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "0.15-0.23",
+      "pixel_size_um": 0.2125,
+      "resolution_uncertain": true,
+      "n_spots": 11845
+    },
+    {
+      "sample_id": "TENX99",
+      "donor_id": "IDC_JanesickSample1",
+      "hest_patient": "patient 1",
+      "donor_label_status": "contradicted",
+      "lab": "FFPE Human Breast using the Entire Sample Area",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "0.15-0.23",
+      "pixel_size_um": 0.2125,
+      "resolution_uncertain": true,
+      "n_spots": 25080
+    }
+  ],
+  "flags": {
+    "idc_attribution_unresolved": true,
+    "patient_labels_unreliable": false,
+    "same_specimen_pairs": false
+  },
+  "folds": {
+    "patient": [
+      {
+        "fold": "0",
+        "train": [
+          "TENX95",
+          "NCBI785",
+          "NCBI783"
+        ],
+        "test": [
+          "TENX99"
+        ]
+      },
+      {
+        "fold": "1",
+        "train": [
+          "TENX99",
+          "NCBI785",
+          "NCBI783"
+        ],
+        "test": [
+          "TENX95"
+        ]
+      },
+      {
+        "fold": "2",
+        "train": [
+          "TENX99",
+          "TENX95",
+          "NCBI783"
+        ],
+        "test": [
+          "NCBI785"
+        ]
+      },
+      {
+        "fold": "3",
+        "train": [
+          "TENX99",
+          "TENX95",
+          "NCBI785"
+        ],
+        "test": [
+          "NCBI783"
+        ]
+      }
+    ],
+    "donor": [
+      {
+        "fold": "IDC_JanesickSample1",
+        "train": [
+          "NCBI783",
+          "NCBI785"
+        ],
+        "test": [
+          "TENX95",
+          "TENX99"
+        ]
+      },
+      {
+        "fold": "NCBI783",
+        "train": [
+          "NCBI785",
+          "TENX95",
+          "TENX99"
+        ],
+        "test": [
+          "NCBI783"
+        ]
+      },
+      {
+        "fold": "NCBI785",
+        "train": [
+          "NCBI783",
+          "TENX95",
+          "TENX99"
+        ],
+        "test": [
+          "NCBI785"
+        ]
+      }
+    ],
+    "slide_out": [
+      {
+        "fold": "NCBI783",
+        "train": [
+          "NCBI785",
+          "TENX95",
+          "TENX99"
+        ],
+        "test": [
+          "NCBI783"
+        ]
+      },
+      {
+        "fold": "NCBI785",
+        "train": [
+          "NCBI783",
+          "TENX95",
+          "TENX99"
+        ],
+        "test": [
+          "NCBI785"
+        ]
+      },
+      {
+        "fold": "TENX95",
+        "train": [
+          "NCBI783",
+          "NCBI785",
+          "TENX99"
+        ],
+        "test": [
+          "TENX95"
+        ]
+      },
+      {
+        "fold": "TENX99",
+        "train": [
+          "NCBI783",
+          "NCBI785",
+          "TENX95"
+        ],
+        "test": [
+          "TENX99"
+        ]
+      }
+    ],
+    "random": {
+      "n_repeats": 5,
+      "test_size_from_fold": "patient",
+      "seed_source": "crc32"
+    }
+  },
+  "provenance": {
+    "generated_by": "code/scripts/round3_task_defs.py",
+    "generated_at": "2026-09-22T10:07:31-04:00",
+    "commit": "fce1ad88f8af50cd09cdec6362bb8791cc075961",
+    "inputs": [
+      "results/round2/R5b_audit/donor_audit.csv",
+      "results/tailored/integrity/sample_metadata.csv",
+      "bench_data/IDC/adata/<sample_id>.h5ad",
+      "bench_data/IDC/splits/test_<k>.csv",
+      "bench_data/IDC/splits/train_<k>.csv",
+      "bench_data/IDC/var_50genes.json"
+    ],
+    "pythonhashseed": "0"
+  }
+}

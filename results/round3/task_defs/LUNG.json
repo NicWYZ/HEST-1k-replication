@@ -1,0 +1,185 @@
+{
+  "task_def_version": 1,
+  "task": "LUNG",
+  "label_set": "shipped",
+  "source": "hest_bench",
+  "st_technology": "Xenium",
+  "repo_root_relative": true,
+  "paths": {
+    "adata": "bench_data/LUNG/adata/{sample_id}.h5ad",
+    "patches": "bench_data/LUNG/patches/{sample_id}.h5",
+    "embeddings": "embeddings/LUNG/{encoder}/{sample_id}.h5",
+    "target_genes": "bench_data/LUNG/var_50genes.json"
+  },
+  "target_genes": {
+    "list": [
+      "ACE2",
+      "ALDH1A3",
+      "BBOX1",
+      "CAPN8",
+      "CCL19",
+      "CCR7",
+      "CD163",
+      "CD19",
+      "CD1A",
+      "CD2",
+      "CD274",
+      "CD79A",
+      "CDK1",
+      "CNN1",
+      "COL5A2",
+      "CTSG",
+      "CTSK",
+      "CXCL10",
+      "CXCL9",
+      "CXCR4",
+      "CYP2A7",
+      "DMBT1",
+      "DNAAF1",
+      "FCER1A",
+      "FGFBP1",
+      "GPRC5A",
+      "INMT",
+      "LIF",
+      "MALL",
+      "MARCO",
+      "MCEMP1",
+      "MEDAG",
+      "MET",
+      "MKI67",
+      "MS4A1",
+      "MZB1",
+      "OGN",
+      "PCSK2",
+      "PECAM1",
+      "PLA2G7",
+      "PTPRC",
+      "SERPINB2",
+      "SNCG",
+      "SNTN",
+      "SOX2",
+      "SPIB",
+      "SRPX",
+      "TCL1A",
+      "TOP2A",
+      "UBE2C"
+    ],
+    "n": 50,
+    "selection": "The benchmark's own 50 target genes for this task, read verbatim and in file order from bench_data/LUNG/var_50genes.json as shipped with HEST-bench. This generator neither selected nor reordered them. Round 2 stage R2 (results/round2/R2_fold_hvg/) established that HEST ranked these genes over the all-sample gene intersection using all spots, test folds included, which is why selection_used_test_spots is true.",
+    "selection_used_test_spots": true
+  },
+  "samples": [
+    {
+      "sample_id": "TENX118",
+      "donor_id": "LUNG_hest_patient_2",
+      "hest_patient": "patient 2",
+      "donor_label_status": "unverifiable",
+      "lab": "Preview Data: FFPE Human Lung Cancer with Xenium Multimodal Cell Segmentation",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "0.23-0.30",
+      "pixel_size_um": 0.2738558376865452,
+      "resolution_uncertain": false,
+      "n_spots": 3115
+    },
+    {
+      "sample_id": "TENX141",
+      "donor_id": "LUNG_hest_patient_1",
+      "hest_patient": "patient 1",
+      "donor_label_status": "unverifiable",
+      "lab": "FFPE Human Lung Cancer Data with Human Immuno-Oncology Profiling Panel and Custom Add-on",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "0.23-0.30",
+      "pixel_size_um": 0.2736430867919545,
+      "resolution_uncertain": false,
+      "n_spots": 4390
+    }
+  ],
+  "flags": {
+    "idc_attribution_unresolved": false,
+    "patient_labels_unreliable": false,
+    "same_specimen_pairs": false
+  },
+  "folds": {
+    "patient": [
+      {
+        "fold": "0",
+        "train": [
+          "TENX118"
+        ],
+        "test": [
+          "TENX141"
+        ]
+      },
+      {
+        "fold": "1",
+        "train": [
+          "TENX141"
+        ],
+        "test": [
+          "TENX118"
+        ]
+      }
+    ],
+    "donor": [
+      {
+        "fold": "LUNG_hest_patient_1",
+        "train": [
+          "TENX118"
+        ],
+        "test": [
+          "TENX141"
+        ]
+      },
+      {
+        "fold": "LUNG_hest_patient_2",
+        "train": [
+          "TENX141"
+        ],
+        "test": [
+          "TENX118"
+        ]
+      }
+    ],
+    "slide_out": [
+      {
+        "fold": "TENX118",
+        "train": [
+          "TENX141"
+        ],
+        "test": [
+          "TENX118"
+        ]
+      },
+      {
+        "fold": "TENX141",
+        "train": [
+          "TENX118"
+        ],
+        "test": [
+          "TENX141"
+        ]
+      }
+    ],
+    "random": {
+      "n_repeats": 5,
+      "test_size_from_fold": "patient",
+      "seed_source": "crc32"
+    }
+  },
+  "provenance": {
+    "generated_by": "code/scripts/round3_task_defs.py",
+    "generated_at": "2026-09-22T10:07:31-04:00",
+    "commit": "fce1ad88f8af50cd09cdec6362bb8791cc075961",
+    "inputs": [
+      "results/round2/R5b_audit/donor_audit.csv",
+      "results/tailored/integrity/sample_metadata.csv",
+      "bench_data/LUNG/adata/<sample_id>.h5ad",
+      "bench_data/LUNG/splits/test_<k>.csv",
+      "bench_data/LUNG/splits/train_<k>.csv",
+      "bench_data/LUNG/var_50genes.json"
+    ],
+    "pythonhashseed": "0"
+  }
+}

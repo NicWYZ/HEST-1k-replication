@@ -1,3 +1,5 @@
+> **Closed record, dated 21 September 2026.** Instruction memo closing the gate left open by `docs/closeout_gate_report.md`, supplied by Nicolas and committed in round 3's S0. Closed; the work it directed is complete.
+
 # Instructions: closing the gate the closeout report left open
 
 21 September 2026. For the execution session on `NicWYZ/HEST-1k-replication`, following `docs/closeout_gate_report.md` at `6acbef2`. None of this touches the presentation, which has been built against the repository as it stands. There is no deadline on this beyond "before round 3 starts." One report at the end.

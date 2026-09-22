@@ -1,3 +1,5 @@
+> **Active instruction document for round 3, dated 22 September 2026.** This is the instruction this round executes against. Its transcription into the execution session's operating plan is `docs/round3_execution_plan.md`. Not bannered as a closed record, because it is not closed.
+
 # Handoff to the Claude Science session: round 3 of the HEST-1k project
 
 22 September 2026. Prepared by the oversight chat for the Claude Science session that will execute round 3 on `NicWYZ/HEST-1k-replication`, starting from tag `round2-docs-clean` (commit `4da6b86`). The companion document `round3_oversight_handoff.md` is context rather than instruction. Read this document fully, then transcribe § 6 into your operating plan before running anything.

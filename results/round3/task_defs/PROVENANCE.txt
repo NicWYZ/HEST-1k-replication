@@ -1,0 +1,107 @@
+PROVENANCE -- results/round3/task_defs/
+
+What is here: the round-3 task-definition files. One JSON per (task, label set):
+ten <TASK>.json with label_set 'shipped' plus IDC_audited.json with label_set
+'audited' (TENX95 and TENX99 merged into one donor). Every later round-3 stage reads
+tasks through these files instead of hard-coding the benchmark's ten task names.
+task_def_validation.csv carries one row per file with the counts and the pass/fail of
+each assertion, and is written before the JSON files on every run.
+
+job id           : 2037596
+partition (used) : general
+node             : c0838
+date (wall clock): 2026-09-22T10:38:31.068421-04:00
+commit           : fce1ad88f8af50cd09cdec6362bb8791cc075961
+commit date      : 2026-09-22T10:07:31-04:00  (written into provenance.generated_at of every file)
+command line     : PYTHONHASHSEED=0 PYTHONPATH=/work/users/w/e/weiyang/round3_pylibs \
+                   env/miniforge3/envs/hest/bin/python code/scripts/round3_task_defs.py --root /work/users/w/e/weiyang/hest_replication
+PYTHONHASHSEED   : 0
+python           : Python 3.11.16
+jsonschema       : installed to /work/users/w/e/weiyang/round3_pylibs (not in the project env)
+
+config_sha256    : 14daa3818fefc3a4284e38f5d90b9451ac4261d0cf8f6f65cab54973dc5c2365
+The configuration that hash covers, verbatim:
+{
+  "commit": "fce1ad88f8af50cd09cdec6362bb8791cc075961",
+  "designs": {
+    "donor": "leave-one-donor-out on donor_id",
+    "patient": "transcribed from bench_data/<task>/splits/{train,test}_<k>.csv",
+    "random": {
+      "n_repeats": 5,
+      "seed_source": "crc32",
+      "test_size_from_fold": "patient"
+    },
+    "slide_out": "one fold per slide wherever the task has more than one slide"
+  },
+  "donor_source": "results/round2/R5b_audit/donor_audit.csv (donor_id, donor_label_status)",
+  "flags": {
+    "idc_attribution_unresolved": [
+      "IDC",
+      "IDC_audited"
+    ],
+    "patient_labels_unreliable": [
+      "COAD"
+    ],
+    "same_specimen_pairs": [
+      "READ"
+    ]
+  },
+  "fold_id_type": "string in every design",
+  "generated_at_policy": "HEAD committer date, not wall clock, so reruns are byte-identical",
+  "generator": "code/scripts/round3_task_defs.py",
+  "generator_sha256": "17bb2d03aace408d36b106876310a89bdeb2bb93b037dbf15743224032ae8e28",
+  "lab_label_status": "unverified for every benchmark sample",
+  "lab_source_field": "sample_metadata.csv:dataset_title (verbatim)",
+  "label_sets": [
+    "shipped for every task",
+    "audited for IDC only"
+  ],
+  "metadata_source": "results/tailored/integrity/sample_metadata.csv",
+  "outdir": "results/round3/task_defs",
+  "pythonhashseed": "0",
+  "root": "/work/users/w/e/weiyang/hest_replication",
+  "schema": "results/round3/task_defs/task_def.schema.json",
+  "schema_sha256": "3bcd602449006d58bb0f53ad8dad247150315951891ac131e881114d99b77c34",
+  "sessions": {
+    "PRAD_p2_sess1_MEND139_MEND146": [
+      "MEND139",
+      "MEND140",
+      "MEND141",
+      "MEND142",
+      "MEND143",
+      "MEND144",
+      "MEND145",
+      "MEND146"
+    ],
+    "PRAD_p2_sess2_MEND147_MEND153": [
+      "MEND147",
+      "MEND148",
+      "MEND149",
+      "MEND150",
+      "MEND151",
+      "MEND152",
+      "MEND153"
+    ]
+  }
+}
+
+Files generated (sha256):
+  CCRCC.json                   5d28f14c3a68e59f65f64ad506763a58c5f8958508a23799c216fcbde9f576f9
+  COAD.json                    39d729da046ad0433de7b9f375efc6773cab0a52ab7821bf4d00266c0cfb421a
+  HCC.json                     321586a94a651611487359a618bc80be1c82f2e124b3dbf2836b34ff8a281e73
+  IDC.json                     efce50e813ac5bbe2cf542719153a764ec431b487f972322694d9cfc5b926aa3
+  IDC_audited.json             66a516d870a493886ebf45513fcb9ad6ed7f72cd5840050315c32573bb52698d
+  LUNG.json                    8f09c1fe9be7e1b2c9c886c9c1bbf304bab9897206a5219338dd2c5f887fb9ac
+  LYMPH_IDC.json               b62f56e4550c4a06eeeb9d5697ee1e997522644a6e6c43aa6064e58d3b61fda3
+  PAAD.json                    c53a100664a08922e878ec39872b1196f98e31744784e00685341ce9f6c1f304
+  PRAD.json                    2b0442c8b412f73800bb698ee97445b9dc616e78bda2f30b6e5fc05554084149
+  READ.json                    ecb41f81fc14856e2e2af8c9c10834231f33019d21870e7e10633dce29938bda
+  SKCM.json                    f3f9008699549586cb9f003407f78aae82d20f1c66c1855aaa934e3cae432beb
+  task_def_validation.csv      0cefc7b90a701ece0356dd8e6800363261efa284dded937eb857f4185dcf41b7
+
+Determinism: the generator was run twice in this job, the second time into a scratch
+directory, and every generated file compared byte for byte. Seeds, where any are
+needed, come from zlib.crc32, never from hash() on a string.
+
+Not done here: this directory's files are written by the generator only; no git
+command was run by the job.

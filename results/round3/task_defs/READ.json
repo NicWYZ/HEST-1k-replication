@@ -1,0 +1,245 @@
+{
+  "task_def_version": 1,
+  "task": "READ",
+  "label_set": "shipped",
+  "source": "hest_bench",
+  "st_technology": "Visium",
+  "repo_root_relative": true,
+  "paths": {
+    "adata": "bench_data/READ/adata/{sample_id}.h5ad",
+    "patches": "bench_data/READ/patches/{sample_id}.h5",
+    "embeddings": "embeddings/READ/{encoder}/{sample_id}.h5",
+    "target_genes": "bench_data/READ/var_50genes.json"
+  },
+  "target_genes": {
+    "list": [
+      "AC010883.3",
+      "ADAMDEC1",
+      "ANGPTL2",
+      "APOC1",
+      "BTNL3",
+      "CA1",
+      "CA2",
+      "CCL14",
+      "CCL21",
+      "CD177",
+      "CEMIP",
+      "CHI3L1",
+      "CLCA1",
+      "CLU",
+      "CXCL10",
+      "CXCL8",
+      "CXCL9",
+      "EFEMP1",
+      "EGLN3",
+      "FRZB",
+      "GUCA2A",
+      "HMOX1",
+      "IGHG2",
+      "IGHG4",
+      "ITGB2",
+      "ITIH5",
+      "LAMA3",
+      "LOX",
+      "MMP28",
+      "MMP7",
+      "MMP9",
+      "MT1F",
+      "MT1M",
+      "MXI1",
+      "P3H3",
+      "PADI2",
+      "PDE9A",
+      "PLAAT3",
+      "PRRG3",
+      "PTGDS",
+      "SECTM1",
+      "SGK1",
+      "SLC26A2",
+      "SLC26A3",
+      "SMPDL3A",
+      "SPHK1",
+      "SPP1",
+      "TPSB2",
+      "TSPAN9",
+      "UBD"
+    ],
+    "n": 50,
+    "selection": "The benchmark's own 50 target genes for this task, read verbatim and in file order from bench_data/READ/var_50genes.json as shipped with HEST-bench. This generator neither selected nor reordered them. Round 2 stage R2 (results/round2/R2_fold_hvg/) established that HEST ranked these genes over the all-sample gene intersection using all spots, test folds included, which is why selection_used_test_spots is true.",
+    "selection_used_test_spots": true
+  },
+  "samples": [
+    {
+      "sample_id": "ZEN36",
+      "donor_id": "READ_specimen7",
+      "hest_patient": "Patient 7",
+      "donor_label_status": "verified",
+      "lab": "Charting the Heterogeneity of Colorectal Cancer Consensus Molecular Subtypes using Spatial Transcriptomics: datasets",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "0.40-0.50",
+      "pixel_size_um": 0.459363338,
+      "resolution_uncertain": false,
+      "n_spots": 1691
+    },
+    {
+      "sample_id": "ZEN40",
+      "donor_id": "READ_specimen7",
+      "hest_patient": "Patient 7",
+      "donor_label_status": "verified",
+      "lab": "Charting the Heterogeneity of Colorectal Cancer Consensus Molecular Subtypes using Spatial Transcriptomics: datasets",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "0.40-0.50",
+      "pixel_size_um": 0.4598401833465827,
+      "resolution_uncertain": false,
+      "n_spots": 2128
+    },
+    {
+      "sample_id": "ZEN48",
+      "donor_id": "READ_specimen1",
+      "hest_patient": "Patient 1",
+      "donor_label_status": "verified",
+      "lab": "Charting the Heterogeneity of Colorectal Cancer Consensus Molecular Subtypes using Spatial Transcriptomics: datasets",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "0.40-0.50",
+      "pixel_size_um": 0.4591296732864132,
+      "resolution_uncertain": false,
+      "n_spots": 2385
+    },
+    {
+      "sample_id": "ZEN49",
+      "donor_id": "READ_specimen1",
+      "hest_patient": "Patient 1",
+      "donor_label_status": "verified",
+      "lab": "Charting the Heterogeneity of Colorectal Cancer Consensus Molecular Subtypes using Spatial Transcriptomics: datasets",
+      "lab_label_status": "unverified",
+      "session": null,
+      "resolution_group": "0.40-0.50",
+      "pixel_size_um": 0.4596361645691399,
+      "resolution_uncertain": false,
+      "n_spots": 2203
+    }
+  ],
+  "flags": {
+    "idc_attribution_unresolved": false,
+    "patient_labels_unreliable": false,
+    "same_specimen_pairs": true
+  },
+  "folds": {
+    "patient": [
+      {
+        "fold": "0",
+        "train": [
+          "ZEN40",
+          "ZEN36"
+        ],
+        "test": [
+          "ZEN49",
+          "ZEN48"
+        ]
+      },
+      {
+        "fold": "1",
+        "train": [
+          "ZEN49",
+          "ZEN48"
+        ],
+        "test": [
+          "ZEN40",
+          "ZEN36"
+        ]
+      }
+    ],
+    "donor": [
+      {
+        "fold": "READ_specimen1",
+        "train": [
+          "ZEN36",
+          "ZEN40"
+        ],
+        "test": [
+          "ZEN48",
+          "ZEN49"
+        ]
+      },
+      {
+        "fold": "READ_specimen7",
+        "train": [
+          "ZEN48",
+          "ZEN49"
+        ],
+        "test": [
+          "ZEN36",
+          "ZEN40"
+        ]
+      }
+    ],
+    "slide_out": [
+      {
+        "fold": "ZEN36",
+        "train": [
+          "ZEN40",
+          "ZEN48",
+          "ZEN49"
+        ],
+        "test": [
+          "ZEN36"
+        ]
+      },
+      {
+        "fold": "ZEN40",
+        "train": [
+          "ZEN36",
+          "ZEN48",
+          "ZEN49"
+        ],
+        "test": [
+          "ZEN40"
+        ]
+      },
+      {
+        "fold": "ZEN48",
+        "train": [
+          "ZEN36",
+          "ZEN40",
+          "ZEN49"
+        ],
+        "test": [
+          "ZEN48"
+        ]
+      },
+      {
+        "fold": "ZEN49",
+        "train": [
+          "ZEN36",
+          "ZEN40",
+          "ZEN48"
+        ],
+        "test": [
+          "ZEN49"
+        ]
+      }
+    ],
+    "random": {
+      "n_repeats": 5,
+      "test_size_from_fold": "patient",
+      "seed_source": "crc32"
+    }
+  },
+  "provenance": {
+    "generated_by": "code/scripts/round3_task_defs.py",
+    "generated_at": "2026-09-22T10:07:31-04:00",
+    "commit": "fce1ad88f8af50cd09cdec6362bb8791cc075961",
+    "inputs": [
+      "results/round2/R5b_audit/donor_audit.csv",
+      "results/tailored/integrity/sample_metadata.csv",
+      "bench_data/READ/adata/<sample_id>.h5ad",
+      "bench_data/READ/splits/test_<k>.csv",
+      "bench_data/READ/splits/train_<k>.csv",
+      "bench_data/READ/var_50genes.json"
+    ],
+    "pythonhashseed": "0"
+  }
+}

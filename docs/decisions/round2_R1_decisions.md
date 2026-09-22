@@ -1,3 +1,5 @@
+> **Closed record, dated 17 September 2026.** Round-2 decision memo, supplied by Nicolas and committed in round 3's S0. Not maintained; numbers in it may have been superseded by later execution and results. The round-3 handoff recorded this memo as never saved and not to be reconstructed; it was in fact supplied, so nothing was reconstructed.
+
 # Round 2: decisions on the R0/R1 report and directives for R2/R3
 
 17 September 2026, revision 2. Response from the oversight chat to the R0/R1 stage report at commit `145ba91`. Everything the report asked for a decision on is decided here; a few additional directives follow.

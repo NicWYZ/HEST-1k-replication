@@ -1,3 +1,5 @@
+> **Active context document for round 3, dated 22 September 2026.** Written for the oversight chat rather than the execution session, and described by its companion as context rather than instruction. Its action items that bear on execution are transcribed into `docs/round3_execution_plan.md`.
+
 # Handoff to the next oversight session: HEST-1k replication, results to date, and the round 3 plan
 
 22 September 2026. Written by the oversight chat that ran rounds 1 and 2, for the chat session that will run round 3. Repository `NicWYZ/HEST-1k-replication` at tag `round2-docs-clean` (commit `4da6b86`). A companion document, `round3_execution_handoff.md`, carries the same content framed for the Claude Science session that executes the work. Read both, since the execution handoff has the stage specifications in full and this document has the reasoning behind them.
