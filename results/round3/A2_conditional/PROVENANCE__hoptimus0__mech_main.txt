@@ -1,0 +1,23 @@
+==============================================================================
+Round 3, stage A0 - conformal harness, encoder hoptimus0
+tasks           : CCRCC/shipped, COAD/shipped, HCC/shipped, IDC/shipped, IDC/audited, LUNG/shipped, LYMPH_IDC/shipped, PAAD/shipped, PRAD/shipped, READ/shipped, SKCM/shipped
+slurm_job_id    : 2135301
+slurm_partition : spill
+node            : c0834
+date            : 2026-09-22T23:46:02-0400
+repo_commit     : d3ce2b7ec538f43d5fbea3b7c89e261ec9c0ff83
+script          : code/scripts/round3_a0_harness.py
+script_file     : /work/users/w/e/weiyang/hest_replication/code/scripts/round3_a0_harness.py
+script_sha256   : sha256/16 4f0536fa25900c9f
+command_line    : code/scripts/round3_a0_harness.py hoptimus0 --task-def results/round3/task_defs/CCRCC.json --task-def results/round3/task_defs/COAD.json --task-def results/round3/task_defs/HCC.json --task-def results/round3/task_defs/IDC.json --task-def results/round3/task_defs/IDC_audited.json --task-def results/round3/task_defs/LUNG.json --task-def results/round3/task_defs/LYMPH_IDC.json --task-def results/round3/task_defs/PAAD.json --task-def results/round3/task_defs/PRAD.json --task-def results/round3/task_defs/READ.json --task-def results/round3/task_defs/SKCM.json --out-dir results/round3/A2_conditional --tag __mech_main --designs random,patient,donor --fit-designs patient,donor --moments-only --slide-gene-anatomy --spot-strata
+pythonhashseed  : 0
+task_defs       : results/round3/task_defs/CCRCC.json; results/round3/task_defs/COAD.json; results/round3/task_defs/HCC.json; results/round3/task_defs/IDC.json; results/round3/task_defs/IDC_audited.json; results/round3/task_defs/LUNG.json; results/round3/task_defs/LYMPH_IDC.json; results/round3/task_defs/PAAD.json; results/round3/task_defs/PRAD.json; results/round3/task_defs/READ.json; results/round3/task_defs/SKCM.json
+n_spots_by_task : {"CCRCC": 74220, "COAD": 15651, "HCC": 4196, "IDC": 35536, "LUNG": 5206, "LYMPH_IDC": 19964, "PAAD": 7571, "PRAD": 62710, "READ": 8407, "SKCM": 3034}
+embedding_dim   : {"CCRCC": 1536, "COAD": 1536, "HCC": 1536, "IDC": 1536, "LUNG": 1536, "LYMPH_IDC": 1536, "PAAD": 1536, "PRAD": 1536, "READ": 1536, "SKCM": 1536}
+n_cells_run     : 394 (design, fold, repeat, cal draw)
+wall_seconds    : 1882
+wall_by_task    : {"CCRCC/shipped": 1413.8, "COAD/shipped": 35.6, "HCC/shipped": 10.5, "IDC/audited": 37.7, "IDC/shipped": 95.6, "LUNG/shipped": 9.2, "LYMPH_IDC/shipped": 114.5, "PAAD/shipped": 7.3, "PRAD/shipped": 140.5, "READ/shipped": 10.3, "SKCM/shipped": 6.3}
+exit            : 0
+config_hash     : sha256/16 ff7e68059b6d98ec
+config          : {"a2b_arms": ["anchor_a1", "C_unit", "C_block"], "a2b_intervention": false, "a2b_min_T_spots": 1000, "a2b_nmatch_from": "", "alpha": 0.1, "alpha_num": 100.0, "alpha_store": 0.2, "base_predictor": "intercept_f64: StandardScaler -> PCA(256, random_state=1) -> Ridge(alpha=100/(256*50), fit_intercept=True, solver=cholesky), float64 from the raw embeddings", "block_grid": 6, "buffer_pitches": 2.5, "cal_block_frac": 0.2, "cal_spot_frac": 0.2, "cal_unit_frac": 0.25, "designs": ["random", "patient", "donor"], "encoder": "hoptimus0", "fit_designs": "patient,donor", "h1_anchor": false, "h2_check": false, "latent": 256, "max_folds": null, "min_C_spots": 9, "min_T_spots": 512, "min_slide_spots": 50, "moments_only": true, "moments_score": "abs", "morph_dir": "instrumentation/morphology_v2", "n_cal_draws": 3, "n_deciles": 10, "n_repeats": null, "n_tertiles": 3, "score_moments": true, "scores": ["abs", "scaled"], "script": "code/scripts/round3_a0_harness.py", "seed_source": "zlib.crc32", "sigma_floor": 0.001, "size_match": "task", "slide_gene_anatomy": true, "spot_cal_draws": 1, "spot_strata": true, "stage": "round3_A0", "task_def_is_fixture": false, "task_defs": ["results/round3/task_defs/CCRCC.json", "results/round3/task_defs/COAD.json", "results/round3/task_defs/HCC.json", "results/round3/task_defs/IDC.json", "results/round3/task_defs/IDC_audited.json", "results/round3/task_defs/LUNG.json", "results/round3/task_defs/LYMPH_IDC.json", "results/round3/task_defs/PAAD.json", "results/round3/task_defs/PRAD.json", "results/round3/task_defs/READ.json", "results/round3/task_defs/SKCM.json"], "tasks": ["CCRCC/shipped", "COAD/shipped", "HCC/shipped", "IDC/shipped", "IDC/audited", "LUNG/shipped", "LYMPH_IDC/shipped", "PAAD/shipped", "PRAD/shipped", "READ/shipped", "SKCM/shipped"]}
+plan            : round3_execution_plan.md section 4.2

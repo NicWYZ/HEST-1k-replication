@@ -1,0 +1,17 @@
+==============================================================================
+Round 3, stage A2 mechanisms - tables
+slurm_job_id    : 2149736
+slurm_partition : spill
+node            : c130604
+date            : 2026-09-23T00:20:34-0400
+repo_commit     : d3ce2b7ec538f43d5fbea3b7c89e261ec9c0ff83
+script          : code/scripts/round3_a2_mechanisms.py
+script_file     : /work/users/w/e/weiyang/hest_replication/code/scripts/round3_a2_mechanisms.py
+script_sha256   : sha256/16 2107e77507b30c3f
+command_line    : code/scripts/round3_a2_mechanisms.py --stage tables
+pythonhashseed  : 0
+root            : /work/users/w/e/weiyang/hest_replication
+files_written   : a2_unit_intervention.csv, a2_dropped_folds.csv, a2_coverage_vs_K.csv, a2_simulated_coverage.csv, a2_level_scale.csv, a2_prad_donor_sharing__arm.csv, a2_by_stratum__spot.csv
+config_hash     : sha256/16 a125c44872ed4c39
+config          : {"alpha": 0.1, "between_share_includes_test_unit": true, "encoders": ["hoptimus0", "uni_v2", "resnet50"], "min_slide_spots": 50, "n_sim": 1000, "queue_note": "The nine A2 harness jobs were submitted with #SBATCH -t 16:00:00. On 2026-09-22 the five that were still pending (2135301 mech hoptimus0, 2135302 mech uni_v2, 2135303 a2b resnet50, 2135304 a2b hoptimus0, 2135310 a2b uni_v2) had their limit lowered in place to 03:00:00 with `scontrol update JobId=<id> TimeLimit=03:00:00`, because a 16 h limit blocks SLURM backfill and the group's fairshare of 0.0066 meant they would not start on priority. The bound came from measurement: job 2135300, the same mech mode on resnet50, ran 1163 s on the main designs plus 748 s on slide_out. Nothing about the jobs' work, resources or seeds was changed.", "score": "abs", "script": "code/scripts/round3_a2_mechanisms.py", "seed_source": "zlib.crc32", "sim_max_n_per_unit": 2000, "stage": "round3_A2_mechanisms", "sub_stage": "tables"}
+plan            : round3_execution_plan.md sections 4.4 and 12.4

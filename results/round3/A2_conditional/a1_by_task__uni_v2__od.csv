@@ -1,0 +1,3 @@
+task,label_set,encoder,design,score,n_folds,coverage_mean,coverage_sd,width_mean,width_sd,interval_score_mean,miss_above_mean,miss_below_mean,calibration_unit,n_train_matched
+PRAD,shipped,uni_v2,slide_out_cal_other_donor,abs,23,0.8936366962388559,0.11721585805429935,2.261698400874099,0.4108571984338276,3.2071961344867947,0.05921190318136469,0.04715140057977944,slide,46244
+PRAD,shipped,uni_v2,slide_out_cal_other_donor,scaled,23,0.8996022105563535,0.05781239681333051,1.9618554528331407,0.44337167947973627,2.6824390855515716,0.08489971720196951,0.015498072241676973,slide,46244

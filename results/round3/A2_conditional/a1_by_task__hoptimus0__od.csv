@@ -1,0 +1,3 @@
+task,label_set,encoder,design,score,n_folds,coverage_mean,coverage_sd,width_mean,width_sd,interval_score_mean,miss_above_mean,miss_below_mean,calibration_unit,n_train_matched
+PRAD,shipped,hoptimus0,slide_out_cal_other_donor,abs,23,0.8935664193717897,0.11912068244818785,2.2584691983618943,0.41717060441678305,3.199871568847505,0.05833636507853424,0.048097215549676095,slide,46244
+PRAD,shipped,hoptimus0,slide_out_cal_other_donor,scaled,23,0.9024887057237585,0.052542211721009785,1.9802150457159058,0.4201269956627069,2.659925435054814,0.08114693463601953,0.016364359640221968,slide,46244

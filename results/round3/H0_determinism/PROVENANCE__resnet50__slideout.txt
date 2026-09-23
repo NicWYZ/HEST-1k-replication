@@ -1,0 +1,21 @@
+==============================================================================
+Round 3, stage A0 - conformal harness, encoder resnet50
+tasks           : PRAD/shipped, READ/shipped, IDC/audited
+slurm_job_id    : 2126234
+slurm_partition : spill
+node            : c151605
+date            : 2026-09-22T20:13:45-0400
+repo_commit     : d3ce2b7ec538f43d5fbea3b7c89e261ec9c0ff83
+script          : code/scripts/round3_a0_harness.py
+command_line    : /work/users/w/e/weiyang/round3_mech/round3_a0_harness__pinned_d3ce2b7.py resnet50 --task-def results/round3/task_defs/PRAD.json --task-def results/round3/task_defs/READ.json --task-def results/round3/task_defs/IDC_audited.json --out-dir results/round3/H0_determinism --tag __slideout --designs slide_out
+pythonhashseed  : 0
+task_defs       : results/round3/task_defs/PRAD.json; results/round3/task_defs/READ.json; results/round3/task_defs/IDC_audited.json
+n_spots_by_task : {"IDC": 35536, "PRAD": 62710, "READ": 8407}
+embedding_dim   : {"IDC": 1024, "PRAD": 1024, "READ": 1024}
+n_cells_run     : 93 (design, fold, repeat, cal draw)
+wall_seconds    : 715
+wall_by_task    : {"IDC/audited": 26.9, "PRAD/shipped": 672.7, "READ/shipped": 14.8}
+exit            : 0
+config_hash     : sha256/16 b377fa919614c6d4
+config          : {"alpha": 0.1, "alpha_num": 100.0, "alpha_store": 0.2, "base_predictor": "intercept_f64: StandardScaler -> PCA(256, random_state=1) -> Ridge(alpha=100/(256*50), fit_intercept=True, solver=cholesky), float64 from the raw embeddings", "block_grid": 6, "buffer_pitches": 2.5, "cal_block_frac": 0.2, "cal_spot_frac": 0.2, "cal_unit_frac": 0.25, "designs": ["slide_out"], "encoder": "resnet50", "h1_anchor": false, "h2_check": false, "latent": 256, "max_folds": null, "min_C_spots": 9, "min_T_spots": 512, "min_slide_spots": 50, "n_cal_draws": 3, "n_repeats": null, "scores": ["abs", "scaled"], "script": "code/scripts/round3_a0_harness.py", "seed_source": "zlib.crc32", "sigma_floor": 0.001, "size_match": "task", "spot_cal_draws": 1, "stage": "round3_A0", "task_def_is_fixture": false, "task_defs": ["results/round3/task_defs/PRAD.json", "results/round3/task_defs/READ.json", "results/round3/task_defs/IDC_audited.json"], "tasks": ["PRAD/shipped", "READ/shipped", "IDC/audited"]}
+plan            : round3_execution_plan.md section 4.2

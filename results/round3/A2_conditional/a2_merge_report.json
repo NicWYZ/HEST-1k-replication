@@ -1,0 +1,56 @@
+{
+  "a2_by_stratum.csv": {
+    "fragments_present": {
+      "a2_by_stratum__anatomy.csv": 4952,
+      "a2_by_stratum__spot.csv": 5337
+    },
+    "fragments_missing": [],
+    "renames_applied": {
+      "a2_by_stratum__spot.csv": {
+        "stratum_kind": "stratum",
+        "scope": "agg_unit"
+      }
+    },
+    "key": [
+      "task",
+      "label_set",
+      "design",
+      "score",
+      "stratum",
+      "stratum_value",
+      "agg_unit",
+      "encoder",
+      "fold"
+    ],
+    "rows_out": 10289,
+    "collision_rows_cross_fragment": 0,
+    "collision_rows_within_fragment": 0
+  },
+  "a2_prad_donor_sharing.csv": {
+    "fragments_present": {
+      "a2_prad_donor_sharing__paired.csv": 148,
+      "a2_prad_donor_sharing__arm.csv": 207
+    },
+    "fragments_missing": [],
+    "renames_applied": {
+      "a2_prad_donor_sharing__arm.csv": {
+        "slide": "test_slide",
+        "scope": "level"
+      }
+    },
+    "key": [
+      "level",
+      "task",
+      "label_set",
+      "design",
+      "encoder",
+      "score",
+      "test_slide",
+      "arm",
+      "fold"
+    ],
+    "rows_out": 355,
+    "collision_rows_cross_fragment": 0,
+    "collision_rows_within_fragment": 0
+  }
+}

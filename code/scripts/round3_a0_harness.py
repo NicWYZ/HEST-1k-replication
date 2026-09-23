@@ -64,6 +64,40 @@ Acceptance modes (section 4.2 H1-H4):
 An H1 or H2 failure is the one in-interval stop condition. This script exits non-zero and says
 so; it does not adjust a threshold.
 
+STAGE A2 ADDITIONS (round3_execution_plan.md section 12.4, memo sections 4.0 item 5 and 4.1).
+Every one of these is behind a flag that is off by default, so an invocation that passes none
+of them enumerates, splits, fits and writes exactly what A1 ran. The flags are:
+
+  --fit-designs D1,D2   fit and evaluate only these designs, while --designs still governs
+                        ENUMERATION and therefore size matching. Needed because
+                        size_match_groups() takes its per-task n_match over every design
+                        requested in the run, so dropping `random` from --designs would
+                        silently change every other design's proper-training size and the
+                        rerun would no longer be A1's splits.
+  --score-moments       write a2_score_moments__<enc><tag>.parquet: per (fold, calibration
+                        draw, unit, gene) the count, mean, variance and 0.5 and 0.9 quantiles
+                        of the calibration scores, and the same for the test unit. A2c.
+  --moments-only        --score-moments and suppress the per-gene coverage rows, which is the
+                        moments-only mode A2c asks for.
+  --slide-gene-anatomy  write a2_slidegene__<enc><tag>.parquet: per (fold, test slide, gene)
+                        the slide offset b_s = mean(y) - mean(yhat), s_y on the test slide,
+                        the calibrated half-width w_hat and the oracle half-width w_star that
+                        would give exactly 1-alpha coverage on that slide. A2f.
+  --spot-strata         write a2_strata__<enc><tag>.csv: coverage and width by predicted-value
+                        decile within task and by neoplastic-fraction tertile from
+                        --morph-dir, aggregated before writing rather than emitting a
+                        spot-level table. A2a. `abs` score only.
+  --a2b-intervention    the calibration-unit intervention. Ignores --designs and runs the
+                        `donor` design only, three arms per fold on a shared T. A2b.
+  --a2b-nmatch-from F   A1's a1_calibration_units CSV, read for the per-task n_match target so
+                        the anchor arm reproduces A1's size-matched proper-training set.
+
+and one new design name, usable in --designs like any other:
+
+  slide_out_cal_other_donor   E is one slide; the pool is every other slide; the calibration
+                              set is drawn only from slides belonging to a DIFFERENT donor
+                              than the test slide. A2d's new arm.
+
 Usage:
   round3_a0_harness.py <encoder> --task-def <file> [options]
 """
@@ -109,7 +143,22 @@ MIN_SLIDE_SPOTS = 50              # project metric convention, carried from roun
 MIN_T_SPOTS = 2 * LATENT          # a T smaller than this cannot support PCA-256 honestly
 MIN_C_SPOTS = 9                   # ceil((n+1)*0.9) <= n first holds at n = 9
 
-DESIGNS = ("random", "patient", "donor", "slide_out")
+DESIGNS = ("random", "patient", "donor", "slide_out", "slide_out_cal_other_donor")
+# The DEFAULT --designs stays A1's four. `slide_out_cal_other_donor` is a valid design
+# name but is never run unless it is asked for by name, so an invocation that passes no
+# A2 flag enumerates exactly what A1 enumerated.
+DESIGNS_DEFAULT = ("random", "patient", "donor", "slide_out")
+
+# Stage A2 constants.
+A2B_MIN_T_SPOTS = 1000            # section 12.7: an A2b fold whose T falls below this after
+                                  # carving C_block is DROPPED and listed, not shrunk further
+A2B_ARMS = ("anchor_a1", "C_unit", "C_block")
+N_DECILES = 10                    # A2a, predicted-value decile within task
+N_TERTILES = 3                    # A2a, neoplastic-fraction tertile of the test spot
+MORPH_DIR = "instrumentation/morphology_v2"
+MOMENTS_SCORE = "abs"             # A2c's scores; `scaled` moments would be moments of a
+                                  # ratio whose denominator hits the 1e-3 floor on a few
+                                  # percent of spots, which is a different quantity
 
 
 # ----------------------------------------------------------------------- arguments
@@ -126,7 +175,7 @@ def parse_args(argv):
     p.add_argument("--out-dir", default="results/round3/A1_coverage",
                    help="relative to the project root")
     p.add_argument("--tag", default="", help="suffix on every output filename")
-    p.add_argument("--designs", default=",".join(DESIGNS))
+    p.add_argument("--designs", default=",".join(DESIGNS_DEFAULT))
     p.add_argument("--scores", default="abs,scaled")
     p.add_argument("--alpha", type=float, default=0.10)
     p.add_argument("--alpha-store", type=float, default=0.20,
@@ -152,6 +201,19 @@ def parse_args(argv):
     p.add_argument("--h1-tol", type=float, default=1e-6)
     p.add_argument("--h2-tol", type=float, default=0.02)
     p.add_argument("--no-parquet", action="store_true")
+    # ---- stage A2, all off by default; see the module docstring ----
+    p.add_argument("--fit-designs", default="",
+                   help="comma-separated subset of --designs to FIT. Enumeration, and "
+                        "therefore size matching, still uses --designs. Empty means all.")
+    p.add_argument("--score-moments", action="store_true")
+    p.add_argument("--moments-only", action="store_true")
+    p.add_argument("--slide-gene-anatomy", action="store_true")
+    p.add_argument("--spot-strata", action="store_true")
+    p.add_argument("--morph-dir", default=MORPH_DIR)
+    p.add_argument("--a2b-intervention", action="store_true")
+    p.add_argument("--a2b-nmatch-from", default="",
+                   help="A1's a1_calibration_units__<enc>__<tag>.csv, read for the per-task "
+                        "n_match_target so the A2b anchor arm reproduces A1's size-matched T")
     return p.parse_args(argv)
 
 
@@ -299,6 +361,136 @@ def buffer_drop(samp, xy, cal_mask, cand_mask):
     return drop
 
 
+# ------------------------------------------------------------- stage A2 helpers
+def block_ids(mask, extent_mask, samp, xy, grid=BLOCK_GRID):
+    """Per-spot block label `<slide>#b<key>` for the spots in `mask`.
+
+    `extent_mask` is the set block_pick() gridded, which is the POOL, not the chosen
+    calibration spots: the grid origin and span come from the pool's bounding box on each
+    slide, so labelling the chosen spots against their own bounding box would produce a
+    different partition and A2c's between-unit variance would be between the wrong units.
+    Recomputed here rather than returned from block_pick so that the A1 code path stays
+    byte-for-byte what it was.
+    """
+    lab = np.full(len(samp), None, dtype=object)
+    for s in np.unique(samp[mask]):
+        ext = extent_mask & (samp == s)
+        m = mask & (samp == s)
+        if not ext.any():
+            ext = m
+        ce = xy[ext]
+        lo, hi = ce.min(0), ce.max(0)
+        span = np.where(hi - lo == 0, 1.0, hi - lo)
+        c = xy[m]
+        key = (np.clip(((c - lo) / span * grid).astype(int), 0, grid - 1)
+               * [grid, 1]).sum(1)
+        lab[np.flatnonzero(m)] = [f"{s}#b{int(k)}" for k in key]
+    return lab
+
+
+def unit_labels(level, mask, extent_mask, samp, xy, meta):
+    """The identity of the calibration unit each spot in `mask` belongs to, for A2c's
+    between-unit variance. `level` is choose_calibration's recorded calibration_unit."""
+    if level == "block":
+        return block_ids(mask, extent_mask, samp, xy)
+    if level == "slide":
+        return np.where(mask, samp, None).astype(object)
+    if level in ("donor", "patient"):
+        keyf = meta["donor_of"] if level == "donor" else meta["patient_of"]
+        out = np.full(len(samp), None, dtype=object)
+        idx = np.flatnonzero(mask)
+        out[idx] = [keyf.get(s) if keyf.get(s) is not None else "__NA__"
+                    for s in samp[idx]]
+        return out
+    return np.full(len(samp), None, dtype=object)
+
+
+def moment_rows(S, labels_sub, genes, role, base):
+    """Count, mean, variance and the 0.5 and 0.9 quantiles of the scores in S, per unit and
+    gene. S is (n_spot, n_gene) and labels_sub is (n_spot,). Variance is the population
+    variance (ddof=0), which is what the between/within decomposition in A2c adds up."""
+    rows = []
+    labs = np.asarray(labels_sub, dtype=object)
+    for u in sorted({str(x) for x in labs}):
+        m = (labs.astype(str) == u)
+        if not m.any():
+            continue
+        s = S[m]
+        mean = s.mean(axis=0)
+        var = s.var(axis=0)
+        q50 = np.quantile(s, 0.5, axis=0)
+        q90 = np.quantile(s, 0.9, axis=0)
+        for j, g in enumerate(genes):
+            rows.append((base["task"], base["label_set"], base["encoder"],
+                         base["design"], base["fold"], base["cal_draw"],
+                         base["score"], base["calibration_unit"], role, u, g,
+                         int(m.sum()), float(mean[j]), float(var[j]),
+                         float(q50[j]), float(q90[j])))
+    return rows
+
+
+def oracle_halfwidth(resid_abs, unit_E, alpha):
+    """w_star, the half-width that would give exactly 1-alpha coverage on this test slide.
+
+    `resid_abs` is |y - yhat| and `unit_E` the score's per-spot scale (1 for `abs`,
+    sigmahat for `scaled`), both (n_spot, n_gene). The oracle multiplier is the same
+    ceil(n(1-alpha))-th order statistic of the score on the TEST slide that the calibrated
+    quantile is of the score on C, so w_star / w_hat above 1 means the calibrated interval
+    is too narrow for this slide. Uses test labels, so it is a diagnostic and not a method,
+    the same standing section 4.4 gives b_s.
+    """
+    n = resid_abs.shape[0]
+    ratio = resid_abs / unit_E
+    k = int(np.ceil((1.0 - alpha) * n))
+    k = min(max(k, 1), n)
+    cstar = np.sort(ratio, axis=0)[k - 1, :]
+    return (unit_E * cstar[None, :]).mean(axis=0), cstar
+
+
+def load_morphology(task, morph_dir):
+    """Neoplastic fraction per spot from instrumentation/morphology_v2/<task>_morph.parquet.
+
+    Returns {(sample_id, barcode): neoplastic_fraction} or None when the file is absent.
+    The column names are resolved by candidate rather than assumed, and the resolution is
+    printed, because a silently wrong join here would make the tertile stratum meaningless
+    while still producing a full table.
+    """
+    p = f"{ROOT}/{morph_dir}/{task}_morph.parquet"
+    if not os.path.exists(p):
+        print(f"[morph] {p} absent; neoplastic-fraction tertile not computed", flush=True)
+        return None
+    d = pq.read_table(p).to_pandas()
+    cols = {c.lower(): c for c in d.columns}
+
+    def pick(cands, what):
+        hit = [cols[c] for c in cands if c in cols]
+        assert len(hit) == 1, (f"{p}: expected exactly one {what} column among {cands}; "
+                               f"found {hit} in {list(d.columns)}")
+        return hit[0]
+
+    csamp = pick(["sample_id", "sample", "slide", "slide_id"], "sample id")
+    cbc = pick(["barcode", "barcodes", "spot_id", "spot"], "barcode")
+    cfrac = pick(["neoplastic_fraction", "frac_neoplastic", "neoplastic_frac",
+                  "neoplastic", "frac_neoplastic_nuclei", "neoplastic_nuclei_fraction"],
+                 "neoplastic fraction")
+    print(f"[morph] {task}: {len(d):,} rows; keys ({csamp}, {cbc}); "
+          f"neoplastic fraction column {cfrac}", flush=True)
+    return dict(zip(zip(d[csamp].astype(str), d[cbc].astype(str)),
+                    d[cfrac].astype(float)))
+
+
+def bin_edges_quantile(v, nbin):
+    """Quantile bin index 0..nbin-1 of each finite value in v, ties broken to the lower bin.
+    Returns -1 where v is not finite."""
+    out = np.full(v.shape, -1, dtype=np.int8)
+    ok = np.isfinite(v)
+    if not ok.any():
+        return out
+    edges = np.quantile(v[ok], np.linspace(0, 1, nbin + 1)[1:-1])
+    out[ok] = np.clip(np.searchsorted(edges, v[ok], side="right"), 0, nbin - 1)
+    return out
+
+
 # ------------------------------------------------------- calibration-unit rule
 def unit_hierarchy(design):
     """The levels the calibration-unit rule may use, highest first, per the section 4.2
@@ -312,6 +504,16 @@ def unit_hierarchy(design):
         return ["donor", "slide", "block"]
     if design == "slide_out":
         return ["slide", "block"]
+    if design == "slide_out_cal_other_donor":
+        # A2d's new arm. The unit is still the slide; what changes is which slides are
+        # eligible, which build_fold_specs enforces by handing choose_calibration a pool
+        # already restricted to the other donors' slides, under the design name
+        # `slide_out`. A fold whose pool holds no other-donor slide has no such arm and is
+        # skipped with a printed reason rather than falling back to the test slide's own
+        # donor, which would undo the one thing the arm varies. On PRAD, the only task the
+        # arm runs on, both donors carry at least two slides (15 and 8), so the block
+        # fallback inside choose_calibration is never reached.
+        return ["slide"]
     raise ValueError(design)
 
 
@@ -457,7 +659,37 @@ def build_fold_specs(td, samp, xy, designs, meta, args):
                             design, pool, E, samp, xy, meta, key, draw, cal_fu, cal_fs)
                         specs.append(dict(task=task, design=design, fold=str(fd["fold"]),
                                           repeat=rep, cal_draw=draw, T=T, C=C, E=E,
-                                          info=info))
+                                          pool=pool, info=info))
+            continue
+
+        if design == "slide_out_cal_other_donor":
+            folds = td["folds"]["slide_out"]
+            if args.max_folds:
+                folds = folds[:args.max_folds]
+            for fd in folds:
+                E = mask_of(fd["test"])
+                pool = mask_of(fd["train"])
+                if not E.any() or not pool.any():
+                    continue
+                te_don = {meta["donor_of"].get(s) for s in fd["test"]}
+                other = [s for s in fd["train"]
+                         if meta["donor_of"].get(s) not in te_don]
+                if not other:
+                    print(f"  [skip] {task} {design} fold={fd['fold']}: no slide from "
+                          f"another donor in the pool", flush=True)
+                    continue
+                cal_pool = mask_of(other)
+                for draw in range(args.n_cal_draws):
+                    key = f"{task}|{design}|{fd['fold']}"
+                    _, C, info = choose_calibration("slide_out", cal_pool, E, samp, xy,
+                                                    meta, key, draw, cal_fu, cal_fs)
+                    T = pool & ~C
+                    info["n_pool_spots"] = int(pool.sum())
+                    info["n_cal_pool_spots"] = int(cal_pool.sum())
+                    info["n_cal_eligible_slides"] = len(other)
+                    specs.append(dict(task=task, design=design, fold=str(fd["fold"]),
+                                      repeat=-1, cal_draw=draw, T=T, C=C, E=E, pool=pool,
+                                      info=info))
             continue
 
         folds = td["folds"][design]
@@ -482,7 +714,8 @@ def build_fold_specs(td, samp, xy, designs, meta, args):
                 T, C, info = choose_calibration(design, pool, E, samp, xy, meta, key,
                                                 draw, cal_fu, cal_fs)
                 specs.append(dict(task=task, design=design, fold=str(fd["fold"]),
-                                  repeat=-1, cal_draw=draw, T=T, C=C, E=E, info=info))
+                                  repeat=-1, cal_draw=draw, T=T, C=C, E=E, pool=pool,
+                                      info=info))
     return specs
 
 
@@ -580,6 +813,7 @@ def run_one(td, enc, args, designs, scores, state):
         resgroup_of={s["sample_id"]: s["resolution_group"] for s in td["samples"]},
         session_of={s["sample_id"]: s["session"] for s in td["samples"]},
     )
+    fit_designs = {d for d in args.fit_designs.split(",") if d}
     X, Y, samp, bc, xy, genes = load_task(td, enc)
     n, dim = X.shape
     state["dims"][task] = dim
@@ -595,6 +829,15 @@ def run_one(td, enc, args, designs, scores, state):
         Tm = apply_size_match(sp, task)
         Cm, Em = sp["C"], sp["E"]
         info = sp["info"]
+
+        if fit_designs and sp["design"] not in fit_designs:
+            # Enumerated so that size_match_groups() sees the same design set A1 saw, but
+            # not fit. Recorded so the calibration-unit file says what was enumerated.
+            info = dict(info)
+            info["cal_status"] = f"{info['cal_status']}|not_fit_this_run"
+            sp["info"] = info
+            state["cal"].append(_cal_row(enc, td, sp, info, Tm, Cm, Em, samp, args))
+            continue
 
         # ---- H3, disjointness: asserted per fold on (sample_id, barcode) ----
         keys = {nm: set(zip(samp[m].tolist(), bc[m].tolist()))
@@ -693,6 +936,23 @@ def run_one(td, enc, args, designs, scores, state):
             q_sto, _ = conformal_quantile(S_C, args.alpha_store)
             half = unit_E * q_rep[None, :]
             lo, hi = P_E - half, P_E + half
+            resid_E = np.abs(Y_E - P_E)
+
+            # ---- A2c, score moments per calibration unit and for the test unit ----
+            if args.score_moments and score == MOMENTS_SCORE \
+                    and sp["design"] != "random":
+                base = dict(task=task, label_set=label_set, encoder=enc,
+                            design=sp["design"], fold=sp["fold"],
+                            cal_draw=sp["cal_draw"], score=score,
+                            calibration_unit=str(info["calibration_unit"]))
+                ul = unit_labels(info["calibration_unit"], Cm,
+                                 sp.get("pool", Cm | sp["T"]), samp, xy, meta)
+                state["mom"] += moment_rows(S_C, ul[Cm], genes, "calibration", base)
+                # The test unit is the fold's held-out unit, which is one donor under
+                # `donor`, one patient under `patient` and one slide under `slide_out`.
+                state["mom"] += moment_rows(
+                    resid_E, np.array([sp["fold"]] * int(Em.sum()), dtype=object),
+                    genes, "test", base)
 
             for s in np.unique(samp[Em]):
                 sl = samp[E_idx] == s
@@ -700,6 +960,25 @@ def run_one(td, enc, args, designs, scores, state):
                     continue
                 m = interval_metrics(Y_E[sl], lo[sl], hi[sl], args.alpha)
                 nsl = int(sl.sum())
+                if args.slide_gene_anatomy:
+                    w_star, _c = oracle_halfwidth(resid_E[sl], unit_E[sl], args.alpha)
+                    b_s = Y_E[sl].mean(axis=0) - P_E[sl].mean(axis=0)
+                    s_y = Y_E[sl].std(axis=0)
+                    w_hat = half[sl].mean(axis=0)
+                    for j, g in enumerate(genes):
+                        state["sg"].append((
+                            task, label_set, enc, sp["design"], args.arm_label,
+                            sp["fold"], sp["cal_draw"], score,
+                            str(info["calibration_unit"]), s, g, nsl,
+                            int(m["n_cov"][j]), float(m["coverage"][j]),
+                            float(m["width_mean"][j]), float(w_hat[j]),
+                            float(w_star[j]), float(b_s[j]), float(s_y[j]),
+                            float(Y_E[sl][:, j].mean()), float(P_E[sl][:, j].mean()),
+                            float(m["miss_above"][j]), float(m["miss_below"][j]),
+                            float(m["interval_score"][j]), float(q_rep[j]),
+                            bool(nsl >= MIN_SLIDE_SPOTS)))
+                if args.moments_only:
+                    continue
                 for j, g in enumerate(genes):
                     state["pg"].append((
                         task, label_set, enc, sp["design"], sp["fold"], sp["repeat"],
@@ -710,11 +989,304 @@ def run_one(td, enc, args, designs, scores, state):
                         float(q_rep[j]), float(q_sto[j]),
                         bool(nsl >= MIN_SLIDE_SPOTS), bool(inf_rep)))
 
+            # ---- A2a, the spot-level strata, kept as compact arrays and aggregated at
+            # the end of the task so that no spot-level table is ever written ----
+            if args.spot_strata and score == "abs":
+                state["strata_raw"].setdefault((task, label_set, sp["design"]), []).append(
+                    dict(fold=sp["fold"], cal_draw=sp["cal_draw"],
+                         E_idx=E_idx.astype(np.int32),
+                         pred=P_E.astype(np.float32),
+                         covered=~((Y_E < lo) | (Y_E > hi)),
+                         width=(hi - lo).astype(np.float32)))
+
         state["cal"].append(_cal_row(enc, td, sp, info, Tm, Cm, Em, samp, args))
         print(f"  [{i+1}/{len(specs)}] {task} {sp['design']} fold={sp['fold']} "
               f"rep={sp['repeat']} draw={sp['cal_draw']} unit={info['calibration_unit']} "
               f"n_T={int(Tm.sum())} n_C={int(Cm.sum())} n_E={int(Em.sum())} "
               f"{time.time()-t0:.0f}s", flush=True)
+
+    if args.spot_strata:
+        _strata_for_task(task, label_set, enc, args, state, samp, bc, genes)
+
+    del X, Y
+    return time.time() - t0
+
+
+def _strata_for_task(task, label_set, enc, args, state, samp, bc, genes):
+    """A2a's two spot-level strata, aggregated within the task before anything is written.
+
+    Predicted-value decile is taken WITHIN TASK, pooling every test spot of the design
+    across its folds and calibration draws, per gene: the decile boundaries are the same
+    for every fold of a design, which is what makes the strata comparable across folds.
+    Neoplastic-fraction tertile is taken within task over the morphology file's spots and
+    does not depend on the design or on the fit.
+    """
+    morph = state["morph"].get(task, "__unset__")
+    if morph == "__unset__":
+        morph = load_morphology(task, args.morph_dir)
+        state["morph"][task] = morph
+    keys = np.array([f"{s}\t{b}" for s, b in zip(samp, bc)], dtype=object)
+    if morph is not None:
+        nf = np.array([morph.get((s, b), np.nan) for s, b in zip(samp, bc)], dtype=float)
+        n_hit = int(np.isfinite(nf).sum())
+        print(f"[morph] {task}: {n_hit:,}/{len(nf):,} spots joined to a neoplastic "
+              f"fraction", flush=True)
+        tert_all = bin_edges_quantile(nf, N_TERTILES)
+    else:
+        n_hit, tert_all = 0, np.full(len(samp), -1, dtype=np.int8)
+    state["morph_join"].append(dict(task=task, encoder=enc, n_spots=len(samp),
+                                    n_joined=n_hit, morph_dir=args.morph_dir))
+
+    for (tk, ls, design), chunks in list(state["strata_raw"].items()):
+        if tk != task:
+            continue
+        pred = np.concatenate([ch["pred"] for ch in chunks], axis=0)
+        cov = np.concatenate([ch["covered"] for ch in chunks], axis=0)
+        wid = np.concatenate([ch["width"] for ch in chunks], axis=0)
+        idx = np.concatenate([ch["E_idx"] for ch in chunks], axis=0)
+        fold = np.concatenate([np.full(len(ch["E_idx"]), ch["fold"], dtype=object)
+                               for ch in chunks])
+        dec = np.empty(pred.shape, dtype=np.int8)
+        for j in range(pred.shape[1]):
+            dec[:, j] = bin_edges_quantile(pred[:, j].astype(float), N_DECILES)
+        tert = tert_all[idx]
+        rows = []
+        for kind, lab in (("predicted_value_decile", dec),
+                          ("neoplastic_fraction_tertile",
+                           np.repeat(tert[:, None], pred.shape[1], axis=1))):
+            nb = N_DECILES if kind == "predicted_value_decile" else N_TERTILES
+            for f in sorted(set(fold.tolist())):
+                fm = (fold == f)
+                for b in range(nb):
+                    m = fm[:, None] & (lab == b)
+                    ns = int(m.sum())
+                    if not ns:
+                        continue
+                    rows.append(dict(
+                        task=task, label_set=ls, encoder=enc, design=design,
+                        score="abs", fold=str(f), stratum_kind=kind, stratum_value=b,
+                        n_spot_gene=ns, n_covered=int(cov[m].sum()),
+                        coverage=float(cov[m].mean()), width_mean=float(wid[m].mean()),
+                        pred_mean=float(pred[m].mean())))
+        state["strata"] += rows
+        del state["strata_raw"][(tk, ls, design)]
+        print(f"[strata] {task} {design}: {len(rows)} stratum rows from "
+              f"{pred.shape[0]:,} test spots x {pred.shape[1]} genes", flush=True)
+
+
+# --------------------------------------------------- A2b, the calibration-unit intervention
+def _fit_bundle(X, Y, Tm, scores):
+    pipe, A, reg, ridge_alpha = fit_base(X[Tm], Y[Tm])
+    sig = fit_sigma(A, Y[Tm], reg, ridge_alpha) if "scaled" in scores else None
+    return pipe, A, reg, ridge_alpha, sig
+
+
+def _a2b_arm(arm, fitted, Cm, Em, X, Y, samp, xy, genes, td, enc, fold, draw,
+             cal_unit, args, scores, state, n_T):
+    """Evaluate one A2b arm: calibrate on Cm with the head in `fitted`, score on Em.
+
+    Writes the same per (test slide, gene) anatomy rows run_one writes, tagged with the
+    arm, and a per (fold, arm, score) summary. The three arms of a fold differ in exactly
+    one thing each, listed in the A2b difference list in the stage report.
+    """
+    task, label_set = td["task"], td["label_set"]
+    pipe, A, reg, ridge_alpha, sig = fitted
+    A_C = pipe.transform(X[Cm].astype(np.float64, copy=False))
+    P_C = reg.predict(A_C)
+    Y_C = Y[Cm].astype(np.float64, copy=False)
+    B = pipe.transform(X[Em].astype(np.float64, copy=False))
+    P_E = reg.predict(B)
+    Y_E = Y[Em].astype(np.float64, copy=False)
+    E_idx = np.flatnonzero(Em)
+    resid_E = np.abs(Y_E - P_E)
+
+    for score in scores:
+        if score == "abs":
+            S_C = np.abs(Y_C - P_C)
+            unit_E = np.ones_like(P_E)
+        elif score == "scaled":
+            s_C = np.maximum(sig.predict(A_C), SIGMA_FLOOR)
+            unit_E = np.maximum(sig.predict(B), SIGMA_FLOOR)
+            S_C = np.abs(Y_C - P_C) / s_C
+        else:
+            raise ValueError(score)
+        q_rep, inf_rep = conformal_quantile(S_C, args.alpha)
+        half = unit_E * q_rep[None, :]
+        lo, hi = P_E - half, P_E + half
+
+        cells = []
+        for s in np.unique(samp[Em]):
+            sl = samp[E_idx] == s
+            if not sl.any():
+                continue
+            m = interval_metrics(Y_E[sl], lo[sl], hi[sl], args.alpha)
+            nsl = int(sl.sum())
+            w_star, _c = oracle_halfwidth(resid_E[sl], unit_E[sl], args.alpha)
+            b_s = Y_E[sl].mean(axis=0) - P_E[sl].mean(axis=0)
+            s_y = Y_E[sl].std(axis=0)
+            w_hat = half[sl].mean(axis=0)
+            for j, g in enumerate(genes):
+                state["sg"].append((
+                    task, label_set, enc, "donor", arm, fold, draw, score,
+                    str(cal_unit), s, g, nsl, int(m["n_cov"][j]),
+                    float(m["coverage"][j]), float(m["width_mean"][j]),
+                    float(w_hat[j]), float(w_star[j]), float(b_s[j]), float(s_y[j]),
+                    float(Y_E[sl][:, j].mean()), float(P_E[sl][:, j].mean()),
+                    float(m["miss_above"][j]), float(m["miss_below"][j]),
+                    float(m["interval_score"][j]), float(q_rep[j]),
+                    bool(nsl >= MIN_SLIDE_SPOTS)))
+                if nsl >= MIN_SLIDE_SPOTS:
+                    cells.append((m["coverage"][j], m["width_mean"][j],
+                                  m["interval_score"][j], m["miss_above"][j],
+                                  m["miss_below"][j]))
+        if not cells:
+            cells = [(np.nan,) * 5]
+        cm = np.asarray(cells, dtype=float).mean(axis=0)
+        # Unweighted mean over the complete (test slide, gene) grid, which is the same
+        # number a1_by_fold reaches by averaging over genes within a slide and then over
+        # slides, because the grid has no missing cell.
+        state["a2b"].append(dict(
+            encoder=enc, task=task, label_set=label_set, design="donor", arm=arm,
+            fold=fold, cal_draw=draw, score=score, calibration_unit=str(cal_unit),
+            n_T=int(n_T), n_C=int(Cm.sum()), n_E=int(Em.sum()),
+            n_test_slides=len(np.unique(samp[Em])),
+            coverage=float(cm[0]), width_mean=float(cm[1]),
+            interval_score=float(cm[2]), miss_above=float(cm[3]),
+            miss_below=float(cm[4]),
+            q_alpha_mean=float(np.mean(q_rep)), quantile_infinite=bool(inf_rep)))
+
+
+def run_a2b(td, enc, args, scores, state):
+    """A2b, section 12.4. Per `donor` fold, hold E fixed and build ONE proper-training set
+    T shared by two calibration arms, plus a third arm anchored to A1.
+
+      anchor_a1  A1's own proper-training set T_A1 (the A1 pool minus A1's C_unit, then
+                 A1's size match) with A1's full C_unit. Must reproduce A1's per-fold
+                 coverage to floating-point resolution. Section 12.9 item 5.
+      C_unit     head fit on T = T_A1 minus the carved blocks, calibrated on C_unit.
+      C_block    the SAME head on the SAME T, calibrated on buffered spatial blocks carved
+                 out of the slides that form T_A1 (grid 6, 2.5-pitch buffer, about 20% of
+                 blocks), size-matched to C_unit in spot count by subsampling the larger.
+
+    Difference list, C_unit against C_block: the proper-training set, the head, the scaler,
+    the PCA, the test set E, the score, alpha, the size match and the number of calibration
+    spots are all identical. The only thing that differs is WHERE the calibration scores
+    come from: a held-out donor, or spatial blocks inside the training donors' own slides.
+
+    Difference list, anchor_a1 against C_unit: the proper-training set differs, by the
+    carved blocks and their buffer, and nothing else.
+    """
+    t0 = time.time()
+    task, label_set = td["task"], td["label_set"]
+    meta = dict(
+        donor_of={s["sample_id"]: s["donor_id"] for s in td["samples"]},
+        patient_of={s["sample_id"]: s["hest_patient"] for s in td["samples"]},
+        resgroup_of={s["sample_id"]: s["resolution_group"] for s in td["samples"]},
+        session_of={s["sample_id"]: s["session"] for s in td["samples"]},
+    )
+    X, Y, samp, bc, xy, genes = load_task(td, enc)
+    n = len(samp)
+    state["dims"][task] = X.shape[1]
+    state["n_spots"][task] = n
+    of_sample = {s: (samp == s) for s in np.unique(samp)}
+
+    def mask_of(ids):
+        m = np.zeros(n, bool)
+        for s in ids:
+            m |= of_sample[s]
+        return m
+
+    assert f"{task}/{label_set}" in state["a2b_nmatch"], (
+        f"{task}/{label_set} is not in the A1 calibration-units file given to "
+        f"--a2b-nmatch-from, so its anchor arm has no A1 size match to reproduce")
+    nm = state["a2b_nmatch"][f"{task}/{label_set}"]
+    print(f"[a2b] {task}/{label_set} {enc}: {n:,} spots, n_match target {nm}, "
+          f"{len(td['folds']['donor'])} donor folds", flush=True)
+
+    a2b_folds = td["folds"]["donor"]
+    if args.max_folds:
+        a2b_folds = a2b_folds[:args.max_folds]
+    for fd in a2b_folds:
+        E, pool = mask_of(fd["test"]), mask_of(fd["train"])
+        if not E.any() or not pool.any():
+            continue
+        fold = str(fd["fold"])
+        key = f"{task}|donor|{fold}"
+        _, _, probe = choose_calibration("donor", pool, E, samp, xy, meta, key, 0,
+                                         CAL_UNIT_FRAC, CAL_SPOT_FRAC)
+        ndraw = args.n_cal_draws if (probe["n_units_in_pool"] or 0) >= 3 else 1
+        for draw in range(ndraw):
+            T_nat, C_unit, info = choose_calibration("donor", pool, E, samp, xy, meta,
+                                                     key, draw, CAL_UNIT_FRAC,
+                                                     CAL_SPOT_FRAC)
+            sp = dict(design="donor", fold=fold, repeat=-1, cal_draw=draw, T=T_nat,
+                      n_match=nm)
+            T_a1 = apply_size_match(sp, task)
+            rng = np.random.default_rng(
+                zlib.crc32(f"{key}|a2b_block|draw{draw}".encode()))
+            blk, nb_ch, nb_tot = block_pick(np.flatnonzero(T_a1), samp, xy,
+                                            CAL_BLOCK_FRAC, rng)
+            T_shared = T_a1 & ~blk
+            drop = buffer_drop(samp, xy, blk, T_shared)
+            T_shared = T_shared & ~drop
+
+            n_u, n_b = int(C_unit.sum()), int(blk.sum())
+            rs = np.random.default_rng(
+                zlib.crc32(f"{key}|a2b_sizematch|draw{draw}".encode()))
+            C_block, C_unit_arm = blk.copy(), C_unit.copy()
+            if n_b > n_u:
+                C_block = np.zeros(n, bool)
+                C_block[rs.choice(np.flatnonzero(blk), size=n_u, replace=False)] = True
+            elif n_u > n_b:
+                C_unit_arm = np.zeros(n, bool)
+                C_unit_arm[rs.choice(np.flatnonzero(C_unit), size=n_b,
+                                     replace=False)] = True
+
+            row = dict(encoder=enc, task=task, label_set=label_set, fold=fold,
+                       cal_draw=draw, calibration_unit=info["calibration_unit"],
+                       n_units_in_pool=info["n_units_in_pool"],
+                       n_cal_units=info["n_cal_units"], n_pool_spots=int(pool.sum()),
+                       n_T_a1_natural=int(T_nat.sum()), n_match_target=nm,
+                       n_T_a1=int(T_a1.sum()), n_blocks_chosen=nb_ch,
+                       n_blocks_total=nb_tot, n_block_spots=n_b,
+                       n_buffer_dropped=int(drop.sum()), n_T_shared=int(T_shared.sum()),
+                       n_C_unit_natural=n_u,
+                       n_C_matched=int(C_block.sum()), n_E=int(E.sum()),
+                       min_T_spots=A2B_MIN_T_SPOTS, status="ok")
+            if int(T_shared.sum()) < A2B_MIN_T_SPOTS:
+                row["status"] = (f"dropped_T_below_{A2B_MIN_T_SPOTS}_after_carving"
+                                 f"_{int(T_shared.sum())}")
+                state["a2b_cells"].append(row)
+                print(f"  [drop] {task} {fold} draw={draw}: |T|={int(T_shared.sum())} "
+                      f"< {A2B_MIN_T_SPOTS} after carving", flush=True)
+                continue
+            if int(C_block.sum()) < MIN_C_SPOTS:
+                row["status"] = f"dropped_C_below_{MIN_C_SPOTS}_{int(C_block.sum())}"
+                state["a2b_cells"].append(row)
+                continue
+            state["a2b_cells"].append(row)
+
+            for nmarm, Cm in (("C_unit", C_unit_arm), ("C_block", C_block),
+                              ("anchor_a1", C_unit)):
+                Tm = T_a1 if nmarm == "anchor_a1" else T_shared
+                kt = set(zip(samp[Tm].tolist(), bc[Tm].tolist()))
+                kc = set(zip(samp[Cm].tolist(), bc[Cm].tolist()))
+                ke = set(zip(samp[E].tolist(), bc[E].tolist()))
+                assert not (kt & kc) and not (kt & ke) and not (kc & ke), (
+                    f"{task} {fold} draw{draw} arm {nmarm}: T/C/E not disjoint")
+
+            fit_shared = _fit_bundle(X, Y, T_shared, scores)
+            fit_anchor = _fit_bundle(X, Y, T_a1, scores)
+            for nmarm, fitted, Cm, Tn in (
+                    ("anchor_a1", fit_anchor, C_unit, int(T_a1.sum())),
+                    ("C_unit", fit_shared, C_unit_arm, int(T_shared.sum())),
+                    ("C_block", fit_shared, C_block, int(T_shared.sum()))):
+                _a2b_arm(nmarm, fitted, Cm, E, X, Y, samp, xy, genes, td, enc, fold,
+                         draw, info["calibration_unit"] if nmarm != "C_block"
+                         else "block", args, scores, state, Tn)
+            print(f"  [a2b] {task} {fold} draw={draw}: |T_A1|={int(T_a1.sum())} "
+                  f"|T_shared|={int(T_shared.sum())} |C_unit|={n_u} |C_block|={n_b} "
+                  f"matched to {int(C_block.sum())} {time.time()-t0:.0f}s", flush=True)
 
     del X, Y
     return time.time() - t0
@@ -734,6 +1306,13 @@ def main(argv=None):
 
     designs = [d for d in args.designs.split(",") if d]
     scores = [s for s in args.scores.split(",") if s]
+    args.arm_label = "a1"                 # overwritten per arm inside run_a2b
+    if args.moments_only:
+        args.score_moments = True
+    if args.a2b_intervention:
+        # A2b builds its own folds from the `donor` design and its own three arms; the
+        # design list and size-match mode are not free parameters there.
+        designs, args.size_match = ["donor"], "a2b_from_a1"
     if args.h1_anchor:
         designs, scores = ["patient"], []
         args.size_match = "none"
@@ -773,6 +1352,14 @@ def main(argv=None):
         min_slide_spots=MIN_SLIDE_SPOTS, min_T_spots=MIN_T_SPOTS,
         min_C_spots=MIN_C_SPOTS, h1_anchor=args.h1_anchor, h2_check=args.h2_check,
         seed_source="zlib.crc32",
+        # ---- stage A2, section 12.4 ----
+        fit_designs=args.fit_designs, score_moments=args.score_moments,
+        moments_only=args.moments_only, slide_gene_anatomy=args.slide_gene_anatomy,
+        spot_strata=args.spot_strata, morph_dir=args.morph_dir,
+        a2b_intervention=args.a2b_intervention,
+        a2b_nmatch_from=args.a2b_nmatch_from,
+        a2b_min_T_spots=A2B_MIN_T_SPOTS, a2b_arms=list(A2B_ARMS),
+        n_deciles=N_DECILES, n_tertiles=N_TERTILES, moments_score=MOMENTS_SCORE,
     )
     # sha256 over canonical JSON. NOT hash(): Python randomises str hashing per process, so a
     # config_hash computed over a tuple containing strings identifies nothing, which is the
@@ -782,10 +1369,35 @@ def main(argv=None):
     print(f"[config] sha256/16 {config_hash}\n{config_blob}", flush=True)
 
     state = dict(cal=[], pg=[], h3=[], h1=[], sigma=[], dims={}, n_spots={},
-                 wall={})
-    for td in tds:
-        state["wall"][f"{td['task']}/{td['label_set']}"] = round(
-            run_one(td, enc, args, designs, scores, state), 1)
+                 wall={}, mom=[], sg=[], strata=[], strata_raw={}, morph={},
+                 morph_join=[], a2b=[], a2b_cells=[], a2b_nmatch={})
+
+    if args.a2b_intervention:
+        assert args.a2b_nmatch_from, \
+            "--a2b-intervention needs --a2b-nmatch-from: the anchor arm has to use A1's " \
+            "own size-match target or it is not anchored to A1"
+        src = args.a2b_nmatch_from
+        if not os.path.isabs(src):
+            src = f"{ROOT}/{src}"
+        nmdf = pd.read_csv(src)
+        # Keyed by (task, label_set), not task: size_match_groups() runs inside run_one on
+        # ONE task definition's specs, so IDC/shipped and IDC/audited have their own
+        # n_match (7015 and 3005 for resnet50) even though both carry task == "IDC".
+        g = nmdf.groupby(["task", "label_set"])["n_match_target"]
+        assert int(g.nunique().max()) == 1, (
+            f"{src}: n_match_target is not constant within a (task, label_set), so A1 did "
+            f"not run with --size-match task and the anchor arm cannot be rebuilt from it")
+        state["a2b_nmatch"] = {f"{k[0]}/{k[1]}": (None if pd.isna(v) else int(v))
+                               for k, v in g.first().items()}
+        print(f"[a2b] n_match targets read from {os.path.relpath(src, ROOT)}: "
+              f"{json.dumps(state['a2b_nmatch'], sort_keys=True)}", flush=True)
+        for td in tds:
+            state["wall"][f"{td['task']}/{td['label_set']}"] = round(
+                run_a2b(td, enc, args, scores, state), 1)
+    else:
+        for td in tds:
+            state["wall"][f"{td['task']}/{td['label_set']}"] = round(
+                run_one(td, enc, args, designs, scores, state), 1)
 
     # --------------------------------------------------- SUMMARIES BEFORE PARQUETS
     # Round 2 R3 lost the per-gene table of three completed 35-CPU-hour jobs to the final
@@ -793,8 +1405,10 @@ def main(argv=None):
     # written first. Ordered deliberately here.
     status = {"exit": 0, "notes": []}
     cal = pd.DataFrame(state["cal"])
-    cal.to_csv(f"{out}/a1_calibration_units{suf}.csv", index=False)
-    print(f"\n[write] a1_calibration_units{suf}.csv ({len(cal)} rows)", flush=True)
+    if len(cal):
+        cal.to_csv(f"{out}/a1_calibration_units{suf}.csv", index=False)
+        print(f"\n[write] a1_calibration_units{suf}.csv ({len(cal)} rows)", flush=True)
+    _a2_summaries(out, suf, state, args)
     if state["h3"]:
         h3 = pd.DataFrame(state["h3"])
         h3.to_csv(f"{out}/h3_disjointness{suf}.csv", index=False)
@@ -827,9 +1441,12 @@ def main(argv=None):
             _h2(out, suf, pg, args, status)
         if not args.no_parquet and len(pg):
             _parquet(out, suf, pg, PG_COLS)
+        if not args.no_parquet:
+            _a2_parquets(out, suf, state)
 
     _provenance(out, suf, config, config_blob, config_hash, args, state,
-                len(state["cal"]), time.time() - t_start, status)
+                len(state["cal"]) + len(state["a2b_cells"]),
+                time.time() - t_start, status)
 
     print(f"\n[done] {time.time()-t_start:.0f}s  exit={status['exit']}", flush=True)
     for nt in status["notes"]:
@@ -965,6 +1582,96 @@ def _parquet(out, suf, pg, cols):
     print(f"[write] pergene{suf}.parquet ({len(d):,} rows, explicit schema)", flush=True)
 
 
+MOM_COLS = ["task", "label_set", "encoder", "design", "fold", "cal_draw", "score",
+            "calibration_unit", "unit_role", "unit_id", "gene", "n", "mean",
+            "variance", "q50", "q90"]
+
+SG_COLS = ["task", "label_set", "encoder", "design", "arm", "fold", "cal_draw", "score",
+           "calibration_unit", "slide", "gene", "n_test", "n_covered", "coverage",
+           "width_mean", "w_hat", "w_star", "b_s", "s_y", "mean_y", "mean_yhat",
+           "miss_above", "miss_below", "interval_score", "q_alpha_reported",
+           "slide_ge_min_spots"]
+
+
+def _typed_parquet(rows, cols, schema, path, what):
+    d = pd.DataFrame(rows, columns=cols)
+    assert [f.name for f in schema] == cols, f"{what}: schema/column mismatch"
+    for f in schema:
+        if f.type == pa.string():
+            d[f.name] = d[f.name].astype(str)
+        elif f.type == pa.int32():
+            d[f.name] = d[f.name].astype("int32")
+        elif f.type == pa.int64():
+            d[f.name] = d[f.name].astype("int64")
+        elif f.type == pa.float32():
+            d[f.name] = d[f.name].astype("float32")
+        elif f.type == pa.float64():
+            d[f.name] = d[f.name].astype("float64")
+        elif f.type == pa.bool_():
+            d[f.name] = d[f.name].astype(bool)
+    pq.write_table(pa.Table.from_pandas(d[cols], schema=schema, preserve_index=False),
+                   path, compression="snappy")
+    print(f"[write] {os.path.basename(path)} ({len(d):,} rows, explicit schema)",
+          flush=True)
+
+
+MOM_SCHEMA = pa.schema([
+    ("task", pa.string()), ("label_set", pa.string()), ("encoder", pa.string()),
+    ("design", pa.string()), ("fold", pa.string()), ("cal_draw", pa.int32()),
+    ("score", pa.string()), ("calibration_unit", pa.string()),
+    ("unit_role", pa.string()), ("unit_id", pa.string()), ("gene", pa.string()),
+    ("n", pa.int32()), ("mean", pa.float64()), ("variance", pa.float64()),
+    ("q50", pa.float64()), ("q90", pa.float64()),
+])
+
+SG_SCHEMA = pa.schema([
+    ("task", pa.string()), ("label_set", pa.string()), ("encoder", pa.string()),
+    ("design", pa.string()), ("arm", pa.string()), ("fold", pa.string()),
+    ("cal_draw", pa.int32()), ("score", pa.string()),
+    ("calibration_unit", pa.string()), ("slide", pa.string()), ("gene", pa.string()),
+    ("n_test", pa.int32()), ("n_covered", pa.int32()), ("coverage", pa.float64()),
+    ("width_mean", pa.float64()), ("w_hat", pa.float64()), ("w_star", pa.float64()),
+    ("b_s", pa.float64()), ("s_y", pa.float64()), ("mean_y", pa.float64()),
+    ("mean_yhat", pa.float64()), ("miss_above", pa.float64()),
+    ("miss_below", pa.float64()), ("interval_score", pa.float64()),
+    ("q_alpha_reported", pa.float64()), ("slide_ge_min_spots", pa.bool_()),
+])
+
+
+def _a2_summaries(out, suf, state, args):
+    """Every A2 CSV, written BEFORE the A2 parquets, for the reason the module docstring
+    gives about round 2 R3."""
+    if state["strata"]:
+        d = pd.DataFrame(state["strata"])
+        d.to_csv(f"{out}/a2_strata{suf}.csv", index=False)
+        print(f"[write] a2_strata{suf}.csv ({len(d)} rows)", flush=True)
+    if state["morph_join"]:
+        pd.DataFrame(state["morph_join"]).to_csv(
+            f"{out}/a2_morph_join{suf}.csv", index=False)
+    if state["a2b_cells"]:
+        d = pd.DataFrame(state["a2b_cells"])
+        d.to_csv(f"{out}/a2b_cells{suf}.csv", index=False)
+        nd = int((d["status"] != "ok").sum())
+        print(f"[write] a2b_cells{suf}.csv ({len(d)} fold-draw cells, {nd} dropped)",
+              flush=True)
+    if state["a2b"]:
+        d = pd.DataFrame(state["a2b"])
+        d.to_csv(f"{out}/a2b_by_fold{suf}.csv", index=False)
+        print(f"[write] a2b_by_fold{suf}.csv ({len(d)} rows)", flush=True)
+        piv = (d[d["score"] == "abs"]
+               .groupby(["task", "fold", "arm"])["coverage"].mean().unstack("arm"))
+        print(piv.round(5).to_string(), flush=True)
+
+
+def _a2_parquets(out, suf, state):
+    if state["mom"]:
+        _typed_parquet(state["mom"], MOM_COLS, MOM_SCHEMA,
+                       f"{out}/a2_score_moments{suf}.parquet", "score moments")
+    if state["sg"]:
+        _typed_parquet(state["sg"], SG_COLS, SG_SCHEMA,
+                       f"{out}/a2_slidegene{suf}.parquet", "slide-gene anatomy")
+
+
 def _h1(out, suf, enc, h1, args, status):
     """H1, the anchor to the prior result: the harness's per-task Pearson under the `patient`
     design with the calibration fraction set to zero must equal R1b's `intercept_f64`
@@ -1055,6 +1762,11 @@ def _provenance(out, suf, config, blob, chash, args, state, nspecs, wall, status
     p = f"{out}/PROVENANCE{suf}.txt"
     commit = subprocess.run(["git", "-C", ROOT, "rev-parse", "HEAD"],
                             capture_output=True, text=True).stdout.strip()
+    # The Longleaf working copy is a file tree, not the committer, so a run can execute a
+    # script that is ahead of repo_commit. The checksum of the file actually executed says
+    # which one it was, which repo_commit on its own does not.
+    with open(os.path.abspath(__file__), "rb") as _f:
+        script_sha = hashlib.sha256(_f.read()).hexdigest()[:16]
     with open(p, "w") as f:
         f.write(
             f"{'='*78}\n"
@@ -1066,6 +1778,8 @@ def _provenance(out, suf, config, blob, chash, args, state, nspecs, wall, status
             f"date            : {time.strftime('%Y-%m-%dT%H:%M:%S%z')}\n"
             f"repo_commit     : {commit}\n"
             f"script          : code/scripts/round3_a0_harness.py\n"
+            f"script_file     : {os.path.abspath(__file__)}\n"
+            f"script_sha256   : sha256/16 {script_sha}\n"
             f"command_line    : {' '.join(sys.argv)}\n"
             f"pythonhashseed  : {os.environ.get('PYTHONHASHSEED', 'unset')}\n"
             f"task_defs       : {'; '.join(config['task_defs'])}"

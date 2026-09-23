@@ -1,0 +1,23 @@
+==============================================================================
+Round 3, stage A0 - conformal harness, encoder resnet50
+tasks           : PRAD/shipped, READ/shipped, IDC/audited
+slurm_job_id    : 2135300
+slurm_partition : spill
+node            : b1022
+date            : 2026-09-22T22:32:34-0400
+repo_commit     : d3ce2b7ec538f43d5fbea3b7c89e261ec9c0ff83
+script          : code/scripts/round3_a0_harness.py
+script_file     : /work/users/w/e/weiyang/hest_replication/code/scripts/round3_a0_harness.py
+script_sha256   : sha256/16 4f0536fa25900c9f
+command_line    : code/scripts/round3_a0_harness.py resnet50 --task-def results/round3/task_defs/PRAD.json --task-def results/round3/task_defs/READ.json --task-def results/round3/task_defs/IDC_audited.json --out-dir results/round3/A2_conditional --tag __mech_slideout --designs slide_out --moments-only --slide-gene-anatomy --spot-strata
+pythonhashseed  : 0
+task_defs       : results/round3/task_defs/PRAD.json; results/round3/task_defs/READ.json; results/round3/task_defs/IDC_audited.json
+n_spots_by_task : {"IDC": 35536, "PRAD": 62710, "READ": 8407}
+embedding_dim   : {"IDC": 1024, "PRAD": 1024, "READ": 1024}
+n_cells_run     : 93 (design, fold, repeat, cal draw)
+wall_seconds    : 748
+wall_by_task    : {"IDC/audited": 31.4, "PRAD/shipped": 701.0, "READ/shipped": 15.7}
+exit            : 0
+config_hash     : sha256/16 782e7819a3178c51
+config          : {"a2b_arms": ["anchor_a1", "C_unit", "C_block"], "a2b_intervention": false, "a2b_min_T_spots": 1000, "a2b_nmatch_from": "", "alpha": 0.1, "alpha_num": 100.0, "alpha_store": 0.2, "base_predictor": "intercept_f64: StandardScaler -> PCA(256, random_state=1) -> Ridge(alpha=100/(256*50), fit_intercept=True, solver=cholesky), float64 from the raw embeddings", "block_grid": 6, "buffer_pitches": 2.5, "cal_block_frac": 0.2, "cal_spot_frac": 0.2, "cal_unit_frac": 0.25, "designs": ["slide_out"], "encoder": "resnet50", "fit_designs": "", "h1_anchor": false, "h2_check": false, "latent": 256, "max_folds": null, "min_C_spots": 9, "min_T_spots": 512, "min_slide_spots": 50, "moments_only": true, "moments_score": "abs", "morph_dir": "instrumentation/morphology_v2", "n_cal_draws": 3, "n_deciles": 10, "n_repeats": null, "n_tertiles": 3, "score_moments": true, "scores": ["abs", "scaled"], "script": "code/scripts/round3_a0_harness.py", "seed_source": "zlib.crc32", "sigma_floor": 0.001, "size_match": "task", "slide_gene_anatomy": true, "spot_cal_draws": 1, "spot_strata": true, "stage": "round3_A0", "task_def_is_fixture": false, "task_defs": ["results/round3/task_defs/PRAD.json", "results/round3/task_defs/READ.json", "results/round3/task_defs/IDC_audited.json"], "tasks": ["PRAD/shipped", "READ/shipped", "IDC/audited"]}
+plan            : round3_execution_plan.md section 4.2

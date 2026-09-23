@@ -1,0 +1,23 @@
+==============================================================================
+Round 3, stage A0 - conformal harness, encoder resnet50
+tasks           : CCRCC/shipped, COAD/shipped, IDC/shipped, IDC/audited, LYMPH_IDC/shipped, PAAD/shipped, PRAD/shipped, READ/shipped
+slurm_job_id    : 2135303
+slurm_partition : spill
+node            : c0834
+date            : 2026-09-22T23:41:21-0400
+repo_commit     : d3ce2b7ec538f43d5fbea3b7c89e261ec9c0ff83
+script          : code/scripts/round3_a0_harness.py
+script_file     : /work/users/w/e/weiyang/hest_replication/code/scripts/round3_a0_harness.py
+script_sha256   : sha256/16 4f0536fa25900c9f
+command_line    : code/scripts/round3_a0_harness.py resnet50 --task-def results/round3/task_defs/CCRCC.json --task-def results/round3/task_defs/COAD.json --task-def results/round3/task_defs/IDC.json --task-def results/round3/task_defs/IDC_audited.json --task-def results/round3/task_defs/LYMPH_IDC.json --task-def results/round3/task_defs/PAAD.json --task-def results/round3/task_defs/PRAD.json --task-def results/round3/task_defs/READ.json --out-dir results/round3/A2_conditional --tag __a2b --a2b-intervention --a2b-nmatch-from results/round3/A1_coverage/a1_calibration_units__resnet50__main.csv
+pythonhashseed  : 0
+task_defs       : results/round3/task_defs/CCRCC.json; results/round3/task_defs/COAD.json; results/round3/task_defs/IDC.json; results/round3/task_defs/IDC_audited.json; results/round3/task_defs/LYMPH_IDC.json; results/round3/task_defs/PAAD.json; results/round3/task_defs/PRAD.json; results/round3/task_defs/READ.json
+n_spots_by_task : {"CCRCC": 74220, "COAD": 15651, "IDC": 35536, "LYMPH_IDC": 19964, "PAAD": 7571, "PRAD": 62710, "READ": 8407}
+embedding_dim   : {"CCRCC": 1024, "COAD": 1024, "IDC": 1024, "LYMPH_IDC": 1024, "PAAD": 1024, "PRAD": 1024, "READ": 1024}
+n_cells_run     : 122 (design, fold, repeat, cal draw)
+wall_seconds    : 1601
+wall_by_task    : {"CCRCC/shipped": 1307.5, "COAD/shipped": 28.8, "IDC/audited": 13.6, "IDC/shipped": 62.8, "LYMPH_IDC/shipped": 74.0, "PAAD/shipped": 5.0, "PRAD/shipped": 102.5, "READ/shipped": 6.3}
+exit            : 0
+config_hash     : sha256/16 8413f887e4f994dd
+config          : {"a2b_arms": ["anchor_a1", "C_unit", "C_block"], "a2b_intervention": true, "a2b_min_T_spots": 1000, "a2b_nmatch_from": "results/round3/A1_coverage/a1_calibration_units__resnet50__main.csv", "alpha": 0.1, "alpha_num": 100.0, "alpha_store": 0.2, "base_predictor": "intercept_f64: StandardScaler -> PCA(256, random_state=1) -> Ridge(alpha=100/(256*50), fit_intercept=True, solver=cholesky), float64 from the raw embeddings", "block_grid": 6, "buffer_pitches": 2.5, "cal_block_frac": 0.2, "cal_spot_frac": 0.2, "cal_unit_frac": 0.25, "designs": ["donor"], "encoder": "resnet50", "fit_designs": "", "h1_anchor": false, "h2_check": false, "latent": 256, "max_folds": null, "min_C_spots": 9, "min_T_spots": 512, "min_slide_spots": 50, "moments_only": false, "moments_score": "abs", "morph_dir": "instrumentation/morphology_v2", "n_cal_draws": 3, "n_deciles": 10, "n_repeats": null, "n_tertiles": 3, "score_moments": false, "scores": ["abs", "scaled"], "script": "code/scripts/round3_a0_harness.py", "seed_source": "zlib.crc32", "sigma_floor": 0.001, "size_match": "a2b_from_a1", "slide_gene_anatomy": false, "spot_cal_draws": 1, "spot_strata": false, "stage": "round3_A0", "task_def_is_fixture": false, "task_defs": ["results/round3/task_defs/CCRCC.json", "results/round3/task_defs/COAD.json", "results/round3/task_defs/IDC.json", "results/round3/task_defs/IDC_audited.json", "results/round3/task_defs/LYMPH_IDC.json", "results/round3/task_defs/PAAD.json", "results/round3/task_defs/PRAD.json", "results/round3/task_defs/READ.json"], "tasks": ["CCRCC/shipped", "COAD/shipped", "IDC/shipped", "IDC/audited", "LYMPH_IDC/shipped", "PAAD/shipped", "PRAD/shipped", "READ/shipped"]}
+plan            : round3_execution_plan.md section 4.2
