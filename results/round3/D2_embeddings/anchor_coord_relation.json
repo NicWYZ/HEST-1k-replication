@@ -1,0 +1,23 @@
+{
+  "relation_tested": "bench_coords == hest1k_coords[:, ::-1] + floor(patch_size_src/2)",
+  "n_samples": 28,
+  "n_holds_exactly": 27,
+  "samples_violating": [
+    [
+      "NCBI785",
+      3960,
+      "[-1, -1]",
+      "[-1, -1]"
+    ]
+  ],
+  "total_shared_barcodes_tested": 108837,
+  "n_patch_size_agrees": 28,
+  "slurm_job_id": "2140045",
+  "slurm_partition": "spill",
+  "slurm_nodelist": "c151416",
+  "node": "c151416.ll.unc.edu",
+  "python": "3.11.16",
+  "executable": "/work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python",
+  "pythonhashseed": "0",
+  "created": "2026-09-22T21:35:19.793503-04:00"
+}

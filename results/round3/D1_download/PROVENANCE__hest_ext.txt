@@ -1,0 +1,65 @@
+dir              : /work/users/w/e/weiyang/hest_replication/hest_ext
+stage            : round3 D1 (download of the three approved expansion sets)
+script           : code/scripts/round3_d1_download.py (staged as d1.py in the job workdir)
+created          : 2026-09-22T19:40:55.211826-04:00
+operator         : weiyang (Nicolas Weiyang Zhang)
+slurm_job_id     : 2126787
+slurm_partition  : spill
+slurm_nodelist   : c0913
+node             : c0913.ll.unc.edu
+platform         : Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python           : 3.11.16
+executable       : /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+commit           : d3ce2b7ec538f43d5fbea3b7c89e261ec9c0ff83
+command_line     : /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python d1.py
+pythonhashseed   : 0
+config           : {"components": ["patches", "st", "cellvit_seg", "metadata"], "ext_root": "/work/users/w/e/weiyang/hest_replication/hest_ext", "listing_rel": "results/round3/D0_inventory/hf_file_listing.csv.gz", "pinned_revision": "7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec", "project_root": "/work/users/w/e/weiyang/hest_replication", "repo_id": "MahmoodLab/hest", "set_order": ["kidney_visium_cell", "institution_breast_xenium", "platform_pair_multitech"], "stage": "round3_D1"}
+config_sets      : {"institution_breast_xenium": {"n_members": 18, "n_owned": 18}, "kidney_visium_cell": {"n_members": 58, "n_owned": 58}, "platform_pair_multitech": {"n_members": 32, "n_owned": 29}}
+config_hash      : sha256:860ece3765decdabe38c5be84cbc44bb crc32:67cff89f  (over d1_config.json, copied into this directory)
+hf_repo          : MahmoodLab/hest
+hf_revision_used : 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec
+hf_revision_note : pinned revision 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec; repository main is now 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec (identical)
+huggingface_hub  : 0.36.2
+components       : ['cellvit_seg', 'metadata', 'patches', 'st']  (no wsis/, no transcripts/, no xenium_seg/, nothing else)
+bytes_downloaded : 70260258915 over 525 files
+
+## sets and physical homes (sets overlap; home is the first set in set_order containing the sample)
+institution_breast_xenium: members=18 owned=18
+kidney_visium_cell: members=58 owned=58
+platform_pair_multitech: members=32 owned=29
+
+## sample list, by home set
+kidney_visium_cell (58): INT1;INT10;INT11;INT12;INT13;INT14;INT15;INT16;INT17;INT18;INT19;INT2;INT20;INT21;INT22;INT23;INT24;INT3;INT4;INT5;INT6;INT7;INT8;INT9;NCBI538;NCBI539;NCBI540;NCBI562;NCBI563;NCBI564;NCBI565;NCBI566;NCBI567;NCBI568;NCBI692;NCBI693;NCBI694;NCBI695;NCBI696;NCBI697;NCBI698;NCBI699;NCBI700;NCBI701;NCBI702;NCBI703;NCBI704;NCBI705;NCBI706;NCBI707;NCBI708;NCBI709;NCBI710;NCBI711;NCBI712;NCBI713;NCBI714;TENX71
+institution_breast_xenium (18): NCBI783;NCBI784;NCBI785;TENX191;TENX192;TENX193;TENX195;TENX196;TENX197;TENX198;TENX199;TENX200;TENX201;TENX202;TENX95;TENX97;TENX98;TENX99
+platform_pair_multitech (29): MEND37;MEND38;MEND39;MEND40;NCBI759;NCBI760;NCBI761;NCBI762;NCBI763;NCBI764;NCBI765;NCBI766;NCBI767;NCBI768;NCBI769;NCBI770;NCBI776;NCBI885;NCBI886;NCBI887;NCBI888;TENX147;TENX148;TENX149;TENX152;TENX153;TENX154;TENX155;TENX156
+
+## per-set download
+kidney_visium_cell: 58 samples, 290 files, 23338759078 bytes, 104.5 s
+institution_breast_xenium: 18 samples, 90 files, 22902665325 bytes, 66.0 s
+platform_pair_multitech: 29 samples, 145 files, 24018834512 bytes, 70.3 s
+
+## storage before and after
+## BEFORE (2026-09-22T19:36:33.251529-04:00)
+### df -h /work
+Filesystem                      Size  Used Avail Use% Mounted on
+hpc.loblolly.its.unc.edu:/work  3.5P  3.0P  556T  85% /work
+### quota -s
+Disk quotas for user weiyang (uid 375767): 
+     Filesystem   space   quota   limit   grace   files   quota   limit   grace
+rc-data-ll:/vol/sas1a
+                  4163M  51200M  76800M            8044   4295m   4295m
+### du -s --block-size=1 hest_ext
+0	/work/users/w/e/weiyang/hest_replication/hest_ext
+
+## AFTER (2026-09-22T19:40:42.908772-04:00)
+### df -h /work
+Filesystem                      Size  Used Avail Use% Mounted on
+hpc.loblolly.its.unc.edu:/work  3.5P  3.0P  555T  85% /work
+### quota -s
+Disk quotas for user weiyang (uid 375767): 
+     Filesystem   space   quota   limit   grace   files   quota   limit   grace
+rc-data-ll:/vol/sas1a
+                  4163M  51200M  76800M            8044   4295m   4295m
+### du -s --block-size=1 hest_ext
+70260654592	/work/users/w/e/weiyang/hest_replication/hest_ext
+

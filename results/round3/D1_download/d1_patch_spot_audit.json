@@ -1,0 +1,143 @@
+{
+  "n_samples": 105,
+  "n_patch_count_equals_spot_count": 11,
+  "n_patch_count_le_spot_count": 105,
+  "n_patch_barcodes_subset_of_st": 105,
+  "samples_patch_barcodes_not_subset": [],
+  "total_st_spots_without_a_patch": 65464,
+  "total_st_spots": 424301,
+  "all_patch_barcodes_unique": true,
+  "all_st_barcodes_unique": true,
+  "n_audit_errors": 0,
+  "anchor_n": 28,
+  "anchor_n_barcode_sets_identical": 5,
+  "anchor_n_row_order_identical": 5,
+  "anchor_max_img_diff": 203,
+  "anchor_max_coord_diff": 96739,
+  "anchor_count_mismatch": [
+    [
+      "INT1",
+      1032,
+      1084
+    ],
+    [
+      "INT10",
+      1971,
+      1983
+    ],
+    [
+      "INT11",
+      1400,
+      1439
+    ],
+    [
+      "INT12",
+      1450,
+      1451
+    ],
+    [
+      "INT14",
+      4559,
+      4562
+    ],
+    [
+      "INT16",
+      3202,
+      3206
+    ],
+    [
+      "INT17",
+      3584,
+      3585
+    ],
+    [
+      "INT18",
+      4914,
+      4915
+    ],
+    [
+      "INT2",
+      2541,
+      2580
+    ],
+    [
+      "INT21",
+      4960,
+      4975
+    ],
+    [
+      "INT22",
+      3826,
+      3829
+    ],
+    [
+      "INT24",
+      4483,
+      4510
+    ],
+    [
+      "INT3",
+      1973,
+      2007
+    ],
+    [
+      "INT4",
+      1255,
+      1349
+    ],
+    [
+      "INT5",
+      1158,
+      1186
+    ],
+    [
+      "INT6",
+      1667,
+      1678
+    ],
+    [
+      "INT7",
+      2361,
+      2374
+    ],
+    [
+      "INT8",
+      1924,
+      1949
+    ],
+    [
+      "INT9",
+      1691,
+      1696
+    ],
+    [
+      "NCBI783",
+      3501,
+      3005
+    ],
+    [
+      "NCBI785",
+      4074,
+      4010
+    ],
+    [
+      "TENX95",
+      7592,
+      7760
+    ],
+    [
+      "TENX99",
+      20549,
+      20761
+    ]
+  ],
+  "anchor_errors": [],
+  "slurm_job_id": "2130504",
+  "slurm_partition": "spill",
+  "slurm_nodelist": "c130602",
+  "node": "c130602.ll.unc.edu",
+  "python": "3.11.16",
+  "executable": "/work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python",
+  "pythonhashseed": "0",
+  "created": "2026-09-22T20:43:23.424573-04:00"
+}

@@ -1,0 +1,51 @@
+# Selection rules for the two set definitions added to expansion_set_members.csv in round-3 D1
+#
+# Written 2026-09-22 by the round-3 interval-2 Expansion track. expansion_set_members.csv has
+# no free-text column and its pre-existing 133 rows had to stay byte-identical, so the rule for
+# each added set is recorded here rather than inside the table. The other four D0_inventory
+# files are untouched. Source for every field is
+# results/round3/D0_inventory/hest_inventory.csv (release HEST_v1_3_0.csv, sha256
+# 5703d716...6ed5d63, HuggingFace revision 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec).
+
+## institution_breast_xenium (18 samples, 22.903 GB over the four components, 4 in the benchmark)
+
+Selection rule. Every sample in the v1_3_0 inventory with species Homo sapiens, organ Breast,
+st_technology exactly Xenium, and oncotree_code IDC, after removing flagged duplicates
+(is_duplicate_of_other_id True). No other filter is applied: disease state, preservation method,
+laboratory and pixel size are left as they are, because this set's purpose is the two-source
+contrast with disease, platform and preservation fixed and the sources are established in D3.
+
+What the filter removes, counted. 140 human Breast samples in the release; 21 of them are Xenium
+(108 Spatial Transcriptomics, 8 Visium, 3 Visium HD); of the 21 Xenium, 18 are IDC, 2 are ILC and
+1 has no oncotree code. st_technology is matched exactly, so Xenium 5k is not included. None of
+the 18 carries a duplicate flag, so the duplicate removal is a no-op on this set and the count is
+18 before and after.
+
+The 18 ids. NCBI783;NCBI784;NCBI785;TENX191;TENX192;TENX193;TENX195;TENX196;TENX197;TENX198;
+TENX199;TENX200;TENX201;TENX202;TENX95;TENX97;TENX98;TENX99
+
+Overlap. NCBI783, NCBI784 and NCBI785 are also members of platform_pair_multitech, which is why
+the union of the three round-3 sets is 105 samples and not 108. The four already in the benchmark
+(task IDC) are NCBI783, NCBI785, TENX95 and TENX99.
+
+## kidney_visium_cell_extras (4 samples, 1.526 GB over the four components, 0 in the benchmark)
+
+These are the four samples that are in the Kidney-on-Visium human cell of the release but outside
+D0's institution_kidney_visium set. The cell holds 58 non-duplicate human samples; the institution
+set holds 54. They are downloaded in D1 and are kept out of every analysis set definition; D3
+audits them. The reason each is excluded from the analysis set:
+
+NCBI538  disease_state Treated. Subseries "PFA fixed kidney_organoid_3", cohort "Genome-wide
+         Spatial Expression Profiling in Formalin-fixed tissues", lab_provisional KTH Royal
+         Institute of Technology. Treated here means PFA-fixed material and the subseries names
+         it organoid, so it may not be donor tissue at all. D0's institution rule excludes an
+         institution whose samples in the cell are all disease_state Treated, which is what
+         removed KTH.
+NCBI539  disease_state Treated. Same cohort and laboratory, subseries "PFA fixed
+         kidney_organoid_2". Same reason.
+NCBI540  disease_state Treated. Same cohort and laboratory, subseries "PFA fixed
+         kidney_organoid_1". Same reason.
+TENX71   lab_basis vendor_product_page. Cohort "Human Kidney, 11 mm Capture Area (FFPE)",
+         lab_provisional "10x Genomics Inc. (vendor product page)". A vendor product page is a
+         download source, not a generating laboratory, so this sample cannot carry an institution
+         label and D0's rule excludes vendor product pages.
