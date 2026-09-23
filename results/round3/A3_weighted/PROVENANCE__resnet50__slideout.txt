@@ -1,0 +1,24 @@
+==============================================================================
+Round 3, stage A3 - weighted and hierarchical conformal, encoder resnet50
+tasks           : PRAD/shipped, READ/shipped, IDC/audited
+slurm_job_id    : 2151288
+slurm_partition : spill
+node            : c0316
+date            : 2026-09-23T01:18:15-0400
+repo_commit     : d3ce2b7ec538f43d5fbea3b7c89e261ec9c0ff83
+script          : code/scripts/round3_a3_weighted.py
+script_file     : /work/users/w/e/weiyang/hest_replication/code/scripts/round3_a3_weighted.py
+script_sha256   : sha256/16 0408e81c7afcfcbf
+harness_sha256  : sha256/16 4f0536fa25900c9f  (imported unmodified, not edited)
+command_line    : code/scripts/round3_a3_weighted.py resnet50 --task-def results/round3/task_defs/PRAD.json --task-def results/round3/task_defs/READ.json --task-def results/round3/task_defs/IDC_audited.json --out-dir results/round3/A3_weighted --tag __slideout --designs slide_out --accept-tag slideout
+pythonhashseed  : 0
+n_spots_by_task : {"IDC": 35536, "PRAD": 62710, "READ": 8407}
+embedding_dim   : {"IDC": 1024, "PRAD": 1024, "READ": 1024}
+n_fold_rows     : 1860
+wall_seconds    : 1111
+wall_by_task    : {"IDC/audited": 76.2, "PRAD/shipped": 1008.5, "READ/shipped": 25.3}
+acceptance      : PASS
+files_written   : a3_acceptance__resnet50__slideout.csv, a3_by_fold__resnet50__slideout.csv, a3_by_task__resnet50__slideout.csv, a3_weights__resnet50__slideout.csv, a3_w2_basis__resnet50__slideout.csv, a3_pergene__resnet50__slideout.parquet, a3_by_slide__resnet50__slideout.csv
+config_hash     : sha256/16 e650bc014482f07d
+config          : {"alpha": 0.1, "alpha_store": 0.2, "base_predictor": "imported unmodified from round3_a0_harness.fit_base", "designs": ["slide_out"], "encoder": "resnet50", "fit_designs": "", "max_folds": null, "min_C_spots": 9, "min_T_spots": 512, "min_slide_spots": 50, "morph_covars": ["n_nuclei", "area_mean", "area_median", "frac_connective", "frac_dead", "frac_epithelial", "frac_inflammatory", "frac_neoplastic"], "morph_dir": "instrumentation/morphology_v2", "n_cal_draws": 3, "n_repeats": null, "quantile_rel_tol": 1e-12, "scores": ["abs", "scaled_clip"], "script": "code/scripts/round3_a3_weighted.py", "seed_source": "zlib.crc32 via the harness", "sigma_clip_hi_pct": 99.0, "sigma_clip_lo_pct": 1.0, "sigma_lo_guard": 0.001, "size_match": "task", "spot_cal_draws": 1, "stage": "round3_A3", "task_defs": ["results/round3/task_defs/PRAD.json", "results/round3/task_defs/READ.json", "results/round3/task_defs/IDC_audited.json"], "tasks": ["PRAD/shipped", "READ/shipped", "IDC/audited"], "w1_C": 1.0, "w1_auc_in_sample_and_holdout": true, "w1_clip_pct": 99.5, "w1_max_iter": 500, "weightings": ["none", "W1", "W1b", "W2", "W3"]}
+plan            : round3_execution_plan.md sections 4.5 and 12.4

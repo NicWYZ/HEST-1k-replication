@@ -1,0 +1,342 @@
+name,value,rule,source
+a2b_n_cells,138,fold rows,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_anchor_max_abs_diff,7.771561172e-16,max |anchor - A1 coverage|,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_cov_C_unit,0.8561922812,mean over fold rows,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_cov_C_block,0.7441704054,mean over fold rows,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_diff_mean,0.1120218758,mean of C_unit - C_block,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_diff_sd,0.07253634458,sd (ddof=1) of C_unit - C_block over fold rows,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_n_block_below_unit,138,count C_block < C_unit,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_width_C_unit,2.72386729,mean over fold rows,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_width_C_block,1.811193577,mean over fold rows,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_unit_minus_a1_mean,0.0004750545686,mean C_unit - A1,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_unit_minus_a1_sd,0.00917582807,sd,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_block_minus_a1_mean,-0.1115468213,mean C_block - A1,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_block_minus_a1_median,-0.09558768898,median C_block - A1,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_pct_block_minus_a1_in_010_020,31.88405797,"% of cells with C_block - A1 in [-0.20,-0.10]",A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_pct_nC_unit_of_anchor,37.94097268,100*mean n_C C_unit / mean n_C anchor,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_pct_nT_unit_of_anchor,67.35057083,100*mean n_T C_unit / mean n_T anchor,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_CCRCC_shipped_n_folds,24,distinct folds,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_CCRCC_shipped_cov_C_unit,0.8660224754,"mean over fold rows, 3 encoders",A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_CCRCC_shipped_cov_C_block,0.7927561976,"mean over fold rows, 3 encoders",A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_CCRCC_shipped_diff,0.0732662778,mean C_unit - C_block,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_CCRCC_shipped_block_minus_a1,-0.07141412827,mean C_block - A1,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_COAD_shipped_n_folds,4,distinct folds,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_COAD_shipped_cov_C_unit,0.8688432849,"mean over fold rows, 3 encoders",A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_COAD_shipped_cov_C_block,0.7236211266,"mean over fold rows, 3 encoders",A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_COAD_shipped_diff,0.1452221583,mean C_unit - C_block,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_COAD_shipped_block_minus_a1,-0.1466764106,mean C_block - A1,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_IDC_audited_n_folds,3,distinct folds,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_IDC_audited_cov_C_unit,0.8336605071,"mean over fold rows, 3 encoders",A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_IDC_audited_cov_C_block,0.5520564682,"mean over fold rows, 3 encoders",A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_IDC_audited_diff,0.2816040389,mean C_unit - C_block,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_IDC_audited_block_minus_a1,-0.2825719745,mean C_block - A1,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_IDC_shipped_n_folds,4,distinct folds,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_IDC_shipped_cov_C_unit,0.8296535741,"mean over fold rows, 3 encoders",A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_IDC_shipped_cov_C_block,0.6131704581,"mean over fold rows, 3 encoders",A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_IDC_shipped_diff,0.216483116,mean C_unit - C_block,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_IDC_shipped_block_minus_a1,-0.2159077302,mean C_block - A1,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_LYMPH_IDC_shipped_n_folds,4,distinct folds,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_LYMPH_IDC_shipped_cov_C_unit,0.8163304007,"mean over fold rows, 3 encoders",A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_LYMPH_IDC_shipped_cov_C_block,0.7212257356,"mean over fold rows, 3 encoders",A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_LYMPH_IDC_shipped_diff,0.0951046651,mean C_unit - C_block,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_LYMPH_IDC_shipped_block_minus_a1,-0.09671751859,mean C_block - A1,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_PAAD_shipped_n_folds,3,distinct folds,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_PAAD_shipped_cov_C_unit,0.8979513826,"mean over fold rows, 3 encoders",A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_PAAD_shipped_cov_C_block,0.7309483488,"mean over fold rows, 3 encoders",A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_PAAD_shipped_diff,0.1670030337,mean C_unit - C_block,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_PAAD_shipped_block_minus_a1,-0.1600932816,mean C_block - A1,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_PRAD_shipped_n_folds,2,distinct folds,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_PRAD_shipped_cov_C_unit,0.8690054225,"mean over fold rows, 3 encoders",A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_PRAD_shipped_cov_C_block,0.8062751894,"mean over fold rows, 3 encoders",A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_PRAD_shipped_diff,0.0627302331,mean C_unit - C_block,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_PRAD_shipped_block_minus_a1,-0.06758235457,mean C_block - A1,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_READ_shipped_n_folds,2,distinct folds,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_READ_shipped_cov_C_unit,0.8040749867,"mean over fold rows, 3 encoders",A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_READ_shipped_cov_C_block,0.7560278973,"mean over fold rows, 3 encoders",A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_READ_shipped_diff,0.04804708949,mean C_unit - C_block,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2b_READ_shipped_block_minus_a1,-0.05842379212,mean C_block - A1,A2_conditional/a2_unit_intervention.csv (scope=fold); A1_coverage/a1_by_fold__<enc>__main.csv
+a2c_n_folds,348,rows,A2_conditional/a2_coverage_vs_K.csv
+a2c_spearman_shortfall_share,-0.08245586698,Spearman over folds,A2_conditional/a2_coverage_vs_K.csv
+a2c_spearman_shortfall_K,-0.02648597842,Spearman over folds,A2_conditional/a2_coverage_vs_K.csv
+a2c_n_unit_folds,309,block_fold False,A2_conditional/a2_coverage_vs_K.csv
+a2c_n_block_folds,39,block_fold True,A2_conditional/a2_coverage_vs_K.csv
+a2c_cov_unit_folds,0.8587416888,mean,A2_conditional/a2_coverage_vs_K.csv
+a2c_cov_block_folds,0.6779785277,mean,A2_conditional/a2_coverage_vs_K.csv
+a2c_n_block_folds_COAD,3,COAD block folds,A2_conditional/a2_coverage_vs_K.csv
+a2c_max_K_unit_folds,6,max K over unit-calibrated folds,A2_conditional/a2_coverage_vs_K.csv
+a2c_max_K_any_fold,8,max K over folds,A2_conditional/a2_coverage_vs_K.csv
+a2c_pct_unit_inside_band,79.93527508,% unit folds inside simulated q05-q95,A2_conditional/a2_simulated_coverage.csv (scope=fold)
+a2c_n_block_inside_band,0,block folds inside band,A2_conditional/a2_simulated_coverage.csv (scope=fold)
+a2c_sim_mean_min,0.8590096922,min simulated mean,A2_conditional/a2_simulated_coverage.csv (scope=fold)
+a2c_sim_mean_max,0.9033332251,max simulated mean,A2_conditional/a2_simulated_coverage.csv (scope=fold)
+a2a_prad_PRAD_patient1_share_min,0.04449298694,min over 3 encoders,"A2_conditional/a2_coverage_vs_K.csv (PRAD, donor)"
+a2a_prad_PRAD_patient1_share_max,0.04630487862,max over 3 encoders,"A2_conditional/a2_coverage_vs_K.csv (PRAD, donor)"
+a2a_prad_PRAD_patient2_share_min,0.0176358037,min over 3 encoders,"A2_conditional/a2_coverage_vs_K.csv (PRAD, donor)"
+a2a_prad_PRAD_patient2_share_max,0.02647110614,max over 3 encoders,"A2_conditional/a2_coverage_vs_K.csv (PRAD, donor)"
+a2d_paired_abs_mean,0.08046908142,mean share - noshare,"A2_conditional/a2_prad_donor_sharing.csv (fragment=paired, level=pair)"
+a2d_paired_abs_n,60,pairs,"A2_conditional/a2_prad_donor_sharing.csv (fragment=paired, level=pair)"
+a2d_paired_abs_n_positive,60,pairs > 0,"A2_conditional/a2_prad_donor_sharing.csv (fragment=paired, level=pair)"
+a2d_paired_abs_n_test_slides,5,distinct test slides,"A2_conditional/a2_prad_donor_sharing.csv (fragment=paired, level=pair)"
+a2d_paired_scaled_mean,0.007077827446,mean share - noshare,"A2_conditional/a2_prad_donor_sharing.csv (fragment=paired, level=pair)"
+a2d_paired_scaled_n,60,pairs,"A2_conditional/a2_prad_donor_sharing.csv (fragment=paired, level=pair)"
+a2d_paired_scaled_n_positive,42,pairs > 0,"A2_conditional/a2_prad_donor_sharing.csv (fragment=paired, level=pair)"
+a2d_paired_scaled_n_test_slides,5,distinct test slides,"A2_conditional/a2_prad_donor_sharing.csv (fragment=paired, level=pair)"
+a2d_paired_pct_res_shared_share,80,% pairs whose share draw shares resolution group,"A2_conditional/a2_prad_donor_sharing.csv (fragment=paired, level=pair)"
+a2d_arm_mean,0.002671490975,mean same-donor-allowed - other-donor,"A2_conditional/a2_prad_donor_sharing.csv (fragment=arm, level=paired_by_slide)"
+a2d_arm_sd,0.0421044854,sd,"A2_conditional/a2_prad_donor_sharing.csv (fragment=arm, level=paired_by_slide)"
+a2d_arm_n,69,slide-encoder pairs,"A2_conditional/a2_prad_donor_sharing.csv (fragment=arm, level=paired_by_slide)"
+a2d_arm_n_test_slides,23,distinct test slides,"A2_conditional/a2_prad_donor_sharing.csv (fragment=arm, level=paired_by_slide)"
+a2d_arm_pct_wider,8.196711278,% other-donor width above slide_out,"A2_conditional/a2_prad_donor_sharing.csv (fragment=arm, level=paired_by_slide)"
+a2e_spearman_width_mean_min,-0.972027972,min over designs,A2_conditional/a2_width_by_encoder.csv
+a2e_spearman_width_mean_max,-0.8741258741,max over designs,A2_conditional/a2_width_by_encoder.csv
+a2e_cov_range_max,0.01541616493,max over designs,A2_conditional/a2_width_by_encoder.csv
+a2e_cov_range_min,0.001774229527,min over designs,A2_conditional/a2_width_by_encoder.csv
+a3_n_cells_per_weighting,966,"fold cells, 3 encoders","A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_auc_holdout_min,0.9747357135,min held-out AUC,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_pct_auc_ge_09,100,% cells held-out AUC >= 0.9,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_neff_pct_median,2.129047998,"median n_eff / n_C, %","A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_pct_neff_lt_5,82.09109731,% cells n_eff/n_C < 5%,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_neff_pct_max,15.79352403,"max n_eff / n_C, %","A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_move_mean,0.002256877788,mean W1 - none coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_move_sd,0.07455477111,sd,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_spearman_move_neff,0.3332483126,"Spearman(move, n_eff/n_C)","A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_CCRCC_donor_none,0.8641703259,mean none coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_CCRCC_donor_w1,0.870322371,mean W1 coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_CCRCC_donor_move,0.006152045098,mean W1 - none,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_CCRCC_donor_width_none,2.118331951,mean none width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_CCRCC_donor_width_w1,2.214761746,mean W1 width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_CCRCC_donor_neff_pct,1.443175391,median n_eff/n_C %,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_HCC_donor_none,0.7514198113,mean none coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_HCC_donor_w1,0.8182226274,mean W1 coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_HCC_donor_move,0.06680281611,mean W1 - none,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_HCC_donor_width_none,1.566672665,mean none width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_HCC_donor_width_w1,1.941069407,mean W1 width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_HCC_donor_neff_pct,10.28866931,median n_eff/n_C %,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_HCC_patient_none,0.7610139002,mean none coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_HCC_patient_w1,0.8360368338,mean W1 coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_HCC_patient_move,0.07502293362,mean W1 - none,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_HCC_patient_width_none,1.591509774,mean none width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_HCC_patient_width_w1,2.060673649,mean W1 width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_HCC_patient_neff_pct,9.615963947,median n_eff/n_C %,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_LUNG_donor_none,0.6232837868,mean none coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_LUNG_donor_w1,0.6841072974,mean W1 coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_LUNG_donor_move,0.06082351064,mean W1 - none,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_LUNG_donor_width_none,2.152416803,mean none width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_LUNG_donor_width_w1,2.501528202,mean W1 width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_LUNG_donor_neff_pct,9.218080094,median n_eff/n_C %,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_LUNG_patient_none,0.6281243133,mean none coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_LUNG_patient_w1,0.6901451438,mean W1 coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_LUNG_patient_move,0.06202083048,mean W1 - none,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_LUNG_patient_width_none,2.189224791,mean none width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_LUNG_patient_width_w1,2.562543815,mean W1 width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_LUNG_patient_neff_pct,10.09233892,median n_eff/n_C %,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_LYMPH_IDC_donor_none,0.8179432542,mean none coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_LYMPH_IDC_donor_w1,0.6679985732,mean W1 coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_LYMPH_IDC_donor_move,-0.149944681,mean W1 - none,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_LYMPH_IDC_donor_width_none,2.439028956,mean none width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_LYMPH_IDC_donor_width_w1,1.634702523,mean W1 width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_LYMPH_IDC_donor_neff_pct,1.7452961,median n_eff/n_C %,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_LYMPH_IDC_patient_none,0.8048025798,mean none coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_LYMPH_IDC_patient_w1,0.6370618974,mean W1 coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_LYMPH_IDC_patient_move,-0.1677406824,mean W1 - none,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_LYMPH_IDC_patient_width_none,2.315358272,mean none width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_LYMPH_IDC_patient_width_w1,1.520808263,mean W1 width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_LYMPH_IDC_patient_neff_pct,1.706872816,median n_eff/n_C %,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_PRAD_slide_out_none,0.8972247272,mean none coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_PRAD_slide_out_w1,0.8988915445,mean W1 coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_PRAD_slide_out_move,0.00166681724,mean W1 - none,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_PRAD_slide_out_width_none,2.08105888,mean none width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_PRAD_slide_out_width_w1,2.037390916,mean W1 width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_PRAD_slide_out_neff_pct,1.869358789,median n_eff/n_C %,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_SKCM_donor_none,0.6682701777,mean none coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_SKCM_donor_w1,0.7997552401,mean W1 coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_SKCM_donor_move,0.1314850624,mean W1 - none,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_SKCM_donor_width_none,2.498677,mean none width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_SKCM_donor_width_w1,3.323544757,mean W1 width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_SKCM_donor_neff_pct,10.7135987,median n_eff/n_C %,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_SKCM_patient_none,0.6783701406,mean none coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_SKCM_patient_w1,0.8294546954,mean W1 coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_SKCM_patient_move,0.1510845549,mean W1 - none,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_SKCM_patient_width_none,2.556207404,mean none width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_SKCM_patient_width_w1,3.734486795,mean W1 width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1_SKCM_patient_neff_pct,9.795205521,median n_eff/n_C %,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_neff_pct_median,9.342018523,"median n_eff / n_C, %","A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10), subset morph_joined"
+a3_w1b_pct_neff_ge_30,20.80745342,% cells n_eff/n_C >= 30%,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_auc_holdout_median,0.9002722329,median held-out AUC,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_move_mean,0.005596790822,mean W1b - none (same subset),"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_move_median,-0.0006061643836,median,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_pct_toward_nominal,58.59213251,% cells closer to 0.90 than none,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_spearman_move_neff,0.1462225498,"Spearman(move, n_eff/n_C)","A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_frac_morph_joined_median_pct,98.42922759,"median joined fraction, %","A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_frac_morph_joined_min_pct,75.20004296,"min joined fraction, %","A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_CCRCC_shipped_donor_none,0.8645197686,mean none coverage (morph subset),"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_CCRCC_shipped_donor_w1b,0.8628939644,mean W1b coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_CCRCC_shipped_donor_width_none,2.122639631,mean none width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_CCRCC_shipped_donor_width_w1b,2.139459637,mean W1b width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_CCRCC_shipped_donor_neff_pct,9.108170631,median n_eff/n_C %,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_CCRCC_shipped_patient_none,0.8562426455,mean none coverage (morph subset),"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_CCRCC_shipped_patient_w1b,0.8568340563,mean W1b coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_CCRCC_shipped_patient_width_none,2.245140224,mean none width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_CCRCC_shipped_patient_width_w1b,2.249443678,mean W1b width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_CCRCC_shipped_patient_neff_pct,38.15329532,median n_eff/n_C %,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_IDC_audited_donor_none,0.8346086551,mean none coverage (morph subset),"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_IDC_audited_donor_w1b,0.8241094609,mean W1b coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_IDC_audited_donor_width_none,4.927033895,mean none width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_IDC_audited_donor_width_w1b,4.676310956,mean W1b width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_IDC_audited_donor_neff_pct,3.384487263,median n_eff/n_C %,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_IDC_shipped_donor_none,0.8284439652,mean none coverage (morph subset),"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_IDC_shipped_donor_w1b,0.8142942676,mean W1b coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_IDC_shipped_donor_width_none,4.248366046,mean none width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_IDC_shipped_donor_width_w1b,4.087404764,mean W1b width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_IDC_shipped_donor_neff_pct,2.898217456,median n_eff/n_C %,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_IDC_audited_patient_none,0.8211000763,mean none coverage (morph subset),"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_IDC_audited_patient_w1b,0.81134939,mean W1b coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_IDC_audited_patient_width_none,4.213531347,mean none width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_IDC_audited_patient_width_w1b,4.127532529,mean W1b width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_IDC_audited_patient_neff_pct,5.299956261,median n_eff/n_C %,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_IDC_shipped_patient_none,0.8210873689,mean none coverage (morph subset),"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_IDC_shipped_patient_w1b,0.8115145824,mean W1b coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_IDC_shipped_patient_width_none,4.145637675,mean none width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_IDC_shipped_patient_width_w1b,4.053016696,mean W1b width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_IDC_shipped_patient_neff_pct,5.299956261,median n_eff/n_C %,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_SKCM_shipped_donor_none,0.6618896666,mean none coverage (morph subset),"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_SKCM_shipped_donor_w1b,0.940140337,mean W1b coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_SKCM_shipped_donor_width_none,2.514723238,mean none width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_SKCM_shipped_donor_width_w1b,3.208761651,mean W1b width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_SKCM_shipped_donor_neff_pct,4.383452326,median n_eff/n_C %,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_SKCM_shipped_patient_none,0.6739737054,mean none coverage (morph subset),"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_SKCM_shipped_patient_w1b,0.9684682436,mean W1b coverage,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_SKCM_shipped_patient_width_none,2.583942419,mean none width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_SKCM_shipped_patient_width_w1b,2.32489495,mean W1b width,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w1b_SKCM_shipped_patient_neff_pct,3.607946619,median n_eff/n_C %,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_move_mean,-0.003875849251,mean W2 - none,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_move_median,0,median,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_spearman_move_neff,0.3871978848,"Spearman(move, n_eff/n_C)","A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_CCRCC_donor_nosupport_n,0,cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_CCRCC_donor_cells,216,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_CCRCC_donor_nosupport_pct,0,% cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_CCRCC_patient_nosupport_n,0,cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_CCRCC_patient_cells,54,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_CCRCC_patient_nosupport_pct,0,% cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_COAD_donor_nosupport_n,0,cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_COAD_donor_cells,36,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_COAD_donor_nosupport_pct,0,% cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_COAD_patient_nosupport_n,0,cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_COAD_patient_cells,18,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_COAD_patient_nosupport_pct,0,% cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_HCC_donor_nosupport_n,0,cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_HCC_donor_cells,18,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_HCC_donor_nosupport_pct,0,% cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_HCC_patient_nosupport_n,0,cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_HCC_patient_cells,18,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_HCC_patient_nosupport_pct,0,% cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_IDC_audited_donor_nosupport_n,9,cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_IDC_audited_donor_cells,9,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_IDC_audited_donor_nosupport_pct,100,% cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_IDC_audited_patient_nosupport_n,33,cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_IDC_audited_patient_cells,36,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_IDC_audited_patient_nosupport_pct,91.66666667,% cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_IDC_audited_slide_out_nosupport_n,30,cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_IDC_audited_slide_out_cells,36,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_IDC_audited_slide_out_nosupport_pct,83.33333333,% cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_IDC_shipped_donor_nosupport_n,33,cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_IDC_shipped_donor_cells,36,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_IDC_shipped_donor_nosupport_pct,91.66666667,% cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_IDC_shipped_patient_nosupport_n,33,cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_IDC_shipped_patient_cells,36,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_IDC_shipped_patient_nosupport_pct,91.66666667,% cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_LUNG_donor_nosupport_n,0,cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_LUNG_donor_cells,18,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_LUNG_donor_nosupport_pct,0,% cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_LUNG_patient_nosupport_n,0,cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_LUNG_patient_cells,18,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_LUNG_patient_nosupport_pct,0,% cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_LYMPH_IDC_donor_nosupport_n,0,cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_LYMPH_IDC_donor_cells,36,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_LYMPH_IDC_donor_nosupport_pct,0,% cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_LYMPH_IDC_patient_nosupport_n,0,cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_LYMPH_IDC_patient_cells,36,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_LYMPH_IDC_patient_nosupport_pct,0,% cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_PAAD_donor_nosupport_n,9,cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_PAAD_donor_cells,9,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_PAAD_donor_nosupport_pct,100,% cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_PAAD_patient_nosupport_n,9,cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_PAAD_patient_cells,9,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_PAAD_patient_nosupport_pct,100,% cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_PRAD_donor_nosupport_n,18,cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_PRAD_donor_cells,18,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_PRAD_donor_nosupport_pct,100,% cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_PRAD_patient_nosupport_n,18,cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_PRAD_patient_cells,18,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_PRAD_patient_nosupport_pct,100,% cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_PRAD_slide_out_nosupport_n,39,cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_PRAD_slide_out_cells,207,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_PRAD_slide_out_nosupport_pct,18.84057971,% cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_READ_donor_nosupport_n,0,cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_READ_donor_cells,6,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_READ_donor_nosupport_pct,0,% cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_READ_patient_nosupport_n,0,cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_READ_patient_cells,6,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_READ_patient_nosupport_pct,0,% cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_READ_slide_out_nosupport_n,0,cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_READ_slide_out_cells,36,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_READ_slide_out_nosupport_pct,0,% cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_SKCM_donor_nosupport_n,18,cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_SKCM_donor_cells,18,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_SKCM_donor_nosupport_pct,100,% cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_SKCM_patient_nosupport_n,18,cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_SKCM_patient_cells,18,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w2_SKCM_patient_nosupport_pct,100,% cells with no_support,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_w3_n_cells,1932,cells over both alphas,"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_n_predicate_mismatch,0,infinite flag != (K+1 < 1/alpha),"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_a010_n_finite,3,finite cells at alpha 0.10,"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_a010_finite_K,9,K of the finite cells,"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_a010_finite_cov_mean,0.9271759525,mean coverage of finite cells,"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_a010_finite_cov_min,0.8843882826,min coverage of finite cells,"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_a020_CCRCC_donor_K,6,median K,"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_a020_CCRCC_donor_cov_mean,0.9142624148,"mean coverage, finite, unit-calibrated","A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_a020_CCRCC_donor_cov_min,0.2795784148,min coverage,"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_a020_CCRCC_patient_K,5,median K,"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_a020_CCRCC_patient_cov_mean,0.9257905973,"mean coverage, finite, unit-calibrated","A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_a020_CCRCC_patient_cov_min,0.7853036529,min coverage,"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_a020_PRAD_donor_K,4,median K,"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_a020_PRAD_donor_cov_mean,0.9904242941,"mean coverage, finite, unit-calibrated","A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_a020_PRAD_donor_cov_min,0.9865822472,min coverage,"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_a020_PRAD_patient_K,4,median K,"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_a020_PRAD_patient_cov_mean,0.9892343523,"mean coverage, finite, unit-calibrated","A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_a020_PRAD_patient_cov_min,0.9857764957,min coverage,"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_a020_PRAD_slide_out_K,6,median K,"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_a020_PRAD_slide_out_cov_mean,0.925582728,"mean coverage, finite, unit-calibrated","A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_a020_PRAD_slide_out_cov_min,0.5728423237,min coverage,"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_finite_unit_n,495,finite cells,"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_finite_unit_lift_mean,0.1470228527,mean W3 - none,"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_finite_unit_lift_sd,0.06850216027,sd,"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_finite_unit_width_ratio,1.71541532,mean per-cell width ratio,"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_finite_unit_a020_cov_mean,0.9230018715,mean coverage at alpha 0.20,"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_finite_block_n,120,finite cells,"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_finite_block_lift_mean,0.1546538474,mean W3 - none,"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_finite_block_lift_sd,0.04337734521,sd,"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_finite_block_width_ratio,1.462613169,mean per-cell width ratio,"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_w3_finite_block_a020_cov_mean,0.7103991131,mean coverage at alpha 0.20,"A3_weighted/a3_by_fold.csv (W3 nominal, score abs, designs patient, donor, slide_out)"
+a3_fallback_alpha_values,8,distinct alpha on fallback rows,"A3_weighted/a3_by_fold.csv (W3 feasible_level, abs; alpha is 1/(K+1) on these rows)"
+a3_fallback_n,966,cells,"A3_weighted/a3_by_fold.csv (W3 feasible_level, abs; alpha is 1/(K+1) on these rows)"
+a3_fallback_cov_mean,0.982197898,mean realised coverage,"A3_weighted/a3_by_fold.csv (W3 feasible_level, abs; alpha is 1/(K+1) on these rows)"
+a3_fallback_guaranteed_mean,0.7286601597,mean guaranteed level,"A3_weighted/a3_by_fold.csv (W3 feasible_level, abs; alpha is 1/(K+1) on these rows)"
+a3_fallback_pct_meets,97.61904762,% realised >= guaranteed,"A3_weighted/a3_by_fold.csv (W3 feasible_level, abs; alpha is 1/(K+1) on these rows)"
+a3_sc_n,966,paired cells,"A3_weighted/a3_by_fold.csv (none, subset all, alpha 0.10, designs patient, donor, slide_out)"
+a3_sc_cov_abs,0.8376719558,mean,"A3_weighted/a3_by_fold.csv (none, subset all, alpha 0.10, designs patient, donor, slide_out)"
+a3_sc_cov_clip,0.843744706,mean,"A3_weighted/a3_by_fold.csv (none, subset all, alpha 0.10, designs patient, donor, slide_out)"
+a3_sc_width_abs,2.536590915,mean of mean width,"A3_weighted/a3_by_fold.csv (none, subset all, alpha 0.10, designs patient, donor, slide_out)"
+a3_sc_width_clip,7.967939471,mean of mean width,"A3_weighted/a3_by_fold.csv (none, subset all, alpha 0.10, designs patient, donor, slide_out)"
+a3_sc_width_ratio_of_means,3.141200035,ratio of means,"A3_weighted/a3_by_fold.csv (none, subset all, alpha 0.10, designs patient, donor, slide_out)"
+a3_sc_width_ratio_median,1.080799649,median per-cell ratio,"A3_weighted/a3_by_fold.csv (none, subset all, alpha 0.10, designs patient, donor, slide_out)"
+a3_sc_width_ratio_mean,2.233186337,mean per-cell ratio,"A3_weighted/a3_by_fold.csv (none, subset all, alpha 0.10, designs patient, donor, slide_out)"
+a3_sc_medwidth_abs,2.344714309,mean of median width,"A3_weighted/a3_by_fold.csv (none, subset all, alpha 0.10, designs patient, donor, slide_out)"
+a3_sc_medwidth_clip,2.580229022,mean of median width,"A3_weighted/a3_by_fold.csv (none, subset all, alpha 0.10, designs patient, donor, slide_out)"
+a3_sc_pct_floor_binds,21.42857143,% cells where the lower clip hits the 1e-3 floor,"A3_weighted/a3_by_fold.csv (none, subset all, alpha 0.10, designs patient, donor, slide_out)"
+a3_none_vs_a1_n_fold_rows,447,fold rows matched to A1 by_fold,A3_weighted/a3_by_fold.csv; A1_coverage/a1_by_fold__<enc>__<tag>.csv
+a3_none_vs_a1_max_abs,3.330669074e-16,max |none - A1|,same
+a3_none_cov_all,0.8376719558,"mean none coverage, all cells","A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_none_cells_all,966,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_none_cov_excl_idc_audited,0.8384460497,excluding IDC audited,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"
+a3_none_cells_excl_idc_audited,885,cells,"A3_weighted/a3_by_fold.csv (designs patient, donor, slide_out; score abs; alpha 0.10)"

@@ -1,0 +1,31 @@
+check,weighting,n_cells,statistic,value,tol,passed,note,_source
+A1_random_weighted_equals_unweighted,W1,22,max |coverage difference|,0.0039907315522657,0.005,True,compared to `none` on subset all,a3_acceptance__hoptimus0__main.csv
+A1_random_weighted_equals_unweighted,W1b,22,max |coverage difference|,0.0005853075232891,0.005,True,compared to `none` on subset morph_joined,a3_acceptance__hoptimus0__main.csv
+A1_random_weighted_equals_unweighted,W2,22,max |coverage difference|,0.0016902339834805,0.005,True,compared to `none` on subset all,a3_acceptance__hoptimus0__main.csv
+A1_random_weighted_equals_unweighted,W3,22,max |coverage difference|,0.0,0.005,True,compared to `none` on subset all,a3_acceptance__hoptimus0__main.csv
+A1_random_W1_auc_near_half,W1,330,max |AUC - 0.5|,0.0580097153741694,0.1,True,"held-out AUC, refit on a stratified half and scored on the other; the in-sample AUC is reported beside it",a3_acceptance__hoptimus0__main.csv
+A2_weights_positive_and_finite,all,2364,folds with a non-positive or non-finite weight,0.0,0.0,True,smallest calibration weight anywhere 1.000e-12,a3_acceptance__hoptimus0__main.csv
+A3_random_W3_equals_unweighted,W3,330,"max |dcoverage|, max |dwidth|, K != n_C count",0.0,1e-06,True,"max |dcoverage| 0.000e+00, max |dwidth| 0.000e+00, K != n_C on 0 of 330 cells",a3_acceptance__hoptimus0__main.csv
+A4_none_reproduces_A1_by_fold,none,118,max |dcoverage| against a1_by_fold,3.3306690738754696e-16,1e-09,True,max |dwidth| 2.509e-13; source results/round3/A1_coverage/a1_by_fold__hoptimus0__main.csv,a3_acceptance__hoptimus0__main.csv
+A2_weights_positive_and_finite,all,558,folds with a non-positive or non-finite weight,0.0,0.0,True,smallest calibration weight anywhere 1.000e-12,a3_acceptance__hoptimus0__slideout.csv
+A4_none_reproduces_A1_by_fold,none,31,max |dcoverage| against a1_by_fold,2.220446049250313e-16,1e-09,True,max |dwidth| 7.905e-14; source results/round3/A1_coverage/a1_by_fold__hoptimus0__slideout.csv,a3_acceptance__hoptimus0__slideout.csv
+A1_random_weighted_equals_unweighted,W1,22,max |coverage difference|,0.0028002156721318,0.005,True,compared to `none` on subset all,a3_acceptance__resnet50__main.csv
+A1_random_weighted_equals_unweighted,W1b,22,max |coverage difference|,0.0010555680134151,0.005,True,compared to `none` on subset morph_joined,a3_acceptance__resnet50__main.csv
+A1_random_weighted_equals_unweighted,W2,22,max |coverage difference|,0.0020817011529816,0.005,True,compared to `none` on subset all,a3_acceptance__resnet50__main.csv
+A1_random_weighted_equals_unweighted,W3,22,max |coverage difference|,0.0,0.005,True,compared to `none` on subset all,a3_acceptance__resnet50__main.csv
+A1_random_W1_auc_near_half,W1,330,max |AUC - 0.5|,0.0521946480614677,0.1,True,"held-out AUC, refit on a stratified half and scored on the other; the in-sample AUC is reported beside it",a3_acceptance__resnet50__main.csv
+A2_weights_positive_and_finite,all,2364,folds with a non-positive or non-finite weight,0.0,0.0,True,smallest calibration weight anywhere 1.000e-12,a3_acceptance__resnet50__main.csv
+A3_random_W3_equals_unweighted,W3,330,"max |dcoverage|, max |dwidth|, K != n_C count",0.0,1e-06,True,"max |dcoverage| 0.000e+00, max |dwidth| 0.000e+00, K != n_C on 0 of 330 cells",a3_acceptance__resnet50__main.csv
+A4_none_reproduces_A1_by_fold,none,118,max |dcoverage| against a1_by_fold,2.220446049250313e-16,1e-09,True,max |dwidth| 1.578e-10; source results/round3/A1_coverage/a1_by_fold__resnet50__main.csv,a3_acceptance__resnet50__main.csv
+A2_weights_positive_and_finite,all,558,folds with a non-positive or non-finite weight,0.0,0.0,True,smallest calibration weight anywhere 1.000e-12,a3_acceptance__resnet50__slideout.csv
+A4_none_reproduces_A1_by_fold,none,31,max |dcoverage| against a1_by_fold,2.220446049250313e-16,1e-09,True,max |dwidth| 6.461e-09; source results/round3/A1_coverage/a1_by_fold__resnet50__slideout.csv,a3_acceptance__resnet50__slideout.csv
+A1_random_weighted_equals_unweighted,W1,22,max |coverage difference|,0.0041201421672311,0.005,True,compared to `none` on subset all,a3_acceptance__uni_v2__main.csv
+A1_random_weighted_equals_unweighted,W1b,22,max |coverage difference|,0.0009060193123647,0.005,True,compared to `none` on subset morph_joined,a3_acceptance__uni_v2__main.csv
+A1_random_weighted_equals_unweighted,W2,22,max |coverage difference|,0.0017714401053871,0.005,True,compared to `none` on subset all,a3_acceptance__uni_v2__main.csv
+A1_random_weighted_equals_unweighted,W3,22,max |coverage difference|,0.0,0.005,True,compared to `none` on subset all,a3_acceptance__uni_v2__main.csv
+A1_random_W1_auc_near_half,W1,330,max |AUC - 0.5|,0.0534117732836324,0.1,True,"held-out AUC, refit on a stratified half and scored on the other; the in-sample AUC is reported beside it",a3_acceptance__uni_v2__main.csv
+A2_weights_positive_and_finite,all,2364,folds with a non-positive or non-finite weight,0.0,0.0,True,smallest calibration weight anywhere 1.000e-12,a3_acceptance__uni_v2__main.csv
+A3_random_W3_equals_unweighted,W3,330,"max |dcoverage|, max |dwidth|, K != n_C count",0.0,1e-06,True,"max |dcoverage| 0.000e+00, max |dwidth| 0.000e+00, K != n_C on 0 of 330 cells",a3_acceptance__uni_v2__main.csv
+A4_none_reproduces_A1_by_fold,none,118,max |dcoverage| against a1_by_fold,3.3306690738754696e-16,1e-09,True,max |dwidth| 1.372e-13; source results/round3/A1_coverage/a1_by_fold__uni_v2__main.csv,a3_acceptance__uni_v2__main.csv
+A2_weights_positive_and_finite,all,558,folds with a non-positive or non-finite weight,0.0,0.0,True,smallest calibration weight anywhere 1.000e-12,a3_acceptance__uni_v2__slideout.csv
+A4_none_reproduces_A1_by_fold,none,31,max |dcoverage| against a1_by_fold,3.3306690738754696e-16,1e-09,True,max |dwidth| 1.275e-13; source results/round3/A1_coverage/a1_by_fold__uni_v2__slideout.csv,a3_acceptance__uni_v2__slideout.csv

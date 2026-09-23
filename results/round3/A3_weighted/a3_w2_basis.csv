@@ -1,0 +1,43 @@
+encoder,task,label_set,n_resolution_groups,n_sessions_defined,n_samples_with_null_session,n_samples,w2_cell_basis,w2_can_vary,_source
+hoptimus0,CCRCC,shipped,1,0,24,24,resolution_group alone,False,a3_w2_basis__hoptimus0__main.csv
+hoptimus0,COAD,shipped,1,0,4,4,resolution_group alone,False,a3_w2_basis__hoptimus0__main.csv
+hoptimus0,HCC,shipped,1,0,2,2,resolution_group alone,False,a3_w2_basis__hoptimus0__main.csv
+hoptimus0,IDC,shipped,3,0,4,4,resolution_group alone,True,a3_w2_basis__hoptimus0__main.csv
+hoptimus0,IDC,audited,3,0,4,4,resolution_group alone,True,a3_w2_basis__hoptimus0__main.csv
+hoptimus0,LUNG,shipped,1,0,2,2,resolution_group alone,False,a3_w2_basis__hoptimus0__main.csv
+hoptimus0,LYMPH_IDC,shipped,1,0,4,4,resolution_group alone,False,a3_w2_basis__hoptimus0__main.csv
+hoptimus0,PAAD,shipped,2,0,3,3,resolution_group alone,True,a3_w2_basis__hoptimus0__main.csv
+hoptimus0,PRAD,shipped,3,2,8,23,resolution_group x session,True,a3_w2_basis__hoptimus0__main.csv
+hoptimus0,READ,shipped,1,0,4,4,resolution_group alone,False,a3_w2_basis__hoptimus0__main.csv
+hoptimus0,SKCM,shipped,2,0,2,2,resolution_group alone,True,a3_w2_basis__hoptimus0__main.csv
+hoptimus0,PRAD,shipped,3,2,8,23,resolution_group x session,True,a3_w2_basis__hoptimus0__slideout.csv
+hoptimus0,READ,shipped,1,0,4,4,resolution_group alone,False,a3_w2_basis__hoptimus0__slideout.csv
+hoptimus0,IDC,audited,3,0,4,4,resolution_group alone,True,a3_w2_basis__hoptimus0__slideout.csv
+resnet50,CCRCC,shipped,1,0,24,24,resolution_group alone,False,a3_w2_basis__resnet50__main.csv
+resnet50,COAD,shipped,1,0,4,4,resolution_group alone,False,a3_w2_basis__resnet50__main.csv
+resnet50,HCC,shipped,1,0,2,2,resolution_group alone,False,a3_w2_basis__resnet50__main.csv
+resnet50,IDC,shipped,3,0,4,4,resolution_group alone,True,a3_w2_basis__resnet50__main.csv
+resnet50,IDC,audited,3,0,4,4,resolution_group alone,True,a3_w2_basis__resnet50__main.csv
+resnet50,LUNG,shipped,1,0,2,2,resolution_group alone,False,a3_w2_basis__resnet50__main.csv
+resnet50,LYMPH_IDC,shipped,1,0,4,4,resolution_group alone,False,a3_w2_basis__resnet50__main.csv
+resnet50,PAAD,shipped,2,0,3,3,resolution_group alone,True,a3_w2_basis__resnet50__main.csv
+resnet50,PRAD,shipped,3,2,8,23,resolution_group x session,True,a3_w2_basis__resnet50__main.csv
+resnet50,READ,shipped,1,0,4,4,resolution_group alone,False,a3_w2_basis__resnet50__main.csv
+resnet50,SKCM,shipped,2,0,2,2,resolution_group alone,True,a3_w2_basis__resnet50__main.csv
+resnet50,PRAD,shipped,3,2,8,23,resolution_group x session,True,a3_w2_basis__resnet50__slideout.csv
+resnet50,READ,shipped,1,0,4,4,resolution_group alone,False,a3_w2_basis__resnet50__slideout.csv
+resnet50,IDC,audited,3,0,4,4,resolution_group alone,True,a3_w2_basis__resnet50__slideout.csv
+uni_v2,CCRCC,shipped,1,0,24,24,resolution_group alone,False,a3_w2_basis__uni_v2__main.csv
+uni_v2,COAD,shipped,1,0,4,4,resolution_group alone,False,a3_w2_basis__uni_v2__main.csv
+uni_v2,HCC,shipped,1,0,2,2,resolution_group alone,False,a3_w2_basis__uni_v2__main.csv
+uni_v2,IDC,shipped,3,0,4,4,resolution_group alone,True,a3_w2_basis__uni_v2__main.csv
+uni_v2,IDC,audited,3,0,4,4,resolution_group alone,True,a3_w2_basis__uni_v2__main.csv
+uni_v2,LUNG,shipped,1,0,2,2,resolution_group alone,False,a3_w2_basis__uni_v2__main.csv
+uni_v2,LYMPH_IDC,shipped,1,0,4,4,resolution_group alone,False,a3_w2_basis__uni_v2__main.csv
+uni_v2,PAAD,shipped,2,0,3,3,resolution_group alone,True,a3_w2_basis__uni_v2__main.csv
+uni_v2,PRAD,shipped,3,2,8,23,resolution_group x session,True,a3_w2_basis__uni_v2__main.csv
+uni_v2,READ,shipped,1,0,4,4,resolution_group alone,False,a3_w2_basis__uni_v2__main.csv
+uni_v2,SKCM,shipped,2,0,2,2,resolution_group alone,True,a3_w2_basis__uni_v2__main.csv
+uni_v2,PRAD,shipped,3,2,8,23,resolution_group x session,True,a3_w2_basis__uni_v2__slideout.csv
+uni_v2,READ,shipped,1,0,4,4,resolution_group alone,False,a3_w2_basis__uni_v2__slideout.csv
+uni_v2,IDC,audited,3,0,4,4,resolution_group alone,True,a3_w2_basis__uni_v2__slideout.csv
