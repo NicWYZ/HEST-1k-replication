@@ -330,13 +330,37 @@ by the wider window.
 ## Required before any document is handed over
 
 **Run the numeric-claim sweep and fix what it flags.** This is a required step, not advisory.
+The gate is two invocations over one document set, and this is what `code/scripts/sweep_table.py`
+actually runs. Run from the repository root:
 
 ```
-python code/scripts/verify_numeric_claims.py README.md docs/*.md \
-    --search-dir . --exceptions .verify-exceptions
+DOCS=$(ls docs/*.md | grep -v deck_master_outline)
+python code/scripts/verify_numeric_claims.py README.md $DOCS \
+    --search-dir . --exceptions .verify-exceptions --derived .verify-derived \
+    --always results/summary/deck_numbers.csv
+
+python code/scripts/verify_numeric_claims.py docs/deck_master_outline.md \
+    --search-dir . --exceptions docs/.verify-exceptions-deck --derived .verify-derived \
+    --always results/summary/deck_numbers.csv
 ```
 
-It exits non-zero if any claim is unresolved, so it can gate a handover.
+Each invocation exits non-zero if any claim is unresolved, so either can gate a handover.
+
+**Why it is in this shape, since a shorter command does not reproduce the gate.**
+`--derived .verify-derived` supplies the formulas for claims that are a computation over cited
+files rather than a stored cell, and without it every one of them is read as unresolved.
+`--always results/summary/deck_numbers.csv` adds the deck's number table to the cited set of every
+scope, which is how the deck documents and the proposal quote it without repeating the citation in
+each paragraph. `docs/deck_master_outline.md` goes in its own invocation because it keeps its own
+exceptions file, `docs/.verify-exceptions-deck`; measured against the repository-root exceptions
+file it reports unresolved claims that it does not have. An earlier revision of this section printed
+the command without the last two flags, and run as printed it reported more unresolved claims than
+the gate does, on documents that pass it. The escalation that found this is in
+`docs/round3_A1_stage_report.md`, under discrepancies, open questions and escalations.
+
+All documents go through one invocation per group rather than one per document: the resolver indexes
+each search directory once per process, so per-document runs walk the tree once per document, which
+is most of why the closeout's per-document sweep took hours.
 
 **Why.** The most recurrent defect of round 2 was a number typed from memory into a sentence
 whose *citation was accurate* — the named file was the right file, the value beside it was not in

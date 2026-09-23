@@ -1,4 +1,36 @@
+> **Closed record of a reading task, dated 2026-09-18.** Round-2 R5's provenance reading of the four
+> IDC Xenium samples, run in parallel with the R4 cluster stage. Closed: nothing in it is maintained,
+> and the questions it left open are now stage D3's in `docs/round3_execution_plan.md`. Its findings
+> are not restated here and are not revised; where later work reads a source differently, the later
+> reading governs. HEST v1.3.0's inventory in `results/round3/D0_inventory/hest_inventory.csv` gives
+> TENX95 and TENX99 siblings under other sample ids and different patient labels, which reopens the
+> question this document answered from the vendor pages. **Stage D3 has since found this document's
+> § 1 table wrong on one row, and the finding is an escalation awaiting the A3 gate.** The table
+> assigns TENX95 to the entire-sample-area dataset as Replicate 2; HEST's release tables, identically
+> in all five releases, assign that row to TENX98 and put TENX95 in the pre-designed-panel dataset,
+> so the same-donor pairing this document reports for TENX95 and TENX99 rests on a misassignment
+> (`results/round3/D3_audit/d3_notes.md` § 2). Two further cautions for anyone reading its
+> numbers: its 60 claims pass the numeric-claim sweep only because D0 committed HEST's release
+> tables, which its citation of `HEST_v1_1_0.csv` now resolves against, and most of those matches
+> are to unrelated samples' values rather than to the quantity the text means
+> (`results/round3/H0_housekeeping/r5_sweep_triage.md`). Read the passes as unchecked, not as
+> verified.
+
 # R5 — Provenance of the four HEST-1k IDC Xenium samples (TENX95, TENX99, NCBI783, NCBI785)
+
+**Where the numbers in this document come from.** This was a reading task, so most of its values were
+read from sources outside the repository (vendor dataset pages, GEO records, the raw GEO-deposited
+`gene_panel.json` files, and the Janesick et al. paper), listed in § 5. Two repository files carry
+the same quantities as this document states them and are the checkable record of the panel and
+resolution claims below: the per-sample panel composition (entries, control probes, real genes,
+extras) is [`r5_idc_panels_observed.csv`](../results/round2/R5b_audit/r5_idc_panels_observed.csv),
+the pairwise shared-entry counts, including the intersection over all four samples, are
+[`r5_idc_panel_pairs.csv`](../results/round2/R5b_audit/r5_idc_panel_pairs.csv), and the per-sample
+pixel size is [`sample_metadata.csv`](../results/tailored/integrity/sample_metadata.csv), which
+carries it at full stored precision where the table in § 1 rounds it. Values this document
+takes from a source outside the repository, including the panel-designer gene counts, the vendor's
+per-replicate cell and transcript metrics and HEST's own table counts, are not in any repository file
+and are declared in `.verify-exceptions`.
 
 **Scope.** Literature/database reading task, run in parallel with the R4 cluster stage. No compute
 was performed; every claim below is sourced to a specific record (DOI, GEO accession, 10x Genomics

@@ -1,0 +1,88 @@
+PROVENANCE -- results/round3/H0_housekeeping/
+Stage H0, items 1 to 4 of the A1 decision memo section 4.0, transcribed as
+docs/round3_execution_plan.md section 12.4. Housekeeping track, interval 2.
+Written 2026-09-22.
+
+Repository state
+  commit           d3ce2b7ec538f43d5fbea3b7c89e261ec9c0ff83 (main), in both the local clone
+                   /Users/nicolaszhang/HEST-1k-replication and the Longleaf working copy
+                   /work/users/w/e/weiyang/hest_replication
+  working tree     the three H0 document edits (README.md, docs/WAYS_OF_WORKING.md,
+                   docs/r5_idc_provenance.md) and one .verify-exceptions entry were
+                   uncommitted at measurement time; this track does not run git and the lead
+                   session is the only committer
+
+=== sweep_by_document.csv ===
+
+Measured in the LOCAL CLONE, not on the cluster, and this is deliberate. The gate resolves a
+citation against files found under --search-dir, and a document measured from a directory other
+than docs/ resolves differently: an attempt to measure the edited documents on the cluster from a
+staging directory beside the repository moved the counts on three documents this track did not
+touch: docs_clean_report.md went from 62 verified and none unresolved to 52 verified and 10
+unresolved, literature_landscape.md from 20 and none to 7 and 13, and round2_results_synthesis.md
+from 105 and none to 101 and 4. It also put WAYS_OF_WORKING.md at 37 verified and 1 unresolved,
+where the same file measured in place passes at 38. That run was discarded as an artefact of the
+staging layout rather than a measurement of the edits.
+The Longleaf copy is pull-only for this track, so the only place the edited documents sit in
+docs/ is the local clone.
+
+  command line (run from the repository root, both invocations, the gate as
+  code/scripts/sweep_table.py runs it):
+    DOCS=$(ls docs/*.md | grep -v deck_master_outline)
+    PYTHONHASHSEED=0 python code/scripts/verify_numeric_claims.py README.md $DOCS \
+        --search-dir . --exceptions .verify-exceptions --derived .verify-derived \
+        --always results/summary/deck_numbers.csv
+    PYTHONHASHSEED=0 python code/scripts/verify_numeric_claims.py docs/deck_master_outline.md \
+        --search-dir . --exceptions docs/.verify-exceptions-deck --derived .verify-derived \
+        --always results/summary/deck_numbers.csv
+  exit status       1 on the first invocation (ten unresolved claims remain, in two documents
+                    this track did not edit), 0 on the second
+  pythonhashseed    0; the same run without it gives byte-identical per-document counts
+  python            3.11.15, macOS, local clone
+  totals            24 documents, 2380 claims, 2369 verified, 10 unresolved, 0 uncited,
+                    0 derived mismatch, 1 derived error; summed from the rows, and the row
+                    identity claims - verified = unresolved + uncited + derived mismatch +
+                    derived error is asserted when the file is written
+  config hash       sha256, first 16 hex digits, of the files the invocation reads besides the
+                    documents themselves:
+                      55001eb39f962bd8  .verify-exceptions
+                      235e6b84d8fe288d  .verify-derived
+                      6a4633f81837aa24  docs/.verify-exceptions-deck
+                      7cced9719707ee15  code/scripts/verify_numeric_claims.py
+                    and of the three edited documents as measured:
+                      558032f6020977c6  README.md
+                      eceb3bd5505bbecf  docs/WAYS_OF_WORKING.md
+                      3a888cc21f97a719  docs/r5_idc_provenance.md
+                    output: 039e88465215de0c  sweep_by_document.csv
+
+Difference against the cluster, measured rather than assumed. The same two invocations were run
+on the Longleaf working copy at the same commit without the edits (job 2126477, partition
+actually used spill, node c151606, 2026-09-22T19:36:32-04:00, PYTHONHASHSEED=0, interpreter
+/work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python 3.11.16). Across
+all 24 documents the two runs differ in exactly two rows: README.md (226 claims there against
+231 here, the five claims this track's edits added, all verified in both), and
+round2_R3_stage_report.md (266 verified and no derived error there, 265 verified and one derived
+error here, because results/round2/R3_splits/pergene__hoptimus0.parquet is gitignored and absent
+from a clone). That one row is README known limitation 12.
+
+=== tenx111_spot_count.md ===
+
+  job ids           2126477 for the AnnData read (partition actually used spill, node c151606,
+                    2026-09-22T19:36:32-04:00) and 2129588 for the grid-index read across six
+                    tasks (partition actually used spill, node c151406,
+                    2026-09-22T20:12:32-04:00). Both requested -p general and both landed on
+                    spill.
+  interpreter       /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+                    3.11.16, PYTHONHASHSEED=0
+  inputs read       bench_data/{COAD,IDC,READ,PAAD,LUNG,SKCM}/adata/*.h5ad and
+                    results/round3/D0_inventory/release_tables/HEST_v1_3_0.csv, both on the
+                    cluster; results/tailored/integrity/sample_metadata.csv and
+                    bench_data/hest_bench_sample_inventory.csv in the clone
+  nothing written   on the cluster; both jobs are read-only on the repository and wrote only
+                    into their own Slurm workdirs
+
+=== r5_sweep_triage.md ===
+
+  no job            all runs local, same invocation as above plus one variant with
+                    --exclude-dir release_tables, which is how the forty-one claims the A1
+                    report recorded were reproduced for triage

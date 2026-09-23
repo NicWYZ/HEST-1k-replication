@@ -1,0 +1,24 @@
+dir              : results/round3/D3_audit
+stage            : round3 D3 (donor and laboratory audit of the expansion sets against source records)
+script           : code/scripts/round3_d3_build_audit.py
+created          : 2026-09-22T20:05:42.841909-04:00
+slurm_job_id     : none (local reading stage, no cluster job)
+slurm_partition  : none
+node             : not recorded (local sandbox; host identity is masked)
+platform         : macOS-26.6.2-arm64-arm-64bit
+python           : 3.11.15
+executable       : /Users/nicolaszhang/.claude-science/orgs/c42040b3-6d87-451b-9b93-c94218d0c812/workspaces/64da144d-f3ca-4d2a-9eca-a1cea79a6d09/.venv/python/bin/python
+commit           : d3ce2b7ec538f43d5fbea3b7c89e261ec9c0ff83
+command_line     : /Users/nicolaszhang/.claude-science/orgs/c42040b3-6d87-451b-9b93-c94218d0c812/workspaces/64da144d-f3ca-4d2a-9eca-a1cea79a6d09/.venv/python/bin/python code/scripts/round3_d3_build_audit.py
+pythonhashseed   : 0
+config           : {"inventory": "results/round3/D0_inventory/hest_inventory.csv", "members": "results/round3/D0_inventory/expansion_set_members.csv", "n_rows": 76}
+config_hash      : sha256:3f5fca2ddfdeca5d1880251ff5f1da46
+downloads        : none by this script. The reading itself fetched api.crossref.org,
+                   api.biorxiv.org, www.biorxiv.org, eutils.ncbi.nlm.nih.gov,
+                   www.ncbi.nlm.nih.gov/geo, cf.10xgenomics.com (granted during the
+                   stage) and Unpaywall. www.10xgenomics.com returned HTTP 429 on
+                   every attempt and is recorded as unreachable.
+
+Files and checksums (sha256, first 16 hex):
+
+  a24c9c9c0672e45b    183,675  donor_lab_audit_ext.csv

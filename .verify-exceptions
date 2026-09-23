@@ -157,6 +157,7 @@
 8353	external: Nat Commun citation page number for Janesick et al. 2023 (14:8353), doi:10.1038/s41467-023-43458-x
 892,966	external: 10x Genomics dataset page for "FFPE Human Breast Using the Entire Sample Area" (Replicate 1 cell count in the per-replicate metrics table), corroborated by a HEST GitHub issue per the document text
 885,523	external: 10x Genomics dataset page for "FFPE Human Breast Using the Entire Sample Area" (Replicate 2 cell count in the per-replicate metrics table)
+313	external: real-gene-target count of Xenium panel design PD_260 ("hBreast_320g"), read in R5 from the raw GEO-deposited gene_panel.json for GSM7780153/GSM7780154, which is not in the repository; the repository's own ingested count for the same sample is 321 in r5_idc_panels_observed.csv and the 33-vs-41 gap between them is the open discrepancy that section 3 of r5_idc_provenance.md reports. Also used, for the same quantity, in round2_R5_stage_report.md
 1.7e-04	diagnostic: A2b's value on the very first (buggy) run of the float64 identity check, before the two bugs described in R3 sec 3.1 were fixed; never written to a results file since the buggy state was fixed, not checkpointed
 5.1e-08	diagnostic: measured PCA column mean under the pre-fix (float32-cast-to-float64) pipeline, from a controlled debugging experiment; not checkpointed to any file
 1.1e-16	diagnostic: the expected (post-fix) PCA column mean the debugging experiment compared against; not checkpointed to any file

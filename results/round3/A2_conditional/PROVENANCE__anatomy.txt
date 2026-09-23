@@ -1,0 +1,121 @@
+==============================================================================
+Round 3, stage A2, Anatomy track
+==============================================================================
+dir              : /Users/nicolaszhang/HEST-1k-replication/results/round3/A2_conditional
+stage            : round3 A2 (conditional coverage), the parts answerable from A1's
+                   committed outputs without rerunning the harness
+track            : Anatomy (docs/round3_execution_plan.md section 12.8)
+spec             : memo section 4.1 = plan section 12.4; original A2 = plan 4.4
+script           : code/scripts/round3_a2_anatomy.py
+created          : 2026-09-22T19:40:34.141786-04:00
+operator         : weiyang (Nicolas Weiyang Zhang)
+repo_commit      : d3ce2b7ec538f43d5fbea3b7c89e261ec9c0ff83
+command_line     : /Users/nicolaszhang/.claude-science/orgs/c42040b3-6d87-451b-9b93-c94218d0c812/workspaces/87032fd4-1635-4d2f-985e-d34306d19982/.venv/python/bin/python code/scripts/round3_a2_anatomy.py --mode local --repo-root . --gene-dir /Users/nicolaszhang/.claude-science/orgs/c42040b3-6d87-451b-9b93-c94218d0c812/workspaces/87032fd4-1635-4d2f-985e-d34306d19982/hpc/d3cc2c98-a558-4d4f-8a5e-5b1820d5696d --out-dir results/round3/A2_conditional --job-facts <--job-facts block, printed below>
+pythonhashseed   : 0
+platform         : macOS-26.6.2-arm64-arm-64bit
+python           : 3.11.15
+numpy/pandas     : 2.4.6 / 2.3.3
+config_hash      : sha256/16 cefb7d5df3f00d06 crc32 34334954
+config           : {"a1_dir": "results/round3/A1_coverage", "aggregation": "per test slide, then over genes, then over repeats and calibration draws inside a fold, then over folds", "benchmark": "results/summary/results_encoder.csv head=pca_ridge column=avg_paper9", "encoders": ["conch_v1", "conch_v15", "ctranspath", "gigapath", "hoptimus0", "hoptimus1", "phikon", "resnet50", "uni_v1", "uni_v2", "virchow", "virchow2"], "nominal_coverage": 0.9, "r7": "results/round2/R7_pergene/r7_pergene_decomposition.csv", "runs": ["main", "slideout"], "scores": ["abs", "scaled"], "script": "code/scripts/round3_a2_anatomy.py", "seed_source": "zlib.crc32 (no randomness used in this stage)", "stage": "round3_A2_anatomy", "strata": ["cal_shares_session_with_test", "donor_label_status", "gene", "n_cal_units_K", "prad_fold", "random_across_slide_coverage_sd", "resolution_group", "session", "test_slide"]}
+
+LOCAL MODE. No Slurm job; the local clone's A1 CSVs are the whole input except the
+gene stratum and the R7 join, which need A1's per-gene parquets. Those are gitignored
+and exist only on Longleaf, so they were collapsed there by this same script in
+--mode gene inside a Slurm job, and only the collapsed table was brought back.
+
+LONGLEAF JOB (the gene mode) --------------------------------------------------
+  gene mode ran as one Slurm job on ssh:longleaf; it read the per-gene parquets in place
+  and wrote only into its own job workdir. Nothing was written into the Longleaf tree.
+    slurm_job_id      : 2126543
+    slurm_partition   : spill (requested general; $SLURM_JOB_PARTITION read at runtime)
+    node              : c0829
+    reqcpus / reqmem  : 4 / 16G
+    submit / start    : 2026-09-22T19:23:04 / 2026-09-22T19:36:32 (13 min 28 s queued)
+    elapsed           : 00:00:08
+    state / exitcode  : COMPLETED 0:0
+    interpreter       : /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+    pythonhashseed    : 0
+    longleaf commit   : d3ce2b7ec538f43d5fbea3b7c89e261ec9c0ff83
+    command_line      : $PY round3_a2_anatomy.py --mode gene --a1-dir <A1_coverage> --out-dir $PWD
+    input parquets    : pergene__<enc>__{main,slideout}.parquet, 12 encoders, 24 files
+                        main 179,500 rows each, slideout 9,300 rows each
+    returned          : a2_gene_by_fold.parquet, 178,800 rows
+                        sha256 4b2b3368b8e13056640ec6db894e9373ee8664cf5b92e2e14e5730f40b36654d
+
+INPUTS -----------------------------------------------------------------------
+  a1_dir                : /Users/nicolaszhang/HEST-1k-replication/results/round3/A1_coverage
+  a1 files read         : a1_by_slide__<enc>__{main,slideout}.csv,
+                          a1_by_fold__..., a1_by_task__...,
+                          a1_calibration_units__... for 12 encoders
+  task definitions      : results/round3/task_defs/*.json (11 task files)
+  r7                    : results/round2/R7_pergene/r7_pergene_decomposition.csv
+  benchmark pearson     : results/summary/results_encoder.csv, head pca_ridge,
+                          column avg_paper9
+  gene table            : /Users/nicolaszhang/.claude-science/orgs/c42040b3-6d87-451b-9b93-c94218d0c812/workspaces/87032fd4-1635-4d2f-985e-d34306d19982/hpc/d3cc2c98-a558-4d4f-8a5e-5b1820d5696d/a2_gene_by_fold.parquet
+  gene table sha256     : 4b2b3368b8e13056640ec6db894e9373ee8664cf5b92e2e14e5730f40b36654d
+  gene table note       : gene stratum from a2_gene_by_fold.parquet, 178,800 (encoder, fold, gene) rows
+
+ANCHOR TO A1 -----------------------------------------------------------------
+  a1_by_slide collapsed to the cell level, then over folds, must reproduce
+  a1_by_fold's coverage and width for every fold.
+  n_folds 3576, max |dcoverage| 3.331e-16, max |dwidth| 2.842e-14, tolerance 1e-09, passed True
+
+OUTPUTS ----------------------------------------------------------------------
+  a2_by_stratum__anatomy.csv        4952 rows, 9 strata: cal_shares_session_with_test, donor_label_status, gene, n_cal_units_K, prad_fold, random_across_slide_coverage_sd, resolution_group, session, test_slide
+  a2_prad_donor_sharing__paired.csv 148 rows (120 pairs, 28 summary rows)
+  a2_width_by_encoder.csv           48 rows
+  a2_pergene_join.csv               55 rows
+  PROVENANCE__anatomy.txt           this file
+
+  a2_by_stratum__anatomy.csv carries two columns beyond the six the task names:
+  `label_set`, because IDC appears twice (shipped and audited) under the same task
+  name, and `detail`, which is where the PRAD-by-fold rows write out the held-out
+  patient, the calibration slides and their K, the session structure of each side
+  and the resolution class of each side. `agg_unit` names the unit each row
+  aggregated over. A row's n_cells counts units pooled OVER THE 12 ENCODERS, and
+  coverage_sd is a dispersion across those units, not a standard error.
+
+DIFFERENCE LISTS ------------------------------------------------------------
+  Written out before any stratum here is named as a term, per the project rule.
+
+  n_cal_units_K. K covaries with `calibration_unit`. The folds with the largest K
+  are the block-calibrated folds of the two-sample tasks (HCC, LUNG, SKCM, COAD),
+  where calibration scores are within-slide residuals, so a K contrast pooled over
+  calibration units is also a within-slide-against-new-slide contrast. Every K row
+  names its calibration unit in `detail`; read K within a unit, not across units.
+  Under `random` the unit is the spot, so K there is the calibration SPOT count.
+
+  cal_shares_session_with_test. The harness defines it as (shares resolution_group)
+  OR (shares exact session). `session` is recorded only for PRAD's patient-2 slides,
+  so for the other ten task files this column IS the resolution-group flag and is
+  not a session contrast. Both halves are in `detail`.
+
+  resolution_group and session. Both are properties of the test slide, so within a
+  task file a resolution_group contrast is also a slide contrast, and in CCRCC and
+  PRAD a donor contrast as well. Across task files it is additionally an organ,
+  technology and study contrast. Rows are per (task, label_set, design, score), so
+  the task is fixed inside a row and free across rows.
+
+  donor_label_status. A property of the test slide's donor label, from
+  results/round2/R5b_audit/donor_audit.csv by way of the task definitions. It is
+  confounded with task: `contradicted` occurs only where the audit contradicted
+  HEST's label, `unverifiable` only where it could not be checked, so the arms also
+  differ in organ, study and slide count.
+
+  prad_fold. The two folds differ in held-out donor, in K (4 against 2), in the
+  session structure and resolution class of both sides, and in the calibration
+  slides' pixel-size spread. Every one of those is written into the row's `detail`.
+
+  A2d's paired donor-sharing arms. The full list is in the docstring of
+  `_prad_donor_sharing` in this script and is reproduced in the stage report: donor
+  sharing, resolution class, whether session is recorded at all, and the identity
+  and spot count of the calibration slides. Held fixed: task, encoder, test slide,
+  design, proper-training set, K and score.
+
+NOT COMPUTED HERE (Mechanisms track, needs a harness rerun) -------------------
+  A2a's predicted-value decile and neoplastic-fraction strata; A2b; A2c; A2d's
+  `slide_out_cal_other_donor` arm; A2f's level-versus-scale decomposition;
+  fig_a2_anatomy.png and fig_a2_coverage_vs_K.png. Also not computed: the
+  between-unit score share that the memo's prediction 3 pairs with the PRAD fold
+  comparison, which A2c writes.
+==============================================================================
