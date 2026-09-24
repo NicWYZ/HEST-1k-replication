@@ -1,0 +1,25 @@
+==============================================================================
+Round 3, stage B1 - prediction-powered inference, predict__resnet50
+slurm_job_id    : 2292518
+slurm_partition : spill
+node            : c151418
+gpu             : none
+date            : 2026-09-23T23:25:13-0400
+repo_commit     : a181326b411573d91a82826b66431b0baccef0ff
+script          : code/scripts/round3_b1_ppi.py
+script_file     : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/5e44fff8-c04f-4ba7-8c73-e2fc1d9ca490/round3_b1_ppi.py
+script_md5      : 268b171490ab2cb996a77551621c2998
+script_sha256   : sha256/16 09a78b1522592e83
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5  (imported unmodified, not edited)
+harness_sha256  : sha256/16 4f0536fa25900c9f
+command_line    : round3_b1_ppi.py --predict resnet50 --task-def /work/users/w/e/weiyang/hest_replication/results/round3/task_defs/CCRCC.json --task-def /work/users/w/e/weiyang/hest_replication/results/round3/task_defs/LYMPH_IDC.json --task-def /work/users/w/e/weiyang/hest_replication/results/round3/task_defs/PRAD.json --task-def /work/users/w/e/weiyang/hest_replication/results/round3/task_defs/IDC.json --design donor --out-dir results/round3/B1_ppi
+pythonhashseed  : 0
+n_spots_by_task : {"CCRCC": 74220, "IDC": 35536, "LYMPH_IDC": 19964, "PRAD": 62710}
+embedding_dim   : {"CCRCC": 1024, "IDC": 1024, "LYMPH_IDC": 1024, "PRAD": 1024}
+wall_seconds    : 445
+wall_by_task    : {"CCRCC/shipped": 369.8, "IDC/shipped": 24.8, "LYMPH_IDC/shipped": 19.6, "PRAD/shipped": 30.7}
+acceptance      : PASS
+files_written   : b1_predictions__CCRCC__resnet50.parquet (Longleaf only), b1_suffstats__CCRCC__resnet50.npz (Longleaf only), b1_predictions__LYMPH_IDC__resnet50.parquet (Longleaf only), b1_suffstats__LYMPH_IDC__resnet50.npz (Longleaf only), b1_predictions__PRAD__resnet50.parquet (Longleaf only), b1_suffstats__PRAD__resnet50.npz (Longleaf only), b1_predictions__IDC__resnet50.parquet (Longleaf only), b1_suffstats__IDC__resnet50.npz (Longleaf only), b1_join__resnet50.csv, b1_pred_quality__resnet50.csv, b1_design_consts__resnet50.csv, b1_theta1_raw_check__resnet50.csv
+config_hash     : sha256/16 1ba6d59075973ad3
+config          : {"base_predictor": "imported unmodified from round3_a0_harness.fit_base", "design": "donor", "encoder": "resnet50", "harness_mode": "h1_anchor (cal_frac_units=cal_frac_spots=0), size_match=none", "merges": {}, "min_join": 0.8, "morph_dir": "instrumentation/morphology_v2", "neo_hi": 0.7, "permute_source": "resnet50", "script": "code/scripts/round3_b1_ppi.py", "seed_source": "zlib.crc32 via the harness", "stage": "round3_B1_predict", "str_lo": 0.3, "task_defs": ["results/round3/task_defs/CCRCC.json", "results/round3/task_defs/LYMPH_IDC.json", "results/round3/task_defs/PRAD.json", "results/round3/task_defs/IDC.json"], "tasks": ["CCRCC/shipped", "LYMPH_IDC/shipped", "PRAD/shipped", "IDC/shipped"], "variant": ""}
+plan            : round3_execution_plan.md sections 4.7, 12.5, 13.6

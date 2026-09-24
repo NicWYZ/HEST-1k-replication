@@ -1,0 +1,17 @@
+==============================================================================
+Round 3, stage B2 - semi-synthetic coverage
+slurm_job_id    : 2307631
+slurm_partition : spill
+node            : c130406
+gpu             : none
+date            : 2026-09-23T23:48:21-0400
+repo_commit     : a181326b411573d91a82826b66431b0baccef0ff
+script          : code/scripts/round3_b2_semisynthetic.py
+script_md5      : {"round3_a0_harness.py": "0ad7ae8efe554c1f285e5f384a9fb7f5", "round3_b1_ppi.py": "6095a793dce3dbf2a2242f255bc17f20", "round3_b2_semisynthetic.py": "351c6f2598de67676e8c515cb9dcded9"}
+command_line    : round3_b2_semisynthetic.py --out-dir results/round3/B2_semisynthetic --b1-dir results/round3/B1_ppi --n-draws 200
+pythonhashseed  : 0
+wall_seconds    : 167
+files_written   : b2_coverage.csv, b2_width_ratio.csv
+config_hash     : sha256/16 55ba526928d50dc3
+config          : {"alpha": 0.1, "arms": ["hoptimus0", "uni_v2", "resnet50", "permuted"], "estimator": "imported from round3_b1_ppi.cell_spot / cell_donor", "n_boot": 500, "n_draws": 200, "prad_slide_nl": [4, 8, 12], "script": "code/scripts/round3_b2_semisynthetic.py", "seed_source": "zlib.crc32", "settings": [{"cluster_form": "separate", "n_L": 6, "pops": ["spot", "donor"], "setting": "CCRCC", "unit": "donor", "variant": "CCRCC"}, {"cluster_form": "separate", "n_L": 8, "pops": ["spot", "donor"], "setting": "CCRCC", "unit": "donor", "variant": "CCRCC"}, {"cluster_form": "separate", "n_L": 12, "pops": ["spot", "donor"], "setting": "CCRCC", "unit": "donor", "variant": "CCRCC"}, {"cluster_form": "separate", "n_L": 6, "pops": ["spot", "donor"], "setting": "CCRCC_merged", "unit": "donor", "variant": "CCRCC_merged"}, {"cluster_form": "separate", "n_L": 8, "pops": ["spot", "donor"], "setting": "CCRCC_merged", "unit": "donor", "variant": "CCRCC_merged"}, {"cluster_form": "separate", "n_L": 12, "pops": ["spot", "donor"], "setting": "CCRCC_merged", "unit": "donor", "variant": "CCRCC_merged"}, {"cluster_form": "separate", "n_L": 2, "pops": ["spot", "donor"], "setting": "LYMPH_IDC", "unit": "donor", "variant": "LYMPH_IDC"}, {"cluster_form": "separate", "n_L": 1, "pops": ["spot", "donor"], "setting": "PRAD", "unit": "donor", "variant": "PRAD"}, {"cluster_form": "separate", "n_L": 2, "pops": ["spot", "donor"], "setting": "PRAD", "unit": "donor", "variant": "PRAD"}, {"cluster_form": "separate", "n_L": 2, "pops": ["spot", "donor"], "setting": "IDC", "unit": "donor", "variant": "IDC"}, {"cluster_form": "combined", "n_L": 4, "pops": ["spot"], "setting": "PRAD_slidemask", "unit": "slide", "variant": "PRAD"}, {"cluster_form": "combined", "n_L": 8, "pops": ["spot"], "setting": "PRAD_slidemask", "unit": "slide", "variant": "PRAD"}, {"cluster_form": "combined", "n_L": 12, "pops": ["spot"], "setting": "PRAD_slidemask", "unit": "slide", "variant": "PRAD"}], "stage": "round3_B2"}
+plan            : round3_execution_plan.md sections 4.8, 12.5, 13.6

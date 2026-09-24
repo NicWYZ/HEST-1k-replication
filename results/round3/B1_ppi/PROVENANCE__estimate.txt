@@ -1,0 +1,25 @@
+==============================================================================
+Round 3, stage B1 - prediction-powered inference, estimate
+slurm_job_id    : 2307631
+slurm_partition : spill
+node            : c130406
+gpu             : none
+date            : 2026-09-23T23:45:16-0400
+repo_commit     : a181326b411573d91a82826b66431b0baccef0ff
+script          : code/scripts/round3_b1_ppi.py
+script_file     : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/a4355a04-0583-44fc-a4ba-539932a35789/round3_b1_ppi.py
+script_md5      : 6095a793dce3dbf2a2242f255bc17f20
+script_sha256   : sha256/16 41091ecd2e187d3c
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5  (imported unmodified, not edited)
+harness_sha256  : sha256/16 4f0536fa25900c9f
+command_line    : round3_b1_ppi.py --estimate --out-dir results/round3/B1_ppi
+pythonhashseed  : 0
+n_spots_by_task : {}
+embedding_dim   : {}
+wall_seconds    : 4
+wall_by_task    : {}
+acceptance      : FAIL or n/a
+files_written   : b1_acceptance.csv, b1_estimates.csv, b1_theta1_by_slide.csv
+config_hash     : sha256/16 5254765d84d76dbc
+config          : {"alpha": 0.1, "arms": ["hoptimus0", "uni_v2", "resnet50", "permuted"], "estimands": ["theta1", "theta2", "theta3"], "exact_tol": 1e-10, "n_boot": 500, "neo_hi": 0.7, "nl_settings": {"CCRCC": [6, 8, 12], "CCRCC_merged": [6, 8, 12], "IDC": [2], "LYMPH_IDC": [2], "PRAD": [1, 2]}, "script": "code/scripts/round3_b1_ppi.py", "seed_source": "zlib.crc32", "stage": "round3_B1_estimate", "str_lo": 0.3, "variants": ["CCRCC", "CCRCC_merged", "LYMPH_IDC", "PRAD", "IDC"]}
+plan            : round3_execution_plan.md sections 4.7, 12.5, 13.6

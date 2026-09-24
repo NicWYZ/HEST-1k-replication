@@ -1,0 +1,15 @@
+==============================================================================
+Round 3, stage B1 - figures (rendering step, no model fit)
+host            : session sandbox (not a Slurm job)
+slurm_job_id    : NA - rendered outside Slurm
+node            : NA
+gpu             : none
+date            : 2026-09-23T23:53:23-0400
+script          : code/scripts/round3_b1_ppi.py
+script_md5      : 544721f07cb3d74dc5b92456d61fe450
+command_line    : runreal.py
+pythonhashseed  : 0
+input           : b1_estimates.csv md5 2708a1f1627babb4b8786bd63ae7b4d8
+input           : b1_theta1_by_slide.csv md5 9e536b58155ce6ec7365b2ecda5a9813
+outputs         : fig_b1_intervals.png
+plan            : round3_execution_plan.md sections 4.7, 4.8, 13.6

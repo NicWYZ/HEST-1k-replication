@@ -1,0 +1,18 @@
+==============================================================================
+Round 3, stage B1 - report_numbers (rendering step, no model fit)
+host            : session sandbox (not a Slurm job)
+slurm_job_id    : NA - rendered outside Slurm
+node            : NA
+gpu             : none
+date            : 2026-09-23T23:53:23-0400
+script          : code/scripts/round3_b1_ppi.py
+script_md5      : 544721f07cb3d74dc5b92456d61fe450
+command_line    : runreal.py
+pythonhashseed  : 0
+input           : b1_estimates.csv md5 2708a1f1627babb4b8786bd63ae7b4d8
+input           : b1_acceptance.csv md5 c9e6644681555819cb8507fec3225c66
+input           : b1_theta1_by_slide.csv md5 9e536b58155ce6ec7365b2ecda5a9813
+input           : b2_coverage.csv md5 d66fb8607350d3b3d36e4d93021f8711
+input           : b2_width_ratio.csv md5 699e021c833069ce484c641396e0921b
+outputs         : b1b2_report_numbers.csv
+plan            : round3_execution_plan.md sections 4.7, 4.8, 13.6
