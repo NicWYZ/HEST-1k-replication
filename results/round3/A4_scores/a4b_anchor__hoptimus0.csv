@@ -1,0 +1,12 @@
+check,scope,n_cells,statistic,value,tol,passed,note
+A0_n_match_reproduces_A1,every arm,729,n_match_target mine vs A1's,35996.0,0.0,True,"mine [35996], A1 [35996]; source results/round3/A1_coverage/a1_calibration_units__hoptimus0__main.csv"
+A1_anchor_pooled_K6_reproduces_a1_by_fold,"arm a1_rule_K6, donor_set 24",24,max |dcoverage| against a1_by_fold,2.220446049250313e-16,1e-12,True,max |dwidth| 2.487e-14; 24 of 24 A1 folds matched; source results/round3/A1_coverage/a1_by_fold__hoptimus0__main.csv
+A2_pooled_K10_beside_A1_donor_row,"arm K10, donor_set 24",72,coverage at K=10 minus A1's CCRCC donor coverage,0.0004366753789011302,,,K=10 pooled coverage 0.861493 width 2.090352; A1 0.861056 / 2.097788; source results/round3/A1_coverage/a1_by_task__hoptimus0__main.csv
+A3_random_control_hcp_equals_pooled,arm random,30,"max |dcoverage|, max |dwidth|",0.0,1e-12,True,"max |dcoverage| 0.000e+00, max |dwidth| 0.000e+00, K != n_C on 0 of 30 cells"
+A3b_random_control_dwr_equals_pooled,arm random,30,max |dcoverage|,0.0,1e-12,True,"on `random` the unit is the spot, so one score per group is every score and the subsample is degenerate; one repetition is run"
+A4_pooled_two_code_paths_agree,every fold and draw,243,max |conformal_quantile - weighted_quantile at equal weights|,0.0,0.0,True,"the harness's conformal_quantile against A3's weighted_quantile with unit weights, per gene and test point"
+A5_K_pool_and_training_donors,"arm K10, donor_set 24",72,"cells with K != 10, pool != 23 or n_T_donors != 13",0.0,0.0,True,"n_T_donors [13], n_C_donors [10], pool [23]"
+A5_K_pool_and_training_donors,"arm K10, donor_set 23_merged",69,"cells with K != 10, pool != 22 or n_T_donors != 12",0.0,0.0,True,"n_T_donors [12], n_C_donors [10], pool [22]"
+A6_A1_calibration_donors_nested_in_K10,donor_set 24,72,folds and draws where A1's 6 donors are not a subset of A4b's 10,0.0,0.0,True,"both are prefixes of the same crc32-seeded donor permutation, so the arms differ in which donors train and not in how they were drawn"
+A7_level_attainable,"arm K10, methods hcp and dwr",282,cells with a finite interval,282.0,282.0,True,"K + 1 >= 1/alpha holds at K = 10 and fails at K = 6, so every K = 6 hcp and dwr interval is recorded as infinite"
+A7_level_attainable,"arm a1_rule_K6, methods hcp and dwr",144,cells with a finite interval,0.0,0.0,True,"K + 1 >= 1/alpha holds at K = 10 and fails at K = 6, so every K = 6 hcp and dwr interval is recorded as infinite"

@@ -1,0 +1,32 @@
+==============================================================================
+Round 3, stage A4b - HCP with K = 10 exchangeable donors on CCRCC, encoder resnet50
+plan            : round3_execution_plan.md sections 13.5.2, 13.10 items 1 and 2, 13.8
+slurm_job_id    : 2288639
+slurm_partition : spill
+node            : c0903
+gpu             : none
+date            : 2026-09-23T23:22:11-0400
+commit          : a181326  (SUPPLIED on the command line; this stage runs no git command, so the field is not read from the working copy)
+script          : code/scripts/round3_a4b_hcp.py
+script_file     : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/b12ab0c0-ab1d-4945-9cb8-fe43c510979b/round3_a4b_hcp.py
+script_md5      : f66159d6d52dbeddc2f35542f3c4ef91
+harness_file    : /work/users/w/e/weiyang/hest_replication/code/scripts/round3_a0_harness.py
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5  (imported unmodified)
+a3_module_file  : /work/users/w/e/weiyang/hest_replication/code/scripts/round3_a3_weighted.py
+a3_module_md5   : 70927b656860286c6a612694ec4b3785  (imported unmodified)
+command_line    : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/b12ab0c0-ab1d-4945-9cb8-fe43c510979b/round3_a4b_hcp.py resnet50 --task-def results/round3/task_defs/CCRCC.json --commit a181326 --out-root /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/b12ab0c0-ab1d-4945-9cb8-fe43c510979b --out-dir a4b_out --donor-sets 24,23_merged --arms a1_rule_K6,K10,random --dwr-reps 200
+pythonhashseed  : 0
+data_root       : /work/users/w/e/weiyang/hest_replication
+out_root        : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/b12ab0c0-ab1d-4945-9cb8-fe43c510979b
+n_spots_by_task : {"CCRCC": 74220}
+embedding_dim   : {"CCRCC": 1024}
+donor_audit     : {"audit_rows_benchmark_r2": 24, "expansion_d3_rows_for_same_samples": 24, "expansion_d3_statuses": "unverifiable", "n_donors": 24, "statuses": "verified"}
+fold_rule_check : rebuilt 24-donor folds equal the shipped ones: True
+enumeration     : [{"donor_set": "24", "encoder": "resnet50", "n_donor_folds": 24, "n_donors": 24, "n_match": 35996, "n_specs": 120}, {"donor_set": "23_merged", "encoder": "resnet50", "n_donor_folds": 23, "n_donors": 23, "n_match": 35996, "n_specs": 117}]
+n_rows          : 729
+n_dwr_rep_rows  : 42630
+wall_seconds    : 3224
+anchors         : PASS
+files_written   : a4b_anchor__resnet50.csv, a4b_hcp_K10__resnet50.csv, a4b_one_per_group_reps__resnet50.csv, a4b_codepath_check__resnet50.csv
+config_hash     : sha256/16 f23c91bd2cdbefd2
+config          : {"K": 10, "alpha": 0.1, "arms": "a1_rule_K6,K10,random", "base_predictor": "imported unmodified from round3_a0_harness.fit_base", "cal_frac_units_rule": "(K - 0.5) / n_units, whose ceiling is K", "designs_enumerated": "random,patient,donor", "donor_grouping": "donor_audit_r3.csv row_origin=benchmark_r2, checked against the task definition", "donor_sets": "24,23_merged", "dwr_reps": 200, "encoder": "resnet50", "max_folds": null, "merge_pair": ["INT4", "INT24"], "merged_id": "INT4+INT24", "methods": ["pooled", "hcp", "dwr"], "min_C_spots": 9, "min_T_spots": 512, "min_slide_spots": 50, "n_cal_draws": 3, "n_repeats": null, "quantile_rel_tol": 1e-12, "score": "abs", "script": "code/scripts/round3_a4b_hcp.py", "seed_source": "zlib.crc32 via the harness", "size_match": "task", "spot_cal_draws": 1, "stage": "round3_A4b", "task": "CCRCC/shipped", "task_def": "results/round3/task_defs/CCRCC.json", "weighted_quantile": "imported unmodified from round3_a3_weighted"}
