@@ -22,3 +22,15 @@ downloads        : none by this script. The reading itself fetched api.crossref.
 Files and checksums (sha256, first 16 hex):
 
   a24c9c9c0672e45b    183,675  donor_lab_audit_ext.csv
+
+Round 3 interval 3, H1 item 1 (23 September 2026). donor_audit_r3.csv and donor_audit_r3_conflicts.csv
+are DERIVED by code/scripts/round3_h1_build_audit_r3.py (md5 52871ab3f61681708b4487af58bb3d86) from
+results/round2/R5b_audit/donor_audit.csv and donor_lab_audit_ext.csv, per
+docs/decisions/round3_A3_decisions.md section 2.1 and docs/round3_execution_plan.md sections 13.2
+and 13.10. The file has 148 rows, 72 benchmark_r2 and 76 expansion_d3 (row_origin column). 28
+samples appear under both origins; after the TENX95/TENX99 correction, 26 of them still disagree
+(24 CCRCC, NCBI783, NCBI785). Both rows are kept and none is chosen between. Only H1's reading items
+may change the status, citation and notes columns, and only through the builder; donor_id is never
+edited by hand.
+  sha256/16 39bc7112c7a95f9d  donor_audit_r3.csv
+  sha256/16 a7f182f002d701c2  donor_audit_r3_conflicts.csv

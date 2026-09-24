@@ -38,3 +38,8 @@ Files and checksums (sha256, first 16 hex):
   252def70d156a491         2,460  r5b_issue133_evidence.md
 
 plan            : deck_figures_and_repo_update.md section 2.3
+
+SUPERSEDED, 23 September 2026. donor_audit.csv is frozen and is superseded for round 3 onward by
+results/round3/D3_audit/donor_audit_r3.csv, per docs/decisions/round3_A3_decisions.md section 2.1.
+Round 3's D3 audit found that its IDC rows merge TENX95 and TENX99 as one donor on a misassigned
+mapping. The file itself is not edited; the checksums above still describe it.
