@@ -88,6 +88,20 @@ Two consequences, the second of which corrects an earlier note in this file:
 What still holds: if a stage is too long for one job, split it by unit and submit the pieces
 together, because that is about wall-clock and failure isolation rather than priority.
 
+**Correction, round 3: in the fairshare regime the group is now in, the time limit is the lever,
+and a generous wall is not free.** The first bullet above says shortening a wall to chase backfill
+does not work, and a generous wall costs nothing. That was measured in round 2 and it is wrong now.
+With the group's fairshare on `rc_htzhu_pi` at about 0.007, a job starts early through backfill or
+it does not start early at all, and a long limit is exactly what makes a job unschedulable in a
+backfill window. In A3 the five A2 jobs still pending after 2 h 40 min had been submitted with 16 h
+limits; lowering the limits in place to 3 h, bounded from a sibling job's measured runtime, started
+all five within minutes, with nothing about the jobs' work, resources or seeds changed
+(`docs/round3_A3_stage_report.md` section 2, `docs/decisions/round3_A3_decisions.md` section 3.5).
+So: size the Slurm `--time` at about three times the expected runtime, take the expectation from a
+sibling's `sacct` rather than from intuition, smoke-test first when there is no sibling to measure,
+and never submit a blanket 16 h. The submission harness's own `run_timeout_s` is the opposite case
+and is unchanged — it counts queue time, so it stays generous.
+
 **The submission harness has its own clock, and it counts queue time.** `run_timeout_s` is
 measured from submission, not from the job starting, and when it expires the harness cancels the
 Slurm job. In round 2 a two-minute D3/D4 check was submitted with a 2 h ceiling, waited longer than
@@ -130,6 +144,28 @@ Every new output directory gets `PROVENANCE.txt` with job ID, partition, node, d
 command line **and a config hash** with the config it hashes. The hash is the element most easily
 forgotten — round 2 shipped two stages without it and had to backfill — and it is the one that
 answers "were these two runs the same experiment?".
+
+**A byte-identical rerun is a same-node claim, so provenance records the node.** Round 3's H0 item
+5 reran A1's resnet50 arm on a different node and diffed every output table
+(`results/round3/H0_determinism/determinism_diff.csv`). Every count column reproduces exactly and
+four of the sixteen compared tables are byte-identical, including the calibration-unit and
+disjointness tables; the floating-point columns are not. The largest absolute difference over every
+compared column is **2.9e-06**, on a calibration-score percentile, and at most **9.5e-07** on any
+width column. On the same node the rerun is bit for bit. Two consequences: claim byte-identity only
+within a node, and set acceptance tolerances on a cross-node comparison above the drift rather than
+at zero. (The A3 memo states this as about $3 \times 10^{-6}$ in widths, section 3.5; read against
+the diff table that figure is the maximum over all compared columns, and the width columns are an
+order of magnitude tighter.)
+
+**A provenance `commit` field records the working copy's HEAD, not the script that ran, so record
+the executed script's md5 too.** In round 3's D2 the first `hoptimus0` and `uni_v2` runs wrote a
+`commit` that did not correspond to the file that produced their output, because the script had
+been edited in the working copy after that commit; the two differ, and the discrepancy surfaced
+only when the runs failed on the breast set and had to be rerun
+(`docs/round3_A3_stage_report.md` section 7 item 15). A commit hash answers "which revision was
+checked out", which is not the question provenance is asked. So every job's provenance now records
+the md5 of the script file it executed, computed inside the job, alongside the job id, partition,
+node, GPU where there is one, commit, command line, config hash and `PYTHONHASHSEED`.
 
 ---
 

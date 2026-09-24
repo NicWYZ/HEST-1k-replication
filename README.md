@@ -116,6 +116,10 @@ piloting both on resnet50 settled it by measurement (raw 0.3278 vs the printed 0
 | [`genes/`](results/tailored/genes) | does holding out target genes change the rest? | `heldout_gene_check.py` |
 | [`integrity/`](results/tailored/integrity) | does the instrumentation layer match independent references? | `check_instrumentation.py`, `verify_row_identity.py`, `metadata_join.py` |
 
+The `site_probes/` question is asked about the recoverable signal, not about a laboratory effect:
+HEST-1k has no cell in which a laboratory term is identified, so none is reported anywhere here
+(see [known limitation 14](#known-limitations)).
+
 ## Key findings
 
 Reordered to the synthesis ranking (patient split and replicate leak; split design vs encoder;
@@ -125,24 +129,34 @@ components). Round-1 figures are established in
 their own result files inline, each checked against its file with
 `code/scripts/verify_numeric_claims.py`.
 
-**1. Patient identity, not slide novelty, drives the split penalty — and part of what the
-benchmark scores as losing a patient is losing a replicate.** Holding training-set size and test
+**1. Patient identity, not slide novelty, drives the split penalty; the same-specimen replicate
+term is measured on READ, and is a counterfactual there.** Holding training-set size and test
 spots fixed and varying only whether another slide from the same patient is in training, a novel
 slide costs **+0.0148** against **+0.1357** for losing the patient altogether, averaged over the
 three multi-slide tasks
-([`r3_decomposition_terms.csv`](results/round2/R3_splits/r3_decomposition_terms.csv)). IDC's
-TENX95 and TENX99 are two sections that HEST-bench's own `donorCount: 1` field and 10x's
-"Replicate 1 / Replicate 2" language describe as one specimen, but they carry distinct patient
-labels; holding
-the test slide and training-set size fixed and varying only whether the same-donor section is
-available, the replicate is worth **+0.0652** within-slide Pearson, positive in all 6
-encoder–slide cells — **54%** of IDC's reported random-minus-patient gap of 0.1210
-([`r5c_leak_summary.csv`](results/round2/R5c_leak/r5c_leak_summary.csv)). READ's two replicate
-pairs are worth **+0.0901**, positive in all 12 cells, but READ's shipped folds hold each pair out
-together, so the leak there is a counterfactual, not a property of the published benchmark
-(`leak_realised_in_shipped_split` is `False` for READ, `True` for IDC, same file). The **+0.0652**
-measurement does not depend on how the IDC pair is attributed — see [property 1](#properties-of-hest-bench-found-in-this-replication)
-and [known limitation 2](#known-limitations).
+([`r3_decomposition_terms.csv`](results/round2/R3_splits/r3_decomposition_terms.csv)). READ's two
+replicate pairs — same specimen, not merely same patient — are worth **+0.0901**, positive in all
+12 cells, but READ's shipped folds hold each pair out together, so the leak there is a
+counterfactual, not a property of the published benchmark
+([`r5c_leak_summary.csv`](results/round2/R5c_leak/r5c_leak_summary.csv),
+`leak_realised_in_shipped_split` `False`). That is now the only same-specimen replicate figure in
+this repository.
+
+IDC's **+0.0652**, from the same design and the same file, is kept as a measurement and renamed.
+Round 2 read TENX95 and TENX99 as two sections of one block and the figure as a replicate leak;
+stage D3 read the source records and found four distinct donors in IDC, so what the design varied
+was whether a slide from *another* donor — same laboratory, same instrument generation, the same
+gene panel and the same pixel size, its run three weeks apart — sat in the training
+pool. Under that reading the value of a same-laboratory, same-instrument slide in the training pool
+across donors is **+0.0652** within-slide Pearson, positive in all 6 encoder–slide cells, **54%** of
+IDC's reported random-minus-patient gap of 0.1210 (same file). Nothing leaks: IDC's shipped patient
+folds separate four donors, and `leak_realised_in_shipped_split` should read `False` for IDC as it
+does for READ. The committed round-2 table still carries `True` for IDC and is left frozen, so that
+cell is now known to be wrong and is recorded as an escalation rather than edited
+([`superseded_tag_manifest.csv`](results/round3/H1_housekeeping/superseded_tag_manifest.csv) covers
+only the round-3 tables). See [property 1](#properties-of-hest-bench-found-in-this-replication),
+[property 11](#properties-of-hest-bench-found-in-this-replication) and
+[known limitation 14](#known-limitations).
 
 **2. Split design costs more than encoder choice.** Over ten tasks, the benchmark's own
 random-minus-patient gap averages **0.1586** Pearson
@@ -355,7 +369,7 @@ HEST-1k authors. Each entry names the file that establishes it.
 
 | # | property | established by |
 |---|---|---|
-| 1 | **IDC's TENX95/TENX99 pair is probably one donor, and the question is unresolved.** HEST-bench's `donorCount: 1` and "Replicate 1 / Replicate 2" language belong to the page HEST's `download_page_link1` associates with TENX99 only; TENX95 is attributed to a different product page, three fetches of which returned HTTP 429. The two carry byte-identical 541-entry gene panels — the only such pair in IDC — and 123 of 128 (96.1%) of the TENX slides' classification errors land on the partner against 33.3% expected; but their spot counts differ 2.1-fold (25,080 vs 11,845), which two sections of one imaged area should not show, and Janesick et al. 2023 is the source for neither, since its Xenium runs used the 280-gene breast panel plus 33 add-on genes while both samples carry exactly 280 real genes. The **+0.0652** replicate-leak measurement does not depend on which reading is right. **Which pair the vendor's replicate language describes is reopened by HEST v1.3.0's own inventory, and is pending stage D3.** There, TENX95 (11,845 spots, pre-designed panel) has a sibling TENX97 at the same spot count under a custom add-on panel and the same patient label, and TENX99 (25,080 spots, entire sample area) has a sibling TENX98 (26,070 spots, the same dataset title, the same patient label) recorded as Replicate 2 to TENX99's Replicate 1. On that reading the replicate pair is TENX98 with TENX99 rather than TENX95 with TENX99, the spot-count difference between TENX95 and TENX99 is a difference of imaged section area rather than evidence against one donor, and v1.3.0 gives TENX95 and TENX99 different patient labels. Neither of TENX97 and TENX98 is in the benchmark. Stage D3 has since read the source records and finds for that reading: HEST maps the four ids identically in all five of its releases, the vendor's per-run metadata places TENX95 and TENX99 in different datasets, and round 2's reading traces to one row of `docs/r5_idc_provenance.md` that assigned TENX95 the entire-sample-area Replicate 2, which is TENX98's row ([`d3_notes.md`](results/round3/D3_audit/d3_notes.md) section 2). **Because that would change a benchmark donor label, it is an escalation awaiting the decision at the A3 gate**, and `donor_audit.csv` is unchanged until then. The 10x dataset pages themselves remain unreadable (HTTP 429), so the reading rests on HEST's release tables and the vendor's file metadata. | [`donor_audit.csv`](results/round2/R5b_audit/donor_audit.csv), [`r5d_idc_partner_confusion.csv`](results/round2/R5c_leak/r5d_idc_partner_confusion.csv), [`r5_idc_panels_observed.csv`](results/round2/R5b_audit/r5_idc_panels_observed.csv), [`sample_metadata.csv`](results/tailored/integrity/sample_metadata.csv), [`hest_inventory.csv`](results/round3/D0_inventory/hest_inventory.csv) |
+| 1 | **Withdrawn and rewritten. IDC's four samples are four distinct donors; the TENX95/TENX99 partner confusion is a scan-session signature read across donors, not a replicate.** Round 2 recorded this entry as "TENX95 and TENX99 are probably one donor, and the question is unresolved", resting on a `donorCount: 1` field and 10x's "Replicate 1 / Replicate 2" language. Stage D3 read the source records and found that language belongs to the entire-sample-area dataset, whose two regions HEST ingests as TENX98 and TENX99, while TENX95 is a section of a separate block from a different provider; HEST maps the four ids identically in all five of its releases, and the round-2 reading traces to one row of [`r5_idc_provenance.md`](docs/r5_idc_provenance.md) that assigned TENX95 the entire-sample-area Replicate 2, which is TENX98's row ([`d3_notes.md`](results/round3/D3_audit/d3_notes.md) section 2). The consequences: the benchmark IDC task has four donors, its shipped patient folds separate them, no replicate sits in a partner's training set, and the `audited` label set built for round 3 — which merged TENX95 and TENX99 into one donor — is superseded by [`donor_audit_r3.csv`](results/round3/D3_audit/donor_audit_r3.csv), its rows kept and tagged `superseded_label_set`, with no further stage running it. What survives is the measurement. The two slides share a laboratory, an instrument generation, a byte-identical 541-entry gene panel (the only such pair in IDC) and a pixel size of 0.2125 µm/px, and their runs start three weeks apart; 123 of 128 (96.1%) of the TENX slides' classification errors land on the partner against 33.3% expected. Read across two donors rather than within one specimen, that is [finding 3](#key-findings)'s scan-session signature reproduced in a second task, and the **+0.0652** replicate-leak figure becomes the value of a same-laboratory, same-instrument slide in the training pool across donors. Because this is a source contrast, [known limitation 14](#known-limitations) applies to it. | [`d3_notes.md`](results/round3/D3_audit/d3_notes.md), [`donor_audit_r3.csv`](results/round3/D3_audit/donor_audit_r3.csv), [`donor_audit_r3_conflicts.csv`](results/round3/D3_audit/donor_audit_r3_conflicts.csv), [`r5d_idc_partner_confusion.csv`](results/round2/R5c_leak/r5d_idc_partner_confusion.csv), [`r5c_leak_summary.csv`](results/round2/R5c_leak/r5c_leak_summary.csv), [`r5_idc_panels_observed.csv`](results/round2/R5b_audit/r5_idc_panels_observed.csv), [`sample_metadata.csv`](results/tailored/integrity/sample_metadata.csv), [`hest_inventory.csv`](results/round3/D0_inventory/hest_inventory.csv) |
 | 2 | **COAD's patient labels collapse three distinct patients into one.** TENX147/148/149 are Patient 1/2/5 in the source subseries but share one HEST patient label; TENX111 has no patient label at all. Confirmed upstream at HEST issue #133: a collaborator states it was wrong in v1.1.0 and fixed in v1.3.0, and that this benchmark's splits were deliberately not updated. The correction is visible in HEST v1.3.0's own metadata, which labels TENX147 Patient 5 and TENX148 Patient 2 where the benchmark's shipped tables label both Patient 1, so the upstream release now agrees with this replication's audit. | [`r3_patient_label_audit.csv`](results/round2/R3_splits/r3_patient_label_audit.csv), [`r5b_issue133_evidence.md`](results/round2/R5b_audit/r5b_issue133_evidence.md), [`benchmark_crosscheck.csv`](results/round3/D0_inventory/benchmark_crosscheck.csv) |
 | 3 | **READ's "patients" are same-specimen replicate pairs, not distinct donors.** ZEN36/ZEN40 share specimen A938797 and ZEN48/ZEN49 share specimen A121573 — same block, not merely same patient — so READ's patient-identity term is a same-specimen term and an upper bound on any patient effect. | [`r3_patient_label_audit.csv`](results/round2/R3_splits/r3_patient_label_audit.csv) |
 | 4 | **Samples within a task do not share a gene panel.** PAAD's three samples intersect on 159 genes against a 919-gene union; the shipped 50 targets are the intersection over *all* samples, held-out ones included, so leakage-free selection is not well defined without the held-out slide's panel. IDC's own panels differ too: NCBI785 measures 41 real genes none of the other three measure, and NCBI783 adds 8 `antisense_*` probes. | [`r2_panel_heterogeneity.csv`](results/round2/R2_fold_hvg/r2_panel_heterogeneity.csv), [`r5_idc_panels_observed.csv`](results/round2/R5b_audit/r5_idc_panels_observed.csv) |
@@ -365,9 +379,13 @@ HEST-1k authors. Each entry names the file that establishes it.
 | 8 | **The benchmark head has no intercept.** Its predictions have training-mean zero per gene while `log1p(y)` does not; Pearson hides this, R² does not. Pooled fold-median R² is −0.953 as shipped, −0.155 with an intercept alone. | [`r1b_ladder_pooled.csv`](results/round2/R1b_heads/r1b_ladder_pooled.csv) |
 | 9 | **Per-gene Pearson under the shipped `lsqr` solver carries measurable solver noise.** Median per-gene noise across encoder–task cells is 0.0005, rising to 0.0276 for the single noisiest gene (PAAD); the shipped head's A2b residual reaches 0.352 (CONCH v1.5), meaning it is not the ridge solution to any tight tolerance, which is why round 2's Topic-A work builds on the float64 `cholesky` head instead. | [`r1b_solver_sensitivity.csv`](results/round2/R1b_heads/r1b_solver_sensitivity.csv), [`acceptance__conch_v15.csv`](results/round2/R1b_heads/acceptance__conch_v15.csv) |
 | 10 | **Nine of the 72 samples' donor labels cannot be verified against any source outside HEST, and five are contradicted by one.** A systematic audit against 10x/GEO/journal sources classified 58 of 72 sample-level donor labels as verified, 9 as unverifiable, and 5 as contradicted. | [`donor_audit.csv`](results/round2/R5b_audit/donor_audit.csv) |
+| 11 | **HEST-1k's shipped patch files and the layout an independent pipeline reproduces from the same public data are not the same patches, so an embedding built from one is not interchangeable with an embedding built from the other.** Stage D2 embedded the 28 samples that are in both the benchmark and round 3's expansion sets twice, once from HEST-1k patches and once from the expansion download, and compared the two row by row on matched barcodes. The median per-row relative L2 difference is **0.0633** for ResNet50, **0.0897** for H-optimus-0 and **0.1519** for UNI v2, over 24 kidney and 4 breast anchor samples, and none of the 84 sample-encoder rows agrees to the anchor check's tolerance (0 of 84). This is a property of the public data — a difference in which pixels a spot's patch covers — not a defect in either pipeline, and it is the reason no expansion result is set beside a benchmark result except through the layout anchor; the layout anchor's outcome will be added when it exists. Because the comparison spans two sources, [known limitation 14](#known-limitations) applies to it. | [`anchor_check__<set>__<enc>.csv`](results/round3/D2_embeddings), [`A3_report_numbers.csv`](results/round3/A3_report_numbers.csv) |
 
-Properties 2, 3 and 10 are the strongest candidates for reporting upstream; property 1 is not
-reported upstream while the attribution stays unresolved (see [known limitation 3](#known-limitations)).
+Properties 2, 3 and 10 are the strongest candidates for reporting upstream. Property 1 is no
+longer among them: its attribution is resolved against the source records in HEST's favour, and
+the corresponding item has been struck from [`hest_bench_issue_draft.md`](docs/hest_bench_issue_draft.md)
+with a dated note. Property 11 is a property of the public data rather than an error, and is not an
+upstream report either.
 
 ## Known limitations
 
@@ -388,14 +406,19 @@ reported upstream while the attribution stays unresolved (see [known limitation 
    [`acceptance__conch_v15.csv`](results/round2/R1b_heads/acceptance__conch_v15.csv)), meaning its
    predictions are not the ridge solution to any tight tolerance, which is why the Topic A work
    builds on the float64 `cholesky` head rather than on the shipped one.
-3. **The IDC same-donor attribution is unresolved.** The evidence is genuinely mixed — identical
-   541-entry panels and 96.1% of TENX misclassifications landing on the partner slide, against a
-   2.1-fold spot-count difference and Janesick et al. 2023 being the source for neither sample —
-   and the page that would settle it returned HTTP 429 on all three fetch attempts, spaced
-   unevenly (175 minutes, then 12 minutes) rather than the intended even spacing, so this is weaker
-   evidence of a persistent block than three properly spaced failures would be. The **+0.0652**
-   replicate-leak measurement does not depend on the label; the authors' draft issue carries a
-   blocking note on this item and has not been sent
+3. **Resolved, and the round-2 files keep the superseded reading.** Round 2 left the IDC same-donor
+   attribution open because the vendor page that would settle it returned HTTP 429 on all three
+   fetch attempts, spaced unevenly (175 minutes, then 12 minutes) rather than the intended even
+   spacing. Stage D3 settled it from HEST's own release tables and the vendor's per-run file
+   metadata instead: the four IDC samples are four distinct donors, and the replicate pair the
+   vendor's language describes is TENX98 with TENX99, neither of which is TENX95
+   ([`d3_notes.md`](results/round3/D3_audit/d3_notes.md) section 2,
+   [`donor_audit_r3.csv`](results/round3/D3_audit/donor_audit_r3.csv)). The dataset pages themselves
+   are still unread, so the reading rests on release tables and file metadata rather than on the
+   pages. What remains a limitation is the record: `donor_audit.csv` stays frozen with the merged
+   IDC donor in it, and `r5c_leak_summary.csv` stays frozen with
+   `leak_realised_in_shipped_split` `True` for IDC, which is now known to be wrong — see
+   [finding 1](#key-findings)
    ([`donor_audit.csv`](results/round2/R5b_audit/donor_audit.csv),
    [`round2_closeout_report.md`](docs/round2_closeout_report.md)).
 4. **Nine of the 72 samples' donor labels cannot be verified against any source outside HEST, and
@@ -474,6 +497,52 @@ reported upstream while the attribution stays unresolved (see [known limitation 
     convention. It changes no result here, since everything uses the AnnData. Details and the
     19-sample check in
     [`tenx111_spot_count.md`](results/round3/H0_housekeeping/tenx111_spot_count.md).
+14. **HEST-1k cannot support a laboratory term, so no contrast in this repository is one.** Two
+    facts about the public data, established by round 3's expansion audit: HEST-1k has no
+    organ-by-technology cell with three laboratories at three or more donors each, and — the
+    stronger of the two — no two-laboratory cell with disease held fixed. Every contrast this
+    repository reports across sources is therefore named for what differs between its arms, with
+    that difference list written before the name: a population-and-source shift for the kidney
+    comparison, a scan-session or run difference for the slide-identity probes, an alignment of
+    cohort source with resolution for IDC. None of them is reported as a laboratory or institution
+    effect, and neither is any figure derived from them
+    ([`donor_lab_audit_ext.csv`](results/round3/D3_audit/donor_lab_audit_ext.csv),
+    [`d3_notes.md`](results/round3/D3_audit/d3_notes.md) section 3).
+15. **Expansion-layout embeddings are not interchangeable with HEST-1k-layout embeddings**, so no
+    expansion result can be read against a benchmark result except through the layout anchor, which
+    does not exist yet. On the samples that are in both, the median per-row relative L2 difference
+    between the two embeddings of the same spots is **0.0633** for ResNet50, **0.0897** for
+    H-optimus-0 and **0.1519** for UNI v2, over 24 kidney and 4 breast anchor samples, and none of
+    the 84 sample-encoder rows agrees to the anchor check's tolerance (0 of 84). See
+    [property 11](#properties-of-hest-bench-found-in-this-replication)
+    ([`A3_report_numbers.csv`](results/round3/A3_report_numbers.csv),
+    [`anchor_check__<set>__<enc>.csv`](results/round3/D2_embeddings)).
+16. **The expansion download's patched spots are a strict subset of the spots the transcriptomics
+    ships, and why HEST drops a spot was not pursued.** Over the 105 downloaded samples, patch
+    barcodes are a subset of the ST barcodes in all 105 and the two counts are equal in only 11;
+    65,464 of 424,301 ST spots carry no patch. Every expansion analysis therefore runs on patched
+    spots only, and every expansion task definition records the unpatched fraction per sample
+    ([`d1_patch_spot_audit.json`](results/round3/D1_download/d1_patch_spot_audit.json)).
+17. **CCRCC's 24 donor labels are not sourced, and one pair may be one donor.** HEST labels the 24
+    samples Patient 1 to Patient 24, one per sample. The GEO series they come from states no donor,
+    patient or participant identifier of any kind, so round 3 records all 24 as `unverifiable`
+    where round 2 recorded them as `verified` against the same accession; the two readings sit side
+    by side in the audit file and neither is chosen. H1's reading of the source record corroborates
+    24 distinct samples with 24 distinct titles and adds no donor evidence, and the paper that
+    carries the patient table is not open access. One pair, `INT4` and `INT24`, shares a cohort
+    letter and number across preservation types and could be one donor profiled twice, so every
+    CCRCC analysis in the inference and HCP stages runs twice, once with the 24 labels and once
+    with that pair merged
+    ([`donor_audit_r3.csv`](results/round3/D3_audit/donor_audit_r3.csv),
+    [`donor_audit_r3_conflicts.csv`](results/round3/D3_audit/donor_audit_r3_conflicts.csv),
+    [`d3_notes.md`](results/round3/D3_audit/d3_notes.md) section 3).
+18. **A byte-identical rerun is a same-node claim.** Rerunning the A1 ResNet50 arm on a different
+    node reproduces every count column exactly, and four of the sixteen compared tables byte for
+    byte, but the floating-point columns move: the largest absolute difference over every compared
+    column is **2.9e-06**, on a calibration-score percentile, and at most **9.5e-07** on any width
+    column. On the same node the rerun is bit for bit. Provenance therefore records the node, and a
+    byte-identical claim is made only within a node
+    ([`determinism_diff.csv`](results/round3/H0_determinism/determinism_diff.csv)).
 
 ### Scan resolution
 
@@ -499,7 +568,9 @@ Three consequences, none of which round 1 accounted for:
   Table 1 calls generalisation to a new patient in those tasks is generalisation to a new scan
   resolution. This is a property of the public benchmark, not of this replication.
 - **Every slide-identity and cohort-source probe is partly a resolution probe**, and every
-  slide-signature term includes it. Seven PRAD slides come from source regions of about 195 px
+  slide-signature term includes it. Cohort source here means the vendor or depositing study a
+  sample came from, not a laboratory: see [known limitation 14](#known-limitations) for why no
+  contrast in this repository is a laboratory term. Seven PRAD slides come from source regions of about 195 px
   upsampled to 224, and one from a 652 px region downsampled; interpolation leaves a per-slide
   signature in sharpness and texture statistics that an encoder will represent and a linear probe
   will read.

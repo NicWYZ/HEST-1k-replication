@@ -1,163 +1,163 @@
-source,task,label_set,encoder,design,score,coverage,aggregation,src
-A0_H2_pooled,CCRCC,shipped,hoptimus0,random,abs,0.89975079493398,pooled over all test points,results/round3/A0_smoke/h2_coverage__hoptimus0__h2.csv
-A0_H2_pooled,COAD,shipped,hoptimus0,random,abs,0.89985125551083,pooled over all test points,results/round3/A0_smoke/h2_coverage__hoptimus0__h2.csv
-A0_H2_pooled,HCC,shipped,hoptimus0,random,abs,0.9010524308865586,pooled over all test points,results/round3/A0_smoke/h2_coverage__hoptimus0__h2.csv
-A0_H2_pooled,IDC,shipped,hoptimus0,random,abs,0.9003013282305268,pooled over all test points,results/round3/A0_smoke/h2_coverage__hoptimus0__h2.csv
-A0_H2_pooled,LUNG,shipped,hoptimus0,random,abs,0.9007998463311564,pooled over all test points,results/round3/A0_smoke/h2_coverage__hoptimus0__h2.csv
-A0_H2_pooled,LYMPH_IDC,shipped,hoptimus0,random,abs,0.9001735123221799,pooled over all test points,results/round3/A0_smoke/h2_coverage__hoptimus0__h2.csv
-A0_H2_pooled,PAAD,shipped,hoptimus0,random,abs,0.9000486065248976,pooled over all test points,results/round3/A0_smoke/h2_coverage__hoptimus0__h2.csv
-A0_H2_pooled,PRAD,shipped,hoptimus0,random,abs,0.8998279700207303,pooled over all test points,results/round3/A0_smoke/h2_coverage__hoptimus0__h2.csv
-A0_H2_pooled,READ,shipped,hoptimus0,random,abs,0.9003059355299156,pooled over all test points,results/round3/A0_smoke/h2_coverage__hoptimus0__h2.csv
-A0_H2_pooled,SKCM,shipped,hoptimus0,random,abs,0.8997139090309823,pooled over all test points,results/round3/A0_smoke/h2_coverage__hoptimus0__h2.csv
-A0_H2_pooled,CCRCC,shipped,resnet50,random,abs,0.8996573430342226,pooled over all test points,results/round3/A0_smoke/h2_coverage__resnet50__h2.csv
-A0_H2_pooled,COAD,shipped,resnet50,random,abs,0.89996089706728,pooled over all test points,results/round3/A0_smoke/h2_coverage__resnet50__h2.csv
-A0_H2_pooled,HCC,shipped,resnet50,random,abs,0.9010829361296473,pooled over all test points,results/round3/A0_smoke/h2_coverage__resnet50__h2.csv
-A0_H2_pooled,IDC,shipped,resnet50,random,abs,0.900558644754615,pooled over all test points,results/round3/A0_smoke/h2_coverage__resnet50__h2.csv
-A0_H2_pooled,LUNG,shipped,resnet50,random,abs,0.9011963119477526,pooled over all test points,results/round3/A0_smoke/h2_coverage__resnet50__h2.csv
-A0_H2_pooled,LYMPH_IDC,shipped,resnet50,random,abs,0.9006467641755159,pooled over all test points,results/round3/A0_smoke/h2_coverage__resnet50__h2.csv
-A0_H2_pooled,PAAD,shipped,resnet50,random,abs,0.8997812706379607,pooled over all test points,results/round3/A0_smoke/h2_coverage__resnet50__h2.csv
-A0_H2_pooled,PRAD,shipped,resnet50,random,abs,0.8995728273002711,pooled over all test points,results/round3/A0_smoke/h2_coverage__resnet50__h2.csv
-A0_H2_pooled,READ,shipped,resnet50,random,abs,0.9005652432496729,pooled over all test points,results/round3/A0_smoke/h2_coverage__resnet50__h2.csv
-A0_H2_pooled,SKCM,shipped,resnet50,random,abs,0.899964403427818,pooled over all test points,results/round3/A0_smoke/h2_coverage__resnet50__h2.csv
-A0_H2_pooled,CCRCC,shipped,uni_v2,random,abs,0.899856103476152,pooled over all test points,results/round3/A0_smoke/h2_coverage__uni_v2__h2.csv
-A0_H2_pooled,COAD,shipped,uni_v2,random,abs,0.900386940131621,pooled over all test points,results/round3/A0_smoke/h2_coverage__uni_v2__h2.csv
-A0_H2_pooled,HCC,shipped,uni_v2,random,abs,0.9017502383222117,pooled over all test points,results/round3/A0_smoke/h2_coverage__uni_v2__h2.csv
-A0_H2_pooled,IDC,shipped,uni_v2,random,abs,0.9000550427735254,pooled over all test points,results/round3/A0_smoke/h2_coverage__uni_v2__h2.csv
-A0_H2_pooled,LUNG,shipped,uni_v2,random,abs,0.8996235113330772,pooled over all test points,results/round3/A0_smoke/h2_coverage__uni_v2__h2.csv
-A0_H2_pooled,LYMPH_IDC,shipped,uni_v2,random,abs,0.9003055499899819,pooled over all test points,results/round3/A0_smoke/h2_coverage__uni_v2__h2.csv
-A0_H2_pooled,PAAD,shipped,uni_v2,random,abs,0.8998811253467177,pooled over all test points,results/round3/A0_smoke/h2_coverage__uni_v2__h2.csv
-A0_H2_pooled,PRAD,shipped,uni_v2,random,abs,0.8995092967628767,pooled over all test points,results/round3/A0_smoke/h2_coverage__uni_v2__h2.csv
-A0_H2_pooled,READ,shipped,uni_v2,random,abs,0.9006765790412752,pooled over all test points,results/round3/A0_smoke/h2_coverage__uni_v2__h2.csv
-A0_H2_pooled,SKCM,shipped,uni_v2,random,abs,0.8986394199077126,pooled over all test points,results/round3/A0_smoke/h2_coverage__uni_v2__h2.csv
-A1_slide_mean,CCRCC,shipped,conch_v15,random,abs,0.8761762820470711,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v15__main.csv
-A1_slide_mean,COAD,shipped,conch_v15,random,abs,0.8965498563153003,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v15__main.csv
-A1_slide_mean,HCC,shipped,conch_v15,random,abs,0.9004647546960978,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v15__main.csv
-A1_slide_mean,IDC,audited,conch_v15,random,abs,0.8747464428252711,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v15__main.csv
-A1_slide_mean,IDC,shipped,conch_v15,random,abs,0.8750979465592683,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v15__main.csv
-A1_slide_mean,LUNG,shipped,conch_v15,random,abs,0.9005916887682368,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v15__main.csv
-A1_slide_mean,LYMPH_IDC,shipped,conch_v15,random,abs,0.9005738069723032,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v15__main.csv
-A1_slide_mean,PAAD,shipped,conch_v15,random,abs,0.8944410713722886,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v15__main.csv
-A1_slide_mean,PRAD,shipped,conch_v15,random,abs,0.9029699479467761,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v15__main.csv
-A1_slide_mean,READ,shipped,conch_v15,random,abs,0.8974989599437107,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v15__main.csv
-A1_slide_mean,SKCM,shipped,conch_v15,random,abs,0.9030051580489851,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v15__main.csv
-A1_slide_mean,CCRCC,shipped,conch_v1,random,abs,0.8782737500495958,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v1__main.csv
-A1_slide_mean,COAD,shipped,conch_v1,random,abs,0.8970568674234349,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v1__main.csv
-A1_slide_mean,HCC,shipped,conch_v1,random,abs,0.9015542483500338,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v1__main.csv
-A1_slide_mean,IDC,audited,conch_v1,random,abs,0.8738905074163503,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v1__main.csv
-A1_slide_mean,IDC,shipped,conch_v1,random,abs,0.8751473109901737,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v1__main.csv
-A1_slide_mean,LUNG,shipped,conch_v1,random,abs,0.8999373658643781,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v1__main.csv
-A1_slide_mean,LYMPH_IDC,shipped,conch_v1,random,abs,0.9005280480219997,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v1__main.csv
-A1_slide_mean,PAAD,shipped,conch_v1,random,abs,0.8929148972122253,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v1__main.csv
-A1_slide_mean,PRAD,shipped,conch_v1,random,abs,0.9034833867987819,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v1__main.csv
-A1_slide_mean,READ,shipped,conch_v1,random,abs,0.8978499467621305,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v1__main.csv
-A1_slide_mean,SKCM,shipped,conch_v1,random,abs,0.9013741142216127,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v1__main.csv
-A1_slide_mean,CCRCC,shipped,ctranspath,random,abs,0.8796808232566101,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__ctranspath__main.csv
-A1_slide_mean,COAD,shipped,ctranspath,random,abs,0.8966555095581601,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__ctranspath__main.csv
-A1_slide_mean,HCC,shipped,ctranspath,random,abs,0.9012508203572912,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__ctranspath__main.csv
-A1_slide_mean,IDC,audited,ctranspath,random,abs,0.8742567100911953,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__ctranspath__main.csv
-A1_slide_mean,IDC,shipped,ctranspath,random,abs,0.8756119103684676,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__ctranspath__main.csv
-A1_slide_mean,LUNG,shipped,ctranspath,random,abs,0.9001283667676573,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__ctranspath__main.csv
-A1_slide_mean,LYMPH_IDC,shipped,ctranspath,random,abs,0.9003302432280849,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__ctranspath__main.csv
-A1_slide_mean,PAAD,shipped,ctranspath,random,abs,0.8931623547699347,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__ctranspath__main.csv
-A1_slide_mean,PRAD,shipped,ctranspath,random,abs,0.9027426934819348,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__ctranspath__main.csv
-A1_slide_mean,READ,shipped,ctranspath,random,abs,0.8982908803984386,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__ctranspath__main.csv
-A1_slide_mean,SKCM,shipped,ctranspath,random,abs,0.904671925839678,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__ctranspath__main.csv
-A1_slide_mean,CCRCC,shipped,gigapath,random,abs,0.8829635743084002,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__gigapath__main.csv
-A1_slide_mean,COAD,shipped,gigapath,random,abs,0.896381656965249,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__gigapath__main.csv
-A1_slide_mean,HCC,shipped,gigapath,random,abs,0.9015086034954136,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__gigapath__main.csv
-A1_slide_mean,IDC,audited,gigapath,random,abs,0.878684311152957,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__gigapath__main.csv
-A1_slide_mean,IDC,shipped,gigapath,random,abs,0.8788715653840703,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__gigapath__main.csv
-A1_slide_mean,LUNG,shipped,gigapath,random,abs,0.8994465685540218,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__gigapath__main.csv
-A1_slide_mean,LYMPH_IDC,shipped,gigapath,random,abs,0.9002405410389955,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__gigapath__main.csv
-A1_slide_mean,PAAD,shipped,gigapath,random,abs,0.8923204110856462,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__gigapath__main.csv
-A1_slide_mean,PRAD,shipped,gigapath,random,abs,0.9038561914764158,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__gigapath__main.csv
-A1_slide_mean,READ,shipped,gigapath,random,abs,0.8979964770871379,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__gigapath__main.csv
-A1_slide_mean,SKCM,shipped,gigapath,random,abs,0.9011544368665299,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__gigapath__main.csv
-A1_slide_mean,CCRCC,shipped,hoptimus0,random,abs,0.8827673685178657,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus0__main.csv
-A1_slide_mean,COAD,shipped,hoptimus0,random,abs,0.895843756728518,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus0__main.csv
-A1_slide_mean,HCC,shipped,hoptimus0,random,abs,0.9019970729675428,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus0__main.csv
-A1_slide_mean,IDC,audited,hoptimus0,random,abs,0.88079734612336,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus0__main.csv
-A1_slide_mean,IDC,shipped,hoptimus0,random,abs,0.8811164512607371,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus0__main.csv
-A1_slide_mean,LUNG,shipped,hoptimus0,random,abs,0.8996631838535185,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus0__main.csv
-A1_slide_mean,LYMPH_IDC,shipped,hoptimus0,random,abs,0.9001726424266909,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus0__main.csv
-A1_slide_mean,PAAD,shipped,hoptimus0,random,abs,0.8921378292639227,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus0__main.csv
-A1_slide_mean,PRAD,shipped,hoptimus0,random,abs,0.9040381527772978,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus0__main.csv
-A1_slide_mean,READ,shipped,hoptimus0,random,abs,0.8974738054348392,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus0__main.csv
-A1_slide_mean,SKCM,shipped,hoptimus0,random,abs,0.8998816936585801,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus0__main.csv
-A1_slide_mean,CCRCC,shipped,hoptimus1,random,abs,0.8800171154994084,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus1__main.csv
-A1_slide_mean,COAD,shipped,hoptimus1,random,abs,0.8964544736819955,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus1__main.csv
-A1_slide_mean,HCC,shipped,hoptimus1,random,abs,0.9022824701121387,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus1__main.csv
-A1_slide_mean,IDC,audited,hoptimus1,random,abs,0.8791068590731302,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus1__main.csv
-A1_slide_mean,IDC,shipped,hoptimus1,random,abs,0.8797062485948728,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus1__main.csv
-A1_slide_mean,LUNG,shipped,hoptimus1,random,abs,0.8985755180332298,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus1__main.csv
-A1_slide_mean,LYMPH_IDC,shipped,hoptimus1,random,abs,0.9004540055805839,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus1__main.csv
-A1_slide_mean,PAAD,shipped,hoptimus1,random,abs,0.8930957915318293,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus1__main.csv
-A1_slide_mean,PRAD,shipped,hoptimus1,random,abs,0.9040396150917774,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus1__main.csv
-A1_slide_mean,READ,shipped,hoptimus1,random,abs,0.8978127605216932,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus1__main.csv
-A1_slide_mean,SKCM,shipped,hoptimus1,random,abs,0.9021843060196597,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus1__main.csv
-A1_slide_mean,CCRCC,shipped,phikon,random,abs,0.8842605065214632,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__phikon__main.csv
-A1_slide_mean,COAD,shipped,phikon,random,abs,0.8960975638844562,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__phikon__main.csv
-A1_slide_mean,HCC,shipped,phikon,random,abs,0.9014147144766308,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__phikon__main.csv
-A1_slide_mean,IDC,audited,phikon,random,abs,0.8780813301389969,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__phikon__main.csv
-A1_slide_mean,IDC,shipped,phikon,random,abs,0.8794295654253101,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__phikon__main.csv
-A1_slide_mean,LUNG,shipped,phikon,random,abs,0.9002475248024884,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__phikon__main.csv
-A1_slide_mean,LYMPH_IDC,shipped,phikon,random,abs,0.8999964633323827,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__phikon__main.csv
-A1_slide_mean,PAAD,shipped,phikon,random,abs,0.8927385091429256,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__phikon__main.csv
-A1_slide_mean,PRAD,shipped,phikon,random,abs,0.9040939244456504,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__phikon__main.csv
-A1_slide_mean,READ,shipped,phikon,random,abs,0.8976442699937469,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__phikon__main.csv
-A1_slide_mean,SKCM,shipped,phikon,random,abs,0.9028102846338104,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__phikon__main.csv
-A1_slide_mean,CCRCC,shipped,resnet50,random,abs,0.876716603355039,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__resnet50__main.csv
-A1_slide_mean,COAD,shipped,resnet50,random,abs,0.8958272502553728,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__resnet50__main.csv
-A1_slide_mean,HCC,shipped,resnet50,random,abs,0.9031657999022847,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__resnet50__main.csv
-A1_slide_mean,IDC,audited,resnet50,random,abs,0.8719710781246354,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__resnet50__main.csv
-A1_slide_mean,IDC,shipped,resnet50,random,abs,0.8724520074944069,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__resnet50__main.csv
-A1_slide_mean,LUNG,shipped,resnet50,random,abs,0.9000702352567751,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__resnet50__main.csv
-A1_slide_mean,LYMPH_IDC,shipped,resnet50,random,abs,0.9006056784168988,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__resnet50__main.csv
-A1_slide_mean,PAAD,shipped,resnet50,random,abs,0.8942289550941142,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__resnet50__main.csv
-A1_slide_mean,PRAD,shipped,resnet50,random,abs,0.902768414562588,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__resnet50__main.csv
-A1_slide_mean,READ,shipped,resnet50,random,abs,0.8973443379260855,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__resnet50__main.csv
-A1_slide_mean,SKCM,shipped,resnet50,random,abs,0.9032441711261694,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__resnet50__main.csv
-A1_slide_mean,CCRCC,shipped,uni_v1,random,abs,0.8821303812865633,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v1__main.csv
-A1_slide_mean,COAD,shipped,uni_v1,random,abs,0.8961115890578597,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v1__main.csv
-A1_slide_mean,HCC,shipped,uni_v1,random,abs,0.9019500622485861,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v1__main.csv
-A1_slide_mean,IDC,audited,uni_v1,random,abs,0.8785766299137836,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v1__main.csv
-A1_slide_mean,IDC,shipped,uni_v1,random,abs,0.8796286926558137,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v1__main.csv
-A1_slide_mean,LUNG,shipped,uni_v1,random,abs,0.8996847436132023,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v1__main.csv
-A1_slide_mean,LYMPH_IDC,shipped,uni_v1,random,abs,0.900156749646208,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v1__main.csv
-A1_slide_mean,PAAD,shipped,uni_v1,random,abs,0.8923852875234145,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v1__main.csv
-A1_slide_mean,PRAD,shipped,uni_v1,random,abs,0.9033154493735363,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v1__main.csv
-A1_slide_mean,READ,shipped,uni_v1,random,abs,0.8973984971169396,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v1__main.csv
-A1_slide_mean,SKCM,shipped,uni_v1,random,abs,0.9014780937251159,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v1__main.csv
-A1_slide_mean,CCRCC,shipped,uni_v2,random,abs,0.8830176250299325,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v2__main.csv
-A1_slide_mean,COAD,shipped,uni_v2,random,abs,0.896467435139279,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v2__main.csv
-A1_slide_mean,HCC,shipped,uni_v2,random,abs,0.9027833142043387,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v2__main.csv
-A1_slide_mean,IDC,audited,uni_v2,random,abs,0.8796858165272499,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v2__main.csv
-A1_slide_mean,IDC,shipped,uni_v2,random,abs,0.8801715514576326,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v2__main.csv
-A1_slide_mean,LUNG,shipped,uni_v2,random,abs,0.8992439974166635,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v2__main.csv
-A1_slide_mean,LYMPH_IDC,shipped,uni_v2,random,abs,0.9003375794646522,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v2__main.csv
-A1_slide_mean,PAAD,shipped,uni_v2,random,abs,0.8929673164919537,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v2__main.csv
-A1_slide_mean,PRAD,shipped,uni_v2,random,abs,0.9040820755298465,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v2__main.csv
-A1_slide_mean,READ,shipped,uni_v2,random,abs,0.8978120561369487,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v2__main.csv
-A1_slide_mean,SKCM,shipped,uni_v2,random,abs,0.8998869101662084,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v2__main.csv
-A1_slide_mean,CCRCC,shipped,virchow2,random,abs,0.8833234920413683,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow2__main.csv
-A1_slide_mean,COAD,shipped,virchow2,random,abs,0.8960190485050974,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow2__main.csv
-A1_slide_mean,HCC,shipped,virchow2,random,abs,0.902570049063143,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow2__main.csv
-A1_slide_mean,IDC,audited,virchow2,random,abs,0.8795403996133749,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow2__main.csv
-A1_slide_mean,IDC,shipped,virchow2,random,abs,0.8806649725250378,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow2__main.csv
-A1_slide_mean,LUNG,shipped,virchow2,random,abs,0.9002885299306587,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow2__main.csv
-A1_slide_mean,LYMPH_IDC,shipped,virchow2,random,abs,0.9002012716584682,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow2__main.csv
-A1_slide_mean,PAAD,shipped,virchow2,random,abs,0.8929206818742674,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow2__main.csv
-A1_slide_mean,PRAD,shipped,virchow2,random,abs,0.9037817434866037,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow2__main.csv
-A1_slide_mean,READ,shipped,virchow2,random,abs,0.8968715691660853,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow2__main.csv
-A1_slide_mean,SKCM,shipped,virchow2,random,abs,0.9017292984511649,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow2__main.csv
-A1_slide_mean,CCRCC,shipped,virchow,random,abs,0.8825217118181149,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow__main.csv
-A1_slide_mean,COAD,shipped,virchow,random,abs,0.8963936683048692,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow__main.csv
-A1_slide_mean,HCC,shipped,virchow,random,abs,0.9024263028375324,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow__main.csv
-A1_slide_mean,IDC,audited,virchow,random,abs,0.8785743619239126,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow__main.csv
-A1_slide_mean,IDC,shipped,virchow,random,abs,0.8800037192827979,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow__main.csv
-A1_slide_mean,LUNG,shipped,virchow,random,abs,0.8996334704961204,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow__main.csv
-A1_slide_mean,LYMPH_IDC,shipped,virchow,random,abs,0.9002557868310147,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow__main.csv
-A1_slide_mean,PAAD,shipped,virchow,random,abs,0.8925877844756425,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow__main.csv
-A1_slide_mean,PRAD,shipped,virchow,random,abs,0.9039455054249134,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow__main.csv
-A1_slide_mean,READ,shipped,virchow,random,abs,0.8975934986912022,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow__main.csv
-A1_slide_mean,SKCM,shipped,virchow,random,abs,0.9024484864489765,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow__main.csv
+source,task,label_set,encoder,design,score,coverage,aggregation,src,superseded_label_set
+A0_H2_pooled,CCRCC,shipped,hoptimus0,random,abs,0.89975079493398,pooled over all test points,results/round3/A0_smoke/h2_coverage__hoptimus0__h2.csv,False
+A0_H2_pooled,COAD,shipped,hoptimus0,random,abs,0.89985125551083,pooled over all test points,results/round3/A0_smoke/h2_coverage__hoptimus0__h2.csv,False
+A0_H2_pooled,HCC,shipped,hoptimus0,random,abs,0.9010524308865586,pooled over all test points,results/round3/A0_smoke/h2_coverage__hoptimus0__h2.csv,False
+A0_H2_pooled,IDC,shipped,hoptimus0,random,abs,0.9003013282305268,pooled over all test points,results/round3/A0_smoke/h2_coverage__hoptimus0__h2.csv,False
+A0_H2_pooled,LUNG,shipped,hoptimus0,random,abs,0.9007998463311564,pooled over all test points,results/round3/A0_smoke/h2_coverage__hoptimus0__h2.csv,False
+A0_H2_pooled,LYMPH_IDC,shipped,hoptimus0,random,abs,0.9001735123221799,pooled over all test points,results/round3/A0_smoke/h2_coverage__hoptimus0__h2.csv,False
+A0_H2_pooled,PAAD,shipped,hoptimus0,random,abs,0.9000486065248976,pooled over all test points,results/round3/A0_smoke/h2_coverage__hoptimus0__h2.csv,False
+A0_H2_pooled,PRAD,shipped,hoptimus0,random,abs,0.8998279700207303,pooled over all test points,results/round3/A0_smoke/h2_coverage__hoptimus0__h2.csv,False
+A0_H2_pooled,READ,shipped,hoptimus0,random,abs,0.9003059355299156,pooled over all test points,results/round3/A0_smoke/h2_coverage__hoptimus0__h2.csv,False
+A0_H2_pooled,SKCM,shipped,hoptimus0,random,abs,0.8997139090309823,pooled over all test points,results/round3/A0_smoke/h2_coverage__hoptimus0__h2.csv,False
+A0_H2_pooled,CCRCC,shipped,resnet50,random,abs,0.8996573430342226,pooled over all test points,results/round3/A0_smoke/h2_coverage__resnet50__h2.csv,False
+A0_H2_pooled,COAD,shipped,resnet50,random,abs,0.89996089706728,pooled over all test points,results/round3/A0_smoke/h2_coverage__resnet50__h2.csv,False
+A0_H2_pooled,HCC,shipped,resnet50,random,abs,0.9010829361296473,pooled over all test points,results/round3/A0_smoke/h2_coverage__resnet50__h2.csv,False
+A0_H2_pooled,IDC,shipped,resnet50,random,abs,0.900558644754615,pooled over all test points,results/round3/A0_smoke/h2_coverage__resnet50__h2.csv,False
+A0_H2_pooled,LUNG,shipped,resnet50,random,abs,0.9011963119477526,pooled over all test points,results/round3/A0_smoke/h2_coverage__resnet50__h2.csv,False
+A0_H2_pooled,LYMPH_IDC,shipped,resnet50,random,abs,0.9006467641755159,pooled over all test points,results/round3/A0_smoke/h2_coverage__resnet50__h2.csv,False
+A0_H2_pooled,PAAD,shipped,resnet50,random,abs,0.8997812706379607,pooled over all test points,results/round3/A0_smoke/h2_coverage__resnet50__h2.csv,False
+A0_H2_pooled,PRAD,shipped,resnet50,random,abs,0.8995728273002711,pooled over all test points,results/round3/A0_smoke/h2_coverage__resnet50__h2.csv,False
+A0_H2_pooled,READ,shipped,resnet50,random,abs,0.9005652432496729,pooled over all test points,results/round3/A0_smoke/h2_coverage__resnet50__h2.csv,False
+A0_H2_pooled,SKCM,shipped,resnet50,random,abs,0.899964403427818,pooled over all test points,results/round3/A0_smoke/h2_coverage__resnet50__h2.csv,False
+A0_H2_pooled,CCRCC,shipped,uni_v2,random,abs,0.899856103476152,pooled over all test points,results/round3/A0_smoke/h2_coverage__uni_v2__h2.csv,False
+A0_H2_pooled,COAD,shipped,uni_v2,random,abs,0.900386940131621,pooled over all test points,results/round3/A0_smoke/h2_coverage__uni_v2__h2.csv,False
+A0_H2_pooled,HCC,shipped,uni_v2,random,abs,0.9017502383222117,pooled over all test points,results/round3/A0_smoke/h2_coverage__uni_v2__h2.csv,False
+A0_H2_pooled,IDC,shipped,uni_v2,random,abs,0.9000550427735254,pooled over all test points,results/round3/A0_smoke/h2_coverage__uni_v2__h2.csv,False
+A0_H2_pooled,LUNG,shipped,uni_v2,random,abs,0.8996235113330772,pooled over all test points,results/round3/A0_smoke/h2_coverage__uni_v2__h2.csv,False
+A0_H2_pooled,LYMPH_IDC,shipped,uni_v2,random,abs,0.9003055499899819,pooled over all test points,results/round3/A0_smoke/h2_coverage__uni_v2__h2.csv,False
+A0_H2_pooled,PAAD,shipped,uni_v2,random,abs,0.8998811253467177,pooled over all test points,results/round3/A0_smoke/h2_coverage__uni_v2__h2.csv,False
+A0_H2_pooled,PRAD,shipped,uni_v2,random,abs,0.8995092967628767,pooled over all test points,results/round3/A0_smoke/h2_coverage__uni_v2__h2.csv,False
+A0_H2_pooled,READ,shipped,uni_v2,random,abs,0.9006765790412752,pooled over all test points,results/round3/A0_smoke/h2_coverage__uni_v2__h2.csv,False
+A0_H2_pooled,SKCM,shipped,uni_v2,random,abs,0.8986394199077126,pooled over all test points,results/round3/A0_smoke/h2_coverage__uni_v2__h2.csv,False
+A1_slide_mean,CCRCC,shipped,conch_v15,random,abs,0.8761762820470711,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v15__main.csv,False
+A1_slide_mean,COAD,shipped,conch_v15,random,abs,0.8965498563153003,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v15__main.csv,False
+A1_slide_mean,HCC,shipped,conch_v15,random,abs,0.9004647546960978,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v15__main.csv,False
+A1_slide_mean,IDC,audited,conch_v15,random,abs,0.8747464428252711,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v15__main.csv,True
+A1_slide_mean,IDC,shipped,conch_v15,random,abs,0.8750979465592683,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v15__main.csv,False
+A1_slide_mean,LUNG,shipped,conch_v15,random,abs,0.9005916887682368,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v15__main.csv,False
+A1_slide_mean,LYMPH_IDC,shipped,conch_v15,random,abs,0.9005738069723032,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v15__main.csv,False
+A1_slide_mean,PAAD,shipped,conch_v15,random,abs,0.8944410713722886,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v15__main.csv,False
+A1_slide_mean,PRAD,shipped,conch_v15,random,abs,0.9029699479467761,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v15__main.csv,False
+A1_slide_mean,READ,shipped,conch_v15,random,abs,0.8974989599437107,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v15__main.csv,False
+A1_slide_mean,SKCM,shipped,conch_v15,random,abs,0.9030051580489851,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v15__main.csv,False
+A1_slide_mean,CCRCC,shipped,conch_v1,random,abs,0.8782737500495958,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v1__main.csv,False
+A1_slide_mean,COAD,shipped,conch_v1,random,abs,0.8970568674234349,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v1__main.csv,False
+A1_slide_mean,HCC,shipped,conch_v1,random,abs,0.9015542483500338,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v1__main.csv,False
+A1_slide_mean,IDC,audited,conch_v1,random,abs,0.8738905074163503,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v1__main.csv,True
+A1_slide_mean,IDC,shipped,conch_v1,random,abs,0.8751473109901737,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v1__main.csv,False
+A1_slide_mean,LUNG,shipped,conch_v1,random,abs,0.8999373658643781,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v1__main.csv,False
+A1_slide_mean,LYMPH_IDC,shipped,conch_v1,random,abs,0.9005280480219997,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v1__main.csv,False
+A1_slide_mean,PAAD,shipped,conch_v1,random,abs,0.8929148972122253,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v1__main.csv,False
+A1_slide_mean,PRAD,shipped,conch_v1,random,abs,0.9034833867987819,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v1__main.csv,False
+A1_slide_mean,READ,shipped,conch_v1,random,abs,0.8978499467621305,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v1__main.csv,False
+A1_slide_mean,SKCM,shipped,conch_v1,random,abs,0.9013741142216127,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__conch_v1__main.csv,False
+A1_slide_mean,CCRCC,shipped,ctranspath,random,abs,0.8796808232566101,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__ctranspath__main.csv,False
+A1_slide_mean,COAD,shipped,ctranspath,random,abs,0.8966555095581601,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__ctranspath__main.csv,False
+A1_slide_mean,HCC,shipped,ctranspath,random,abs,0.9012508203572912,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__ctranspath__main.csv,False
+A1_slide_mean,IDC,audited,ctranspath,random,abs,0.8742567100911953,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__ctranspath__main.csv,True
+A1_slide_mean,IDC,shipped,ctranspath,random,abs,0.8756119103684676,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__ctranspath__main.csv,False
+A1_slide_mean,LUNG,shipped,ctranspath,random,abs,0.9001283667676573,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__ctranspath__main.csv,False
+A1_slide_mean,LYMPH_IDC,shipped,ctranspath,random,abs,0.9003302432280849,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__ctranspath__main.csv,False
+A1_slide_mean,PAAD,shipped,ctranspath,random,abs,0.8931623547699347,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__ctranspath__main.csv,False
+A1_slide_mean,PRAD,shipped,ctranspath,random,abs,0.9027426934819348,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__ctranspath__main.csv,False
+A1_slide_mean,READ,shipped,ctranspath,random,abs,0.8982908803984386,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__ctranspath__main.csv,False
+A1_slide_mean,SKCM,shipped,ctranspath,random,abs,0.904671925839678,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__ctranspath__main.csv,False
+A1_slide_mean,CCRCC,shipped,gigapath,random,abs,0.8829635743084002,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__gigapath__main.csv,False
+A1_slide_mean,COAD,shipped,gigapath,random,abs,0.896381656965249,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__gigapath__main.csv,False
+A1_slide_mean,HCC,shipped,gigapath,random,abs,0.9015086034954136,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__gigapath__main.csv,False
+A1_slide_mean,IDC,audited,gigapath,random,abs,0.878684311152957,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__gigapath__main.csv,True
+A1_slide_mean,IDC,shipped,gigapath,random,abs,0.8788715653840703,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__gigapath__main.csv,False
+A1_slide_mean,LUNG,shipped,gigapath,random,abs,0.8994465685540218,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__gigapath__main.csv,False
+A1_slide_mean,LYMPH_IDC,shipped,gigapath,random,abs,0.9002405410389955,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__gigapath__main.csv,False
+A1_slide_mean,PAAD,shipped,gigapath,random,abs,0.8923204110856462,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__gigapath__main.csv,False
+A1_slide_mean,PRAD,shipped,gigapath,random,abs,0.9038561914764158,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__gigapath__main.csv,False
+A1_slide_mean,READ,shipped,gigapath,random,abs,0.8979964770871379,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__gigapath__main.csv,False
+A1_slide_mean,SKCM,shipped,gigapath,random,abs,0.9011544368665299,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__gigapath__main.csv,False
+A1_slide_mean,CCRCC,shipped,hoptimus0,random,abs,0.8827673685178657,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus0__main.csv,False
+A1_slide_mean,COAD,shipped,hoptimus0,random,abs,0.895843756728518,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus0__main.csv,False
+A1_slide_mean,HCC,shipped,hoptimus0,random,abs,0.9019970729675428,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus0__main.csv,False
+A1_slide_mean,IDC,audited,hoptimus0,random,abs,0.88079734612336,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus0__main.csv,True
+A1_slide_mean,IDC,shipped,hoptimus0,random,abs,0.8811164512607371,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus0__main.csv,False
+A1_slide_mean,LUNG,shipped,hoptimus0,random,abs,0.8996631838535185,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus0__main.csv,False
+A1_slide_mean,LYMPH_IDC,shipped,hoptimus0,random,abs,0.9001726424266909,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus0__main.csv,False
+A1_slide_mean,PAAD,shipped,hoptimus0,random,abs,0.8921378292639227,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus0__main.csv,False
+A1_slide_mean,PRAD,shipped,hoptimus0,random,abs,0.9040381527772978,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus0__main.csv,False
+A1_slide_mean,READ,shipped,hoptimus0,random,abs,0.8974738054348392,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus0__main.csv,False
+A1_slide_mean,SKCM,shipped,hoptimus0,random,abs,0.8998816936585801,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus0__main.csv,False
+A1_slide_mean,CCRCC,shipped,hoptimus1,random,abs,0.8800171154994084,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus1__main.csv,False
+A1_slide_mean,COAD,shipped,hoptimus1,random,abs,0.8964544736819955,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus1__main.csv,False
+A1_slide_mean,HCC,shipped,hoptimus1,random,abs,0.9022824701121387,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus1__main.csv,False
+A1_slide_mean,IDC,audited,hoptimus1,random,abs,0.8791068590731302,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus1__main.csv,True
+A1_slide_mean,IDC,shipped,hoptimus1,random,abs,0.8797062485948728,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus1__main.csv,False
+A1_slide_mean,LUNG,shipped,hoptimus1,random,abs,0.8985755180332298,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus1__main.csv,False
+A1_slide_mean,LYMPH_IDC,shipped,hoptimus1,random,abs,0.9004540055805839,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus1__main.csv,False
+A1_slide_mean,PAAD,shipped,hoptimus1,random,abs,0.8930957915318293,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus1__main.csv,False
+A1_slide_mean,PRAD,shipped,hoptimus1,random,abs,0.9040396150917774,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus1__main.csv,False
+A1_slide_mean,READ,shipped,hoptimus1,random,abs,0.8978127605216932,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus1__main.csv,False
+A1_slide_mean,SKCM,shipped,hoptimus1,random,abs,0.9021843060196597,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__hoptimus1__main.csv,False
+A1_slide_mean,CCRCC,shipped,phikon,random,abs,0.8842605065214632,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__phikon__main.csv,False
+A1_slide_mean,COAD,shipped,phikon,random,abs,0.8960975638844562,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__phikon__main.csv,False
+A1_slide_mean,HCC,shipped,phikon,random,abs,0.9014147144766308,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__phikon__main.csv,False
+A1_slide_mean,IDC,audited,phikon,random,abs,0.8780813301389969,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__phikon__main.csv,True
+A1_slide_mean,IDC,shipped,phikon,random,abs,0.8794295654253101,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__phikon__main.csv,False
+A1_slide_mean,LUNG,shipped,phikon,random,abs,0.9002475248024884,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__phikon__main.csv,False
+A1_slide_mean,LYMPH_IDC,shipped,phikon,random,abs,0.8999964633323827,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__phikon__main.csv,False
+A1_slide_mean,PAAD,shipped,phikon,random,abs,0.8927385091429256,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__phikon__main.csv,False
+A1_slide_mean,PRAD,shipped,phikon,random,abs,0.9040939244456504,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__phikon__main.csv,False
+A1_slide_mean,READ,shipped,phikon,random,abs,0.8976442699937469,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__phikon__main.csv,False
+A1_slide_mean,SKCM,shipped,phikon,random,abs,0.9028102846338104,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__phikon__main.csv,False
+A1_slide_mean,CCRCC,shipped,resnet50,random,abs,0.876716603355039,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__resnet50__main.csv,False
+A1_slide_mean,COAD,shipped,resnet50,random,abs,0.8958272502553728,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__resnet50__main.csv,False
+A1_slide_mean,HCC,shipped,resnet50,random,abs,0.9031657999022847,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__resnet50__main.csv,False
+A1_slide_mean,IDC,audited,resnet50,random,abs,0.8719710781246354,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__resnet50__main.csv,True
+A1_slide_mean,IDC,shipped,resnet50,random,abs,0.8724520074944069,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__resnet50__main.csv,False
+A1_slide_mean,LUNG,shipped,resnet50,random,abs,0.9000702352567751,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__resnet50__main.csv,False
+A1_slide_mean,LYMPH_IDC,shipped,resnet50,random,abs,0.9006056784168988,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__resnet50__main.csv,False
+A1_slide_mean,PAAD,shipped,resnet50,random,abs,0.8942289550941142,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__resnet50__main.csv,False
+A1_slide_mean,PRAD,shipped,resnet50,random,abs,0.902768414562588,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__resnet50__main.csv,False
+A1_slide_mean,READ,shipped,resnet50,random,abs,0.8973443379260855,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__resnet50__main.csv,False
+A1_slide_mean,SKCM,shipped,resnet50,random,abs,0.9032441711261694,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__resnet50__main.csv,False
+A1_slide_mean,CCRCC,shipped,uni_v1,random,abs,0.8821303812865633,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v1__main.csv,False
+A1_slide_mean,COAD,shipped,uni_v1,random,abs,0.8961115890578597,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v1__main.csv,False
+A1_slide_mean,HCC,shipped,uni_v1,random,abs,0.9019500622485861,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v1__main.csv,False
+A1_slide_mean,IDC,audited,uni_v1,random,abs,0.8785766299137836,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v1__main.csv,True
+A1_slide_mean,IDC,shipped,uni_v1,random,abs,0.8796286926558137,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v1__main.csv,False
+A1_slide_mean,LUNG,shipped,uni_v1,random,abs,0.8996847436132023,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v1__main.csv,False
+A1_slide_mean,LYMPH_IDC,shipped,uni_v1,random,abs,0.900156749646208,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v1__main.csv,False
+A1_slide_mean,PAAD,shipped,uni_v1,random,abs,0.8923852875234145,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v1__main.csv,False
+A1_slide_mean,PRAD,shipped,uni_v1,random,abs,0.9033154493735363,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v1__main.csv,False
+A1_slide_mean,READ,shipped,uni_v1,random,abs,0.8973984971169396,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v1__main.csv,False
+A1_slide_mean,SKCM,shipped,uni_v1,random,abs,0.9014780937251159,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v1__main.csv,False
+A1_slide_mean,CCRCC,shipped,uni_v2,random,abs,0.8830176250299325,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v2__main.csv,False
+A1_slide_mean,COAD,shipped,uni_v2,random,abs,0.896467435139279,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v2__main.csv,False
+A1_slide_mean,HCC,shipped,uni_v2,random,abs,0.9027833142043387,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v2__main.csv,False
+A1_slide_mean,IDC,audited,uni_v2,random,abs,0.8796858165272499,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v2__main.csv,True
+A1_slide_mean,IDC,shipped,uni_v2,random,abs,0.8801715514576326,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v2__main.csv,False
+A1_slide_mean,LUNG,shipped,uni_v2,random,abs,0.8992439974166635,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v2__main.csv,False
+A1_slide_mean,LYMPH_IDC,shipped,uni_v2,random,abs,0.9003375794646522,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v2__main.csv,False
+A1_slide_mean,PAAD,shipped,uni_v2,random,abs,0.8929673164919537,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v2__main.csv,False
+A1_slide_mean,PRAD,shipped,uni_v2,random,abs,0.9040820755298465,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v2__main.csv,False
+A1_slide_mean,READ,shipped,uni_v2,random,abs,0.8978120561369487,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v2__main.csv,False
+A1_slide_mean,SKCM,shipped,uni_v2,random,abs,0.8998869101662084,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__uni_v2__main.csv,False
+A1_slide_mean,CCRCC,shipped,virchow2,random,abs,0.8833234920413683,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow2__main.csv,False
+A1_slide_mean,COAD,shipped,virchow2,random,abs,0.8960190485050974,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow2__main.csv,False
+A1_slide_mean,HCC,shipped,virchow2,random,abs,0.902570049063143,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow2__main.csv,False
+A1_slide_mean,IDC,audited,virchow2,random,abs,0.8795403996133749,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow2__main.csv,True
+A1_slide_mean,IDC,shipped,virchow2,random,abs,0.8806649725250378,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow2__main.csv,False
+A1_slide_mean,LUNG,shipped,virchow2,random,abs,0.9002885299306587,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow2__main.csv,False
+A1_slide_mean,LYMPH_IDC,shipped,virchow2,random,abs,0.9002012716584682,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow2__main.csv,False
+A1_slide_mean,PAAD,shipped,virchow2,random,abs,0.8929206818742674,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow2__main.csv,False
+A1_slide_mean,PRAD,shipped,virchow2,random,abs,0.9037817434866037,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow2__main.csv,False
+A1_slide_mean,READ,shipped,virchow2,random,abs,0.8968715691660853,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow2__main.csv,False
+A1_slide_mean,SKCM,shipped,virchow2,random,abs,0.9017292984511649,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow2__main.csv,False
+A1_slide_mean,CCRCC,shipped,virchow,random,abs,0.8825217118181149,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow__main.csv,False
+A1_slide_mean,COAD,shipped,virchow,random,abs,0.8963936683048692,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow__main.csv,False
+A1_slide_mean,HCC,shipped,virchow,random,abs,0.9024263028375324,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow__main.csv,False
+A1_slide_mean,IDC,audited,virchow,random,abs,0.8785743619239126,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow__main.csv,True
+A1_slide_mean,IDC,shipped,virchow,random,abs,0.8800037192827979,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow__main.csv,False
+A1_slide_mean,LUNG,shipped,virchow,random,abs,0.8996334704961204,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow__main.csv,False
+A1_slide_mean,LYMPH_IDC,shipped,virchow,random,abs,0.9002557868310147,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow__main.csv,False
+A1_slide_mean,PAAD,shipped,virchow,random,abs,0.8925877844756425,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow__main.csv,False
+A1_slide_mean,PRAD,shipped,virchow,random,abs,0.9039455054249134,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow__main.csv,False
+A1_slide_mean,READ,shipped,virchow,random,abs,0.8975934986912022,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow__main.csv,False
+A1_slide_mean,SKCM,shipped,virchow,random,abs,0.9024484864489765,"per slide, then genes, then folds",results/round3/A1_coverage/a1_by_task__virchow__main.csv,False

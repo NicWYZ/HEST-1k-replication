@@ -1,0 +1,103 @@
+results/round3/H1_housekeeping/ -- PROVENANCE
+================================================================================
+
+Stage      H1, housekeeping from the A3 escalations.
+Instruction docs/decisions/round3_A3_decisions.md sections 2.1, 2.2, 3.4 and 3.5, transcribed in
+           docs/round3_execution_plan.md section 13.4 items 1 to 5, with the flagged points of
+           section 13.10 items 2 and 4.
+Date       2026-09-24.
+Commit     a181326 (the local clone's HEAD as stated by the lead session; this track runs no git
+           command, including read-only queries, so the value is recorded as received and not
+           re-derived here).
+
+Where it ran
+------------
+Local only. No Slurm job, no Longleaf job, no GPU: every item in H1 is a file edit, a local
+rebuild of a committed CSV, or a reading task over public records.
+  host              macOS-26.6.2-arm64 (the local clone's machine)
+  python            3.11.15
+  PYTHONHASHSEED    0 (exported on every invocation)
+  slurm             not applicable -- no job was submitted
+
+Scripts executed, with the md5 of the file that actually ran
+-----------------------------------------------------------
+Per the standing rule added to docs/WAYS_OF_WORKING.md by this stage, the md5 is of the script
+file as executed, not the commit it was read from.
+  1ede07568fa4f9062d6ed8e70441db5a  code/scripts/round3_h1_tag_superseded.py
+  4c7952ca4e3cf0609ad99935ddd5fc03  code/scripts/round3_h1_build_audit_r3.py   (extended by H1;
+                                    an earlier H1 revision, md5 f64fcb18f33281b074f1e91d9ca56ef7,
+                                    blocked only donor_id/row_origin/sample_id where its docstring
+                                    claimed the track owns only donor_label_status, citation and
+                                    notes. The allowlist is now enforced. Both revisions produce
+                                    byte-identical donor_audit_r3.csv and donor_audit_r3_conflicts.csv
+                                    from the committed overrides file, so no output depends on which
+                                    one ran; the guard fixture is h1_override_guard_fixture.csv)
+  8e6877105f56416f4e839ef220b0305e  code/scripts/round3_a3_report_numbers.py   (rerun, unmodified)
+  31f7aff091589808f9a5ddcec1a6cf7c  code/scripts/verify_numeric_claims.py      (gate, unmodified)
+  0ad7ae8efe554c1f285e5f384a9fb7f5  code/scripts/round3_a0_harness.py          (not run, not
+                                    edited; the md5 is recorded to show it is the committed one)
+
+Command lines
+-------------
+  PYTHONHASHSEED=0 python code/scripts/round3_h1_tag_superseded.py
+  PYTHONHASHSEED=0 python code/scripts/round3_h1_build_audit_r3.py
+  PYTHONHASHSEED=0 python code/scripts/round3_a3_report_numbers.py
+  python code/scripts/verify_numeric_claims.py README.md docs/round3_*.md --search-dir . \
+      --exceptions .verify-exceptions --derived .verify-derived \
+      --always results/summary/deck_numbers.csv
+  python code/scripts/verify_numeric_claims.py docs/WAYS_OF_WORKING.md \
+      docs/hest_bench_issue_draft.md docs/r5_idc_provenance.md --search-dir . \
+      --exceptions .verify-exceptions --derived .verify-derived \
+      --always results/summary/deck_numbers.csv
+
+What is in this directory
+-------------------------
+superseded_tag_manifest.csv
+    One row per committed round-3 CSV that carries an IDC `audited` row, with its row count, the
+    number of rows tagged, and the sha256 before and after the tag was added. 229 files, 14,149
+    rows tagged True over 178,150 rows. Scope was fixed by rule, not by hand: a CSV is in scope
+    when it has both a `task` and a `label_set` column and at least one row with task == IDC and
+    label_set == audited. 352 CSVs exist under results/round3/; 229 are in scope.
+
+a3_report_numbers_rerun_comparison.csv
+    The proof that the tag moved nothing numeric. results/round3/A3_report_numbers.csv was copied
+    before the tagging run, round3_a3_report_numbers.py was rerun afterwards over the tagged
+    tables, and the two files are byte-identical (388 rows, sha256 in the file, max absolute
+    difference over the value column 0.0). The A1 anchor inside that table,
+    a2b_anchor_max_abs_diff = 7.771561172e-16, is therefore reproduced unchanged.
+
+h1_numeric_gate_summary.csv
+    Per-document result of the numeric-claim gate, in the two invocations above, over every
+    document H1 edited and every round-3 document. 0 not found and 0 uncited everywhere.
+
+h1_override_guard_fixture.csv
+    Both-directions fixture for the builder's override guards, run in a /tmp fixture tree so the
+    clone was not perturbed: 12 cases, 3 accepted and 9 refused. The three accepted are the
+    committed overrides file and an override on each of the two owned columns this stage did not
+    use (donor_label_status, notes); the nine refused are donor_id, row_origin, sample_id, two
+    columns that exist but are outside the three the track owns (disease, hest_patient), a column
+    that does not exist, a sample_id matching no row, an empty citation, and a duplicate key.
+
+h1_numeric_gate_round3_and_readme.tsv, h1_numeric_gate_h1_docs.tsv
+    The gate's own --tsv output for the same two invocations. Both are header-only, which is the
+    record that no claim was left unresolved.
+
+tracked_round3_csv_at_a181326.txt
+    Written by the lead session, not by this track: the output of `git ls-files` over
+    results/round3/*.csv at a181326, supplied so this track could confirm that the 229 files it
+    tagged are all tracked and that nothing untracked was touched. Reconciled: 349 tracked, 349
+    CSVs on disk before this stage, all 229 tagged files in the tracked set.
+
+What was NOT touched
+--------------------
+  * The parquets. Every per-row parquet lives on Longleaf under
+    /work/users/w/e/weiyang/hest_replication/results/round3/ and is gitignored; none was read or
+    written by this stage, and the `superseded_label_set` tag is a property of the committed
+    summary CSVs only.
+  * code/scripts/round3_a0_harness.py, md5 unchanged above.
+  * results/round2/R5b_audit/donor_audit.csv and results/round2/R5c_leak/r5c_leak_summary.csv,
+    both frozen. The second carries leak_realised_in_shipped_split = True for IDC, which the D3
+    reading makes wrong; it is left as it stands and raised as an escalation instead.
+  * docs/r5_idc_provenance.md beyond the one-line banner prepended at the top. The banner plus its
+    blank separator line shifts the file's line numbering down by two, so the content that was at
+    line 47 is now at line 49, unedited.

@@ -1,0 +1,13 @@
+planted_error,expected,exit_code,message
+none (the committed overrides file),accept,0,
+column = donor_label_status (a column the track owns),accept,0,
+column = notes (a column the track owns),accept,0,
+column = donor_id,refuse,1,"AssertionError: override may not touch ['donor_id']: donor_id, row_origin and sample_id are fixed"
+column = row_origin,refuse,1,"AssertionError: override may not touch ['row_origin']: donor_id, row_origin and sample_id are fixed"
+column = sample_id,refuse,1,"AssertionError: override may not touch ['sample_id']: donor_id, row_origin and sample_id are fixed"
+"column = disease (exists, outside the three the track owns)",refuse,1,"AssertionError: override names ['disease'], outside the columns this track owns ['donor_label_status', 'citation', 'notes'] (docs/round3_execution_plan.md section 13.9)"
+"column = hest_patient (exists, outside the three the track owns)",refuse,1,"AssertionError: override names ['hest_patient'], outside the columns this track owns ['donor_label_status', 'citation', 'notes'] (docs/round3_execution_plan.md section 13.9)"
+column that does not exist,refuse,1,AssertionError: override names columns that do not exist: ['not_a_column']
+sample_id matching no row,refuse,1,"AssertionError: ('NOPE', 'benchmark_r2', 0)"
+empty citation,refuse,1,AssertionError: every override carries a citation and a note
+"duplicate (sample_id, row_origin, column)",refuse,1,AssertionError: duplicate override key

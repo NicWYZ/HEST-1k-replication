@@ -4,19 +4,26 @@
 be made on a finished text rather than a summary. Sending it is Nicolas's call with David, not the
 analysis session's. Nothing here has been communicated to anyone outside the project.
 
-**One thing to settle before this is sent.** Item 1's evidence is the "FFPE Human Breast using the
-Entire Sample Area" page, which states `donorCount: 1` and frames its two sections as Replicate 1
-and Replicate 2. HEST's own metadata assigns **only TENX99** to that dataset (subseries "Replicate
-1"); it assigns TENX95 to a different product, "FFPE Human Breast with Pre-designed Panel"
-(subseries "Tissue sample 1"). The two pages could not be re-fetched to close this (10x returned
-HTTP 429 on every attempt). The supporting evidence is mixed: TENX95 and TENX99 carry
-byte-identical 541-entry panels, the only such pair in IDC, but their spot counts differ 2.1-fold
-(25,080 against 11,845, `results/tailored/integrity/sample_metadata.csv`), which two replicates of
-one imaged area should not. **The measurement in
-item 1 does not depend on this** — it measures what TENX95 in training is worth for predicting
-TENX99, whatever the two are called — but the *claim* that they are one donor does, and that
-sentence should not be sent until the Pre-designed Panel page has been read. This is exactly why
-the draft is a draft.
+**Item 1 is struck. Dated note, 23 September 2026.** The question this note used to describe as
+unsettled is now settled against item 1's claim, so item 1 is withdrawn and is **not** to be sent.
+Stage D3 read HEST's five release tables and the vendor's per-run file metadata and found that the
+`donorCount: 1` and "Replicate 1 / Replicate 2" language belongs to the *entire sample area*
+dataset, whose two regions HEST ingests as TENX98 and TENX99; TENX95 is a section of a separate
+block from a different provider, and round 2's reading traces to one row of
+`docs/r5_idc_provenance.md` that assigned TENX95 the entire-sample-area Replicate 2, which is
+TENX98's row (`results/round3/D3_audit/d3_notes.md` section 2). The benchmark's four IDC samples
+are four distinct donors, its patient folds separate them, and there is no leak to report. The A3
+decision memo (`docs/decisions/round3_A3_decisions.md` section 2.1, transcribed as
+`docs/round3_execution_plan.md` section 13.2 item 1) directs that the item be struck and the draft
+stay unsent.
+
+The text of item 1 is kept below, struck through, because deleting it would remove the record of
+what this project believed and on what evidence. The measurement in it stands — it measures what
+TENX95 in training is worth for predicting TENX99 — but it is the value of a same-laboratory,
+same-instrument slide in the training pool across donors, not a replicate leak, and it is reported
+that way in `README.md` finding 1 and property 1.
+
+**This draft has still not been sent, and with item 1 struck the remaining items are 2, 3 and 4.**
 
 Written for HEST-1k's GitHub issue tracker, which the project README names as the preferred
 channel. Every number cites the file in `NicWYZ/HEST-1k-replication` that establishes it.
@@ -25,8 +32,10 @@ channel. Every number cites the file in `NicWYZ/HEST-1k-replication` that establ
 
 ## Title
 
-Sample-level metadata issues in HEST-bench affecting patient-split interpretation (IDC, COAD,
-READ), plus within-task gene-panel heterogeneity
+Sample-level metadata issues in HEST-bench affecting patient-split interpretation (COAD, READ),
+plus within-task gene-panel heterogeneity
+
+(Before item 1 was struck this title also named IDC. It no longer does.)
 
 ## Body
 
@@ -35,11 +44,19 @@ reproduced Table 1 across 12 encoders and 9 tasks with no cell exceeding a 0.03 
 starting any of the work below, so what follows comes from a replication that matches yours.
 
 While building a variance decomposition on top of HEST-bench we needed the `patient` field to mean
-"distinct donor", and found three places where it does not. Two are metadata issues we think are
-worth correcting; one is a property of the data that we think is worth documenting. We also have
-three questions we could not resolve from public sources.
+"distinct donor", and found places where it does not. One is a metadata issue we think is worth
+correcting; one is a property of the data that we think is worth documenting. We also have
+questions we could not resolve from public sources.
 
-### 1. IDC: TENX95 and TENX99 are one donor, and the patient split leaks
+(An earlier revision of this paragraph counted three places and two metadata issues. Item 1 was
+struck on 23 September 2026, which removes one of each.)
+
+### ~~1. IDC: TENX95 and TENX99 are one donor, and the patient split leaks~~ — STRUCK
+
+**Struck 23 September 2026; withdrawn, not to be sent.** Everything from here to the end of this
+item is the superseded text, retained as a record. See the dated note at the top of this document,
+`results/round3/D3_audit/d3_notes.md` section 2 and `docs/round3_execution_plan.md` section 13.2
+item 1.
 
 `sample_metadata` assigns TENX95 and TENX99 the labels `patient 2` and `patient 1`. Both come from
 the 10x Genomics dataset **"FFPE Human Breast using the Entire Sample Area"**, whose page carries
@@ -115,14 +132,17 @@ Sources: HEST issues #126 and #133; `r3_per_task_terms.csv`;
 ZEN36/ZEN40 (`Patient 7`) and ZEN48/ZEN49 (`Patient 1`) are replicate sections of one specimen
 rather than merely two slides from one patient, and **READ's folds group each pair** — `test_0` is
 ZEN48+ZEN49, `test_1` is ZEN36+ZEN40. No replicate is ever in its partner's training set, so READ
-has no leak. We mention it only because it gives the counterfactual that makes item 1 concrete.
+has no leak. Before item 1 was struck, this item existed to give the counterfactual that made item
+1 concrete; with item 1 withdrawn it stands on its own, as a reading caveat about what a
+same-patient term computed on READ means.
 
 Running the same controlled design on READ ([`r5_idc_replicate_leak.csv`](results/round2/R5c_leak/r5_idc_replicate_leak.csv)) — hold out one slide, fix the training size, vary only
 whether the partner section is available — gives **+0.0901** (12 of 12 encoder–slide cells
 positive, range +0.033 to +0.150). Without its partner, ResNet50 on ZEN40 scores −0.017, below
-predicting the mean. That is what your READ grouping is preventing, and it is a second, independent
-estimate of the same quantity IDC's split exposes (+0.0651). One task would be an anecdote; two
-make it a property of same-specimen sections in this data.
+predicting the mean. That is what your READ grouping is preventing. With item 1 struck, this is the
+only same-specimen replicate figure we have: IDC's four samples are four donors, so the figure
+measured there is a same-laboratory, same-instrument value across donors and not a second estimate
+of the same quantity. One task, so it is one measurement rather than a property established twice.
 
 The only caveat we would note for READ is a reading one: a same-patient term computed on it is a
 same-*specimen* term, so it is an upper bound on a patient effect rather than an estimate of one.
@@ -159,9 +179,10 @@ Source: `r2_panel_heterogeneity.csv`, `r5_idc_panels_observed.csv`, `r5_idc_pane
 ### Three questions, not claims
 
 1. **NCBI784** appears in HEST-1k's metadata but not in the 4-sample IDC benchmark task. If it is
-   the other replicate of Janesick et al.'s Sample #1, then the benchmark already excludes one
-   same-donor replicate pair while including another — was the IDC pair an oversight, or is there
-   a reason we are missing?
+   the other replicate of Janesick et al.'s Sample #1, the benchmark excludes one same-donor
+   replicate pair; is that deliberate, and is the exclusion recorded anywhere? (Before item 1 was
+   struck this question also asked why the benchmark included another such pair. With four distinct
+   donors in IDC, it does not, and that half of the question is withdrawn.)
 2. **Table A4** reports n = 4 Xenium samples for the Janesick publication, while the GEO subseries
    lists 3 and `atlas.py` names 3. Which is right?
 3. **H&E scan provenance.** Scan resolution varies 5.02× across the 72 benchmark samples and is
@@ -174,6 +195,6 @@ Source: `r2_panel_heterogeneity.csv`, `r5_idc_panels_observed.csv`, `r5_idc_pane
 ### What we are not claiming
 
 We are not claiming these affect the benchmark's headline conclusions or any encoder ranking. Items
-1 to 3 affect the interpretation of patient-split scores as cross-patient generalisation; item 4
-affects what a leakage-free target selection could mean. We are happy to open a PR adding a
+2 and 3 affect the interpretation of patient-split scores as cross-patient generalisation; item 4
+affects what a leakage-free target selection could mean. Item 1 is struck and claims nothing. We are happy to open a PR adding a
 `donor_id` column and the panel-heterogeneity note if that would be useful.

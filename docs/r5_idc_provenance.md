@@ -1,3 +1,5 @@
+> **Banner, 23 September 2026: superseded on the IDC donor question — the § 1 table's TENX95 row is wrong, stage D3's reading governs (`results/round3/D3_audit/d3_notes.md` § 2), and the decision is the A3 memo's § 2.1, transcribed as `docs/round3_execution_plan.md` § 13.2 item 1; this document stays frozen.**
+
 > **Closed record of a reading task, dated 2026-09-18.** Round-2 R5's provenance reading of the four
 > IDC Xenium samples, run in parallel with the R4 cluster stage. Closed: nothing in it is maintained,
 > and the questions it left open are now stage D3's in `docs/round3_execution_plan.md`. Its findings
