@@ -1,7 +1,8 @@
-> **Active instruction document for round 3 interval 2, dated 22 September 2026.** The oversight
-> chat's decision memo at the A1 gate, handed over by Nicolas. It opens interval 2 and amends the
-> interval-3 stages. Its transcription into the execution session's operating plan is
-> `docs/round3_execution_plan.md` section 12. Not bannered as a closed record, because it is not closed.
+> **Closed record, dated 22 September 2026.** The oversight chat's decision memo at the A1 gate,
+> handed over by Nicolas. It governed round 3 interval 2, which closed at the A3 gate with
+> `docs/round3_A3_stage_report.md` (tags `round3-A3` and `round3-A3-r2`). Its transcription is
+> `docs/round3_execution_plan.md` section 12; its interval-3 amendments are carried forward, and
+> revised where the A3 memo says so, in section 13. Not edited below this banner.
 
 # Round 3, decision memo at the A1 gate
 

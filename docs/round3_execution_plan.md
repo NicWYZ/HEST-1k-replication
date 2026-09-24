@@ -1069,3 +1069,255 @@ Recorded here so they are not changed silently.
    H0 item that bears on the harness A2 extends, to go first on the harness track, while H0's
    document items run in parallel under Nicolas's fan-out rule. If the memo meant all of H0 first,
    the cost of this reading is that A2 starts some hours earlier than it would have.
+
+
+---
+
+## 13. Interval 3, transcribed from the A3 decision memo
+
+Transcribed from `docs/decisions/round3_A3_decisions.md` (23 September 2026) before anything in it
+was run, as the memo and Nicolas's standing rule both require. The memo answers
+`docs/round3_A3_stage_report.md` revision 2 (tag `round3-A3-r2`, commit `5bc4bb3`). Where this
+section and §§ 4.6 to 4.10 or § 12.5 differ, this section governs, because it is the later
+instruction; those sections are left as they were, as the record of what earlier documents said.
+
+### 13.1 The gate, and what it opened
+
+- **A3 is accepted; interval 3 opens on receipt of the memo.** Nothing in the A3 report is
+  withdrawn. The memo's own check of the repository reproduced A2b's arm means and 138-of-138 count,
+  the five level-scale groups, the W3 infinite-interval predicate on all 1,932 nominal cells, the
+  D2 anchor rows, the determinism diff and the D3 status counts, and found
+  `results/round3/A3_report_numbers.csv` in agreement with the primary tables.
+- **The remaining gate is the end-of-round report after B2.** The gate rule is unchanged, in the
+  wording Nicolas approved: report-and-wait means no stage after the gated stage starts, every stage,
+  and nothing after the gate is set up, staged or piloted. Inside the interval there are no interim
+  reports and no interim stop conditions; anything that would have halted work is handled under the
+  decision boundaries (§ 13.8), recorded in the Escalations section of the end-of-round report, and
+  work continues. Contact with anyone outside the project is never this session's decision.
+- **Three errors in the A1 memo are acknowledged by the oversight chat:** the W3 parenthetical at
+  $\alpha = 0.1$, the "two task files" that listed three, and the mechanism-(a) prediction that A2c
+  refuted. § 12.9 items 2 and 3 are closed by this.
+
+### 13.2 The five decisions
+
+1. **IDC `audited` is superseded.** Build `results/round3/D3_audit/donor_audit_r3.csv`: the 72
+   benchmark rows of `results/round2/R5b_audit/donor_audit.csv` unchanged except IDC, where `TENX95`
+   and `TENX99` receive distinct `donor_id` values and `donor_label_status = verified` citing D3's
+   rows; then the 76 rows of `donor_lab_audit_ext.csv` appended. `donor_audit.csv` stays frozen, its
+   provenance saying it is superseded. Every round-3 table carrying an IDC `audited` row keeps the row,
+   tagged `superseded_label_set`; no further stage runs IDC `audited`.
+   `docs/r5_idc_provenance.md` stays frozen, gains a one-line banner pointing to D3 and the memo, and
+   its line 47 is not edited. README consequences are H1's (§ 13.4): property 1 withdrawn; the 96%
+   `TENX95`/`TENX99` partner confusion re-read as two donors from one laboratory, instrument, panel and
+   pixel size three weeks apart, the session signature of finding 3 in a second task; R5c's
+   $+0.0652$ kept as a measurement and renamed as the value of a same-laboratory, same-instrument
+   slide in the training pool across donors, with IDC's `leak_realised_in_shipped_split` set to
+   `False`; READ's $+0.0901$ remaining the only same-specimen replicate figure.
+   `docs/hest_bench_issue_draft.md` has its IDC item struck and stays unsent. The deck's `issue1`
+   slide is on Nicolas's running list, not this session's.
+2. **The D2 layout finding is a property of the public data; no re-embedding.** The 28 anchor
+   samples are already embedded from HEST-1k patches, so the expansion is internally consistent. Whether
+   a benchmark result moves with the layout is measured by D4's layout anchor (§ 13.7.1), and expansion
+   results are set beside benchmark results only through it. README property 11 records the layout
+   difference, with the anchor's outcome added when it exists.
+3. **The D1 criterion is the subset relation.** Expansion analyses use patched spots only, and
+   every expansion task definition records the unpatched fraction per sample. Why HEST drops a spot is
+   not pursued this round.
+4. **D4 is re-scoped, and no round-3 document carries a laboratory term.** Breast Xenium is one
+   laboratory; kidney's two laboratories are separated exactly by tumour status and further by
+   preservation, region, instrument and pixel size. The kidney contrast is a population-and-source
+   shift, named as such with its difference list. Two limitations go into every document reporting a
+   source term and into what Nicolas tells the advisors: HEST-1k has no organ-by-technology cell with
+   three laboratories at three or more donors each, and, the stronger, no two-laboratory cell with
+   disease held fixed.
+5. **A4 absorbs A3's consequences.** W1 and W1b run in no further stage. HCP at $\alpha = 0.2$ on
+   CCRCC joins A4's width-at-matched-coverage table from A3's tables, without a rerun. `scaled`
+   against `scaled_clip` is A4's first comparison. A4 gains A4b (§ 13.5.2).
+
+### 13.3 How the oversight review reads interval 2
+
+Recorded here; it adds no action beyond what the stage sections below carry.
+
+- **A2b is the interval's result** and goes on the deck as a figure: calibration level, not
+  calibration size, sets coverage.
+- **Mechanism (a) is refuted as a mean effect.** The small-$K$ account explains fold-level scatter,
+  not the unit-calibrated mean shortfall of three to four points, which nothing measured yet explains.
+  The best current account is intervals of about the right width with a positive miss asymmetry.
+- **The level-scale shares are shares of across-slide variance.** A constant offset is invisible to
+  them; the mean $|b_s|/s_y \approx 0.5$ on unit-calibrated slides is large and absorbed by the width.
+  Slide-level recentring would buy width, not coverage, hence A4's oracle row.
+- **A3 is a clean negative result with its mechanism measured**, including the new finding that
+  eight morphology covariates separate slides at a median AUC of 0.90.
+- **The predicted-value decile failure is the $R^2$ ladder's scale error seen from the interval
+  side**, and A4 reports every score by decile to test it.
+- **`INT5` and CCRCC's donor labels** matter for B1, B2 and A4b; H1 item 4 reads the sources, and
+  every CCRCC analysis in B1, B2 and A4b runs twice, with 24 donors and with `INT4` and `INT24` merged.
+
+### 13.4 H1. Housekeeping from the A3 escalations (capped at one day in total)
+
+1. The round-3 audit file of § 13.2 item 1, and the `superseded_label_set` tag on every round-3
+   table carrying an IDC `audited` row.
+2. README: property 1 withdrawn and rewritten per § 13.2 item 1; property 11 added; known limitations
+   updated for the D2 layout, the subset relation, the CCRCC labels and the determinism note; the
+   `raw_ridge` sentence and everything else untouched.
+3. `docs/hest_bench_issue_draft.md`: IDC item struck with a dated note; stays unsent.
+4. Two reading items, one hour each: the Immunity paper's patient table for CCRCC's donor count and
+   any per-sample donor mapping, and `INT5`'s source record. Recorded in `donor_audit_r3.csv`.
+5. `docs/WAYS_OF_WORKING.md` gains three notes: (i) with fairshare near 0.007 jobs start through
+   backfill or not at all, so the time limit is about three times the expected runtime, sized from a
+   sibling's `sacct`, never a blanket 16 h; (ii) determinism across nodes holds to about
+   $3 \times 10^{-6}$ absolute in widths and exactly in every count, and bit for bit on one node, so
+   provenance records the node and a byte-identical rerun is a same-node claim; (iii) a provenance
+   `commit` field records the working copy's HEAD, not the script that ran, so every job's provenance
+   also records the md5 of the script file it executed.
+6. This transcription.
+
+### 13.5 A4. Scores, the model-based comparator, and the $K \ge 9$ experiment (three days; no gate)
+
+**13.5.1 A4a.** § 4.6 as specified, with these changes. Scores `abs`, `scaled` (unclipped),
+`scaled_clip`, `cqr`, `nb`, `nb_conformal`; three encoders (`hoptimus0`, `uni_v2`, `resnet50`); the
+A0 designs; every task file except IDC `audited`. First comparison `scaled` against `scaled_clip`
+against `abs`, with the fraction of folds where the lower clip binds. Every score reported by
+predicted-value decile per design. Width at matched coverage is the primary table, mean and median
+width beside each other, with HCP at $\alpha = 0.2$ on CCRCC `donor` from A3's tables as a row. One
+oracle row: the `abs` interval recentred per test slide by $b_s$, with the width that then gives 90%
+on that slide; it uses test labels and is labelled a diagnostic. The NB head as in § 4.6 with the
+convergence guard, the PIT histogram and KS statistic on `random`, and $\hat\alpha_g$ beside the
+marginal Fano factor. CQR time-boxed at 20 minutes per task-encoder fit with the 20,000-spot fallback
+recorded. Outputs as § 4.6, with `scaled_clip` added to the score set, plus `a4_by_decile.csv` and
+`a4_oracle_recentred.csv`.
+
+**13.5.2 A4b. HCP with $K = 10$ exchangeable donors on CCRCC.** CCRCC, `donor` design, one held-out
+donor per fold: 24 folds with 24 donors, and 23 folds with `INT4` and `INT24` merged. From the
+remaining pool, 10 donors form $C$ and the rest train, three calibration draws with crc32 seeds. Score
+`abs`, three encoders. Four intervals per fold at $\alpha = 0.1$: A1's pooled spot-level quantile; HCP
+with group-equal weights (A3's W3); the Dunn-Wasserman-Ramdas one-score-per-group subsample (one
+calibration spot per donor, $K + 1 = 11$ exchangeable scores, 200 repetitions, width averaged and
+coverage reported per repetition); and, as the control, the same on `random` with $K$ equal to the
+spot count. Record the training-set size beside A1's, and, as the anchor, the pooled-quantile
+coverage against A1's CCRCC `donor` row. $K = 10$ is fixed and is not a session choice (§ 13.8).
+Outputs `results/round3/A4_scores/a4b_hcp_K10.csv` (fold, draw, encoder, method, coverage,
+width_mean, width_median, K, n_T, n_C, finite) and `fig_a4b_hcp_K10.png`, coverage against width for
+the four methods with A1's point marked.
+
+### 13.6 B1 and B2. As §§ 4.7, 4.8 and 12.5, with four changes
+
+- **Inputs.** B1 uses the calibration-fraction-zero `donor` predictions (the H1 mode). IDC
+  $\theta_1$ runs under the four-donor labels of `donor_audit_r3.csv`. CCRCC runs with 24 donors and
+  with `INT4` and `INT24` merged, both reported; the same for B2's semi-synthetic partitions.
+- **References and positioning** as § 12.3 and § 12.5: the four references, and the positioning
+  against Salerno, Wu and McCormick (arXiv:2603.11368) and Shirota (arXiv:2608.10356) in the B1
+  report's opening paragraph; Fisch et al. (arXiv:2406.04291) read first and the difference stated.
+- **The parallel with A4b.** A short paragraph setting $n_{\text{eff}} \approx n_{\text{donors}}/\rho$
+  beside the $K \ge 9$ condition, quoting A4b's result once it exists.
+- **No expansion task in B this round.**
+
+B2 as specified: 200 partitions per setting, the slide-masking variant on PRAD, and the end-of-round
+report as the gate.
+
+### 13.7 D4. The expansion, re-scoped (two days; inside interval 3)
+
+Every D4 arm runs on HEST-1k-layout embeddings only, on patched spots only, with
+`donor_audit_r3.csv` as the grouping source, and the four contradicted papilla samples (`NCBI563` to
+`NCBI566`) excluded from any donor unit. Expansion task definitions are written first, in the A0
+format, with columns `lab`, `source`, `population`, `instrument_generation`, `preservation`, `region`,
+the audit statuses and the unpatched fraction per sample.
+
+1. **The layout anchor, first, and a condition for reading anything else in D4.** CCRCC, 24
+   samples, HEST-1k-layout embeddings, three encoders, the A1 harness on `random` and `donor` with A1's
+   seeds and rule. Compare per-task Pearson and coverage with A1's committed CCRCC rows. If either moves
+   more than predicted, the end-of-round report says so before any expansion number and property 11
+   is extended.
+2. **The Indiana donor set.** The 23 atlas samples (22 donors; `NCBI701` and `NCBI702` are one
+   participant) plus the three single-donor papilla samples, 25 donor units, one laboratory, instrument
+   and objective, fresh frozen throughout. 50 target genes chosen on training samples only per fold,
+   with R2's reproduction check as the template. The A1 harness on `random`, `donor` (25% rule) and the
+   A4b design ($K = 10$; 24 in the pool, 10 calibration, 14 training), `abs`, three encoders, and the
+   R7-style per-gene decomposition. Difference list for `donor`: donor, disease (reference, diabetic,
+   acute injury), region where stated, section and capture area; not laboratory, instrument,
+   preservation or pixel size.
+3. **The kidney population-and-source shift.** `population_out` both ways on the 54-sample set:
+   train on the 24 Cordeliers ccRCC samples and test on the 30 Indiana non-tumour samples, and the
+   reverse, calibration at donor level within the training population, training-only gene selection on
+   the intersection panel. Difference list, written before the term is named: tissue state, anatomical
+   region, disease, preservation (partly), laboratory, instrument, objective, pixel size and the
+   pixel-size provenance flag. Reported as a population-and-source shift, never a laboratory term. The
+   R4-style probe with population as the target, with and without the morphology adjustment, which
+   uses the shipped CellViT counts and areas per spot with round 2's per-sample geometry calibration.
+4. **Breast Xenium, one laboratory, two instrument generations.** Fifteen donor groups; the `donor`
+   design at the 25% rule, `abs`, three encoders, target genes on the common panel chosen on training
+   samples. Two strata: instrument generation, and disease. Difference list for `donor`: donor,
+   disease, block source, instrument generation for some pairs, run date and slide; not laboratory,
+   platform, panel or preservation. No source term is reported from this set.
+5. **What D4 does not do:** no `lab_out` anywhere; no platform-pair set; no Topic B on expansion
+   data; no morphology build beyond the 7.3 probe's inputs.
+
+### 13.8 End-of-round report and decision boundaries
+
+**The end-of-round report** follows § 9's nine items, covering H1, A4, B1, B2 and D4, plus the full
+predictions-against-outcomes table for the round (every prediction from the execution handoff and the
+two memos, with its outcome), an Escalations section, and a closing section titled "What round 3
+established", at most one page, every sentence naming its file. The sweep runs with the corrected
+command over the README and `docs/round3_*.md`. Tag `round3-final`, then stop; the round-4 plan is
+the oversight chat's to write.
+
+**Decision boundaries** are § 8's and § 12.7's, with two additions: A4b's calibration size is fixed at
+$K = 10$ and is not a session choice; and any D4 result that would be read against a benchmark result
+waits for § 13.7.1's anchor and is reported beside it or not at all. Jobs are charged to
+`rc_htzhu_pi`. Nicolas was added to `rc_tengfei_pi` on 23 September, but at transcription time his
+Slurm association did not yet list it, and spending another group's allocation is his decision, so no
+job uses it unless he says so.
+
+**Predictions for interval 3**, consolidated in the memo's § 10 and quoted there so the end-of-round
+report can set outcomes beside them: eleven rows, A4a (1 to 4), A4b (5), B1 (6), B2 (7) and D4.1 to
+D4.4 (8 to 11). They are not restated here, so they cannot drift from the memo's wording.
+
+### 13.9 How the interval is cut into parallel tracks
+
+Per Nicolas's standing rule, parallel work goes to sub-agents. The round-3 audit file comes first,
+built by the lead, because the Inference, HCP and Expansion tracks all group by it; everything else
+fans out once it exists.
+
+| track | stages | writes |
+|---|---|---|
+| lead, before fan-out | § 13.4 item 1's audit file; this transcription | `results/round3/D3_audit/donor_audit_r3.csv`, `docs/round3_execution_plan.md` |
+| Housekeeping | H1 items 1 (the `superseded_label_set` tags), 2 to 5 | the tag column on committed round-3 tables, `README.md`, `docs/hest_bench_issue_draft.md`, `docs/WAYS_OF_WORKING.md`, the banner on `docs/r5_idc_provenance.md`, and only the status, citation and notes columns of `donor_audit_r3.csv`, never `donor_id` |
+| Scores | A4a | `code/scripts/round3_a4_scores.py`, `results/round3/A4_scores/` except `a4b_*` |
+| HCP | A4b | `code/scripts/round3_a4b_hcp.py`, `results/round3/A4_scores/a4b_*` |
+| Inference | B1, then B2 | `code/scripts/round3_b1_ppi.py`, `code/scripts/round3_b2_semisynthetic.py`, `results/round3/B1_ppi/`, `results/round3/B2_semisynthetic/` |
+| Expansion | D4, the layout anchor first | expansion task definitions, `code/scripts/round3_d4_*.py`, `results/round3/D4_expansion/` |
+
+No track edits `code/scripts/round3_a0_harness.py`. Each new script imports the harness unmodified,
+as A3 did, so every result stays anchored to A1's folds. A track that finds it needs a harness edit
+records that as an escalation and works around it in its own script. As before, sub-agents run no
+git command, including read-only queries; the local clone is the only committer.
+
+### 13.10 Points in the memo flagged for the end-of-round report rather than changed
+
+1. **A4b's training size.** § 5.2 says training "falls from 18 to 13 donors". A1's CCRCC `donor`
+   folds have 23 donors in the pool and 6 in calibration
+   (`results/round3/A1_coverage/a1_calibration_units__resnet50__main.csv`), so they train on 17, and
+   the fall is 17 to 13. With `INT4` and `INT24` merged it is 22 in the pool, 10 calibration and 12
+   training; the memo fixes $K = 10$ and does not state this case, so it runs at $K = 10$.
+2. **The round-3 audit file duplicates 28 samples, and the two rows disagree on all 28.** The 76
+   expansion rows include the 24 CCRCC and 4 IDC benchmark samples. On CCRCC, round 2's rows say
+   `verified` and D3's say `unverifiable`; the memo carries round 2's rows unchanged, while its § 3.4
+   accepts D3's reading. On IDC, the memo corrects `TENX95` and `TENX99`, but `NCBI783` and `NCBI785`
+   also differ (round 2 `unverifiable` with per-sample donor ids, D3 `verified` with `NCBI784` and
+   `NCBI785` sharing a donor). The file keeps every row as the memo says, adds a `row_origin` column
+   (`benchmark_r2` or `expansion_d3`), and lists the 28 pairs and their disagreements in a companion
+   file. No row is dropped and no status is chosen between them. Stages that group benchmark tasks use
+   the `benchmark_r2` rows, which is the memo's instruction, and those that group expansion sets use
+   the `expansion_d3` rows.
+3. **The breast instrument-generation stratum.** § 7.4 says "the three Janesick prototype samples
+   against the twelve production-instrument samples". The set has 18 samples, 3 of them Janesick, so
+   the sample split is 3 against 15; the donor-group split is 2 against 13, because `NCBI784` and
+   `NCBI785` share a donor. Twelve matches neither. The stratum is reported both by sample and by donor
+   group.
+4. **README property 11's citation.** § 2.2 cites `anchor_check_consolidated.csv` for the 6% to 15%
+   range, but that file holds only `resnet50`'s rows. The per-encoder range is in
+   `results/round3/D2_embeddings/anchor_check__<set>__<enc>.csv` and in
+   `results/round3/A3_report_numbers.csv`, which property 11 cites instead.
+5. **The `population_out` test set contains the four contradicted papilla samples.** § 7 excludes
+   them from any donor unit, and § 7.3's test population is all 30 Indiana samples. They stay in the
+   test set as spots, and are excluded from any donor-level calibration or clustering.
