@@ -1,0 +1,84 @@
+dir              : /work/users/w/e/weiyang/hest_replication/embeddings_ext/kidney_visium_cell/uni_v2
+stage            : round3 D2 (patch embeddings, set=kidney_visium_cell, encoder=uni_v2)
+script           : code/scripts/round3_d2_embed.py (staged as d2.py in the job workdir)
+extraction_path  : hest.bench.benchmark.embed_tiles + hest.bench.st_dataset.H5PatchDataset + trident.patch_encoder_models.encoder_factory, the same calls hest.bench.benchmark.predict_single_split makes, with round-1 config values
+created          : 2026-09-23T03:37:06.696329-04:00
+operator         : weiyang (Nicolas Weiyang Zhang)
+command_line     : /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python d2.py --set kidney_visium_cell --encoder uni_v2 --config d2_config.json
+config_hash      : sha256:3da008e0b222042f1be1c23c69dc4130 crc32:06edd11f  (over d2_config.json, copied into /work/users/w/e/weiyang/hest_replication/embeddings_ext)
+commit           : 710c4f730efb1176a824c6e06485d48fe4eb9e1b
+cuda             : 13.0
+cudnn            : 92400
+encoder_class    : UNIv2InferenceEncoder
+encoder_precision: torch.bfloat16
+executable       : /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+gpu_capability   : (8, 9)
+gpu_name         : NVIDIA L40S
+node             : g181002.ll.unc.edu
+python           : 3.11.16
+pythonhashseed   : 0
+slurm_job_id     : 2128582
+slurm_nodelist   : g181002
+slurm_partition  : l40-gpu
+torch            : 2.14.0+cu130
+trident_commit_installed: f3eb7f301ce34f875306b545e6cfefc5d3335a5c
+trident_commit_pinned: f3eb7f301ce34f875306b545e6cfefc5d3335a5c
+trident_version  : 0.3.2
+seed             : 1
+batch_size       : 128
+num_workers      : 4
+
+## summary
+{
+  "set": "kidney_visium_cell",
+  "encoder": "uni_v2",
+  "n_samples": 58,
+  "n_written": 58,
+  "n_cached": 0,
+  "n_missing_patches": 0,
+  "patches_embedded": 115785,
+  "seconds_extraction": 1157.5,
+  "n_anchor_samples": 24,
+  "n_anchor_errors": 0,
+  "anchor_barcodes_matched_total": 73813,
+  "anchor_max_rel_diff_elem": 2.0,
+  "anchor_median_of_median_rel_diff_elem": 0.1410269,
+  "anchor_max_rel_l2_row": 0.5360846,
+  "anchor_median_of_median_rel_l2_row": 0.15187175,
+  "anchor_all_agree_1e-5": false,
+  "anchor_samples_disagreeing": [
+    "INT1",
+    "INT10",
+    "INT11",
+    "INT12",
+    "INT13",
+    "INT14",
+    "INT15",
+    "INT16",
+    "INT17",
+    "INT18",
+    "INT19",
+    "INT2",
+    "INT20",
+    "INT21",
+    "INT22",
+    "INT23",
+    "INT24",
+    "INT3",
+    "INT4",
+    "INT5",
+    "INT6",
+    "INT7",
+    "INT8",
+    "INT9"
+  ],
+  "anchor_barcode_sets_identical_all": false,
+  "anchor_row_order_identical_all": false,
+  "anchor_max_abs_img_diff": 152.0,
+  "anchor_max_abs_coord_diff": 13673.0,
+  "config": {
+    "seed": 1,
+    "batch_size": 128,
+    "num_workers": 4
+  }
+}

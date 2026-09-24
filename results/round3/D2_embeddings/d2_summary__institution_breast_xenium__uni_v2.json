@@ -1,0 +1,53 @@
+{
+  "set": "institution_breast_xenium",
+  "encoder": "uni_v2",
+  "n_samples": 18,
+  "n_written": 3,
+  "n_cached": 15,
+  "n_missing_patches": 0,
+  "patches_embedded": 48556,
+  "seconds_extraction": 247.7,
+  "n_anchor_samples": 4,
+  "n_anchor_errors": 0,
+  "anchor_barcodes_matched_total": 35024,
+  "anchor_max_rel_diff_elem": 1.999999,
+  "anchor_median_of_median_rel_diff_elem": 0.13920375000000001,
+  "anchor_max_rel_l2_row": 0.5301515,
+  "anchor_median_of_median_rel_l2_row": 0.1512498,
+  "anchor_all_agree_1e-5": false,
+  "anchor_samples_disagreeing": [
+    "NCBI783",
+    "NCBI785",
+    "TENX95",
+    "TENX99"
+  ],
+  "anchor_barcode_sets_identical_all": false,
+  "anchor_row_order_identical_all": false,
+  "anchor_max_abs_img_diff": 203.0,
+  "anchor_max_abs_coord_diff": 96739.0,
+  "env": {
+    "slurm_job_id": "2210699",
+    "slurm_partition": "l40-gpu",
+    "slurm_nodelist": "g181102",
+    "node": "g181102.ll.unc.edu",
+    "pythonhashseed": "0",
+    "python": "3.11.16",
+    "executable": "/work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python",
+    "torch": "2.14.0+cu130",
+    "cuda": "13.0",
+    "cudnn": 92400,
+    "gpu_name": "NVIDIA L40S",
+    "gpu_capability": "(8, 9)",
+    "trident_version": "0.3.2",
+    "trident_commit_installed": "f3eb7f301ce34f875306b545e6cfefc5d3335a5c",
+    "trident_commit_pinned": "f3eb7f301ce34f875306b545e6cfefc5d3335a5c",
+    "commit": "710c4f730efb1176a824c6e06485d48fe4eb9e1b",
+    "encoder_precision": "torch.bfloat16",
+    "encoder_class": "UNIv2InferenceEncoder"
+  },
+  "config": {
+    "seed": 1,
+    "batch_size": 128,
+    "num_workers": 4
+  }
+}

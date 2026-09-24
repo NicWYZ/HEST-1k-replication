@@ -5,6 +5,14 @@
 `docs/decisions/round3_A1_decisions.md`. Report-and-wait gate. Nothing in interval 3 has been
 started, set up, staged or piloted, and nothing will be until the decision comes back.
 
+**Revision 2, 23 September 2026 (tag `round3-A3-r2`).** The first version (tag `round3-A3`) was
+committed while D2's `hoptimus0` and `uni_v2` jobs were still queued. Nicolas asked that every
+interval-2 result be in before the report goes to review, so D2 was completed and this revision
+replaces the D2 passages only: the status table, the queue note in section 2, the D2 acceptance
+entry in section 3, section 6.9's D2 paragraph, section 7 items 4 and 15, and one line of section
+8. No A2, A3, H0, D1 or D3 number changed; every pooled number the first version cited reproduces
+unchanged in `results/round3/A3_report_numbers.csv`.
+
 Numbers are quoted at the precision the comparison needs, and every one was read back from the file
 named beside it. Full precision stays in the files. Every source term in this report is subject to
 one limitation, stated here once and repeated where it bites: **HEST-1k contains no organ-by-
@@ -22,7 +30,7 @@ fixed, checked across all 46 cells, so the institution axis this round is a two-
 | A2, conditional coverage and the anatomy of failure | complete; every planned output written, fragments merged with zero collisions |
 | A3, weighted and hierarchical conformal | complete; all four acceptance checks pass with zero failures; no harness edit was needed |
 | D1, download of the approved sets | complete and verified; the memo's patch-equals-spot check fails and is replaced by a subset relation, escalated |
-| D2, embeddings for the expansion sets | `resnet50` complete; `hoptimus0` and `uni_v2` pending in the Slurm queue; **the anchor check fails** |
+| D2, embeddings for the expansion sets | complete: three encoders on both analysis sets, 76 samples each; **the anchor check fails for every encoder on every anchor sample** |
 | D3, donor and laboratory audit | complete inside its cap; three findings change round-3 set descriptions and one would change a benchmark donor label, all escalated |
 
 The A2 headline is narrower and stronger than any of the six A2 predictions. What breaks coverage
@@ -71,9 +79,12 @@ backfill. On the lead's diagnosis the Mechanisms track lowered their limits in p
 `scontrol update`, bounded from a sibling job's measured runtime; all five started within minutes.
 Nothing about the jobs' work, resources or seeds changed. The note is under `config.queue_note` in
 `results/round3/A2_conditional/PROVENANCE__mechanisms__tables.txt`. The lead made the same change to the two
-pending D2 GPU jobs, 2128386 (`hoptimus0`, 6 h to 4 h) and 2128582 (`uni_v2`, 6 h to 3 h), which moved
-their estimated start from the evening of 23 September to early that morning; the D2 script caches
-per sample, so a timeout costs only the unwritten samples. Their anchor checks are not in this report. Carried forward: time limits at
+D2 GPU jobs, 2128386 (`hoptimus0`) and 2128582 (`uni_v2`), which then started within hours. Both
+completed the kidney set and failed on the breast set; section 7, item 15 gives the cause and the
+rerun (jobs 2176069 and 2210699, both on L40S nodes; job ids, node and GPU in
+`results/round3/D2_embeddings/PROVENANCE__kidney_visium_cell__hoptimus0.txt`,
+`PROVENANCE__kidney_visium_cell__uni_v2.txt`, `PROVENANCE__institution_breast_xenium__hoptimus0.txt`
+and `PROVENANCE__institution_breast_xenium__uni_v2.txt` in the same directory). Carried forward: time limits at
 about three times the expected runtime, never a blanket 16 h.
 
 ## 3. Acceptance checks
@@ -140,12 +151,25 @@ one of 1,932 cells.
 criterion that each sample's patch count equal its spot count fails on 94 of 105 samples; see
 section 6.9 and section 7, item 3.
 
-**D2 anchor check: FAILS.** `results/round3/D2_embeddings/anchor_check_consolidated.csv` and
+**D2 anchor check: FAILS, for all three encoders.** `results/round3/D2_embeddings/anchor_check__<set>__<enc>.csv`,
+summarised in `results/round3/A3_report_numbers.csv`; the resnet50 diagnostics are in
+`results/round3/D2_embeddings/anchor_check_consolidated.csv` and
 `results/round3/D1_download/round3_d1_d2_expansion_note.md`. The criterion was agreement with the
-cached benchmark embeddings to about $10^{-5}$ relative on the 28 samples present in both layouts.
-For `resnet50` over 108,837 matched barcodes, the per-row relative L2 difference has a median of
-per-sample medians of 0.0633 and a maximum of 0.1552, three to four orders of magnitude above the
-criterion. Section 6.9 gives what differs.
+cached benchmark embeddings to about $10^{-5}$ relative on the 28 samples present in both layouts,
+24 CCRCC in the kidney set and 4 IDC in the breast set. None of the 84 sample-encoder rows meets it.
+Per-row relative L2 between the two layouts' embeddings, over 73,813 matched kidney barcodes and
+35,024 breast barcodes:
+
+| encoder | kidney, median | kidney, max | breast, median | breast, max |
+|---|---|---|---|---|
+| `resnet50` | 0.063 | 0.109 | 0.074 | 0.155 |
+| `hoptimus0` | 0.092 | 0.370 | 0.088 | 0.445 |
+| `uni_v2` | 0.152 | 0.536 | 0.151 | 0.530 |
+
+The median is the median over samples of each sample's median row difference. The disagreement is
+three to four orders of magnitude above the criterion and grows from `resnet50` to `hoptimus0` to
+`uni_v2` on both sets, so the foundation models are more sensitive to the layout difference than
+the ImageNet baseline. Section 6.9 gives what differs.
 
 ## 4. What differs between the arms of each comparison
 
@@ -444,9 +468,18 @@ code is built for this relation: it reads the barcodes from the embedding file a
 expression matrix to them, so the patch barcode list is the reference set and the count criterion
 was the wrong test. Why HEST's patching drops a given spot was not established. Section 7, item 3.
 
-**D2.** `results/round3/D2_embeddings/`. `resnet50` embedded for all 76 samples of the two analysis
-sets; `hoptimus0` (Slurm 2128386) and `uni_v2` (Slurm 2128582) were still pending on `l40-gpu` at
-the time of writing. The anchor check fails (section 3). The patch windows are the same, the
+**D2.** `results/round3/D2_embeddings/`. All three encoders embedded all 76 samples of the two
+analysis sets, 58 kidney and 18 breast, with no sample missing patches (`results/round3/A3_report_numbers.csv`). Every embedding was
+produced on an NVIDIA L40S, in each encoder's own precision as HEST's loader sets it: float32 for
+`resnet50`, float16 for `hoptimus0` and bfloat16 for `uni_v2` (the per-set PROVENANCE files record
+node, GPU, precision and commit). Two script versions produced them, differing only in the barcode
+fix described in section 7, item 15: all 58 kidney samples for each encoder, and 15 of 18
+breast samples per encoder, were written before the fix, and the remaining breast samples after it. The
+fix changes only how barcode strings are stored in the HDF5 file, so the embeddings themselves are
+comparable across the two versions, but the barcode column's HDF5 string type differs between the
+two groups of files, which a reader must tolerate. The PROVENANCE `commit` field records the
+repository HEAD at run time, not the file that ran, and for the first `hoptimus0` and `uni_v2` runs
+the two differ. The anchor check fails for every encoder (section 3). The patch windows are the same, the
 coordinate axes being swapped and offset by half a patch, but the pixel values differ by a few grey
 levels everywhere, with correlation 0.96 to 0.99 per sample, which is the signature of a different
 resampling of the same image rather than a different region. The kept spot sets also differ between
@@ -541,9 +574,12 @@ AnnData's 6,138 rows (`results/round3/H0_housekeeping/tenx111_spot_count.md`).
 3. **The patch-equals-spot criterion is replaced by a subset relation** in D1. Decision needed:
    accept the subset relation as the D1 criterion, and decide whether expansion analyses use the
    patched spots only.
-4. **The D2 anchor check fails.** The two layouts' patches differ by resampling and kept-spot set.
-   Decision needed before any expansion result is read against the benchmark: re-embed the benchmark
-   samples from HEST-1k patches so both sides share a layout, or characterise the difference first.
+4. **The D2 anchor check fails, for all three encoders, and more for the stronger ones.** The two
+   layouts' patches differ by resampling and kept-spot set, and the embedding disagreement rises from
+   0.063 (`resnet50`) to 0.152 (`uni_v2`) in median on the kidney anchors. Decision needed before any
+   expansion result is read against the benchmark: re-embed the benchmark samples from HEST-1k
+   patches so both sides share a layout, or characterise the difference first. Because the
+   foundation models react most, re-embedding is the safer of the two.
 5. **Breast Xenium is one laboratory.** The breast institution cell has no source contrast.
 6. **Kidney is Indiana against Cordeliers, not Washington University against Indiana,** and the
    contrast is confounded with tumour status and partly with preservation.
@@ -577,6 +613,26 @@ AnnData's 6,138 rows (`results/round3/H0_housekeeping/tenx111_spot_count.md`).
 14. **The per-encoder A3 source CSVs stay on Longleaf** under `results/round3/A3_weighted/`; the
     committed merged tables are verified exact concatenations of them. The per-gene A3 parquets,
     about 160 MB, also stay there (gitignored).
+15. **D2's first `hoptimus0` and `uni_v2` runs failed on the breast set, and were rerun**
+    (`results/round3/D2_embeddings/PROVENANCE__kidney_visium_cell__hoptimus0.txt`,
+    `results/round3/D2_embeddings/PROVENANCE__kidney_visium_cell__uni_v2.txt`,
+    `results/round3/D2_embeddings/PROVENANCE__institution_breast_xenium__hoptimus0.txt`,
+    `results/round3/D2_embeddings/PROVENANCE__institution_breast_xenium__uni_v2.txt`). Jobs
+    2128386 and 2128582 had been staged with a copy of `round3_d2_embed.py` taken before the
+    Expansion track fixed a defect in the pinned HEST clone: its HDF5 writer asserts that each
+    appended batch has the dataset's string dtype, while the barcodes arrive as fixed-width byte
+    strings whose width varies by batch. The fix, already in the committed script, hands barcodes
+    over as variable-length strings and changes nothing else. Both jobs completed the kidney set,
+    which the defect did not reach, then stopped partway through the breast set. Their PROVENANCE
+    files record commit 710c4f7 because the Longleaf working copy had been synced to it before they
+    started, but the script they ran was the pre-fix copy staged at submission (md5
+    `ca3fdbc93cc1b676950c9ab924a85333`, against the committed `3b9e47a045993bc2bd38790466486178`),
+    which differs from the committed script only in the fix. The rerun used the committed script, reused the 15 finished breast samples from cache, and re-embedded three:
+    `TENX97`, whose file the crash had left partial, and `TENX98` and `TENX99`, which had not
+    started. The first check after the crash counted two missing samples, not three, because it read
+    the partial file as present. The rerun jobs are 2176069 (`hoptimus0`) and 2210699 (`uni_v2`).
+    Their PROVENANCE files and the per-sample extraction logs in
+    `results/round3/D2_embeddings/` show the cached and written samples.
 
 ## 8. What was not checked
 
@@ -592,7 +648,8 @@ AnnData's 6,138 rows (`results/round3/H0_housekeeping/tenx111_spot_count.md`).
 - Why the neoplastic-fraction tertile bins are unequal in size.
 - Whether HEST ingests the post-Xenium H&E or the DAPI image for the Xenium samples; the region of
   21 of the 23 atlas kidney samples; `TENX71`'s generating laboratory.
-- The mechanism behind the D2 resampling difference, and the D2 anchor for `hoptimus0` and `uni_v2`.
+- The mechanism behind the D2 resampling difference, and why the foundation-model embeddings react
+  to it more than `resnet50`'s.
 - Whether W1's classifier is calibrated as a probability model; the density ratio is validated only
   by the `random` control.
 - Sensitivity of any A3 result to W1's $C$, the 99.5th-percentile clip or the $\hat\sigma$ clip

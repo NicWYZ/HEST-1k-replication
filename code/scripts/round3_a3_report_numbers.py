@@ -10,6 +10,7 @@ Usage (repository root):
     python code/scripts/round3_a3_report_numbers.py
 Writes results/round3/A3_report_numbers.csv with columns name, value, rule, source.
 """
+import json
 from pathlib import Path
 
 import numpy as np
@@ -270,6 +271,34 @@ put("a3_none_cov_all", nn10.coverage.mean(), "mean none coverage, all cells", sr
 put("a3_none_cells_all", len(nn10), "cells", src)
 put("a3_none_cov_excl_idc_audited", nn10[nn10.label_set != "audited"].coverage.mean(), "excluding IDC audited", src)
 put("a3_none_cells_excl_idc_audited", int((nn10.label_set != "audited").sum()), "cells", src)
+
+# ---------------------------------------------------------------- D2, anchor check, all encoders
+D2 = R / "D2_embeddings"
+anc = []
+for s_ in ["kidney_visium_cell", "institution_breast_xenium"]:
+    for e in ENC3:
+        f = D2 / f"anchor_check__{s_}__{e}.csv"
+        a = pd.read_csv(f)
+        assert set(a.encoder) == {e} and set(a.set_name) == {s_}, f
+        anc.append(a)
+        srcd = f"D2_embeddings/anchor_check__{s_}__{e}.csv"
+        put(f"d2_{s_}_{e}_n_samples", len(a), "anchor samples", srcd)
+        put(f"d2_{s_}_{e}_n_agree_1e5", int(a["agrees_1e-5"].astype(str).eq("True").sum()), "samples within 1e-5", srcd)
+        put(f"d2_{s_}_{e}_median_rel_l2", a.median_rel_l2_row.median(), "median over samples of per-sample median row relative L2", srcd)
+        put(f"d2_{s_}_{e}_max_rel_l2", a.max_rel_l2_row.max(), "max over samples of per-row relative L2", srcd)
+        put(f"d2_{s_}_{e}_n_barcodes", int(a.n_barcodes_matched.sum()), "matched barcodes", srcd)
+anc = pd.concat(anc, ignore_index=True)
+srcd = "D2_embeddings/anchor_check__<set>__<enc>.csv, all six"
+put("d2_all_n_rows", len(anc), "sample-encoder rows", srcd)
+put("d2_all_n_agree_1e5", int(anc["agrees_1e-5"].astype(str).eq("True").sum()), "rows within 1e-5", srcd)
+for e, g in anc.groupby("encoder"):
+    put(f"d2_all_{e}_median_rel_l2", g.median_rel_l2_row.median(), "median over 28 anchor samples", srcd)
+for s_ in ["kidney_visium_cell", "institution_breast_xenium"]:
+    for e in ENC3:
+        sm = json.loads((D2 / f"d2_summary__{s_}__{e}.json").read_text())
+        srcs_ = f"D2_embeddings/d2_summary__{s_}__{e}.json"
+        put(f"d2_{s_}_{e}_n_samples_total", sm["n_samples"], "samples in set", srcs_)
+        put(f"d2_{s_}_{e}_n_missing", sm["n_missing_patches"], "samples missing patches", srcs_)
 
 out = pd.DataFrame(rows)
 out.to_csv(R / "A3_report_numbers.csv", index=False, float_format="%.10g")
