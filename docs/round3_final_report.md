@@ -6,6 +6,10 @@
 repository is tagged `round3-final` and work stops; the round-4 plan is the oversight chat's to
 write.
 
+**Revision 2, 24 September 2026 (tag `round3-final-r2`).** The first version (tag `round3-final`,
+commit `8a16020`) repeated a false floating-point example from the A4b hand-back in section 3. This
+revision corrects that sentence and adds section 7 item 18. No number changed.
+
 Numbers are quoted at the precision the comparison needs, and every one was read back from the file
 named beside it. Full precision stays in the files. Every pooled number is computed by a script into
 a committed table, one per track: `results/round3/A4_scores/a4b_summary.csv`,
@@ -135,8 +139,12 @@ per-job decile fragments are committed beside the merged table.
 fold-encoder rows, which the lead checked against `results/round3/A1_coverage/a1_by_fold__<enc>__main.csv`;
 HCP and the one-per-group interval are finite in every cell (`results/round3/A4_scores/a4b_anchor.csv`).
 $K = 10$ was obtained through the harness's own calibration routine by passing
-$(K - 0.5)/n_{\text{units}}$, because `10/23 * 23` evaluates to `10.000000000000002` in floating
-point and ceils to 11.
+$(K - 0.5)/n_{\text{units}}$, whose ceiling is $K$ for every pool size, rather than
+$K/n_{\text{units}}$, whose ceiling exceeds $K$ in floating point for some pool sizes (`7/25 * 25`
+evaluates to `7.000000000000001`). The A4b hand-back and the docstring of
+`code/scripts/round3_a4b_hcp.py` give `10/23 * 23` as the example; that product is exactly 10.0 in
+floating point, so the example is wrong, while the guard is sound and no A4b number depends on it
+(section 7 item 18).
 
 **B1.** The calibration-fraction-zero `patient` predictions reproduce A0's H1 in 12 of 12
 encoder-task cells, maximum difference $1.1 \times 10^{-11}$, before any `donor` prediction was made
@@ -583,6 +591,13 @@ the gate rule requires. None stopped work.
     `results/round3/final_report/interval3_jobs.csv` is built from `sacct` and is authoritative.
 17. **`rc_tengfei_pi`.** Nicolas was added to this account on 23 September. His Slurm association did
     not list it at transcription time, and no job used it.
+18. **A false floating-point example in the A4b record.** The A4b hand-back and the docstring of
+    `code/scripts/round3_a4b_hcp.py` justify passing $(K - 0.5)/n_{\text{units}}$ to the harness by
+    saying `10/23 * 23` evaluates to `10.000000000000002`. It evaluates to exactly 10.0. The hazard
+    the guard protects against is real for other pool sizes, and the guard is correct for all of
+    them, so no A4b number is affected. The docstring is left as committed, because editing it would
+    change the md5 recorded in section 2. A background review flagged the claim after the first
+    version of this report was tagged.
 
 ## 8. What was not checked
 

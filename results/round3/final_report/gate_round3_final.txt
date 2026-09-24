@@ -3,5 +3,5 @@ docs/round3_A1_stage_report.md: 153 claims, 153 verified, 0 not found, 0 uncited
 docs/round3_A3_stage_report.md: 329 claims, 329 verified, 0 not found, 0 uncited
 docs/round3_d0_expansion_proposal.md: 24 claims, 24 verified, 0 not found, 0 uncited
 docs/round3_execution_plan.md: 95 claims, 95 verified, 0 not found, 0 uncited
-docs/round3_final_report.md: 285 claims, 285 verified, 0 not found, 0 uncited
+docs/round3_final_report.md: 288 claims, 288 verified, 0 not found, 0 uncited
 command: python code/scripts/verify_numeric_claims.py README.md docs/round3_*.md --search-dir . --exceptions .verify-exceptions --derived .verify-derived --always results/summary/deck_numbers.csv (run from the repository root; exit 0)
