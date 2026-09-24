@@ -1,0 +1,26 @@
+executed script md5 : 1efae3e0295e13cae00b18e572ebec3e
+committed script md5: 0363082776933e4bfc792f1aa5867524
+The nine production jobs ran the executed version, whose md5 every PROVENANCE file records.
+The committed version adds, after those jobs finished: _anchor_by_cell (the per-cell anchor
+against a1_by_slide), the inapplicable marking of the by-fold anchor under --cqr-cells-only,
+_difference_list_file and the trimming of the two paragraph columns out of the bulk tables,
+the --report-numbers mode, and the figure's shared axes and log width scale.
+Verified by a function-level diff: run_task, interval_for, fold_stats, fit_base, fit_sigma,
+fit_cqr, cqr_predict, fit_nb, nb_predict, nb_ppf, nb_cdf, nb_logpmf, poisson_deviance,
+load_counts, gene_subset, nb_gene_indices, cqr_cell, _positions, _oracle_rows,
+_nb_diagnostics and _pergene_rows are byte-identical between the two versions, so no
+computed interval, coverage, width, dispersion, PIT or decile value differs. The only change
+inside _deciles_for_design is the removal of the paragraph column from the emitted row.
+The merged tables, a4_report_numbers.csv and fig_a4_width_at_coverage.png were produced by
+the committed version.
+
+MERGE RERUN, after the lead's verification found the a4_by_decile dedup defect.
+merge-fix script md5: 541bca01159e06d971419391415c734c
+NO FIT WAS RERUN. No Slurm job was submitted; the 48 per-job CSVs and 12 PROVENANCE files
+written by the production jobs are unchanged on disk, and only --merge and --report-numbers
+were re-run locally over them. Verified byte-identical after the rerun: a4_by_fold.csv,
+a4_oracle_recentred.csv and fig_a4_width_at_coverage.png (md5 unchanged), so the primary
+width-at-coverage table, the first comparison, the oracle and every NB number are untouched.
+Four values in a4_report_numbers.csv changed, all of them the `abs` top-decile coverage on
+the `full` subset, which had been taking the CQR invocation's draw-0-only aggregate instead
+of the main invocation's superset.

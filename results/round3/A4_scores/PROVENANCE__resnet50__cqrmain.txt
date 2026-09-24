@@ -1,0 +1,30 @@
+==============================================================================
+Round 3, stage A4a - adaptive scores and the model-based comparator, encoder resnet50
+tasks           : CCRCC/shipped, COAD/shipped, HCC/shipped, IDC/shipped, LUNG/shipped, LYMPH_IDC/shipped, PAAD/shipped, PRAD/shipped, READ/shipped, SKCM/shipped
+slurm_job_id    : 2305585
+slurm_partition : spill
+node            : c0912
+gpu             : none
+date            : 2026-09-24T02:32:41-0400
+repo_commit     : a181326b411573d91a82826b66431b0baccef0ff
+script          : code/scripts/round3_a4_scores.py
+script_file     : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/564d1cb5-0aab-4bc2-9775-fff4d29abc22/round3_a4_scores.py
+script_md5      : 1efae3e0295e13cae00b18e572ebec3e
+script_sha256   : sha256/16 4091b688776162fa
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5  (imported unmodified, not edited)
+harness_sha256  : sha256/16 4f0536fa25900c9f
+command_line    : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/564d1cb5-0aab-4bc2-9775-fff4d29abc22/round3_a4_scores.py resnet50 --task-def /work/users/w/e/weiyang/hest_replication/results/round3/task_defs/CCRCC.json --task-def /work/users/w/e/weiyang/hest_replication/results/round3/task_defs/COAD.json --task-def /work/users/w/e/weiyang/hest_replication/results/round3/task_defs/HCC.json --task-def /work/users/w/e/weiyang/hest_replication/results/round3/task_defs/IDC.json --task-def /work/users/w/e/weiyang/hest_replication/results/round3/task_defs/LUNG.json --task-def /work/users/w/e/weiyang/hest_replication/results/round3/task_defs/LYMPH_IDC.json --task-def /work/users/w/e/weiyang/hest_replication/results/round3/task_defs/PAAD.json --task-def /work/users/w/e/weiyang/hest_replication/results/round3/task_defs/PRAD.json --task-def /work/users/w/e/weiyang/hest_replication/results/round3/task_defs/READ.json --task-def /work/users/w/e/weiyang/hest_replication/results/round3/task_defs/SKCM.json --designs random,patient,donor --scores abs,cqr --alpha 0.10 --alpha-grid 0.02,0.05,0.075,0.10,0.15,0.20,0.30 --cqr-genes 6 --cqr-max-draws 1 --cqr-cells-only 1 --cqr-subsample 2500 --cqr-budget-s 2400 --nb-genes 12 --accept-tag main --out-dir results/round3/A4_scores --tag __cqrmain
+pythonhashseed  : 0
+numpy           : 2.4.6
+pandas          : 2.3.3
+n_spots_by_task : {"CCRCC": 74220, "COAD": 15651, "HCC": 4196, "IDC": 35536, "LUNG": 5206, "LYMPH_IDC": 19964, "PAAD": 7571, "PRAD": 62710, "READ": 8407, "SKCM": 3034}
+embedding_dim   : {"CCRCC": 1024, "COAD": 1024, "HCC": 1024, "IDC": 1024, "LUNG": 1024, "LYMPH_IDC": 1024, "PAAD": 1024, "PRAD": 1024, "READ": 1024, "SKCM": 1024}
+n_fold_rows     : 2807
+wall_seconds    : 9184
+wall_by_task    : {"CCRCC/shipped": 2845.4, "COAD/shipped": 955.6, "HCC/shipped": 186.1, "IDC/shipped": 1468.5, "LUNG/shipped": 165.2, "LYMPH_IDC/shipped": 1434.1, "PAAD/shipped": 765.3, "PRAD/shipped": 815.5, "READ/shipped": 449.2, "SKCM/shipped": 97.1}
+cqr_seconds_by_task : {"CCRCC/shipped": 2406.2, "COAD/shipped": 914.6, "HCC/shipped": 166.1, "IDC/shipped": 1397.9, "LUNG/shipped": 146.7, "LYMPH_IDC/shipped": 1349.9, "PAAD/shipped": 732.6, "PRAD/shipped": 717.9, "READ/shipped": 416.6, "SKCM/shipped": 82.0}
+acceptance      : FAIL
+files_written   : a4_acceptance__resnet50__cqrmain.csv, a4_by_fold__resnet50__cqrmain.csv, a4_scores_by_task__resnet50__cqrmain.csv, a4_by_decile__resnet50__cqrmain.csv, a4_oracle_recentred__resnet50__cqrmain.csv, a4_cqr_fits__resnet50__cqrmain.csv, a4_pergene__resnet50__cqrmain.parquet
+config_hash     : sha256/16 56c9a9e46c38b778
+config          : {"alpha": 0.1, "alpha_grid": [0.02, 0.05, 0.075, 0.1, 0.15, 0.2, 0.3], "base_predictor": "imported unmodified from round3_a0_harness.fit_base", "counts_dir": "instrumentation", "counts_tol": 1e-05, "cqr_budget_s": 2400.0, "cqr_cells_only": 1, "cqr_designs": "", "cqr_genes": 6, "cqr_mark_only": 0, "cqr_max_draws": 1, "cqr_max_folds": 0, "cqr_presubsample": 1, "cqr_quantiles": [0.05, 0.95], "cqr_solver": "highs", "cqr_subsample": 2500, "cqr_timebox_s": 1200.0, "designs": ["random", "patient", "donor"], "encoder": "resnet50", "fit_designs": "", "max_folds": null, "min_C_spots": 9, "min_T_spots": 512, "min_slide_spots": 50, "n_cal_draws": 3, "n_deciles": 10, "n_repeats": null, "nb_gene_set": "union of the NB and CQR evenly spaced subsets", "nb_genes": 12, "nb_l2": "same as the mean head: ALPHA_NUM/(n_components*n_genes)", "nb_max_iter": 300, "nb_score_tol": 0.001, "nb_solver": "newton-cholesky", "nb_tol": 1e-06, "pit_bins_fine": 1000, "probe_genes": 2, "probe_sizes": "2000,5000,20000", "scores": ["abs", "cqr"], "script": "code/scripts/round3_a4_scores.py", "seed_source": "zlib.crc32 via the harness", "sigma_clip_hi_pct": 99.0, "sigma_clip_lo_pct": 1.0, "sigma_floor": 0.001, "size_match": "task", "spot_cal_draws": 1, "stage": "round3_A4a", "task_defs": ["results/round3/task_defs/CCRCC.json", "results/round3/task_defs/COAD.json", "results/round3/task_defs/HCC.json", "results/round3/task_defs/IDC.json", "results/round3/task_defs/LUNG.json", "results/round3/task_defs/LYMPH_IDC.json", "results/round3/task_defs/PAAD.json", "results/round3/task_defs/PRAD.json", "results/round3/task_defs/READ.json", "results/round3/task_defs/SKCM.json"], "tasks": ["CCRCC/shipped", "COAD/shipped", "HCC/shipped", "IDC/shipped", "LUNG/shipped", "LYMPH_IDC/shipped", "PAAD/shipped", "PRAD/shipped", "READ/shipped", "SKCM/shipped"], "timing_probe": false}
+plan            : round3_execution_plan.md sections 4.6 and 13.5.1

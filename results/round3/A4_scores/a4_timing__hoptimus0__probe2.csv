@@ -1,0 +1,13 @@
+task,encoder,design,fold,n_T_natural,n_used,fit,detail,gene,seconds,status,base_fit_seconds,deviance,score_residual,n_iter
+CCRCC,hoptimus0,random,0,35996,8000,cqr,q=0.05,AKAP8,81.408,ok,13.1,,,
+CCRCC,hoptimus0,random,0,35996,8000,cqr,q=0.95,AKAP8,150.206,ok,13.1,,,
+CCRCC,hoptimus0,random,0,35996,8000,nb_poisson,lbfgs|tol=0.0001,AKAP8,8.611,ok,13.1,7932.719285064331,5.20461699498819e-05,88.0
+CCRCC,hoptimus0,random,0,35996,8000,nb_poisson,lbfgs|tol=1e-06,AKAP8,15.258,ok,13.1,7932.716910746871,1.2535238651835364e-07,136.0
+CCRCC,hoptimus0,random,0,35996,8000,nb_poisson,newton-cholesky|tol=0.0001,AKAP8,0.962,ok,13.1,7932.717014003501,2.0246484087210405e-06,5.0
+CCRCC,hoptimus0,random,0,35996,8000,nb_poisson,newton-cholesky|tol=1e-06,AKAP8,1.014,ok,13.1,7932.716910208369,7.234584654530523e-11,6.0
+CCRCC,hoptimus0,random,0,35996,20000,cqr,q=0.05,AKAP8,395.272,ok,13.1,,,
+CCRCC,hoptimus0,random,0,35996,20000,cqr,q=0.95,AKAP8,1015.595,ok,13.1,,,
+CCRCC,hoptimus0,random,0,35996,20000,nb_poisson,lbfgs|tol=0.0001,AKAP8,9.399,ok,13.1,20998.63909607158,1.5336023089055695e-05,81.0
+CCRCC,hoptimus0,random,0,35996,20000,nb_poisson,lbfgs|tol=1e-06,AKAP8,14.583,ok,13.1,20998.639338703528,1.4698387686044885e-07,123.0
+CCRCC,hoptimus0,random,0,35996,20000,nb_poisson,newton-cholesky|tol=0.0001,AKAP8,1.301,ok,13.1,20998.63948481786,1.5088964034219912e-06,5.0
+CCRCC,hoptimus0,random,0,35996,20000,nb_poisson,newton-cholesky|tol=1e-06,AKAP8,1.531,ok,13.1,20998.63931721854,5.362499699772553e-11,6.0

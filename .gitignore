@@ -69,3 +69,15 @@ out_sweep_final.tsv
 
 # on-disk cache of extracted file values (see verify_numeric_claims.py)
 .verify-cache/
+
+# Round 3 A4a per-job CSV fragments. The merged a4_*.csv tables beside them carry every row
+# (each with a _source column; rows two jobs share were verified identical), so these fragments
+# are not committed; they stay on Longleaf under results/round3/A4_scores/. The exception is
+# a4_by_decile: its rows are per-job aggregates, the merge keeps one job's row per key by a
+# source rule, and the fragments are the only record of the other job's rows, so they ARE
+# committed (the negation below).
+results/round3/A4_scores/a4_*__*__mainCCRCC.csv
+results/round3/A4_scores/a4_*__*__main9.csv
+results/round3/A4_scores/a4_*__*__slideout.csv
+results/round3/A4_scores/a4_*__*__cqrmain.csv
+!results/round3/A4_scores/a4_by_decile__*__*.csv

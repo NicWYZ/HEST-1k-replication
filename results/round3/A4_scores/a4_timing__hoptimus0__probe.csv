@@ -1,0 +1,13 @@
+task,encoder,design,fold,n_T_natural,n_used,fit,detail,gene,seconds,status,base_fit_seconds
+CCRCC,hoptimus0,random,0,35996,500,cqr,q=0.05,AKAP8,0.705,ok,5.55
+CCRCC,hoptimus0,random,0,35996,500,cqr,q=0.95,AKAP8,0.396,ok,5.55
+CCRCC,hoptimus0,random,0,35996,500,nb_poisson,,AKAP8,12.024,ok,5.55
+CCRCC,hoptimus0,random,0,35996,2000,cqr,q=0.05,AKAP8,2.064,ok,5.55
+CCRCC,hoptimus0,random,0,35996,2000,cqr,q=0.95,AKAP8,3.077,ok,5.55
+CCRCC,hoptimus0,random,0,35996,2000,nb_poisson,,AKAP8,16.694,ok,5.55
+CCRCC,hoptimus0,random,0,35996,8000,cqr,q=0.05,AKAP8,17.817,ok,5.55
+CCRCC,hoptimus0,random,0,35996,8000,cqr,q=0.95,AKAP8,36.84,ok,5.55
+CCRCC,hoptimus0,random,0,35996,8000,nb_poisson,,AKAP8,14.887,ok,5.55
+SKCM,hoptimus0,random,0,693,500,cqr,q=0.05,ACER1,0.388,ok,0.83
+SKCM,hoptimus0,random,0,693,500,cqr,q=0.95,ACER1,0.387,ok,0.83
+SKCM,hoptimus0,random,0,693,500,nb_poisson,,ACER1,12.936,ok,0.83

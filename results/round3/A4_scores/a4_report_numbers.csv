@@ -1,0 +1,411 @@
+name,scope,value,n,source,note
+anchor_cell_max_abs_dcoverage,"all encoders, all cells",4.440892098500626e-16,2640,a4_acceptance.csv,"max over encoders and A1 tags of max |dcoverage| per (fold, repeat, draw) against a1_by_slide"
+anchor_byfold_max_abs_dcoverage,invocations scoring every cell,3.3306690738754696e-16,804,a4_acceptance.csv,"max |dcoverage| against a1_by_fold, abs and scaled"
+width_mean_abs,"subset cqr_matched, alpha 0.1, all cells",2.451372909788533,402,a4_by_fold.csv,"unweighted mean over (task, design, encoder, fold, repeat, draw) cells"
+width_median_abs,"subset cqr_matched, alpha 0.1, all cells",2.245982954166817,402,a4_by_fold.csv,mean over cells of the within-cell median spot-gene width
+coverage_abs,"subset cqr_matched, alpha 0.1, all cells",0.8524820588591784,402,a4_by_fold.csv,
+width_mean_scaled,"subset cqr_matched, alpha 0.1, all cells",3.5669107647445077,402,a4_by_fold.csv,"unweighted mean over (task, design, encoder, fold, repeat, draw) cells"
+width_median_scaled,"subset cqr_matched, alpha 0.1, all cells",2.598164621459169,402,a4_by_fold.csv,mean over cells of the within-cell median spot-gene width
+coverage_scaled,"subset cqr_matched, alpha 0.1, all cells",0.85534819709031,402,a4_by_fold.csv,
+width_mean_scaled_clip,"subset cqr_matched, alpha 0.1, all cells",3.543330236557404,402,a4_by_fold.csv,"unweighted mean over (task, design, encoder, fold, repeat, draw) cells"
+width_median_scaled_clip,"subset cqr_matched, alpha 0.1, all cells",2.591525419740787,402,a4_by_fold.csv,mean over cells of the within-cell median spot-gene width
+coverage_scaled_clip,"subset cqr_matched, alpha 0.1, all cells",0.8542377572935799,402,a4_by_fold.csv,
+width_ratio_scaled_clip_over_scaled,"subset cqr_matched, alpha 0.1",0.9929729178882941,402,a4_by_fold.csv,mean over cells of the per-cell width ratio
+frac_cells_scaled_clip_narrows_scaled_by_half,"subset cqr_matched, alpha 0.1",0.0,402,a4_by_fold.csv,memo prediction 1 asks for a narrowing of more than half
+width_ratio_scaled_over_abs,"subset cqr_matched, alpha 0.1",1.490281558907189,402,a4_by_fold.csv,
+width_mean_abs,"subset full, alpha 0.1, all cells",2.2117404428791683,1320,a4_by_fold.csv,"unweighted mean over (task, design, encoder, fold, repeat, draw) cells"
+width_median_abs,"subset full, alpha 0.1, all cells",2.0807125913276363,1320,a4_by_fold.csv,mean over cells of the within-cell median spot-gene width
+coverage_abs,"subset full, alpha 0.1, all cells",0.8562142941481029,1320,a4_by_fold.csv,
+width_mean_scaled,"subset full, alpha 0.1, all cells",3.941586546295217,1320,a4_by_fold.csv,"unweighted mean over (task, design, encoder, fold, repeat, draw) cells"
+width_median_scaled,"subset full, alpha 0.1, all cells",2.241893176029693,1320,a4_by_fold.csv,mean over cells of the within-cell median spot-gene width
+coverage_scaled,"subset full, alpha 0.1, all cells",0.8630347479049005,1320,a4_by_fold.csv,
+width_mean_scaled_clip,"subset full, alpha 0.1, all cells",3.888148576354024,1320,a4_by_fold.csv,"unweighted mean over (task, design, encoder, fold, repeat, draw) cells"
+width_median_scaled_clip,"subset full, alpha 0.1, all cells",2.2322064174568097,1320,a4_by_fold.csv,mean over cells of the within-cell median spot-gene width
+coverage_scaled_clip,"subset full, alpha 0.1, all cells",0.8628477878402868,1320,a4_by_fold.csv,
+width_ratio_scaled_clip_over_scaled,"subset full, alpha 0.1",0.9886969903377301,1320,a4_by_fold.csv,mean over cells of the per-cell width ratio
+frac_cells_scaled_clip_narrows_scaled_by_half,"subset full, alpha 0.1",0.0007575757575757576,1320,a4_by_fold.csv,memo prediction 1 asks for a narrowing of more than half
+width_ratio_scaled_over_abs,"subset full, alpha 0.1",1.4994804577486183,1320,a4_by_fold.csv,
+width_mean_abs,"subset nb_matched, alpha 0.1, all cells",2.2812620534023464,1320,a4_by_fold.csv,"unweighted mean over (task, design, encoder, fold, repeat, draw) cells"
+width_median_abs,"subset nb_matched, alpha 0.1, all cells",2.1068877964573596,1320,a4_by_fold.csv,mean over cells of the within-cell median spot-gene width
+coverage_abs,"subset nb_matched, alpha 0.1, all cells",0.8535983188106194,1320,a4_by_fold.csv,
+width_mean_scaled,"subset nb_matched, alpha 0.1, all cells",4.406529778775201,1320,a4_by_fold.csv,"unweighted mean over (task, design, encoder, fold, repeat, draw) cells"
+width_median_scaled,"subset nb_matched, alpha 0.1, all cells",2.289878692576503,1320,a4_by_fold.csv,mean over cells of the within-cell median spot-gene width
+coverage_scaled,"subset nb_matched, alpha 0.1, all cells",0.8612947802430692,1320,a4_by_fold.csv,
+width_mean_scaled_clip,"subset nb_matched, alpha 0.1, all cells",4.352755505457743,1320,a4_by_fold.csv,"unweighted mean over (task, design, encoder, fold, repeat, draw) cells"
+width_median_scaled_clip,"subset nb_matched, alpha 0.1, all cells",2.2819665717708064,1320,a4_by_fold.csv,mean over cells of the within-cell median spot-gene width
+coverage_scaled_clip,"subset nb_matched, alpha 0.1, all cells",0.861003304554745,1320,a4_by_fold.csv,
+width_ratio_scaled_clip_over_scaled,"subset nb_matched, alpha 0.1",0.9897971016184367,1320,a4_by_fold.csv,mean over cells of the per-cell width ratio
+frac_cells_scaled_clip_narrows_scaled_by_half,"subset nb_matched, alpha 0.1",0.0022727272727272726,1320,a4_by_fold.csv,memo prediction 1 asks for a narrowing of more than half
+width_ratio_scaled_over_abs,"subset nb_matched, alpha 0.1",1.5666381758238574,1320,a4_by_fold.csv,
+frac_folds_lower_clip_binds,every fold with scaled_clip,0.9984848484848485,1320,a4_sigma_clip.csv,"binds = at least one TEST sigmahat below the lower clip, so the clip changes that fold's intervals"
+frac_folds_p1_of_sigma_below_harness_floor,every fold with scaled_clip,0.20454545454545456,1320,a4_sigma_clip.csv,"the 1st percentile of the calibration sigmahat is itself below SIGMA_FLOOR, so the lower clip IS the floor and the percentile never acts"
+mean_frac_cal_sigma_below_floor,every fold with scaled_clip,0.0059531638777689825,1320,a4_sigma_clip.csv,the extrapolation defect: an unconstrained ridge on absolute residuals predicting a negative sigmahat
+mean_frac_test_sigma_clipped_high,every fold with scaled_clip,0.015908713852354164,1320,a4_sigma_clip.csv,
+top_decile_coverage_abs,"subset cqr_matched, all designs",0.7223539568222338,1403917,a4_by_decile.csv,"pooled over task, design, encoder and fold; decile 9 of the base head's predicted value within task and gene"
+top_decile_coverage_abs__donor,"subset cqr_matched, design donor",0.7052647896057045,425772,a4_by_decile.csv,
+top_decile_coverage_abs__patient,"subset cqr_matched, design patient",0.712160499046438,425772,a4_by_decile.csv,
+top_decile_coverage_abs__random,"subset cqr_matched, design random",0.7839947201788751,425772,a4_by_decile.csv,
+top_decile_coverage_abs__slide_out,"subset cqr_matched, design slide_out",0.6068040536804606,126601,a4_by_decile.csv,
+top_decile_coverage_cqr,"subset cqr_matched, all designs",0.8746546268091923,1384734,a4_by_decile.csv,"pooled over task, design, encoder and fold; decile 9 of the base head's predicted value within task and gene"
+top_decile_coverage_cqr__donor,"subset cqr_matched, design donor",0.8479176760807597,406589,a4_by_decile.csv,
+top_decile_coverage_cqr__patient,"subset cqr_matched, design patient",0.8601199703127496,425772,a4_by_decile.csv,
+top_decile_coverage_cqr__random,"subset cqr_matched, design random",0.8982741936999145,425772,a4_by_decile.csv,
+top_decile_coverage_cqr__slide_out,"subset cqr_matched, design slide_out",0.9299689575911723,126601,a4_by_decile.csv,
+top_decile_coverage_nb,"subset cqr_matched, all designs",0.7405447812090208,1404674,a4_by_decile.csv,"pooled over task, design, encoder and fold; decile 9 of the base head's predicted value within task and gene"
+top_decile_coverage_nb__donor,"subset cqr_matched, design donor",0.6812748688351532,504899,a4_by_decile.csv,
+top_decile_coverage_nb__patient,"subset cqr_matched, design patient",0.6977603889472246,347605,a4_by_decile.csv,
+top_decile_coverage_nb__random,"subset cqr_matched, design random",0.8330540993352429,425569,a4_by_decile.csv,
+top_decile_coverage_nb__slide_out,"subset cqr_matched, design slide_out",0.7834219318962725,126601,a4_by_decile.csv,
+top_decile_coverage_nb_conformal,"subset cqr_matched, all designs",0.8667875962678885,1404674,a4_by_decile.csv,"pooled over task, design, encoder and fold; decile 9 of the base head's predicted value within task and gene"
+top_decile_coverage_nb_conformal__donor,"subset cqr_matched, design donor",0.851401963561029,504899,a4_by_decile.csv,
+top_decile_coverage_nb_conformal__patient,"subset cqr_matched, design patient",0.8665410451518246,347605,a4_by_decile.csv,
+top_decile_coverage_nb_conformal__random,"subset cqr_matched, design random",0.9019923913630927,425569,a4_by_decile.csv,
+top_decile_coverage_nb_conformal__slide_out,"subset cqr_matched, design slide_out",0.8104833295155647,126601,a4_by_decile.csv,
+top_decile_coverage_scaled,"subset cqr_matched, all designs",0.8289795354651684,1404674,a4_by_decile.csv,"pooled over task, design, encoder and fold; decile 9 of the base head's predicted value within task and gene"
+top_decile_coverage_scaled__donor,"subset cqr_matched, design donor",0.7872960730760014,504899,a4_by_decile.csv,
+top_decile_coverage_scaled__patient,"subset cqr_matched, design patient",0.790423037643302,347605,a4_by_decile.csv,
+top_decile_coverage_scaled__random,"subset cqr_matched, design random",0.9004673742683326,425569,a4_by_decile.csv,
+top_decile_coverage_scaled__slide_out,"subset cqr_matched, design slide_out",0.8607751913491994,126601,a4_by_decile.csv,
+top_decile_coverage_scaled_clip,"subset cqr_matched, all designs",0.8205348714363617,1404674,a4_by_decile.csv,"pooled over task, design, encoder and fold; decile 9 of the base head's predicted value within task and gene"
+top_decile_coverage_scaled_clip__donor,"subset cqr_matched, design donor",0.785848258760663,504899,a4_by_decile.csv,
+top_decile_coverage_scaled_clip__patient,"subset cqr_matched, design patient",0.7867205592554768,347605,a4_by_decile.csv,
+top_decile_coverage_scaled_clip__random,"subset cqr_matched, design random",0.8979812909304954,425569,a4_by_decile.csv,
+top_decile_coverage_scaled_clip__slide_out,"subset cqr_matched, design slide_out",0.7913760554813943,126601,a4_by_decile.csv,
+top_decile_coverage_abs,"subset full, all designs",0.7054914998297102,41264938,a4_by_decile.csv,"pooled over task, design, encoder and fold; decile 9 of the base head's predicted value within task and gene"
+top_decile_coverage_abs__donor,"subset full, design donor",0.6944602661957038,10163575,a4_by_decile.csv,
+top_decile_coverage_abs__patient,"subset full, design patient",0.6669722996909069,10163605,a4_by_decile.csv,
+top_decile_coverage_abs__random,"subset full, design random",0.7525683787048995,17737357,a4_by_decile.csv,
+top_decile_coverage_abs__slide_out,"subset full, design slide_out",0.6019392569868588,3200401,a4_by_decile.csv,
+top_decile_coverage_cqr,"subset full, all designs",0.8746663162249922,1384919,a4_by_decile.csv,"pooled over task, design, encoder and fold; decile 9 of the base head's predicted value within task and gene"
+top_decile_coverage_cqr__donor,"subset full, design donor",0.8479696342440766,406774,a4_by_decile.csv,
+top_decile_coverage_cqr__patient,"subset full, design patient",0.8601199703127496,425772,a4_by_decile.csv,
+top_decile_coverage_cqr__random,"subset full, design random",0.8982741936999145,425772,a4_by_decile.csv,
+top_decile_coverage_cqr__slide_out,"subset full, design slide_out",0.9299689575911723,126601,a4_by_decile.csv,
+top_decile_coverage_nb,"subset full, all designs",0.761376417555714,13204772,a4_by_decile.csv,"pooled over task, design, encoder and fold; decile 9 of the base head's predicted value within task and gene"
+top_decile_coverage_nb__donor,"subset full, design donor",0.679816169337717,3252341,a4_by_decile.csv,
+top_decile_coverage_nb__patient,"subset full, design patient",0.6762854640049171,3252347,a4_by_decile.csv,
+top_decile_coverage_nb__random,"subset full, design random",0.844435517899631,5675955,a4_by_decile.csv,
+top_decile_coverage_nb__slide_out,"subset full, design slide_out",0.8302811462227903,1024129,a4_by_decile.csv,
+top_decile_coverage_nb_conformal,"subset full, all designs",0.8658204018971324,13204772,a4_by_decile.csv,"pooled over task, design, encoder and fold; decile 9 of the base head's predicted value within task and gene"
+top_decile_coverage_nb_conformal__donor,"subset full, design donor",0.8278950454457267,3252341,a4_by_decile.csv,
+top_decile_coverage_nb_conformal__patient,"subset full, design patient",0.828815621457366,3252347,a4_by_decile.csv,
+top_decile_coverage_nb_conformal__random,"subset full, design random",0.9066854828834972,5675955,a4_by_decile.csv,
+top_decile_coverage_nb_conformal__slide_out,"subset full, design slide_out",0.8772937784204919,1024129,a4_by_decile.csv,
+top_decile_coverage_scaled,"subset full, all designs",0.8497342223075678,41264938,a4_by_decile.csv,"pooled over task, design, encoder and fold; decile 9 of the base head's predicted value within task and gene"
+top_decile_coverage_scaled__donor,"subset full, design donor",0.800665021904202,10163575,a4_by_decile.csv,
+top_decile_coverage_scaled__patient,"subset full, design patient",0.7958935830347598,10163605,a4_by_decile.csv,
+top_decile_coverage_scaled__random,"subset full, design random",0.9016047881316253,17737357,a4_by_decile.csv,
+top_decile_coverage_scaled__slide_out,"subset full, design slide_out",0.8890689010533368,3200401,a4_by_decile.csv,
+top_decile_coverage_scaled_clip,"subset full, all designs",0.8441031221227087,41264938,a4_by_decile.csv,"pooled over task, design, encoder and fold; decile 9 of the base head's predicted value within task and gene"
+top_decile_coverage_scaled_clip__donor,"subset full, design donor",0.7975614879606832,10163575,a4_by_decile.csv,
+top_decile_coverage_scaled_clip__patient,"subset full, design patient",0.7916831675375027,10163605,a4_by_decile.csv,
+top_decile_coverage_scaled_clip__random,"subset full, design random",0.896569088619009,17737357,a4_by_decile.csv,
+top_decile_coverage_scaled_clip__slide_out,"subset full, design slide_out",0.8675994039496926,3200401,a4_by_decile.csv,
+top_decile_coverage_abs,"subset nb_matched, all designs",0.7125602774512123,13204772,a4_by_decile.csv,"pooled over task, design, encoder and fold; decile 9 of the base head's predicted value within task and gene"
+top_decile_coverage_abs__donor,"subset nb_matched, design donor",0.688508062346476,3252341,a4_by_decile.csv,
+top_decile_coverage_abs__patient,"subset nb_matched, design patient",0.6664442631736405,3252347,a4_by_decile.csv,
+top_decile_coverage_abs__random,"subset nb_matched, design random",0.7679239881218227,5675955,a4_by_decile.csv,
+top_decile_coverage_abs__slide_out,"subset nb_matched, design slide_out",0.6285565587928864,1024129,a4_by_decile.csv,
+top_decile_coverage_nb,"subset nb_matched, all designs",0.761376417555714,13204772,a4_by_decile.csv,"pooled over task, design, encoder and fold; decile 9 of the base head's predicted value within task and gene"
+top_decile_coverage_nb__donor,"subset nb_matched, design donor",0.679816169337717,3252341,a4_by_decile.csv,
+top_decile_coverage_nb__patient,"subset nb_matched, design patient",0.6762854640049171,3252347,a4_by_decile.csv,
+top_decile_coverage_nb__random,"subset nb_matched, design random",0.844435517899631,5675955,a4_by_decile.csv,
+top_decile_coverage_nb__slide_out,"subset nb_matched, design slide_out",0.8302811462227903,1024129,a4_by_decile.csv,
+top_decile_coverage_nb_conformal,"subset nb_matched, all designs",0.8658204018971324,13204772,a4_by_decile.csv,"pooled over task, design, encoder and fold; decile 9 of the base head's predicted value within task and gene"
+top_decile_coverage_nb_conformal__donor,"subset nb_matched, design donor",0.8278950454457267,3252341,a4_by_decile.csv,
+top_decile_coverage_nb_conformal__patient,"subset nb_matched, design patient",0.828815621457366,3252347,a4_by_decile.csv,
+top_decile_coverage_nb_conformal__random,"subset nb_matched, design random",0.9066854828834972,5675955,a4_by_decile.csv,
+top_decile_coverage_nb_conformal__slide_out,"subset nb_matched, design slide_out",0.8772937784204919,1024129,a4_by_decile.csv,
+top_decile_coverage_scaled,"subset nb_matched, all designs",0.8416537597165631,13204772,a4_by_decile.csv,"pooled over task, design, encoder and fold; decile 9 of the base head's predicted value within task and gene"
+top_decile_coverage_scaled__donor,"subset nb_matched, design donor",0.7882783508863308,3252341,a4_by_decile.csv,
+top_decile_coverage_scaled__patient,"subset nb_matched, design patient",0.7811620346783416,3252347,a4_by_decile.csv,
+top_decile_coverage_scaled__random,"subset nb_matched, design random",0.9009690880213109,5675955,a4_by_decile.csv,
+top_decile_coverage_scaled__slide_out,"subset nb_matched, design slide_out",0.8745245960225714,1024129,a4_by_decile.csv,
+top_decile_coverage_scaled_clip,"subset nb_matched, all designs",0.8364300421090194,13204772,a4_by_decile.csv,"pooled over task, design, encoder and fold; decile 9 of the base head's predicted value within task and gene"
+top_decile_coverage_scaled_clip__donor,"subset nb_matched, design donor",0.785469604816961,3252341,a4_by_decile.csv,
+top_decile_coverage_scaled_clip__patient,"subset nb_matched, design patient",0.7769152553525193,3252347,a4_by_decile.csv,
+top_decile_coverage_scaled_clip__random,"subset nb_matched, design random",0.8969676468541418,5675955,a4_by_decile.csv,
+top_decile_coverage_scaled_clip__slide_out,"subset nb_matched, design slide_out",0.8517550035200644,1024129,a4_by_decile.csv,
+A2_top_decile_coverage_abs__donor,"A2 baseline, design donor",0.6944602661957038,10163575,results/round3/A2_conditional/a2_strata__*.csv,"A2's own committed decile table, IDC audited excluded; the memo's prediction 2 quotes 0.68 for this quantity"
+A2_top_decile_coverage_abs__patient,"A2 baseline, design patient",0.6669722996909069,10163605,results/round3/A2_conditional/a2_strata__*.csv,"A2's own committed decile table, IDC audited excluded; the memo's prediction 2 quotes 0.68 for this quantity"
+A2_top_decile_coverage_abs__slide_out,"A2 baseline, design slide_out",0.6019392569868588,3200401,results/round3/A2_conditional/a2_strata__*.csv,"A2's own committed decile table, IDC audited excluded; the memo's prediction 2 quotes 0.68 for this quantity"
+width_mean_at_cov90_abs,subset cqr_matched,2.692993311576165,78,a4_width_at_coverage.csv,"width at the grid level whose realised coverage is 0.90; a DIAGNOSTIC, the level is picked with test labels"
+width_median_at_cov90_abs,subset cqr_matched,2.5027865337756188,78,a4_width_at_coverage.csv,
+frac_cells_cov90_in_grid_abs,subset cqr_matched,0.8125,96,a4_width_at_coverage.csv,0.90 lies inside the level grid's realised-coverage range; nothing is extrapolated outside it
+width_mean_at_cov90_cqr,subset cqr_matched,2.6460747177381654,76,a4_width_at_coverage.csv,"width at the grid level whose realised coverage is 0.90; a DIAGNOSTIC, the level is picked with test labels"
+width_median_at_cov90_cqr,subset cqr_matched,2.451510570763984,76,a4_width_at_coverage.csv,
+frac_cells_cov90_in_grid_cqr,subset cqr_matched,0.7916666666666666,96,a4_width_at_coverage.csv,0.90 lies inside the level grid's realised-coverage range; nothing is extrapolated outside it
+width_mean_at_cov90_nb,subset cqr_matched,1.5137371119081522,20,a4_width_at_coverage.csv,"width at the grid level whose realised coverage is 0.90; a DIAGNOSTIC, the level is picked with test labels"
+width_median_at_cov90_nb,subset cqr_matched,1.4494122262067641,20,a4_width_at_coverage.csv,
+frac_cells_cov90_in_grid_nb,subset cqr_matched,0.20833333333333334,96,a4_width_at_coverage.csv,0.90 lies inside the level grid's realised-coverage range; nothing is extrapolated outside it
+width_mean_at_cov90_nb_conformal,subset cqr_matched,1.955562627684863,81,a4_width_at_coverage.csv,"width at the grid level whose realised coverage is 0.90; a DIAGNOSTIC, the level is picked with test labels"
+width_median_at_cov90_nb_conformal,subset cqr_matched,1.8577066052680322,81,a4_width_at_coverage.csv,
+frac_cells_cov90_in_grid_nb_conformal,subset cqr_matched,0.84375,96,a4_width_at_coverage.csv,0.90 lies inside the level grid's realised-coverage range; nothing is extrapolated outside it
+width_mean_at_cov90_scaled,subset cqr_matched,14.832513673670409,82,a4_width_at_coverage.csv,"width at the grid level whose realised coverage is 0.90; a DIAGNOSTIC, the level is picked with test labels"
+width_median_at_cov90_scaled,subset cqr_matched,6.891143095123752,82,a4_width_at_coverage.csv,
+frac_cells_cov90_in_grid_scaled,subset cqr_matched,0.8541666666666666,96,a4_width_at_coverage.csv,0.90 lies inside the level grid's realised-coverage range; nothing is extrapolated outside it
+width_mean_at_cov90_scaled_clip,subset cqr_matched,14.705218031515916,80,a4_width_at_coverage.csv,"width at the grid level whose realised coverage is 0.90; a DIAGNOSTIC, the level is picked with test labels"
+width_median_at_cov90_scaled_clip,subset cqr_matched,6.797643490226287,80,a4_width_at_coverage.csv,
+frac_cells_cov90_in_grid_scaled_clip,subset cqr_matched,0.8333333333333334,96,a4_width_at_coverage.csv,0.90 lies inside the level grid's realised-coverage range; nothing is extrapolated outside it
+width_mean_at_cov90_abs,subset full,2.6080118040074836,74,a4_width_at_coverage.csv,"width at the grid level whose realised coverage is 0.90; a DIAGNOSTIC, the level is picked with test labels"
+width_median_at_cov90_abs,subset full,2.4514591108558825,74,a4_width_at_coverage.csv,
+frac_cells_cov90_in_grid_abs,subset full,0.7708333333333334,96,a4_width_at_coverage.csv,0.90 lies inside the level grid's realised-coverage range; nothing is extrapolated outside it
+width_mean_at_cov90_cqr,subset full,2.627234165278456,77,a4_width_at_coverage.csv,"width at the grid level whose realised coverage is 0.90; a DIAGNOSTIC, the level is picked with test labels"
+width_median_at_cov90_cqr,subset full,2.4346780488549458,77,a4_width_at_coverage.csv,
+frac_cells_cov90_in_grid_cqr,subset full,0.7938144329896907,97,a4_width_at_coverage.csv,0.90 lies inside the level grid's realised-coverage range; nothing is extrapolated outside it
+width_mean_at_cov90_nb,subset full,1.430334958008469,17,a4_width_at_coverage.csv,"width at the grid level whose realised coverage is 0.90; a DIAGNOSTIC, the level is picked with test labels"
+width_median_at_cov90_nb,subset full,1.3326862534787212,17,a4_width_at_coverage.csv,
+frac_cells_cov90_in_grid_nb,subset full,0.17708333333333334,96,a4_width_at_coverage.csv,0.90 lies inside the level grid's realised-coverage range; nothing is extrapolated outside it
+width_mean_at_cov90_nb_conformal,subset full,1.9337166278794238,76,a4_width_at_coverage.csv,"width at the grid level whose realised coverage is 0.90; a DIAGNOSTIC, the level is picked with test labels"
+width_median_at_cov90_nb_conformal,subset full,1.8283841003160581,76,a4_width_at_coverage.csv,
+frac_cells_cov90_in_grid_nb_conformal,subset full,0.7916666666666666,96,a4_width_at_coverage.csv,0.90 lies inside the level grid's realised-coverage range; nothing is extrapolated outside it
+width_mean_at_cov90_scaled,subset full,25.419974151904583,86,a4_width_at_coverage.csv,"width at the grid level whose realised coverage is 0.90; a DIAGNOSTIC, the level is picked with test labels"
+width_median_at_cov90_scaled,subset full,8.63463334934293,86,a4_width_at_coverage.csv,
+frac_cells_cov90_in_grid_scaled,subset full,0.8958333333333334,96,a4_width_at_coverage.csv,0.90 lies inside the level grid's realised-coverage range; nothing is extrapolated outside it
+width_mean_at_cov90_scaled_clip,subset full,23.944077476161816,86,a4_width_at_coverage.csv,"width at the grid level whose realised coverage is 0.90; a DIAGNOSTIC, the level is picked with test labels"
+width_median_at_cov90_scaled_clip,subset full,8.580625852415666,86,a4_width_at_coverage.csv,
+frac_cells_cov90_in_grid_scaled_clip,subset full,0.8958333333333334,96,a4_width_at_coverage.csv,0.90 lies inside the level grid's realised-coverage range; nothing is extrapolated outside it
+width_mean_at_cov90_abs,subset nb_matched,2.644668254931842,69,a4_width_at_coverage.csv,"width at the grid level whose realised coverage is 0.90; a DIAGNOSTIC, the level is picked with test labels"
+width_median_at_cov90_abs,subset nb_matched,2.4327293004324906,69,a4_width_at_coverage.csv,
+frac_cells_cov90_in_grid_abs,subset nb_matched,0.71875,96,a4_width_at_coverage.csv,0.90 lies inside the level grid's realised-coverage range; nothing is extrapolated outside it
+width_mean_at_cov90_nb,subset nb_matched,1.430334958008469,17,a4_width_at_coverage.csv,"width at the grid level whose realised coverage is 0.90; a DIAGNOSTIC, the level is picked with test labels"
+width_median_at_cov90_nb,subset nb_matched,1.3326862534787212,17,a4_width_at_coverage.csv,
+frac_cells_cov90_in_grid_nb,subset nb_matched,0.17708333333333334,96,a4_width_at_coverage.csv,0.90 lies inside the level grid's realised-coverage range; nothing is extrapolated outside it
+width_mean_at_cov90_nb_conformal,subset nb_matched,1.9337166278794238,76,a4_width_at_coverage.csv,"width at the grid level whose realised coverage is 0.90; a DIAGNOSTIC, the level is picked with test labels"
+width_median_at_cov90_nb_conformal,subset nb_matched,1.8283841003160581,76,a4_width_at_coverage.csv,
+frac_cells_cov90_in_grid_nb_conformal,subset nb_matched,0.7916666666666666,96,a4_width_at_coverage.csv,0.90 lies inside the level grid's realised-coverage range; nothing is extrapolated outside it
+width_mean_at_cov90_scaled,subset nb_matched,24.120760055594687,85,a4_width_at_coverage.csv,"width at the grid level whose realised coverage is 0.90; a DIAGNOSTIC, the level is picked with test labels"
+width_median_at_cov90_scaled,subset nb_matched,8.410452873272265,85,a4_width_at_coverage.csv,
+frac_cells_cov90_in_grid_scaled,subset nb_matched,0.8854166666666666,96,a4_width_at_coverage.csv,0.90 lies inside the level grid's realised-coverage range; nothing is extrapolated outside it
+width_mean_at_cov90_scaled_clip,subset nb_matched,22.62436073278886,85,a4_width_at_coverage.csv,"width at the grid level whose realised coverage is 0.90; a DIAGNOSTIC, the level is picked with test labels"
+width_median_at_cov90_scaled_clip,subset nb_matched,8.350311361271807,85,a4_width_at_coverage.csv,
+frac_cells_cov90_in_grid_scaled_clip,subset nb_matched,0.8854166666666666,96,a4_width_at_coverage.csv,0.90 lies inside the level grid's realised-coverage range; nothing is extrapolated outside it
+HCP_alpha020_CCRCC_donor_coverage,"A3 W3 nominal, abs, all encoders",0.914262414805738,24,results/round3/A3_weighted/a3_by_fold.csv,no rerun; 13.2 item 5
+HCP_alpha020_CCRCC_donor_width_mean,"A3 W3 nominal, abs, all encoders",2.761347100211142,24,results/round3/A3_weighted/a3_by_fold.csv,
+HCP_alpha020_CCRCC_donor_width_median,"A3 W3 nominal, abs, all encoders",2.706316609762117,24,results/round3/A3_weighted/a3_by_fold.csv,
+oracle_recentred_width_ratio_to_abs,block-calibrated folds,1.4717147477124544,6750,a4_oracle_recentred.csv,"mean over (test slide, gene) of w_star(recentred) / w_hat(abs); a DIAGNOSTIC, uses test labels for the offset and the half-width"
+oracle_recentred_coverage,block-calibrated folds,0.8998950394421323,135,a4_oracle_recentred.csv,by construction the ceil((1-alpha) n)/n order statistic on the slide
+abs_coverage_on_same_slides,block-calibrated folds,0.6666156040083134,135,a4_oracle_recentred.csv,
+b_s_over_s_y_mean,block-calibrated folds,0.650915630402007,135,a4_oracle_recentred.csv,A2 reported this near 0.5 on unit-calibrated slides
+oracle_recentred_width_ratio_to_abs,spot-calibrated folds,0.9808593129908897,194250,a4_oracle_recentred.csv,"mean over (test slide, gene) of w_star(recentred) / w_hat(abs); a DIAGNOSTIC, uses test labels for the offset and the half-width"
+oracle_recentred_coverage,spot-calibrated folds,0.8999088242807985,3885,a4_oracle_recentred.csv,by construction the ceil((1-alpha) n)/n order statistic on the slide
+abs_coverage_on_same_slides,spot-calibrated folds,0.8882608798573733,3885,a4_oracle_recentred.csv,
+b_s_over_s_y_mean,spot-calibrated folds,0.12707878858879387,3885,a4_oracle_recentred.csv,A2 reported this near 0.5 on unit-calibrated slides
+oracle_recentred_width_ratio_to_abs,unit-calibrated folds,0.8617176337642285,66000,a4_oracle_recentred.csv,"mean over (test slide, gene) of w_star(recentred) / w_hat(abs); a DIAGNOSTIC, uses test labels for the offset and the half-width"
+oracle_recentred_coverage,unit-calibrated folds,0.8999805290150423,1320,a4_oracle_recentred.csv,by construction the ceil((1-alpha) n)/n order statistic on the slide
+abs_coverage_on_same_slides,unit-calibrated folds,0.8710357677874285,1320,a4_oracle_recentred.csv,
+b_s_over_s_y_mean,unit-calibrated folds,0.5244629109390408,1320,a4_oracle_recentred.csv,A2 reported this near 0.5 on unit-calibrated slides
+nb_alpha_g_mean,"every (task, design, fold, gene) NB fit",0.28555372990959427,21120,a4_nb_dispersion.csv,
+nb_alpha_g_oos_mean,"every (task, design, fold, gene) NB fit",57.44937079735815,21120,a4_nb_dispersion.csv,"the SAME moment estimator on the calibration set's out-of-sample Pearson residuals; a diagnostic, not the plan's estimator and not used for any interval"
+marginal_fano_mean,"the same (task, gene) pairs",68.42211239806441,21120,results/tailored/counts/count_diagnostics.csv,round 1's marginal Fano factor on the raw counts
+nb_alpha_g_over_marginal_alpha_mom_mean,"the same (task, gene) pairs",0.06389402437758487,21120,a4_nb_dispersion.csv,conditional over marginal NB2 dispersion; the round-1 review's question
+frac_nb_alpha_g_exactly_zero,every NB fit,0.10577651515151515,21120,a4_nb_dispersion.csv,"the moment estimator is max(0, .) and collapses wherever the in-sample residual variance falls below the Poisson mean"
+frac_nb_alpha_g_oos_exactly_zero,every NB fit,0.008428030303030304,21120,a4_nb_dispersion.csv,
+nb_deviance_ratio_mean,every NB fit,0.40324883555055585,21120,a4_nb_dispersion.csv,fitted Poisson deviance over the intercept-only deviance on T; small values are the in-sample overfit that collapses alpha_g
+frac_nb_alpha_g_exactly_zero,task CCRCC,0.0,5760,a4_nb_dispersion.csv,
+nb_deviance_ratio_mean,task CCRCC,0.45650576413522487,5760,a4_nb_dispersion.csv,
+frac_nb_alpha_g_exactly_zero,task COAD,0.022321428571428572,1344,a4_nb_dispersion.csv,
+nb_deviance_ratio_mean,task COAD,0.2557225681060174,1344,a4_nb_dispersion.csv,
+frac_nb_alpha_g_exactly_zero,task HCC,0.47632575757575757,1056,a4_nb_dispersion.csv,
+nb_deviance_ratio_mean,task HCC,0.4303534733631272,1056,a4_nb_dispersion.csv,
+frac_nb_alpha_g_exactly_zero,task IDC,0.00946969696969697,2112,a4_nb_dispersion.csv,
+nb_deviance_ratio_mean,task IDC,0.21577875330862697,2112,a4_nb_dispersion.csv,
+frac_nb_alpha_g_exactly_zero,task LUNG,0.20643939393939395,1056,a4_nb_dispersion.csv,
+nb_deviance_ratio_mean,task LUNG,0.17495619849160532,1056,a4_nb_dispersion.csv,
+frac_nb_alpha_g_exactly_zero,task LYMPH_IDC,0.001893939393939394,2112,a4_nb_dispersion.csv,
+nb_deviance_ratio_mean,task LYMPH_IDC,0.5431695948500005,2112,a4_nb_dispersion.csv,
+frac_nb_alpha_g_exactly_zero,task PAAD,0.1736111111111111,1008,a4_nb_dispersion.csv,
+nb_deviance_ratio_mean,task PAAD,0.3097950973827536,1008,a4_nb_dispersion.csv,
+frac_nb_alpha_g_exactly_zero,task PRAD,0.0,4368,a4_nb_dispersion.csv,
+nb_deviance_ratio_mean,task PRAD,0.5245981709599664,4368,a4_nb_dispersion.csv,
+frac_nb_alpha_g_exactly_zero,task READ,0.3189102564102564,1248,a4_nb_dispersion.csv,
+nb_deviance_ratio_mean,task READ,0.5032190099408974,1248,a4_nb_dispersion.csv,
+frac_nb_alpha_g_exactly_zero,task SKCM,0.8390151515151515,1056,a4_nb_dispersion.csv,
+nb_deviance_ratio_mean,task SKCM,0.06591813992760222,1056,a4_nb_dispersion.csv,
+nb_guard_fail_count,every NB fit,0.0,21120,a4_nb_guard.csv,"deviance finite, no worse than intercept-only, and intercept score residual under the tolerance; the library flag is recorded and not used"
+nb_max_score_residual,every NB fit,7.312901684957304e-07,21120,a4_nb_guard.csv,
+nb_max_n_iter,every NB fit,13.0,21120,a4_nb_guard.csv,max_iter 300
+nb_pit_ks_pooled_median,design donor,0.15978416812304347,480,a4_pit.csv,"pooled over folds per (task, gene), read off a 1000-bin histogram so resolved to 1e-3"
+nb_pit_ks_cell_median,design donor,0.2242111623182703,480,a4_pit.csv,"median over (task, gene) of the median exact per-cell KS"
+nb_log_score_mean,design donor,48.00556523855023,480,a4_pit.csv,negative log predictive mass at the observed count
+nb_pit_ks_pooled_median,design patient,0.1669927992247907,480,a4_pit.csv,"pooled over folds per (task, gene), read off a 1000-bin histogram so resolved to 1e-3"
+nb_pit_ks_cell_median,design patient,0.22535549064244814,480,a4_pit.csv,"median over (task, gene) of the median exact per-cell KS"
+nb_log_score_mean,design patient,117.38976498301362,480,a4_pit.csv,negative log predictive mass at the observed count
+nb_pit_ks_pooled_median,design random,0.0604713627602532,480,a4_pit.csv,"pooled over folds per (task, gene), read off a 1000-bin histogram so resolved to 1e-3"
+nb_pit_ks_cell_median,design random,0.0650329542013421,480,a4_pit.csv,"median over (task, gene) of the median exact per-cell KS"
+nb_log_score_mean,design random,4.657371409206405,480,a4_pit.csv,negative log predictive mass at the observed count
+nb_pit_ks_pooled_median,design slide_out,0.0607620447617483,96,a4_pit.csv,"pooled over folds per (task, gene), read off a 1000-bin histogram so resolved to 1e-3"
+nb_pit_ks_cell_median,design slide_out,0.10377319653484154,96,a4_pit.csv,"median over (task, gene) of the median exact per-cell KS"
+nb_log_score_mean,design slide_out,1.591679747976387,96,a4_pit.csv,negative log predictive mass at the observed count
+nb_pit_ks_pooled_median,"task CCRCC, design random",0.020415656157369948,48,a4_pit.csv,
+nb_pit_ks_pooled_median,"task COAD, design random",0.08322576832151296,48,a4_pit.csv,
+nb_pit_ks_pooled_median,"task HCC, design random",0.0677140133460438,48,a4_pit.csv,
+nb_pit_ks_pooled_median,"task IDC, design random",0.13818122467357044,48,a4_pit.csv,
+nb_pit_ks_pooled_median,"task LUNG, design random",0.11569112562427965,48,a4_pit.csv,
+nb_pit_ks_pooled_median,"task LYMPH_IDC, design random",0.012340913644560199,48,a4_pit.csv,
+nb_pit_ks_pooled_median,"task PAAD, design random",0.0646029586580372,48,a4_pit.csv,
+nb_pit_ks_pooled_median,"task PRAD, design random",0.01785592409504065,48,a4_pit.csv,
+nb_pit_ks_pooled_median,"task READ, design random",0.0401152016176995,48,a4_pit.csv,
+nb_pit_ks_pooled_median,"task SKCM, design random",0.13707415952537894,48,a4_pit.csv,
+coverage_abs,"subset cqr_matched, design donor",0.839168308154658,147,a4_by_fold.csv,
+width_mean_abs,"subset cqr_matched, design donor",2.634755039860733,147,a4_by_fold.csv,
+coverage_cqr,"subset cqr_matched, design donor",0.8484280993899793,133,a4_by_fold.csv,
+width_mean_cqr,"subset cqr_matched, design donor",2.64917503875447,133,a4_by_fold.csv,
+coverage_nb,"subset cqr_matched, design donor",0.710448581121102,147,a4_by_fold.csv,
+width_mean_nb,"subset cqr_matched, design donor",1.3181322774747162,147,a4_by_fold.csv,
+coverage_nb_conformal,"subset cqr_matched, design donor",0.8541666296646188,147,a4_by_fold.csv,
+width_mean_nb_conformal,"subset cqr_matched, design donor",1.9195788623525074,147,a4_by_fold.csv,
+coverage_scaled,"subset cqr_matched, design donor",0.8386969540630491,147,a4_by_fold.csv,
+width_mean_scaled,"subset cqr_matched, design donor",4.08904681851924,147,a4_by_fold.csv,
+coverage_scaled_clip,"subset cqr_matched, design donor",0.8392456686829756,147,a4_by_fold.csv,
+width_mean_scaled_clip,"subset cqr_matched, design donor",4.07664384517198,147,a4_by_fold.csv,
+coverage_abs,"subset cqr_matched, design patient",0.8052794771249019,87,a4_by_fold.csv,
+width_mean_abs,"subset cqr_matched, design patient",2.771601328800549,87,a4_by_fold.csv,
+coverage_cqr,"subset cqr_matched, design patient",0.809808198408596,87,a4_by_fold.csv,
+width_mean_cqr,"subset cqr_matched, design patient",2.7088702795172703,87,a4_by_fold.csv,
+coverage_nb,"subset cqr_matched, design patient",0.6534445893592195,87,a4_by_fold.csv,
+width_mean_nb,"subset cqr_matched, design patient",1.2506100440741534,87,a4_by_fold.csv,
+coverage_nb_conformal,"subset cqr_matched, design patient",0.8237459912497568,87,a4_by_fold.csv,
+width_mean_nb_conformal,"subset cqr_matched, design patient",1.9256872746509306,87,a4_by_fold.csv,
+coverage_scaled,"subset cqr_matched, design patient",0.8004510230875634,87,a4_by_fold.csv,
+width_mean_scaled,"subset cqr_matched, design patient",4.0671946458718455,87,a4_by_fold.csv,
+coverage_scaled_clip,"subset cqr_matched, design patient",0.8011808179384292,87,a4_by_fold.csv,
+width_mean_scaled_clip,"subset cqr_matched, design patient",4.054993623258077,87,a4_by_fold.csv,
+coverage_abs,"subset cqr_matched, design random",0.8936861464292526,87,a4_by_fold.csv,
+width_mean_abs,"subset cqr_matched, design random",1.927504208864136,87,a4_by_fold.csv,
+coverage_cqr,"subset cqr_matched, design random",0.898455825435788,87,a4_by_fold.csv,
+width_mean_cqr,"subset cqr_matched, design random",1.9164819579331331,87,a4_by_fold.csv,
+coverage_nb,"subset cqr_matched, design random",0.8050738598629662,87,a4_by_fold.csv,
+width_mean_nb,"subset cqr_matched, design random",1.2827589676760676,87,a4_by_fold.csv,
+coverage_nb_conformal,"subset cqr_matched, design random",0.9066348407671689,87,a4_by_fold.csv,
+width_mean_nb_conformal,"subset cqr_matched, design random",1.6968683594730778,87,a4_by_fold.csv,
+coverage_scaled,"subset cqr_matched, design random",0.900198210837282,87,a4_by_fold.csv,
+width_mean_scaled,"subset cqr_matched, design random",2.107195866366617,87,a4_by_fold.csv,
+coverage_scaled_clip,"subset cqr_matched, design random",0.8999955896692119,87,a4_by_fold.csv,
+width_mean_scaled_clip,"subset cqr_matched, design random",2.098497855794761,87,a4_by_fold.csv,
+coverage_abs,"subset cqr_matched, design slide_out",0.8830868779437477,81,a4_by_fold.csv,
+width_mean_abs,"subset cqr_matched, design slide_out",2.3372930506004326,81,a4_by_fold.csv,
+coverage_cqr,"subset cqr_matched, design slide_out",0.9038132646731956,81,a4_by_fold.csv,
+width_mean_cqr,"subset cqr_matched, design slide_out",2.077557763157548,81,a4_by_fold.csv,
+coverage_nb,"subset cqr_matched, design slide_out",0.838314517032713,81,a4_by_fold.csv,
+width_mean_nb,"subset cqr_matched, design slide_out",1.5365283344840803,81,a4_by_fold.csv,
+coverage_nb_conformal,"subset cqr_matched, design slide_out",0.8949413935947783,81,a4_by_fold.csv,
+width_mean_nb_conformal,"subset cqr_matched, design slide_out",1.8786338525515693,81,a4_by_fold.csv,
+coverage_scaled,"subset cqr_matched, design slide_out",0.8963585139700591,81,a4_by_fold.csv,
+width_mean_scaled,"subset cqr_matched, design slide_out",3.649830500496515,81,a4_by_fold.csv,
+coverage_scaled_clip,"subset cqr_matched, design slide_out",0.889285403379715,81,a4_by_fold.csv,
+width_mean_scaled_clip,"subset cqr_matched, design slide_out",3.5777574219530672,81,a4_by_fold.csv,
+coverage_abs,"subset full, design donor",0.8338037037070817,411,a4_by_fold.csv,
+width_mean_abs,"subset full, design donor",2.4678737906241377,411,a4_by_fold.csv,
+coverage_cqr,"subset full, design donor",0.8491517111677193,134,a4_by_fold.csv,
+width_mean_cqr,"subset full, design donor",2.6410882930789557,134,a4_by_fold.csv,
+coverage_nb,"subset full, design donor",0.7062604840123128,411,a4_by_fold.csv,
+width_mean_nb,"subset full, design donor",1.337679957309985,411,a4_by_fold.csv,
+coverage_nb_conformal,"subset full, design donor",0.8444989416249813,411,a4_by_fold.csv,
+width_mean_nb_conformal,"subset full, design donor",1.9015406464996178,411,a4_by_fold.csv,
+coverage_scaled,"subset full, design donor",0.8399379280793646,411,a4_by_fold.csv,
+width_mean_scaled,"subset full, design donor",4.835052710531116,411,a4_by_fold.csv,
+coverage_scaled_clip,"subset full, design donor",0.8402387108425279,411,a4_by_fold.csv,
+width_mean_scaled_clip,"subset full, design donor",4.764600317960438,411,a4_by_fold.csv,
+coverage_abs,"subset full, design patient",0.7939165764620948,231,a4_by_fold.csv,
+width_mean_abs,"subset full, design patient",2.5687610574446444,231,a4_by_fold.csv,
+coverage_cqr,"subset full, design patient",0.809808198408596,87,a4_by_fold.csv,
+width_mean_cqr,"subset full, design patient",2.7088702795172703,87,a4_by_fold.csv,
+coverage_nb,"subset full, design patient",0.6485423302544734,231,a4_by_fold.csv,
+width_mean_nb,"subset full, design patient",1.2633842183644022,231,a4_by_fold.csv,
+coverage_nb_conformal,"subset full, design patient",0.8190635273591663,231,a4_by_fold.csv,
+width_mean_nb_conformal,"subset full, design patient",1.9496697274612056,231,a4_by_fold.csv,
+coverage_scaled,"subset full, design patient",0.8017843216385772,231,a4_by_fold.csv,
+width_mean_scaled,"subset full, design patient",7.296105857904735,231,a4_by_fold.csv,
+coverage_scaled_clip,"subset full, design patient",0.802414829406208,231,a4_by_fold.csv,
+width_mean_scaled_clip,"subset full, design patient",7.175722312457755,231,a4_by_fold.csv,
+coverage_abs,"subset full, design random",0.8923634810590435,435,a4_by_fold.csv,
+width_mean_abs,"subset full, design random",1.8874313551523623,435,a4_by_fold.csv,
+coverage_cqr,"subset full, design random",0.898455825435788,87,a4_by_fold.csv,
+width_mean_cqr,"subset full, design random",1.9164819579331331,87,a4_by_fold.csv,
+coverage_nb,"subset full, design random",0.8112793303662911,435,a4_by_fold.csv,
+width_mean_nb,"subset full, design random",1.2761491038054165,435,a4_by_fold.csv,
+coverage_nb_conformal,"subset full, design random",0.9083212032838133,435,a4_by_fold.csv,
+width_mean_nb_conformal,"subset full, design random",1.6644799059912914,435,a4_by_fold.csv,
+coverage_scaled,"subset full, design random",0.8996538549544748,435,a4_by_fold.csv,
+width_mean_scaled,"subset full, design random",2.075365573808263,435,a4_by_fold.csv,
+coverage_scaled_clip,"subset full, design random",0.8993347487691966,435,a4_by_fold.csv,
+width_mean_scaled_clip,"subset full, design random",2.0610485933327474,435,a4_by_fold.csv,
+coverage_abs,"subset full, design slide_out",0.8886284058784262,243,a4_by_fold.csv,
+width_mean_abs,"subset full, design slide_out",2.019690588037,243,a4_by_fold.csv,
+coverage_cqr,"subset full, design slide_out",0.9038132646731956,81,a4_by_fold.csv,
+width_mean_cqr,"subset full, design slide_out",2.077557763157548,81,a4_by_fold.csv,
+coverage_nb,"subset full, design slide_out",0.8477785060163462,243,a4_by_fold.csv,
+width_mean_nb,"subset full, design slide_out",1.450449363540168,243,a4_by_fold.csv,
+coverage_nb_conformal,"subset full, design slide_out",0.8975759490057456,243,a4_by_fold.csv,
+width_mean_nb_conformal,"subset full, design slide_out",1.7228568344592146,243,a4_by_fold.csv,
+coverage_scaled,"subset full, design slide_out",0.8947727308236306,243,a4_by_fold.csv,
+width_mean_scaled,"subset full, design slide_out",2.5823172810650616,243,a4_by_fold.csv,
+coverage_scaled_clip,"subset full, design slide_out",0.8932202818331896,243,a4_by_fold.csv,
+width_mean_scaled_clip,"subset full, design slide_out",2.5512650116382094,243,a4_by_fold.csv,
+coverage_abs,"subset nb_matched, design donor",0.8289267429123893,411,a4_by_fold.csv,
+width_mean_abs,"subset nb_matched, design donor",2.5560497842918415,411,a4_by_fold.csv,
+coverage_nb,"subset nb_matched, design donor",0.7062604840123128,411,a4_by_fold.csv,
+width_mean_nb,"subset nb_matched, design donor",1.337679957309985,411,a4_by_fold.csv,
+coverage_nb_conformal,"subset nb_matched, design donor",0.8444989416249813,411,a4_by_fold.csv,
+width_mean_nb_conformal,"subset nb_matched, design donor",1.9015406464996178,411,a4_by_fold.csv,
+coverage_scaled,"subset nb_matched, design donor",0.8377301342087922,411,a4_by_fold.csv,
+width_mean_scaled,"subset nb_matched, design donor",5.223192195190207,411,a4_by_fold.csv,
+coverage_scaled_clip,"subset nb_matched, design donor",0.8380060572523247,411,a4_by_fold.csv,
+width_mean_scaled_clip,"subset nb_matched, design donor",5.120819451416312,411,a4_by_fold.csv,
+coverage_abs,"subset nb_matched, design patient",0.7862440564038605,231,a4_by_fold.csv,
+width_mean_abs,"subset nb_matched, design patient",2.6373578779312394,231,a4_by_fold.csv,
+coverage_nb,"subset nb_matched, design patient",0.6485423302544734,231,a4_by_fold.csv,
+width_mean_nb,"subset nb_matched, design patient",1.2633842183644022,231,a4_by_fold.csv,
+coverage_nb_conformal,"subset nb_matched, design patient",0.8190635273591663,231,a4_by_fold.csv,
+width_mean_nb_conformal,"subset nb_matched, design patient",1.9496697274612056,231,a4_by_fold.csv,
+coverage_scaled,"subset nb_matched, design patient",0.7957068000960651,231,a4_by_fold.csv,
+width_mean_scaled,"subset nb_matched, design patient",9.12383102036329,231,a4_by_fold.csv,
+coverage_scaled_clip,"subset nb_matched, design patient",0.7964329624801937,231,a4_by_fold.csv,
+width_mean_scaled_clip,"subset nb_matched, design patient",9.071382590136983,231,a4_by_fold.csv,
+coverage_abs,"subset nb_matched, design random",0.8921198250542616,435,a4_by_fold.csv,
+width_mean_abs,"subset nb_matched, design random",1.8921301468386227,435,a4_by_fold.csv,
+coverage_nb,"subset nb_matched, design random",0.8112793303662911,435,a4_by_fold.csv,
+width_mean_nb,"subset nb_matched, design random",1.2761491038054165,435,a4_by_fold.csv,
+coverage_nb_conformal,"subset nb_matched, design random",0.9083212032838133,435,a4_by_fold.csv,
+width_mean_nb_conformal,"subset nb_matched, design random",1.6644799059912914,435,a4_by_fold.csv,
+coverage_scaled,"subset nb_matched, design random",0.8999663869138169,435,a4_by_fold.csv,
+width_mean_scaled,"subset nb_matched, design random",2.099566637759802,435,a4_by_fold.csv,
+coverage_scaled_clip,"subset nb_matched, design random",0.8995704518608265,435,a4_by_fold.csv,
+width_mean_scaled_clip,"subset nb_matched, design random",2.0860315397595,435,a4_by_fold.csv,
+coverage_abs,"subset nb_matched, design slide_out",0.8903966607618516,243,a4_by_fold.csv,
+width_mean_abs,"subset nb_matched, design slide_out",2.174580927861041,243,a4_by_fold.csv,
+coverage_nb,"subset nb_matched, design slide_out",0.8477785060163462,243,a4_by_fold.csv,
+width_mean_nb,"subset nb_matched, design slide_out",1.450449363540168,243,a4_by_fold.csv,
+coverage_nb_conformal,"subset nb_matched, design slide_out",0.8975759490057456,243,a4_by_fold.csv,
+width_mean_nb_conformal,"subset nb_matched, design slide_out",1.7228568344592146,243,a4_by_fold.csv,
+coverage_scaled,"subset nb_matched, design slide_out",0.8942731507462387,243,a4_by_fold.csv,
+width_mean_scaled,"subset nb_matched, design slide_out",2.670661986134381,243,a4_by_fold.csv,
+coverage_scaled_clip,"subset nb_matched, design slide_out",0.8922416114780819,243,a4_by_fold.csv,
+width_mean_scaled_clip,"subset nb_matched, design slide_out",2.625791664835768,243,a4_by_fold.csv,
+cqr_fits_total,every encoder and task,4824.0,4824,a4_cqr_fits.csv,
+cqr_seconds_total,every encoder and task,22847.639000000003,4824,a4_cqr_fits.csv,
+cqr_fits_subsampled,every encoder and task,3636.0,4824,a4_cqr_fits.csv,
+cqr_fit_failures,every encoder and task,157.0,4824,a4_cqr_fits.csv,
+cqr_folds_covered,task CCRCC,30.0,1296,a4_cqr_fits.csv,distinct fold labels; `random` and `patient` share fold labels by construction so this is a lower bound on the design-fold count
+cqr_n_T_used_max,task CCRCC,2500.0,1296,a4_cqr_fits.csv,
+cqr_folds_covered,task COAD,6.0,288,a4_cqr_fits.csv,distinct fold labels; `random` and `patient` share fold labels by construction so this is a lower bound on the design-fold count
+cqr_n_T_used_max,task COAD,2500.0,288,a4_cqr_fits.csv,
+cqr_folds_covered,task HCC,4.0,216,a4_cqr_fits.csv,distinct fold labels; `random` and `patient` share fold labels by construction so this is a lower bound on the design-fold count
+cqr_n_T_used_max,task HCC,1203.0,216,a4_cqr_fits.csv,
+cqr_folds_covered,task IDC,8.0,432,a4_cqr_fits.csv,distinct fold labels; `random` and `patient` share fold labels by construction so this is a lower bound on the design-fold count
+cqr_n_T_used_max,task IDC,2500.0,432,a4_cqr_fits.csv,
+cqr_folds_covered,task LUNG,4.0,216,a4_cqr_fits.csv,distinct fold labels; `random` and `patient` share fold labels by construction so this is a lower bound on the design-fold count
+cqr_n_T_used_max,task LUNG,1027.0,216,a4_cqr_fits.csv,
+cqr_folds_covered,task LYMPH_IDC,8.0,432,a4_cqr_fits.csv,distinct fold labels; `random` and `patient` share fold labels by construction so this is a lower bound on the design-fold count
+cqr_n_T_used_max,task LYMPH_IDC,2500.0,432,a4_cqr_fits.csv,
+cqr_folds_covered,task PAAD,6.0,324,a4_cqr_fits.csv,distinct fold labels; `random` and `patient` share fold labels by construction so this is a lower bound on the design-fold count
+cqr_n_T_used_max,task PAAD,1951.0,324,a4_cqr_fits.csv,
+cqr_folds_covered,task PRAD,27.0,1044,a4_cqr_fits.csv,distinct fold labels; `random` and `patient` share fold labels by construction so this is a lower bound on the design-fold count
+cqr_n_T_used_max,task PRAD,2500.0,1044,a4_cqr_fits.csv,
+cqr_folds_covered,task READ,8.0,360,a4_cqr_fits.csv,distinct fold labels; `random` and `patient` share fold labels by construction so this is a lower bound on the design-fold count
+cqr_n_T_used_max,task READ,2500.0,360,a4_cqr_fits.csv,
+cqr_folds_covered,task SKCM,4.0,216,a4_cqr_fits.csv,distinct fold labels; `random` and `patient` share fold labels by construction so this is a lower bound on the design-fold count
+cqr_n_T_used_max,task SKCM,693.0,216,a4_cqr_fits.csv,
+counts_min_frac_joined,every task and encoder,1.0,36,a4_counts_join.csv,
+counts_max_abs_log1p_minus_Y,every task and encoder,5.132378948502492e-07,36,a4_counts_join.csv,the raw-count table and the harness describe the same spots

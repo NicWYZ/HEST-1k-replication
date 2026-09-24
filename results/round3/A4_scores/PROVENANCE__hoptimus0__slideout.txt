@@ -1,0 +1,30 @@
+==============================================================================
+Round 3, stage A4a - adaptive scores and the model-based comparator, encoder hoptimus0
+tasks           : PRAD/shipped, READ/shipped
+slurm_job_id    : 2305489
+slurm_partition : spill
+node            : c151606
+gpu             : none
+date            : 2026-09-24T02:25:14-0400
+repo_commit     : a181326b411573d91a82826b66431b0baccef0ff
+script          : code/scripts/round3_a4_scores.py
+script_file     : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/dd834696-262a-43b5-963e-1eeb5da92dde/round3_a4_scores.py
+script_md5      : 1efae3e0295e13cae00b18e572ebec3e
+script_sha256   : sha256/16 4091b688776162fa
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5  (imported unmodified, not edited)
+harness_sha256  : sha256/16 4f0536fa25900c9f
+command_line    : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/dd834696-262a-43b5-963e-1eeb5da92dde/round3_a4_scores.py hoptimus0 --task-def /work/users/w/e/weiyang/hest_replication/results/round3/task_defs/PRAD.json --task-def /work/users/w/e/weiyang/hest_replication/results/round3/task_defs/READ.json --designs slide_out --scores abs,scaled,scaled_clip,cqr,nb,nb_conformal --alpha 0.10 --alpha-grid 0.02,0.05,0.075,0.10,0.15,0.20,0.30 --nb-genes 12 --nb-solver newton-cholesky --nb-tol 1e-6 --cqr-genes 6 --cqr-max-draws 1 --cqr-subsample 2500 --cqr-budget-s 2400 --accept-tag slideout --out-dir results/round3/A4_scores --tag __slideout
+pythonhashseed  : 0
+numpy           : 2.4.6
+pandas          : 2.3.3
+n_spots_by_task : {"PRAD": 62710, "READ": 8407}
+embedding_dim   : {"PRAD": 1536, "READ": 1536}
+n_fold_rows     : 6993
+wall_seconds    : 4420
+wall_by_task    : {"PRAD/shipped": 4058.9, "READ/shipped": 360.7}
+cqr_seconds_by_task : {"PRAD/shipped": 1367.0, "READ/shipped": 188.0}
+acceptance      : PASS
+files_written   : a4_acceptance__hoptimus0__slideout.csv, a4_by_fold__hoptimus0__slideout.csv, a4_scores_by_task__hoptimus0__slideout.csv, a4_sigma_clip__hoptimus0__slideout.csv, a4_by_decile__hoptimus0__slideout.csv, a4_oracle_recentred__hoptimus0__slideout.csv, a4_nb_dispersion__hoptimus0__slideout.csv, a4_nb_guard__hoptimus0__slideout.csv, a4_cqr_fits__hoptimus0__slideout.csv, a4_counts_join__hoptimus0__slideout.csv, a4_pit_by_cell__hoptimus0__slideout.csv, a4_pit__hoptimus0__slideout.csv, a4_pergene__hoptimus0__slideout.parquet
+config_hash     : sha256/16 f167dee0de969581
+config          : {"alpha": 0.1, "alpha_grid": [0.02, 0.05, 0.075, 0.1, 0.15, 0.2, 0.3], "base_predictor": "imported unmodified from round3_a0_harness.fit_base", "counts_dir": "instrumentation", "counts_tol": 1e-05, "cqr_budget_s": 2400.0, "cqr_cells_only": 0, "cqr_designs": "", "cqr_genes": 6, "cqr_mark_only": 0, "cqr_max_draws": 1, "cqr_max_folds": 0, "cqr_presubsample": 1, "cqr_quantiles": [0.05, 0.95], "cqr_solver": "highs", "cqr_subsample": 2500, "cqr_timebox_s": 1200.0, "designs": ["slide_out"], "encoder": "hoptimus0", "fit_designs": "", "max_folds": null, "min_C_spots": 9, "min_T_spots": 512, "min_slide_spots": 50, "n_cal_draws": 3, "n_deciles": 10, "n_repeats": null, "nb_gene_set": "union of the NB and CQR evenly spaced subsets", "nb_genes": 12, "nb_l2": "same as the mean head: ALPHA_NUM/(n_components*n_genes)", "nb_max_iter": 300, "nb_score_tol": 0.001, "nb_solver": "newton-cholesky", "nb_tol": 1e-06, "pit_bins_fine": 1000, "probe_genes": 2, "probe_sizes": "2000,5000,20000", "scores": ["abs", "scaled", "scaled_clip", "cqr", "nb", "nb_conformal"], "script": "code/scripts/round3_a4_scores.py", "seed_source": "zlib.crc32 via the harness", "sigma_clip_hi_pct": 99.0, "sigma_clip_lo_pct": 1.0, "sigma_floor": 0.001, "size_match": "task", "spot_cal_draws": 1, "stage": "round3_A4a", "task_defs": ["results/round3/task_defs/PRAD.json", "results/round3/task_defs/READ.json"], "tasks": ["PRAD/shipped", "READ/shipped"], "timing_probe": false}
+plan            : round3_execution_plan.md sections 4.6 and 13.5.1
