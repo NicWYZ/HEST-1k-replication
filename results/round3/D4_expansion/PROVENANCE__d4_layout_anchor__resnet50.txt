@@ -1,0 +1,19 @@
+==============================================================================
+Round 3, stage D4.1 - the layout anchor, encoder resnet50
+slurm_job_id    : 2306316
+slurm_partition : spill
+node            : c151415
+gpu             : none (CPU job)
+date            : 2026-09-24T00:19:08-0400
+repo_commit     : a181326b411573d91a82826b66431b0baccef0ff
+script          : code/scripts/round3_d4_layout_anchor.py
+script_md5      : 35c9711b53d420087491d30b8074a874
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : round3_d4_layout_anchor.py resnet50 --arms bench,hest
+pythonhashseed  : 0
+config_hash     : sha256/16 e0e77d98c46ca263
+config          : {"alpha": 0.1, "alpha_num": 100.0, "alpha_store": 0.2, "arms": ["bench", "hest"], "bench_task_def": "results/round3/task_defs/CCRCC.json", "cal_spot_frac": 0.2, "cal_unit_frac": 0.25, "designs": ["random", "patient", "donor"], "encoder": "resnet50", "harness_md5": "0ad7ae8efe554c1f285e5f384a9fb7f5", "hest_task_def": "results/round3/D4_expansion/task_defs/CCRCC_hest_layout.json", "latent": 256, "max_folds": null, "min_C_spots": 9, "min_T_spots": 512, "min_slide_spots": 50, "n_cal_draws": 3, "scores": ["abs"], "script": "code/scripts/round3_d4_layout_anchor.py", "seed_source": "zlib.crc32", "size_match": "task", "spot_cal_draws": 1, "stage": "round3_D4.1"}
+arms            : ['bench', 'hest']
+wall_seconds    : 2662
+wall_by_arm     : {"bench": 1566.9, "hest": 938.5}
+plan            : round3_execution_plan.md section 13.7.1

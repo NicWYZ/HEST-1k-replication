@@ -1,0 +1,19 @@
+==============================================================================
+Round 3, stage D4.3b - the population probe, encoder hoptimus0
+slurm_job_id    : 2309705
+slurm_partition : spill
+node            : c0412
+gpu             : none (CPU job)
+date            : 2026-09-24T00:48:14-0400
+repo_commit     : a181326b411573d91a82826b66431b0baccef0ff
+script          : code/scripts/round3_d4_probe.py
+script_md5      : 03aaf8278e69413abdafb8a07a260261
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : round3_d4_probe.py --stage probe --encoder hoptimus0
+pythonhashseed  : 0
+config_hash     : sha256/16 fe74faf0cfae23a4
+config          : {"adjustments": ["none", "morphology_v2_ext"], "classes": ["cordeliers_ccRCC", "indiana_nontumour"], "encoder": "hoptimus0", "grid": 6, "harness_md5": "0ad7ae8efe554c1f285e5f384a9fb7f5", "hest_revision": "7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec", "latent": 256, "morph_covs": ["n_nuclei", "area_mean", "frac_connective", "frac_dead", "frac_epithelial", "frac_inflammatory", "frac_neoplastic", "neo_area_mean"], "protocols": ["block", "slide_out"], "script": "code/scripts/round3_d4_probe.py", "seed": 1, "stage": "round3_D4.3b_probe", "subsample_per_slide": 800, "target": "population", "task_def": "results/round3/D4_expansion/task_defs/KIDNEY_POP54.json", "test_frac": 0.3}
+morph_parquet   : instrumentation/morphology_v2_ext/KIDNEY_POP54_morph.parquet
+cellvit_source  : hest_ext/kidney_visium_cell/cellvit_seg/, D1's download at HEST revision 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec
+wall_seconds    : 938
+plan            : round3_execution_plan.md section 13.7.3

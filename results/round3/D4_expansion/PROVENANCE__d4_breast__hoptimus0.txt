@@ -1,0 +1,21 @@
+==============================================================================
+Round 3, stage D4 arm breast, encoder hoptimus0
+slurm_job_id    : 2309706
+slurm_partition : spill
+node            : c151607
+gpu             : none (CPU job)
+date            : 2026-09-24T00:29:41-0400
+repo_commit     : a181326b411573d91a82826b66431b0baccef0ff
+script          : code/scripts/round3_d4_sets.py
+script_md5      : b74f2dda031bc972c1c44c1d7b3a04da
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+a3_script_md5   : 70927b656860286c6a612694ec4b3785
+gene_check_md5  : e267b1e6038daa893647202dd47ffb04
+command_line    : round3_d4_sets.py --arm breast --stage fit --encoder hoptimus0
+pythonhashseed  : 0
+config_hash     : sha256/16 45e245970f3dd30b
+config          : {"a3_md5": "70927b656860286c6a612694ec4b3785", "a4b_K": 10, "a4b_draws": 3, "alpha": 0.1, "alpha_num": 100.0, "alpha_store": 0.2, "arm": "breast", "cal_spot_frac": 0.2, "cal_unit_frac": 0.25, "designs": ["random", "donor"], "encoder": "hoptimus0", "gene_check_md5": "e267b1e6038daa893647202dd47ffb04", "harness_md5": "0ad7ae8efe554c1f285e5f384a9fb7f5", "k_genes": 50, "latent": 256, "max_folds": null, "min_C_spots": 9, "min_T_spots": 512, "min_cells_pct": 0.1, "min_slide_spots": 50, "n_cal_draws": 3, "n_repeats": null, "script": "code/scripts/round3_d4_sets.py", "seed_source": "zlib.crc32", "shard": [1, 1], "size_match": "task", "spot_cal_draws": 1, "stage": "round3_D4_breast_fit", "task": "BREAST_XENIUM", "task_def": "results/round3/D4_expansion/task_defs/BREAST_XENIUM.json"}
+gene_shards     : [{"path": "d4_fold_genes__BREAST_XENIUM.json", "shard": [1, 1], "n": 40, "n_tasks": 40}]
+n_fold_cells    : 70
+wall_seconds    : 1107
+plan            : round3_execution_plan.md section 13.7

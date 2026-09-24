@@ -1,0 +1,67 @@
+check,encoder,design,metric,n_folds_matched,n_folds_new_only,n_folds_a1_only,max_abs_diff,tolerance,tolerance_source,passed
+bench_arm_reproduces_A1_by_fold,hoptimus0,donor,coverage,24,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,hoptimus0,patient,coverage,6,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,hoptimus0,random,coverage,6,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,hoptimus0,donor,width_mean,24,0,0,2.1396218130576017e-11,3e-06,"H0's measured cross-node bound, 3e-6 absolute in widths",True
+bench_arm_reproduces_A1_by_fold,hoptimus0,patient,width_mean,6,0,0,1.3158363287857355e-11,3e-06,"H0's measured cross-node bound, 3e-6 absolute in widths",True
+bench_arm_reproduces_A1_by_fold,hoptimus0,random,width_mean,6,0,0,1.3455681013851972e-11,3e-06,"H0's measured cross-node bound, 3e-6 absolute in widths",True
+bench_arm_reproduces_A1_by_fold,hoptimus0,donor,interval_score,24,0,0,4.82458517581108e-10,6e-05,20x H0's width bound: the Winkler penalty multiplies the width by 2/alpha,True
+bench_arm_reproduces_A1_by_fold,hoptimus0,patient,interval_score,6,0,0,1.2887735323374727e-10,6e-05,20x H0's width bound: the Winkler penalty multiplies the width by 2/alpha,True
+bench_arm_reproduces_A1_by_fold,hoptimus0,random,interval_score,6,0,0,4.8234749527864545e-11,6e-05,20x H0's width bound: the Winkler penalty multiplies the width by 2/alpha,True
+bench_arm_reproduces_A1_by_fold,hoptimus0,donor,miss_above,24,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,hoptimus0,patient,miss_above,6,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,hoptimus0,random,miss_above,6,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,hoptimus0,donor,miss_below,24,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,hoptimus0,patient,miss_below,6,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,hoptimus0,random,miss_below,6,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_task,hoptimus0,all,coverage_mean,3,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_task,hoptimus0,all,coverage_sd,3,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_task,hoptimus0,all,width_mean,3,0,0,4.594991054318598e-12,3e-06,"H0's measured cross-node bound, 3e-6 absolute in widths",True
+bench_arm_reproduces_A1_by_task,hoptimus0,all,width_sd,3,0,0,6.5648001357915264e-12,3e-06,"H0's measured cross-node bound, 3e-6 absolute in widths",True
+bench_arm_reproduces_A1_by_task,hoptimus0,all,interval_score_mean,3,0,0,2.949640531824116e-11,6e-05,20x H0's width bound: the Winkler penalty multiplies the width by 2/alpha,True
+bench_arm_reproduces_A1_by_task,hoptimus0,all,n_folds,3,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_task,hoptimus0,all,n_train_matched,3,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,resnet50,donor,coverage,24,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,resnet50,patient,coverage,6,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,resnet50,random,coverage,6,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,resnet50,donor,width_mean,24,0,0,1.880762212636e-11,3e-06,"H0's measured cross-node bound, 3e-6 absolute in widths",True
+bench_arm_reproduces_A1_by_fold,resnet50,patient,width_mean,6,0,0,1.1305623104362894e-11,3e-06,"H0's measured cross-node bound, 3e-6 absolute in widths",True
+bench_arm_reproduces_A1_by_fold,resnet50,random,width_mean,6,0,0,4.831246513958831e-12,3e-06,"H0's measured cross-node bound, 3e-6 absolute in widths",True
+bench_arm_reproduces_A1_by_fold,resnet50,donor,interval_score,24,0,0,4.82494044717896e-10,6e-05,20x H0's width bound: the Winkler penalty multiplies the width by 2/alpha,True
+bench_arm_reproduces_A1_by_fold,resnet50,patient,interval_score,6,0,0,1.205782140800693e-10,6e-05,20x H0's width bound: the Winkler penalty multiplies the width by 2/alpha,True
+bench_arm_reproduces_A1_by_fold,resnet50,random,interval_score,6,0,0,4.260991559590366e-11,6e-05,20x H0's width bound: the Winkler penalty multiplies the width by 2/alpha,True
+bench_arm_reproduces_A1_by_fold,resnet50,donor,miss_above,24,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,resnet50,patient,miss_above,6,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,resnet50,random,miss_above,6,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,resnet50,donor,miss_below,24,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,resnet50,patient,miss_below,6,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,resnet50,random,miss_below,6,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_task,resnet50,all,coverage_mean,3,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_task,resnet50,all,coverage_sd,3,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_task,resnet50,all,width_mean,3,0,0,4.575451129085195e-12,3e-06,"H0's measured cross-node bound, 3e-6 absolute in widths",True
+bench_arm_reproduces_A1_by_task,resnet50,all,width_sd,3,0,0,4.445388501750358e-12,3e-06,"H0's measured cross-node bound, 3e-6 absolute in widths",True
+bench_arm_reproduces_A1_by_task,resnet50,all,interval_score_mean,3,0,0,3.877564935805822e-11,6e-05,20x H0's width bound: the Winkler penalty multiplies the width by 2/alpha,True
+bench_arm_reproduces_A1_by_task,resnet50,all,n_folds,3,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_task,resnet50,all,n_train_matched,3,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,uni_v2,donor,coverage,24,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,uni_v2,patient,coverage,6,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,uni_v2,random,coverage,6,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,uni_v2,donor,width_mean,24,0,0,1.7577050925865478e-11,3e-06,"H0's measured cross-node bound, 3e-6 absolute in widths",True
+bench_arm_reproduces_A1_by_fold,uni_v2,patient,width_mean,6,0,0,1.4625189947992112e-11,3e-06,"H0's measured cross-node bound, 3e-6 absolute in widths",True
+bench_arm_reproduces_A1_by_fold,uni_v2,random,width_mean,6,0,0,7.239320254370796e-12,3e-06,"H0's measured cross-node bound, 3e-6 absolute in widths",True
+bench_arm_reproduces_A1_by_fold,uni_v2,donor,interval_score,24,0,0,4.824656230084655e-10,6e-05,20x H0's width bound: the Winkler penalty multiplies the width by 2/alpha,True
+bench_arm_reproduces_A1_by_fold,uni_v2,patient,interval_score,6,0,0,1.2152945316756814e-10,6e-05,20x H0's width bound: the Winkler penalty multiplies the width by 2/alpha,True
+bench_arm_reproduces_A1_by_fold,uni_v2,random,interval_score,6,0,0,4.3588244125203346e-11,6e-05,20x H0's width bound: the Winkler penalty multiplies the width by 2/alpha,True
+bench_arm_reproduces_A1_by_fold,uni_v2,donor,miss_above,24,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,uni_v2,patient,miss_above,6,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,uni_v2,random,miss_above,6,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,uni_v2,donor,miss_below,24,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,uni_v2,patient,miss_below,6,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_fold,uni_v2,random,miss_below,6,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_task,uni_v2,all,coverage_mean,3,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_task,uni_v2,all,coverage_sd,3,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_task,uni_v2,all,width_mean,3,0,0,3.8125058665627876e-12,3e-06,"H0's measured cross-node bound, 3e-6 absolute in widths",True
+bench_arm_reproduces_A1_by_task,uni_v2,all,width_sd,3,0,0,6.466299717899915e-12,3e-06,"H0's measured cross-node bound, 3e-6 absolute in widths",True
+bench_arm_reproduces_A1_by_task,uni_v2,all,interval_score_mean,3,0,0,2.4718449509464335e-11,6e-05,20x H0's width bound: the Winkler penalty multiplies the width by 2/alpha,True
+bench_arm_reproduces_A1_by_task,uni_v2,all,n_folds,3,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True
+bench_arm_reproduces_A1_by_task,uni_v2,all,n_train_matched,3,0,0,0.0,0.0,"exact: a mean of integer counts over a fixed spot set, and H0 found every count exact across nodes",True

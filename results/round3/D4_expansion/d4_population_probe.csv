@@ -1,0 +1,13 @@
+encoder,target,protocol,adjustment,balanced_accuracy,chance,n_train,n_test,n_slides_train,n_slides_test,confusion,labels
+hoptimus0,population,block,none,1.0,0.5,26412,12417,54,54,"[[6106, 0], [0, 6311]]",cordeliers_ccRCC;indiana_nontumour
+hoptimus0,population,slide_out,none,0.9999739583333334,0.5,38828,54,53,1,,cordeliers_ccRCC;indiana_nontumour
+hoptimus0,population,block,morphology_v2_ext,0.8595894570141829,0.5,26412,12417,54,54,"[[4877, 1229], [502, 5809]]",cordeliers_ccRCC;indiana_nontumour
+hoptimus0,population,slide_out,morphology_v2_ext,0.8222463306906226,0.5,38828,54,53,1,,cordeliers_ccRCC;indiana_nontumour
+resnet50,population,block,none,0.9999182873018468,0.5,26458,12371,54,54,"[[6118, 1], [0, 6252]]",cordeliers_ccRCC;indiana_nontumour
+resnet50,population,slide_out,none,0.9999479166666668,0.5,38828,54,53,1,,cordeliers_ccRCC;indiana_nontumour
+resnet50,population,block,morphology_v2_ext,0.8330851499639742,0.5,26458,12371,54,54,"[[4596, 1523], [531, 5721]]",cordeliers_ccRCC;indiana_nontumour
+resnet50,population,slide_out,morphology_v2_ext,0.8322323973932879,0.5,38828,54,53,1,,cordeliers_ccRCC;indiana_nontumour
+uni_v2,population,block,none,1.0,0.5,26483,12346,54,54,"[[6082, 0], [0, 6264]]",cordeliers_ccRCC;indiana_nontumour
+uni_v2,population,slide_out,none,0.9999739583333334,0.5,38828,54,53,1,,cordeliers_ccRCC;indiana_nontumour
+uni_v2,population,block,morphology_v2_ext,0.8400825951250324,0.5,26483,12346,54,54,"[[4697, 1385], [577, 5687]]",cordeliers_ccRCC;indiana_nontumour
+uni_v2,population,slide_out,morphology_v2_ext,0.83184570460638,0.5,38828,54,53,1,,cordeliers_ccRCC;indiana_nontumour

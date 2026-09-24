@@ -1,0 +1,21 @@
+slurm_job_id,operon_job_name,stage,partition,node,state,elapsed,timelimit,req_cpus,req_mem,max_rss_gb,account,gpu
+2285552,operon-33493fde,"D4 recon: shapes, panels, barcode relations",spill,c151413,COMPLETED,00:18:48,00:30:00,4,16G,4.37,rc_htzhu_pi,none
+2291420,operon-05a43a92,"D4 task definitions, attempt 1",spill,c0405,FAILED,00:00:12,00:40:00,4,16G,0.15,rc_htzhu_pi,none
+2292533,operon-106c78c1,D4 task definitions + extension schema + validation,spill,c151412,COMPLETED,00:11:13,00:40:00,4,16G,,rc_htzhu_pi,none
+2299026,operon-19b5c7c3,D4 stage the three scripts into code/scripts,spill,c151403,COMPLETED,00:00:02,00:10:00,1,2G,,rc_htzhu_pi,none
+2301783,operon-cce4fe53,D4 smoke: anchor 2 folds + 4 gene selections,spill,c0301,COMPLETED,00:11:47,01:30:00,4,32G,15.5,rc_htzhu_pi,none
+2301818,operon-8492b135,"D4.3b CellViT morphology build, 54 kidney samples",spill,c151409,COMPLETED,00:01:53,01:30:00,4,32G,2.22,rc_htzhu_pi,none
+2305347,operon-d0138377,"D4 barcode integrity, attempt 1",spill,c151417,FAILED,00:00:02,00:40:00,4,32G,0.01,rc_htzhu_pi,none
+2305349,operon-16ff13bc,"D4.2 gene stage, Indiana, 55 selections",spill,c151418,COMPLETED,00:11:32,01:40:00,4,48G,5.59,rc_htzhu_pi,none
+2305350,operon-a0ad0d41,"D4.4 gene stage, breast, 40 selections",spill,c151410,COMPLETED,00:01:41,01:40:00,4,48G,4.1,rc_htzhu_pi,none
+2305765,operon-a77048cb,"D4 barcode integrity, attempt 2",spill,c151408,TIMEOUT,00:40:27,00:40:00,4,32G,4.91,rc_htzhu_pi,none
+2306316,operon-e3c90805,"D4.1 layout anchor, resnet50",spill,c151415,COMPLETED,00:45:14,01:50:00,4,32G,8.01,rc_htzhu_pi,none
+2306317,operon-b4fb5e75,"D4.1 layout anchor, hoptimus0",spill,c151411,COMPLETED,00:49:23,01:50:00,4,32G,9.78,rc_htzhu_pi,none
+2306333,operon-240495fa,"D4.1 layout anchor, uni_v2",spill,c0312,COMPLETED,00:58:08,01:50:00,4,32G,9.8,rc_htzhu_pi,none
+2309643,operon-a2a79214,"D4 barcode integrity, attempt 3",spill,c151401,COMPLETED,00:23:04,00:40:00,4,16G,3.99,rc_htzhu_pi,none
+2309687,operon-beccbade,"D4.2 + D4.3 + probe, resnet50",spill,c151408,COMPLETED,00:23:26,01:40:00,4,48G,6.76,rc_htzhu_pi,none
+2309688,operon-5ef92e17,"D4.4 breast, resnet50",spill,c151411,COMPLETED,00:15:25,02:20:00,4,48G,4.14,rc_htzhu_pi,none
+2309705,operon-9be2ce13,"D4.2 + D4.3 + probe, hoptimus0",spill,c0412,COMPLETED,00:37:17,01:40:00,4,48G,7.61,rc_htzhu_pi,none
+2309706,operon-b9591fe3,"D4.4 breast, hoptimus0",spill,c151607,COMPLETED,00:18:44,02:20:00,4,48G,5.65,rc_htzhu_pi,none
+2309712,operon-66cd0598,"D4.2 + D4.3 + probe, uni_v2",spill,c151414,COMPLETED,00:28:05,01:40:00,4,48G,7.62,rc_htzhu_pi,none
+2309713,operon-0ccea811,"D4.4 breast, uni_v2",spill,c151413,COMPLETED,00:19:52,02:20:00,4,48G,5.43,rc_htzhu_pi,none
