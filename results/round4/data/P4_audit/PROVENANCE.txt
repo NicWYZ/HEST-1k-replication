@@ -1,0 +1,42 @@
+PROVENANCE -- results/round4/data/P4_audit/
+round 4, stage P, sub-stage P4: source-record audit of set L (24 lung Xenium samples)
+
+job id                : none. P4 is a reading audit with no computation; it ran in the
+                        Claude Science session sandbox, not on Longleaf. No Slurm job was
+                        submitted, no file was written to /work/users/w/e/weiyang, and no
+                        login-node command was run.
+partition actually used: not applicable (no Slurm job)
+node                  : Claude Science session sandbox (darwin, 10 CPU, 16 GiB)
+date (UTC)            : 2026-09-28T18:09:16+00:00
+repository commit     : local clone at /Users/nicolaszhang/HEST-1k-replication, read-only.
+                        No git command of any kind was run, so the commit is not recorded
+                        here by this session; the lead stamps it at commit. Input digests
+                        below pin the exact input files that were read.
+command line          : python round4_data_build_audit_r4.py \
+                          --repo /Users/nicolaszhang/HEST-1k-replication \
+                          --verdicts p4_verdicts.csv \
+                          --out donor_audit_r4.csv
+                        run twice, to separate directories, and compared
+PYTHONHASHSEED        : 0 (set in the environment of both builder runs)
+script md5 (computed inside the run, by the script, on the file that ran)
+  round4_data_build_audit_r4.py : 4ec393a8a4a83574c5bbe51a35b969c5
+config hash           : the builder takes no config file. Its inputs are the three paths on
+                        the command line plus the two fixed repository paths below, and the
+                        column lists R3_COLS (29) and NEW_COLS (13) in the script source.
+input digests (md5)
+  results/round3/D3_audit/donor_audit_r3.csv        : 4900dec9ae6fcf2ec1ea81702f492804
+  results/round3/D0_inventory/hest_inventory.csv    : 42aaf681805a6c80299a1b40bc4d2506
+  results/round4/data/P1_selection/selection.csv    : 0b4ffe04bf3e0c764d34e75d754bf9db
+  p4_verdicts.csv (sha256)                          : 78938e47cf8332c03e2d87e6b7c13149af68025b76847affb31713191960e315
+output digest
+  donor_audit_r4.csv (sha256)                       : 866461444a9c3ca4f078d6cb39f818a461205dc7770afdb1b40a5fa373897d69
+                        identical on both runs; byte-for-byte equal under cmp
+round-3 code           : code/scripts/round3_a0_harness.py md5 0ad7ae8efe554c1f285e5f384a9fb7f5, read only
+                        to confirm the repository state; not imported, nothing needed it.
+network sources read   : eutils.ncbi.nlm.nih.gov, www.ncbi.nlm.nih.gov/geo,
+                        pmc.ncbi.nlm.nih.gov (via DOI full-text fetch), biorxiv.org (PDF via
+                        the same fetch), cf.10xgenomics.com. All read 2026-09-28. The builder
+                        itself performs no network access.
+network refused        : www.10xgenomics.com, HTTP 429 with a Vercel Security Checkpoint body.
+                        This is the origin's bot protection, not the sandbox allowlist, so no
+                        network-access request applies; round 3's D3 recorded the same.
