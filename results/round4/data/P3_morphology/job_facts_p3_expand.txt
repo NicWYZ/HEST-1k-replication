@@ -1,0 +1,53 @@
+partition=spill node=c0926.ll.unc.edu job=2772935 date=2026-09-28T14:08:27-04:00
+wd=/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/8fd44d3c-e838-4d40-8762-69c3e57db362 out=/work/users/w/e/weiyang/hest_replication/results/round4/data/P3_morphology morph_root=/work/users/w/e/weiyang/hest_replication/instrumentation/morphology_ext
+pythonhashseed=0
+987d005ad66e9f8bdbd7544901298c4a  /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/8fd44d3c-e838-4d40-8762-69c3e57db362/round4_data_morphology.py
+5ddc86a84e7ffd63a6bbf1b99729e77d  /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/8fd44d3c-e838-4d40-8762-69c3e57db362/p3_morph_config.json
+b4be534b9a604e4866a25d6a41f74775  /work/users/w/e/weiyang/hest_replication/code/scripts/morphology_features.py
+3c060bcb8271e7d3a24c2c84ebf157ae  /work/users/w/e/weiyang/hest_replication/results/round4/data/P3_morphology/p3_geometry_scan.csv
+--- destination state before the run ---
+ls: cannot access '/work/users/w/e/weiyang/hest_replication/instrumentation/morphology_ext': No such file or directory
+total 36
+drwxr-xr-x 2 weiyang users  4096 Sep 28 14:00 .
+drwxr-xr-x 2 weiyang users  4096 Sep 28 13:51 ..
+-rw-r--r-- 1 weiyang users   957 Sep 28 13:52 p3_anchor_comparison.csv
+-rw-r--r-- 1 weiyang users 32235 Sep 28 14:00 p3_geometry_scan.csv
+-rw-r--r-- 1 weiyang users   388 Sep 28 14:00 _provenance.json
+-rw-r--r-- 1 weiyang users  2823 Sep 28 14:00 PROVENANCE__p3_anchor.txt
+expand_rc=0
+--- written parquets ---
+-rw-r--r-- 1 weiyang users 3.2M Sep 28 14:18 /work/users/w/e/weiyang/hest_replication/instrumentation/morphology_ext/breast_xenium/morphology.parquet
+-rw-r--r-- 1 weiyang users 805K Sep 28 14:18 /work/users/w/e/weiyang/hest_replication/instrumentation/morphology_ext/indiana_kidney/morphology.parquet
+-rw-r--r-- 1 weiyang users 1.4M Sep 28 14:18 /work/users/w/e/weiyang/hest_replication/instrumentation/morphology_ext/lung_xenium/morphology.parquet
+--- morphology_v2 untouched (must still be the round-2 mtimes) ---
+total 6612
+drwxr-xr-x 2 weiyang users    4096 Sep 14 03:47 .
+drwxr-xr-x 2 weiyang users    4096 Sep 28 14:18 ..
+-rw-r--r-- 1 weiyang users 1766423 Sep 14 03:45 CCRCC_morph.parquet
+-rw-r--r-- 1 weiyang users  569607 Sep 14 03:44 COAD_morph.parquet
+-rw-r--r-- 1 weiyang users  156102 Sep 14 03:43 HCC_morph.parquet
+-rw-r--r-- 1 weiyang users 1038086 Sep 14 03:45 IDC_morph.parquet
+-rw-r--r-- 1 weiyang users  214604 Sep 14 03:43 LUNG_morph.parquet
+-rw-r--r-- 1 weiyang users  661309 Sep 14 03:46 LYMPH_IDC_morph.parquet
+-rw-r--r-- 1 weiyang users  297797 Sep 14 03:43 PAAD_morph.parquet
+-rw-r--r-- 1 weiyang users 1598555 Sep 14 03:47 PRAD_morph.parquet
+-rw-r--r-- 1 weiyang users  333284 Sep 14 03:43 READ_morph.parquet
+-rw-r--r-- 1 weiyang users  131948 Sep 14 03:43 SKCM_morph.parquet
+total 5947
+drwxr-xr-x 2 weiyang users    4096 Sep 14 02:15 .
+drwxr-xr-x 2 weiyang users    4096 Sep 28 14:18 ..
+-rw-r--r-- 1 weiyang users 1594122 Sep 14 02:14 CCRCC_morph.parquet
+-rw-r--r-- 1 weiyang users  497250 Sep 14 02:14 COAD_morph.parquet
+-rw-r--r-- 1 weiyang users  144325 Sep 14 02:14 HCC_morph.parquet
+-rw-r--r-- 1 weiyang users  949428 Sep 14 02:14 IDC_morph.parquet
+-rw-r--r-- 1 weiyang users  190673 Sep 14 02:14 LUNG_morph.parquet
+-rw-r--r-- 1 weiyang users  594680 Sep 14 02:14 LYMPH_IDC_morph.parquet
+-rw-r--r-- 1 weiyang users  264211 Sep 14 02:14 PAAD_morph.parquet
+-rw-r--r-- 1 weiyang users 1445081 Sep 14 02:15 PRAD_morph.parquet
+-rw-r--r-- 1 weiyang users  288252 Sep 14 02:15 READ_morph.parquet
+-rw-r--r-- 1 weiyang users  119167 Sep 14 02:14 SKCM_morph.parquet
+JobID                         JobName  Partition        NodeList    Elapsed   TotalCPU     MaxRSS     ReqMem  ReqCPUS      State 
+------------ ------------------------ ---------- --------------- ---------- ---------- ---------- ---------- -------- ---------- 
+2772935               operon-8fd44d3c      spill           c0926   00:10:10   00:00:00                   32G        4    RUNNING 
+2772935.bat+                    batch                      c0926   00:10:10   00:00:00                              4    RUNNING 
+2772935.ext+                   extern                      c0926   00:10:10   00:00:00                              4    RUNNING 

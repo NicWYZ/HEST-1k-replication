@@ -1,0 +1,17 @@
+partition=spill node=c0813.ll.unc.edu job=2753400 date=2026-09-28T13:51:43-04:00
+wd=/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/889a3d0e-2d34-4386-8800-b43f898b4afd out=/work/users/w/e/weiyang/hest_replication/results/round4/data/P3_morphology
+pythonhashseed=0
+987d005ad66e9f8bdbd7544901298c4a  /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/889a3d0e-2d34-4386-8800-b43f898b4afd/round4_data_morphology.py
+5ddc86a84e7ffd63a6bbf1b99729e77d  /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/889a3d0e-2d34-4386-8800-b43f898b4afd/p3_morph_config.json
+b4be534b9a604e4866a25d6a41f74775  /work/users/w/e/weiyang/hest_replication/code/scripts/morphology_features.py
+--- destination state before the run ---
+total 0
+drwxr-xr-x 2 weiyang users 4096 Sep 28 13:51 .
+drwxr-xr-x 2 weiyang users 4096 Sep 28 13:51 ..
+ls: cannot access '/work/users/w/e/weiyang/hest_replication/instrumentation/morphology_ext': No such file or directory
+anchor_rc=0
+JobID                         JobName  Partition        NodeList    Elapsed   TotalCPU     MaxRSS     ReqMem  ReqCPUS      State 
+------------ ------------------------ ---------- --------------- ---------- ---------- ---------- ---------- -------- ---------- 
+2753400               operon-889a3d0e      spill           c0813   00:08:56   00:00:00                   16G        4    RUNNING 
+2753400.bat+                    batch                      c0813   00:08:56   00:00:00                              4    RUNNING 
+2753400.ext+                   extern                      c0813   00:08:56   00:00:00                              4    RUNNING 

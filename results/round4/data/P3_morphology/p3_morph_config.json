@@ -1,0 +1,40 @@
+{
+  "config_version": 1,
+  "stage": "round4_P3_morphology",
+  "repo_root": "/work/users/w/e/weiyang/hest_replication",
+  "commit": "71451d7",
+  "project_id": "proj_3a4e23273fb6",
+  "frame_id": "dab7c82a-7762-41ec-aaf1-9a41e6afaff2",
+  "builder": "code/scripts/morphology_features.py",
+  "builder_md5_expected": "unverified_at_write_time",
+  "morphology_v2_dir": "instrumentation/morphology_v2",
+  "out_morph_root": "instrumentation/morphology_ext",
+  "anchor": [
+    {"task": "CCRCC", "sample_id": "INT1"},
+    {"task": "IDC", "sample_id": "NCBI783"}
+  ],
+  "anchor_reference_tasks": ["CCRCC", "IDC"],
+  "sets": {
+    "indiana_kidney": {
+      "hest_ext_set": "kidney_visium_cell",
+      "task_def": "results/round3/D4_expansion/task_defs/KIDNEY_POP54.json",
+      "population": "indiana_nontumour",
+      "n_expected": 30
+    },
+    "breast_xenium": {
+      "hest_ext_set": "institution_breast_xenium",
+      "task_def": "results/round3/D4_expansion/task_defs/BREAST_XENIUM.json",
+      "population": null,
+      "n_expected": 18
+    },
+    "lung_xenium": {
+      "hest_ext_set": "lung_xenium",
+      "selection_csv": "results/round4/data/P1_selection/selection.csv",
+      "selection_set": "L",
+      "n_expected": 24
+    }
+  },
+  "flagged_samples": {
+    "NCBI865": "P1 subset relation fails: patch barcode 051x019 has no row in the expression file. Built and reported as it comes out; marked excluded from set L task membership pending the oversight chat."
+  }
+}
