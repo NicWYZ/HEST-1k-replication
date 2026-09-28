@@ -1,0 +1,14 @@
+partition=l40-gpu node=g181009.ll.unc.edu job=2723647 date=2026-09-28T05:09:43-04:00
+repo_head=e00d9bd7dd775df0af2c088b93d6d60ef8902cfc
+4cbb8b9b3417b6e31daf80638915127e  /work/users/w/e/weiyang/hest_replication/code/scripts/round3_d1_download.py
+3b9e47a045993bc2bd38790466486178  /work/users/w/e/weiyang/hest_replication/code/scripts/round3_d2_embed.py
+d1_rc=0
+d2_rc=0
+still_link patches/NCBI692.h5
+still_link st/NCBI692.h5ad
+still_link metadata/NCBI692.json
+JobID         Partition        NodeList    Elapsed     MaxRSS      State 
+------------ ---------- --------------- ---------- ---------- ---------- 
+2723647         l40-gpu         g181009   00:01:08               RUNNING 
+2723647.bat+                    g181009   00:01:08               RUNNING 
+2723647.ext+                    g181009   00:01:08               RUNNING 

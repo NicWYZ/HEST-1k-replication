@@ -1,0 +1,32 @@
+expected 5 files over 1 samples, 82072235 bytes
+## BEFORE (2026-09-28T05:09:44.179796-04:00)
+### df -h /work
+Filesystem                      Size  Used Avail Use% Mounted on
+hpc.loblolly.its.unc.edu:/work  3.5P  3.0P  567T  85% /work
+### quota -s
+Disk quotas for user weiyang (uid 375767): 
+     Filesystem   space   quota   limit   grace   files   quota   limit   grace
+rc-data-ll:/vol/sas1a
+                  4163M  51200M  76800M            8046   4295m   4295m
+### du -s --block-size=1 hest_ext
+2560	/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/94014b4e-2c26-4e99-8efb-fa9dfd6a7523/ext
+
+pinned revision 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec; repository main is now 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec (identical)
+[2026-09-28T05:09:54.153744] p0check: 1 samples, 5 files -> /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/94014b4e-2c26-4e99-8efb-fa9dfd6a7523/ext/p0check
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files:  60%|██████    | 3/5 [00:00<00:00, 19.88it/s]Fetching 5 files: 100%|██████████| 5/5 [00:00<00:00, 31.70it/s]
+  done in 0s, 82072235 bytes on disk
+## AFTER (2026-09-28T05:09:54.498500-04:00)
+### df -h /work
+Filesystem                      Size  Used Avail Use% Mounted on
+hpc.loblolly.its.unc.edu:/work  3.5P  3.0P  567T  85% /work
+### quota -s
+Disk quotas for user weiyang (uid 375767): 
+     Filesystem   space   quota   limit   grace   files   quota   limit   grace
+rc-data-ll:/vol/sas1a
+                  4163M  51200M  76800M            8046   4295m   4295m
+### du -s --block-size=1 hest_ext
+3072	/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/94014b4e-2c26-4e99-8efb-fa9dfd6a7523/ext
+
+  NCBI692 p0check files 5/5 mismatch 0 patches 357 spots 370 eq False 
+SUMMARY {"n_samples": 1, "n_files_expected": 5, "n_files_present": 5, "bytes_expected": 82072235, "bytes_present": 82072235, "samples_with_missing_files": [], "samples_with_size_mismatch": [], "samples_patch_count_ne_spot_count": ["NCBI692"], "revision_note": "pinned revision 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec; repository main is now 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec (identical)", "hf_revision_used": "7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec", "hf_main_revision_now": "7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec", "huggingface_hub_version": "0.36.2"}
+FAILURES PRESENT

@@ -1,0 +1,59 @@
+dir              : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/94014b4e-2c26-4e99-8efb-fa9dfd6a7523/ext
+stage            : round3 D1 (download of the three approved expansion sets)
+script           : code/scripts/round3_d1_download.py (staged as d1.py in the job workdir)
+created          : 2026-09-28T05:10:02.890033-04:00
+operator         : weiyang (Nicolas Weiyang Zhang)
+slurm_job_id     : 2723647
+slurm_partition  : l40-gpu
+slurm_nodelist   : g181009
+node             : g181009.ll.unc.edu
+platform         : Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python           : 3.11.16
+executable       : /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+commit           : e00d9bd7dd775df0af2c088b93d6d60ef8902cfc
+command_line     : /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python /work/users/w/e/weiyang/hest_replication/code/scripts/round3_d1_download.py
+pythonhashseed   : 0
+config           : {"components": ["patches", "st", "cellvit_seg", "metadata"], "ext_root": "/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/94014b4e-2c26-4e99-8efb-fa9dfd6a7523/ext", "listing_rel": "results/round3/D0_inventory/hf_file_listing.csv.gz", "pinned_revision": "7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec", "project_root": "/work/users/w/e/weiyang/hest_replication", "repo_id": "MahmoodLab/hest", "set_order": ["p0check"], "stage": "round4_P0_check_of_round3_D1"}
+config_sets      : {"p0check": {"n_members": 1, "n_owned": 1}}
+config_hash      : sha256:cbe63b4cd786a73b80acf5ce6d5084c3 crc32:cf80eea6  (over d1_config.json, copied into this directory)
+hf_repo          : MahmoodLab/hest
+hf_revision_used : 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec
+hf_revision_note : pinned revision 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec; repository main is now 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec (identical)
+huggingface_hub  : 0.36.2
+components       : ['cellvit_seg', 'metadata', 'patches', 'st']  (no wsis/, no transcripts/, no xenium_seg/, nothing else)
+bytes_downloaded : 82072235 over 5 files
+
+## sets and physical homes (sets overlap; home is the first set in set_order containing the sample)
+p0check: members=1 owned=1
+
+## sample list, by home set
+p0check (1): NCBI692
+
+## per-set download
+p0check: 1 samples, 5 files, 82072235 bytes, 0.3 s
+
+## storage before and after
+## BEFORE (2026-09-28T05:09:44.179796-04:00)
+### df -h /work
+Filesystem                      Size  Used Avail Use% Mounted on
+hpc.loblolly.its.unc.edu:/work  3.5P  3.0P  567T  85% /work
+### quota -s
+Disk quotas for user weiyang (uid 375767): 
+     Filesystem   space   quota   limit   grace   files   quota   limit   grace
+rc-data-ll:/vol/sas1a
+                  4163M  51200M  76800M            8046   4295m   4295m
+### du -s --block-size=1 hest_ext
+2560	/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/94014b4e-2c26-4e99-8efb-fa9dfd6a7523/ext
+
+## AFTER (2026-09-28T05:09:54.498500-04:00)
+### df -h /work
+Filesystem                      Size  Used Avail Use% Mounted on
+hpc.loblolly.its.unc.edu:/work  3.5P  3.0P  567T  85% /work
+### quota -s
+Disk quotas for user weiyang (uid 375767): 
+     Filesystem   space   quota   limit   grace   files   quota   limit   grace
+rc-data-ll:/vol/sas1a
+                  4163M  51200M  76800M            8046   4295m   4295m
+### du -s --block-size=1 hest_ext
+3072	/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/94014b4e-2c26-4e99-8efb-fa9dfd6a7523/ext
+

@@ -47,3 +47,16 @@ Decision needed from the oversight chat before P1 downloads anything:
 1. Proceed with set V as selected (39 samples, 19 GB) and set L (24 samples, 9.4 GB).
 2. Change set V's rule, for example to include Spatial Transcriptomics.
 3. Download set L only.
+
+## P0 environment check (job 2723647, `l40-gpu`, node g181009), completed after this note was first written
+
+Round 3's `round3_d1_download.py` (md5 `4cbb8b9b3417b6e31daf80638915127e`) and `round3_d2_embed.py` (md5
+`3b9e47a045993bc2bd38790466486178`) ran unchanged on one existing sample, NCBI692, in a scratch tree
+that links to the real files (`results/round4/data/P0_setup/`).
+- D1 found 5 of 5 files present at their listed sizes, with 0 size mismatches. HuggingFace `main` is
+  still the pinned revision `7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec`, so P1 has no newer release to
+  handle.
+- The script prints "FAILURES PRESENT" only because of its old patch-count-equals-spot-count test (357
+  patches against 370 spots). Round 3 replaced that test with the subset relation.
+- D2 loaded resnet50 at float32 on an NVIDIA L40S and read the sample as cached, with 357 rows.
+- The three linked files were still links after the run, so no real file was written.

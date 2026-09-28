@@ -1,0 +1,26 @@
+{
+ "batch_size": 128,
+ "bench_task": {},
+ "emb_ext_root": "/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/94014b4e-2c26-4e99-8efb-fa9dfd6a7523/emb",
+ "encoders": [
+  "hoptimus0",
+  "uni_v2",
+  "resnet50"
+ ],
+ "ext_root": "/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/94014b4e-2c26-4e99-8efb-fa9dfd6a7523/ext",
+ "home": {
+  "NCBI692": "p0check"
+ },
+ "num_workers": 4,
+ "project_root": "/work/users/w/e/weiyang/hest_replication",
+ "seed": 1,
+ "sets": {
+  "p0check": {
+   "members": [
+    "NCBI692"
+   ]
+  }
+ },
+ "stage": "round4_P0_check_of_round3_D2",
+ "trident_commit_pinned": "f3eb7f301ce34f875306b545e6cfefc5d3335a5c"
+}
