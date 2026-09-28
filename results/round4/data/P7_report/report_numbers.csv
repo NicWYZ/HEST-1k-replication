@@ -17,3 +17,7 @@ p1_unpatched_donor_labelled_v_mean,0.056673,results/round4/data/P1_download/p1_v
 p1_unpatched_donor_labelled_v_sd,0.127998,results/round4/data/P1_download/p1_verification.csv,"sample sd, set == donor_labelled_v"
 stageP_sacct_n_batch_steps,9.0,results/round4/data/P7_report/stageP_sacct.csv,rows whose JobID ends in .batch
 p6_sacct_n_batch_steps,8.0,results/round4/data/P7_report/p6_sacct_lead.csv,rows whose JobID ends in .batch
+gate_main_n_unresolved,10.0,results/round4/data/P7_report/gate_main.tsv,row count (one row per unresolved claim)
+gate_main_n_unresolved__deck_speaker_scripts.md,5.0,results/round4/data/P7_report/gate_main.tsv,rows with doc == docs/deck_speaker_scripts.md
+gate_main_n_unresolved__first_year_ST_project_proposal.md,5.0,results/round4/data/P7_report/gate_main.tsv,rows with doc == docs/first_year_ST_project_proposal.md
+gate_deck_n_unresolved,0.0,results/round4/data/P7_report/gate_deck.tsv,row count (one row per unresolved claim)

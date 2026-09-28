@@ -297,6 +297,19 @@ lung. Source: `results/round4/data/P3_morphology/morphology_ext_pooled.csv`.
     working copy is at that commit. Source: `results/round4/data/P1_download/p1_p2_lead_verification.md`.
 18. **`rc_tengfei_pi` is available** for GPU work, with the same limits as rc_htzhu_pi. Source:
     `results/round4/data/P7_report/accounts_at_report.txt`.
+19. **The numeric-claim gate.** It was run in its `docs/WAYS_OF_WORKING.md` form, both invocations
+    over README and every document, on the synced Longleaf working copy at `a6d5d44` (job `2812030`).
+    - Every claim in this report and in `docs/round4_data_plan.md` resolves.
+    - The deck outline invocation resolves every claim.
+    - The main invocation leaves 10 claims unresolved: 5 in `docs/deck_speaker_scripts.md` and 5 in
+      `docs/first_year_ST_project_proposal.md`.
+
+    Both documents entered at `80f1ae5`, which precedes the round-3 tag. Stage P changed no file
+    outside round-4 paths, so the 10 predate this stage. Round 3's gate covered README and the round-3
+    documents only, which is why they were not seen. They are not fixed here, because those
+    documents are outside stage P. **For the oversight chat.** Source:
+    `results/round4/data/P7_report/gate_main.tsv`, `results/round4/data/P7_report/gate_deck.tsv`,
+    `results/round4/data/P7_report/report_numbers.csv`.
 
 **Proposed edits**, not applied:
 1. `round3_d1_download.py`'s patch-count test is stale. Patch count need not equal spot count, and the

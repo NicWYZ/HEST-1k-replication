@@ -11,6 +11,8 @@ Outputs
   stageP_sacct.csv      results/round4/data/P7_report/stageP_sacct.psv as CSV, MaxRSS in K as a number
   p6_sacct_lead.csv     results/round4/data/P6_genes/p6_sacct_lead.psv, the same way
 
+Also counts the unresolved claims in the Longleaf gate run's gate_main.tsv and gate_deck.tsv.
+
 Usage, from the repository root:
   python code/scripts/round4_data_report_numbers.py
 """
@@ -66,6 +68,14 @@ def main():
         add(f"{name}_sacct_n_batch_steps", int(d.JobID.str.endswith(".batch").sum()),
             f"results/round4/data/P7_report/{name}_sacct{'_lead' if name == 'p6' else ''}.csv",
             "rows whose JobID ends in .batch")
+
+    # The Longleaf gate run (job output copied into P7_report): unresolved claims per document.
+    for inv in ("main", "deck"):
+        src = f"results/round4/data/P7_report/gate_{inv}.tsv"
+        g = pd.read_csv(os.path.join(ROOT, src), sep="\t")
+        add(f"gate_{inv}_n_unresolved", len(g), src, "row count (one row per unresolved claim)")
+        for doc, n in g.groupby("doc").size().items():
+            add(f"gate_{inv}_n_unresolved__{os.path.basename(doc)}", int(n), src, f"rows with doc == {doc}")
 
     os.makedirs(OUT, exist_ok=True)
     pd.DataFrame(rows).to_csv(os.path.join(OUT, "report_numbers.csv"), index=False)
