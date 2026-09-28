@@ -1,0 +1,19 @@
+name,value,source,formula
+r2_shared_top50_five_visium_mean,24.69,results/round2/R2_fold_hvg/fold_hvg__hoptimus0.csv,"mean n_genes_shared over rows with task in CCRCC, PRAD, READ, LYMPH_IDC, HCC"
+r2_shared_top50_five_visium_sd,11.13,results/round2/R2_fold_hvg/fold_hvg__hoptimus0.csv,"sample sd, same rows"
+r2_shared_top50_five_visium_n_folds,16.0,results/round2/R2_fold_hvg/fold_hvg__hoptimus0.csv,"row count, same rows"
+p6_overlap_top50_benchmark_mean,35.65,results/round4/data/P6_genes/p6_gene_summary.csv,mean overlap_top50_shipped over the benchmark-task rows (task != INDIANA_KIDNEY)
+p6_overlap_top50_benchmark_sd,12.57,results/round4/data/P6_genes/p6_gene_summary.csv,"sample sd, same rows"
+p6_overlap_top50_benchmark_n_folds,34.0,results/round4/data/P6_genes/p6_gene_summary.csv,"row count, same rows"
+p1_unpatched_lung_xenium_min,0.282733,results/round4/data/P1_download/p1_verification.csv,min unpatched_fraction over set == lung_xenium
+p1_unpatched_lung_xenium_median,0.379772,results/round4/data/P1_download/p1_verification.csv,median unpatched_fraction over set == lung_xenium
+p1_unpatched_lung_xenium_max,0.757519,results/round4/data/P1_download/p1_verification.csv,max unpatched_fraction over set == lung_xenium
+p1_unpatched_lung_xenium_mean,0.414785,results/round4/data/P1_download/p1_verification.csv,mean unpatched_fraction over set == lung_xenium
+p1_unpatched_lung_xenium_sd,0.11987,results/round4/data/P1_download/p1_verification.csv,"sample sd, set == lung_xenium"
+p1_unpatched_donor_labelled_v_min,0.0,results/round4/data/P1_download/p1_verification.csv,min unpatched_fraction over set == donor_labelled_v
+p1_unpatched_donor_labelled_v_median,0.003063,results/round4/data/P1_download/p1_verification.csv,median unpatched_fraction over set == donor_labelled_v
+p1_unpatched_donor_labelled_v_max,0.54954,results/round4/data/P1_download/p1_verification.csv,max unpatched_fraction over set == donor_labelled_v
+p1_unpatched_donor_labelled_v_mean,0.056673,results/round4/data/P1_download/p1_verification.csv,mean unpatched_fraction over set == donor_labelled_v
+p1_unpatched_donor_labelled_v_sd,0.127998,results/round4/data/P1_download/p1_verification.csv,"sample sd, set == donor_labelled_v"
+stageP_sacct_n_batch_steps,9.0,results/round4/data/P7_report/stageP_sacct.csv,rows whose JobID ends in .batch
+p6_sacct_n_batch_steps,8.0,results/round4/data/P7_report/p6_sacct_lead.csv,rows whose JobID ends in .batch
