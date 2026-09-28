@@ -242,3 +242,33 @@ Checked against `results/round3/D0_inventory/hest_inventory.csv` before anything
    one, as `round3-A3-r2` and `round3-final-r2` did.
 9. **The index.** This plan and the report are new documents under `docs/`, and `docs/README.md` is
    not edited this stage. Their index entries are proposed in the report.
+
+## 8. The P1 decision, transcribed before P1's download starts
+
+From `docs/decisions/round4_data_P1_decision.md` (28 September 2026, the oversight chat's answer to
+`results/round4/data/P1_selection/STOP_NOTE.md` at `c31e36e`). Where it and the sections above differ,
+it governs.
+
+1. **Option 1.** Sets V and L proceed as selected: V is 39 samples and 19.0 GB, L is 24 samples and
+   9.4 GB (`results/round4/data/P1_selection/selection.csv`). The selection rule stands as written and
+   nothing is added to it. The Spatial Transcriptomics platform and unlabelled samples stay excluded;
+   a later use for either comes back as a proposal.
+2. **Prediction 2 is scored as refuted** in the P7 report. The stated reason is that it was written
+   from the 172 labelled Visium and Xenium samples without subtracting the 113 already on disk.
+3. **Set L's two unlabelled samples** stay in the download and the embedding. P4 tries to resolve
+   their donors from the source record. If it cannot, they are recorded `unverifiable` and excluded
+   from every donor unit. P5 builds the lung task definition on the donor units that remain (19 to
+   21), and the P7 report states the count P5 used.
+4. **Set L's two benchmark LUNG samples** (`TENX118`, `TENX141`) are downloaded again in the HEST-1k
+   layout, like every other expansion sample, because the two layouts are not mixed. P5 uses the
+   HEST-1k-layout copies, and the benchmark LUNG task is untouched. This settles section 7 item 1.
+5. **Set V's 24 samples with an uncertain pixel size** are downloaded as they are. Set V is neither
+   embedded nor audited in this stage, and the flag travels with its rows.
+6. **The P0 finding.** `round3_d1_download.py`'s patch-count test is stale and is not edited.
+   `round4_data_*` scripts use the subset relation, and the P7 report lists the stale check under
+   proposed edits.
+7. **What continues.** P1's download starts on receipt of the memo, set L first and then set V. P2 to
+   P6 follow as planned. The one gate is P7, and the gate rule is unchanged.
+
+On the same day Nicolas said that `rc_tengfei_pi` should now be on his association. P0 item 4's check
+is therefore repeated before P2's GPU jobs, and any use of that account is recorded.
