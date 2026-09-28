@@ -1,0 +1,94 @@
+Round 4, stage P, P6 (Genes track) output directory.
+Directory stamp: _provenance.json (longleaf-provenance stamp_dir format).
+Per-job records follow, one per job that wrote here.
+
+Round 4, stage P, P6 (check), tag all
+slurm_job_id      : 2772863
+slurm_partition   : spill
+node              : c0939
+date              : 2026-09-28T14:27:05-0400
+repo_commit       : 71451d7 (recorded by the job from the environment; no git command is run by this stage)
+script            : code/scripts/round4_data_p6_genes.py
+script_md5        : 67f702c02ffeb8e870c6197541658678
+imported_md5      : round3_a0_harness 0ad7ae8efe554c1f285e5f384a9fb7f5; round3_d4_sets b74f2dda031bc972c1c44c1d7b3a04da; round2_r2_gene_check e267b1e6038daa893647202dd47ffb04
+command_line      : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/4e50707d-1c72-4a76-aadf-e9538883109a/round4_data_p6_genes.py --stage check --out /work/users/w/e/weiyang/hest_replication/results/round4/data/P6_genes
+pythonhashseed    : 0
+config_hash       : 7a19d8e8711c
+config            : stage=check tag=all sizes=(50, 200, 500) design=donor selection=get_k_genes(criteria=var,min_cells_pct=0.1) off_panel=dropped_against_fold_var_names_intersection material=bench:all_spots_of_bench_adata|ext:patched_spots_of_samples fold_enumeration=round3_a0_harness.build_fold_specs_general_branch indiana_check=round3_d4_sets.run_genes_unmodified
+scanpy_version    : 1.11.5
+pyarrow_version   : 25.0.1
+numpy_version     : 2.4.6
+exit_code         : 0
+decisions         : docs/decisions/round4_data_pull.md section 6 P6; docs/round4_data_plan.md section 3 P6 and section 7 items 5 and 6; docs/decisions/round4_data_P1_decision.md
+Round 4, stage P, P6 (lists), tag ccrcc
+slurm_job_id      : 2774163
+slurm_partition   : spill
+node              : c0909
+date              : 2026-09-28T14:56:14-0400
+repo_commit       : 71451d7 (recorded by the job from the environment; no git command is run by this stage)
+script            : code/scripts/round4_data_p6_genes.py
+script_md5        : 67f702c02ffeb8e870c6197541658678
+imported_md5      : round3_a0_harness 0ad7ae8efe554c1f285e5f384a9fb7f5; round3_d4_sets b74f2dda031bc972c1c44c1d7b3a04da; round2_r2_gene_check e267b1e6038daa893647202dd47ffb04
+command_line      : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/75fbd1ba-2b43-4c9c-aa4d-3c06bed72567/round4_data_p6_genes.py --stage lists --tasks CCRCC --tag ccrcc --out /work/users/w/e/weiyang/hest_replication/results/round4/data/P6_genes
+pythonhashseed    : 0
+config_hash       : ba2b5d2287ed
+config            : stage=lists tag=ccrcc sizes=(50, 200, 500) design=donor selection=get_k_genes(criteria=var,min_cells_pct=0.1) off_panel=dropped_against_fold_var_names_intersection material=bench:all_spots_of_bench_adata|ext:patched_spots_of_samples fold_enumeration=round3_a0_harness.build_fold_specs_general_branch indiana_check=round3_d4_sets.run_genes_unmodified
+scanpy_version    : 1.11.5
+pyarrow_version   : 25.0.1
+numpy_version     : 2.4.6
+exit_code         : 0
+decisions         : docs/decisions/round4_data_pull.md section 6 P6; docs/round4_data_plan.md section 3 P6 and section 7 items 5 and 6; docs/decisions/round4_data_P1_decision.md
+Round 4, stage P, P6 (lists), tag indiana
+slurm_job_id      : 2774174
+slurm_partition   : spill
+node              : c0939
+date              : 2026-09-28T14:43:49-0400
+repo_commit       : 71451d7 (recorded by the job from the environment; no git command is run by this stage)
+script            : code/scripts/round4_data_p6_genes.py
+script_md5        : 67f702c02ffeb8e870c6197541658678
+imported_md5      : round3_a0_harness 0ad7ae8efe554c1f285e5f384a9fb7f5; round3_d4_sets b74f2dda031bc972c1c44c1d7b3a04da; round2_r2_gene_check e267b1e6038daa893647202dd47ffb04
+command_line      : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/cdc13edd-8f73-48b7-808c-bf39fb2eb63e/round4_data_p6_genes.py --stage lists --tasks INDIANA_KIDNEY --tag indiana --out /work/users/w/e/weiyang/hest_replication/results/round4/data/P6_genes
+pythonhashseed    : 0
+config_hash       : d9cc3412165d
+config            : stage=lists tag=indiana sizes=(50, 200, 500) design=donor selection=get_k_genes(criteria=var,min_cells_pct=0.1) off_panel=dropped_against_fold_var_names_intersection material=bench:all_spots_of_bench_adata|ext:patched_spots_of_samples fold_enumeration=round3_a0_harness.build_fold_specs_general_branch indiana_check=round3_d4_sets.run_genes_unmodified
+scanpy_version    : 1.11.5
+pyarrow_version   : 25.0.1
+numpy_version     : 2.4.6
+exit_code         : 0
+decisions         : docs/decisions/round4_data_pull.md section 6 P6; docs/round4_data_plan.md section 3 P6 and section 7 items 5 and 6; docs/decisions/round4_data_P1_decision.md
+Round 4, stage P, P6 (lists), tag small
+slurm_job_id      : 2774164
+slurm_partition   : spill
+node              : c0904
+date              : 2026-09-28T14:32:23-0400
+repo_commit       : 71451d7 (recorded by the job from the environment; no git command is run by this stage)
+script            : code/scripts/round4_data_p6_genes.py
+script_md5        : 67f702c02ffeb8e870c6197541658678
+imported_md5      : round3_a0_harness 0ad7ae8efe554c1f285e5f384a9fb7f5; round3_d4_sets b74f2dda031bc972c1c44c1d7b3a04da; round2_r2_gene_check e267b1e6038daa893647202dd47ffb04
+command_line      : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/49a596dc-69cd-4096-9c6c-09f57c1979d1/round4_data_p6_genes.py --stage lists --tasks PRAD,READ,LYMPH_IDC,HCC --tag small --out /work/users/w/e/weiyang/hest_replication/results/round4/data/P6_genes
+pythonhashseed    : 0
+config_hash       : 57ecd6b4e284
+config            : stage=lists tag=small sizes=(50, 200, 500) design=donor selection=get_k_genes(criteria=var,min_cells_pct=0.1) off_panel=dropped_against_fold_var_names_intersection material=bench:all_spots_of_bench_adata|ext:patched_spots_of_samples fold_enumeration=round3_a0_harness.build_fold_specs_general_branch indiana_check=round3_d4_sets.run_genes_unmodified
+scanpy_version    : 1.11.5
+pyarrow_version   : 25.0.1
+numpy_version     : 2.4.6
+exit_code         : 0
+decisions         : docs/decisions/round4_data_pull.md section 6 P6; docs/round4_data_plan.md section 3 P6 and section 7 items 5 and 6; docs/decisions/round4_data_P1_decision.md
+Round 4, stage P, P6 (verify), tag all
+slurm_job_id      : 2777221
+slurm_partition   : spill
+node              : c151609
+date              : 2026-09-28T15:07:54-0400
+repo_commit       : 71451d7 (recorded by the job from the environment; no git command is run by this stage)
+script            : code/scripts/round4_data_p6_genes.py
+script_md5        : 03ecb15ccdf71dd22d05f2802f28f0ce
+imported_md5      : round3_a0_harness 0ad7ae8efe554c1f285e5f384a9fb7f5; round3_d4_sets b74f2dda031bc972c1c44c1d7b3a04da; round2_r2_gene_check e267b1e6038daa893647202dd47ffb04
+command_line      : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/e31a9ddc-f80c-40e5-8fd8-bfa47c4b2f22/round4_data_p6_genes.py --stage verify --out /work/users/w/e/weiyang/hest_replication/results/round4/data/P6_genes
+pythonhashseed    : 0
+config_hash       : 372af474083b
+config            : stage=verify tag=all sizes=(50, 200, 500) design=donor selection=get_k_genes(criteria=var,min_cells_pct=0.1) off_panel=dropped_against_fold_var_names_intersection material=bench:all_spots_of_bench_adata|ext:patched_spots_of_samples fold_enumeration=round3_a0_harness.build_fold_specs_general_branch indiana_check=round3_d4_sets.run_genes_unmodified
+scanpy_version    : 1.11.5
+pyarrow_version   : 25.0.1
+numpy_version     : 2.4.6
+exit_code         : 0
+decisions         : docs/decisions/round4_data_pull.md section 6 P6; docs/round4_data_plan.md section 3 P6 and section 7 items 5 and 6; docs/decisions/round4_data_P1_decision.md

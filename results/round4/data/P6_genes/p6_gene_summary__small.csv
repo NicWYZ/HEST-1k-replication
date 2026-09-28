@@ -1,0 +1,11 @@
+task,design,fold,st_technology,selection_material,n_train_samples,n_test_samples,n_train_spots,n_test_spots,panel_min,panel_max,panel_union,n_present_all_fold_samples,n_common_genes_50,n_raw_50,n_selected_50,n_off_panel_50,genes_off_panel_50,n_common_genes_200,n_raw_200,n_selected_200,n_off_panel_200,genes_off_panel_200,n_common_genes_500,n_raw_500,n_selected_500,n_off_panel_500,genes_off_panel_500,overlap_top50_shipped,n_shipped,shipped_all_present,nested_50_in_200,nested_200_in_500,seconds
+PRAD,donor,PRAD_patient1,Visium,all_spots_of_bench_adata,15,8,36819,25891,33538,33538,33538,33538,1673,50,50,0,,1673,200,200,0,,1673,500,500,0,,12,50,True,True,True,28.3
+PRAD,donor,PRAD_patient2,Visium,all_spots_of_bench_adata,8,15,25891,36819,33538,33538,33538,33538,1575,50,50,0,,1575,200,200,0,,1575,500,500,0,,10,50,True,True,True,18.3
+READ,donor,READ_specimen1,Visium,all_spots_of_bench_adata,2,2,3819,4588,36601,36601,36601,36601,9532,50,50,0,,9532,200,200,0,,9532,500,500,0,,18,50,True,True,True,7.5
+READ,donor,READ_specimen7,Visium,all_spots_of_bench_adata,2,2,4588,3819,36601,36601,36601,36601,10041,50,50,0,,10041,200,200,0,,10041,500,500,0,,15,50,True,True,True,9.4
+LYMPH_IDC,donor,Patient_3,Visium,all_spots_of_bench_adata,3,1,14972,4992,33931,33931,33931,33931,10544,50,50,0,,10544,200,200,0,,10544,500,500,0,,24,50,True,True,True,36.3
+LYMPH_IDC,donor,Patient_6,Visium,all_spots_of_bench_adata,3,1,14972,4992,33931,33931,33931,33931,10920,50,50,0,,10920,200,200,0,,10920,500,500,0,,21,50,True,True,True,35.6
+LYMPH_IDC,donor,Patient_7,Visium,all_spots_of_bench_adata,3,1,14976,4988,33931,33931,33931,33931,10364,50,50,0,,10364,200,200,0,,10364,500,500,0,,16,50,True,True,True,31.6
+LYMPH_IDC,donor,Patient_8,Visium,all_spots_of_bench_adata,3,1,14972,4992,33931,33931,33931,33931,10377,50,50,0,,10377,200,200,0,,10377,500,500,0,,23,50,True,True,True,31.7
+HCC,donor,CHC20,Visium,all_spots_of_bench_adata,1,1,2261,1987,36601,36601,36601,36601,11464,50,50,0,,11464,200,200,0,,11464,500,500,0,,25,50,True,True,True,5.1
+HCC,donor,CHC23,Visium,all_spots_of_bench_adata,1,1,1987,2261,36601,36601,36601,36601,10637,50,50,0,,10637,200,200,0,,10637,500,500,0,,23,50,True,True,True,4.2

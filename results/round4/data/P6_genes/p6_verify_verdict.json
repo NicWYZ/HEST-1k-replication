@@ -1,0 +1,18 @@
+{
+ "stage": "verify",
+ "passed": true,
+ "n_gene_sample_checks": 974818,
+ "n_absent": 0,
+ "n_empty_folds": 0,
+ "n_folds_short_of_k": 2,
+ "folds_short_of_k": [
+  "kidVis_atlas_IU-F59:199",
+  "kidVis_atlas_IU-F59:494"
+ ],
+ "short_of_k_is_a_gate": false,
+ "short_of_k_note": "a list shorter than k is the specified off-panel drop, never topped up; it is a result and the evidence prediction 4 is scored against, not an acceptance failure",
+ "n_parquet_csv_mismatches": 0,
+ "n_parquet_schema_mismatches": 0,
+ "n_summary_rows": 59,
+ "n_fragments": 3
+}

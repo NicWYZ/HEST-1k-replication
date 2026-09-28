@@ -1,0 +1,6 @@
+task,st_technology,spot_set,n_samples,n_spots_total,n_common_genes,n_common_genes_expected,panel_intersection,panel_intersection_expected,panel_min,panel_max,n_shipped,n_reproduced,n_intersect,set_equal,order_equal,shipped_all_present,missing,extra,task_def,seconds
+CCRCC,Visium,adata,24,74220,2248,2248,17943,17943,17943,36601,50,50,50,True,True,True,,,results/round3/task_defs/CCRCC.json,34.7
+PRAD,Visium,adata,23,62710,1228,1228,33538,33538,33538,33538,50,50,50,True,True,True,,,results/round3/task_defs/PRAD.json,24.0
+READ,Visium,adata,4,8407,8828,8828,36601,36601,36601,36601,50,50,50,True,True,True,,,results/round3/task_defs/READ.json,7.9
+LYMPH_IDC,Visium,adata,4,19964,10276,10276,33931,33931,33931,33931,50,50,50,True,True,True,,,results/round3/task_defs/LYMPH_IDC.json,18.8
+HCC,Visium,adata,2,4248,9940,9940,36601,36601,36601,36601,50,50,50,True,True,True,,,results/round3/task_defs/HCC.json,4.0

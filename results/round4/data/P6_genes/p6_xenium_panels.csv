@@ -1,0 +1,7 @@
+set_name,kind,source,n_samples,panel_min,panel_max,panel_intersection,panel_intersection_expected,panel_union,panels_identical,shipped_all_on_intersection,note
+IDC,benchmark_task,bench_data,4,541,541,500,500,582,False,True,gene selection is the panel
+PAAD,benchmark_task,bench_data,3,538,541,159,159,919,False,True,gene selection is the panel
+SKCM,benchmark_task,bench_data,2,541,541,343,343,739,False,True,gene selection is the panel
+COAD,benchmark_task,bench_data,4,541,541,412,412,670,False,True,gene selection is the panel
+LUNG,benchmark_task,bench_data,2,541,541,259,259,823,False,True,gene selection is the panel
+BREAST_XENIUM,expansion_set,hest_ext/institution_breast_xenium,18,541,541,151,151,1063,False,True,gene selection is the panel; candidate panel of the D4 task def
