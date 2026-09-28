@@ -1,0 +1,22 @@
+job=2751562
+encoder=hoptimus0
+partition_requested=l40-gpu
+partition_actual=l40-gpu
+account=rc_tengfei_pi
+qos=gpu_access
+node=g181009.ll.unc.edu
+nodelist=g181009
+gpu=NVIDIA L40S, 46068 MiB
+date=2026-09-28T15:45:05-04:00
+workdir=/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/b3a675f7-0c58-4b95-843b-7247498671e2
+pythonhashseed=0
+hf_home=/work/users/w/e/weiyang/hf_cache
+3b9e47a045993bc2bd38790466486178  /work/users/w/e/weiyang/hest_replication/code/scripts/round3_d2_embed.py
+e0e32d959b90daeef7a4568141eb6246  /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/b3a675f7-0c58-4b95-843b-7247498671e2/round4_data_p2_accept.py
+611a78abb39ef306e88f84fcb3ff0226  /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/b3a675f7-0c58-4b95-843b-7247498671e2/d2_config.json
+d2_rc=0
+JobID                     JobName  Partition    Account    Elapsed  Timelimit     ReqMem     MaxRSS      State 
+------------ -------------------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- 
+2751562           operon-b3a675f7    l40-gpu rc_tengfe+   00:11:11   01:00:00        32G               RUNNING 
+2751562.bat+                batch            rc_tengfe+   00:11:11                                     RUNNING 
+2751562.ext+               extern            rc_tengfe+   00:11:11                                     RUNNING 

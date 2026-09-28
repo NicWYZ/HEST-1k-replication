@@ -1,0 +1,57 @@
+set lung_xenium: 24 samples, 120 files, 9358042424 bytes expected from results/round3/D0_inventory/hf_file_listing.csv.gz
+PRECHECK ok: sample count, file count and byte total match the selection table
+## BEFORE (2026-09-28T13:45:35.124498-04:00)
+### df -h /work
+Filesystem                      Size  Used Avail Use% Mounted on
+hpc.loblolly.its.unc.edu:/work  3.5P  3.0P  570T  85% /work
+### quota -s
+Disk quotas for user weiyang (uid 375767): 
+     Filesystem   space   quota   limit   grace   files   quota   limit   grace
+rc-data-ll:/vol/sas1a
+                  4163M  51200M  76800M            8046   4295m   4295m
+### du -s --block-size=1 /work/users/w/e/weiyang/hest_replication/hest_ext/lung_xenium
+0	/work/users/w/e/weiyang/hest_replication/hest_ext/lung_xenium
+
+REVISION pinned revision 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec; repository main is now 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec (identical); the pinned revision is used
+[2026-09-28T13:45:44.205451] downloading 120 files -> /work/users/w/e/weiyang/hest_replication/hest_ext/lung_xenium
+Fetching 120 files:   0%|          | 0/120 [00:00<?, ?it/s]Fetching 120 files:   7%|▋         | 8/120 [00:02<00:32,  3.47it/s]Fetching 120 files:  13%|█▎        | 16/120 [00:03<00:21,  4.84it/s]Fetching 120 files:  20%|██        | 24/120 [00:04<00:16,  5.97it/s]Fetching 120 files:  27%|██▋       | 32/120 [00:04<00:12,  6.83it/s]Fetching 120 files:  33%|███▎      | 40/120 [00:05<00:11,  6.76it/s]Fetching 120 files:  40%|████      | 48/120 [00:07<00:10,  6.58it/s]Fetching 120 files:  47%|████▋     | 56/120 [00:07<00:08,  7.34it/s]Fetching 120 files:  53%|█████▎    | 64/120 [00:07<00:06,  8.20it/s]Fetching 120 files:  60%|██████    | 72/120 [00:08<00:05,  8.74it/s]Fetching 120 files:  67%|██████▋   | 80/120 [00:11<00:05,  6.69it/s]Fetching 120 files:  73%|███████▎  | 88/120 [00:14<00:05,  6.00it/s]Fetching 120 files:  80%|████████  | 96/120 [00:19<00:04,  5.04it/s]Fetching 120 files:  87%|████████▋ | 104/120 [00:21<00:03,  4.94it/s]Fetching 120 files:  93%|█████████▎| 112/120 [00:22<00:01,  5.05it/s]Fetching 120 files: 100%|██████████| 120/120 [00:26<00:00,  4.60it/s]Fetching 120 files: 100%|██████████| 120/120 [00:26<00:00,  4.60it/s]
+  transfer done in 27s, 9358042424 bytes on disk (345 MB/s)
+## AFTER (2026-09-28T13:46:11.392774-04:00)
+### df -h /work
+Filesystem                      Size  Used Avail Use% Mounted on
+hpc.loblolly.its.unc.edu:/work  3.5P  3.0P  570T  85% /work
+### quota -s
+Disk quotas for user weiyang (uid 375767): 
+     Filesystem   space   quota   limit   grace   files   quota   limit   grace
+rc-data-ll:/vol/sas1a
+                  4163M  51200M  76800M            8046   4295m   4295m
+### du -s --block-size=1 /work/users/w/e/weiyang/hest_replication/hest_ext/lung_xenium
+9358131712	/work/users/w/e/weiyang/hest_replication/hest_ext/lung_xenium
+
+  NCBI856 files 5/5 mismatch 0 patches 947 spots 1607 subset True unpatched 0.410703 verified True 
+  NCBI857 files 5/5 mismatch 0 patches 1146 spots 1771 subset True unpatched 0.352908 verified True 
+  NCBI858 files 5/5 mismatch 0 patches 582 spots 837 subset True unpatched 0.304659 verified True 
+  NCBI859 files 5/5 mismatch 0 patches 715 spots 1116 subset True unpatched 0.359319 verified True 
+  NCBI860 files 5/5 mismatch 0 patches 639 spots 1282 subset True unpatched 0.501560 verified True 
+  NCBI861 files 5/5 mismatch 0 patches 712 spots 1121 subset True unpatched 0.364853 verified True 
+  NCBI864 files 5/5 mismatch 0 patches 1946 spots 2905 subset True unpatched 0.330120 verified True 
+  NCBI865 files 5/5 mismatch 0 patches 2143 spots 3090 subset False unpatched 0.306796 verified False 
+  NCBI866 files 5/5 mismatch 0 patches 1124 spots 1604 subset True unpatched 0.299252 verified True 
+  NCBI867 files 5/5 mismatch 0 patches 2509 spots 3498 subset True unpatched 0.282733 verified True 
+  NCBI870 files 5/5 mismatch 0 patches 592 spots 1084 subset True unpatched 0.453875 verified True 
+  NCBI873 files 5/5 mismatch 0 patches 829 spots 1491 subset True unpatched 0.443997 verified True 
+  NCBI875 files 5/5 mismatch 0 patches 523 spots 999 subset True unpatched 0.476476 verified True 
+  NCBI876 files 5/5 mismatch 0 patches 258 spots 1064 subset True unpatched 0.757519 verified True 
+  NCBI879 files 5/5 mismatch 0 patches 445 spots 1017 subset True unpatched 0.562439 verified True 
+  NCBI880 files 5/5 mismatch 0 patches 707 spots 1168 subset True unpatched 0.394692 verified True 
+  NCBI881 files 5/5 mismatch 0 patches 742 spots 1397 subset True unpatched 0.468862 verified True 
+  NCBI882 files 5/5 mismatch 0 patches 984 spots 1435 subset True unpatched 0.314286 verified True 
+  NCBI883 files 5/5 mismatch 0 patches 504 spots 1276 subset True unpatched 0.605016 verified True 
+  NCBI884 files 5/5 mismatch 0 patches 1037 spots 2521 subset True unpatched 0.588655 verified True 
+  NCBI885 files 5/5 mismatch 0 patches 15473 spots 23209 subset True unpatched 0.333319 verified True 
+  NCBI886 files 5/5 mismatch 0 patches 15640 spots 23411 subset True unpatched 0.331938 verified True 
+  TENX118 files 5/5 mismatch 0 patches 1838 spots 3115 subset True unpatched 0.409952 verified True 
+  TENX141 files 5/5 mismatch 0 patches 3069 spots 4390 subset True unpatched 0.300911 verified True 
+SUMMARY {"stage": "round4_P1_download", "set": "lung_xenium", "n_samples": 24, "n_files_expected": 120, "n_files_present": 120, "bytes_expected": 9358042424, "bytes_present": 9358042424, "gb_present": 9.358, "transfer_seconds": 27.2, "transfer_MBps": 344.7, "samples_with_missing_files": [], "samples_with_size_mismatch": [], "samples_subset_relation_fails": ["NCBI865"], "samples_dropped_unverified": ["NCBI865"], "n_verified": 23, "n_patches_total": 55104, "n_expr_spots_total": 86408, "unpatched_fraction_min": 0.282733, "unpatched_fraction_median": 0.394692, "unpatched_fraction_max": 0.757519, "n_resolution_uncertain": 0, "n_stale_patch_count_equals_spot_count": 0, "hf_repo": "MahmoodLab/hest", "hf_revision_pinned": "7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec", "hf_main_revision_now": "7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec", "hf_revision_used": "7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec", "revision_note": "pinned revision 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec; repository main is now 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec (identical); the pinned revision is used", "huggingface_hub_version": "0.36.2", "components": ["cellvit_seg", "metadata", "patches", "st"], "script_md5": "8420374d957de7cf9b3e3068c42d332a", "config_hash": "sha256:89bc26542ada97c5596140841e68d37b", "slurm_job_id": "2750881", "slurm_partition": "spill", "slurm_nodelist": "b1001", "node": "b1001.ll.unc.edu", "pythonhashseed": "0", "created": "2026-09-28T13:47:24.588663-04:00"}
+ACCEPT set=lung_xenium samples=24 verified=23 files=120/120 size_mismatches=0 subset_fails=1 bytes=9358042424
+FAILURES PRESENT

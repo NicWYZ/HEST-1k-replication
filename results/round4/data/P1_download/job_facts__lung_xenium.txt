@@ -1,0 +1,18 @@
+job=2750881
+partition_requested=general
+partition_actual=spill
+account=rc_htzhu_pi
+node=b1001.ll.unc.edu
+nodelist=b1001
+date=2026-09-28T13:45:34-04:00
+submit_dir=/nas/longleaf/home/weiyang
+workdir=/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/64b2ea45-087b-4423-a61f-685a44dc4b2b
+pythonhashseed=0
+8420374d957de7cf9b3e3068c42d332a  /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/64b2ea45-087b-4423-a61f-685a44dc4b2b/round4_data_download.py
+c38e9d65235b33dba64359c50c46284c  /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/64b2ea45-087b-4423-a61f-685a44dc4b2b/round4_p1_config.json
+script_rc=0
+JobID                     JobName  Partition    Account    Elapsed  Timelimit     ReqMem     MaxRSS      State 
+------------ -------------------- ---------- ---------- ---------- ---------- ---------- ---------- ---------- 
+2750881           operon-64b2ea45      spill rc_htzhu_+   00:01:50   00:30:00        16G               RUNNING 
+2750881.bat+                batch            rc_htzhu_+   00:01:50                                     RUNNING 
+2750881.ext+               extern            rc_htzhu_+   00:01:50                                     RUNNING 

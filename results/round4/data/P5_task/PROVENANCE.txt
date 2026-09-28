@@ -1,0 +1,11 @@
+P5 LUNG_XENIUM task definition: PROVENANCE
+run: lead session, local machine (darwin), not a Slurm job; no job id, partition or node
+date: 2026-09-28
+commit of inputs: 60ab51d (script and outputs first committed there)
+command: PYTHONHASHSEED=0 python code/scripts/round4_data_task_lung.py   (from the repository root)
+PYTHONHASHSEED: 0
+script md5: f040b71ddf85fce7ac77050bea410f1e
+config: constants in the script (TASK, PENDING, A4B_K=10, A4B_DRAWS=3, N_PATIENT_GROUPS=6); no separate config file
+inputs (md5): see LUNG_XENIUM.json provenance.inputs
+stamp_dir: not applicable (not written on a Longleaf node); panel_job/ holds the Longleaf panel job's own _provenance.json and job_facts.txt (job 2774326, spill, c0304)
+outputs: LUNG_XENIUM.json, p5_validation.csv, p5_a4b_crosscheck.txt

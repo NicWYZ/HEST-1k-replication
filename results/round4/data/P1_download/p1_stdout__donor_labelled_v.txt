@@ -1,0 +1,72 @@
+set donor_labelled_v: 39 samples, 195 files, 18980302609 bytes expected from results/round3/D0_inventory/hf_file_listing.csv.gz
+PRECHECK ok: sample count, file count and byte total match the selection table
+## BEFORE (2026-09-28T13:50:42.822995-04:00)
+### df -h /work
+Filesystem                      Size  Used Avail Use% Mounted on
+hpc.loblolly.its.unc.edu:/work  3.5P  3.0P  570T  85% /work
+### quota -s
+Disk quotas for user weiyang (uid 375767): 
+     Filesystem   space   quota   limit   grace   files   quota   limit   grace
+rc-data-ll:/vol/sas1a
+                  4163M  51200M  76800M            8046   4295m   4295m
+### du -s --block-size=1 /work/users/w/e/weiyang/hest_replication/hest_ext/donor_labelled_v
+0	/work/users/w/e/weiyang/hest_replication/hest_ext/donor_labelled_v
+
+REVISION pinned revision 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec; repository main is now 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec (identical); the pinned revision is used
+[2026-09-28T13:50:51.831879] downloading 195 files -> /work/users/w/e/weiyang/hest_replication/hest_ext/donor_labelled_v
+Fetching 195 files:   0%|          | 0/195 [00:00<?, ?it/s]Fetching 195 files:   4%|▍         | 8/195 [00:03<01:19,  2.34it/s]Fetching 195 files:   8%|▊         | 16/195 [00:04<00:52,  3.42it/s]Fetching 195 files:  12%|█▏        | 24/195 [00:06<00:44,  3.85it/s]Fetching 195 files:  16%|█▋        | 32/195 [00:07<00:39,  4.11it/s]Fetching 195 files:  21%|██        | 40/195 [00:09<00:35,  4.40it/s]Fetching 195 files:  25%|██▍       | 48/195 [00:10<00:31,  4.65it/s]Fetching 195 files:  29%|██▊       | 56/195 [00:13<00:32,  4.28it/s]Fetching 195 files:  33%|███▎      | 64/195 [00:13<00:28,  4.57it/s]Fetching 195 files:  37%|███▋      | 72/195 [00:14<00:25,  4.88it/s]Fetching 195 files:  41%|████      | 80/195 [00:15<00:21,  5.29it/s]Fetching 195 files:  45%|████▌     | 88/195 [00:15<00:18,  5.71it/s]Fetching 195 files:  49%|████▉     | 96/195 [00:15<00:16,  6.13it/s]Fetching 195 files:  53%|█████▎    | 104/195 [00:15<00:13,  6.52it/s]Fetching 195 files:  57%|█████▋    | 112/195 [00:16<00:12,  6.91it/s]Fetching 195 files:  62%|██████▏   | 120/195 [00:21<00:13,  5.56it/s]Fetching 195 files:  66%|██████▌   | 128/195 [00:28<00:14,  4.49it/s]Fetching 195 files:  70%|██████▉   | 136/195 [00:31<00:13,  4.26it/s]Fetching 195 files:  74%|███████▍  | 144/195 [00:36<00:12,  3.93it/s]Fetching 195 files:  78%|███████▊  | 152/195 [00:41<00:11,  3.69it/s]Fetching 195 files:  82%|████████▏ | 160/195 [00:43<00:09,  3.70it/s]Fetching 195 files:  86%|████████▌ | 168/195 [00:44<00:07,  3.74it/s]Fetching 195 files:  90%|█████████ | 176/195 [00:46<00:05,  3.79it/s]Fetching 195 files:  94%|█████████▍| 184/195 [00:47<00:02,  3.91it/s]Fetching 195 files:  98%|█████████▊| 192/195 [00:48<00:00,  3.99it/s]Fetching 195 files: 100%|██████████| 195/195 [00:48<00:00,  3.99it/s]
+  transfer done in 51s, 18980302609 bytes on disk (372 MB/s)
+## AFTER (2026-09-28T13:51:42.924556-04:00)
+### df -h /work
+Filesystem                      Size  Used Avail Use% Mounted on
+hpc.loblolly.its.unc.edu:/work  3.5P  3.0P  570T  85% /work
+### quota -s
+Disk quotas for user weiyang (uid 375767): 
+     Filesystem   space   quota   limit   grace   files   quota   limit   grace
+rc-data-ll:/vol/sas1a
+                  4163M  51200M  76800M            8046   4295m   4295m
+### du -s --block-size=1 /work/users/w/e/weiyang/hest_replication/hest_ext/donor_labelled_v
+18980456448	/work/users/w/e/weiyang/hest_replication/hest_ext/donor_labelled_v
+
+  MEND33 files 5/5 mismatch 0 patches 3271 spots 3291 subset True unpatched 0.006077 verified True 
+  MEND34 files 5/5 mismatch 0 patches 3252 spots 3294 subset True unpatched 0.012750 verified True 
+  MEND35 files 5/5 mismatch 0 patches 3273 spots 3320 subset True unpatched 0.014157 verified True 
+  MEND36 files 5/5 mismatch 0 patches 2029 spots 3214 subset True unpatched 0.368699 verified True 
+  NCBI600 files 5/5 mismatch 0 patches 798 spots 832 subset True unpatched 0.040865 verified True 
+  NCBI601 files 5/5 mismatch 0 patches 1464 spots 1469 subset True unpatched 0.003404 verified True 
+  NCBI602 files 5/5 mismatch 0 patches 976 spots 1017 subset True unpatched 0.040315 verified True 
+  NCBI603 files 5/5 mismatch 0 patches 767 spots 768 subset True unpatched 0.001302 verified True 
+  NCBI628 files 5/5 mismatch 0 patches 1249 spots 1262 subset True unpatched 0.010301 verified True 
+  NCBI629 files 5/5 mismatch 0 patches 3619 spots 3620 subset True unpatched 0.000276 verified True 
+  NCBI630 files 5/5 mismatch 0 patches 2957 spots 2961 subset True unpatched 0.001351 verified True 
+  NCBI631 files 5/5 mismatch 0 patches 2034 spots 2051 subset True unpatched 0.008289 verified True 
+  NCBI632 files 5/5 mismatch 0 patches 2737 spots 2743 subset True unpatched 0.002187 verified True 
+  NCBI633 files 5/5 mismatch 0 patches 2985 spots 3153 subset True unpatched 0.053283 verified True 
+  NCBI634 files 5/5 mismatch 0 patches 1832 spots 1842 subset True unpatched 0.005429 verified True 
+  NCBI635 files 5/5 mismatch 0 patches 2987 spots 3027 subset True unpatched 0.013214 verified True 
+  NCBI636 files 5/5 mismatch 0 patches 1607 spots 1616 subset True unpatched 0.005569 verified True 
+  NCBI637 files 5/5 mismatch 0 patches 2702 spots 2705 subset True unpatched 0.001109 verified True 
+  NCBI638 files 5/5 mismatch 0 patches 3059 spots 3060 subset True unpatched 0.000327 verified True 
+  NCBI639 files 5/5 mismatch 0 patches 936 spots 979 subset True unpatched 0.043922 verified True 
+  NCBI640 files 5/5 mismatch 0 patches 1953 spots 1959 subset True unpatched 0.003063 verified True 
+  NCBI641 files 5/5 mismatch 0 patches 2233 spots 2236 subset True unpatched 0.001342 verified True 
+  NCBI854 files 5/5 mismatch 0 patches 697 spots 699 subset True unpatched 0.002861 verified True 
+  NCBI855 files 5/5 mismatch 0 patches 1430 spots 1432 subset True unpatched 0.001397 verified True 
+  TENX124 files 5/5 mismatch 0 patches 5724 spots 12707 subset True unpatched 0.549540 verified True 
+  TENX125 files 5/5 mismatch 0 patches 6256 spots 10005 subset True unpatched 0.374713 verified True 
+  TENX194 files 5/5 mismatch 0 patches 6406 spots 7650 subset True unpatched 0.162614 verified True 
+  TENX94 files 5/5 mismatch 0 patches 6078 spots 9152 subset True unpatched 0.335883 verified True 
+  TENX96 files 5/5 mismatch 0 patches 6177 spots 7233 subset True unpatched 0.145998 verified True 
+  ZEN37 files 5/5 mismatch 0 patches 1656 spots 1656 subset True unpatched 0.000000 verified True 
+  ZEN38 files 5/5 mismatch 0 patches 387 spots 387 subset True unpatched 0.000000 verified True 
+  ZEN39 files 5/5 mismatch 0 patches 1219 spots 1219 subset True unpatched 0.000000 verified True 
+  ZEN41 files 5/5 mismatch 0 patches 1685 spots 1685 subset True unpatched 0.000000 verified True 
+  ZEN42 files 5/5 mismatch 0 patches 1192 spots 1192 subset True unpatched 0.000000 verified True 
+  ZEN43 files 5/5 mismatch 0 patches 691 spots 691 subset True unpatched 0.000000 verified True 
+  ZEN44 files 5/5 mismatch 0 patches 1048 spots 1048 subset True unpatched 0.000000 verified True 
+  ZEN45 files 5/5 mismatch 0 patches 328 spots 328 subset True unpatched 0.000000 verified True 
+  ZEN46 files 5/5 mismatch 0 patches 1803 spots 1803 subset True unpatched 0.000000 verified True 
+  ZEN47 files 5/5 mismatch 0 patches 2317 spots 2317 subset True unpatched 0.000000 verified True 
+SUMMARY {"stage": "round4_P1_download", "set": "donor_labelled_v", "n_samples": 39, "n_files_expected": 195, "n_files_present": 195, "bytes_expected": 18980302609, "bytes_present": 18980302609, "gb_present": 18.98, "transfer_seconds": 51.0, "transfer_MBps": 371.9, "samples_with_missing_files": [], "samples_with_size_mismatch": [], "samples_subset_relation_fails": [], "samples_dropped_unverified": [], "n_verified": 39, "n_patches_total": 93814, "n_expr_spots_total": 111623, "unpatched_fraction_min": 0.0, "unpatched_fraction_median": 0.003063, "unpatched_fraction_max": 0.54954, "n_resolution_uncertain": 24, "n_stale_patch_count_equals_spot_count": 10, "hf_repo": "MahmoodLab/hest", "hf_revision_pinned": "7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec", "hf_main_revision_now": "7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec", "hf_revision_used": "7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec", "revision_note": "pinned revision 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec; repository main is now 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec (identical); the pinned revision is used", "huggingface_hub_version": "0.36.2", "components": ["cellvit_seg", "metadata", "patches", "st"], "script_md5": "8420374d957de7cf9b3e3068c42d332a", "config_hash": "sha256:89bc26542ada97c5596140841e68d37b", "slurm_job_id": "2751561", "slurm_partition": "spill", "slurm_nodelist": "c0825", "node": "c0825.ll.unc.edu", "pythonhashseed": "0", "created": "2026-09-28T13:53:21.084348-04:00"}
+ACCEPT set=donor_labelled_v samples=39 verified=39 files=195/195 size_mismatches=0 subset_fails=0 bytes=18980302609
+OK

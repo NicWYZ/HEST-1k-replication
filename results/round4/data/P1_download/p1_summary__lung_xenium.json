@@ -1,0 +1,48 @@
+{
+  "stage": "round4_P1_download",
+  "set": "lung_xenium",
+  "n_samples": 24,
+  "n_files_expected": 120,
+  "n_files_present": 120,
+  "bytes_expected": 9358042424,
+  "bytes_present": 9358042424,
+  "gb_present": 9.358,
+  "transfer_seconds": 27.2,
+  "transfer_MBps": 344.7,
+  "samples_with_missing_files": [],
+  "samples_with_size_mismatch": [],
+  "samples_subset_relation_fails": [
+    "NCBI865"
+  ],
+  "samples_dropped_unverified": [
+    "NCBI865"
+  ],
+  "n_verified": 23,
+  "n_patches_total": 55104,
+  "n_expr_spots_total": 86408,
+  "unpatched_fraction_min": 0.282733,
+  "unpatched_fraction_median": 0.394692,
+  "unpatched_fraction_max": 0.757519,
+  "n_resolution_uncertain": 0,
+  "n_stale_patch_count_equals_spot_count": 0,
+  "hf_repo": "MahmoodLab/hest",
+  "hf_revision_pinned": "7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec",
+  "hf_main_revision_now": "7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec",
+  "hf_revision_used": "7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec",
+  "revision_note": "pinned revision 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec; repository main is now 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec (identical); the pinned revision is used",
+  "huggingface_hub_version": "0.36.2",
+  "components": [
+    "cellvit_seg",
+    "metadata",
+    "patches",
+    "st"
+  ],
+  "script_md5": "8420374d957de7cf9b3e3068c42d332a",
+  "config_hash": "sha256:89bc26542ada97c5596140841e68d37b",
+  "slurm_job_id": "2750881",
+  "slurm_partition": "spill",
+  "slurm_nodelist": "b1001",
+  "node": "b1001.ll.unc.edu",
+  "pythonhashseed": "0",
+  "created": "2026-09-28T13:47:24.588663-04:00"
+}

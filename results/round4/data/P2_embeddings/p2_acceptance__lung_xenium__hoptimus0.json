@@ -1,0 +1,27 @@
+{
+  "stage": "round4_P2_acceptance",
+  "set": "lung_xenium",
+  "encoder": "hoptimus0",
+  "n_samples": 24,
+  "n_accepted": 24,
+  "n_missing_embeddings": 0,
+  "n_rows_ne_patches": 0,
+  "n_barcodes_unreadable": 0,
+  "n_barcode_order_mismatch": 0,
+  "samples_not_accepted": [],
+  "total_embedding_rows": 55104,
+  "total_patches": 55104,
+  "emb_dims": [
+    1536
+  ],
+  "dtypes": [
+    "float32"
+  ],
+  "reader": "h5py, key barcodes|barcode, reshape(-1), decode; embeddings and coords; the read round3_d4_sets.patched_barcodes and round3_d4_layout_anchor use",
+  "script_md5": "e0e32d959b90daeef7a4568141eb6246",
+  "slurm_job_id": "2751562",
+  "slurm_partition": "l40-gpu",
+  "node": "g181009.ll.unc.edu",
+  "pythonhashseed": "0",
+  "created": "2026-09-28T15:56:16.163388-04:00"
+}

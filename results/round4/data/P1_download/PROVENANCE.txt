@@ -1,0 +1,38 @@
+dir              : results/round4/data/P1_download
+stage            : round4 stage P, P1 (download and verification of sets L and V)
+script           : code/scripts/round4_data_download.py
+script_md5       : 8420374d957de7cf9b3e3068c42d332a  (md5 of the file that ran, recomputed inside each job; see job_facts__*.txt)
+created          : 2026-09-28T14:25:28.091288-04:00
+operator         : weiyang (Nicolas Weiyang Zhang), Claude Science execution session, Transfer track
+commit           : 71451d7  (the Longleaf working copy's commit, as stated in the track brief; this session runs no git command)
+pythonhashseed   : 0  (set in both job scripts)
+config_hash      : sha256:89bc26542ada97c5596140841e68d37b  (over round4_p1_config.json, copied into this directory and into each set directory)
+
+## jobs
+set L (lung_xenium)      : slurm job 2750881, partition spill (requested general), account rc_htzhu_pi, node b1001, 4 CPUs, 16 GB, limit 00:30:00
+set V (donor_labelled_v) : slurm job 2751561, partition spill (requested general), account rc_htzhu_pi, node c0825, 4 CPUs, 16 GB, limit 00:45:00
+command_line             : $PY round4_data_download.py --set <set> --config round4_p1_config.json --out-dir $WD/out
+job name                 : requested -J r4data_p1_lung and -J r4data_p1_v; the submission route replaces --job-name, and sacct records the jobs as operon-<id>. The r4data_ prefix could not be applied under this route.
+
+## HuggingFace revision
+repo                     : MahmoodLab/hest
+pinned (D1)              : 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec
+main at job start        : 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec (re-checked in both jobs, identical to the pinned revision)
+revision used            : 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec
+components               : cellvit_seg, metadata, patches, st  (no wsis/, nothing else)
+huggingface_hub          : 0.36.2
+
+## destinations on Longleaf
+/work/users/w/e/weiyang/hest_replication/hest_ext/lung_xenium       24 samples, 120 files, 9358042424 bytes
+/work/users/w/e/weiyang/hest_replication/hest_ext/donor_labelled_v  39 samples, 195 files, 18980302609 bytes
+Each set directory carries its own PROVENANCE.txt (copied here) and _provenance.json stamp. Nothing was written at the root of hest_ext/, where the round-3 D1 records live.
+
+## verification
+File sizes against results/round3/D0_inventory/hf_file_listing.csv.gz, file by file.
+The subset relation (every patch barcode is an expression barcode), with the unpatched fraction per sample. This replaces round3_d1_download.py's patch-count-equals-spot-count test, which is stale; that test is still computed and reported in the column patch_count_equals_spot_count_STALE, where it is True on 10 of the 63 samples (ZEN37, ZEN38, ZEN39, ZEN41, ZEN42, ZEN43, ZEN44, ZEN45, ZEN46, ZEN47, all in set V, whose unpatched fraction is 0.000) and False on the other 53, including all 24 of set L. Read back from p1_verification.csv; the per-set counts are 0 of 24 and 10 of 39 in p1_summary__lung_xenium.json and p1_summary__donor_labelled_v.json.
+
+## post-job annotation
+p1_verification.csv and p1_verification__lung_xenium.csv carry two columns added after the jobs ran,
+set_L_member_for_task and set_L_member_for_task_reason, on the lead's ruling of 28 September 2026.
+No data file was altered. The job-written tables are unchanged in the job workdirs and their contents
+are reproduced in p1_stdout__*.txt.

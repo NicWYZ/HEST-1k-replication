@@ -1,0 +1,52 @@
+dir              : results/round4/data/P2_embeddings
+stage            : round4 stage P, P2 (patch embeddings for set L, lung Xenium, 24 samples)
+script           : code/scripts/round3_d2_embed.py, RUN UNCHANGED
+script_md5       : 3b9e47a045993bc2bd38790466486178  (required md5; recomputed inside each job, see job_facts__<encoder>.txt)
+acceptance script: code/scripts/round4_data_p2_accept.py, md5 e0e32d959b90daeef7a4568141eb6246
+created          : 2026-09-28T16:18:37.574372-04:00
+operator         : weiyang (Nicolas Weiyang Zhang), Claude Science execution session, Transfer track
+commit           : 71451d7cc8e538cb54ab8cd6ab712a42de080bb4  (read by the round-3 script's own internal rev-parse inside the job; this session runs no git command)
+pythonhashseed   : 0  (set in all three job scripts)
+config           : d2_config__round4_P2.json, derived from results/round3/D2_embeddings/d2_config.json
+                   with set lung_xenium (24 members), home -> lung_xenium for all 24, and bench_task empty
+                   (no layout anchor is needed; set L has no benchmark counterpart in this layout).
+                   seed 1, batch_size 128, num_workers 4, trident pinned f3eb7f301ce34f875306b545e6cfefc5d3335a5c.
+roots (rule 3)   : emb_ext_root and ext_root were $WD/scratch/emb and $WD/scratch/ext in each job workdir,
+                   whose lung_xenium entries symlink /work/users/w/e/weiyang/hest_replication/embeddings_ext/lung_xenium
+                   and .../hest_ext/lung_xenium. The embeddings therefore land in
+                   embeddings_ext/lung_xenium/<encoder>/ while the round-3 root-level files
+                   (d2_config.json, d2_extraction__*, d2_summary__*, PROVENANCE__*) land in the job
+                   workdir. Nothing at the root of embeddings_ext/ was written or changed.
+
+## jobs (all COMPLETED; partition requested l40-gpu, partition actually used l40-gpu)
+encoder    job      node     gpu          precision        elapsed  limit  MaxRSS      encoding s  s/patch  slowest sample s
+hoptimus0  2751562  g181009  NVIDIA L40S  torch.float16    00:11:11 01:00  14121700K   425.3    0.007718  99.3
+uni_v2     2751563  g181006  NVIDIA L40S  torch.bfloat16   00:09:17 01:00   8989324K   312.6    0.005673  81.2
+resnet50   2751564  g181006  NVIDIA L40S  torch.float32     00:08:07 01:00   3139208K   272.5    0.004945  74.5
+account          : rc_tengfei_pi, qos gpu_access, --gres=gpu:1, 8 CPUs, 32 GB. rc_tengfei_pi was
+                   confirmed on weiyang's association (sacctmgr show assoc, qos gpu_access,normal) before
+                   submission and is recorded here because the instruction requires any use of it to be recorded.
+                   The two P1 CPU jobs stayed on rc_htzhu_pi.
+torch            : 2.14.0+cu130; trident installed f3eb7f301ce34f875306b545e6cfefc5d3335a5c
+
+## time-limit sizing, both figures as the instruction asks
+measured D2 rate : 0.006 s per patch on the breast Xenium siblings; set L is 55,104 patches, which projects
+                   to about 6 minutes of encoding per encoder plus model load. A 1 h limit was set.
+plan's literal   : three times the slowest D2 breast sample (130 s) times 24 samples = 9,360 s, about 2.6 h.
+outcome          : the slowest job ran 00:11:11 wall, of which 425.3 s was encoding. The
+                   measured rate was the better estimate; the literal rule would have over-asked by about 14x.
+
+## acceptance (numbers read back from p2_acceptance.csv and p2_acceptance__lung_xenium__<encoder>.json)
+24 of 24 samples accepted for each of the three encoders, 72 of 72 rows.
+No sample missing patches (n_missing_patches 0 per encoder; all 24 written, none cached).
+Embedding rows equal patch count on every sample: 55,104 rows against 55,104 patches per encoder.
+Barcode column readable by the same h5py read the D4 readers use (round3_d4_sets.patched_barcodes and
+round3_d4_layout_anchor): key "barcodes", decoded to str, alongside "embeddings" and "coords";
+readable on 72 of 72, and equal to the patch file's barcode list in order on 72 of 72.
+Embedding dimension 1536 for hoptimus0 and uni_v2, 1024 for resnet50, stored float32 in all three.
+0 anchor rows per encoder, as intended with bench_task empty.
+
+## NCBI865
+Embedded with the other 23, on the lead's ruling of 28 September 2026: 2,143 rows against 2,143 patches
+for each encoder, accepted. Its P1 subset-relation failure is a property of the shipped expression file,
+not of the patches, and it is flagged in p1_verification__lung_xenium.csv under set_L_member_for_task.

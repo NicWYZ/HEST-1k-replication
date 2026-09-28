@@ -1,0 +1,56 @@
+dir              : /work/users/w/e/weiyang/hest_replication/hest_ext/lung_xenium
+stage            : round4 stage P, P1 (download of set lung_xenium)
+script           : code/scripts/round4_data_download.py
+script_md5       : 8420374d957de7cf9b3e3068c42d332a  (md5 of the file that ran, computed inside the job)
+created          : 2026-09-28T13:47:24.595691-04:00
+operator         : weiyang (Nicolas Weiyang Zhang)
+slurm_job_id     : 2750881
+slurm_partition  : spill  (partition actually used)
+slurm_nodelist   : b1001
+node             : b1001.ll.unc.edu
+platform         : Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python           : 3.11.16
+executable       : /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+commit           : 71451d7  (working copy commit recorded in the config; this script runs no git command)
+command_line     : /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python round4_data_download.py --set lung_xenium --config round4_p1_config.json --out-dir /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/64b2ea45-087b-4423-a61f-685a44dc4b2b/out
+pythonhashseed   : 0
+config_hash      : sha256:89bc26542ada97c5596140841e68d37b  (over the config below, copied into this directory as round4_p1_config__lung_xenium.json)
+config           : {"components": ["patches", "st", "cellvit_seg", "metadata"], "ext_root": "/work/users/w/e/weiyang/hest_replication/hest_ext", "listing_rel": "results/round3/D0_inventory/hf_file_listing.csv.gz", "pinned_revision": "7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec", "project_root": "/work/users/w/e/weiyang/hest_replication", "repo_commit": "71451d7", "repo_id": "MahmoodLab/hest", "selection_table": "results/round4/data/P1_selection/selection.csv", "sets": {"donor_labelled_v": {"expect": {"bytes": 18980302609, "n_files": 195, "n_samples": 39}, "members": ["MEND33", "MEND34", "MEND35", "MEND36", "NCBI600", "NCBI601", "NCBI602", "NCBI603", "NCBI628", "NCBI629", "NCBI630", "NCBI631", "NCBI632", "NCBI633", "NCBI634", "NCBI635", "NCBI636", "NCBI637", "NCBI638", "NCBI639", "NCBI640", "NCBI641", "NCBI854", "NCBI855", "TENX124", "TENX125", "TENX194", "TENX94", "TENX96", "ZEN37", "ZEN38", "ZEN39", "ZEN41", "ZEN42", "ZEN43", "ZEN44", "ZEN45", "ZEN46", "ZEN47"], "resolution_uncertain": {"MEND33": true, "MEND34": true, "MEND35": true, "MEND36": true, "NCBI600": true, "NCBI601": true, "NCBI602": true, "NCBI603": true, "NCBI628": true, "NCBI629": true, "NCBI630": true, "NCBI631": true, "NCBI632": true, "NCBI633": true, "NCBI634": true, "NCBI635": true, "NCBI636": true, "NCBI637": false, "NCBI638": true, "NCBI639": true, "NCBI640": true, "NCBI641": false, "NCBI854": true, "NCBI855": true, "TENX124": false, "TENX125": true, "TENX194": false, "TENX94": true, "TENX96": false, "ZEN37": false, "ZEN38": false, "ZEN39": false, "ZEN41": false, "ZEN42": false, "ZEN43": false, "ZEN44": false, "ZEN45": false, "ZEN46": false, "ZEN47": false}}, "lung_xenium": {"expect": {"bytes": 9358042424, "n_files": 120, "n_samples": 24}, "members": ["NCBI856", "NCBI857", "NCBI858", "NCBI859", "NCBI860", "NCBI861", "NCBI864", "NCBI865", "NCBI866", "NCBI867", "NCBI870", "NCBI873", "NCBI875", "NCBI876", "NCBI879", "NCBI880", "NCBI881", "NCBI882", "NCBI883", "NCBI884", "NCBI885", "NCBI886", "TENX118", "TENX141"], "resolution_uncertain": {"NCBI856": false, "NCBI857": false, "NCBI858": false, "NCBI859": false, "NCBI860": false, "NCBI861": false, "NCBI864": false, "NCBI865": false, "NCBI866": false, "NCBI867": false, "NCBI870": false, "NCBI873": false, "NCBI875": false, "NCBI876": false, "NCBI879": false, "NCBI880": false, "NCBI881": false, "NCBI882": false, "NCBI883": false, "NCBI884": false, "NCBI885": false, "NCBI886": false, "TENX118": false, "TENX141": false}}}, "stage": "round4_P1_download", "stamp": {"frame_id": "dab7c82a-7762-41ec-aaf1-9a41e6afaff2", "plan": "round4 stage P", "project_id": "proj_3a4e23273fb6", "track": "Transfer (P1 download, P2 embeddings)"}}
+hf_repo          : MahmoodLab/hest
+hf_revision_used : 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec
+hf_revision_note : pinned revision 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec; repository main is now 7e8d5a0b0aace41d8c8ec0f6ecea80e4ad2a61ec (identical); the pinned revision is used
+huggingface_hub  : 0.36.2
+components       : ['cellvit_seg', 'metadata', 'patches', 'st']  (no wsis/, no transcripts/, no xenium_seg/, nothing else)
+bytes_downloaded : 9358042424 over 120 files in 27.2 s
+verification     : file sizes against results/round3/D0_inventory/hf_file_listing.csv.gz; the subset relation (every patch barcode is an expression barcode), which replaces D1's stale patch-count-equals-spot-count test
+n_verified       : 23 / 24
+dropped          : ['NCBI865']
+
+## sample list (24)
+NCBI856;NCBI857;NCBI858;NCBI859;NCBI860;NCBI861;NCBI864;NCBI865;NCBI866;NCBI867;NCBI870;NCBI873;NCBI875;NCBI876;NCBI879;NCBI880;NCBI881;NCBI882;NCBI883;NCBI884;NCBI885;NCBI886;TENX118;TENX141
+
+## storage before and after
+## BEFORE (2026-09-28T13:45:35.124498-04:00)
+### df -h /work
+Filesystem                      Size  Used Avail Use% Mounted on
+hpc.loblolly.its.unc.edu:/work  3.5P  3.0P  570T  85% /work
+### quota -s
+Disk quotas for user weiyang (uid 375767): 
+     Filesystem   space   quota   limit   grace   files   quota   limit   grace
+rc-data-ll:/vol/sas1a
+                  4163M  51200M  76800M            8046   4295m   4295m
+### du -s --block-size=1 /work/users/w/e/weiyang/hest_replication/hest_ext/lung_xenium
+0	/work/users/w/e/weiyang/hest_replication/hest_ext/lung_xenium
+
+## AFTER (2026-09-28T13:46:11.392774-04:00)
+### df -h /work
+Filesystem                      Size  Used Avail Use% Mounted on
+hpc.loblolly.its.unc.edu:/work  3.5P  3.0P  570T  85% /work
+### quota -s
+Disk quotas for user weiyang (uid 375767): 
+     Filesystem   space   quota   limit   grace   files   quota   limit   grace
+rc-data-ll:/vol/sas1a
+                  4163M  51200M  76800M            8046   4295m   4295m
+### du -s --block-size=1 /work/users/w/e/weiyang/hest_replication/hest_ext/lung_xenium
+9358131712	/work/users/w/e/weiyang/hest_replication/hest_ext/lung_xenium
+

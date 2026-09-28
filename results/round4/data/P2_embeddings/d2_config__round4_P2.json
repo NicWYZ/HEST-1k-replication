@@ -1,0 +1,72 @@
+{
+  "batch_size": 128,
+  "bench_task": {},
+  "emb_ext_root": "/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/b3a675f7-0c58-4b95-843b-7247498671e2/scratch/emb",
+  "encoders": [
+    "hoptimus0",
+    "uni_v2",
+    "resnet50"
+  ],
+  "ext_root": "/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/b3a675f7-0c58-4b95-843b-7247498671e2/scratch/ext",
+  "home": {
+    "NCBI856": "lung_xenium",
+    "NCBI857": "lung_xenium",
+    "NCBI858": "lung_xenium",
+    "NCBI859": "lung_xenium",
+    "NCBI860": "lung_xenium",
+    "NCBI861": "lung_xenium",
+    "NCBI864": "lung_xenium",
+    "NCBI865": "lung_xenium",
+    "NCBI866": "lung_xenium",
+    "NCBI867": "lung_xenium",
+    "NCBI870": "lung_xenium",
+    "NCBI873": "lung_xenium",
+    "NCBI875": "lung_xenium",
+    "NCBI876": "lung_xenium",
+    "NCBI879": "lung_xenium",
+    "NCBI880": "lung_xenium",
+    "NCBI881": "lung_xenium",
+    "NCBI882": "lung_xenium",
+    "NCBI883": "lung_xenium",
+    "NCBI884": "lung_xenium",
+    "NCBI885": "lung_xenium",
+    "NCBI886": "lung_xenium",
+    "TENX118": "lung_xenium",
+    "TENX141": "lung_xenium"
+  },
+  "num_workers": 4,
+  "project_root": "/work/users/w/e/weiyang/hest_replication",
+  "seed": 1,
+  "sets": {
+    "lung_xenium": {
+      "members": [
+        "NCBI856",
+        "NCBI857",
+        "NCBI858",
+        "NCBI859",
+        "NCBI860",
+        "NCBI861",
+        "NCBI864",
+        "NCBI865",
+        "NCBI866",
+        "NCBI867",
+        "NCBI870",
+        "NCBI873",
+        "NCBI875",
+        "NCBI876",
+        "NCBI879",
+        "NCBI880",
+        "NCBI881",
+        "NCBI882",
+        "NCBI883",
+        "NCBI884",
+        "NCBI885",
+        "NCBI886",
+        "TENX118",
+        "TENX141"
+      ]
+    }
+  },
+  "stage": "round4_P2",
+  "trident_commit_pinned": "f3eb7f301ce34f875306b545e6cfefc5d3335a5c"
+}
