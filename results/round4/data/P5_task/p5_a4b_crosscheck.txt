@@ -1,0 +1,9 @@
+P5 A4b K=10 cross-check (lead, 2026-09-28)
+round3_d4_sets.a4b_specs (round 3 D4's own function, unmodified; scanpy stubbed at import because
+a4b_specs does not use it; H.sharing_flags replaced by an empty dict because only C and T are compared)
+was run on LUNG_XENIUM.json with one pseudo-spot per sample.
+fold x draw rows: a4b_specs 42, LUNG_XENIUM.json expansion.a4b_k10 42
+calibration sample sets identical on all 42: True
+training sample sets identical on all 42: True
+Pool per donor fold: 13 donors; 10 calibration, 3 training.
+Rebuild determinism: two runs byte-identical apart from provenance.generated_at.
