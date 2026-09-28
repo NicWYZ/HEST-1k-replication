@@ -1,0 +1,104 @@
+{
+ "stage": "round4_P1_selection",
+ "inventory": "results/round3/D0_inventory/hest_inventory.csv",
+ "inventory_md5": "42aaf681805a6c80299a1b40bc4d2506",
+ "home_map": "results/round3/D1_download/sample_home_map.csv",
+ "home_map_md5": "7a50f06ec8f321a1be1911b71036ea94",
+ "script_md5": "8d3822d60f2ce8407fee95b43d94bd71",
+ "set_L": {
+  "n_samples": 24,
+  "n_donor_keys": 21,
+  "n_missing_label": 2,
+  "n_in_benchmark": 2,
+  "organs": {
+   "Lung": 24
+  },
+  "technologies": {
+   "Xenium": 24
+  },
+  "n_dataset_titles": 4,
+  "pixel_sizes_estimated": [
+   0.2125,
+   0.2517,
+   0.2517,
+   0.2736,
+   0.2739
+  ],
+  "n_resolution_uncertain": 0,
+  "bytes_four_components": 9358042424,
+  "gb_four_components": 9.36
+ },
+ "set_V": {
+  "n_samples": 39,
+  "n_donor_keys": 28,
+  "n_missing_label": 0,
+  "n_in_benchmark": 0,
+  "organs": {
+   "Bowel": 14,
+   "Brain": 14,
+   "Bladder": 6,
+   "Breast": 3,
+   "Lymphoid": 2
+  },
+  "technologies": {
+   "Visium": 34,
+   "Xenium": 5
+  },
+  "n_dataset_titles": 9,
+  "pixel_sizes_estimated": [
+   0.172,
+   0.1721,
+   0.1721,
+   0.1721,
+   0.2125,
+   0.2737,
+   0.274,
+   0.4585,
+   0.4587,
+   0.459,
+   0.4594,
+   0.4595,
+   0.4596,
+   0.4597,
+   0.4597,
+   0.4601,
+   0.4603,
+   0.4711,
+   0.4711,
+   0.4876,
+   0.4877,
+   0.4883,
+   0.4901,
+   0.6142,
+   0.6142,
+   0.6149,
+   0.6149,
+   0.6228,
+   0.6231,
+   0.7971,
+   0.7975,
+   0.7981,
+   0.7984,
+   0.7984,
+   0.7992,
+   0.7994,
+   0.7995
+  ],
+  "n_resolution_uncertain": 24,
+  "bytes_four_components": 18980302609,
+  "gb_four_components": 18.98
+ },
+ "excluded_by_literal_technology_rule_xenium_5k_labelled": 0,
+ "predicted": {
+  "L": [
+   24,
+   24
+  ],
+  "V": [
+   150,
+   250
+  ]
+ },
+ "set_L_within_factor_two_of_prediction": true,
+ "set_V_within_factor_two_of_prediction": false
+}
