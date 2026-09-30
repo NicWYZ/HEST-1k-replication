@@ -272,3 +272,79 @@ it governs.
 
 On the same day Nicolas said that `rc_tengfei_pi` should now be on his association. P0 item 4's check
 is therefore repeated before P2's GPU jobs, and any use of that account is recorded.
+
+## 9. The P7 decisions and stage P8, transcribed before P8 starts
+
+From `docs/decisions/round4_data_P7_decisions.md` (30 September 2026, the oversight chat's
+acceptance of `docs/round4_data_report.md` at tag `round4-data`, `2905525`). Where it and the
+sections above differ, it governs.
+
+**Accepted.** The report is accepted and the predictions are scored as the report scored them.
+
+**Decisions that change files in P8.**
+1. `NCBI865` is reinstated by dropping its one patch barcode, `051x019`. The drop is recorded as
+   `dropped_patch_barcodes` in the task definition. The subset relation is asserted after the drop,
+   not relaxed. The embedding row for that patch is excluded by barcode at read time, and the
+   embedding files are not rewritten.
+2. D4's probe box: the `patch_geometry` fallback in `round3_d4_probe.py` is corrected to half the
+   extent and its docstring fixed. Nothing is rerun. Round 3's 31% to 34% statement is quarantined.
+3. Control features: a control-free Xenium panel table is written, and both tracks also filter at
+   read time.
+4. `round3_d1_download.py`: the stale patch-count test is replaced by the subset relation.
+5. Schema v2 is written as a new file. The v1 file is untouched.
+6. The `docs/README.md` index entries are added, with the P7 decisions memo among them.
+
+**Recorded without file changes in P8:** `TENX197` stays (item 2). The lung donor count is read from
+the task file (item 4). K = 10 stays, and the conformal track adds K = 6 and K = 8 on lung (item 5).
+`NCBI885`, `NCBI886`, `NCBI887` and `TENX141` stay excluded (items 7, 8 and 12). The audit file is
+the record of HEST's contradicted fields (item 9). Disease goes into the lung difference list
+(item 11). Future set-V jobs ask for 32 GB (item 14). Jobs are identified by Slurm id, with the
+intended prefix recorded in `PROVENANCE.txt` (item 15). Sub-agents call `stamp_dir()` from their own
+process (item 16). Both tracks may use `rc_tengfei_pi` (item 18). The ten older unresolved claims
+stay as a round-5 item (item 19). Proposed edit 5 is deferred.
+
+**Stage P8** (one day, capped; report and wait). It runs on `main` from `round4-data`, writes under
+`results/round4/data/P8_addendum/`, and rewrites only the files named. No downloads, no embeddings,
+no GPU.
+1. Rewrite `results/round4/data/P5_task/LUNG_XENIUM.json` with `NCBI865` as a member,
+   `dropped_patch_barcodes` `{"NCBI865": ["051x019"]}`, and the donor, `random` and `a4b_k10`
+   folds regenerated. Keep the previous file as `LUNG_XENIUM__19_pre_P8.json` and the previous
+   validation as `p5_validation__pre_P8.csv`. Acceptance: 20 samples, 15 donor units, 15 donor
+   folds, 45 `a4b_k10` rows, a minimum of 4 training donors, and the subset relation on every sample
+   after the drop.
+2. Write `results/round3/D4_expansion/task_defs/task_def_ext.schema.v2.json`. It adds row origin
+   `expansion_r4`, a per-sample `slide_id`, an `a4b_k10` fold key and `dropped_patch_barcodes`.
+   Validate the new lung file against it and record the result.
+3. Write `results/round4/data/P8_addendum/xenium_panels_genes_only.csv` with the controls removed
+   and a per-task count of controls dropped. Expected: 61 on five tasks, 220 on IDC.
+4. Correct `round3_d4_probe.py` (not run) and `round3_d1_download.py` (self-test if it has one; no
+   download). These are ordinary commits with the reason in the message.
+5. Write `results/round4/data/P8_addendum/lung_edge_patches.csv`. For each of the 20 lung samples,
+   it gives the fraction of patches whose centre is more than 1.6 mm from the tissue centroid, with
+   the HEST rectangle and the 3 mm core diameter beside it. Report only.
+6. Add the index entries, write `docs/round4_data_P8_report.md` in the report format, run the
+   numeric-claim gate over it, commit, tag `round4-data-v2`, and stop.
+
+**How the memo is read where it leaves a choice.** Flagged here rather than decided silently.
+1. *Where `dropped_patch_barcodes` lives.* The memo writes it as a mapping from sample to list, so
+   it is a top-level key of the task definition in exactly that form, and schema v2 defines it there.
+2. *Where the `a4b_k10` lists live.* Schema v2 adds `folds.a4b_k10`, which becomes the canonical
+   place. `expansion.a4b_k10` keeps its parameters and an identical copy of the lists, asserted
+   equal, so that code written against the 19-sample file still reads them. `slide_id` is added per
+   sample, and `expansion.source_slide_id` is kept.
+3. *"`random` regenerated at the same sizes."* `random` is parametric: 5 repeats, with the test size
+   taken from the `patient` folds. The parameters stay the same. The `patient` folds are regenerated
+   over the 15 donors with the same 6 groups, so the test size follows the new donor set.
+4. *The subset check after the drop, and the edge diagnostic,* need the patch and expression files,
+   which are on Longleaf only. They run as one CPU job that reads the files and writes nothing
+   outside its working directory. This is not a download, embedding or GPU job.
+5. *Tissue centroid* is the mean of the sample's patch centres. The patch `coords` are box centres
+   (this is how `round3_d4_probe.py` and P3 use them). NCBI865 is measured without its dropped
+   patch. The threshold is converted with the sample's pixel size. The HEST rectangle comes from
+   the inventory's `fullres_px_width` and `fullres_px_height`.
+6. *`round3_d1_download.py` has no self-test.* It is a module-level script with no test entry. The
+   change is checked by compiling it, and it is recorded that no download was run.
+7. *Editing `docs/README.md` and the two round-3 scripts, and adding one file under a round-3
+   directory,* is authorised by this memo for these items only. The standing rule otherwise holds.
+8. *The gate* runs over README, `docs/README.md`, this plan and the P8 report. The ten older
+   unresolved claims are out of scope, per item 19.
