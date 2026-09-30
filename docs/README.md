@@ -1,65 +1,127 @@
-# `docs/` — document index
+# `docs/`, a reading guide
 
-One row per document in this directory, in chronological order by the date the document
-itself states (its own header/opening line — not filesystem mtime; several documents below
-carry no date at all, and that is noted rather than papered over with a file timestamp).
-Regenerate this list by hand when a document is added, removed, or renamed — it is not
-script-generated.
+Rewritten 30 September 2026 by the oversight chat, replacing the flat index that is kept at `superseded/README_index_2026-09-30.md`. This file is the map of the project's documents, ordered the way the project happened, so that someone new can follow what was planned, what was found, and what was decided because of it.
 
-| # | Document | Date (from the document) | What it is | Status |
-|---|---|---|---|---|
-| 1 | [`first_year_ST_project_proposal.md`](first_year_ST_project_proposal.md) | September 2026 (month only; the document gives no day) | The project's framing document: three constraints on the first year, the two ordered topics (A, calibrated uncertainty on predicted expression; B, inference on predicted expression), and the plan to reach them through a HEST-1k replication. | Current — the statement of scope the rounds are executed against. Explicitly "exploratory first-year scope; not a dissertation commitment." |
-| 2 | [`HEST_replication_handoff.md`](HEST_replication_handoff.md) | 12 September 2026 | Original handoff for the HEST-1k replication: stage-by-stage execution plan, ground rules, and reporting format for the round-1 (faithful-replication) work. | Current — still the cited source for the original stage plan and ground rules. |
-| 3 | [`round1_final_stage_report.md`](round1_final_stage_report.md) | Revision 2, generated 2026-09-16 | Round 1's comprehensive final report: the faithful-replication result, the instrumentation layer, and the first pass at tailored analyses. | **CLOSED — historical record, not maintained.** Frozen per the project's own rule that a stage report is written once and not edited afterward. It contains numbers round 2 later withdrew (e.g. the "institution shift" scalar, the COAD same-patient reading) — see `round2_R0_R1_stage_report.md`'s relabelling note for what changed and why. Do not cite its withdrawn numbers as current. |
-| 4 | [`HEST_replication_review.md`](HEST_replication_review.md) | Written 16 September 2026 | Independent audit of the round-1 replication and instrumentation layer (against commit `eb670fa` and the final stage report, revision 2): what to keep, what three attribution claims the data don't support as stated, and the scan-resolution/patient-identity confound the round-1 report didn't discuss. | Current — the audit that motivated round 2's plan. |
-| 5 | [`round2_execution_plan.md`](round2_execution_plan.md) | Prepared 16 September 2026 | Round 2's execution plan: implements the review's Sections 6–7, specifies stages R0–R8, and sets the reporting format (its Section 13) that every subsequent round-2 stage report follows. | Current — round 2's stage reports still cite its Section 13 for reporting format. |
-| 6 | [`round2_R0_R1_stage_report.md`](round2_R0_R1_stage_report.md) | 17 September 2026 | Stage report for round 2's R0 (scan-resolution columns, README relabelling) and R1 (a report-and-wait boundary). Contains the relabelling note explaining exactly which round-1 claims were withdrawn and why. | Frozen stage report, per the project's write-once convention; its content is restated (not replaced) by `round2_R3_stage_report.md`. |
-| 7 | [`round2_R3_stage_report.md`](round2_R3_stage_report.md) | Prepared 18 September 2026 | Stage report covering R0, R1, R1b, R2 and R3, restating the R0/R1 results so the document stands alone. Implements `round2_R1_decisions.md` (now in [`decisions/`](decisions/)) and the execution plan. | Frozen stage report. |
-| 8 | [`r5_idc_provenance.md`](r5_idc_provenance.md) | 2026-09-18 (the fetch date the document dates every claim to; it states no separate authorship date) | R5's provenance reading task on the four IDC Xenium samples (TENX95, TENX99, NCBI783, NCBI785): one sourced row per question — study/accession, donor, block, panel — with "not stated in sources consulted" wherever a source was silent, and a network note recording which domains were reachable and that the gated HEST metadata CSV was not. No compute. | **Closed record of a reading task** (bannered in round 3's H0). **Its TENX95 mapping is contradicted:** round 3's D3 found HEST maps TENX95 to the pre-designed-panel dataset in every release table, so the IDC same-donor finding it supports does not stand; see `round3_A3_stage_report.md` section 7, item 1. Its sweep pass is partly spurious for the reason given there. |
-| 9 | [`round2_R5_stage_report.md`](round2_R5_stage_report.md) | Prepared 18 September 2026 | Stage report for the interval opened by `round2_R3_decisions.md` (now in [`decisions/`](decisions/)), covering R4 and R5 only. | Frozen stage report. |
-| 10 | [`round2_R8_stage_report.md`](round2_R8_stage_report.md) | Prepared 19 September 2026 | Stage report covering R5b (donor provenance audit), R5c (replicate-leak generalisation), R6 (donor-grouped variance/theta), R7 (per-gene decomposition), R8 (H-Optimus-1 on raw heads), written under the R5 decisions memo (`round2_R5_decisions.md`, now in [`decisions/`](decisions/)). | Frozen stage report. |
-| 11 | [`round2_closeout_report.md`](round2_closeout_report.md) | 19 September 2026 | Round 2's closeout: the two restatements (θ₁ against `morphology_v2`, the pooled between-donor estimate), the repository freeze at commit `3161a61` tagged `round2-final`. | Current — the authoritative summary of what round 2 concluded and where the repository stood at freeze. |
-| 12 | [`round2_results_synthesis.md`](round2_results_synthesis.md) | 19 September 2026, final version | Synthesis of every result outside the faithful replication stage, rounds 1 and 2, ranked by significance, written for the progress presentation and as the record of where the project stood before Topic A began. Leads with the finding that the patient split does not measure what the benchmark says it measures. | Current — the cross-stage summary the deck and the round-3 handoff are built on. Its numbers were verified against their cited files by the claim sweep (296 claims, 0 unresolved) at the freeze. |
-| 13 | [`closeout_gate_report.md`](closeout_gate_report.md) | Written 21 September 2026 (against commit `a220974`, tag `round2-final-deck`) | The closeout gate's own correction: commit `a220974`'s message named four documents as failing the numeric-claim sweep and presented that as complete; seven more had unresolved claims and one had never been assessed. Gives the full per-document table. | Superseded on one point of fact by `docs_clean_report.md`, which records the pre-triage scope as 688 unresolved claims across thirteen of sixteen documents rather than this report's 437 across eleven. Kept as the record of the correction. |
-| 14 | [`docs_clean_report.md`](docs_clean_report.md) | Written 21 September 2026 (against tag `round2-docs-clean`) | How the numeric-claim gate was closed: the pre-triage scope, the five defects in the sweep tool that produced most of the false failures, and what remains uncited rather than unresolved. Companion to `closeout_gate_report.md`, which it supersedes on the scope figure. | Current — the standing account of the claim-sweep gate and of why a false failure is fixed in the checker rather than declared away. |
-| 15 | [`deck_round2/`](deck_round2) | Deck as presented 21 September 2026; text export as it stood in the editor 22 September 2026 | Directory, not a single document: `deck_round2_slides.md` (text export of the presented deck, one section per slide — title, bullets, figure, sources, speaker notes), `deck.json` (deck order) and `slides/` (per-slide source files). Figures are the committed files in `figures/deck/`. | Current — the record of what was actually presented. |
-| 16 | [`deck_master_outline.md`](deck_master_outline.md) | 22 September 2026 (title-slide credit line; the only date the document gives) | Master outline for the round-2 progress-update deck: twelve main slides plus two backup slides, speaker notes, figure references into `figures/deck/`. | Current — the live outline for the presentation. |
-| 17 | [`round3_execution_plan.md`](round3_execution_plan.md) | Live operating plan, opened 2026-09-22 | Round 3's operating plan: the execution session's full transcription of `decisions/round3_execution_handoff.md`, written before anything was run. Carries the two round-3 topics (A, conformal coverage across fold designs; B, prediction-powered inference), the stages S0 through D4, the gates, the caps and the decision boundaries. Not a stage report; carries no results. | Current — updated when a new instruction or decision document arrives, and at no other time. |
-| 18 | [`round3_d0_expansion_proposal.md`](round3_d0_expansion_proposal.md) | 22 September 2026 | Stage D0's proposal: three candidate expansion sets from full HEST-1k with their selection rules, sizes and label-quality caveats, the 86-sample 47.7 GB storage ask, and four options with costs. Establishes that the handoff's institution criterion, three laboratories with three or more donors each, is not satisfiable in any of the 46 organ-by-technology cells. | Closed — approved in `decisions/round3_A1_decisions.md`; the approved sets were downloaded in D1 and are reported in `round3_A3_stage_report.md`. |
-| 19 | [`round3_A1_stage_report.md`](round3_A1_stage_report.md) | 22 September 2026 | Round 3's first gate report, covering S0, A0, A1 and D0: the A0 acceptance checks, the marginal-coverage table across four fold designs for 12 encoders, the finding that the calibration unit rather than the design predicts coverage, predictions against outcomes, and seven escalations. | Frozen stage report, per the write-once convention. Corrections go in the next report. |
-| 19a | [`round3_A3_stage_report.md`](round3_A3_stage_report.md) | 23 September 2026 | Round 3's second gate report, covering H0, A2, A3, D1, D2 and D3: the calibration-unit intervention and the level-versus-scale anatomy of the coverage failure, weighted and hierarchical conformal, the expansion download and its failed anchor check, the donor and laboratory audit, and fifteen escalations and corrections. Revision 2 (tag `round3-A3-r2`) completes D2 for all three encoders; tag `round3-A3` holds the first version. | Frozen stage report, per the write-once convention. Accepted in `decisions/round3_A3_decisions.md`. |
-| 19b | [`round3_final_report.md`](round3_final_report.md) | 24 September 2026 | Round 3's end-of-round report, covering interval 3: H1, A4a (adaptive scores and the negative-binomial comparator), A4b (hierarchical conformal with ten exchangeable donors), B1 and B2 (prediction-powered inference with donor-clustered variance, and its semi-synthetic coverage), and D4 (the layout anchor and the three expansion sets). Carries the predictions-against-outcomes table for the whole round, the escalations, and a one-page "What round 3 established". Its pooled numbers are recomputed in `results/round3/final_report/final_report_numbers.csv` and the per-track pooled tables it names. | Frozen end-of-round report. Revision 2 (tag `round3-final-r2`) corrects one false floating-point example in section 3 and changes no number; tag `round3-final` holds the first version. The round-4 plan is the oversight chat's to write. |
-| 19c | [`round4_data_plan.md`](round4_data_plan.md) | Opened 28 September 2026 | Round 4 stage P's operating plan: the execution session's transcription of `decisions/round4_data_pull.md` (the data pull: set L, lung Xenium; set V, donor-labelled Visium and Xenium; embeddings, morphology covariates, the source audit of set L, the lung task definition and training-only gene lists), with the points flagged rather than changed, the P1 decision as its section 8, and the P7 decisions and the P8 addendum as its section 9. Not a stage report; carries no results. | Current — updated when a new instruction or decision document arrives, and at no other time. |
-| 19d | [`round4_data_report.md`](round4_data_report.md) | 28 September 2026 | Round 4 stage P's gate report, covering P0 to P7: what was run, the acceptance checks, predictions against outcomes, the results, nineteen escalations, proposed edits and what was not checked. Tag `round4-data`. | Frozen stage report, per the write-once convention. Accepted in `decisions/round4_data_P7_decisions.md`; its lung task (without `NCBI865`) is superseded by the P8 addendum. |
-| 19e | [`round4_data_P8_report.md`](round4_data_P8_report.md) | 30 September 2026 | Round 4 stage P8, the short addendum the P7 decisions asked for: the lung task rebuilt with `NCBI865` reinstated by a recorded patch drop, the v2 task-definition extension schema, the control-free Xenium panel table, the corrections to `round3_d4_probe.py` and `round3_d1_download.py`, and the report-only edge-patch diagnostic. Tag `round4-data-v2`, the tag the round-4 tracks start from. | Frozen stage report, per the write-once convention. |
-| 20 | [`WAYS_OF_WORKING.md`](WAYS_OF_WORKING.md) | No date in the document | Running list of process rules, each tied to the failure it prevents (e.g. "a relabelled claim must be swept for, not just edited where remembered"). Added to as each round finds a new one. | Current — living document by design; not dated because it has no single authorship date, only accretion. |
-| 21 | [`hest_bench_issue_draft.md`](hest_bench_issue_draft.md) | No date in the document | Draft GitHub issue for the HEST-1k authors, covering the IDC same-donor replicate pair, the Table A4 Xenium sample-count discrepancy, and missing H&E scan provenance. | **UNSENT — draft only.** The document says explicitly that sending it is Nicolas's call, not this session's. Item 1's evidence carries an unresolved attribution caveat (whether HEST's own metadata assignment of TENX99 vs TENX95 to the two "FFPE Human Breast" GEO pages is correct) that could not be closed because the source 10x pages returned HTTP 429 on every re-fetch attempt. **Round 3's D3 closed that caveat against item 1:** HEST's own release tables map TENX95 to a different dataset, so item 1 as drafted is contradicted; see `round3_A3_stage_report.md` section 7, item 1. Do not send it as drafted. |
-| 22 | [`literature_landscape.md`](literature_landscape.md) | No date in the document (its title names a 2026 landscape; its newest citations are mid-2026) | Methodology landscape for spatial transcriptomics and a ranked dissertation shortlist: where the field's open problems are (calibration, distribution shift, batch dominance in foundation-model embeddings, inference on predicted expression) and which niches are crowded. The source of the Topic A / Topic B framing. | Current — background and citation source, not a result document. Written outside the project's own numeric-claim gate; its numbers are citations to the literature, not to files in this repository. |
-| 23 | [`deck_speaker_scripts.md`](deck_speaker_scripts.md) | No date in the document | Full speaker scripts for the progress update, one per slide, written for about 150 words per minute (~2,300 words, ~15 minutes). Bullets and figure choices unchanged from `deck_master_outline.md`; replaces that document's notes sections. | Current — companion to the outline and to `deck_round2/`. |
-| 24 | [`decisions/`](decisions) | Memos dated 17–30 September 2026 | Directory, not a single document: the oversight chat's decision memos and instruction documents, placed and committed by Nicolas. Contains `round2_R1_decisions.md` (17 Sep, revision 2), `round2_R3_decisions.md` (18 Sep), `round2_R5_decisions.md` (19 Sep), `round2_closeout_decisions.md` (19 Sep), `deck_figures_and_repo_update.md` (20 Sep), `post_deck_repo_instructions.md` (21 Sep), `round3_execution_handoff.md` (22 Sep), `round3_oversight_handoff.md` (22 Sep), `round3_A1_decisions.md` (22 Sep, the A1 gate decision, now closed) and `round3_A3_decisions.md` (23 Sep, the A3 gate decision, executed in interval 3 and closed by `round3_final_report.md`); for round 4, `round4_data_pull.md` (28 Sep, the stage P instruction), `round4_data_P1_decision.md` (28 Sep, the decision on P1's selection stop) and `round4_data_P7_decisions.md` (30 Sep, the acceptance of `round4_data_report.md`, the decisions on its escalations and the P8 addendum, closed by `round4_data_P8_report.md`). | Closed records. Each is the instruction a stage was executed under; they are not edited, and the round-3 documents are the exception only in that `round3_execution_handoff.md` is still being executed. |
-| 25 | [`superseded/`](superseded) | Opened 22 September 2026 | Directory, not a single document: working documents that a later document replaced, moved here rather than deleted, each bannered with what superseded it. Contains `round3_park_note.md`, the mid-interval-1 park note superseded by `round3_A1_stage_report.md`. | Current — the record of what was replaced and by what. |
+The files themselves are not moved. Every instruction document, plan and report cites other documents by their path under `docs/`, the two round-4 tracks are running against those paths on their branches, and frozen records are not edited. Moving files now would break hundreds of references in documents that cannot be corrected. A physical reorganisation into round folders is a between-rounds job, after round 4's branches are merged, with a script that rewrites the references and a numeric-claim sweep afterwards. Until then, this guide is the organisation.
 
-## Pending — not yet in `docs/`
+---
 
-Nothing. This section previously listed six documents that reports in the table cite or
-implement but that were not present anywhere in the repository. All six are now present, and
-the section is kept rather than deleted so the resolution is on the record:
+## Start here
 
-- `round2_R1_decisions.md` — **present**, `docs/decisions/round2_R1_decisions.md` (17 September 2026, revision 2). It had been recorded as never saved and explicitly not to be reconstructed; it was in fact supplied and committed, so nothing was reconstructed and nothing is missing.
-- `round2_R3_decisions.md` — **present**, `docs/decisions/round2_R3_decisions.md` (18 September 2026).
-- `round2_R5_decisions.md` — **present**, `docs/decisions/round2_R5_decisions.md` (19 September 2026).
-- `round2_closeout_decisions.md` — **present**, `docs/decisions/round2_closeout_decisions.md` (19 September 2026).
-- `deck_figures_and_repo_update.md` — **present**, `docs/decisions/deck_figures_and_repo_update.md` (20 September 2026).
-- `r5_idc_provenance.md` — **present in `docs/` itself**, row 8 above. Listing it as absent was an error of this index, not a missing file: the earlier entry said so was established by filename search rather than by confirming the absence was intentional, and the search was wrong.
+To get up to speed in about an hour, read these in order.
 
-Two further instruction documents arrived with round 3 and are indexed under `decisions/` in
-row 22: `post_deck_repo_instructions.md` (21 September 2026) and the round-3 pair
-`round3_execution_handoff.md` and `round3_oversight_handoff.md` (both 22 September 2026). The
-oversight handoff is context rather than instruction and was not supplied to the execution
-session; `round3_execution_plan.md` records it as not in the repository, which is no longer
-true.
+1. `../README.md`, the repository's entry point (status, key findings, the benchmark's properties, known limitations).
+2. `decisions/round4_oversight_handoff.md`, the latest oversight handoff (30 September). It carries the whole path from the literature review to the current directions, with reasons, the key numbers with their files, what is running, and the open decisions.
+3. `decisions/round3_oversight_handoff.md`, the previous handoff (22 September), for rounds 1 and 2 in detail. Its sections 0, 2, 6 and 10 still hold.
+4. `round3_final_report.md`, its closing page "What round 3 established".
+5. `decisions/round3_directions.md` and `decisions/round4_originality_check.md`, the two documents where the project changed direction.
+6. `WAYS_OF_WORKING.md`, the procedures, each tied to the failure it prevents.
 
-*Note on method: dates in the table above were read from each document's own opening lines,
-not from `ls -la` timestamps, which reflect when a file was last touched on Longleaf (all
-recently, from the round-2 reorganisation and the round-3 open) rather than when it was
-written.*
+For the methods themselves, derived from scratch, read `reference/methods_and_state_of_play.md` and `reference/concepts_explained_round4.md`.
+
+## How the documents relate
+
+Each stage of work produces the same chain. The oversight chat writes an **instruction** (a handoff or a track document) or a **decision memo** at a gate. The execution session transcribes it into an **operating plan** before running anything, flags what looks wrong rather than changing it, then writes a **stage report** at the gate. The next decision memo answers that report. Instructions and decision memos live in `decisions/`; plans and reports live in `docs/` itself. Reports are written once and not edited; corrections go in the next report. Tags mark the state of the repository at each gate.
+
+---
+
+## Before round 1 (early September)
+
+| document | date | what it is |
+|---|---|---|
+| `first_year_ST_project_proposal.md` | September | The framing. Three constraints on the first year; Topic A (calibrated uncertainty on predicted expression) and Topic B (inference on predicted expression); the plan to reach them through a HEST-1k replication. Superseded as a statement of scope by the round-3 and round-4 reframings below. |
+| `literature_landscape.md` | undated, mid-2026 citations | The landscape and ranked shortlist that produced Topics A and B. Slide 7 of the round-2 deck. |
+
+## Round 1, faithful replication and instrumentation (12 to 16 September)
+
+| document | date | role |
+|---|---|---|
+| `HEST_replication_handoff.md` | 12 Sep | instruction, the original stage plan and ground rules |
+| `round1_final_stage_report.md` | 16 Sep | report, frozen. Contains claims round 2 withdrew (the "institution shift" scalar, the COAD same-patient reading); do not cite those |
+| `HEST_replication_review.md` | 16 Sep | the oversight audit of round 1 that produced round 2 |
+
+## Round 2, from replication to project motivation (16 to 21 September)
+
+| document | date | role |
+|---|---|---|
+| `round2_execution_plan.md` | 16 Sep | instruction and plan, stages R0 to R8; its section 13 is the report format every later report follows |
+| `round2_R0_R1_stage_report.md` | 17 Sep | report, R0 and R1 (the intercept, the $R^2$ ladder); carries the relabelling note on round 1 |
+| `decisions/round2_R1_decisions.md` | 17 Sep | decision at R1 |
+| `round2_R3_stage_report.md` | 18 Sep | report, R0 to R3 (split decomposition) |
+| `decisions/round2_R3_decisions.md` | 18 Sep | decision at R3 |
+| `r5_idc_provenance.md` | 18 Sep | reading task on the IDC samples. Its `TENX95` mapping is contradicted by round 3's D3 |
+| `round2_R5_stage_report.md` | 18 Sep | report, R4 and R5 (probes, provenance) |
+| `decisions/round2_R5_decisions.md` | 19 Sep | decision at R5 |
+| `round2_R8_stage_report.md` | 19 Sep | report, R5b to R8 (donor audit, replicate leak, variance components, per-gene, raw heads) |
+| `decisions/round2_closeout_decisions.md` | 19 Sep | closeout instruction |
+| `round2_closeout_report.md` | 19 Sep | closeout report; freeze at `round2-final` |
+| `round2_results_synthesis.md` | 19 Sep | every result of rounds 1 and 2 ranked by significance; the basis of the deck |
+| `decisions/deck_figures_and_repo_update.md` | 20 Sep | instruction for the deck figures and repository refresh |
+| `deck_master_outline.md`, `deck_speaker_scripts.md` | 20 to 22 Sep | the deck's outline and full scripts |
+| `closeout_gate_report.md` | 21 Sep | the numeric-claim gate's first correction |
+| `decisions/post_deck_repo_instructions.md` | 21 Sep | instruction closing the claim gate |
+| `docs_clean_report.md` | 21 Sep | how the claim gate was closed at zero; tag `round2-docs-clean` |
+| `deck_round2/` | presented 21 Sep | the deck. `HEST-1k Replication Update.pptx` is the authoritative copy, kept current by Nicolas; `deck_round2_slides.md`, `deck.json` and `slides/` are a text export as of 22 September and may lag his edits. Presented through slide 6 of 14 |
+| `hest_bench_issue_draft.md` | undated | draft issue to the HEST authors. **Unsent**, and its IDC item is contradicted; do not send as drafted |
+
+## Round 3, the first experiments for both topics (22 to 24 September)
+
+| document | date | role |
+|---|---|---|
+| `decisions/round3_oversight_handoff.md` | 22 Sep | context for the oversight chat, rounds 1 and 2 in detail |
+| `decisions/round3_execution_handoff.md` | 22 Sep | instruction, stages S0 to D4 |
+| `round3_execution_plan.md` | 22 Sep | plan, the transcription |
+| `superseded/round3_park_note.md` | 22 Sep | mid-interval park note, superseded by the A1 report |
+| `round3_d0_expansion_proposal.md` | 22 Sep | D0, the expansion proposal; the institution criterion is not satisfiable in HEST-1k |
+| `round3_A1_stage_report.md` | 22 Sep | report at the A1 gate (coverage across four fold designs); tag `round3-A1` |
+| `decisions/round3_A1_decisions.md` | 22 Sep | decision at A1 (interval 2; the expansion approved; HCP added as W3) |
+| `round3_A3_stage_report.md` | 23 Sep | report at the A3 gate (A2 anatomy of failure, A3 reweighting and HCP, D1 to D3); tags `round3-A3`, `round3-A3-r2` |
+| `decisions/round3_A3_decisions.md` | 23 Sep | decision at A3 (IDC is four donors; A4b with $K = 10$; B1 and B2; D4 re-scoped) |
+| `round3_final_report.md` | 24 Sep | end-of-round report (A4, B1, B2, D4); tags `round3-final`, `round3-final-r2`. Its closing page is the best one-page summary of round 3 |
+| `decisions/round3_directions.md` | 24 Sep | **the first change of direction.** What round 3 established, the three facts that constrain any direction, the four candidates D1 to D4, and why Topics A and B as framed were retired |
+
+## Between rounds 3 and 4 (25 to 28 September)
+
+| document | date | role |
+|---|---|---|
+| `reference/methods_and_state_of_play.md` | 27 Sep | every method derived from scratch, every round-3 result with how and why, what has not been tried, and what the rest of HEST-1k holds |
+| `decisions/round4_originality_check.md` | 28 Sep | **the second change of direction.** PPI is the survey-sampling difference estimator (Mozer 2026); GHCP (Mallick et al., August 2026) occupies the labelled-test-group conformal setting; the paper reframed as "Labelling budgets for prediction-powered inference with clustered data" |
+| `reference/concepts_explained_round4.md` | 28 to 29 Sep | the nineteen concepts Nicolas asked about, with the regime B correction (section 4) that changed the PPI track's Q3 |
+
+## Round 4, stage P, the data pull (28 to 30 September)
+
+| document | date | role |
+|---|---|---|
+| `decisions/round4_data_pull.md` | 28 Sep | instruction, stages P0 to P7 |
+| `round4_data_plan.md` | 28 Sep | plan, with the P1 decision (section 8) and the P7 decisions and P8 (section 9) |
+| `decisions/round4_data_P1_decision.md` | 28 Sep | decision on the P1 stop (proceed as selected) |
+| `round4_data_report.md` | 28 Sep | report at P7; tag `round4-data`. Nineteen escalations |
+| `decisions/round4_data_P7_decisions.md` | 30 Sep | acceptance, a decision on each escalation, and the P8 addendum |
+| `round4_data_P8_report.md` | 30 Sep | report on P8 (lung task at 20 samples and 15 donors, schema v2, control-free panels, code corrections); tag `round4-data-v2`, the tag both tracks start from |
+
+## Round 4, the two tracks (from 30 September, on branches until their gates are merged)
+
+These are on the track branches, not yet on `main`. Read them with `git show origin/<branch>:<path>` after `git fetch`.
+
+| document | branch | role |
+|---|---|---|
+| `decisions/round4_ppi_track.md` | `round4-ppi` | instruction, stages Q0 to Q5, gates Q1, Q3, Q5 |
+| `round4_ppi_plan.md` | `round4-ppi` | plan; section 8 lists eight points flagged in the instruction; sections 9 and 10 are the working-copy and version-management amendments |
+| `decisions/round4_conformal_track.md` | `main` (this commit) | instruction, stages C0 to C4, gates C2, C4. The session received it without section 5's working-copies paragraph, which reached it as a separate note and is transcribed in its plan |
+| `round4_conf_plan.md` | `round4-conformal` | plan; section 2 working copies, section 8 five flags, section 9 version management |
+| `round4_conf_lower_bound.md` | `round4-conformal` | the $o = 0$ lower-bound scoping, in progress |
+
+Each gate's report arrives as a pull request into `main` and is merged by Nicolas with a merge commit after the oversight chat accepts it.
+
+---
+
+## Living documents
+
+| document | what it is |
+|---|---|
+| `WAYS_OF_WORKING.md` | procedures, each tied to the failure it prevents; added to every round |
+| `README.md` (this file) | the reading guide; update it when a document is added |
+
+## Superseded and withdrawn
+
+`superseded/` holds working documents that a later document replaced, each bannered with what replaced it. Withdrawn readings that live inside frozen documents are listed in `decisions/round4_oversight_handoff.md` section 12 (dead ends) and in the README's known limitations. The most important are the IDC one-donor reading (withdrawn by round 3's D3), the round-1 "institution shift" scalar, and the D4 probe's 31% to 34% morphology share (quarantined by the P7 decisions).
