@@ -254,3 +254,45 @@ Recorded now, not acted on; each is repeated in the C2 report.
    holds at $K = 8$, since $K + 1 = 9 < 10$.
 5. **"Within-slide" on lung.** Lung slides carry two to five donors, so C3's within-slide split
    conformal and per-slide metrics are within-donor (the donor's own core or cores) on lung.
+
+## 9. Amendment, 30 September 2026: version management (oversight chat note)
+
+A note from the oversight chat, handed over by Nicolas on 30 September 2026, covers how accepted
+work reaches `main`. It applies from the next gate (C2) on. Everything the instruction already says
+still holds: commits only on `round4-conformal`, a tag at each gate, and no merge into `main` by this
+session. The action items, transcribed before any of them is run:
+
+1. **At each gate (C2 and C4), in this order.**
+   1. Commit the gate report and everything it cites on `round4-conformal`, run the numeric-claim
+      sweep, tag the commit (`round4-conf-C2`, `round4-conf-final`), and push the branch and the tag.
+   2. Open a pull request from `round4-conformal` into `main` with `gh pr create`, titled
+      "Round 4 conformal track, gate C2" (or "Round 4 conformal track, final"). The description
+      gives the tag, the head commit, the path of the gate report, and one paragraph on what the
+      stage produced. No reviewers, labels or auto-merge.
+   3. Stop, as the gate rule already requires.
+2. **Never** merge the pull request, push to `main`, or change `main` in any other way. After the
+   oversight chat accepts the report, Nicolas merges it on GitHub with a merge commit.
+3. **Branch rules**, because every provenance record cites commit hashes. Never rebase, squash,
+   amend a pushed commit, or force-push `round4-conformal`.
+4. **After a merge**, keep working on `round4-conformal` as before. Do not merge or pull `main` into
+   the branch unless the oversight chat asks. The PPI track's merged work will be in `main` and not
+   in this branch, which is intended. The ACS data under `results/round4/ppi/Q0_setup/acs/` is read
+   from the `round4-ppi` branch, recording the commit read.
+5. **If a gate is not accepted**, fix with new commits on `round4-conformal` and push. Move the tag
+   only if the oversight chat asks. The open pull request picks up the new commits; no second pull
+   request is opened.
+6. **The Longleaf project tree** `/work/users/w/e/weiyang/hest_replication` does not follow `main`
+   during the round. It stays at `round4-data-v2` as the data root. Nothing is pulled, fetched into
+   it or checked out there. It is updated once, between rounds. (This track's jobs only read its
+   branch name with `git rev-parse`, which changes nothing.)
+7. **If `gh` fails**, push the branch and tag anyway, put the GitHub compare URL for
+   `main...round4-conformal` in the report, and say so under escalations. Nicolas then opens the
+   pull request.
+
+How item 1.2 will be carried out, proposed and not yet approved. The `gh` CLI cannot verify TLS
+certificates from this session's sandbox, so `gh pr create` is expected to fail here. The
+proposal is to open the pull request through the GitHub REST API (`POST /repos/NicWYZ/HEST-1k-replication/pulls`)
+with the same title, head, base and description, and no reviewers, labels or auto-merge. That is
+the same request `gh pr create` makes. If the REST call also fails, item 7 applies. Either way the
+route used is recorded under escalations in the gate report. If Nicolas prefers the item 7
+fallback to be used straight away, the REST call is not made.
