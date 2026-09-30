@@ -296,3 +296,57 @@ with the same title, head, base and description, and no reviewers, labels or aut
 the same request `gh pr create` makes. If the REST call also fails, item 7 applies. Either way the
 route used is recorded under escalations in the gate report. If Nicolas prefers the item 7
 fallback to be used straight away, the REST call is not made.
+
+## 10. Addendum 1, 30 September 2026 (oversight chat, interval 1)
+
+Handed over by Nicolas as `round4_conformal_addendum1.md`. Transcribed before any of it is acted
+on. It does not move the C2 gate, and nothing in it starts C3. The gate rule it restates is the one
+in section 1 of this plan, unchanged.
+
+1. **The five flags of section 8 are all accepted.**
+   1. C1 acceptance with no donor effect. Every method is evaluated against its own expected
+      coverage under no donor effect: for HCP its calibration level $(1-\alpha)(K+1)/K$ where
+      finite, for one-per-donor $\lceil (K+1)(1-\alpha)\rceil/(K+1)$. The literal reading is
+      reported beside it.
+   2. The C0 anchor is accepted as done (per-encoder comparison at $10^{-12}$ plus the check that
+      `a4b_summary.csv` is the mean of the three committed tables).
+   3. Prediction C3.3 is scored "not tested".
+   4. Lung: HCP is finite only at $\alpha = 0.2$ at $K = 6$ and at $K = 8$; both rows are reported.
+   5. "Within-slide" on lung means within-donor, the donor's own core or cores.
+   The conventions of section 7 are accepted as written, including the primary and secondary
+   readings of criterion (b). The criterion is unchanged.
+2. **GHCP pool rule.** The primary implementation in C1, C2 and C3 is the rule for which the paper's
+   validity theorem is stated. The other rule runs as a secondary variant in
+   `c1_ghcp_reproduction.csv` and in every C1 cell at $\alpha = 0.1$. The C2 report (a) shows the
+   difference on one small worked example, (b) says which rule the theorem covers, quoting the
+   paper, (c) says whether the two rules' coverage differs by more than Monte Carlo error in any
+   cell, and (d) records the repository commit read (`d1a69f4a35b260b592d3ea39d7c7ad7133459cba`).
+   If the paper does not say which rule its theorem covers, that is an escalation, the paper's rule
+   stays primary, and work continues.
+3. **Lower-bound scoping, remaining cap to 3 October**, in this order, each marked derived,
+   conjectured or failed in `docs/round4_conf_lower_bound.md`, stopping at the cap wherever it is:
+   1. step 3 of Proposition 2 (the equivariance construction) written in full;
+   2. whether randomised HCP attains Proposition 1's floor with equality;
+   3. case 3 ($|J_h| = 1$) of the section 5 argument;
+   4. the finite-$N_k$ version, with the distance check widened by a DKW band.
+   No literature search on whether the propositions are known; the oversight chat does that.
+4. **Added candidate K6, the switch rule of the lower-bound document's section 5.** Finite $N_k$,
+   $d$ widened by $2\epsilon_N$ from a DKW band at level 0.01, $\delta$ from the probe's worst
+   configuration at that $d$. Runs through the C1 grid at $\alpha = 0.1$ behind the C1 interface,
+   with assumptions and guarantee in the docstring before it runs, scored against the fixed
+   criterion. Part (c) is unmet unless items 3.3 and 3.4 are derived. Cap one day, from the candidate
+   budget. It is a fourth C2 fan-out unit. The criterion is not changed by adding it.
+5. **Prediction C2.6**, as written by the oversight chat: K6 covers at least 0.89 in every cell and
+   meets (b) only in cells with between-donor share 0.1, so it fails (b) overall, and its price of
+   validity equals HCP's at shares 0.3 and 0.5.
+6. **ACS source changed (C3 only, not before the C2 memo).** The `ppi_py` census file has no state or
+   PUMA and is not used. C3 reads, read-only, the 2018 ACS PUMS 1-Year person file for the 50 states
+   and DC that the PPI track fetches through `folktables` into
+   `results/round4/ppi/Q0_setup/acs_pums2018/` on Longleaf, recording the PPI commit its provenance
+   carries. `whose()` will return `sibling`, and the addendum is the permission to read it. The GHCP
+   paper's ACS numbers are reproduced by applying the released code's own `real_data/acs/`
+   processing, with its defaults at the commit above, to that file; the year and horizon are
+   confirmed from the released loader, and a mismatch is an escalation.
+7. **Procedure.** Opening the gate pull request through the GitHub REST API (section 9) is accepted;
+   the route used is recorded in the report. The full instruction document is on `main` at
+   `docs/decisions/round4_conformal_track.md`; it is not added to this branch.
