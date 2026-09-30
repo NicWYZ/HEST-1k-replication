@@ -455,3 +455,47 @@ after the drop. These agree with the source.
 8. **Lung and $n_L = 16$.** Lung has 15 donors, so $n_L = 16$ is infeasible, and at $n_L = 12$ only
    three donors are unlabelled. Q2 and Q3 run lung at the $n_L$ values that leave at least two
    unlabelled donors, and record the counts.
+
+## 9. Amendment of 30 September 2026, working copies (oversight chat note)
+
+Transcribed before any further work, and applied for the rest of the track. The note covers a point
+the instruction document did not, namely that each session needs its own working copy, because a git
+working copy has one checked-out branch at a time and two sessions sharing one decide for each other
+what is checked out.
+
+The rule. Each session has its own working copy, locally and on Longleaf, and never checks out a
+branch in a working copy the other session uses.
+
+- Locally, `~/HEST-1k-replication` belongs to this session alone. It stays on `round4-ppi`, and no
+  other branch is checked out there. The conformal session moves to a sibling clone,
+  `~/HEST-1k-replication-conformal`, made from this local repository. The `round4-conformal` branch in
+  this clone is not deleted, renamed or moved.
+- On Longleaf, the project tree `/work/users/w/e/weiyang/hest_replication` stays on `main` at
+  `round4-data-v2` (`9d7277d`) and nobody checks out a branch there. It is the data root only (the
+  harness hard-codes it as `ROOT`).
+- This track's code runs from its own clone, `/work/users/w/e/weiyang/hest_code/round4-ppi/`, which
+  is on `PYTHONPATH` in every job script. Every job records that clone's HEAD as its commit and the md5
+  of every script it executed. Before the first job from the clone, the harness there is confirmed at
+  md5 `0ad7ae8efe554c1f285e5f384a9fb7f5`.
+- Results still go to `results/round4/ppi/` inside the project tree, which the conformal track never
+  writes. The conformal track's results go to `results/round4/conformal/`, which this track never
+  writes.
+
+What the note asked for before continuing, and what was found.
+
+1. The Longleaf project tree reads branch `main`, HEAD `9d7277dc8c4bfade08d5895051666ee134b8396a`,
+   working tree matching `origin/main` apart from untracked files that predate round 4. It was not
+   changed.
+2. Jobs already submitted that imported code from the project tree. Three Q0 jobs were submitted by
+   this session's sub-agents before the note, Slurm `3074092` (ACS fetch, a self-contained staged
+   script), `3074101` (B1 anchor, which ran `code/scripts/round3_b1_ppi.py` and the harness from the
+   project tree) and `3074111` (lung wrapper, which imported `round3_d4_sets.py` and the harness from
+   the project tree). All three were still pending and never started; `sacct` records each as
+   cancelled with elapsed `00:00:00`. They produced nothing, so there is nothing to check against a
+   committed md5, and all three are resubmitted from the new clone.
+3. `docs/decisions/round4_ppi_track.md` is this session's copy of the instruction document. It was
+   committed on `round4-ppi` in `47edb81` together with this plan, before the note arrived, and is
+   tracked.
+4. The clone was created at `/work/users/w/e/weiyang/hest_code/round4-ppi/` from GitHub, on branch
+   `round4-ppi` at `47edb81`. Its harness md5 is `0ad7ae8efe554c1f285e5f384a9fb7f5`, as required. The
+   clone is pull-only; the local clone stays the sole committer.
