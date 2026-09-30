@@ -19,8 +19,12 @@ spot, over the SAME pixels the encoder saw, using round 2's per-sample geometry 
 code/scripts/morphology_features.py: the patch half-width in WSI pixels is 112 * `factor`, where
 `factor` is an attribute of the patches/<sid>.h5 'img' dataset -- the value the extraction itself
 used, so it cannot drift from the pixels the encoder embedded. Where the attribute is absent the
-fallback is 112 / pixel_size_um_estimated, which that script verified agrees with 224 * factor to
-0.000 px on 72 of 72 benchmark samples; which source was used is recorded per sample. Nuclei are
+fallback is HALF the 112 um patch extent, 56 / pixel_size_um_estimated. (112 / pixel_size_um_estimated
+is the FULL extent, which morphology_features.py verified agrees with 224 * factor to 0.000 px on 72
+of 72 benchmark samples; until round 4 P8 this fallback returned that full extent as the half-width,
+2x too large, and D4 used it on all 54 kidney samples. Corrected in round 4 P8 per
+docs/decisions/round4_data_P7_decisions.md section 2 item 3; D4's probe outputs were computed
+before the correction and have not been rerun.) Which source was used is recorded per sample. Nuclei are
 assigned by a KD-tree ball query at the circumscribing radius followed by an exact box filter, so
 a nucleus in the overlap of two patches counts toward both, as round 2's v2 build does.
 The CellViT parquets are the ones D1 downloaded (hest_ext/<set>/cellvit_seg/), so nothing is
@@ -169,7 +173,9 @@ def patch_geometry(td, sid, px_est):
     if "patch_size_level0" in at:
         return float(np.asarray(at["patch_size_level0"]).ravel()[0]) / 2.0, \
             "patch_attr_patch_size_level0", keys
-    return 112.0 / float(px_est), "112_over_pixel_size_um_estimated", keys
+    # Half of the 112 um patch extent. Before round 4 P8 this returned 112 / px_est, the FULL
+    # extent, as the half-width (results/round4/data/P3_morphology/p3_d4_geometry_discrepancy.csv).
+    return 56.0 / float(px_est), "56_over_pixel_size_um_estimated", keys
 
 
 def build_morphology(td):

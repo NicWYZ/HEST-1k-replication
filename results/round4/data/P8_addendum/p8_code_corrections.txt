@@ -1,0 +1,12 @@
+P8 item 4, code corrections (lead, 2026-09-30). Neither script was run on data.
+
+1. code/scripts/round3_d4_probe.py, patch_geometry fallback.
+   Before: return 112.0 / px_est  (the FULL 112 um patch extent in pixels, used as the half-width)
+   After:  return 56.0 / px_est   (half the extent); source label 56_over_pixel_size_um_estimated.
+   Docstring corrected to say the same and to record that D4's outputs predate the fix.
+   Check, on the 30 Indiana rows of results/round4/data/P3_morphology/p3_d4_geometry_discrepancy.csv
+   with pixel sizes from results/round3/D4_expansion/task_defs/KIDNEY_POP54.json:
+     old formula equals D4's recorded half-width (max abs difference 0.0 px);
+     old / corrected = 2.0 on all 30;
+     corrected equals P3's half-width from the patch downsample attribute (max abs difference 0.0 px).
+   The probe was not rerun (memo section 2 item 3); round-3 result files are unchanged.
