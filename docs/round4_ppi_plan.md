@@ -499,3 +499,51 @@ What the note asked for before continuing, and what was found.
 4. The clone was created at `/work/users/w/e/weiyang/hest_code/round4-ppi/` from GitHub, on branch
    `round4-ppi` at `47edb81`. Its harness md5 is `0ad7ae8efe554c1f285e5f384a9fb7f5`, as required. The
    clone is pull-only; the local clone stays the sole committer.
+
+## 10. Amendment of 30 September 2026, version management (oversight chat note)
+
+Transcribed before any further work. It applies from the Q1 gate on. What the instruction document
+already says stands, namely that this session commits only on `round4-ppi`, tags each gate and never
+merges into `main`. The note adds how accepted work reaches `main`, which is through a pull request at
+each gate, merged on GitHub by Nicolas with a merge commit after the oversight chat accepts the gate
+report. The conformal track follows the same procedure on `round4-conformal`, on disjoint files.
+
+At each gate (Q1, Q3 and Q5), in this order.
+
+1. Commit the gate report and everything it cites on `round4-ppi`, run the numeric-claim sweep, tag
+   the commit (`round4-ppi-Q1`, `round4-ppi-Q3`, `round4-ppi-final`), and push the branch and the tag.
+2. Open a pull request from `round4-ppi` into `main`, titled "Round 4 PPI track, gate Q1" (or Q3, or
+   final). The description gives the tag, the head commit, the path of the gate report, and one
+   paragraph on what the stage produced. No reviewers, labels or auto-merge.
+3. Stop, as the gate rule requires.
+
+This session never merges the pull request, never pushes to `main` and never changes `main` in any
+other way.
+
+Rules for the branch, because every provenance record cites its commit hashes.
+
+- Never rebase, squash, amend a pushed commit, or force-push `round4-ppi`.
+- After a merge, keep working on `round4-ppi`. Do not merge or pull `main` into it unless the oversight
+  chat asks. The conformal track's merged work being in `main` and not in this branch is intended.
+- If a gate is not accepted, fix it with new commits on `round4-ppi` and push; move the tag only if the
+  oversight chat asks. The open pull request picks up the new commits; no second one is opened.
+
+The Longleaf project tree `/work/users/w/e/weiyang/hest_replication` does not follow `main` during the
+round. It stays at `round4-data-v2` as the data root, and nothing is pulled, fetched into or checked
+out there. It is updated once, between rounds.
+
+If opening the pull request fails, the branch and tag are pushed anyway, the report carries the GitHub
+compare URL for `main...round4-ppi`, and the failure is recorded under escalations for Nicolas to open
+it.
+
+Two facts recorded against this note.
+
+1. The `gh` command-line tool cannot verify TLS certificates in this session's sandbox, so every
+   `gh` call fails here. The pull request is therefore opened through GitHub's REST API with the
+   configured token, which creates the same pull request `gh pr create` would. If that also fails, the
+   fallback above applies.
+2. Before this note and the working-copy note arrived, this session's first read-only check of the
+   Longleaf project tree ran `git fetch -q origin` there (30 September, about 12:25 local time). That
+   updated only the tree's remote-tracking refs (it now lists `origin/round4-ppi`); the checked-out
+   branch, HEAD (`9d7277d`) and working files were not changed. Nothing has been fetched into the tree
+   since, and nothing will be.
