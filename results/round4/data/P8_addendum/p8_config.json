@@ -1,0 +1,162 @@
+{
+ "stage": "round4 P8 subset-after-drop check and lung edge-patch diagnostic",
+ "root": "/work/users/w/e/weiyang/hest_replication",
+ "set_dir": "hest_ext/lung_xenium",
+ "members": [
+  "NCBI856",
+  "NCBI857",
+  "NCBI858",
+  "NCBI859",
+  "NCBI860",
+  "NCBI861",
+  "NCBI864",
+  "NCBI865",
+  "NCBI866",
+  "NCBI867",
+  "NCBI870",
+  "NCBI873",
+  "NCBI875",
+  "NCBI876",
+  "NCBI879",
+  "NCBI880",
+  "NCBI881",
+  "NCBI882",
+  "NCBI883",
+  "NCBI884"
+ ],
+ "dropped_patch_barcodes": {
+  "NCBI865": [
+   "051x019"
+  ]
+ },
+ "threshold_mm": 1.6,
+ "core_diameter_mm": 3.0,
+ "pixel_size_um": {
+  "NCBI856": 0.2125,
+  "NCBI857": 0.2125,
+  "NCBI858": 0.2125,
+  "NCBI859": 0.2125,
+  "NCBI860": 0.2125,
+  "NCBI861": 0.2125,
+  "NCBI864": 0.2125,
+  "NCBI865": 0.2125,
+  "NCBI866": 0.2125,
+  "NCBI867": 0.2125,
+  "NCBI870": 0.2125,
+  "NCBI873": 0.2125,
+  "NCBI875": 0.2125,
+  "NCBI876": 0.2125,
+  "NCBI879": 0.2125,
+  "NCBI880": 0.2125,
+  "NCBI881": 0.2125,
+  "NCBI882": 0.2125,
+  "NCBI883": 0.2125,
+  "NCBI884": 0.2125
+ },
+ "fullres_px": {
+  "NCBI856": [
+   17136,
+   24809
+  ],
+  "NCBI857": [
+   19964,
+   24815
+  ],
+  "NCBI858": [
+   14306,
+   12484
+  ],
+  "NCBI859": [
+   17140,
+   16592
+  ],
+  "NCBI860": [
+   19969,
+   16597
+  ],
+  "NCBI861": [
+   17137,
+   16596
+  ],
+  "NCBI864": [
+   25624,
+   33047
+  ],
+  "NCBI865": [
+   28454,
+   28935
+  ],
+  "NCBI866": [
+   19966,
+   20710
+  ],
+  "NCBI867": [
+   28462,
+   33048
+  ],
+  "NCBI870": [
+   17135,
+   16593
+  ],
+  "NCBI873": [
+   17134,
+   20714
+  ],
+  "NCBI875": [
+   17132,
+   12491
+  ],
+  "NCBI876": [
+   14301,
+   16598
+  ],
+  "NCBI879": [
+   14312,
+   16598
+  ],
+  "NCBI880": [
+   17141,
+   16594
+  ],
+  "NCBI881": [
+   19973,
+   16596
+  ],
+  "NCBI882": [
+   17141,
+   20708
+  ],
+  "NCBI883": [
+   17145,
+   16597
+  ],
+  "NCBI884": [
+   25630,
+   28964
+  ]
+ },
+ "core_diameter_mm_source": {
+  "NCBI856": 3,
+  "NCBI857": 3,
+  "NCBI858": 3,
+  "NCBI859": 3,
+  "NCBI860": 3,
+  "NCBI861": 3,
+  "NCBI864": 5,
+  "NCBI865": 5,
+  "NCBI866": 3,
+  "NCBI867": 5,
+  "NCBI870": 3,
+  "NCBI873": 3,
+  "NCBI875": 3,
+  "NCBI876": 3,
+  "NCBI879": 3,
+  "NCBI880": 3,
+  "NCBI881": 3,
+  "NCBI882": 3,
+  "NCBI883": 3,
+  "NCBI884": 5
+ },
+ "core_diameter_source_note": "from the GEO sample title quoted in donor_audit_r4.csv donor_statement (suffix _3mm or _5mm)",
+ "margin_mm": 0.1
+}

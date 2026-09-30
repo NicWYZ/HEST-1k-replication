@@ -1,0 +1,12 @@
+P8 item 1 cross-checks (lead, 2026-09-30)
+LUNG_XENIUM.json rebuilt by code/scripts/round4_data_p8_task_lung.py (md5 4c0162247f1f79193bc6126a8dfa7e20).
+- round3_d4_sets.a4b_specs (unmodified; scanpy stubbed at import, H.sharing_flags replaced by an empty dict)
+  on the new definition: 45 fold x draw rows, calibration and training sample sets identical to
+  folds.a4b_k10 on all 45. expansion.a4b_k10.folds is asserted identical to folds.a4b_k10.
+- The 19 samples of LUNG_XENIUM__19_pre_P8.json: the only sample key that differs is the added slide_id.
+- Target genes identical (343). NCBI865: donor lungXen_VUILD110, n_patch_spots 2142 = patches after the
+  drop (p8_subset_after_drop.csv) = P3 n_patched_spots; n_expr_spots 3090; unpatched_fraction 0.306796.
+- LUNG_XENIUM__19_pre_P8.json and p5_validation__pre_P8.csv are byte-identical to the files at tag round4-data.
+- Rebuild determinism: two runs identical apart from provenance.generated_at.
+- Schema v2 (code/scripts/round4_data_p8_schema_v2.py): v1 file unchanged; BREAST_XENIUM, CCRCC_hest_layout,
+  INDIANA_KIDNEY and KIDNEY_POP54 validate against v1 and v2 with 0 errors.
