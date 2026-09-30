@@ -1,0 +1,18 @@
+stage: r4ppi_Q0 lung_wrapper
+intended_job_prefix: r4ppi_ (job identified by Slurm id)
+slurm_job_id: 3074935
+partition: spill
+node: c151412.ll.unc.edu
+date_utc: 2026-09-30T17:45:59Z
+commit: ca96d3e2b9ea0887b89ecb0a665a5f50e459d525
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python q0_lung_wrapper_check.py /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q0_setup/lung_wrapper  (R4PPI_CODE_DIR=/work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts)
+config_file: q0_lung_wrapper_config.json  config_md5: f79b4418e5fadea97f9a72f0b373c501
+PYTHONHASHSEED: 0
+clone_harness_md5: 0ad7ae8efe554c1f285e5f384a9fb7f5
+script_md5:
+2a26eb3ce74815e3e7c63cccd0527398  round4_ppi_data.py
+613e0284d18b5983b994c3a7cdaee438  q0_lung_wrapper_check.py
+b74f2dda031bc972c1c44c1d7b3a04da  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round3_d4_sets.py
+0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round3_a0_harness.py
+70927b656860286c6a612694ec4b3785  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round3_a3_weighted.py
+e267b1e6038daa893647202dd47ffb04  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round2_r2_gene_check.py

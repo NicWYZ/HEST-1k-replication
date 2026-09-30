@@ -1,0 +1,82 @@
+{
+ "ppi_python_version": "0.2.3.dist",
+ "loader_import": "ppi_py.datasets.load_dataset (package import)",
+ "files": {
+  "acs_fetch.py": {
+   "bytes": 2428,
+   "md5": "79839a005a4f9a1929333822efe5f701",
+   "sha256": "9e60dae53b88bd277b8810820b8b57e8abfb1f80d6a069f9143d0ab9569f9516"
+  },
+  "attempt1_FAILED_gdown_import_NOT_a_refusal.txt": {
+   "bytes": 1640,
+   "md5": "27454a4f9268197923aa3bd0dccbb7d4",
+   "sha256": "8f4cfec4e1ad871c6d01b3a5de9bc05cfaa4c79bd9e42c4a79c55300ca889134"
+  },
+  "attempt1_stdout.txt": {
+   "bytes": 1197,
+   "md5": "226eed4b1c5352d5ed8352dcee9ca5f9",
+   "sha256": "a4225dd2c254be6d51e6eee2c2c30c749e729f1057017251d4a432cfe49b6a5c"
+  },
+  "census_income.npz": {
+   "bytes": 10643278,
+   "md5": "9d49f41eaa4563dffaeec3ef8f354169",
+   "sha256": "07db91fc27b7275763e9071768ed8125ec44640dcd49b9be6bae3e2335afcfb4"
+  }
+ },
+ "inventory": {
+  "npz_keys": [
+   "Y",
+   "Yhat",
+   "X"
+  ],
+  "arrays": {
+   "Y": {
+    "shape": [
+     380091
+    ],
+    "dtype": "float64",
+    "min": -7200.0,
+    "max": 1403700.0,
+    "mean": 43105.58967457793,
+    "n_nan": 0,
+    "n_unique": 8896,
+    "n_le_0": 109877
+   },
+   "Yhat": {
+    "shape": [
+     380091
+    ],
+    "dtype": "float32",
+    "min": -21421.84765625,
+    "max": 197141.75,
+    "mean": 31640.756024011425,
+    "n_nan": 0,
+    "n_unique": 270228,
+    "n_le_0": 73878
+   },
+   "X": {
+    "shape": [
+     380091,
+     2
+    ],
+    "dtype": "int64",
+    "col_min": [
+     0.0,
+     1.0
+    ],
+    "col_max": [
+     94.0,
+     2.0
+    ],
+    "col_mean": [
+     40.86045710106264,
+     1.5067733779542267
+    ],
+    "col_n_unique": [
+     92,
+     2
+    ]
+   }
+  }
+ }
+}

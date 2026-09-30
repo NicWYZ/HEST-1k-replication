@@ -1,0 +1,113 @@
+{
+ "inventory_version": 1,
+ "dataset": "ppi_py census_income (ppi_python 0.2.3)",
+ "file": "census_income.npz",
+ "md5": "9d49f41eaa4563dffaeec3ef8f354169",
+ "sha256": "07db91fc27b7275763e9071768ed8125ec44640dcd49b9be6bae3e2335afcfb4",
+ "bytes": 10643278,
+ "arrays": {
+  "Y": {
+   "shape": [
+    380091
+   ],
+   "dtype": "float64",
+   "min": -7200.0,
+   "max": 1403700.0,
+   "mean": 43105.58967457793,
+   "n_nan": 0,
+   "n_unique": 8896,
+   "n_le_0": 109877
+  },
+  "Yhat": {
+   "shape": [
+    380091
+   ],
+   "dtype": "float32",
+   "min": -21421.84765625,
+   "max": 197141.75,
+   "mean": 31640.756024011425,
+   "n_nan": 0,
+   "n_unique": 270228,
+   "n_le_0": 73878
+  },
+  "X": {
+   "shape": [
+    380091,
+    2
+   ],
+   "dtype": "int64",
+   "col_min": [
+    0.0,
+    1.0
+   ],
+   "col_max": [
+    94.0,
+    2.0
+   ],
+   "col_mean": [
+    40.86045710106264,
+    1.5067733779542267
+   ],
+   "col_n_unique": [
+    92,
+    2
+   ]
+  }
+ },
+ "npz_keys": [
+  "Y",
+  "Yhat",
+  "X"
+ ],
+ "column_names_in_file": "none: X is an unnamed 2-column integer array; columns are read by position",
+ "X_column_interpretation": {
+  "X[:,0]": "age (inferred: integer 0 to 94, 92 distinct values)",
+  "X[:,1]": "sex (inferred: values 1 and 2)",
+  "basis": "value ranges; the npz carries no column labels; to be confirmed against ppi_py documentation"
+ },
+ "state_identifier_present": false,
+ "puma_identifier_present": false,
+ "survey_year_present": false,
+ "yhat_present": true,
+ "yhat_dtype": "float32",
+ "yhat_origin": "gradient-boosted predictions shipped in the file (by the package description; training split not stated in the file)",
+ "outcome_scale": "raw dollars (income), not log; Y ranges from -7200 to 1403700",
+ "stats": {
+  "n_rows": 380091,
+  "Y_eq_0": 47597,
+  "Y_lt_0": 62280,
+  "Y_le_0": 109877,
+  "Y_le_0_fraction": 0.2890807727623122,
+  "Y_min": -7200.0,
+  "Yhat_le_0": 73878,
+  "Yhat_lt_0": 73878,
+  "Yhat_min": -21421.84765625,
+  "age_min": 0.0,
+  "age_max": 94.0,
+  "age_mean": 40.86045710106264,
+  "age_sd_ddof0": 23.28034613275992,
+  "age_lt_16": 66593,
+  "age_eq_0": 3382,
+  "sex_values": [
+   1,
+   2
+  ],
+  "Y_le_0_among_age_lt_16": 66177,
+  "descriptive_full_data_theta3_slope_log1p_income_on_z_age_Y": 2.838293864442556,
+  "descriptive_full_data_theta3_slope_log1p_income_on_z_age_Yhat": 2.9456575194662182,
+  "descriptive_full_data_mean_log1p_income_Y": 7.352001727850979,
+  "descriptive_full_data_mean_log1p_income_Yhat": 7.866708716797951
+ },
+ "predictor_fit": {
+  "unit_R2_raw_dollars_Yhat_as_prediction_of_Y": 0.3187554107115047,
+  "unit_corr_raw_dollars": 0.6074993834638893,
+  "unit_R2_log1p_clipped_all_rows": 0.7241361967495197,
+  "unit_corr_log1p_clipped_all_rows": 0.8590066157256,
+  "unit_R2_log_Yhat_positive_only_rows_Y_gt_0_and_Yhat_gt_0": 0.18299585891837833,
+  "cluster_level_R2": "not computable: no state or PUMA identifier in the package data",
+  "n_rows_Y_gt_0_and_Yhat_gt_0": 268118,
+  "unit_corr_log_positive_only_rows": 0.5514214864057134
+ },
+ "escalation": "state and PUMA identifiers and a survey year are absent from the package's census_income file. By the brief's hard limit no other source was fetched. The ACS cluster units (Q2, Q4 state and PUMA settings, the state-by-year two-way supplement) cannot run on this file as it stands.",
+ "generated_at": "2026-09-30T17:50:55Z"
+}

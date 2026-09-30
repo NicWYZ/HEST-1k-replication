@@ -1,0 +1,49 @@
+module_file round3_d4_sets /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round3_d4_sets.py
+module_file round3_a0_harness /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round3_a0_harness.py
+module_file round3_a3_weighted /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round3_a3_weighted.py
+module_file round2_r2_gene_check /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round2_r2_gene_check.py
+module_file round4_ppi_data(staged) /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/e3a052ef-74c1-454a-971a-84fbb18cec0d/round4_ppi_data.py
+{
+ "round3_load_set_on_NCBI865_before_drop": {
+  "hoptimus0": "AssertionError: NCBI865: patch barcode not in expression",
+  "hoptimus0_load_lung_rows": 2142,
+  "hoptimus0_load_lung_Y_shape": [
+   2142,
+   3
+  ],
+  "uni_v2": "AssertionError: NCBI865: patch barcode not in expression",
+  "uni_v2_load_lung_rows": 2142,
+  "uni_v2_load_lung_Y_shape": [
+   2142,
+   3
+  ],
+  "resnet50": "AssertionError: NCBI865: patch barcode not in expression",
+  "resnet50_load_lung_rows": 2142,
+  "resnet50_load_lung_Y_shape": [
+   2142,
+   3
+  ]
+ },
+ "lung_target_list_len": 343,
+ "lung_controls_removed": 0,
+ "lung_kept": 343,
+ "breast_target_list_len": 151,
+ "breast_controls_removed": 61,
+ "breast_kept": 90,
+ "all_rows_after_equal_task": true,
+ "all_subset_ok_after_drop": true,
+ "subset_fails_without_drop": [
+  [
+   "NCBI865",
+   "hoptimus0"
+  ],
+  [
+   "NCBI865",
+   "resnet50"
+  ],
+  [
+   "NCBI865",
+   "uni_v2"
+  ]
+ ]
+}

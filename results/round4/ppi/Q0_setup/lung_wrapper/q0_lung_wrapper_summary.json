@@ -1,0 +1,166 @@
+{
+ "round3_load_set_on_NCBI865_before_drop": {
+  "hoptimus0": "AssertionError: NCBI865: patch barcode not in expression",
+  "hoptimus0_load_lung_rows": 2142,
+  "hoptimus0_load_lung_Y_shape": [
+   2142,
+   3
+  ],
+  "uni_v2": "AssertionError: NCBI865: patch barcode not in expression",
+  "uni_v2_load_lung_rows": 2142,
+  "uni_v2_load_lung_Y_shape": [
+   2142,
+   3
+  ],
+  "resnet50": "AssertionError: NCBI865: patch barcode not in expression",
+  "resnet50_load_lung_rows": 2142,
+  "resnet50_load_lung_Y_shape": [
+   2142,
+   3
+  ]
+ },
+ "lung_target_list_len": 343,
+ "lung_controls_removed": 0,
+ "lung_kept": 343,
+ "breast_target_list_len": 151,
+ "breast_controls_removed": 61,
+ "breast_kept": 90,
+ "lung_sample_table": [
+  {
+   "sample_id": "NCBI856",
+   "donor_id": "lungXen_VUILD96",
+   "slide_id": "0003817",
+   "core_diameter_mm_source": 3
+  },
+  {
+   "sample_id": "NCBI857",
+   "donor_id": "lungXen_VUILD96",
+   "slide_id": "0003817",
+   "core_diameter_mm_source": 3
+  },
+  {
+   "sample_id": "NCBI858",
+   "donor_id": "lungXen_VUILD91",
+   "slide_id": "0003400",
+   "core_diameter_mm_source": 3
+  },
+  {
+   "sample_id": "NCBI859",
+   "donor_id": "lungXen_VUILD91",
+   "slide_id": "0003400",
+   "core_diameter_mm_source": 3
+  },
+  {
+   "sample_id": "NCBI860",
+   "donor_id": "lungXen_VUILD78",
+   "slide_id": "0003400",
+   "core_diameter_mm_source": 3
+  },
+  {
+   "sample_id": "NCBI861",
+   "donor_id": "lungXen_VUILD78",
+   "slide_id": "0003400",
+   "core_diameter_mm_source": 3
+  },
+  {
+   "sample_id": "NCBI864",
+   "donor_id": "lungXen_VUILD115",
+   "slide_id": "0003392",
+   "core_diameter_mm_source": 5
+  },
+  {
+   "sample_id": "NCBI865",
+   "donor_id": "lungXen_VUILD110",
+   "slide_id": "0003392",
+   "core_diameter_mm_source": 5
+  },
+  {
+   "sample_id": "NCBI866",
+   "donor_id": "lungXen_VUILD107",
+   "slide_id": "0003817",
+   "core_diameter_mm_source": 3
+  },
+  {
+   "sample_id": "NCBI867",
+   "donor_id": "lungXen_VUILD106",
+   "slide_id": "0003392",
+   "core_diameter_mm_source": 5
+  },
+  {
+   "sample_id": "NCBI870",
+   "donor_id": "lungXen_VUILD105",
+   "slide_id": "0003789",
+   "core_diameter_mm_source": 3
+  },
+  {
+   "sample_id": "NCBI873",
+   "donor_id": "lungXen_VUILD102",
+   "slide_id": "0003817",
+   "core_diameter_mm_source": 3
+  },
+  {
+   "sample_id": "NCBI875",
+   "donor_id": "lungXen_VUHD116",
+   "slide_id": "0003817",
+   "core_diameter_mm_source": 3
+  },
+  {
+   "sample_id": "NCBI876",
+   "donor_id": "lungXen_VUHD116",
+   "slide_id": "0003817",
+   "core_diameter_mm_source": 3
+  },
+  {
+   "sample_id": "NCBI879",
+   "donor_id": "lungXen_VUHD069",
+   "slide_id": "0003789",
+   "core_diameter_mm_source": 3
+  },
+  {
+   "sample_id": "NCBI880",
+   "donor_id": "lungXen_TILD175",
+   "slide_id": "0003400",
+   "core_diameter_mm_source": 3
+  },
+  {
+   "sample_id": "NCBI881",
+   "donor_id": "lungXen_TILD117",
+   "slide_id": "0003400",
+   "core_diameter_mm_source": 3
+  },
+  {
+   "sample_id": "NCBI882",
+   "donor_id": "lungXen_TILD117",
+   "slide_id": "0003400",
+   "core_diameter_mm_source": 3
+  },
+  {
+   "sample_id": "NCBI883",
+   "donor_id": "lungXen_THD0011",
+   "slide_id": "0003400",
+   "core_diameter_mm_source": 3
+  },
+  {
+   "sample_id": "NCBI884",
+   "donor_id": "lungXen_THD0008",
+   "slide_id": "0003392",
+   "core_diameter_mm_source": 5
+  }
+ ],
+ "all_rows_after_equal_task": true,
+ "all_subset_ok_after_drop": true,
+ "subset_fails_without_drop": [
+  [
+   "NCBI865",
+   "hoptimus0"
+  ],
+  [
+   "NCBI865",
+   "resnet50"
+  ],
+  [
+   "NCBI865",
+   "uni_v2"
+  ]
+ ]
+}

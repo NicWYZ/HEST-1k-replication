@@ -1,0 +1,12 @@
+{
+ "computed": "locally on the harvested copy of census_income.npz (md5 9d49f41eaa4563dffaeec3ef8f354169), not on Longleaf",
+ "Y_eq_minus1": 61876,
+ "Y_lt_0_total": 62280,
+ "Y_lt_0_with_age_lt_16": 61885,
+ "Y_lt_0_with_age_ge_16": 395,
+ "Y_eq_0_age_ge_16": 43305,
+ "Y_eq_0_age_lt_16": 4292,
+ "Y_gt_0_age_lt_16": 416,
+ "reading": "Y = -1 on 61,876 rows, nearly all under 16, looks like a not-applicable code rather than an income. Under the proposed log1p clip these rows sit at 0 together with 47,597 true zeros.",
+ "proposal_only": "define the ACS population as age >= 16 (age is observed on unlabelled rows, so L and U stay the same population), and treat true zeros and the 395 remaining negatives by the lead's rule. Not applied in acs_task_def.json."
+}
