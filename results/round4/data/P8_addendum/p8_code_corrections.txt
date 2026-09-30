@@ -10,3 +10,17 @@ P8 item 4, code corrections (lead, 2026-09-30). Neither script was run on data.
      old / corrected = 2.0 on all 30;
      corrected equals P3's half-width from the patch downsample attribute (max abs difference 0.0 px).
    The probe was not rerun (memo section 2 item 3); round-3 result files are unchanged.
+
+2. code/scripts/round3_d1_download.py, per-sample verification.
+   Before: acceptance was patch count == expression spot count (stale: fails on valid samples,
+           because HEST's patching drops spots near the section edge).
+   After:  acceptance is the subset relation (every patch barcode is an expression barcode), stated
+           as round4_data_download.py states it, with n_patch_barcodes_not_in_expr, an example list,
+           n_expr_spots_without_a_patch and unpatched_fraction recorded; the old equality is kept as
+           the report-only column patch_count_equals_spot_count_STALE; the summary key is
+           samples_subset_relation_fails, and the final OK / FAILURES PRESENT line uses it.
+   The script has no self-test: it is a module-level script that downloads on import. Checked by
+   python -m py_compile, and by extracting its three verification functions (_bc, st_barcodes,
+   patch_probe) from the source and running them on two synthetic files: patch {a,b} against
+   expression {a,b,c} gives subset True (unpatched 0.333333) while the stale equality gives False;
+   patch {a,z} gives subset False with z listed. No download was run.

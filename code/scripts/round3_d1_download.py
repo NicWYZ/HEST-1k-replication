@@ -6,8 +6,15 @@ overlap, so each sample has exactly one physical home, assigned by the set
 order in the config (kidney, breast Xenium, platform-pair).
 
 Then verifies: every expected file present with the byte size recorded in the
-D0 HuggingFace listing, and per sample the patch count against the expression
-file's spot count.
+D0 HuggingFace listing, and per sample the SUBSET relation (every patch barcode
+is an expression barcode), with the unpatched fraction recorded.
+
+Changed in round 4 P8 (docs/decisions/round4_data_P7_decisions.md section 3
+item 4): the original per-sample test, patch count equals spot count, was stale.
+It fails on valid samples because HEST's patching drops spots near the section
+edge (round3_d1_patch_spot_audit.py). The subset relation is now the acceptance
+test, stated as round4_data_download.py states it; the old equality is still
+computed and reported as patch_count_equals_spot_count_STALE, not as a criterion.
 """
 import csv
 import datetime as dt
@@ -133,13 +140,19 @@ import h5py
 home = {h["sample_id"]: h["home_set"] for h in home_map}
 
 
-def spot_count(h5ad_path):
+def _bc(arr):
+    import numpy as np
+    a = np.asarray(arr).reshape(-1)
+    return [x.decode() if isinstance(x, bytes) else str(x) for x in a]
+
+
+def st_barcodes(h5ad_path):
     with h5py.File(h5ad_path, "r") as f:
         obs = f["obs"]
         idx = obs.attrs.get("_index", "_index")
         if isinstance(idx, bytes):
             idx = idx.decode()
-        return int(obs[idx].shape[0])
+        return _bc(obs[idx][:])
 
 
 def patch_probe(h5_path):
@@ -147,7 +160,7 @@ def patch_probe(h5_path):
         key = "img" if "img" in f else ("imgs" if "imgs" in f else "images")
         bkey = "barcodes" if "barcodes" in f else ("barcode" if "barcode" in f else None)
         return (int(f[key].shape[0]),
-                (int(f[bkey].shape[0]) if bkey else -1),
+                (_bc(f[bkey][:]) if bkey else []),
                 tuple(int(x) for x in f[key].shape[1:]),
                 sorted(f.keys()))
 
@@ -161,7 +174,9 @@ for sid in ALL_IDS:
            "n_files_size_mismatch": 0, "bytes_expected": sum(expected[sid].values()),
            "bytes_present": 0, "missing_files": "", "size_mismatch_detail": "",
            "n_patches": -1, "n_patch_barcodes": -1, "patch_shape": "",
-           "n_spots_st": -1, "patch_count_equals_spot_count": "",
+           "n_spots_st": -1, "subset_holds": "", "n_patch_barcodes_not_in_expr": -1,
+           "example_patch_barcodes_not_in_expr": "", "n_expr_spots_without_a_patch": -1,
+           "unpatched_fraction": "", "patch_count_equals_spot_count_STALE": "",
            "patches_h5_keys": "", "error": ""}
     miss, mism = [], []
     for p, size in sorted(expected[sid].items()):
@@ -178,18 +193,27 @@ for sid in ALL_IDS:
     rec["size_mismatch_detail"] = ";".join(mism)
     rec["n_files_size_mismatch"] = len(mism)
     try:
-        n_img, n_bc, shp, keys = patch_probe(os.path.join(d, f"patches/{sid}.h5"))
-        rec.update({"n_patches": n_img, "n_patch_barcodes": n_bc,
+        n_img, pb, shp, keys = patch_probe(os.path.join(d, f"patches/{sid}.h5"))
+        rec.update({"n_patches": n_img, "n_patch_barcodes": len(pb),
                     "patch_shape": "x".join(str(x) for x in shp),
                     "patches_h5_keys": ";".join(keys)})
-        rec["n_spots_st"] = spot_count(os.path.join(d, f"st/{sid}.h5ad"))
-        rec["patch_count_equals_spot_count"] = str(rec["n_patches"] == rec["n_spots_st"])
+        sb = st_barcodes(os.path.join(d, f"st/{sid}.h5ad"))
+        pset, sset = set(pb), set(sb)
+        extra = sorted(pset - sset)
+        without = sset - pset
+        rec["n_spots_st"] = len(sb)
+        rec["subset_holds"] = str(bool(pb) and not extra)
+        rec["n_patch_barcodes_not_in_expr"] = len(extra)
+        rec["example_patch_barcodes_not_in_expr"] = ";".join(extra[:3])
+        rec["n_expr_spots_without_a_patch"] = len(without)
+        rec["unpatched_fraction"] = f"{len(without) / max(len(sset), 1):.6f}"
+        rec["patch_count_equals_spot_count_STALE"] = str(rec["n_patches"] == rec["n_spots_st"])
     except Exception as exc:
         rec["error"] = f"{type(exc).__name__}: {exc}"
     ver.append(rec)
     print(f"  {sid} {set_name} files {rec['n_files_present']}/{rec['n_files_expected']} "
           f"mismatch {rec['n_files_size_mismatch']} patches {rec['n_patches']} "
-          f"spots {rec['n_spots_st']} eq {rec['patch_count_equals_spot_count']} "
+          f"spots {rec['n_spots_st']} subset {rec['subset_holds']} "
           f"{rec['error']}", flush=True)
 
 vpath = os.path.join(EXT, "d1_verification.csv")
@@ -206,7 +230,7 @@ with open(hpath, "w", newline="") as fh:
 
 fail_missing = [r["sample_id"] for r in ver if r["missing_files"]]
 fail_size = [r["sample_id"] for r in ver if r["n_files_size_mismatch"]]
-fail_count = [r["sample_id"] for r in ver if r["patch_count_equals_spot_count"] != "True"]
+fail_subset = [r["sample_id"] for r in ver if r["subset_holds"] != "True"]
 summary = {
     "n_samples": len(ver),
     "n_files_expected": sum(r["n_files_expected"] for r in ver),
@@ -215,7 +239,9 @@ summary = {
     "bytes_present": sum(r["bytes_present"] for r in ver),
     "samples_with_missing_files": fail_missing,
     "samples_with_size_mismatch": fail_size,
-    "samples_patch_count_ne_spot_count": fail_count,
+    "samples_subset_relation_fails": fail_subset,
+    "n_samples_patch_count_ne_spot_count_STALE": sum(
+        1 for r in ver if r["patch_count_equals_spot_count_STALE"] != "True"),
     "per_set": download_log,
     "revision_note": rev_note,
     "hf_revision_used": PINNED,
@@ -281,4 +307,4 @@ shutil.copy(vpath, "d1_verification.csv")
 shutil.copy(hpath, "sample_home_map.csv")
 shutil.copy(os.path.join(EXT, "d1_summary.json"), "d1_summary.json")
 shutil.copy("d1_config.json", os.path.join(EXT, "d1_config.json"))
-print("OK" if not (fail_missing or fail_size or fail_count) else "FAILURES PRESENT", flush=True)
+print("OK" if not (fail_missing or fail_size or fail_subset) else "FAILURES PRESENT", flush=True)
