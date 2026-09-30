@@ -341,7 +341,7 @@ def restricted_pool(N, o, eta, rng, rule="paper"):
 
 
 def ghcp_q(cal, init, o, alpha, rng, adapt=True, eta=0.0, n_glob=N_GLOB, pool_rule="paper",
-           lam=None):
+           lam=None, J0=None):
     """GHCP threshold and test centre. cal: list of residual arrays; init: test residual stream."""
     N = np.array([len(x) for x in cal])
     m = (o // 2) if adapt else 0
@@ -352,7 +352,8 @@ def ghcp_q(cal, init, o, alpha, rng, adapt=True, eta=0.0, n_glob=N_GLOB, pool_ru
         held = np.abs(init[m:o] - c_test)
         L = o + 1 - m
         return wquantile(held, np.full(len(held), 1.0 / L), 1.0 / L, 1 - alpha), c_test
-    J0 = S[rng.integers(len(S))]
+    J0 = S[rng.integers(len(S))] if J0 is None else int(J0)
+    assert J0 in S, "donor must be in the pool"
     Scal = [j for j in S if j != J0]
     M = len(Scal) + 1
     sc, wt = [], []
