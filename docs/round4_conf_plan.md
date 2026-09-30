@@ -71,7 +71,7 @@ the counts in the instruction. The file wins where they differ; here they agree.
 | quantity | instruction | file |
 |---|---|---|
 | samples | 20 | 20 |
-| donors | 15 | 26 |
+| donors | 15 | 15 |
 | donors with two samples, with one | 5, 10 | 5, 10 |
 | `folds.a4b_k10` rows | 15 folds by 3 draws | 45 rows, 15 folds, draws [0, 1, 2] |
 | training donors per `a4b_k10` row | 4 | 4 to 4 |
