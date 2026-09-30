@@ -1,0 +1,8 @@
+check,n,statistic,value,tol,passed,note
+A_K6_pooled_vs_A1_donor,24,max |dcoverage|,2.220446049250313e-16,1e-15,True,24 of 24 folds; max |dwidth| 1.880e-11; folds with dcoverage > 1e-15: 0
+B_K10_hcp_rows_vs_committed,72,max |dcoverage|,0.0,1e-12,True,max |dwidth_mean| 6.554e-11; finite mine 72 ref 72
+B_K10_pooled_rows_vs_committed,72,max |dcoverage|,0.0,1e-12,True,max |dwidth_mean| 6.083e-11; finite mine 72 ref 72
+B_K10_dwr_rows_vs_committed,72,max |dcoverage|,0.0,1e-12,True,max |dwidth_mean| 2.861e-10; finite mine 72 ref 72
+C_K10_hcp_mean_vs_committed_encoder_mean,72,|mine - committed|,0.0,1e-12,True,"mine 0.9693837304722703, committed 0.9693837304722703, encoder resnet50"
+D_summary_equals_mean_of_encoder_tables,216,|summary - mean|,0.0,1e-12,True,"summary 0.9692115333343452, mean 0.9692115333343452, n 216"
+E_rerun_own_anchor_table,8,rows failing,0.0,0.0,True,
