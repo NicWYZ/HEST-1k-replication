@@ -547,3 +547,100 @@ Two facts recorded against this note.
    updated only the tree's remote-tracking refs (it now lists `origin/round4-ppi`); the checked-out
    branch, HEAD (`9d7277d`) and working files were not changed. Nothing has been fetched into the tree
    since, and nothing will be.
+
+## 11. Addendum 1 (30 September 2026), transcribed before any of it is acted on
+
+Source `docs/decisions/round4_ppi_addendum1.md`, the oversight chat's answer to section 8, handed
+over by Nicolas. It does not move the Q1 gate and nothing in it starts Q2. Where this section and
+the source differ, the source governs.
+
+### 11.1 The eight points of section 8
+
+1. The $r = 0$ cells use a predictor drawn independently of $y$ with the same structure,
+   $\hat y_{gi} = \nu + p_g + d_{gi}$, $p_g \sim N(0, \sigma_u^2)$, $d_{gi} \sim N(0, \sigma_e^2)$,
+   independent of everything else, so its between-donor share is $\rho$. This replaces the
+   construction in the committed simulation script. It is recorded in
+   `docs/round4_ppi_estimator_definition.md` and the report.
+2. The 0.89 to 0.91 band at $r = 0$ is scored only on CR2 with Satterthwaite at every $G_L$, CR1 at
+   $G_L \ge 6$, and the bootstrap-$t$, with the MC standard error beside every cell. The other
+   variants are scored against Q1.1 and Q1.2, not the band.
+3. Q1.5 is scored as written. Nothing in Q1 changes.
+4. The $V_U$ and rectifier corrections are accepted for the Q2 theory document. Nothing in Q1
+   changes.
+5. The ACS reading was correct; 11.4 authorises one more download.
+6. Changes Q1 now; 11.2.
+7. Q4 placement accepted as plan section 8 item 7 places it.
+8. Lung runs at the $n_L$ values that leave at least two unlabelled donors, counts recorded.
+
+### 11.2 The design-based arm uses the textbook difference estimator
+
+Predictions are on every spot of every donor of the fixed population, so the primary design-arm
+estimator is the difference estimator over the whole population; the only randomness is which
+$n_L$ of the $G$ donors are labelled.
+
+- Donor-weighted.
+  $\hat\theta = \frac{\lambda}{G}\sum_{g=1}^{G}\bar{\hat y}_g + \frac{1}{n_L}\sum_{g \in L}(\bar y_g - \lambda\bar{\hat y}_g)$,
+  $\widehat{\text{Var}} = (1 - n_L/G)\, s_r^2/n_L$, $s_r^2$ the sample variance of the labelled
+  donors' rectifier means, $t_{n_L - 1}$ reference.
+- Spot-weighted. $\hat\theta = \frac{\lambda}{N}\sum_{i=1}^{N}\hat y_i + \frac{G}{N n_L}\sum_{g \in L} R_g$
+  with $R_g = \sum_{i \in g}(y_i - \lambda\hat y_i)$, $\widehat{\text{Var}} = (1 - n_L/G)\frac{G^2}{N^2}\frac{s_R^2}{n_L}$.
+- $\theta_3$. The same two forms on the per-spot contributions, with the covariate's constants
+  computed over all $N$ spots.
+- B1's complement form $\lambda\bar{\hat y}_U + \bar r_L$ stays as a named legacy variant,
+  `form = complement`, with its own coverage in the design arm.
+- The superpopulation arm is unchanged ($U$ is $G_U$ fresh donors, no correction).
+- Welch-Satterthwaite and the $G_U$ axis apply to the superpopulation arm only; Q1.4 is scored
+  there.
+- Q1.3 is scored with the textbook form as primary and the complement form beside it.
+- The three $\lambda$ rules apply to both forms.
+- Every row carries a `form` column (`textbook` or `complement`) beside `target`.
+- `docs/round4_ppi_estimator_definition.md` states both forms and which target uses which.
+
+### 11.3 A real-data check of the permuted predictor's $\lambda$ (half a day, capped)
+
+On CCRCC with the permuted predictor, $\theta_2$ and $\theta_3$, $n_L \in \{6, 8, 12\}$, 200 draws,
+$\lambda$ under rules (a), (b) and (c); median and interquartile range per rule in
+`results/round4/ppi/Q1_estimator/q1_permuted_lambda.csv`. The Q1 report explains why rule (a)
+gives the permuted $\theta_2$ a donor-weighted $\lambda$ far from 0. Prediction, written by the
+oversight chat before running: rules (b) and (c) give a median within 0.1 of 0 in every cell and
+rule (a) reproduces Q0's figures. Recorded as prediction Q1.6.
+
+### 11.4 The ACS source, replaced (half a day, capped, in parallel with Q1; reported under Q0)
+
+The `ppi_py` file stays where it is and is used for no clustered unit.
+
+- Authorisation for one download, and only this one. The 2018 ACS PUMS person file, 1-Year, for
+  the 50 states and DC, through `folktables`
+  (`ACSDataSource(survey_year='2018', horizon='1-Year', survey='person').get_data(states=[...], download=True)`).
+  `folktables` may be installed into the track's environment.
+- Raw files to `results/round4/ppi/Q0_setup/acs_pums2018/raw/` on Longleaf, every column kept,
+  nothing committed; a parquet with an explicit `pa.schema` of all columns beside them;
+  `PROVENANCE.txt` naming source URLs, `folktables` version and md5 of every downloaded file;
+  stamped. Committed record `acs_pums2018_inventory.json` (rows per state, column list, md5s).
+  32 GB memory.
+- Task definition `results/round4/ppi/Q0_setup/acs_pums_task_def.json` in the A0 format.
+  Population the folktables ACSIncome filter (`AGEP > 16`, `PINCP > 100`, `WKHP > 0`,
+  `PWGTP >= 1`), survey weights not used and the file says so; the design-based target is the
+  finite population of sampled persons passing the filter. Outcome $\log$ `PINCP`; $\theta_3$
+  covariate `AGEP` standardised. Clusters `ST` (51 levels) and, as a second setting, PUMAs within
+  the state with the most persons after the filter, named from the file. Predictor a
+  gradient-boosted regression of $\log$ `PINCP` on `AGEP`, `COW`, `SCHL`, `MAR`, `OCCP`, `POBP`,
+  `RELP`, `WKHP`, `SEX`, `RAC1P`, cross-fitted over five folds of states assigned by `zlib.crc32`
+  of the state code, library defaults, no tuning, library, version and settings recorded.
+  Unit-level, within-state and state-level $R^2$ recorded in the inventory as description only.
+- If the network refuses, record it and stop the unit; the fetch is a standalone script with no
+  Longleaf dependency so Nicolas can run it himself.
+- The ACS units of Q2 and Q4 read this file, not the `ppi_py` one.
+
+### 11.5 Procedure
+
+- The lung wrapper's stamp stays as it is. Every later fan-out stamps from the sub-agent's own
+  process, and the lead checks the frame id on each hand-back before commit.
+- The gate pull request through GitHub's REST API is accepted; the report records the route.
+
+### 11.6 What this does to work in flight
+
+The fifteen Q1 simulation jobs and the Q1 acceptance job were submitted from `65ca58f` and are
+still pending. They are cancelled before they start, the simulation and module are changed for
+11.1 item 1 and 11.2, committed, and the jobs resubmitted from the new commit. Two new parallel
+units start alongside, the permuted-$\lambda$ check (11.3) and the ACS PUMS pull (11.4).
