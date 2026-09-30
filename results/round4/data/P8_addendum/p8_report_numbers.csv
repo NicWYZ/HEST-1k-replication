@@ -1,0 +1,30 @@
+name,value,source,formula
+edge_memo_frac_min,0.0,results/round4/data/P8_addendum/lung_edge_patches.csv,"min of frac_beyond_threshold, 20 rows"
+edge_memo_frac_median,0.105743,results/round4/data/P8_addendum/lung_edge_patches.csv,"median of frac_beyond_threshold, 20 rows"
+edge_memo_frac_max,0.679952,results/round4/data/P8_addendum/lung_edge_patches.csv,"max of frac_beyond_threshold, 20 rows"
+edge_memo_frac_mean,0.200531,results/round4/data/P8_addendum/lung_edge_patches.csv,"mean of frac_beyond_threshold, 20 rows"
+edge_memo_frac_sd,0.231908,results/round4/data/P8_addendum/lung_edge_patches.csv,sample sd of frac_beyond_threshold
+edge_memo_n_samples_over_0.10,10.0,results/round4/data/P8_addendum/lung_edge_patches.csv,rows with frac_beyond_threshold > 0.10
+edge_memo_n_samples_zero,1.0,results/round4/data/P8_addendum/lung_edge_patches.csv,rows with frac_beyond_threshold == 0
+edge_source_frac_min,0.0,results/round4/data/P8_addendum/lung_edge_patches.csv,"min of frac_beyond_source_threshold, 20 rows"
+edge_source_frac_median,0.067286,results/round4/data/P8_addendum/lung_edge_patches.csv,"median of frac_beyond_source_threshold, 20 rows"
+edge_source_frac_max,0.308901,results/round4/data/P8_addendum/lung_edge_patches.csv,"max of frac_beyond_source_threshold, 20 rows"
+edge_source_frac_mean,0.096754,results/round4/data/P8_addendum/lung_edge_patches.csv,"mean of frac_beyond_source_threshold, 20 rows"
+edge_source_frac_sd,0.089898,results/round4/data/P8_addendum/lung_edge_patches.csv,sample sd of frac_beyond_source_threshold
+edge_source_n_samples_over_0.10,8.0,results/round4/data/P8_addendum/lung_edge_patches.csv,rows with frac_beyond_source_threshold > 0.10
+edge_source_n_samples_zero,1.0,results/round4/data/P8_addendum/lung_edge_patches.csv,rows with frac_beyond_source_threshold == 0
+edge_n_samples_core_3mm,16.0,results/round4/data/P8_addendum/lung_edge_patches.csv,rows with core_diameter_mm_source == 3
+edge_core_3mm_memo_frac_median,0.062217,results/round4/data/P8_addendum/lung_edge_patches.csv,median frac_beyond_threshold over those rows
+edge_core_3mm_source_frac_median,0.062217,results/round4/data/P8_addendum/lung_edge_patches.csv,median frac_beyond_source_threshold over those rows
+edge_n_samples_core_5mm,4.0,results/round4/data/P8_addendum/lung_edge_patches.csv,rows with core_diameter_mm_source == 5
+edge_core_5mm_memo_frac_median,0.619568,results/round4/data/P8_addendum/lung_edge_patches.csv,median frac_beyond_threshold over those rows
+edge_core_5mm_source_frac_median,0.081103,results/round4/data/P8_addendum/lung_edge_patches.csv,median frac_beyond_source_threshold over those rows
+edge_n_patches_used_total,19083.0,results/round4/data/P8_addendum/lung_edge_patches.csv,sum n_patches_used
+subset_n_samples_holding_after_drop,20.0,results/round4/data/P8_addendum/p8_subset_after_drop.csv,rows with subset_holds_after_drop
+subset_n_samples_failing_before_drop,1.0,results/round4/data/P8_addendum/p8_subset_after_drop.csv,rows with n_missing_before_drop > 0
+subset_n_patches_after_drop_total,19083.0,results/round4/data/P8_addendum/p8_subset_after_drop.csv,sum n_patches_after_drop
+lung_task_n_NegControlCodeword,41.0,results/round4/data/P5_task/panel_job/lung_genes_by_sample.json,features of the shared member panel whose name starts with NegControlCodeword
+lung_task_n_NegControlProbe,20.0,results/round4/data/P5_task/panel_job/lung_genes_by_sample.json,features of the shared member panel whose name starts with NegControlProbe
+lung_task_n_UnassignedCodeword,137.0,results/round4/data/P5_task/panel_job/lung_genes_by_sample.json,features of the shared member panel whose name starts with UnassignedCodeword
+lung_task_n_BLANK,0.0,results/round4/data/P5_task/panel_job/lung_genes_by_sample.json,features of the shared member panel whose name starts with BLANK
+lung_task_n_features,541.0,results/round4/data/P5_task/panel_job/lung_genes_by_sample.json,features of the shared member panel
