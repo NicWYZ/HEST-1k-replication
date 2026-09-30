@@ -547,16 +547,120 @@ def _jackknife(pop, D, Lm, Um, lam):
     return L
 
 
+# ============================================================== the textbook form
+# Addendum 1 section 2 (plan section 11.2). For the DESIGN-BASED target the population is the
+# fixed set of G donors and predictions exist on every spot of every donor, so the primary
+# estimator is the textbook difference estimator with the prediction term over the WHOLE
+# population (labelled donors included). The only randomness is which n_L of the G donors are
+# labelled (simple random sampling without replacement), and the finite-population correction
+# is then exact for the mean.
+#   donor-weighted  theta = lam/G sum_{all g} tf_g + 1/n_L sum_{g in L} (t_g - lam_g tf_g)
+#                   Var  = (1 - n_L/G) s_r^2 / n_L,           t_{n_L - 1}
+#   spot-weighted   theta = lam/N sum_{all i} f_i + G/(N n_L) sum_{g in L} R_g,
+#                   R_g = sum_{i in g} (z_i - lam_g f_i)
+#                   Var  = (1 - n_L/G) (G/N)^2 s_R^2 / n_L,    t_{n_L - 1}
+# lam_g is the lambda applied to labelled donor g (one value for rules a and b; the other
+# half's value under cross-fitting) and the coefficient on the population term is cU, as in the
+# complement form. The lambda rules are unchanged (addendum 1): they are computed exactly as
+# for the complement form, with U the unlabelled donors, and then plugged in.
+def estimate_textbook(pop, D, Lm, Am, lam):
+    """Am is the population mask (all G donors). Returns dict(theta, e, G, n_L) with e the
+    per-labelled-donor terms whose sample variance gives the variance."""
+    lamL, cU = lam["lamL"], lam["cU"]
+    GL = Lm.sum(0).astype(float)
+    G = Am.sum(0).astype(float)
+    if pop == "spot":
+        N = _m(D["n"], Am)
+        Ftot = _m(D["Sf"], Am)
+        R = np.where(Lm, D["Sz"] - lamL * D["Sf"], 0.0)
+        theta = cU * Ftot / N + (G / (N * GL)) * R.sum(0)
+        e = np.where(Lm, (G / N)[None, :] * R, 0.0)   # scaled so Var = (1-f) s_e^2 / n_L
+    else:
+        t, tf = donor_values(D)
+        Ftot = _m(tf, Am)
+        R = np.where(Lm, t - lamL * tf, 0.0)
+        theta = cU * Ftot / G + R.sum(0) / GL
+        e = R
+    return dict(theta=theta, e=e, mask=Lm, G=G, n_L=GL)
+
+
+def var_textbook(tb, fpc=True):
+    e, Lm, GL, G = tb["e"], tb["mask"], tb["n_L"], tb["G"]
+    em = _m(e, Lm) / GL
+    s2 = _m((e - em) ** 2, Lm) / (GL - 1.0)
+    f = np.clip(1.0 - GL / G, 0.0, 1.0) if fpc else 1.0
+    return f * s2 / GL, GL - 1.0
+
+
+def bootstrap_textbook(tb, se_hat, n_boot=N_BOOT, seed=0, alpha=ALPHA):
+    """Labelled donors resampled with replacement (the population term is fixed); lambda
+    held fixed. Studentised on the non-fpc textbook standard error."""
+    e, Lm, GL = tb["e"], tb["mask"], int(tb["n_L"][0])
+    ncol = Lm.shape[1]
+    rng = seed_rng(seed)
+    cnt = draw_counts(GL, n_boot, ncol, rng, shared=False)
+    eL = _gather(e, Lm)
+    base = tb["theta"] - eL.mean(0)                  # the fixed population term
+    m1 = _cdot(cnt, eL) / GL
+    th = base[:, None] + m1
+    v = (_cdot(cnt, eL ** 2) / GL - m1 ** 2) * GL / (GL - 1.0) / GL
+    se_star = np.sqrt(np.maximum(v, 0.0))
+    q = [100.0 * alpha / 2.0, 100.0 * (1.0 - alpha / 2.0)]
+    theta_hat = tb["theta"]
+    out = {"boot_pct": (np.percentile(th, q[0], axis=1), np.percentile(th, q[1], axis=1)),
+           "se_boot": th.std(axis=1, ddof=1)}
+    tstar = (th - theta_hat[:, None]) / np.where(se_star > 0, se_star, np.nan)
+    out["boot_t"] = (theta_hat - np.nanpercentile(tstar, q[1], axis=1) * se_hat,
+                     theta_hat - np.nanpercentile(tstar, q[0], axis=1) * se_hat)
+    p0 = (th < theta_hat[:, None]).mean(1) + 0.5 * (th == theta_hat[:, None]).mean(1)
+    z0 = stats.norm.ppf(np.clip(p0, 1e-12, 1 - 1e-12))
+    jk = (eL.sum(0)[None, :] - eL) / (GL - 1.0) + base[None, :]
+    d = jk.mean(0)[None, :] - jk
+    acc = (d ** 3).sum(0) / (6.0 * np.maximum((d ** 2).sum(0), 1e-300) ** 1.5)
+    ths = np.sort(th, axis=1)
+    lo_hi = []
+    for z in stats.norm.ppf([alpha / 2.0, 1.0 - alpha / 2.0]):
+        a1 = stats.norm.cdf(z0 + (z0 + z) / (1.0 - acc * (z0 + z)))
+        lo_hi.append(_row_quantile(ths, a1))
+    out["boot_bca"] = (lo_hi[0], lo_hi[1])
+    return out
+
+
+def textbook_intervals(pop, D, Lm, Um, rule, seed=0, n_boot=N_BOOT, alpha=ALPHA,
+                       do_boot=True):
+    """Every interval of the textbook form for one estimator (rule 'none' = classical, for
+    which the textbook form is the labelled-donor expansion mean). U is the complement of L
+    and the population is L | U."""
+    lam = lambda_rule(rule, pop, D, Lm, Um, seed=seed)
+    tb = estimate_textbook(pop, D, Lm, Lm | Um, lam)
+    th = tb["theta"]
+    iv = {}
+    for fpc in (False, True):
+        v, df = var_textbook(tb, fpc=fpc)
+        lo, hi = t_interval(th, v, df, alpha)
+        iv["textbook_t" + ("|fpc" if fpc else "")] = dict(lo=lo, hi=hi, df=df, var=v)
+    if do_boot:
+        se0 = np.sqrt(np.maximum(iv["textbook_t"]["var"], 0.0))
+        b = bootstrap_textbook(tb, se0, n_boot=n_boot, seed=f"tb|{seed}", alpha=alpha)
+        for k in ("boot_pct", "boot_t", "boot_bca"):
+            iv[k] = dict(lo=b[k][0], hi=b[k][1], df=np.full(th.shape, np.nan),
+                         var=b["se_boot"] ** 2)
+    return lam, tb, iv
+
+
 # ============================================================== one call for everything
 def all_intervals(pop, D, Lm, Um, rule, truth, G_pop=None, seed=0, n_boot=N_BOOT,
-                  alpha=ALPHA, do_boot=True, design_exact=False, shared_boot=False):
-    """Every interval of the Q1 comparison for one estimator (rule 'none' = classical).
-    Returns (lam dict, res, dict name -> dict(lo, hi, df, var))."""
+                  alpha=ALPHA, do_boot=True, design_exact=False, shared_boot=False,
+                  with_ws=True):
+    """Every interval of the Q1 comparison for one estimator (rule 'none' = classical) in the
+    complement form. Returns (lam dict, res, dict name -> dict(lo, hi, df, var))."""
     lam = lambda_rule(rule, pop, D, Lm, Um, seed=seed)
     res = estimate(pop, D, Lm, Um, lam)
     th = res["theta"]
     iv = {}
     for name, (v, df) in variances(res, G_pop).items():
+        if not with_ws and "_ws" in name:
+            continue
         lo, hi = t_interval(th, v, df, alpha)
         iv[name] = dict(lo=lo, hi=hi, df=df, var=v)
     if design_exact and G_pop is not None:

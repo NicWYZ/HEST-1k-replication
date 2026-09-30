@@ -18,10 +18,10 @@ THE MODEL. Donor g, spot i.
   outcome    y_gi = mu + u_g + beta m_gi + e_gi, u ~ N(0, rho), e ~ N(0, 1 - rho).
   predictor  yhat_gi = y_gi - a_g - eps_gi, a ~ N(0, rho / 2) (half of sigma_u^2), eps scaled
              so that corr(y, yhat) = r at the spot level, Var eps = Var y (1/r^2 - 1) - rho/2.
-             At r = 0 that construction does not exist (plan section 8 item 1); the r = 0
-             predictor is an independent copy with the same donor and spot variances as
-             y - a, namely a donor part N(0, rho + rho/2 + beta^2 s_c) and a spot part
-             N(0, 1 - rho + beta^2 (1 - s_c)), independent of everything else.
+             At r = 0 that construction does not exist (plan section 8 item 1). Addendum 1
+             (plan section 11.1 item 1) fixes the r = 0 predictor as yhat = nu + p_g + d_gi,
+             p ~ N(0, sigma_u^2 = rho), d ~ N(0, sigma_e^2 = 1 - rho), independent of
+             everything else, so it has the outcome's between-donor share; nu = mu = 0.
   Unspecified by the source and fixed here (recorded in the config): mu = 0, beta = 0.3,
   s_c = 0.3 (the covariate's between-donor share).
 
@@ -34,8 +34,16 @@ THE ESTIMANDS as means of a per-spot scalar z, as in round3_b1_ppi.py.
   Truths: superpopulation mean mu, theta_3 beta, both populations; design-based, the values
   on the fixed population.
 
+FORMS (addendum 1 section 2, plan section 11.2). Every row carries `form`.
+  design target   `textbook`, the difference estimator with the prediction term over the whole
+                  fixed population, primary; and `complement`, B1's lambda * mean_U(f) +
+                  mean_L(r) with U the unlabelled donors, as a named legacy variant. No
+                  Welch-Satterthwaite rows in the design arm (there is no random U term).
+  superpopulation `complement` (U is G_U fresh donors independent of L), with the
+                  Welch-Satterthwaite rows.
+
 OUTPUT, per unit: q1_sim__GL<G_L>__rho<rho>.csv, one row per
-(cell, estimand, population, lambda rule, interval, fpc) with coverage at 90%, its MC
+(cell, estimand, population, form, lambda rule, interval, fpc) with coverage at 90%, its MC
 standard error, mean and median width, the mean width of the classical estimator with the
 same interval and fpc, their ratio, lambda summaries, mean df, the empirical sd of the
 estimate, the root mean estimated variance, bias, and non-finite counts. A summary JSON with
@@ -82,9 +90,8 @@ def yhat_at(y, a0, eps0, r, rho):
     var_y = BETA ** 2 + 1.0
     sa = np.sqrt(rho / 2.0)
     if r == 0.0:
-        s_don = np.sqrt(rho + rho / 2.0 + BETA ** 2 * S_C)
-        s_spt = np.sqrt(1.0 - rho + BETA ** 2 * (1.0 - S_C))
-        return MU + s_don * a0 + s_spt * eps0
+        # addendum 1: nu + p_g + d_gi, p ~ N(0, rho), d ~ N(0, 1 - rho), independent of y
+        return MU + np.sqrt(rho) * a0 + np.sqrt(1.0 - rho) * eps0
     ve = var_y * (1.0 / r ** 2 - 1.0) - rho / 2.0
     assert ve >= 0, (r, rho, ve)
     return y - sa * a0 - np.sqrt(ve) * eps0
@@ -139,17 +146,24 @@ def run_cell(stats_list, masks, truth, G_pop, design, seed, n_boot, m):
         tr = truth[(est, pop)]
         tr = np.broadcast_to(tr, (Lm.shape[1],))
         for rule in RULES:
-            lam, res, iv = E.all_intervals(pop, D, Lm, Um, rule, tr, G_pop=G_pop,
-                                           seed=f"{seed}|{est}|{pop}|{rule}", n_boot=n_boot,
-                                           design_exact=design)
-            th = res["theta"]
-            for name, v in iv.items():
-                base, _, f = name.partition("|")
-                key = (est, pop, rule, base, f == "fpc")
-                out[key] = dict(cov=(v["lo"] <= tr) & (tr <= v["hi"]), width=v["hi"] - v["lo"],
-                                lam=lam["lam"], df=v["df"], theta=th, var=v["var"],
-                                finite=np.isfinite(v["lo"]) & np.isfinite(v["hi"]),
-                                truth=tr)
+            sd = f"{seed}|{est}|{pop}|{rule}"
+            lam, res, iv = E.all_intervals(pop, D, Lm, Um, rule, tr, G_pop=G_pop, seed=sd,
+                                           n_boot=n_boot, design_exact=design,
+                                           with_ws=not design)
+            runs = [("complement", lam, res["theta"], iv)]
+            if design:
+                lam_t, tb, iv_t = E.textbook_intervals(pop, D, Lm, Um, rule, seed=sd,
+                                                       n_boot=n_boot)
+                runs.append(("textbook", lam_t, tb["theta"], iv_t))
+            for form, lm, th, ivs in runs:
+                for name, v in ivs.items():
+                    base, _, f = name.partition("|")
+                    key = (est, pop, form, rule, base, f == "fpc")
+                    out[key] = dict(cov=(v["lo"] <= tr) & (tr <= v["hi"]),
+                                    width=v["hi"] - v["lo"], lam=lm["lam"], df=v["df"],
+                                    theta=th, var=v["var"],
+                                    finite=np.isfinite(v["lo"]) & np.isfinite(v["hi"]),
+                                    truth=tr)
     return out
 
 
@@ -165,15 +179,15 @@ def merge_chunks(acc, new):
 def summarise(acc, cell):
     rows = []
     fin = {k: {kk: np.concatenate(vv) for kk, vv in v.items()} for k, v in acc.items()}
-    for (est, pop, rule, iv, fpc), v in fin.items():
+    for (est, pop, form, rule, iv, fpc), v in fin.items():
         R = len(v["cov"])
         ok = v["finite"]
         cov = float(np.mean(v["cov"][ok])) if ok.any() else np.nan
-        cl = fin.get((est, pop, "none", iv, fpc))
+        cl = fin.get((est, pop, form, "none", iv, fpc))
         wcl = float(np.nanmean(cl["width"])) if cl is not None else np.nan
         w = float(np.nanmean(v["width"][ok])) if ok.any() else np.nan
         lam = v["lam"]
-        rows.append(dict(**cell, estimand=est, population=pop,
+        rows.append(dict(**cell, estimand=est, population=pop, form=form,
                          estimator="classical" if rule == "none" else "ppi",
                          lambda_rule=rule, interval=iv, fpc=bool(fpc), n_reps=R,
                          n_nonfinite=int((~ok).sum()), coverage=cov,
@@ -294,6 +308,8 @@ def main(argv=None):
                n_boot=a.n_boot, grid={k: list(v) for k, v in GRID.items()},
                G_design=G_DESIGN, mu=MU, beta=BETA, s_c=S_C, sigma_a2="rho/2",
                rules=list(RULES), estimands=list(ESTS), populations=list(POPS),
+               r0_predictor="nu + p_g + d_gi, p~N(0,rho), d~N(0,1-rho) (addendum 1)",
+               forms={"design": ["textbook", "complement"], "super": ["complement"]},
                alpha=E.ALPHA, min_tune_g=E.MIN_TUNE_G, targets=a.targets,
                seed_source="zlib.crc32")
     blob = json.dumps(cfg, sort_keys=True)
