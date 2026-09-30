@@ -119,6 +119,24 @@ def main(argv=None):
                                hcp_quantile_level=min(1.0, 0.9 * (K + 1) / K)))
                 print(rs[-1], flush=True)
         pd.DataFrame(rs).to_csv(f"{a.out}/c2_lb_switch_probe.csv", index=False)
+    # section 8.3 counterexample, the repaired HCP-branch level, and DKW widths (section 8.4)
+    K, alpha = 10, 0.1
+    qp = stats.norm.ppf(1 - alpha)
+    pt = qp + 0.05
+    qs = np.linspace(0, 6, 600001)
+    Fm = ((K - 1) * stats.norm.cdf(qs) + (qs >= pt)) / (K + 1)
+    qj = qs[np.argmax(Fm >= 1 - alpha)]
+    c3 = [dict(item="case3_counterexample", K=K, alpha=alpha, value=(K * stats.norm.cdf(qj)) / (K + 1),
+               note=f"pooled threshold {qp:.6f}, point mass at {pt:.6f}, HCP threshold {qj:.6f}"),
+          dict(item="case3_worst_case_bound", K=K, alpha=alpha,
+               value=(K / (K + 1)) * (((K + 1) * (1 - alpha) - 1) / (K - 1)), note="d = 0")]
+    for d in (0.0, 0.05):
+        c3.append(dict(item=f"repaired_hcp_level_d{d}", K=K, alpha=alpha,
+                       value=((K - 1) * ((1 - alpha) * (K + 1) / K + d) + 1) / (K + 1), note=""))
+    for N in (100, 500, 2000):
+        c3.append(dict(item=f"dkw_2eps_N{N}", K=K, alpha=alpha,
+                       value=2 * np.sqrt(np.log(2 / 0.01) / (2 * N)), note="gamma = 0.01"))
+    pd.DataFrame(c3).to_csv(f"{a.out}/c2_lb_case3.csv", index=False)
     IO.write_provenance(a.out, "C2", __file__, dict(stage="C2 lower bound", skip_switch=a.skip_switch),
                         extra={"where": "local laptop, no Slurm job; no data read"})
     return 0

@@ -80,8 +80,11 @@ evaluated with the relative tolerance 1e-12 that round 3's A3 weighted_quantile 
              1 - alpha + E[(1 + rho_o(max N))/|S|] under no ties. In C1 A1 to A3 hold by
              construction (sizes are drawn independently of a_k, b_k).
              Variants: ghcp (eta 0, adaptation on), ghcp_noad (eta 0, off), ghcp_r05 (eta 0.5,
-             on, the paper's restricted pool; in C1 the groups outside the pool are unused because
-             the global predictor is fixed).
+             on, the paper's restricted pool, eq. 8, the rule Corollary 2.6 is stated for; in C1
+             the groups outside the pool are unused because the global predictor is fixed), and
+             at alpha = 0.1 only ghcp_r05code (the same with the released code's pool, one group
+             larger), the secondary variant addendum 1 item 2 requires. At eta = 0 both pool rules
+             give S = {k : N_k > o}.
   within     split conformal inside the test donor alone: c = mean of its first floor(o/2)
              residuals (lambda = 1), the other o - floor(o/2) scores calibrate, one atom at +inf.
              The GHCP paper's Std-CP with the absolute score. Assumes within-donor i.i.d.
@@ -377,6 +380,9 @@ def m_ghcp(rep, cell, o, rng, alpha):
     out["ghcp"] = ghcp_q(rep["cal"], rep["init"], o, alpha, rng, True, 0.0, ng)
     out["ghcp_noad"] = ghcp_q(rep["cal"], rep["init"], o, alpha, rng, False, 0.0, ng)
     out["ghcp_r05"] = ghcp_q(rep["cal"], rep["init"], o, alpha, rng, True, 0.5, ng)
+    if abs(alpha - 0.1) < 1e-12:   # addendum 1 item 2: the released code's pool, secondary
+        out["ghcp_r05code"] = ghcp_q(rep["cal"], rep["init"], o, alpha, rng, True, 0.5, ng,
+                                     pool_rule="code")
     return out
 
 
