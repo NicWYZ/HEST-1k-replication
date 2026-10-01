@@ -1,0 +1,22 @@
+{
+ "breast_task": "results/round3/D4_expansion/task_defs/BREAST_XENIUM.json",
+ "controls_prefixes": [
+  "NegControl",
+  "UnassignedCodeword",
+  "BLANK"
+ ],
+ "encoders": [
+  "hoptimus0",
+  "uni_v2",
+  "resnet50"
+ ],
+ "expected": {
+  "NCBI865_rows_after": 2142,
+  "NCBI865_rows_before": 2143,
+  "breast_controls": 61,
+  "lung_controls": 0
+ },
+ "lung_task": "results/round4/data/P5_task/LUNG_XENIUM.json",
+ "stage": "r4ppi_Q0",
+ "unit": "lung_wrapper"
+}

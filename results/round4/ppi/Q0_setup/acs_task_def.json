@@ -1,0 +1,94 @@
+{
+ "task_def_version": 1,
+ "task": "ACS_INCOME",
+ "label_set": "package",
+ "source": "ppi_py",
+ "st_technology": "not applicable (tabular ACS PUMS survey microdata)",
+ "repo_root_relative": true,
+ "paths": {
+  "data": "results/round4/ppi/Q0_setup/acs/census_income.npz",
+  "data_md5": "9d49f41eaa4563dffaeec3ef8f354169",
+  "arrays": {
+   "Y": "income, raw dollars, float64",
+   "Yhat": "package gradient-boosted prediction, raw dollars, float32",
+   "X": "int64 (n, 2): age, sex (by position)"
+  }
+ },
+ "adaptation_note": "A0 format adapted for tabular data: paths.adata/patches/embeddings and target_genes have no analogue and are replaced by paths.data and the outcome block; samples becomes clusters (the grouping units); the HEST donor folds are omitted (no folds are defined here; labelled-cluster subsets are drawn by the Q4 ACS unit).",
+ "n_units": 380091,
+ "clusters": {
+  "level_1": {
+   "name": "state",
+   "field": null,
+   "status": "absent",
+   "n": null,
+   "note": "no state identifier in the package file"
+  },
+  "level_2": {
+   "name": "PUMA",
+   "field": null,
+   "status": "absent",
+   "n": null,
+   "nested_in": "state (by ACS definition)",
+   "note": "no PUMA identifier in the package file"
+  },
+  "survey_year": {
+   "field": null,
+   "status": "absent",
+   "note": "no year in the package file; state-by-year two-way clustering (Q4) cannot be done on this file"
+  }
+ },
+ "outcome": {
+  "name": "log income",
+  "raw_array": "Y",
+  "transform": "log1p of income clipped at zero: y_tilde = log(1 + max(Y, 0))",
+  "transform_status": "PROPOSED by the ACS data unit; the brief says log of income and asks for a stated handling of zero and negative incomes, and this choice needs the lead's confirmation before Q2 or Q4 use it",
+  "zero_or_negative_handling": "incomes at or below zero map to log(1)=0 instead of being dropped, because dropping rows by the outcome cannot be applied to the unlabelled rows (no Y there) and would change the estimand between L and U. The same map is applied to the predictor.",
+  "n_income_eq_0": 47597,
+  "n_income_lt_0": 62280,
+  "n_income_le_0": 109877,
+  "fraction_income_le_0": 0.2890807727623122,
+  "alternative_not_chosen": "drop rows with Y <= 0 (a strict log); would remove the counts above and make the target population differ from the package's"
+ },
+ "covariates": {
+  "theta_3": {
+   "name": "age, standardised",
+   "raw_array": "X[:,0]",
+   "raw_column_status": "inferred to be age from value range; not labelled in the file",
+   "standardisation": "z = (age - mean) / sd over all 380091 rows, sd with ddof=0",
+   "age_mean": 40.86045710106264,
+   "age_sd_ddof0": 23.28034613275992
+  }
+ },
+ "estimands": {
+  "theta_2": "mean of log income (spot-weighted and cluster-weighted as in plan section Q4)",
+  "theta_3": "slope of log income on standardised age"
+ },
+ "predictor": {
+  "source": "package gradient-boosted predictions (Yhat in the file)",
+  "present": true,
+  "fit_here": false,
+  "map_to_outcome_scale": "log(1 + max(Yhat, 0)), the same map as the outcome",
+  "n_Yhat_le_0": 73878,
+  "n_Yhat_lt_0": 73878,
+  "unit_R2_on_outcome_scale_log1p_clipped": 0.7241361967495197,
+  "unit_corr_on_outcome_scale": 0.8590066157256,
+  "unit_R2_raw_dollars": 0.3187554107115047,
+  "cluster_level_R2": "not computable: no state or PUMA identifier in the package data",
+  "training_split": "not recorded in the file; no held-out split was fitted here because Yhat is present"
+ },
+ "flags": {
+  "cluster_fields_absent": true,
+  "survey_year_absent": true,
+  "escalation": "state and PUMA identifiers and a survey year are absent from the package's census_income file. By the brief's hard limit no other source was fetched. The ACS cluster units (Q2, Q4 state and PUMA settings, the state-by-year two-way supplement) cannot run on this file as it stands."
+ },
+ "provenance": {
+  "generated_by": "acs_taskdef.py (staged in the job workdir; md5 recorded in PROVENANCE_taskdef.txt)",
+  "generated_at": "2026-09-30T17:50:55Z",
+  "pythonhashseed": "0",
+  "inputs": [
+   "results/round4/ppi/Q0_setup/acs/census_income.npz md5 9d49f41eaa4563dffaeec3ef8f354169",
+   "results/round4/ppi/Q0_setup/acs/acs_fetch_raw.json"
+  ]
+ }
+}

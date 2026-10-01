@@ -1,0 +1,17 @@
+stage: r4ppi_Q0 unit acs_data (fetch)
+intended job prefix: r4ppi_ (identified by slurm id)
+slurm_job_id: 3078654
+partition: spill
+node: c151409.ll.unc.edu
+date: 2026-09-30T17:47:58Z
+commit (clone HEAD): ca96d3e2b9ea0887b89ecb0a665a5f50e459d525
+clone: /work/users/w/e/weiyang/hest_code/round4-ppi ; harness round3_a0_harness.py md5: 0ad7ae8efe554c1f285e5f384a9fb7f5 (imported from clone, path asserted)
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python acs_fetch.py /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q0_setup/acs /work/users/w/e/weiyang/round4_ppi_pylibs
+pythonhashseed: 0
+source: ppi_py.datasets.load_dataset dataset 'census_income'; Google Drive file id 15dZeWw-RTw17-MieG4y1ILTZlreJOmBS (https://drive.google.com/uc?id=15dZeWw-RTw17-MieG4y1ILTZlreJOmBS), fetched by gdown
+ppi_py dist-info: ['ppi_python-0.2.3.dist-info'] (installed with pip --target /work/users/w/e/weiyang/round4_ppi_pylibs)
+config hash: none (no config; the fetch has no parameters beyond the dataset name)
+script md5: 79839a005a4f9a1929333822efe5f701  acs_fetch.py
+files:
+9d49f41eaa4563dffaeec3ef8f354169  /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q0_setup/acs/census_income.npz
+07db91fc27b7275763e9071768ed8125ec44640dcd49b9be6bae3e2335afcfb4  /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q0_setup/acs/census_income.npz

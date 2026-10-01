@@ -1,0 +1,20 @@
+stage           : r4ppi_Q0 / B1 anchor (plan Q0 step 4)
+job_prefix      : r4ppi_ (intended; job identified by Slurm id)
+slurm_job_id    : 3074938
+slurm_partition : spill
+node            : c151417.ll.unc.edu
+date            : 2026-09-30T13:56:05-04:00
+repo_commit     : ca96d3e2b9ea0887b89ecb0a665a5f50e459d525 (git -C /work/users/w/e/weiyang/hest_code/round4-ppi, branch round4-ppi; data root /work/users/w/e/weiyang/hest_replication not used for code)
+import_check    : round3_a0_harness /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round3_a0_harness.py round3_b1_ppi /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round3_b1_ppi.py round3_d4_sets /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round3_d4_sets.py IMPORT_CHECK_OK 
+command_predict : /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round3_b1_ppi.py --predict resnet50 --task-def /work/users/w/e/weiyang/hest_replication/results/round3/task_defs/CCRCC.json --design donor --out-dir results/round4/ppi/Q0_setup/anchor/run
+command_estimate: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round3_b1_ppi.py --estimate --out-dir results/round4/ppi/Q0_setup/anchor/run --b2-dir results/round4/ppi/Q0_setup/anchor/b2_unused
+command_compare : /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/74f64d2b-d7ca-4c98-ab47-872ce13faa6f/q0_anchor_compare.py /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q0_setup/anchor/run/b1_acceptance.csv /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_acceptance.csv /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q0_setup/anchor/q0_anchor_compare.csv /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q0_setup/anchor/q0_anchor_compare_summary.json
+config_hash     : sha256/16 0285466adc7dfaa0 (config.json alongside)
+pythonhashseed  : 0
+python          : Python 3.11.16
+md5 round3_b1_ppi.py (run from repo, unmodified) : 544721f07cb3d74dc5b92456d61fe450
+md5 round3_a0_harness.py (expected 0ad7ae8efe554c1f285e5f384a9fb7f5) : 0ad7ae8efe554c1f285e5f384a9fb7f5
+md5 q0_anchor_compare.py : 3485954b4e56b8d108206be33fb626ca
+md5 q0_anchor_job.sh : 941b6f160d3f34cd9ced5504f36f28cd
+rc predict/estimate/compare : 0 / 5 / 0
+wall_seconds    : 630

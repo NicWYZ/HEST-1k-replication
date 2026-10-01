@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/work/users/w/e/weiyang/round4_ppi_pylibs/bin/gdown", line 3, in <module>
+    from gdown.__main__ import main
+ModuleNotFoundError: No module named 'gdown'
+Dataset census_income not found at location /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q0_setup/acs; downloading now...
+Traceback (most recent call last):
+  File "/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/bc4ea7d3-a0fe-43fa-b521-180e28b96f31/acs_fetch.py", line 22, in <module>
+    data = load_dataset(out, "census_income")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/users/w/e/weiyang/round4_ppi_pylibs/ppi_py/datasets/datasets.py", line 43, in load_dataset
+    return np.load(dataset_path)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/lib/python3.11/site-packages/numpy/lib/_npyio_impl.py", line 454, in load
+    fid = stack.enter_context(open(os.fspath(file), "rb"))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q0_setup/acs/census_income.npz'
