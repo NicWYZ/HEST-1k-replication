@@ -644,3 +644,21 @@ The fifteen Q1 simulation jobs and the Q1 acceptance job were submitted from `65
 still pending. They are cancelled before they start, the simulation and module are changed for
 11.1 item 1 and 11.2, committed, and the jobs resubmitted from the new commit. Two new parallel
 units start alongside, the permuted-$\lambda$ check (11.3) and the ACS PUMS pull (11.4).
+
+## 12. Decision of 30 September 2026 (Nicolas), where the Q1 simulation runs
+
+All nineteen interval-1 jobs sat pending on Longleaf for one to three hours with none started
+(28,720 jobs pending on `spill` at a median priority of 292, ours at 228 on `rc_tengfei_pi`).
+Asked whether to keep waiting, Nicolas chose to run the fifteen simulation units locally. The
+simulation uses synthetic data only.
+
+- The fifteen pending simulation jobs are cancelled before they start.
+- Each unit runs the committed `code/scripts/round4_ppi_q1_sim.py` at `de3d1f2` (md5
+  `873dad7f383eb99826b2d0b990cd6914`, with `round4_ppi_estimator.py` md5
+  `10c76fd4706435a2ad71a8c5f53fb938`) with the same arguments, on the local Mac, one unit per
+  sub-agent, single-threaded BLAS. `PROVENANCE.txt` records the local host, platform, Python and
+  library versions and wall time in place of the Slurm fields.
+- The acceptance job, the permuted-lambda check and the ACS PUMS pull read Longleaf data and stay
+  on Longleaf.
+- The Q1 report lists this as a deviation from "run the planned analyses on UNC Longleaf through
+  Slurm", with Nicolas's decision as its authority.
