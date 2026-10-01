@@ -73,7 +73,7 @@ def numbers(df):
     sup = sel(df, target="super", form="complement")
     des = sel(df, target="design")
     # ---- Q1.1 ----
-    for est, rule in (("ppi", "c_crossfit"), ("ppi", "a_b1"), ("classical", "none")):
+    for est, rule in (("ppi", "c_crossfit"), ("ppi", "a_b1"), ("ppi", "b_cluster"), ("classical", "none")):
         for iv in ("CR1_t", "CR2_bm"):
             for lab, gl in (("GLge6", [6, 8, 12, 20]), ("GL4", [4])):
                 x = sel(sup, estimator=est, lambda_rule=rule, interval=iv, fpc=False, G_L=gl)
@@ -140,6 +140,75 @@ def numbers(df):
                     getattr(x.width_ratio, stat)(),
                     f"superpopulation, rule c_crossfit, CR1_t: {stat} over G_L, G_U, m, estimand, "
                     f"population of PPI/classical mean width, r {rr}, rho {rho}", len(x))
+    # ---- supplementary numbers quoted in the report ----
+    z = sel(sup, r=0.0, estimator="ppi").drop_duplicates(
+        ["G_L", "G_U", "m", "rho", "estimand", "population", "lambda_rule"])
+    for rule in ("a_b1", "b_cluster", "c_crossfit"):
+        x = sel(z, lambda_rule=rule)
+        add(f"S|super|r0|{rule}|lambda_median_max", x.lambda_median.max(),
+            f"superpopulation, r = 0, rule {rule}: max over cells of the median lambda", len(x))
+        add(f"S|super|r0|{rule}|lambda_median_median", x.lambda_median.median(),
+            f"superpopulation, r = 0, rule {rule}: median over cells of the median lambda", len(x))
+        for gl in (4, 20):
+            y = sel(x, G_L=gl)
+            add(f"S|super|r0|{rule}|GL{gl}|lambda_median_median", y.lambda_median.median(),
+                f"as above at G_L {gl}", len(y))
+    for rule in ("none", "c_crossfit", "a_b1"):
+        for est in ("mean", "theta3"):
+            for pop in ("spot", "donor"):
+                x = sel(sup, lambda_rule=rule, interval="CR1_t", fpc=False, estimand=est,
+                        population=pop)
+                add(f"S|super|{rule}|CR1_t|{est}|{pop}|cov_min", x.coverage.min(),
+                    f"superpopulation, rule {rule}, CR1_t, {est} {pop}: minimum coverage over cells",
+                    len(x))
+                add(f"S|super|{rule}|CR1_t|{est}|{pop}|cov_median", x.coverage.median(),
+                    "as above, median", len(x))
+        x = sel(sup, lambda_rule=rule, interval="CR1_t", fpc=False, estimand="theta3",
+                population="spot", rho=0.1, m=[1000, 5000])
+        add(f"S|super|{rule}|CR1_t|theta3|spot|rho0.1|m1000+|cov_median", x.coverage.median(),
+            "superpopulation, theta3 spot, rho 0.1, m 1000 and 5000: median coverage", len(x))
+        add(f"S|super|{rule}|CR1_t|theta3|spot|rho0.1|m1000+|emp_sd_over_rms_se_median",
+            (x.emp_sd / x.rms_se).median(),
+            "as above: median of empirical sd of the estimate / root mean estimated variance",
+            len(x))
+    for rule in ("a_b1", "b_cluster", "c_crossfit"):
+        for gl in (4, 6, 8, 12, 20):
+            x = sel(sup, lambda_rule=rule, interval="CR1_t", fpc=False, G_L=gl, r=[0.3, 0.5, 0.8])
+            add(f"S|super|{rule}|CR1_t|GL{gl}|r>0|width_ratio_median", x.width_ratio.median(),
+                f"superpopulation, rule {rule}, CR1_t, G_L {gl}, r > 0: median PPI/classical width",
+                len(x))
+            x0 = sel(sup, lambda_rule=rule, interval="CR1_t", fpc=False, G_L=gl, r=0.0)
+            add(f"S|super|{rule}|CR1_t|GL{gl}|r0|width_ratio_median", x0.width_ratio.median(),
+                "as above at r = 0", len(x0))
+    for rule in ("c_crossfit", "a_b1", "none"):
+        for iv, fpc in (("CR1_ws", False), ("CR1_t", True)):
+            for gl in (4, 6, 8, 12, 20):
+                x = sel(sup, lambda_rule=rule, interval=iv, fpc=fpc, G_L=gl)
+                add(f"S|super|{rule}|{iv}|fpc{int(fpc)}|GL{gl}|cov_median", x.coverage.median(),
+                    f"superpopulation, rule {rule}, {iv}, fpc {fpc}, G_L {gl}: median coverage",
+                    len(x))
+    for form, iv, fpc in (("textbook", "textbook_t", True), ("complement", "CR1_t", False),
+                          ("complement", "CR1_t", True), ("textbook", "boot_pct", False),
+                          ("textbook", "boot_t", False)):
+        for rule in ("none", "a_b1", "b_cluster", "c_crossfit"):
+            for gl in (4, 6, 8, 12, 20):
+                x = sel(des, form=form, interval=iv, fpc=fpc, lambda_rule=rule, G_L=gl)
+                add(f"S|design|{form}|{iv}|fpc{int(fpc)}|{rule}|GL{gl}|cov_median",
+                    x.coverage.median(), f"design, {form}, {iv}, fpc {fpc}, rule {rule}, G_L {gl}: "
+                    "median coverage over m, rho, r, estimand, population", len(x))
+                add(f"S|design|{form}|{iv}|fpc{int(fpc)}|{rule}|GL{gl}|cov_min",
+                    x.coverage.min(), "as above, minimum", len(x))
+    x = sel(des, form="textbook", interval="textbook_t", fpc=True, lambda_rule="none")
+    for (est, pop), y in x.groupby(["estimand", "population"]):
+        add(f"S|design|textbook|classical|{est}|{pop}|cov_min", y.coverage.min(),
+            f"design, textbook fpc, classical, {est} {pop}: minimum coverage", len(y))
+        add(f"S|design|textbook|classical|{est}|{pop}|cov_median", y.coverage.median(),
+            "as above, median", len(y))
+    for rule in ("a_b1", "c_crossfit"):
+        x = sel(des, form="textbook", interval="textbook_t", fpc=True, lambda_rule=rule,
+                r=[0.3, 0.5, 0.8])
+        add(f"S|design|textbook|{rule}|r>0|width_ratio_median", x.width_ratio.median(),
+            f"design, textbook fpc, rule {rule}, r > 0: median PPI/classical width", len(x))
     return pd.DataFrame(rows)
 
 
@@ -147,16 +216,23 @@ def sim_acceptance(df):
     rows = []
     # r = 0: lambda within 0.05 of 0 under every rule
     z = sel(df, r=0.0, estimator="ppi")
-    for rule in ("a_b1", "b_cluster", "c_crossfit"):
-        x = sel(z, lambda_rule=rule).drop_duplicates(
-            ["target", "G_L", "G_U", "m", "rho", "estimand", "population", "form"])
-        for stat in ("lambda_median", "lambda_mean"):
-            v = float(x[stat].max())
-            rows.append(dict(part="3_sim_r0_lambda", check=f"r = 0: {stat} within 0.05 of 0, "
-                             f"rule {rule}", statistic=f"max over cells of {stat}", value=v,
-                             tol=0.05, passed=bool(v <= 0.05),
-                             detail=f"{len(x)} cells (target x G_L x G_U x m x rho x estimand "
-                                    "x population x form)"))
+    # Scored on the superpopulation arm, where an independent predictor has population lambda 0.
+    # In the design arm the fixed 24-donor population has a non-zero finite-population covariance
+    # between y and the independent predictor, so its lambda is not expected to be 0; reported.
+    for tgt in ("super", "design"):
+        for rule in ("a_b1", "b_cluster", "c_crossfit"):
+            x = sel(z, lambda_rule=rule, target=tgt).drop_duplicates(
+                ["G_L", "G_U", "m", "rho", "estimand", "population", "form"])
+            for stat in ("lambda_median", "lambda_mean"):
+                v = float(x[stat].max())
+                rows.append(dict(part="3_sim_r0_lambda" + ("" if tgt == "super" else "_reported"),
+                                 check=f"r = 0, {tgt} target: {stat} within 0.05 of 0, rule {rule}",
+                                 statistic=f"max over cells of {stat}", value=v,
+                                 tol=0.05 if tgt == "super" else np.nan,
+                                 passed=bool(v <= 0.05) if tgt == "super" else True,
+                                 detail=f"{len(x)} cells (G_L x G_U x m x rho x estimand x "
+                                        "population x form)"
+                                        + ("" if tgt == "super" else "; reported, not scored")))
     # r = 0 band, scoped per addendum 1 section 1 item 2
     scoped = [("CR2_bm", None), ("CR1_t", [6, 8, 12, 20]), ("boot_t", None),
               ("textbook_t", None)]
@@ -213,7 +289,7 @@ def figure(S, path):
     fig, axes = plt.subplots(1, 2, figsize=(7.2, 3.0), sharey=True)
     specs = {
         "super": [("complement", "CR1_t", False, "CR1, $t_{G_L-1}$", "#1f4e79"),
-                  ("complement", "CR2_bm", False, "CR2, Bell-McCaffrey df", "#6fa8dc"),
+                  ("complement", "CR2_bm", False, "CR2, Bell-McCaffrey df (identical to CR1 at equal cluster sizes)", "#6fa8dc"),
                   ("complement", "boot_pct", False, "percentile bootstrap", "#b45f06"),
                   ("complement", "boot_t", False, "bootstrap-$t$", "#38761d"),
                   ("complement", "boot_bca", False, "BCa", "#999999")],
@@ -236,7 +312,7 @@ def figure(S, path):
         ax.set_xticks([4, 6, 8, 12, 20])
         ax.set_xlabel("labelled donors $G_L$")
         ax.set_title(titles[tgt], loc="left", fontsize=8)
-        ax.legend(frameon=False, fontsize=6.5, loc="lower right")
+        ax.legend(frameon=False, fontsize=6, loc="lower right")
         ax.margins(x=0.04)
     axes[0].set_ylabel("coverage of 90% interval")
     fig.tight_layout()

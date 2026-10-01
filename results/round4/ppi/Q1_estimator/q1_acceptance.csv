@@ -1,0 +1,29 @@
+part,check,statistic,value,tol,passed,detail
+1a_b1_estimates,module in B1 configuration reproduces b1_estimates.csv (CCRCC),max |new - committed| over 22 columns,8.881784197001252e-16,1e-10,True,1200 rows; worst column classical_cluster_lo
+1b_b1_acceptance,"module in B1 configuration reproduces b1_acceptance.csv values (CCRCC, checks 1-4b)",max |new - committed|,1.3322676295501878e-15,1e-10,True,"92 of 92 committed rows matched, 0 unmatched"
+2_m_equals_1,"CR1 equals spot iid at m = 1, lambda rule none",max relative |diff|,4.818061581088243e-16,1e-12,True,"G=30, G_L=8, 200 replicates, population spot"
+2_m_equals_1,"CR2 equals spot iid at m = 1, lambda rule none",max relative |diff|,5.105455668980548e-16,1e-12,True,"G=30, G_L=8, 200 replicates, population spot"
+2_m_equals_1,"CR1 equals spot iid at m = 1, lambda rule a_b1",max relative |diff|,8.650719516130729e-16,1e-12,True,"G=30, G_L=8, 200 replicates, population spot"
+2_m_equals_1,"CR2 equals spot iid at m = 1, lambda rule a_b1",max relative |diff|,7.414902442397766e-16,1e-12,True,"G=30, G_L=8, 200 replicates, population spot"
+2_m_equals_1,"CR1 equals spot iid at m = 1, lambda rule b_cluster",max relative |diff|,1.2358170737329616e-15,1e-12,True,"G=30, G_L=8, 200 replicates, population spot"
+2_m_equals_1,"CR2 equals spot iid at m = 1, lambda rule b_cluster",max relative |diff|,1.3593987811062577e-15,1e-12,True,"G=30, G_L=8, 200 replicates, population spot"
+3_sim_r0_lambda,"r = 0, super target: lambda_median within 0.05 of 0, rule a_b1",max over cells of lambda_median,0.0320462945313472,0.05,True,540 cells (G_L x G_U x m x rho x estimand x population x form)
+3_sim_r0_lambda,"r = 0, super target: lambda_mean within 0.05 of 0, rule a_b1",max over cells of lambda_mean,0.2527795305876871,0.05,False,540 cells (G_L x G_U x m x rho x estimand x population x form)
+3_sim_r0_lambda,"r = 0, super target: lambda_median within 0.05 of 0, rule b_cluster",max over cells of lambda_median,0.0320462945313472,0.05,True,540 cells (G_L x G_U x m x rho x estimand x population x form)
+3_sim_r0_lambda,"r = 0, super target: lambda_mean within 0.05 of 0, rule b_cluster",max over cells of lambda_mean,0.2744464954506355,0.05,False,540 cells (G_L x G_U x m x rho x estimand x population x form)
+3_sim_r0_lambda,"r = 0, super target: lambda_median within 0.05 of 0, rule c_crossfit",max over cells of lambda_median,0.3817951078145536,0.05,False,540 cells (G_L x G_U x m x rho x estimand x population x form)
+3_sim_r0_lambda,"r = 0, super target: lambda_mean within 0.05 of 0, rule c_crossfit",max over cells of lambda_mean,0.3533222092066176,0.05,False,540 cells (G_L x G_U x m x rho x estimand x population x form)
+3_sim_r0_lambda_reported,"r = 0, design target: lambda_median within 0.05 of 0, rule a_b1",max over cells of lambda_median,0.5319523208968246,,True,"360 cells (G_L x G_U x m x rho x estimand x population x form); reported, not scored"
+3_sim_r0_lambda_reported,"r = 0, design target: lambda_mean within 0.05 of 0, rule a_b1",max over cells of lambda_mean,0.5150302348390009,,True,"360 cells (G_L x G_U x m x rho x estimand x population x form); reported, not scored"
+3_sim_r0_lambda_reported,"r = 0, design target: lambda_median within 0.05 of 0, rule b_cluster",max over cells of lambda_median,0.5319523208968246,,True,"360 cells (G_L x G_U x m x rho x estimand x population x form); reported, not scored"
+3_sim_r0_lambda_reported,"r = 0, design target: lambda_mean within 0.05 of 0, rule b_cluster",max over cells of lambda_mean,0.5150302348390009,,True,"360 cells (G_L x G_U x m x rho x estimand x population x form); reported, not scored"
+3_sim_r0_lambda_reported,"r = 0, design target: lambda_median within 0.05 of 0, rule c_crossfit",max over cells of lambda_median,0.5,,True,"360 cells (G_L x G_U x m x rho x estimand x population x form); reported, not scored"
+3_sim_r0_lambda_reported,"r = 0, design target: lambda_mean within 0.05 of 0, rule c_crossfit",max over cells of lambda_mean,0.507201755266048,,True,"360 cells (G_L x G_U x m x rho x estimand x population x form); reported, not scored"
+3_sim_r0_band,"r = 0: coverage in [0.89, 0.91], CR2_bm at every G_L",fraction of cells inside the band,0.4462962962962963,,False,1620 cells; coverage min 0.7585 max 0.9175; fraction within the band widened by 2 MC se 0.7290; mean MC se 0.0072; superpopulation target
+3_sim_r0_band,"r = 0: coverage in [0.89, 0.91], CR1_t at G_L [6, 8, 12, 20]",fraction of cells inside the band,0.49228395061728397,,False,1296 cells; coverage min 0.7920 max 0.9175; fraction within the band widened by 2 MC se 0.8025; mean MC se 0.0071; superpopulation target
+3_sim_r0_band,"r = 0: coverage in [0.89, 0.91], boot_t at every G_L",fraction of cells inside the band,0.2771604938271605,,False,1620 cells; coverage min 0.7675 max 0.9130; fraction within the band widened by 2 MC se 0.5389; mean MC se 0.0075; superpopulation target
+3_sim_r0_band,"r = 0: coverage in [0.89, 0.91], textbook_t at every G_L",fraction of cells inside the band,0.37777777777777777,,False,"540 cells; coverage min 0.7410 max 0.9215; fraction within the band widened by 2 MC se 0.6093; mean MC se 0.0073; design target, textbook form, fpc"
+4_sim_GL20_m200,"G_L = 20, m = 200: analytic variance variants ['CR1_t', 'CR2_bm', 'CR1_ws', 'CR2_ws'] within 0.02 coverage of each other (super)",max over cells of the coverage spread,0.013499999999999956,0.02,True,576 cells
+4_sim_GL20_m200,as above including the three bootstraps (super),max over cells of the coverage spread,0.08050000000000002,0.02,False,576 cells
+4_sim_GL20_m200,"G_L = 20, m = 200: analytic variance variants ['CR1_t', 'CR2_bm'] within 0.02 coverage of each other (design)",max over cells of the coverage spread,0.0,0.02,True,192 cells
+4_sim_GL20_m200,as above including the three bootstraps (design),max over cells of the coverage spread,0.07450000000000001,0.02,False,384 cells

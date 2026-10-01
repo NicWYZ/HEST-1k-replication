@@ -1,0 +1,10 @@
+stage            : r4ppi_Q1 permuted-lambda mechanism diagnostic (lead; addendum 1 section 3 asks the report to explain the figure)
+where            : run locally on the user's Mac (plan section 12.1); no Slurm job
+platform         : macOS-26.6.2-arm64-arm-64bit
+commit           : local clone round4-ppi, script committed with this output
+command          : PYTHONHASHSEED=0 python3 code/scripts/round4_ppi_q1_permuted_mechanism.py --pred <b1_predictions__CCRCC__resnet50.parquet> --suff <b1_suffstats__CCRCC__resnet50.npz> --out-dir results/round4/ppi/Q1_estimator/permuted_mechanism
+md5 script       : 552ca5fcc5ca8425948e067a6811416e
+md5 estimator    : 10c76fd4706435a2ad71a8c5f53fb938
+inputs           : b1_predictions__CCRCC__resnet50.parquet artifact 3c8b8ceb-3ea3-49ad-b843-32e7f8b142c8 md5 59ac3c2fe8e1818b7b1d0a1e9c141652; b1_suffstats__CCRCC__resnet50.npz artifact 3f9d1a2f-1cea-4ca0-b30f-a6c3a2a39c16 md5 4f6ba4e2dce40d516e1f27d6cbfab734; both harvested from Longleaf results/round4/ppi/Q0_setup/anchor/run/
+seeds            : permutation crc32('CCRCC|permute') as round3_b1_ppi.py line 687; draws crc32('q1mech|<est>|nL<n>|d<draw>')
+PYTHONHASHSEED   : 0

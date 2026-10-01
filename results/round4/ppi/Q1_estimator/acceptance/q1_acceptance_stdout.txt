@@ -1,0 +1,10 @@
+stubbed: ['scanpy', 'torch']
+            part                                                                               check                             statistic        value          tol  passed                                       detail
+ 1a_b1_estimates                      module in B1 configuration reproduces b1_estimates.csv (CCRCC) max |new - committed| over 22 columns 8.881784e-16 1.000000e-10    True 1200 rows; worst column classical_cluster_lo
+1b_b1_acceptance module in B1 configuration reproduces b1_acceptance.csv values (CCRCC, checks 1-4b)                 max |new - committed| 1.332268e-15 1.000000e-10    True 92 of 92 committed rows matched, 0 unmatched
+    2_m_equals_1                                      CR1 equals spot iid at m = 1, lambda rule none                   max relative |diff| 4.818062e-16 1.000000e-12    True G=30, G_L=8, 200 replicates, population spot
+    2_m_equals_1                                      CR2 equals spot iid at m = 1, lambda rule none                   max relative |diff| 5.105456e-16 1.000000e-12    True G=30, G_L=8, 200 replicates, population spot
+    2_m_equals_1                                      CR1 equals spot iid at m = 1, lambda rule a_b1                   max relative |diff| 8.650720e-16 1.000000e-12    True G=30, G_L=8, 200 replicates, population spot
+    2_m_equals_1                                      CR2 equals spot iid at m = 1, lambda rule a_b1                   max relative |diff| 7.414902e-16 1.000000e-12    True G=30, G_L=8, 200 replicates, population spot
+    2_m_equals_1                                 CR1 equals spot iid at m = 1, lambda rule b_cluster                   max relative |diff| 1.235817e-15 1.000000e-12    True G=30, G_L=8, 200 replicates, population spot
+    2_m_equals_1                                 CR2 equals spot iid at m = 1, lambda rule b_cluster                   max relative |diff| 1.359399e-15 1.000000e-12    True G=30, G_L=8, 200 replicates, population spot

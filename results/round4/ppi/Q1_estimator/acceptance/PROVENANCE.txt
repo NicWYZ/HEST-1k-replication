@@ -1,0 +1,15 @@
+stage            : r4ppi_Q1 module acceptance (B1 configuration and m = 1)
+where            : run locally on the user's Mac by decision of Nicolas (plan section 12.1); no Slurm job; Slurm 3082178 and 3114810 cancelled before start
+platform         : macOS-26.6.2-arm64-arm-64bit arm64
+versions         : 3.11.15 numpy 2.4.6 scipy 1.17.1 pandas 2.3.3
+start / end UTC  : 2026-10-01T02:47:48Z / 2026-10-01T02:47:51Z   exit code 0
+commit           : 413da2ef4d4fa32a9f36ebcc4901a854a27bbeba (local clone, branch round4-ppi)
+command          : PYTHONHASHSEED=0 python3 results/round4/ppi/Q1_estimator/acceptance/run_local_acceptance.py --suff-dir /tmp/q1acc/suff --b1-dir results/round3/B1_ppi --out-dir results/round4/ppi/Q1_estimator/acceptance --n-boot 500 --tol 1e-10
+md5 round4_ppi_q1_acceptance.py : 4f1993e527e88277bd42f3137ea12336
+md5 round4_ppi_estimator.py     : 10c76fd4706435a2ad71a8c5f53fb938
+md5 round3_b1_ppi.py            : 544721f07cb3d74dc5b92456d61fe450
+md5 round3_a0_harness.py        : 0ad7ae8efe554c1f285e5f384a9fb7f5
+md5 run_local_acceptance.py     : 81b93ed5ef0bf6444d48e2fe1af20ee0
+input            : b1_suffstats__CCRCC__resnet50.npz, artifact 3f9d1a2f-1cea-4ca0-b30f-a6c3a2a39c16, harvested from Longleaf results/round4/ppi/Q0_setup/anchor/run/; md5 4f6ba4e2dce40d516e1f27d6cbfab734
+config           : n_boot=500 tol=1e-10; md5 a521b0e9b337bb432e3db0de2a227f1f
+PYTHONHASHSEED   : 0

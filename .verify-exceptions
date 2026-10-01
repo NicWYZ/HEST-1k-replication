@@ -259,3 +259,8 @@ docs/round2_results_synthesis.md:0.29	derived: median zero-fraction over the fiv
 82.2	derived (round-3 D0): decimal-GB conversion of the project-tree byte count 82232314368 recorded by du in results/round3/D0_inventory/storage_context.txt
 4.2	derived (round-3 D0): decimal-GB conversion of the 4163M home-filesystem usage reported by quota in results/round3/D0_inventory/storage_context.txt
 51.2	derived (round-3 D0): decimal-GB conversion of the 51200M home soft quota reported by quota in results/round3/D0_inventory/storage_context.txt
+4.9	derived (round-4 PPI Q1): 4.895786742675767e-08 in results/round4/ppi/Q1_estimator/permuted_mechanism/q1_permuted_lambda_mechanism_check.csv, written as 4.9 x 10^-8 in docs/round4_ppi_Q1_report.md
+0.0067	derived (round-4 PPI plan): Monte Carlo standard error of a 90% coverage at 2,000 replicates, sqrt(0.09/2000), as written in docs/round4_ppi_plan.md section 11
+28,720	observed (round-4 PPI plan section 12): pending jobs on spill in a squeue snapshot on 30 September 2026; not stored in a file
+292	observed (round-4 PPI plan section 12): median priority of pending spill jobs in the same squeue snapshot
+228	observed (round-4 PPI plan section 12): priority of this track's pending jobs on rc_tengfei_pi in the same squeue snapshot

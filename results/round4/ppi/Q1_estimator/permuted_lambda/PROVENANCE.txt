@@ -1,0 +1,17 @@
+stage: Q1_permuted_lambda (plan 11.3, prediction Q1.6), unit of PPI track interval 1
+run route: LOCAL, per lead redirect (plan section 12.1, commit 413da2e). Longleaf job Slurm 3115093 (operon-d4077e9b, partition spill, account rc_tengfei_pi) was cancelled before it started; it produced nothing.
+host: Nicolass-MacBook-Pro-9.local  platform: macOS-26.6.2-arm64-arm-64bit
+python 3.11.15, numpy 2.4.6, pandas 2.3.3
+start: 2026-09-30T22:47:51-0400   end: 2026-09-30T22:48:18-0400
+command: PYTHONHASHSEED=0 python round4_ppi_q1_permuted_lambda.py --clone . --suff suff --out permuted_lambda --draws 200
+PYTHONHASHSEED: 0
+seeds: zlib.crc32 of f'q1perm|{est}|{pop}|nL{n_L}|d{draw}' (draw_L and the cross-fit rng); B1 draw: f'CCRCC|nL{n_L}'
+config hash (sha256[:16] of sorted-key config.json): bb2482071874aafd
+{"b1_draw_tag": "CCRCC|nL{n_L}", "draws": 200, "estimands": ["theta2", "theta3"], "n_L": [6, 8, 12], "populations": ["spot", "donor"], "rules": ["a_b1", "b_cluster", "c_crossfit"], "seed_tag": "q1perm|{est}|{pop}|nL{n_L}|d{draw}", "stage": "Q1_permuted_lambda"}
+input suff stats md5: 4f6ba4e2dce40d516e1f27d6cbfab734 (artifact version 3f9d1a2f-1cea-4ca0-b30f-a6c3a2a39c16, Q0 anchor rerun file)
+stubbed modules (empty stubs inserted before import of round3_b1_ppi, not used by load_suff/draw_L/group_mask): ['scanpy']
+md5 round4_ppi_q1_permuted_lambda.py: 94fffd08ada0d6c5623094fd05db2a85
+md5 round4_ppi_estimator.py: 10c76fd4706435a2ad71a8c5f53fb938
+md5 round4_ppi_q1_acceptance.py: 4f1993e527e88277bd42f3137ea12336
+md5 round3_b1_ppi.py: 544721f07cb3d74dc5b92456d61fe450
+md5 round3_a0_harness.py: 0ad7ae8efe554c1f285e5f384a9fb7f5
