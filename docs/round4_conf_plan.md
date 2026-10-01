@@ -350,3 +350,14 @@ in section 1 of this plan, unchanged.
 7. **Procedure.** Opening the gate pull request through the GitHub REST API (section 9) is accepted;
    the route used is recorded in the report. The full instruction document is on `main` at
    `docs/decisions/round4_conformal_track.md`; it is not added to this branch.
+
+## 11. Instructions from Nicolas during interval 1 (1 October 2026)
+
+1. **Local execution.** "If longleaf queue is long, run anything you can locally." The Longleaf
+   queue held about 34,000 pending jobs and none of this track's jobs started in about ten hours,
+   so the C1 grid, the GHCP reproduction and the C2 candidate runs execute on the local machine.
+   Their PROVENANCE files record `slurm_job_id: none` and the local host. Real-data work that needs
+   the Longleaf embeddings (C3) stays on Longleaf. Recorded under escalations in the C2 report.
+2. **No pushes between gates.** Commits are made locally on `round4-conformal` and nothing is
+   pushed until a gate's report is written; the branch and tag are then pushed together with the
+   gate pull request (section 9).
