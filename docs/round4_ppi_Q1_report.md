@@ -19,8 +19,9 @@ until the oversight chat replies.
 - The estimator module reproduces B1 in B1's configuration to about $10^{-15}$.
 - All fifteen simulation units ran, at 2,000 replicates per cell.
 - The addendum's permuted-$\lambda$ check ran.
-- The one open unit is the ACS PUMS 2018 pull (plan 11.4). Its Longleaf job is still pending, and
-  section 7 item 3 gives its state.
+- The one unit that did not run is the ACS PUMS 2018 pull (plan 11.4). Its Longleaf job sat
+  pending until the twelve-hour cap and was cancelled before it started. Section 7 item 3 gives
+  the detail.
 
 Two decisions by Nicolas changed where things ran (plan section 12). The fifteen simulation units,
 the module-acceptance run and the permuted-$\lambda$ check ran on the local Mac, because their
@@ -70,14 +71,14 @@ intent it was submitted with. They were matched to the session's job ledger by j
 - **Local.** The fifteen simulation units took 2,594 s to 3,367 s of wall time each, with all 15
   running at once (`results/round4/ppi/Q1_estimator/q1_unit_walltimes.csv`, which also lists each
   unit's 9,600 rows and the frame id in its stamp).
-- **Cancelled before starting.** 36 jobs were cancelled while still pending, with elapsed 00:00:00,
+- **Cancelled before starting.** 37 jobs were cancelled while still pending, with elapsed 00:00:00,
   so none produced anything. They were submitted before an instruction changed the code or the
   site:
   - 3074092, 3074101 and 3074111, before the working-copy note;
   - 3082178 and the fifteen first-round simulation jobs from 3082461 to 3082548, before addendum 1;
   - the fifteen second-round simulation jobs from 3114712 to 3114729, then 3114810 and 3115093,
     before Nicolas moved the work to the local machine.
-- **Pending.** 3115277, the ACS PUMS unit.
+  - 3115277, the ACS PUMS unit, cancelled by the run-clock ceiling at its twelve-hour cap.
 
 Each local `PROVENANCE.txt` records the platform, library versions, the md5 of every script and
 input, the command line and `PYTHONHASHSEED`.
@@ -222,6 +223,8 @@ are 0.8805 and 0.8815.
 From `results/round4/ppi/Q1_estimator/q1_permuted_lambda.csv` and
 `results/round4/ppi/Q1_estimator/permuted_mechanism/q1_permuted_lambda_mechanism.csv`.
 
+- **Scope.** The check runs on 50 genes of CCRCC, not all of them (the `n_genes` column), with 200
+  draws, so its medians are provisional.
 - **Reproduction.** B1's own draw is reproduced by rule (a), giving donor medians 1.0, 0.8604 and
   0.4612 for $\theta_2$.
 - **Over 200 draws.** The rule (a) donor medians are 0.522, 0.495 and 0.346 at $n_L$ = 6, 8, 12.
@@ -262,13 +265,24 @@ unlabelled age-and-sex array, and no state, PUMA or year
    re-stamped by their own sub-agents before merge, and the lead checked every fragment's stamp
    against the sub-agent's frame id. The lung stamp stays as it is, per addendum 1. Proposed fix
    for the briefs: give each sub-agent its own frame id explicitly.
-3. **ACS PUMS 2018 (plan 11.4).**
-   - Slurm 3115277 has been pending since 30 September 16:56 local time, with no download yet
+3. **ACS PUMS 2018 (plan 11.4) reached its cap without running.**
+   - Slurm 3115277 sat pending on `spill` from 30 September 16:56 local time until the
+     twelve-hour cap, and was cancelled with elapsed 00:00:00 and no node
      (`results/round4/ppi/Q1_estimator/q1_slurm_jobs.csv`).
-   - The unit's cap was set at twelve hours from submission, counting queue time against the
-     half-day.
-   - The ACS units of Q2 and Q4 cannot start until it lands. Q2 does not start before the Q1 memo
-     in any case.
+   - Nothing was downloaded, and the one authorised download is unused. The directory
+     `results/round4/ppi/Q0_setup/acs_pums2018/` does not exist on Longleaf, so there is no
+     inventory and no task definition to commit.
+   - The fetch and analysis scripts are committed unrun as
+     `code/scripts/round4_ppi_acs_pums2018_fetch.py` and
+     `code/scripts/round4_ppi_acs_pums2018_analyze.py`. The fetch script is standalone.
+   - The queued job script carried the lead's frame id in its stamp call, although the brief gave
+     the unit its own id. No stamp was written, because the job never ran. The job script is not
+     committed, and it should not be resubmitted as it stands.
+   - Options for the memo:
+     - resubmit with the corrected stamp and a shorter wall of about 1.5 hours;
+     - have Nicolas run the fetch script on his own machine, with the analysis on its output;
+     - drop ACS from Q2 and Q4.
+   - The ACS units of Q2 and Q4 cannot start until one of these is done.
 4. **CR2 cannot be assessed in this simulation.** Every donor has $m$ spots, so CR2 equals CR1 and
    the Bell-McCaffrey df equal $G_L - 1$. Real data has unequal donors. Proposal: add an
    unequal-size arm, for example $m_g$ drawn from CCRCC's spot counts, before CR2 is accepted or
@@ -303,8 +317,10 @@ unlabelled age-and-sex array, and no state, PUMA or year
   not touch those files, so the claims come from `main` and are left for the oversight chat.
   Five exceptions were added to `.verify-exceptions`, each with its source: one rounding of a
   stored value, one Monte Carlo standard error, and three queue-snapshot figures with no file.
-- If the ACS PUMS unit finishes after this tag, its inventory and task definition go on the branch
-  as one further commit with no other change, and the pull request will show it.
+- This report was first tagged as `round4-ppi-Q1` at `768b43a`, while the ACS PUMS unit was
+  still pending. The unit then reached its cap, and one further commit records that outcome, the
+  50-gene scope of the permuted check and the two unrun ACS scripts. The tag was not moved. The
+  pull request head is the later commit.
 
 ### Proposed edits to shared documents, for the oversight chat to merge
 
@@ -321,7 +337,8 @@ unlabelled age-and-sex array, and no state, PUMA or year
 - Bootstraps with a finite-population correction.
 - The Q3 regime B arm of the simulation, which is Q3's.
 - Cross-node determinism, since the simulation ran on one machine.
-- The ACS PUMS data and its predictor, which are pending.
+- The ACS PUMS data and its predictor, because the unit did not run.
+- The permuted-predictor $\lambda$ on all genes, rather than the 50 used.
 
 ## 9. Proposed next step
 
@@ -332,6 +349,6 @@ The Q1 decision memo should settle the following:
 3. How to treat the skew of $\theta_3$ spot-weighted at small $\rho$.
 4. Whether the Q2 statement of the gain theorem takes the $G_U$ condition and the $\sigma_a^2$ axis
    (addendum 1 items 3 and 4).
-5. What to do if the ACS PUMS pull reaches its cap.
+5. Which of the three ACS options in section 7 item 3 to take.
 
 Nothing in Q2 starts before the memo.
