@@ -277,17 +277,24 @@ def oracle_qstar(cell, alpha, semi=None, n=N_ORACLE):
 
 
 def own_quantiles(a, b, tail, alpha):
-    """(own_raw, own_centred): quantiles of |a + b e| and |b e| at 1 - alpha."""
-    D = stats.norm if tail == "normal" else stats.t(3)
-    cdf = lambda q: D.cdf((q - a) / b) - D.cdf((-q - a) / b)
-    lo, hi = 0.0, abs(a) + b * 100
-    for _ in range(70):
+    """(own_raw, own_centred): quantiles of |a + b e| and |b e| at 1 - alpha (bisection on the
+    exact CDF via scipy.special, 60 steps)."""
+    from scipy import special
+    cdf1 = special.ndtr if tail == "normal" else (lambda z: special.stdtr(3, z))
+    lo, hi = 0.0, abs(a) + b * 200.0
+    for _ in range(60):
         mid = 0.5 * (lo + hi)
-        if cdf(mid) < 1 - alpha:
+        if cdf1((mid - a) / b) - cdf1((-mid - a) / b) < 1 - alpha:
             lo = mid
         else:
             hi = mid
-    return 0.5 * (lo + hi), float(b * D.ppf(1 - alpha / 2))
+    key = (tail, alpha)
+    if key not in _PPF:
+        _PPF[key] = float(stats.norm.ppf(1 - alpha / 2) if tail == "normal" else stats.t(3).ppf(1 - alpha / 2))
+    return 0.5 * (lo + hi), float(b * _PPF[key])
+
+
+_PPF = {}
 
 
 # ============================================================================ methods
@@ -400,6 +407,143 @@ register_method("ghcp", m_ghcp, True)
 register_method("within", m_within, True)
 
 
+
+# ============================================================================ fast path
+class Prep:
+    """Per-replicate sorted views of each calibration group's residuals, so that every method
+    builds its sorted score arrays from presorted runs (merged by a stable sort in near-linear
+    time). Results equal the reference functions above (checked in the C1 smoke)."""
+
+    def __init__(self, cal):
+        self.cal = cal
+        self.N = np.array([len(x) for x in cal])
+        self.order = [np.argsort(x, kind="stable") for x in cal]
+        self.xs = [x[o] for x, o in zip(cal, self.order)]
+        self.rank = []
+        for o in self.order:
+            r = np.empty_like(o)
+            r[o] = np.arange(len(o))
+            self.rank.append(r)
+
+    def held_abs(self, j, m, c):
+        """Two sorted runs whose union is {|x_i - c| : i >= m} for group j."""
+        v = self.xs[j]
+        if m > 0:
+            keep = np.ones(len(v), bool)
+            keep[self.rank[j][:m]] = False
+            v = v[keep]
+        k = np.searchsorted(v, c)
+        return np.concatenate([(c - v[:k])[::-1], v[k:] - c])
+
+
+def wquantiles(scores, weights, inf_mass, betas):
+    if len(scores) == 0:
+        return [math.inf] * len(betas)
+    o = np.argsort(scores, kind="stable")
+    cw = np.cumsum(weights[o])
+    tot = cw[-1] + inf_mass
+    s = scores[o]
+    out = []
+    for b in betas:
+        i = np.searchsorted(cw, b * tot * (1 - QTOL), side="left")
+        out.append(math.inf if i >= len(cw) else float(s[i]))
+    return out
+
+
+def split_qs(scores, alphas):
+    n = len(scores)
+    ks = [math.ceil((n + 1) * (1 - a) * (1 - QTOL)) for a in alphas]
+    fin = [k for k in ks if 1 <= k <= n]
+    part = np.partition(scores, [k - 1 for k in fin]) if fin else None
+    return [float(part[k - 1]) if 1 <= k <= n else math.inf for k in ks]
+
+
+def f_pooled(prep, rep, cell, o, rng, alphas):
+    s = np.concatenate([prep.held_abs(j, 0, 0.0) for j in range(len(prep.N))])
+    return {"pooled": [(q, 0.0) for q in split_qs(s, alphas)]}
+
+
+def f_hcp(prep, rep, cell, o, rng, alphas):
+    K = len(prep.N)
+    s = np.concatenate([prep.held_abs(j, 0, 0.0) for j in range(K)])
+    w = np.concatenate([np.full(n, 1.0 / ((K + 1) * n)) for n in prep.N])
+    return {"hcp": [(q, 0.0) for q in wquantiles(s, w, 1.0 / (K + 1), [1 - a for a in alphas])]}
+
+
+def f_one_per(prep, rep, cell, o, rng, alphas):
+    s = np.array([abs(x[rng.integers(len(x))]) for x in prep.cal])
+    return {"one_per": [(q, 0.0) for q in split_qs(s, alphas)]}
+
+
+def f_dwr_rep(prep, rep, cell, o, rng, alphas, B=DWR_B):
+    K = len(prep.N)
+    S = np.concatenate([np.abs(x[rng.integers(len(x), size=B)]) for x in prep.cal])
+    out = []
+    for a in alphas:
+        m = math.ceil(B * (a * (K + 1) - 1) * (1 - QTOL))
+        out.append((math.inf, 0.0) if m <= 0 else (float(-np.partition(-S, m - 1)[m - 1]), 0.0))
+    return {"dwr_rep": out}
+
+
+def ghcp_fast(prep, init, o, alphas, rng, adapt=True, eta=0.0, n_glob=N_GLOB, pool_rule="paper",
+              J0=None):
+    N = prep.N
+    m = (o // 2) if adapt else 0
+    lamv = m / (n_glob + m) if m > 0 else 0.0
+    S = restricted_pool(N, o, eta, rng, pool_rule)
+    c_test = lamv * float(np.mean(init[:m])) if m > 0 else 0.0
+    betas = [1 - a for a in alphas]
+    if len(S) == 0:
+        held = np.abs(init[m:o] - c_test)
+        L = o + 1 - m
+        return [(q, c_test) for q in wquantiles(held, np.full(len(held), 1.0 / L), 1.0 / L, betas)]
+    J0 = S[rng.integers(len(S))] if J0 is None else int(J0)
+    Scal = [j for j in S if j != J0]
+    M = len(Scal) + 1
+    sc, wt = [], []
+    for j in Scal:
+        cj = lamv * float(np.mean(prep.cal[j][:m])) if m > 0 else 0.0
+        h = prep.held_abs(j, m, cj)
+        sc.append(h)
+        wt.append(np.full(len(h), 1.0 / (M * len(h))))
+    Lt = N[J0] - m
+    h = np.abs(init[m:o] - c_test)
+    sc.append(h)
+    wt.append(np.full(len(h), 1.0 / (M * Lt)))
+    qs = wquantiles(np.concatenate(sc), np.concatenate(wt), (N[J0] - o) / (M * Lt), betas)
+    return [(q, c_test) for q in qs]
+
+
+def f_ghcp(prep, rep, cell, o, rng, alphas):
+    ng = cell.get("n_glob", N_GLOB)
+    out = {"ghcp": ghcp_fast(prep, rep["init"], o, alphas, rng, True, 0.0, ng),
+           "ghcp_noad": ghcp_fast(prep, rep["init"], o, alphas, rng, False, 0.0, ng),
+           "ghcp_r05": ghcp_fast(prep, rep["init"], o, alphas, rng, True, 0.5, ng)}
+    if any(abs(a - 0.1) < 1e-12 for a in alphas):
+        r = ghcp_fast(prep, rep["init"], o, alphas, rng, True, 0.5, ng, pool_rule="code")
+        out["ghcp_r05code"] = [x if abs(a - 0.1) < 1e-12 else None for a, x in zip(alphas, r)]
+    return out
+
+
+def f_within(prep, rep, cell, o, rng, alphas):
+    m = o // 2
+    c = float(np.mean(rep["init"][:m])) if m > 0 else 0.0
+    return {"within": [(q, c) for q in split_qs(np.abs(rep["init"][m:o] - c), alphas)]}
+
+
+FAST = {}
+
+
+def register_fast(name, fn, uses_o):
+    """C2 candidates register here: fn(prep, rep, cell, o, rng, alphas) -> {variant: [(q, c) or
+    None per alpha]}."""
+    FAST[name] = (fn, uses_o)
+
+
+for _n, _f, _u in (("pooled", f_pooled, False), ("hcp", f_hcp, False), ("one_per", f_one_per, False),
+                   ("dwr_rep", f_dwr_rep, False), ("ghcp", f_ghcp, True), ("within", f_within, True)):
+    register_fast(_n, _f, _u)
+
 # ============================================================================ cells
 def build_cells(K, include_semireal=True, semireal_N=("data", "500")):
     cells = []
@@ -426,29 +570,65 @@ def build_cells(K, include_semireal=True, semireal_N=("data", "500")):
 
 # ============================================================================ runner
 def run_cell(cell, alphas, n_reps, o_grid, semi=None, methods=None, seed_tag="C1"):
-    """Per-replicate rows (one per alpha, method variant, o, replicate)."""
-    methods = methods or list(METHODS)
+    """Per-replicate rows (one per alpha, method variant, o, replicate). Uses the fast path."""
+    methods = methods or list(FAST)
     o_max = max(o_grid)
     qstar = {a: oracle_qstar(cell, a, semi) for a in alphas}
     rows = []
     for r in range(n_reps):
         rng = np.random.default_rng(crc(f"{seed_tag}|{cell['cell_id']}|rep{r}"))
         rep = draw_replicate(cell, rng, o_max, semi)
+        prep = Prep(rep["cal"])
         test = rep["test"]
-        for a in alphas:
-            qs = qstar[a][rep["gene"]] if isinstance(qstar[a], dict) else qstar[a]
-            own_raw, own_c = own_quantiles(rep["a"], rep["b"], rep["tail"], a)
-            for mname in methods:
-                fn, uses_o = METHODS[mname]
-                for o in (o_grid if uses_o else (0,)):
-                    if uses_o and o == 0 and mname == "within":
-                        continue
-                    mrng = np.random.default_rng(crc(f"{seed_tag}|{cell['cell_id']}|rep{r}|{mname}|o{o}|a{a}"))
-                    for vname, (q, c) in fn(rep, cell, o, mrng, a).items():
+        own = {a: own_quantiles(rep["a"], rep["b"], rep["tail"], a) for a in alphas}
+        qsv = {a: (qstar[a][rep["gene"]] if isinstance(qstar[a], dict) else qstar[a]) for a in alphas}
+        for mname in methods:
+            fn, uses_o = FAST[mname]
+            for o in (o_grid if uses_o else (0,)):
+                if mname == "within" and o == 0:
+                    continue
+                mrng = np.random.default_rng(crc(f"{seed_tag}|{cell['cell_id']}|rep{r}|{mname}|o{o}"))
+                for vname, res in fn(prep, rep, cell, o, mrng, alphas).items():
+                    for a, qc in zip(alphas, res):
+                        if qc is None:
+                            continue
+                        q, c = qc
                         cov = float(np.mean(np.abs(test - c) <= q)) if np.isfinite(q) else 1.0
-                        rows.append((a, vname, o, r, cov, q, qs, own_raw, own_c, rep["gene"] or ""))
+                        rows.append((a, vname, o, r, cov, q, qsv[a], own[a][0], own[a][1],
+                                     rep["gene"] or ""))
     return pd.DataFrame(rows, columns=["alpha", "method", "o", "rep", "coverage", "q", "q_star",
                                        "own_raw", "own_centred", "gene"])
+
+
+def fast_equals_reference(n=60, seed_tag="C1fastcheck"):
+    """Max |difference| between the fast path and the reference functions on random replicates."""
+    worst = 0.0
+    for t in range(n):
+        rng = np.random.default_rng(crc(f"{seed_tag}|{t}"))
+        K = int(rng.choice([5, 9, 10, 20]))
+        cell = dict(gen="t3" if t % 2 else "normal", K=K, N=str(rng.choice(["100", "500", "unequal"])),
+                    sigma_a=float(rng.choice([0.0, 1.0])), tau=float(rng.choice([0.0, 0.3])),
+                    n_test=50, n_glob=N_GLOB)
+        rep = draw_replicate(cell, rng, 100, None)
+        prep = Prep(rep["cal"])
+        for a in (0.1, 0.2):
+            pairs = [(f_pooled(prep, rep, cell, 0, None, [a])["pooled"][0][0],
+                      m_pooled(rep, cell, 0, None, a)["pooled"][0]),
+                     (f_hcp(prep, rep, cell, 0, None, [a])["hcp"][0][0],
+                      m_hcp(rep, cell, 0, None, a)["hcp"][0])]
+            for o in O_GRID:
+                for ad, eta, rule in ((True, 0.0, "paper"), (False, 0.0, "paper"), (True, 0.5, "paper"),
+                                      (True, 0.5, "code")):
+                    r1 = np.random.default_rng(t * 1000 + o)
+                    r2 = np.random.default_rng(t * 1000 + o)
+                    qf, cf = ghcp_fast(prep, rep["init"], o, [a], r1, ad, eta, N_GLOB, rule)[0]
+                    qr, cr = ghcp_q(rep["cal"], rep["init"], o, a, r2, ad, eta, N_GLOB, rule)
+                    pairs.append((qf, qr))
+                    pairs.append((cf, cr))
+            for x, y in pairs:
+                if np.isfinite(x) or np.isfinite(y):
+                    worst = max(worst, abs(x - y) if np.isfinite(x) and np.isfinite(y) else math.inf)
+    return worst
 
 
 def summarise(rr, cell):
