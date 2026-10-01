@@ -17,8 +17,9 @@ $w = (m - \mu_m)/V_m$; for a mean, $w = 1$), and $f_{gi} = w_{gi}\,\hat y_{gi}$.
 
 ## Superpopulation target, fresh donors in $U$ (the complement form)
 
-$$\hat\theta = \lambda\,\bar f_U + \bar r_L,\qquad
-\widehat{\text{Var}} = \frac{n_L}{n_L - 2}\sum_{g \in L}\hat S_g^2 + \frac{G_U}{G_U - 1}\sum_{g \in U}\hat S_g^2,$$
+$$
+\hat\theta = \lambda\,\bar f_U + \bar r_L,\qquad \widehat{\text{Var}} = \frac{n_L}{n_L - 2}\sum_{g \in L}\hat S_g^2 + \frac{G_U}{G_U - 1}\sum_{g \in U}\hat S_g^2,
+$$
 
 with $\hat S_g$ the donor's summed influence contribution, a $t_{n_L - 2}$ reference, and
 $\lambda$ cross-fitted (rule c). The labelled donors are split in two halves by a `zlib.crc32`
@@ -42,11 +43,13 @@ $n_L = 4$), so it is not used.
 
 Addendum 1 section 2. Predictions exist on every spot of every donor, so
 
-$$\text{donor-weighted}\quad \hat\theta = \frac{\lambda}{G}\sum_{g=1}^{G}\bar f_g + \frac{1}{n_L}\sum_{g \in L}\bar r_g,
-\qquad \widehat{\text{Var}} = \Big(1 - \frac{n_L}{G}\Big)\frac{s_r^2}{n_L},$$
+$$
+\text{donor-weighted}\quad \hat\theta = \frac{\lambda}{G}\sum_{g=1}^{G}\bar f_g + \frac{1}{n_L}\sum_{g \in L}\bar r_g, \qquad \widehat{\text{Var}} = \Big(1 - \frac{n_L}{G}\Big)\frac{s_r^2}{n_L},
+$$
 
-$$\text{spot-weighted}\quad \hat\theta = \frac{\lambda}{N}\sum_{i=1}^{N} f_i + \frac{G}{N\,n_L}\sum_{g \in L} R_g,
-\qquad \widehat{\text{Var}} = \Big(1 - \frac{n_L}{G}\Big)\frac{G^2}{N^2}\frac{s_R^2}{n_L},$$
+$$
+\text{spot-weighted}\quad \hat\theta = \frac{\lambda}{N}\sum_{i=1}^{N} f_i + \frac{G}{N\,n_L}\sum_{g \in L} R_g, \qquad \widehat{\text{Var}} = \Big(1 - \frac{n_L}{G}\Big)\frac{G^2}{N^2}\frac{s_R^2}{n_L},
+$$
 
 with $t_{n_L - 1}$ and cross-fitted $\lambda$. Median coverage is 0.89 at every $n_L$ from 4 to 20
 (0.8915 at $n_L = 4$, 0.894 at 20). B1's rule (a) covers 0.844 at $n_L = 4$, rising to 0.896 at 20.

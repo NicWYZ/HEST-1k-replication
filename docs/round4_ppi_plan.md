@@ -363,6 +363,15 @@ unit-level Pearson, and fewer than a third of genes gain more than 5% under regi
 variance is reported for ACS (state by survey year, if the package data carries the year) and the
 HEST result is the nesting table itself.
 
+**Added by the Q1 decision memo (plan section 13), copied verbatim before Q1b and the theorem check run.** Q1.4 is dropped from every later stage (memo section 1).
+
+- Q1b.1. At $r = 0$, rules (d1) and (d2) give a median $\lambda$ of 0 in every cell and a median width ratio within 0.02 of 1 at every $n_L \ge 6$.
+- Q1b.2. At $r \ge 0.5$ and $n_L \ge 8$, rule (d1)'s median width ratio is within 0.02 of rule (c)'s; rule (d2) gives up more, by 0.02 to 0.05.
+- Q1b.3. With unequal sizes, CR1 at $G_L = 4$ loses 0.02 to 0.04 of coverage against the equal-size arm, and CR2 with Satterthwaite recovers at least half of that; at $G_L \ge 8$ CR1 and CR2 are within 0.01.
+- Q1b.4. On $\theta_3$ spot-weighted at $\rho = 0.1$, the wild bootstrap-$t$ with Mammen weights covers at least 0.88 at every $G_L \ge 6$, and the Rademacher version sits between it and the CR1 $t$ interval.
+
+- Prediction Q2.7, written now: at $m = 5000$ and $G_U = 100$ the empirical ratio is within 0.05 of $1 - R^2_{\text{cluster}}$ in all three cells, and at $G_U = 20$ it is within 0.05 of the full ratio and above $1 - R^2_{\text{cluster}}$ by at least the $G_U$ term's size.
+
 ## 5. Decision boundaries (source section 9)
 
 - Decided alone. Sub-agent structure; seeds; replicate counts above 2,000; bootstrap draws above 500;
@@ -671,3 +680,132 @@ anchor (`b1_suffstats__CCRCC__resnet50.npz`, 0.6 MB, harvested as an artifact, m
 Nicolas chose to run both locally as well. Their Longleaf jobs are cancelled before starting, the
 committed scripts run on the local Mac against the harvested file, and provenance records the
 local host and the input's md5. The ACS PUMS pull (section 11.4) stays on Longleaf.
+
+## 13. The Q1 decision memo (1 October 2026), transcribed before any of it is acted on
+
+Source `docs/decisions/round4_ppi_Q1_decisions.md` (md5 `b7dafd175f42d55a21c5387437cd0dd3`),
+written by the oversight chat and handed over by Nicolas. Interval 2 (Q2 and Q3, ending at the Q3
+gate) starts when this transcription is committed. Where this section and the source differ, the
+source governs.
+
+### 13.1 Gate rule and state at hand-over
+
+- Report-and-wait means no stage after a gated stage starts until the oversight chat has replied.
+  Every stage, set up, staged or piloted. Inside an interval there are no interim reports and no
+  interim stop conditions; anything that would have halted work is handled under the decision
+  boundaries, recorded under "Escalations" in the next report, and work continues. Gates Q1, Q3, Q5.
+  Contact with anyone outside the project is never the session's decision.
+- The Q1 report is accepted. Q1.4's prediction had the wrong sign and is dropped from every later
+  stage.
+- The pull request. The memo asks the session to open it. At hand-over it already existed and was
+  merged: pull request #2 from `round4-ppi`, merged into `main` by Nicolas with the merge commit
+  `75e630a` over the branch head `2385298`. The session does not reopen it. The Q3 report records
+  why the session's own attempt produced none (HTTP 403, the earlier token lacked
+  `pull_requests=write`), and that the session's GitHub API calls on 1 October returned HTTP 401.
+- The branch continues from `2385298`. `main` is never merged or pulled into it (section 10).
+- Nicolas renamed the local working copy to `~/HEST-1k-replication-PPI`. It is this track's
+  working tree from now on.
+
+### 13.2 The working estimator for Q2 and Q3 (memo section 2)
+
+1. Superpopulation target: complement form, cross-fitted $\lambda$, CR1 with $t_{n_L-2}$, no
+   finite-population correction, no Welch-Satterthwaite.
+2. Design-based target: textbook form with the finite-population correction, $t_{n_L-1}$,
+   cross-fitted $\lambda$.
+3. No bootstrap is an interval candidate from Q2 on, except Q1b addition 3 (section 13.3).
+4. New rule (d), cross-fitted with a pre-test. Each half's $\lambda$ is zero unless its unclipped
+   estimate exceeds $k$ times its own standard error, the ordinary standard error of the slope of
+   the half's donor rectifier contributions on its donor prediction contributions over the half's
+   donors (at least three donors in the half); otherwise the clipped estimate, as in rule (c).
+   Rule (d1) has $k = 1$, rule (d2) $k = 2$. When $n_L < 6$, $\lambda = 0$ throughout (classical).
+5. Every Q2 and Q3 row is computed under rules (c), (d1) and (d2); every table carries
+   `lambda_rule`. The Q3 report proposes one; the Q3 memo finalises the definition.
+6. `docs/round4_ppi_theory.md` states the pre-test as a corollary of the gain theorem under the
+   $\lambda$ corollary: near-zero cluster-level $R^2$ leaves $\lambda$ unidentified and nearly
+   harmless, and the pre-test reports zero there.
+
+### 13.3 Unit Q1b, a Q1 supplement (memo section 3)
+
+Run inside interval 2, reported with Q3. Five sub-agents by $G_L$, on Longleaf through Slurm,
+capped at one and a half days. Outputs under `results/round4/ppi/Q1_estimator/q1b/`; the Q1
+tables are not touched. Q1 generator and code paths, plus three additions.
+
+- Grid: $G_L \in \{4, 6, 8, 12, 20\}$, $G_U = 20$, $m \in \{200, 1000\}$,
+  $\rho \in \{0.1, 0.3, 0.5\}$, $r \in \{0, 0.5, 0.8\}$, both estimands and populations, both
+  targets, 2,000 replicates per cell.
+- Addition 1: rules (c), (d1), (d2), with CR1 $t$ and the textbook form.
+- Addition 2: an unequal-size arm beside the equal-size arm, $m_g = m \cdot s_g$ with $s_g$ the
+  24 CCRCC donors' spot counts over their mean, read from the task definition and recorded in the
+  config, assigned by `zlib.crc32` of the donor index and recycled when $G > 24$. CR1 with
+  $t_{G_L-1}$ and CR2 with Bell-McCaffrey df on both arms.
+- Addition 3: on $\theta_3$ spot-weighted, superpopulation target, classical and rule (c) only,
+  the wild cluster bootstrap-$t$ (Cameron, Gelbach and Miller 2008) on the labelled donors'
+  influence contributions, 500 draws, Rademacher and Mammen weights as separate interval names,
+  the unlabelled term held fixed.
+- Predictions Q1b.1 to Q1b.4 are copied from the memo into section 4's list before Q1b runs.
+- The real-data permuted check reruns under (d1) and (d2) on the same 50 genes and 200 draws, into
+  `q1_permuted_lambda_d.csv`. Prediction: median $\lambda$ 0 in every donor-weighted cell, below
+  0.1 in every spot-weighted cell. All genes only if that costs under two hours.
+
+### 13.4 Primary estimand (memo section 4)
+
+The donor-weighted population is the primary estimand of every real-data table from Q2 on. The
+spot-weighted slope is reported beside it with the Q1 finding stated. The Q3 memo decides whether
+the wild cluster bootstrap becomes the spot-weighted interval in Q4.
+
+### 13.5 The Q2 theorem and its simulation check (memo section 5)
+
+- The gain theorem is stated for the labelled term, with the full ratio
+  $\sigma_{u,r}^2/\sigma_u^2 + n_L V_U/\sigma_u^2$, $V_U = \lambda^2 \text{Var}(p_g)/G_U$, beside
+  it; it equals $1 - R^2_{\text{cluster}}$ only as $G_U/n_L \to \infty$.
+- Under $\hat y = y - a - \epsilon$ the rectifier's cluster component is
+  $(1 - \lambda)u_g + \lambda a_g$, with the endpoint at the optimal $\lambda$ unchanged.
+- A sixth Q2 unit, the theorem check, on Longleaf, capped at half a day: $G_L \in \{6, 12\}$,
+  $G_U \in \{20, 100\}$, $m \in \{200, 5000\}$, $\rho = 0.3$, $r = 0.5$,
+  $\sigma_a^2/\sigma_u^2 \in \{0.25, 1, 4\}$, 2,000 replicates, rule (c), donor-weighted mean,
+  superpopulation target. Output `results/round4/ppi/Q2_theory/q2_sim_theorem.csv` with the
+  empirical variance ratio, $1 - R^2_{\text{cluster}}$ and the full ratio. Prediction Q2.7 is
+  copied into section 4.
+- Everything else in Q2 and Q3 runs as the instruction and addendum 1 say, under (c), (d1), (d2).
+
+### 13.6 ACS (memo section 6)
+
+Nicolas ran the fetch script on his machine; the output is `~/acs_pums2018` (read-only grant).
+Nothing is downloaded again.
+
+1. Read `raw_manifest.json` and `fetch_info.json` and record them, with the local path, in the Q3
+   report.
+2. Copy the directory to `results/round4/ppi/Q0_setup/acs_pums2018/` in the Longleaf project tree,
+   verify every file's md5 there against `raw_manifest.json` into
+   `acs_pums2018_transfer_check.csv`, and stamp the directory. One mismatch stops the ACS unit and
+   goes to escalations.
+3. Run `round4_ppi_acs_pums2018_analyze.py` on Longleaf through Slurm against that copy with 32 GB,
+   and commit `acs_pums2018_inventory.json` and `acs_pums_task_def.json`. Raw files are not
+   committed. The old job script is not resubmitted.
+4. The ACS units of Q2 and Q4 run on Longleaf against the same copy.
+
+### 13.7 Where interval 2 runs (memo section 7)
+
+Every interval-2 job runs on Longleaf through Slurm, walls sized from a sibling's `sacct`.
+Section 12's local decisions do not carry forward. Local runs only on Nicolas's request in chat,
+each recorded first as a numbered extension of section 12. If a job has not started four hours
+after submission, the session tells Nicolas in chat what it needs (inputs and sizes, memory,
+expected runtime, queue state) and keeps waiting, without moving it, harvesting its inputs or
+proposing a local run; independent work continues.
+
+### 13.8 Procedure (memo section 8)
+
+1. Every sub-agent brief states the sub-agent's own frame id; the lead checks each hand-back's
+   stamp before merge.
+2. The two `docs/WAYS_OF_WORKING.md` edits are applied by the oversight chat on `main`.
+3. B1's check 4 stands; nothing to do.
+4. The ten unresolved claims in pre-round-3 documents are a round-5 item.
+5. In `docs/round4_ppi_estimator_definition.md` each `$$` goes on its own line, in the next commit;
+   `docs/round4_ppi_theory.md` does the same from the start.
+6. The Q0 `ppi_py` ACS file stays where it is and is used for nothing clustered.
+
+### 13.9 What the Q3 report carries (memo section 9)
+
+The instruction's Q2 and Q3 content, plus Q1b and the theorem check, scoring Q1b.1 to Q1b.4 and
+Q2.7 beside Q2.1 to Q3.4, and proposals for the final $\lambda$ rule, CR1 or CR2, and the
+spot-weighted interval. Report and wait.
