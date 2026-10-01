@@ -44,7 +44,8 @@ COMPONENTS (section 6 Q1).
               rules 'd1_pretest', 'd2_pretest'  (Q1 decision memo section 2) rule (c) with a
                                 pre-test: a half's lambda is 0 unless its unclipped estimate
                                 exceeds k = 1 or 2 OLS slope standard errors over the half's
-                                donors (three or more); columns where both halves are 0 are
+                                donors (three or more), and 0 throughout when n_L < 6;
+                                columns where both halves are 0 are
                                 reported as the classical estimator with classical variances.
   variance    CR1 (G/(G-1)), CR2 (Bell-McCaffrey leverage adjustment), spot i.i.d.;
               references t_{G_L-1} (CR1), Bell-McCaffrey Satterthwaite df of the L term (CR2),
@@ -267,7 +268,9 @@ def lambda_rule(rule, pop, D, Lm, Um, seed=None):
                 clip = _cluster_lambda_donor(t, tf, Lh, Um)
             yv, xv = _donor_contributions(pop, D, Lh)
             se = _ols_slope_se(yv, xv, Lh)
-            passed = okU & (Lh.sum(0) >= 3) & np.isfinite(se) & np.isfinite(raw) & (raw > k * se)
+            # memo section 2 item 2: when n_L < 6 lambda is 0 throughout (classical)
+            passed = (okU & (GL >= 6) & (Lh.sum(0) >= 3) & np.isfinite(se) & np.isfinite(raw)
+                      & (raw > k * se))
             lams.append(np.where(passed, clip, 0.0)); raws.append(raw); ses.append(se)
         lamA, lamB = lams
         lamL = np.where(LA, lamB[None, :], np.where(LB, lamA[None, :], 0.0))

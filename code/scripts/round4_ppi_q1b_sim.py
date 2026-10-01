@@ -23,8 +23,10 @@ g receives share number g mod 24 of that order (recycled when G > 24). Spots bey
 ADDITION 3. On theta_3 spot-weighted, superpopulation target, classical and rule c only: the wild
 cluster bootstrap-t (Cameron, Gelbach and Miller 2008) on the labelled donors' influence
 contributions, 500 draws, Rademacher weights (`wild_t_rad`) and Mammen two-point weights
-(`wild_t_mammen`), the unlabelled term held fixed; studentised by the CR1 standard error
-recomputed on each bootstrap sample (within-half centring under cross-fitting).
+(`wild_t_mammen`), the unlabelled term held fixed. Each draw is studentised by the labelled
+term's CR1 standard error recomputed on the bootstrap residual contributions (within-half
+centring under cross-fitting), and the bootstrap quantiles of that labelled-term t statistic
+multiply the full CR1 standard error, labelled plus unlabelled terms, of the estimate.
 
 OUTPUT per unit: q1b_sim__GL<G_L>.csv with the Q1 columns plus `size_arm`, and summary and config
 JSON beside it.
@@ -140,8 +142,9 @@ def wild_t(res, theta, n_wild, seed, alpha):
     """Wild cluster bootstrap-t on the labelled term's per-donor influence contributions q_g
     (res['L']['q'], deviations from the (within-half) centre, summing to theta_L - its centre),
     the U term held fixed. theta* - theta = sum_g w_g q_g; the bootstrap residual contributions
-    are w_g q_g recentred by the donor's size share within its stratum; se* is CR1 on them plus
-    the fixed U variance. Returns dict kind -> (lo, hi)."""
+    are w_g q_g recentred by the donor's size share within its stratum; t* divides by the CR1
+    standard error of the labelled term on them; the interval is theta minus the t* quantiles times
+    the full CR1 standard error (labelled plus fixed unlabelled term). Returns kind -> (lo, hi)."""
     L = res["L"]
     q, mask, strata = L["q"], L["mask"], L["strata"]
     G, ncol = q.shape
@@ -164,7 +167,7 @@ def wild_t(res, theta, n_wild, seed, alpha):
             for h in labels:
                 s = mask if h is None else (mask & (strata == h))
                 qs = np.where(s, wq - shares * np.where(s, wq, 0.0).sum(0)[None, :], qs)
-            vstar = c1 * (qs ** 2).sum(0) + vU
+            vstar = c1 * (qs ** 2).sum(0)
             tstar[:, b] = d / np.sqrt(np.where(vstar > 0, vstar, np.nan))
         hi_q = np.nanpercentile(tstar, 100 * (1 - alpha / 2), axis=1)
         lo_q = np.nanpercentile(tstar, 100 * alpha / 2, axis=1)
