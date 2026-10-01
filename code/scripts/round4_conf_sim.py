@@ -90,13 +90,16 @@ evaluated with the relative tolerance 1e-12 that round 3's A3 weighted_quantile 
              The GHCP paper's Std-CP with the absolute score. Assumes within-donor i.i.d.
              Guarantee: coverage at least 1 - alpha; infinite when 1/(o - floor(o/2) + 1) > alpha.
 
-C2 candidates register with `register_method(name, fn, uses_o)`; fn(rep, cell, o, rng) returns
-{variant_name: (q, c)}.
+C2 candidates register with `register_fast(name, fn, uses_o)`; fn(prep, rep, cell, o, rng, alphas)
+returns {variant_name: [(q, c) or None, one per alpha]}. The functions m_* and ghcp_q are the
+reference implementations; the f_* functions are the fast path the runner uses, checked equal by
+fast_equals_reference().
 """
 import argparse
 import json
 import math
 import os
+import re
 import sys
 import time
 import zlib
@@ -696,7 +699,8 @@ def main(argv=None):
                    "round3/A2_conditional/a2_score_moments__resnet50.parquet")
     p.add_argument("--out", required=True)
     p.add_argument("--tag", default="")
-    p.add_argument("--only-cells", default="", help="substring filter on cell_id (smoke tests)")
+    p.add_argument("--cells-regex", default="", help="regex filter on cell_id, used to split a K "
+                   "into Slurm jobs, e.g. '^t3\\|.*\\|N2000\\|share0\\.(1|3)'")
     a = p.parse_args(argv)
     t0 = time.time()
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -706,10 +710,11 @@ def main(argv=None):
     Ns = a.N.split(",")
     cells, sig = build_cells(a.K, include_semireal="semireal" in Ns)
     cells = [c for c in cells if (c["gen"] == "semireal" or c["N"] in Ns)
-             and (a.only_cells in c["cell_id"])]
+             and re.search(a.cells_regex, c["cell_id"])]
     semi = SemiReal(a.moments) if any(c["gen"] == "semireal" for c in cells) else None
     suf = f"__K{a.K:02d}{a.tag}"
-    summ, reps = [], []
+    summ = []
+    os.makedirs(f"{a.out}/reps", exist_ok=True)
     for i, cell in enumerate(cells):
         tc = time.time()
         rr = run_cell(cell, alphas, a.reps, O_GRID, semi)
@@ -718,17 +723,17 @@ def main(argv=None):
             row["realised_share"] = rs
             summ.append(row)
         rr.insert(0, "cell_id", cell["cell_id"])
-        reps.append(rr)
+        rr["gene"] = rr["gene"].astype(str)
+        safe = re.sub(r"[^A-Za-z0-9.]+", "_", cell["cell_id"])
+        pq.write_table(pa.Table.from_pandas(rr[[f.name for f in REP_SCHEMA]], schema=REP_SCHEMA,
+                                            preserve_index=False), f"{a.out}/reps/c1_reps__{safe}.parquet")
+        del rr
         print(f"[cell {i+1}/{len(cells)}] {cell['cell_id']} {time.time()-tc:.0f}s", flush=True)
         # summaries first, rewritten after every cell so a timeout keeps finished cells
         pd.DataFrame(summ).to_csv(f"{a.out}/c1_grid{suf}.csv", index=False)
     S = pd.DataFrame(summ)
     pq.write_table(pa.Table.from_pandas(S[[f.name for f in GRID_SCHEMA]], schema=GRID_SCHEMA,
                                         preserve_index=False), f"{a.out}/c1_grid{suf}.parquet")
-    R = pd.concat(reps, ignore_index=True)
-    R["gene"] = R["gene"].astype(str)
-    pq.write_table(pa.Table.from_pandas(R[[f.name for f in REP_SCHEMA]], schema=REP_SCHEMA,
-                                        preserve_index=False), f"{a.out}/c1_reps{suf}.parquet")
     sa = pd.DataFrame([dict(gen=g, share=s, sigma_a=v) for (g, s), v in sig.items()])
     sa.to_csv(f"{a.out}/c1_sigma_a{suf}.csv", index=False)
     if semi is not None:
@@ -741,7 +746,7 @@ def main(argv=None):
                      ).to_csv(f"{a.out}/c1_semireal_fit{suf}.csv", index=False)
     cfg = dict(stage="C1", K=a.K, N=Ns, reps=a.reps, alphas=alphas, o_grid=list(O_GRID),
                n_test=N_TEST, dwr_B=DWR_B, n_glob=N_GLOB, n_oracle=N_ORACLE, qtol=QTOL,
-               moments=a.moments, only_cells=a.only_cells, seed="zlib.crc32 keys C1|cell|rep")
+               moments=a.moments, cells_regex=a.cells_regex, seed="zlib.crc32 keys C1|cell|rep")
     IO.write_provenance(a.out, "C1", __file__, cfg, extra={"wall_seconds": round(time.time() - t0),
                                                           "n_cells": len(cells)})
     print(f"[done] {len(cells)} cells {time.time()-t0:.0f}s", flush=True)
