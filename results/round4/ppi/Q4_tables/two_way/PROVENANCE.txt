@@ -1,0 +1,12 @@
+code: read-only working tree of /Users/nicolaszhang/HEST-1k-replication-PPI at aa71028 (as stated by lead). One read-only 'git log -1' was run in code/ before the brief's no-git rule was applied; nothing written by git.
+host: nicolass-mbp-9.wireless-1x.unc.edu (local, darwin), 1 process, OMP_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1 PYTHONHASHSEED=0
+date_utc: 2026-10-02T17:24:10.883336Z
+command: python q4_two_way_lung_slide.py hpc/6fd9c843-8a45-46f5-8192-6e85887f7a17
+wall_s: 4.65 (user 3.23, sys 0.91); MaxRSS not reported (macOS time)
+slurm: 3463998 harvest copy of 3 lung prediction parquets (succeeded, exit 0; wall resized 20 to 5 min with scontrol while pending). No Slurm compute job.
+script md5: q4_two_way_lung_slide.py 72667996c324505e52cd99423e248e43; round4_ppi_q2_masking.py 0bd894a5cd714ffc508b723c2c9ac616; round4_ppi_estimator.py 4e73048c16f4df033a309efff646a841
+input md5: b1_predictions__LUNG_XENIUM__uni_v2.parquet 6aa0dbc8e957a236d09d112649db0352; b1_predictions__LUNG_XENIUM__hoptimus0.parquet 160b62889856e3eea69b977ae513acdb; b1_predictions__LUNG_XENIUM__resnet50.parquet 080e4ec1dd84e01a62bb9b376e7ede4b
+task def md5: LUNG_XENIUM.json eca56c169594017cc73bf16d1207e348
+method: classical all-labelled theta3 (z) and rectifier (z-f), donor-weighted (t_g=Sz/n, influence (t_g-theta)/G) and spot-weighted; CR1 G/(G-1) by donor (15) vs S/(S-1) by slide (4); ratio slide/donor per gene; 343 genes; encoders uni_v2, hoptimus0, resnet50, permuted. Descriptive, no interval.
+PUMA count 2351 and 51 states: from /Users/nicolaszhang/acs_pums2018/acs_pums2018_all_columns.parquet (ST, PUMA, AGEP, PINCP, WKHP, PWGTP), folktables adult filter, filtered N 1,659,616 equals the inventory.
+local reruns after sleep: none (no local job was running).

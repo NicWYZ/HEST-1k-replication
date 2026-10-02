@@ -1,0 +1,13 @@
+Indiana theta2 main table, Round 4 PPI Q4 (interval 3, phase 2)
+Code commit: none run from repo (no repo code executed; table assembled by inline pandas filtering). Repo read-only: /Users/nicolaszhang/hest-1k/HEST-1k-replication-PPI
+Host: local Mac; no Slurm job; wall <5 s
+Frame id: UNRESOLVED (sub-agent could not read its own frame id; lead should stamp)  project proj_3a4e23273fb6
+Output md5: 7bd0a78f71f3ae87319f724d1500a95d
+Inputs md5: {
+ "q4a_table61.csv": "2f4f777ca86f7fe41fb8a984daba5baa",
+ "q4a_variance_grid.csv": "411f0e8ac6ca3517bb6e8b8f41a2d595",
+ "q4a_regime_comparison.csv": "6dd4f7c39da35b11211754d830ba1972",
+ "q3_regime_comparison.csv(committed)": "7e2ed13508283bafb0453c5fa9b25cd7"
+}
+Filters: vtag=INDIANA_KIDNEY, estimand=theta2; q4a_variance_grid (fixed n_L,m), q4a_regime_comparison (A, B cd10); committed q3 table rows regime B cost unit and cd_cs_100, rules none and c_crossfit only.
+n_L<6 superpopulation: c_crossfit rows dropped (144), classical none rows flagged lambda_zero_nL_lt6.

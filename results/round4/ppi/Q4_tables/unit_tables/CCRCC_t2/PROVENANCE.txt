@@ -1,0 +1,11 @@
+Unit Q4 CCRCC theta2 main table, phase 2
+code: inline pandas filter/concat (no repo code run); repo read-only at /Users/nicolaszhang/hest-1k/HEST-1k-replication-PPI
+host: local Mac, wall under 1 min, no Slurm
+inputs md5:
+  t61 2f4f777ca86f7fe41fb8a984daba5baa
+  vg 411f0e8ac6ca3517bb6e8b8f41a2d595
+  rg 6dd4f7c39da35b11211754d830ba1972
+  q3_regime_comparison.csv 7e2ed13508283bafb0453c5fa9b25cd7
+  q2_variance_grid.csv(spot check) 536ab46b4c76f83d4e70ec96a9353cd7
+output q4_main_table__CCRCC_t2.csv md5 113afb61f21bd65072fed37c3c149bdd
+stamp frame_id field empty (own frame id not available to the helper)

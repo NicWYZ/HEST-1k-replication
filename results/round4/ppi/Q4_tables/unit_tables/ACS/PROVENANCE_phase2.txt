@@ -1,0 +1,7 @@
+Round 4 PPI interval 3, unit Q4 ACS, phase 2 main table (built locally, python 3.11 pandas, no simulation run in phase 2)
+sources (lead's merged Q4a artifacts, read-only): q4a_variance_grid.csv (artifact 6f6e5593-cb86-4980-b3b4-ceb4db5eac96), q4a_regime_comparison.csv (1c2b2d93-72fe-4669-b39d-a0e0435cce65); committed /Users/nicolaszhang/hest-1k/HEST-1k-replication-PPI/results/round4/ppi/Q3_regimes/q3_regime_comparison.csv (regime B unit-cost budgets 2400/4800/9600 and cd/cs=100 rows, rules none and c_crossfit only; d1/d2 pretest rows dropped); phase 1 outputs q4_acs_phase1.tar.gz (n_L=20 masking, regime B m x G); R2 from Q2_theory/q2_cluster_r2.csv
+rules applied: regime A superpopulation c_crossfit rows at n_L<6 removed (288 rows) and the classical row kept and flagged lambda_zero_nL_lt6; design c_crossfit_design rows at n_L<6 flagged (lambda 0 by rule); G_U = G - n_L on superpopulation rows
+phase 1 frame id: own frame id not resolvable from the sandbox (stamp field says so)
+MD5 (q4_main_table__ACS.csv) = b1bdd35e13d786f9a64a052f944e381d
+MD5 (q4_acs_gain_vs_R2_breakeven.csv) = 9be1e08a61ef127a03026a5db494fac8
+MD5 (q4_acs_r2_table.csv) = 90dfdf3c8fe7c0cb6fcf656f6c4723e5
