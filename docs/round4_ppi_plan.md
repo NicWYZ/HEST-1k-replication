@@ -975,3 +975,30 @@ Q4a and the recomputed section 6.1 table, the theory additions with Q4.3 and Q4.
 the two new cost ratios, the Q4 tables, the joint-design table from the conformal track's C3 outputs
 once committed (with `within_plain` as a method, per that track's C2 memo), the round-5 cluster
 table, and the closing page "What the PPI track established". Report and wait.
+
+### 14.9 Addendum 2 (2 October 2026), the conformal track's outputs for Q5, transcribed before Q5 reads them
+
+Source `docs/decisions/round4_ppi_addendum2.md` (md5 `7df21bbb7c814cb033a651025c9ff47d`), written by the oversight chat and
+handed over by Nicolas. It asks to be transcribed as section 14.1; that number already holds the Q3
+memo's gate rule and acceptance, so it is recorded here as 14.9 and no other number moves. It changes
+nothing in Q4 or in the Q3 memo, and the gate rule is unchanged. Where this section and the source
+differ, the source governs.
+
+1. Q5 reads `results/round4/conformal/C3_real/c3_o_sweep.csv.gz` from `main` at the merge commit of
+   pull request #5 (the conformal track at tag `round4-conf-final`, `d65626f`), not from the branch,
+   and records the commit it read. The plain file is on Longleaf at the same path with md5
+   `2c3ceaa42528a1e3ad2979dc1161e542`; `c3_o_sweep_by_task.csv` is beside it.
+2. Columns: task, label_set, encoder, method, score, alpha, o, K, fold, draw, coverage, width_mean,
+   width_median, n_test, finite. HEST tasks `CCRCC`, `CCRCC_23merged`, `INDIANA_KIDNEY`,
+   `LUNG_XENIUM`; ACS rows under task `ACS` with states as groups, one predictor, $K \le 10$.
+3. Methods at $o > 0$: `ghcp` (primary), `within` (recentres on half the labelled spots, infinite below
+   $o = 25$ at $\alpha = 0.1$), `within_plain` (finite from $o = 9$), `recentred` (no guarantee). At
+   $o = 0$: `pooled`, `hcp` and the one-per-donor interval.
+4. `q5_joint_design.csv` carries, per task and $m$, regime B's confidence-interval width ratio from Q3
+   at $m$ labelled spots per donor, and from C3 at $o = m$ the coverage and width of `ghcp`,
+   `within_plain` and `within` at $K = 10$, $\alpha = 0.1$, averaged over encoders and folds, with the
+   finite share beside each. Where $m$ and $o$ do not coincide, the nearest $o$ at or below $m$ is used
+   and named in the column. The cheapest valid prediction set is marked by the conformal track's rule:
+   `hcp` at $o = 0$, `ghcp` for $0 < o < 9$, `within_plain` for $9 \le o < 25$, `within` from $o = 25$.
+5. The Q5 closing page carries the one-paragraph statement of the source's item 5 on what the joint
+   table supports.
