@@ -681,6 +681,27 @@ Nicolas chose to run both locally as well. Their Longleaf jobs are cancelled bef
 committed scripts run on the local Mac against the harvested file, and provenance records the
 local host and the input's md5. The ACS PUMS pull (section 11.4) stays on Longleaf.
 
+### 12.2 Extension of 2 October 2026 (Nicolas), interval 2
+
+Recorded under memo section 7 (plan section 13.7) before any task moves. Nicolas wrote in chat, on
+2 October 2026 at about 01:25 UTC: "if longleaf is cluttered then run anything you can locally".
+Interval-2 jobs had waited one to nine hours on `spill` (`general` at 264 of 264 nodes) and then
+ran for minutes. Under this extension the following run on the local Mac from committed code, with
+provenance recording the local host, the commit, every script's and input's md5, and wall time.
+
+1. Synthetic simulations with no cluster inputs: the theorem check with the oracle-lambda arm
+   (`round4_ppi_q2_theorem_sim.py` at `de3b71f`) and any remaining Q1b work.
+2. Q2 masking and Q3 regime comparison for every task whose inputs are prediction parquets small
+   enough to copy (CCRCC, CCRCC merged, and the ACS parquets once converted, and Indiana and lung
+   once their predictions exist), each copy checked by md5 against Longleaf.
+3. Longleaf jobs of these tasks that have not started are cancelled before they start; jobs already
+   running finish where they are.
+
+What stays on Longleaf: steps that need the harness, the embeddings or the morphology files (the
+Indiana and lung prediction steps, the ACS conversion that reads the 448 MB parquet, and the
+recalibration test). The Q3 report lists every local run as a deviation from "run on UNC Longleaf
+through Slurm", with this message as its authority.
+
 ## 13. The Q1 decision memo (1 October 2026), transcribed before any of it is acted on
 
 Source `docs/decisions/round4_ppi_Q1_decisions.md` (md5 `b7dafd175f42d55a21c5387437cd0dd3`),
