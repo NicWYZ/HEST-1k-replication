@@ -1,0 +1,14 @@
+T1[donor]: PASS max |diff| 5.55e-16
+T2[donor]: PASS 
+T4[donor]: PASS max |grid argmin - lambda| 2.4e-04
+T1[spot]: PASS max |diff| 7.77e-16
+T2[spot]: PASS 
+T4[spot]: PASS max |grid argmin - lambda| 2.4e-04
+T3[donor,nL4]: PASS 
+T3[spot,nL4]: PASS 
+T3[donor,nL5]: PASS 
+T3[spot,nL5]: PASS 
+T5[donor]: PASS 
+T5[spot]: PASS 
+T6: PASS (spot totals differ from donor means)
+ALL PASS

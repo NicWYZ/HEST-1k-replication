@@ -89,7 +89,10 @@ def _imp(name):
 
 B1 = _imp("round3_b1_ppi")
 
-RULES = ("none", "c_crossfit", "d1_pretest", "d2_pretest")
+RULES = ("none", "c_crossfit", "d1_pretest", "d2_pretest")   # interval 2 (Q2 as reported at Q3)
+# Interval 3 (Q3 decision memo, plan section 14): rule (d) dropped, the design rule added. The
+# default stays the interval-2 set so old commands reproduce; Q4a passes --rules.
+DESIGN_ONLY_RULES = ("c_crossfit_design",)   # design-target rows only; superpopulation unchanged
 ESTS = ("theta3", "theta2")
 POPS = ("donor", "spot")
 NL_GRID = (4, 6, 8, 12, 16)
@@ -252,12 +255,15 @@ def run_cell(data, Z, n_L, m, n_draws, vtag, theta_full, valid, Dpop):
             tr = theta_full[(est, pop)]
             for rule in RULES:
                 sd = f"q2|{vtag}|nL{n_L}|m{m}|d{d}|{est}|{pop}|{rule}"
-                lam, res, iv = E.all_intervals(pop, Dd, Lm, Um, rule, tr, seed=sd, do_boot=False,
-                                               with_ws=False)
-                for name in ("CR1_t", "CR2_bm"):
-                    v = iv[name]
-                    _acc(acc, (est, pop, "super", rule, name), res["theta"], v["var"], v["lo"], v["hi"],
-                         lam["lam"], tr)
+                if rule in DESIGN_ONLY_RULES:
+                    lam = E.lambda_rule(rule, pop, Dd, Lm, Um, seed=sd)
+                else:
+                    lam, res, iv = E.all_intervals(pop, Dd, Lm, Um, rule, tr, seed=sd, do_boot=False,
+                                                   with_ws=False)
+                    for name in ("CR1_t", "CR2_bm"):
+                        v = iv[name]
+                        _acc(acc, (est, pop, "super", rule, name), res["theta"], v["var"], v["lo"], v["hi"],
+                             lam["lam"], tr, lam.get("lam_se"))
                 # design target: within-donor rectifier variance over labelled spots
                 lamL = lam["lamL"]
                 s2w = np.zeros((G, ng))
@@ -276,14 +282,16 @@ def run_cell(data, Z, n_L, m, n_draws, vtag, theta_full, valid, Dpop):
                     cc = lam["classical_cols"]
                     th, var = np.where(cc, th0, th), np.where(cc, var0, var)
                 lo, hi = E.t_interval(th, var, df)
-                _acc(acc, (est, pop, "design", rule, "textbook_t|fpc"), th, var, lo, hi, lam["lam"], tr)
+                _acc(acc, (est, pop, "design", rule, "textbook_t|fpc"), th, var, lo, hi, lam["lam"], tr,
+                     lam.get("lam_se"))
     return acc
 
 
-def _acc(acc, key, th, var, lo, hi, lam, tr):
-    a = acc.setdefault(key, dict(th=[], var=[], cov=[], w=[], lam=[]))
+def _acc(acc, key, th, var, lo, hi, lam, tr, lam_se=None):
+    a = acc.setdefault(key, dict(th=[], var=[], cov=[], w=[], lam=[], lam_se=[]))
     a["th"].append(th); a["var"].append(var); a["cov"].append((lo <= tr) & (tr <= hi))
     a["w"].append(hi - lo); a["lam"].append(lam)
+    a["lam_se"].append(np.full(np.shape(th), np.nan) if lam_se is None else lam_se)
 
 
 def summarise(acc, cell, genes):
@@ -308,14 +316,21 @@ def summarise(acc, cell, genes):
                          width_ratio_median=float(np.nanmedian(w[ok] / wc[ok])) if ok.any() else np.nan,
                          emp_var_ratio_median=float(np.nanmedian(ev[ok] / evc[ok])) if ok.any() else np.nan,
                          lambda_median=float(np.nanmedian(v["lam"])),
-                         lambda_frac_zero=float(np.mean(v["lam"] == 0.0))))
+                         lambda_frac_zero=float(np.mean(v["lam"] == 0.0)),
+                         lambda_se_median=(float(np.nanmedian(v["lam_se"]))
+                                           if np.isfinite(v["lam_se"]).any() else np.nan)))
         # per-gene rows for the fit and the gene axis
         for j, gname in enumerate(genes):
             if not ok[j]:
                 continue
             rows[-1].setdefault("_genes", []).append(dict(gene=gname, emp_var=ev[j], est_var=mv[j],
                                                          emp_var_classical=evc[j], coverage=cov[j],
-                                                         width=w[j], width_classical=wc[j]))
+                                                         width=w[j], width_classical=wc[j],
+                                                         lambda_median=float(np.nanmedian(v["lam"][:, j])),
+                                                         lambda_sd_draws=float(np.nanstd(v["lam"][:, j], ddof=1)),
+                                                         lambda_se_median=(float(np.nanmedian(v["lam_se"][:, j]))
+                                                                           if np.isfinite(v["lam_se"][:, j]).any()
+                                                                           else np.nan)))
     return rows
 
 
@@ -355,6 +370,7 @@ def main(argv=None):
     argv = sys.argv[1:] if argv is None else argv
     if argv and argv[0].startswith("--fit-from"):
         return fit_main(argv)
+    global THETA2_KIND, RULES
     p = argparse.ArgumentParser()
     p.add_argument("--parquet", required=True)
     p.add_argument("--vtag", required=True, help="task tag as in B1, e.g. CCRCC or CCRCC_merged")
@@ -366,10 +382,12 @@ def main(argv=None):
     p.add_argument("--fit", action="store_true")
     p.add_argument("--theta2-kind", default="neo_minus_stroma", choices=("neo_minus_stroma", "mean"))
     p.add_argument("--out-dir", required=True)
+    p.add_argument("--rules", default=",".join(RULES),
+                   help="comma list; interval 3 uses none,c_crossfit,c_crossfit_design")
     a = p.parse_args(argv)
     np.seterr(all="ignore")
-    global THETA2_KIND
     THETA2_KIND = a.theta2_kind
+    RULES = tuple(r for r in a.rules.split(",") if r)
     os.makedirs(a.out_dir, exist_ok=True)
     t0 = time.time()
     data = load(a.parquet, a.arm, a.vtag)

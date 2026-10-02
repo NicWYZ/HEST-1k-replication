@@ -47,6 +47,15 @@ COMPONENTS (section 6 Q1).
                                 donors (three or more), and 0 throughout when n_L < 6;
                                 columns where both halves are 0 are
                                 reported as the classical estimator with classical variances.
+                                Dropped by the Q3 decision memo; kept for reproducing Q1b and Q2.
+              rule 'c_crossfit_design'  (Q3 decision memo section 2) the design-target rule: the
+                                same halves as rule (c); each half's lambda is the least-squares
+                                slope of the textbook form's donor contributions (donor
+                                population t_d on tf_d; spot population Sz_d on Sf_d) over that
+                                half, clipped to [0, 1], with no unlabelled term (the GREG
+                                coefficient), applied to the other half; 0 when n_L < 6.
+              Rules c and c_crossfit_design also return lam_se, the root mean square of the two
+              halves' OLS slope standard errors (the se of the lambda applied to a half).
   variance    CR1 (G/(G-1)), CR2 (Bell-McCaffrey leverage adjustment), spot i.i.d.;
               references t_{G_L-1} (CR1), Bell-McCaffrey Satterthwaite df of the L term (CR2),
               and a Welch-Satterthwaite combination of the U and L terms' df (either).
@@ -161,6 +170,48 @@ def _ols_slope_se(y, x, mask):
     return np.where((k >= 3) & (sxx > 0), np.sqrt(s2 / np.where(sxx > 0, sxx, 1.0)), np.nan)
 
 
+def _design_lambda(y, x, mask, raw=False):
+    """Q3 decision memo section 2 (plan section 14.2): the design-target lambda minimises the
+    between-donor sample variance of r_g = y_g - lambda x_g over the masked (tuning-half) donors,
+    with no unlabelled term: the least-squares slope of y on x with intercept (the GREG
+    coefficient), clipped to [0, 1]. raw=True returns the unclipped slope (nan if no spread)."""
+    k = mask.sum(0).astype(float)
+    xm, ym = _m(x, mask) / np.maximum(k, 1.0), _m(y, mask) / np.maximum(k, 1.0)
+    dx = np.where(mask, x - xm, 0.0)
+    dy = np.where(mask, y - ym, 0.0)
+    sxx, sxy = (dx ** 2).sum(0), (dx * dy).sum(0)
+    if raw:
+        return np.where((k >= 2) & (sxx > 0), sxy / np.where(sxx > 0, sxx, 1.0), np.nan)
+    return np.where((k >= 2) & (sxx > 0), np.clip(sxy / np.where(sxx > 0, sxx, 1.0), 0.0, 1.0), 0.0)
+
+
+def _textbook_contributions(pop, D):
+    """Donor contributions of the textbook form: donor population (t_d, tf_d); spot population
+    the donor totals (Sz_d, Sf_d), whose rectifier Sz_d - lambda Sf_d is what var_textbook uses."""
+    if pop == "donor":
+        return donor_values(D)
+    return D["Sz"], D["Sf"]
+
+
+def _crossfit_halves(Lm, seed):
+    rng = seed_rng(f"crossfit|{seed}")
+    half = np.full(Lm.shape, -1, dtype=int)
+    for j in range(Lm.shape[1]):
+        idx = np.flatnonzero(Lm[:, j])
+        perm = rng.permutation(idx)
+        h = len(perm) // 2
+        half[perm[:h], j] = 0
+        half[perm[h:], j] = 1
+    return half
+
+
+def _half_se_summary(seA, seB):
+    """se of the lambda applied to one half (root mean square of the two halves' OLS slope
+    standard errors) and se of the average of the two half estimates."""
+    se_half = np.sqrt((seA ** 2 + seB ** 2) / 2.0)
+    return se_half, np.sqrt((seA ** 2 + seB ** 2) / 4.0)
+
+
 def _donor_contributions(pop, D, Lh):
     """The half's donor-level outcome and prediction contributions used by the pre-test:
     donor population (t_d, tf_d); spot population the donor totals of z and f centred at the
@@ -237,8 +288,30 @@ def lambda_rule(rule, pop, D, Lm, Um, seed=None):
         else:
             w = Lm.astype(float)
         cU = (w * lamL).sum(0) / w.sum(0)
+        yA, xA = _donor_contributions(pop, D, LA)
+        yB, xB = _donor_contributions(pop, D, LB)
+        se_half, se_mean = _half_se_summary(_ols_slope_se(yA, xA, LA), _ols_slope_se(yB, xB, LB))
         return dict(lamL=lamL, cU=cU, strata=np.where(Lm, half, -1), lam=cU,
-                    lamA=lamA, lamB=lamB, basis="crossfit_cluster")
+                    lamA=lamA, lamB=lamB, lam_se=se_half, lam_se_mean=se_mean,
+                    basis="crossfit_cluster")
+    if rule == "c_crossfit_design":
+        # Q3 decision memo section 2 (plan section 14.2): the same halves as rule (c) (same seed
+        # tag); each half's lambda is the GREG coefficient of the textbook form's donor
+        # contributions over that half, applied to the other half; lambda = 0 when n_L < 6.
+        half = _crossfit_halves(Lm, seed)
+        LA, LB = half == 0, half == 1
+        y, x = _textbook_contributions(pop, D)
+        ok6 = GL >= 6
+        lamA = np.where(ok6, _design_lambda(y, x, LA), 0.0)
+        lamB = np.where(ok6, _design_lambda(y, x, LB), 0.0)
+        lamL = np.where(LA, lamB[None, :], np.where(LB, lamA[None, :], 0.0))
+        w = np.where(Lm, D["n"], 0.0) if pop == "spot" else Lm.astype(float)
+        cU = (w * lamL).sum(0) / w.sum(0)
+        se_half, se_mean = _half_se_summary(_ols_slope_se(y, x, LA), _ols_slope_se(y, x, LB))
+        return dict(lamL=lamL, cU=cU, strata=np.where(Lm, half, -1), lam=cU,
+                    lamA=lamA, lamB=lamB, lam_se=se_half, lam_se_mean=se_mean,
+                    rawA=_design_lambda(y, x, LA, raw=True), rawB=_design_lambda(y, x, LB, raw=True),
+                    basis="crossfit_design_greg")
     if rule in PRETEST_K:
         # Rule (d), Q1 decision memo section 2 (plan section 13.2): rule (c) with a pre-test on
         # each half. The halves are the same as rule (c)'s (same seed tag). A half's lambda is
@@ -639,8 +712,9 @@ def _jackknife(pop, D, Lm, Um, lam):
 #                   Var  = (1 - n_L/G) (G/N)^2 s_R^2 / n_L,    t_{n_L - 1}
 # lam_g is the lambda applied to labelled donor g (one value for rules a and b; the other
 # half's value under cross-fitting) and the coefficient on the population term is cU, as in the
-# complement form. The lambda rules are unchanged (addendum 1): they are computed exactly as
-# for the complement form, with U the unlabelled donors, and then plugged in.
+# complement form. Addendum 1 kept the complement-form lambda rules here; the Q3 decision memo
+# replaces them on design-target rows by 'c_crossfit_design', whose objective is this form's own
+# between-donor variance of e (no U term). The older rules remain available for comparison.
 def estimate_textbook(pop, D, Lm, Am, lam):
     """Am is the population mask (all G donors). Returns dict(theta, e, G, n_L) with e the
     per-labelled-donor terms whose sample variance gives the variance."""
