@@ -15,12 +15,14 @@ Q1's outcome also carries beta c_g, a donor-level covariate term, so the outcome
 sigma_U^2 = rho + beta^2 s_c, not rho. The file records both: R2_cluster_memo = 1/(1 + sigma_a^2/rho),
 the memo's nominal value, and R2_cluster_exact = sigma_U^2/(sigma_U^2 + sigma_a^2).
 
-Columns of q2_sim_theorem.csv, one row per cell: the empirical variance of the PPI estimate over
+Columns of q2_sim_theorem.csv, one row per cell: the empirical variance of the PPI estimate (rule c) over
 replicates divided by the classical one (`emp_var_ratio`, with a delta-method MC standard error),
 `one_minus_R2_memo`, `one_minus_R2_exact`, the large-m full ratios at the cluster optimum and at the
 two-term optimum (`full_ratio_lambda_c`, `full_ratio_lambda_A`, theory section 2 step 3, exact R2),
 the finite-m ratio at lambda_A (`finite_m_ratio_lambda_A`), the G_U term's size at lambda_A
-(`GU_term_lambda_A` = R2 n_L/(G_U + n_L)), and the lambda summaries.
+(`GU_term_lambda_A` = R2 n_L/(G_U + n_L)), the lambda summaries, and `oracle_emp_var_ratio`, the
+same ratio with lambda fixed at lambda_A (finite m) instead of estimated, which isolates the cost of
+estimating lambda from the theorem's fixed-lambda formula.
 """
 import argparse
 import hashlib
@@ -81,7 +83,7 @@ def run_cell(G_L, G_U, m, ratio, reps, chunk, max_spots, seed):
     comp = components(ratio, m, G_L, G_U)
     sa, seps = np.sqrt(comp["sigma_a2"]), np.sqrt(comp["sigma_eps2"])
     rng = E.seed_rng(seed)
-    th = {"none": [], "c_crossfit": []}
+    th = {"none": [], "c_crossfit": [], "oracle_lambda_A": []}
     lams = []
     done, ch = 0, 0
     while done < reps:
@@ -99,13 +101,20 @@ def run_cell(G_L, G_U, m, ratio, reps, chunk, max_spots, seed):
         Lm = np.zeros((G, n), bool); Lm[:G_L] = True
         Um = ~Lm
         for rule in th:
-            lam = E.lambda_rule(rule, "donor", D, Lm, Um, seed=f"{seed}|ch{ch}|{rule}")
+            if rule == "oracle_lambda_A":
+                # the theorem's lambda, fixed at its finite-m two-term optimum (no estimation)
+                lv = np.full(n, comp["lambda_A_finite"])
+                lam = dict(lamL=np.broadcast_to(lv, Lm.shape).copy(), cU=lv.copy(), strata=None,
+                           lam=lv, basis="oracle")
+            else:
+                lam = E.lambda_rule(rule, "donor", D, Lm, Um, seed=f"{seed}|ch{ch}|{rule}")
             res = E.estimate("donor", D, Lm, Um, lam)
             th[rule].append(res["theta"])
             if rule == "c_crossfit":
                 lams.append(lam["lam"])
         done += n
         ch += 1
+    o = np.concatenate(th["oracle_lambda_A"])
     a, b = np.concatenate(th["c_crossfit"]), np.concatenate(th["none"])
     va, vb = a.var(ddof=1), b.var(ddof=1)
     ratio_emp = va / vb
@@ -114,8 +123,14 @@ def run_cell(G_L, G_U, m, ratio, reps, chunk, max_spots, seed):
     g = da / va - db / vb
     se = ratio_emp * np.sqrt(np.var(g, ddof=1) / len(a))
     lam = np.concatenate(lams)
+    vo = o.var(ddof=1)
+    do = (o - o.mean()) ** 2 - vo
+    go = do / vo - db / vb
+    oracle_ratio = vo / vb
+    oracle_se = oracle_ratio * np.sqrt(np.var(go, ddof=1) / len(o))
     return dict(G_L=G_L, G_U=G_U, m=m, rho=RHO, r=R, sigma_a2_over_sigma_u2=ratio, n_reps=len(a),
-                emp_var_ratio=ratio_emp, emp_var_ratio_mc_se=se, emp_var_ppi=va, emp_var_cl=vb,
+                emp_var_ratio=ratio_emp, emp_var_ratio_mc_se=se,
+                oracle_emp_var_ratio=oracle_ratio, oracle_emp_var_ratio_mc_se=oracle_se, emp_var_ppi=va, emp_var_cl=vb,
                 bias_ppi=float(a.mean() - MU), bias_cl=float(b.mean() - MU),
                 lambda_mean=float(lam.mean()), lambda_median=float(np.median(lam)), **comp)
 
