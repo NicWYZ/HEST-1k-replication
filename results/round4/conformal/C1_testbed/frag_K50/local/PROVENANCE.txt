@@ -1,0 +1,21 @@
+==============================================================================
+Round 4 conformal track, stage C1
+job_name_prefix : r4conf_C1  (the submission route replaces --job-name)
+slurm_job_id    : none
+slurm_partition : none
+node            : Nicolass-MacBook-Pro-9.local
+date            : 2026-10-01T03:14:17-04:00
+code_clone      : /Users/nicolaszhang/HEST-1k-replication-conformal
+code_clone_head : 6d69e3c40ea570d5c0729d1e99adc83c9305163d
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /Users/nicolaszhang/HEST-1k-replication-conformal/code/scripts/round4_conf_sim.py
+script_md5      : 76fda34ee622e299bbaa806e5c8da98a
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : code/scripts/round4_conf_sim.py --K 50 --N 100,500,2000,unequal,semireal --reps 5000 --moments results/round4/conformal/C1_testbed/inputs/a2_score_moments__resnet50.parquet --out results/round4/conformal/C1_testbed/frag_K50/local --tag __local
+pythonhashseed  : 0
+python          : 3.11.15
+numpy           : 2.4.6
+config_hash     : sha256/16 2a88f9c7713d3c8d
+config          : {"K": 50, "N": ["100", "500", "2000", "unequal", "semireal"], "alphas": [0.1, 0.2], "cells_regex": "", "dwr_B": 100, "moments": "results/round4/conformal/C1_testbed/inputs/a2_score_moments__resnet50.parquet", "n_glob": 13, "n_oracle": 1000000, "n_test": 500, "o_grid": [0, 5, 10, 25, 50, 100], "qtol": 1e-12, "reps": 5000, "seed": "zlib.crc32 keys C1|cell|rep", "stage": "C1"}
+wall_seconds    : 11421
+n_cells         : 58

@@ -1,0 +1,210 @@
+stage C0, intended prefix r4conf_C0, job 3074739 partition spill node c151417.ll.unc.edu
+code HEAD a652ab43a422d9d01ad32607fbd4f5f6e3f5321c
+                            check   encoder  n_embedding_rows  n_dropped  n_kept  X_rows  Y_rows  xy_rows  n_genes  dropped_in_output  passed                                     note
+                  wrapper_NCBI865 hoptimus0            2143.0        1.0  2142.0  2142.0  2142.0   2142.0    343.0                0.0    True                                      NaN
+                  wrapper_NCBI865    uni_v2            2143.0        1.0  2142.0  2142.0  2142.0   2142.0    343.0                0.0    True                                      NaN
+                  wrapper_NCBI865  resnet50            2143.0        1.0  2142.0  2142.0  2142.0   2142.0    343.0                0.0    True                                      NaN
+round3_load_set_raises_on_NCBI865  resnet50               NaN        NaN     NaN     NaN     NaN      NaN      NaN                NaN    True NCBI865: patch barcode not in expression
+        lung_target_list_controls                         NaN        0.0     NaN     NaN     NaN      NaN    343.0                NaN    True                                      NaN
+[C0 lung] PASS
+lung rc=0
+[config] sha256/16 d530820243ac5da5
+{"K": 10, "alpha": 0.1, "arms": "a1_rule_K6,K10", "base_predictor": "imported unmodified from round3_a0_harness.fit_base", "cal_frac_units_rule": "(K - 0.5) / n_units, whose ceiling is K", "designs_enumerated": "random,patient,donor", "donor_grouping": "donor_audit_r3.csv row_origin=benchmark_r2, checked against the task definition", "donor_sets": "24", "dwr_reps": 200, "encoder": "resnet50", "max_folds": null, "merge_pair": ["INT4", "INT24"], "merged_id": "INT4+INT24", "methods": ["pooled", "hcp", "dwr"], "min_C_spots": 9, "min_T_spots": 512, "min_slide_spots": 50, "n_cal_draws": 3, "n_repeats": null, "quantile_rel_tol": 1e-12, "score": "abs", "script": "code/scripts/round3_a4b_hcp.py", "seed_source": "zlib.crc32 via the harness", "size_match": "task", "spot_cal_draws": 1, "stage": "round3_A4b", "task": "CCRCC/shipped", "task_def": "results/round3/task_defs/CCRCC.json", "weighted_quantile": "imported unmodified from round3_a3_weighted"}
+[audit] {"audit_rows_benchmark_r2": 24, "expansion_d3_rows_for_same_samples": 24, "expansion_d3_statuses": "unverifiable", "n_donors": 24, "statuses": "verified"}
+[load] CCRCC resnet50: 74,220 spots x 1024 dims, 50 genes, 37s
+[enum] 24: 120 A1 specs, n_match=35996, 24 donor folds, 24 donors
+  [24/a1_rule_K6] INT1 draw0 K=6 n_T=35996(17d) n_C=22105(6d) n_E=1084 r=0.1103
+  [24/a1_rule_K6] INT1 draw1 K=6 n_T=35996(17d) n_C=22542(6d) n_E=1084 r=0.0464
+  [24/a1_rule_K6] INT1 draw2 K=6 n_T=35996(17d) n_C=17537(6d) n_E=1084 r=0.1134
+  [24/a1_rule_K6] INT10 draw0 K=6 n_T=35996(17d) n_C=20751(6d) n_E=1983 r=0.4682
+  [24/a1_rule_K6] INT10 draw1 K=6 n_T=35996(17d) n_C=19589(6d) n_E=1983 r=0.3424
+  [24/a1_rule_K6] INT10 draw2 K=6 n_T=35996(17d) n_C=15682(6d) n_E=1983 r=0.4376
+  [24/a1_rule_K6] INT11 draw0 K=6 n_T=35996(17d) n_C=18765(6d) n_E=1439 r=0.0250
+  [24/a1_rule_K6] INT11 draw1 K=6 n_T=35996(17d) n_C=19774(6d) n_E=1439 r=0.0855
+  [24/a1_rule_K6] INT11 draw2 K=6 n_T=35996(17d) n_C=16893(6d) n_E=1439 r=0.0211
+  [24/a1_rule_K6] INT12 draw0 K=6 n_T=35996(17d) n_C=19276(6d) n_E=1451 r=0.0956
+  [24/a1_rule_K6] INT12 draw1 K=6 n_T=35996(17d) n_C=19118(6d) n_E=1451 r=0.0531
+  [24/a1_rule_K6] INT12 draw2 K=6 n_T=35996(17d) n_C=13495(6d) n_E=1451 r=0.1037
+  [24/a1_rule_K6] INT13 draw0 K=6 n_T=35996(17d) n_C=14763(6d) n_E=4359 r=0.0698
+  [24/a1_rule_K6] INT13 draw1 K=6 n_T=35996(17d) n_C=15569(6d) n_E=4359 r=0.0870
+  [24/a1_rule_K6] INT13 draw2 K=6 n_T=35996(17d) n_C=17605(6d) n_E=4359 r=0.1012
+  [24/a1_rule_K6] INT14 draw0 K=6 n_T=35996(17d) n_C=20484(6d) n_E=4562 r=0.1161
+  [24/a1_rule_K6] INT14 draw1 K=6 n_T=35996(17d) n_C=10569(6d) n_E=4562 r=0.0931
+  [24/a1_rule_K6] INT14 draw2 K=6 n_T=35996(17d) n_C=19870(6d) n_E=4562 r=0.0708
+  [24/a1_rule_K6] INT15 draw0 K=6 n_T=35996(17d) n_C=21635(6d) n_E=4940 r=0.0879
+  [24/a1_rule_K6] INT15 draw1 K=6 n_T=35996(17d) n_C=19409(6d) n_E=4940 r=0.1322
+  [24/a1_rule_K6] INT15 draw2 K=6 n_T=35996(17d) n_C=22370(6d) n_E=4940 r=0.0911
+  [24/a1_rule_K6] INT16 draw0 K=6 n_T=35996(17d) n_C=16890(6d) n_E=3206 r=0.1040
+  [24/a1_rule_K6] INT16 draw1 K=6 n_T=35996(17d) n_C=16496(6d) n_E=3206 r=0.1152
+  [24/a1_rule_K6] INT16 draw2 K=6 n_T=35996(17d) n_C=20702(6d) n_E=3206 r=0.1237
+  [24/a1_rule_K6] INT17 draw0 K=6 n_T=35996(17d) n_C=22814(6d) n_E=3585 r=0.1010
+  [24/a1_rule_K6] INT17 draw1 K=6 n_T=35996(17d) n_C=18516(6d) n_E=3585 r=0.1062
+  [24/a1_rule_K6] INT17 draw2 K=6 n_T=35996(17d) n_C=21742(6d) n_E=3585 r=0.1024
+  [24/a1_rule_K6] INT18 draw0 K=6 n_T=35996(17d) n_C=20693(6d) n_E=4915 r=0.2347
+  [24/a1_rule_K6] INT18 draw1 K=6 n_T=35996(17d) n_C=12528(6d) n_E=4915 r=0.2156
+  [24/a1_rule_K6] INT18 draw2 K=6 n_T=35996(17d) n_C=17768(6d) n_E=4915 r=0.1667
+  [24/a1_rule_K6] INT19 draw0 K=6 n_T=35996(17d) n_C=17973(6d) n_E=4948 r=0.0765
+  [24/a1_rule_K6] INT19 draw1 K=6 n_T=35996(17d) n_C=16852(6d) n_E=4948 r=0.1253
+  [24/a1_rule_K6] INT19 draw2 K=6 n_T=35996(17d) n_C=16547(6d) n_E=4948 r=0.1158
+  [24/a1_rule_K6] INT2 draw0 K=6 n_T=35996(17d) n_C=17105(6d) n_E=2580 r=0.2182
+  [24/a1_rule_K6] INT2 draw1 K=6 n_T=35996(17d) n_C=17025(6d) n_E=2580 r=0.2306
+  [24/a1_rule_K6] INT2 draw2 K=6 n_T=35996(17d) n_C=17316(6d) n_E=2580 r=0.1941
+  [24/a1_rule_K6] INT20 draw0 K=6 n_T=35996(17d) n_C=12289(6d) n_E=4860 r=0.1429
+  [24/a1_rule_K6] INT20 draw1 K=6 n_T=35996(17d) n_C=22582(6d) n_E=4860 r=0.1335
+  [24/a1_rule_K6] INT20 draw2 K=6 n_T=35996(17d) n_C=23616(6d) n_E=4860 r=0.1238
+  [24/a1_rule_K6] INT21 draw0 K=6 n_T=35996(17d) n_C=13913(6d) n_E=4975 r=0.1745
+  [24/a1_rule_K6] INT21 draw1 K=6 n_T=35996(17d) n_C=10996(6d) n_E=4975 r=0.2046
+  [24/a1_rule_K6] INT21 draw2 K=6 n_T=35996(17d) n_C=15758(6d) n_E=4975 r=0.1879
+  [24/a1_rule_K6] INT22 draw0 K=6 n_T=35996(17d) n_C=17587(6d) n_E=3829 r=0.1147
+  [24/a1_rule_K6] INT22 draw1 K=6 n_T=35996(17d) n_C=21427(6d) n_E=3829 r=0.0986
+  [24/a1_rule_K6] INT22 draw2 K=6 n_T=35996(17d) n_C=23361(6d) n_E=3829 r=0.0739
+  [24/a1_rule_K6] INT23 draw0 K=6 n_T=35996(17d) n_C=21452(6d) n_E=4755 r=0.0822
+  [24/a1_rule_K6] INT23 draw1 K=6 n_T=35996(17d) n_C=17479(6d) n_E=4755 r=0.0551
+  [24/a1_rule_K6] INT23 draw2 K=6 n_T=35996(17d) n_C=13269(6d) n_E=4755 r=0.0519
+  [24/a1_rule_K6] INT24 draw0 K=6 n_T=35996(17d) n_C=18859(6d) n_E=4510 r=0.0826
+  [24/a1_rule_K6] INT24 draw1 K=6 n_T=35996(17d) n_C=24159(6d) n_E=4510 r=0.1995
+  [24/a1_rule_K6] INT24 draw2 K=6 n_T=35996(17d) n_C=17964(6d) n_E=4510 r=0.1895
+  [24/a1_rule_K6] INT3 draw0 K=6 n_T=35996(17d) n_C=20344(6d) n_E=2007 r=0.1081
+  [24/a1_rule_K6] INT3 draw1 K=6 n_T=35996(17d) n_C=19219(6d) n_E=2007 r=0.1223
+  [24/a1_rule_K6] INT3 draw2 K=6 n_T=35996(17d) n_C=17234(6d) n_E=2007 r=0.1052
+  [24/a1_rule_K6] INT4 draw0 K=6 n_T=35996(17d) n_C=13610(6d) n_E=1349 r=0.0985
+  [24/a1_rule_K6] INT4 draw1 K=6 n_T=35996(17d) n_C=20622(6d) n_E=1349 r=0.1071
+  [24/a1_rule_K6] INT4 draw2 K=6 n_T=35996(17d) n_C=18248(6d) n_E=1349 r=0.1168
+  [24/a1_rule_K6] INT5 draw0 K=6 n_T=35996(17d) n_C=24596(6d) n_E=1186 r=0.4620
+  [24/a1_rule_K6] INT5 draw1 K=6 n_T=35996(17d) n_C=17266(6d) n_E=1186 r=0.5036
+  [24/a1_rule_K6] INT5 draw2 K=6 n_T=35996(17d) n_C=22330(6d) n_E=1186 r=0.4467
+  [24/a1_rule_K6] INT6 draw0 K=6 n_T=35996(17d) n_C=17592(6d) n_E=1678 r=0.2340
+  [24/a1_rule_K6] INT6 draw1 K=6 n_T=35996(17d) n_C=19422(6d) n_E=1678 r=0.1705
+  [24/a1_rule_K6] INT6 draw2 K=6 n_T=35996(17d) n_C=19847(6d) n_E=1678 r=0.2803
+  [24/a1_rule_K6] INT7 draw0 K=6 n_T=35996(17d) n_C=18917(6d) n_E=2374 r=-0.0285
+  [24/a1_rule_K6] INT7 draw1 K=6 n_T=35996(17d) n_C=24820(6d) n_E=2374 r=-0.0120
+  [24/a1_rule_K6] INT7 draw2 K=6 n_T=35996(17d) n_C=22623(6d) n_E=2374 r=-0.0118
+  [24/a1_rule_K6] INT8 draw0 K=6 n_T=35996(17d) n_C=22774(6d) n_E=1949 r=0.1037
+  [24/a1_rule_K6] INT8 draw1 K=6 n_T=35996(17d) n_C=18471(6d) n_E=1949 r=0.1475
+  [24/a1_rule_K6] INT8 draw2 K=6 n_T=35996(17d) n_C=21619(6d) n_E=1949 r=0.0886
+  [24/a1_rule_K6] INT9 draw0 K=6 n_T=35996(17d) n_C=12609(6d) n_E=1696 r=0.3517
+  [24/a1_rule_K6] INT9 draw1 K=6 n_T=35996(17d) n_C=20533(6d) n_E=1696 r=0.3628
+  [24/a1_rule_K6] INT9 draw2 K=6 n_T=35996(17d) n_C=17614(6d) n_E=1696 r=0.3139
+  [24/K10] INT1 draw0 K=10 n_T=35996(13d) n_C=34264(10d) n_E=1084 r=0.0892
+  [24/K10] INT1 draw1 K=10 n_T=35996(13d) n_C=31450(10d) n_E=1084 r=0.0311
+  [24/K10] INT1 draw2 K=10 n_T=35996(13d) n_C=34063(10d) n_E=1084 r=0.0784
+  [24/K10] INT10 draw0 K=10 n_T=35996(13d) n_C=33394(10d) n_E=1983 r=0.4503
+  [24/K10] INT10 draw1 K=10 n_T=35996(13d) n_C=32424(10d) n_E=1983 r=0.2528
+  [24/K10] INT10 draw2 K=10 n_T=35996(13d) n_C=26781(10d) n_E=1983 r=0.4072
+  [24/K10] INT11 draw0 K=10 n_T=35996(13d) n_C=34610(10d) n_E=1439 r=0.0409
+  [24/K10] INT11 draw1 K=10 n_T=35996(13d) n_C=34182(10d) n_E=1439 r=0.0968
+  [24/K10] INT11 draw2 K=10 n_T=35996(13d) n_C=31359(10d) n_E=1439 r=0.0733
+  [24/K10] INT12 draw0 K=10 n_T=35996(13d) n_C=34098(10d) n_E=1451 r=0.0934
+  [24/K10] INT12 draw1 K=10 n_T=35996(13d) n_C=34981(10d) n_E=1451 r=0.0640
+  [24/K10] INT12 draw2 K=10 n_T=35996(13d) n_C=31118(10d) n_E=1451 r=0.1055
+  [24/K10] INT13 draw0 K=10 n_T=35996(13d) n_C=30733(10d) n_E=4359 r=0.0637
+  [24/K10] INT13 draw1 K=10 n_T=35996(13d) n_C=31433(10d) n_E=4359 r=0.1049
+  [24/K10] INT13 draw2 K=10 n_T=35996(13d) n_C=29953(10d) n_E=4359 r=0.0817
+  [24/K10] INT14 draw0 K=10 n_T=35996(13d) n_C=32216(10d) n_E=4562 r=0.1094
+  [24/K10] INT14 draw1 K=10 n_T=35996(13d) n_C=28992(10d) n_E=4562 r=0.1073
+  [24/K10] INT14 draw2 K=10 n_T=35996(13d) n_C=29746(10d) n_E=4562 r=0.0789
+  [24/K10] INT15 draw0 K=10 n_T=35996(13d) n_C=31962(10d) n_E=4940 r=0.0762
+  [24/K10] INT15 draw1 K=10 n_T=35996(13d) n_C=29544(10d) n_E=4940 r=0.1305
+  [24/K10] INT15 draw2 K=10 n_T=35996(13d) n_C=32034(10d) n_E=4940 r=0.1223
+  [24/K10] INT16 draw0 K=10 n_T=35996(13d) n_C=33689(10d) n_E=3206 r=0.1051
+  [24/K10] INT16 draw1 K=10 n_T=35996(13d) n_C=30479(10d) n_E=3206 r=0.1082
+  [24/K10] INT16 draw2 K=10 n_T=35996(13d) n_C=32891(10d) n_E=3206 r=0.1315
+  [24/K10] INT17 draw0 K=10 n_T=35996(13d) n_C=31298(10d) n_E=3585 r=0.0909
+  [24/K10] INT17 draw1 K=10 n_T=35996(13d) n_C=33791(10d) n_E=3585 r=0.0927
+  [24/K10] INT17 draw2 K=10 n_T=35996(13d) n_C=28052(10d) n_E=3585 r=0.1187
+  [24/K10] INT18 draw0 K=10 n_T=35996(13d) n_C=32330(10d) n_E=4915 r=0.2178
+  [24/K10] INT18 draw1 K=10 n_T=35996(13d) n_C=25133(10d) n_E=4915 r=0.1454
+  [24/K10] INT18 draw2 K=10 n_T=35996(13d) n_C=27683(10d) n_E=4915 r=0.1294
+  [24/K10] INT19 draw0 K=10 n_T=35996(13d) n_C=32132(10d) n_E=4948 r=0.0766
+  [24/K10] INT19 draw1 K=10 n_T=35996(13d) n_C=27761(10d) n_E=4948 r=0.1436
+  [24/K10] INT19 draw2 K=10 n_T=35996(13d) n_C=31307(10d) n_E=4948 r=0.0733
+  [24/K10] INT2 draw0 K=10 n_T=35996(13d) n_C=25797(10d) n_E=2580 r=0.2300
+  [24/K10] INT2 draw1 K=10 n_T=35996(13d) n_C=33233(10d) n_E=2580 r=0.2419
+  [24/K10] INT2 draw2 K=10 n_T=35996(13d) n_C=33382(10d) n_E=2580 r=0.1587
+  [24/K10] INT20 draw0 K=10 n_T=35996(13d) n_C=22234(10d) n_E=4860 r=0.1236
+  [24/K10] INT20 draw1 K=10 n_T=35996(13d) n_C=29730(10d) n_E=4860 r=0.1195
+  [24/K10] INT20 draw2 K=10 n_T=32661(13d) n_C=36699(10d) n_E=4860 r=0.0758
+  [24/K10] INT21 draw0 K=10 n_T=35996(13d) n_C=27023(10d) n_E=4975 r=0.1478
+  [24/K10] INT21 draw1 K=10 n_T=35996(13d) n_C=21606(10d) n_E=4975 r=0.1780
+  [24/K10] INT21 draw2 K=10 n_T=35996(13d) n_C=30031(10d) n_E=4975 r=0.1843
+  [24/K10] INT22 draw0 K=10 n_T=35996(13d) n_C=27014(10d) n_E=3829 r=0.1037
+  [24/K10] INT22 draw1 K=10 n_T=35996(13d) n_C=28770(10d) n_E=3829 r=0.0823
+  [24/K10] INT22 draw2 K=10 n_T=35996(13d) n_C=30151(10d) n_E=3829 r=0.0664
+  [24/K10] INT23 draw0 K=10 n_T=35996(13d) n_C=33433(10d) n_E=4755 r=0.0953
+  [24/K10] INT23 draw1 K=10 n_T=35996(13d) n_C=31319(10d) n_E=4755 r=0.0601
+  [24/K10] INT23 draw2 K=10 n_T=35996(13d) n_C=28994(10d) n_E=4755 r=0.0651
+  [24/K10] INT24 draw0 K=10 n_T=35996(13d) n_C=33114(10d) n_E=4510 r=0.0729
+  [24/K10] INT24 draw1 K=10 n_T=33047(13d) n_C=36663(10d) n_E=4510 r=0.2371
+  [24/K10] INT24 draw2 K=10 n_T=35996(13d) n_C=31798(10d) n_E=4510 r=0.1943
+  [24/K10] INT3 draw0 K=10 n_T=35996(13d) n_C=33987(10d) n_E=2007 r=0.0793
+  [24/K10] INT3 draw1 K=10 n_T=35996(13d) n_C=32117(10d) n_E=2007 r=0.1307
+  [24/K10] INT3 draw2 K=10 n_T=35996(13d) n_C=30428(10d) n_E=2007 r=0.1219
+  [24/K10] INT4 draw0 K=10 n_T=35996(13d) n_C=27476(10d) n_E=1349 r=0.0622
+  [24/K10] INT4 draw1 K=10 n_T=35996(13d) n_C=31913(10d) n_E=1349 r=0.0953
+  [24/K10] INT4 draw2 K=10 n_T=35996(13d) n_C=30318(10d) n_E=1349 r=0.0753
+  [24/K10] INT5 draw0 K=10 n_T=35996(13d) n_C=32048(10d) n_E=1186 r=0.4245
+  [24/K10] INT5 draw1 K=10 n_T=35996(13d) n_C=29331(10d) n_E=1186 r=0.5007
+  [24/K10] INT5 draw2 K=10 n_T=35996(13d) n_C=35711(10d) n_E=1186 r=0.4496
+  [24/K10] INT6 draw0 K=10 n_T=35996(13d) n_C=30131(10d) n_E=1678 r=0.2092
+  [24/K10] INT6 draw1 K=10 n_T=35996(13d) n_C=34088(10d) n_E=1678 r=0.1310
+  [24/K10] INT6 draw2 K=10 n_T=35996(13d) n_C=36398(10d) n_E=1678 r=0.2822
+  [24/K10] INT7 draw0 K=10 n_T=33837(13d) n_C=38009(10d) n_E=2374 r=-0.0311
+  [24/K10] INT7 draw1 K=10 n_T=35200(13d) n_C=36646(10d) n_E=2374 r=0.0066
+  [24/K10] INT7 draw2 K=10 n_T=31804(13d) n_C=40042(10d) n_E=2374 r=-0.0209
+  [24/K10] INT8 draw0 K=10 n_T=35996(13d) n_C=36106(10d) n_E=1949 r=0.0309
+  [24/K10] INT8 draw1 K=10 n_T=35996(13d) n_C=33855(10d) n_E=1949 r=0.1681
+  [24/K10] INT8 draw2 K=10 n_T=35996(13d) n_C=32228(10d) n_E=1949 r=0.1344
+  [24/K10] INT9 draw0 K=10 n_T=35996(13d) n_C=28513(10d) n_E=1696 r=0.3576
+  [24/K10] INT9 draw1 K=10 n_T=35996(13d) n_C=34133(10d) n_E=1696 r=0.3609
+  [24/K10] INT9 draw2 K=10 n_T=35996(13d) n_C=32994(10d) n_E=1696 r=0.2988
+
+=== A4b ANCHORS, encoder resnet50 ===
+                                    check                               scope  n_cells                                                        statistic         value          tol passed                                                                                                                                   note
+                 A0_n_match_reproduces_A1                           every arm      432                                      n_match_target mine vs A1's  3.599600e+04 0.000000e+00   True                                   mine [35996], A1 [35996]; source results/round3/A1_coverage/a1_calibration_units__resnet50__main.csv
+A1_anchor_pooled_K6_reproduces_a1_by_fold        arm a1_rule_K6, donor_set 24       24                               max |dcoverage| against a1_by_fold  2.220446e-16 1.000000e-12   True                    max |dwidth| 1.880e-11; 24 of 24 A1 folds matched; source results/round3/A1_coverage/a1_by_fold__resnet50__main.csv
+        A2_pooled_K10_beside_A1_donor_row               arm K10, donor_set 24       72                 coverage at K=10 minus A1's CCRCC donor coverage -1.394610e-03          NaN   None K=10 pooled coverage 0.864688 width 2.163301; A1 0.866082 / 2.170053; source results/round3/A1_coverage/a1_by_task__resnet50__main.csv
+           A4_pooled_two_code_paths_agree                 every fold and draw      144    max |conformal_quantile - weighted_quantile at equal weights|  0.000000e+00 0.000000e+00   True                             the harness's conformal_quantile against A3's weighted_quantile with unit weights, per gene and test point
+            A5_K_pool_and_training_donors               arm K10, donor_set 24       72               cells with K != 10, pool != 23 or n_T_donors != 13  0.000000e+00 0.000000e+00   True                                                                                            n_T_donors [13], n_C_donors [10], pool [23]
+   A6_A1_calibration_donors_nested_in_K10                        donor_set 24       72 folds and draws where A1's 6 donors are not a subset of A4b's 10  0.000000e+00 0.000000e+00   True  both are prefixes of the same crc32-seeded donor permutation, so the arms differ in which donors train and not in how they were drawn
+                      A7_level_attainable        arm K10, methods hcp and dwr      144                                     cells with a finite interval  1.440000e+02 1.440000e+02   True                       K + 1 >= 1/alpha holds at K = 10 and fails at K = 6, so every K = 6 hcp and dwr interval is recorded as infinite
+                      A7_level_attainable arm a1_rule_K6, methods hcp and dwr      144                                     cells with a finite interval  0.000000e+00 0.000000e+00   True                       K + 1 >= 1/alpha holds at K = 10 and fails at K = 6, so every K = 6 hcp and dwr interval is recorded as infinite
+ANCHORS: PASS
+[write] a4b_hcp_K10__resnet50.csv (432 rows)
+donor_set        arm method  n  coverage  width_mean  width_median       K  n_T_donors     n_T     n_C  finite  pearson
+       24        K10    dwr 72   0.91144     3.09681       3.02195    10.0        13.0 35996.0 31937.5    True  0.14437
+       24        K10    hcp 72   0.96938     4.23104       4.12781    10.0        13.0 35996.0 31937.5    True  0.14437
+       24        K10 pooled 72   0.86469     2.16330       2.07753 31937.5        13.0 35996.0 31937.5    True  0.14437
+       24 a1_rule_K6    dwr 72   1.00000         NaN           NaN     6.0        17.0 35996.0 18812.0   False  0.15233
+       24 a1_rule_K6    hcp 72   1.00000         NaN           NaN     6.0        17.0 35996.0 18812.0   False  0.15233
+       24 a1_rule_K6 pooled 72   0.86608     2.17005       2.07058 18812.0        17.0 35996.0 18812.0    True  0.15233
+[write] a4b_one_per_group_reps__resnet50.csv (28800 rows)
+[write] a4b_PROVENANCE__resnet50.txt (config_hash d530820243ac5da5)
+
+[done] 1771s  anchors=PASS
+a4b rc=0
+                                   check   n          statistic        value          tol  passed                                                                    note
+                 A_K6_pooled_vs_A1_donor  24    max |dcoverage| 2.220446e-16 1.000000e-15    True 24 of 24 folds; max |dwidth| 1.880e-11; folds with dcoverage > 1e-15: 0
+             B_K10_hcp_rows_vs_committed  72    max |dcoverage| 0.000000e+00 1.000000e-12    True                      max |dwidth_mean| 6.554e-11; finite mine 72 ref 72
+          B_K10_pooled_rows_vs_committed  72    max |dcoverage| 0.000000e+00 1.000000e-12    True                      max |dwidth_mean| 6.083e-11; finite mine 72 ref 72
+             B_K10_dwr_rows_vs_committed  72    max |dcoverage| 0.000000e+00 1.000000e-12    True                      max |dwidth_mean| 2.861e-10; finite mine 72 ref 72
+C_K10_hcp_mean_vs_committed_encoder_mean  72 |mine - committed| 0.000000e+00 1.000000e-12    True mine 0.9693837304722703, committed 0.9693837304722703, encoder resnet50
+ D_summary_equals_mean_of_encoder_tables 216   |summary - mean| 0.000000e+00 1.000000e-12    True              summary 0.9692115333343452, mean 0.9692115333343452, n 216
+                E_rerun_own_anchor_table   8       rows failing 0.000000e+00 0.000000e+00    True                                                                        
+[C0 anchor] PASS
+anchor rc=0
+/work/users/w/e/weiyang/hest_replication/results/round4/conformal/C0_setup:
+total 7
+drwxr-xr-x 2 weiyang users 4096 Sep 30 14:15 a4b_rerun
+-rw-r--r-- 1 weiyang users 1972 Sep 30 14:15 c0_anchor_A_by_fold.csv
+-rw-r--r-- 1 weiyang users  873 Sep 30 14:15 c0_anchor.csv
+-rw-r--r-- 1 weiyang users  493 Sep 30 13:45 c0_lung_wrapper.csv
+-rw-r--r-- 1 weiyang users  407 Sep 30 13:45 _provenance.json
+-rw-r--r-- 1 weiyang users 2846 Sep 30 14:15 PROVENANCE.txt
+
+/work/users/w/e/weiyang/hest_replication/results/round4/conformal/C0_setup/a4b_rerun:
+total 4926
+-rw-r--r-- 1 weiyang users    1880 Sep 30 14:15 a4b_anchor__resnet50.csv
+-rw-r--r-- 1 weiyang users    5742 Sep 30 14:15 a4b_codepath_check__resnet50.csv
+-rw-r--r-- 1 weiyang users  375106 Sep 30 14:15 a4b_hcp_K10__resnet50.csv
+-rw-r--r-- 1 weiyang users 4656538 Sep 30 14:15 a4b_one_per_group_reps__resnet50.csv
+-rw-r--r-- 1 weiyang users    3390 Sep 30 14:15 a4b_PROVENANCE__resnet50.txt

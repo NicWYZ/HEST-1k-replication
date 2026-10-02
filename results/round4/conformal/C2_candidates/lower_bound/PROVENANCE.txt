@@ -1,0 +1,40 @@
+==============================================================================
+Round 4 conformal track, stage C2
+job_name_prefix : r4conf_C2  (the submission route replaces --job-name)
+slurm_job_id    : none
+slurm_partition : none
+node            : Nicolass-MacBook-Pro-9.local
+date            : 2026-09-30T15:14:58-04:00
+code_clone      : /Users/nicolaszhang/HEST-1k-replication-conformal
+code_clone_head : e846322b9a486148a13dd593c64b5c2f0da8fb02
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /Users/nicolaszhang/HEST-1k-replication-conformal/code/scripts/round4_conf_c2_lower_bound.py
+script_md5      : dd59d3a8f406620992797c35a98bec35
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : code/scripts/round4_conf_c2_lower_bound.py --out results/round4/conformal/C2_candidates/lower_bound
+pythonhashseed  : 0
+python          : 3.11.15
+numpy           : 2.4.6
+config_hash     : sha256/16 9c5345f980e7e7aa
+config          : {"skip_switch": false, "stage": "C2 lower bound"}
+where           : local laptop, no Slurm job; no data read
+==============================================================================
+Round 4 conformal track, stage C2
+job_name_prefix : r4conf_C2  (the submission route replaces --job-name)
+slurm_job_id    : none
+slurm_partition : none
+node            : Nicolass-MacBook-Pro-9.local
+date            : 2026-09-30T17:05:07-04:00
+code_clone      : /Users/nicolaszhang/HEST-1k-replication-conformal
+code_clone_head : 5de71cc141a58bf0b1d26407a24e9d46fcd7a353
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /Users/nicolaszhang/HEST-1k-replication-conformal/code/scripts/round4_conf_c2_lower_bound.py
+script_md5      : 3314f9d1e0d2850a749f4c50578bea16
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : code/scripts/round4_conf_c2_lower_bound.py --out results/round4/conformal/C2_candidates/lower_bound --skip-switch
+pythonhashseed  : 0
+python          : 3.11.15
+numpy           : 2.4.6
+config_hash     : sha256/16 b838f45d51035f2e
+config          : {"skip_switch": true, "stage": "C2 lower bound"}
+where           : local laptop, no Slurm job; no data read

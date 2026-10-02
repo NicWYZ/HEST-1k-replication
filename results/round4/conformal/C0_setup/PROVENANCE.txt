@@ -1,0 +1,42 @@
+==============================================================================
+Round 4 conformal track, stage C0
+job_name_prefix : r4conf_C0  (the submission route replaces --job-name)
+slurm_job_id    : 3074739
+slurm_partition : spill
+node            : c151417.ll.unc.edu
+date            : 2026-09-30T13:45:47-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : a652ab43a422d9d01ad32607fbd4f5f6e3f5321c
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/hest_code/round4-conformal/code/scripts/round4_conf_c0_setup.py
+script_md5      : 74f58480f312d32be1079b6711cb95af
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : /work/users/w/e/weiyang/hest_code/round4-conformal/code/scripts/round4_conf_c0_setup.py lung --out /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C0_setup
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 5b6004ad1bed1490
+config          : {"anchor_tols": {"A": 1e-15, "B": 1e-12, "C": 1e-12, "D": 1e-12}, "encoder": "resnet50", "lung_td": "/work/users/w/e/weiyang/hest_replication/results/round4/data/P5_task/LUNG_XENIUM.json", "mode": "lung", "rerun_dir": null, "stage": "C0"}
+mode            : lung
+passed          : True
+==============================================================================
+Round 4 conformal track, stage C0
+job_name_prefix : r4conf_C0  (the submission route replaces --job-name)
+slurm_job_id    : 3074739
+slurm_partition : spill
+node            : c151417.ll.unc.edu
+date            : 2026-09-30T14:15:24-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : a652ab43a422d9d01ad32607fbd4f5f6e3f5321c
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/hest_code/round4-conformal/code/scripts/round4_conf_c0_setup.py
+script_md5      : 74f58480f312d32be1079b6711cb95af
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : /work/users/w/e/weiyang/hest_code/round4-conformal/code/scripts/round4_conf_c0_setup.py anchor --out /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C0_setup --rerun-dir /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C0_setup/a4b_rerun --encoder resnet50
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 d227c8d07da759b9
+config          : {"anchor_tols": {"A": 1e-15, "B": 1e-12, "C": 1e-12, "D": 1e-12}, "encoder": "resnet50", "lung_td": "/work/users/w/e/weiyang/hest_replication/results/round4/data/P5_task/LUNG_XENIUM.json", "mode": "anchor", "rerun_dir": "/work/users/w/e/weiyang/hest_replication/results/round4/conformal/C0_setup/a4b_rerun", "stage": "C0"}
+mode            : anchor
+passed          : True

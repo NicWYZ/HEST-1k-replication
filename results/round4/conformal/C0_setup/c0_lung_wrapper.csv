@@ -1,0 +1,6 @@
+check,encoder,n_embedding_rows,n_dropped,n_kept,X_rows,Y_rows,xy_rows,n_genes,dropped_in_output,passed,note
+wrapper_NCBI865,hoptimus0,2143.0,1.0,2142.0,2142.0,2142.0,2142.0,343.0,0.0,True,
+wrapper_NCBI865,uni_v2,2143.0,1.0,2142.0,2142.0,2142.0,2142.0,343.0,0.0,True,
+wrapper_NCBI865,resnet50,2143.0,1.0,2142.0,2142.0,2142.0,2142.0,343.0,0.0,True,
+round3_load_set_raises_on_NCBI865,resnet50,,,,,,,,,True,NCBI865: patch barcode not in expression
+lung_target_list_controls,,,0.0,,,,,343.0,,True,

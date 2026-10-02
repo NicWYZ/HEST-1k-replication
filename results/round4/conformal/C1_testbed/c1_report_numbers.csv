@@ -1,0 +1,63 @@
+name,value,note
+C1.1_hcp_price_K10_normal_min,1.4418816423487133,
+C1.1_hcp_price_K10_normal_max,1.6753465969308454,
+C1.1_hcp_price_K10_normal_mean,1.5383974392476425,
+C1.1_hcp_price_K10_t3_min,1.5395267953778735,
+C1.1_hcp_price_K10_t3_max,2.1773063088907185,
+C1.1_hcp_price_K10_t3_mean,1.822480859331869,
+C1.1_hcp_price_K25_normal_min,1.116667509524906,
+C1.1_hcp_price_K25_normal_max,1.1437403917472782,
+C1.1_hcp_price_K25_normal_mean,1.1263068476933409,
+C1.1_hcp_price_K25_t3_min,1.1230287451763374,
+C1.1_hcp_price_K25_t3_max,1.1758720985345392,
+C1.1_hcp_price_K25_t3_mean,1.1433262893545533,
+C1.1_hcp_price_K50_normal_min,1.053278075002266,
+C1.1_hcp_price_K50_normal_max,1.064402336599244,
+C1.1_hcp_price_K50_normal_mean,1.0577230909553805,
+C1.1_hcp_price_K50_t3_min,1.0558065425279184,
+C1.1_hcp_price_K50_t3_max,1.0776609441465017,
+C1.1_hcp_price_K50_t3_mean,1.0644578355481251,
+C1.1_hcp_min_coverage_minus_nominal_finite_cells,0.009372799999999848,n 896
+C1.1_hcp_cells_below_nominal_by_more_than_3mcse,0.0,n 896
+C1.2_pooled_coverage_share0.1_mean,0.894889861111111,n 144
+C1.2_pooled_coverage_share0.1_min,0.8806008,
+C1.2_pooled_coverage_share0.1_max,0.9013468,
+C1.2_pooled_coverage_share0.1_range_over_K,0.0098028,
+C1.2_pooled_coverage_share0.1_spearman_K,1.0,
+C1.2_pooled_coverage_share0.3_mean,0.8882123,n 144
+C1.2_pooled_coverage_share0.3_min,0.8580644000000001,
+C1.2_pooled_coverage_share0.3_max,0.9028224,
+C1.2_pooled_coverage_share0.3_range_over_K,0.02318964999999995,
+C1.2_pooled_coverage_share0.3_spearman_K,1.0,
+C1.2_pooled_coverage_share0.5_mean,0.882101313888889,n 144
+C1.2_pooled_coverage_share0.5_min,0.838576,
+C1.2_pooled_coverage_share0.5_max,0.9020616,
+C1.2_pooled_coverage_share0.5_range_over_K,0.03792192500000002,
+C1.2_pooled_coverage_share0.5_spearman_K,1.0,
+C1.3_one_per_coverage_mean,0.9142538809523809,cells 336
+C1.3_sd_ratio_one_per_over_hcp_median,1.5227157087111725,
+C1.3_sd_ratio_one_per_over_hcp_min,1.0523845992417924,
+C1.3_sd_ratio_one_per_over_hcp_max,597.8953807948865,
+C1.3_dwr_rep_coverage_mean,0.9486147999999999,cells 288
+C1.3_sd_ratio_dwr_over_one_per_median,0.7050572632892245,
+C1.4_ghcp_o5_coverage_min,0.9129212,n 432
+C1.4_ghcp_o5_cells_below_nominal_3mcse,0.0,
+C1.4_ghcp_o5_K10_price_median,2.2470444231983677,
+C1.4_ghcp_o5_K10_price_max,8.141853067640866,
+C1.4_ghcp_o25_coverage_min,0.9136399999999998,n 432
+C1.4_ghcp_o25_cells_below_nominal_3mcse,0.0,
+C1.4_ghcp_o25_K10_price_median,1.6979513485535132,
+C1.4_ghcp_o25_K10_price_max,5.095298826499193,
+C1.4_ghcp_o100_coverage_min,0.9004384,n 432
+C1.4_ghcp_o100_cells_below_nominal_3mcse,0.0,
+C1.4_ghcp_o100_K10_price_median,1.4667377833034982,
+C1.4_ghcp_o100_K10_price_max,inf,
+C1.4_within_over_ghcp_halfwidth_o5_median,inf,finite within cells 0 of 432
+C1.4_within_over_ghcp_halfwidth_o10_median,inf,finite within cells 0 of 432
+C1.4_within_over_ghcp_halfwidth_o25_median,0.7584546499054534,finite within cells 432 of 432
+C1.4_within_over_ghcp_halfwidth_o50_median,0.7701126691682283,finite within cells 432 of 432
+C1.4_within_over_ghcp_halfwidth_o100_median,0.7946174225484062,finite within cells 432 of 432
+C1.5_cells_where_hcp0_to_ghcp5_is_largest_step,0.0,of 312 cells with all steps finite
+C1.5_largest_step_count_10->25,248.0,
+C1.5_largest_step_count_50->100,52.0,
+C1.5_largest_step_count_25->50,12.0,

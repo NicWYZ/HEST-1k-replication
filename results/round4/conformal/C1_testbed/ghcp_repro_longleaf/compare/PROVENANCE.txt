@@ -1,0 +1,19 @@
+==============================================================================
+Round 4 conformal track, stage C1
+job_name_prefix : r4conf_C1  (the submission route replaces --job-name)
+slurm_job_id    : 3299889
+slurm_partition : spill
+node            : c151607.ll.unc.edu
+date            : 2026-10-01T20:00:59-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : 018b83f271c007acbe340027586273be4339675c
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/aa52b807-5595-4505-b24c-f973f0f1c190/round4_conf_c1_ghcp_compare.py
+script_md5      : 85197b968ef4dfa6ed2297dae067e2aa
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/aa52b807-5595-4505-b24c-f973f0f1c190/round4_conf_c1_ghcp_compare.py --ours /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C1_testbed/ghcp_repro_longleaf/final --shipped /work/users/w/e/weiyang/hest_code/ghcp_code --reference /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/aa52b807-5595-4505-b24c-f973f0f1c190/c1_ghcp_paper_reference.csv --out /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C1_testbed/ghcp_repro_longleaf/final/compare
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 4941aabfc65e3111
+config          : {"ours": "/work/users/w/e/weiyang/hest_replication/results/round4/conformal/C1_testbed/ghcp_repro_longleaf/final", "reference": "/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/aa52b807-5595-4505-b24c-f973f0f1c190/c1_ghcp_paper_reference.csv", "shipped": "/work/users/w/e/weiyang/hest_code/ghcp_code", "stage": "C1 GHCP reproduction comparison"}

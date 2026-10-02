@@ -1,0 +1,22 @@
+check,scope,statistic,value,tol,passed,note
+M0_merge,9 fragment files,duplicated keys / clashing keys,0/0,0.0,True,"cells 522, rows 31320"
+A1_hcp_K50_share0.1_literal,alpha 0.1,max |coverage - (1-alpha)|,0.018781599999999954,0.01,False,n 16; coverage 0.9157 to 0.9188
+A1_hcp_K50_share0.1_own_level,alpha 0.1,max |coverage - (1-alpha)(K+1)/K|,0.0022595999999999172,0.01,True,own calibration level 0.9180
+A1_hcp_K50_share0.1_literal,alpha 0.2,max |coverage - (1-alpha)|,0.018501599999999896,0.01,False,n 16; coverage 0.8125 to 0.8185
+A1_hcp_K50_share0.1_own_level,alpha 0.2,max |coverage - (1-alpha)(K+1)/K|,0.003521200000000002,0.01,True,own calibration level 0.8160
+A2_no_donor_effect_literal_dwr_rep,"share 0, tau 0",max |coverage - (1-alpha)|,0.1600687999999998,0.01,False,n 144
+A2_no_donor_effect_own_dwr_rep,"share 0, tau 0",not defined,,0.01,,no closed-form expected coverage for this method; literal reading only
+A2_no_donor_effect_literal_hcp,"share 0, tau 0",max |coverage - (1-alpha)|,0.1601376,0.01,False,n 144
+A2_no_donor_effect_own_hcp,"share 0, tau 0",max |coverage - own expected|,0.0020092000000001553,0.01,True,"n 144; tolerance max(0.01, 3 MCSE); rows above tolerance 0"
+A2_no_donor_effect_literal_one_per,"share 0, tau 0",max |coverage - (1-alpha)|,0.09999999999999998,0.01,False,n 144
+A2_no_donor_effect_own_one_per,"share 0, tau 0",max |coverage - own expected|,0.003657999999999939,0.01,True,"n 144; tolerance max(0.01, 3 MCSE); rows above tolerance 0"
+A2_no_donor_effect_literal_pooled,"share 0, tau 0",max |coverage - (1-alpha)|,0.0008128000000000579,0.01,True,n 144
+A2_no_donor_effect_own_pooled,"share 0, tau 0",max |coverage - own expected|,0.0008128000000000579,0.01,True,"n 144; tolerance max(0.01, 3 MCSE); rows above tolerance 0"
+A2_no_donor_effect_literal_within,"share 0, tau 0",max |coverage - (1-alpha)|,0.19999999999999996,0.01,False,n 720
+A2_no_donor_effect_own_within,"share 0, tau 0",max |coverage - own expected|,0.004366133333333466,0.01,True,"n 720; tolerance max(0.01, 3 MCSE); rows above tolerance 0"
+A2_pooled_price_no_donor_effect,"share 0, tau 0",max |price - 1|,0.007031760119201369,0.02,True,n 144
+A3_hcp_infinite_iff_K+1_lt_1/alpha,all hcp rows,rows violating,0.0,0.0,True,n 1044
+A4_semireal_K10_hcp_coverage_Ndata,primary (CCRCC spot counts),|coverage - A4b|,0.004142066665654864,0.02,True,"semireal 0.9734, A4b 0.9692"
+A4_semireal_K10_width_ratio_Ndata,primary (CCRCC spot counts),|hcp/pooled half-width - A4b|,0.03463290920794049,0.15,True,"semireal 1.9120, A4b 1.9466"
+A4_semireal_K10_hcp_coverage_N500,secondary (N 500),|coverage - A4b|,0.005429666665654809,0.02,True,"semireal 0.9746, A4b 0.9692"
+A4_semireal_K10_width_ratio_N500,secondary (N 500),|hcp/pooled half-width - A4b|,0.23989891580660871,0.15,False,"semireal 1.7067, A4b 1.9466"
