@@ -1,0 +1,14 @@
+Round 4 conformal track, stage C3, unit ACS o (frag_ACS_o)
+frame_id        : c9ca6fa5-6999-4cc6-859a-86b193251aba
+slurm_job_id    : none (run locally, plan section 11 item 7; Longleaf saturated, ~17,000 pending)
+host            : Nicolass-MacBook-Pro-9.local (local machine, 10 cores, 8 workers)
+date            : 2026-10-02T01:08:15-04:00
+ACS source      : local copy ~/acs_pums2018 (read-only). 51 raw files verified against raw_manifest.json: 0 mismatches.
+parquet md5     : 0196311a5fcae51e8945bc4d758348f1 (= md5 recorded in Longleaf acs_pums2018_transfer_check.csv, 55/55 rows match)
+Longleaf dir    : $P/results/round4/ppi/Q0_setup/acs_pums2018/ stamped by frame 489504c4-ba56-4908-816f-a5c52417f390, track round4-ppi (verdict sibling: same project, other plan); read-only. Provenance: transfer job 3237420 (no commit, copy of the local fetch); analyze job 3245844 clone_HEAD 72332fd58fb3b1de85a1d5fb2030424652a76c58, project_tree_HEAD 9d7277dc8c4bfade08d5895051666ee134b8396a, script_md5 2b0add945d60eb308cd83cbb6939d5a1
+predictions     : acs_pums2018_predictions.parquet copied from the Longleaf dir (read), md5 cabb141ce4c4609eda500680b71848bf = acs_pums_task_def.json predictions_md5
+released code   : soham-penn/hierarchical_CP d1a69f4a35b260b592d3ea39d7c7ad7133459cba, unmodified; wrapper code/run_released_patched.py (md5 88408721edb313a06fd132e1698bbcef) only disables concurrent.futures' sysconf check
+sweep module    : code/round4_conf_c3_acs_o.py md5 f9d411a8703b09031cf5f759f369695c; imports round4_conf_sim.py from the local conformal clone, md5 76fda34ee622e299bbaa806e5c8da98a
+env             : conda env ghcp313, python 3.13, numpy 2.4.6, pandas 3.0.3, scikit-learn 1.8.0 (released pins)
+PYTHONHASHSEED  : 0; OMP/MKL/OPENBLAS_NUM_THREADS=1; R4CONF_FRAME_ID=c9ca6fa5-6999-4cc6-859a-86b193251aba
+reproduction    : run_section_3_2.py --alphas 0.05,0.1,0.15,0.2 --B 1000 --n_workers 8 --skip_stdcp (04:00:26Z to 05:03:42Z); recompute_acs_stdcp_randomized_min21.py --B 1000 --n_workers 8 --alphas 0.1,0.2 --skip_plot

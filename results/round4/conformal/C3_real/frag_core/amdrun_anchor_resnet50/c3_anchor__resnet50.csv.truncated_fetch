@@ -1,0 +1,57 @@
+check,encoder,n,max_abs_diff,tol,passed,note
+selftest:split_q_cols_vs_SIM.split_q,resnet50,1,0.0,1e-12,True,fast kernels against round4_conf_sim / A3 references
+selftest:wq_cols_vs_SIM.hcp_q,resnet50,1,0.0,1e-12,True,fast kernels against round4_conf_sim / A3 references
+selftest:ghcp_cols_vs_SIM.ghcp_q[ghcp],resnet50,1,8.881784197001252e-16,1e-12,True,fast kernels against round4_conf_sim / A3 references
+selftest:ghcp_cols_vs_SIM.ghcp_q[ghcp_noad],resnet50,1,0.0,1e-12,True,fast kernels against round4_conf_sim / A3 references
+selftest:ghcp_cols_vs_SIM.ghcp_q[ghcp_r05],resnet50,1,3.3306690738754696e-16,1e-12,True,fast kernels against round4_conf_sim / A3 references
+selftest:ghcp_cols_vs_SIM.ghcp_q[ghcp_r05_noad],resnet50,1,0.0,1e-12,True,fast kernels against round4_conf_sim / A3 references
+selftest:ghcp_cols_vs_SIM.ghcp_q[ghcp_r05code],resnet50,1,3.3306690738754696e-16,1e-12,True,fast kernels against round4_conf_sim / A3 references
+selftest:metrics_vs_A3_cell_metrics,resnet50,1,1.3322676295501878e-15,1e-12,True,fast kernels against round4_conf_sim / A3 references
+K10_24_pooled_vs_a4b_pooled_coverage,resnet50,72,1.1102230246251565e-16,1e-12,True,rows mine 72 ref 72
+K10_24_pooled_vs_a4b_pooled_width_mean,resnet50,72,6.082601089474338e-11,1e-12,False,rows mine 72 ref 72
+K10_24_pooled_vs_a4b_pooled_width_median,resnet50,72,3.965192618693436e-10,1e-12,False,rows mine 72 ref 72
+K10_24_pooled_finite_flag,resnet50,72,0.0,0.0,True,rows where finite differs
+K10_24_pooled_design_n_T_donors,resnet50,72,0.0,0.0,True,n_T_donors against a4b n_T_donors
+K10_24_pooled_design_n_T_matched,resnet50,72,0.0,0.0,True,n_T_matched against a4b n_T_spots_matched
+K10_24_pooled_design_n_C,resnet50,72,0.0,0.0,True,n_C against a4b n_C
+K10_24_pooled_design_K,resnet50,72,0.0,0.0,True,K against a4b n_cal_units
+K10_24_hcp_vs_a4b_hcp_coverage,resnet50,72,1.1102230246251565e-16,1e-12,True,rows mine 72 ref 72
+K10_24_hcp_vs_a4b_hcp_width_mean,resnet50,72,6.544542685560373e-11,1e-12,False,rows mine 72 ref 72
+K10_24_hcp_vs_a4b_hcp_width_median,resnet50,72,1.938995630723639e-10,1e-12,False,rows mine 72 ref 72
+K10_24_hcp_finite_flag,resnet50,72,0.0,0.0,True,rows where finite differs
+K10_24_hcp_design_n_T_donors,resnet50,72,0.0,0.0,True,n_T_donors against a4b n_T_donors
+K10_24_hcp_design_n_T_matched,resnet50,72,0.0,0.0,True,n_T_matched against a4b n_T_spots_matched
+K10_24_hcp_design_n_C,resnet50,72,0.0,0.0,True,n_C against a4b n_C
+K10_24_hcp_design_K,resnet50,72,0.0,0.0,True,K against a4b n_cal_units
+K10_24_one_per_vs_a4b_dwr_coverage,resnet50,72,1.1102230246251565e-16,1e-12,True,rows mine 72 ref 72
+K10_24_one_per_vs_a4b_dwr_width_mean,resnet50,72,2.8610447344590284e-10,1e-12,False,rows mine 72 ref 72
+K10_24_one_per_vs_a4b_dwr_width_median,resnet50,72,1.9953816376983013e-11,1e-12,False,rows mine 72 ref 72
+K10_24_one_per_finite_flag,resnet50,72,0.0,0.0,True,rows where finite differs
+K10_24_one_per_design_n_T_donors,resnet50,72,0.0,0.0,True,n_T_donors against a4b n_T_donors
+K10_24_one_per_design_n_T_matched,resnet50,72,0.0,0.0,True,n_T_matched against a4b n_T_spots_matched
+K10_24_one_per_design_n_C,resnet50,72,0.0,0.0,True,n_C against a4b n_C
+K10_24_one_per_design_K,resnet50,72,0.0,0.0,True,K against a4b n_cal_units
+K10_23_merged_pooled_vs_a4b_pooled_coverage,resnet50,69,1.1102230246251565e-16,1e-12,True,rows mine 69 ref 69
+K10_23_merged_pooled_vs_a4b_pooled_width_mean,resnet50,69,6.825473519711522e-11,1e-12,False,rows mine 69 ref 69
+K10_23_merged_pooled_vs_a4b_pooled_width_median,resnet50,69,3.1530333899354446e-14,1e-12,True,rows mine 69 ref 69
+K10_23_merged_pooled_finite_flag,resnet50,69,0.0,0.0,True,rows where finite differs
+K10_23_merged_pooled_design_n_T_donors,resnet50,69,0.0,0.0,True,n_T_donors against a4b n_T_donors
+K10_23_merged_pooled_design_n_T_matched,resnet50,69,0.0,0.0,True,n_T_matched against a4b n_T_spots_matched
+K10_23_merged_pooled_design_n_C,resnet50,69,0.0,0.0,True,n_C against a4b n_C
+K10_23_merged_pooled_design_K,resnet50,69,0.0,0.0,True,K against a4b n_cal_units
+K10_23_merged_hcp_vs_a4b_hcp_coverage,resnet50,69,1.1102230246251565e-16,1e-12,True,rows mine 69 ref 69
+K10_23_merged_hcp_vs_a4b_hcp_width_mean,resnet50,69,6.970335419964613e-11,1e-12,False,rows mine 69 ref 69
+K10_23_merged_hcp_vs_a4b_hcp_width_median,resnet50,69,2.5757174171303632e-14,1e-12,True,rows mine 69 ref 69
+K10_23_merged_hcp_finite_flag,resnet50,69,0.0,0.0,True,rows where finite differs
+K10_23_merged_hcp_design_n_T_donors,resnet50,69,0.0,0.0,True,n_T_donors against a4b n_T_donors
+K10_23_merged_hcp_design_n_T_matched,resnet50,69,0.0,0.0,True,n_T_matched against a4b n_T_spots_matched
+K10_23_merged_hcp_design_n_C,resnet50,69,0.0,0.0,True,n_C against a4b n_C
+K10_23_merged_hcp_design_K,resnet50,69,0.0,0.0,True,K against a4b n_cal_units
+K10_23_merged_one_per_vs_a4b_dwr_coverage,resnet50,69,1.1102230246251565e-16,1e-12,True,rows mine 69 ref 69
+K10_23_merged_one_per_vs_a4b_dwr_width_mean,resnet50,69,1.9426282804602124e-10,1e-12,False,rows mine 69 ref 69
+K10_23_merged_one_per_vs_a4b_dwr_width_median,resnet50,69,3.5291325417574626e-11,1e-12,False,rows mine 69 ref 69
+K10_23_merged_one_per_finite_flag,resnet50,69,0.0,0.0,True,rows where finite differs
+K10_23_merged_one_per_design_n_T_donors,resnet50,69,0.0,0.0,True,n_T_donors against a4b n_T_donors
+K10_23_merged_one_per_design_n_T_matched,resnet50,69,0.0,0.0,True,n_T_matched against a4b n_T_spots_matched
+K10_23_merged_one_per_design_n_C,resnet50,69,0.0,0.0,True,n_C against a4b n_C
+K10_23_merged_one_per_design_K,resnet50,69,0.0,0.0,True,K against a4b n_cal_units

@@ -1,0 +1,21 @@
+==============================================================================
+Round 4 conformal track, stage C3_CCRCC_K
+job_name_prefix : r4conf_C3_CCRCC_K  (the submission route replaces --job-name)
+slurm_job_id    : 3445624
+slurm_partition : spill
+node            : c0917.ll.unc.edu
+date            : 2026-10-02T07:32:23-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : fe36f6b0aecfbafc2ee58b9ca3420beac89c327e
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/1598953c-0a46-470d-a6d4-06ea799a003d/c3_ccrcc_k.py
+script_md5      : 07819e8da0fa447b5fbafbee4e52d829
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : c3_ccrcc_k.py --task CCRCC:24 --encoder uni_v2 --ks 10,12,14 --out out/ds24_uni_v2_K10-12-14 --tag ds24_uni_v2_K10-12-14
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 e1ff386bf73d9fe3
+config          : {"alphas": [0.1, 0.2], "cal_draws": 3, "cpu_vendor": "GenuineIntel", "dwr_reps": 200, "encoder": "uni_v2", "ks": [10, 12, 14], "task": "CCRCC:24"}
+tag             : ds24_uni_v2_K10-12-14
+rows            : 1296

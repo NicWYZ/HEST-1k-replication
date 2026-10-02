@@ -1,0 +1,21 @@
+==============================================================================
+Round 4 conformal track, stage C3_CCRCC_K
+job_name_prefix : r4conf_C3_CCRCC_K  (the submission route replaces --job-name)
+slurm_job_id    : 3445601
+slurm_partition : spill
+node            : c0935.ll.unc.edu
+date            : 2026-10-02T07:33:26-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : fe36f6b0aecfbafc2ee58b9ca3420beac89c327e
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/6508568a-1b17-4fe7-9cb6-d9e823319d2f/c3_ccrcc_k.py
+script_md5      : 07819e8da0fa447b5fbafbee4e52d829
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : c3_ccrcc_k.py --task CCRCC:24 --encoder hoptimus0 --ks 4,6,8 --out out/ds24_hoptimus0_K4-6-8 --tag ds24_hoptimus0_K4-6-8
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 1e3e29868c40d3d0
+config          : {"alphas": [0.1, 0.2], "cal_draws": 3, "cpu_vendor": "GenuineIntel", "dwr_reps": 200, "encoder": "hoptimus0", "ks": [4, 6, 8], "task": "CCRCC:24"}
+tag             : ds24_hoptimus0_K4-6-8
+rows            : 1296

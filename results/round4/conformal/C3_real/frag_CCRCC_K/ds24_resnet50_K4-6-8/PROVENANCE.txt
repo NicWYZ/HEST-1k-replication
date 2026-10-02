@@ -1,0 +1,21 @@
+==============================================================================
+Round 4 conformal track, stage C3_CCRCC_K
+job_name_prefix : r4conf_C3_CCRCC_K  (the submission route replaces --job-name)
+slurm_job_id    : 3445626
+slurm_partition : spill
+node            : c1104.ll.unc.edu
+date            : 2026-10-02T07:18:43-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : fe36f6b0aecfbafc2ee58b9ca3420beac89c327e
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/0e06bb5b-3cc3-47e0-b4a6-4e7305087db7/c3_ccrcc_k.py
+script_md5      : 07819e8da0fa447b5fbafbee4e52d829
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : c3_ccrcc_k.py --task CCRCC:24 --encoder resnet50 --ks 4,6,8 --out out/ds24_resnet50_K4-6-8 --tag ds24_resnet50_K4-6-8
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 41b59ecd0c1b2664
+config          : {"alphas": [0.1, 0.2], "cal_draws": 3, "cpu_vendor": "GenuineIntel", "dwr_reps": 200, "encoder": "resnet50", "ks": [4, 6, 8], "task": "CCRCC:24"}
+tag             : ds24_resnet50_K4-6-8
+rows            : 1296

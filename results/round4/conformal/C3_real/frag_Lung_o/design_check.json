@@ -1,0 +1,42 @@
+{
+ "n_parts": 45,
+ "n_fits": 135,
+ "rows": 243810,
+ "expected_rows": 243810,
+ "methods": [
+  "ghcp",
+  "ghcp_noad",
+  "ghcp_r05",
+  "ghcp_r05_noad",
+  "ghcp_r05code",
+  "hcp",
+  "one_per",
+  "pooled",
+  "recentred",
+  "within",
+  "within_plain"
+ ],
+ "o": [
+  0,
+  5,
+  10,
+  25,
+  50,
+  100,
+  200
+ ],
+ "by_method": {
+  "ghcp": 32400,
+  "ghcp_noad": 32400,
+  "ghcp_r05": 32400,
+  "ghcp_r05_noad": 32400,
+  "ghcp_r05code": 16200,
+  "hcp": 270,
+  "one_per": 270,
+  "pooled": 270,
+  "recentred": 32400,
+  "within": 32400,
+  "within_plain": 32400
+ },
+ "skipped": []
+}

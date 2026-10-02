@@ -1,0 +1,25 @@
+check,encoder,n,max_abs_diff,tol,passed,max_abs_dcoverage,max_abs_dwidth_mean,max_abs_dwidth_median,finite_flag_mismatches,design_col_max_diff,cpu_vendor
+K10_24_pooled_vs_a4b_pooled,resnet50,72,0.0,1e-12,True,0.0,6.082645498395323e-11,3.965192618693436e-10,0,0.0,AMD
+K10_24_hcp_vs_a4b_hcp,resnet50,72,0.0,1e-12,True,0.0,6.544631503402343e-11,1.9390000716157374e-10,0,0.0,AMD
+K10_24_one_per_vs_a4b_dwr,resnet50,72,0.0,1e-12,True,0.0,2.8610447344590284e-10,1.9954260466192864e-11,0,0.0,AMD
+K10_23_merged_pooled_vs_a4b_pooled,resnet50,69,0.0,1e-12,True,0.0,6.825473519711522e-11,3.1530333899354446e-14,0,0.0,AMD
+K10_23_merged_hcp_vs_a4b_hcp,resnet50,69,0.0,1e-12,True,0.0,6.970202193201658e-11,2.5757174171303632e-14,0,0.0,AMD
+K10_23_merged_one_per_vs_a4b_dwr,resnet50,69,0.0,1e-12,True,0.0,1.942632721352311e-10,3.5291325417574626e-11,0,0.0,AMD
+K10_24_pooled_vs_a4b_pooled,hoptimus0,72,0.0,1e-12,True,0.0,5.276801218201399e-11,3.0346636314959596e-10,0,0.0,AMD
+K10_24_hcp_vs_a4b_hcp,hoptimus0,72,0.0,1e-12,True,0.0,1.1434853064429262e-10,2.7062352359052966e-10,0,0.0,AMD
+K10_24_one_per_vs_a4b_dwr,hoptimus0,72,0.0,1e-12,True,0.0,2.8609825619696494e-10,2.553113276348995e-11,0,0.0,AMD
+K10_23_merged_pooled_vs_a4b_pooled,hoptimus0,69,0.0,1e-12,True,0.0,5.28594945592431e-11,5.384945822584086e-10,0,0.0,AMD
+K10_23_merged_hcp_vs_a4b_hcp,hoptimus0,69,0.0,1e-12,True,0.0,8.879741386635942e-11,4.933111696914239e-10,0,0.0,AMD
+K10_23_merged_one_per_vs_a4b_dwr,hoptimus0,69,0.0,1e-12,True,0.0,1.9951107432802928e-10,1.8983925542670477e-11,0,0.0,AMD
+K10_24_pooled_vs_a4b_pooled,uni_v2,72,0.0,1e-12,True,0.0,3.774758283725532e-14,1.9095836023552692e-14,0,0.0,Intel
+K10_24_hcp_vs_a4b_hcp,uni_v2,72,0.0,1e-12,True,0.0,9.325873406851315e-14,3.1530333899354446e-14,0,0.0,Intel
+K10_24_one_per_vs_a4b_dwr,uni_v2,72,0.0,1e-12,True,0.0,5.773159728050814e-15,5.329070518200751e-15,0,0.0,Intel
+K10_23_merged_pooled_vs_a4b_pooled,uni_v2,69,0.0,1e-12,True,0.0,4.440892098500626e-14,2.398081733190338e-14,0,0.0,Intel
+K10_23_merged_hcp_vs_a4b_hcp,uni_v2,69,0.0,1e-12,True,0.0,1.0658141036401503e-13,1.8207657603852567e-14,0,0.0,Intel
+K10_23_merged_one_per_vs_a4b_dwr,uni_v2,69,0.0,1e-12,True,0.0,1.021405182655144e-14,1.021405182655144e-14,0,0.0,Intel
+summary_donor_set=24 arm=K10 method=pooled,all3,216,0.0,1e-12,True,0.0,1.3984369218178472e-12,3.694822225952521e-13,0,0.0,AMD;Intel
+summary_donor_set=24 arm=K10 method=hcp,all3,216,0.0,1e-12,True,0.0,2.644107155447273e-12,1.9539925233402755e-14,0,0.0,AMD;Intel
+summary_donor_set=24 arm=K10 method=dwr,all3,216,1.1102230246251565e-16,1e-12,True,1.1102230246251565e-16,2.2144952538383222e-11,1.3500311979441904e-12,0,0.0,AMD;Intel
+summary_donor_set=23_merged arm=K10 method=pooled,all3,207,0.0,1e-12,True,0.0,2.6578739209526248e-12,2.930100606590713e-12,0,0.0,AMD;Intel
+summary_donor_set=23_merged arm=K10 method=hcp,all3,207,0.0,1e-12,True,0.0,5.998757046654646e-12,2.2879476091475226e-12,0,0.0,AMD;Intel
+summary_donor_set=23_merged arm=K10 method=dwr,all3,207,0.0,1e-12,True,0.0,1.3431034062705294e-11,1.8172130467064562e-12,0,0.0,AMD;Intel

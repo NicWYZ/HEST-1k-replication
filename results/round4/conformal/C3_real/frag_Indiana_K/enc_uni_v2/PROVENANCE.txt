@@ -1,0 +1,21 @@
+==============================================================================
+Round 4 conformal track, stage C3_Indiana_K
+job_name_prefix : r4conf_C3_Indiana_K  (the submission route replaces --job-name)
+slurm_job_id    : 3445521
+slurm_partition : spill
+node            : c151606.ll.unc.edu
+date            : 2026-10-02T06:36:46-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : fe36f6b0aecfbafc2ee58b9ca3420beac89c327e
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/07a5a82a-f3ea-40e9-8662-7197b0637ec6/run_indiana_K10.py
+script_md5      : 734dc83a05fe6de3f634f31640c917fb
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : run_indiana_K10.py --encoder uni_v2 --out ./out/enc_uni_v2
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 a913e6d7b06b4d3c
+config          : {"K": 10, "encoder": "uni_v2", "expected_rows": 450, "md5_module": "2d8418677cf8290eec89a14c315b92cd", "n_folds": 25, "rows": 450}
+tag             : indiana_K10_uni_v2
+rows            : 450

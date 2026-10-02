@@ -1,0 +1,24 @@
+==============================================================================
+Round 4 conformal track, stage C3_lung_o
+job_name_prefix : r4conf_C3_lung_o  (the submission route replaces --job-name)
+slurm_job_id    : 3445557
+slurm_partition : spill
+node            : c151405.ll.unc.edu
+date            : 2026-10-02T07:17:54-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : unreadable (FileNotFoundError)
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/31fc3957-78d8-4faa-b957-6fc357c57975/run_lung_o.py
+script_md5      : 4e67f17adca7c269265b61289bef653c
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : run_lung_o.py hoptimus0 10 15 /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C3_real/frag_Lung_o
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 5adf14d9d52a0139
+config          : {"K": 10, "alphas": [0.1, 0.2], "cal_draws": 3, "enc": "hoptimus0", "hi": 15, "label_draws": 20, "lo": 10, "o_grid": [5, 10, 25, 50, 100, 200]}
+cpu             : Vendor ID: AuthenticAMD; Model name: AMD EPYC 7763 64-Core Processor; 
+c3_md5          : 2d8418677cf8290eec89a14c315b92cd
+folds           : lungXen_VUILD110,lungXen_VUILD115,lungXen_VUILD78,lungXen_VUILD91,lungXen_VUILD96
+frame_id        : 37664027-917b-4af5-b46c-c441036d6333
+node_features   : ActiveFeatures=rhel9,amd

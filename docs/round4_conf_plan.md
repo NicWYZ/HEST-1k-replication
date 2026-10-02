@@ -390,6 +390,13 @@ in section 1 of this plan, unchanged.
    `acs_pums2018_all_columns.parquet`, `raw/`, `raw_manifest.json`, `fetch_info.json`,
    `folktables_stdout.txt`). The md5 check against `raw_manifest.json` of section 12.4 applies to
    whichever copy is read, and the C4 report records which one it was.
+9. **Nine hours without permissions** (2 October 2026, about 04:20 UTC). "I will not be available to
+   grant permission for anything for about 9 hours, so if anything is gated on my permission just
+   work around it." For that window no task waits on an approval: no new network domains, host
+   paths or credentials are requested; a unit that meets a block uses what is already reachable
+   and records the gap as an escalation for C4. The 4-hour unstarted-job note of section 12.6 is
+   still written, for Nicolas to read on return, and nobody waits on it. Never-yours items
+   (outside contact, `main`, pushes between gates) and the C4 gate are unchanged.
 
 
 ## 12. The C2 decision memo, 2 October 2026 (oversight chat), verbatim
