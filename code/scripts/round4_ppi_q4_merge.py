@@ -185,6 +185,10 @@ score("Q3.1", "reversal_cd1000|design|cd_vs_c", "n_cells_A_narrower_of_n", f"{in
 p3 = R31[(R31.cd_cs == 10) & (R31.target == "super") & (R31.rule_A == "c_crossfit")]
 score("Q3.1", "cd10|super|c_crossfit", "median_width_ratio", float(p3.width_ratio_B_over_A.median()), "context (advantage under the cost-weighted budget)", None)
 score("Q3.1", "cd10|super|c_crossfit", "n_cells_A_narrower_of_n", f"{int((p3.width_ratio_B_over_A > 1).sum())}/{len(p3)}", "context", None)
+for c, pp in ((10, p3), (1000, p)):
+    add(f"q31|cd{c}|super|c_crossfit|n_cells", len(pp))
+    add(f"q31|cd{c}|super|c_crossfit|n_B_narrower", int((pp.width_ratio_B_over_A < 1).sum()))
+    add(f"q31|cd{c}|super|c_crossfit|n_A_narrower", int((pp.width_ratio_B_over_A > 1).sum()))
 
 # ------------------------------------------------------------------ carry Q4a.1, Q4.4, Q3.3 from the Q4a merge
 s4a = pd.read_csv(f"{a.q4a}/q4a_prediction_scores.csv")

@@ -2,7 +2,7 @@
 
 This is the final estimator of the Q3 decision memo section 2 (`docs/decisions/round4_ppi_Q3_decisions.md`, plan section 14.2). It replaces the version proposed at the Q1 gate. The estimator is the survey-sampling difference estimator, in its PPI++ form the generalised regression estimator (Mozer, arXiv:2603.19160; Särndal, Swensson and Wretman 1992, chapter 8; Breidt and Opsomer 2017), with Liang and Zeger's sandwich clustered by donor. None of it is new. The code is `code/scripts/round4_ppi_estimator.py`.
 
-Numbers are read from the file named beside them. Simulation numbers come from `results/round4/ppi/Q1_estimator/q1_report_numbers.csv` (2,000 replicates per cell), from `results/round4/ppi/Q1_estimator/q1b/q1b_sim_coverage.csv.gz` and from the interval-3 check `results/round4/ppi/Q4_tables/spot_cr2_check/q4_spot_cr2_check.csv`. Real-data numbers come from `results/round4/ppi/Q4a_recompute/q4a_table61.csv`, where each entry is a median over genes of 200 masking draws.
+Numbers are read from the file named beside them. Simulation numbers come from `results/round4/ppi/Q1_estimator/q1_report_numbers.csv` (2,000 replicates per cell), from `results/round4/ppi/Q1_estimator/q1b/q1b_sim_coverage.csv.gz` and from the interval-3 check `results/round4/ppi/Q4_tables/spot_cr2_check/q4_spot_cr2_check.csv`. Real-data numbers come from `results/round4/ppi/Q4a_recompute/q4a_table61.csv`, where each entry is a median over genes of 200 masking draws (`n_draws` in `results/round4/ppi/Q4_tables/q4_main_table.csv`).
 
 ## Notation
 
@@ -28,7 +28,7 @@ $\lambda$ is rule `c_crossfit`. On each half it minimises the donor-clustered va
 
 Behaviour in the simulation (`q1_report_numbers.csv`). Median coverage of the 90% interval is 0.902 at $n_L = 4$ and 0.9005 over $n_L \ge 6$. Against the classical estimator, for $r > 0$ the median width ratio is 1.009 at $n_L = 4$, 0.87 at 6 and 0.85 at 8 and 12. At $r = 0$ it is 1.319 at $n_L = 4$, which is why $\lambda = 0$ below $n_L = 6$. The Welch-Satterthwaite combination narrows the interval (median width 0.961 of the $t$ interval at $G_U = 10$) and under-covers (0.86 at $n_L = 4$), so it is not used.
 
-CR2 against CR1 (`q4_spot_cr2_check.csv`, spot-weighted $\theta_3$, no finite-population correction). Over the cells of the classical and `c_crossfit` rules, CR2 equals CR1 when donor sizes are equal, with median coverage 0.8806 for both. With unequal sizes the median coverage is 0.8789 for CR2 against 0.8521 for CR1. The minimum over cells is 0.8408 against 0.8028, and the cell medians of empirical sd over root mean square standard error run from 0.993 to 1.189 for CR2 against 1.003 to 1.279 for CR1.
+CR2 against CR1 (`results/round4/ppi/Q4_tables/spot_cr2_check/q4_spot_cr2_summary.csv`, from `q4_spot_cr2_check.csv`, spot-weighted $\theta_3$, no finite-population correction). Over the 30 cells of the classical and `c_crossfit` rules, CR2 equals CR1 when donor sizes are equal, with median coverage 0.8806 for both. With unequal sizes the median coverage is 0.8789 for CR2 against 0.8521 for CR1. The minimum over cells is 0.8408 against 0.8028, and the cell medians of empirical sd over root mean square standard error run from 0.9930 to 1.1892 for CR2 against 1.0028 to 1.2785 for CR1.
 
 ## Design-based target, the fixed set of $G$ donors (the textbook form)
 
@@ -62,7 +62,7 @@ No bootstrap is used. In the simulation the percentile bootstrap covers 0.760 at
 
 ## Limits of this definition
 
-The coverage minimum is set by the slope estimand on the spot-weighted population. At a between-donor share of 0.1 and 1,000 or more spots per donor the classical interval covers a median 0.8445, while its standard error is right on average, with empirical sd over root mean estimated variance 0.99 (`q1_report_numbers.csv`). The shortfall comes from skewed donor-level contributions, not from the variance formula, and no interval in this comparison removes it. The spot-weighted slope is therefore reported with CR2 and this finding stated beside it. The interval-3 check agrees. With equal sizes and no finite-population correction, the cell means of bias over sd run from $-0.050$ to $0.026$ and the cell medians of sd over root mean square standard error from 0.975 to 1.029, yet median coverage is 0.8806 (`q4_spot_cr2_check.csv`).
+The coverage minimum is set by the slope estimand on the spot-weighted population. At a between-donor share of 0.1 and 1,000 or more spots per donor the classical interval covers a median 0.8445, while its standard error is right on average, with empirical sd over root mean estimated variance 0.99 (`q1_report_numbers.csv`). The shortfall comes from skewed donor-level contributions, not from the variance formula, and no interval in this comparison removes it. The spot-weighted slope is therefore reported with CR2 and this finding stated beside it. The interval-3 check agrees. With equal sizes and no finite-population correction, the cell means of bias over sd run from $-0.0504$ to $0.0259$ and the cell medians of sd over root mean square standard error from 0.9755 to 1.0293, yet median coverage is 0.8806 (`results/round4/ppi/Q4_tables/spot_cr2_check/q4_spot_cr2_summary.csv`).
 
 ## The $r = 0$ predictor
 

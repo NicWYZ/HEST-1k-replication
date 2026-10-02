@@ -17,6 +17,8 @@ ap.add_argument("--main", required=True)
 ap.add_argument("--c3", required=True)
 ap.add_argument("--c3-commit", required=True)
 ap.add_argument("--out", required=True)
+ap.add_argument("--cluster", default=None)
+ap.add_argument("--numbers", default=None)
 a = ap.parse_args()
 
 TASKMAP = {"CCRCC": "CCRCC", "CCRCC_merged": "CCRCC_23merged", "INDIANA_KIDNEY": "INDIANA_KIDNEY",
@@ -75,3 +77,21 @@ J["c3_commit"] = a.c3_commit
 J.to_csv(a.out, index=False)
 print(J[["vtag", "cost", "m", "o_used", "regB_width_ratio_theta3", "cheapest_valid_set", "ghcp_coverage",
          "within_plain_coverage", "within_coverage"]].to_string(index=False))
+
+if a.numbers:
+    nums = []
+    for task in sorted(c3.task.unique()):
+        for o, meth in ((5, "ghcp"), (10, "within_plain"), (10, "ghcp"), (5, "within_plain")):
+            z = c3[(c3.task == task) & (c3.o == o) & (c3.method == meth)]
+            fin = z[z.finite == 1]
+            nums += [dict(name=f"c3|{task}|o{o}|{meth}|coverage_mean", value=z.coverage.mean()),
+                     dict(name=f"c3|{task}|o{o}|{meth}|width_mean_finite", value=fin.width_mean.mean() if len(fin) else np.nan),
+                     dict(name=f"c3|{task}|o{o}|{meth}|finite_share", value=z.finite.mean())]
+    nums.append(dict(name="joint|rows", value=len(J)))
+    if a.cluster:
+        ct = pd.read_csv(a.cluster)
+        nums.append(dict(name="cluster|rows", value=len(ct)))
+        for k, z in ct.groupby("task"):
+            nums.append(dict(name=f"cluster|rows|{k}", value=len(z)))
+        nums.append(dict(name="cluster|rows_with_loo_offset", value=int(ct.loo_offset_pred_median_over_genes.notna().sum())))
+    pd.DataFrame(nums, dtype=object).to_csv(a.numbers, index=False)

@@ -1,4 +1,5 @@
 q5_joint_design.csv, Round 4 PPI Q5 (plan section 3 Q5 and section 14.9), lead frame 489504c4-ba56-4908-816f-a5c52417f390, project proj_3a4e23273fb6, 2 October 2026.
 Command: python code/scripts/round4_ppi_q5_joint.py --main results/round4/ppi/Q4_tables/q4_main_table.csv --c3 c3_o_sweep.csv.gz --c3-commit cbf091dad8e952e80479213c02087a68dfd3afe0 --out q5_joint_design.csv
 C3 input: results/round4/conformal/C3_real/c3_o_sweep.csv.gz read with git show from main at cbf091dad8e952e80479213c02087a68dfd3afe0, the merge commit of pull request #5 (head d65626f2e1ce5c4cb8162e958495520c51871f64). The gz md5 is 74703993d155214eb952120391b05a11. The decompressed md5 is 2c3ceaa42528a1e3ad2979dc1161e542, which equals the Longleaf plain-file md5 named in addendum 2. origin/main was fetched for this read only; nothing from main was merged into round4-ppi.
-Q4 main table md5 1dfa83d4e5fe79abd4329431e42f2cf2; script md5 52981cfc5819269e450ed0f2d6d87e96.
+Q4 main table md5 1dfa83d4e5fe79abd4329431e42f2cf2; script md5 545e4f5a20ebed9d91604708ae23637d (revised in the final-report commit to add --cluster and --numbers; q5_joint_design.csv is unchanged).
+q5_report_numbers.csv: python code/scripts/round4_ppi_q5_joint.py ... --cluster results/round4/ppi/Q5_joint/q5_cluster_table.csv --numbers q5_report_numbers.csv
