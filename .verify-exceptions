@@ -264,3 +264,11 @@ docs/round2_results_synthesis.md:0.29	derived: median zero-fraction over the fiv
 28,720	observed (round-4 PPI plan section 12): pending jobs on spill in a squeue snapshot on 30 September 2026; not stored in a file
 292	observed (round-4 PPI plan section 12): median priority of pending spill jobs in the same squeue snapshot
 228	observed (round-4 PPI plan section 12): priority of this track's pending jobs on rc_tengfei_pi in the same squeue snapshot
+133	derived: number of data rows in results/round4/ppi/Q3_regimes/q2q3_slurm_jobs.csv (round4_ppi_Q3_report.md section 2)
+130	derived: numerator of the Q3.2 summary string "130/176" in results/round4/ppi/Q3_regimes/q3_prediction_scores.csv
+176	derived: denominator of the Q3.2 summary string "130/176" in results/round4/ppi/Q3_regimes/q3_prediction_scores.csv
+0.0013	derived: Q1b.3 CR1 minus CR2 at G_L = 8 (0.0113, q1b_report_numbers.csv) less the 0.01 threshold
+6.2	section number of round4_ppi_Q3_report.md, not a result
+0.029	derived: maximum over cells of |oracle_emp_var_ratio - finite_m_ratio_lambda_A| in results/round4/ppi/Q2_theory/theorem_v2/q2_sim_theorem.csv
+1.76	derived: maximum over cells of that difference divided by oracle_emp_var_ratio_mc_se, same file
+31,915	derived: length of target_genes.list in results/round3/D4_expansion/task_defs/INDIANA_KIDNEY.json (Indiana kidney candidate panel)

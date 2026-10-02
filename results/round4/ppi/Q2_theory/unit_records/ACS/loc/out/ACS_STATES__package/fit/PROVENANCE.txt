@@ -1,0 +1,12 @@
+local darwin; md5:
+7f0274bb3c2285d0139dbd07ec39fb58  /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_q2_masking.py
+931bd81f10200410c512bcf3f81b5b43  /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_estimator.py
+544721f07cb3d74dc5b92456d61fe450  /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round3_b1_ppi.py
+command: python /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_q2_masking.py --fit-from "out/ACS_STATES__package/nL*/q2_variance_grid_genes__ACS_STATES__package.csv.gz" --out out/ACS_STATES__package/fit/q2_fitted_components__ACS_STATES__package.csv
+1dd7b669d79e682d0e27d46bd8f3a20a  out/ACS_STATES__package/nL12/q2_variance_grid_genes__ACS_STATES__package.csv.gz
+14e315c7d2446904fa6cc08f8e429272  out/ACS_STATES__package/nL16/q2_variance_grid_genes__ACS_STATES__package.csv.gz
+84fe0348adcf0d2fcbe1b71f126b2989  out/ACS_STATES__package/nL4/q2_variance_grid_genes__ACS_STATES__package.csv.gz
+559e20b7fcda5e2b9eba5d2051967329  out/ACS_STATES__package/nL6/q2_variance_grid_genes__ACS_STATES__package.csv.gz
+03d1a5c34ca91ec1a29fb37b62559eea  out/ACS_STATES__package/nL8/q2_variance_grid_genes__ACS_STATES__package.csv.gz
+{"files": ["out/ACS_STATES__package/nL12/q2_variance_grid_genes__ACS_STATES__package.csv.gz", "out/ACS_STATES__package/nL16/q2_variance_grid_genes__ACS_STATES__package.csv.gz", "out/ACS_STATES__package/nL4/q2_variance_grid_genes__ACS_STATES__package.csv.gz", "out/ACS_STATES__package/nL6/q2_variance_grid_genes__ACS_STATES__package.csv.gz", "out/ACS_STATES__package/nL8/q2_variance_grid_genes__ACS_STATES__package.csv.gz"], "n_gene_rows": 1440, "out": "out/ACS_STATES__package/fit/q2_fitted_components__ACS_STATES__package.csv"}
+exit=0 wall_s=3

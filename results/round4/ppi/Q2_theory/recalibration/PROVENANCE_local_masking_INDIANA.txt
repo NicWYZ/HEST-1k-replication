@@ -1,0 +1,9 @@
+Local masking step for Q2 recalibration (INDIANA_KIDNEY, hoptimus0, 50 genes, 25 donor units), authorised by lead (plan 12.2)
+host: Nicolass-MacBook-Pro-9.local (local, python env), date 2026-10-02T09:50:27+00:00
+repo (read-only reference): /Users/nicolaszhang/HEST-1k-replication-PPI (HEAD as stated by lead; git not run)
+scripts md5: round4_ppi_q2_masking.py 7f0274bb3c2285d0139dbd07ec39fb58 ; round4_ppi_estimator.py 931bd81f10200410c512bcf3f81b5b43 ; round3_b1_ppi.py 544721f07cb3d74dc5b92456d61fe450 (equal the Longleaf clone md5s)
+inputs md5: b1_predictions__INDIANA_KIDNEY__hoptimus0.parquet b6a56e963872511ad177c7c1082d07b7 (local copy == Longleaf) ; recal_predictions__INDIANA_KIDNEY__hoptimus0.parquet 7eabc96abcf5adb2e2e29adb27985901 (local copy == Longleaf)
+command: PYTHONHASHSEED=0 OMP_NUM_THREADS=1 python round4_ppi_q2_masking.py --parquet <P> --vtag INDIANA_KIDNEY --arm hoptimus0 --nl-grid 8,12 --m-grid 0 --draws 200 --out-dir <before|after>  (two processes in parallel)
+libs: python 3.11.15 numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 ; scanpy stubbed by the script
+wall: before 75.9 s, after 76.9 s (script wall)
+Recalibration job A (Indiana): Slurm 3441506, node c151603, partition spill, account rc_tengfei_pi, wall 2:53.77, MaxRSS 2,978,144 KB; see PROVENANCE_A_INDIANA.txt

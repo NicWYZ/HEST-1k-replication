@@ -1,0 +1,4 @@
+fit step (local, scripts HEAD 42fe578), PYTHONHASHSEED=0
+MD5 (/Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_q2_masking.py) = 7f0274bb3c2285d0139dbd07ec39fb58
+cmd: python /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_q2_masking.py --fit-from '/Users/nicolaszhang/.claude-science/orgs/c42040b3-6d87-451b-9b93-c94218d0c812/workspaces/29d26232-3024-422c-8c8b-0dd27509ba09/q2/INDIANA_KIDNEY__resnet50/nL*/q2_variance_grid_genes__INDIANA_KIDNEY__resnet50.csv.gz' --out /Users/nicolaszhang/.claude-science/orgs/c42040b3-6d87-451b-9b93-c94218d0c812/workspaces/29d26232-3024-422c-8c8b-0dd27509ba09/q2/INDIANA_KIDNEY__resnet50/q2_fitted_components__INDIANA_KIDNEY__resnet50.csv
+wall_s 2.6 user_s 2.2 sys_s 0.4 maxrss_bytes 313114624

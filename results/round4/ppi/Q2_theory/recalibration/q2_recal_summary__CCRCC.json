@@ -1,0 +1,14 @@
+{
+ "task": "CCRCC",
+ "enc": "hoptimus0",
+ "n_donors": 24,
+ "n_genes": 50,
+ "ydev": 0.0,
+ "wall": 976.523072719574,
+ "penalty": "per gene, inner leave-one-out over the training donors (closed form), grid 1e-6..1e3 x s1^2 plus intercept-only",
+ "embedding_space": "fold PCA (round3_a0_harness.fit_base on the other donors), donor means over joined spots",
+ "offsets": "mean(y - f) over joined spots, f the B1 donor-design parquet",
+ "recal_parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/recalibration/CCRCC/recal_predictions__CCRCC__hoptimus0.parquet",
+ "recal_parquet_md5": "c69bd40804479912e332a3f9b6cbce2a",
+ "stubbed": []
+}

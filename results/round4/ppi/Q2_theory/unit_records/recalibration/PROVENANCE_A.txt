@@ -1,0 +1,12 @@
+clone_HEAD aaec0e87055f1ed1b2c2512e0b07eb36f436a72c
+bce37983d44a2c2842aa5bc9e6a7295b  /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/26995500-f843-4b85-8539-d4cb7e3c7534/q2_recal_driver.py
+0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round3_a0_harness.py
+544721f07cb3d74dc5b92456d61fe450  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round3_b1_ppi.py
+7f0274bb3c2285d0139dbd07ec39fb58  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round4_ppi_q2_masking.py
+931bd81f10200410c512bcf3f81b5b43  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round4_ppi_estimator.py
+slurm_job 3322201 node c0413.ll.unc.edu partition spill account rc_tengfei_pi
+PYTHONHASHSEED=0
+numpy 2.4.6 pandas 2.3.3 sklearn 1.9.1 scipy 1.17.1 pyarrow 25.0.1
+cmd: python /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/26995500-f843-4b85-8539-d4cb7e3c7534/q2_recal_driver.py --task-def /work/users/w/e/weiyang/hest_replication/results/round3/task_defs/CCRCC.json --enc hoptimus0 --parquet <B1 CCRCC hoptimus0 parquet> --vtag CCRCC --out-dir /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/recalibration/CCRCC --recal-parquet /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/recalibration/CCRCC/recal_predictions__CCRCC__hoptimus0.parquet
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 16:32.44
+	Maximum resident set size (kbytes): 5344744

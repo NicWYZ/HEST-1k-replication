@@ -1,0 +1,10 @@
+host: Nicolass-MacBook-Pro-9.local (local)
+date_utc: 2026-10-02T02:25:00Z
+command: python /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_q2_masking.py --fit-from "q2local/LUNG_XENIUM__permuted/nL*/q2_variance_grid_genes__LUNG_XENIUM__permuted.csv.gz" --out q2local/LUNG_XENIUM__permuted/q2_fitted_components__LUNG_XENIUM__permuted.csv
+wall_s: 5 exit: 0
+env: PYTHONHASHSEED=0 OMP_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1
+MD5 (/Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_q2_masking.py) = 7f0274bb3c2285d0139dbd07ec39fb58
+MD5 (q2local/LUNG_XENIUM__permuted/nL12/q2_variance_grid_genes__LUNG_XENIUM__permuted.csv.gz) = 38e142d281bf21bd8f2da99ae7c982e5
+MD5 (q2local/LUNG_XENIUM__permuted/nL4/q2_variance_grid_genes__LUNG_XENIUM__permuted.csv.gz) = 2d600eb1ef805035e1543092ed7af31b
+MD5 (q2local/LUNG_XENIUM__permuted/nL6/q2_variance_grid_genes__LUNG_XENIUM__permuted.csv.gz) = e3499dd189166c3f9e8e490816da6758
+MD5 (q2local/LUNG_XENIUM__permuted/nL8/q2_variance_grid_genes__LUNG_XENIUM__permuted.csv.gz) = 2be76a2d187d439c12e8fbb9f45c5968

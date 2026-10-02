@@ -1,0 +1,25 @@
+==============================================================================
+Round 3, stage B1 - prediction-powered inference, predict__resnet50
+slurm_job_id    : 3326063
+slurm_partition : spill
+node            : c130603
+gpu             : none
+date            : 2026-10-01T21:07:42-0400
+repo_commit     : 9d7277dc8c4bfade08d5895051666ee134b8396a
+script          : code/scripts/round3_b1_ppi.py
+script_file     : /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round3_b1_ppi.py
+script_md5      : 544721f07cb3d74dc5b92456d61fe450
+script_sha256   : sha256/16 1965a71eaeaaad44
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5  (imported unmodified, not edited)
+harness_sha256  : sha256/16 4f0536fa25900c9f
+command_line    : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/e49212d2-fd6b-4050-a75b-3028f49cc995/lung_predict_driver.py resnet50 results/round4/ppi/Q2_theory/predictions /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/e49212d2-fd6b-4050-a75b-3028f49cc995/LUNG_XENIUM__labelset.json
+pythonhashseed  : 0
+n_spots_by_task : {"LUNG_XENIUM": 19083}
+embedding_dim   : {"LUNG_XENIUM": 1024}
+wall_seconds    : 98
+wall_by_task    : {"LUNG_XENIUM/lung_donor_set": 97.9}
+acceptance      : PASS
+files_written   : b1_predictions__LUNG_XENIUM__resnet50.parquet (Longleaf only), b1_suffstats__LUNG_XENIUM__resnet50.npz (Longleaf only), b1_join__resnet50.csv, b1_pred_quality__resnet50.csv, b1_design_consts__resnet50.csv
+config_hash     : sha256/16 e7625dc79fbd7e81
+config          : {"base_predictor": "imported unmodified from round3_a0_harness.fit_base", "design": "donor", "encoder": "resnet50", "harness_mode": "h1_anchor (cal_frac_units=cal_frac_spots=0), size_match=none", "merges": {}, "min_join": 0.8, "morph_dir": "results/round4/ppi/Q2_theory/morph_links", "neo_hi": 0.7, "permute_source": "resnet50", "script": "code/scripts/round3_b1_ppi.py", "seed_source": "zlib.crc32 via the harness", "stage": "round3_B1_predict", "str_lo": 0.3, "task_defs": ["../.claude-science-scratch/.claude-science/jobs/e49212d2-fd6b-4050-a75b-3028f49cc995/LUNG_XENIUM__labelset.json"], "tasks": ["LUNG_XENIUM/lung_donor_set"], "variant": ""}
+plan            : round3_execution_plan.md sections 4.7, 12.5, 13.6

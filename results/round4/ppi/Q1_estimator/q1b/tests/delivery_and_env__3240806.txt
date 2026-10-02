@@ -1,0 +1,19 @@
+project_tree_HEAD: 9d7277dc8c4bfade08d5895051666ee134b8396a
+clone_branch: round4-ppi
+clone_HEAD_before: 4bc8da178ea968ea8b921b46e4a13db5c53ed37b
+clone_status_porcelain_lines: 0
+4bc8da178ea968ea8b921b46e4a13db5c53ed37b 
+The bundle uses this hash algorithm: sha1
+From /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/4f135538-1877-4d84-8548-afdb4480f730/r4ppi_72332fd.bundle
+   4bc8da1..72332fd  round4-ppi -> refs/bundles/round4-ppi
+ create mode 100644 results/round4/ppi/Q0_setup/acs_pums2018/fetch_info.json
+ create mode 100644 results/round4/ppi/Q0_setup/acs_pums2018/folktables_stdout.txt
+ create mode 100644 results/round4/ppi/Q0_setup/acs_pums2018/raw_manifest.json
+clone_HEAD_after: 72332fd58fb3b1de85a1d5fb2030424652a76c58
+931bd81f10200410c512bcf3f81b5b43  code/scripts/round4_ppi_estimator.py
+416318688d6c0c2c6254dc87442b19c0  code/scripts/round4_ppi_q1b_sim.py
+90fd589f98cbea127ed06c7b6dd5f4db  code/scripts/round4_ppi_q1b_tests.py
+873dad7f383eb99826b2d0b990cd6914  code/scripts/round4_ppi_q1_sim.py
+0ad7ae8efe554c1f285e5f384a9fb7f5  code/scripts/round3_a0_harness.py
+ref_module_md5: 10c76fd4706435a2ad71a8c5f53fb938
+host: c151606.ll.unc.edu slurm_job: 3240806 partition: spill python: 3.11.16 2.4.6 1.17.1 2.3.3

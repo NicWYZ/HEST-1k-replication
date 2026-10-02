@@ -7,6 +7,8 @@ import numpy as np, pandas as pd
 ap = argparse.ArgumentParser()
 ap.add_argument("--clone", required=True); ap.add_argument("--suff", required=True)
 ap.add_argument("--out", required=True); ap.add_argument("--draws", type=int, default=200)
+ap.add_argument("--rules", default="a_b1,b_cluster,c_crossfit")
+ap.add_argument("--suffix", default="", help="appended to output file stems, e.g. _d (memo section 3)")
 a = ap.parse_args()
 sys.path.insert(0, a.clone)
 import types, importlib, platform, time
@@ -37,7 +39,7 @@ for m in (E, Q, B):
 os.makedirs(a.out, exist_ok=True)
 
 Q0 = {6: 1.0, 8: 0.86, 12: 0.46}          # Q0 donor-weighted theta2 medians, anchor rerun b1_estimates.csv
-NLS = (6, 8, 12); RULES = ("a_b1", "b_cluster", "c_crossfit"); V = "CCRCC"
+NLS = (6, 8, 12); RULES = tuple(a.rules.split(",")); V = "CCRCC"
 rows, b1rows, diag, corr = [], [], [], []
 
 def masks(d, Ld):
@@ -71,7 +73,9 @@ for est in ("theta2", "theta3"):
                 med = float(np.median(flat))
                 pred = ""
                 if r != "a_b1":
-                    pred = f"|median|<=0.1: {abs(med) <= 0.1}"
+                    pred = (f"|median|<=0.1: {abs(med) <= 0.1}" if not r.startswith("d")
+                            else (f"memo s3 donor median == 0: {med == 0.0}" if pop == "donor"
+                                  else f"memo s3 spot median < 0.1: {med < 0.1}"))
                 elif pop == "donor" and est == "theta2":
                     pred = f"Q0 figure {Q0[nL]}; B1-draw median {np.nanmedian(b1[r]):.4f}; draws median {med:.4f}"
                 rows.append(dict(estimand=est, population=pop, n_L=nL, rule=r, median=med,
@@ -123,10 +127,10 @@ for est in ("theta2", "theta3"):
                 diag[-1].pop("med_abs_corr_tf_donormean")
             print(est, pop, nL, "done", flush=True)
 
-pd.DataFrame(rows).to_csv(f"{a.out}/q1_permuted_lambda.csv", index=False)
-pd.DataFrame(b1rows).to_csv(f"{a.out}/q1_permuted_lambda_b1draw.csv", index=False)
-pd.DataFrame(diag).to_csv(f"{a.out}/q1_permuted_lambda_diagnostic.csv", index=False)
-pd.DataFrame(corr).to_csv(f"{a.out}/q1_permuted_lambda_diagnostic_genes.csv", index=False)
+pd.DataFrame(rows).to_csv(f"{a.out}/q1_permuted_lambda{a.suffix}.csv", index=False)
+pd.DataFrame(b1rows).to_csv(f"{a.out}/q1_permuted_lambda_b1draw{a.suffix}.csv", index=False)
+pd.DataFrame(diag).to_csv(f"{a.out}/q1_permuted_lambda_diagnostic{a.suffix}.csv", index=False)
+pd.DataFrame(corr).to_csv(f"{a.out}/q1_permuted_lambda_diagnostic_genes{a.suffix}.csv", index=False)
 print(pd.DataFrame(rows).drop(columns=["pred_Q1_6"]).round(3).to_string())
 print(pd.DataFrame(b1rows).drop(columns=["labelled"]).round(3).to_string())
 print(pd.DataFrame(diag).round(4).to_string())

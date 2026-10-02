@@ -41,6 +41,12 @@ COMPONENTS (section 6 Q1).
                                 and applied to the OTHER half; cU is the matching weighted
                                 average so the estimator stays unbiased given the lambdas.
                                 Variances centre the rectifier within halves.
+              rules 'd1_pretest', 'd2_pretest'  (Q1 decision memo section 2) rule (c) with a
+                                pre-test: a half's lambda is 0 unless its unclipped estimate
+                                exceeds k = 1 or 2 OLS slope standard errors over the half's
+                                donors (three or more), and 0 throughout when n_L < 6;
+                                columns where both halves are 0 are
+                                reported as the classical estimator with classical variances.
   variance    CR1 (G/(G-1)), CR2 (Bell-McCaffrey leverage adjustment), spot i.i.d.;
               references t_{G_L-1} (CR1), Bell-McCaffrey Satterthwaite df of the L term (CR2),
               and a Welch-Satterthwaite combination of the U and L terms' df (either).
@@ -58,6 +64,7 @@ from scipy import stats
 
 ALPHA = 0.10
 MIN_TUNE_G = 4
+PRETEST_K = {"d1_pretest": 1.0, "d2_pretest": 2.0}
 N_BOOT = 500
 
 STAT_KEYS = ("n", "Sz", "Sf", "Szz", "Sff", "Szf")
@@ -104,8 +111,9 @@ def _clip01(num, den):
     return np.where(den > 0, np.clip(_safe_div(num, den), 0.0, 1.0), 0.0)
 
 
-def _cluster_lambda_spot(D, Lm, Um):
-    """lambda minimising the CR1 variance (spot population), no threshold applied."""
+def _cluster_lambda_spot(D, Lm, Um, raw=False):
+    """lambda minimising the CR1 variance (spot population), no threshold applied.
+    raw=True returns the unclipped ratio (nan where the denominator is 0)."""
     nL, NU = _m(D["n"], Lm), _m(D["n"], Um)
     zb, fbL, fbU = _m(D["Sz"], Lm) / nL, _m(D["Sf"], Lm) / nL, _m(D["Sf"], Um) / NU
     qa = (D["Sz"] - D["n"] * zb) / nL
@@ -116,10 +124,12 @@ def _cluster_lambda_spot(D, Lm, Um):
     cU = GU / np.maximum(GU - 1.0, 1e-300)
     num = cL * _m(qa * qb, Lm)
     den = cU * _m(q0 ** 2, Um) + cL * _m(qb ** 2, Lm)
+    if raw:
+        return _safe_div(num, den)
     return _clip01(num, den)
 
 
-def _cluster_lambda_donor(t, tf, Lm, Um):
+def _cluster_lambda_donor(t, tf, Lm, Um, raw=False):
     """lambda from the donor pairs (donor population); identical to B1's donor_pairs rule."""
     GL, GU = Lm.sum(0), Um.sum(0)
     tLm = _m(t, Lm) / GL
@@ -132,7 +142,34 @@ def _cluster_lambda_donor(t, tf, Lm, Um):
     cL = GL / np.maximum(GL - 1.0, 1e-300)
     num = cL * (aL * bL).sum(0) / GL ** 2
     den = cU * (dU ** 2).sum(0) / GU ** 2 + cL * (bL ** 2).sum(0) / GL ** 2
+    if raw:
+        return _safe_div(num, den)
     return _clip01(num, den)
+
+
+def _ols_slope_se(y, x, mask):
+    """Ordinary least-squares slope standard error of y on x (with intercept) over the
+    masked donors, per column; nan where fewer than three donors or x has no spread."""
+    k = mask.sum(0).astype(float)
+    xm, ym = _m(x, mask) / np.maximum(k, 1.0), _m(y, mask) / np.maximum(k, 1.0)
+    dx = np.where(mask, x - xm, 0.0)
+    dy = np.where(mask, y - ym, 0.0)
+    sxx = (dx ** 2).sum(0)
+    b = _safe_div((dx * dy).sum(0), sxx)
+    rss = ((dy - b * dx) ** 2 * mask).sum(0)
+    s2 = np.where(k >= 3, rss / np.maximum(k - 2.0, 1.0), np.nan)
+    return np.where((k >= 3) & (sxx > 0), np.sqrt(s2 / np.where(sxx > 0, sxx, 1.0)), np.nan)
+
+
+def _donor_contributions(pop, D, Lh):
+    """The half's donor-level outcome and prediction contributions used by the pre-test:
+    donor population (t_d, tf_d); spot population the donor totals of z and f centred at the
+    half's spot means (the CR1 influence pieces of _cluster_lambda_spot, up to scale)."""
+    if pop == "donor":
+        return donor_values(D)
+    nL = _m(D["n"], Lh)
+    zb, fb = _m(D["Sz"], Lh) / nL, _m(D["Sf"], Lh) / nL
+    return D["Sz"] - D["n"] * zb, D["Sf"] - D["n"] * fb
 
 
 def lambda_spot_iid(D, Lm, Um):
@@ -202,6 +239,47 @@ def lambda_rule(rule, pop, D, Lm, Um, seed=None):
         cU = (w * lamL).sum(0) / w.sum(0)
         return dict(lamL=lamL, cU=cU, strata=np.where(Lm, half, -1), lam=cU,
                     lamA=lamA, lamB=lamB, basis="crossfit_cluster")
+    if rule in PRETEST_K:
+        # Rule (d), Q1 decision memo section 2 (plan section 13.2): rule (c) with a pre-test on
+        # each half. The halves are the same as rule (c)'s (same seed tag). A half's lambda is
+        # its clipped estimate only if its unclipped estimate exceeds k times the OLS slope
+        # standard error of the half's donor outcome contributions on its donor prediction
+        # contributions (at least three donors in the half); otherwise 0. Columns where both
+        # halves are 0 are classical; all_intervals then reports the classical estimator and its
+        # variance there (flag 'classical_cols').
+        k = PRETEST_K[rule]
+        rng = seed_rng(f"crossfit|{seed}")
+        half = np.full(Lm.shape, -1, dtype=int)
+        for j in range(ncol):
+            idx = np.flatnonzero(Lm[:, j])
+            perm = rng.permutation(idx)
+            h = len(perm) // 2
+            half[perm[:h], j] = 0
+            half[perm[h:], j] = 1
+        LA, LB = half == 0, half == 1
+        okU = GU >= 2
+        lams, raws, ses = [], [], []
+        for Lh in (LA, LB):
+            if pop == "spot":
+                raw = _cluster_lambda_spot(D, Lh, Um, raw=True)
+                clip = _cluster_lambda_spot(D, Lh, Um)
+            else:
+                raw = _cluster_lambda_donor(t, tf, Lh, Um, raw=True)
+                clip = _cluster_lambda_donor(t, tf, Lh, Um)
+            yv, xv = _donor_contributions(pop, D, Lh)
+            se = _ols_slope_se(yv, xv, Lh)
+            # memo section 2 item 2: when n_L < 6 lambda is 0 throughout (classical)
+            passed = (okU & (GL >= 6) & (Lh.sum(0) >= 3) & np.isfinite(se) & np.isfinite(raw)
+                      & (raw > k * se))
+            lams.append(np.where(passed, clip, 0.0)); raws.append(raw); ses.append(se)
+        lamA, lamB = lams
+        lamL = np.where(LA, lamB[None, :], np.where(LB, lamA[None, :], 0.0))
+        w = np.where(Lm, D["n"], 0.0) if pop == "spot" else Lm.astype(float)
+        cU = (w * lamL).sum(0) / w.sum(0)
+        classical_cols = (lamA == 0.0) & (lamB == 0.0)
+        return dict(lamL=lamL, cU=cU, strata=np.where(Lm, half, -1), lam=cU,
+                    lamA=lamA, lamB=lamB, rawA=raws[0], rawB=raws[1], seA=ses[0], seB=ses[1],
+                    classical_cols=classical_cols, basis=f"crossfit_pretest_k{k:g}")
     raise ValueError(rule)
 
 
@@ -667,6 +745,26 @@ def all_intervals(pop, D, Lm, Um, rule, truth, G_pop=None, seed=0, n_boot=N_BOOT
         v, df = design_exact_var(pop, D, Lm, Um, lam, G_pop)
         lo, hi = t_interval(th, v, df, alpha)
         iv["design_exact_t"] = dict(lo=lo, hi=hi, df=df, var=v)
+    if lam.get("classical_cols") is not None and lam["classical_cols"].any():
+        # Rule (d): where both halves fail the pre-test the estimator is classical, so the
+        # classical estimate and its variances replace the cross-fitted ones in those columns.
+        cc = lam["classical_cols"]
+        lam0 = lambda_rule("none", pop, D, Lm, Um, seed=seed)
+        res0 = estimate(pop, D, Lm, Um, lam0)
+        th0 = res0["theta"]
+        for name, (v, df) in variances(res0, G_pop).items():
+            if name not in iv:
+                continue
+            lo, hi = t_interval(th0, v, df, alpha)
+            for key, val in (("lo", lo), ("hi", hi), ("df", df), ("var", v)):
+                iv[name][key] = np.where(cc, val, iv[name][key])
+        if "design_exact_t" in iv:
+            v, df = design_exact_var(pop, D, Lm, Um, lam0, G_pop)
+            lo, hi = t_interval(th0, v, df, alpha)
+            for key, val in (("lo", lo), ("hi", hi), ("df", df), ("var", v)):
+                iv["design_exact_t"][key] = np.where(cc, val, iv["design_exact_t"][key])
+        res = dict(res, theta=np.where(cc, th0, th))
+        th = res["theta"]
     if do_boot:
         se1 = np.sqrt(np.maximum(iv["CR1_t"]["var"], 0.0))
         b = bootstrap(pop, D, Lm, Um, lam, th, se1, n_boot=n_boot, seed=seed, alpha=alpha,

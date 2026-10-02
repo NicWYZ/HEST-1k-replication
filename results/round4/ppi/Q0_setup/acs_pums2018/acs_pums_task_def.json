@@ -1,0 +1,197 @@
+{
+ "task_def_version": 1,
+ "task": "ACS_PUMS2018_INCOME",
+ "label_set": "folktables_ACSIncome",
+ "source": "folktables ACS PUMS 2018 1-Year person",
+ "st_technology": "not applicable (tabular ACS PUMS survey microdata)",
+ "repo_root_relative": true,
+ "adaptation_note": "A0 format adapted for tabular data as in results/round4/ppi/Q0_setup/acs_task_def.json: paths.adata/patches/embeddings and target_genes have no analogue and are replaced by paths.data and the outcome block; samples becomes clusters; the HEST donor folds are replaced by the five state folds of the predictor.",
+ "paths": {
+  "data": "results/round4/ppi/Q0_setup/acs_pums2018/acs_pums2018_all_columns.parquet (Longleaf only, not committed)",
+  "predictions": "results/round4/ppi/Q0_setup/acs_pums2018/acs_pums2018_predictions.parquet (Longleaf only, not committed)",
+  "predictions_md5": "cabb141ce4c4609eda500680b71848bf",
+  "inventory": "results/round4/ppi/Q0_setup/acs_pums2018_inventory.json",
+  "person_key": [
+   "SERIALNO",
+   "SPORDER",
+   "ST",
+   "PUMA"
+  ]
+ },
+ "n_units": 1659616,
+ "population": {
+  "filter": "AGEP > 16, PINCP > 100, WKHP > 0, PWGTP >= 1 (folktables ACSIncome)",
+  "survey_weights": "NOT used. PWGTP enters only through the filter PWGTP >= 1. Every sampled person passing the filter counts once.",
+  "design_based_target": "the finite population of sampled persons that pass the filter (N = 1659616)"
+ },
+ "clusters": {
+  "level_1": {
+   "name": "state",
+   "field": "ST",
+   "status": "present",
+   "n": 51,
+   "rows_per_state_after_filter": {
+    "1": 22268,
+    "2": 3546,
+    "4": 33277,
+    "5": 13929,
+    "6": 195665,
+    "8": 31306,
+    "9": 19785,
+    "10": 4713,
+    "11": 4187,
+    "12": 98925,
+    "13": 50915,
+    "15": 7731,
+    "16": 8265,
+    "17": 67016,
+    "18": 35022,
+    "19": 17745,
+    "20": 15807,
+    "21": 22006,
+    "22": 20667,
+    "23": 7002,
+    "24": 33042,
+    "25": 40114,
+    "26": 50008,
+    "27": 31021,
+    "28": 13189,
+    "29": 31664,
+    "30": 5463,
+    "31": 10785,
+    "32": 14807,
+    "33": 7966,
+    "34": 47781,
+    "35": 8711,
+    "36": 103021,
+    "37": 52067,
+    "38": 4455,
+    "39": 62135,
+    "40": 17917,
+    "41": 21919,
+    "42": 68308,
+    "44": 5712,
+    "45": 24879,
+    "46": 4899,
+    "47": 34003,
+    "48": 135924,
+    "49": 16337,
+    "50": 3767,
+    "51": 46144,
+    "53": 39944,
+    "54": 8103,
+    "55": 32690,
+    "56": 3064
+   }
+  },
+  "level_2": {
+   "name": "PUMA",
+   "field": "PUMA",
+   "status": "present",
+   "nested_in": "state (PUMA codes are unique only within a state)",
+   "setting": "second setting: PUMAs within the single state with most persons after the filter",
+   "state_ST": 6,
+   "state_N_after_filter": 195665,
+   "n": 265,
+   "persons_per_PUMA": {
+    "min": 282.0,
+    "25%": 601.0,
+    "50%": 709.0,
+    "75%": 844.0,
+    "max": 1401.0,
+    "mean": 738.3584905660377,
+    "std": 194.38676831174152
+   }
+  }
+ },
+ "outcome": {
+  "name": "log PINCP",
+  "transform": "natural log of PINCP; PINCP > 100 after the filter so the log is defined for every unit",
+  "zero_or_negative_handling": "not needed: the filter removes PINCP <= 100 before the outcome exists"
+ },
+ "covariates": {
+  "theta_3": {
+   "name": "AGEP, standardised",
+   "raw_column": "AGEP",
+   "standardisation": "z = (AGEP - mean) / sd over all 1659616 filtered persons, sd with ddof=0",
+   "age_mean": 43.397205739158935,
+   "age_sd_ddof0": 15.310247737823113
+  }
+ },
+ "estimands": {
+  "theta_2": "mean of log PINCP (person-weighted and cluster-weighted as in plan section Q4)",
+  "theta_3": "slope of log PINCP on standardised AGEP"
+ },
+ "predictor": {
+  "present": true,
+  "fit_here": true,
+  "family": "gradient-boosted regression of log PINCP",
+  "library": "scikit-learn HistGradientBoostingRegressor",
+  "version": "1.9.1",
+  "features": [
+   "AGEP",
+   "COW",
+   "SCHL",
+   "MAR",
+   "OCCP",
+   "POBP",
+   "RELP",
+   "WKHP",
+   "SEX",
+   "RAC1P"
+  ],
+  "cross_fit": "five folds of states, fold = zlib.crc32(str(int(ST)).encode()) % 5",
+  "get_params_fold0": {
+   "categorical_features": "from_dtype",
+   "early_stopping": "auto",
+   "interaction_cst": null,
+   "l2_regularization": 0.0,
+   "learning_rate": 0.1,
+   "loss": "squared_error",
+   "max_bins": 255,
+   "max_depth": null,
+   "max_features": 1.0,
+   "max_iter": 100,
+   "max_leaf_nodes": 31,
+   "min_samples_leaf": 20,
+   "monotonic_cst": null,
+   "n_iter_no_change": 10,
+   "quantile": null,
+   "random_state": 825021582,
+   "scoring": "loss",
+   "tol": 1e-07,
+   "validation_fraction": 0.1,
+   "verbose": 0,
+   "warm_start": false
+  },
+  "defaults_no_tuning": true,
+  "fold_sizes_persons": {
+   "0": 634747,
+   "1": 235441,
+   "2": 406007,
+   "3": 259734,
+   "4": 123687
+  },
+  "fold_sizes_states": {
+   "0": 10,
+   "1": 11,
+   "2": 11,
+   "3": 11,
+   "4": 8
+  },
+  "R2_description_only": {
+   "unit_level_R2": 0.6210734836098112,
+   "within_state_R2": 0.6232749639804995,
+   "state_level_R2_squared_correlation_of_state_means": 0.5694849081361285,
+   "unit_level_squared_correlation": 0.6211677774835825,
+   "definitions": "unit: 1-SSE/SST over all filtered persons; within-state: 1-SSE/SST after subtracting each state mean of y and of yhat; state-level: squared Pearson correlation of the 51 state means of y and yhat (unweighted by persons). Description only, not a Q2 result."
+  }
+ },
+ "flags": {
+  "dc_added_to_folktables_tables": true
+ },
+ "provenance": {
+  "generated_by": "acs_pums2018_analyze.py",
+  "pythonhashseed": "0"
+ }
+}

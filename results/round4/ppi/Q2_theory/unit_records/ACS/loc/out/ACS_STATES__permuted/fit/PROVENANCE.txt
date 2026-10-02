@@ -1,0 +1,12 @@
+local darwin; md5:
+7f0274bb3c2285d0139dbd07ec39fb58  /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_q2_masking.py
+931bd81f10200410c512bcf3f81b5b43  /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_estimator.py
+544721f07cb3d74dc5b92456d61fe450  /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round3_b1_ppi.py
+command: python /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_q2_masking.py --fit-from "out/ACS_STATES__permuted/nL*/q2_variance_grid_genes__ACS_STATES__permuted.csv.gz" --out out/ACS_STATES__permuted/fit/q2_fitted_components__ACS_STATES__permuted.csv
+f6b9981597f4d92c9d597ec1dc1a4418  out/ACS_STATES__permuted/nL12/q2_variance_grid_genes__ACS_STATES__permuted.csv.gz
+6301276dc0e7a2b942243280d7fe73fa  out/ACS_STATES__permuted/nL16/q2_variance_grid_genes__ACS_STATES__permuted.csv.gz
+5bb4f161816f891c1ea71cf28b7c7e5f  out/ACS_STATES__permuted/nL4/q2_variance_grid_genes__ACS_STATES__permuted.csv.gz
+0bb7b74797159a52c508a9e6a22eaa86  out/ACS_STATES__permuted/nL6/q2_variance_grid_genes__ACS_STATES__permuted.csv.gz
+334fdf40f952c35fa39b4415dd74eec0  out/ACS_STATES__permuted/nL8/q2_variance_grid_genes__ACS_STATES__permuted.csv.gz
+{"files": ["out/ACS_STATES__permuted/nL12/q2_variance_grid_genes__ACS_STATES__permuted.csv.gz", "out/ACS_STATES__permuted/nL16/q2_variance_grid_genes__ACS_STATES__permuted.csv.gz", "out/ACS_STATES__permuted/nL4/q2_variance_grid_genes__ACS_STATES__permuted.csv.gz", "out/ACS_STATES__permuted/nL6/q2_variance_grid_genes__ACS_STATES__permuted.csv.gz", "out/ACS_STATES__permuted/nL8/q2_variance_grid_genes__ACS_STATES__permuted.csv.gz"], "n_gene_rows": 1440, "out": "out/ACS_STATES__permuted/fit/q2_fitted_components__ACS_STATES__permuted.csv"}
+exit=0 wall_s=3

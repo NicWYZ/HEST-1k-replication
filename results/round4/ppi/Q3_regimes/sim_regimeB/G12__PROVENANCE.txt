@@ -1,0 +1,13 @@
+clone HEAD: aaec0e87055f1ed1b2c2512e0b07eb36f436a72c
+7f0274bb3c2285d0139dbd07ec39fb58  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round4_ppi_q2_masking.py
+fd1d2e53b7178d43aa0d82ee65fea26d  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round4_ppi_q3_regimes.py
+931bd81f10200410c512bcf3f81b5b43  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round4_ppi_estimator.py
+873dad7f383eb99826b2d0b990cd6914  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round4_ppi_q1_sim.py
+02da231857f74978de92550b95cf62d2  /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/551ab27e-3969-4d30-9cf3-c78447971822/round4_ppi_q3_regimeB_sim.py
+slurm job: 3322205 node: c151406.ll.unc.edu partition: spill account: rc_tengfei_pi
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/551ab27e-3969-4d30-9cf3-c78447971822/round4_ppi_q3_regimeB_sim.py --G 12 --reps 2000 --chunk 100 --out-dir /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q3_regimes/sim_regimeB/G12
+PYTHONHASHSEED=0 PYTHONPATH=/work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts:/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/551ab27e-3969-4d30-9cf3-c78447971822
+python 3.11.16 numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:18.21
+	Maximum resident set size (kbytes): 638804
+exit code: 0

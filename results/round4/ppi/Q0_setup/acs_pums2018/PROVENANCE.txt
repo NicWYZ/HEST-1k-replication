@@ -1,0 +1,7 @@
+unit: ACS PUMS 2018 transfer to Longleaf (docs/round4_ppi_plan.md section 13.6, memo section 6)
+source: Nicolas's local fetch, /Users/nicolaszhang/acs_pums2018, produced by code/scripts/round4_ppi_acs_pums2018_fetch.py
+slurm_job_id: 3237420
+partition: spill
+host: c1139
+date_utc: 2026-10-01T14:09:48Z
+check: acs_pums2018_transfer_check.csv (md5 and bytes per file against raw_manifest.json; non-manifest files against md5 taken locally before transfer)

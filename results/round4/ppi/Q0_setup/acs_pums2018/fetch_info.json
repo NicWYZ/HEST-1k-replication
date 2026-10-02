@@ -1,0 +1,1443 @@
+{
+ "call": "ACSDataSource(survey_year='2018', horizon='1-Year', survey='person', root_dir='/Users/nicolaszhang/acs_pums2018/raw').get_data(states=['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'], download=True)",
+ "folktables_version": "0.0.12",
+ "pandas_version": "2.2.3",
+ "pyarrow_version": "25.0.1",
+ "python": "3.12.2",
+ "n_rows": 3214539,
+ "n_columns": 286,
+ "columns": [
+  {
+   "name": "RT",
+   "dtype": "object",
+   "arrow_type": "string"
+  },
+  {
+   "name": "SERIALNO",
+   "dtype": "object",
+   "arrow_type": "string"
+  },
+  {
+   "name": "DIVISION",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "SPORDER",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PUMA",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "REGION",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "ST",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "ADJINC",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "AGEP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "CIT",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "CITWP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "COW",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "DDRS",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "DEAR",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "DEYE",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "DOUT",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "DPHY",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "DRAT",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "DRATX",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "DREM",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "ENG",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "FER",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "GCL",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "GCM",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "GCR",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "HINS1",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "HINS2",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "HINS3",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "HINS4",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "HINS5",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "HINS6",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "HINS7",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "INTP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "JWMNP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "JWRIP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "JWTR",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "LANX",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "MAR",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "MARHD",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "MARHM",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "MARHT",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "MARHW",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "MARHYP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "MIG",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "MIL",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "MLPA",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "MLPB",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "MLPCD",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "MLPE",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "MLPFG",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "MLPH",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "MLPI",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "MLPJ",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "MLPK",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "NWAB",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "NWAV",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "NWLA",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "NWLK",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "NWRE",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "OIP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "PAP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "RELP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "RETP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "SCH",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "SCHG",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "SCHL",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "SEMP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "SEX",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "SSIP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "SSP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "WAGP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "WKHP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "WKL",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "WKW",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "WRK",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "YOEP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "ANC",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "ANC1P",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "ANC2P",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "DECADE",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "DIS",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "DRIVESP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "ESP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "ESR",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "FOD1P",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "FOD2P",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "HICOV",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "HISP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "INDP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "JWAP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "JWDP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "LANP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "MIGPUMA",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "MIGSP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "MSP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "NAICSP",
+   "dtype": "object",
+   "arrow_type": "string"
+  },
+  {
+   "name": "NATIVITY",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "NOP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "OC",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "OCCP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "PAOC",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "PERNP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "PINCP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "POBP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "POVPIP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "POWPUMA",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "POWSP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "PRIVCOV",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PUBCOV",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "QTRBIR",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "RAC1P",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "RAC2P",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "RAC3P",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "RACAIAN",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "RACASN",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "RACBLK",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "RACNH",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "RACNUM",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "RACPI",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "RACSOR",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "RACWHT",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "RC",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "SCIENGP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "SCIENGRLP",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "SFN",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "SFR",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "SOCP",
+   "dtype": "object",
+   "arrow_type": "string"
+  },
+  {
+   "name": "VPS",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "WAOB",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FAGEP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FANCP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FCITP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FCITWP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FCOWP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FDDRSP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FDEARP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FDEYEP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FDISP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FDOUTP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FDPHYP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FDRATP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FDRATXP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FDREMP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FENGP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FESRP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FFERP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FFODP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FGCLP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FGCMP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FGCRP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FHICOVP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FHINS1P",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FHINS2P",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FHINS3C",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "FHINS3P",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FHINS4C",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "FHINS4P",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FHINS5C",
+   "dtype": "float64",
+   "arrow_type": "double"
+  },
+  {
+   "name": "FHINS5P",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FHINS6P",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FHINS7P",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FHISP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FINDP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FINTP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FJWDP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FJWMNP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FJWRIP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FJWTRP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FLANP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FLANXP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FMARP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FMARHDP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FMARHMP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FMARHTP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FMARHWP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FMARHYP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FMIGP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FMIGSP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FMILPP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FMILSP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FOCCP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FOIP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FPAP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FPERNP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FPINCP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FPOBP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FPOWSP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FPRIVCOVP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FPUBCOVP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FRACP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FRELP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FRETP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FSCHGP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FSCHLP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FSCHP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FSEMP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FSEXP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FSSIP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FSSP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FWAGP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FWKHP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FWKLP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FWKWP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FWRKP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "FYOEP",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP1",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP2",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP3",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP4",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP5",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP6",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP7",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP8",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP9",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP10",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP11",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP12",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP13",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP14",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP15",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP16",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP17",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP18",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP19",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP20",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP21",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP22",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP23",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP24",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP25",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP26",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP27",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP28",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP29",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP30",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP31",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP32",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP33",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP34",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP35",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP36",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP37",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP38",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP39",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP40",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP41",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP42",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP43",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP44",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP45",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP46",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP47",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP48",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP49",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP50",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP51",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP52",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP53",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP54",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP55",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP56",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP57",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP58",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP59",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP60",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP61",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP62",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP63",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP64",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP65",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP66",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP67",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP68",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP69",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP70",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP71",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP72",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP73",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP74",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP75",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP76",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP77",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP78",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP79",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  },
+  {
+   "name": "PWGTP80",
+   "dtype": "int64",
+   "arrow_type": "int64"
+  }
+ ],
+ "dc_note": "DC added to folktables.load_acs.state_list and _STATE_CODES in memory (absent in 0.0.12)",
+ "reader_note": "folktables' reader removes spaces from each data line; raw csv files on disk are untouched"
+}

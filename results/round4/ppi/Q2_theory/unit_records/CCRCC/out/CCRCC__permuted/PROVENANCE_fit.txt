@@ -1,0 +1,3 @@
+host=Nicolass-MacBook-Pro-9.local local; script md5: 7f0274bb3c2285d0139dbd07ec39fb58  /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_q2_masking.py
+cmd=python /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_q2_masking.py --fit-from 'out/CCRCC__permuted/nL*/q2_variance_grid_genes__*.csv.gz' --out out/CCRCC__permuted/q2_fitted_components__CCRCC__permuted.csv
+2.4.6 2.3.3 1.17.1

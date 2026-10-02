@@ -1,0 +1,14 @@
+{
+ "task": "INDIANA_KIDNEY",
+ "enc": "hoptimus0",
+ "n_donors": 25,
+ "n_genes": 50,
+ "ydev": 0.0,
+ "wall": 165.78408360481262,
+ "penalty": "per gene, inner leave-one-out over the training donors (closed form), grid 1e-6..1e3 x s1^2 plus intercept-only",
+ "embedding_space": "fold PCA (round3_a0_harness.fit_base on the other donors), donor means over joined spots",
+ "offsets": "mean(y - f) over joined spots, f the B1 donor-design parquet",
+ "recal_parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/recalibration/INDIANA_KIDNEY/recal_predictions__INDIANA_KIDNEY__hoptimus0.parquet",
+ "recal_parquet_md5": "7eabc96abcf5adb2e2e29adb27985901",
+ "stubbed": []
+}
