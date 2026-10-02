@@ -107,7 +107,7 @@ $\lambda$ makes the ratio fall below one; any $\lambda \neq 0$ raises the varian
 $\lambda^2 \sigma_p^2 (1/n_L + 1/G_U)$ at large $m$, so it raises the ratio by
 $\lambda^2 \sigma_p^2 (1 + n_L/G_U)/\sigma_u^2$.
 
-**The pre-test corollary, rule (d)** (memo section 2). When $R^2_{\text{cluster}}$ is near zero,
+**The pre-test corollary, rule (d)** (Q1 memo section 2; rule (d) was dropped by the Q3 memo, section 2, in favour of the break-even rule of section 5.2). When $R^2_{\text{cluster}}$ is near zero,
 the objective $\sigma_{u,r}^2(\lambda) + (n_L/G_U)\lambda^2\sigma_p^2$ is nearly flat in $\lambda$
 whenever $\sigma_p^2$ is small against $\sigma_u^2$, because both $\lambda$ terms scale with
 $\sigma_p^2$ and $C_u$. The tuned $\lambda$ is then unidentified: its sampling spread over a few
@@ -277,3 +277,190 @@ fitted components and reports it beside the cost-weighted comparison at $c_d/c_s
 **Training.** The prediction head is trained on other donors (the harness's calibration-fraction-zero
 `donor` mode), so the labelled spots enter only the rectifier and the derivations above apply with
 the predictor fixed.
+
+## 5. Interval 3 additions (Q3 decision memo section 4, plan section 14.4)
+
+Written before the Q4 tables, and checked in Q4 by predictions Q4.3 and Q4.4 (plan section 4).
+
+### 5.1 The general setting
+
+Every estimand of the track is the population mean of a per-spot scalar that is linear in the
+outcome, $z_{gi} = w_{gi} y_{gi}$, with label-free weights $w_{gi}$ computed from all spots, and its
+prediction counterpart $f_{gi} = w_{gi} \hat y_{gi}$ (`docs/round4_ppi_estimator_definition.md`).
+For the mean $w_{gi} = 1$. For the group difference $\theta_2$, $w_{gi} = 1/\pi_{g,\text{neo}}$ on
+neoplastic spots and $-1/\pi_{g,\text{str}}$ on stromal spots. For the within-donor slope
+$\theta_3$, $w_{gi} = (x_{gi} - \bar x_g)/v_g$ with $x$ the standardised morphology covariate.
+
+**Step 1, donor contributions.** For the donor-weighted population the estimand is
+$\theta = G^{-1}\sum_g z_g$ with donor contribution $z_g = M_g^{-1}\sum_i z_{gi}$, and likewise
+$f_g$. Write
+
+$$
+z_g = \mu_z + u_g + \bar e_g, \qquad f_g = \mu_f + p_g + \bar d_g,
+$$
+
+with $u_g$ and $p_g$ the centred between-donor parts and $\bar e_g$, $\bar d_g$ the within-donor
+sampling parts, which vanish at $m$ = all. Section 2's $\sigma_u^2$, $\sigma_p^2$, $C_u$ and
+$R^2_{\text{cluster}} = C_u^2/(\sigma_u^2\sigma_p^2)$ are read on this scale. This is the `z`
+scale of `results/round4/ppi/Q2_theory/q2_cluster_r2.csv`.
+
+**Step 2, invariance to donor offsets.** For $\theta_2$ and $\theta_3$ the weights sum to zero
+within each donor, $\sum_i w_{gi} = 0$, because each donor is centred on its own design
+constants. A donor-constant shift $\hat y_{gi} \mapsto \hat y_{gi} + c_g$ changes $f_g$ by
+$c_g M_g^{-1}\sum_i w_{gi} = 0$. So $p_g$ is a within-donor contrast of the predictions, and no
+offset recalibration can change these estimators. For the mean, $\sum_i w_{gi} = M_g$, and the
+offset enters $f_g$ in full.
+
+**Step 3, the superpopulation target (complement form).** Section 2's argument goes through with
+$(z_g, f_g)$ in place of the donor means of $(y, \hat y)$, since it used only that the labelled
+and unlabelled donors are independent draws of the pairs. At $m$ = all, with a fixed $\lambda$,
+
+$$
+\frac{\text{Var}(\hat\theta_{\text{PP}})}{\text{Var}(\hat\theta_{\text{cl}})} = \frac{\sigma_u^2 - 2\lambda C_u + \lambda^2\sigma_p^2}{\sigma_u^2} + \frac{n_L}{G_U}\frac{\lambda^2\sigma_p^2}{\sigma_u^2},
+$$
+
+which is minimised at $\lambda_A = \lambda^\star G_U/(G_U + n_L)$, $\lambda^\star = C_u/\sigma_p^2$,
+where it equals $1 - R^2_{\text{cluster}}\,G_U/(G_U + n_L)$. It reaches
+$1 - R^2_{\text{cluster}}$ only as $G_U/n_L \to \infty$.
+
+**Step 4, the design-based target (textbook form).** The population is the fixed set of $G$
+donors, the $n_L$ labelled donors are a simple random sample from it, and $\bar F = G^{-1}\sum_g f_g$
+is known because every spot is predicted. The estimator
+$\hat\theta = \lambda \bar F + n_L^{-1}\sum_{g \in L}(z_g - \lambda f_g)$ is a sample mean of
+$r_g = z_g - \lambda f_g$ plus a constant, so for a fixed $\lambda$
+
+$$
+\text{Var}(\hat\theta) = \Big(1 - \frac{n_L}{G}\Big)\frac{S_r^2}{n_L}, \qquad S_r^2 = \frac{1}{G - 1}\sum_{g=1}^{G}(r_g - \bar r)^2,
+$$
+
+and the classical estimator is the case $\lambda = 0$. The ratio is exactly $S_r^2/S_z^2$, with no
+$G_U$ term, and it is minimised at the finite-population regression coefficient
+$\lambda = S_{zf}/S_f^2$, where it equals $1 - R^2_{\text{fp}}$ with $R^2_{\text{fp}}$ the
+squared finite-population correlation of $z_g$ and $f_g$. The design-target rule
+`c_crossfit_design` estimates this coefficient, so its objective has no unlabelled term
+(memo section 2).
+
+### 5.2 The cost of tuning $\lambda$
+
+**Setting.** The labelled donors are split into halves $A$ and $B$ of $n_h = n_L/2$ donors. The
+coefficient $\hat\lambda_B$ is estimated from half $B$ only and applied to half $A$, and the reverse.
+Take the between-donor parts as in 5.1 at $m$ = all, with $p_g$ centred, and write the half-$A$
+labelled term as
+
+$$
+\bar r_A = \frac{1}{n_h}\sum_{g \in A}\big(u_g - \hat\lambda_B\,p_g\big).
+$$
+
+Write $\bar\lambda = E[\hat\lambda]$, $\lambda^\star = C_u/\sigma_p^2$ and
+$\text{MSE}(\hat\lambda) = \text{Var}(\hat\lambda) + (\bar\lambda - \lambda^\star)^2$.
+
+**Step 1, conditioning on $\hat\lambda_B$.** Half $A$'s donors are independent of $\hat\lambda_B$.
+Given $\hat\lambda_B$ the summands are independent with mean zero and variance
+$\sigma_u^2 - 2\hat\lambda_B C_u + \hat\lambda_B^2\sigma_p^2$, so
+
+$$
+E\big[\bar r_A \mid \hat\lambda_B\big] = 0, \qquad \text{Var}\big(\bar r_A \mid \hat\lambda_B\big) = \frac{\sigma_u^2 - 2\hat\lambda_B C_u + \hat\lambda_B^2\sigma_p^2}{n_h}.
+$$
+
+**Step 2, the law of total variance.** The conditional mean is constant, so
+
+$$
+\text{Var}(\bar r_A) = E\big[\text{Var}(\bar r_A \mid \hat\lambda_B)\big] = \frac{\sigma_u^2 - 2\bar\lambda C_u + (\text{Var}(\hat\lambda) + \bar\lambda^2)\sigma_p^2}{n_h} = \frac{\text{Var}(u_g - \bar\lambda\,p_g) + \text{Var}(\hat\lambda)\,\sigma_p^2}{n_h}.
+$$
+
+**Step 3, completing the square.** $\text{Var}(u_g - \bar\lambda p_g) = \sigma_u^2(1 - R^2_{\text{cluster}}) + (\bar\lambda - \lambda^\star)^2\sigma_p^2$,
+so against the classical half-mean variance $\sigma_u^2/n_h$,
+
+$$
+\frac{\text{Var}(\bar r_A)}{\sigma_u^2/n_h} = 1 - R^2_{\text{cluster}} + \text{MSE}(\hat\lambda)\,\frac{\sigma_p^2}{\sigma_u^2}.
+$$
+
+**Step 4, what averaging the two halves adds.** The labelled term is $(\bar r_A + \bar r_B)/2$.
+Expanding $E[\bar r_A \bar r_B]$ term by term, every term containing $u_g$ or $p_g$ for a donor in
+one half and nothing else from that half has mean zero, which leaves
+
+$$
+\text{Cov}(\bar r_A, \bar r_B) = \kappa_A\,\kappa_B, \qquad \kappa_A = \frac{1}{n_h}\sum_{g \in A}E\big[\hat\lambda_A\,p_g\big].
+$$
+
+$\kappa_A$ is the covariance between half $A$'s coefficient and its own predictions. It is zero when
+the joint law of $(u_g, p_g)$ is symmetric under $(u, p) \mapsto (-u, -p)$, since $\hat\lambda$ is
+invariant and $p_g$ changes sign, and it is $O(1/n_h)$ in general because one donor moves
+$\hat\lambda$ by $O(1/n_h)$. So the covariance is $O(1/n_h^2)$, and
+
+$$
+\text{Var}\Big(\frac{\bar r_A + \bar r_B}{2}\Big) = \frac{\text{Var}(\bar r_A)}{2}\big(1 + O(1/n_h)\big),
+$$
+
+whose ratio to the classical $\sigma_u^2/n_L$ is the half ratio of step 3. Averaging restores the
+sample size but not the tuning cost, because each half is rectified with a coefficient estimated
+from only $n_h$ donors. In the complement form the population term $\bar\lambda \bar f_U$ adds the
+section 2 term with $E[c_U^2]$ in place of $\lambda^2$, where $c_U$ is the average coefficient;
+in the textbook form with $p_g$ centred on the population it adds nothing.
+
+**Corollary, when predictions pay for their tuning.** Since $R^2_{\text{cluster}} = \lambda^{\star 2}\sigma_p^2/\sigma_u^2$,
+the ratio of step 3 is below one if and only if
+
+$$
+\lambda^{\star 2} > \text{Var}(\hat\lambda) + (\bar\lambda - \lambda^\star)^2,
+$$
+
+that is, when $\hat\lambda$'s mean squared error is below the square of what it estimates.
+
+**Corollary, the break-even number of labelled clusters.** For the unclipped least-squares slope of
+$u_g$ on $p_g$ over $n_h$ donors with Gaussian $p_g$, $\hat\lambda$ is unbiased and
+$\text{Var}(\hat\lambda) = \sigma_u^2(1 - R^2_{\text{cluster}})\,E[1/S_{pp}] = \sigma_u^2(1 - R^2_{\text{cluster}})/\{(n_h - 3)\sigma_p^2\}$,
+using $E[1/\chi^2_{n_h - 1}] = 1/(n_h - 3)$. So
+
+$$
+\text{Var}(\hat\lambda)\frac{\sigma_p^2}{\sigma_u^2} = \frac{1 - R^2_{\text{cluster}}}{n_h - 3},
+$$
+
+and predictions reduce the variance if and only if $R^2_{\text{cluster}} > (1 - R^2_{\text{cluster}})/(n_h - 3)$,
+which rearranges to
+
+$$
+n_h > 2 + \frac{1}{R^2_{\text{cluster}}}, \qquad n_L > 4 + \frac{2}{R^2_{\text{cluster}}}.
+$$
+
+Clipping $\hat\lambda$ to $[0, 1]$ lowers its variance at the price of a bias toward the interval,
+so for $\lambda^\star \in [0, 1]$ the count is conservative. A predictor with donor-level
+$R^2_{\text{cluster}} = 0.44$ on the contrast scale needs $n_L > 8.5$; at 0.2 it needs $n_L > 14$;
+at 0.95 it needs $n_L > 6.1$. This is the answer to "how many labelled clusters before a predictor
+pays for its own tuning".
+
+**What the experiment checks.** Prediction Q4.3 compares the theorem check's
+estimated-$\lambda$ minus oracle-$\lambda$ ratio with $\text{MSE}(\hat\lambda)\sigma_p^2/\sigma_u^2$,
+both measured across replicates (`round4_ppi_q2_theorem_sim.py`, columns `tuning_cost_obs` and
+`tuning_cost_pred`; `tuning_cost_pred_with_U` adds the complement form's population term).
+Prediction Q4.4 evaluates the corollary on the real tasks from each cell's own $\hat\lambda$ and its
+standard error.
+
+### 5.3 The allocation condition
+
+Section 3 step 3 found that $m^\star_{\text{PP}} \le m^\star$ if and only if
+
+$$
+\frac{\sigma^2_{e,r}(\lambda)}{\sigma^2_e} \le \frac{\sigma^2_{u,r}(\lambda)}{\sigma^2_u}.
+$$
+
+At the cluster optimum $\lambda = \lambda^\star$ the right side is $1 - R^2_{\text{cluster}}$. The
+left side is a quadratic in $\lambda$ minimised at the within-cluster coefficient
+$\lambda_w = C_e/\sigma_d^2$, where it equals $1 - R^2_{\text{within}}$, so at any $\lambda$ it is at
+least $1 - R^2_{\text{within}}$. Two statements follow, and together they are the memo's condition
+made exact.
+
+1. If $R^2_{\text{within}} < R^2_{\text{cluster}}$, the left side exceeds $1 - R^2_{\text{within}} > 1 - R^2_{\text{cluster}}$
+   and $m^\star_{\text{PP}} > m^\star$. So $R^2_{\text{within}} \ge R^2_{\text{cluster}}$ is necessary.
+2. If the two coefficients coincide, $\lambda_w = \lambda^\star$ (as under the Q1 generator when the
+   predictor's error is in the same proportion at both levels), the condition is exactly
+   $R^2_{\text{within}} \ge R^2_{\text{cluster}}$. When they differ the left side at $\lambda^\star$
+   is $1 - R^2_{\text{within}} + (\lambda^\star - \lambda_w)^2\sigma_d^2/\sigma_e^2$, and the
+   condition is $R^2_{\text{within}} - (\lambda^\star - \lambda_w)^2\sigma_d^2/\sigma_e^2 \ge R^2_{\text{cluster}}$.
+
+In words, a predictor moves the optimal design toward more clusters with fewer units each when it
+ranks units within clusters better than it ranks clusters, by a margin that covers any mismatch
+between the two levels' coefficients. In the Q2 data the within-cluster $R^2$ on the `z` scale
+exceeds the cluster-level one for every HEST encoder except `uni_v2` on CCRCC and CCRCC merged
+(`q2_cluster_r2.csv`), and the fitted $m^\star_{\text{PP}}$ is below $m^\star$ in every case where both
+are defined (`q2_report_numbers.csv`).
