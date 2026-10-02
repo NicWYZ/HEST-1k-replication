@@ -1,0 +1,8 @@
+check,value,expected,passed,note
+rowcount_K16,8640.0,8640,True,"72 specs, 0 skipped (o=25 leaves <10 eval spots), 20 draws x (2 ghcp x 2 alpha + within_plain x 2)"
+o_K_K16,25.0,25,True,o=25 and K column
+rowcount_K18,8640.0,8640,True,"72 specs, 0 skipped (o=25 leaves <10 eval spots), 20 draws x (2 ghcp x 2 alpha + within_plain x 2)"
+o_K_K18,25.0,25,True,o=25 and K column
+rowcount_K20,8640.0,8640,True,"72 specs, 0 skipped (o=25 leaves <10 eval spots), 20 draws x (2 ghcp x 2 alpha + within_plain x 2)"
+o_K_K20,25.0,25,True,o=25 and K column
+fixed_columns_exact,15.0,15,True,

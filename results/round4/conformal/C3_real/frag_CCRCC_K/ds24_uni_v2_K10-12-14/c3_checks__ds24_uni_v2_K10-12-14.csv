@@ -1,0 +1,35 @@
+check,value,expected,passed,note
+rowcount_K10,432.0,432.0,True,"24 folds, 72 fold x draw specs, 3 methods, 2 alphas"
+o_all_zero_K10,0.0,0.0,True,
+K_col_K10,10.0,10.0,True,K column equals design K
+K10_vs_a4b_pooled_coverage,1.1102230246251565e-16,0.0,True,tol 1e-12; within 1e-9: True; n=72 cpu=GenuineIntel
+K10_vs_a4b_pooled_width_mean,3.774758283725532e-14,0.0,True,tol 1e-12; within 1e-9: True; n=72 cpu=GenuineIntel
+K10_vs_a4b_pooled_width_median,1.9095836023552692e-14,0.0,True,tol 1e-12; within 1e-9: True; n=72 cpu=GenuineIntel
+K10_finite_flag_pooled,0.0,0.0,True,
+K10_design_pooled_n_T_donors,0.0,0.0,True,
+K10_design_pooled_n_T_matched,0.0,0.0,True,
+K10_design_pooled_n_C,0.0,0.0,True,
+K10_design_pooled_K,0.0,0.0,True,
+K10_vs_a4b_hcp_coverage,1.1102230246251565e-16,0.0,True,tol 1e-12; within 1e-9: True; n=72 cpu=GenuineIntel
+K10_vs_a4b_hcp_width_mean,9.325873406851315e-14,0.0,True,tol 1e-12; within 1e-9: True; n=72 cpu=GenuineIntel
+K10_vs_a4b_hcp_width_median,3.1530333899354446e-14,0.0,True,tol 1e-12; within 1e-9: True; n=72 cpu=GenuineIntel
+K10_finite_flag_hcp,0.0,0.0,True,
+K10_design_hcp_n_T_donors,0.0,0.0,True,
+K10_design_hcp_n_T_matched,0.0,0.0,True,
+K10_design_hcp_n_C,0.0,0.0,True,
+K10_design_hcp_K,0.0,0.0,True,
+K10_vs_a4b_dwr_coverage,1.1102230246251565e-16,0.0,True,tol 1e-12; within 1e-9: True; n=72 cpu=GenuineIntel
+K10_vs_a4b_dwr_width_mean,5.773159728050814e-15,0.0,True,tol 1e-12; within 1e-9: True; n=72 cpu=GenuineIntel
+K10_vs_a4b_dwr_width_median,5.329070518200751e-15,0.0,True,tol 1e-12; within 1e-9: True; n=72 cpu=GenuineIntel
+K10_finite_flag_dwr,0.0,0.0,True,
+K10_design_dwr_n_T_donors,0.0,0.0,True,
+K10_design_dwr_n_T_matched,0.0,0.0,True,
+K10_design_dwr_n_C,0.0,0.0,True,
+K10_design_dwr_K,0.0,0.0,True,
+rowcount_K12,432.0,432.0,True,"24 folds, 72 fold x draw specs, 3 methods, 2 alphas"
+o_all_zero_K12,0.0,0.0,True,
+K_col_K12,12.0,12.0,True,K column equals design K
+rowcount_K14,432.0,432.0,True,"24 folds, 72 fold x draw specs, 3 methods, 2 alphas"
+o_all_zero_K14,0.0,0.0,True,
+K_col_K14,14.0,14.0,True,K column equals design K
+fixed_columns_exact,15.0,15.0,True,"task,label_set,encoder,method,score,alpha,o,K,fold,draw,coverage,width_mean,width_median,n_test,finite"

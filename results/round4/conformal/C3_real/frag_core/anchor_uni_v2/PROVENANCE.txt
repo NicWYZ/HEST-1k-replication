@@ -1,0 +1,22 @@
+==============================================================================
+Round 4 conformal track, stage C3core
+job_name_prefix : r4conf_C3core  (the submission route replaces --job-name)
+slurm_job_id    : 3412749
+slurm_partition : spill
+node            : c0512.ll.unc.edu
+date            : 2026-10-02T06:20:02-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : fe36f6b0aecfbafc2ee58b9ca3420beac89c327e
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/c13a54a0-3551-4b99-9b83-7e661b4863f7/round4_conf_c3_anchor.py
+script_md5      : bb0efa80f5186de9d99f8b125bc347c1
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : round4_conf_c3_anchor.py run --encoder uni_v2 --out /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C3_real/frag_core/anchor_uni_v2
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 156b59375ddac6d0
+config          : {"dwr_reps": 200, "encoder": "uni_v2", "smoke": false, "tol": 1e-12}
+passed          : True
+fit_seconds_mean_o0: 16.758685497527427
+n_fits          : 141

@@ -1,0 +1,59 @@
+Loading paper cohort...
+Loaded 378817 rows from /Users/nicolaszhang/.claude-science/orgs/c42040b3-6d87-451b-9b93-c94218d0c812/workspaces/c9ca6fa5-6999-4cc6-859a-86b193251aba/code_ghcp/real_data/acs/data/acs_data_all50states.csv
+After filtering to 1 specified states: 378817 rows
+After filtering to foreign-born: 98793 rows
+After age filter [25, 54]: 51615 rows
+After recent entry filter (YOEP >= 2000): 22893 rows
+After labor force filter (hours >= 40): 13707 rows
+After requiring non-missing income: 13707 rows
+After dropping non-positive income: 13700 rows
+After dropping missings in key columns: 12285 rows
+
+Final state counts:
+state_abb
+CA    12285
+Name: count, dtype: int64
+  n=12285, eligible PUMAs=212
+
+=== Std-CP randomized studentized alpha10 B=1000 workers=8 ===
+  alpha10: 100/1000
+  alpha10: 200/1000
+  alpha10: 300/1000
+  alpha10: 400/1000
+  alpha10: 500/1000
+  alpha10: 600/1000
+  alpha10: 700/1000
+  alpha10: 800/1000
+  alpha10: 900/1000
+  alpha10: 1000/1000
+Wrote /Users/nicolaszhang/HEST-1k-replication-conformal/results/round4/conformal/C3_real/frag_ACS_o/ghcp_repro/acs/results/true_marginal_permuted_rf_income_notrim_yoep2000_alpha10/stdcp_studentized_randomized_alpha10_detailed.csv
+  o=0: cov=1.000±0.000  finite=0/1000  mean_finite_w=nan
+  o=5: cov=0.894±0.010  finite=410/1000  mean_finite_w=140054.1
+  o=10: cov=0.900±0.009  finite=607/1000  mean_finite_w=172087.4
+  o=15: cov=0.913±0.009  finite=883/1000  mean_finite_w=207667.8
+  o=20: cov=0.900±0.009  finite=1000/1000  mean_finite_w=211222.6
+  Saved summaries to /Users/nicolaszhang/HEST-1k-replication-conformal/results/round4/conformal/C3_real/frag_ACS_o/ghcp_repro/acs/results/true_marginal_permuted_rf_income_notrim_yoep2000_alpha10/summaries
+Patched /Users/nicolaszhang/HEST-1k-replication-conformal/results/round4/conformal/C3_real/frag_ACS_o/ghcp_repro/acs/results/true_marginal_permuted_rf_income_notrim_yoep2000_alpha10/acs_true_marg_alpha10_detailed.csv
+  Std-CP finite widths: 2900/5000
+
+=== Std-CP randomized studentized alpha20 B=1000 workers=8 ===
+  alpha20: 100/1000
+  alpha20: 200/1000
+  alpha20: 300/1000
+  alpha20: 400/1000
+  alpha20: 500/1000
+  alpha20: 600/1000
+  alpha20: 700/1000
+  alpha20: 800/1000
+  alpha20: 900/1000
+  alpha20: 1000/1000
+Wrote /Users/nicolaszhang/HEST-1k-replication-conformal/results/round4/conformal/C3_real/frag_ACS_o/ghcp_repro/acs/results/true_marginal_permuted_rf_income_notrim_yoep2000_alpha20/stdcp_studentized_randomized_alpha20_detailed.csv
+  o=0: cov=1.000±0.000  finite=0/1000  mean_finite_w=nan
+  o=5: cov=0.810±0.012  finite=803/1000  mean_finite_w=142899.9
+  o=10: cov=0.795±0.013  finite=1000/1000  mean_finite_w=148387.2
+  o=15: cov=0.805±0.013  finite=1000/1000  mean_finite_w=129086.3
+  o=20: cov=0.807±0.012  finite=1000/1000  mean_finite_w=114039.4
+  Saved summaries to /Users/nicolaszhang/HEST-1k-replication-conformal/results/round4/conformal/C3_real/frag_ACS_o/ghcp_repro/acs/results/true_marginal_permuted_rf_income_notrim_yoep2000_alpha20/summaries
+Patched /Users/nicolaszhang/HEST-1k-replication-conformal/results/round4/conformal/C3_real/frag_ACS_o/ghcp_repro/acs/results/true_marginal_permuted_rf_income_notrim_yoep2000_alpha20/acs_true_marg_alpha20_detailed.csv
+  Std-CP finite widths: 3803/5000
+Done.

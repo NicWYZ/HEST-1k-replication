@@ -1,0 +1,11 @@
+check,value,expected,passed,note
+rowcount_K16,414.0,414,True,"23 folds, 69 fold x draw specs, 3 methods, 2 alphas"
+o_all_zero_K16,0.0,0,True,
+K_col_K16,16.0,16,True,K column equals design K
+rowcount_K18,414.0,414,True,"23 folds, 69 fold x draw specs, 3 methods, 2 alphas"
+o_all_zero_K18,0.0,0,True,
+K_col_K18,18.0,18,True,K column equals design K
+rowcount_K20,414.0,414,True,"23 folds, 69 fold x draw specs, 3 methods, 2 alphas"
+o_all_zero_K20,0.0,0,True,
+K_col_K20,20.0,20,True,K column equals design K
+fixed_columns_exact,15.0,15,True,"task,label_set,encoder,method,score,alpha,o,K,fold,draw,coverage,width_mean,width_median,n_test,finite"

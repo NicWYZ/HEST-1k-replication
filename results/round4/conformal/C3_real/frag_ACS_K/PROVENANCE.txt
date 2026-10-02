@@ -1,0 +1,24 @@
+==============================================================================
+Round 4 conformal track, stage C3_ACS_K
+job_name_prefix : r4conf_C3_ACS_K  (the submission route replaces --job-name)
+slurm_job_id    : 3378830
+slurm_partition : spill
+node            : c151416.ll.unc.edu
+date            : 2026-10-02T06:10:17-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : fe36f6b0aecfbafc2ee58b9ca3420beac89c327e
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/1bc2c257-7c04-4c07-8984-49d60130f253/round4_conf_c3_acs_K.py
+script_md5      : 6e3ffd39fa88e1a8c7e687bca53a00d9
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : round4_conf_c3_acs_K.py /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q0_setup/acs_pums2018/acs_pums2018_predictions.parquet /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C3_real/frag_ACS_K /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q0_setup/acs_pums2018
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 d0014439e7798d26
+config          : {"ALPHAS": [0.1, 0.2], "K_GRID": [4, 6, 8, 10, 12, 14, 16, 18, 20], "N_DRAWS": 20}
+checks          : {"sim_md5": "76fda34ee622e299bbaa806e5c8da98a", "pred_md5": "cabb141ce4c4609eda500680b71848bf", "raw_checked": 51, "raw_mismatch": 0}
+rows            : {"within": [2040, 21360], "crossfold": [5400, 55080]}
+frame_id        : 37664027-917b-4af5-b46c-c441036d6333
+------------------------------------------------------------------------------
+Frame 37664027-917b-4af5-b46c-c441036d6333 (ACS K unit). Ran on Longleaf as Slurm 3378830 (spill, node c151416), submitted after the lead stopped local compute; no local computation was run. Outputs copied from the job workdir; the Longleaf copy is under results/round4/conformal/C3_real/frag_ACS_K/ (stamped). Predictions parquet read in place from the PPI Q0 directory (verdict sibling, read-only).

@@ -1,0 +1,57 @@
+check,encoder,n,max_abs_diff,tol,passed,note
+selftest:split_q_cols_vs_SIM.split_q,hoptimus0,1,0.0,1e-12,True,fast kernels against round4_conf_sim / A3 references
+selftest:wq_cols_vs_SIM.hcp_q,hoptimus0,1,0.0,1e-12,True,fast kernels against round4_conf_sim / A3 references
+selftest:ghcp_cols_vs_SIM.ghcp_q[ghcp],hoptimus0,1,8.881784197001252e-16,1e-12,True,fast kernels against round4_conf_sim / A3 references
+selftest:ghcp_cols_vs_SIM.ghcp_q[ghcp_noad],hoptimus0,1,0.0,1e-12,True,fast kernels against round4_conf_sim / A3 references
+selftest:ghcp_cols_vs_SIM.ghcp_q[ghcp_r05],hoptimus0,1,3.3306690738754696e-16,1e-12,True,fast kernels against round4_conf_sim / A3 references
+selftest:ghcp_cols_vs_SIM.ghcp_q[ghcp_r05_noad],hoptimus0,1,0.0,1e-12,True,fast kernels against round4_conf_sim / A3 references
+selftest:ghcp_cols_vs_SIM.ghcp_q[ghcp_r05code],hoptimus0,1,3.3306690738754696e-16,1e-12,True,fast kernels against round4_conf_sim / A3 references
+selftest:metrics_vs_A3_cell_metrics,hoptimus0,1,5.329070518200751e-15,1e-12,True,fast kernels against round4_conf_sim / A3 references
+K10_24_pooled_vs_a4b_pooled_coverage,hoptimus0,72,1.1102230246251565e-16,1e-12,True,rows mine 72 ref 72
+K10_24_pooled_vs_a4b_pooled_width_mean,hoptimus0,72,5.276801218201399e-11,1e-12,False,rows mine 72 ref 72
+K10_24_pooled_vs_a4b_pooled_width_median,hoptimus0,72,3.0346636314959596e-10,1e-12,False,rows mine 72 ref 72
+K10_24_pooled_finite_flag,hoptimus0,72,0.0,0.0,True,rows where finite differs
+K10_24_pooled_design_n_T_donors,hoptimus0,72,0.0,0.0,True,n_T_donors against a4b n_T_donors
+K10_24_pooled_design_n_T_matched,hoptimus0,72,0.0,0.0,True,n_T_matched against a4b n_T_spots_matched
+K10_24_pooled_design_n_C,hoptimus0,72,0.0,0.0,True,n_C against a4b n_C
+K10_24_pooled_design_K,hoptimus0,72,0.0,0.0,True,K against a4b n_cal_units
+K10_24_hcp_vs_a4b_hcp_coverage,hoptimus0,72,1.1102230246251565e-16,1e-12,True,rows mine 72 ref 72
+K10_24_hcp_vs_a4b_hcp_width_mean,hoptimus0,72,1.1434853064429262e-10,1e-12,False,rows mine 72 ref 72
+K10_24_hcp_vs_a4b_hcp_width_median,hoptimus0,72,2.7062352359052966e-10,1e-12,False,rows mine 72 ref 72
+K10_24_hcp_finite_flag,hoptimus0,72,0.0,0.0,True,rows where finite differs
+K10_24_hcp_design_n_T_donors,hoptimus0,72,0.0,0.0,True,n_T_donors against a4b n_T_donors
+K10_24_hcp_design_n_T_matched,hoptimus0,72,0.0,0.0,True,n_T_matched against a4b n_T_spots_matched
+K10_24_hcp_design_n_C,hoptimus0,72,0.0,0.0,True,n_C against a4b n_C
+K10_24_hcp_design_K,hoptimus0,72,0.0,0.0,True,K against a4b n_cal_units
+K10_24_one_per_vs_a4b_dwr_coverage,hoptimus0,72,1.1102230246251565e-16,1e-12,True,rows mine 72 ref 72
+K10_24_one_per_vs_a4b_dwr_width_mean,hoptimus0,72,2.8609825619696494e-10,1e-12,False,rows mine 72 ref 72
+K10_24_one_per_vs_a4b_dwr_width_median,hoptimus0,72,2.553113276348995e-11,1e-12,False,rows mine 72 ref 72
+K10_24_one_per_finite_flag,hoptimus0,72,0.0,0.0,True,rows where finite differs
+K10_24_one_per_design_n_T_donors,hoptimus0,72,0.0,0.0,True,n_T_donors against a4b n_T_donors
+K10_24_one_per_design_n_T_matched,hoptimus0,72,0.0,0.0,True,n_T_matched against a4b n_T_spots_matched
+K10_24_one_per_design_n_C,hoptimus0,72,0.0,0.0,True,n_C against a4b n_C
+K10_24_one_per_design_K,hoptimus0,72,0.0,0.0,True,K against a4b n_cal_units
+K10_23_merged_pooled_vs_a4b_pooled_coverage,hoptimus0,69,1.1102230246251565e-16,1e-12,True,rows mine 69 ref 69
+K10_23_merged_pooled_vs_a4b_pooled_width_mean,hoptimus0,69,5.28594945592431e-11,1e-12,False,rows mine 69 ref 69
+K10_23_merged_pooled_vs_a4b_pooled_width_median,hoptimus0,69,5.384945822584086e-10,1e-12,False,rows mine 69 ref 69
+K10_23_merged_pooled_finite_flag,hoptimus0,69,0.0,0.0,True,rows where finite differs
+K10_23_merged_pooled_design_n_T_donors,hoptimus0,69,0.0,0.0,True,n_T_donors against a4b n_T_donors
+K10_23_merged_pooled_design_n_T_matched,hoptimus0,69,0.0,0.0,True,n_T_matched against a4b n_T_spots_matched
+K10_23_merged_pooled_design_n_C,hoptimus0,69,0.0,0.0,True,n_C against a4b n_C
+K10_23_merged_pooled_design_K,hoptimus0,69,0.0,0.0,True,K against a4b n_cal_units
+K10_23_merged_hcp_vs_a4b_hcp_coverage,hoptimus0,69,1.1102230246251565e-16,1e-12,True,rows mine 69 ref 69
+K10_23_merged_hcp_vs_a4b_hcp_width_mean,hoptimus0,69,8.879741386635942e-11,1e-12,False,rows mine 69 ref 69
+K10_23_merged_hcp_vs_a4b_hcp_width_median,hoptimus0,69,4.933111696914239e-10,1e-12,False,rows mine 69 ref 69
+K10_23_merged_hcp_finite_flag,hoptimus0,69,0.0,0.0,True,rows where finite differs
+K10_23_merged_hcp_design_n_T_donors,hoptimus0,69,0.0,0.0,True,n_T_donors against a4b n_T_donors
+K10_23_merged_hcp_design_n_T_matched,hoptimus0,69,0.0,0.0,True,n_T_matched against a4b n_T_spots_matched
+K10_23_merged_hcp_design_n_C,hoptimus0,69,0.0,0.0,True,n_C against a4b n_C
+K10_23_merged_hcp_design_K,hoptimus0,69,0.0,0.0,True,K against a4b n_cal_units
+K10_23_merged_one_per_vs_a4b_dwr_coverage,hoptimus0,69,1.1102230246251565e-16,1e-12,True,rows mine 69 ref 69
+K10_23_merged_one_per_vs_a4b_dwr_width_mean,hoptimus0,69,1.9951107432802928e-10,1e-12,False,rows mine 69 ref 69
+K10_23_merged_one_per_vs_a4b_dwr_width_median,hoptimus0,69,1.8983925542670477e-11,1e-12,False,rows mine 69 ref 69
+K10_23_merged_one_per_finite_flag,hoptimus0,69,0.0,0.0,True,rows where finite differs
+K10_23_merged_one_per_design_n_T_donors,hoptimus0,69,0.0,0.0,True,n_T_donors against a4b n_T_donors
+K10_23_merged_one_per_design_n_T_matched,hoptimus0,69,0.0,0.0,True,n_T_matched against a4b n_T_spots_matched
+K10_23_merged_one_per_design_n_C,hoptimus0,69,0.0,0.0,True,n_C against a4b n_C
+K10_23_merged_one_per_design_K,hoptimus0,69,0.0,0.0,True,K against a4b n_cal_units

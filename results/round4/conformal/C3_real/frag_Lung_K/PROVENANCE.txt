@@ -1,0 +1,67 @@
+==============================================================================
+Round 4 conformal track, stage C3_Lung_K
+job_name_prefix : r4conf_C3_Lung_K  (the submission route replaces --job-name)
+slurm_job_id    : 3445502
+slurm_partition : spill
+node            : b1010.ll.unc.edu
+date            : 2026-10-02T06:46:53-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : fe36f6b0aecfbafc2ee58b9ca3420beac89c327e
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/f8a827fd-4ebf-4b4e-a8aa-5b8300330dad/run_lung_k.py
+script_md5      : f267810570c6d2eaf6cce31d56df0664
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : ./run_lung_k.py hoptimus0
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 d5878bce12888d8c
+config          : {"K": [6, 8, 10], "alphas": [0.1, 0.2], "core_md5": "2d8418677cf8290eec89a14c315b92cd", "cpu": "Vendor ID:                               GenuineIntel | Model name:                              Intel(R) Xeon(R) CPU E5-2643 v3 @ 3.40GHz", "enc": "hoptimus0", "folds": ["lungXen_THD0008", "lungXen_THD0011", "lungXen_TILD117", "lungXen_TILD175", "lungXen_VUHD069", "lungXen_VUHD116", "lungXen_VUILD102", "lungXen_VUILD105", "lungXen_VUILD106", "lungXen_VUILD107", "lungXen_VUILD110", "lungXen_VUILD115", "lungXen_VUILD78", "lungXen_VUILD91", "lungXen_VUILD96"], "n_cal_draws": 3, "specs_per_K": {"6": 45, "8": 45, "10": 45}, "task": "LUNG_XENIUM"}
+tag             : LUNG_hoptimus0
+rows            : 810
+cpu_hoptimus0: Vendor ID:                               GenuineIntel | Model name:                              Intel(R) Xeon(R) CPU E5-2643 v3 @ 3.40GHz ; node b1010.ll.unc.edu ; folds ['lungXen_THD0008', 'lungXen_THD0011', 'lungXen_TILD117', 'lungXen_TILD175', 'lungXen_VUHD069', 'lungXen_VUHD116', 'lungXen_VUILD102', 'lungXen_VUILD105', 'lungXen_VUILD106', 'lungXen_VUILD107', 'lungXen_VUILD110', 'lungXen_VUILD115', 'lungXen_VUILD78', 'lungXen_VUILD91', 'lungXen_VUILD96'] ; specs_per_K {6: 45, 8: 45, 10: 45} ; rows 810 (expected 810)
+==============================================================================
+Round 4 conformal track, stage C3_Lung_K
+job_name_prefix : r4conf_C3_Lung_K  (the submission route replaces --job-name)
+slurm_job_id    : 3445508
+slurm_partition : spill
+node            : c1130.ll.unc.edu
+date            : 2026-10-02T06:48:49-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : fe36f6b0aecfbafc2ee58b9ca3420beac89c327e
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/58b14469-bcc8-4fef-9122-d9dca96b7723/run_lung_k.py
+script_md5      : f267810570c6d2eaf6cce31d56df0664
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : ./run_lung_k.py resnet50
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 f5e50ebd1a4a48fd
+config          : {"K": [6, 8, 10], "alphas": [0.1, 0.2], "core_md5": "2d8418677cf8290eec89a14c315b92cd", "cpu": "Vendor ID:                               GenuineIntel | Model name:                              Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz", "enc": "resnet50", "folds": ["lungXen_THD0008", "lungXen_THD0011", "lungXen_TILD117", "lungXen_TILD175", "lungXen_VUHD069", "lungXen_VUHD116", "lungXen_VUILD102", "lungXen_VUILD105", "lungXen_VUILD106", "lungXen_VUILD107", "lungXen_VUILD110", "lungXen_VUILD115", "lungXen_VUILD78", "lungXen_VUILD91", "lungXen_VUILD96"], "n_cal_draws": 3, "specs_per_K": {"6": 45, "8": 45, "10": 45}, "task": "LUNG_XENIUM"}
+tag             : LUNG_resnet50
+rows            : 810
+cpu_resnet50: Vendor ID:                               GenuineIntel | Model name:                              Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz ; node c1130.ll.unc.edu ; folds ['lungXen_THD0008', 'lungXen_THD0011', 'lungXen_TILD117', 'lungXen_TILD175', 'lungXen_VUHD069', 'lungXen_VUHD116', 'lungXen_VUILD102', 'lungXen_VUILD105', 'lungXen_VUILD106', 'lungXen_VUILD107', 'lungXen_VUILD110', 'lungXen_VUILD115', 'lungXen_VUILD78', 'lungXen_VUILD91', 'lungXen_VUILD96'] ; specs_per_K {6: 45, 8: 45, 10: 45} ; rows 810 (expected 810)
+==============================================================================
+Round 4 conformal track, stage C3_Lung_K
+job_name_prefix : r4conf_C3_Lung_K  (the submission route replaces --job-name)
+slurm_job_id    : 3445504
+slurm_partition : spill
+node            : c0536
+date            : 2026-10-02T06:51:18-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : fe36f6b0aecfbafc2ee58b9ca3420beac89c327e
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/a20508d7-ae77-476c-821e-146a8b470718/run_lung_k.py
+script_md5      : f267810570c6d2eaf6cce31d56df0664
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : ./run_lung_k.py uni_v2
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 9648ce6b56f26efe
+config          : {"K": [6, 8, 10], "alphas": [0.1, 0.2], "core_md5": "2d8418677cf8290eec89a14c315b92cd", "cpu": "Vendor ID:                               GenuineIntel | Model name:                              Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz", "enc": "uni_v2", "folds": ["lungXen_THD0008", "lungXen_THD0011", "lungXen_TILD117", "lungXen_TILD175", "lungXen_VUHD069", "lungXen_VUHD116", "lungXen_VUILD102", "lungXen_VUILD105", "lungXen_VUILD106", "lungXen_VUILD107", "lungXen_VUILD110", "lungXen_VUILD115", "lungXen_VUILD78", "lungXen_VUILD91", "lungXen_VUILD96"], "n_cal_draws": 3, "specs_per_K": {"6": 45, "8": 45, "10": 45}, "task": "LUNG_XENIUM"}
+tag             : LUNG_uni_v2
+rows            : 810
+cpu_uni_v2: Vendor ID:                               GenuineIntel | Model name:                              Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz ; node c0536 ; folds ['lungXen_THD0008', 'lungXen_THD0011', 'lungXen_TILD117', 'lungXen_TILD175', 'lungXen_VUHD069', 'lungXen_VUHD116', 'lungXen_VUILD102', 'lungXen_VUILD105', 'lungXen_VUILD106', 'lungXen_VUILD107', 'lungXen_VUILD110', 'lungXen_VUILD115', 'lungXen_VUILD78', 'lungXen_VUILD91', 'lungXen_VUILD96'] ; specs_per_K {6: 45, 8: 45, 10: 45} ; rows 810 (expected 810)
+CORRECTION 2026-10-02: jobs 3445502,3445504,3445508 ran with R4CONF_FRAME_ID=37664027-917b-4af5-b46c-c441036d6333 (the lead id) by mistake; stamp rewritten after the fact to the writing sub-agent frame cab82b06-dd06-4c0c-a383-09d0fc1c4108. No numbers depend on it.
