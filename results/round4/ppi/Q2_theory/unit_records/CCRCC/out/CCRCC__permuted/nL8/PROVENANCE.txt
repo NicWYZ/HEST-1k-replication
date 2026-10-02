@@ -1,0 +1,12 @@
+host=Nicolass-MacBook-Pro-9.local (local, darwin)
+repo_head_requested=42fe578 (read-only copy /Users/nicolaszhang/HEST-1k-replication-PPI)
+7f0274bb3c2285d0139dbd07ec39fb58  /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_q2_masking.py
+931bd81f10200410c512bcf3f81b5b43  /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_estimator.py
+544721f07cb3d74dc5b92456d61fe450  /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round3_b1_ppi.py
+input_md5_local: 59ac3c2fe8e1818b7b1d0a1e9c141652  /Users/nicolaszhang/.claude-science/orgs/c42040b3-6d87-451b-9b93-c94218d0c812/workspaces/30f92869-3c48-4ca7-aea4-4a59afc9e6e0/q2_local/in/b1_predictions__CCRCC__resnet50.parquet
+input_md5_longleaf: 59ac3c2fe8e1818b7b1d0a1e9c141652  b1_predictions__CCRCC__resnet50.parquet
+env: PYTHONHASHSEED=0 OMP_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1
+cmd=python /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_q2_masking.py --parquet /Users/nicolaszhang/.claude-science/orgs/c42040b3-6d87-451b-9b93-c94218d0c812/workspaces/30f92869-3c48-4ca7-aea4-4a59afc9e6e0/q2_local/in/b1_predictions__CCRCC__resnet50.parquet --vtag CCRCC --arm permuted --nl-grid 8 --draws 200 --out-dir /Users/nicolaszhang/.claude-science/orgs/c42040b3-6d87-451b-9b93-c94218d0c812/workspaces/30f92869-3c48-4ca7-aea4-4a59afc9e6e0/q2_local/out/CCRCC__permuted/nL8
+numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+Python 3.11.15
+exit=0 wall_s=118

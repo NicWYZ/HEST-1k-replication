@@ -1,0 +1,13 @@
+clone_HEAD de3b71f0d395dd657ef6c8a67238ad9c78025048
+0bfb7ac9d04bad2c377ec57215abf5f0  /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/2c6c2600-fd73-4cb2-ac4f-8053614c2936/q2_recal_driver.py
+0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round3_a0_harness.py
+544721f07cb3d74dc5b92456d61fe450  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round3_b1_ppi.py
+7f0274bb3c2285d0139dbd07ec39fb58  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round4_ppi_q2_masking.py
+931bd81f10200410c512bcf3f81b5b43  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round4_ppi_estimator.py
+input md5 b6a56e963872511ad177c7c1082d07b7  /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions_INDIANA_KIDNEY/b1_predictions__INDIANA_KIDNEY__hoptimus0.parquet
+slurm_job 3441506 node c151603.ll.unc.edu partition spill account rc_tengfei_pi
+PYTHONHASHSEED=0
+numpy 2.4.6 pandas 2.3.3 sklearn 1.9.1 scipy 1.17.1 pyarrow 25.0.1
+cmd: python /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/2c6c2600-fd73-4cb2-ac4f-8053614c2936/q2_recal_driver.py --indiana50 --task-def /work/users/w/e/weiyang/hest_replication/results/round3/D4_expansion/task_defs/INDIANA_KIDNEY.json --enc hoptimus0 --parquet <Indiana hoptimus0 parquet> --vtag INDIANA_KIDNEY --out-dir /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/recalibration/INDIANA_KIDNEY --recal-parquet /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/recalibration/INDIANA_KIDNEY/recal_predictions__INDIANA_KIDNEY__hoptimus0.parquet
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:53.77
+	Maximum resident set size (kbytes): 2978144

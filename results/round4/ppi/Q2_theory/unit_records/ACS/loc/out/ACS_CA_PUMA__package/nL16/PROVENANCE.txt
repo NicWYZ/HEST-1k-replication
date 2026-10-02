@@ -1,0 +1,12 @@
+clone HEAD: aaec0e87055f1ed1b2c2512e0b07eb36f436a72c
+7f0274bb3c2285d0139dbd07ec39fb58  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round4_ppi_q2_masking.py
+fd1d2e53b7178d43aa0d82ee65fea26d  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round4_ppi_q3_regimes.py
+931bd81f10200410c512bcf3f81b5b43  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round4_ppi_estimator.py
+544721f07cb3d74dc5b92456d61fe450  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round3_b1_ppi.py
+c581e8d0a04c989cfebfe6ee888feb90  /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_CA_PUMA.parquet
+job=3326030 node=c0922.ll.unc.edu partition=spill account=rc_tengfei_pi PYTHONHASHSEED=0
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round4_ppi_q2_masking.py --parquet /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_CA_PUMA.parquet --vtag ACS_CA_PUMA --arm package --theta2-kind mean --nl-grid 16  --draws 200 --out-dir /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/ACS_CA_PUMA__package/nL16
+3.11.16 numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+exit=0
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:38.16
+	Maximum resident set size (kbytes): 474108

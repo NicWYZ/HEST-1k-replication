@@ -1,0 +1,12 @@
+clone_HEAD aaec0e87055f1ed1b2c2512e0b07eb36f436a72c
+fd1d2e53b7178d43aa0d82ee65fea26d  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round4_ppi_q3_regimes.py
+7f0274bb3c2285d0139dbd07ec39fb58  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round4_ppi_q2_masking.py
+931bd81f10200410c512bcf3f81b5b43  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round4_ppi_estimator.py
+slurm_job 3322118 node c151612.ll.unc.edu partition spill account rc_tengfei_pi
+command /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round4_ppi_q3_regimes.py --parquet /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__hoptimus0.parquet --vtag CCRCC --arm hoptimus0 --budgets 4800 --out-dir /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q3_regimes/CCRCC__hoptimus0/B4800
+PYTHONHASHSEED=0
+python 3.11.16 numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+start 2026-10-02T00:59:55
+end 2026-10-02T01:14:28
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 14:32.88
+	Maximum resident set size (kbytes): 836564

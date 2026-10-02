@@ -1,0 +1,11 @@
+host: Nicolass-MacBook-Pro-9.local (local sandbox, darwin); repo copy /Users/nicolaszhang/HEST-1k-replication-PPI HEAD per lead 42fe578
+fd1d2e53b7178d43aa0d82ee65fea26d  /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_q3_regimes.py
+7f0274bb3c2285d0139dbd07ec39fb58  /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_q2_masking.py
+931bd81f10200410c512bcf3f81b5b43  /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_estimator.py
+544721f07cb3d74dc5b92456d61fe450  /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round3_b1_ppi.py
+c581e8d0a04c989cfebfe6ee888feb90  /Users/nicolaszhang/.claude-science/orgs/c42040b3-6d87-451b-9b93-c94218d0c812/workspaces/e2341968-ca72-46c3-a417-31beb69f6202/loc3/in/ACS_CA_PUMA.parquet
+input md5 on Longleaf: ACS_STATES e18604e1e915ff51f2668719e397ab7a, ACS_CA_PUMA c581e8d0a04c989cfebfe6ee888feb90
+PYTHONHASHSEED=0 OMP_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1
+command: python /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_q3_regimes.py --parquet /Users/nicolaszhang/.claude-science/orgs/c42040b3-6d87-451b-9b93-c94218d0c812/workspaces/e2341968-ca72-46c3-a417-31beb69f6202/loc3/in/ACS_CA_PUMA.parquet --vtag ACS_CA_PUMA --arm permuted --theta2-kind mean --budgets 4800 --nl-grid 4,6,8,12 --draws 200 --out-dir /Users/nicolaszhang/.claude-science/orgs/c42040b3-6d87-451b-9b93-c94218d0c812/workspaces/e2341968-ca72-46c3-a417-31beb69f6202/loc3/Q3/ACS_CA_PUMA__permuted/B4800
+3.11.15 numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+exit=0 wall_s=40

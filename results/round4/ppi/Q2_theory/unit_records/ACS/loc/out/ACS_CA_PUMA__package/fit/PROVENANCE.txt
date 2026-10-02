@@ -1,0 +1,12 @@
+local darwin; md5:
+7f0274bb3c2285d0139dbd07ec39fb58  /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_q2_masking.py
+931bd81f10200410c512bcf3f81b5b43  /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_estimator.py
+544721f07cb3d74dc5b92456d61fe450  /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round3_b1_ppi.py
+command: python /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_q2_masking.py --fit-from "out/ACS_CA_PUMA__package/nL*/q2_variance_grid_genes__ACS_CA_PUMA__package.csv.gz" --out out/ACS_CA_PUMA__package/fit/q2_fitted_components__ACS_CA_PUMA__package.csv
+f5c3bb9a7914577fbd40730bcf6434a0  out/ACS_CA_PUMA__package/nL12/q2_variance_grid_genes__ACS_CA_PUMA__package.csv.gz
+8dea9ffe9a0e1ca451d63d9e90235a9f  out/ACS_CA_PUMA__package/nL16/q2_variance_grid_genes__ACS_CA_PUMA__package.csv.gz
+924957e0d0cbe8607d45e8634640cb3c  out/ACS_CA_PUMA__package/nL4/q2_variance_grid_genes__ACS_CA_PUMA__package.csv.gz
+7598876440219af39a7eb59a1bded05e  out/ACS_CA_PUMA__package/nL6/q2_variance_grid_genes__ACS_CA_PUMA__package.csv.gz
+f8cd1f7784a04171acaab742350592c6  out/ACS_CA_PUMA__package/nL8/q2_variance_grid_genes__ACS_CA_PUMA__package.csv.gz
+{"files": ["out/ACS_CA_PUMA__package/nL12/q2_variance_grid_genes__ACS_CA_PUMA__package.csv.gz", "out/ACS_CA_PUMA__package/nL16/q2_variance_grid_genes__ACS_CA_PUMA__package.csv.gz", "out/ACS_CA_PUMA__package/nL4/q2_variance_grid_genes__ACS_CA_PUMA__package.csv.gz", "out/ACS_CA_PUMA__package/nL6/q2_variance_grid_genes__ACS_CA_PUMA__package.csv.gz", "out/ACS_CA_PUMA__package/nL8/q2_variance_grid_genes__ACS_CA_PUMA__package.csv.gz"], "n_gene_rows": 1440, "out": "out/ACS_CA_PUMA__package/fit/q2_fitted_components__ACS_CA_PUMA__package.csv"}
+exit=0 wall_s=3

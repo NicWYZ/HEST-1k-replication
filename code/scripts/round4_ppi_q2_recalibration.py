@@ -20,6 +20,7 @@ ap.add_argument("--parquet", required=True)
 ap.add_argument("--vtag", required=True)
 ap.add_argument("--out-dir", required=True)
 ap.add_argument("--recal-parquet", required=True)
+ap.add_argument("--indiana50", action="store_true", help="replace the candidate-panel gene list by the 50 most frequently selected pool-fold genes, exactly as the Indiana prediction driver did")
 a = ap.parse_args()
 sys.dont_write_bytecode = True
 import round3_a0_harness as H
@@ -28,6 +29,16 @@ import round4_ppi_q2_masking as Q2
 
 t0 = time.time()
 td = json.load(open(a.task_def))
+if a.indiana50:
+    import collections
+    fg = json.load(open(f"{H.ROOT}/results/round3/D4_expansion/d4_fold_genes__INDIANA_KIDNEY.json"))
+    cnt = collections.Counter(g for v in fg["selections"].values() if v["design"] == "pool" for g in v["genes"])
+    gsel = [g for g, _ in sorted(cnt.items(), key=lambda kv: (-kv[1], kv[0]))[:50]]
+    assert len(gsel) == 50 and all(g in set(td["target_genes"]["list"]) for g in gsel)
+    td["target_genes"] = dict(td["target_genes"], list=sorted(gsel), n=50, selection="Q2 recal driver: same 50-gene rule as the Indiana prediction driver")
+    a.task_def = os.path.abspath("INDIANA_KIDNEY__q2_50genes.json")
+    json.dump(td, open(a.task_def, "w"), indent=1)
+    print("[indiana50] task-def copy md5", hashlib.md5(open(a.task_def, "rb").read()).hexdigest(), flush=True)
 meta = dict(donor_of={s["sample_id"]: s["donor_id"] for s in td["samples"]},
             patient_of={s["sample_id"]: s["hest_patient"] for s in td["samples"]},
             resgroup_of={s["sample_id"]: s["resolution_group"] for s in td["samples"]},

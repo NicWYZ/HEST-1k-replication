@@ -212,6 +212,7 @@ def q3_numbers(q3, acc, r2):
                 if len(s):
                     recs.append(dict(vtag=vt, arm=arm, regime=reg, ratio=float(s.emp_var_ratio_median.iloc[0]),
                                      omc=float(np.nanmedian(1 - rz.R2_cluster_corrected)),
+                                     omr=float(np.nanmedian(1 - rz.R2_cluster_raw)),
                                      omw=float(np.nanmedian(1 - rz.R2_within))))
         rr = pd.DataFrame(recs)
         for reg in ("A", "B"):
@@ -222,12 +223,18 @@ def q3_numbers(q3, acc, r2):
                 add(f"Q3.4|{est}|{pop}|{tgt}|regime{reg}|spearman_ratio_vs_one_minus_R2w_pooled",
                     stats.spearmanr(x.ratio, x.omw)[0])
                 add(f"Q3.4|{est}|{pop}|{tgt}|regime{reg}|n_points", len(x))
+                add(f"Q3.4|{est}|{pop}|{tgt}|regime{reg}|spearman_ratio_vs_one_minus_R2c_raw_pooled",
+                    stats.spearmanr(x.ratio, x.omr)[0])
+                for _, pt in x.iterrows():
+                    add(f"Q3.4|{pt.vtag}|{pt.arm}|{est}|{pop}|{tgt}|regime{reg}|var_ratio_B9600", pt.ratio)
             for vt, xv in x.groupby("vtag"):
                 if len(xv) >= 3:
                     add(f"Q3.4|{vt}|{est}|{pop}|{tgt}|regime{reg}|spearman_ratio_vs_one_minus_R2c",
                         stats.spearmanr(xv.ratio, xv.omc)[0])
                     add(f"Q3.4|{vt}|{est}|{pop}|{tgt}|regime{reg}|spearman_ratio_vs_one_minus_R2w",
                         stats.spearmanr(xv.ratio, xv.omw)[0])
+                    add(f"Q3.4|{vt}|{est}|{pop}|{tgt}|regime{reg}|spearman_ratio_vs_one_minus_R2c_raw",
+                        stats.spearmanr(xv.ratio, xv.omr)[0])
     return pd.DataFrame(rows)
 
 
@@ -295,6 +302,7 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--stage", required=True)
     p.add_argument("--out", required=True)
+    p.add_argument("--quick-figures", action="store_true")
     a = p.parse_args()
     grid, r2, fit, gf = q2_merge(a.stage, a.out)
     q2n = q2_numbers(grid, r2, fit)
@@ -302,7 +310,8 @@ def main():
     q3, acc, qf = q3_merge(a.stage, a.out)
     q3n = q3_numbers(q3, acc, r2)
     q3n.to_csv(f"{a.out}/Q3_regimes/q3_report_numbers.csv", index=False)
-    figures(grid, r2, fit, q3, a.out)
+    if a.quick_figures:  # report figures come from round4_ppi_q3_figures.py
+        figures(grid, r2, fit, q3, a.out)
     print(dict(q2_files=len(gf), q2_rows=len(grid), q2_numbers=len(q2n), q2_nan=int(q2n.value.isna().sum()),
                q3_rows=len(q3), q3_numbers=len(q3n), q3_nan=int(q3n.value.isna().sum()),
                tasks=sorted(grid.vtag.unique()), q3_tasks=sorted(q3.vtag.unique())))

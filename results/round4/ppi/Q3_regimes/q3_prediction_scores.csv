@@ -1,0 +1,576 @@
+prediction,scope,statistic,value,criterion,holds
+Q2.1,ACS_CA_PUMA|package,var_ratio_mall_nLmax_minus_one_minus_R2_cluster_raw,0.0348284265150586,"|ratio - (1 - R2_cluster_raw)| <= 0.1, theta3 donor, rule c, superpopulation",True
+Q2.1,ACS_CA_PUMA|package,R2_unit,0.9938702918504657,context,
+Q2.1,ACS_CA_PUMA|package,R2_cluster_raw,0.8802763780484835,context,
+Q2.1,ACS_CA_PUMA|package,frac_genes_R2_cluster_corrected_undefined,1.0,context,
+Q2.1,ACS_CA_PUMA|permuted,var_ratio_mall_nLmax_minus_one_minus_R2_cluster_raw,0.03434907745816196,"|ratio - (1 - R2_cluster_raw)| <= 0.1, theta3 donor, rule c, superpopulation",True
+Q2.1,ACS_CA_PUMA|permuted,R2_unit,0.9763022219974355,context,
+Q2.1,ACS_CA_PUMA|permuted,R2_cluster_raw,0.000110279845099,context,
+Q2.1,ACS_CA_PUMA|permuted,frac_genes_R2_cluster_corrected_undefined,1.0,context,
+Q2.1,ACS_STATES|package,var_ratio_mall_nLmax_minus_one_minus_R2_cluster_raw,0.1962335136540957,"|ratio - (1 - R2_cluster_raw)| <= 0.1, theta3 donor, rule c, superpopulation",False
+Q2.1,ACS_STATES|package,R2_unit,0.9940074031825595,context,
+Q2.1,ACS_STATES|package,R2_cluster_raw,0.7027008656424436,context,
+Q2.1,ACS_STATES|package,frac_genes_R2_cluster_corrected_undefined,1.0,context,
+Q2.1,ACS_STATES|permuted,var_ratio_mall_nLmax_minus_one_minus_R2_cluster_raw,0.049266416567526394,"|ratio - (1 - R2_cluster_raw)| <= 0.1, theta3 donor, rule c, superpopulation",True
+Q2.1,ACS_STATES|permuted,R2_unit,0.9758212097520191,context,
+Q2.1,ACS_STATES|permuted,R2_cluster_raw,0.0389912128373798,context,
+Q2.1,ACS_STATES|permuted,frac_genes_R2_cluster_corrected_undefined,1.0,context,
+Q2.1,CCRCC|hoptimus0,var_ratio_mall_nLmax_minus_one_minus_R2_cluster_raw,0.47352087074167626,"|ratio - (1 - R2_cluster_raw)| <= 0.1, theta3 donor, rule c, superpopulation",False
+Q2.1,CCRCC|hoptimus0,R2_unit,0.36970546525977155,context,
+Q2.1,CCRCC|hoptimus0,R2_cluster_raw,0.2873087941541586,context,
+Q2.1,CCRCC|hoptimus0,frac_genes_R2_cluster_corrected_undefined,0.0,context,
+Q2.1,CCRCC|permuted,var_ratio_mall_nLmax_minus_one_minus_R2_cluster_raw,0.03655391409796649,"|ratio - (1 - R2_cluster_raw)| <= 0.1, theta3 donor, rule c, superpopulation",True
+Q2.1,CCRCC|permuted,R2_unit,0.23575262435613875,context,
+Q2.1,CCRCC|permuted,R2_cluster_raw,0.0188404496297795,context,
+Q2.1,CCRCC|permuted,frac_genes_R2_cluster_corrected_undefined,1.0,context,
+Q2.1,CCRCC|resnet50,var_ratio_mall_nLmax_minus_one_minus_R2_cluster_raw,0.35528564995366974,"|ratio - (1 - R2_cluster_raw)| <= 0.1, theta3 donor, rule c, superpopulation",False
+Q2.1,CCRCC|resnet50,R2_unit,0.36686102865635595,context,
+Q2.1,CCRCC|resnet50,R2_cluster_raw,0.1997228278831861,context,
+Q2.1,CCRCC|resnet50,frac_genes_R2_cluster_corrected_undefined,0.0,context,
+Q2.1,CCRCC|uni_v2,var_ratio_mall_nLmax_minus_one_minus_R2_cluster_raw,0.5718617911962618,"|ratio - (1 - R2_cluster_raw)| <= 0.1, theta3 donor, rule c, superpopulation",False
+Q2.1,CCRCC|uni_v2,R2_unit,0.3833312554524342,context,
+Q2.1,CCRCC|uni_v2,R2_cluster_raw,0.4387262423085516,context,
+Q2.1,CCRCC|uni_v2,frac_genes_R2_cluster_corrected_undefined,0.0,context,
+Q2.1,CCRCC_merged|hoptimus0,var_ratio_mall_nLmax_minus_one_minus_R2_cluster_raw,0.5976142589677146,"|ratio - (1 - R2_cluster_raw)| <= 0.1, theta3 donor, rule c, superpopulation",False
+Q2.1,CCRCC_merged|hoptimus0,R2_unit,0.369322780475834,context,
+Q2.1,CCRCC_merged|hoptimus0,R2_cluster_raw,0.2560086605506458,context,
+Q2.1,CCRCC_merged|hoptimus0,frac_genes_R2_cluster_corrected_undefined,0.0,context,
+Q2.1,CCRCC_merged|permuted,var_ratio_mall_nLmax_minus_one_minus_R2_cluster_raw,0.11016691120761246,"|ratio - (1 - R2_cluster_raw)| <= 0.1, theta3 donor, rule c, superpopulation",False
+Q2.1,CCRCC_merged|permuted,R2_unit,0.23814968143167325,context,
+Q2.1,CCRCC_merged|permuted,R2_cluster_raw,0.0863262579137621,context,
+Q2.1,CCRCC_merged|permuted,frac_genes_R2_cluster_corrected_undefined,1.0,context,
+Q2.1,CCRCC_merged|resnet50,var_ratio_mall_nLmax_minus_one_minus_R2_cluster_raw,0.49022951260543046,"|ratio - (1 - R2_cluster_raw)| <= 0.1, theta3 donor, rule c, superpopulation",False
+Q2.1,CCRCC_merged|resnet50,R2_unit,0.35975195189683595,context,
+Q2.1,CCRCC_merged|resnet50,R2_cluster_raw,0.2197477295681414,context,
+Q2.1,CCRCC_merged|resnet50,frac_genes_R2_cluster_corrected_undefined,0.0,context,
+Q2.1,CCRCC_merged|uni_v2,var_ratio_mall_nLmax_minus_one_minus_R2_cluster_raw,0.580531030104358,"|ratio - (1 - R2_cluster_raw)| <= 0.1, theta3 donor, rule c, superpopulation",False
+Q2.1,CCRCC_merged|uni_v2,R2_unit,0.3813963056026646,context,
+Q2.1,CCRCC_merged|uni_v2,R2_cluster_raw,0.4286383958324968,context,
+Q2.1,CCRCC_merged|uni_v2,frac_genes_R2_cluster_corrected_undefined,0.0,context,
+Q2.1,INDIANA_KIDNEY|hoptimus0,var_ratio_mall_nLmax_minus_one_minus_R2_cluster_raw,0.28441225274230497,"|ratio - (1 - R2_cluster_raw)| <= 0.1, theta3 donor, rule c, superpopulation",False
+Q2.1,INDIANA_KIDNEY|hoptimus0,R2_unit,0.2793048179071236,context,
+Q2.1,INDIANA_KIDNEY|hoptimus0,R2_cluster_raw,0.1863371251456178,context,
+Q2.1,INDIANA_KIDNEY|hoptimus0,frac_genes_R2_cluster_corrected_undefined,0.0,context,
+Q2.1,INDIANA_KIDNEY|permuted,var_ratio_mall_nLmax_minus_one_minus_R2_cluster_raw,0.10423921178608686,"|ratio - (1 - R2_cluster_raw)| <= 0.1, theta3 donor, rule c, superpopulation",False
+Q2.1,INDIANA_KIDNEY|permuted,R2_unit,0.2069162041969106,context,
+Q2.1,INDIANA_KIDNEY|permuted,R2_cluster_raw,0.035889287937588,context,
+Q2.1,INDIANA_KIDNEY|permuted,frac_genes_R2_cluster_corrected_undefined,1.0,context,
+Q2.1,INDIANA_KIDNEY|resnet50,var_ratio_mall_nLmax_minus_one_minus_R2_cluster_raw,0.14117608036626428,"|ratio - (1 - R2_cluster_raw)| <= 0.1, theta3 donor, rule c, superpopulation",False
+Q2.1,INDIANA_KIDNEY|resnet50,R2_unit,0.261758840963651,context,
+Q2.1,INDIANA_KIDNEY|resnet50,R2_cluster_raw,0.0513258623316612,context,
+Q2.1,INDIANA_KIDNEY|resnet50,frac_genes_R2_cluster_corrected_undefined,0.04,context,
+Q2.1,INDIANA_KIDNEY|uni_v2,var_ratio_mall_nLmax_minus_one_minus_R2_cluster_raw,0.2626256865289983,"|ratio - (1 - R2_cluster_raw)| <= 0.1, theta3 donor, rule c, superpopulation",False
+Q2.1,INDIANA_KIDNEY|uni_v2,R2_unit,0.28321940238831966,context,
+Q2.1,INDIANA_KIDNEY|uni_v2,R2_cluster_raw,0.1389668174396607,context,
+Q2.1,INDIANA_KIDNEY|uni_v2,frac_genes_R2_cluster_corrected_undefined,0.02,context,
+Q2.1,LUNG_XENIUM|hoptimus0,var_ratio_mall_nLmax_minus_one_minus_R2_cluster_raw,1.256502844779258,"|ratio - (1 - R2_cluster_raw)| <= 0.1, theta3 donor, rule c, superpopulation",False
+Q2.1,LUNG_XENIUM|hoptimus0,R2_unit,0.8252461243203721,context,
+Q2.1,LUNG_XENIUM|hoptimus0,R2_cluster_raw,0.7295370226920849,context,
+Q2.1,LUNG_XENIUM|hoptimus0,frac_genes_R2_cluster_corrected_undefined,0.0291545189504373,context,
+Q2.1,LUNG_XENIUM|permuted,var_ratio_mall_nLmax_minus_one_minus_R2_cluster_raw,0.15603688908798297,"|ratio - (1 - R2_cluster_raw)| <= 0.1, theta3 donor, rule c, superpopulation",False
+Q2.1,LUNG_XENIUM|permuted,R2_unit,0.571093230183098,context,
+Q2.1,LUNG_XENIUM|permuted,R2_cluster_raw,0.0325429385363482,context,
+Q2.1,LUNG_XENIUM|permuted,frac_genes_R2_cluster_corrected_undefined,0.9941690962099126,context,
+Q2.1,LUNG_XENIUM|resnet50,var_ratio_mall_nLmax_minus_one_minus_R2_cluster_raw,1.0280792005838193,"|ratio - (1 - R2_cluster_raw)| <= 0.1, theta3 donor, rule c, superpopulation",False
+Q2.1,LUNG_XENIUM|resnet50,R2_unit,0.7709825264842274,context,
+Q2.1,LUNG_XENIUM|resnet50,R2_cluster_raw,0.6543891178232232,context,
+Q2.1,LUNG_XENIUM|resnet50,frac_genes_R2_cluster_corrected_undefined,0.075801749271137,context,
+Q2.1,LUNG_XENIUM|uni_v2,var_ratio_mall_nLmax_minus_one_minus_R2_cluster_raw,1.3373242987338654,"|ratio - (1 - R2_cluster_raw)| <= 0.1, theta3 donor, rule c, superpopulation",False
+Q2.1,LUNG_XENIUM|uni_v2,R2_unit,0.8295979509428029,context,
+Q2.1,LUNG_XENIUM|uni_v2,R2_cluster_raw,0.7135141999082618,context,
+Q2.1,LUNG_XENIUM|uni_v2,frac_genes_R2_cluster_corrected_undefined,0.0699708454810495,context,
+Q2.2,ACS_CA_PUMA|package|none,emp_var_m200_over_mall_nLmax,31.042051541201825,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,ACS_CA_PUMA|package|none,emp_var_m500_over_mall_nLmax,7.120103387853413,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,ACS_CA_PUMA|package|c_crossfit,emp_var_m200_over_mall_nLmax,2.311120742574017,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,ACS_CA_PUMA|package|c_crossfit,emp_var_m500_over_mall_nLmax,1.188691561223236,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),True
+Q2.2,ACS_CA_PUMA|permuted|none,emp_var_m200_over_mall_nLmax,31.042051541201825,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,ACS_CA_PUMA|permuted|none,emp_var_m500_over_mall_nLmax,7.120103387853413,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,ACS_CA_PUMA|permuted|c_crossfit,emp_var_m200_over_mall_nLmax,2.1072275160973537,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,ACS_CA_PUMA|permuted|c_crossfit,emp_var_m500_over_mall_nLmax,1.2876678515960047,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,ACS_STATES|package|none,emp_var_m200_over_mall_nLmax,327.10143817486994,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,ACS_STATES|package|none,emp_var_m500_over_mall_nLmax,135.66260548200182,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,ACS_STATES|package|c_crossfit,emp_var_m200_over_mall_nLmax,5.643807318872042,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,ACS_STATES|package|c_crossfit,emp_var_m500_over_mall_nLmax,2.40748399309489,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,ACS_STATES|permuted|none,emp_var_m200_over_mall_nLmax,327.10143817486994,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,ACS_STATES|permuted|none,emp_var_m500_over_mall_nLmax,135.66260548200182,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,ACS_STATES|permuted|c_crossfit,emp_var_m200_over_mall_nLmax,9.104613581817704,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,ACS_STATES|permuted|c_crossfit,emp_var_m500_over_mall_nLmax,3.887312165575021,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC|hoptimus0|none,emp_var_m200_over_mall_nLmax,3.002714621067715,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC|hoptimus0|none,emp_var_m500_over_mall_nLmax,1.7346041630785531,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC|hoptimus0|c_crossfit,emp_var_m200_over_mall_nLmax,2.4290854658452337,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC|hoptimus0|c_crossfit,emp_var_m500_over_mall_nLmax,1.4890992145912825,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC|permuted|none,emp_var_m200_over_mall_nLmax,3.002714621067715,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC|permuted|none,emp_var_m500_over_mall_nLmax,1.7346041630785531,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC|permuted|c_crossfit,emp_var_m200_over_mall_nLmax,2.492189920740095,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC|permuted|c_crossfit,emp_var_m500_over_mall_nLmax,1.5004408036376504,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC|resnet50|none,emp_var_m200_over_mall_nLmax,3.002714621067715,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC|resnet50|none,emp_var_m500_over_mall_nLmax,1.7346041630785531,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC|resnet50|c_crossfit,emp_var_m200_over_mall_nLmax,2.538484320341649,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC|resnet50|c_crossfit,emp_var_m500_over_mall_nLmax,1.517537016476115,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC|uni_v2|none,emp_var_m200_over_mall_nLmax,3.002714621067715,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC|uni_v2|none,emp_var_m500_over_mall_nLmax,1.7346041630785531,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC|uni_v2|c_crossfit,emp_var_m200_over_mall_nLmax,2.3127416152048803,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC|uni_v2|c_crossfit,emp_var_m500_over_mall_nLmax,1.4565850422786013,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC_merged|hoptimus0|none,emp_var_m200_over_mall_nLmax,3.0881670027530848,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC_merged|hoptimus0|none,emp_var_m500_over_mall_nLmax,1.5906311962335764,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC_merged|hoptimus0|c_crossfit,emp_var_m200_over_mall_nLmax,2.420089365871731,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC_merged|hoptimus0|c_crossfit,emp_var_m500_over_mall_nLmax,1.4231296046636674,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC_merged|permuted|none,emp_var_m200_over_mall_nLmax,3.0881670027530848,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC_merged|permuted|none,emp_var_m500_over_mall_nLmax,1.5906311962335764,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC_merged|permuted|c_crossfit,emp_var_m200_over_mall_nLmax,2.7941822926893054,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC_merged|permuted|c_crossfit,emp_var_m500_over_mall_nLmax,1.6191841511112477,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC_merged|resnet50|none,emp_var_m200_over_mall_nLmax,3.0881670027530848,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC_merged|resnet50|none,emp_var_m500_over_mall_nLmax,1.5906311962335764,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC_merged|resnet50|c_crossfit,emp_var_m200_over_mall_nLmax,2.7422705681020116,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC_merged|resnet50|c_crossfit,emp_var_m500_over_mall_nLmax,1.4996724750321364,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC_merged|uni_v2|none,emp_var_m200_over_mall_nLmax,3.0881670027530848,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC_merged|uni_v2|none,emp_var_m500_over_mall_nLmax,1.5906311962335764,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC_merged|uni_v2|c_crossfit,emp_var_m200_over_mall_nLmax,2.545325843003447,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,CCRCC_merged|uni_v2|c_crossfit,emp_var_m500_over_mall_nLmax,1.327663393329913,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,INDIANA_KIDNEY|hoptimus0|none,emp_var_m200_over_mall_nLmax,3.23290754507937,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,INDIANA_KIDNEY|hoptimus0|none,emp_var_m500_over_mall_nLmax,1.4793810561110907,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,INDIANA_KIDNEY|hoptimus0|c_crossfit,emp_var_m200_over_mall_nLmax,2.628956465598775,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,INDIANA_KIDNEY|hoptimus0|c_crossfit,emp_var_m500_over_mall_nLmax,1.306584853657958,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,INDIANA_KIDNEY|permuted|none,emp_var_m200_over_mall_nLmax,3.23290754507937,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,INDIANA_KIDNEY|permuted|none,emp_var_m500_over_mall_nLmax,1.4793810561110907,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,INDIANA_KIDNEY|permuted|c_crossfit,emp_var_m200_over_mall_nLmax,2.8136494404388857,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,INDIANA_KIDNEY|permuted|c_crossfit,emp_var_m500_over_mall_nLmax,1.3494435452439124,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,INDIANA_KIDNEY|resnet50|none,emp_var_m200_over_mall_nLmax,3.23290754507937,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,INDIANA_KIDNEY|resnet50|none,emp_var_m500_over_mall_nLmax,1.4793810561110907,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,INDIANA_KIDNEY|resnet50|c_crossfit,emp_var_m200_over_mall_nLmax,2.908584064394135,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,INDIANA_KIDNEY|resnet50|c_crossfit,emp_var_m500_over_mall_nLmax,1.3809720007239257,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,INDIANA_KIDNEY|uni_v2|none,emp_var_m200_over_mall_nLmax,3.23290754507937,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,INDIANA_KIDNEY|uni_v2|none,emp_var_m500_over_mall_nLmax,1.4793810561110907,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,INDIANA_KIDNEY|uni_v2|c_crossfit,emp_var_m200_over_mall_nLmax,2.778422515603986,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,INDIANA_KIDNEY|uni_v2|c_crossfit,emp_var_m500_over_mall_nLmax,1.3808046615256957,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,LUNG_XENIUM|hoptimus0|none,emp_var_m200_over_mall_nLmax,4.56578144898765,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,LUNG_XENIUM|hoptimus0|none,emp_var_m500_over_mall_nLmax,1.7193496758699138,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,LUNG_XENIUM|hoptimus0|c_crossfit,emp_var_m200_over_mall_nLmax,2.7414643029344403,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,LUNG_XENIUM|hoptimus0|c_crossfit,emp_var_m500_over_mall_nLmax,1.402431456514626,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,LUNG_XENIUM|permuted|none,emp_var_m200_over_mall_nLmax,4.56578144898765,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,LUNG_XENIUM|permuted|none,emp_var_m500_over_mall_nLmax,1.7193496758699138,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,LUNG_XENIUM|permuted|c_crossfit,emp_var_m200_over_mall_nLmax,2.969275482353257,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,LUNG_XENIUM|permuted|c_crossfit,emp_var_m500_over_mall_nLmax,1.5839458653126657,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,LUNG_XENIUM|resnet50|none,emp_var_m200_over_mall_nLmax,4.56578144898765,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,LUNG_XENIUM|resnet50|none,emp_var_m500_over_mall_nLmax,1.7193496758699138,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,LUNG_XENIUM|resnet50|c_crossfit,emp_var_m200_over_mall_nLmax,2.6050200909232606,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,LUNG_XENIUM|resnet50|c_crossfit,emp_var_m500_over_mall_nLmax,1.3706414119112948,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,LUNG_XENIUM|uni_v2|none,emp_var_m200_over_mall_nLmax,4.56578144898765,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,LUNG_XENIUM|uni_v2|none,emp_var_m500_over_mall_nLmax,1.7193496758699138,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,LUNG_XENIUM|uni_v2|c_crossfit,emp_var_m200_over_mall_nLmax,2.4413456243934344,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.2,LUNG_XENIUM|uni_v2|c_crossfit,emp_var_m500_over_mall_nLmax,1.284767913517299,ratio < 1.2 at m = 200 and m = 500 (flat beyond 100 to 200),False
+Q2.3,CCRCC|hoptimus0,m_star_PP_cd_cs_100_median,108.14776208548452,context,
+Q2.3,CCRCC|resnet50,m_star_PP_cd_cs_100_median,108.6265314773762,context,
+Q2.3,CCRCC|permuted,m_star_PP_cd_cs_100_median,110.6919127474374,context,
+Q2.3,CCRCC,order_hoptimus0_lt_resnet50_lt_permuted,,m*_PP(hoptimus0) < m*_PP(resnet50) < m*_PP(permuted),True
+Q2.3,CCRCC|hoptimus0,sigma2_unit_rule_c_median,1.5621221488872912,context,
+Q2.3,CCRCC|hoptimus0,sigma2_cluster_rule_c_median,0.0142655413094759,context,
+Q2.3,CCRCC|resnet50,sigma2_unit_rule_c_median,1.6036726055026511,context,
+Q2.3,CCRCC|resnet50,sigma2_cluster_rule_c_median,0.0142380496424806,context,
+Q2.3,CCRCC|permuted,sigma2_unit_rule_c_median,1.6071499490322043,context,
+Q2.3,CCRCC|permuted,sigma2_cluster_rule_c_median,0.0155777394148381,context,
+Q2.3,CCRCC_merged|hoptimus0,m_star_PP_cd_cs_100_median,115.62778861071143,context,
+Q2.3,CCRCC_merged|resnet50,m_star_PP_cd_cs_100_median,113.33006150222128,context,
+Q2.3,CCRCC_merged|permuted,m_star_PP_cd_cs_100_median,107.2463059073918,context,
+Q2.3,CCRCC_merged,order_hoptimus0_lt_resnet50_lt_permuted,,m*_PP(hoptimus0) < m*_PP(resnet50) < m*_PP(permuted),False
+Q2.3,CCRCC_merged|hoptimus0,sigma2_unit_rule_c_median,1.5461706116471825,context,
+Q2.3,CCRCC_merged|hoptimus0,sigma2_cluster_rule_c_median,0.0137207645034924,context,
+Q2.3,CCRCC_merged|resnet50,sigma2_unit_rule_c_median,1.553865807613844,context,
+Q2.3,CCRCC_merged|resnet50,sigma2_cluster_rule_c_median,0.0142709657515913,context,
+Q2.3,CCRCC_merged|permuted,sigma2_unit_rule_c_median,1.7216299170277778,context,
+Q2.3,CCRCC_merged|permuted,sigma2_cluster_rule_c_median,0.0155023456011895,context,
+Q2.3,INDIANA_KIDNEY|hoptimus0,m_star_PP_cd_cs_100_median,188.0051424498949,context,
+Q2.3,INDIANA_KIDNEY|resnet50,m_star_PP_cd_cs_100_median,175.0120703485699,context,
+Q2.3,INDIANA_KIDNEY|permuted,m_star_PP_cd_cs_100_median,192.2146985776807,context,
+Q2.3,INDIANA_KIDNEY,order_hoptimus0_lt_resnet50_lt_permuted,,m*_PP(hoptimus0) < m*_PP(resnet50) < m*_PP(permuted),False
+Q2.3,INDIANA_KIDNEY|hoptimus0,sigma2_unit_rule_c_median,0.3518105499199179,context,
+Q2.3,INDIANA_KIDNEY|hoptimus0,sigma2_cluster_rule_c_median,0.0011068117984093,context,
+Q2.3,INDIANA_KIDNEY|resnet50,sigma2_unit_rule_c_median,0.3583479286374961,context,
+Q2.3,INDIANA_KIDNEY|resnet50,sigma2_cluster_rule_c_median,0.0012369280946907,context,
+Q2.3,INDIANA_KIDNEY|permuted,sigma2_unit_rule_c_median,0.3722861411511614,context,
+Q2.3,INDIANA_KIDNEY|permuted,sigma2_cluster_rule_c_median,0.0011298965459727,context,
+Q2.3,LUNG_XENIUM|hoptimus0,m_star_PP_cd_cs_100_median,121.20777799186556,context,
+Q2.3,LUNG_XENIUM|resnet50,m_star_PP_cd_cs_100_median,112.14611107757597,context,
+Q2.3,LUNG_XENIUM|permuted,m_star_PP_cd_cs_100_median,96.39112592976268,context,
+Q2.3,LUNG_XENIUM,order_hoptimus0_lt_resnet50_lt_permuted,,m*_PP(hoptimus0) < m*_PP(resnet50) < m*_PP(permuted),False
+Q2.3,LUNG_XENIUM|hoptimus0,sigma2_unit_rule_c_median,3.2090082341301547,context,
+Q2.3,LUNG_XENIUM|hoptimus0,sigma2_cluster_rule_c_median,0.021878277233676,context,
+Q2.3,LUNG_XENIUM|resnet50,sigma2_unit_rule_c_median,3.6711099072323496,context,
+Q2.3,LUNG_XENIUM|resnet50,sigma2_cluster_rule_c_median,0.0276135062519869,context,
+Q2.3,LUNG_XENIUM|permuted,sigma2_unit_rule_c_median,6.137674682829126,context,
+Q2.3,LUNG_XENIUM|permuted,sigma2_cluster_rule_c_median,0.062346322012219,context,
+Q2.4,CCRCC|hoptimus0,m_star_classical_cd_cs_100_median,121.06163330599604,30 <= m* <= 150 (Visium),True
+Q2.4,CCRCC_merged|hoptimus0,m_star_classical_cd_cs_100_median,120.52414526038292,30 <= m* <= 150 (Visium),True
+Q2.4,INDIANA_KIDNEY|hoptimus0,m_star_classical_cd_cs_100_median,235.8530014837651,30 <= m* <= 150 (Visium),False
+Q2.4,ACS_CA_PUMA|package,m_star_classical_cd_cs_100_median,,larger than every Visium task's m*,
+Q2.4,ACS_STATES|package,m_star_classical_cd_cs_100_median,378.59518633633394,larger than every Visium task's m*,True
+Q2.4,LUNG_XENIUM|hoptimus0,m_star_classical_cd_cs_100_median,172.12974101946796,larger than every Visium task's m*,False
+Q2.5,ACS_CA_PUMA|design,frac_cells_nL_ge6_within_15pct,0.4921875,estimated / empirical variance within 15% in every cell with n_L >= 6,False
+Q2.5,ACS_CA_PUMA|design,frac_cells_nL4_within_15pct,0.65625,context,
+Q2.5,ACS_CA_PUMA|design,median_est_over_emp_nL_ge6,1.1494495599958485,context,
+Q2.5,ACS_CA_PUMA|design,n_cells_nL_ge6,128.0,context,
+Q2.5,ACS_CA_PUMA|super,frac_cells_nL_ge6_within_15pct,0.46875,estimated / empirical variance within 15% in every cell with n_L >= 6,False
+Q2.5,ACS_CA_PUMA|super,frac_cells_nL4_within_15pct,0.875,context,
+Q2.5,ACS_CA_PUMA|super,median_est_over_emp_nL_ge6,1.1789015005333503,context,
+Q2.5,ACS_CA_PUMA|super,n_cells_nL_ge6,128.0,context,
+Q2.5,ACS_STATES|design,frac_cells_nL_ge6_within_15pct,0.5703125,estimated / empirical variance within 15% in every cell with n_L >= 6,False
+Q2.5,ACS_STATES|design,frac_cells_nL4_within_15pct,0.84375,context,
+Q2.5,ACS_STATES|design,median_est_over_emp_nL_ge6,1.1192228519125016,context,
+Q2.5,ACS_STATES|design,n_cells_nL_ge6,128.0,context,
+Q2.5,ACS_STATES|super,frac_cells_nL_ge6_within_15pct,0.375,estimated / empirical variance within 15% in every cell with n_L >= 6,False
+Q2.5,ACS_STATES|super,frac_cells_nL4_within_15pct,0.46875,context,
+Q2.5,ACS_STATES|super,median_est_over_emp_nL_ge6,1.0799416734098686,context,
+Q2.5,ACS_STATES|super,n_cells_nL_ge6,128.0,context,
+Q2.5,CCRCC|design,frac_cells_nL_ge6_within_15pct,0.984375,estimated / empirical variance within 15% in every cell with n_L >= 6,False
+Q2.5,CCRCC|design,frac_cells_nL4_within_15pct,1.0,context,
+Q2.5,CCRCC|design,median_est_over_emp_nL_ge6,1.015041624685587,context,
+Q2.5,CCRCC|design,n_cells_nL_ge6,256.0,context,
+Q2.5,CCRCC|super,frac_cells_nL_ge6_within_15pct,0.203125,estimated / empirical variance within 15% in every cell with n_L >= 6,False
+Q2.5,CCRCC|super,frac_cells_nL4_within_15pct,0.65625,context,
+Q2.5,CCRCC|super,median_est_over_emp_nL_ge6,1.4721459587858952,context,
+Q2.5,CCRCC|super,n_cells_nL_ge6,256.0,context,
+Q2.5,CCRCC_merged|design,frac_cells_nL_ge6_within_15pct,0.94921875,estimated / empirical variance within 15% in every cell with n_L >= 6,False
+Q2.5,CCRCC_merged|design,frac_cells_nL4_within_15pct,1.0,context,
+Q2.5,CCRCC_merged|design,median_est_over_emp_nL_ge6,1.0137554975454761,context,
+Q2.5,CCRCC_merged|design,n_cells_nL_ge6,256.0,context,
+Q2.5,CCRCC_merged|super,frac_cells_nL_ge6_within_15pct,0.2421875,estimated / empirical variance within 15% in every cell with n_L >= 6,False
+Q2.5,CCRCC_merged|super,frac_cells_nL4_within_15pct,0.671875,context,
+Q2.5,CCRCC_merged|super,median_est_over_emp_nL_ge6,1.5409560093061987,context,
+Q2.5,CCRCC_merged|super,n_cells_nL_ge6,256.0,context,
+Q2.5,INDIANA_KIDNEY|design,frac_cells_nL_ge6_within_15pct,0.953125,estimated / empirical variance within 15% in every cell with n_L >= 6,False
+Q2.5,INDIANA_KIDNEY|design,frac_cells_nL4_within_15pct,1.0,context,
+Q2.5,INDIANA_KIDNEY|design,median_est_over_emp_nL_ge6,0.9913804120067397,context,
+Q2.5,INDIANA_KIDNEY|design,n_cells_nL_ge6,256.0,context,
+Q2.5,INDIANA_KIDNEY|super,frac_cells_nL_ge6_within_15pct,0.515625,estimated / empirical variance within 15% in every cell with n_L >= 6,False
+Q2.5,INDIANA_KIDNEY|super,frac_cells_nL4_within_15pct,0.5,context,
+Q2.5,INDIANA_KIDNEY|super,median_est_over_emp_nL_ge6,1.1353305014457271,context,
+Q2.5,INDIANA_KIDNEY|super,n_cells_nL_ge6,256.0,context,
+Q2.5,LUNG_XENIUM|design,frac_cells_nL_ge6_within_15pct,0.671875,estimated / empirical variance within 15% in every cell with n_L >= 6,False
+Q2.5,LUNG_XENIUM|design,frac_cells_nL4_within_15pct,0.625,context,
+Q2.5,LUNG_XENIUM|design,median_est_over_emp_nL_ge6,0.965469582460025,context,
+Q2.5,LUNG_XENIUM|design,n_cells_nL_ge6,192.0,context,
+Q2.5,LUNG_XENIUM|super,frac_cells_nL_ge6_within_15pct,0.3072916666666667,estimated / empirical variance within 15% in every cell with n_L >= 6,False
+Q2.5,LUNG_XENIUM|super,frac_cells_nL4_within_15pct,0.578125,context,
+Q2.5,LUNG_XENIUM|super,median_est_over_emp_nL_ge6,1.3000983711432887,context,
+Q2.5,LUNG_XENIUM|super,n_cells_nL_ge6,192.0,context,
+Q2.6,CCRCC|hoptimus0,R2_offset_loo_median_gene,-0.11091716625252955,0.1 <= median LOO R2 of offsets <= 0.4,False
+Q2.6,CCRCC|hoptimus0,delta_R2_cluster_raw_median,-0.04241442898964172,cluster-level R2 rises by >= 0.1,False
+Q2.6,CCRCC|hoptimus0,max_abs_delta_R2_within,1.968223695136828e-09,within-cluster R2 unchanged to 1e-3,True
+Q2.6,CCRCC|hoptimus0,max_abs_delta_var_ratio_theta3_donor_nL12,3.638561718588562e-08,context (structurally zero for donor-weighted estimands),
+Q2.6,CCRCC|hoptimus0,median_delta_var_ratio_theta3_spot_nL12,0.0192044029014673,context,
+Q2.6,CCRCC|hoptimus0,median_abs(delta_var_ratio - delta_one_minus_R2c)_theta3_spot_nL12,0.031677290194317,variance-ratio change within 0.1 of the change in 1 - R2_cluster (spot-weighted),True
+Q2.6,INDIANA_KIDNEY|hoptimus0,R2_offset_loo_median_gene,-0.0886203687047907,0.1 <= median LOO R2 of offsets <= 0.4,False
+Q2.6,INDIANA_KIDNEY|hoptimus0,delta_R2_cluster_raw_median,-0.04762248842498913,cluster-level R2 rises by >= 0.1,False
+Q2.6,INDIANA_KIDNEY|hoptimus0,max_abs_delta_R2_within,2.6461473984218387e-09,within-cluster R2 unchanged to 1e-3,True
+Q2.6,INDIANA_KIDNEY|hoptimus0,max_abs_delta_var_ratio_theta3_donor_nL12,2.6678274256397572e-08,context (structurally zero for donor-weighted estimands),
+Q2.6,INDIANA_KIDNEY|hoptimus0,median_delta_var_ratio_theta3_spot_nL12,0.019210142398762675,context,
+Q2.6,INDIANA_KIDNEY|hoptimus0,median_abs(delta_var_ratio - delta_one_minus_R2c)_theta3_spot_nL12,0.03362708443696967,variance-ratio change within 0.1 of the change in 1 - R2_cluster (spot-weighted),True
+Q2.7,GL6|GU20|m200|sa2su2_0.25,emp_ratio_minus_full_ratio,0.12790970233267046,|diff| <= 0.05 at G_U = 20,False
+Q2.7,GL6|GU20|m200|sa2su2_0.25,emp_ratio_minus_one_minus_R2_minus_GU_term,0.12790970233267046,>= 0 (above 1 - R2 by at least the G_U term),True
+Q2.7,GL6|GU20|m200|sa2su2_1,emp_ratio_minus_full_ratio,0.23185012560386697,|diff| <= 0.05 at G_U = 20,False
+Q2.7,GL6|GU20|m200|sa2su2_1,emp_ratio_minus_one_minus_R2_minus_GU_term,0.23185012560386703,>= 0 (above 1 - R2 by at least the G_U term),True
+Q2.7,GL6|GU20|m200|sa2su2_4,emp_ratio_minus_full_ratio,0.19637878964451683,|diff| <= 0.05 at G_U = 20,False
+Q2.7,GL6|GU20|m200|sa2su2_4,emp_ratio_minus_one_minus_R2_minus_GU_term,0.1963787896445169,>= 0 (above 1 - R2 by at least the G_U term),True
+Q2.7,GL6|GU20|m5000|sa2su2_0.25,emp_ratio_minus_full_ratio,0.13613685914358048,|diff| <= 0.05 at G_U = 20,False
+Q2.7,GL6|GU20|m5000|sa2su2_0.25,emp_ratio_minus_one_minus_R2_minus_GU_term,0.13613685914358048,>= 0 (above 1 - R2 by at least the G_U term),True
+Q2.7,GL6|GU20|m5000|sa2su2_1,emp_ratio_minus_full_ratio,0.2039828706134168,|diff| <= 0.05 at G_U = 20,False
+Q2.7,GL6|GU20|m5000|sa2su2_1,emp_ratio_minus_one_minus_R2_minus_GU_term,0.20398287061341686,>= 0 (above 1 - R2 by at least the G_U term),True
+Q2.7,GL6|GU20|m5000|sa2su2_4,emp_ratio_minus_full_ratio,0.22477275381520112,|diff| <= 0.05 at G_U = 20,False
+Q2.7,GL6|GU20|m5000|sa2su2_4,emp_ratio_minus_one_minus_R2_minus_GU_term,0.2247727538152012,>= 0 (above 1 - R2 by at least the G_U term),True
+Q2.7,GL6|GU100|m5000|sa2su2_0.25,emp_ratio_minus_one_minus_R2_exact,0.1487032959794946,"|diff| <= 0.05 at m = 5000, G_U = 100",False
+Q2.7,GL6|GU100|m5000|sa2su2_0.25,oracle_ratio_minus_one_minus_R2_exact,0.055394935685550484,context (oracle lambda),
+Q2.7,GL6|GU100|m5000|sa2su2_1,emp_ratio_minus_one_minus_R2_exact,0.23782238821279217,"|diff| <= 0.05 at m = 5000, G_U = 100",False
+Q2.7,GL6|GU100|m5000|sa2su2_1,oracle_ratio_minus_one_minus_R2_exact,0.02555826537689959,context (oracle lambda),
+Q2.7,GL6|GU100|m5000|sa2su2_4,emp_ratio_minus_one_minus_R2_exact,0.4199758024200222,"|diff| <= 0.05 at m = 5000, G_U = 100",False
+Q2.7,GL6|GU100|m5000|sa2su2_4,oracle_ratio_minus_one_minus_R2_exact,0.0409947409137279,context (oracle lambda),
+Q2.7,GL12|GU20|m200|sa2su2_0.25,emp_ratio_minus_full_ratio,0.08797554115873679,|diff| <= 0.05 at G_U = 20,False
+Q2.7,GL12|GU20|m200|sa2su2_0.25,emp_ratio_minus_one_minus_R2_minus_GU_term,0.08797554115873679,>= 0 (above 1 - R2 by at least the G_U term),True
+Q2.7,GL12|GU20|m200|sa2su2_1,emp_ratio_minus_full_ratio,0.1183035941648819,|diff| <= 0.05 at G_U = 20,False
+Q2.7,GL12|GU20|m200|sa2su2_1,emp_ratio_minus_one_minus_R2_minus_GU_term,0.11830359416488201,>= 0 (above 1 - R2 by at least the G_U term),True
+Q2.7,GL12|GU20|m200|sa2su2_4,emp_ratio_minus_full_ratio,0.11001141422189098,|diff| <= 0.05 at G_U = 20,False
+Q2.7,GL12|GU20|m200|sa2su2_4,emp_ratio_minus_one_minus_R2_minus_GU_term,0.11001141422189108,>= 0 (above 1 - R2 by at least the G_U term),True
+Q2.7,GL12|GU20|m5000|sa2su2_0.25,emp_ratio_minus_full_ratio,0.084041673841664,|diff| <= 0.05 at G_U = 20,False
+Q2.7,GL12|GU20|m5000|sa2su2_0.25,emp_ratio_minus_one_minus_R2_minus_GU_term,0.084041673841664,>= 0 (above 1 - R2 by at least the G_U term),True
+Q2.7,GL12|GU20|m5000|sa2su2_1,emp_ratio_minus_full_ratio,0.060212063089812085,|diff| <= 0.05 at G_U = 20,False
+Q2.7,GL12|GU20|m5000|sa2su2_1,emp_ratio_minus_one_minus_R2_minus_GU_term,0.060212063089812196,>= 0 (above 1 - R2 by at least the G_U term),True
+Q2.7,GL12|GU20|m5000|sa2su2_4,emp_ratio_minus_full_ratio,0.11264555040836655,|diff| <= 0.05 at G_U = 20,False
+Q2.7,GL12|GU20|m5000|sa2su2_4,emp_ratio_minus_one_minus_R2_minus_GU_term,0.11264555040836664,>= 0 (above 1 - R2 by at least the G_U term),True
+Q2.7,GL12|GU100|m5000|sa2su2_0.25,emp_ratio_minus_one_minus_R2_exact,0.1127094277903114,"|diff| <= 0.05 at m = 5000, G_U = 100",False
+Q2.7,GL12|GU100|m5000|sa2su2_0.25,oracle_ratio_minus_one_minus_R2_exact,0.07662338908200877,context (oracle lambda),
+Q2.7,GL12|GU100|m5000|sa2su2_1,emp_ratio_minus_one_minus_R2_exact,0.15094014722051202,"|diff| <= 0.05 at m = 5000, G_U = 100",False
+Q2.7,GL12|GU100|m5000|sa2su2_1,oracle_ratio_minus_one_minus_R2_exact,0.04694851162358443,context (oracle lambda),
+Q2.7,GL12|GU100|m5000|sa2su2_4,emp_ratio_minus_one_minus_R2_exact,0.17278828153047976,"|diff| <= 0.05 at m = 5000, G_U = 100",False
+Q2.7,GL12|GU100|m5000|sa2su2_4,oracle_ratio_minus_one_minus_R2_exact,0.040275880152782495,context (oracle lambda),
+Q3.1,ACS_CA_PUMA|design|none,max_width_ratio_B_over_A_unit_cost,2.6618393116683237,regime B narrower by >= 20% at every budget and n_L (ratio <= 0.8); scored for rule c only,
+Q3.1,ACS_CA_PUMA|design|none,median_width_ratio_unit_cost,1.867036506330594,context,
+Q3.1,ACS_CA_PUMA|design|none,frac_cells_ratio_le_0.8,0.0,context,
+Q3.1,ACS_CA_PUMA|design|c_crossfit,max_width_ratio_B_over_A_unit_cost,0.7039934318738678,regime B narrower by >= 20% at every budget and n_L (ratio <= 0.8); scored for rule c only,True
+Q3.1,ACS_CA_PUMA|design|c_crossfit,median_width_ratio_unit_cost,0.40542901257726394,context,
+Q3.1,ACS_CA_PUMA|design|c_crossfit,frac_cells_ratio_le_0.8,1.0,context,
+Q3.1,ACS_CA_PUMA|super|none,max_width_ratio_B_over_A_unit_cost,2.6618393116683237,regime B narrower by >= 20% at every budget and n_L (ratio <= 0.8); scored for rule c only,
+Q3.1,ACS_CA_PUMA|super|none,median_width_ratio_unit_cost,1.867036506330594,context,
+Q3.1,ACS_CA_PUMA|super|none,frac_cells_ratio_le_0.8,0.0,context,
+Q3.1,ACS_CA_PUMA|super|c_crossfit,max_width_ratio_B_over_A_unit_cost,0.7297667884776886,regime B narrower by >= 20% at every budget and n_L (ratio <= 0.8); scored for rule c only,True
+Q3.1,ACS_CA_PUMA|super|c_crossfit,median_width_ratio_unit_cost,0.4092028043794846,context,
+Q3.1,ACS_CA_PUMA|super|c_crossfit,frac_cells_ratio_le_0.8,1.0,context,
+Q3.1,ACS_STATES|design|none,max_width_ratio_B_over_A_unit_cost,1.818839749841283,regime B narrower by >= 20% at every budget and n_L (ratio <= 0.8); scored for rule c only,
+Q3.1,ACS_STATES|design|none,median_width_ratio_unit_cost,1.703308873751988,context,
+Q3.1,ACS_STATES|design|none,frac_cells_ratio_le_0.8,0.0,context,
+Q3.1,ACS_STATES|design|none,median_width_ratio_cost100,3.1051535497457623,advantage shrinks under c_d/c_s = 100 (median ratio above the unit-cost median); rule c only,
+Q3.1,ACS_STATES|design|c_crossfit,max_width_ratio_B_over_A_unit_cost,1.5420442934310885,regime B narrower by >= 20% at every budget and n_L (ratio <= 0.8); scored for rule c only,False
+Q3.1,ACS_STATES|design|c_crossfit,median_width_ratio_unit_cost,0.9140518752258004,context,
+Q3.1,ACS_STATES|design|c_crossfit,frac_cells_ratio_le_0.8,0.3333333333333333,context,
+Q3.1,ACS_STATES|design|c_crossfit,median_width_ratio_cost100,1.8591667121769673,advantage shrinks under c_d/c_s = 100 (median ratio above the unit-cost median); rule c only,True
+Q3.1,ACS_STATES|super|none,max_width_ratio_B_over_A_unit_cost,1.818839749841283,regime B narrower by >= 20% at every budget and n_L (ratio <= 0.8); scored for rule c only,
+Q3.1,ACS_STATES|super|none,median_width_ratio_unit_cost,1.703308873751988,context,
+Q3.1,ACS_STATES|super|none,frac_cells_ratio_le_0.8,0.0,context,
+Q3.1,ACS_STATES|super|none,median_width_ratio_cost100,3.1051535497457623,advantage shrinks under c_d/c_s = 100 (median ratio above the unit-cost median); rule c only,
+Q3.1,ACS_STATES|super|c_crossfit,max_width_ratio_B_over_A_unit_cost,1.5348006403776226,regime B narrower by >= 20% at every budget and n_L (ratio <= 0.8); scored for rule c only,False
+Q3.1,ACS_STATES|super|c_crossfit,median_width_ratio_unit_cost,0.9145607216688544,context,
+Q3.1,ACS_STATES|super|c_crossfit,frac_cells_ratio_le_0.8,0.3333333333333333,context,
+Q3.1,ACS_STATES|super|c_crossfit,median_width_ratio_cost100,1.863227708792116,advantage shrinks under c_d/c_s = 100 (median ratio above the unit-cost median); rule c only,True
+Q3.1,CCRCC|design|none,max_width_ratio_B_over_A_unit_cost,0.9174757636451945,regime B narrower by >= 20% at every budget and n_L (ratio <= 0.8); scored for rule c only,
+Q3.1,CCRCC|design|none,median_width_ratio_unit_cost,0.5662424759377115,context,
+Q3.1,CCRCC|design|none,frac_cells_ratio_le_0.8,0.9166666666666666,context,
+Q3.1,CCRCC|design|none,median_width_ratio_cost100,0.684859661660268,advantage shrinks under c_d/c_s = 100 (median ratio above the unit-cost median); rule c only,
+Q3.1,CCRCC|design|c_crossfit,max_width_ratio_B_over_A_unit_cost,0.8327032208537697,regime B narrower by >= 20% at every budget and n_L (ratio <= 0.8); scored for rule c only,False
+Q3.1,CCRCC|design|c_crossfit,median_width_ratio_unit_cost,0.4799944449005491,context,
+Q3.1,CCRCC|design|c_crossfit,frac_cells_ratio_le_0.8,0.9583333333333334,context,
+Q3.1,CCRCC|design|c_crossfit,median_width_ratio_cost100,0.5796833142993397,advantage shrinks under c_d/c_s = 100 (median ratio above the unit-cost median); rule c only,True
+Q3.1,CCRCC|super|none,max_width_ratio_B_over_A_unit_cost,0.9174757636451945,regime B narrower by >= 20% at every budget and n_L (ratio <= 0.8); scored for rule c only,
+Q3.1,CCRCC|super|none,median_width_ratio_unit_cost,0.5662424759377115,context,
+Q3.1,CCRCC|super|none,frac_cells_ratio_le_0.8,0.9166666666666666,context,
+Q3.1,CCRCC|super|none,median_width_ratio_cost100,0.684859661660268,advantage shrinks under c_d/c_s = 100 (median ratio above the unit-cost median); rule c only,
+Q3.1,CCRCC|super|c_crossfit,max_width_ratio_B_over_A_unit_cost,0.8151878056277152,regime B narrower by >= 20% at every budget and n_L (ratio <= 0.8); scored for rule c only,False
+Q3.1,CCRCC|super|c_crossfit,median_width_ratio_unit_cost,0.4837658111073597,context,
+Q3.1,CCRCC|super|c_crossfit,frac_cells_ratio_le_0.8,0.9583333333333334,context,
+Q3.1,CCRCC|super|c_crossfit,median_width_ratio_cost100,0.5796336302966875,advantage shrinks under c_d/c_s = 100 (median ratio above the unit-cost median); rule c only,True
+Q3.1,INDIANA_KIDNEY|design|none,max_width_ratio_B_over_A_unit_cost,1.2221090219319315,regime B narrower by >= 20% at every budget and n_L (ratio <= 0.8); scored for rule c only,
+Q3.1,INDIANA_KIDNEY|design|none,median_width_ratio_unit_cost,0.8132007616293697,context,
+Q3.1,INDIANA_KIDNEY|design|none,frac_cells_ratio_le_0.8,0.5,context,
+Q3.1,INDIANA_KIDNEY|design|none,median_width_ratio_cost100,1.0185607169639244,advantage shrinks under c_d/c_s = 100 (median ratio above the unit-cost median); rule c only,
+Q3.1,INDIANA_KIDNEY|design|c_crossfit,max_width_ratio_B_over_A_unit_cost,1.0873503330930647,regime B narrower by >= 20% at every budget and n_L (ratio <= 0.8); scored for rule c only,False
+Q3.1,INDIANA_KIDNEY|design|c_crossfit,median_width_ratio_unit_cost,0.7006321627824791,context,
+Q3.1,INDIANA_KIDNEY|design|c_crossfit,frac_cells_ratio_le_0.8,0.6666666666666666,context,
+Q3.1,INDIANA_KIDNEY|design|c_crossfit,median_width_ratio_cost100,0.8819952533630925,advantage shrinks under c_d/c_s = 100 (median ratio above the unit-cost median); rule c only,True
+Q3.1,INDIANA_KIDNEY|super|none,max_width_ratio_B_over_A_unit_cost,1.2221090219319315,regime B narrower by >= 20% at every budget and n_L (ratio <= 0.8); scored for rule c only,
+Q3.1,INDIANA_KIDNEY|super|none,median_width_ratio_unit_cost,0.8132007616293697,context,
+Q3.1,INDIANA_KIDNEY|super|none,frac_cells_ratio_le_0.8,0.5,context,
+Q3.1,INDIANA_KIDNEY|super|none,median_width_ratio_cost100,1.0185607169639244,advantage shrinks under c_d/c_s = 100 (median ratio above the unit-cost median); rule c only,
+Q3.1,INDIANA_KIDNEY|super|c_crossfit,max_width_ratio_B_over_A_unit_cost,1.0997683922089114,regime B narrower by >= 20% at every budget and n_L (ratio <= 0.8); scored for rule c only,False
+Q3.1,INDIANA_KIDNEY|super|c_crossfit,median_width_ratio_unit_cost,0.6982531457628192,context,
+Q3.1,INDIANA_KIDNEY|super|c_crossfit,frac_cells_ratio_le_0.8,0.6875,context,
+Q3.1,INDIANA_KIDNEY|super|c_crossfit,median_width_ratio_cost100,0.8704123459269411,advantage shrinks under c_d/c_s = 100 (median ratio above the unit-cost median); rule c only,True
+Q3.1,LUNG_XENIUM|design|none,max_width_ratio_B_over_A_unit_cost,1.2640184816132736,regime B narrower by >= 20% at every budget and n_L (ratio <= 0.8); scored for rule c only,
+Q3.1,LUNG_XENIUM|design|none,median_width_ratio_unit_cost,0.809422467734757,context,
+Q3.1,LUNG_XENIUM|design|none,frac_cells_ratio_le_0.8,0.5,context,
+Q3.1,LUNG_XENIUM|design|none,median_width_ratio_cost100,0.8888634226970185,advantage shrinks under c_d/c_s = 100 (median ratio above the unit-cost median); rule c only,
+Q3.1,LUNG_XENIUM|design|c_crossfit,max_width_ratio_B_over_A_unit_cost,0.9137457037696683,regime B narrower by >= 20% at every budget and n_L (ratio <= 0.8); scored for rule c only,False
+Q3.1,LUNG_XENIUM|design|c_crossfit,median_width_ratio_unit_cost,0.4030809045002594,context,
+Q3.1,LUNG_XENIUM|design|c_crossfit,frac_cells_ratio_le_0.8,0.9791666666666666,context,
+Q3.1,LUNG_XENIUM|design|c_crossfit,median_width_ratio_cost100,0.48554616831551345,advantage shrinks under c_d/c_s = 100 (median ratio above the unit-cost median); rule c only,True
+Q3.1,LUNG_XENIUM|super|none,max_width_ratio_B_over_A_unit_cost,1.2640184816132736,regime B narrower by >= 20% at every budget and n_L (ratio <= 0.8); scored for rule c only,
+Q3.1,LUNG_XENIUM|super|none,median_width_ratio_unit_cost,0.809422467734757,context,
+Q3.1,LUNG_XENIUM|super|none,frac_cells_ratio_le_0.8,0.5,context,
+Q3.1,LUNG_XENIUM|super|none,median_width_ratio_cost100,0.8888634226970185,advantage shrinks under c_d/c_s = 100 (median ratio above the unit-cost median); rule c only,
+Q3.1,LUNG_XENIUM|super|c_crossfit,max_width_ratio_B_over_A_unit_cost,0.8690558469995121,regime B narrower by >= 20% at every budget and n_L (ratio <= 0.8); scored for rule c only,False
+Q3.1,LUNG_XENIUM|super|c_crossfit,median_width_ratio_unit_cost,0.40542971677291245,context,
+Q3.1,LUNG_XENIUM|super|c_crossfit,frac_cells_ratio_le_0.8,0.9791666666666666,context,
+Q3.1,LUNG_XENIUM|super|c_crossfit,median_width_ratio_cost100,0.459131755793093,advantage shrinks under c_d/c_s = 100 (median ratio above the unit-cost median); rule c only,True
+Q3.1,all,reversal_at_cd_cs_ge_1000,,not assessed (only c_d/c_s = 100 was run),
+Q3.2,ACS_CA_PUMA|package|theta3|donor|none|design|regB|B9600,regB_design_coverage_median,0.94,0.88 <= coverage <= 0.92 at m >= 25,False
+Q3.2,ACS_CA_PUMA|package|theta3|donor|c_crossfit|design|regB|B9600,regB_design_coverage_median,0.89,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,ACS_CA_PUMA|permuted|theta3|donor|none|design|regB|B9600,regB_design_coverage_median,0.94,0.88 <= coverage <= 0.92 at m >= 25,False
+Q3.2,ACS_CA_PUMA|permuted|theta3|donor|c_crossfit|design|regB|B9600,regB_design_coverage_median,0.91,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,ACS_STATES|package|theta3|donor|none|design|regB|B2400,regB_design_coverage_median,0.915,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,ACS_STATES|package|theta3|donor|none|design|regB|B4800,regB_design_coverage_median,0.875,0.88 <= coverage <= 0.92 at m >= 25,False
+Q3.2,ACS_STATES|package|theta3|donor|none|design|regB|B9600,regB_design_coverage_median,0.895,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,ACS_STATES|package|theta3|donor|c_crossfit|design|regB|B2400,regB_design_coverage_median,0.87,0.88 <= coverage <= 0.92 at m >= 25,False
+Q3.2,ACS_STATES|package|theta3|donor|c_crossfit|design|regB|B4800,regB_design_coverage_median,0.895,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,ACS_STATES|package|theta3|donor|c_crossfit|design|regB|B9600,regB_design_coverage_median,0.89,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,ACS_STATES|permuted|theta3|donor|none|design|regB|B2400,regB_design_coverage_median,0.915,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,ACS_STATES|permuted|theta3|donor|none|design|regB|B4800,regB_design_coverage_median,0.875,0.88 <= coverage <= 0.92 at m >= 25,False
+Q3.2,ACS_STATES|permuted|theta3|donor|none|design|regB|B9600,regB_design_coverage_median,0.895,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,ACS_STATES|permuted|theta3|donor|c_crossfit|design|regB|B2400,regB_design_coverage_median,0.86,0.88 <= coverage <= 0.92 at m >= 25,False
+Q3.2,ACS_STATES|permuted|theta3|donor|c_crossfit|design|regB|B4800,regB_design_coverage_median,0.91,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,ACS_STATES|permuted|theta3|donor|c_crossfit|design|regB|B9600,regB_design_coverage_median,0.93,0.88 <= coverage <= 0.92 at m >= 25,False
+Q3.2,CCRCC|hoptimus0|theta3|donor|none|design|regB|B2400,regB_design_coverage_median,0.905,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,CCRCC|hoptimus0|theta3|donor|none|design|regB|B4800,regB_design_coverage_median,0.905,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,CCRCC|hoptimus0|theta3|donor|none|design|regB|B9600,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,CCRCC|hoptimus0|theta3|donor|c_crossfit|design|regB|B2400,regB_design_coverage_median,0.89,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,CCRCC|hoptimus0|theta3|donor|c_crossfit|design|regB|B4800,regB_design_coverage_median,0.905,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,CCRCC|hoptimus0|theta3|donor|c_crossfit|design|regB|B9600,regB_design_coverage_median,0.885,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,CCRCC|permuted|theta3|donor|none|design|regB|B2400,regB_design_coverage_median,0.905,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,CCRCC|permuted|theta3|donor|none|design|regB|B4800,regB_design_coverage_median,0.905,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,CCRCC|permuted|theta3|donor|none|design|regB|B9600,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,CCRCC|permuted|theta3|donor|c_crossfit|design|regB|B2400,regB_design_coverage_median,0.8975,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,CCRCC|permuted|theta3|donor|c_crossfit|design|regB|B4800,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,CCRCC|permuted|theta3|donor|c_crossfit|design|regB|B9600,regB_design_coverage_median,0.895,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,CCRCC|resnet50|theta3|donor|none|design|regB|B2400,regB_design_coverage_median,0.905,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,CCRCC|resnet50|theta3|donor|none|design|regB|B4800,regB_design_coverage_median,0.905,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,CCRCC|resnet50|theta3|donor|none|design|regB|B9600,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,CCRCC|resnet50|theta3|donor|c_crossfit|design|regB|B2400,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,CCRCC|resnet50|theta3|donor|c_crossfit|design|regB|B4800,regB_design_coverage_median,0.895,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,CCRCC|resnet50|theta3|donor|c_crossfit|design|regB|B9600,regB_design_coverage_median,0.8925000000000001,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,CCRCC|uni_v2|theta3|donor|none|design|regB|B2400,regB_design_coverage_median,0.905,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,CCRCC|uni_v2|theta3|donor|none|design|regB|B4800,regB_design_coverage_median,0.905,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,CCRCC|uni_v2|theta3|donor|none|design|regB|B9600,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,CCRCC|uni_v2|theta3|donor|c_crossfit|design|regB|B2400,regB_design_coverage_median,0.89,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,CCRCC|uni_v2|theta3|donor|c_crossfit|design|regB|B4800,regB_design_coverage_median,0.905,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,CCRCC|uni_v2|theta3|donor|c_crossfit|design|regB|B9600,regB_design_coverage_median,0.885,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,INDIANA_KIDNEY|hoptimus0|theta3|donor|none|design|regB|B2400,regB_design_coverage_median,0.905,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,INDIANA_KIDNEY|hoptimus0|theta3|donor|none|design|regB|B4800,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,INDIANA_KIDNEY|hoptimus0|theta3|donor|none|design|regB|B9600,regB_design_coverage_median,0.905,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,INDIANA_KIDNEY|hoptimus0|theta3|donor|c_crossfit|design|regB|B2400,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,INDIANA_KIDNEY|hoptimus0|theta3|donor|c_crossfit|design|regB|B4800,regB_design_coverage_median,0.8975,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,INDIANA_KIDNEY|hoptimus0|theta3|donor|c_crossfit|design|regB|B9600,regB_design_coverage_median,0.905,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,INDIANA_KIDNEY|permuted|theta3|donor|none|design|regB|B2400,regB_design_coverage_median,0.905,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,INDIANA_KIDNEY|permuted|theta3|donor|none|design|regB|B4800,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,INDIANA_KIDNEY|permuted|theta3|donor|none|design|regB|B9600,regB_design_coverage_median,0.905,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,INDIANA_KIDNEY|permuted|theta3|donor|c_crossfit|design|regB|B2400,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,INDIANA_KIDNEY|permuted|theta3|donor|c_crossfit|design|regB|B4800,regB_design_coverage_median,0.89,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,INDIANA_KIDNEY|permuted|theta3|donor|c_crossfit|design|regB|B9600,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,INDIANA_KIDNEY|resnet50|theta3|donor|none|design|regB|B2400,regB_design_coverage_median,0.905,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,INDIANA_KIDNEY|resnet50|theta3|donor|none|design|regB|B4800,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,INDIANA_KIDNEY|resnet50|theta3|donor|none|design|regB|B9600,regB_design_coverage_median,0.905,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,INDIANA_KIDNEY|resnet50|theta3|donor|c_crossfit|design|regB|B2400,regB_design_coverage_median,0.8975,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,INDIANA_KIDNEY|resnet50|theta3|donor|c_crossfit|design|regB|B4800,regB_design_coverage_median,0.895,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,INDIANA_KIDNEY|resnet50|theta3|donor|c_crossfit|design|regB|B9600,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,INDIANA_KIDNEY|uni_v2|theta3|donor|none|design|regB|B2400,regB_design_coverage_median,0.905,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,INDIANA_KIDNEY|uni_v2|theta3|donor|none|design|regB|B4800,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,INDIANA_KIDNEY|uni_v2|theta3|donor|none|design|regB|B9600,regB_design_coverage_median,0.905,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,INDIANA_KIDNEY|uni_v2|theta3|donor|c_crossfit|design|regB|B2400,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,INDIANA_KIDNEY|uni_v2|theta3|donor|c_crossfit|design|regB|B4800,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,INDIANA_KIDNEY|uni_v2|theta3|donor|c_crossfit|design|regB|B9600,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,LUNG_XENIUM|hoptimus0|theta3|donor|none|design|regB|B2400,regB_design_coverage_median,0.895,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,LUNG_XENIUM|hoptimus0|theta3|donor|none|design|regB|B4800,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,LUNG_XENIUM|hoptimus0|theta3|donor|none|design|regB|B9600,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,LUNG_XENIUM|hoptimus0|theta3|donor|c_crossfit|design|regB|B2400,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,LUNG_XENIUM|hoptimus0|theta3|donor|c_crossfit|design|regB|B4800,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,LUNG_XENIUM|hoptimus0|theta3|donor|c_crossfit|design|regB|B9600,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,LUNG_XENIUM|permuted|theta3|donor|none|design|regB|B2400,regB_design_coverage_median,0.895,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,LUNG_XENIUM|permuted|theta3|donor|none|design|regB|B4800,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,LUNG_XENIUM|permuted|theta3|donor|none|design|regB|B9600,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,LUNG_XENIUM|permuted|theta3|donor|c_crossfit|design|regB|B2400,regB_design_coverage_median,0.905,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,LUNG_XENIUM|permuted|theta3|donor|c_crossfit|design|regB|B4800,regB_design_coverage_median,0.89,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,LUNG_XENIUM|permuted|theta3|donor|c_crossfit|design|regB|B9600,regB_design_coverage_median,0.905,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,LUNG_XENIUM|resnet50|theta3|donor|none|design|regB|B2400,regB_design_coverage_median,0.895,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,LUNG_XENIUM|resnet50|theta3|donor|none|design|regB|B4800,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,LUNG_XENIUM|resnet50|theta3|donor|none|design|regB|B9600,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,LUNG_XENIUM|resnet50|theta3|donor|c_crossfit|design|regB|B2400,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,LUNG_XENIUM|resnet50|theta3|donor|c_crossfit|design|regB|B4800,regB_design_coverage_median,0.895,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,LUNG_XENIUM|resnet50|theta3|donor|c_crossfit|design|regB|B9600,regB_design_coverage_median,0.905,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,LUNG_XENIUM|uni_v2|theta3|donor|none|design|regB|B2400,regB_design_coverage_median,0.895,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,LUNG_XENIUM|uni_v2|theta3|donor|none|design|regB|B4800,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,LUNG_XENIUM|uni_v2|theta3|donor|none|design|regB|B9600,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,LUNG_XENIUM|uni_v2|theta3|donor|c_crossfit|design|regB|B2400,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,LUNG_XENIUM|uni_v2|theta3|donor|c_crossfit|design|regB|B4800,regB_design_coverage_median,0.895,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,LUNG_XENIUM|uni_v2|theta3|donor|c_crossfit|design|regB|B9600,regB_design_coverage_median,0.9,0.88 <= coverage <= 0.92 at m >= 25,True
+Q3.2,ACS_CA_PUMA|package|theta3|donor|none|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,0.94,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,ACS_CA_PUMA|package|theta3|donor|c_crossfit|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,0.975,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,ACS_CA_PUMA|permuted|theta3|donor|none|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,0.94,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,ACS_CA_PUMA|permuted|theta3|donor|c_crossfit|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,0.925,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,ACS_STATES|package|theta3|donor|none|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.905,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,ACS_STATES|package|theta3|donor|none|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,0.87,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,ACS_STATES|package|theta3|donor|none|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,0.895,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,ACS_STATES|package|theta3|donor|c_crossfit|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.9,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,ACS_STATES|package|theta3|donor|c_crossfit|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,0.94,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,ACS_STATES|package|theta3|donor|c_crossfit|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,0.93,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,ACS_STATES|permuted|theta3|donor|none|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.905,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,ACS_STATES|permuted|theta3|donor|none|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,0.87,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,ACS_STATES|permuted|theta3|donor|none|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,0.895,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,ACS_STATES|permuted|theta3|donor|c_crossfit|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.87,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,ACS_STATES|permuted|theta3|donor|c_crossfit|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,0.92,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,ACS_STATES|permuted|theta3|donor|c_crossfit|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,0.925,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,CCRCC|hoptimus0|theta3|donor|none|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.97,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,CCRCC|hoptimus0|theta3|donor|none|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,0.98,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,CCRCC|hoptimus0|theta3|donor|none|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,1.0,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,CCRCC|hoptimus0|theta3|donor|c_crossfit|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.98,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,CCRCC|hoptimus0|theta3|donor|c_crossfit|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,0.995,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,CCRCC|hoptimus0|theta3|donor|c_crossfit|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,1.0,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,CCRCC|permuted|theta3|donor|none|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.97,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,CCRCC|permuted|theta3|donor|none|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,0.98,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,CCRCC|permuted|theta3|donor|none|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,1.0,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,CCRCC|permuted|theta3|donor|c_crossfit|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.975,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,CCRCC|permuted|theta3|donor|c_crossfit|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,0.99,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,CCRCC|permuted|theta3|donor|c_crossfit|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,1.0,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,CCRCC|resnet50|theta3|donor|none|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.97,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,CCRCC|resnet50|theta3|donor|none|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,0.98,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,CCRCC|resnet50|theta3|donor|none|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,1.0,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,CCRCC|resnet50|theta3|donor|c_crossfit|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.975,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,CCRCC|resnet50|theta3|donor|c_crossfit|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,0.99,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,CCRCC|resnet50|theta3|donor|c_crossfit|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,1.0,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,CCRCC|uni_v2|theta3|donor|none|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.97,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,CCRCC|uni_v2|theta3|donor|none|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,0.98,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,CCRCC|uni_v2|theta3|donor|none|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,1.0,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,CCRCC|uni_v2|theta3|donor|c_crossfit|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.98,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,CCRCC|uni_v2|theta3|donor|c_crossfit|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,0.995,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,CCRCC|uni_v2|theta3|donor|c_crossfit|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,1.0,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,INDIANA_KIDNEY|hoptimus0|theta3|donor|none|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.93,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,INDIANA_KIDNEY|hoptimus0|theta3|donor|none|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,0.955,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,INDIANA_KIDNEY|hoptimus0|theta3|donor|none|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,0.9875,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,INDIANA_KIDNEY|hoptimus0|theta3|donor|c_crossfit|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.945,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,INDIANA_KIDNEY|hoptimus0|theta3|donor|c_crossfit|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,0.97,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,INDIANA_KIDNEY|hoptimus0|theta3|donor|c_crossfit|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,0.995,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,INDIANA_KIDNEY|permuted|theta3|donor|none|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.93,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,INDIANA_KIDNEY|permuted|theta3|donor|none|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,0.955,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,INDIANA_KIDNEY|permuted|theta3|donor|none|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,0.9875,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,INDIANA_KIDNEY|permuted|theta3|donor|c_crossfit|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.94,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,INDIANA_KIDNEY|permuted|theta3|donor|c_crossfit|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,0.965,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,INDIANA_KIDNEY|permuted|theta3|donor|c_crossfit|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,0.99,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,INDIANA_KIDNEY|resnet50|theta3|donor|none|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.93,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,INDIANA_KIDNEY|resnet50|theta3|donor|none|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,0.955,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,INDIANA_KIDNEY|resnet50|theta3|donor|none|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,0.9875,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,INDIANA_KIDNEY|resnet50|theta3|donor|c_crossfit|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.94,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,INDIANA_KIDNEY|resnet50|theta3|donor|c_crossfit|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,0.965,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,INDIANA_KIDNEY|resnet50|theta3|donor|c_crossfit|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,0.99,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,INDIANA_KIDNEY|uni_v2|theta3|donor|none|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.93,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,INDIANA_KIDNEY|uni_v2|theta3|donor|none|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,0.955,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,INDIANA_KIDNEY|uni_v2|theta3|donor|none|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,0.9875,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,INDIANA_KIDNEY|uni_v2|theta3|donor|c_crossfit|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.945,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,INDIANA_KIDNEY|uni_v2|theta3|donor|c_crossfit|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,0.965,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,INDIANA_KIDNEY|uni_v2|theta3|donor|c_crossfit|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,0.995,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,LUNG_XENIUM|hoptimus0|theta3|donor|none|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.955,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,LUNG_XENIUM|hoptimus0|theta3|donor|none|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,0.98,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,LUNG_XENIUM|hoptimus0|theta3|donor|none|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,1.0,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,LUNG_XENIUM|hoptimus0|theta3|donor|c_crossfit|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,1.0,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,LUNG_XENIUM|hoptimus0|theta3|donor|c_crossfit|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,1.0,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,LUNG_XENIUM|hoptimus0|theta3|donor|c_crossfit|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,1.0,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,LUNG_XENIUM|permuted|theta3|donor|none|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.955,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,LUNG_XENIUM|permuted|theta3|donor|none|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,0.98,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,LUNG_XENIUM|permuted|theta3|donor|none|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,1.0,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,LUNG_XENIUM|permuted|theta3|donor|c_crossfit|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.985,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,LUNG_XENIUM|permuted|theta3|donor|c_crossfit|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,1.0,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,LUNG_XENIUM|permuted|theta3|donor|c_crossfit|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,1.0,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,LUNG_XENIUM|resnet50|theta3|donor|none|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.955,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,LUNG_XENIUM|resnet50|theta3|donor|none|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,0.98,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,LUNG_XENIUM|resnet50|theta3|donor|none|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,1.0,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,LUNG_XENIUM|resnet50|theta3|donor|c_crossfit|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.995,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,LUNG_XENIUM|resnet50|theta3|donor|c_crossfit|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,1.0,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,LUNG_XENIUM|resnet50|theta3|donor|c_crossfit|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,1.0,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,LUNG_XENIUM|uni_v2|theta3|donor|none|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,0.955,> 0.97 (cluster-robust variance against the design target),False
+Q3.2,LUNG_XENIUM|uni_v2|theta3|donor|none|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,0.98,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,LUNG_XENIUM|uni_v2|theta3|donor|none|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,1.0,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,LUNG_XENIUM|uni_v2|theta3|donor|c_crossfit|super|regB|B2400,regB_CR_variance_coverage_of_theta_full,1.0,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,LUNG_XENIUM|uni_v2|theta3|donor|c_crossfit|super|regB|B4800,regB_CR_variance_coverage_of_theta_full,1.0,> 0.97 (cluster-robust variance against the design target),True
+Q3.2,LUNG_XENIUM|uni_v2|theta3|donor|c_crossfit|super|regB|B9600,regB_CR_variance_coverage_of_theta_full,1.0,> 0.97 (cluster-robust variance against the design target),True
+Q3.3,all,crossover_cost_ratio,,not assessed at this depth (only c_d/c_s = 100 was run),
+Q3.4,pooled|super|regimeA,spearman_vs_one_minus_R2_cluster_raw,-0.088235294117647,> 0.8,False
+Q3.4,pooled|super|regimeA,spearman_vs_one_minus_R2_within,0.3470588235294117,< 0.5,True
+Q3.4,pooled|super|regimeB,spearman_vs_one_minus_R2_cluster_raw,0.4147058823529412,< 0.5,True
+Q3.4,pooled|super|regimeB,spearman_vs_one_minus_R2_within,0.9264705882352942,> 0.8,True
+Q3.4,pooled|design|regimeA,spearman_vs_one_minus_R2_cluster_raw,0.5911764705882353,> 0.8,False
+Q3.4,pooled|design|regimeA,spearman_vs_one_minus_R2_within,0.911764705882353,< 0.5,False
+Q3.4,pooled|design|regimeB,spearman_vs_one_minus_R2_cluster_raw,0.4147058823529412,< 0.5,True
+Q3.4,pooled|design|regimeB,spearman_vs_one_minus_R2_within,0.9264705882352942,> 0.8,True
+Q2.1,SUMMARY,n_holds_of_n_scored,4/20,,False
+Q2.2,SUMMARY,n_holds_of_n_scored,1/80,,False
+Q2.3,SUMMARY,n_holds_of_n_scored,1/4,,False
+Q2.4,SUMMARY,n_holds_of_n_scored,3/5,,False
+Q2.5,SUMMARY,n_holds_of_n_scored,0/12,,False
+Q2.6,SUMMARY,n_holds_of_n_scored,4/8,,False
+Q2.7,SUMMARY,n_holds_of_n_scored,12/30,,False
+Q3.1,SUMMARY,n_holds_of_n_scored,10/18,,False
+Q3.2,SUMMARY,n_holds_of_n_scored,130/176,,False
+Q3.3,SUMMARY,n_holds_of_n_scored,0/0,,
+Q3.4,SUMMARY,n_holds_of_n_scored,5/8,,False

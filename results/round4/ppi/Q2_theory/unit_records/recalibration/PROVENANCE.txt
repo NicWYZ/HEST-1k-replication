@@ -1,0 +1,8 @@
+Local masking step for Q2 recalibration (CCRCC, hoptimus0), authorised by lead instruction (plan 12.2)
+host: Nicolass-MacBook-Pro-9.local (local, python env), date 2026-10-02T01:34:30+00:00
+repo (read-only reference): /Users/nicolaszhang/HEST-1k-replication-PPI HEAD 42fe578 (as stated by lead; git not run)
+scripts md5: round4_ppi_q2_masking.py 7f0274bb3c2285d0139dbd07ec39fb58 ; round4_ppi_estimator.py 931bd81f10200410c512bcf3f81b5b43 ; round3_b1_ppi.py 544721f07cb3d74dc5b92456d61fe450 (all equal the Longleaf clone md5s)
+inputs md5 (local copy == Longleaf file): b1_predictions__CCRCC__hoptimus0.parquet 8aaf05663cafb35b0c2ee4cbf5ff87b7 ; recal_predictions__CCRCC__hoptimus0.parquet c69bd40804479912e332a3f9b6cbce2a
+command: PYTHONHASHSEED=0 OMP_NUM_THREADS=1 python round4_ppi_q2_masking.py --parquet <P> --vtag CCRCC --arm hoptimus0 --nl-grid 8,12 --m-grid 0 --draws 200 --out-dir <before|after>  (two processes in parallel)
+libs: python 3.11.15 numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 ; scanpy stubbed by the script (pure functions only)
+wall: before 213.99 s (real), after ~204 s (script wall 203.7 s)

@@ -1,0 +1,15 @@
+clone HEAD: de3b71f0d395dd657ef6c8a67238ad9c78025048
+job: 3441172 node: c151606.ll.unc.edu partition: spill account: rc_tengfei_pi
+PYTHONHASHSEED=0
+out dir is separate from Q2_theory/predictions because lung wrote unsuffixed b1_join/b1_design_consts/b1_pred_quality files there
+790f9f37b5994265552c415cd55423b2  /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/cbbcf7d4-0011-4757-94bb-bd1516143701/indiana_predict_driver.py
+544721f07cb3d74dc5b92456d61fe450  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round3_b1_ppi.py
+0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round3_a0_harness.py
+note: scontrol set TimeLimit 25 min / 12 GB on queued jobs by lead 2026-10-02 02:37 EDT (prior attempts 3328382/3/5, failed at B1 partition assert)
+9b15092aad6d9cb594b250ace521d091  /work/users/w/e/weiyang/hest_replication/instrumentation/morphology_ext/indiana_kidney/morphology.parquet
+morph symlink target: /work/users/w/e/weiyang/hest_replication/instrumentation/morphology_ext/indiana_kidney/morphology.parquet
+3.11.16 numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+cmd: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/cbbcf7d4-0011-4757-94bb-bd1516143701/indiana_predict_driver.py uni_v2 results/round4/ppi/Q2_theory/predictions_INDIANA_KIDNEY /work/users/w/e/weiyang/hest_replication/results/round3/D4_expansion/task_defs/INDIANA_KIDNEY.json
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:34.11
+	Maximum resident set size (kbytes): 2955680
+exit 0

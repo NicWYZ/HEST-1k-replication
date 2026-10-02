@@ -1,0 +1,5 @@
+Q2 Indiana kidney, local masking runs on three B1 parquets + permuted (resnet50 parquet permuted by the script), n_L 4,6,8,12,16, default m grid, 200 draws, 50 genes, 25 donors.
+Gene list: driver picks 50 most frequently selected genes across the 25 'pool' folds of d4_fold_genes__INDIANA_KIDNEY.json (ties alphabetical); see indiana_predict_driver.py.
+Determinism: a first pass (two launchers ran concurrently by mistake) was discarded; the clean second pass equals the first pass byte-for-byte on 30 of 30 compared variance_grid/cluster_r2 CSVs.
+Wall times in per-run PROVENANCE.txt are from a machine shared with up to 3 concurrent runs.
+Prediction output dir is predictions_INDIANA_KIDNEY (separate from predictions/, which holds lung files with unsuffixed b1_*__<enc>.csv names).

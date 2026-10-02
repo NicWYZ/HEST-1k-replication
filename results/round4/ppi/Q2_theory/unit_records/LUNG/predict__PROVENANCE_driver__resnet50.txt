@@ -1,0 +1,19 @@
+slurm_job_id: 3326063
+morph_symlink: /work/users/w/e/weiyang/hest_replication/instrumentation/morphology_ext/lung_xenium/morphology.parquet
+morph_target_md5: 0f63263eeb6ae3072bc26c7a2baf9df1
+partition: spill
+node: c130603.ll.unc.edu
+account: rc_tengfei_pi
+clone_head: aaec0e87055f1ed1b2c2512e0b07eb36f436a72c
+PYTHONHASHSEED=0
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/e49212d2-fd6b-4050-a75b-3028f49cc995/lung_predict_driver.py resnet50 results/round4/ppi/Q2_theory/predictions /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/e49212d2-fd6b-4050-a75b-3028f49cc995/LUNG_XENIUM__labelset.json
+task_def_src_md5: eca56c169594017cc73bf16d1207e348
+task_def_copy_md5: 8c80214f012ed7cbfd085eab3ac516a7
+ccde9bb9760c2e007e1be703d55c69a1  /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/e49212d2-fd6b-4050-a75b-3028f49cc995/lung_predict_driver.py
+544721f07cb3d74dc5b92456d61fe450  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round3_b1_ppi.py
+0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round3_a0_harness.py
+2a26eb3ce74815e3e7c63cccd0527398  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round4_ppi_data.py
+b74f2dda031bc972c1c44c1d7b3a04da  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round3_d4_sets.py
+numpy 2.4.6 pandas 2.3.3 sklearn 1.9.1 anndata 0.12.19 scanpy 1.11.5 pyarrow 25.0.1 scipy 1.17.1
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:50.80
+	Maximum resident set size (kbytes): 1396584

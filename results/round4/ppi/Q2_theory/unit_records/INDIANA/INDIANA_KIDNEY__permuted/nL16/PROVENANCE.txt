@@ -1,0 +1,11 @@
+host: Nicolass-MacBook-Pro-9.local (local, authorised by lead plan 12.2); clone HEAD of scripts dir: 42fe578 (per lead)
+PYTHONHASHSEED=0 PYTHONDONTWRITEBYTECODE=1 OMP_NUM_THREADS=1
+MD5 (/Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_q2_masking.py) = 7f0274bb3c2285d0139dbd07ec39fb58
+MD5 (/Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_estimator.py) = 931bd81f10200410c512bcf3f81b5b43
+MD5 (/Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round3_b1_ppi.py) = 544721f07cb3d74dc5b92456d61fe450
+MD5 (/Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round3_a0_harness.py) = 0ad7ae8efe554c1f285e5f384a9fb7f5
+input parquet md5 (local): 224dd3b2946cfe125e7409561c68a4a4
+3.11.15 numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.0
+cmd: python /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_q2_masking.py --parquet /Users/nicolaszhang/.claude-science/orgs/c42040b3-6d87-451b-9b93-c94218d0c812/workspaces/29d26232-3024-422c-8c8b-0dd27509ba09/hpc/scp-713a0994673a7eda/b1_predictions__INDIANA_KIDNEY__resnet50.parquet --vtag INDIANA_KIDNEY --arm permuted --nl-grid 16 --out-dir /Users/nicolaszhang/.claude-science/orgs/c42040b3-6d87-451b-9b93-c94218d0c812/workspaces/29d26232-3024-422c-8c8b-0dd27509ba09/q2/INDIANA_KIDNEY__permuted/nL16
+exit 0; wall_s 105
+timed.py md5 9220a6b6171ac01a89c1a8dc7ee663a6: wall_s 104.6 user_s 93.1 sys_s 11.3 maxrss_bytes 878100480

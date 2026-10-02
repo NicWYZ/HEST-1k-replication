@@ -1,0 +1,9 @@
+slurm_job_id: 3322171
+partition: spill
+node: c151407.ll.unc.edu
+account: rc_tengfei_pi
+clone_head: aaec0e87055f1ed1b2c2512e0b07eb36f436a72c
+PYTHONHASHSEED=0
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python morph_check.py /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/morph_check
+5abd916ab3225b1f9ec82dede25034bc  /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/60faf748-2071-49ab-b457-adba771b7f26/morph_check.py
+2a26eb3ce74815e3e7c63cccd0527398  /work/users/w/e/weiyang/hest_code/round4-ppi/code/scripts/round4_ppi_data.py

@@ -1,0 +1,14 @@
+host: Nicolass-MacBook-Pro-9.local (local, darwin)
+date_utc: 2026-10-02T01:45:49Z
+script_dir_head: 42fe578 (as stated by lead; git not run)
+env: PYTHONHASHSEED=0 OMP_NUM_THREADS=1 PYTHONDONTWRITEBYTECODE=1
+command: python /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_q2_masking.py --parquet /Users/nicolaszhang/.claude-science/orgs/c42040b3-6d87-451b-9b93-c94218d0c812/workspaces/040a77a6-04af-44f8-9fc3-a5a62d075ff8/hpc/scp-713a0994673a7eda/b1_predictions__LUNG_XENIUM__uni_v2.parquet --vtag LUNG_XENIUM --arm uni_v2 --nl-grid 4 --draws 200 --out-dir /Users/nicolaszhang/.claude-science/orgs/c42040b3-6d87-451b-9b93-c94218d0c812/workspaces/040a77a6-04af-44f8-9fc3-a5a62d075ff8/q2local/LUNG_XENIUM__uni_v2/nL4
+wall_s: 221
+exit_code: 0
+input_parquet_md5: 6aa0dbc8e957a236d09d112649db0352
+longleaf_source_md5: "uni_v2": "6aa0dbc8e957a236d09d112649db0352"
+script_md5:
+MD5 (/Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_q2_masking.py) = 7f0274bb3c2285d0139dbd07ec39fb58
+MD5 (/Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_estimator.py) = 931bd81f10200410c512bcf3f81b5b43
+MD5 (/Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round3_b1_ppi.py) = 544721f07cb3d74dc5b92456d61fe450
+python 3.11.15 numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
