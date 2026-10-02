@@ -31,6 +31,18 @@ report passed 40 of 40 claims this way — and the first pass of that same audit
 that compared a hard-coded constant against itself, so it could not have failed. Assert that no
 comparison value is a literal copied from the text.
 
+**Read the whole grid before writing a headline from one corner of it.** Round 4's PPI Q3 report
+led with "the donor-weighted estimator loses to the classical one on every HEST task". The table
+behind it was taken at the largest number of labelled donors under one of the two targets, which
+was the one corner where the loss was general. Across the rest of the grid the same estimator
+gained on two of the three tasks. The numbers in the table were right and the sentence over them was
+too wide. Before a summary sentence goes into a report, tabulate the quantity over every axis the
+experiment varied and check that the sentence holds in each cell it claims.
+
+**Put each `$$` on a line of its own.** A display equation that opens or closes `$$` in the middle
+of a running line does not render in most Markdown previews, and the document cannot be read by the
+person it is for. Round 4's estimator definition had to be reformatted before Nicolas could read it.
+
 ---
 
 ## Acceptance checks
@@ -53,6 +65,15 @@ not weaken a threshold until the first case is demonstrated.
 Round 2's R1 gate compared two round-2 heads and would have passed had both been wrong together.
 The check that mattered was added: the control arm must reproduce round 1's stored per-task values
 (110 of 110 cells within 3.7e-4). Every refit needs at least one arm anchored to the prior result.
+
+**Before fixing a tolerance on "nominal", work out what the method's own expected value is.** Round
+4's conformal instruction asked every method to cover within a small tolerance of nominal when there
+is no donor effect. Hierarchical conformal prediction calibrates above nominal by construction, and
+the one-score-per-donor interval covers a known fraction that depends on the number of donors, so
+both failed a check that neither could pass. The session flagged it before running and the check was
+scored against each method's own expected coverage, with the literal reading reported beside it. An
+instruction's author should do that arithmetic when writing the check, and a session that finds such
+a check should flag it and report both readings, not pick one.
 
 ---
 
@@ -136,6 +157,30 @@ fewer backfill gaps, so right-size at submission rather than after.
 **Do not compute on the login node.** Its system python has no pandas or pyarrow, and a monitoring
 daemon kills work there. Send inspection through the scheduler like everything else.
 
+**Longleaf is where work runs. Nothing runs locally unless Nicolas asks for that specific task.**
+In round 4 both tracks moved simulation and post-processing work to Nicolas's laptop while the queue
+was full, each time on his instruction in chat. The oversight memos then disagreed with the sessions
+about whether that permission carried into the next interval, one sub-agent read a notice about it as
+an order to stop, and partial local outputs had to be quarantined when units moved back. The rule
+that came out of it has four parts. Every job runs on Longleaf through Slurm by default. A local run
+needs Nicolas to ask for it in chat, and the request is written into the operating plan as a numbered
+extension before the task runs. A permission covers the work it names and does not carry across a
+gate unless he says so again. And a local run records the host, the library versions, the md5 of
+every script and input, and the command line in its `PROVENANCE.txt`, in place of the Slurm fields.
+
+**A job that has waited four hours is reported to Nicolas in chat, and it keeps waiting.** The
+session says what the job needs (its inputs and their sizes, memory, expected runtime and the state
+of the queue). It does not move the job to another site or copy its inputs elsewhere on its own.
+Two things are allowed and are recorded in the job ledger. A pending job's time limit and memory may
+be reduced with `scontrol` to a sibling's measured values, which is the round-3 backfill lesson
+applied in place. And a pending job may be switched between the group's two approved accounts,
+`rc_htzhu_pi` and `rc_tengfei_pi`.
+
+**Run a job from its own working directory, never from inside the code clone.** Several round-4
+job scripts changed directory into `code/scripts/` of the track's Longleaf clone and left dozens of
+untracked output files there, which had to be moved out by a separate job before the clone was clean
+again. The clone goes on `PYTHONPATH`. The job's working directory is its output directory.
+
 ---
 
 ## Provenance
@@ -166,6 +211,14 @@ only when the runs failed on the breast set and had to be rerun
 checked out", which is not the question provenance is asked. So every job's provenance now records
 the md5 of the script file it executed, computed inside the job, alongside the job id, partition,
 node, GPU where there is one, commit, command line, config hash and `PYTHONHASHSEED`.
+
+**Give each sub-agent its own frame id in its brief, and check the stamp before merging.** The
+`longleaf-provenance` stamp is how a later session tells whose output a directory is. In round 4 the
+brief said "stamp from your own process" and sub-agents in the data pull, the PPI track and the
+conformal track still wrote the lead's frame id, because a sub-agent's context shows the lead's id
+and some copied it. A general instruction did not fix it in three sessions. What works is specific.
+The lead writes the sub-agent's own frame id into its brief, and compares the id in every returned
+stamp with the id it assigned before the fragment is merged.
 
 ---
 
@@ -200,6 +253,29 @@ vendor dataset pages. The audit is now a stage of its own (`R5b_audit`), its ver
 `donor_label_status` column rather than being assumed, and nine of the 72 samples are recorded as
 unverifiable rather than inferred. Budget for it: the audit found something in three of the ten
 tasks, and two of the three findings invalidated a number already written down.
+
+## Several sessions on one repository
+
+**One working copy per session, locally and on Longleaf.** A git working copy has one checked-out
+branch, so two sessions sharing one decide for each other what is checked out. Round 4 ran two
+tracks at once. Each had its own local clone and its own code clone on Longleaf, on its own branch,
+with disjoint result directories. The Longleaf project tree stayed on `main` at the round's starting
+tag as the data root, and nobody checked out a branch there.
+
+**Reading another session's clone can break it.** A plain `git status` in the PPI session's clone,
+run by the oversight chat, left a stale `.git/index.lock` that would have blocked that session's next
+commit. Read another clone's files directly, or read its branch from your own clone after a fetch
+with `git show origin/<branch>:<path>`. If git must be run in a clone that is not yours, use
+`git --no-optional-locks` and nothing that writes.
+
+**Accepted work reaches `main` through a pull request at each gate, merged by Nicolas.** The session
+commits, tags and pushes its branch, opens the pull request, and stops. It never merges. After the
+oversight chat accepts the gate report, Nicolas merges on GitHub with a merge commit. Branches are
+never rebased, squashed, amended after a push or force-pushed, because provenance records cite
+commit hashes. A rejected gate is fixed with new commits on the same open pull request.
+
+**A file too large for GitHub is committed compressed, with the md5 of the plain file recorded.**
+The plain file stays at the same path in the Longleaf project tree, and the report says so.
 
 ## Writing outputs, and watching a job run
 

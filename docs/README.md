@@ -99,19 +99,38 @@ Each stage of work produces the same chain. The oversight chat writes an **instr
 | `decisions/round4_data_P7_decisions.md` | 30 Sep | acceptance, a decision on each escalation, and the P8 addendum |
 | `round4_data_P8_report.md` | 30 Sep | report on P8 (lung task at 20 samples and 15 donors, schema v2, control-free panels, code corrections); tag `round4-data-v2`, the tag both tracks start from |
 
-## Round 4, the two tracks (from 30 September, on branches until their gates are merged)
+## Round 4, the two tracks (30 September to October)
 
-These are on the track branches, not yet on `main`. Read them with `git show origin/<branch>:<path>` after `git fetch`.
+Each gate's report arrived as a pull request into `main`, merged by Nicolas with a merge commit after the oversight chat accepted it. Everything below is on `main` unless marked.
 
-| document | branch | role |
+**The PPI track** (branch `round4-ppi`, stages Q0 to Q5, gates Q1, Q3, Q5).
+
+| document | date | role |
 |---|---|---|
-| `decisions/round4_ppi_track.md` | `round4-ppi` | instruction, stages Q0 to Q5, gates Q1, Q3, Q5 |
-| `round4_ppi_plan.md` | `round4-ppi` | plan; section 8 lists eight points flagged in the instruction; sections 9 and 10 are the working-copy and version-management amendments |
-| `decisions/round4_conformal_track.md` | `main` (this commit) | instruction, stages C0 to C4, gates C2, C4. The session received it without section 5's working-copies paragraph, which reached it as a separate note and is transcribed in its plan |
-| `round4_conf_plan.md` | `round4-conformal` | plan; section 2 working copies, section 8 five flags, section 9 version management |
-| `round4_conf_lower_bound.md` | `round4-conformal` | the $o = 0$ lower-bound scoping, in progress |
+| `decisions/round4_ppi_track.md` | 30 Sep | instruction |
+| `round4_ppi_plan.md` | 30 Sep onward | plan; section 8 lists eight points flagged in the instruction; later sections transcribe every addendum and memo, and Nicolas's decisions on where work runs |
+| `decisions/round4_ppi_addendum1.md` | 30 Sep | addendum inside interval 1 (answers to the eight flags, the textbook form for the design-based target, the ACS source) |
+| `round4_ppi_Q1_report.md` | 1 Oct | report at the Q1 gate; tag `round4-ppi-Q1` |
+| `round4_ppi_estimator_definition.md` | 1 Oct | the estimator as proposed at Q1; finalised by the Q3 decision memo |
+| `decisions/round4_ppi_Q1_decisions.md` | 1 Oct | decision at Q1 |
+| `round4_ppi_theory.md` | 1 Oct onward | the gain theorem, the allocation result and the two labelling regimes, derived |
+| `round4_ppi_Q3_report.md` | 2 Oct | report at the Q3 gate (Q2, Q3, the Q1 supplement and the theorem check); tag `round4-ppi-Q3` |
+| `decisions/round4_ppi_Q3_decisions.md` | 2 Oct | decision at Q3. It reads the Q3 headline against the whole grid, finalises the estimator, corrects the tuning rule for the design-based target, and adds the tuning-cost result |
+| `decisions/round4_ppi_addendum2.md` | 2 Oct | where the conformal track's outputs are and how Q5 builds the joint design table |
 
-Each gate's report arrives as a pull request into `main` and is merged by Nicolas with a merge commit after the oversight chat accepts it.
+**The conformal track** (branch `round4-conformal`, stages C0 to C4, gates C2, C4; complete).
+
+| document | date | role |
+|---|---|---|
+| `decisions/round4_conformal_track.md` | 30 Sep | instruction |
+| `round4_conf_plan.md` | 30 Sep onward | plan; section 8 lists five points flagged in the instruction; later sections transcribe the addendum and both memos |
+| `decisions/round4_conformal_addendum1.md` | 30 Sep | addendum inside interval 1 (answers to the five flags, the GHCP pool rule, the rest of the lower-bound cap, the ACS source) |
+| `round4_conf_candidate_definitions.md` | 1 Oct | the four candidate methods as written before they ran |
+| `round4_conf_lower_bound.md` | 30 Sep to 1 Oct | the lower-bound scoping at no test-group observations, each step marked derived, conjectured or failed |
+| `round4_conf_C2_report.md` | 2 Oct | report at the C2 gate (the simulation testbed, the GHCP reproduction, the candidates and the go or no-go); tag `round4-conf-C2` |
+| `decisions/round4_conformal_C2_decisions.md` | 2 Oct | decision at C2 (no candidate goes forward; the plain within-donor split added; the scoping closed) |
+| `round4_conf_final_report.md` | 2 Oct | end-of-track report (the real-data map over calibration donors and labelled spots); tag `round4-conf-final`. Its closing page, "What the conformal track established", is the summary |
+| `decisions/round4_conformal_C4_decisions.md` | 2 Oct | acceptance and close of the track |
 
 ---
 
