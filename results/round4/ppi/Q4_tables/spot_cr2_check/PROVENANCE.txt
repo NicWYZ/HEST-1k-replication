@@ -1,0 +1,7 @@
+Spot CR2 check, interval 3. Pure tabulation, no simulation run (no Longleaf job, no extra cell set).
+Repo commit: aa71028 (read-only tree /Users/nicolaszhang/HEST-1k-replication-PPI)
+Input: /Users/nicolaszhang/HEST-1k-replication-PPI/results/round4/ppi/Q1_estimator/q1b/q1b_sim_coverage.csv.gz md5 35fe94395f9d7e825d3f21e2911ee435
+Filter: target=super, estimand=theta3, population=spot, interval CR1_t and CR2_bm, rules none(classical) and c_crossfit, fpc False and True kept (column fpc), G_U 20, 2000 reps; cov median/min over cells m (200,1000) x r (0,0.5,0.8)
+Host: local Mac, no Slurm id, wall under 5 s
+Output md5 q4_spot_cr2_check.csv 41e0e020f942e8b9f7c8a2dba0028d12
+Date 2026-10-02T13:58:13.240633Z

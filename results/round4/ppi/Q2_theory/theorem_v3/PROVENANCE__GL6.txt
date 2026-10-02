@@ -1,0 +1,11 @@
+host: Nicolass-MacBook-Pro-9.local local macOS-26.6.2-arm64-arm-64bit
+repo: /Users/nicolaszhang/HEST-1k-replication-PPI, branch round4-ppi (lead states commit aa71028; read from .git/HEAD ref only)
+e7b40e814961ceda4caef77b2f6eeecb  round4_ppi_q2_theorem_sim.py
+4e73048c16f4df033a309efff646a841  round4_ppi_estimator.py
+873dad7f383eb99826b2d0b990cd6914  round4_ppi_q1_sim.py
+command: /Users/nicolaszhang/.claude-science/orgs/c42040b3-6d87-451b-9b93-c94218d0c812/workspaces/ab674f84-25c3-4e5f-9a25-e0dbd7583e34/.venv/python/bin/python /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_q2_theorem_sim.py --G-L-grid 6 --reps 2000 --out-dir /Users/nicolaszhang/.claude-science/orgs/c42040b3-6d87-451b-9b93-c94218d0c812/workspaces/ab674f84-25c3-4e5f-9a25-e0dbd7583e34/theorem_v3/GL6
+env: PYTHONDONTWRITEBYTECODE=1 PYTHONHASHSEED=0 OMP_NUM_THREADS=1 PYTHONPATH=/Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts
+python 3.11.15 numpy 2.4.6 pandas 2.3.3
+script exit code: 0
+wall_s: 94.5
+max_rss_children_bytes: 724680704
