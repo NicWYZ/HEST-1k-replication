@@ -1,0 +1,15 @@
+unit: ACS PUMS 2018 analyze (docs/round4_ppi_plan.md section 13.6 item 3; addendum 1 section 4)
+slurm_job_id: 3245844
+partition: spill
+account: rc_tengfei_pi
+node: c151410.ll.unc.edu
+date_utc: 2026-10-02T00:51:27Z
+clone: /work/users/w/e/weiyang/hest_code/round4-ppi
+clone_HEAD: 72332fd58fb3b1de85a1d5fb2030424652a76c58
+project_tree_HEAD: 9d7277dc8c4bfade08d5895051666ee134b8396a
+script_md5: 2b0add945d60eb308cd83cbb6939d5a1
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python code/scripts/round4_ppi_acs_pums2018_analyze.py /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q0_setup/acs_pums2018 acs_pums_task_def.json acs_pums2018_inventory.json
+PYTHONHASHSEED: 0
+python_versions: 3.11.16 2.4.6 2.3.3 1.9.1 25.0.1
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:32.49
+	Maximum resident set size (kbytes): 2322260

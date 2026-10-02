@@ -1,0 +1,20 @@
+project_tree_HEAD: 9d7277dc8c4bfade08d5895051666ee134b8396a
+clone_branch: round4-ppi
+clone_HEAD_before: de3d1f2f61aa0629c61caf21f19f536ced48142c
+clone_status_porcelain_lines: 0
+de3d1f2f61aa0629c61caf21f19f536ced48142c 
+The bundle uses this hash algorithm: sha1
+From /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/cafc4ba7-e705-4069-bca4-33fd0413d378/r4ppi_4bc8da1.bundle
+ * [new branch]      round4-ppi -> refs/bundles/round4-ppi
+ create mode 100644 results/round4/ppi/Q1_estimator/q1_sim_coverage.csv.gz
+ create mode 100644 results/round4/ppi/Q1_estimator/q1_slurm_jobs.csv
+ create mode 100644 results/round4/ppi/Q1_estimator/q1_unit_walltimes.csv
+clone_HEAD_after: 4bc8da178ea968ea8b921b46e4a13db5c53ed37b
+6321caafc21affb24106f683b52c4007  code/scripts/round4_ppi_estimator.py
+0cca25ac4ee81a75e37d54c1b80d1c72  code/scripts/round4_ppi_q1b_sim.py
+90fd589f98cbea127ed06c7b6dd5f4db  code/scripts/round4_ppi_q1b_tests.py
+873dad7f383eb99826b2d0b990cd6914  code/scripts/round4_ppi_q1_sim.py
+0ad7ae8efe554c1f285e5f384a9fb7f5  code/scripts/round3_a0_harness.py
+ref_module_md5: 10c76fd4706435a2ad71a8c5f53fb938
+host: c0536 slurm_job: 3237662 partition: spill python: 3.11.16 2.4.6 1.17.1 2.3.3
+tests exit 1
