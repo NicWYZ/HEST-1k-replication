@@ -372,6 +372,12 @@ HEST result is the nesting table itself.
 
 - Prediction Q2.7, written now: at $m = 5000$ and $G_U = 100$ the empirical ratio is within 0.05 of $1 - R^2_{\text{cluster}}$ in all three cells, and at $G_U = 20$ it is within 0.05 of the full ratio and above $1 - R^2_{\text{cluster}}$ by at least the $G_U$ term's size.
 
+**Added by the Q3 decision memo (plan section 14), copied verbatim before Q4a and Q4 run.**
+
+- Prediction Q4a.1. Under `c_crossfit_design` the tuned $\lambda$ no longer falls with $n_L$ (median at $n_L = 16$ within 0.1 of the median at $n_L = 8$ on CCRCC for every encoder), and the design-target variance ratio at $n_L = 12$ and 16 is no larger than at $n_L = 8$ for every HEST encoder, with CCRCC `uni_v2` below 0.9 at every $n_L \ge 6$ and lung `hoptimus0` below 0.75 at every $n_L$.
+- Prediction Q4.3. In every cell the estimated-$\lambda$ ratio minus the oracle ratio equals $[\text{Var}(\hat\lambda) + (\bar\lambda - \lambda^\star)^2]\text{Var}(p_g)/\sigma_u^2$ within 0.03, with $\text{Var}(\hat\lambda)$ and $\bar\lambda$ measured across replicates.
+- Prediction Q4.4. On the real tasks, under `c_crossfit_design`, the sign of (variance ratio minus 1) agrees with the sign of $\text{se}(\hat\lambda)^2 - \hat\lambda^2$ (the break-even rule evaluated from the data's own $\hat\lambda$ and its standard error, median over genes) in at least 18 of the 22 task, predictor and $n_L \in \{8, 16\}$ cells.
+
 ## 5. Decision boundaries (source section 9)
 
 - Decided alone. Sub-agent structure; seeds; replicate counts above 2,000; bootstrap draws above 500;
@@ -714,6 +720,18 @@ one that does not, or deferred, and recorded under escalations in the Q3 report 
 the gate push or pull request needs an approval, the branch is committed and tagged locally and
 the push and pull request wait for him). The gate rule of section 13.1 is unchanged.
 
+### 12.4 Extension of 2 October 2026 (Nicolas), interval 3
+
+Nicolas wrote in chat on 2 October 2026, handing over the Q3 decision memo: "Local compute is
+allowed until I say stop." The Q3 memo (section 14.7) puts interval 3 on Longleaf and says sections
+12.2 and 12.3 do not carry forward unless he repeats the instruction, which this is. Consequences
+for this track: steps that need Longleaf-resident data (embeddings, the harness, morphology files,
+new predictions) run on Longleaf through Slurm; steps whose inputs are already staged locally (the
+masking and regime runs on saved prediction parquets, the simulations) may run on the local Mac,
+at most four local processes for this track at a time because the conformal track shares the
+machine. Every local run carries a `PROVENANCE` file, and the Q5 report lists them. This lasts
+until Nicolas says stop.
+
 ## 13. The Q1 decision memo (1 October 2026), transcribed before any of it is acted on
 
 Source `docs/decisions/round4_ppi_Q1_decisions.md` (md5 `b7dafd175f42d55a21c5387437cd0dd3`),
@@ -842,3 +860,118 @@ proposing a local run; independent work continues.
 The instruction's Q2 and Q3 content, plus Q1b and the theorem check, scoring Q1b.1 to Q1b.4 and
 Q2.7 beside Q2.1 to Q3.4, and proposals for the final $\lambda$ rule, CR1 or CR2, and the
 spot-weighted interval. Report and wait.
+
+## 14. The Q3 decision memo (2 October 2026), transcribed before any of it is acted on
+
+Source `docs/decisions/round4_ppi_Q3_decisions.md` (md5 `0970097bbcd51635d7ae7d1a3a244eb2`),
+written by the oversight chat and handed over by Nicolas. Interval 3 (Q4a, Q4 and Q5, ending at the
+Q5 gate) starts when this transcription is committed and Nicolas has merged the Q3 pull request.
+He merged pull request #4 as `763e684` before this transcription. Where this section and the source
+differ, the source governs.
+
+### 14.1 Gate rule and acceptance (memo preamble and section 1)
+
+- The gate rule is unchanged from section 13.1. The remaining gate is Q5, the end of the track.
+- The Q3 report is accepted, with its predictions scored as it scores them.
+- Escalation 1 is read more narrowly. For $\theta_3$ donor-weighted at $m$ = all under rule (c),
+  the encoders gain at $n_L \le 8$ on CCRCC and lung on the superpopulation target; the loss at
+  $n_L = 12$ and 16 is the complement form's unlabelled term with a small $G_U$; and the
+  design-target ratios drift to 1 because $\lambda$ is tuned for the complement form's objective.
+  Addendum 1 section 2 was wrong to keep the rules unchanged for the textbook form, and 14.2
+  corrects it.
+- Escalation 2 is accepted in full. The theory document states the setting for a general linear
+  estimand with donor contributions $z_g$ and $f_g$, the `z`-scale column of `q2_cluster_r2.csv` is
+  the one every table uses, and recalibration by a donor offset is dropped from the paper apart
+  from one sentence.
+
+### 14.2 The estimator, finalised (memo section 2)
+
+1. $\lambda$: rule (c), cross-fitted over halves of the labelled donors, with $\lambda = 0$ when
+   $n_L < 6$. Rule (d) is dropped. The paper reports $\hat\lambda$ with its standard error and uses
+   the break-even rule of 14.4 rather than a pre-test.
+2. Design-based target: textbook form, finite-population correction, $t_{n_L - 1}$, with $\lambda$
+   cross-fitted as in rule (c) but chosen to minimise the between-donor sample variance of
+   $r_g = z_g - \lambda f_g$ over the tuning half, with no unlabelled term, clipped to $[0, 1]$
+   (the GREG coefficient). It is named `c_crossfit_design` in every table, and the old `c_crossfit`
+   rows are kept beside it.
+3. Superpopulation target: complement form, rule (c) as it stands, CR2 with Bell and McCaffrey
+   degrees of freedom, no Welch-Satterthwaite combination. Every superpopulation row states $G_U$,
+   and the HEST tables lead with the design target.
+4. No bootstrap.
+5. The spot-weighted slope is reported with CR2 and the Q1 finding beside it; CR2 on the
+   spot-weighted $\theta_3$ is checked in the Q4 simulation rows before that table is built.
+6. `docs/round4_ppi_estimator_definition.md` is updated to this, with the design-target $\lambda$
+   objective written out and behaviour quoted beside each choice; each `$$` on its own line.
+
+### 14.3 Unit Q4a, recomputation before the Q4 tables (memo section 3)
+
+Every design-target row of Q2 (the masking grid, all tasks, all $n_L$ and $m$) and of Q3 regime A is
+recomputed under `c_crossfit_design` with the same draws and seeds, before any Q4 table. The masking
+runs did not save per-draw sufficient statistics, so the HEST and ACS masking units rerun with the
+new rule added, keeping every existing row. Regime B and the superpopulation rows are unchanged; the
+permuted arms run too. The Q5 report carries the recomputed section 6.1 table at every $n_L$, both
+targets, `c_crossfit` and `c_crossfit_design` side by side. Prediction Q4a.1 is in section 4.
+
+### 14.4 Theory additions, written before Q4's tables and checked in Q4 (memo section 4)
+
+Each is derived step by step in `docs/round4_ppi_theory.md`; a derivation that does not close is
+stop-and-report.
+
+1. The general setting: the gain theorem for a linear estimand with donor contributions $z_g$ and
+   $f_g$ and centred between-donor parts $u_g$ and $p_g$, covering the mean, the group difference and
+   the within-donor slope; the $G_U$ term carried, with the limit $1 - R^2_{\text{cluster}}$ reached
+   only as $G_U/n_L \to \infty$; for the design target with the textbook form no $G_U$ term and the
+   ratio exactly $S^2_r/S^2_z$.
+2. The tuning cost: for a cross-fitted $\lambda$ applied to a half of $n_h = n_L/2$ donors,
+   derive
+
+$$
+\text{Var}\big(\bar r_{\text{half}}\big) = \frac{\text{Var}(u_g - \bar\lambda\,p_g) + \text{Var}(\hat\lambda)\,\text{Var}(p_g)}{n_h}, \qquad \bar\lambda = E[\hat\lambda],
+$$
+
+   so the ratio is $1 - R^2_{\text{cluster}} + [\text{Var}(\hat\lambda) + (\bar\lambda - \lambda^\star)^2]\text{Var}(p_g)/\sigma_u^2$;
+   state what averaging the two halves adds; give the corollary that predictions help if and only
+   if $\lambda^{\star 2} > \text{Var}(\hat\lambda) + (\bar\lambda - \lambda^\star)^2$, and the
+   break-even $n_L > 4 + 2/R^2_{\text{cluster}}$ for an unclipped least-squares $\hat\lambda$, a
+   conservative count because clipping lowers $\text{Var}(\hat\lambda)$.
+3. The allocation condition: $m^\star_{\text{PP}} \le m^\star$ if and only if
+   $\sigma^2_{e,r}/\sigma^2_e \le \sigma^2_{u,r}/\sigma^2_u$, at the optimal $\lambda$
+   $R^2_{\text{within}} \ge R^2_{\text{cluster}}$.
+
+Predictions Q4.3 (on the theorem-check replicates; `theorem_v2` did not keep per-replicate
+$\hat\lambda$, so it reruns with them kept) and Q4.4 are in section 4.
+
+### 14.5 Q4, as instructed with these changes (memo section 5)
+
+- Real-data tables lead with the design target under `c_crossfit_design`, show every $n_L$, carry
+  $\theta_2$ and $\theta_3$ in both populations, put superpopulation rows after with $G_U$ stated,
+  have the permuted predictor on every row and three encoders, and carry $\hat\lambda$ and its
+  standard error on each row.
+- Q3.3: Q3's budget-matched comparison at $c_d/c_s \in \{10, 1000\}$ on every task with the code
+  as it stands; Q3.3 and the reversal clause of Q3.1 are scored in the Q5 report.
+- The ACS application runs as instructed with the Q0 cross-fitted gradient boosting predictor.
+- The gene axis and the two-way supplement as instructed; the gene axis reports per-gene
+  $\hat\lambda^2 - \text{se}(\hat\lambda)^2$ beside the width ratio.
+- Recalibration is closed. The IDC illustration as instructed.
+
+### 14.6 Answers to the other Q3 escalations (memo section 6)
+
+Escalations 3 and 4 are taken up in 14.4. Escalation 5 is accepted, with the uncorrected squared
+correlation reported beside the corrected one and stated in table notes. Escalations 6, 7, 10, 12,
+13 and 14 are accepted or recorded, with the prediction-driver md5s in the final report. Escalation
+9: resizing a pending job's time or memory from a sibling's measurement is allowed and is not moving
+it; each resize is recorded in the job ledger. Escalation 11: nothing for the session to do.
+
+### 14.7 Where interval 3 runs (memo section 7)
+
+Every Q4 and Q5 job runs on Longleaf through Slurm with walls from a sibling's `sacct`, unless
+Nicolas repeats the local-compute instruction in chat, recorded as section 12.4 (done). A pending job
+may be resized from a sibling's measurement, never moved to another site. A job not started four
+hours after submission is reported to Nicolas in chat and left waiting.
+
+### 14.8 What the Q5 report carries (memo section 8)
+
+Q4a and the recomputed section 6.1 table, the theory additions with Q4.3 and Q4.4 scored, Q3.3 at
+the two new cost ratios, the Q4 tables, the joint-design table from the conformal track's C3 outputs
+once committed (with `within_plain` as a method, per that track's C2 memo), the round-5 cluster
+table, and the closing page "What the PPI track established". Report and wait.
