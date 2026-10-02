@@ -1,0 +1,198 @@
+##### Longleaf job output outK20
+==============================================================================
+Round 4 conformal track, stage C2
+job_name_prefix : r4conf_C2  (the submission route replaces --job-name)
+slurm_job_id    : 3231767
+slurm_partition : spill
+node            : c0915.ll.unc.edu
+date            : 2026-10-01T09:25:04-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : 018b83f271c007acbe340027586273be4339675c
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/0cd541e4-9e9f-4a48-8ea3-b03661e12960/round4_conf_c2_k1_smoothed.py
+script_md5      : bce6f54fa808bff951a05555967f6287
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : round4_conf_c2_k1_smoothed.py --out /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C2_candidates/frag_K1/K20 --reps 5000 --Ks 20
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 01b55845848722b4
+config          : {"Ks": "20", "alphas": [0.1], "candidate": "K1", "method": "k1_smoothed", "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_sha256": "74f80322a653cc531af9b1a74ed90fba5be56aa5fc4e3cbc8d2272c5308bfd3c", "n_test": 500, "o_grid": [0, 5, 10, 25, 50, 100], "qtol": 1e-12, "reps": 5000, "seed_tag": "C1", "smoke_cells": 0, "smoke_pick": "", "stage": "C2"}
+wall_seconds    : 1171
+n_cells         : 58
+##### Longleaf job output outK10
+==============================================================================
+Round 4 conformal track, stage C2
+job_name_prefix : r4conf_C2  (the submission route replaces --job-name)
+slurm_job_id    : 3231761
+slurm_partition : spill
+node            : c151606.ll.unc.edu
+date            : 2026-10-01T09:12:30-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : 018b83f271c007acbe340027586273be4339675c
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/3fc3940b-9307-4908-8058-ef9d63537078/round4_conf_c2_k1_smoothed.py
+script_md5      : bce6f54fa808bff951a05555967f6287
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : round4_conf_c2_k1_smoothed.py --out /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C2_candidates/frag_K1/K10 --reps 5000 --Ks 10
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 6af2971b0cdbc0b3
+config          : {"Ks": "10", "alphas": [0.1], "candidate": "K1", "method": "k1_smoothed", "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_sha256": "74f80322a653cc531af9b1a74ed90fba5be56aa5fc4e3cbc8d2272c5308bfd3c", "n_test": 500, "o_grid": [0, 5, 10, 25, 50, 100], "qtol": 1e-12, "reps": 5000, "seed_tag": "C1", "smoke_cells": 0, "smoke_pick": "", "stage": "C2"}
+wall_seconds    : 418
+n_cells         : 58
+##### Longleaf job output outK9
+==============================================================================
+Round 4 conformal track, stage C2
+job_name_prefix : r4conf_C2  (the submission route replaces --job-name)
+slurm_job_id    : 3231759
+slurm_partition : spill
+node            : c151607.ll.unc.edu
+date            : 2026-10-01T09:11:56-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : 018b83f271c007acbe340027586273be4339675c
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/5ecc7a30-0782-4785-b501-0175955d33c4/round4_conf_c2_k1_smoothed.py
+script_md5      : bce6f54fa808bff951a05555967f6287
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : round4_conf_c2_k1_smoothed.py --out /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C2_candidates/frag_K1/K9 --reps 5000 --Ks 9
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 dea476685db152a6
+config          : {"Ks": "9", "alphas": [0.1], "candidate": "K1", "method": "k1_smoothed", "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_sha256": "74f80322a653cc531af9b1a74ed90fba5be56aa5fc4e3cbc8d2272c5308bfd3c", "n_test": 500, "o_grid": [0, 5, 10, 25, 50, 100], "qtol": 1e-12, "reps": 5000, "seed_tag": "C1", "smoke_cells": 0, "smoke_pick": "", "stage": "C2"}
+wall_seconds    : 385
+n_cells         : 58
+##### Longleaf job output outK7
+==============================================================================
+Round 4 conformal track, stage C2
+job_name_prefix : r4conf_C2  (the submission route replaces --job-name)
+slurm_job_id    : 3231757
+slurm_partition : spill
+node            : c151610.ll.unc.edu
+date            : 2026-10-01T09:10:48-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : 018b83f271c007acbe340027586273be4339675c
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/9e1797c4-2331-477f-98e4-69499062d2df/round4_conf_c2_k1_smoothed.py
+script_md5      : bce6f54fa808bff951a05555967f6287
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : round4_conf_c2_k1_smoothed.py --out /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C2_candidates/frag_K1/K7 --reps 5000 --Ks 7
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 91f5b69ad7db8d12
+config          : {"Ks": "7", "alphas": [0.1], "candidate": "K1", "method": "k1_smoothed", "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_sha256": "74f80322a653cc531af9b1a74ed90fba5be56aa5fc4e3cbc8d2272c5308bfd3c", "n_test": 500, "o_grid": [0, 5, 10, 25, 50, 100], "qtol": 1e-12, "reps": 5000, "seed_tag": "C1", "smoke_cells": 0, "smoke_pick": "", "stage": "C2"}
+wall_seconds    : 314
+n_cells         : 58
+##### Longleaf job output outK15
+==============================================================================
+Round 4 conformal track, stage C2
+job_name_prefix : r4conf_C2  (the submission route replaces --job-name)
+slurm_job_id    : 3231765
+slurm_partition : spill
+node            : c0819.ll.unc.edu
+date            : 2026-10-01T09:21:47-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : 018b83f271c007acbe340027586273be4339675c
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/cd05f1be-0817-4dd7-a6be-da15621a46bb/round4_conf_c2_k1_smoothed.py
+script_md5      : bce6f54fa808bff951a05555967f6287
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : round4_conf_c2_k1_smoothed.py --out /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C2_candidates/frag_K1/K15 --reps 5000 --Ks 15
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 f89d2c0944c352df
+config          : {"Ks": "15", "alphas": [0.1], "candidate": "K1", "method": "k1_smoothed", "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_sha256": "74f80322a653cc531af9b1a74ed90fba5be56aa5fc4e3cbc8d2272c5308bfd3c", "n_test": 500, "o_grid": [0, 5, 10, 25, 50, 100], "qtol": 1e-12, "reps": 5000, "seed_tag": "C1", "smoke_cells": 0, "smoke_pick": "", "stage": "C2"}
+wall_seconds    : 973
+n_cells         : 58
+##### Longleaf job output outK12
+==============================================================================
+Round 4 conformal track, stage C2
+job_name_prefix : r4conf_C2  (the submission route replaces --job-name)
+slurm_job_id    : 3231763
+slurm_partition : spill
+node            : c1110.ll.unc.edu
+date            : 2026-10-01T09:19:45-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : 018b83f271c007acbe340027586273be4339675c
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/d1c542fb-e5e2-42fa-9cca-2dfe700d48fd/round4_conf_c2_k1_smoothed.py
+script_md5      : bce6f54fa808bff951a05555967f6287
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : round4_conf_c2_k1_smoothed.py --out /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C2_candidates/frag_K1/K12 --reps 5000 --Ks 12
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 2b0fa374a98e7c7a
+config          : {"Ks": "12", "alphas": [0.1], "candidate": "K1", "method": "k1_smoothed", "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_sha256": "74f80322a653cc531af9b1a74ed90fba5be56aa5fc4e3cbc8d2272c5308bfd3c", "n_test": 500, "o_grid": [0, 5, 10, 25, 50, 100], "qtol": 1e-12, "reps": 5000, "seed_tag": "C1", "smoke_cells": 0, "smoke_pick": "", "stage": "C2"}
+wall_seconds    : 852
+n_cells         : 58
+##### Longleaf job output outK5
+==============================================================================
+Round 4 conformal track, stage C2
+job_name_prefix : r4conf_C2  (the submission route replaces --job-name)
+slurm_job_id    : 3231756
+slurm_partition : spill
+node            : c151415.ll.unc.edu
+date            : 2026-10-01T09:10:17-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : 018b83f271c007acbe340027586273be4339675c
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/e7a1b562-a4d2-4e16-825f-00854868fdf4/round4_conf_c2_k1_smoothed.py
+script_md5      : bce6f54fa808bff951a05555967f6287
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : round4_conf_c2_k1_smoothed.py --out /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C2_candidates/frag_K1/K5 --reps 5000 --Ks 5
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 0014a469c727989e
+config          : {"Ks": "5", "alphas": [0.1], "candidate": "K1", "method": "k1_smoothed", "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_sha256": "74f80322a653cc531af9b1a74ed90fba5be56aa5fc4e3cbc8d2272c5308bfd3c", "n_test": 500, "o_grid": [0, 5, 10, 25, 50, 100], "qtol": 1e-12, "reps": 5000, "seed_tag": "C1", "smoke_cells": 0, "smoke_pick": "", "stage": "C2"}
+wall_seconds    : 285
+n_cells         : 58
+##### Longleaf job output outK50
+==============================================================================
+Round 4 conformal track, stage C2
+job_name_prefix : r4conf_C2  (the submission route replaces --job-name)
+slurm_job_id    : 3231774
+slurm_partition : spill
+node            : c1125.ll.unc.edu
+date            : 2026-10-01T09:47:18-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : 018b83f271c007acbe340027586273be4339675c
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/f4b30ea1-025f-4512-ab4e-4969f5680b65/round4_conf_c2_k1_smoothed.py
+script_md5      : bce6f54fa808bff951a05555967f6287
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : round4_conf_c2_k1_smoothed.py --out /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C2_candidates/frag_K1/K50 --reps 5000 --Ks 50
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 2705dbd02757974a
+config          : {"Ks": "50", "alphas": [0.1], "candidate": "K1", "method": "k1_smoothed", "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_sha256": "74f80322a653cc531af9b1a74ed90fba5be56aa5fc4e3cbc8d2272c5308bfd3c", "n_test": 500, "o_grid": [0, 5, 10, 25, 50, 100], "qtol": 1e-12, "reps": 5000, "seed_tag": "C1", "smoke_cells": 0, "smoke_pick": "", "stage": "C2"}
+wall_seconds    : 2448
+n_cells         : 58
+##### Longleaf job output outK25
+==============================================================================
+Round 4 conformal track, stage C2
+job_name_prefix : r4conf_C2  (the submission route replaces --job-name)
+slurm_job_id    : 3231769
+slurm_partition : spill
+node            : c0512.ll.unc.edu
+date            : 2026-10-01T09:28:45-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : 018b83f271c007acbe340027586273be4339675c
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/f73d90e0-eaf1-41da-b383-13937fdbc080/round4_conf_c2_k1_smoothed.py
+script_md5      : bce6f54fa808bff951a05555967f6287
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : round4_conf_c2_k1_smoothed.py --out /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C2_candidates/frag_K1/K25 --reps 5000 --Ks 25
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 f47cc98bc9e765db
+config          : {"Ks": "25", "alphas": [0.1], "candidate": "K1", "method": "k1_smoothed", "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_sha256": "74f80322a653cc531af9b1a74ed90fba5be56aa5fc4e3cbc8d2272c5308bfd3c", "n_test": 500, "o_grid": [0, 5, 10, 25, 50, 100], "qtol": 1e-12, "reps": 5000, "seed_tag": "C1", "smoke_cells": 0, "smoke_pick": "", "stage": "C2"}
+wall_seconds    : 1334
+n_cells         : 58

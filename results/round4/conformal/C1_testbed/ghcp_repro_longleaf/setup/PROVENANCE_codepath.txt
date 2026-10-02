@@ -1,0 +1,19 @@
+==============================================================================
+Round 4 conformal track, stage C1
+job_name_prefix : r4conf_C1  (the submission route replaces --job-name)
+slurm_job_id    : 3231770
+slurm_partition : spill
+node            : c0824.ll.unc.edu
+date            : 2026-10-01T09:09:05-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : 018b83f271c007acbe340027586273be4339675c
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/hest_code/round4-conformal/code/scripts/round4_conf_c1_codepath.py
+script_md5      : 0782beafb7a7f35e6eefe4e59bd2c0c3
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : /work/users/w/e/weiyang/hest_code/round4-conformal/code/scripts/round4_conf_c1_codepath.py --ghcp-code /work/users/w/e/weiyang/hest_code/ghcp_code --out /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C1_testbed/ghcp_repro_longleaf/setup/codepath --n 400
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 8830fc60c003e8e5
+config          : {"ghcp_code": "/work/users/w/e/weiyang/hest_code/ghcp_code", "n": 400, "stage": "C1 codepath"}

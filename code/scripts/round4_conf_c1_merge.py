@@ -123,7 +123,8 @@ def acceptance(G, a4b, with_ghcp, repro=None):
             f"semireal {wr:.4f}, A4b {ref_w:.4f}")
     if repro is not None:
         add("A5_ghcp_reproduction", "c1_ghcp_reproduction.csv", "rows outside MC error",
-            int((~repro.within_mc).sum()), 0, bool(repro.within_mc.all()), f"n {len(repro)}")
+            int((~repro.agree.astype(bool)).sum()), 0, bool(repro.agree.astype(bool).all()),
+            f"n {len(repro)}, found {int(repro.found.astype(bool).sum())}")
     return pd.DataFrame(rows)
 
 

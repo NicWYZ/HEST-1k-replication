@@ -361,3 +361,20 @@ in section 1 of this plan, unchanged.
 2. **No pushes between gates.** Commits are made locally on `round4-conformal` and nothing is
    pushed until a gate's report is written; the branch and tag are then pushed together with the
    gate pull request (section 9).
+3. **All compute back to Longleaf.** "Stop any local compute task and move all compute onto
+   longleaf. My laptop is dying." Item 1 is withdrawn from that point. The C1 grid had already
+   finished locally and is not rerun. The local GHCP reproduction was stopped and rerun on Longleaf
+   (33 Slurm jobs, chunk subsets merged by the launchers' own aggregation). The four C2 candidate
+   units stopped their local runs and reran on Longleaf; their partial local outputs are quarantined
+   and unused.
+4. **No local compute by default.** "Do not default any task to local compute unless I ask." Two
+   later permissions, each for a named step: the merge, released plot scripts and comparison of the
+   GHCP reproduction (Longleaf general and spill fully allocated, about 13,700 jobs pending), and
+   the light gate table work (C1 merge and acceptance, C2 merge and criterion, the two figures, the
+   numeric-claim sweep). The final reproduction job did in the end run on Longleaf; only a 9-second
+   Python 3.13 check of one launcher ran locally under the first permission. Earlier, inside a
+   one-hour local window Nicolas offered ("local compute can be available to you for the next
+   hour"), one diagnostic of a few seconds recomputed two code-path draws.
+5. **GitHub.** The stored credential was updated with pull-request read and write access, used only
+   at the gate.
+6. **ACS.** Downloaded and added as context; read in C3 only (section 10 item 6).

@@ -1,0 +1,73 @@
+prediction,quantity,scope,value
+C2.1,"share of HCP-pooled half-width gap recovered by K1, median over cells",K=10,-1.604890913176055
+C2.1,"same, maximum over cells",K=10,-0.6028474234688899
+C2.1,cells,K=10,58.0
+C2.2,k4_a050 coverage min / max (first),normal,0.8097
+C2.2,k4_a050 coverage min / max (second),normal,0.9
+C2.2,k4_a050 price min / max (finite cells) (first),normal,0.8206
+C2.2,k4_a050 price min / max (finite cells) (second),normal,1.001
+C2.2,k4_a050 coverage min / max (first),t3,0.7747
+C2.2,k4_a050 coverage min / max (second),t3,0.9004
+C2.2,k4_a050 price min / max (finite cells) (first),t3,0.7566
+C2.2,k4_a050 price min / max (finite cells) (second),t3,1.0018
+C2.2,k4_a050 coverage min / max (first),semireal,0.8606
+C2.2,k4_a050 coverage min / max (second),semireal,0.8764
+C2.2,k4_a050 price min / max (finite cells) (first),semireal,0.9158
+C2.2,k4_a050 price min / max (finite cells) (second),semireal,0.9253
+C2.2,"k4_a050 coverage mean, t3 share 0.5","all K, N, tau",0.7923341333333334
+C2.2,k4_a025 coverage min / max (first),normal,0.8949
+C2.2,k4_a025 coverage min / max (second),normal,0.9359
+C2.2,k4_a025 price min / max (finite cells) (first),normal,1.0115
+C2.2,k4_a025 price min / max (finite cells) (second),normal,1.1648
+C2.2,k4_a025 coverage min / max (first),t3,0.8693
+C2.2,k4_a025 coverage min / max (second),t3,0.9264
+C2.2,k4_a025 price min / max (finite cells) (first),t3,0.9654
+C2.2,k4_a025 price min / max (finite cells) (second),t3,1.1425
+C2.2,k4_a025 coverage min / max (first),semireal,0.9141
+C2.2,k4_a025 coverage min / max (second),semireal,0.9343
+C2.2,k4_a025 price min / max (finite cells) (first),semireal,1.1611
+C2.2,k4_a025 price min / max (finite cells) (second),semireal,1.171
+C2.2,"k4_a025 coverage mean, t3 share 0.5","all K, N, tau",0.8862960277777777
+C2.2,k4_a010 coverage min / max (first),normal,0.9081
+C2.2,k4_a010 coverage min / max (second),normal,0.9639
+C2.2,k4_a010 price min / max (finite cells) (first),normal,1.0241
+C2.2,k4_a010 price min / max (finite cells) (second),normal,1.3896
+C2.2,k4_a010 coverage min / max (first),t3,0.9082
+C2.2,k4_a010 coverage min / max (second),t3,0.9512
+C2.2,k4_a010 price min / max (finite cells) (first),t3,1.0398
+C2.2,k4_a010 price min / max (finite cells) (second),t3,1.3686
+C2.2,k4_a010 coverage min / max (first),semireal,0.9437
+C2.2,k4_a010 coverage min / max (second),semireal,0.9602
+C2.2,k4_a010 price min / max (finite cells) (first),semireal,1.3868
+C2.2,k4_a010 price min / max (finite cells) (second),semireal,1.431
+C2.2,"k4_a010 coverage mean, t3 share 0.5","all K, N, tau",0.9371028166666666
+C2.3,"k5_ghcp / ghcp mean half-width, median over cells",tau=0.0,1.1766739045988435
+C2.3,"same, 10th and 90th percentile (first)",tau=0.0,1.0184
+C2.3,"same, 10th and 90th percentile (second)",tau=0.0,3.9152
+C2.3,"k5_ghcp minus ghcp coverage, min / max (first)",tau=0.0,-0.0255
+C2.3,"k5_ghcp minus ghcp coverage, min / max (second)",tau=0.0,0.0037
+C2.3,cells,tau=0.0,1008.0
+C2.3,"k5_ghcp / ghcp mean half-width, median over cells",tau=0.3,1.1595946810027136
+C2.3,"same, 10th and 90th percentile (first)",tau=0.3,0.9859
+C2.3,"same, 10th and 90th percentile (second)",tau=0.3,3.5017
+C2.3,"k5_ghcp minus ghcp coverage, min / max (first)",tau=0.3,-0.0211
+C2.3,"k5_ghcp minus ghcp coverage, min / max (second)",tau=0.3,0.0056
+C2.3,cells,tau=0.3,756.0
+C2.3,"k5_ghcp / ghcp mean half-width, median over cells","tau=0.3, o=5",3.6362434669288506
+C2.3,"k5_ghcp / ghcp mean half-width, median over cells","tau=0.3, o=10",1.542747386682417
+C2.3,"k5_ghcp / ghcp mean half-width, median over cells","tau=0.3, o=25",1.1693817166097689
+C2.3,"k5_ghcp / ghcp mean half-width, median over cells","tau=0.3, o=50",1.0602907811244955
+C2.3,"k5_ghcp / ghcp mean half-width, median over cells","tau=0.3, o=100",1.0
+C2.1,"k1 / hcp mean half-width, median over finite cells",all K,1.0130419059323348
+C2.1,"k1 minus hcp coverage, min / max (first)",all K,-0.0016
+C2.1,"k1 minus hcp coverage, min / max (second)",all K,0.0123
+C2.6,"k6 share of cells meeting (b), primary","share=0.0, normal and t3",0.8472222222222222
+C2.6,"k6 share of cells meeting (b), primary","share=0.1, normal and t3",0.0
+C2.6,"k6 share of cells meeting (b), primary","share=0.3, normal and t3",0.0
+C2.6,"k6 share of cells meeting (b), primary","share=0.5, normal and t3",0.0
+C2.6,"k6 share of cells meeting (b), primary",semireal,0.0
+C2.6,"k6 price minus HCP price, max |.|",share=0.3,0.032522252863952605
+C2.6,k6 coverage min,share=0.3,0.9130724
+C2.6,"k6 price minus HCP price, max |.|",share=0.5,0.0017874395964001533
+C2.6,k6 coverage min,share=0.5,0.9117328
+C2.6,"k6 coverage min, all cells",all,0.9001720000000001

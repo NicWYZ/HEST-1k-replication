@@ -1,0 +1,254 @@
+K5 fragment, stage C2. Computed on Longleaf as 10 Slurm jobs (K05 K07 K09 K10 K12 K15 K20 K25 K50a K50b); c2_grid__K5.csv is their concatenation (522 cells).
+Remote outputs (incl. reps/ parquet, 522 files): /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C2_candidates/frag_K5/<label>/
+Local reps/ in this directory are stale partial output of an aborted local run and are NOT part of the fragment.
+
+=== job K05 ===
+==============================================================================
+Round 4 conformal track, stage C2
+job_name_prefix : r4conf_C2  (the submission route replaces --job-name)
+slurm_job_id    : 3231758
+slurm_partition : spill
+node            : c151405.ll.unc.edu
+date            : 2026-10-01T09:23:52-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : 018b83f271c007acbe340027586273be4339675c
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/e780fb02-5677-4674-a670-4690d98730c1/round4_conf_c2_k5_scaled.py
+script_md5      : 732425307f375ca5eaeb06df7639787a
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : ./round4_conf_c2_k5_scaled.py --Ks 5 --label __K05 --out /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C2_candidates/frag_K5/K05
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 0b13312714ed2e26
+config          : {"Ks": "5", "abs_floor": 1e-12, "alphas": [0.1], "candidate": "K5", "floor_rel": 0.1, "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_sha256": "74f80322a653cc531af9b1a74ed90fba5be56aa5fc4e3cbc8d2272c5308bfd3c", "n_glob": 13, "o_grid": [0, 5, 10, 25, 50, 100], "registered_under": "ghcp (stream pairing)", "reps": 5000, "seed_tag": "C1", "sim_md5": "76fda34ee622e299bbaa806e5c8da98a", "stage": "C2", "variants": ["k5_hcp", "k5_ghcp"]}
+wall_seconds    : 1096
+n_cells         : 58
+
+=== job K07 ===
+==============================================================================
+Round 4 conformal track, stage C2
+job_name_prefix : r4conf_C2  (the submission route replaces --job-name)
+slurm_job_id    : 3231760
+slurm_partition : spill
+node            : c130405.ll.unc.edu
+date            : 2026-10-01T09:29:52-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : 018b83f271c007acbe340027586273be4339675c
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/5c4d1963-9897-43f7-aed7-5f79e8c3970f/round4_conf_c2_k5_scaled.py
+script_md5      : 732425307f375ca5eaeb06df7639787a
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : ./round4_conf_c2_k5_scaled.py --Ks 7 --label __K07 --out /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C2_candidates/frag_K5/K07
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 b5e213aac388c380
+config          : {"Ks": "7", "abs_floor": 1e-12, "alphas": [0.1], "candidate": "K5", "floor_rel": 0.1, "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_sha256": "74f80322a653cc531af9b1a74ed90fba5be56aa5fc4e3cbc8d2272c5308bfd3c", "n_glob": 13, "o_grid": [0, 5, 10, 25, 50, 100], "registered_under": "ghcp (stream pairing)", "reps": 5000, "seed_tag": "C1", "sim_md5": "76fda34ee622e299bbaa806e5c8da98a", "stage": "C2", "variants": ["k5_hcp", "k5_ghcp"]}
+wall_seconds    : 1456
+n_cells         : 58
+
+=== job K09 ===
+==============================================================================
+Round 4 conformal track, stage C2
+job_name_prefix : r4conf_C2  (the submission route replaces --job-name)
+slurm_job_id    : 3231762
+slurm_partition : spill
+node            : c1107.ll.unc.edu
+date            : 2026-10-01T09:43:54-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : 018b83f271c007acbe340027586273be4339675c
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/9a5f8a96-16a4-4d70-ad0e-eeca601be722/round4_conf_c2_k5_scaled.py
+script_md5      : 732425307f375ca5eaeb06df7639787a
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : ./round4_conf_c2_k5_scaled.py --Ks 9 --label __K09 --out /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C2_candidates/frag_K5/K09
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 6778d6d097fb639e
+config          : {"Ks": "9", "abs_floor": 1e-12, "alphas": [0.1], "candidate": "K5", "floor_rel": 0.1, "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_sha256": "74f80322a653cc531af9b1a74ed90fba5be56aa5fc4e3cbc8d2272c5308bfd3c", "n_glob": 13, "o_grid": [0, 5, 10, 25, 50, 100], "registered_under": "ghcp (stream pairing)", "reps": 5000, "seed_tag": "C1", "sim_md5": "76fda34ee622e299bbaa806e5c8da98a", "stage": "C2", "variants": ["k5_hcp", "k5_ghcp"]}
+wall_seconds    : 2297
+n_cells         : 58
+
+=== job K10 ===
+==============================================================================
+Round 4 conformal track, stage C2
+job_name_prefix : r4conf_C2  (the submission route replaces --job-name)
+slurm_job_id    : 3231764
+slurm_partition : spill
+node            : c1118.ll.unc.edu
+date            : 2026-10-01T09:49:38-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : 018b83f271c007acbe340027586273be4339675c
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/14ea1790-0a54-4f01-9cba-4b32720de2ee/round4_conf_c2_k5_scaled.py
+script_md5      : 732425307f375ca5eaeb06df7639787a
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : ./round4_conf_c2_k5_scaled.py --Ks 10 --label __K10 --out /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C2_candidates/frag_K5/K10
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 b9b48a0e63b224b2
+config          : {"Ks": "10", "abs_floor": 1e-12, "alphas": [0.1], "candidate": "K5", "floor_rel": 0.1, "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_sha256": "74f80322a653cc531af9b1a74ed90fba5be56aa5fc4e3cbc8d2272c5308bfd3c", "n_glob": 13, "o_grid": [0, 5, 10, 25, 50, 100], "registered_under": "ghcp (stream pairing)", "reps": 5000, "seed_tag": "C1", "sim_md5": "76fda34ee622e299bbaa806e5c8da98a", "stage": "C2", "variants": ["k5_hcp", "k5_ghcp"]}
+wall_seconds    : 2644
+n_cells         : 58
+
+=== job K12 ===
+==============================================================================
+Round 4 conformal track, stage C2
+job_name_prefix : r4conf_C2  (the submission route replaces --job-name)
+slurm_job_id    : 3231766
+slurm_partition : spill
+node            : c0820.ll.unc.edu
+date            : 2026-10-01T09:56:13-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : 018b83f271c007acbe340027586273be4339675c
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/d347c52c-701f-4231-9d5c-4e51ba168952/round4_conf_c2_k5_scaled.py
+script_md5      : 732425307f375ca5eaeb06df7639787a
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : ./round4_conf_c2_k5_scaled.py --Ks 12 --label __K12 --out /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C2_candidates/frag_K5/K12
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 5d586f1890ce1d2f
+config          : {"Ks": "12", "abs_floor": 1e-12, "alphas": [0.1], "candidate": "K5", "floor_rel": 0.1, "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_sha256": "74f80322a653cc531af9b1a74ed90fba5be56aa5fc4e3cbc8d2272c5308bfd3c", "n_glob": 13, "o_grid": [0, 5, 10, 25, 50, 100], "registered_under": "ghcp (stream pairing)", "reps": 5000, "seed_tag": "C1", "sim_md5": "76fda34ee622e299bbaa806e5c8da98a", "stage": "C2", "variants": ["k5_hcp", "k5_ghcp"]}
+wall_seconds    : 3038
+n_cells         : 58
+
+=== job K15 ===
+==============================================================================
+Round 4 conformal track, stage C2
+job_name_prefix : r4conf_C2  (the submission route replaces --job-name)
+slurm_job_id    : 3231768
+slurm_partition : spill
+node            : c0823.ll.unc.edu
+date            : 2026-10-01T10:12:59-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : 018b83f271c007acbe340027586273be4339675c
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/6c57a846-06d9-4dbc-aee6-6d389d8e4127/round4_conf_c2_k5_scaled.py
+script_md5      : 732425307f375ca5eaeb06df7639787a
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : ./round4_conf_c2_k5_scaled.py --Ks 15 --label __K15 --out /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C2_candidates/frag_K5/K15
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 274526b363b36957
+config          : {"Ks": "15", "abs_floor": 1e-12, "alphas": [0.1], "candidate": "K5", "floor_rel": 0.1, "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_sha256": "74f80322a653cc531af9b1a74ed90fba5be56aa5fc4e3cbc8d2272c5308bfd3c", "n_glob": 13, "o_grid": [0, 5, 10, 25, 50, 100], "registered_under": "ghcp (stream pairing)", "reps": 5000, "seed_tag": "C1", "sim_md5": "76fda34ee622e299bbaa806e5c8da98a", "stage": "C2", "variants": ["k5_hcp", "k5_ghcp"]}
+wall_seconds    : 3987
+n_cells         : 58
+
+=== job K20 ===
+==============================================================================
+Round 4 conformal track, stage C2
+job_name_prefix : r4conf_C2  (the submission route replaces --job-name)
+slurm_job_id    : 3231772
+slurm_partition : spill
+node            : c0520
+date            : 2026-10-01T10:21:10-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : 018b83f271c007acbe340027586273be4339675c
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/5dad51ae-c037-4fdb-946d-1af01f39d60e/round4_conf_c2_k5_scaled.py
+script_md5      : 732425307f375ca5eaeb06df7639787a
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : ./round4_conf_c2_k5_scaled.py --Ks 20 --label __K20 --out /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C2_candidates/frag_K5/K20
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 1dd5ec87bac70010
+config          : {"Ks": "20", "abs_floor": 1e-12, "alphas": [0.1], "candidate": "K5", "floor_rel": 0.1, "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_sha256": "74f80322a653cc531af9b1a74ed90fba5be56aa5fc4e3cbc8d2272c5308bfd3c", "n_glob": 13, "o_grid": [0, 5, 10, 25, 50, 100], "registered_under": "ghcp (stream pairing)", "reps": 5000, "seed_tag": "C1", "sim_md5": "76fda34ee622e299bbaa806e5c8da98a", "stage": "C2", "variants": ["k5_hcp", "k5_ghcp"]}
+wall_seconds    : 4479
+n_cells         : 58
+
+=== job K25 ===
+==============================================================================
+Round 4 conformal track, stage C2
+job_name_prefix : r4conf_C2  (the submission route replaces --job-name)
+slurm_job_id    : 3231775
+slurm_partition : spill
+node            : c0533
+date            : 2026-10-01T10:36:28-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : 018b83f271c007acbe340027586273be4339675c
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/8fe4bb16-5764-4248-af6b-bae07d0287e5/round4_conf_c2_k5_scaled.py
+script_md5      : 732425307f375ca5eaeb06df7639787a
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : ./round4_conf_c2_k5_scaled.py --Ks 25 --label __K25 --out /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C2_candidates/frag_K5/K25
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 6443d833080e91d1
+config          : {"Ks": "25", "abs_floor": 1e-12, "alphas": [0.1], "candidate": "K5", "floor_rel": 0.1, "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_sha256": "74f80322a653cc531af9b1a74ed90fba5be56aa5fc4e3cbc8d2272c5308bfd3c", "n_glob": 13, "o_grid": [0, 5, 10, 25, 50, 100], "registered_under": "ghcp (stream pairing)", "reps": 5000, "seed_tag": "C1", "sim_md5": "76fda34ee622e299bbaa806e5c8da98a", "stage": "C2", "variants": ["k5_hcp", "k5_ghcp"]}
+wall_seconds    : 5397
+n_cells         : 58
+
+=== job K50a ===
+==============================================================================
+Round 4 conformal track, stage C2
+job_name_prefix : r4conf_C2  (the submission route replaces --job-name)
+slurm_job_id    : 3231777
+slurm_partition : spill
+node            : c1133
+date            : 2026-10-01T11:23:01-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : 018b83f271c007acbe340027586273be4339675c
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/a090ae38-0051-4446-91fe-819b7b869f54/round4_conf_c2_k5_scaled.py
+script_md5      : 732425307f375ca5eaeb06df7639787a
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : ./round4_conf_c2_k5_scaled.py --Ks 50 --cell-idx 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28 --label __K50a --out /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C2_candidates/frag_K5/K50a
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 a60b3808892f84d8
+config          : {"Ks": "50", "abs_floor": 1e-12, "alphas": [0.1], "candidate": "K5", "floor_rel": 0.1, "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_sha256": "74f80322a653cc531af9b1a74ed90fba5be56aa5fc4e3cbc8d2272c5308bfd3c", "n_glob": 13, "o_grid": [0, 5, 10, 25, 50, 100], "registered_under": "ghcp (stream pairing)", "reps": 5000, "seed_tag": "C1", "sim_md5": "76fda34ee622e299bbaa806e5c8da98a", "stage": "C2", "variants": ["k5_hcp", "k5_ghcp"]}
+wall_seconds    : 8189
+n_cells         : 29
+
+=== job K50b ===
+==============================================================================
+Round 4 conformal track, stage C2
+job_name_prefix : r4conf_C2  (the submission route replaces --job-name)
+slurm_job_id    : 3231797
+slurm_partition : spill
+node            : b1004.ll.unc.edu
+date            : 2026-10-01T10:22:04-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round4-conformal
+code_clone_head : 018b83f271c007acbe340027586273be4339675c
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/aaaae5f1-d0c5-4e52-9fa1-686971330665/round4_conf_c2_k5_scaled.py
+script_md5      : 732425307f375ca5eaeb06df7639787a
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : ./round4_conf_c2_k5_scaled.py --Ks 50 --cell-idx 29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57 --label __K50b --out /work/users/w/e/weiyang/hest_replication/results/round4/conformal/C2_candidates/frag_K5/K50b
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+config_hash     : sha256/16 a60b3808892f84d8
+config          : {"Ks": "50", "abs_floor": 1e-12, "alphas": [0.1], "candidate": "K5", "floor_rel": 0.1, "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_sha256": "74f80322a653cc531af9b1a74ed90fba5be56aa5fc4e3cbc8d2272c5308bfd3c", "n_glob": 13, "o_grid": [0, 5, 10, 25, 50, 100], "registered_under": "ghcp (stream pairing)", "reps": 5000, "seed_tag": "C1", "sim_md5": "76fda34ee622e299bbaa806e5c8da98a", "stage": "C2", "variants": ["k5_hcp", "k5_ghcp"]}
+wall_seconds    : 4534
+n_cells         : 29
+==============================================================================
+Round 4 conformal track, stage C2
+job_name_prefix : r4conf_C2  (the submission route replaces --job-name)
+slurm_job_id    : none
+slurm_partition : none
+node            : Nicolass-MacBook-Pro-9.local
+date            : 2026-10-01T16:19:00-04:00
+code_clone      : /Users/nicolaszhang/HEST-1k-replication-conformal
+code_clone_head : cbe949fcb9389cc1360034b3479663b39be763da
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /Users/nicolaszhang/HEST-1k-replication-conformal/results/round4/conformal/C2_candidates/frag_K5/code/round4_conf_c2_k5_scaled.py
+script_md5      : 732425307f375ca5eaeb06df7639787a
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : results/round4/conformal/C2_candidates/frag_K5/code/round4_conf_c2_k5_scaled.py
+pythonhashseed  : 0
+python          : 3.11.15
+numpy           : 2.4.6
+config_hash     : sha256/16 5d771f6c5649e692
+config          : {"Ks": "5,7,9,10,12,15,20,25,50", "abs_floor": 1e-12, "alphas": [0.1], "candidate": "K5", "floor_rel": 0.1, "moments": "results/round4/conformal/C1_testbed/inputs/a2_score_moments__resnet50.parquet", "moments_sha256": "74f80322a653cc531af9b1a74ed90fba5be56aa5fc4e3cbc8d2272c5308bfd3c", "n_glob": 13, "o_grid": [0, 5, 10, 25, 50, 100], "registered_under": "ghcp (stream pairing)", "reps": 5000, "seed_tag": "C1", "sim_md5": "76fda34ee622e299bbaa806e5c8da98a", "stage": "C2", "variants": ["k5_hcp", "k5_ghcp"]}
+wall_seconds    : 28732
+n_cells         : 522

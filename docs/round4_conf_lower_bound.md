@@ -262,7 +262,7 @@ $P(E^c) \le K\gamma$. On $E$, observed spread at most $d$ implies true spread at
 1 to 3 hold with $d$ replaced by $d + 2\epsilon$. Off $E$ the rule's coverage is bounded below by zero. The
 repaired rule therefore covers at least $1 - \alpha - K\gamma$. At the addendum's $\gamma = 0.01$ that is a
 possible loss of $0.1$ at $K = 10$, so exact validity needs $\gamma$ of order $\alpha/K$ or smaller, charged to
-the level. The widening is also large: $2\epsilon_N$ is 0.3256, 0.1456 and 0.0728 in Kolmogorov distance
+the level. The widening is also large: $2\epsilon_N$ is 0.3255, 0.1456 and 0.0728 in Kolmogorov distance
 at $N_k = 100, 500, 2000$ and $\gamma = 0.01$, and the repaired HCP branch at $d = 0.05$ is already at 0.94.
 
 ### 8.5 Consequence for candidate K6

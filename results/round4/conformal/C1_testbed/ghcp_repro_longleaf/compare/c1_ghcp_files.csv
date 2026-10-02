@@ -1,0 +1,16 @@
+file,ours_exists,shipped_exists,rows_ours,rows_shipped,same_columns,max_abs_diff,text_equal,agree
+dgp/summaries/fixedN21_summary_by_alpha_o_method.csv,True,True,128.0,128.0,True,inf,True,False
+dgp/summaries/fixedN21_coverage_table.csv,True,True,128.0,128.0,True,0.3956267439399421,True,False
+dgp/summaries/fixedN21_width_table.csv,True,True,128.0,128.0,True,inf,True,False
+dgp/summaries/poissonNmean25_summary_by_alpha_o_method.csv,True,True,128.0,128.0,True,630.0,True,False
+dgp/summaries/poissonNmean25_coverage_table.csv,True,True,128.0,128.0,True,0.1377623630878033,True,False
+dgp/summaries/poissonNmean25_width_table.csv,True,True,128.0,128.0,True,630.0,True,False
+size_shift/summary_by_xi_o.csv,True,True,20.0,20.0,True,0.622316500249184,True,False
+size_shift/summary_by_xi_o_panels.csv,True,True,20.0,20.0,True,0.622316500249184,True,False
+effect_of_weights/gamma5p0/summary_by_weight_o.csv,True,True,30.0,30.0,True,0.08733394450826992,True,False
+effect_of_weights/gamma5p0/width_monotonicity.csv,True,True,6.0,6.0,True,0.05725629566011392,False,False
+effect_of_weights/ud_narrow_gamma0/summary_by_predictor_weight.csv,True,True,40.0,40.0,True,0.020575598423017816,True,False
+dgp/tables/simulations_added_baselines.tex,False,True,,,,,,
+dgp/tables/simulations_added_baselines_tables.tex,True,True,,,,,False,False
+dgp/tables/simulations_mean_width_tables.tex,True,True,,,,,False,False
+dgp/tables/simulations_section_mean_width.tex,False,True,,,,,,

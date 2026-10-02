@@ -1,0 +1,27 @@
+==============================================================================
+Round 4 conformal track, stage C1
+job_name_prefix : r4conf_C1  (the submission route replaces --job-name)
+slurm_job_id    : none
+slurm_partition : none
+node            : Nicolass-MacBook-Pro-9.local
+date            : 2026-10-01T21:26:33-04:00
+code_clone      : /Users/nicolaszhang/HEST-1k-replication-conformal
+code_clone_head : cbe949fcb9389cc1360034b3479663b39be763da
+data_root       : /work/users/w/e/weiyang/hest_replication
+script          : /Users/nicolaszhang/HEST-1k-replication-conformal/code/scripts/round4_conf_c1_ghcp_repro.py
+script_md5      : b3ea4727024636111e4107b8d3e1de76
+harness_md5     : 0ad7ae8efe554c1f285e5f384a9fb7f5
+command_line    : /Users/nicolaszhang/.claude-science/orgs/c42040b3-6d87-451b-9b93-c94218d0c812/workspaces/37664027-917b-4af5-b46c-c441036d6333/articles/ghcp_code/code/marginal/run_bayes_ghcp_c1.py --total_replicates 1000
+pythonhashseed  : 0
+python          : 3.13.15
+numpy           : 2.4.6
+config_hash     : sha256/16 d7761aad9e030179
+config          : {"args": ["--total_replicates", "1000"], "ghcp_commit": "d1a69f4a35b260b592d3ea39d7c7ad7133459cba", "launcher": "run_bayes_ghcp_c1.py", "mode": "full", "stage": "C1 GHCP reproduction", "store": null, "subset": []}
+ghcp_commit     : d1a69f4a35b260b592d3ea39d7c7ad7133459cba
+launcher_md5    : f56a2cf81159fbf6f516b1d1768b6df2
+wall_seconds    : 9
+ok              : True
+where           : local, Python 3.13 diagnostic
+slurm_job_id    : 
+executors       : None
+stored_chunks   : None
