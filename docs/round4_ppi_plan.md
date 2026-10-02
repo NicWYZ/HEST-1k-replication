@@ -702,6 +702,18 @@ Indiana and lung prediction steps, the ACS conversion that reads the 448 MB parq
 recalibration test). The Q3 report lists every local run as a deviation from "run on UNC Longleaf
 through Slurm", with this message as its authority.
 
+### 12.3 Extension of 2 October 2026 (Nicolas), interval 2
+
+Nicolas wrote in chat on 2 October 2026, about four hours after 12.2: he is unavailable to grant
+permissions for about nine hours, so anything gated on his permission is worked around; local
+compute is allowed and preferred where it genuinely speeds the work, until he says to stop; the
+conformal track also uses the local machine. Consequences for this track: local runs are the
+default for anything that does not need cluster-only data, at most four local processes at a
+time and fewer when the machine is loaded; an action that would need his approval is replaced by
+one that does not, or deferred, and recorded under escalations in the Q3 report (in particular, if
+the gate push or pull request needs an approval, the branch is committed and tagged locally and
+the push and pull request wait for him). The gate rule of section 13.1 is unchanged.
+
 ## 13. The Q1 decision memo (1 October 2026), transcribed before any of it is acted on
 
 Source `docs/decisions/round4_ppi_Q1_decisions.md` (md5 `b7dafd175f42d55a21c5387437cd0dd3`),

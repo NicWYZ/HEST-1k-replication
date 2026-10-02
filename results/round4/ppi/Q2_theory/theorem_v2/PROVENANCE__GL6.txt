@@ -1,0 +1,10 @@
+host: Nicolass-MacBook-Pro-9.local (local, Darwin arm64)
+repo HEAD (read from .git/HEAD ref, no git run): round4-ppi, lead states 42fe578
+3548eea9b225c53ee8aebc4de0713803  /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_q2_theorem_sim.py
+931bd81f10200410c512bcf3f81b5b43  /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_estimator.py
+873dad7f383eb99826b2d0b990cd6914  /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_q1_sim.py
+command: /Users/nicolaszhang/.claude-science/orgs/c42040b3-6d87-451b-9b93-c94218d0c812/workspaces/ab674f84-25c3-4e5f-9a25-e0dbd7583e34/.venv/python/bin/python /Users/nicolaszhang/HEST-1k-replication-PPI/code/scripts/round4_ppi_q2_theorem_sim.py --G-L-grid 6 --reps 2000 --out-dir /Users/nicolaszhang/.claude-science/orgs/c42040b3-6d87-451b-9b93-c94218d0c812/workspaces/ab674f84-25c3-4e5f-9a25-e0dbd7583e34/theorem_v2/GL6
+env: PYTHONDONTWRITEBYTECODE=1 PYTHONHASHSEED=0 OMP_NUM_THREADS=1
+python 3.11.15 numpy 2.4.6 pandas 2.3.3
+exit: 1
+      114.26 real        83.62 user        19.91 sys
