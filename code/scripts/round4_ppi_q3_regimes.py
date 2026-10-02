@@ -142,7 +142,7 @@ def run_b(data, Z, valid, theta_full, B, n_draws, vtag, budget_label):
         rng = np.random.default_rng(zlib.crc32(f"q3B|{vtag}|B{budget_label}|d{d}".encode()))
         sel = np.zeros(len(didx), bool)
         for g in range(G):
-            idx = np.flatnonzero(didx == g)
+            idx = data["by_donor"][g]
             sel[idx if mg[g] >= len(idx) else rng.choice(idx, int(mg[g]), replace=False)] = True
         for (est, pop), (z, zf) in Z.items():
             tr = theta_full[(est, pop)]
@@ -167,9 +167,11 @@ def main(argv=None):
     p.add_argument("--nl-grid", default=",".join(map(str, NL_A)))
     p.add_argument("--draws", type=int, default=Q2.N_DRAWS)
     p.add_argument("--max-genes", type=int, default=0)
+    p.add_argument("--theta2-kind", default="neo_minus_stroma", choices=("neo_minus_stroma", "mean"))
     p.add_argument("--out-dir", required=True)
     a = p.parse_args(argv)
     np.seterr(all="ignore")
+    Q2.THETA2_KIND = a.theta2_kind
     os.makedirs(a.out_dir, exist_ok=True)
     t0 = time.time()
     data = Q2.load(a.parquet, a.arm, a.vtag)
@@ -220,7 +222,7 @@ def main(argv=None):
             rng = np.random.default_rng(zlib.crc32(f"q3acc1|{a.vtag}".encode()))
             sel = np.zeros(len(didx), bool)
             for g in range(G):
-                sel[rng.choice(np.flatnonzero(didx == g))] = True
+                sel[rng.choice(data["by_donor"][g])] = True
             o1 = regime_b(z, zf, didx, valid[(est, pop)], M, np.ones(G), sel, pop, rule, "acc1")
             # one-labelled-unit formula: classical CR1 over donors of w_g G (lam fbar_g + r_g1)
             vm = valid[(est, pop)].astype(bool)

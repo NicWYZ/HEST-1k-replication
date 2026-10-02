@@ -110,13 +110,22 @@ def load(parquet, arm, vtag):
     d, Y, P = d[js].reset_index(drop=True), Y[js], P[js]
     donors = np.array(sorted(d["donor_id"].unique()), dtype=object)
     didx = np.searchsorted(donors, d["donor_id"].to_numpy(object))
+    order = np.argsort(didx, kind="stable")
+    bounds = np.searchsorted(didx[order], np.arange(len(donors) + 1))
+    by_donor = [order[bounds[g]:bounds[g + 1]] for g in range(len(donors))]
     return dict(genes=genes, Y=Y, P=P, m=d["m_std"].to_numpy(np.float64),
-                neo=d["frac_neoplastic"].to_numpy(np.float64), donors=donors, didx=didx)
+                neo=d["frac_neoplastic"].to_numpy(np.float64), donors=donors, didx=didx,
+                by_donor=by_donor)
+
+
+THETA2_KIND = "neo_minus_stroma"     # 'mean' for ACS (instruction Q2: ACS theta_2 is the mean)
 
 
 def z_arrays(data, est, pop):
     """Per-spot z and f-z (n, n_gene) with B1's constants; unit validity per donor."""
     G = len(data["donors"])
+    if est == "theta2" and THETA2_KIND == "mean":
+        return data["Y"].copy(), data["P"].copy(), np.ones(G, bool)
     if pop == "spot":
         uidx, nu = np.zeros(len(data["didx"]), int), 1
     else:
@@ -221,9 +230,12 @@ def run_cell(data, Z, n_L, m, n_draws, vtag, theta_full, valid, Dpop):
         Lmask = np.isin(data["donors"], Ld)
         rng = np.random.default_rng(zlib.crc32(f"q2spots|{vtag}|nL{n_L}|m{m}|d{d}".encode()))
         sel = np.zeros(len(didx), bool)
+        lab_idx = {}
         for g in np.flatnonzero(Lmask):
-            idx = np.flatnonzero(didx == g)
-            sel[idx if (m == 0 or m >= len(idx)) else rng.choice(idx, m, replace=False)] = True
+            idx = data["by_donor"][g]
+            ii = idx if (m == 0 or m >= len(idx)) else np.sort(rng.choice(idx, m, replace=False))
+            sel[ii] = True
+            lab_idx[g] = ii
         mlab = np.bincount(didx[sel], minlength=G).astype(float)
         for (est, pop), (z, zf) in Z.items():
             ok = valid[(est, pop)]
@@ -248,22 +260,18 @@ def run_cell(data, Z, n_L, m, n_draws, vtag, theta_full, valid, Dpop):
                          lam["lam"], tr)
                 # design target: within-donor rectifier variance over labelled spots
                 lamL = lam["lamL"]
-                rs = z - lamL[didx] * zf
                 s2w = np.zeros((G, ng))
-                for g in np.flatnonzero(Lmask):
-                    ii = np.flatnonzero(sel & (didx == g))
+                for g, ii in lab_idx.items():
                     if len(ii) > 1:
-                        s2w[g] = rs[ii].var(0, ddof=1)
+                        s2w[g] = (z[ii] - lamL[g] * zf[ii]).var(0, ddof=1)
                 lam_d = lam
                 th, var, df = textbook_two_stage(pop, Dx, Dp, Lm, Am, lam_d, M, np.broadcast_to(mlab[:, None], (G, ng)), s2w)
                 if lam.get("classical_cols") is not None and lam["classical_cols"].any():
                     lam0 = E.lambda_rule("none", pop, Dd, Lm, Um)
-                    rs0 = z
                     s20 = np.zeros((G, ng))
-                    for g in np.flatnonzero(Lmask):
-                        ii = np.flatnonzero(sel & (didx == g))
+                    for g, ii in lab_idx.items():
                         if len(ii) > 1:
-                            s20[g] = rs0[ii].var(0, ddof=1)
+                            s20[g] = z[ii].var(0, ddof=1)
                     th0, var0, _ = textbook_two_stage(pop, Dx, Dp, Lm, Am, lam0, M, np.broadcast_to(mlab[:, None], (G, ng)), s20)
                     cc = lam["classical_cols"]
                     th, var = np.where(cc, th0, th), np.where(cc, var0, var)
@@ -338,9 +346,12 @@ def main(argv=None):
     p.add_argument("--draws", type=int, default=N_DRAWS)
     p.add_argument("--max-genes", type=int, default=0, help="0 = all genes")
     p.add_argument("--fit", action="store_true")
+    p.add_argument("--theta2-kind", default="neo_minus_stroma", choices=("neo_minus_stroma", "mean"))
     p.add_argument("--out-dir", required=True)
     a = p.parse_args(argv)
     np.seterr(all="ignore")
+    global THETA2_KIND
+    THETA2_KIND = a.theta2_kind
     os.makedirs(a.out_dir, exist_ok=True)
     t0 = time.time()
     data = load(a.parquet, a.arm, a.vtag)
@@ -395,7 +406,7 @@ def main(argv=None):
         fit_components(gg, f"{a.out_dir}/q2_fitted_components__{tag}.csv")
     summ = dict(vtag=a.vtag, arm=a.arm, n_rows=len(rows), n_gene_rows=len(gg), wall_s=time.time() - t0,
                 n_donors=G, n_genes=len(data["genes"]), stubbed=STUBBED, nl_grid=nls, m_grid=ms,
-                draws=a.draws, rules=list(RULES))
+                draws=a.draws, rules=list(RULES), theta2_kind=THETA2_KIND)
     with open(f"{a.out_dir}/q2_summary__{tag}.json", "w") as fh:
         json.dump(summ, fh, indent=1)
     print(json.dumps(summ))
