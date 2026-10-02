@@ -336,7 +336,25 @@ def fit_components(grid_gene, out_path):
     pd.DataFrame(rows).to_csv(out_path, index=False)
 
 
+def fit_main(argv):
+    """--fit-from: fit the variance surface on per-gene grid files written by separate n_L jobs."""
+    import glob
+    p = argparse.ArgumentParser()
+    p.add_argument("--fit-from", required=True, help="glob of q2_variance_grid_genes__*.csv.gz files")
+    p.add_argument("--out", required=True)
+    a = p.parse_args(argv)
+    files = sorted(glob.glob(a.fit_from))
+    assert files, a.fit_from
+    gg = pd.concat([pd.read_csv(f) for f in files], ignore_index=True)
+    fit_components(gg, a.out)
+    print(json.dumps(dict(files=files, n_gene_rows=len(gg), out=a.out)))
+    return 0
+
+
 def main(argv=None):
+    argv = sys.argv[1:] if argv is None else argv
+    if argv and argv[0].startswith("--fit-from"):
+        return fit_main(argv)
     p = argparse.ArgumentParser()
     p.add_argument("--parquet", required=True)
     p.add_argument("--vtag", required=True, help="task tag as in B1, e.g. CCRCC or CCRCC_merged")
