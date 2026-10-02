@@ -81,3 +81,20 @@ results/round3/A4_scores/a4_*__*__main9.csv
 results/round3/A4_scores/a4_*__*__slideout.csv
 results/round3/A4_scores/a4_*__*__cqrmain.csv
 !results/round3/A4_scores/a4_by_decile__*__*.csv
+
+# ---- Round 4 conformal track: large or local-only outputs (kept on disk / on Longleaf) ----
+# Over or near GitHub's 100 MB limit; the merged o-axis table is committed as c3_o_sweep.csv.gz
+# and the plain files are in the Longleaf project tree at the same paths.
+results/round4/conformal/C3_real/c3_o_sweep.csv
+results/round4/conformal/C3_real/c3_K_sweep.csv
+results/round4/conformal/C3_real/frag_*/c3_full__*.csv
+results/round4/conformal/C3_real/frag_*/c3_o_sweep__CCRCC.csv
+results/round4/conformal/C3_real/frag_*/c3_o_sweep__INDIANA.csv
+results/round4/conformal/C3_real/frag_*/c3_o_sweep__LUNG.csv
+results/round4/conformal/C3_real/frag_CCRCC_K/ghcp_o25/c3_full_ghcp_o25__CCRCC.csv
+results/round4/conformal/C3_real/frag_*/shards/
+# Interrupted local GHCP reproduction and quarantined local-abort runs (superseded on Longleaf)
+results/round4/conformal/C1_testbed/ghcp_repro/
+results/round4/conformal/C2_candidates/frag_*/local_aborted*
+results/round4/conformal/C2_candidates/frag_*/local_partial_aborted/
+.DS_Store
