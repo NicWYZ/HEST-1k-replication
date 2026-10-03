@@ -4,7 +4,7 @@ The instruction is `docs/decisions/round4_ppi_track.md`, with addendum 1, the Q1
 
 ## 1. Stage and status
 
-Interval 3 (Q4a, Q4 and Q5) is complete and this report is the final gate of the track. The work stops here. Q1 and Q2 with Q3 were reported at their gates in `docs/round4_ppi_Q1_report.md` and `docs/round4_ppi_Q3_report.md`. This report carries interval 3 in full and restates the earlier verdicts in the predictions table of section 5.
+Interval 3 (Q4a, Q4 and Q5) is complete and this report is the final gate of the track. The Q5 decision memo accepted it subject to one closing unit, Q5a, which section 10 records. The work stops after Q5a. Q1 and Q2 with Q3 were reported at their gates in `docs/round4_ppi_Q1_report.md` and `docs/round4_ppi_Q3_report.md`. This report carries interval 3 in full and restates the earlier verdicts in the predictions table of section 5.
 
 - Q4a recomputed every design-target row of Q2 and of Q3 regime A under the new rule `c_crossfit_design` on all six task variants, with the same draws and seeds. The rows under the old rules reproduce interval 2 exactly.
 - The estimator definition is final (`docs/round4_ppi_estimator_definition.md`), and the theory document has its section 5 (`docs/round4_ppi_theory.md`).
@@ -65,7 +65,7 @@ The laptop slept twice and the local repo moved to `/Users/nicolaszhang/hest-1k/
 - In every Q4a unit the rows for rules none and `c_crossfit` match the interval-2 merged files with maximum absolute difference 0.0 and no unmatched rows (`results/round4/ppi/Q4a_recompute/unit_records/*_reproduction_check.csv`).
 - The theorem check v3 reproduces the v2 ratios exactly (`results/round4/ppi/Q2_theory/theorem_v3/PROVENANCE__GL6.txt`).
 - Every Q4 unit table matches its source rows exactly on every numeric column (the unit `PROVENANCE` files under `results/round4/ppi/Q4_tables/unit_tables/`).
-- The numeric-claim sweep (`code/scripts/verify_numeric_claims.py` with `.verify-exceptions` and `.verify-derived`) over this report, the estimator definition, the theory document, the plan and the Q1 and Q3 reports leaves one unresolved claim. It is 0.32 in section 9 of `docs/round4_ppi_Q3_report.md`, a document not changed in interval 3, and it is left as found (`results/round4/ppi/final_gate_sweep.tsv`). Ten exceptions were added in this commit, each with its reason in `.verify-exceptions`. They are section references, prediction thresholds transcribed in the plan, two worked-example values and one range endpoint.
+- The numeric-claim sweep (`code/scripts/verify_numeric_claims.py` with `.verify-exceptions` and `.verify-derived`) over this report, the estimator definition, the theory document, the plan and the Q1 and Q3 reports leaves one unresolved claim. It is 0.32 in section 9 of `docs/round4_ppi_Q3_report.md`, a document not changed in interval 3, and it is left as found (`results/round4/ppi/final_gate_sweep.tsv`). Ten exceptions were added in this commit, each with its reason in `.verify-exceptions`. The Q5a sweep over the same documents, with three further section-reference exceptions, leaves no unresolved claim (`results/round4/ppi/Q5a/q5a_sweep.tsv`). They are section references, prediction thresholds transcribed in the plan, two worked-example values and one range endpoint.
 - The C3 file read for Q5 decompresses to md5 `2c3ceaa42528a1e3ad2979dc1161e542`, the value addendum 2 names (`results/round4/ppi/Q5_joint/PROVENANCE_joint.txt`).
 
 ## 4. What differs between the arms of each comparison
@@ -77,7 +77,7 @@ The laptop slept twice and the local repo moved to `/Users/nicolaszhang/hest-1k/
 
 ## 5. Predictions against outcomes
 
-Interval-3 predictions are scored in `results/round4/ppi/Q4_tables/q4_prediction_scores.csv`. Earlier verdicts are copied from the Q1 and Q3 reports.
+Interval-3 predictions are scored in `results/round4/ppi/Q4_tables/q4_prediction_scores.csv`. Earlier verdicts are copied from the Q1 and Q3 reports. This section is the record at `round4-ppi-final`. Q5a moved Q3.3 to 10 of 20 and rescored Q4.1 on the corrected interval, and section 10.5 gives the new values.
 
 | prediction | verdict | source |
 |---|---|---|
@@ -160,7 +160,7 @@ The median $\hat\lambda$ under the new rule is exactly 0.5000 in most CCRCC cell
 
 ### 6.2 Q4 tables
 
-The merged main table is `results/round4/ppi/Q4_tables/q4_main_table.csv`, with 30,304 rows (`q4_report_numbers.csv`). Each row carries a `role` column that marks the final design-target estimator, the final superpopulation estimator, the classical row and the comparison rows. The 96 superpopulation `c_crossfit` rows at $n_L < 6$ that one unit kept are dropped, because $\lambda = 0$ there by rule. Every superpopulation row states $G_U$. Regime B has no `c_crossfit_design` rows, because the rule is design-only and regime B is unchanged from interval 2.
+The merged main table is `results/round4/ppi/Q4_tables/q4_main_table.csv`, with 40,096 rows after Q5a, which added the corrected-interval rows of section 10.1 (`q4_report_numbers.csv`). Each row carries a `role` column that marks the final design-target estimator, the final superpopulation estimator, the classical row and the comparison rows. The 96 superpopulation `c_crossfit` rows at $n_L < 6$ that one unit kept are dropped, because $\lambda = 0$ there by rule. Every superpopulation row states $G_U$. Regime B has no `c_crossfit_design` rows, because the rule is design-only and regime B is unchanged from interval 2.
 
 ACS, from `results/round4/ppi/Q4_tables/unit_tables/ACS/q4_acs_gain_vs_R2_breakeven.csv`. On ACS states $\theta_2$ the package predictor's corrected cluster-level $R^2$ is 0.367, so the break-even rule puts the gain above $n_L = 9.44$. The spot-weighted superpopulation `c_crossfit` ratio is 0.752 at $n_L = 6$ and 0.822 at 8, and 1.084 to 1.205 from $n_L = 12$. That is opposite to the rule's direction. The donor-weighted ratio is 0.511 to 0.577 at every $n_L \ge 6$. On ACS PUMAs the spot-weighted $\theta_2$ superpopulation ratio is 0.106 to 0.152 at $n_L \ge 6$.
 
@@ -251,8 +251,139 @@ The leave-one-out offset prediction is Q2's recalibration quantity, the other do
 
 The track ends here. For round 5, the cluster table of section 6.6 is the input the instruction names. The three items above that affect the paper's tables are escalations 1, 2 and 10.
 
+## 10. Q5a, the closing unit (plan section 15.3)
+
+The Q5 decision memo accepted this report subject to one closing unit. Q5a ran on 2 and 3 October 2026, locally under plan section 15.6, as same-seed reruns of the Q4a runs. Every old row and column reproduces the committed values exactly (`results/round4/ppi/Q5a/PROVENANCE.md`, files in `results/round4/ppi/Q5a/unit_records/`). The code commits are `ea75e51` (unclipped $\hat\lambda$ columns and a per-draw dump) and `a8e6b43` (the design-variance fix below). The results commit is `d546007`. Sections 1 to 9 above are the record at `round4-ppi-final`. Where Q5a changed a number they cite, this section gives the new value and the file.
+
+### 10.1 Escalation 2 was a defect in the interval, not in the diagnostic
+
+The per-draw dump of the ACS states $\theta_2$ donor-weighted design rows settles it (`results/round4/ppi/Q5a/q5a_escalation2_reconciliation.csv`). The column `est_var_over_emp_var_median` is the median over genes of the mean over draws of the estimated variance, divided by the empirical variance. ACS has one outcome, so the median has nothing to act on and a heavy right tail of draws drives the mean. Under `c_crossfit` the estimated variance exceeds ten times the empirical variance in 0.625 of the draws at $n_L = 4$ and in 0.535 to 0.565 of them at $n_L \ge 6$, with coverage 0.950 to 0.975. So the interval was too wide in most draws and too narrow in the rest. The diagnostic was right to flag it.
+
+The cause is in the design-target variance with a cross-fitted $\lambda$. The two halves of the labelled donors carry different $\lambda_g$, and the population term's coefficient $c_U$ is their average over the labelled donors, so $c_U$ depends on which donors are labelled. The textbook variance formed each donor's contribution as $\bar z_g - \lambda_g \bar f_g$ without linearising $c_U$, so $(\lambda_A - \lambda_B)$ times the level of $\bar f$ entered $s_r^2$ as spurious between-donor variance. Linearising $c_U$ adds $(\lambda_g - c_U)\,\bar f_{\text{pop}}$ to each donor's contribution, and $(G/N)\bar F M_g(\lambda_g - c_U)$ in the spot-weighted form. The added term is zero when every donor has the same $\lambda$, so classical rows are unchanged. `code/scripts/round4_ppi_q2_masking.py` at `a8e6b43` writes the corrected interval as `textbook_t|fpc|lin`, beside the unchanged `textbook_t|fpc` rows, which stay in every table as the before values. In `q4_main_table.csv` the final design-target role now sits on the `lin` rows, and the old `c_crossfit_design` rows carry `design_variance_before_q5a`.
+
+Under the corrected interval the ACS states $\theta_2$ donor-weighted rows have estimated over empirical variance 0.887 to 1.021 under `c_crossfit` and coverage 0.875 to 0.910, where they had 411.950 to 1164.730 and 0.950 to 0.975 (`q5a_escalation2_reconciliation.csv`). The table below gives the before and after ranges for the donor-weighted design rows under both PPI rules at $n_L \ge 6$ (`results/round4/ppi/Q5a/q5a_design_variance_before_after.csv`). Estimates, empirical variances, variance ratios and $\hat\lambda$ are unchanged, so section 6.1's table stands.
+
+| task | estimand | coverage before | coverage after | est./emp. variance before | est./emp. variance after |
+|---|---|---|---|---|---|
+| CCRCC | $\theta_3$ | 0.847 to 0.885 | 0.840 to 0.883 | 0.921 to 1.197 | 0.827 to 1.096 |
+| CCRCC | $\theta_2$ | 0.863 to 0.900 | 0.863 to 0.893 | 0.943 to 1.084 | 0.895 to 1.045 |
+| CCRCC_merged | $\theta_3$ | 0.808 to 0.880 | 0.805 to 0.875 | 0.888 to 1.199 | 0.801 to 1.093 |
+| CCRCC_merged | $\theta_2$ | 0.855 to 0.907 | 0.853 to 0.907 | 0.913 to 1.202 | 0.866 to 1.138 |
+| INDIANA_KIDNEY | $\theta_3$ | 0.877 to 0.915 | 0.877 to 0.912 | 0.917 to 1.109 | 0.913 to 1.103 |
+| INDIANA_KIDNEY | $\theta_2$ | 0.870 to 0.895 | 0.870 to 0.895 | 0.982 to 1.075 | 0.974 to 1.074 |
+| LUNG_XENIUM | $\theta_3$ | 0.860 to 0.885 | 0.850 to 0.880 | 0.744 to 1.026 | 0.708 to 0.954 |
+| LUNG_XENIUM | $\theta_2$ | 0.830 to 0.915 | 0.820 to 0.915 | 0.887 to 1.073 | 0.822 to 1.019 |
+| ACS_STATES | $\theta_3$ | 0.875 to 0.975 | 0.875 to 0.940 | 0.886 to 17.094 | 0.848 to 1.285 |
+| ACS_STATES | $\theta_2$ | 0.910 to 0.965 | 0.875 to 0.910 | 204.380 to 1068.599 | 0.890 to 1.042 |
+| ACS_CA_PUMA | $\theta_3$ | 0.875 to 0.950 | 0.855 to 0.930 | 0.825 to 2.633 | 0.806 to 1.214 |
+| ACS_CA_PUMA | $\theta_2$ | 0.890 to 0.955 | 0.850 to 0.920 | 1.047 to 173.569 | 0.951 to 1.189 |
+
+The fix matters most on ACS, where the level of the prediction mean is large against its spread between clusters. On the HEST tasks it moves the median coverage of any design cell by at most 0.025 (`q5a_design_variance_before_after.csv`) and narrows the design interval. On the CCRCC gene axis the median width ratio of `hoptimus0` moves from 0.958 to 0.908 (`results/round4/ppi/Q4_tables/q4_gene_axis_summary.csv`).
+
+### 10.2 The spot-weighted PPI rows
+
+Every spot-weighted PPI row, on both targets and under every $\lambda$ rule, now carries the role `nuisance` in `q4_main_table.csv` and `q4a_table61.csv`. A `nuisance_note` beside it cites the permuted predictor's variance ratio in the same cell, and no row is deleted. The permuted predictor carries no information, yet on these rows it takes a large $\hat\lambda$ and removes a large share of the variance. What it removes is the between-donor variance of the design-weight sums, which any predictor constant across spots reproduces. The table gives the permuted predictor's rows on the design target under `c_crossfit_design` with the corrected interval (`results/round4/ppi/Q5a/q5a_spot_weighted_permuted.csv`). The paper treats these rows as a finding about estimand choice and does not count them as gains.
+
+| task | estimand | $n_L$ | clipped $\hat\lambda$ (median) | unclipped half mean (median) | its se (median) | variance ratio | coverage |
+|---|---|---|---|---|---|---|---|
+| CCRCC | $\theta_3$ | 6 | 0.856 | 1.050 | 0.248 | 0.397 | 0.855 |
+| CCRCC | $\theta_3$ | 8 | 0.879 | 1.061 | 0.243 | 0.389 | 0.867 |
+| CCRCC | $\theta_3$ | 12 | 0.909 | 1.070 | 0.200 | 0.346 | 0.865 |
+| CCRCC | $\theta_3$ | 16 | 0.915 | 1.046 | 0.172 | 0.285 | 0.867 |
+| CCRCC | $\theta_2$ | 6 | 0.892 | 1.167 | 0.340 | 0.441 | 0.873 |
+| CCRCC | $\theta_2$ | 8 | 0.919 | 1.167 | 0.318 | 0.364 | 0.867 |
+| CCRCC | $\theta_2$ | 12 | 0.959 | 1.174 | 0.240 | 0.373 | 0.875 |
+| CCRCC | $\theta_2$ | 16 | 0.971 | 1.155 | 0.204 | 0.364 | 0.867 |
+| CCRCC_merged | $\theta_3$ | 6 | 0.854 | 1.049 | 0.246 | 0.436 | 0.865 |
+| CCRCC_merged | $\theta_3$ | 8 | 0.881 | 1.051 | 0.243 | 0.307 | 0.860 |
+| CCRCC_merged | $\theta_3$ | 12 | 0.904 | 1.043 | 0.192 | 0.353 | 0.857 |
+| CCRCC_merged | $\theta_3$ | 16 | 0.923 | 1.058 | 0.171 | 0.346 | 0.877 |
+| CCRCC_merged | $\theta_2$ | 6 | 0.896 | 1.163 | 0.329 | 0.437 | 0.867 |
+| CCRCC_merged | $\theta_2$ | 8 | 0.925 | 1.170 | 0.302 | 0.373 | 0.853 |
+| CCRCC_merged | $\theta_2$ | 12 | 0.935 | 1.114 | 0.232 | 0.340 | 0.865 |
+| CCRCC_merged | $\theta_2$ | 16 | 0.963 | 1.143 | 0.204 | 0.364 | 0.887 |
+| INDIANA_KIDNEY | $\theta_3$ | 6 | 0.788 | 0.914 | 0.250 | 0.480 | 0.857 |
+| INDIANA_KIDNEY | $\theta_3$ | 8 | 0.810 | 0.927 | 0.217 | 0.435 | 0.847 |
+| INDIANA_KIDNEY | $\theta_3$ | 12 | 0.811 | 0.911 | 0.181 | 0.431 | 0.835 |
+| INDIANA_KIDNEY | $\theta_3$ | 16 | 0.822 | 0.911 | 0.152 | 0.471 | 0.840 |
+| INDIANA_KIDNEY | $\theta_2$ | 6 | 0.736 | 0.804 | 0.167 | 0.448 | 0.830 |
+| INDIANA_KIDNEY | $\theta_2$ | 8 | 0.764 | 0.819 | 0.152 | 0.423 | 0.818 |
+| INDIANA_KIDNEY | $\theta_2$ | 12 | 0.775 | 0.811 | 0.125 | 0.460 | 0.815 |
+| INDIANA_KIDNEY | $\theta_2$ | 16 | 0.781 | 0.810 | 0.110 | 0.441 | 0.790 |
+| LUNG_XENIUM | $\theta_3$ | 6 | 0.952 | 1.050 | 0.131 | 0.135 | 0.875 |
+| LUNG_XENIUM | $\theta_3$ | 8 | 0.964 | 1.048 | 0.112 | 0.099 | 0.860 |
+| LUNG_XENIUM | $\theta_3$ | 12 | 0.977 | 1.046 | 0.081 | 0.088 | 0.840 |
+| LUNG_XENIUM | $\theta_2$ | 6 | 0.885 | 1.030 | 0.200 | 0.318 | 0.830 |
+| LUNG_XENIUM | $\theta_2$ | 8 | 0.898 | 1.022 | 0.161 | 0.280 | 0.835 |
+| LUNG_XENIUM | $\theta_2$ | 12 | 0.926 | 1.032 | 0.116 | 0.272 | 0.820 |
+| ACS_STATES | $\theta_3$ | 6 | 0.702 | 0.733 | 0.381 | 0.515 | 0.835 |
+| ACS_STATES | $\theta_3$ | 8 | 0.719 | 0.784 | 0.381 | 0.701 | 0.850 |
+| ACS_STATES | $\theta_3$ | 12 | 0.753 | 0.803 | 0.237 | 0.595 | 0.825 |
+| ACS_STATES | $\theta_3$ | 16 | 0.720 | 0.784 | 0.200 | 0.654 | 0.860 |
+| ACS_STATES | $\theta_2$ | 6 | 0.996 | 1.000 | 0.006 | 0.000 | 0.740 |
+| ACS_STATES | $\theta_2$ | 8 | 0.997 | 1.002 | 0.005 | 0.000 | 0.820 |
+| ACS_STATES | $\theta_2$ | 12 | 0.999 | 1.004 | 0.004 | 0.000 | 0.825 |
+| ACS_STATES | $\theta_2$ | 16 | 1.000 | 1.004 | 0.003 | 0.000 | 0.855 |
+| ACS_CA_PUMA | $\theta_3$ | 6 | 0.989 | 1.036 | 0.070 | 0.028 | 0.860 |
+| ACS_CA_PUMA | $\theta_3$ | 8 | 0.995 | 1.025 | 0.051 | 0.035 | 0.865 |
+| ACS_CA_PUMA | $\theta_3$ | 12 | 0.998 | 1.035 | 0.044 | 0.026 | 0.855 |
+| ACS_CA_PUMA | $\theta_3$ | 16 | 0.998 | 1.027 | 0.035 | 0.020 | 0.900 |
+| ACS_CA_PUMA | $\theta_2$ | 6 | 0.980 | 1.015 | 0.059 | 0.024 | 0.845 |
+| ACS_CA_PUMA | $\theta_2$ | 8 | 0.995 | 1.035 | 0.056 | 0.013 | 0.880 |
+| ACS_CA_PUMA | $\theta_2$ | 12 | 0.998 | 1.027 | 0.040 | 0.016 | 0.890 |
+| ACS_CA_PUMA | $\theta_2$ | 16 | 1.000 | 1.030 | 0.032 | 0.015 | 0.855 |
+
+### 10.3 $\hat\lambda$ unclipped
+
+Every table that reports $\hat\lambda$ now carries `lambda_raw_mean_median`, the median over draws of the mean of the two unclipped half-sample estimates, and `lambda_raw_mean_se_median`, its standard error. The unclipped columns are empty only on rows that were not rerun. Those are the lung regime B rows at $c_d/c_s = 1000$, the ACS regime B rows at fixed $m \times G$ budgets and the ACS masking rows at $n_L = 20$ (`results/round4/ppi/Q5a/PROVENANCE.md`). For the final design-target rule at $n_L = 8$, $\theta_3$ donor-weighted, the clipped median of 0.500 on CCRCC and Indiana hides unclipped means of 0.472 to 0.667, with standard errors of 0.390 to 0.854 (`results/round4/ppi/Q4a_recompute/q4a_table61.csv`).
+
+| task | predictor | clipped $\hat\lambda$ | unclipped half mean | its se |
+|---|---|---|---|---|
+| ACS_CA_PUMA | `package` | 1.000 | 1.256 | 0.236 |
+| ACS_STATES | `package` | 0.918 | 1.209 | 0.370 |
+| CCRCC | `hoptimus0` | 0.500 | 0.567 | 0.397 |
+| CCRCC | `resnet50` | 0.500 | 0.565 | 0.466 |
+| CCRCC | `uni_v2` | 0.542 | 0.644 | 0.440 |
+| CCRCC_merged | `hoptimus0` | 0.500 | 0.548 | 0.390 |
+| CCRCC_merged | `resnet50` | 0.500 | 0.542 | 0.469 |
+| CCRCC_merged | `uni_v2` | 0.520 | 0.635 | 0.442 |
+| INDIANA_KIDNEY | `hoptimus0` | 0.500 | 0.667 | 0.626 |
+| INDIANA_KIDNEY | `resnet50` | 0.500 | 0.472 | 0.854 |
+| INDIANA_KIDNEY | `uni_v2` | 0.500 | 0.650 | 0.698 |
+| LUNG_XENIUM | `hoptimus0` | 0.816 | 0.932 | 0.317 |
+| LUNG_XENIUM | `resnet50` | 0.776 | 0.927 | 0.392 |
+| LUNG_XENIUM | `uni_v2` | 0.818 | 0.955 | 0.324 |
+
+### 10.4 The Indiana genes with corrected cluster-level $R^2$ of 1.0
+
+`q4_gene_axis.csv` carries the flag `R2_cluster_corrected_eq1`, set on 10, 7 and 19 Indiana genes for `hoptimus0`, `uni_v2` and `resnet50`, and on none of the CCRCC encoder genes. `q4_gene_axis_summary.csv` gives every summary with and without them (`full_union` and `full_union_excl_R2eq1`). Without them the Indiana `hoptimus0` Spearman correlation of width ratio with the corrected cluster-level $R^2$ is $-0.423$, against $-0.356$ with them, on the corrected interval (`q4_gene_axis_summary.csv`). Figure `results/round4/ppi/Q4_tables/fig_q4_gene_axis.png` now plots the corrected interval and draws the flagged genes as open circles.
+
+### 10.5 Scores that moved
+
+Every number below is read from `results/round4/ppi/Q4_tables/q4_prediction_scores.csv`.
+
+- **Q3.3** moves from 6 of 20 to 10 of 20 task and predictor pairs, because CCRCC merged now has regime B rows at unit cost and at $c_d/c_s = 100$ from the reruns. All four CCRCC merged arms now hold.
+- **Q4.1** stays at 7 of 12 criteria and is now scored on the corrected interval. The CCRCC gain shares rise to 0.669, 0.793 and 0.660 for `hoptimus0`, `uni_v2` and `resnet50`, so the "fewer than a third" half fails by more. The pre-fix shares stay in the file as context rows.
+- Q4a.1, Q4.2, Q4.3, Q4.4 and the Q3.1 reversal clause are unchanged.
+
+### 10.6 Escalations from Q5a
+
+1. **The estimator definition.** Memo section 3 item 5 keeps `docs/round4_ppi_estimator_definition.md` unchanged. Its design-target variance formula is the one escalation 2 found defective under a cross-fitted $\lambda$, and the linearised term of section 10.1 should be added to it before the paper uses the definition. That decision is for the oversight chat, and the document is untouched.
+2. **"No new masking draws."** Items 1 and 4 needed per-draw outputs and unclipped half-sample $\hat\lambda$, neither of which had been kept, so Q5a reran the existing draws with the same seeds (plan section 15.7). Nicolas approved this reading in the plan revision, and every old column reproduced exactly.
+3. **A pause and restart.** The first reruns started on `ea75e51`. When the dump showed the interval defect, the units were paused, the fix was committed as `a8e6b43`, and the units restarted from step 1. Outputs from the first pass are kept in the unit artifacts and not used.
+4. **Process limit.** As units finished, the remaining units were allowed 2 and then up to 4 processes, so the total never exceeded 4 (plan section 12.4).
+5. **A floating-point difference.** One regime B column on CCRCC differs from the interval-2 file by $4.4 \times 10^{-16}$ (`results/round4/ppi/Q5a/unit_records/CCRCC_q5a_reproduction_check.csv`).
+
 ## What the PPI track established
 
-On the Visium tasks the cluster-clustered PPI estimator gives little over the classical one under either target. Its design-target variance ratio lies between 0.93 and 1.09 at $n_L \ge 8$ for every encoder except `uni_v2` on CCRCC and CCRCC merged, at 0.81 to 0.90 (`results/round4/ppi/Q4a_recompute/q4a_table61.csv`). On lung Xenium the final design rule brings the variance to 0.41 to 0.55 of the classical one for every encoder at $n_L \ge 6$, where the old rule's gain shrank as $n_L$ grew (`q4a_table61.csv`). The permuted predictor sits at 0.96 to 1.07 on every task, so the gains are not an artefact of the tuning (`q4a_table61.csv`). Within a task the gain tracks the cluster-level $R^2$ of the within-donor contrast, strongly on CCRCC and weakly on Indiana (`results/round4/ppi/Q4_tables/q4_gene_axis_summary.csv`). The break-even rule $n_L > 4 + 2/R^2_{\text{cluster}}$ and the sign rule of Q4.4 do not predict the real-data gains cell by cell (`results/round4/ppi/Q4_tables/q4_prediction_scores.csv`). The estimator that remains is the textbook difference estimator with the finite-population correction and the GREG $\lambda$ for the design target, and the complement form with CR2 for the superpopulation, with no bootstrap (`docs/round4_ppi_estimator_definition.md`). At $n_L = 4$ and 6, labelling a few spots on every donor gives a narrower interval than spending the same unit budget on whole donors on every task, for the predictor shown in the Q3 report (`docs/round4_ppi_Q3_report.md` section 5). For the superpopulation $\theta_3$ donor-weighted interval under the cost ratio $c_d/c_s = 10$ it is narrower in 216 of 232 cells, and at 1000, where only lung can afford it, in 11 of 16 (`results/round4/ppi/Q4_tables/q4_report_numbers.csv`).
+Every number on this page is read from the file named beside it. Design-target ratios are empirical variance ratios against the classical estimator, which the Q5a variance fix does not change.
 
-Addendum 2 item 5 asks this page to carry its statement of what the joint table supports, which reads "on these data the same few labelled spots per donor serve the confidence interval (regime B, Q3) from the first spot and the prediction set only from about ten spots, so a labelling design of tens of spots on every donor serves both targets, while a design of a few fully labelled donors serves neither as well." The table supports the second half (`results/round4/ppi/Q5_joint/q5_joint_design.csv`). From $o = 10$ the `within_plain` set is finite and covers about 0.91, while at $o = 5$ only `ghcp` is finite, with mean width 4.564 to 6.622 on CCRCC, Indiana and lung against 1.879 to 2.947 for `within_plain` at $o = 10$ (`results/round4/ppi/Q5_joint/q5_report_numbers.csv`). The table does not test the "from the first spot" clause on HEST, because the smallest regime B setting is 6 spots per donor on Indiana and 14 on CCRCC. On ACS states the regime B slope interval covers 0.505 at one spot per state (`q5_joint_design.csv`).
+The gain theorem holds, and its practical form is the tuning cost. With $\lambda$ cross-fitted from half the labelled donors, the theorem check reproduces the predicted tuning cost to within 0.0426 in all 24 cells, refuted at the 0.03 line and held at 0.05 (`results/round4/ppi/Q4_tables/q4_prediction_scores.csv`). The break-even rule $n_L > 4 + 2/R^2_{\text{cluster}}$ is the structural statement, and it does not predict real-data cells one by one, with sign agreement in 23 of 36 cells (`q4_prediction_scores.csv`).
+
+On the Visium tasks the donor-weighted gain is small. Design-target ratios at $n_L \ge 8$ lie between 0.93 and 1.09 for every encoder except `uni_v2` on CCRCC and CCRCC merged, at 0.81 to 0.90 (`results/round4/ppi/Q4a_recompute/q4a_table61.csv`). On lung Xenium the gain is large and stable under the corrected rule, 0.41 to 0.55 at $n_L = 6$ to 12 for every encoder, while the permuted predictor stays at 1.03 to 1.05 (`q4a_table61.csv`). On ACS the package predictor's gain is large, 0.34 to 0.45 on states and 0.17 to 0.23 on PUMAs, with an unclipped $\hat\lambda$ above 1 (`q4a_table61.csv`). Across genes the gain tracks the cluster-level $R^2$ of the within-donor contrast. On CCRCC the Spearman correlations are $-0.858$ to $-0.903$ against $-0.358$ to $-0.508$ for the unit-level Pearson correlation, on the corrected interval (`results/round4/ppi/Q4_tables/q4_gene_axis_summary.csv`).
+
+Two corrections from Q5a change how the tables are read. First, every spot-weighted PPI row is nuisance-driven. The permuted predictor takes a median $\hat\lambda$ of 0.856 to 0.915 on CCRCC $\theta_3$ and brings the variance to 0.285 to 0.397 of the classical one, which a predictor without information cannot do (`results/round4/ppi/Q5a/q5a_spot_weighted_permuted.csv`). The paper treats this as a finding about estimand choice, not as a gain. Second, the design-target variance under a cross-fitted $\lambda$ needed a linearisation of the population coefficient. Without it the ACS states $\theta_2$ interval was too wide in most draws, with estimated over empirical variance 204.380 to 1068.599, and with it the ratio is 0.890 to 1.042 (`results/round4/ppi/Q5a/q5a_design_variance_before_after.csv`).
+
+The estimator that remains has two forms (`docs/round4_ppi_estimator_definition.md`). For the design target it is the textbook difference estimator with the finite-population correction, the GREG $\lambda$ and the linearised variance, the last still to be added to that document under escalation 1 of section 10.6. For the superpopulation it is the complement form with CR2. Neither uses a bootstrap. The design results stand. Under the cost ratio $c_d/c_s = 10$, labelling a few spots on every donor gives a narrower interval than labelling whole donors in 216 of 232 cells, and at 1000, where only lung can afford it, in 11 of 16 (`results/round4/ppi/Q4_tables/q4_report_numbers.csv`).
+
+Addendum 2 item 5 asks this page to carry its statement of what the joint table supports, which reads "on these data the same few labelled spots per donor serve the confidence interval (regime B, Q3) from the first spot and the prediction set only from about ten spots, so a labelling design of tens of spots on every donor serves both targets, while a design of a few fully labelled donors serves neither as well." The table supports the second half (`results/round4/ppi/Q5_joint/q5_joint_design.csv`). From $o = 10$ the `within_plain` set is finite and covers about 0.91. At $o = 5$ only `ghcp` is finite, with mean width 4.564 to 6.622 on CCRCC, Indiana and lung against 1.879 to 2.947 for `within_plain` at $o = 10$ (`results/round4/ppi/Q5_joint/q5_report_numbers.csv`). The table does not test the "from the first spot" clause on HEST, because the smallest regime B setting is 6 spots per donor on Indiana and 14 on CCRCC. On ACS states the regime B slope interval covers 0.505 at one spot per state (`q5_joint_design.csv`).
