@@ -84,7 +84,7 @@ def run_cell(G_L, G_U, m, ratio, reps, chunk, max_spots, seed):
     sa, seps = np.sqrt(comp["sigma_a2"]), np.sqrt(comp["sigma_eps2"])
     rng = E.seed_rng(seed)
     th = {"none": [], "c_crossfit": [], "oracle_lambda_A": []}
-    lams = []
+    lams, halves, cus, vt, vtf, nv = [], [], [], 0.0, 0.0, 0
     done, ch = 0, 0
     while done < reps:
         n = min(chunk, reps - done)
@@ -98,6 +98,9 @@ def run_cell(G_L, G_U, m, ratio, reps, chunk, max_spots, seed):
             tf_parts.append(yh.mean(2).T)
         t, tf = np.concatenate(t_parts, 1), np.concatenate(tf_parts, 1)
         D = Q1._n_for_iid(Q1.donor_value_stats(t, tf), m)
+        # donor-level variances of the outcome and prediction contributions (pooled over donors
+        # and replicates; every donor has the same distribution) for the tuning-cost terms
+        vt += float(t.var(axis=1, ddof=1).sum()); vtf += float(tf.var(axis=1, ddof=1).sum()); nv += t.shape[0]
         Lm = np.zeros((G, n), bool); Lm[:G_L] = True
         Um = ~Lm
         for rule in th:
@@ -112,6 +115,8 @@ def run_cell(G_L, G_U, m, ratio, reps, chunk, max_spots, seed):
             th[rule].append(res["theta"])
             if rule == "c_crossfit":
                 lams.append(lam["lam"])
+                halves.append(np.concatenate([lam["lamA"], lam["lamB"]]))
+                cus.append(lam["cU"])
         done += n
         ch += 1
     o = np.concatenate(th["oracle_lambda_A"])
@@ -123,6 +128,17 @@ def run_cell(G_L, G_U, m, ratio, reps, chunk, max_spots, seed):
     g = da / va - db / vb
     se = ratio_emp * np.sqrt(np.var(g, ddof=1) / len(a))
     lam = np.concatenate(lams)
+    # Q3 decision memo section 4 item 2 (plan section 14.4): tuning cost of a cross-fitted lambda.
+    # The lambda applied to a half is the other half's estimate; its mean and variance across
+    # replicates, against lambda_star (the oracle arm's lambda), give the predicted excess
+    # [Var(lam_hat) + (mean - lambda_star)^2] Var(p_g)/sigma_u^2, with Var(p_g) and sigma_u^2 the
+    # donor-level variances of the prediction and outcome contributions.
+    lh = np.concatenate(halves)
+    cu = np.concatenate(cus)
+    var_t, var_tf = vt / nv, vtf / nv
+    lam_star = comp["lambda_A_finite"]
+    tuning_pred = (lh.var(ddof=1) + (lh.mean() - lam_star) ** 2) * var_tf / var_t
+    u_extra = cu.var(ddof=1) * var_tf / var_t * G_L / G_U   # the complement form's U term
     vo = o.var(ddof=1)
     do = (o - o.mean()) ** 2 - vo
     go = do / vo - db / vb
@@ -132,7 +148,13 @@ def run_cell(G_L, G_U, m, ratio, reps, chunk, max_spots, seed):
                 emp_var_ratio=ratio_emp, emp_var_ratio_mc_se=se,
                 oracle_emp_var_ratio=oracle_ratio, oracle_emp_var_ratio_mc_se=oracle_se, emp_var_ppi=va, emp_var_cl=vb,
                 bias_ppi=float(a.mean() - MU), bias_cl=float(b.mean() - MU),
-                lambda_mean=float(lam.mean()), lambda_median=float(np.median(lam)), **comp)
+                lambda_mean=float(lam.mean()), lambda_median=float(np.median(lam)),
+                lambda_half_mean=float(lh.mean()), lambda_half_var=float(lh.var(ddof=1)),
+                lambda_star=float(lam_star), cU_var=float(cu.var(ddof=1)),
+                var_p_over_var_u=float(var_tf / var_t),
+                tuning_cost_obs=float(ratio_emp - oracle_ratio), tuning_cost_pred=float(tuning_pred),
+                tuning_cost_pred_with_U=float(tuning_pred + u_extra),
+                tuning_cost_obs_minus_pred=float(ratio_emp - oracle_ratio - tuning_pred), **comp)
 
 
 def main(argv=None):

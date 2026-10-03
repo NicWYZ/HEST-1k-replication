@@ -1,0 +1,12 @@
+Unit: Q4 Lung theta2 main table (LUNG_XENIUM, estimand theta2)
+Built by: python in-session assembly from merged Q4a files and committed interval-2 Q3 table; repo read-only at /Users/nicolaszhang/hest-1k/HEST-1k-replication-PPI (expected commit aa71028, not re-verified by me, no git run)
+Host: local Mac ; no Slurm jobs; wall time under 1 min
+Frame id: not exposed to this sub-agent (only the lead's 489504c4 is visible, deliberately not used); stamp frame_id is null. Project proj_3a4e23273fb6
+Inputs md5: {
+ "q4a_variance_grid.csv": "411f0e8ac6ca3517bb6e8b8f41a2d595",
+ "q4a_regime_comparison.csv": "6dd4f7c39da35b11211754d830ba1972",
+ "q4a_table61.csv": "2f4f777ca86f7fe41fb8a984daba5baa",
+ "q3_regime_comparison.csv(repo)": "7e2ed13508283bafb0453c5fa9b25cd7"
+}
+Rule: super rows at n_L<6: c_crossfit rows dropped, classical (none) rows flagged lambda_zero_nL_lt6=True.
+Script md5s: not applicable (no repo scripts run; assembly in-session pandas).

@@ -89,7 +89,10 @@ def _imp(name):
 
 B1 = _imp("round3_b1_ppi")
 
-RULES = ("none", "c_crossfit", "d1_pretest", "d2_pretest")
+RULES = ("none", "c_crossfit", "d1_pretest", "d2_pretest")   # interval 2 (Q2 as reported at Q3)
+# Interval 3 (Q3 decision memo, plan section 14): rule (d) dropped, the design rule added. The
+# default stays the interval-2 set so old commands reproduce; Q4a passes --rules.
+DESIGN_ONLY_RULES = ("c_crossfit_design",)   # design-target rows only; superpopulation unchanged
 ESTS = ("theta3", "theta2")
 POPS = ("donor", "spot")
 NL_GRID = (4, 6, 8, 12, 16)
@@ -188,7 +191,7 @@ def r2_measures(z, zf, didx, G):
 
 
 # ============================================================== textbook, two-stage
-def textbook_two_stage(pop, Dl, Dpop, Lm, Am, lam, M, m_lab, s2w):
+def textbook_two_stage(pop, Dl, Dpop, Lm, Am, lam, M, m_lab, s2w, lin=False):
     """Design-based difference estimator over all G donors. Dl: labelled donors' expanded sums;
     Dpop: all donors' all-spot f sums; Am the population mask (valid donors); s2w: per labelled donor the within-donor sample variance of
     the rectifier over its labelled spots, (G, ncol); M: donor spot counts (G,); m_lab (G, ncol)."""
@@ -212,6 +215,19 @@ def textbook_two_stage(pop, Dl, Dpop, Lm, Am, lam, M, m_lab, s2w):
         theta = cU * np.where(Am, tfp, 0.0).sum(0) / G + R.sum(0) / GL
         e = R
         within = np.where(Lm, f2 * s2w / np.maximum(m_lab, 1), 0.0)
+    if lin:
+        # Q5a (plan section 15.3 item 1, escalation 2). With a cross-fitted lambda the two halves
+        # carry different lambda_g, and the population term's coefficient cU is their (weighted)
+        # average over L, so cU itself depends on which donors are labelled. Linearising cU adds
+        # each donor's (lambda_g - cU) times the population prediction mean to its contribution.
+        # Without it, (lambda_A - lambda_B) times the level of f enters s^2 as spurious
+        # between-donor variance. The term is zero when lambda is the same on every donor.
+        if pop == "spot":
+            Fbar = Ftot / N
+            e = np.where(Lm, e + (G / N)[None, :] * Fbar[None, :] * M[:, None] * (lamL - cU[None, :]), 0.0)
+        else:
+            fpop = np.where(Am, tfp, 0.0).sum(0) / G
+            e = np.where(Lm, e + fpop[None, :] * (lamL - cU[None, :]), 0.0)
     em = np.where(Lm, e, 0.0).sum(0) / GL
     s2 = np.where(Lm, (e - em) ** 2, 0.0).sum(0) / (GL - 1.0)
     var = (1.0 - GL / G) * s2 / GL + within.sum(0) / (G * GL)
@@ -252,12 +268,15 @@ def run_cell(data, Z, n_L, m, n_draws, vtag, theta_full, valid, Dpop):
             tr = theta_full[(est, pop)]
             for rule in RULES:
                 sd = f"q2|{vtag}|nL{n_L}|m{m}|d{d}|{est}|{pop}|{rule}"
-                lam, res, iv = E.all_intervals(pop, Dd, Lm, Um, rule, tr, seed=sd, do_boot=False,
-                                               with_ws=False)
-                for name in ("CR1_t", "CR2_bm"):
-                    v = iv[name]
-                    _acc(acc, (est, pop, "super", rule, name), res["theta"], v["var"], v["lo"], v["hi"],
-                         lam["lam"], tr)
+                if rule in DESIGN_ONLY_RULES:
+                    lam = E.lambda_rule(rule, pop, Dd, Lm, Um, seed=sd)
+                else:
+                    lam, res, iv = E.all_intervals(pop, Dd, Lm, Um, rule, tr, seed=sd, do_boot=False,
+                                                   with_ws=False)
+                    for name in ("CR1_t", "CR2_bm"):
+                        v = iv[name]
+                        _acc(acc, (est, pop, "super", rule, name), res["theta"], v["var"], v["lo"], v["hi"],
+                             lam["lam"], tr, lam.get("lam_se"), *_raw(lam))
                 # design target: within-donor rectifier variance over labelled spots
                 lamL = lam["lamL"]
                 s2w = np.zeros((G, ng))
@@ -276,14 +295,49 @@ def run_cell(data, Z, n_L, m, n_draws, vtag, theta_full, valid, Dpop):
                     cc = lam["classical_cols"]
                     th, var = np.where(cc, th0, th), np.where(cc, var0, var)
                 lo, hi = E.t_interval(th, var, df)
-                _acc(acc, (est, pop, "design", rule, "textbook_t|fpc"), th, var, lo, hi, lam["lam"], tr)
+                _acc(acc, (est, pop, "design", rule, "textbook_t|fpc"), th, var, lo, hi, lam["lam"], tr,
+                     lam.get("lam_se"), *_raw(lam))
+                # Q5a: the same estimate with the linearised design variance (see textbook_two_stage)
+                _, varl, _ = textbook_two_stage(pop, Dx, Dp, Lm, Am, lam_d, M, np.broadcast_to(mlab[:, None], (G, ng)),
+                                                s2w, lin=True)
+                if lam.get("classical_cols") is not None and lam["classical_cols"].any():
+                    varl = np.where(lam["classical_cols"], var0, varl)
+                lol, hil = E.t_interval(th, varl, df)
+                _acc(acc, (est, pop, "design", rule, "textbook_t|fpc|lin"), th, varl, lol, hil, lam["lam"], tr,
+                     lam.get("lam_se"), *_raw(lam))
     return acc
 
 
-def _acc(acc, key, th, var, lo, hi, lam, tr):
-    a = acc.setdefault(key, dict(th=[], var=[], cov=[], w=[], lam=[]))
+def _raw(lam):
+    """Q5 memo section 3 item 4 (plan section 15.3): the mean of the two unclipped half-sample
+    lambdas and its standard error (lam_se_mean), nan for rules without halves."""
+    if lam.get("rawA") is None:
+        return None, None
+    return (np.asarray(lam["rawA"], float) + np.asarray(lam["rawB"], float)) / 2.0, lam.get("lam_se_mean")
+
+
+def _acc(acc, key, th, var, lo, hi, lam, tr, lam_se=None, lam_raw=None, lam_raw_se=None):
+    a = acc.setdefault(key, dict(th=[], var=[], cov=[], w=[], lam=[], lam_se=[], lam_raw=[], lam_raw_se=[]))
     a["th"].append(th); a["var"].append(var); a["cov"].append((lo <= tr) & (tr <= hi))
     a["w"].append(hi - lo); a["lam"].append(lam)
+    a["lam_se"].append(np.full(np.shape(th), np.nan) if lam_se is None else lam_se)
+    a["lam_raw"].append(np.full(np.shape(th), np.nan) if lam_raw is None else np.broadcast_to(lam_raw, np.shape(th)))
+    a["lam_raw_se"].append(np.full(np.shape(th), np.nan) if lam_raw_se is None
+                           else np.broadcast_to(lam_raw_se, np.shape(th)))
+
+
+def dump_draws(acc, spec, theta_full, path):
+    """Write per-draw arrays (draw x gene) for the requested estimand|population|target keys."""
+    want = {tuple(x.split("|")) for x in spec.split(",") if x}
+    out = {}
+    for (est, pop, tgt, rule, iv), v in acc.items():
+        if (est, pop, tgt) not in want:
+            continue
+        tag = f"{est}|{pop}|{tgt}|{rule}|{iv}"
+        for kk in ("th", "var", "cov", "w", "lam", "lam_se", "lam_raw", "lam_raw_se"):
+            out[f"{tag}|{kk}"] = np.stack([np.broadcast_to(x, np.shape(v["th"][0])) for x in v[kk]]).astype(float)
+        out[f"{tag}|theta_full"] = np.asarray(theta_full[(est, pop)], float)
+    np.savez_compressed(path, **out)
 
 
 def summarise(acc, cell, genes):
@@ -308,14 +362,31 @@ def summarise(acc, cell, genes):
                          width_ratio_median=float(np.nanmedian(w[ok] / wc[ok])) if ok.any() else np.nan,
                          emp_var_ratio_median=float(np.nanmedian(ev[ok] / evc[ok])) if ok.any() else np.nan,
                          lambda_median=float(np.nanmedian(v["lam"])),
-                         lambda_frac_zero=float(np.mean(v["lam"] == 0.0))))
+                         lambda_frac_zero=float(np.mean(v["lam"] == 0.0)),
+                         lambda_se_median=(float(np.nanmedian(v["lam_se"]))
+                                           if np.isfinite(v["lam_se"]).any() else np.nan),
+                         lambda_raw_mean_median=(float(np.nanmedian(v["lam_raw"]))
+                                                 if np.isfinite(v["lam_raw"]).any() else np.nan),
+                         lambda_raw_mean_se_median=(float(np.nanmedian(v["lam_raw_se"]))
+                                                    if np.isfinite(v["lam_raw_se"]).any() else np.nan)))
         # per-gene rows for the fit and the gene axis
         for j, gname in enumerate(genes):
             if not ok[j]:
                 continue
             rows[-1].setdefault("_genes", []).append(dict(gene=gname, emp_var=ev[j], est_var=mv[j],
                                                          emp_var_classical=evc[j], coverage=cov[j],
-                                                         width=w[j], width_classical=wc[j]))
+                                                         width=w[j], width_classical=wc[j],
+                                                         lambda_median=float(np.nanmedian(v["lam"][:, j])),
+                                                         lambda_sd_draws=float(np.nanstd(v["lam"][:, j], ddof=1)),
+                                                         lambda_se_median=(float(np.nanmedian(v["lam_se"][:, j]))
+                                                                           if np.isfinite(v["lam_se"][:, j]).any()
+                                                                           else np.nan),
+                                                         lambda_raw_mean_median=(float(np.nanmedian(v["lam_raw"][:, j]))
+                                                                                 if np.isfinite(v["lam_raw"][:, j]).any()
+                                                                                 else np.nan),
+                                                         lambda_raw_mean_se_median=(float(np.nanmedian(v["lam_raw_se"][:, j]))
+                                                                                    if np.isfinite(v["lam_raw_se"][:, j]).any()
+                                                                                    else np.nan)))
     return rows
 
 
@@ -355,6 +426,7 @@ def main(argv=None):
     argv = sys.argv[1:] if argv is None else argv
     if argv and argv[0].startswith("--fit-from"):
         return fit_main(argv)
+    global THETA2_KIND, RULES
     p = argparse.ArgumentParser()
     p.add_argument("--parquet", required=True)
     p.add_argument("--vtag", required=True, help="task tag as in B1, e.g. CCRCC or CCRCC_merged")
@@ -366,10 +438,15 @@ def main(argv=None):
     p.add_argument("--fit", action="store_true")
     p.add_argument("--theta2-kind", default="neo_minus_stroma", choices=("neo_minus_stroma", "mean"))
     p.add_argument("--out-dir", required=True)
+    p.add_argument("--rules", default=",".join(RULES),
+                   help="comma list; interval 3 uses none,c_crossfit,c_crossfit_design")
+    p.add_argument("--dump-draws", default="",
+                   help="Q5a (plan section 15.3 item 1): comma list of estimand|population|target whose "
+                        "per-draw estimates, variances, intervals and lambdas are written to an npz per cell")
     a = p.parse_args(argv)
     np.seterr(all="ignore")
-    global THETA2_KIND
     THETA2_KIND = a.theta2_kind
+    RULES = tuple(r for r in a.rules.split(",") if r)
     os.makedirs(a.out_dir, exist_ok=True)
     t0 = time.time()
     data = load(a.parquet, a.arm, a.vtag)
@@ -409,6 +486,8 @@ def main(argv=None):
     for n_L in nls:
         for m in ms:
             acc = run_cell(data, Z, n_L, m, a.draws, a.vtag, theta_full, valid, Dpop)
+            if a.dump_draws:
+                dump_draws(acc, a.dump_draws, theta_full, f"{a.out_dir}/q2_draws__{a.vtag}__{a.arm}__nL{n_L}__m{m}.npz")
             cell = dict(vtag=a.vtag, arm=a.arm, G=G, n_L=n_L, m=("all" if m == 0 else m),
                         m_eff=(medM if m == 0 else min(m, medM)))
             for r in summarise(acc, cell, data["genes"]):

@@ -1,0 +1,45 @@
+Round 4 PPI Q5 cluster table (descriptive only)
+frame_id 489504c4-ba56-4908-816f-a5c52417f390
+slurm_job 3511943 node c0812.ll.unc.edu partition spill account rc_htzhu_pi
+date 2026-10-02T17:09:29-04:00
+track clone HEAD aa71028 (/work/users/w/e/weiyang/hest_code/round4-ppi); scripts q5_build.py q5_check.py are staged, not committed
+wall build 44s check 4s
+python Python 3.11.16 numpy/pandas/pyarrow: 2.4.6 2.3.3 25.0.1
+70d4e11f53af3878e8361cc9fbfe3419  /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q5_joint/q5_build.py
+f57e25ab766d066e862c0841f62b99c3  /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q5_joint/q5_check.py
+--- input md5 (computed in job) ---
+{
+ "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__hoptimus0.parquet": "8aaf05663cafb35b0c2ee4cbf5ff87b7",
+ "/work/users/w/e/weiyang/hest_replication/results/round3/task_defs/CCRCC.json": "fa87eb05137bb8c95e5329e19268a4ab",
+ "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/recalibration/CCRCC/q2_recal_donor_offsets__CCRCC.csv": "862f5eb63fcb187d95c57604e86218ea",
+ "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet": "0cc62c5e600cc3811168b71ca7e2c1ab",
+ "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__resnet50.parquet": "59ac3c2fe8e1818b7b1d0a1e9c141652",
+ "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC_merged__hoptimus0.parquet": "70c5396113c56bff3c432e2c290092ad",
+ "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC_merged__uni_v2.parquet": "7db7809ab38c6c09660f89169ed5e4b0",
+ "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC_merged__resnet50.parquet": "bb99b9c832bab3c0bbf127fae73882df",
+ "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions_INDIANA_KIDNEY/b1_predictions__INDIANA_KIDNEY__hoptimus0.parquet": "b6a56e963872511ad177c7c1082d07b7",
+ "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/recalibration/INDIANA_KIDNEY/INDIANA_KIDNEY__q2_50genes.json": "c6100900c8b3f5d09cff7e8ee2e3f3a9",
+ "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/recalibration/INDIANA_KIDNEY/q2_recal_donor_offsets__INDIANA_KIDNEY.csv": "b0232bcdb2b1ae2e2bff6a839842e0af",
+ "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions_INDIANA_KIDNEY/b1_predictions__INDIANA_KIDNEY__uni_v2.parquet": "7a3322218de7cd846fe912ece20f633c",
+ "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions_INDIANA_KIDNEY/b1_predictions__INDIANA_KIDNEY__resnet50.parquet": "224dd3b2946cfe125e7409561c68a4a4",
+ "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__hoptimus0.parquet": "160b62889856e3eea69b977ae513acdb",
+ "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/LUNG_XENIUM__labelset__hoptimus0.json": "8c80214f012ed7cbfd085eab3ac516a7",
+ "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__uni_v2.parquet": "6aa0dbc8e957a236d09d112649db0352",
+ "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/LUNG_XENIUM__labelset__uni_v2.json": "8c80214f012ed7cbfd085eab3ac516a7",
+ "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__resnet50.parquet": "080e4ec1dd84e01a62bb9b376e7ede4b",
+ "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/LUNG_XENIUM__labelset__resnet50.json": "8c80214f012ed7cbfd085eab3ac516a7"
+}--- output md5 ---
+f907ea68c85d01a33c06ef1210105941  q5_cluster_table.csv
+2e45d86ab4ad17be6e21803007923e9f  q5_cluster_residuals_long.csv.gz
+ca79791a8a3dac8d847cbaaf1ee9d912  q5_mean_embeddings__CCRCC__hoptimus0.parquet
+b4ece30b5004bdd9e08367630f1a6a38  q5_mean_embeddings__CCRCC_merged__hoptimus0.parquet
+cecba0724eaf8d3fb4f1f7ce3437e036  q5_mean_embeddings__CCRCC_merged__resnet50.parquet
+18f276c3589328d308c64e2457311c6f  q5_mean_embeddings__CCRCC_merged__uni_v2.parquet
+bead880e0fea091496d7ac9e24a7bb59  q5_mean_embeddings__CCRCC__resnet50.parquet
+a7ce4e67607cb267652d0d019c746715  q5_mean_embeddings__CCRCC__uni_v2.parquet
+86531747cbf9ad84f9e2855145a70873  q5_mean_embeddings__INDIANA_KIDNEY__hoptimus0.parquet
+45ab1f87b062134f663aeb12e6d99333  q5_mean_embeddings__INDIANA_KIDNEY__resnet50.parquet
+6afacfeab8a65b01832c06906657362a  q5_mean_embeddings__INDIANA_KIDNEY__uni_v2.parquet
+1b67a5d8a20ab7c6b8c84b9bee9ea57f  q5_mean_embeddings__LUNG_XENIUM__hoptimus0.parquet
+383ab054ecddc0ff35c4fef2af68cd86  q5_mean_embeddings__LUNG_XENIUM__resnet50.parquet
+600d92e813353a75b476f28e65a80820  q5_mean_embeddings__LUNG_XENIUM__uni_v2.parquet

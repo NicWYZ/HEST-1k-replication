@@ -57,7 +57,7 @@ RULES = Q2.RULES
 def _half_lambda(z, zf, didx, sel, donors_h, k):
     s = sel & np.isin(didx, donors_h)
     if not s.any():
-        return np.zeros(z.shape[1]), np.zeros(z.shape[1])
+        return np.zeros(z.shape[1]), np.full(z.shape[1], np.nan), np.full(z.shape[1], np.nan)
     dd = didx[s]
     G = int(didx.max()) + 1
     n = np.bincount(dd, minlength=G).astype(float)
@@ -67,14 +67,14 @@ def _half_lambda(z, zf, didx, sel, donors_h, k):
     sxx, sxy = (wf ** 2).sum(0), (wf * wz).sum(0)
     raw = np.where(sxx > 0, sxy / np.where(sxx > 0, sxx, 1), np.nan)
     clip = np.clip(np.nan_to_num(raw), 0.0, 1.0)
-    if k is None:
-        return clip, raw
     Gh = int((n > 0).sum())
     dfree = s.sum() - Gh - 1
     rss = ((wz - raw * wf) ** 2).sum(0)
     se = np.sqrt(np.where((dfree > 0) & (sxx > 0), rss / max(dfree, 1) / np.where(sxx > 0, sxx, 1), np.nan))
+    if k is None:
+        return clip, raw, se
     ok = np.isfinite(se) & np.isfinite(raw) & (raw > k * se) & (len(donors_h) >= 3)
-    return np.where(ok, clip, 0.0), raw
+    return np.where(ok, clip, 0.0), raw, se
 
 
 def regime_b(z, zf, didx, valid, M, mg, sel, pop, rule, seed):
@@ -82,6 +82,7 @@ def regime_b(z, zf, didx, valid, M, mg, sel, pop, rule, seed):
     G = len(M)
     ng = z.shape[1]
     vd = np.flatnonzero(valid)
+    lam_raw = lam_raw_se = None
     if rule == "none":
         lamg = np.zeros((G, ng)); strata = None
     else:
@@ -90,8 +91,9 @@ def regime_b(z, zf, didx, valid, M, mg, sel, pop, rule, seed):
         h = len(perm) // 2
         A, Bh = perm[:h], perm[h:]
         k = E.PRETEST_K.get(rule)
-        lA, _ = _half_lambda(z, zf, didx, sel, A, k)
-        lB, _ = _half_lambda(z, zf, didx, sel, Bh, k)
+        lA, rA, sA = _half_lambda(z, zf, didx, sel, A, k)
+        lB, rB, sB = _half_lambda(z, zf, didx, sel, Bh, k)
+        lam_raw, lam_raw_se = (rA + rB) / 2.0, np.sqrt((sA ** 2 + sB ** 2) / 4.0)
         lamg = np.zeros((G, ng)); lamg[A] = lB; lamg[Bh] = lA
         strata = np.full(G, -1); strata[A] = 0; strata[Bh] = 1
     nall = np.bincount(didx, minlength=G).astype(float)
@@ -128,7 +130,8 @@ def regime_b(z, zf, didx, valid, M, mg, sel, pop, rule, seed):
         kst = 2
     v_super = Gv / (Gv - kst) * (q ** 2).sum(0) / Gv ** 2
     return dict(design=(theta, v_design, df_design), super=(theta, v_super, Gv - kst),
-                lam=np.nanmedian(lamg[vm], axis=0), n_m1=int((mm[vm] == 1).sum()))
+                lam=np.nanmedian(lamg[vm], axis=0), n_m1=int((mm[vm] == 1).sum()),
+                lam_raw=lam_raw, lam_raw_se=lam_raw_se)
 
 
 def run_b(data, Z, valid, theta_full, B, n_draws, vtag, budget_label):
@@ -146,13 +149,16 @@ def run_b(data, Z, valid, theta_full, B, n_draws, vtag, budget_label):
             sel[idx if mg[g] >= len(idx) else rng.choice(idx, int(mg[g]), replace=False)] = True
         for (est, pop), (z, zf) in Z.items():
             tr = theta_full[(est, pop)]
-            for rule in RULES:
+            for rule in Q2.RULES:
+                if rule in Q2.DESIGN_ONLY_RULES:
+                    continue   # regime B is unchanged by the Q3 memo
                 o = regime_b(z, zf, didx, valid[(est, pop)], M, mg, sel, pop, rule,
                              f"{vtag}|B{budget_label}|d{d}|{est}|{pop}|{rule}")
                 for tgt in ("design", "super"):
                     th, v, df = o[tgt]
                     lo, hi = E.t_interval(th, v, np.full(th.shape, df))
-                    Q2._acc(acc, (est, pop, tgt, rule, "regB_t"), th, v, lo, hi, o["lam"], tr)
+                    Q2._acc(acc, (est, pop, tgt, rule, "regB_t"), th, v, lo, hi, o["lam"], tr,
+                            None, o["lam_raw"], o["lam_raw_se"])
         if B == 0:
             break
     return acc, mg
@@ -169,9 +175,18 @@ def main(argv=None):
     p.add_argument("--max-genes", type=int, default=0)
     p.add_argument("--theta2-kind", default="neo_minus_stroma", choices=("neo_minus_stroma", "mean"))
     p.add_argument("--out-dir", required=True)
+    p.add_argument("--rules", default=",".join(Q2.RULES))
+    p.add_argument("--cd-cs", type=float, default=CD_CS, help="cost ratio of the cost-matched regime B rows")
+    p.add_argument("--parts", default="A,B,cost,acc",
+                   help="subset of A (regime A unit cost), B (regime B unit cost), cost (cost-matched "
+                        "regime B), acc (acceptance); interval 3 runs A for Q4a and cost for Q3.3")
+    p.add_argument("--tag-suffix", default="")
     a = p.parse_args(argv)
     np.seterr(all="ignore")
     Q2.THETA2_KIND = a.theta2_kind
+    Q2.RULES = tuple(r for r in a.rules.split(",") if r)
+    parts = set(a.parts.split(","))
+    cd_cs = a.cd_cs
     os.makedirs(a.out_dir, exist_ok=True)
     t0 = time.time()
     data = Q2.load(a.parquet, a.arm, a.vtag)
@@ -193,28 +208,33 @@ def main(argv=None):
     for B in map(int, a.budgets.split(",")):
         for n_L in nls:
             mA = int(B // n_L)
-            acc = Q2.run_cell(data, Z, n_L, mA, a.draws, a.vtag, theta_full, valid, Dpop)
-            for r in Q2.summarise(acc, dict(vtag=a.vtag, arm=a.arm, G=G, regime="A", budget=B,
-                                            cost="unit", n_L=n_L, m=mA), data["genes"]):
-                r.pop("_genes", None); rows.append(r)
-            Bc = int(round(n_L * (CD_CS + mA) - CD_CS * G))
-            if Bc > 0:
-                acc, mg = run_b(data, Z, valid, theta_full, Bc, a.draws, a.vtag, f"cost{B}_{n_L}")
+            if "A" in parts:
+                acc = Q2.run_cell(data, Z, n_L, mA, a.draws, a.vtag, theta_full, valid, Dpop)
+                for r in Q2.summarise(acc, dict(vtag=a.vtag, arm=a.arm, G=G, regime="A", budget=B,
+                                                cost="unit", n_L=n_L, m=mA), data["genes"]):
+                    r.pop("_genes", None); rows.append(r)
+            # cost-matched regime B: same total cost n_L (c_d/c_s + m_A) as regime A, in spot units.
+            # The draw seed label is unchanged for c_d/c_s = 100 so interval-2 rows reproduce.
+            Bc = int(round(n_L * (cd_cs + mA) - cd_cs * G))
+            if "cost" in parts and Bc > 0:
+                lab = f"cost{B}_{n_L}" if cd_cs == 100 else f"cost{cd_cs:g}_{B}_{n_L}"
+                acc, mg = run_b(data, Z, valid, theta_full, Bc, a.draws, a.vtag, lab)
                 for r in Q2.summarise(acc, dict(vtag=a.vtag, arm=a.arm, G=G, regime="B", budget=Bc,
-                                                cost=f"cd_cs_{CD_CS:g}_vs_A_nL{n_L}_B{B}", n_L=G,
+                                                cost=f"cd_cs_{cd_cs:g}_vs_A_nL{n_L}_B{B}", n_L=G,
                                                 m=float(np.median(mg))), data["genes"]):
                     r.pop("_genes", None); rows.append(r)
             print(f"A B{B} nL{n_L} {time.time()-t0:.0f}s", flush=True)
-        acc, mg = run_b(data, Z, valid, theta_full, B, a.draws, a.vtag, str(B))
-        for r in Q2.summarise(acc, dict(vtag=a.vtag, arm=a.arm, G=G, regime="B", budget=B, cost="unit",
-                                        n_L=G, m=float(np.median(mg))), data["genes"]):
-            r.pop("_genes", None); rows.append(r)
-        print(f"B B{B} {time.time()-t0:.0f}s", flush=True)
+        if "B" in parts:
+            acc, mg = run_b(data, Z, valid, theta_full, B, a.draws, a.vtag, str(B))
+            for r in Q2.summarise(acc, dict(vtag=a.vtag, arm=a.arm, G=G, regime="B", budget=B, cost="unit",
+                                            n_L=G, m=float(np.median(mg))), data["genes"]):
+                r.pop("_genes", None); rows.append(r)
+            print(f"B B{B} {time.time()-t0:.0f}s", flush=True)
     # acceptance: m = all, and m = 1
     didx = data["didx"]
     M = np.bincount(didx, minlength=G).astype(float)
-    for (est, pop), (z, zf) in Z.items():
-        for rule in RULES:
+    for (est, pop), (z, zf) in (Z.items() if "acc" in parts else []):
+        for rule in [r for r in Q2.RULES if r not in Q2.DESIGN_ONLY_RULES]:
             o = regime_b(z, zf, didx, valid[(est, pop)], M, M.copy(), np.ones(len(didx), bool), pop, rule, "acc")
             accrows.append(dict(vtag=a.vtag, arm=a.arm, estimand=est, population=pop, lambda_rule=rule,
                                 check="m_all_equals_theta_full",
@@ -229,7 +249,7 @@ def main(argv=None):
             accrows.append(dict(vtag=a.vtag, arm=a.arm, estimand=est, population=pop, lambda_rule=rule,
                                 check="m1_design_var_zero_and_n_m1", value=float(np.nanmax(np.abs(o1["design"][1]))),
                                 n_m1=o1["n_m1"], n_valid=int(vm.sum())))
-    tag = f"{a.vtag}__{a.arm}"
+    tag = f"{a.vtag}__{a.arm}{a.tag_suffix}"
     pd.DataFrame(rows).to_csv(f"{a.out_dir}/q3_regime_comparison__{tag}.csv", index=False)
     pd.DataFrame(accrows).to_csv(f"{a.out_dir}/q3_acceptance__{tag}.csv", index=False)
     summ = dict(vtag=a.vtag, arm=a.arm, n_rows=len(rows), wall_s=time.time() - t0, budgets=a.budgets,

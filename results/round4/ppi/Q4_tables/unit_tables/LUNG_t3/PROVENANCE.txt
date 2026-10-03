@@ -1,0 +1,6 @@
+Q4 Lung theta3 main table, interval 3 phase 2
+repo (read-only): /Users/nicolaszhang/hest-1k/HEST-1k-replication-PPI ; git HEAD not readable from sandbox (rev-parse returned empty); no repo scripts run
+method: inline pandas cell; filter vtag=LUNG_XENIUM, estimand=theta3; super c_crossfit rows at n_L<6 dropped (144 rows) and replaced by classical rows flagged lambda_zero_nL_lt6; regime B unit and c_d/c_s=100 rows from committed interval-2 q3_regime_comparison.csv (rules none, c_crossfit; pretest rules d1/d2 excluded)
+host local Mac, no Slurm, wall about 2 s, MaxRSS about 0.2 GB
+input md5: {"table61": "2f4f777ca86f7fe41fb8a984daba5baa", "grid": "411f0e8ac6ca3517bb6e8b8f41a2d595", "regime": "6dd4f7c39da35b11211754d830ba1972", "q3_regime_comparison.csv(committed)": "7e2ed13508283bafb0453c5fa9b25cd7"}
+output md5 q4_main_table__Lung_t3.csv: d11a1e335e21c2688e865608fb0a320c

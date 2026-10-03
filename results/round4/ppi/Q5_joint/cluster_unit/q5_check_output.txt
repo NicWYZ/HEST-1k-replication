@@ -1,0 +1,19 @@
+CCRCC hoptimus0 rows 24 expected 24 spots 74220 parquet rows 74220 OK
+CCRCC uni_v2 rows 24 expected 24 spots 74220 parquet rows 74220 OK
+CCRCC resnet50 rows 24 expected 24 spots 74220 parquet rows 74220 OK
+CCRCC_merged hoptimus0 rows 23 expected 23 spots 74220 parquet rows 74220 OK
+CCRCC_merged uni_v2 rows 23 expected 23 spots 74220 parquet rows 74220 OK
+CCRCC_merged resnet50 rows 23 expected 23 spots 74220 parquet rows 74220 OK
+INDIANA_KIDNEY hoptimus0 rows 25 expected 25 spots 31425 parquet rows 31425 OK
+INDIANA_KIDNEY uni_v2 rows 25 expected 25 spots 31425 parquet rows 31425 OK
+INDIANA_KIDNEY resnet50 rows 25 expected 25 spots 31425 parquet rows 31425 OK
+LUNG_XENIUM hoptimus0 rows 15 expected 15 spots 19083 parquet rows 19083 OK
+LUNG_XENIUM uni_v2 rows 15 expected 15 spots 19083 parquet rows 19083 OK
+LUNG_XENIUM resnet50 rows 15 expected 15 spots 19083 parquet rows 19083 OK
+duplicate keys main 0 long 0
+CHECK CCRCC_merged uni_v2 INT10: n=1983 joined=1980 max|dmean_resid|=8.33e-17 max rel dvar=3.54e-16 max|d mean_emb|=2.98e-08 med diff=5.6e-17
+CHECK CCRCC hoptimus0 INT8: n=1949 joined=1929 max|dmean_resid|=9.11e-17 max rel dvar=3.07e-16 max|d mean_emb|=6.88e-08 med diff=0.0e+00
+CHECK CCRCC_merged uni_v2 INT5: n=1186 joined=1168 max|dmean_resid|=4.44e-16 max rel dvar=2.35e-16 max|d mean_emb|=4.60e-08 med diff=0.0e+00
+CHECK CCRCC_merged resnet50 INT8: n=1949 joined=1929 max|dmean_resid|=2.22e-16 max rel dvar=3.52e-16 max|d mean_emb|=1.19e-08 med diff=5.6e-17
+CHECK LUNG_XENIUM resnet50 lungXen_VUILD106: n=2509 joined=2476 max|dmean_resid|=1.11e-16 max rel dvar=7.12e-16 max|d mean_emb|=1.39e-08 med diff=0.0e+00
+worst 6.880338654369211e-08

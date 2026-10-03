@@ -1,0 +1,60 @@
+prediction,scope,statistic,value,criterion,holds
+Q4a.1,CCRCC|hoptimus0,lambda_median_nL16_minus_nL8,0.03225293740228241,"|median lambda at n_L 16 - at n_L 8| <= 0.1 (theta3 donor, design, m = all)",True
+Q4a.1,CCRCC|uni_v2,lambda_median_nL16_minus_nL8,0.0806508027389976,"|median lambda at n_L 16 - at n_L 8| <= 0.1 (theta3 donor, design, m = all)",True
+Q4a.1,CCRCC|resnet50,lambda_median_nL16_minus_nL8,0.028352805481346666,"|median lambda at n_L 16 - at n_L 8| <= 0.1 (theta3 donor, design, m = all)",True
+Q4a.1,CCRCC|hoptimus0|nL12,ratio_minus_ratio_nL8,-0.028941820996620127,design ratio at n_L 12 and 16 no larger than at n_L 8,True
+Q4a.1,CCRCC|hoptimus0|nL16,ratio_minus_ratio_nL8,0.0903571217689807,design ratio at n_L 12 and 16 no larger than at n_L 8,False
+Q4a.1,CCRCC|uni_v2|nL12,ratio_minus_ratio_nL8,-0.030114500226519958,design ratio at n_L 12 and 16 no larger than at n_L 8,True
+Q4a.1,CCRCC|uni_v2|nL16,ratio_minus_ratio_nL8,0.0250091396699077,design ratio at n_L 12 and 16 no larger than at n_L 8,False
+Q4a.1,CCRCC|resnet50|nL12,ratio_minus_ratio_nL8,0.010716033511720457,design ratio at n_L 12 and 16 no larger than at n_L 8,False
+Q4a.1,CCRCC|resnet50|nL16,ratio_minus_ratio_nL8,0.05198794825436304,design ratio at n_L 12 and 16 no larger than at n_L 8,False
+Q4a.1,CCRCC_merged|hoptimus0|nL12,ratio_minus_ratio_nL8,-0.034516881545556655,design ratio at n_L 12 and 16 no larger than at n_L 8,True
+Q4a.1,CCRCC_merged|hoptimus0|nL16,ratio_minus_ratio_nL8,0.07600456574919012,design ratio at n_L 12 and 16 no larger than at n_L 8,False
+Q4a.1,CCRCC_merged|uni_v2|nL12,ratio_minus_ratio_nL8,-0.015292139163457508,design ratio at n_L 12 and 16 no larger than at n_L 8,True
+Q4a.1,CCRCC_merged|uni_v2|nL16,ratio_minus_ratio_nL8,0.06537962064931202,design ratio at n_L 12 and 16 no larger than at n_L 8,False
+Q4a.1,CCRCC_merged|resnet50|nL12,ratio_minus_ratio_nL8,-0.05126401782405443,design ratio at n_L 12 and 16 no larger than at n_L 8,True
+Q4a.1,CCRCC_merged|resnet50|nL16,ratio_minus_ratio_nL8,0.08142439478843377,design ratio at n_L 12 and 16 no larger than at n_L 8,False
+Q4a.1,INDIANA_KIDNEY|hoptimus0|nL12,ratio_minus_ratio_nL8,0.0104891758928074,design ratio at n_L 12 and 16 no larger than at n_L 8,False
+Q4a.1,INDIANA_KIDNEY|hoptimus0|nL16,ratio_minus_ratio_nL8,-0.00365813652490099,design ratio at n_L 12 and 16 no larger than at n_L 8,True
+Q4a.1,INDIANA_KIDNEY|uni_v2|nL12,ratio_minus_ratio_nL8,0.03384096232953582,design ratio at n_L 12 and 16 no larger than at n_L 8,False
+Q4a.1,INDIANA_KIDNEY|uni_v2|nL16,ratio_minus_ratio_nL8,0.00439324743860714,design ratio at n_L 12 and 16 no larger than at n_L 8,False
+Q4a.1,INDIANA_KIDNEY|resnet50|nL12,ratio_minus_ratio_nL8,0.029196933750307297,design ratio at n_L 12 and 16 no larger than at n_L 8,False
+Q4a.1,INDIANA_KIDNEY|resnet50|nL16,ratio_minus_ratio_nL8,0.017268726668949297,design ratio at n_L 12 and 16 no larger than at n_L 8,False
+Q4a.1,LUNG_XENIUM|hoptimus0|nL12,ratio_minus_ratio_nL8,-0.016261008804054566,design ratio at n_L 12 and 16 no larger than at n_L 8,True
+Q4a.1,LUNG_XENIUM|uni_v2|nL12,ratio_minus_ratio_nL8,-0.012514342357502206,design ratio at n_L 12 and 16 no larger than at n_L 8,True
+Q4a.1,LUNG_XENIUM|resnet50|nL12,ratio_minus_ratio_nL8,-0.004835329713479997,design ratio at n_L 12 and 16 no larger than at n_L 8,True
+Q4a.1,CCRCC|uni_v2|nL6,design_ratio,0.7931317282961435,< 0.9 at every n_L >= 6,True
+Q4a.1,CCRCC|uni_v2|nL8,design_ratio,0.8439532116134996,< 0.9 at every n_L >= 6,True
+Q4a.1,CCRCC|uni_v2|nL12,design_ratio,0.8138387113869796,< 0.9 at every n_L >= 6,True
+Q4a.1,CCRCC|uni_v2|nL16,design_ratio,0.8689623512834073,< 0.9 at every n_L >= 6,True
+Q4a.1,LUNG_XENIUM|hoptimus0|nL4,design_ratio,1.0,"< 0.75 at every n_L (n_L = 4 is classical by the n_L < 6 rule, ratio 1)",False
+Q4a.1,LUNG_XENIUM|hoptimus0|nL6,design_ratio,0.4580329111441706,"< 0.75 at every n_L (n_L = 4 is classical by the n_L < 6 rule, ratio 1)",True
+Q4a.1,LUNG_XENIUM|hoptimus0|nL8,design_ratio,0.4281583363653484,"< 0.75 at every n_L (n_L = 4 is classical by the n_L < 6 rule, ratio 1)",True
+Q4a.1,LUNG_XENIUM|hoptimus0|nL12,design_ratio,0.4118973275612938,"< 0.75 at every n_L (n_L = 4 is classical by the n_L < 6 rule, ratio 1)",True
+Q4.4,all_arms,n_agree_of_n_cells,23/36,sign(ratio - 1) agrees with sign(se^2 - lambda^2) in at least 18 of 22 cells (scaled: >= 18/22 of cells),False
+Q4.4,encoders_only,n_agree_of_n_cells,9/21,sign(ratio - 1) agrees with sign(se^2 - lambda^2) in at least 18 of 22 cells (scaled: >= 18/22 of cells),False
+Q4.4,HEST_encoders,n_agree_of_n_cells,9/21,sign(ratio - 1) agrees with sign(se^2 - lambda^2) in at least 18 of 22 cells (scaled: >= 18/22 of cells),False
+Q3.3,ACS_CA_PUMA|package,frac_cells_pred_within_factor2,1.0,predicted crossover within a factor of two of the empirical one in every cell,True
+Q3.3,ACS_CA_PUMA|permuted,frac_cells_pred_within_factor2,1.0,predicted crossover within a factor of two of the empirical one in every cell,True
+Q3.3,ACS_STATES|package,frac_cells_pred_within_factor2,0.5714285714285714,predicted crossover within a factor of two of the empirical one in every cell,False
+Q3.3,ACS_STATES|permuted,frac_cells_pred_within_factor2,0.42857142857142855,predicted crossover within a factor of two of the empirical one in every cell,False
+Q3.3,CCRCC|hoptimus0,frac_cells_pred_within_factor2,1.0,predicted crossover within a factor of two of the empirical one in every cell,True
+Q3.3,CCRCC|permuted,frac_cells_pred_within_factor2,1.0,predicted crossover within a factor of two of the empirical one in every cell,True
+Q3.3,CCRCC|resnet50,frac_cells_pred_within_factor2,1.0,predicted crossover within a factor of two of the empirical one in every cell,True
+Q3.3,CCRCC|uni_v2,frac_cells_pred_within_factor2,1.0,predicted crossover within a factor of two of the empirical one in every cell,True
+Q3.3,CCRCC_merged|hoptimus0,frac_cells_pred_within_factor2,1.0,predicted crossover within a factor of two of the empirical one in every cell,True
+Q3.3,CCRCC_merged|permuted,frac_cells_pred_within_factor2,1.0,predicted crossover within a factor of two of the empirical one in every cell,True
+Q3.3,CCRCC_merged|resnet50,frac_cells_pred_within_factor2,1.0,predicted crossover within a factor of two of the empirical one in every cell,True
+Q3.3,CCRCC_merged|uni_v2,frac_cells_pred_within_factor2,1.0,predicted crossover within a factor of two of the empirical one in every cell,True
+Q3.3,INDIANA_KIDNEY|hoptimus0,frac_cells_pred_within_factor2,0.7272727272727273,predicted crossover within a factor of two of the empirical one in every cell,False
+Q3.3,INDIANA_KIDNEY|permuted,frac_cells_pred_within_factor2,0.6363636363636364,predicted crossover within a factor of two of the empirical one in every cell,False
+Q3.3,INDIANA_KIDNEY|resnet50,frac_cells_pred_within_factor2,0.7272727272727273,predicted crossover within a factor of two of the empirical one in every cell,False
+Q3.3,INDIANA_KIDNEY|uni_v2,frac_cells_pred_within_factor2,0.6363636363636364,predicted crossover within a factor of two of the empirical one in every cell,False
+Q3.3,LUNG_XENIUM|hoptimus0,frac_cells_pred_within_factor2,0.5555555555555556,predicted crossover within a factor of two of the empirical one in every cell,False
+Q3.3,LUNG_XENIUM|permuted,frac_cells_pred_within_factor2,0.9166666666666666,predicted crossover within a factor of two of the empirical one in every cell,False
+Q3.3,LUNG_XENIUM|resnet50,frac_cells_pred_within_factor2,0.8888888888888888,predicted crossover within a factor of two of the empirical one in every cell,False
+Q3.3,LUNG_XENIUM|uni_v2,frac_cells_pred_within_factor2,0.5555555555555556,predicted crossover within a factor of two of the empirical one in every cell,False
+Q3.3,all,n_cells_scored,217,context,
+Q3.3,SUMMARY,n_holds_of_n_scored,10/20,,False
+Q4.4,SUMMARY,n_holds_of_n_scored,0/3,,False
+Q4a.1,SUMMARY,n_holds_of_n_scored,19/32,,False

@@ -272,3 +272,16 @@ docs/round2_results_synthesis.md:0.29	derived: median zero-fraction over the fiv
 0.029	derived: maximum over cells of |oracle_emp_var_ratio - finite_m_ratio_lambda_A| in results/round4/ppi/Q2_theory/theorem_v2/q2_sim_theorem.csv
 1.76	derived: maximum over cells of that difference divided by oracle_emp_var_ratio_mc_se, same file
 31,915	derived: length of target_genes.list in results/round3/D4_expansion/task_defs/INDIANA_KIDNEY.json (Indiana kidney candidate panel)
+5.1	section reference: docs/round4_ppi_theory.md section 5.1, not a numeric claim
+0.44	derived: worked example of the break-even rule n_L > 4 + 2/R2 in docs/round4_ppi_theory.md section 5, R2 = 0.44 gives 8.5
+8.5	derived: 4 + 2/0.44 = 8.55, the worked example in docs/round4_ppi_theory.md section 5
+834	upper end of the range written 824-834 in results/round4/ppi/Q4_tables/unit_tables/CCRCC_t3/PROVENANCE_phase2.txt, which the resolver reads as -834
+14.4	section reference: docs/round4_ppi_plan.md section 14.4
+14.9	section reference: docs/round4_ppi_plan.md section 14.9
+0.75	prediction threshold: Q4a.1 (lung hoptimus0 below 0.75), transcribed verbatim in docs/round4_ppi_plan.md section 4 from the Q3 memo
+0.09	derived: binomial variance 0.9 x 0.1 in the Monte Carlo error of docs/round4_ppi_plan.md section 8 item 2
+0.04	prediction threshold: Q1b.3 (CR1 loses 0.02 to 0.04), transcribed verbatim in docs/round4_ppi_plan.md section 4
+0.01	prediction threshold: Q1b.3 (CR1 and CR2 within 0.01), transcribed verbatim in docs/round4_ppi_plan.md section 4
+15.1	section reference: docs/round4_ppi_plan.md section 15.1
+15.5	section reference: docs/round4_ppi_plan.md section 15.5
+15.7	section reference: docs/round4_ppi_plan.md section 15.7
