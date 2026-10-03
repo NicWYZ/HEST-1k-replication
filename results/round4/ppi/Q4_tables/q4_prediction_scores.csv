@@ -1,16 +1,22 @@
 prediction,scope,statistic,value,criterion,holds
-Q4.1,CCRCC|hoptimus0|correlation,abs_rho_R2_cluster_minus_abs_rho_pearson,0.4396600612271996,"|rho(width, R2_cluster)| > |rho(width, unit Pearson)| and frac genes gaining > 5% < 1/3 (regime A, n_L 8, m all, design, c_crossfit_design, full gene set)",True
-Q4.1,CCRCC|hoptimus0|gain_share,frac_gain_gt5pct,0.477124183006536,"|rho(width, R2_cluster)| > |rho(width, unit Pearson)| and frac genes gaining > 5% < 1/3 (regime A, n_L 8, m all, design, c_crossfit_design, full gene set)",False
-Q4.1,CCRCC|resnet50|correlation,abs_rho_R2_cluster_minus_abs_rho_pearson,0.5590146317371326,"|rho(width, R2_cluster)| > |rho(width, unit Pearson)| and frac genes gaining > 5% < 1/3 (regime A, n_L 8, m all, design, c_crossfit_design, full gene set)",True
-Q4.1,CCRCC|resnet50|gain_share,frac_gain_gt5pct,0.4074074074074074,"|rho(width, R2_cluster)| > |rho(width, unit Pearson)| and frac genes gaining > 5% < 1/3 (regime A, n_L 8, m all, design, c_crossfit_design, full gene set)",False
-Q4.1,CCRCC|uni_v2|correlation,abs_rho_R2_cluster_minus_abs_rho_pearson,0.45390872506207725,"|rho(width, R2_cluster)| > |rho(width, unit Pearson)| and frac genes gaining > 5% < 1/3 (regime A, n_L 8, m all, design, c_crossfit_design, full gene set)",True
-Q4.1,CCRCC|uni_v2|gain_share,frac_gain_gt5pct,0.6056644880174292,"|rho(width, R2_cluster)| > |rho(width, unit Pearson)| and frac genes gaining > 5% < 1/3 (regime A, n_L 8, m all, design, c_crossfit_design, full gene set)",False
-Q4.1,INDIANA_KIDNEY|hoptimus0|correlation,abs_rho_R2_cluster_minus_abs_rho_pearson,0.081669508468175,"|rho(width, R2_cluster)| > |rho(width, unit Pearson)| and frac genes gaining > 5% < 1/3 (regime A, n_L 8, m all, design, c_crossfit_design, full gene set)",True
-Q4.1,INDIANA_KIDNEY|hoptimus0|gain_share,frac_gain_gt5pct,0.5063938618925832,"|rho(width, R2_cluster)| > |rho(width, unit Pearson)| and frac genes gaining > 5% < 1/3 (regime A, n_L 8, m all, design, c_crossfit_design, full gene set)",False
-Q4.1,INDIANA_KIDNEY|resnet50|correlation,abs_rho_R2_cluster_minus_abs_rho_pearson,0.23136759153005626,"|rho(width, R2_cluster)| > |rho(width, unit Pearson)| and frac genes gaining > 5% < 1/3 (regime A, n_L 8, m all, design, c_crossfit_design, full gene set)",True
-Q4.1,INDIANA_KIDNEY|resnet50|gain_share,frac_gain_gt5pct,0.0639386189258312,"|rho(width, R2_cluster)| > |rho(width, unit Pearson)| and frac genes gaining > 5% < 1/3 (regime A, n_L 8, m all, design, c_crossfit_design, full gene set)",True
-Q4.1,INDIANA_KIDNEY|uni_v2|correlation,abs_rho_R2_cluster_minus_abs_rho_pearson,-0.0470694621151993,"|rho(width, R2_cluster)| > |rho(width, unit Pearson)| and frac genes gaining > 5% < 1/3 (regime A, n_L 8, m all, design, c_crossfit_design, full gene set)",False
-Q4.1,INDIANA_KIDNEY|uni_v2|gain_share,frac_gain_gt5pct,0.29923273657289,"|rho(width, R2_cluster)| > |rho(width, unit Pearson)| and frac genes gaining > 5% < 1/3 (regime A, n_L 8, m all, design, c_crossfit_design, full gene set)",True
+Q4.1,CCRCC|hoptimus0|correlation,abs_rho_R2_cluster_minus_abs_rho_pearson,0.3645881186472437,"|rho(width, R2_cluster)| > |rho(width, unit Pearson)| and frac genes gaining > 5% < 1/3 (regime A, n_L 8, m all, design, c_crossfit_design, full gene set)",True
+Q4.1,CCRCC|hoptimus0|gain_share,frac_gain_gt5pct,0.6688453159041394,"|rho(width, R2_cluster)| > |rho(width, unit Pearson)| and frac genes gaining > 5% < 1/3 (regime A, n_L 8, m all, design, c_crossfit_design, full gene set)",False
+Q4.1,CCRCC|resnet50|correlation,abs_rho_R2_cluster_minus_abs_rho_pearson,0.4996869148266863,"|rho(width, R2_cluster)| > |rho(width, unit Pearson)| and frac genes gaining > 5% < 1/3 (regime A, n_L 8, m all, design, c_crossfit_design, full gene set)",True
+Q4.1,CCRCC|resnet50|gain_share,frac_gain_gt5pct,0.6601307189542484,"|rho(width, R2_cluster)| > |rho(width, unit Pearson)| and frac genes gaining > 5% < 1/3 (regime A, n_L 8, m all, design, c_crossfit_design, full gene set)",False
+Q4.1,CCRCC|uni_v2|correlation,abs_rho_R2_cluster_minus_abs_rho_pearson,0.4027977876803529,"|rho(width, R2_cluster)| > |rho(width, unit Pearson)| and frac genes gaining > 5% < 1/3 (regime A, n_L 8, m all, design, c_crossfit_design, full gene set)",True
+Q4.1,CCRCC|uni_v2|gain_share,frac_gain_gt5pct,0.7930283224400871,"|rho(width, R2_cluster)| > |rho(width, unit Pearson)| and frac genes gaining > 5% < 1/3 (regime A, n_L 8, m all, design, c_crossfit_design, full gene set)",False
+Q4.1,INDIANA_KIDNEY|hoptimus0|correlation,abs_rho_R2_cluster_minus_abs_rho_pearson,0.06828025993287884,"|rho(width, R2_cluster)| > |rho(width, unit Pearson)| and frac genes gaining > 5% < 1/3 (regime A, n_L 8, m all, design, c_crossfit_design, full gene set)",True
+Q4.1,INDIANA_KIDNEY|hoptimus0|gain_share,frac_gain_gt5pct,0.5038363171355499,"|rho(width, R2_cluster)| > |rho(width, unit Pearson)| and frac genes gaining > 5% < 1/3 (regime A, n_L 8, m all, design, c_crossfit_design, full gene set)",False
+Q4.1,INDIANA_KIDNEY|resnet50|correlation,abs_rho_R2_cluster_minus_abs_rho_pearson,0.23234504625397243,"|rho(width, R2_cluster)| > |rho(width, unit Pearson)| and frac genes gaining > 5% < 1/3 (regime A, n_L 8, m all, design, c_crossfit_design, full gene set)",True
+Q4.1,INDIANA_KIDNEY|resnet50|gain_share,frac_gain_gt5pct,0.07161125319693094,"|rho(width, R2_cluster)| > |rho(width, unit Pearson)| and frac genes gaining > 5% < 1/3 (regime A, n_L 8, m all, design, c_crossfit_design, full gene set)",True
+Q4.1,INDIANA_KIDNEY|uni_v2|correlation,abs_rho_R2_cluster_minus_abs_rho_pearson,-0.0679566023519394,"|rho(width, R2_cluster)| > |rho(width, unit Pearson)| and frac genes gaining > 5% < 1/3 (regime A, n_L 8, m all, design, c_crossfit_design, full gene set)",False
+Q4.1,INDIANA_KIDNEY|uni_v2|gain_share,frac_gain_gt5pct,0.3171355498721228,"|rho(width, R2_cluster)| > |rho(width, unit Pearson)| and frac genes gaining > 5% < 1/3 (regime A, n_L 8, m all, design, c_crossfit_design, full gene set)",True
+Q4.1,CCRCC|hoptimus0|before_q5a_variance,frac_gain_gt5pct,0.477124183006536,context: the same quantity under the interval before the Q5a variance fix,
+Q4.1,CCRCC|resnet50|before_q5a_variance,frac_gain_gt5pct,0.4074074074074074,context: the same quantity under the interval before the Q5a variance fix,
+Q4.1,CCRCC|uni_v2|before_q5a_variance,frac_gain_gt5pct,0.6056644880174292,context: the same quantity under the interval before the Q5a variance fix,
+Q4.1,INDIANA_KIDNEY|hoptimus0|before_q5a_variance,frac_gain_gt5pct,0.5063938618925832,context: the same quantity under the interval before the Q5a variance fix,
+Q4.1,INDIANA_KIDNEY|resnet50|before_q5a_variance,frac_gain_gt5pct,0.0639386189258312,context: the same quantity under the interval before the Q5a variance fix,
+Q4.1,INDIANA_KIDNEY|uni_v2|before_q5a_variance,frac_gain_gt5pct,0.29923273657289,context: the same quantity under the interval before the Q5a variance fix,
 Q4.2,HEST,n_tasks_with_crossed_grouping_gt4_levels,0,no HEST task has a crossed second grouping with more than four levels (q4_two_way.csv),True
 Q4.2,ACS,survey_year_levels,1,"two-way variance reported for ACS state by survey year if the data carries the year; PUMS 2018 is one year, so there is nothing to report",
 Q4.3,all_cells,n_within_0.03_of_n,21/24,observed minus predicted tuning cost within 0.03 in every cell,False
@@ -66,10 +72,10 @@ Q3.3,CCRCC|hoptimus0,frac_cells_pred_within_factor2,1.0,predicted crossover with
 Q3.3,CCRCC|permuted,frac_cells_pred_within_factor2,1.0,predicted crossover within a factor of two of the empirical one in every cell,True
 Q3.3,CCRCC|resnet50,frac_cells_pred_within_factor2,1.0,predicted crossover within a factor of two of the empirical one in every cell,True
 Q3.3,CCRCC|uni_v2,frac_cells_pred_within_factor2,1.0,predicted crossover within a factor of two of the empirical one in every cell,True
-Q3.3,CCRCC_merged|hoptimus0,frac_cells_pred_within_factor2,0.9166666666666666,predicted crossover within a factor of two of the empirical one in every cell,False
-Q3.3,CCRCC_merged|permuted,frac_cells_pred_within_factor2,0.9166666666666666,predicted crossover within a factor of two of the empirical one in every cell,False
-Q3.3,CCRCC_merged|resnet50,frac_cells_pred_within_factor2,0.9166666666666666,predicted crossover within a factor of two of the empirical one in every cell,False
-Q3.3,CCRCC_merged|uni_v2,frac_cells_pred_within_factor2,0.9166666666666666,predicted crossover within a factor of two of the empirical one in every cell,False
+Q3.3,CCRCC_merged|hoptimus0,frac_cells_pred_within_factor2,1.0,predicted crossover within a factor of two of the empirical one in every cell,True
+Q3.3,CCRCC_merged|permuted,frac_cells_pred_within_factor2,1.0,predicted crossover within a factor of two of the empirical one in every cell,True
+Q3.3,CCRCC_merged|resnet50,frac_cells_pred_within_factor2,1.0,predicted crossover within a factor of two of the empirical one in every cell,True
+Q3.3,CCRCC_merged|uni_v2,frac_cells_pred_within_factor2,1.0,predicted crossover within a factor of two of the empirical one in every cell,True
 Q3.3,INDIANA_KIDNEY|hoptimus0,frac_cells_pred_within_factor2,0.7272727272727273,predicted crossover within a factor of two of the empirical one in every cell,False
 Q3.3,INDIANA_KIDNEY|permuted,frac_cells_pred_within_factor2,0.6363636363636364,predicted crossover within a factor of two of the empirical one in every cell,False
 Q3.3,INDIANA_KIDNEY|resnet50,frac_cells_pred_within_factor2,0.7272727272727273,predicted crossover within a factor of two of the empirical one in every cell,False
@@ -80,7 +86,7 @@ Q3.3,LUNG_XENIUM|resnet50,frac_cells_pred_within_factor2,0.8888888888888888,pred
 Q3.3,LUNG_XENIUM|uni_v2,frac_cells_pred_within_factor2,0.5555555555555556,predicted crossover within a factor of two of the empirical one in every cell,False
 Q3.3,all,n_cells_scored,217,context,
 Q3.1,SUMMARY,n_holds_of_n_scored,0/1,,False
-Q3.3,SUMMARY,n_holds_of_n_scored,6/20,,False
+Q3.3,SUMMARY,n_holds_of_n_scored,10/20,,False
 Q4.1,SUMMARY,n_holds_of_n_scored,7/12,,False
 Q4.2,SUMMARY,n_holds_of_n_scored,1/1,,True
 Q4.3,SUMMARY,n_holds_of_n_scored,0/1,,False

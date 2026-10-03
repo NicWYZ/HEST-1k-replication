@@ -40,6 +40,22 @@ def read_all(pattern):
     return (pd.concat(parts, ignore_index=True) if parts else pd.DataFrame()), fs
 
 
+def mark_nuisance(t, cell):
+    """Q5a (plan section 15.3 item 2): every spot-weighted PPI row (both targets, every lambda rule)
+    gets role 'nuisance' and a note citing the permuted predictor's variance ratio in the same cell.
+    No row is deleted."""
+    t = t.copy()
+    perm = t[t.arm == "permuted"].set_index(cell)["emp_var_ratio_median"]
+    perm = perm[~perm.index.duplicated()]
+    nu = (t.population == "spot") & (t.lambda_rule != "none")
+    key = pd.MultiIndex.from_frame(t[cell])
+    pr = perm.reindex(key).to_numpy()
+    t["role"] = np.where(nu, "nuisance", "")
+    t["nuisance_note"] = np.where(nu, [f"permuted predictor ratio in this cell {v:.4f}" if np.isfinite(v)
+                                       else "permuted predictor ratio not available in this cell" for v in pr], "")
+    return t
+
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--stage", required=True)
@@ -59,13 +75,16 @@ def main():
     q.to_csv(f"{out}/q4a_regime_comparison.csv", index=False)
 
     # ---------------------------------------------------------------- section 6.1 table
-    s = g[(g.m == "all") & g.interval.isin(["textbook_t|fpc", "CR2_bm", "CR1_t"])]
+    s = g[(g.m == "all") & g.interval.isin(["textbook_t|fpc", "textbook_t|fpc|lin", "CR2_bm", "CR1_t"])]
     cols = ["emp_var_median", "emp_var_ratio_median", "coverage_median", "est_var_over_emp_var_median",
             "lambda_median", "lambda_se_median"]
+    # Q5a (plan section 15.3 item 4): the unclipped half-sample lambda mean and its se, when present
+    cols += [c for c in ("lambda_raw_mean_median", "lambda_raw_mean_se_median") if c in g.columns]
     t61 = s[["vtag", "arm", "estimand", "population", "target", "interval", "lambda_rule", "n_L"] + cols].copy()
     t61["G"] = t61.vtag.map(g.groupby("vtag").G.first()) if "G" in g else np.nan
     t61["G_U"] = np.where(t61.target == "super", t61["G"] - t61["n_L"], np.nan)
     t61 = t61.sort_values(["vtag", "arm", "estimand", "population", "target", "interval", "n_L", "lambda_rule"])
+    t61 = mark_nuisance(t61, ["vtag", "estimand", "population", "target", "interval", "n_L", "lambda_rule"])
     t61.to_csv(f"{out}/q4a_table61.csv", index=False)
 
     rows = []
@@ -74,7 +93,8 @@ def main():
         rows.append(dict(prediction=pred, scope=scope, statistic=stat, value=value, criterion=crit,
                          holds=None if holds is None else bool(holds)))
 
-    d = t61[(t61.estimand == "theta3") & (t61.population == "donor") & (t61.target == "design")]
+    d = t61[(t61.estimand == "theta3") & (t61.population == "donor") & (t61.target == "design")
+            & (t61.interval == "textbook_t|fpc")]
 
     def val(vt, arm, n, rule, col):
         x = d[(d.vtag == vt) & (d.arm == arm) & (d.n_L == n) & (d.lambda_rule == rule)][col]

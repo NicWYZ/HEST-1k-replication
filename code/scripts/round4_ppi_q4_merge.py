@@ -21,6 +21,7 @@ ap.add_argument("--stage", required=True)
 ap.add_argument("--q4a", required=True)
 ap.add_argument("--theorem", required=True)
 ap.add_argument("--out", required=True)
+ap.add_argument("--q5a", default=None, help="merged Q5a rerun directory (q4a-style files with the unclipped lambda columns)")
 a = ap.parse_args()
 os.makedirs(a.out, exist_ok=True)
 KEY = ["vtag", "arm", "estimand", "population", "target", "regime", "budget", "cost", "n_L", "m",
@@ -37,6 +38,20 @@ for f in sorted(glob.glob(f"{a.stage}/q4_main/*/q4_main_table*.csv")):
     d = d[[c for c in COMMON if c in d.columns]].copy()
     d["unit_table"] = os.path.basename(f)
     parts.append(d)
+# Q5a: append the linearised design-variance rows (interval textbook_t|fpc|lin) from the reruns
+if a.q5a:
+    for f, reg in (("q4a_variance_grid.csv", "A"), ("q4a_regime_comparison.csv", None)):
+        p = f"{a.q5a}/{f}"
+        if not os.path.exists(p):
+            continue
+        z = pd.read_csv(p, low_memory=False)
+        z = z[z.interval == "textbook_t|fpc|lin"].copy()
+        if reg:
+            z["regime"] = "A"; z["budget"] = np.nan; z["cost"] = np.nan
+        z["task"] = z["vtag"]
+        z = z[[c for c in COMMON if c in z.columns]]
+        z["unit_table"] = f"q5a/{f}"
+        parts.append(z)
 M = pd.concat(parts, ignore_index=True)
 M["m"] = M["m"].astype(str).str.replace(r"\.0$", "", regex=True)
 M["budget"] = pd.to_numeric(M["budget"], errors="coerce")
@@ -50,7 +65,11 @@ def role(r):
     if r.regime == "B":
         return f"regimeB_{r.lambda_rule}"
     if r.target == "design":
-        return {"c_crossfit_design": "final_design", "c_crossfit": "old_c_crossfit"}.get(r.lambda_rule, "classical")
+        if r.lambda_rule == "c_crossfit_design":
+            if HAS_LIN:
+                return "final_design" if str(r.interval).endswith("|lin") else "design_variance_before_q5a"
+            return "final_design"
+        return {"c_crossfit": "old_c_crossfit"}.get(r.lambda_rule, "classical")
     if r.lambda_rule == "c_crossfit":
         return "final_super" if r.interval == "CR2_bm" else "super_CR1_beside"
     if r.n_L < 6 and r.interval == "CR2_bm":
@@ -58,7 +77,46 @@ def role(r):
     return "classical"
 
 
+HAS_LIN = bool((M.interval == "textbook_t|fpc|lin").any())
 M["role"] = M.apply(role, axis=1)
+# Q5a (plan section 15.3 item 2): every spot-weighted PPI row is a nuisance row; no row is deleted
+M["role_q4"] = M["role"]
+nu = (M.population == "spot") & (M.lambda_rule != "none")
+CELL = ["vtag", "estimand", "population", "target", "regime", "budget", "cost", "n_L", "m", "lambda_rule", "interval"]
+perm = M[M.arm == "permuted"].set_index(CELL)["emp_var_ratio_median"]
+perm = perm[~perm.index.duplicated()]
+pr = perm.reindex(pd.MultiIndex.from_frame(M[CELL])).to_numpy()
+M.loc[nu, "role"] = "nuisance"
+M["nuisance_note"] = np.where(nu, [f"permuted predictor ratio in this cell {v:.4f}" if np.isfinite(v)
+                                   else "permuted predictor ratio not available in this cell" for v in pr], "")
+# Q5a (plan section 15.3 item 4): unclipped half-sample lambda mean and se from the same-seed reruns.
+# The unit tables label the masking-grid rows differently (grid, m_grid, fixed_nL_m, or regime A
+# with no budget), so a normalised block label decides which rerun file a row is matched to.
+M["block"] = np.where(M.regime == "B", "B", np.where(M.budget.notna(), "A_budget", "grid"))
+if a.q5a:
+    RAW = ["lambda_raw_mean_median", "lambda_raw_mean_se_median"]
+    BASE = ["arm", "vtag", "estimand", "population", "target", "n_L", "lambda_rule", "interval"]
+    gq = pd.read_csv(f"{a.q5a}/q4a_variance_grid.csv", low_memory=False)
+    gq["m"] = gq["m"].astype(str).str.replace(r"\.0$", "", regex=True).replace({"0": "all"})
+    rq = pd.read_csv(f"{a.q5a}/q4a_regime_comparison.csv", low_memory=False)
+    rq["budget"] = pd.to_numeric(rq["budget"], errors="coerce")
+    for c in RAW:
+        M[c] = np.nan
+    M["m"] = M["m"].astype(str)
+    def fill(mask, src, keys):
+        sub = M.loc[mask, BASE + keys].reset_index()
+        j = sub.merge(src[BASE + keys + RAW].drop_duplicates(BASE + keys), on=BASE + keys, how="left")
+        for c in RAW:
+            M.loc[j["index"].to_numpy(), c] = j[c].to_numpy()
+    fill(M.block == "grid", gq, ["m"])
+    fill(M.block == "A_budget", rq[rq.regime == "A"], ["budget"])
+    rb = rq[rq.regime == "B"].copy(); rb["cost"] = rb["cost"].astype(str)
+    M["cost"] = M["cost"].astype(object).where(M["cost"].notna(), np.nan)
+    Mc = M["cost"].astype(str)
+    M["_cost"] = Mc
+    rb["_cost"] = rb["cost"]
+    fill(M.block == "B", rb, ["budget", "_cost"])
+    M = M.drop(columns=["_cost"])
 M["G_U"] = np.where((M.target == "super") & (M.regime == "A"), M.G - M.n_L, np.where(M.target == "super", 0, np.nan))
 M.to_csv(f"{a.out}/q4_main_table.csv", index=False)
 
@@ -79,19 +137,27 @@ for k, z in M.groupby("role"):
 
 # ------------------------------------------------------------------ gene axis, harmonised long form
 g = []
-ci = pd.read_csv(f"{a.stage}/q4_gene/CCRCC/q4_gene_axis__CCRCC.csv", low_memory=False)
-for s in ["A_design_cd", "A_design_cf", "A_super_cf_CR2", "B_design_cf", "B_super_cf"]:
+CF = sorted(glob.glob(f"{a.stage}/q4_gene/CCRCC/q5a_q4_gene_axis__CCRCC.csv")) or [f"{a.stage}/q4_gene/CCRCC/q4_gene_axis__CCRCC.csv"]
+ci = pd.read_csv(CF[0], low_memory=False)
+VALS = ["width_ratio", "emp_var_ratio", "coverage", "lambda_median", "lambda_se_median", "lam2_minus_se2",
+        "lambda_raw_mean_median", "lambda_raw_mean_se_median"]
+for s_ in ["A_design_cd", "A_design_cd_lin", "A_design_cf", "A_super_cf_CR2", "B_design_cf", "B_super_cf"]:
+    if f"{s_}_width_ratio" not in ci.columns:
+        continue
     z = ci[["vtag", "gene", "arm", "in_all_folds"]].copy()
-    z["setting"] = s
-    for c in ["width_ratio", "emp_var_ratio", "coverage", "lambda_median", "lambda_se_median", "lam2_minus_se2"]:
-        z[c] = ci[f"{s}_{c}"]
+    z["setting"] = s_
+    for c in VALS:
+        z[c] = ci[f"{s_}_{c}"] if f"{s_}_{c}" in ci.columns else np.nan
+    z["lam2_minus_se2_raw"] = ci[f"{s_}_lam2_minus_se2_raw"] if f"{s_}_lam2_minus_se2_raw" in ci.columns else np.nan
     z["R2_cluster_corrected"] = ci.R2_cluster_z_corrected
     z["R2_cluster_raw"] = ci.R2_cluster_z_raw
     z["pearson_unit"] = ci.pearson_unit_outcome
     g.append(z)
-ii = pd.read_csv(f"{a.stage}/q4_gene/INDIANA/q4_gene_axis__INDIANA_KIDNEY.csv", low_memory=False)
+IF = sorted(glob.glob(f"{a.stage}/q4_gene/INDIANA/q5a_q4_gene_axis__INDIANA_KIDNEY.csv")) or [f"{a.stage}/q4_gene/INDIANA/q4_gene_axis__INDIANA_KIDNEY.csv"]
+ii = pd.read_csv(IF[0], low_memory=False)
 ii = ii[(ii.population == "donor") & (ii.n_L == 8) & (ii.m.astype(str) == "all")]
 smap = {("A", "design", "c_crossfit_design", "textbook_t|fpc"): "A_design_cd",
+        ("A", "design", "c_crossfit_design", "textbook_t|fpc|lin"): "A_design_cd_lin",
         ("A", "design", "c_crossfit", "textbook_t|fpc"): "A_design_cf",
         ("A", "super", "c_crossfit", "CR2_bm"): "A_super_cf_CR2",
         ("B", "design", "c_crossfit", "regB_t"): "B_design_cf",
@@ -99,13 +165,17 @@ smap = {("A", "design", "c_crossfit_design", "textbook_t|fpc"): "A_design_cd",
 ii["setting"] = [smap.get(k) for k in zip(ii.regime, ii.target, ii.lambda_rule, ii.interval)]
 ii = ii[ii.setting.notna()].copy()
 ii["emp_var_ratio"] = ii.emp_var / ii.emp_var_classical
-ii = ii.rename(columns={"encoder": "arm", "pearson_log1p": "pearson_unit"})
+ii = ii.rename(columns={"encoder": "arm", "pearson_log1p": "pearson_unit", "lam2_minus_se2_rawmean": "lam2_minus_se2_raw"})
 ii["vtag"] = "INDIANA_KIDNEY"
-g.append(ii[["vtag", "gene", "arm", "in_all_folds", "setting", "width_ratio", "emp_var_ratio", "coverage",
-             "lambda_median", "lambda_se_median", "lam2_minus_se2", "R2_cluster_corrected", "R2_cluster_raw",
-             "pearson_unit"]])
+for c in VALS + ["lam2_minus_se2_raw"]:
+    if c not in ii.columns:
+        ii[c] = np.nan
+g.append(ii[["vtag", "gene", "arm", "in_all_folds", "setting"] + VALS + ["lam2_minus_se2_raw", "R2_cluster_corrected",
+            "R2_cluster_raw", "pearson_unit"]])
 GA = pd.concat(g, ignore_index=True)
 GA["gains_gt5pct"] = GA.width_ratio < 0.95
+# Q5a (plan section 15.3 item 3): flag genes with corrected cluster-level R^2 of 1.0
+GA["R2_cluster_corrected_eq1"] = GA.R2_cluster_corrected >= 1.0 - 1e-12
 GA.to_csv(f"{a.out}/q4_gene_axis.csv", index=False)
 
 sc = []
@@ -117,7 +187,9 @@ def score(pred, scope, stat, val, crit, holds):
 
 summ = []
 for (vt, arm, s), z in GA.groupby(["vtag", "arm", "setting"]):
-    for gs, zz in (("full_union", z), ("in_all_folds", z[z.in_all_folds.astype(bool)])):
+    ex = ~z.R2_cluster_corrected_eq1
+    for gs, zz in (("full_union", z), ("in_all_folds", z[z.in_all_folds.astype(bool)]),
+                   ("full_union_excl_R2eq1", z[ex]), ("in_all_folds_excl_R2eq1", z[z.in_all_folds.astype(bool) & ex])):
         rc = zz[["width_ratio", "R2_cluster_corrected"]].corr("spearman").iloc[0, 1]
         rp = zz[["width_ratio", "pearson_unit"]].corr("spearman").iloc[0, 1]
         rl = zz[["width_ratio", "lam2_minus_se2"]].corr("spearman").iloc[0, 1]
@@ -128,12 +200,18 @@ for (vt, arm, s), z in GA.groupby(["vtag", "arm", "setting"]):
 GS = pd.DataFrame(summ)
 GS.to_csv(f"{a.out}/q4_gene_axis_summary.csv", index=False)
 crit41 = "|rho(width, R2_cluster)| > |rho(width, unit Pearson)| and frac genes gaining > 5% < 1/3 (regime A, n_L 8, m all, design, c_crossfit_design, full gene set)"
-for _, r in GS[(GS.setting == "A_design_cd") & (GS.gene_set == "full_union") & (GS.arm != "permuted")].iterrows():
+Q41_SETTING = "A_design_cd_lin" if (GS.setting == "A_design_cd_lin").any() else "A_design_cd"
+for _, r in GS[(GS.setting == Q41_SETTING) & (GS.gene_set == "full_union") & (GS.arm != "permuted")].iterrows():
     h1 = abs(r.spearman_R2_cluster) > abs(r.spearman_pearson_unit)
     h2 = r.frac_gain_gt5pct < 1 / 3
     score("Q4.1", f"{r.vtag}|{r.arm}|correlation", "abs_rho_R2_cluster_minus_abs_rho_pearson",
           abs(r.spearman_R2_cluster) - abs(r.spearman_pearson_unit), crit41, bool(h1))
     score("Q4.1", f"{r.vtag}|{r.arm}|gain_share", "frac_gain_gt5pct", r.frac_gain_gt5pct, crit41, bool(h2))
+
+if Q41_SETTING != "A_design_cd":
+    for _, r in GS[(GS.setting == "A_design_cd") & (GS.gene_set == "full_union") & (GS.arm != "permuted")].iterrows():
+        score("Q4.1", f"{r.vtag}|{r.arm}|before_q5a_variance", "frac_gain_gt5pct", r.frac_gain_gt5pct,
+              "context: the same quantity under the interval before the Q5a variance fix", None)
 
 # ------------------------------------------------------------------ two-way (Q4.2)
 tw = pd.read_csv(f"{a.stage}/two_way/q4_two_way.csv")
