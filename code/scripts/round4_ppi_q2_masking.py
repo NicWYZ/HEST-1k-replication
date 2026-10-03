@@ -191,7 +191,7 @@ def r2_measures(z, zf, didx, G):
 
 
 # ============================================================== textbook, two-stage
-def textbook_two_stage(pop, Dl, Dpop, Lm, Am, lam, M, m_lab, s2w):
+def textbook_two_stage(pop, Dl, Dpop, Lm, Am, lam, M, m_lab, s2w, lin=False):
     """Design-based difference estimator over all G donors. Dl: labelled donors' expanded sums;
     Dpop: all donors' all-spot f sums; Am the population mask (valid donors); s2w: per labelled donor the within-donor sample variance of
     the rectifier over its labelled spots, (G, ncol); M: donor spot counts (G,); m_lab (G, ncol)."""
@@ -215,6 +215,19 @@ def textbook_two_stage(pop, Dl, Dpop, Lm, Am, lam, M, m_lab, s2w):
         theta = cU * np.where(Am, tfp, 0.0).sum(0) / G + R.sum(0) / GL
         e = R
         within = np.where(Lm, f2 * s2w / np.maximum(m_lab, 1), 0.0)
+    if lin:
+        # Q5a (plan section 15.3 item 1, escalation 2). With a cross-fitted lambda the two halves
+        # carry different lambda_g, and the population term's coefficient cU is their (weighted)
+        # average over L, so cU itself depends on which donors are labelled. Linearising cU adds
+        # each donor's (lambda_g - cU) times the population prediction mean to its contribution.
+        # Without it, (lambda_A - lambda_B) times the level of f enters s^2 as spurious
+        # between-donor variance. The term is zero when lambda is the same on every donor.
+        if pop == "spot":
+            Fbar = Ftot / N
+            e = np.where(Lm, e + (G / N)[None, :] * Fbar[None, :] * M[:, None] * (lamL - cU[None, :]), 0.0)
+        else:
+            fpop = np.where(Am, tfp, 0.0).sum(0) / G
+            e = np.where(Lm, e + fpop[None, :] * (lamL - cU[None, :]), 0.0)
     em = np.where(Lm, e, 0.0).sum(0) / GL
     s2 = np.where(Lm, (e - em) ** 2, 0.0).sum(0) / (GL - 1.0)
     var = (1.0 - GL / G) * s2 / GL + within.sum(0) / (G * GL)
@@ -283,6 +296,14 @@ def run_cell(data, Z, n_L, m, n_draws, vtag, theta_full, valid, Dpop):
                     th, var = np.where(cc, th0, th), np.where(cc, var0, var)
                 lo, hi = E.t_interval(th, var, df)
                 _acc(acc, (est, pop, "design", rule, "textbook_t|fpc"), th, var, lo, hi, lam["lam"], tr,
+                     lam.get("lam_se"), *_raw(lam))
+                # Q5a: the same estimate with the linearised design variance (see textbook_two_stage)
+                _, varl, _ = textbook_two_stage(pop, Dx, Dp, Lm, Am, lam_d, M, np.broadcast_to(mlab[:, None], (G, ng)),
+                                                s2w, lin=True)
+                if lam.get("classical_cols") is not None and lam["classical_cols"].any():
+                    varl = np.where(lam["classical_cols"], var0, varl)
+                lol, hil = E.t_interval(th, varl, df)
+                _acc(acc, (est, pop, "design", rule, "textbook_t|fpc|lin"), th, varl, lol, hil, lam["lam"], tr,
                      lam.get("lam_se"), *_raw(lam))
     return acc
 
