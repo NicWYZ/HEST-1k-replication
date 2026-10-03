@@ -263,7 +263,7 @@ def run_cell(data, Z, n_L, m, n_draws, vtag, theta_full, valid, Dpop):
                     for name in ("CR1_t", "CR2_bm"):
                         v = iv[name]
                         _acc(acc, (est, pop, "super", rule, name), res["theta"], v["var"], v["lo"], v["hi"],
-                             lam["lam"], tr, lam.get("lam_se"))
+                             lam["lam"], tr, lam.get("lam_se"), *_raw(lam))
                 # design target: within-donor rectifier variance over labelled spots
                 lamL = lam["lamL"]
                 s2w = np.zeros((G, ng))
@@ -283,15 +283,40 @@ def run_cell(data, Z, n_L, m, n_draws, vtag, theta_full, valid, Dpop):
                     th, var = np.where(cc, th0, th), np.where(cc, var0, var)
                 lo, hi = E.t_interval(th, var, df)
                 _acc(acc, (est, pop, "design", rule, "textbook_t|fpc"), th, var, lo, hi, lam["lam"], tr,
-                     lam.get("lam_se"))
+                     lam.get("lam_se"), *_raw(lam))
     return acc
 
 
-def _acc(acc, key, th, var, lo, hi, lam, tr, lam_se=None):
-    a = acc.setdefault(key, dict(th=[], var=[], cov=[], w=[], lam=[], lam_se=[]))
+def _raw(lam):
+    """Q5 memo section 3 item 4 (plan section 15.3): the mean of the two unclipped half-sample
+    lambdas and its standard error (lam_se_mean), nan for rules without halves."""
+    if lam.get("rawA") is None:
+        return None, None
+    return (np.asarray(lam["rawA"], float) + np.asarray(lam["rawB"], float)) / 2.0, lam.get("lam_se_mean")
+
+
+def _acc(acc, key, th, var, lo, hi, lam, tr, lam_se=None, lam_raw=None, lam_raw_se=None):
+    a = acc.setdefault(key, dict(th=[], var=[], cov=[], w=[], lam=[], lam_se=[], lam_raw=[], lam_raw_se=[]))
     a["th"].append(th); a["var"].append(var); a["cov"].append((lo <= tr) & (tr <= hi))
     a["w"].append(hi - lo); a["lam"].append(lam)
     a["lam_se"].append(np.full(np.shape(th), np.nan) if lam_se is None else lam_se)
+    a["lam_raw"].append(np.full(np.shape(th), np.nan) if lam_raw is None else np.broadcast_to(lam_raw, np.shape(th)))
+    a["lam_raw_se"].append(np.full(np.shape(th), np.nan) if lam_raw_se is None
+                           else np.broadcast_to(lam_raw_se, np.shape(th)))
+
+
+def dump_draws(acc, spec, theta_full, path):
+    """Write per-draw arrays (draw x gene) for the requested estimand|population|target keys."""
+    want = {tuple(x.split("|")) for x in spec.split(",") if x}
+    out = {}
+    for (est, pop, tgt, rule, iv), v in acc.items():
+        if (est, pop, tgt) not in want:
+            continue
+        tag = f"{est}|{pop}|{tgt}|{rule}|{iv}"
+        for kk in ("th", "var", "cov", "w", "lam", "lam_se", "lam_raw", "lam_raw_se"):
+            out[f"{tag}|{kk}"] = np.stack([np.broadcast_to(x, np.shape(v["th"][0])) for x in v[kk]]).astype(float)
+        out[f"{tag}|theta_full"] = np.asarray(theta_full[(est, pop)], float)
+    np.savez_compressed(path, **out)
 
 
 def summarise(acc, cell, genes):
@@ -318,7 +343,11 @@ def summarise(acc, cell, genes):
                          lambda_median=float(np.nanmedian(v["lam"])),
                          lambda_frac_zero=float(np.mean(v["lam"] == 0.0)),
                          lambda_se_median=(float(np.nanmedian(v["lam_se"]))
-                                           if np.isfinite(v["lam_se"]).any() else np.nan)))
+                                           if np.isfinite(v["lam_se"]).any() else np.nan),
+                         lambda_raw_mean_median=(float(np.nanmedian(v["lam_raw"]))
+                                                 if np.isfinite(v["lam_raw"]).any() else np.nan),
+                         lambda_raw_mean_se_median=(float(np.nanmedian(v["lam_raw_se"]))
+                                                    if np.isfinite(v["lam_raw_se"]).any() else np.nan)))
         # per-gene rows for the fit and the gene axis
         for j, gname in enumerate(genes):
             if not ok[j]:
@@ -330,7 +359,13 @@ def summarise(acc, cell, genes):
                                                          lambda_sd_draws=float(np.nanstd(v["lam"][:, j], ddof=1)),
                                                          lambda_se_median=(float(np.nanmedian(v["lam_se"][:, j]))
                                                                            if np.isfinite(v["lam_se"][:, j]).any()
-                                                                           else np.nan)))
+                                                                           else np.nan),
+                                                         lambda_raw_mean_median=(float(np.nanmedian(v["lam_raw"][:, j]))
+                                                                                 if np.isfinite(v["lam_raw"][:, j]).any()
+                                                                                 else np.nan),
+                                                         lambda_raw_mean_se_median=(float(np.nanmedian(v["lam_raw_se"][:, j]))
+                                                                                    if np.isfinite(v["lam_raw_se"][:, j]).any()
+                                                                                    else np.nan)))
     return rows
 
 
@@ -384,6 +419,9 @@ def main(argv=None):
     p.add_argument("--out-dir", required=True)
     p.add_argument("--rules", default=",".join(RULES),
                    help="comma list; interval 3 uses none,c_crossfit,c_crossfit_design")
+    p.add_argument("--dump-draws", default="",
+                   help="Q5a (plan section 15.3 item 1): comma list of estimand|population|target whose "
+                        "per-draw estimates, variances, intervals and lambdas are written to an npz per cell")
     a = p.parse_args(argv)
     np.seterr(all="ignore")
     THETA2_KIND = a.theta2_kind
@@ -427,6 +465,8 @@ def main(argv=None):
     for n_L in nls:
         for m in ms:
             acc = run_cell(data, Z, n_L, m, a.draws, a.vtag, theta_full, valid, Dpop)
+            if a.dump_draws:
+                dump_draws(acc, a.dump_draws, theta_full, f"{a.out_dir}/q2_draws__{a.vtag}__{a.arm}__nL{n_L}__m{m}.npz")
             cell = dict(vtag=a.vtag, arm=a.arm, G=G, n_L=n_L, m=("all" if m == 0 else m),
                         m_eff=(medM if m == 0 else min(m, medM)))
             for r in summarise(acc, cell, data["genes"]):

@@ -57,7 +57,7 @@ RULES = Q2.RULES
 def _half_lambda(z, zf, didx, sel, donors_h, k):
     s = sel & np.isin(didx, donors_h)
     if not s.any():
-        return np.zeros(z.shape[1]), np.zeros(z.shape[1])
+        return np.zeros(z.shape[1]), np.full(z.shape[1], np.nan), np.full(z.shape[1], np.nan)
     dd = didx[s]
     G = int(didx.max()) + 1
     n = np.bincount(dd, minlength=G).astype(float)
@@ -67,14 +67,14 @@ def _half_lambda(z, zf, didx, sel, donors_h, k):
     sxx, sxy = (wf ** 2).sum(0), (wf * wz).sum(0)
     raw = np.where(sxx > 0, sxy / np.where(sxx > 0, sxx, 1), np.nan)
     clip = np.clip(np.nan_to_num(raw), 0.0, 1.0)
-    if k is None:
-        return clip, raw
     Gh = int((n > 0).sum())
     dfree = s.sum() - Gh - 1
     rss = ((wz - raw * wf) ** 2).sum(0)
     se = np.sqrt(np.where((dfree > 0) & (sxx > 0), rss / max(dfree, 1) / np.where(sxx > 0, sxx, 1), np.nan))
+    if k is None:
+        return clip, raw, se
     ok = np.isfinite(se) & np.isfinite(raw) & (raw > k * se) & (len(donors_h) >= 3)
-    return np.where(ok, clip, 0.0), raw
+    return np.where(ok, clip, 0.0), raw, se
 
 
 def regime_b(z, zf, didx, valid, M, mg, sel, pop, rule, seed):
@@ -82,6 +82,7 @@ def regime_b(z, zf, didx, valid, M, mg, sel, pop, rule, seed):
     G = len(M)
     ng = z.shape[1]
     vd = np.flatnonzero(valid)
+    lam_raw = lam_raw_se = None
     if rule == "none":
         lamg = np.zeros((G, ng)); strata = None
     else:
@@ -90,8 +91,9 @@ def regime_b(z, zf, didx, valid, M, mg, sel, pop, rule, seed):
         h = len(perm) // 2
         A, Bh = perm[:h], perm[h:]
         k = E.PRETEST_K.get(rule)
-        lA, _ = _half_lambda(z, zf, didx, sel, A, k)
-        lB, _ = _half_lambda(z, zf, didx, sel, Bh, k)
+        lA, rA, sA = _half_lambda(z, zf, didx, sel, A, k)
+        lB, rB, sB = _half_lambda(z, zf, didx, sel, Bh, k)
+        lam_raw, lam_raw_se = (rA + rB) / 2.0, np.sqrt((sA ** 2 + sB ** 2) / 4.0)
         lamg = np.zeros((G, ng)); lamg[A] = lB; lamg[Bh] = lA
         strata = np.full(G, -1); strata[A] = 0; strata[Bh] = 1
     nall = np.bincount(didx, minlength=G).astype(float)
@@ -128,7 +130,8 @@ def regime_b(z, zf, didx, valid, M, mg, sel, pop, rule, seed):
         kst = 2
     v_super = Gv / (Gv - kst) * (q ** 2).sum(0) / Gv ** 2
     return dict(design=(theta, v_design, df_design), super=(theta, v_super, Gv - kst),
-                lam=np.nanmedian(lamg[vm], axis=0), n_m1=int((mm[vm] == 1).sum()))
+                lam=np.nanmedian(lamg[vm], axis=0), n_m1=int((mm[vm] == 1).sum()),
+                lam_raw=lam_raw, lam_raw_se=lam_raw_se)
 
 
 def run_b(data, Z, valid, theta_full, B, n_draws, vtag, budget_label):
@@ -154,7 +157,8 @@ def run_b(data, Z, valid, theta_full, B, n_draws, vtag, budget_label):
                 for tgt in ("design", "super"):
                     th, v, df = o[tgt]
                     lo, hi = E.t_interval(th, v, np.full(th.shape, df))
-                    Q2._acc(acc, (est, pop, tgt, rule, "regB_t"), th, v, lo, hi, o["lam"], tr)
+                    Q2._acc(acc, (est, pop, tgt, rule, "regB_t"), th, v, lo, hi, o["lam"], tr,
+                            None, o["lam_raw"], o["lam_raw_se"])
         if B == 0:
             break
     return acc, mg

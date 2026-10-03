@@ -291,9 +291,18 @@ def lambda_rule(rule, pop, D, Lm, Um, seed=None):
         yA, xA = _donor_contributions(pop, D, LA)
         yB, xB = _donor_contributions(pop, D, LB)
         se_half, se_mean = _half_se_summary(_ols_slope_se(yA, xA, LA), _ols_slope_se(yB, xB, LB))
+        # Q5 memo section 3 item 4 (plan section 15.3): the unclipped half estimates, reported
+        # only; nothing above uses them.
+        if pop == "spot":
+            rawA = _cluster_lambda_spot(D, LA, Um, raw=True)
+            rawB = _cluster_lambda_spot(D, LB, Um, raw=True)
+        else:
+            rawA = _cluster_lambda_donor(t, tf, LA, Um, raw=True)
+            rawB = _cluster_lambda_donor(t, tf, LB, Um, raw=True)
+        rawA, rawB = np.where(okU, rawA, np.nan), np.where(okU, rawB, np.nan)
         return dict(lamL=lamL, cU=cU, strata=np.where(Lm, half, -1), lam=cU,
                     lamA=lamA, lamB=lamB, lam_se=se_half, lam_se_mean=se_mean,
-                    basis="crossfit_cluster")
+                    rawA=rawA, rawB=rawB, basis="crossfit_cluster")
     if rule == "c_crossfit_design":
         # Q3 decision memo section 2 (plan section 14.2): the same halves as rule (c) (same seed
         # tag); each half's lambda is the GREG coefficient of the textbook form's donor
