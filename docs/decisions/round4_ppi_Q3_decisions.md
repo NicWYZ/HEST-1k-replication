@@ -1,6 +1,6 @@
 # Round 4, the PPI track, the Q3 decision memo
 
-2 October 2026. Written by the oversight chat after reading `docs/round4_ppi_Q3_report.md` at `93e0ae3` on `round4-ppi`, `docs/round4_ppi_theory.md` and the estimator definition, and checking the report's numbers against `q2_report_numbers.csv`, `q3_report_numbers.csv`, `q3_prediction_scores.csv`, `q1b_report_numbers.csv`, `q2_sim_theorem.csv` and the merged grid `q2_variance_grid.csv`. Nicolas hands this to the PPI session in full. Transcribe it into `docs/round4_ppi_plan.md` as section 14 before anything in it runs. Interval 3 (Q4 and Q5, ending at the Q5 gate) starts when the transcription is committed and Nicolas has merged the Q3 pull request.
+2 October 2026. Written by the oversight chat after reading `docs/round4_ppi_Q3_report.md` at tag `round4-ppi-Q3` (`93e0ae3`, pull request #4), `docs/round4_ppi_theory.md` and the estimator definition, and checking the report's numbers against `q2_report_numbers.csv`, `q3_report_numbers.csv`, `q3_prediction_scores.csv`, `q1b_report_numbers.csv`, `q2_sim_theorem.csv` and the merged grid `q2_variance_grid.csv`. Nicolas hands this to the PPI session in full. Transcribe it into `docs/round4_ppi_plan.md` as section 14 before anything in it runs. Interval 3 (Q4 and Q5, ending at the Q5 gate) starts when the transcription is committed and Nicolas has merged the Q3 pull request.
 
 **The gate rule, in the wording Nicolas approved.** Report-and-wait means that no stage after the gated stage starts until the oversight chat has reviewed the report and replied. Not the dependent stages only, and not the expensive ones only. Every stage. Nothing after the gate is set up, staged or piloted. Inside an interval there are no interim reports and no interim stop conditions; anything that would have halted work is handled under the decision boundaries, recorded in an "Escalations" section of the next report, and work continues. This track's gates are Q1, Q3 and Q5. Contact with anyone outside the project is never the session's decision.
 
@@ -64,7 +64,7 @@ Add to `docs/round4_ppi_theory.md`, each derived step by step, and stop-and-repo
 - 7 (prediction drivers for Indiana and lung): accepted; record the md5s in the final report as here.
 - 9 (resizing pending jobs with `scontrol`): resizing a pending job's time or memory from a sibling's measurement is allowed and is not moving it; record each resize in the job ledger as done.
 - 10 (strays in the clone): accepted; the brief rule stands.
-- 11 (the Q1 pull request): the token has been replaced; open the Q3 pull request now, before interval 3 work, and tell Nicolas its number in chat. Nicolas merges it.
+- 11 (the Q1 pull request): the token has been replaced, and the Q3 pull request is open as #4 at `93e0ae3`. Nicolas merges it; nothing for the session to do.
 - 12 (50 genes): accepted; the all-genes rerun is not needed.
 - 13 (Indiana's 50-gene list): the rule is accepted and is recorded as the task's list; no rerun.
 - 14 (local concurrency): recorded.

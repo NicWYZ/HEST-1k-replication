@@ -103,7 +103,7 @@ Each stage of work produces the same chain. The oversight chat writes an **instr
 
 Each gate's report arrived as a pull request into `main`, merged by Nicolas with a merge commit after the oversight chat accepted it. Everything below is on `main` unless marked.
 
-**The PPI track** (branch `round4-ppi`, stages Q0 to Q5, gates Q1, Q3, Q5).
+**The PPI track** (branch `round4-ppi`, stages Q0 to Q5 and the closing unit Q5a, gates Q1, Q3, Q5; complete).
 
 | document | date | role |
 |---|---|---|
@@ -111,12 +111,15 @@ Each gate's report arrived as a pull request into `main`, merged by Nicolas with
 | `round4_ppi_plan.md` | 30 Sep onward | plan; section 8 lists eight points flagged in the instruction; later sections transcribe every addendum and memo, and Nicolas's decisions on where work runs |
 | `decisions/round4_ppi_addendum1.md` | 30 Sep | addendum inside interval 1 (answers to the eight flags, the textbook form for the design-based target, the ACS source) |
 | `round4_ppi_Q1_report.md` | 1 Oct | report at the Q1 gate; tag `round4-ppi-Q1` |
-| `round4_ppi_estimator_definition.md` | 1 Oct | the estimator as proposed at Q1; finalised by the Q3 decision memo |
+| `round4_ppi_estimator_definition.md` | 1 to 3 Oct | the estimator, defined once; proposed at Q1, finalised by the Q3 decision memo, and given the linearised design-target variance after Q5a |
 | `decisions/round4_ppi_Q1_decisions.md` | 1 Oct | decision at Q1 |
 | `round4_ppi_theory.md` | 1 Oct onward | the gain theorem, the allocation result and the two labelling regimes, derived |
 | `round4_ppi_Q3_report.md` | 2 Oct | report at the Q3 gate (Q2, Q3, the Q1 supplement and the theorem check); tag `round4-ppi-Q3` |
 | `decisions/round4_ppi_Q3_decisions.md` | 2 Oct | decision at Q3. It reads the Q3 headline against the whole grid, finalises the estimator, corrects the tuning rule for the design-based target, and adds the tuning-cost result |
 | `decisions/round4_ppi_addendum2.md` | 2 Oct | where the conformal track's outputs are and how Q5 builds the joint design table |
+| `round4_ppi_final_report.md` | 2 to 3 Oct | end-of-track report (Q1 to Q5, then Q5a as section 10); tag `round4-ppi-final` marks the report before Q5a. Its closing page, "What the PPI track established", is the summary |
+| `decisions/round4_ppi_Q5_decisions.md` | 2 Oct | decision at Q5. Acceptance subject to the closing unit Q5a (the ACS design-interval defect, the spot-weighted rows marked as nuisance rows, the unclipped tuning coefficient) |
+| `decisions/round4_ppi_Q5a_closing.md` | 3 Oct | acceptance of Q5a and close of the track; a record, not handed to the session |
 
 **The conformal track** (branch `round4-conformal`, stages C0 to C4, gates C2, C4; complete).
 
