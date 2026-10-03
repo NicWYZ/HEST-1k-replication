@@ -1,6 +1,6 @@
 # Round 4 PPI track, the estimator, defined once
 
-This is the final estimator of the Q3 decision memo section 2 (`docs/decisions/round4_ppi_Q3_decisions.md`, plan section 14.2). It replaces the version proposed at the Q1 gate. The estimator is the survey-sampling difference estimator, in its PPI++ form the generalised regression estimator (Mozer, arXiv:2603.19160; Särndal, Swensson and Wretman 1992, chapter 8; Breidt and Opsomer 2017), with Liang and Zeger's sandwich clustered by donor. None of it is new. The code is `code/scripts/round4_ppi_estimator.py`.
+This is the final estimator of the Q3 decision memo section 2 (`docs/decisions/round4_ppi_Q3_decisions.md`, plan section 14.2). It replaces the version proposed at the Q1 gate. The design-target variance was amended on 3 October 2026, after the closing unit Q5a, to carry the linearised term described below (`docs/decisions/round4_ppi_Q5a_closing.md`). The estimator is the survey-sampling difference estimator, in its PPI++ form the generalised regression estimator (Mozer, arXiv:2603.19160; Särndal, Swensson and Wretman 1992, chapter 8; Breidt and Opsomer 2017), with Liang and Zeger's sandwich clustered by donor. None of it is new. The code is `code/scripts/round4_ppi_estimator.py`.
 
 Numbers are read from the file named beside them. Simulation numbers come from `results/round4/ppi/Q1_estimator/q1_report_numbers.csv` (2,000 replicates per cell), from `results/round4/ppi/Q1_estimator/q1b/q1b_sim_coverage.csv.gz` and from the interval-3 check `results/round4/ppi/Q4_tables/spot_cr2_check/q4_spot_cr2_check.csv`. Real-data numbers come from `results/round4/ppi/Q4a_recompute/q4a_table61.csv`, where each entry is a median over genes of 200 masking draws (`n_draws` in `results/round4/ppi/Q4_tables/q4_main_table.csv`).
 
@@ -52,9 +52,27 @@ $$
 
 which is the GREG coefficient of survey sampling. Each half's value is applied to the other half, and the coefficient on the population term is the labelled-weight average of the two. The old rows stay labelled `c_crossfit` so the two rules can be compared.
 
-Behaviour in the simulation (`q1_report_numbers.csv`, with rule c). Median coverage is 0.89 at every $n_L$ from 4 to 20 (0.8915 at $n_L = 4$, 0.894 at 20). The complement form without the finite-population correction over-covers more as $n_L$ grows, 0.977 at $n_L = 12$ of 24, which is the over-coverage B2 saw.
+The variance under a cross-fitted $\lambda$. The two formulas above are exact when every labelled donor has the same $\lambda$. Under cross-fitting the donors of the two halves carry different values $\lambda_g$, and the coefficient on the population term is their average, $c_U = \frac{1}{n_L}\sum_{g \in L}\lambda_g$ donor-weighted. That coefficient depends on which donors are labelled, so each donor's contribution to the estimator carries one more term. Write $\bar F$ for the population mean of the prediction term, $\frac{1}{G}\sum_{g=1}^{G}\bar f_g$ donor-weighted and $\frac{1}{N}\sum_{i=1}^{N} f_i$ spot-weighted, and $M_g$ for the number of spots of donor $g$. The contributions are
 
-Behaviour on the real tasks (`q4a_table61.csv`, $\theta_3$, donor-weighted, $m$ = all, $n_L = 8$). The design rule lowers the empirical variance ratio against classical most where the prediction carries signal. On LUNG_XENIUM `hoptimus0` the ratio is 0.4282 with median $\lambda$ 0.8163, against 0.6268 and 0.4922 under `c_crossfit`. On CCRCC `uni_v2` it is 0.8440 against 0.8576. On INDIANA_KIDNEY `hoptimus0` it is 0.9752 against 0.9572. Median coverage of the design interval is 0.8700 to 0.8800 on CCRCC, 0.8900 to 0.8950 on INDIANA_KIDNEY and 0.8650 to 0.8750 on LUNG_XENIUM, over all four arms. The median $\lambda$ is often exactly 0.5000, because the two halves frequently clip at opposite ends.
+$$
+\text{donor-weighted}\quad e_g = \bar z_g - \lambda_g \bar f_g + (\lambda_g - c_U)\,\bar F,
+$$
+
+$$
+\text{spot-weighted}\quad e_g = \frac{G}{N}\Big(Z_g - \lambda_g F_g + (\lambda_g - c_U)\,\bar F\,M_g\Big),
+$$
+
+and the variance is
+
+$$
+\widehat{\text{Var}} = \Big(1 - \frac{n_L}{G}\Big)\frac{s_e^2}{n_L},
+$$
+
+with $s_e^2$ the sample variance of $e_g$ over the labelled donors and the same $t_{n_L - 1}$ reference. The added term is zero when $\lambda_g$ is the same for every donor, so the classical interval is unchanged. Without it, $(\lambda_A - \lambda_B)\bar F$ enters $s_r^2$ as between-donor variance that the estimator does not have. This is the interval `textbook_t|fpc|lin` of `code/scripts/round4_ppi_q2_masking.py`, and it is the design-target interval of the paper. The rows without the term stay in the tables as `textbook_t|fpc`. On the ACS states task, $\theta_2$ donor-weighted, the old interval's estimated variance was 204.380 to 1068.599 times the empirical variance and the corrected one's is 0.890 to 1.042 times (`results/round4/ppi/Q5a/q5a_design_variance_before_after.csv`).
+
+Behaviour in the simulation (`q1_report_numbers.csv`, with rule c). Median coverage is 0.89 at every $n_L$ from 4 to 20 (0.8915 at $n_L = 4$, 0.894 at 20). These simulation numbers were computed with the variance before the linearised term was added and have not been rerun. The complement form without the finite-population correction over-covers more as $n_L$ grows, 0.977 at $n_L = 12$ of 24, which is the over-coverage B2 saw.
+
+Behaviour on the real tasks (`q4a_table61.csv`, $\theta_3$, donor-weighted, $m$ = all, $n_L = 8$). The design rule lowers the empirical variance ratio against classical most where the prediction carries signal. On LUNG_XENIUM `hoptimus0` the ratio is 0.4282 with median $\lambda$ 0.8163, against 0.6268 and 0.4922 under `c_crossfit`. On CCRCC `uni_v2` it is 0.8440 against 0.8576. On INDIANA_KIDNEY `hoptimus0` it is 0.9752 against 0.9572. Median coverage of the corrected design interval is 0.8625 to 0.8700 on CCRCC, 0.8900 to 0.8950 on INDIANA_KIDNEY and 0.8500 to 0.8650 on LUNG_XENIUM, over all four arms. Before the linearised term it was 0.8700 to 0.8800, 0.8900 to 0.8950 and 0.8650 to 0.8750. The median $\lambda$ is often exactly 0.5000, because the two halves frequently clip at opposite ends.
 
 ## Not chosen, and why
 
