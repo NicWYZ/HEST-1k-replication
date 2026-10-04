@@ -88,7 +88,7 @@ Each pattern is tied to the rule that came from it. The rules are in `docs/WAYS_
 
 ## 4. Where things stand
 
-Round 4 is complete. Both tracks were accepted at their final gates and all their pull requests are merged. The results are six statements, listed in section 7.4, and they are the "new results" of the next presentation.
+Round 4 is complete. Both tracks were accepted at their final gates and all their pull requests are merged. The results are six statements, listed in section 7.5, and they are the "new results" of the next presentation.
 
 A literature check on 4 October changed how two of the six are described. The break-even rule for tuning is already published for independent data, and the limit in the gain theorem is a standard formula in the design of cluster-randomised trials. The comparison of the two labelling regimes was not found anywhere and is now the result to lead with (section 7.5).
 
