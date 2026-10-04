@@ -11,11 +11,12 @@ The files themselves are not moved. Every instruction document, plan and report 
 To get up to speed in about an hour, read these in order.
 
 1. `../README.md`, the repository's entry point (status, key findings, the benchmark's properties, known limitations).
-2. `decisions/round4_oversight_handoff.md`, the latest oversight handoff (30 September). It carries the whole path from the literature review to the current directions, with reasons, the key numbers with their files, what is running, and the open decisions.
-3. `decisions/round3_oversight_handoff.md`, the previous handoff (22 September), for rounds 1 and 2 in detail. Its sections 0, 2, 6 and 10 still hold.
-4. `round3_final_report.md`, its closing page "What round 3 established".
-5. `decisions/round3_directions.md` and `decisions/round4_originality_check.md`, the two documents where the project changed direction.
-6. `WAYS_OF_WORKING.md`, the procedures, each tied to the failure it prevents.
+2. `decisions/round5_oversight_handoff.md`, the latest oversight handoff (4 October). It carries round 4 from start to close with reasons, the six results and what a literature check did to them, the key numbers with their files, the state of the second advisor deck, and the open decisions.
+3. `decisions/round4_oversight_handoff.md`, the handoff before it (30 September), for the path from the literature review to the start of round 4. Its sections 3, 5, 6 and 12 still hold.
+4. `decisions/round3_oversight_handoff.md` (22 September), for rounds 1 and 2 in detail. Its sections 0, 2, 6 and 10 still hold.
+5. The closing pages of `round3_final_report.md`, `round4_ppi_final_report.md` and `round4_conf_final_report.md`.
+6. `decisions/round3_directions.md` and `decisions/round4_originality_check.md`, the two documents where the project changed direction, and `deck2/deck2_literature_check.md`, which changed how two of round 4's results are described.
+7. `WAYS_OF_WORKING.md`, the procedures, each tied to the failure it prevents.
 
 For the methods themselves, derived from scratch, read `reference/methods_and_state_of_play.md` and `reference/concepts_explained_round4.md`.
 
@@ -135,6 +136,19 @@ Each gate's report arrived as a pull request into `main`, merged by Nicolas with
 | `round4_conf_final_report.md` | 2 Oct | end-of-track report (the real-data map over calibration donors and labelled spots); tag `round4-conf-final`. Its closing page, "What the conformal track established", is the summary |
 | `decisions/round4_conformal_C4_decisions.md` | 2 Oct | acceptance and close of the track |
 
+## After round 4, the second advisor deck (3 to 4 October)
+
+Preparation only. The slides are not built.
+
+| document | date | role |
+|---|---|---|
+| `deck2/deck2_outline.md` | 4 Oct | the outline, revision 3, 16 slides, following Nicolas's structure for the second presentation |
+| `deck2/deck2_new_results_explained.md` | 3 to 4 Oct | for Nicolas. Each of the six results with what was obtained, why, how, and the theory, then the results not on the slides, then what is not established |
+| `deck2/deck2_literature_check.md` | 4 Oct | originality, relevance and importance of round 4's results, with what was confirmed and what was only reported by the searches |
+| `decisions/round5_oversight_handoff.md` | 4 Oct | the oversight handoff at the close of round 4 |
+
+The deck's numbers are in `results/summary/deck2_numbers.csv`, written by `code/scripts/deck2_numbers.py`. Its figures are in `figures/deck2/`, written by `code/scripts/deck2_figures.py`.
+
 ---
 
 ## Living documents
@@ -146,4 +160,4 @@ Each gate's report arrived as a pull request into `main`, merged by Nicolas with
 
 ## Superseded and withdrawn
 
-`superseded/` holds working documents that a later document replaced, each bannered with what replaced it. Withdrawn readings that live inside frozen documents are listed in `decisions/round4_oversight_handoff.md` section 12 (dead ends) and in the README's known limitations. The most important are the IDC one-donor reading (withdrawn by round 3's D3), the round-1 "institution shift" scalar, and the D4 probe's 31% to 34% morphology share (quarantined by the P7 decisions).
+`superseded/` holds working documents that a later document replaced, each bannered with what replaced it. Withdrawn readings that live inside frozen documents are listed in `decisions/round4_oversight_handoff.md` section 12 and `decisions/round5_oversight_handoff.md` section 14 (dead ends) and in the README's known limitations. The most important are the IDC one-donor reading (withdrawn by round 3's D3), the round-1 "institution shift" scalar, and the D4 probe's 31% to 34% morphology share (quarantined by the P7 decisions).
