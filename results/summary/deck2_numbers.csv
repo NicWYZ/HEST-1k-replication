@@ -1,0 +1,465 @@
+id,value,shown_as,slide_topic,what,source_file,how
+data|CCRCC|donors,24.0,24,data,donor units in the task,results/round4/ppi/Q5_joint/q5_cluster_table.csv,rows for one encoder
+data|CCRCC|spots,74220.0,"74,220",data,spots in the task,results/round4/ppi/Q5_joint/q5_cluster_table.csv,sum of spot_count
+data|CCRCC|spots_per_donor_median,2893.0,2893,data,median spots per donor,results/round4/ppi/Q5_joint/q5_cluster_table.csv,median of spot_count
+data|CCRCC|genes,50.0,50,data,genes analysed,results/round4/ppi/Q5_joint/q5_cluster_table.csv,n_genes
+data|INDIANA_KIDNEY|donors,25.0,25,data,donor units in the task,results/round4/ppi/Q5_joint/q5_cluster_table.csv,rows for one encoder
+data|INDIANA_KIDNEY|spots,31425.0,"31,425",data,spots in the task,results/round4/ppi/Q5_joint/q5_cluster_table.csv,sum of spot_count
+data|INDIANA_KIDNEY|spots_per_donor_median,673.0,673,data,median spots per donor,results/round4/ppi/Q5_joint/q5_cluster_table.csv,median of spot_count
+data|INDIANA_KIDNEY|genes,50.0,50,data,genes analysed,results/round4/ppi/Q5_joint/q5_cluster_table.csv,n_genes
+data|LUNG_XENIUM|donors,15.0,15,data,donor units in the task,results/round4/ppi/Q5_joint/q5_cluster_table.csv,rows for one encoder
+data|LUNG_XENIUM|spots,19083.0,"19,083",data,spots in the task,results/round4/ppi/Q5_joint/q5_cluster_table.csv,sum of spot_count
+data|LUNG_XENIUM|spots_per_donor_median,1124.0,1124,data,median spots per donor,results/round4/ppi/Q5_joint/q5_cluster_table.csv,median of spot_count
+data|LUNG_XENIUM|genes,343.0,343,data,genes analysed,results/round4/ppi/Q5_joint/q5_cluster_table.csv,n_genes
+data|ACS_STATES|clusters,51.0,51,data,clusters in the task,results/round4/ppi/Q4a_recompute/q4a_table61.csv,column G
+data|ACS_CA_PUMA|clusters,265.0,265,data,clusters in the task,results/round4/ppi/Q4a_recompute/q4a_table61.csv,column G
+data|ACS|people,1659616.0,"1,659,616",data,people in the ACS 2018 income task,results/round4/ppi/Q0_setup/acs_pums2018/acs_pums_task_def.json,n_units
+coverage_by_design|random,0.8937327863316654,0.89,roadblocks,"coverage at nominal 0.90, absolute score, mean over cells",results/round3/A1_coverage/a1_coverage_by_design.csv,"design=random, score=abs"
+coverage_by_design|patient,0.7862392719231861,0.79,roadblocks,"coverage at nominal 0.90, absolute score, mean over cells",results/round3/A1_coverage/a1_coverage_by_design.csv,"design=patient, score=abs"
+coverage_by_design|donor,0.8024485509175473,0.80,roadblocks,"coverage at nominal 0.90, absolute score, mean over cells",results/round3/A1_coverage/a1_coverage_by_design.csv,"design=donor, score=abs"
+coverage_by_design|slide_out,0.8584947281319253,0.86,roadblocks,"coverage at nominal 0.90, absolute score, mean over cells",results/round3/A1_coverage/a1_coverage_by_design.csv,"design=slide_out, score=abs"
+unit_vs_block|donor_calibrated,0.8561922812192644,0.86,roadblocks,coverage when calibration scores come from held-out donors,results/round3/A2_conditional/a2_unit_intervention.csv,mean over fold rows
+unit_vs_block|block_calibrated,0.7441704053992401,0.74,roadblocks,coverage when calibration scores come from blocks inside training slides,results/round3/A2_conditional/a2_unit_intervention.csv,mean over fold rows
+interval_coverage|spot_level,0.04403187440532826,0.04,first experiments,"coverage of a 90% interval for a population quantity, classical estimator",results/round3/B2_semisynthetic/b2_coverage.csv,"mean over cells, variance=iid"
+interval_coverage|donor_clustered_t,0.9129495268138802,0.91,first experiments,"coverage of a 90% interval for a population quantity, classical estimator",results/round3/B2_semisynthetic/b2_coverage.csv,"mean over cells, variance=cluster"
+interval_coverage|donor_bootstrap,0.7110757611798287,0.71,first experiments,"coverage of a 90% interval for a population quantity, classical estimator",results/round3/B2_semisynthetic/b2_coverage.csv,"mean over cells, variance=boot"
+hcp|CCRCC|K10|coverage,0.9692115333343452,0.97,prediction sets,HCP coverage,results/round4/conformal/C3_real/c3_report_numbers.csv,CCRCC alpha=0.1 K=10
+hcp|CCRCC|K10|width_over_pooled,1.9464969534443728,1.95,prediction sets,HCP width over pooled width,results/round4/conformal/C3_real/c3_report_numbers.csv,CCRCC alpha=0.1 K=10
+pooled|CCRCC|K10|coverage,0.864426272376767,0.86,prediction sets,pooled interval coverage,results/round4/conformal/C3_real/c3_report_numbers.csv,CCRCC alpha=0.1 K=10
+hcp|CCRCC|K12|coverage,0.9593139900383142,0.96,prediction sets,HCP coverage,results/round4/conformal/C3_real/c3_report_numbers.csv,CCRCC alpha=0.1 K=12
+hcp|CCRCC|K12|width_over_pooled,1.7695263278699864,1.77,prediction sets,HCP width over pooled width,results/round4/conformal/C3_real/c3_report_numbers.csv,CCRCC alpha=0.1 K=12
+pooled|CCRCC|K12|coverage,0.866037141157383,0.87,prediction sets,pooled interval coverage,results/round4/conformal/C3_real/c3_report_numbers.csv,CCRCC alpha=0.1 K=12
+hcp|CCRCC|K14|coverage,0.951727964714025,0.95,prediction sets,HCP coverage,results/round4/conformal/C3_real/c3_report_numbers.csv,CCRCC alpha=0.1 K=14
+hcp|CCRCC|K14|width_over_pooled,1.6370371795088905,1.64,prediction sets,HCP width over pooled width,results/round4/conformal/C3_real/c3_report_numbers.csv,CCRCC alpha=0.1 K=14
+pooled|CCRCC|K14|coverage,0.8645469892556793,0.86,prediction sets,pooled interval coverage,results/round4/conformal/C3_real/c3_report_numbers.csv,CCRCC alpha=0.1 K=14
+hcp|CCRCC|K16|coverage,0.9481967565541866,0.95,prediction sets,HCP coverage,results/round4/conformal/C3_real/c3_report_numbers.csv,CCRCC alpha=0.1 K=16
+hcp|CCRCC|K16|width_over_pooled,1.5525307772450407,1.55,prediction sets,HCP width over pooled width,results/round4/conformal/C3_real/c3_report_numbers.csv,CCRCC alpha=0.1 K=16
+pooled|CCRCC|K16|coverage,0.8663151824926439,0.87,prediction sets,pooled interval coverage,results/round4/conformal/C3_real/c3_report_numbers.csv,CCRCC alpha=0.1 K=16
+hcp|CCRCC|K18|coverage,0.9465724170051456,0.95,prediction sets,HCP coverage,results/round4/conformal/C3_real/c3_report_numbers.csv,CCRCC alpha=0.1 K=18
+hcp|CCRCC|K18|width_over_pooled,1.4444611743850295,1.44,prediction sets,HCP width over pooled width,results/round4/conformal/C3_real/c3_report_numbers.csv,CCRCC alpha=0.1 K=18
+pooled|CCRCC|K18|coverage,0.8714603763853598,0.87,prediction sets,pooled interval coverage,results/round4/conformal/C3_real/c3_report_numbers.csv,CCRCC alpha=0.1 K=18
+hcp|CCRCC|K20|coverage,0.9391964440850196,0.94,prediction sets,HCP coverage,results/round4/conformal/C3_real/c3_report_numbers.csv,CCRCC alpha=0.1 K=20
+hcp|CCRCC|K20|width_over_pooled,1.3603530062635203,1.36,prediction sets,HCP width over pooled width,results/round4/conformal/C3_real/c3_report_numbers.csv,CCRCC alpha=0.1 K=20
+pooled|CCRCC|K20|coverage,0.8726789437269525,0.87,prediction sets,pooled interval coverage,results/round4/conformal/C3_real/c3_report_numbers.csv,CCRCC alpha=0.1 K=20
+sim_coverage|super|same_clusters_rule1|G4,0.8735,0.87,result 1,"simulated coverage, lambda tuning rule",results/round4/ppi/Q1_estimator/q1_coverage_by_G.csv,"super, complement, a_b1, CR1_t, G_L=4, cov_median"
+sim_coverage|super|same_clusters_rule1|G6,0.8825,0.88,result 1,"simulated coverage, lambda tuning rule",results/round4/ppi/Q1_estimator/q1_coverage_by_G.csv,"super, complement, a_b1, CR1_t, G_L=6, cov_median"
+sim_coverage|super|same_clusters_rule1|G8,0.8875,0.89,result 1,"simulated coverage, lambda tuning rule",results/round4/ppi/Q1_estimator/q1_coverage_by_G.csv,"super, complement, a_b1, CR1_t, G_L=8, cov_median"
+sim_coverage|super|same_clusters_rule1|G12,0.891,0.89,result 1,"simulated coverage, lambda tuning rule",results/round4/ppi/Q1_estimator/q1_coverage_by_G.csv,"super, complement, a_b1, CR1_t, G_L=12, cov_median"
+sim_coverage|super|same_clusters_rule1|G20,0.893,0.89,result 1,"simulated coverage, lambda tuning rule",results/round4/ppi/Q1_estimator/q1_coverage_by_G.csv,"super, complement, a_b1, CR1_t, G_L=20, cov_median"
+sim_width|super|same_clusters_rule1|G4|informative_predictor,0.7364944604778118,0.74,result 1,"median PPI width over classical width, four clusters",results/round4/ppi/Q1_estimator/q1_report_numbers.csv,S|super|a_b1|CR1_t|GL4|r>0|width_ratio_median
+sim_width|super|same_clusters_rule1|G4|uninformative_predictor,0.943290095967907,0.94,result 1,"median PPI width over classical width, four clusters",results/round4/ppi/Q1_estimator/q1_report_numbers.csv,S|super|a_b1|CR1_t|GL4|r0|width_ratio_median
+sim_coverage|super|same_clusters_rule2|G4,0.856,0.86,result 1,"simulated coverage, lambda tuning rule",results/round4/ppi/Q1_estimator/q1_coverage_by_G.csv,"super, complement, b_cluster, CR1_t, G_L=4, cov_median"
+sim_coverage|super|same_clusters_rule2|G6,0.873,0.87,result 1,"simulated coverage, lambda tuning rule",results/round4/ppi/Q1_estimator/q1_coverage_by_G.csv,"super, complement, b_cluster, CR1_t, G_L=6, cov_median"
+sim_coverage|super|same_clusters_rule2|G8,0.881,0.88,result 1,"simulated coverage, lambda tuning rule",results/round4/ppi/Q1_estimator/q1_coverage_by_G.csv,"super, complement, b_cluster, CR1_t, G_L=8, cov_median"
+sim_coverage|super|same_clusters_rule2|G12,0.887,0.89,result 1,"simulated coverage, lambda tuning rule",results/round4/ppi/Q1_estimator/q1_coverage_by_G.csv,"super, complement, b_cluster, CR1_t, G_L=12, cov_median"
+sim_coverage|super|same_clusters_rule2|G20,0.89025,0.89,result 1,"simulated coverage, lambda tuning rule",results/round4/ppi/Q1_estimator/q1_coverage_by_G.csv,"super, complement, b_cluster, CR1_t, G_L=20, cov_median"
+sim_width|super|same_clusters_rule2|G4|informative_predictor,0.6054651071929108,0.61,result 1,"median PPI width over classical width, four clusters",results/round4/ppi/Q1_estimator/q1_report_numbers.csv,S|super|b_cluster|CR1_t|GL4|r>0|width_ratio_median
+sim_width|super|same_clusters_rule2|G4|uninformative_predictor,0.9201333745830442,0.92,result 1,"median PPI width over classical width, four clusters",results/round4/ppi/Q1_estimator/q1_report_numbers.csv,S|super|b_cluster|CR1_t|GL4|r0|width_ratio_median
+sim_coverage|super|cross_fitted|G4,0.902,0.90,result 1,"simulated coverage, lambda tuning rule",results/round4/ppi/Q1_estimator/q1_coverage_by_G.csv,"super, complement, c_crossfit, CR1_t, G_L=4, cov_median"
+sim_coverage|super|cross_fitted|G6,0.9035,0.90,result 1,"simulated coverage, lambda tuning rule",results/round4/ppi/Q1_estimator/q1_coverage_by_G.csv,"super, complement, c_crossfit, CR1_t, G_L=6, cov_median"
+sim_coverage|super|cross_fitted|G8,0.90225,0.90,result 1,"simulated coverage, lambda tuning rule",results/round4/ppi/Q1_estimator/q1_coverage_by_G.csv,"super, complement, c_crossfit, CR1_t, G_L=8, cov_median"
+sim_coverage|super|cross_fitted|G12,0.9,0.90,result 1,"simulated coverage, lambda tuning rule",results/round4/ppi/Q1_estimator/q1_coverage_by_G.csv,"super, complement, c_crossfit, CR1_t, G_L=12, cov_median"
+sim_coverage|super|cross_fitted|G20,0.897,0.90,result 1,"simulated coverage, lambda tuning rule",results/round4/ppi/Q1_estimator/q1_coverage_by_G.csv,"super, complement, c_crossfit, CR1_t, G_L=20, cov_median"
+sim_width|super|cross_fitted|G4|informative_predictor,1.008969981553951,1.01,result 1,"median PPI width over classical width, four clusters",results/round4/ppi/Q1_estimator/q1_report_numbers.csv,S|super|c_crossfit|CR1_t|GL4|r>0|width_ratio_median
+sim_width|super|cross_fitted|G4|uninformative_predictor,1.3188245246550117,1.32,result 1,"median PPI width over classical width, four clusters",results/round4/ppi/Q1_estimator/q1_report_numbers.csv,S|super|c_crossfit|CR1_t|GL4|r0|width_ratio_median
+sim_coverage|design|no_fpc|G4,0.9065,0.91,result 1,"design target, no finite-population correction",results/round4/ppi/Q1_estimator/q1_coverage_by_G.csv,"design, complement, a_b1, CR1_t, fpc False, G_L=4"
+sim_coverage|design|fpc_crossfit|G4,0.8915,0.89,result 1,"design target, finite-population correction and cross-fitting",results/round4/ppi/Q1_estimator/q1_coverage_by_G.csv,"design, textbook, c_crossfit, textbook_t, fpc True, G_L=4"
+sim_coverage|design|no_fpc|G6,0.932,0.93,result 1,"design target, no finite-population correction",results/round4/ppi/Q1_estimator/q1_coverage_by_G.csv,"design, complement, a_b1, CR1_t, fpc False, G_L=6"
+sim_coverage|design|fpc_crossfit|G6,0.89325,0.89,result 1,"design target, finite-population correction and cross-fitting",results/round4/ppi/Q1_estimator/q1_coverage_by_G.csv,"design, textbook, c_crossfit, textbook_t, fpc True, G_L=6"
+sim_coverage|design|no_fpc|G8,0.9525,0.95,result 1,"design target, no finite-population correction",results/round4/ppi/Q1_estimator/q1_coverage_by_G.csv,"design, complement, a_b1, CR1_t, fpc False, G_L=8"
+sim_coverage|design|fpc_crossfit|G8,0.8915,0.89,result 1,"design target, finite-population correction and cross-fitting",results/round4/ppi/Q1_estimator/q1_coverage_by_G.csv,"design, textbook, c_crossfit, textbook_t, fpc True, G_L=8"
+sim_coverage|design|no_fpc|G12,0.97675,0.98,result 1,"design target, no finite-population correction",results/round4/ppi/Q1_estimator/q1_coverage_by_G.csv,"design, complement, a_b1, CR1_t, fpc False, G_L=12"
+sim_coverage|design|fpc_crossfit|G12,0.89325,0.89,result 1,"design target, finite-population correction and cross-fitting",results/round4/ppi/Q1_estimator/q1_coverage_by_G.csv,"design, textbook, c_crossfit, textbook_t, fpc True, G_L=12"
+sim_coverage|design|no_fpc|G20,0.9985,1.00,result 1,"design target, no finite-population correction",results/round4/ppi/Q1_estimator/q1_coverage_by_G.csv,"design, complement, a_b1, CR1_t, fpc False, G_L=20"
+sim_coverage|design|fpc_crossfit|G20,0.894,0.89,result 1,"design target, finite-population correction and cross-fitting",results/round4/ppi/Q1_estimator/q1_coverage_by_G.csv,"design, textbook, c_crossfit, textbook_t, fpc True, G_L=20"
+variance_fix|ACS_states|before_min,204.37996432346708,204,result 1,estimated over empirical variance before the extra term,results/round4/ppi/Q5a/q5a_design_variance_before_after.csv,min over PPI rules and n_L>=6
+variance_fix|ACS_states|before_max,1068.5992589897742,1069,result 1,"same, max",results/round4/ppi/Q5a/q5a_design_variance_before_after.csv,max
+variance_fix|ACS_states|after_min,0.8901566634869917,0.89,result 1,estimated over empirical variance after,results/round4/ppi/Q5a/q5a_design_variance_before_after.csv,min
+variance_fix|ACS_states|after_max,1.042067486880789,1.04,result 1,"same, max",results/round4/ppi/Q5a/q5a_design_variance_before_after.csv,max
+R2_cluster|ACS_CA_PUMA|package,0.8802763780484835,0.88,result 2,"cluster-level R-squared, slope estimand, median over genes",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,"scale z, donor, theta3, R2_cluster_raw median"
+floor|ACS_CA_PUMA|package,0.11972362195151653,0.12,result 2,one minus cluster-level R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived: 1 - R2_cluster
+R2_within|ACS_CA_PUMA|package,0.9938927199169776,0.99,result 4,within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,R2_within median
+break_even|ACS_CA_PUMA|package,6.272013710550626,6.3,result 3,"break-even labelled clusters, 4 + 2/R2_cluster",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived from the rule and R2_cluster
+ratio|ACS_CA_PUMA|package|nL4,1.0,1.00,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|ACS_CA_PUMA|package|nL6,0.2271360528906119,0.23,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|ACS_CA_PUMA|package|nL8,0.1881560873252641,0.19,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|ACS_CA_PUMA|package|nL12,0.1694981868101937,0.17,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|ACS_CA_PUMA|package|nL16,0.1675963964167571,0.17,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+R2_cluster|ACS_CA_PUMA|permuted,0.000110279845099,0.00,result 2,"cluster-level R-squared, slope estimand, median over genes",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,"scale z, donor, theta3, R2_cluster_raw median"
+floor|ACS_CA_PUMA|permuted,0.999889720154901,1.00,result 2,one minus cluster-level R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived: 1 - R2_cluster
+R2_within|ACS_CA_PUMA|permuted,0.9764687116517878,0.98,result 4,within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,R2_within median
+ratio|ACS_CA_PUMA|permuted|nL4,1.0,1.00,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|ACS_CA_PUMA|permuted|nL6,1.0682197681955183,1.07,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|ACS_CA_PUMA|permuted|nL8,1.0404558083415074,1.04,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|ACS_CA_PUMA|permuted|nL12,1.0353070625452838,1.04,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|ACS_CA_PUMA|permuted|nL16,1.0188493633298883,1.02,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+R2_cluster|ACS_STATES|package,0.7027008656424436,0.70,result 2,"cluster-level R-squared, slope estimand, median over genes",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,"scale z, donor, theta3, R2_cluster_raw median"
+floor|ACS_STATES|package,0.2972991343575564,0.30,result 2,one minus cluster-level R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived: 1 - R2_cluster
+R2_within|ACS_STATES|package,0.9940121284249812,0.99,result 4,within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,R2_within median
+break_even|ACS_STATES|package,6.846161286810856,6.8,result 3,"break-even labelled clusters, 4 + 2/R2_cluster",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived from the rule and R2_cluster
+ratio|ACS_STATES|package|nL4,1.0,1.00,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|ACS_STATES|package|nL6,0.4510277177822965,0.45,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|ACS_STATES|package|nL8,0.4335170496233833,0.43,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|ACS_STATES|package|nL12,0.3357922798059441,0.34,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|ACS_STATES|package|nL16,0.398353178486601,0.40,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+R2_cluster|ACS_STATES|permuted,0.0389912128373798,0.04,result 2,"cluster-level R-squared, slope estimand, median over genes",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,"scale z, donor, theta3, R2_cluster_raw median"
+floor|ACS_STATES|permuted,0.9610087871626202,0.96,result 2,one minus cluster-level R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived: 1 - R2_cluster
+R2_within|ACS_STATES|permuted,0.97583522643507,0.98,result 4,within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,R2_within median
+ratio|ACS_STATES|permuted|nL4,1.0,1.00,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|ACS_STATES|permuted|nL6,0.9705347475131896,0.97,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|ACS_STATES|permuted|nL8,0.9919591468406048,0.99,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|ACS_STATES|permuted|nL12,0.9628644639812998,0.96,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|ACS_STATES|permuted|nL16,1.0207742983501984,1.02,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+R2_cluster|CCRCC|hoptimus0,0.2873087941541586,0.29,result 2,"cluster-level R-squared, slope estimand, median over genes",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,"scale z, donor, theta3, R2_cluster_raw median"
+floor|CCRCC|hoptimus0,0.7126912058458414,0.71,result 2,one minus cluster-level R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived: 1 - R2_cluster
+R2_within|CCRCC|hoptimus0,0.3698514686535589,0.37,result 4,within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,R2_within median
+break_even|CCRCC|hoptimus0,10.961151348979866,11.0,result 3,"break-even labelled clusters, 4 + 2/R2_cluster",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived from the rule and R2_cluster
+ratio|CCRCC|hoptimus0|nL4,1.0,1.00,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|CCRCC|hoptimus0|nL6,0.8706351411407192,0.87,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|CCRCC|hoptimus0|nL8,0.9633666106087884,0.96,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|CCRCC|hoptimus0|nL12,0.9344247896121682,0.93,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|CCRCC|hoptimus0|nL16,1.053723732377769,1.05,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+R2_cluster|CCRCC|permuted,0.0188404496297795,0.02,result 2,"cluster-level R-squared, slope estimand, median over genes",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,"scale z, donor, theta3, R2_cluster_raw median"
+floor|CCRCC|permuted,0.9811595503702205,0.98,result 2,one minus cluster-level R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived: 1 - R2_cluster
+R2_within|CCRCC|permuted,0.23737034381153843,0.24,result 4,within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,R2_within median
+ratio|CCRCC|permuted|nL4,1.0,1.00,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|CCRCC|permuted|nL6,1.0008888736904789,1.00,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|CCRCC|permuted|nL8,1.005546547676833,1.01,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|CCRCC|permuted|nL12,1.0129503069392736,1.01,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|CCRCC|permuted|nL16,1.0043454353340393,1.00,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+R2_cluster|CCRCC|resnet50,0.1997228278831861,0.20,result 2,"cluster-level R-squared, slope estimand, median over genes",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,"scale z, donor, theta3, R2_cluster_raw median"
+floor|CCRCC|resnet50,0.8002771721168139,0.80,result 2,one minus cluster-level R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived: 1 - R2_cluster
+R2_within|CCRCC|resnet50,0.3688873543308744,0.37,result 4,within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,R2_within median
+break_even|CCRCC|resnet50,14.01387783859019,14.0,result 3,"break-even labelled clusters, 4 + 2/R2_cluster",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived from the rule and R2_cluster
+ratio|CCRCC|resnet50|nL4,1.0,1.00,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|CCRCC|resnet50|nL6,0.915103979630944,0.92,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|CCRCC|resnet50|nL8,1.0022794139546312,1.00,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|CCRCC|resnet50|nL12,1.0129954474663516,1.01,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|CCRCC|resnet50|nL16,1.0542673622089942,1.05,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+R2_cluster|CCRCC|uni_v2,0.4387262423085516,0.44,result 2,"cluster-level R-squared, slope estimand, median over genes",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,"scale z, donor, theta3, R2_cluster_raw median"
+floor|CCRCC|uni_v2,0.5612737576914484,0.56,result 2,one minus cluster-level R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived: 1 - R2_cluster
+R2_within|CCRCC|uni_v2,0.38396304957680477,0.38,result 4,within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,R2_within median
+break_even|CCRCC|uni_v2,8.558651402925246,8.6,result 3,"break-even labelled clusters, 4 + 2/R2_cluster",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived from the rule and R2_cluster
+ratio|CCRCC|uni_v2|nL4,1.0,1.00,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|CCRCC|uni_v2|nL6,0.7931317282961435,0.79,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|CCRCC|uni_v2|nL8,0.8439532116134996,0.84,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|CCRCC|uni_v2|nL12,0.8138387113869796,0.81,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|CCRCC|uni_v2|nL16,0.8689623512834073,0.87,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+R2_cluster|INDIANA_KIDNEY|hoptimus0,0.1863371251456178,0.19,result 2,"cluster-level R-squared, slope estimand, median over genes",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,"scale z, donor, theta3, R2_cluster_raw median"
+floor|INDIANA_KIDNEY|hoptimus0,0.8136628748543822,0.81,result 2,one minus cluster-level R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived: 1 - R2_cluster
+R2_within|INDIANA_KIDNEY|hoptimus0,0.2802937949486727,0.28,result 4,within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,R2_within median
+break_even|INDIANA_KIDNEY|hoptimus0,14.733234176694795,14.7,result 3,"break-even labelled clusters, 4 + 2/R2_cluster",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived from the rule and R2_cluster
+ratio|INDIANA_KIDNEY|hoptimus0|nL4,1.0,1.00,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|INDIANA_KIDNEY|hoptimus0|nL6,0.956609584050143,0.96,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|INDIANA_KIDNEY|hoptimus0|nL8,0.9751719287369848,0.98,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|INDIANA_KIDNEY|hoptimus0|nL12,0.9856611046297922,0.99,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|INDIANA_KIDNEY|hoptimus0|nL16,0.9715137922120838,0.97,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+R2_cluster|INDIANA_KIDNEY|permuted,0.035889287937588096,0.04,result 2,"cluster-level R-squared, slope estimand, median over genes",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,"scale z, donor, theta3, R2_cluster_raw median"
+floor|INDIANA_KIDNEY|permuted,0.964110712062412,0.96,result 2,one minus cluster-level R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived: 1 - R2_cluster
+R2_within|INDIANA_KIDNEY|permuted,0.20770725304928533,0.21,result 4,within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,R2_within median
+ratio|INDIANA_KIDNEY|permuted|nL4,1.0,1.00,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|INDIANA_KIDNEY|permuted|nL6,1.0235726261298033,1.02,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|INDIANA_KIDNEY|permuted|nL8,1.0346099607894574,1.03,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|INDIANA_KIDNEY|permuted|nL12,1.0364476818213806,1.04,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|INDIANA_KIDNEY|permuted|nL16,1.0263796926983888,1.03,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+R2_cluster|INDIANA_KIDNEY|resnet50,0.051325862331661296,0.05,result 2,"cluster-level R-squared, slope estimand, median over genes",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,"scale z, donor, theta3, R2_cluster_raw median"
+floor|INDIANA_KIDNEY|resnet50,0.9486741376683387,0.95,result 2,one minus cluster-level R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived: 1 - R2_cluster
+R2_within|INDIANA_KIDNEY|resnet50,0.2633737757317709,0.26,result 4,within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,R2_within median
+break_even|INDIANA_KIDNEY|resnet50,42.96671013681661,43.0,result 3,"break-even labelled clusters, 4 + 2/R2_cluster",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived from the rule and R2_cluster
+ratio|INDIANA_KIDNEY|resnet50|nL4,1.0,1.00,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|INDIANA_KIDNEY|resnet50|nL6,1.0244168360039696,1.02,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|INDIANA_KIDNEY|resnet50|nL8,1.0352411473854848,1.04,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|INDIANA_KIDNEY|resnet50|nL12,1.064438081135792,1.06,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|INDIANA_KIDNEY|resnet50|nL16,1.052509874054434,1.05,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+R2_cluster|INDIANA_KIDNEY|uni_v2,0.13896681743966072,0.14,result 2,"cluster-level R-squared, slope estimand, median over genes",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,"scale z, donor, theta3, R2_cluster_raw median"
+floor|INDIANA_KIDNEY|uni_v2,0.8610331825603392,0.86,result 2,one minus cluster-level R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived: 1 - R2_cluster
+R2_within|INDIANA_KIDNEY|uni_v2,0.28405338081116194,0.28,result 4,within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,R2_within median
+break_even|INDIANA_KIDNEY|uni_v2,18.391924898678766,18.4,result 3,"break-even labelled clusters, 4 + 2/R2_cluster",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived from the rule and R2_cluster
+ratio|INDIANA_KIDNEY|uni_v2|nL4,1.0,1.00,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|INDIANA_KIDNEY|uni_v2|nL6,0.9691619287697256,0.97,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|INDIANA_KIDNEY|uni_v2|nL8,0.9835239541273236,0.98,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|INDIANA_KIDNEY|uni_v2|nL12,1.0173649164568594,1.02,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|INDIANA_KIDNEY|uni_v2|nL16,0.9879172015659308,0.99,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+R2_cluster|LUNG_XENIUM|hoptimus0,0.7295370226920849,0.73,result 2,"cluster-level R-squared, slope estimand, median over genes",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,"scale z, donor, theta3, R2_cluster_raw median"
+floor|LUNG_XENIUM|hoptimus0,0.27046297730791513,0.27,result 2,one minus cluster-level R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived: 1 - R2_cluster
+R2_within|LUNG_XENIUM|hoptimus0,0.8262568768906634,0.83,result 4,within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,R2_within median
+break_even|LUNG_XENIUM|hoptimus0,6.7414647067803966,6.7,result 3,"break-even labelled clusters, 4 + 2/R2_cluster",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived from the rule and R2_cluster
+ratio|LUNG_XENIUM|hoptimus0|nL4,1.0,1.00,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|LUNG_XENIUM|hoptimus0|nL6,0.4580329111441706,0.46,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|LUNG_XENIUM|hoptimus0|nL8,0.4281583363653484,0.43,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|LUNG_XENIUM|hoptimus0|nL12,0.4118973275612938,0.41,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+R2_cluster|LUNG_XENIUM|permuted,0.0325429385363482,0.03,result 2,"cluster-level R-squared, slope estimand, median over genes",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,"scale z, donor, theta3, R2_cluster_raw median"
+floor|LUNG_XENIUM|permuted,0.9674570614636518,0.97,result 2,one minus cluster-level R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived: 1 - R2_cluster
+R2_within|LUNG_XENIUM|permuted,0.5748923048589829,0.57,result 4,within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,R2_within median
+ratio|LUNG_XENIUM|permuted|nL4,1.0,1.00,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|LUNG_XENIUM|permuted|nL6,1.032819101151466,1.03,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|LUNG_XENIUM|permuted|nL8,1.0394037302303478,1.04,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|LUNG_XENIUM|permuted|nL12,1.0545213183723592,1.05,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+R2_cluster|LUNG_XENIUM|resnet50,0.6543891178232232,0.65,result 2,"cluster-level R-squared, slope estimand, median over genes",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,"scale z, donor, theta3, R2_cluster_raw median"
+floor|LUNG_XENIUM|resnet50,0.3456108821767768,0.35,result 2,one minus cluster-level R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived: 1 - R2_cluster
+R2_within|LUNG_XENIUM|resnet50,0.7711560980422749,0.77,result 4,within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,R2_within median
+break_even|LUNG_XENIUM|resnet50,7.056285542542106,7.1,result 3,"break-even labelled clusters, 4 + 2/R2_cluster",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived from the rule and R2_cluster
+ratio|LUNG_XENIUM|resnet50|nL4,1.0,1.00,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|LUNG_XENIUM|resnet50|nL6,0.5543258556599765,0.55,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|LUNG_XENIUM|resnet50|nL8,0.5395897152644017,0.54,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|LUNG_XENIUM|resnet50|nL12,0.5347543855509217,0.53,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+R2_cluster|LUNG_XENIUM|uni_v2,0.7135141999082618,0.71,result 2,"cluster-level R-squared, slope estimand, median over genes",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,"scale z, donor, theta3, R2_cluster_raw median"
+floor|LUNG_XENIUM|uni_v2,0.2864858000917382,0.29,result 2,one minus cluster-level R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived: 1 - R2_cluster
+R2_within|LUNG_XENIUM|uni_v2,0.8307131748695162,0.83,result 4,within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,R2_within median
+break_even|LUNG_XENIUM|uni_v2,6.803027606538377,6.8,result 3,"break-even labelled clusters, 4 + 2/R2_cluster",results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived from the rule and R2_cluster
+ratio|LUNG_XENIUM|uni_v2|nL4,1.0,1.00,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|LUNG_XENIUM|uni_v2|nL6,0.4937837140381626,0.49,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|LUNG_XENIUM|uni_v2|nL8,0.470299482965042,0.47,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+ratio|LUNG_XENIUM|uni_v2|nL12,0.4577851406075398,0.46,result 2 and 3,"PPI over classical empirical variance, masking draws",results/round4/ppi/Q4a_recompute/q4a_table61.csv,theta3 donor design c_crossfit_design lin
+gene_axis|CCRCC|hoptimus0|spearman_cluster,-0.8724646367628756,-0.87,result 2,Spearman of per-gene width ratio with cluster-level R-squared,results/round4/ppi/Q4_tables/q4_gene_axis_summary.csv,"A_design_cd_lin, full_union"
+gene_axis|CCRCC|hoptimus0|spearman_unit,-0.5078765181156318,-0.51,result 2,Spearman with unit-level correlation,results/round4/ppi/Q4_tables/q4_gene_axis_summary.csv,"A_design_cd_lin, full_union"
+gene_axis|CCRCC|hoptimus0|n_genes,459.0,459,result 2,genes,results/round4/ppi/Q4_tables/q4_gene_axis_summary.csv,n_genes
+gene_axis|CCRCC|resnet50|spearman_cluster,-0.8578301695971091,-0.86,result 2,Spearman of per-gene width ratio with cluster-level R-squared,results/round4/ppi/Q4_tables/q4_gene_axis_summary.csv,"A_design_cd_lin, full_union"
+gene_axis|CCRCC|resnet50|spearman_unit,-0.3581432547704228,-0.36,result 2,Spearman with unit-level correlation,results/round4/ppi/Q4_tables/q4_gene_axis_summary.csv,"A_design_cd_lin, full_union"
+gene_axis|CCRCC|resnet50|n_genes,459.0,459,result 2,genes,results/round4/ppi/Q4_tables/q4_gene_axis_summary.csv,n_genes
+gene_axis|CCRCC|uni_v2|spearman_cluster,-0.9034054682565388,-0.90,result 2,Spearman of per-gene width ratio with cluster-level R-squared,results/round4/ppi/Q4_tables/q4_gene_axis_summary.csv,"A_design_cd_lin, full_union"
+gene_axis|CCRCC|uni_v2|spearman_unit,-0.5006076805761859,-0.50,result 2,Spearman with unit-level correlation,results/round4/ppi/Q4_tables/q4_gene_axis_summary.csv,"A_design_cd_lin, full_union"
+gene_axis|CCRCC|uni_v2|n_genes,459.0,459,result 2,genes,results/round4/ppi/Q4_tables/q4_gene_axis_summary.csv,n_genes
+spot_weighted_permuted|CCRCC|min,0.2852491657065379,0.29,result 2,"permuted predictor, unit-weighted slope, variance ratio",results/round4/ppi/Q5a/q5a_spot_weighted_permuted.csv,"theta3, n_L>=6, min"
+spot_weighted_permuted|CCRCC|max,0.3971830390694957,0.40,result 2,"same, max",results/round4/ppi/Q5a/q5a_spot_weighted_permuted.csv,max
+spot_weighted_permuted|LUNG_XENIUM|min,0.0875683764744205,0.09,result 2,"permuted predictor, unit-weighted slope, variance ratio",results/round4/ppi/Q5a/q5a_spot_weighted_permuted.csv,"theta3, n_L>=6, min"
+spot_weighted_permuted|LUNG_XENIUM|max,0.1346942804658461,0.13,result 2,"same, max",results/round4/ppi/Q5a/q5a_spot_weighted_permuted.csv,max
+tuning_cost|sim|max_abs_diff,0.0425922432052409,0.043,result 3,largest gap between observed and predicted tuning cost,results/round4/ppi/Q2_theory/theorem_v3/q2_sim_theorem_v3.csv,max |tuning_cost_obs_minus_pred| over cells
+tuning_cost|sim|cells,24.0,24,result 3,simulation cells,results/round4/ppi/Q2_theory/theorem_v3/q2_sim_theorem_v3.csv,rows
+theorem|sim|oracle_minus_floor_min,0.02555826537689959,0.03,result 2,best-lambda ratio minus floor,results/round4/ppi/Q2_theory/theorem_v3/q2_sim_theorem_v3.csv,"G_U=100, m=5000"
+theorem|sim|oracle_minus_floor_max,0.07662338908200877,0.08,result 2,"same, max",results/round4/ppi/Q2_theory/theorem_v3/q2_sim_theorem_v3.csv,"G_U=100, m=5000"
+regimes|cost10|cells,232.0,232,result 4,cells compared at a cluster cost of 10 units,results/round4/ppi/Q4_tables/q4_report_numbers.csv,name q31|cd10|super|c_crossfit|n_cells
+regimes|cost10|B_narrower,216.0,216,result 4,cells where regime B is narrower,results/round4/ppi/Q4_tables/q4_report_numbers.csv,name q31|cd10|super|c_crossfit|n_B_narrower
+regimeB_width|ACS_CA_PUMA|package,0.0787587445267155,0.08,result 4,"regime B, PPI width over classical width",results/round4/ppi/Q4_tables/q4_main_table.csv,"regimeB_c_crossfit, theta3 donor design, unit cost, median over budgets"
+regimeB_predicted|ACS_CA_PUMA|package,0.0781490888176082,0.08,result 4,square root of one minus within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived
+regimeB_width|ACS_CA_PUMA|permuted,0.1522581885894073,0.15,result 4,"regime B, PPI width over classical width",results/round4/ppi/Q4_tables/q4_main_table.csv,"regimeB_c_crossfit, theta3 donor design, unit cost, median over budgets"
+regimeB_predicted|ACS_CA_PUMA|permuted,0.1533991145613695,0.15,result 4,square root of one minus within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived
+regimeB_width|ACS_STATES|package,0.0773174814308914,0.08,result 4,"regime B, PPI width over classical width",results/round4/ppi/Q4_tables/q4_main_table.csv,"regimeB_c_crossfit, theta3 donor design, unit cost, median over budgets"
+regimeB_predicted|ACS_STATES|package,0.07738133867424878,0.08,result 4,square root of one minus within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived
+regimeB_width|ACS_STATES|permuted,0.1544640779487911,0.15,result 4,"regime B, PPI width over classical width",results/round4/ppi/Q4_tables/q4_main_table.csv,"regimeB_c_crossfit, theta3 donor design, unit cost, median over budgets"
+regimeB_predicted|ACS_STATES|permuted,0.15545022857792767,0.16,result 4,square root of one minus within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived
+regimeB_width|CCRCC|hoptimus0,0.8271134828867249,0.83,result 4,"regime B, PPI width over classical width",results/round4/ppi/Q4_tables/q4_main_table.csv,"regimeB_c_crossfit, theta3 donor design, unit cost, median over budgets"
+regimeB_predicted|CCRCC|hoptimus0,0.793818953758627,0.79,result 4,square root of one minus within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived
+regimeB_width|CCRCC|permuted,0.8717528960645691,0.87,result 4,"regime B, PPI width over classical width",results/round4/ppi/Q4_tables/q4_main_table.csv,"regimeB_c_crossfit, theta3 donor design, unit cost, median over budgets"
+regimeB_predicted|CCRCC|permuted,0.8732866975904657,0.87,result 4,square root of one minus within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived
+regimeB_width|CCRCC|resnet50,0.8436779852691016,0.84,result 4,"regime B, PPI width over classical width",results/round4/ppi/Q4_tables/q4_main_table.csv,"regimeB_c_crossfit, theta3 donor design, unit cost, median over budgets"
+regimeB_predicted|CCRCC|resnet50,0.7944259850163045,0.79,result 4,square root of one minus within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived
+regimeB_width|CCRCC|uni_v2,0.8034350309243592,0.80,result 4,"regime B, PPI width over classical width",results/round4/ppi/Q4_tables/q4_main_table.csv,"regimeB_c_crossfit, theta3 donor design, unit cost, median over budgets"
+regimeB_predicted|CCRCC|uni_v2,0.7848802140602064,0.78,result 4,square root of one minus within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived
+regimeB_width|INDIANA_KIDNEY|hoptimus0,0.8368491542214825,0.84,result 4,"regime B, PPI width over classical width",results/round4/ppi/Q4_tables/q4_main_table.csv,"regimeB_c_crossfit, theta3 donor design, unit cost, median over budgets"
+regimeB_predicted|INDIANA_KIDNEY|hoptimus0,0.8483549994261408,0.85,result 4,square root of one minus within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived
+regimeB_width|INDIANA_KIDNEY|permuted,0.8798774812538261,0.88,result 4,"regime B, PPI width over classical width",results/round4/ppi/Q4_tables/q4_main_table.csv,"regimeB_c_crossfit, theta3 donor design, unit cost, median over budgets"
+regimeB_predicted|INDIANA_KIDNEY|permuted,0.8901082782171585,0.89,result 4,square root of one minus within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived
+regimeB_width|INDIANA_KIDNEY|resnet50,0.8375377767581353,0.84,result 4,"regime B, PPI width over classical width",results/round4/ppi/Q4_tables/q4_main_table.csv,"regimeB_c_crossfit, theta3 donor design, unit cost, median over budgets"
+regimeB_predicted|INDIANA_KIDNEY|resnet50,0.8582693191931243,0.86,result 4,square root of one minus within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived
+regimeB_width|INDIANA_KIDNEY|uni_v2,0.8303992892293137,0.83,result 4,"regime B, PPI width over classical width",results/round4/ppi/Q4_tables/q4_main_table.csv,"regimeB_c_crossfit, theta3 donor design, unit cost, median over budgets"
+regimeB_predicted|INDIANA_KIDNEY|uni_v2,0.846136288779082,0.85,result 4,square root of one minus within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived
+regimeB_width|LUNG_XENIUM|hoptimus0,0.4225900497481067,0.42,result 4,"regime B, PPI width over classical width",results/round4/ppi/Q4_tables/q4_main_table.csv,"regimeB_c_crossfit, theta3 donor design, unit cost, median over budgets"
+regimeB_predicted|LUNG_XENIUM|hoptimus0,0.4168250509618353,0.42,result 4,square root of one minus within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived
+regimeB_width|LUNG_XENIUM|permuted,0.6574208935913306,0.66,result 4,"regime B, PPI width over classical width",results/round4/ppi/Q4_tables/q4_main_table.csv,"regimeB_c_crossfit, theta3 donor design, unit cost, median over budgets"
+regimeB_predicted|LUNG_XENIUM|permuted,0.6520028336909411,0.65,result 4,square root of one minus within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived
+regimeB_width|LUNG_XENIUM|resnet50,0.4881814893798428,0.49,result 4,"regime B, PPI width over classical width",results/round4/ppi/Q4_tables/q4_main_table.csv,"regimeB_c_crossfit, theta3 donor design, unit cost, median over budgets"
+regimeB_predicted|LUNG_XENIUM|resnet50,0.4783763183496076,0.48,result 4,square root of one minus within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived
+regimeB_width|LUNG_XENIUM|uni_v2,0.418365351510072,0.42,result 4,"regime B, PPI width over classical width",results/round4/ppi/Q4_tables/q4_main_table.csv,"regimeB_c_crossfit, theta3 donor design, unit cost, median over budgets"
+regimeB_predicted|LUNG_XENIUM|uni_v2,0.4114448020457711,0.41,result 4,square root of one minus within-cluster R-squared,results/round4/ppi/Q2_theory/q2_cluster_r2.csv,derived
+regimes|CCRCC|B2400|nL4|B_over_A,0.4574727338863153,0.46,result 4,"regime B width over regime A width, equal budget",results/round4/ppi/Q3_regimes/q3_report_numbers.csv,Q3.1|CCRCC|hoptimus0|theta3|donor|c_crossfit|super|B2400|nL4|width_ratio_B_over_A
+regimes|CCRCC|B2400|nL8|B_over_A,0.6378321286195375,0.64,result 4,"regime B width over regime A width, equal budget",results/round4/ppi/Q3_regimes/q3_report_numbers.csv,Q3.1|CCRCC|hoptimus0|theta3|donor|c_crossfit|super|B2400|nL8|width_ratio_B_over_A
+regimes|INDIANA_KIDNEY|B2400|nL4|B_over_A,0.7429904569712735,0.74,result 4,"regime B width over regime A width, equal budget",results/round4/ppi/Q3_regimes/q3_report_numbers.csv,Q3.1|INDIANA_KIDNEY|hoptimus0|theta3|donor|c_crossfit|super|B2400|nL4|width_ratio_B_over_A
+regimes|INDIANA_KIDNEY|B2400|nL8|B_over_A,0.9170916588354506,0.92,result 4,"regime B width over regime A width, equal budget",results/round4/ppi/Q3_regimes/q3_report_numbers.csv,Q3.1|INDIANA_KIDNEY|hoptimus0|theta3|donor|c_crossfit|super|B2400|nL8|width_ratio_B_over_A
+regimes|LUNG_XENIUM|B2400|nL4|B_over_A,0.3993940318751984,0.40,result 4,"regime B width over regime A width, equal budget",results/round4/ppi/Q3_regimes/q3_report_numbers.csv,Q3.1|LUNG_XENIUM|hoptimus0|theta3|donor|c_crossfit|super|B2400|nL4|width_ratio_B_over_A
+regimes|LUNG_XENIUM|B2400|nL8|B_over_A,0.5814004558615196,0.58,result 4,"regime B width over regime A width, equal budget",results/round4/ppi/Q3_regimes/q3_report_numbers.csv,Q3.1|LUNG_XENIUM|hoptimus0|theta3|donor|c_crossfit|super|B2400|nL8|width_ratio_B_over_A
+allocation|CCRCC|classical,121.06163330599604,121,result 4,optimal units per cluster at cost ratio 100,results/round4/ppi/Q2_theory/q2_report_numbers.csv,Q2.3|CCRCC|hoptimus0|theta3|donor|none|m_star_cd_cs_100_median
+allocation|CCRCC|with_predictor,108.14776208548452,108,result 4,optimal units per cluster at cost ratio 100,results/round4/ppi/Q2_theory/q2_report_numbers.csv,Q2.3|CCRCC|hoptimus0|theta3|donor|c_crossfit|m_star_cd_cs_100_median
+allocation|INDIANA_KIDNEY|classical,235.8530014837651,236,result 4,optimal units per cluster at cost ratio 100,results/round4/ppi/Q2_theory/q2_report_numbers.csv,Q2.3|INDIANA_KIDNEY|hoptimus0|theta3|donor|none|m_star_cd_cs_100_median
+allocation|INDIANA_KIDNEY|with_predictor,188.0051424498949,188,result 4,optimal units per cluster at cost ratio 100,results/round4/ppi/Q2_theory/q2_report_numbers.csv,Q2.3|INDIANA_KIDNEY|hoptimus0|theta3|donor|c_crossfit|m_star_cd_cs_100_median
+allocation|LUNG_XENIUM|classical,172.12974101946796,172,result 4,optimal units per cluster at cost ratio 100,results/round4/ppi/Q2_theory/q2_report_numbers.csv,Q2.3|LUNG_XENIUM|hoptimus0|theta3|donor|none|m_star_cd_cs_100_median
+allocation|LUNG_XENIUM|with_predictor,121.20777799186556,121,result 4,optimal units per cluster at cost ratio 100,results/round4/ppi/Q2_theory/q2_report_numbers.csv,Q2.3|LUNG_XENIUM|hoptimus0|theta3|donor|c_crossfit|m_star_cd_cs_100_median
+allocation|ACS_STATES|classical,378.59518633633394,379,result 4,optimal units per cluster at cost ratio 100,results/round4/ppi/Q2_theory/q2_report_numbers.csv,Q2.3|ACS_STATES|package|theta3|donor|none|m_star_cd_cs_100_median
+allocation|ACS_STATES|with_predictor,88.62390445337451,89,result 4,optimal units per cluster at cost ratio 100,results/round4/ppi/Q2_theory/q2_report_numbers.csv,Q2.3|ACS_STATES|package|theta3|donor|c_crossfit|m_star_cd_cs_100_median
+sets|ACS|ghcp|o0|coverage,0.9999959572826036,1.000,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|ACS|ghcp|o0|width,12.636496762061483,12.64,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|ACS|ghcp|o5|coverage,0.9999702202253102,1.000,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|ACS|ghcp|o5|width,11.155066029596696,11.16,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|ACS|ghcp|o10|coverage,0.9999494371771548,1.000,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|ACS|ghcp|o10|width,10.729399191846928,10.73,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|ACS|ghcp|o25|coverage,0.999879568854201,1.000,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|ACS|ghcp|o25|width,9.964146054619336,9.96,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|ACS|ghcp|o50|coverage,0.999763799507194,1.000,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|ACS|ghcp|o50|width,9.41658708619775,9.42,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|ACS|ghcp|o100|coverage,0.9995484741076072,1.000,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|ACS|ghcp|o100|width,8.828727226255097,8.83,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|ACS|ghcp|o200|coverage,0.9990550701465838,0.999,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|ACS|ghcp|o200|width,8.136197594794503,8.14,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|ACS|hcp|o0|coverage,0.98998378875796,0.99,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|ACS|hcp|o0|width,5.119361383224014,5.12,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|ACS|pooled|o0|coverage,0.8983590827581832,0.90,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|ACS|pooled|o0|width,2.2588826394661994,2.26,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|ACS|within|o5|coverage,1.0,1.000,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|ACS|within|o10|coverage,1.0,1.000,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|ACS|within|o25|coverage,0.9280861351745188,0.93,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|ACS|within|o25|width,3.341316582115167,3.34,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|ACS|within|o50|coverage,0.9243896489481424,0.92,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|ACS|within|o50|width,2.966553384155901,2.97,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|ACS|within|o100|coverage,0.9021052459372054,0.90,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|ACS|within|o100|width,2.433909962490052,2.43,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|ACS|within|o200|coverage,0.9007134374103943,0.90,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|ACS|within|o200|width,2.345463907609411,2.35,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|ACS|within_plain|o5|coverage,1.0,1.000,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|ACS|within_plain|o10|coverage,0.9072240525116204,0.91,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|ACS|within_plain|o10|width,3.017568151551985,3.02,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|ACS|within_plain|o25|coverage,0.9211857360417433,0.92,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|ACS|within_plain|o25|width,2.86847508583318,2.87,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|ACS|within_plain|o50|coverage,0.9010746870018036,0.90,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|ACS|within_plain|o50|width,2.427669151557915,2.43,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|ACS|within_plain|o100|coverage,0.9010593607840016,0.90,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|ACS|within_plain|o100|width,2.3490884472980604,2.35,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|ACS|within_plain|o200|coverage,0.9002234989621622,0.90,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|ACS|within_plain|o200|width,2.308687935579588,2.31,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|CCRCC|ghcp|o5|coverage,0.9947920504535516,0.995,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|CCRCC|ghcp|o5|width,5.458409939291894,5.46,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|CCRCC|ghcp|o10|coverage,0.996080745100028,0.996,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|CCRCC|ghcp|o10|width,5.059603612740309,5.06,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|CCRCC|ghcp|o25|coverage,0.9970438207455996,0.997,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|CCRCC|ghcp|o25|width,4.432526836734113,4.43,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|CCRCC|ghcp|o50|coverage,0.9976106688168285,0.998,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|CCRCC|ghcp|o50|width,3.9753177949749996,3.98,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|CCRCC|ghcp|o100|coverage,0.9966722711975308,0.997,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|CCRCC|ghcp|o100|width,3.6225626980324375,3.62,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|CCRCC|ghcp|o200|coverage,0.9941172129259259,0.994,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|CCRCC|ghcp|o200|width,3.2962136618529025,3.30,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|CCRCC|hcp|o0|coverage,0.9692115333343452,0.97,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|CCRCC|hcp|o0|width,4.109367407809914,4.11,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|CCRCC|pooled|o0|coverage,0.864426272376767,0.86,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|CCRCC|pooled|o0|width,2.1110351028422323,2.11,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|CCRCC|within|o5|coverage,1.0,1.000,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|CCRCC|within|o10|coverage,1.0,1.000,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|CCRCC|within|o25|coverage,0.9280304920606884,0.93,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|CCRCC|within|o25|width,2.136894386380886,2.14,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|CCRCC|within|o50|coverage,0.922666875191541,0.92,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|CCRCC|within|o50|width,1.9546549039064616,1.95,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|CCRCC|within|o100|coverage,0.9023418444812266,0.90,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|CCRCC|within|o100|width,1.7537081001737247,1.75,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|CCRCC|within|o200|coverage,0.9004966895684233,0.90,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|CCRCC|within|o200|width,1.711362871839328,1.71,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|CCRCC|within_plain|o5|coverage,1.0,1.000,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|CCRCC|within_plain|o10|coverage,0.9095744101291704,0.91,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|CCRCC|within_plain|o10|width,2.3210052547226527,2.32,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|CCRCC|within_plain|o25|coverage,0.9236233538407222,0.92,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|CCRCC|within_plain|o25|width,2.300492850723311,2.30,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|CCRCC|within_plain|o50|coverage,0.9026683542274245,0.90,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|CCRCC|within_plain|o50|width,2.1317444096223483,2.13,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|CCRCC|within_plain|o100|coverage,0.9016891371510575,0.90,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|CCRCC|within_plain|o100|width,2.1089779703047355,2.11,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|CCRCC|within_plain|o200|coverage,0.9008240914283795,0.90,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|CCRCC|within_plain|o200|width,2.096356264113149,2.10,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|INDIANA_KIDNEY|ghcp|o5|coverage,0.9990404352607275,0.999,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|INDIANA_KIDNEY|ghcp|o5|width,4.564359098853935,4.56,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|INDIANA_KIDNEY|ghcp|o10|coverage,0.9988217954745086,0.999,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|INDIANA_KIDNEY|ghcp|o10|width,4.271565293395718,4.27,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|INDIANA_KIDNEY|ghcp|o25|coverage,0.9976667120897753,0.998,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|INDIANA_KIDNEY|ghcp|o25|width,3.7421737454708173,3.74,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|INDIANA_KIDNEY|ghcp|o50|coverage,0.9959626017423204,0.996,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|INDIANA_KIDNEY|ghcp|o50|width,3.366441475240265,3.37,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|INDIANA_KIDNEY|ghcp|o100|coverage,0.9916550575707236,0.992,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|INDIANA_KIDNEY|ghcp|o100|width,2.963735397089577,2.96,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|INDIANA_KIDNEY|ghcp|o200|coverage,0.982056700635512,0.98,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|INDIANA_KIDNEY|ghcp|o200|width,2.5753771400573506,2.58,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|INDIANA_KIDNEY|hcp|o0|coverage,0.9881501874857671,0.99,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|INDIANA_KIDNEY|hcp|o0|width,3.065991565647067,3.07,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|INDIANA_KIDNEY|pooled|o0|coverage,0.8870559427098792,0.89,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|INDIANA_KIDNEY|pooled|o0|width,1.6075324195346214,1.61,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|INDIANA_KIDNEY|within|o5|coverage,1.0,1.000,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|INDIANA_KIDNEY|within|o10|coverage,1.0,1.000,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|INDIANA_KIDNEY|within|o25|coverage,0.929025787504196,0.93,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|INDIANA_KIDNEY|within|o25|width,1.959289293999073,1.96,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|INDIANA_KIDNEY|within|o50|coverage,0.9222857612955327,0.92,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|INDIANA_KIDNEY|within|o50|width,1.7482635599986072,1.75,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|INDIANA_KIDNEY|within|o100|coverage,0.9011089462103236,0.90,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|INDIANA_KIDNEY|within|o100|width,1.5299555269743823,1.53,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|INDIANA_KIDNEY|within|o200|coverage,0.900694996016692,0.90,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|INDIANA_KIDNEY|within|o200|width,1.4937267196298576,1.49,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|INDIANA_KIDNEY|within_plain|o5|coverage,1.0,1.000,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|INDIANA_KIDNEY|within_plain|o10|coverage,0.9089234145425028,0.91,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|INDIANA_KIDNEY|within_plain|o10|width,1.8789813363158123,1.88,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|INDIANA_KIDNEY|within_plain|o25|coverage,0.9232269710297291,0.92,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|INDIANA_KIDNEY|within_plain|o25|width,1.8372482628357527,1.84,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|INDIANA_KIDNEY|within_plain|o50|coverage,0.9017977216791114,0.90,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|INDIANA_KIDNEY|within_plain|o50|width,1.642396965908577,1.64,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|INDIANA_KIDNEY|within_plain|o100|coverage,0.9005175779041078,0.90,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|INDIANA_KIDNEY|within_plain|o100|width,1.6125093013212777,1.61,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|INDIANA_KIDNEY|within_plain|o200|coverage,0.9000953314643655,0.90,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|INDIANA_KIDNEY|within_plain|o200|width,1.5990397187736836,1.60,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|LUNG_XENIUM|ghcp|o5|coverage,0.9990241721661922,0.999,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|LUNG_XENIUM|ghcp|o5|width,6.621582363323058,6.62,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|LUNG_XENIUM|ghcp|o10|coverage,0.9986807164142206,0.999,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|LUNG_XENIUM|ghcp|o10|width,6.2819639868333175,6.28,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|LUNG_XENIUM|ghcp|o25|coverage,0.9975192924881241,0.998,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|LUNG_XENIUM|ghcp|o25|width,5.6031293449044846,5.60,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|LUNG_XENIUM|ghcp|o50|coverage,0.9960335178431673,0.996,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|LUNG_XENIUM|ghcp|o50|width,5.1770177537896735,5.18,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|LUNG_XENIUM|ghcp|o100|coverage,0.9928392537993952,0.993,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|LUNG_XENIUM|ghcp|o100|width,4.6310870444248105,4.63,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|LUNG_XENIUM|ghcp|o200|coverage,0.9855355915214602,0.99,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|LUNG_XENIUM|ghcp|o200|width,3.984903353546066,3.98,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|LUNG_XENIUM|hcp|o0|coverage,0.9872962535335361,0.99,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|LUNG_XENIUM|hcp|o0|width,4.542210546834191,4.54,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|LUNG_XENIUM|pooled|o0|coverage,0.8992144337279413,0.90,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|LUNG_XENIUM|pooled|o0|width,2.6991797477480346,2.70,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|LUNG_XENIUM|within|o5|coverage,1.0,1.000,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|LUNG_XENIUM|within|o10|coverage,1.0,1.000,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|LUNG_XENIUM|within|o25|coverage,0.9281598986469274,0.93,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|LUNG_XENIUM|within|o25|width,2.9075596734477163,2.91,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|LUNG_XENIUM|within|o50|coverage,0.9228837332200442,0.92,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|LUNG_XENIUM|within|o50|width,2.6293815704362697,2.63,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|LUNG_XENIUM|within|o100|coverage,0.9014917042721265,0.90,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|LUNG_XENIUM|within|o100|width,2.314696817355802,2.31,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|LUNG_XENIUM|within|o200|coverage,0.9007004988225319,0.90,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|LUNG_XENIUM|within|o200|width,2.264786883042397,2.26,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|LUNG_XENIUM|within_plain|o5|coverage,1.0,1.000,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|LUNG_XENIUM|within_plain|o10|coverage,0.9089042259006992,0.91,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|LUNG_XENIUM|within_plain|o10|width,2.9474413959584083,2.95,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|LUNG_XENIUM|within_plain|o25|coverage,0.9229266776143995,0.92,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|LUNG_XENIUM|within_plain|o25|width,2.912227862251964,2.91,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|LUNG_XENIUM|within_plain|o50|coverage,0.9019948712594097,0.90,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|LUNG_XENIUM|within_plain|o50|width,2.6402108436758867,2.64,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|LUNG_XENIUM|within_plain|o100|coverage,0.9006724965147296,0.90,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|LUNG_XENIUM|within_plain|o100|width,2.5999432212340388,2.60,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+sets|LUNG_XENIUM|within_plain|o200|coverage,0.9001878903688998,0.90,result 5,"coverage, 10 calibration clusters, mean over encoders",results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,"alpha 0.1, K 10, abs score"
+sets|LUNG_XENIUM|within_plain|o200|width,2.581701056053601,2.58,result 5,mean width,results/round4/conformal/C3_real/c3_o_sweep_by_task.csv,same
+lower_bound|K4|coverage_floor,0.9513656919954396,0.951,result 5,"coverage floor for a finite valid method, alpha 0.1",results/round4/conformal/C2_candidates/lower_bound/c2_lb_beta_star.csv,min_coverage_any_valid
+lower_bound|K4|forced_infinite_prob,0.5,0.50,result 5,"forced probability of an infinite set, 1 - alpha(K+1)",results/round4/conformal/C2_candidates/lower_bound/c2_lb_beta_star.csv,derived from K and alpha
+lower_bound|K5|coverage_floor,0.922971952706216,0.923,result 5,"coverage floor for a finite valid method, alpha 0.1",results/round4/conformal/C2_candidates/lower_bound/c2_lb_beta_star.csv,min_coverage_any_valid
+lower_bound|K5|forced_infinite_prob,0.3999999999999999,0.40,result 5,"forced probability of an infinite set, 1 - alpha(K+1)",results/round4/conformal/C2_candidates/lower_bound/c2_lb_beta_star.csv,derived from K and alpha
+lower_bound|K6|coverage_floor,0.909641370184104,0.910,result 5,"coverage floor for a finite valid method, alpha 0.1",results/round4/conformal/C2_candidates/lower_bound/c2_lb_beta_star.csv,min_coverage_any_valid
+lower_bound|K6|forced_infinite_prob,0.29999999999999993,0.30,result 5,"forced probability of an infinite set, 1 - alpha(K+1)",results/round4/conformal/C2_candidates/lower_bound/c2_lb_beta_star.csv,derived from K and alpha
+lower_bound|K7|coverage_floor,0.9033422866212232,0.903,result 5,"coverage floor for a finite valid method, alpha 0.1",results/round4/conformal/C2_candidates/lower_bound/c2_lb_beta_star.csv,min_coverage_any_valid
+lower_bound|K7|forced_infinite_prob,0.19999999999999996,0.20,result 5,"forced probability of an infinite set, 1 - alpha(K+1)",results/round4/conformal/C2_candidates/lower_bound/c2_lb_beta_star.csv,derived from K and alpha
+lower_bound|K8|coverage_floor,0.9006730415388681,0.901,result 5,"coverage floor for a finite valid method, alpha 0.1",results/round4/conformal/C2_candidates/lower_bound/c2_lb_beta_star.csv,min_coverage_any_valid
+lower_bound|K8|forced_infinite_prob,0.09999999999999998,0.10,result 5,"forced probability of an infinite set, 1 - alpha(K+1)",results/round4/conformal/C2_candidates/lower_bound/c2_lb_beta_star.csv,derived from K and alpha
+ghcp_reproduction|simulation|values,254.0,254,result 5,published values compared,results/round4/conformal/C1_testbed/ghcp_repro_longleaf/compare/c1_ghcp_reproduction.csv,rows
+ghcp_reproduction|acs|values,53.0,53,result 5,published values compared,results/round4/conformal/C3_real/frag_ACS_o/acs_ghcp_reproduction.csv,rows
+joint|CCRCC|m14|ci_width_ratio,0.8267547142418858,0.83,result 6,ci_width_ratio,results/round4/ppi/Q5_joint/q5_joint_design.csv,"m=14, regB_width_ratio_theta3"
+joint|CCRCC|m14|ci_coverage,0.8925000000000001,0.89,result 6,ci_coverage,results/round4/ppi/Q5_joint/q5_joint_design.csv,"m=14, regB_coverage_theta3"
+joint|CCRCC|m14|set_coverage,0.9095744101291704,0.91,result 6,set_coverage,results/round4/ppi/Q5_joint/q5_joint_design.csv,"m=14, cheapest_coverage"
+joint|CCRCC|m14|set_width,2.3210052547226527,2.32,result 6,set_width,results/round4/ppi/Q5_joint/q5_joint_design.csv,"m=14, cheapest_width_mean_finite"
+joint|CCRCC|m14|cheapest_set,0.0,within_plain,result 6,cheapest valid set (name in shown_as),results/round4/ppi/Q5_joint/q5_joint_design.csv,cheapest_valid_set
+joint|CCRCC|m84|ci_width_ratio,0.8140015659501973,0.81,result 6,ci_width_ratio,results/round4/ppi/Q5_joint/q5_joint_design.csv,"m=84, regB_width_ratio_theta3"
+joint|CCRCC|m84|ci_coverage,0.89,0.89,result 6,ci_coverage,results/round4/ppi/Q5_joint/q5_joint_design.csv,"m=84, regB_coverage_theta3"
+joint|CCRCC|m84|set_coverage,0.9226668751915412,0.92,result 6,set_coverage,results/round4/ppi/Q5_joint/q5_joint_design.csv,"m=84, cheapest_coverage"
+joint|CCRCC|m84|set_width,1.9546549039064611,1.95,result 6,set_width,results/round4/ppi/Q5_joint/q5_joint_design.csv,"m=84, cheapest_width_mean_finite"
+joint|CCRCC|m84|cheapest_set,0.0,within,result 6,cheapest valid set (name in shown_as),results/round4/ppi/Q5_joint/q5_joint_design.csv,cheapest_valid_set
+joint|INDIANA_KIDNEY|m6|ci_width_ratio,0.8440726296555544,0.84,result 6,ci_width_ratio,results/round4/ppi/Q5_joint/q5_joint_design.csv,"m=6, regB_width_ratio_theta3"
+joint|INDIANA_KIDNEY|m6|ci_coverage,0.8975,0.90,result 6,ci_coverage,results/round4/ppi/Q5_joint/q5_joint_design.csv,"m=6, regB_coverage_theta3"
+joint|INDIANA_KIDNEY|m6|set_coverage,0.9990404352607276,1.00,result 6,set_coverage,results/round4/ppi/Q5_joint/q5_joint_design.csv,"m=6, cheapest_coverage"
+joint|INDIANA_KIDNEY|m6|set_width,4.564359098853936,4.56,result 6,set_width,results/round4/ppi/Q5_joint/q5_joint_design.csv,"m=6, cheapest_width_mean_finite"
+joint|INDIANA_KIDNEY|m6|cheapest_set,0.0,ghcp,result 6,cheapest valid set (name in shown_as),results/round4/ppi/Q5_joint/q5_joint_design.csv,cheapest_valid_set
+joint|INDIANA_KIDNEY|m51|ci_width_ratio,0.8380856111664279,0.84,result 6,ci_width_ratio,results/round4/ppi/Q5_joint/q5_joint_design.csv,"m=51, regB_width_ratio_theta3"
+joint|INDIANA_KIDNEY|m51|ci_coverage,0.9,0.90,result 6,ci_coverage,results/round4/ppi/Q5_joint/q5_joint_design.csv,"m=51, regB_coverage_theta3"
+joint|INDIANA_KIDNEY|m51|set_coverage,0.9222857612955327,0.92,result 6,set_coverage,results/round4/ppi/Q5_joint/q5_joint_design.csv,"m=51, cheapest_coverage"
+joint|INDIANA_KIDNEY|m51|set_width,1.7482635599986074,1.75,result 6,set_width,results/round4/ppi/Q5_joint/q5_joint_design.csv,"m=51, cheapest_width_mean_finite"
+joint|INDIANA_KIDNEY|m51|cheapest_set,0.0,within,result 6,cheapest valid set (name in shown_as),results/round4/ppi/Q5_joint/q5_joint_design.csv,cheapest_valid_set
+joint|LUNG_XENIUM|m36|ci_width_ratio,0.4262379138164111,0.43,result 6,ci_width_ratio,results/round4/ppi/Q5_joint/q5_joint_design.csv,"m=36, regB_width_ratio_theta3"
+joint|LUNG_XENIUM|m36|ci_coverage,0.895,0.90,result 6,ci_coverage,results/round4/ppi/Q5_joint/q5_joint_design.csv,"m=36, regB_coverage_theta3"
+joint|LUNG_XENIUM|m36|set_coverage,0.9281598986469272,0.93,result 6,set_coverage,results/round4/ppi/Q5_joint/q5_joint_design.csv,"m=36, cheapest_coverage"
+joint|LUNG_XENIUM|m36|set_width,2.9075596734477163,2.91,result 6,set_width,results/round4/ppi/Q5_joint/q5_joint_design.csv,"m=36, cheapest_width_mean_finite"
+joint|LUNG_XENIUM|m36|cheapest_set,0.0,within,result 6,cheapest valid set (name in shown_as),results/round4/ppi/Q5_joint/q5_joint_design.csv,cheapest_valid_set
