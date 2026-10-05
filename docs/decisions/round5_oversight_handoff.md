@@ -1,8 +1,10 @@
-> **Active context document for the oversight chat, dated 4 October 2026.** It replaces `round4_oversight_handoff.md` as the place to start. That document's sections 3, 5, 6 and 12 still hold and are pointed to below, not repeated.
+> **Active context document for the oversight chat, dated 4 October 2026, revised that evening.** It replaces `round4_oversight_handoff.md` as the place to start. That document's sections 3, 5, 6 and 12 still hold and are pointed to below, not repeated.
 
 # Handoff to the next oversight session. Round 4 from start to close, the second advisor deck in preparation, and what comes next
 
-4 October 2026. Written by the oversight chat that ran round 4 and prepared the second advisor deck, for the oversight session that takes over. Repository `NicWYZ/HEST-1k-replication`. When this was written `main` was at `b1f1a7e` and pull request #11 (branch `deck-update2-prep`) was open with the deck preparation and this handoff on it. Nicolas merges it before the next session starts, so on `main` everything named here should be present. If `docs/deck2/` is missing, the merge has not happened yet.
+4 October 2026. Written by the oversight chat that ran round 4 and prepared the second advisor deck, for the oversight session that takes over. Repository `NicWYZ/HEST-1k-replication`. Pull request #11 carried the deck preparation and the first version of this handoff and was merged on 4 October, which put `main` at `e76462a`.
+
+**Revised on the evening of 4 October,** after Nicolas read the explainer and sent a list of questions and three additions for this handoff. The explainer was rewritten in the places he asked about. This handoff now has the two open questions he wants pursued (section 13), one section that gathers everything the slide build needs (section 8.3), and the fact that **the next session builds the slides**. The revision is on branch `deck2-explainer-rev2`, in a pull request that Nicolas merges. If section 8.3 is missing from the copy you are reading, that merge has not happened yet.
 
 Start from `docs/README.md`, the reading guide. Then read this document, then the three files in `docs/deck2/`. The previous handoff, `docs/decisions/round4_oversight_handoff.md` (30 September), has the path from the literature review to the start of round 4, and the handoff before it, `round3_oversight_handoff.md` (22 September), has rounds 1 and 2.
 
@@ -27,7 +29,7 @@ These were stated by him, several of them more than once after a correction. Tre
 
 **Writing.** Plain, natural prose. No em-dashes. No sentence that states something, then a colon, then the explanation. No compressed or clever phrasing. Math as rendered LaTeX, with each `$$` on its own line. Numbers at the precision the comparison needs, with the relative scale stated. Full precision belongs in files. Do not inflate length.
 
-**Explaining.** When he asks how something works, derive it slowly and step by step. For the deck's explainer he asked for the key ideas and mechanisms, with the algebra left out, and with a sentence every time a step is skipped so he is never left wondering how a line followed.
+**Explaining.** When he asks how something works, derive it slowly and step by step. For the deck's explainer he asked for the key ideas and mechanisms, with the algebra left out, and with a sentence every time a step is skipped so he is never left wondering how a line followed. I got this wrong in the first version of the explainer and described the derivations in words. His correction was "I said skip algebraic manipulation steps, not skip math expressions completely". So a derivation shows every expression that carries the argument, each on its own display line, and leaves out only the algebra between two displayed lines, with a sentence saying what kind of step was left out. He also wants terms that recur in several senses sorted out explicitly, as he asked for the word "cost".
 
 **Documents.** Memos and instruction documents for execution sessions are complete standalone documents, never diffs. Frozen reports are not edited. Past working documents that served their purpose are not reconstructed. He wants a full handoff at every session boundary.
 
@@ -83,6 +85,7 @@ Each pattern is tied to the rule that came from it. The rules are in `docs/WAYS_
 - I quoted the ACS sample as 380,091 people, which is the size of a different file. The task has 1,659,616. Every number goes through the numbers script.
 - I said I had deleted a superseded file and had not. Check with a listing.
 - I read "background" as background on the field. He meant the motivation for our own steps.
+- I read "skip the algebra" as "describe the derivation in words". He meant keep the expressions and skip the manipulation between them.
 
 ---
 
@@ -92,7 +95,11 @@ Round 4 is complete. Both tracks were accepted at their final gates and all thei
 
 A literature check on 4 October changed how two of the six are described. The break-even rule for tuning is already published for independent data, and the limit in the gain theorem is a standard formula in the design of cluster-randomised trials. The comparison of the two labelling regimes was not found anywhere and is now the result to lead with (section 7.5).
 
-The second advisor deck is prepared and not built. There is an outline in its third revision (16 slides), an explainer for Nicolas, the literature check, a numbers file built by script, and 13 figures. Nicolas is reading the explainer. Two points about slide wording wait for him, and so does the choice of cuts to reach 15 to 20 minutes. The date of the presentation was not stated in this session.
+The second advisor deck is prepared and not built. There is an outline in its third revision (16 slides), an explainer for Nicolas, the literature check, a numbers file built by script, and 13 figures. **The next session builds the slides,** from the resources listed in section 8.3.
+
+Nicolas has read the explainer. He sent questions on five of the six results and on the setup of the estimands, and the explainer was revised to answer them (section 16). He has not yet answered the two points about slide wording that were held for him, or chosen the cuts to reach 15 to 20 minutes. He asked that two open questions on the prediction-set side be pursued (section 13). The date of the presentation was not stated in this session.
+
+One practical question came up while revising the explainer and is not settled. Regime B assumes labelled spots can be bought a few at a time on every donor. On Visium a whole capture area is measured in one run. Whether regime B can be bought on a spatial transcriptomics platform, and at what cost per donor and per spot, is a question for David, and it bears on how the design result is presented.
 
 Nothing is running on Longleaf for this project. Round 5 has not been planned beyond a list of candidates (section 13).
 
@@ -108,7 +115,7 @@ Dates before 30 September are in the previous handoff's section 2.
 | 1 Oct | Q1 decision memo. Pull request #2 merged. Nicolas fetches ACS PUMS 2018 with cluster identifiers on his Mac. The rule that Longleaf is the default is set. C2 report in the evening (`round4-conf-C2`) |
 | 2 Oct | C2 decision memo, pull request #3 merged. Q3 report (`round4-ppi-Q3`), Q3 decision memo, pull request #4 merged. Conformal final report (`round4-conf-final`), C4 decision memo, pull requests #5 and #7 merged, conformal track closed. Ways-of-working additions merged (#6). Addendum 2 to the PPI track. PPI final report (`round4-ppi-final`). Q5 decision memo with the closing unit Q5a. The three clones on Nicolas's Mac moved under `~/hest-1k` |
 | 3 Oct | Q5a finished overnight. Q5a closing memo. Pull requests #8, #9 and #10 merged. `main` at `b1f1a7e`. Round 4 closed. First outline of the second deck and the explainer drafted |
-| 4 Oct | Nicolas's eleven points on the outline. Literature check. Outline revision 2, explainer corrections, numbers file, figures, pull request #11. His clarification on background, outline revision 3 (16 slides). This handoff |
+| 4 Oct | Nicolas's eleven points on the outline. Literature check. Outline revision 2, explainer corrections, numbers file, figures, pull request #11. His clarification on background, outline revision 3 (16 slides). This handoff. Pull request #11 merged, `main` at `e76462a`. In the evening, his questions on the explainer, the explainer's second version, and this handoff revised |
 
 ---
 
@@ -226,12 +233,33 @@ The explainer's part A uses the same slide numbers (10 to 15), so it and the out
 
 **Still to do before the deck can be built.**
 
-- Nicolas's answers on the two held points and the cuts (section 12).
+- Nicolas's answers on the two held points and the cuts (section 12). If he wants the deck started before he answers, build slides 11 and 13 without the held sentences and mark them.
 - The strip for slide 4, from the first deck's figures `figures/deck/fig05_r2_ladder`, `fig06_session_signature` and `fig07_theta_and_variance`.
 - Numbers on slides 2 to 6 that come from rounds 2 and 3 or from the literature are not yet in the deck's numbers file. The file has the coverage-by-design and interval-coverage rows. It does not have the classifier AUC of 0.97, the 2% effective sample size, the 1.84 scale ratio, the 30 to 40% between-donor share, or the three literature facts. Add them to `code/scripts/deck2_numbers.py` from the files in section 9 before the slides quote them.
 - The numeric-claim sweep has not been run over the three `docs/deck2/` documents. Run it before the deck is handed over.
 
 **How to build it, when he says.** Use the Slides artifact type if the session offers one, as the first deck was. Figure on the left and bullets on the right. Short speaker notes that cover only what is on the slide. Apply every point of section 2's list. Keep the practice of a numbers file built by script and figures from committed scripts. The first deck's authoritative file is `docs/deck_round2/HEST-1k Replication Update.pptx`.
+
+### 8.3 Everything the slide build needs, in one place
+
+The next session builds the slides. These are all the inputs. Paths are from the repository root.
+
+| what | where | notes |
+|---|---|---|
+| the structure Nicolas set | `ST_presentation2.pdf` | his own file, not in the repository. Its two parts and their sub-points are quoted at the top of section 8.2 |
+| the outline | `docs/deck2/deck2_outline.md`, revision 3 | slide by slide. The text of each bullet, the formulas, which figure goes where, the per-slide time, the cut list, the backup slides B1 to B5, and the two held points |
+| what each result means | `docs/deck2/deck2_new_results_explained.md`, second version | for writing speaker notes and answering questions. Part A follows slides 10 to 15 |
+| what is ours and what is known | `docs/deck2/deck2_literature_check.md` | the citations for slides 2, 7, 11, 12 and 14, with what was confirmed and what was not |
+| every number on the slides | `results/summary/deck2_numbers.csv`, 464 rows | columns `id`, `value`, `shown_as`, `slide_topic`, `what`, `source_file`, `how`. Built by `python code/scripts/deck2_numbers.py` from the repository root. Some numbers for slides 2 to 6 are not in it yet (section 8.2) |
+| the figures | `figures/deck2/f01` to `f13`, PNG | built by `python code/scripts/deck2_figures.py`. The table at the end of the outline maps each to its slide. Plain labels, three colours (`#2a78d6`, `#eb6834`, `#1baf7a`) |
+| the first deck | `docs/deck_round2/HEST-1k Replication Update.pptx` | the authoritative copy and the style to match. Its slides 7 and 8 are reused as the new slides 2 and 3, and its slides 9 to 11 feed slide 4. `docs/deck_round2/deck_round2_slides.md` is a text export that may lag his edits |
+| the first deck's figures and numbers | `figures/deck/`, `results/summary/deck_numbers.csv` | `fig05_r2_ladder`, `fig06_session_signature` and `fig07_theta_and_variance` make the strip for slide 4 |
+| formulas, in full | `docs/round4_ppi_theory.md`, `docs/round4_ppi_estimator_definition.md`, `docs/round4_conf_lower_bound.md` | check any formula on a slide against these |
+| one-page summaries | the closing pages of `docs/round4_ppi_final_report.md` and `docs/round4_conf_final_report.md` | |
+| the rules for the deck | section 2 of this handoff, the list under "What he said about the second deck" | also in the project's memory, in the file on advisor presentations |
+| key numbers already read back | section 9 of this handoff | with the primary file beside each |
+
+The order of work. Settle the open points with Nicolas (section 12). Add the missing numbers to the numbers script and rerun it. Assemble the strip for slide 4. Build the slides with the Slides artifact type if the session offers one. Check every number on every slide against the numbers file. Run the numeric-claim sweep. Hand the deck to Nicolas with speaker notes that cover only what is on each slide.
 
 ---
 
@@ -334,7 +362,7 @@ The Longleaf project tree `/work/users/w/e/weiyang/hest_replication` was held on
 
 No reports are due. Three things will arrive.
 
-**Nicolas's reading of the explainer.** He may ask for derivations. Give them slowly, from `docs/round4_ppi_theory.md` and `docs/round4_conf_lower_bound.md`, and say when a step is skipped. He will then settle the two held points.
+**Nicolas's reading of the explainer's second version.** He asked about the $\lambda = 0$ rule, the permuted predictor, the nuisance rows, the tuning-cost derivation, the two $R^2$ values, the setup of the estimands, the small-$K$ result and the word "cost". The second version answers each, and its opening lists where. He may come back with more. Give derivations with their expressions, from `docs/round4_ppi_theory.md` and `docs/round4_conf_lower_bound.md`, and say when a step is skipped. He still has to settle the two held points.
 
 **The deck build.** Before any slide text is final, check each number on it against `results/summary/deck2_numbers.csv`, add the missing rows named in section 8.2, and run the sweep. Check each slide against the list in section 2. Check that the slides for results 2 and 3 say "carried over to clusters" and name their sources, since an advisor who knows Mani and colleagues or the trial-design literature will otherwise think we claim them.
 
@@ -351,6 +379,8 @@ One known fault in the tooling. `code/scripts/verify_numeric_claims.py` raises a
 | Slide 11. Whether to add a footnote that the floor (measured on all donors) and the observed ratio (masking draws at 8 labelled donors) come from two computations | Nicolas, after reading the explainer |
 | Slide 13. Whether to say that most of regime B's gain on the Visium tasks comes from the design and not the encoder (permuted 0.87 against 0.80 to 0.84 on kidney cancer, 0.66 against 0.42 to 0.49 on lung) | Nicolas, after reading the explainer |
 | Which cuts bring the talk to 15 to 20 minutes | Nicolas |
+| Whether regime B can be bought on a spatial transcriptomics platform, and at what cost per donor and per spot. It decides how the design result is presented to people who know the platforms | ask David, before the talk if possible |
+| How the two open questions of section 13 are pursued, by the oversight chat as reading and theory or by a capped execution unit | Nicolas |
 | When the slides are built | Nicolas |
 | Whether to tell the GHCP authors about the pool rule and the tie convention, or raise the lower bound with them | Nicolas with David and Dr. Zhu. Never a session's decision |
 | Which result the paper leads with, and whether the scope is right for a first paper | Dr. Zhu and Dr. Zhang, asked on slide 16 |
@@ -368,6 +398,13 @@ One known fault in the tooling. `code/scripts/verify_numeric_claims.py` raises a
 
 **Before the presentation.** Settle section 12's first four rows. Finish the preparation in section 8.2. Build the deck. Read the full texts that the slides lean on before they are cited by theorem number, which are Mani and colleagues (the cross-fitting corollary), Tibshirani, Barber and Ramdas, and Shirota.
 
+**To pursue, at Nicolas's request of 4 October.** Both are on the prediction-set side. The C4 decision memo had recorded the first as open and not to be pursued in round 4 or 5. Nicolas has now asked for both, so this replaces that line.
+
+1. **Whether HCP can be beaten when $K + 1 \ge 1/\alpha$.** For $K + 1 < 1/\alpha$ the two propositions settle what a valid method must do. From 9 calibration donors on at 90%, neither argument forces anything, and that range includes every real study. What exists. `docs/round4_conf_lower_bound.md` section 5 and sections 8.3 to 8.5 construct a rule that is valid and narrower than HCP when the donors look alike, show that the rule as first stated is invalid, repair it, and find that the repaired rule does not dominate HCP and loses coverage at finite group sizes. Tibshirani, Barber and Ramdas (arXiv:2608.27310) settle the matching question for data without groups, where the best valid method is a randomised conformal predictor with an oracle score. So the question to pose is the grouped one. Under hierarchical exchangeability the symmetry is larger and the within-group data carry information that ordinary conformal prediction does not have, and no paper found addresses whether HCP is optimal there. Where to start. Read Tibshirani, Barber and Ramdas in full, since the first step is to see whether their argument lifts from points to groups, and Lee, Barber and Willett (arXiv:2306.06342) for the hierarchical setting. Then state precisely what "beaten" means (narrower in expectation under every law, or under a class of laws, at the same coverage) before any method is tried. The four candidate methods of round 4 are dead ends (section 14) and are not the route.
+2. **Whether the two small-$K$ propositions are new.** The execution session checked only the papers its instruction named. The literature check of 4 October read summaries of pages and reported that the forced-infinite-set statement follows in a few lines from universality results and that the coverage floor was not found. Neither has been checked against full texts. What to read. Tibshirani, Barber and Ramdas. Angelopoulos, Barber and Bates on the theory of conformal prediction. Vovk on conditional validity. Lei and Wasserman (2014) and Barber, Candès, Ramdas and Tibshirani (2021) on the limits of distribution-free inference, where infinite sets are forced. Lee, Barber and Willett, and the GHCP paper, for anything stated at the group level. Dunn, Wasserman and Ramdas on grouped data. Several of these are named from my own knowledge of the field and not from a search, so confirm each is the right paper before relying on it. The outcome is one of three statements for each proposition, namely that it is in print, that it is a direct corollary of a named result, or that it was not found after a stated search.
+
+Neither needs Longleaf to begin. Both begin as reading and pen-and-paper work. Whether that is done by the oversight chat or by an execution session with a time cap is Nicolas's decision (section 12). Neither should delay the deck.
+
 **Round 5 candidates,** in the order the closing memos left them.
 
 1. Active cluster selection, which clusters to label and not only how many. The inputs are in `results/round4/ppi/Q5_joint/q5_cluster_table.csv` (261 donor rows with mean embeddings, residuals and offsets).
@@ -377,7 +414,7 @@ One known fault in the tooling. `code/scripts/verify_numeric_claims.py` raises a
 5. A simulation of the final design-target rule and variance, which were validated only on masking draws.
 6. The reading list in the literature check's section 6.
 
-**Not planned.** Any institution axis from HEST-1k. Any train-time method. Any further data download. Any further search for a method sharper than HCP with no labelled test units. Recalibration of donor offsets. A pre-test for $\lambda$. Any bootstrap interval.
+**Not planned.** Any institution axis from HEST-1k. Any train-time method. Any further data download. Rerunning the four prediction-set candidates of round 4. Recalibration of donor offsets. A pre-test for $\lambda$. Any bootstrap interval.
 
 ---
 
@@ -391,7 +428,7 @@ The previous handoff's section 12 stands. Round 4 added these.
 - **Recalibrating donor offsets.** No out-of-sample skill, and the donor-weighted estimands are invariant to it.
 - **Two-way clustering.** No HEST task has a second grouping that crosses the donor.
 - **Spot-weighted PPI rows as evidence of a gain.** A permuted predictor produces the same gain.
-- **Four candidate prediction-set methods with no labelled test units.** A smoothed HCP, a model-based donor quantile, an adaptive score, and a rule switching between pooled and HCP. None met the criterion. The switch rule is invalid, with a counterexample.
+- **Four candidate prediction-set methods with no labelled test units.** A smoothed HCP, a model-based donor quantile, an adaptive score, and a rule switching between pooled and HCP. None met the criterion. The switch rule is invalid, with a counterexample. These four methods are closed. The question of whether anything valid can beat HCP is not closed and is to be pursued (section 13).
 - **GHCP with a few labelled units at about 10 calibration clusters.** Wider than HCP with none.
 - **The `ppi_py` census file for anything clustered.** It has no cluster identifiers.
 - **Claiming the break-even rule or the gain limit as new.** Both exist for simpler settings.
@@ -429,7 +466,7 @@ Every prediction is written before the run and scored afterwards. Every number i
 
 - PPI track. `docs/round4_ppi_plan.md`, `round4_ppi_Q1_report.md`, `round4_ppi_Q3_report.md`, `round4_ppi_final_report.md` (its closing page is the summary, and section 10 is Q5a), `round4_ppi_theory.md`, `round4_ppi_estimator_definition.md`. Decisions in `docs/decisions/` as `round4_ppi_track.md`, `round4_ppi_addendum1.md`, `round4_ppi_Q1_decisions.md`, `round4_ppi_Q3_decisions.md`, `round4_ppi_addendum2.md`, `round4_ppi_Q5_decisions.md`, `round4_ppi_Q5a_closing.md`.
 - Conformal track. `docs/round4_conf_plan.md`, `round4_conf_C2_report.md`, `round4_conf_final_report.md`, `round4_conf_candidate_definitions.md`, `round4_conf_lower_bound.md`. Decisions as `round4_conformal_track.md`, `round4_conformal_addendum1.md`, `round4_conformal_C2_decisions.md`, `round4_conformal_C4_decisions.md`.
-- The second deck. `docs/deck2/deck2_outline.md` (revision 3), `docs/deck2/deck2_new_results_explained.md` (what, why, how and the theory for each of the six results, then the results not on the slides, then what is not established), `docs/deck2/deck2_literature_check.md`. `code/scripts/deck2_numbers.py` writes `results/summary/deck2_numbers.csv` (464 rows). `code/scripts/deck2_figures.py` writes `figures/deck2/f01` to `f13`.
+- The second deck. `docs/deck2/deck2_outline.md` (revision 3), `docs/deck2/deck2_new_results_explained.md` (second version, revised on the evening of 4 October after Nicolas's questions. The setting with the estimands written out, then what, why, how and the theory with its expressions for each of the six results, then the four uses of the word "cost", then the results not on the slides, then what is not established), `docs/deck2/deck2_literature_check.md`. `code/scripts/deck2_numbers.py` writes `results/summary/deck2_numbers.csv` (464 rows). `code/scripts/deck2_figures.py` writes `figures/deck2/f01` to `f13`.
 - This handoff, `docs/decisions/round5_oversight_handoff.md`.
 
 **In the Claude project.** The project had no documents before today. This handoff is there as `claude/round5-oversight-handoff.md`. The project's memory holds two facts, that jobs run on Longleaf by default and that the clones live under `~/hest-1k`. The project's instructions still say that round 4 is running as two tracks. That line is out of date and Nicolas may want to change it.
@@ -438,7 +475,7 @@ Every prediction is written before the run and scored afterwards. Every number i
 
 | folder | what it is | use |
 |---|---|---|
-| `HEST-1k-replication-oversight` | the oversight clone, on `main` | yours. It was at `b1f1a7e` when this was written and needs a pull after the merge. `.oversight-scratch/` inside it holds stale lock files and stray files that I moved aside, none of them needed |
+| `HEST-1k-replication-oversight` | the oversight clone, on `main` | yours. It was at `b1f1a7e` when this was first written and needs a pull to reach the merged `main`. `.oversight-scratch/` inside it holds stale lock files and stray files that I moved aside, none of them needed |
 | `HEST-1k-replication-PPI` | the PPI session's clone, on `round4-ppi` at `8cca44f` | read only. Do not run git there except with `git --no-optional-locks` |
 | `HEST-1k-replication-conformal` | the conformal session's clone, on `round4-conformal` at `e208907` | read only, same rule |
 | `acs_pums2018` | the raw census fetch, 2.6 GB | not in the repository. Leave it |
@@ -449,11 +486,12 @@ A plain `git status` in a clone can leave `.git/index.lock` behind on this mount
 
 ## 17. What to do first
 
-1. Confirm that pull request #11 is merged and that the oversight clone on the Mac has been pulled. `docs/deck2/` and this file should be on `main`.
+1. Confirm that `main` carries the evening revision (section 8.3 of this file exists, and the explainer's opening has a list headed "What changed in this revision"), and that the oversight clone on the Mac has been pulled.
 2. Read `docs/README.md`, this handoff, and the three files in `docs/deck2/`. Then the closing pages of `docs/round4_ppi_final_report.md` and `docs/round4_conf_final_report.md`.
-3. Do not build slides. Wait for Nicolas to say he has read the explainer, and answer what he asks about it.
-4. With him, settle the two held points and the cuts (section 12).
+3. Ask Nicolas whether the explainer's second version answered his questions, and answer what is left.
+4. With him, settle the two held points and the cuts (section 12), and put the question about regime B's practicality to David through him.
 5. Add the missing rows to the numbers script and assemble the strip for slide 4 (section 8.2).
 6. Fix the checker's fault on empty cells, with a fixture, and run the sweep over the `docs/deck2/` documents.
-7. When he says so, build the deck from outline revision 3 under the rules in section 2.
-8. After the meeting, plan round 5 from section 13 and the advisors' answers.
+7. Build the deck from outline revision 3 with the inputs of section 8.3 and under the rules in section 2. Building it is your job. Confirm with Nicolas before starting, since he asked the previous session not to build until he said so.
+8. Start the two questions of section 13 as reading, once he has said who does them. They do not wait for the meeting and must not hold up the deck.
+9. After the meeting, plan round 5 from section 13 and the advisors' answers.
