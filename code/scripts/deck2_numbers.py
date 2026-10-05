@@ -243,6 +243,55 @@ for v, m in [("CCRCC", 14), ("CCRCC", 84), ("INDIANA_KIDNEY", 6), ("INDIANA_KIDN
     add(f"joint|{v}|m{m}|cheapest_set", 0, str(x.cheapest_valid_set.iloc[0]), "result 6", "cheapest valid set (name in shown_as)", src,
         "cheapest_valid_set")
 
+# ---------------------------------------------------------------- slides 2 to 6, numbers from before round 4
+# Added 4 October 2026 for the slide build. These were quoted in the outline but had no row here.
+src = "results/round3/A3_report_numbers.csv"
+a3 = pd.read_csv(src).set_index("name").value.astype(float)
+add("reweighting|classifier_auc_min", a3["a3_w1_auc_holdout_min"], f2(a3["a3_w1_auc_holdout_min"]), "roadblocks",
+    "smallest held-out AUC of the calibration-against-test classifier", src, "a3_w1_auc_holdout_min")
+add("reweighting|effective_sample_pct_median", a3["a3_w1_neff_pct_median"], f"{a3['a3_w1_neff_pct_median']:.0f}%", "roadblocks",
+    "median effective sample size after importance weighting, % of the calibration sample", src, "a3_w1_neff_pct_median")
+add("coverage_by_design|n_encoders", int(a1[a1.score == "abs"].n_encoders.max()), str(int(a1[a1.score == "abs"].n_encoders.max())),
+    "roadblocks", "image models in the coverage-by-design comparison", "results/round3/A1_coverage/a1_coverage_by_design.csv",
+    "n_encoders, score=abs")
+
+src = "results/round2/R1b_heads/r1b_ladder_pooled.csv"
+lad = pd.read_csv(src).iloc[0]
+add("head|scale_ratio_pooled", float(lad.rho_over_r), f2(float(lad.rho_over_r)), "efforts",
+    "prediction-to-target scale ratio of the benchmark head, pooled", src, "rho_over_r")
+
+src = "results/round2/R6_variance/r6_variance_by_task.csv"
+vt = pd.read_csv(src)
+wp = vt[(vt.df_donor >= 3) & (vt.status == "verified")]      # the two tasks with 3 or more donor degrees of freedom and verified labels
+assert sorted(wp.task) == ["CCRCC", "LYMPH_IDC"], sorted(wp.task)
+for r in wp.itertuples():
+    add(f"between_donor_share|{r.task}", r.frac_donor, f2(r.frac_donor), "efforts",
+        "between-donor share of expression variance", src, f"frac_donor, task={r.task}")
+lo_, hi_ = wp.frac_donor.min(), wp.frac_donor.max()
+add("between_donor_share|range", hi_, f"{math.floor(lo_ * 10) * 10} to {math.ceil(hi_ * 10) * 10}%", "efforts",
+    "between-donor share, range over the two tasks with 3 or more donor degrees of freedom, rounded outward to tens",
+    src, "min and max of frac_donor where df_donor>=3 and status=verified")
+
+# Three facts from the literature. They are not computed from a result file. Each is read out of the sentence
+# that states it in the literature check, and the script fails if that sentence changes.
+import re
+src = "docs/deck2/deck2_literature_check.md"
+lit = open(src, encoding="utf-8").read()
+
+
+def lit_fact(id_, pattern, shown, what):
+    m = re.search(pattern, lit)
+    assert m, f"literature check no longer contains the sentence for {id_}"
+    add(id_, float(m.group(1).replace(",", "")), shown(m), "literature", what, src, "read from the sentence matching: " + pattern)
+
+
+lit_fact("literature|hest_best_2024", r"HEST benchmark was (0\.\d+) in the 2024 paper and is (0\.\d+) on the April 2026 leaderboard, after (\d+) models",
+         lambda m: f"{m.group(1)} to {m.group(2)}, {m.group(3)} models", "best average correlation on HEST-1k, 2024 paper and April 2026 leaderboard")
+lit_fact("literature|site_recovery", r"with (\d+) to (\d+)% accuracy from (\d+) pathology foundation models",
+         lambda m: f"{m.group(1)} to {m.group(2)}%, {m.group(3)} models", "accuracy of recovering the medical centre from a patch (Kömen and colleagues 2026)")
+lit_fact("literature|path2space", r"trained on (\d+) breast cancer patients and then applied to ([\d,]+) TCGA samples",
+         lambda m: f"{m.group(1)} patients, {m.group(2)} samples", "patients in training and archive samples in application (Path2Space)")
+
 out = pd.DataFrame(ROWS)
 assert out.id.is_unique, out[out.id.duplicated()].id.tolist()
 out.to_csv("results/summary/deck2_numbers.csv", index=False)
