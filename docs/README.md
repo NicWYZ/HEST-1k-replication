@@ -143,9 +143,9 @@ Preparation only. The slides are not built.
 | document | date | role |
 |---|---|---|
 | `deck2/deck2_outline.md` | 4 Oct | the outline, revision 3, 16 slides, following Nicolas's structure for the second presentation |
-| `deck2/deck2_new_results_explained.md` | 3 to 4 Oct | for Nicolas. Each of the six results with what was obtained, why, how, and the theory, then the results not on the slides, then what is not established |
+| `deck2/deck2_new_results_explained.md` | 3 to 4 Oct, second version 4 Oct evening | for Nicolas. The estimands written out, then each of the six results with what was obtained, why, how, and the theory with its expressions, then the four uses of the word "cost", the results not on the slides, and what is not established. The second version answers his questions on the first |
 | `deck2/deck2_literature_check.md` | 4 Oct | originality, relevance and importance of round 4's results, with what was confirmed and what was only reported by the searches |
-| `decisions/round5_oversight_handoff.md` | 4 Oct | the oversight handoff at the close of round 4 |
+| `decisions/round5_oversight_handoff.md` | 4 Oct, revised that evening | the oversight handoff at the close of round 4. Its section 8.3 lists everything the slide build needs |
 
 The deck's numbers are in `results/summary/deck2_numbers.csv`, written by `code/scripts/deck2_numbers.py`. Its figures are in `figures/deck2/`, written by `code/scripts/deck2_figures.py`.
 
