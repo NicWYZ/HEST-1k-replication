@@ -355,6 +355,58 @@ def f13():
     save(fig, "f13_lower_bound_small_K")
 
 
+# ------------------------------------------------------------------ f14 recap strip for the "efforts" slide
+def f14():
+    """Three panels redrawn from the first deck's source tables, one per finding of the replication."""
+    fig, axes = plt.subplots(1, 3, figsize=(16.5, 4.3), gridspec_kw=dict(wspace=0.5, width_ratios=[1.0, 1.0, 1.15]))
+    # (a) the head's scale ratio by image model
+    ax = axes[0]
+    be = pd.read_csv("results/round2/R1b_heads/r1b_ladder_by_encoder.csv").sort_values("rho_over_r")
+    pooled = float(pd.read_csv("results/round2/R1b_heads/r1b_ladder_pooled.csv").iloc[0].rho_over_r)
+    ax.barh(np.arange(len(be)), be.rho_over_r, color=BLUE, height=0.7)
+    ax.axvline(pooled, color=INK, lw=1, ls=(0, (4, 3)))
+    ax.text(pooled, len(be) - 0.3, f" pooled {pooled:.2f}", color=INK, fontsize=12, va="bottom", ha="left")
+    ax.set_yticks([]); ax.set_ylabel("12 image models"); ax.set_xlim(1.0, float(be.rho_over_r.max()) * 1.08)
+    ax.set_ylim(-0.7, len(be) + 0.6); ax.grid(axis="y", visible=False)
+    ax.set_xlabel("spread of predictions over the optimal spread")
+    ax.set_title("1. Predictions are spread too widely", loc="left")
+    # (b) the session signature, in the features and in the expression
+    ax = axes[1]
+    P = pd.read_csv("results/round2/R4_probes/r4_probes_v2.csv")
+    encs = ["hoptimus0", "uni_v2", "resnet50"]
+    w = 0.25
+    for k, (probe, lab) in enumerate([("probe1_slide_within_patient", "slide"), ("probe1b_scan_subcluster", "scan session")]):
+        sub = P[P.probe == probe].set_index("encoder")
+        for j, e in enumerate(encs):
+            ax.bar(k + (j - 1) * w, float(sub.loc[e, "acc_blocked"]), width=w * 0.9, color=ENC_COL[e], label=ENC[e] if k == 0 else None)
+        ch = float(sub.chance.iloc[0])
+        ax.plot([k - 1.6 * w, k + 1.6 * w], [ch, ch], color=INK, lw=1.2, ls=(0, (4, 3)))
+        ax.text(k + 1.7 * w, ch, "chance", color=MUTED, fontsize=11, va="center", ha="left")
+    PV = pd.read_csv("results/round2/R6_variance/r6_prad_session_variance.csv")
+    comps = ["within_slide", "between_slide_within_session", "between_session"]
+    share = float(PV["between_session"].sum() / PV[comps].sum().sum())
+    ax.set_xticks([0, 1]); ax.set_xticklabels(["which slide", "which\nscan session"]); ax.set_xlim(-0.6, 1.95)
+    ax.set_ylim(0, 1.42); ax.set_yticks(np.arange(0, 1.01, 0.25)); ax.grid(axis="x", visible=False)
+    ax.set_ylabel("accuracy from image features")
+    ax.text(0.675, 1.24, f"The same session axis is {share * 100:.1f}%\nof the variance in expression", ha="center", va="center", fontsize=12, color=INK)
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.2), ncol=3, fontsize=11, handlelength=1.2, columnspacing=1.2)
+    ax.set_title("2. A session signature in the features", loc="left")
+    # (c) between-donor share of expression variance, by task
+    ax = axes[2]
+    V = pd.read_csv("results/round2/R6_variance/r6_variance_by_task.csv")
+    V = V.sort_values("frac_donor").reset_index(drop=True)
+    strong = (V.df_donor >= 3) & (V.status == "verified")
+    ax.barh(np.arange(len(V)), V.frac_donor, color=[BLUE if s else GREY for s in strong], height=0.7)
+    for i, r in V.iterrows():
+        ax.text(r.frac_donor + 0.008, i, f"{r.frac_donor:.2f}", va="center", ha="left", fontsize=11, color=INK if strong[i] else MUTED)
+    ax.set_yticks(np.arange(len(V))); ax.set_yticklabels([f"{r.task} ({int(r.donors)})" for _, r in V.iterrows()], fontsize=11)
+    ax.set_xlim(0, 0.5); ax.grid(axis="y", visible=False)
+    ax.set_xlabel("between-donor share of expression variance")
+    ax.text(0.49, 0.2, "task (donors)\nblue: 4 or more donors,\nlabels verified", ha="right", va="bottom", fontsize=11, color=MUTED)
+    ax.set_title("3. The donor is the unit", loc="left")
+    save(fig, "f14_recap_strip")
+
+
 if __name__ == "__main__":
-    for fn in [f01, f02, f03, f04, f05, f06, f07, f08, f09, f10, f11, f12, f13]:
+    for fn in [f01, f02, f03, f04, f05, f06, f07, f08, f09, f10, f11, f12, f13, f14]:
         fn()
