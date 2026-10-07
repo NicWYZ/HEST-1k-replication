@@ -151,6 +151,17 @@ The deck's numbers are in `results/summary/deck2_numbers.csv`, written by `code/
 
 ---
 
+## Round 5, two tracks (from 7 October)
+
+Instructions only so far. Each session starts from the `main` commit that carries its instruction.
+
+| document | date | role |
+|---|---|---|
+| `decisions/round5_ppi_track.md` | 7 Oct | instruction for the inference track (branch `round5-ppi`, stages E0 to E5, gates E2, E4, E5). Its section 2.4 sets out the oversight chat's reading that regime B's classical comparator has no intercept, which stage E2 tests |
+| `decisions/round5_conformal_track.md` | 7 Oct | instruction for the prediction-set track (branch `round5-conformal`, stages W0 to W5, gates W2, W5) |
+
+---
+
 ## Living documents
 
 | document | what it is |
