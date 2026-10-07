@@ -260,4 +260,6 @@ These are listed and not acted on. Each is repeated in the E2 report.
 
 1. (7 October 2026) No pushes between gates. New `round5_ppi_*.py` scripts reach Longleaf by upload into the job's own directory. Each job's `PROVENANCE.txt` records the md5 of every uploaded script, the local commit that holds it, and the Longleaf clone's HEAD, which stays at its last fast-forward until the gate push. Round-3 and round-4 modules are imported from the Longleaf clone unmodified. The branch, the tag and the pull request are pushed together at each gate.
 
+2. (7 October 2026) One pull request per gate, from `round5-ppi` into `main`, opened when the branch and the gate's tag are pushed. Nicolas merges it after he and the oversight chat have reviewed the gate report. The session never merges. A rejected gate is fixed with new commits on the same open pull request.
+
 No local run has been requested. Nothing runs on Nicolas's Mac.
