@@ -1,0 +1,24 @@
+==============================================================================
+Round 5 conformal track, stage W0_c3diag
+job_name_prefix : r5conf_W0_c3diag  (the submission route replaces --job-name)
+slurm_job_id    : 4201202
+slurm_partition : spill
+slurm_account   : rc_tengfei_pi
+node            : c0309.ll.unc.edu
+cpu_vendor      : GenuineIntel
+date            : 2026-10-07T18:56:19-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round5-conformal
+code_clone_head : a7c583de91dc042e22cb7348f8e12f29f21838a9
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_w0_c3_diag.py /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W0_anchors/c3_uni_v2/w0_c3_rows.csv /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W0_anchors/c3_uni_v2_diag /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/2d96eedf-de18-415e-a942-f9fddb8353f3/run_info__ccrcc24_uni_v2_s0of2.json /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/2d96eedf-de18-415e-a942-f9fddb8353f3/run_info__ccrcc24_uni_v2_s1of4.json /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/2d96eedf-de18-415e-a942-f9fddb8353f3/run_info__ccrcc24_uni_v2_s3of4.json
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+pandas          : 2.3.3
+config_hash     : sha256/16 af60d4075a76d8cd
+config          : {"rows": "/work/users/w/e/weiyang/hest_replication/results/round5/conformal/W0_anchors/c3_uni_v2/w0_c3_rows.csv", "shards": ["ccrcc24_uni_v2_s0of2", "ccrcc24_uni_v2_s1of4", "ccrcc24_uni_v2_s3of4"], "stage": "W0 c3 diagnostic"}
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round3_a0_harness.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_io.py
+script_md5      : 2cfd98a9b8be20ff2121de33cf22bfea  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_w0_c3_diag.py
+rows            : 22032
+run_info_md5    : run_info__ccrcc24_uni_v2_s0of2.json=84f7222d6f72104bc33e8f506e2a977d;run_info__ccrcc24_uni_v2_s1of4.json=a9c75e7576a69480e93b32a942739338;run_info__ccrcc24_uni_v2_s3of4.json=e4722d7fa8ab814726f029c744e7110b
