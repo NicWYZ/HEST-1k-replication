@@ -28,9 +28,24 @@ plt.rcParams.update({
     "lines.linewidth": 2.0, "lines.markersize": 7,
 })
 
-TASK = {"CCRCC": "Kidney cancer (Visium)", "INDIANA_KIDNEY": "Kidney, one lab (Visium)",
-        "LUNG_XENIUM": "Lung (Xenium)", "ACS_STATES": "ACS income, states", "ACS_CA_PUMA": "ACS income, CA areas",
-        "ACS": "ACS income, states"}
+# Every figure is drawn at FIGSCALE times the size written in its function, with the fonts unchanged.
+# Text is then larger relative to the plot, which is what a slide needs. Set after the first build of the
+# deck, when the labels were too small at slide size.
+FIGSCALE = 0.8
+_subplots = plt.subplots
+
+
+def _scaled_subplots(*args, figsize=None, **kwargs):
+    if figsize is not None:
+        figsize = (figsize[0] * FIGSCALE, figsize[1] * FIGSCALE)
+    return _subplots(*args, figsize=figsize, **kwargs)
+
+
+plt.subplots = _scaled_subplots
+
+TASK = {"CCRCC": "Kidney cancer", "INDIANA_KIDNEY": "Kidney, one lab",
+        "LUNG_XENIUM": "Lung", "ACS_STATES": "Census income, states", "ACS_CA_PUMA": "Census income, CA areas",
+        "ACS": "Census income, states"}
 ENC = {"hoptimus0": "H-optimus-0", "uni_v2": "UNI2", "resnet50": "ResNet50", "package": "income model",
        "permuted": "permuted (no information)"}
 ENC_COL = {"hoptimus0": BLUE, "uni_v2": ORANGE, "resnet50": AQUA, "package": BLUE, "permuted": GREY}
@@ -96,8 +111,8 @@ def f03():
     fig, axes = plt.subplots(1, 2, figsize=(11, 4.4))
     G, per = 8, 28
     pts = [(rng.uniform(0.12, 0.88, per), rng.uniform(0.08, 0.92, per)) for _ in range(G)]
-    for ax, title, mode in [(axes[0], "Regime A: label a few clusters fully", "A"),
-                            (axes[1], "Regime B: label a few units in every cluster", "B")]:
+    for ax, title, mode in [(axes[0], "Regime A\nlabel a few clusters fully", "A"),
+                            (axes[1], "Regime B\nlabel a few units in every cluster", "B")]:
         for g in range(G):
             x0 = g * 1.15
             ax.add_patch(plt.Rectangle((x0, 0), 1, 1, fill=False, ec=MUTED, lw=1.2))
@@ -108,12 +123,12 @@ def f03():
                 lab = np.zeros(per, bool); lab[:4] = True
             ax.scatter(x0 + xs[~lab], ys[~lab], s=22, facecolor="none", edgecolor=GREY, lw=1)
             ax.scatter(x0 + xs[lab], ys[lab], s=26, color=BLUE)
-            ax.text(x0 + 0.5, -0.1, f"{g + 1}", ha="center", va="top", fontsize=11, color=MUTED)
+            ax.text(x0 + 0.5, -0.06, f"{g + 1}", ha="center", va="top", fontsize=12, color=MUTED)
         ax.set_xlim(-0.1, G * 1.15); ax.set_ylim(-0.3, 1.1); ax.axis("off")
         ax.set_title(title, loc="left")
     axes[0].scatter([], [], s=26, color=BLUE, label="labelled unit (measured)")
     axes[0].scatter([], [], s=22, facecolor="none", edgecolor=GREY, label="unlabelled unit (prediction only)")
-    axes[0].legend(loc="upper left", bbox_to_anchor=(0, -0.08), ncol=2, fontsize=11)
+    fig.legend(*axes[0].get_legend_handles_labels(), loc="lower center", bbox_to_anchor=(0.5, -0.06), ncol=2, fontsize=12, markerscale=1.6)
     save(fig, "f03_two_regimes_schematic")
 
 
@@ -135,7 +150,7 @@ def f04():
     s0 = q[(q.target == "design") & (q.form == "complement") & (q.lambda_rule == "a_b1") & (q.interval == "CR1_t") & (~q.fpc)].sort_values("G_L")
     ax.plot(s1.G_L, s1.cov_median, color=BLUE, marker="o", label="with finite-population correction")
     ax.plot(s0.G_L, s0.cov_median, color=ORANGE, marker="s", label="without (earlier form)")
-    ax.set_title("When the clusters at hand are the population (24)", loc="left"); ax.set_xlabel("labelled clusters, of 24")
+    ax.set_title("When the 24 clusters are the population", loc="left"); ax.set_xlabel("labelled clusters, of 24")
     ax.set_xticks([4, 6, 8, 12, 20]); ax.legend(loc="upper left", bbox_to_anchor=(0, -0.2), fontsize=10.5)
     nominal(ax)
     save(fig, "f04_interval_coverage_simulation")
@@ -204,7 +219,8 @@ def f06():
 def f07():
     R, t = _gain_table()
     tasks = ["CCRCC", "INDIANA_KIDNEY", "LUNG_XENIUM", "ACS_STATES"]
-    fig, axes = plt.subplots(1, 4, figsize=(14, 4.3), sharey=True, gridspec_kw=dict(wspace=0.1))
+    fig, axes = plt.subplots(2, 2, figsize=(9.6, 7.6), sharey=True, sharex=True, gridspec_kw=dict(wspace=0.08, hspace=0.22))
+    axes = axes.ravel()
     for ax, v in zip(axes, tasks):
         for arm in ["hoptimus0", "uni_v2", "resnet50", "package", "permuted"]:
             s = t[(t.vtag == v) & (t.arm == arm) & (t.n_L >= 6)].sort_values("n_L")
@@ -216,18 +232,18 @@ def f07():
             if arm != "permuted" and len(rr):
                 ax.plot([s.n_L.max() + 0.6, s.n_L.max() + 1.6], [1 - rr.R2_cluster_raw.iloc[0]] * 2, color=ENC_COL[arm], lw=3, solid_capstyle="butt")
         ax.axhline(1, color=GREY, lw=1); ax.set_title(TASK[v], loc="left", fontsize=12.5)
-        ax.set_xlabel("labelled clusters"); ax.set_xticks([6, 8, 12, 16]); ax.set_xlim(5, 18.5); ax.set_ylim(0, 1.15)
-    axes[0].set_ylabel("variance ratio, PPI / classical")
-    axes[0].text(17.6, 0.46, "floors", ha="center", va="top", fontsize=10, color=MUTED)
+        ax.set_xticks([6, 8, 12, 16]); ax.set_xlim(5, 18.5); ax.set_ylim(0, 1.15)
+    for ax in axes[2:]:
+        ax.set_xlabel("labelled clusters")
+    fig.supylabel("variance ratio, PPI / classical", fontsize=13, x=0.03)
+    axes[0].text(17.1, 0.46, "floors", ha="center", va="top", fontsize=12, color=MUTED)
     h, l = [], []
     for ax in (axes[0], axes[3]):
         hh, ll = ax.get_legend_handles_labels()
         for a, b in zip(hh, ll):
             if b not in l:
                 h.append(a); l.append(b)
-    fig.legend(h, l, loc="lower center", ncol=5, bbox_to_anchor=(0.5, -0.1), fontsize=11)
-    fig.suptitle("Observed ratio by number of labelled clusters; short bars on the right mark each predictor's floor",
-                 x=0.07, ha="left", fontsize=13, fontweight="bold", y=1.02)
+    fig.legend(h, l, loc="lower center", ncol=3, bbox_to_anchor=(0.5, -0.1), fontsize=12)
     save(fig, "f07_ratio_by_labelled_clusters")
 
 
@@ -262,7 +278,7 @@ def f09():
         ax.set_ylim(0, None)
     axes[0].set_ylabel("variance of the PPI estimate\n(relative to regime A at 2,400)")
     h, l = axes[0].get_legend_handles_labels()
-    fig.legend(h, l, loc="lower center", ncol=2, bbox_to_anchor=(0.5, -0.12), fontsize=11)
+    fig.legend(h, l, loc="lower center", ncol=2, bbox_to_anchor=(0.5, -0.2), fontsize=12)
     save(fig, "f09_regime_A_vs_B")
 
 
@@ -307,7 +323,7 @@ def f11():
     fin = d[d.ratio.notna()]
     ax.plot(fin.K, fin.ratio, color=BLUE, marker="o")
     ax.axvspan(3.5, 8.9, color=GRID, alpha=0.7, lw=0)
-    ax.text(6.2, 1.5, "infinite\n(K + 1 < 1/α)", ha="center", va="center", color=MUTED, fontsize=11)
+    ax.text(6.2, 1.5, "infinite", ha="center", va="center", color=MUTED, fontsize=11)
     ax.axhline(1, color=GREY, lw=1); ax.set_xlim(3.5, 20.5); ax.set_ylim(0.9, 2.1)
     ax.set_xlabel("calibration donors K"); ax.set_ylabel("width, hierarchical / pooled")
     ax.set_title("Price of validity (kidney cancer)", loc="left")
@@ -320,7 +336,8 @@ def f12():
     o = o[(o.alpha == 0.1) & (o.K == 10) & (o.score == "abs")]
     g = o.groupby(["task", "method", "o"])[["coverage", "width_mean", "finite"]].mean().reset_index()
     tasks = ["CCRCC", "INDIANA_KIDNEY", "LUNG_XENIUM", "ACS"]
-    fig, axes = plt.subplots(1, 4, figsize=(14, 4.3), gridspec_kw=dict(wspace=0.25))
+    fig, axes = plt.subplots(2, 2, figsize=(9.6, 7.6), sharex=True, gridspec_kw=dict(wspace=0.16, hspace=0.22))
+    axes = axes.ravel()
     for ax, v in zip(axes, tasks):
         hcp = g[(g.task == v) & (g.method == "hcp") & (g.o == 0)].width_mean.iloc[0]
         ax.axhline(hcp, color=GREY, lw=2, ls=(0, (4, 3)), label="hierarchical, no labelled units")
@@ -330,11 +347,13 @@ def f12():
             s = g[(g.task == v) & (g.method == m) & (g.finite > 0.999)].sort_values("o")
             ax.plot(s.o, s.width_mean, color=col, marker=mk, label=lab)
         ax.set_xscale("log"); ax.set_xticks([5, 10, 25, 50, 100, 200]); ax.set_xticklabels(["5", "10", "25", "50", "100", "200"])
-        ax.minorticks_off(); ax.set_ylim(0, None); ax.set_title(TASK[v], loc="left", fontsize=12.5); ax.set_xlabel("labelled units, new cluster")
-    axes[0].set_ylabel("mean width of a valid 90% set")
+        ax.minorticks_off(); ax.set_ylim(0, None); ax.set_title(TASK[v], loc="left", fontsize=12.5)
+    for ax in axes[2:]:
+        ax.set_xlabel("labelled units in the new cluster")
+    fig.supylabel("mean width of a valid 90% set", fontsize=13, x=0.04)
     h, l = axes[0].get_legend_handles_labels()
-    fig.legend(h, l, loc="lower center", ncol=4, bbox_to_anchor=(0.5, -0.12), fontsize=11)
-    fig.suptitle("10 calibration clusters. A method is drawn only where its set is finite.", x=0.07, ha="left", fontsize=13, fontweight="bold", y=1.02)
+    fig.legend(h, l, loc="lower center", ncol=2, bbox_to_anchor=(0.5, -0.09), fontsize=12)
+    fig.suptitle("10 calibration clusters. A method is drawn only where its set is finite.", x=0.07, ha="left", fontsize=13, fontweight="bold", y=0.97)
     save(fig, "f12_prediction_sets_by_labelled_units")
 
 
@@ -346,19 +365,19 @@ def f13():
     ax = axes[0]
     K = np.arange(1, 13)
     ax.bar(K, np.maximum(0, 1 - 0.1 * (K + 1)), width=0.6, color=BLUE)
-    ax.set_xlabel("calibration clusters K"); ax.set_ylabel("probability an infinite set is forced")
-    ax.set_title(r"$1 - \alpha(K+1)$ at $\alpha = 0.1$", loc="left"); ax.set_xticks(K); ax.grid(axis="x", visible=False)
+    ax.set_xlabel("calibration clusters K"); ax.set_ylabel("probability of a forced infinite set")
+    ax.set_title(r"$1 - \alpha(K+1)$ at $\alpha = 0.1$", loc="left"); ax.set_xticks([1, 2, 3, 4, 5, 6, 7, 8, 10, 12]); ax.grid(axis="x", visible=False)
     ax = axes[1]
     ax.plot(lb.K, lb.min_coverage_any_valid, color=BLUE, marker="o")
-    ax.set_xlabel("calibration clusters K"); ax.set_ylabel("least coverage of any finite valid method")
-    ax.set_title("A finite set must over-cover", loc="left"); ax.set_xticks(lb.K); ax.set_ylim(0.89, 1.005); nominal(ax, label="")
+    ax.set_xlabel("calibration clusters K"); ax.set_ylabel("least coverage, finite valid method")
+    ax.set_title("A finite set must over-cover", loc="left"); ax.set_xticks([1, 2, 3, 4, 5, 6, 7, 8, 10, 12]); ax.set_ylim(0.89, 1.005); nominal(ax, label="")
     save(fig, "f13_lower_bound_small_K")
 
 
 # ------------------------------------------------------------------ f14 recap strip for the "efforts" slide
 def f14():
     """Three panels redrawn from the first deck's source tables, one per finding of the replication."""
-    fig, axes = plt.subplots(1, 3, figsize=(16.5, 4.3), gridspec_kw=dict(wspace=0.5, width_ratios=[1.0, 1.0, 1.15]))
+    fig, axes = plt.subplots(1, 3, figsize=(16.5, 4.3), gridspec_kw=dict(wspace=0.62, width_ratios=[1.0, 1.0, 1.15]))
     # (a) the head's scale ratio by image model
     ax = axes[0]
     be = pd.read_csv("results/round2/R1b_heads/r1b_ladder_by_encoder.csv").sort_values("rho_over_r")
@@ -368,8 +387,8 @@ def f14():
     ax.text(pooled, len(be) - 0.3, f" pooled {pooled:.2f}", color=INK, fontsize=12, va="bottom", ha="left")
     ax.set_yticks([]); ax.set_ylabel("12 image models"); ax.set_xlim(1.0, float(be.rho_over_r.max()) * 1.08)
     ax.set_ylim(-0.7, len(be) + 0.6); ax.grid(axis="y", visible=False)
-    ax.set_xlabel("spread of predictions over the optimal spread")
-    ax.set_title("1. Predictions are spread too widely", loc="left")
+    ax.set_xlabel("prediction spread / optimal spread")
+    ax.set_title("1. Spread too wide", loc="left")
     # (b) the session signature, in the features and in the expression
     ax = axes[1]
     P = pd.read_csv("results/round2/R4_probes/r4_probes_v2.csv")
@@ -381,16 +400,15 @@ def f14():
             ax.bar(k + (j - 1) * w, float(sub.loc[e, "acc_blocked"]), width=w * 0.9, color=ENC_COL[e], label=ENC[e] if k == 0 else None)
         ch = float(sub.chance.iloc[0])
         ax.plot([k - 1.6 * w, k + 1.6 * w], [ch, ch], color=INK, lw=1.2, ls=(0, (4, 3)))
-        ax.text(k + 1.7 * w, ch, "chance", color=MUTED, fontsize=11, va="center", ha="left")
     PV = pd.read_csv("results/round2/R6_variance/r6_prad_session_variance.csv")
     comps = ["within_slide", "between_slide_within_session", "between_session"]
     share = float(PV["between_session"].sum() / PV[comps].sum().sum())
     ax.set_xticks([0, 1]); ax.set_xticklabels(["which slide", "which\nscan session"]); ax.set_xlim(-0.6, 1.95)
     ax.set_ylim(0, 1.42); ax.set_yticks(np.arange(0, 1.01, 0.25)); ax.grid(axis="x", visible=False)
     ax.set_ylabel("accuracy from image features")
-    ax.text(0.675, 1.24, f"The same session axis is {share * 100:.1f}%\nof the variance in expression", ha="center", va="center", fontsize=12, color=INK)
+    ax.text(0.675, 1.24, f"dashed: chance. Same axis in\nexpression: {share * 100:.1f}% of variance", ha="center", va="center", fontsize=12, color=INK)
     ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.2), ncol=3, fontsize=11, handlelength=1.2, columnspacing=1.2)
-    ax.set_title("2. A session signature in the features", loc="left")
+    ax.set_title("2. Session signature", loc="left")
     # (c) between-donor share of expression variance, by task
     ax = axes[2]
     V = pd.read_csv("results/round2/R6_variance/r6_variance_by_task.csv")
@@ -401,9 +419,9 @@ def f14():
         ax.text(r.frac_donor + 0.008, i, f"{r.frac_donor:.2f}", va="center", ha="left", fontsize=11, color=INK if strong[i] else MUTED)
     ax.set_yticks(np.arange(len(V))); ax.set_yticklabels([f"{r.task} ({int(r.donors)})" for _, r in V.iterrows()], fontsize=11)
     ax.set_xlim(0, 0.5); ax.grid(axis="y", visible=False)
-    ax.set_xlabel("between-donor share of expression variance")
-    ax.text(0.49, 0.2, "task (donors)\nblue: 4 or more donors,\nlabels verified", ha="right", va="bottom", fontsize=11, color=MUTED)
-    ax.set_title("3. The donor is the unit", loc="left")
+    ax.set_xlabel("between-donor share of variance")
+    ax.text(0.49, 0.2, "task (donors)\nblue: 4 or more\ndonors, verified", ha="right", va="bottom", fontsize=11, color=MUTED)
+    ax.set_title("3. Donor is the unit", loc="left")
     save(fig, "f14_recap_strip")
 
 
