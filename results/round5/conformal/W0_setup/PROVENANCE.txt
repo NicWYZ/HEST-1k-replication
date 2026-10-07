@@ -1,0 +1,21 @@
+==============================================================================
+Round 5 conformal track, stage W0_setup
+job_name_prefix : r5conf_W0_setup  (the submission route replaces --job-name)
+slurm_job_id    : 4168847
+slurm_partition : spill
+slurm_account   : rc_tengfei_pi
+node            : c130601.ll.unc.edu
+cpu_vendor      : AuthenticAMD
+date            : 2026-10-07T17:59:18-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round5-conformal
+code_clone_head : 331b024ac92ad22f4532d00688867903dbd95794
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : -c
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+pandas          : 2.3.3
+config_hash     : sha256/16 6022b6f486ad70e1
+config          : {"clone": "/work/users/w/e/weiyang/hest_code/round5-conformal", "expect_head": "331b024ac92ad22f4532d00688867903dbd95794", "stage": "W0 setup"}
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round3_a0_harness.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_io.py
