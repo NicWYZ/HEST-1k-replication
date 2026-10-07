@@ -29,15 +29,17 @@ R4 = os.path.join(IO5.CLONE, "results", "round4", "conformal", "C3_real")
 KEY = ["task", "label_set", "encoder", "method", "score", "alpha", "o", "K", "fold", "draw"]
 
 
-def main(rows_path, out):
+def main(rows_path, out, run_infos):
     os.makedirs(out, exist_ok=True)
     IO5.stamp(out, track="conformal-W0", note="W0 c3 anchor difference breakdown")
     vend = {}
-    for p in sorted(glob.glob(os.path.join(R4, "frag_CCRCC_o", "shards", "ccrcc24_uni_v2_*", "run_info.json"))):
+    # The shard run_info.json files are gitignored in the clone and absent from the project tree;
+    # they are passed in as staged copies from the local working copy, md5 recorded in PROVENANCE.
+    for p in sorted(run_infos):
         d = json.load(open(p))
         for f in d["folds"]:
             assert f not in vend, f"fold {f} in two shards"
-            vend[f] = (d["cpu"]["vendor"], os.path.basename(os.path.dirname(p)))
+            vend[f] = (d["cpu"]["vendor"], d["tag"])
     new = pd.read_csv(rows_path, dtype={"fold": str})
     ref = pd.read_csv(os.path.join(R4, "c3_o_sweep.csv.gz"), dtype={"fold": str})
     ref = ref[(ref.task == "CCRCC") & (ref.encoder == "uni_v2") & (ref.K == 10) & ref.o.isin([0, 25])]
@@ -77,9 +79,10 @@ def main(rows_path, out):
         os.path.join(out, "w0_c3_diag_worst_width.csv"), index=False)
     m[m.d_coverage > 0][cols].to_csv(os.path.join(out, "w0_c3_diag_coverage_nonzero.csv"), index=False)
     IO5.write_provenance(out, "W0_c3diag", __file__, dict(stage="W0 c3 diagnostic", rows=rows_path,
-                         shards=sorted({s for _, s in vend.values()})), extra=dict(rows=len(m)))
+                         shards=sorted({s for _, s in vend.values()})),
+                         extra=dict(rows=len(m), run_info_md5=";".join(f"{os.path.basename(p)}={IO5.md5(p)}" for p in sorted(run_infos))))
     print(v.to_string(), flush=True)
 
 
 if __name__ == "__main__":
-    main(sys.argv[1], sys.argv[2])
+    main(sys.argv[1], sys.argv[2], sys.argv[3:])
