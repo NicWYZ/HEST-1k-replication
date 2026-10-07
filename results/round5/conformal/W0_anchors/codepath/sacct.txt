@@ -1,0 +1,13 @@
+# job 4198457 (-X)
+JobID|Account|Partition|NCPUS|ReqMem|Submit|Start|Elapsed|MaxRSS|State|ExitCode|NodeList
+4198457|rc_tengfei_pi|spill|2|6G|2026-10-07T18:03:30|2026-10-07T18:04:20|00:00:17||COMPLETED|0:0|c151402
+
+# job 4198457 with steps (MaxRSS on batch)
+JobID|Account|Partition|NCPUS|ReqMem|Submit|Start|Elapsed|MaxRSS|State|ExitCode|NodeList
+4198457|rc_tengfei_pi|spill|2|6G|2026-10-07T18:03:30|2026-10-07T18:04:20|00:00:17||COMPLETED|0:0|c151402
+4198457.batch|rc_tengfei_pi||2||2026-10-07T18:04:20|2026-10-07T18:04:20|00:00:17|271664K|COMPLETED|0:0|c151402
+4198457.extern|rc_tengfei_pi||2||2026-10-07T18:04:20|2026-10-07T18:04:20|00:00:17||COMPLETED|0:0|c151402
+
+# earlier attempt 4198252 (-X), aborted by set -e after round-4 script exit 5
+JobID|Account|Partition|NCPUS|ReqMem|Submit|Start|Elapsed|MaxRSS|State|ExitCode|NodeList
+4198252|rc_tengfei_pi|spill|2|6G|2026-10-07T18:01:03|2026-10-07T18:02:18|00:00:20||FAILED|5:0|c151409

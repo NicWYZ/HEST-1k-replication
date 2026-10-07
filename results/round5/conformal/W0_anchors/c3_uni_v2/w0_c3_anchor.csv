@@ -1,0 +1,17 @@
+check,value,tol,passed
+selftest:split_q_cols_vs_SIM.split_q,0.0,1e-12,True
+selftest:wq_cols_vs_SIM.hcp_q,0.0,1e-12,True
+selftest:ghcp_cols_vs_SIM.ghcp_q[ghcp],4.440892098500626e-16,1e-12,True
+selftest:ghcp_cols_vs_SIM.ghcp_q[ghcp_noad],0.0,1e-12,True
+selftest:ghcp_cols_vs_SIM.ghcp_q[ghcp_r05],5.551115123125783e-17,1e-12,True
+selftest:ghcp_cols_vs_SIM.ghcp_q[ghcp_r05_noad],0.0,1e-12,True
+selftest:ghcp_cols_vs_SIM.ghcp_q[ghcp_r05code],5.551115123125783e-17,1e-12,True
+selftest:metrics_vs_A3_cell_metrics,3.552713678800501e-15,1e-12,True
+rows_only_in_round4,0.0,0.0,True
+rows_only_in_round5,0.0,0.0,True
+rows_matched,22032.0,,True
+max_abs_diff:coverage,1.1102230246251565e-16,0.0,False
+max_abs_diff:width_mean,1.91047000441813e-08,3e-10,False
+max_abs_diff:width_median,1.3157643863337398e-09,3e-10,False
+max_abs_diff:n_test,0.0,0.0,True
+max_abs_diff:finite,0.0,0.0,True

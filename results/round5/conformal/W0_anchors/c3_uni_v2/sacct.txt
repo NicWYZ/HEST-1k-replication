@@ -1,0 +1,9 @@
+# sacct -j 4198244 -X -P -o JobID,Account,Partition,NCPUS,ReqMem,Submit,Start,Elapsed,MaxRSS,State,ExitCode,NodeList
+JobID|Account|Partition|NCPUS|ReqMem|Submit|Start|Elapsed|MaxRSS|State|ExitCode|NodeList
+4198244|rc_tengfei_pi|spill|4|16G|2026-10-07T18:00:54|2026-10-07T18:01:17|00:46:53||FAILED|3:0|c0514
+
+# sacct -j 4198244 -P -o JobID,Account,Partition,NCPUS,ReqMem,Submit,Start,Elapsed,MaxRSS,State,ExitCode,NodeList (all steps, for MaxRSS)
+JobID|Account|Partition|NCPUS|ReqMem|Submit|Start|Elapsed|MaxRSS|State|ExitCode|NodeList
+4198244|rc_tengfei_pi|spill|4|16G|2026-10-07T18:00:54|2026-10-07T18:01:17|00:46:53||FAILED|3:0|c0514
+4198244.batch|rc_tengfei_pi||4||2026-10-07T18:01:17|2026-10-07T18:01:17|00:46:53|7305576K|FAILED|3:0|c0514
+4198244.extern|rc_tengfei_pi||4||2026-10-07T18:01:17|2026-10-07T18:01:17|00:46:53||COMPLETED|0:0|c0514
