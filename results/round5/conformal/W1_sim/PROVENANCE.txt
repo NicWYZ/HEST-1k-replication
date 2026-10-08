@@ -1,0 +1,52 @@
+==============================================================================
+Round 5 conformal track, stage W1_merge
+job_name_prefix : r5conf_W1_merge  (the submission route replaces --job-name)
+slurm_job_id    : none
+slurm_partition : none
+slurm_account   : none
+node            : Nicolass-MacBook-Pro-9.local
+cpu_vendor      : arm
+date            : 2026-10-08T00:07:42-04:00
+code_clone      : /Users/nicolaszhang/hest-1k/HEST-1k-replication-conformal
+code_clone_head : c8a8fa6a872e24d1674e01aef852092ae064366f
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : /Users/nicolaszhang/hest-1k/HEST-1k-replication-conformal/code/scripts/round5_conf_w1_merge.py . .
+pythonhashseed  : 0
+python          : 3.11.15
+numpy           : 2.4.6
+pandas          : 2.3.3
+config_hash     : sha256/16 b4b0fcf2f0171879
+config          : {"frags": ["./frag_K09", "./frag_K10", "./frag_K12", "./frag_K14", "./frag_K16", "./frag_K18", "./frag_K20", "./frag_K25", "./frag_K30", "./frag_K50"], "stage": "W1 merge"}
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /Users/nicolaszhang/hest-1k/HEST-1k-replication-conformal/code/scripts/round3_a0_harness.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /Users/nicolaszhang/hest-1k/HEST-1k-replication-conformal/code/scripts/round5_conf_io.py
+script_md5      : 47d336ee0d72189c4757274ea81e4944  /Users/nicolaszhang/hest-1k/HEST-1k-replication-conformal/code/scripts/round5_conf_w1_merge.py
+acceptance_all_literal: False
+Nicolass-MacBook-Pro-9.local 3.11.15 2.4.6 2.3.3 3.11.0
+==============================================================================
+Round 5 conformal track, stage W1_merge
+job_name_prefix : r5conf_W1_merge  (the submission route replaces --job-name)
+slurm_job_id    : none
+slurm_partition : none
+slurm_account   : none
+node            : Nicolass-MacBook-Pro-9.local
+cpu_vendor      : arm
+date            : 2026-10-08T00:08:20-04:00
+code_clone      : /Users/nicolaszhang/hest-1k/HEST-1k-replication-conformal
+code_clone_head : c8a8fa6a872e24d1674e01aef852092ae064366f
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : /Users/nicolaszhang/hest-1k/HEST-1k-replication-conformal/code/scripts/round5_conf_w1_merge.py . .
+pythonhashseed  : 0
+python          : 3.11.15
+numpy           : 2.4.6
+pandas          : 2.3.3
+config_hash     : sha256/16 b4b0fcf2f0171879
+config          : {"frags": ["./frag_K09", "./frag_K10", "./frag_K12", "./frag_K14", "./frag_K16", "./frag_K18", "./frag_K20", "./frag_K25", "./frag_K30", "./frag_K50"], "stage": "W1 merge"}
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /Users/nicolaszhang/hest-1k/HEST-1k-replication-conformal/code/scripts/round3_a0_harness.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /Users/nicolaszhang/hest-1k/HEST-1k-replication-conformal/code/scripts/round5_conf_io.py
+script_md5      : f297715748daae00fb21c78d4d6ab686  /Users/nicolaszhang/hest-1k/HEST-1k-replication-conformal/code/scripts/round5_conf_w1_merge.py
+acceptance_all_literal: False
+local_run_host  : Nicolass-MacBook-Pro-9.local macOS-26.6.2-arm64-arm-64bit
+local_versions  : python 3.11.15 numpy 2.4.6 pandas 2.3.3 matplotlib 3.11.0
+merge_md5       : f297715748daae00fb21c78d4d6ab686
+inputs_md5      : da1c5f470e3ab35dcc25cef6b88371bc (concatenated frag CSVs), c1_grid 0d14828dbb80a19b1f61b481ae6140e8
+extension       : plan section 5 item 6 (local where faster)

@@ -1,0 +1,16 @@
+                                     check         value       tol passed                                                note
+0                          1_rows_compared  1.531200e+04       NaN   True                             0 expected rows missing
+1                  1_max_abs_diff_coverage  0.000000e+00  0.000100   True                                                 NaN
+2                     1_max_rel_diff_price  8.561087e-16  0.000001   True                                                 NaN
+3             1_max_abs_diff_frac_infinite  0.000000e+00  0.000000   True                                                 NaN
+4       2_within_plain_finite_from_o9_a0.1  0.000000e+00  0.000000   True                                           8880 rows
+5       2_within_plain_finite_from_o4_a0.2  0.000000e+00  0.000000   True                                           8880 rows
+6            2_within_finite_from_o17_a0.1  0.000000e+00  0.000000   True                                           8880 rows
+7             2_within_finite_from_o7_a0.2  0.000000e+00  0.000000   True                                           8880 rows
+8        4_within_full_finite_from_o9_a0.1  0.000000e+00  0.000000   True                                           8880 rows
+9        4_within_full_finite_from_o4_a0.2  0.000000e+00  0.000000   True                                           8880 rows
+10                 3_within_cov_within_3se  2.600000e+01  0.000000  False  11840 cells; 32.0 expected by chance; max |z| 3.60
+11           3_within_plain_cov_within_3se  5.200000e+01  0.000000  False  15540 cells; 42.0 expected by chance; max |z| 4.80
+12      4_within_full_exact_cov_within_3se  3.400000e+01  0.000000  False  15540 cells; 42.0 expected by chance; max |z| 5.27
+13     4_within_full_frac_not_interval_max  0.000000e+00       NaN    NaN   share of replicates whose set is not one interval
+14  4_within_full_hull_minus_exact_cov_max  4.440892e-16       NaN    NaN                                                 NaN
