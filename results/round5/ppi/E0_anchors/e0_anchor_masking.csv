@@ -1,0 +1,9 @@
+anchor,column,n_ref_rows,n_matched,unmatched_ref_rows,duplicate_keys_new,duplicate_keys_ref,nan_mismatch,max_diff,diff_kind,tolerance,max_abs_diff,passes
+masking|CCRCC|hoptimus0,coverage_median,40,40,0,0,0,0,0.0,abs,0.005,0.0,True
+masking|CCRCC|hoptimus0,emp_var_median,40,40,0,0,0,0,0.0,rel,1e-05,0.0,True
+masking|CCRCC|hoptimus0,emp_var_ratio_median,40,40,0,0,0,0,0.0,rel,1e-05,0.0,True
+masking|CCRCC|hoptimus0,est_var_over_emp_var_median,40,40,0,0,0,0,0.0,rel,1e-05,0.0,True
+masking|CCRCC|hoptimus0,lambda_median,40,40,0,0,0,0,0.0,abs,,0.0,
+masking|CCRCC|hoptimus0,lambda_se_median,40,24,0,0,0,0,0.0,abs,,0.0,
+masking|CCRCC|hoptimus0,lambda_raw_mean_median,40,24,0,0,0,0,0.0,abs,,0.0,
+masking|CCRCC|hoptimus0,lambda_raw_mean_se_median,40,24,0,0,0,0,0.0,abs,,0.0,

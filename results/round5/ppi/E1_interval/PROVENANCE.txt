@@ -1,0 +1,22 @@
+stage: E1 merge
+intended_job_prefix: r5ppi_
+frame_id: e5d5217d-4382-43ce-9cdc-7b08d2cba953
+slurm_job_id: 4200582
+partition: spill
+account: rc_tengfei_pi
+node: c151406.ll.unc.edu
+cpu: x86_64
+date_utc: 2026-10-07T22:44:26+00:00
+code_clone: /work/users/w/e/weiyang/hest_code/round5-ppi
+code_clone_HEAD: d82c3f33ce37fe2d7dbf5b527bfee9a9fb9ee935
+PYTHONHASHSEED: 0
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python _lead_scripts/round5_ppi_e1_merge.py --frames G15=96745b89-5af4-4220-acc2-fe072ca5cbc8,G24=7190eda6-ddfd-40ae-a424-0a9c83c2aaa3,G51=b9e3feaa-c69f-4aec-8c5e-72d379c7e8ad,diag=7edb66c6-59c7-4570-97fe-b4293e44126d
+config: {"stage": "E1 merge"}
+config_md5: 4185a38ef8be58e55eb8def8d4c69ebd
+script_md5:
+  0f3b0e5b1cf1b9a402cd3fb8471c9c98  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E1_interval/_lead_scripts/round5_ppi_e1_merge.py
+  122375c3acb103ed93e3e687644d7f6d  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E1_interval/_lead_scripts/round5_ppi_common.py
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+uploaded_scripts_local_commit: 5a65c417c1862b1398db3ac42d66cb6295f1dc57
+

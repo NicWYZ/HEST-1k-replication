@@ -1,0 +1,7 @@
+check,n,n_pass,worst,tolerance
+1_variance_function_equals_textbook_two_stage_lin,12,12,6.520130587537116e-15,1e-12
+2_rule_none_fpc_equals_fpc_lin,1440,1440,,0.0
+3_oracle_within_3_mcse|normal,480,480,2.9061232425739423,3.0
+3_oracle_within_3_mcse|skewed,480,479,3.8722790157506104,3.0
+3_oracle_within_3_mcse|heavy,480,478,4.078147651296351,3.0
+4_classical_normal_G24_median_coverage_within_0.01_of_0.90,6,6,0.001183333333333203,0.01

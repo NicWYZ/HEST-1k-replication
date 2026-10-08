@@ -1,0 +1,8 @@
+job_id,stage,unit,purpose,partition,account,node,submit,start,end,elapsed,state,req_mem,req_cpus,max_rss_gb,note
+4198998,E1,G51_smoke,"smoke: 1 cell, 50 draws",spill,rc_tengfei_pi,c0309,2026-10-07T18:13:23,2026-10-07T18:14:20,2026-10-07T18:14:29,00:00:09,COMPLETED,4G,2,0.25,"job 243a11ba; requested -p general, ran on spill"
+4199044,E1,G51_normal_nl4-6-8,"normal law grid n_L 4,6,8 (90 cells x 1000 draws)",spill,rc_tengfei_pi,c0315,2026-10-07T18:14:55,2026-10-07T18:15:17,2026-10-07T18:22:07,00:06:50,COMPLETED,4G,2,0.22,job 94beb9bd
+4199051,E1,G51_normal_nl12-16-20,"normal law grid n_L 12,16,20 (90 cells x 1000 draws)",spill,rc_tengfei_pi,c0315,2026-10-07T18:14:58,2026-10-07T18:16:19,2026-10-07T18:23:29,00:07:10,COMPLETED,4G,2,0.17,job 5ee999de
+4199532,E1,G51_skewed_nl4-6-8,"skewed lognormal sigma 0.940959499999249, n_L 4,6,8",spill,rc_tengfei_pi,c151416,2026-10-07T18:30:48,2026-10-07T18:31:24,2026-10-07T18:36:19,00:04:55,COMPLETED,6G,2,0.17,job 4e7f3336
+4199536,E1,G51_skewed_nl12-16-20,"skewed lognormal, n_L 12,16,20",spill,rc_tengfei_pi,c130402,2026-10-07T18:30:52,2026-10-07T18:31:24,2026-10-07T18:38:58,00:07:34,COMPLETED,6G,2,0.2,job bebd0037
+4199537,E1,G51_heavy_nl4-6-8,"heavy lognormal sigma 1.9394834999993038, n_L 4,6,8",spill,rc_tengfei_pi,c130402,2026-10-07T18:30:55,2026-10-07T18:31:24,2026-10-07T18:38:21,00:06:57,COMPLETED,6G,2,0.27,job 99b66d05
+4199538,E1,G51_heavy_nl12-16-20,"heavy lognormal, n_L 12,16,20",spill,rc_tengfei_pi,c130604,2026-10-07T18:30:59,2026-10-07T18:33:25,2026-10-07T18:39:46,00:06:21,COMPLETED,6G,2,0.18,job 8e1bc552

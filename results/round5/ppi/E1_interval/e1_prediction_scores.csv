@@ -1,0 +1,32 @@
+prediction,n_cells,n_in_band,rule,band,qty_min,qty_median,qty_max,held
+"E1.1a|normal|final coverage in [0.88,0.91], nL>=6",390,341,all,"[0.88, 0.91]",0.8400833333333335,0.8934000000000001,0.9023333333333332,False
+"E1.1b|normal|final within 0.02 of classical, nL>=6",390,337,all,"[None, 0.02]",0.0,0.006366666666666576,0.059016666666666495,False
+"E1.2a|normal|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",78,70,>= 0.5 of cells,"[2.0, None]",1.1230580221110615,6.979371231397472,31.711330584776487,True
+"E1.2b|normal|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",78,69,all,"[0.85, 1.1]",0.6866236820823708,0.9654474015146461,1.010952284550385,False
+E1.2c|normal|kappa0 lin vs no-lin coverage differ < 0.01,160,160,all,"[None, 0.0099999]",0.0,0.00013333333333348518,0.002566666666666717,True
+"E1.3a|normal|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",144,75,all,"[0.03, 0.15]",0.00037680136031514877,0.0526960054456187,0.3157072500670035,False
+"E1.3b|normal|classical minus final est/emp < 0.05, G51 nL6-12",90,88,all,"[None, 0.0499999]",-0.014078236007092793,0.009779026102019528,0.060495089965167614,False
+E1.5a|normal|tuned/classical variance < 1 above break-even,186,183,all,"[None, 0.9999999]",0.1190416045904315,0.4200904893968198,1.0616372130694829,False
+E1.5b|normal|tuned/classical variance > 1 in >= half below break-even (nL>=6),126,5,>= 0.5 of cells,"[1.0000001, None]",0.1798343246315715,0.8281792308144971,1.1040589990569671,False
+"E1.1a|skewed|final coverage in [0.88,0.91], nL>=6",390,9,all,"[0.88, 0.91]",0.7914666666666667,0.8311916666666668,0.8895333333333334,False
+"E1.1b|skewed|final within 0.02 of classical, nL>=6",390,296,all,"[None, 0.02]",8.333333333332416e-05,0.013741666666666708,0.07013333333333338,False
+"E1.2a|skewed|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",78,74,>= 0.5 of cells,"[2.0, None]",1.1387296700567022,10.834830742490096,43.45147430397549,True
+"E1.2b|skewed|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",78,67,all,"[0.85, 1.1]",0.5875394989619934,0.9471408331467326,0.9929750629420362,False
+E1.2c|skewed|kappa0 lin vs no-lin coverage differ < 0.01,160,160,all,"[None, 0.0099999]",0.0,0.00021666666666686485,0.0032333333333335323,True
+"E1.3a|skewed|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",144,89,all,"[0.03, 0.15]",0.0039016798042847967,0.07894449012132448,0.4305665288249453,False
+"E1.3b|skewed|classical minus final est/emp < 0.05, G51 nL6-12",90,83,all,"[None, 0.0499999]",-0.0012309395920764299,0.024063885565217658,0.075862476250797,False
+E1.5a|skewed|tuned/classical variance < 1 above break-even,186,186,all,"[None, 0.9999999]",0.1300067432540045,0.48675115310667827,0.9964346465058704,True
+E1.5b|skewed|tuned/classical variance > 1 in >= half below break-even (nL>=6),126,1,>= 0.5 of cells,"[1.0000001, None]",0.209606975801242,0.779699023954155,1.0098321833571036,False
+"E1.1a|heavy|final coverage in [0.88,0.91], nL>=6",390,0,all,"[0.88, 0.91]",0.5747333333333333,0.7133750000000001,0.8667166666666668,False
+"E1.1b|heavy|final within 0.02 of classical, nL>=6",390,254,all,"[None, 0.02]",6.66666666665483e-05,0.013658333333333328,0.07094999999999996,False
+"E1.2a|heavy|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",78,78,>= 0.5 of cells,"[2.0, None]",13.946882890073653,96.96532011156826,665.3388502081309,True
+"E1.2b|heavy|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",78,64,all,"[0.85, 1.1]",0.5320822443756992,0.9203105900538089,0.9847940595855168,False
+E1.2c|heavy|kappa0 lin vs no-lin coverage differ < 0.01,160,155,all,"[None, 0.0099999]",0.0,0.0010666666666667712,0.021716666666666495,False
+"E1.3a|heavy|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",144,101,all,"[0.03, 0.15]",0.030490473121572936,0.10898689723535232,0.4885068658298156,False
+"E1.3b|heavy|classical minus final est/emp < 0.05, G51 nL6-12",90,72,all,"[None, 0.0499999]",0.006296802410677316,0.029405598389971088,0.09087364231015338,False
+E1.5a|heavy|tuned/classical variance < 1 above break-even,186,186,all,"[None, 0.9999999]",0.2804602881200668,0.5757267505269351,0.9398104527121924,True
+E1.5b|heavy|tuned/classical variance > 1 in >= half below break-even (nL>=6),126,1,>= 0.5 of cells,"[1.0000001, None]",0.3543456732570106,0.7555596698470133,1.0068785402778768,False
+E1.4a|normal G24 nL8 classical per-population 5-95 range >= 0.03,30,28,all,"[0.03, None]",0.02705000000000002,0.037675000000000014,0.04910000000000003,False
+E1.4b|normal G24 nL8 classical per-population p05 > 0.87,30,30,all,"[0.8700001, None]",0.87075,0.8792500000000001,0.8879,True
+"E1.4c|skewed G24 classical coverage averaged over cells in [0.85,0.89], per nL",6,3,all,"[0.85, 0.89]",0.8165988888888889,0.8418383333333334,0.888885,False
+"E1.4c|heavy G24 classical coverage averaged over cells in [0.85,0.89], per nL",6,1,all,"[0.85, 0.89]",0.6365511111111111,0.7268619444444444,0.8639100000000001,False

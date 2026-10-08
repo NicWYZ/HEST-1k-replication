@@ -1,0 +1,57 @@
+stage: E0
+intended_job_prefix: r5ppi_
+frame_id: e5d5217d-4382-43ce-9cdc-7b08d2cba953
+slurm_job_id: 4168737
+partition: spill
+account: rc_tengfei_pi
+node: c130601.ll.unc.edu
+cpu: x86_64
+date_utc: 2026-10-07T22:03:58+00:00
+code_clone: /work/users/w/e/weiyang/hest_code/round5-ppi
+code_clone_HEAD: d82c3f33ce37fe2d7dbf5b527bfee9a9fb9ee935
+PYTHONHASHSEED: 0
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+command: e0_job.sh: round5_ppi_e0_checks.py; round4_ppi_q4a_tests.py; round4_ppi_q1b_tests.py --out-dir q1b; round4_ppi_q2_masking.py CCRCC hoptimus0 --nl-grid 8 --m-grid 0 --draws 200 --rules none,c_crossfit,c_crossfit_design; round4_ppi_q3_regimes.py CCRCC hoptimus0 --budgets 2400 --parts B --rules none,c_crossfit; round5_ppi_e0_compare.py x2
+config: {"anchors": ["masking CCRCC hoptimus0 nL8 m=all 200 draws", "regimeB CCRCC hoptimus0 B2400"], "stage": "E0", "tolerances": {"coverage_abs": 0.005, "variance_rel": 1e-05}}
+config_md5: 8c5ac085eb956c9a77edb88ead2e70c1
+script_md5:
+  122375c3acb103ed93e3e687644d7f6d  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E0_anchors/_scripts/round5_ppi_common.py
+  1c334fc84714a655f3f2b31bf9183914  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E0_anchors/_scripts/round5_ppi_e0_checks.py
+  cd1c7abb33b63f9e39a9e9ff68a931ac  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E0_anchors/_scripts/round5_ppi_e0_compare.py
+  ab33d9c3fd79eee45baa3a52f583ed38  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round4_ppi_q4a_tests.py
+  90fd589f98cbea127ed06c7b6dd5f4db  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round4_ppi_q1b_tests.py
+  15f51917a5fb79702ba239e520e7ff86  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round4_ppi_q2_masking.py
+  6097231bc238c0a23387ce76029acefd  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round4_ppi_q3_regimes.py
+  d79e69aa65800b9d24de556e019a0c64  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round4_ppi_estimator.py
+  0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round3_a0_harness.py
+  873dad7f383eb99826b2d0b990cd6914  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round4_ppi_q1_sim.py
+  416318688d6c0c2c6254dc87442b19c0  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round4_ppi_q1b_sim.py
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+uploaded_scripts_local_commit: 6443f99797229d2b4434f813127f84aae3b2f66d
+uploaded_scripts_route: plan extension 1 (upload, no push)
+
+stage: E0 (q1b tests rerun with --ref-module)
+intended_job_prefix: r5ppi_
+frame_id: e5d5217d-4382-43ce-9cdc-7b08d2cba953
+slurm_job_id: 4198575
+partition: spill
+account: rc_tengfei_pi
+node: c141601.ll.unc.edu
+cpu: x86_64
+date_utc: 2026-10-07T22:06:34+00:00
+code_clone: /work/users/w/e/weiyang/hest_code/round5-ppi
+code_clone_HEAD: d82c3f33ce37fe2d7dbf5b527bfee9a9fb9ee935
+PYTHONHASHSEED: 0
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+command: round4_ppi_q1b_tests.py --ref-module ref_estimator_de3d1f2.py --out-dir q1b (from tests/)
+config: {"ref_module": "round4_ppi_estimator.py at de3d1f2, md5 10c76fd4706435a2ad71a8c5f53fb938 as in round-4 job 3240806", "stage": "E0"}
+config_md5: fc256f0845a8da2b9cfd9ef9db234fbe
+script_md5:
+  90fd589f98cbea127ed06c7b6dd5f4db  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round4_ppi_q1b_tests.py
+  10c76fd4706435a2ad71a8c5f53fb938  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E0_anchors/tests/ref_estimator_de3d1f2.py
+  d79e69aa65800b9d24de556e019a0c64  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round4_ppi_estimator.py
+  873dad7f383eb99826b2d0b990cd6914  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round4_ppi_q1_sim.py
+  416318688d6c0c2c6254dc87442b19c0  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round4_ppi_q1b_sim.py
+  0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round3_a0_harness.py
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+

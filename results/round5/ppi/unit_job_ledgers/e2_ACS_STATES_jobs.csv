@@ -1,0 +1,8 @@
+job_id,stage,unit,purpose,partition,account,node,submit,start,end,elapsed,state,req_mem,req_cpus,max_rss_gb,note
+4199220,E2_smoke,smoke_package,smoke test package m=5 10 draws,spill,rc_tengfei_pi,c0411,2026-10-07T18:20:19,2026-10-07T18:21:20,2026-10-07T18:22:03,00:00:43,COMPLETED,8G,2,0.99,sized real jobs; 17 s per m at 10 draws
+4199295,E2_grid,package,"full grid, 12 m x 200 draws",spill,rc_tengfei_pi,c130503,2026-10-07T18:22:38,2026-10-07T18:23:24,2026-10-07T18:56:21,00:32:57,COMPLETED,4G,2,0.94,
+4199298,E2_grid,permuted,full grid,spill,rc_tengfei_pi,c151603,2026-10-07T18:22:42,2026-10-07T18:23:24,2026-10-07T18:50:06,00:26:42,COMPLETED,4G,2,1.17,
+4199301,E2_grid,constant,"full grid, theta2 skipped",spill,rc_tengfei_pi,c151609,2026-10-07T18:22:46,2026-10-07T18:23:24,2026-10-07T18:37:29,00:14:05,COMPLETED,4G,2,0.93,
+4199305,E2_grid,donor_constant,"full grid, theta2 skipped",spill,rc_tengfei_pi,c151609,2026-10-07T18:22:49,2026-10-07T18:23:24,2026-10-07T18:37:29,00:14:05,COMPLETED,4G,2,0.94,
+4199308,E2_acceptance,acceptance_package,check 1 m_all,spill,rc_tengfei_pi,c0316,2026-10-07T18:22:53,2026-10-07T18:23:24,2026-10-07T18:23:47,00:00:23,COMPLETED,4G,2,1.45,
+4201289,E2_aux,cluster_sizes,M_g and units per cluster by m,spill,rc_tengfei_pi,c0414,2026-10-07T18:57:01,2026-10-07T18:58:10,2026-10-07T18:58:29,00:00:19,COMPLETED,4G,2,1.41,

@@ -1,0 +1,476 @@
+prediction,level,n_cells,n_in_band,axis
+"E1.1a|heavy|final coverage in [0.88,0.91], nL>=6",15.0,90,0,G
+"E1.1a|heavy|final coverage in [0.88,0.91], nL>=6",24.0,150,0,G
+"E1.1a|heavy|final coverage in [0.88,0.91], nL>=6",51.0,150,0,G
+"E1.1a|normal|final coverage in [0.88,0.91], nL>=6",15.0,90,65,G
+"E1.1a|normal|final coverage in [0.88,0.91], nL>=6",24.0,150,127,G
+"E1.1a|normal|final coverage in [0.88,0.91], nL>=6",51.0,150,149,G
+"E1.1a|skewed|final coverage in [0.88,0.91], nL>=6",15.0,90,0,G
+"E1.1a|skewed|final coverage in [0.88,0.91], nL>=6",24.0,150,9,G
+"E1.1a|skewed|final coverage in [0.88,0.91], nL>=6",51.0,150,0,G
+"E1.1b|heavy|final within 0.02 of classical, nL>=6",15.0,90,65,G
+"E1.1b|heavy|final within 0.02 of classical, nL>=6",24.0,150,103,G
+"E1.1b|heavy|final within 0.02 of classical, nL>=6",51.0,150,86,G
+"E1.1b|normal|final within 0.02 of classical, nL>=6",15.0,90,61,G
+"E1.1b|normal|final within 0.02 of classical, nL>=6",24.0,150,127,G
+"E1.1b|normal|final within 0.02 of classical, nL>=6",51.0,150,149,G
+"E1.1b|skewed|final within 0.02 of classical, nL>=6",15.0,90,65,G
+"E1.1b|skewed|final within 0.02 of classical, nL>=6",24.0,150,101,G
+"E1.1b|skewed|final within 0.02 of classical, nL>=6",51.0,150,130,G
+"E1.2a|heavy|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",15.0,18,18,G
+"E1.2a|heavy|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",24.0,30,30,G
+"E1.2a|heavy|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",51.0,30,30,G
+"E1.2a|normal|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",15.0,18,17,G
+"E1.2a|normal|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",24.0,30,26,G
+"E1.2a|normal|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",51.0,30,27,G
+"E1.2a|skewed|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",15.0,18,18,G
+"E1.2a|skewed|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",24.0,30,27,G
+"E1.2a|skewed|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",51.0,30,29,G
+"E1.2b|heavy|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",15.0,18,12,G
+"E1.2b|heavy|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",24.0,30,22,G
+"E1.2b|heavy|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",51.0,30,30,G
+"E1.2b|normal|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",15.0,18,12,G
+"E1.2b|normal|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",24.0,30,27,G
+"E1.2b|normal|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",51.0,30,30,G
+"E1.2b|skewed|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",15.0,18,12,G
+"E1.2b|skewed|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",24.0,30,25,G
+"E1.2b|skewed|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",51.0,30,30,G
+E1.2c|heavy|kappa0 lin vs no-lin coverage differ < 0.01,15.0,40,37,G
+E1.2c|heavy|kappa0 lin vs no-lin coverage differ < 0.01,24.0,60,58,G
+E1.2c|heavy|kappa0 lin vs no-lin coverage differ < 0.01,51.0,60,60,G
+E1.2c|normal|kappa0 lin vs no-lin coverage differ < 0.01,15.0,40,40,G
+E1.2c|normal|kappa0 lin vs no-lin coverage differ < 0.01,24.0,60,60,G
+E1.2c|normal|kappa0 lin vs no-lin coverage differ < 0.01,51.0,60,60,G
+E1.2c|skewed|kappa0 lin vs no-lin coverage differ < 0.01,15.0,40,40,G
+E1.2c|skewed|kappa0 lin vs no-lin coverage differ < 0.01,24.0,60,60,G
+E1.2c|skewed|kappa0 lin vs no-lin coverage differ < 0.01,51.0,60,60,G
+"E1.3a|heavy|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",15.0,54,36,G
+"E1.3a|heavy|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",24.0,72,47,G
+"E1.3a|heavy|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",51.0,18,18,G
+"E1.3a|normal|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",15.0,54,32,G
+"E1.3a|normal|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",24.0,72,37,G
+"E1.3a|normal|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",51.0,18,6,G
+"E1.3a|skewed|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",15.0,54,34,G
+"E1.3a|skewed|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",24.0,72,46,G
+"E1.3a|skewed|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",51.0,18,9,G
+"E1.3b|heavy|classical minus final est/emp < 0.05, G51 nL6-12",51.0,90,72,G
+"E1.3b|normal|classical minus final est/emp < 0.05, G51 nL6-12",51.0,90,88,G
+"E1.3b|skewed|classical minus final est/emp < 0.05, G51 nL6-12",51.0,90,83,G
+E1.4a|normal G24 nL8 classical per-population 5-95 range >= 0.03,24.0,30,28,G
+E1.4b|normal G24 nL8 classical per-population p05 > 0.87,24.0,30,30,G
+"E1.4c|heavy G24 classical coverage averaged over cells in [0.85,0.89], per nL",24.0,6,1,G
+"E1.4c|skewed G24 classical coverage averaged over cells in [0.85,0.89], per nL",24.0,6,3,G
+E1.5a|heavy|tuned/classical variance < 1 above break-even,15.0,30,30,G
+E1.5a|heavy|tuned/classical variance < 1 above break-even,24.0,78,78,G
+E1.5a|heavy|tuned/classical variance < 1 above break-even,51.0,78,78,G
+E1.5a|normal|tuned/classical variance < 1 above break-even,15.0,30,30,G
+E1.5a|normal|tuned/classical variance < 1 above break-even,24.0,78,75,G
+E1.5a|normal|tuned/classical variance < 1 above break-even,51.0,78,78,G
+E1.5a|skewed|tuned/classical variance < 1 above break-even,15.0,30,30,G
+E1.5a|skewed|tuned/classical variance < 1 above break-even,24.0,78,78,G
+E1.5a|skewed|tuned/classical variance < 1 above break-even,51.0,78,78,G
+E1.5b|heavy|tuned/classical variance > 1 in >= half below break-even (nL>=6),15.0,42,1,G
+E1.5b|heavy|tuned/classical variance > 1 in >= half below break-even (nL>=6),24.0,42,0,G
+E1.5b|heavy|tuned/classical variance > 1 in >= half below break-even (nL>=6),51.0,42,0,G
+E1.5b|normal|tuned/classical variance > 1 in >= half below break-even (nL>=6),15.0,42,5,G
+E1.5b|normal|tuned/classical variance > 1 in >= half below break-even (nL>=6),24.0,42,0,G
+E1.5b|normal|tuned/classical variance > 1 in >= half below break-even (nL>=6),51.0,42,0,G
+E1.5b|skewed|tuned/classical variance > 1 in >= half below break-even (nL>=6),15.0,42,1,G
+E1.5b|skewed|tuned/classical variance > 1 in >= half below break-even (nL>=6),24.0,42,0,G
+E1.5b|skewed|tuned/classical variance > 1 in >= half below break-even (nL>=6),51.0,42,0,G
+acceptance3_exceedance,24.0,2,0,G
+acceptance3_exceedance,51.0,1,0,G
+"E1.1a|heavy|final coverage in [0.88,0.91], nL>=6",6.0,90,0,n_L
+"E1.1a|heavy|final coverage in [0.88,0.91], nL>=6",8.0,90,0,n_L
+"E1.1a|heavy|final coverage in [0.88,0.91], nL>=6",12.0,90,0,n_L
+"E1.1a|heavy|final coverage in [0.88,0.91], nL>=6",16.0,60,0,n_L
+"E1.1a|heavy|final coverage in [0.88,0.91], nL>=6",20.0,60,0,n_L
+"E1.1a|normal|final coverage in [0.88,0.91], nL>=6",6.0,90,82,n_L
+"E1.1a|normal|final coverage in [0.88,0.91], nL>=6",8.0,90,82,n_L
+"E1.1a|normal|final coverage in [0.88,0.91], nL>=6",12.0,90,76,n_L
+"E1.1a|normal|final coverage in [0.88,0.91], nL>=6",16.0,60,53,n_L
+"E1.1a|normal|final coverage in [0.88,0.91], nL>=6",20.0,60,48,n_L
+"E1.1a|skewed|final coverage in [0.88,0.91], nL>=6",6.0,90,0,n_L
+"E1.1a|skewed|final coverage in [0.88,0.91], nL>=6",8.0,90,0,n_L
+"E1.1a|skewed|final coverage in [0.88,0.91], nL>=6",12.0,90,0,n_L
+"E1.1a|skewed|final coverage in [0.88,0.91], nL>=6",16.0,60,0,n_L
+"E1.1a|skewed|final coverage in [0.88,0.91], nL>=6",20.0,60,9,n_L
+"E1.1b|heavy|final within 0.02 of classical, nL>=6",6.0,90,63,n_L
+"E1.1b|heavy|final within 0.02 of classical, nL>=6",8.0,90,68,n_L
+"E1.1b|heavy|final within 0.02 of classical, nL>=6",12.0,90,53,n_L
+"E1.1b|heavy|final within 0.02 of classical, nL>=6",16.0,60,39,n_L
+"E1.1b|heavy|final within 0.02 of classical, nL>=6",20.0,60,31,n_L
+"E1.1b|normal|final within 0.02 of classical, nL>=6",6.0,90,81,n_L
+"E1.1b|normal|final within 0.02 of classical, nL>=6",8.0,90,80,n_L
+"E1.1b|normal|final within 0.02 of classical, nL>=6",12.0,90,74,n_L
+"E1.1b|normal|final within 0.02 of classical, nL>=6",16.0,60,54,n_L
+"E1.1b|normal|final within 0.02 of classical, nL>=6",20.0,60,48,n_L
+"E1.1b|skewed|final within 0.02 of classical, nL>=6",6.0,90,74,n_L
+"E1.1b|skewed|final within 0.02 of classical, nL>=6",8.0,90,72,n_L
+"E1.1b|skewed|final within 0.02 of classical, nL>=6",12.0,90,61,n_L
+"E1.1b|skewed|final within 0.02 of classical, nL>=6",16.0,60,47,n_L
+"E1.1b|skewed|final within 0.02 of classical, nL>=6",20.0,60,42,n_L
+"E1.2a|heavy|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",6.0,18,18,n_L
+"E1.2a|heavy|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",8.0,18,18,n_L
+"E1.2a|heavy|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",12.0,18,18,n_L
+"E1.2a|heavy|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",16.0,12,12,n_L
+"E1.2a|heavy|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",20.0,12,12,n_L
+"E1.2a|normal|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",6.0,18,18,n_L
+"E1.2a|normal|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",8.0,18,18,n_L
+"E1.2a|normal|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",12.0,18,17,n_L
+"E1.2a|normal|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",16.0,12,9,n_L
+"E1.2a|normal|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",20.0,12,8,n_L
+"E1.2a|skewed|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",6.0,18,18,n_L
+"E1.2a|skewed|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",8.0,18,18,n_L
+"E1.2a|skewed|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",12.0,18,18,n_L
+"E1.2a|skewed|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",16.0,12,11,n_L
+"E1.2a|skewed|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",20.0,12,9,n_L
+"E1.2b|heavy|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",6.0,18,17,n_L
+"E1.2b|heavy|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",8.0,18,16,n_L
+"E1.2b|heavy|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",12.0,18,14,n_L
+"E1.2b|heavy|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",16.0,12,9,n_L
+"E1.2b|heavy|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",20.0,12,8,n_L
+"E1.2b|normal|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",6.0,18,17,n_L
+"E1.2b|normal|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",8.0,18,16,n_L
+"E1.2b|normal|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",12.0,18,15,n_L
+"E1.2b|normal|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",16.0,12,12,n_L
+"E1.2b|normal|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",20.0,12,9,n_L
+"E1.2b|skewed|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",6.0,18,17,n_L
+"E1.2b|skewed|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",8.0,18,16,n_L
+"E1.2b|skewed|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",12.0,18,15,n_L
+"E1.2b|skewed|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",16.0,12,10,n_L
+"E1.2b|skewed|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",20.0,12,9,n_L
+E1.2c|heavy|kappa0 lin vs no-lin coverage differ < 0.01,4.0,30,30,n_L
+E1.2c|heavy|kappa0 lin vs no-lin coverage differ < 0.01,6.0,30,27,n_L
+E1.2c|heavy|kappa0 lin vs no-lin coverage differ < 0.01,8.0,30,28,n_L
+E1.2c|heavy|kappa0 lin vs no-lin coverage differ < 0.01,12.0,30,30,n_L
+E1.2c|heavy|kappa0 lin vs no-lin coverage differ < 0.01,16.0,20,20,n_L
+E1.2c|heavy|kappa0 lin vs no-lin coverage differ < 0.01,20.0,20,20,n_L
+E1.2c|normal|kappa0 lin vs no-lin coverage differ < 0.01,4.0,30,30,n_L
+E1.2c|normal|kappa0 lin vs no-lin coverage differ < 0.01,6.0,30,30,n_L
+E1.2c|normal|kappa0 lin vs no-lin coverage differ < 0.01,8.0,30,30,n_L
+E1.2c|normal|kappa0 lin vs no-lin coverage differ < 0.01,12.0,30,30,n_L
+E1.2c|normal|kappa0 lin vs no-lin coverage differ < 0.01,16.0,20,20,n_L
+E1.2c|normal|kappa0 lin vs no-lin coverage differ < 0.01,20.0,20,20,n_L
+E1.2c|skewed|kappa0 lin vs no-lin coverage differ < 0.01,4.0,30,30,n_L
+E1.2c|skewed|kappa0 lin vs no-lin coverage differ < 0.01,6.0,30,30,n_L
+E1.2c|skewed|kappa0 lin vs no-lin coverage differ < 0.01,8.0,30,30,n_L
+E1.2c|skewed|kappa0 lin vs no-lin coverage differ < 0.01,12.0,30,30,n_L
+E1.2c|skewed|kappa0 lin vs no-lin coverage differ < 0.01,16.0,20,20,n_L
+E1.2c|skewed|kappa0 lin vs no-lin coverage differ < 0.01,20.0,20,20,n_L
+"E1.3a|heavy|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",6.0,18,15,n_L
+"E1.3a|heavy|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",8.0,36,31,n_L
+"E1.3a|heavy|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",12.0,36,21,n_L
+"E1.3a|heavy|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",16.0,18,9,n_L
+"E1.3a|heavy|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",20.0,36,25,n_L
+"E1.3a|normal|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",6.0,18,14,n_L
+"E1.3a|normal|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",8.0,36,19,n_L
+"E1.3a|normal|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",12.0,36,21,n_L
+"E1.3a|normal|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",16.0,18,10,n_L
+"E1.3a|normal|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",20.0,36,11,n_L
+"E1.3a|skewed|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",6.0,18,13,n_L
+"E1.3a|skewed|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",8.0,36,28,n_L
+"E1.3a|skewed|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",12.0,36,22,n_L
+"E1.3a|skewed|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",16.0,18,10,n_L
+"E1.3a|skewed|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",20.0,36,16,n_L
+"E1.3b|heavy|classical minus final est/emp < 0.05, G51 nL6-12",6.0,30,26,n_L
+"E1.3b|heavy|classical minus final est/emp < 0.05, G51 nL6-12",8.0,30,23,n_L
+"E1.3b|heavy|classical minus final est/emp < 0.05, G51 nL6-12",12.0,30,23,n_L
+"E1.3b|normal|classical minus final est/emp < 0.05, G51 nL6-12",6.0,30,30,n_L
+"E1.3b|normal|classical minus final est/emp < 0.05, G51 nL6-12",8.0,30,29,n_L
+"E1.3b|normal|classical minus final est/emp < 0.05, G51 nL6-12",12.0,30,29,n_L
+"E1.3b|skewed|classical minus final est/emp < 0.05, G51 nL6-12",6.0,30,28,n_L
+"E1.3b|skewed|classical minus final est/emp < 0.05, G51 nL6-12",8.0,30,29,n_L
+"E1.3b|skewed|classical minus final est/emp < 0.05, G51 nL6-12",12.0,30,26,n_L
+E1.4a|normal G24 nL8 classical per-population 5-95 range >= 0.03,8.0,30,28,n_L
+E1.4b|normal G24 nL8 classical per-population p05 > 0.87,8.0,30,30,n_L
+"E1.4c|heavy G24 classical coverage averaged over cells in [0.85,0.89], per nL",4.0,1,0,n_L
+"E1.4c|heavy G24 classical coverage averaged over cells in [0.85,0.89], per nL",6.0,1,0,n_L
+"E1.4c|heavy G24 classical coverage averaged over cells in [0.85,0.89], per nL",8.0,1,0,n_L
+"E1.4c|heavy G24 classical coverage averaged over cells in [0.85,0.89], per nL",12.0,1,0,n_L
+"E1.4c|heavy G24 classical coverage averaged over cells in [0.85,0.89], per nL",16.0,1,0,n_L
+"E1.4c|heavy G24 classical coverage averaged over cells in [0.85,0.89], per nL",20.0,1,1,n_L
+"E1.4c|skewed G24 classical coverage averaged over cells in [0.85,0.89], per nL",4.0,1,0,n_L
+"E1.4c|skewed G24 classical coverage averaged over cells in [0.85,0.89], per nL",6.0,1,0,n_L
+"E1.4c|skewed G24 classical coverage averaged over cells in [0.85,0.89], per nL",8.0,1,0,n_L
+"E1.4c|skewed G24 classical coverage averaged over cells in [0.85,0.89], per nL",12.0,1,1,n_L
+"E1.4c|skewed G24 classical coverage averaged over cells in [0.85,0.89], per nL",16.0,1,1,n_L
+"E1.4c|skewed G24 classical coverage averaged over cells in [0.85,0.89], per nL",20.0,1,1,n_L
+E1.5a|heavy|tuned/classical variance < 1 above break-even,8.0,36,36,n_L
+E1.5a|heavy|tuned/classical variance < 1 above break-even,12.0,54,54,n_L
+E1.5a|heavy|tuned/classical variance < 1 above break-even,16.0,48,48,n_L
+E1.5a|heavy|tuned/classical variance < 1 above break-even,20.0,48,48,n_L
+E1.5a|normal|tuned/classical variance < 1 above break-even,8.0,36,36,n_L
+E1.5a|normal|tuned/classical variance < 1 above break-even,12.0,54,54,n_L
+E1.5a|normal|tuned/classical variance < 1 above break-even,16.0,48,48,n_L
+E1.5a|normal|tuned/classical variance < 1 above break-even,20.0,48,45,n_L
+E1.5a|skewed|tuned/classical variance < 1 above break-even,8.0,36,36,n_L
+E1.5a|skewed|tuned/classical variance < 1 above break-even,12.0,54,54,n_L
+E1.5a|skewed|tuned/classical variance < 1 above break-even,16.0,48,48,n_L
+E1.5a|skewed|tuned/classical variance < 1 above break-even,20.0,48,48,n_L
+E1.5b|heavy|tuned/classical variance > 1 in >= half below break-even (nL>=6),6.0,72,0,n_L
+E1.5b|heavy|tuned/classical variance > 1 in >= half below break-even (nL>=6),8.0,36,0,n_L
+E1.5b|heavy|tuned/classical variance > 1 in >= half below break-even (nL>=6),12.0,18,1,n_L
+E1.5b|normal|tuned/classical variance > 1 in >= half below break-even (nL>=6),6.0,72,1,n_L
+E1.5b|normal|tuned/classical variance > 1 in >= half below break-even (nL>=6),8.0,36,1,n_L
+E1.5b|normal|tuned/classical variance > 1 in >= half below break-even (nL>=6),12.0,18,3,n_L
+E1.5b|skewed|tuned/classical variance > 1 in >= half below break-even (nL>=6),6.0,72,0,n_L
+E1.5b|skewed|tuned/classical variance > 1 in >= half below break-even (nL>=6),8.0,36,0,n_L
+E1.5b|skewed|tuned/classical variance > 1 in >= half below break-even (nL>=6),12.0,18,1,n_L
+acceptance3_exceedance,4.0,2,0,n_L
+acceptance3_exceedance,12.0,1,0,n_L
+"E1.1a|heavy|final coverage in [0.88,0.91], nL>=6",0.0,78,0,R2
+"E1.1a|heavy|final coverage in [0.88,0.91], nL>=6",0.2,78,0,R2
+"E1.1a|heavy|final coverage in [0.88,0.91], nL>=6",0.4,78,0,R2
+"E1.1a|heavy|final coverage in [0.88,0.91], nL>=6",0.7,78,0,R2
+"E1.1a|heavy|final coverage in [0.88,0.91], nL>=6",0.9,78,0,R2
+"E1.1a|normal|final coverage in [0.88,0.91], nL>=6",0.0,78,77,R2
+"E1.1a|normal|final coverage in [0.88,0.91], nL>=6",0.2,78,72,R2
+"E1.1a|normal|final coverage in [0.88,0.91], nL>=6",0.4,78,71,R2
+"E1.1a|normal|final coverage in [0.88,0.91], nL>=6",0.7,78,63,R2
+"E1.1a|normal|final coverage in [0.88,0.91], nL>=6",0.9,78,58,R2
+"E1.1a|skewed|final coverage in [0.88,0.91], nL>=6",0.0,78,0,R2
+"E1.1a|skewed|final coverage in [0.88,0.91], nL>=6",0.2,78,2,R2
+"E1.1a|skewed|final coverage in [0.88,0.91], nL>=6",0.4,78,2,R2
+"E1.1a|skewed|final coverage in [0.88,0.91], nL>=6",0.7,78,2,R2
+"E1.1a|skewed|final coverage in [0.88,0.91], nL>=6",0.9,78,3,R2
+"E1.1b|heavy|final within 0.02 of classical, nL>=6",0.0,78,48,R2
+"E1.1b|heavy|final within 0.02 of classical, nL>=6",0.2,78,50,R2
+"E1.1b|heavy|final within 0.02 of classical, nL>=6",0.4,78,54,R2
+"E1.1b|heavy|final within 0.02 of classical, nL>=6",0.7,78,48,R2
+"E1.1b|heavy|final within 0.02 of classical, nL>=6",0.9,78,54,R2
+"E1.1b|normal|final within 0.02 of classical, nL>=6",0.0,78,75,R2
+"E1.1b|normal|final within 0.02 of classical, nL>=6",0.2,78,72,R2
+"E1.1b|normal|final within 0.02 of classical, nL>=6",0.4,78,70,R2
+"E1.1b|normal|final within 0.02 of classical, nL>=6",0.7,78,62,R2
+"E1.1b|normal|final within 0.02 of classical, nL>=6",0.9,78,58,R2
+"E1.1b|skewed|final within 0.02 of classical, nL>=6",0.0,78,65,R2
+"E1.1b|skewed|final within 0.02 of classical, nL>=6",0.2,78,66,R2
+"E1.1b|skewed|final within 0.02 of classical, nL>=6",0.4,78,49,R2
+"E1.1b|skewed|final within 0.02 of classical, nL>=6",0.7,78,50,R2
+"E1.1b|skewed|final within 0.02 of classical, nL>=6",0.9,78,66,R2
+"E1.2a|heavy|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",0.4,26,26,R2
+"E1.2a|heavy|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",0.7,26,26,R2
+"E1.2a|heavy|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",0.9,26,26,R2
+"E1.2a|normal|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",0.4,26,26,R2
+"E1.2a|normal|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",0.7,26,23,R2
+"E1.2a|normal|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",0.9,26,21,R2
+"E1.2a|skewed|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",0.4,26,26,R2
+"E1.2a|skewed|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",0.7,26,25,R2
+"E1.2a|skewed|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",0.9,26,23,R2
+"E1.2b|heavy|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",0.4,26,23,R2
+"E1.2b|heavy|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",0.7,26,21,R2
+"E1.2b|heavy|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",0.9,26,20,R2
+"E1.2b|normal|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",0.4,26,24,R2
+"E1.2b|normal|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",0.7,26,23,R2
+"E1.2b|normal|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",0.9,26,22,R2
+"E1.2b|skewed|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",0.4,26,24,R2
+"E1.2b|skewed|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",0.7,26,22,R2
+"E1.2b|skewed|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",0.9,26,21,R2
+E1.2c|heavy|kappa0 lin vs no-lin coverage differ < 0.01,0.0,32,32,R2
+E1.2c|heavy|kappa0 lin vs no-lin coverage differ < 0.01,0.2,32,32,R2
+E1.2c|heavy|kappa0 lin vs no-lin coverage differ < 0.01,0.4,32,32,R2
+E1.2c|heavy|kappa0 lin vs no-lin coverage differ < 0.01,0.7,32,32,R2
+E1.2c|heavy|kappa0 lin vs no-lin coverage differ < 0.01,0.9,32,27,R2
+E1.2c|normal|kappa0 lin vs no-lin coverage differ < 0.01,0.0,32,32,R2
+E1.2c|normal|kappa0 lin vs no-lin coverage differ < 0.01,0.2,32,32,R2
+E1.2c|normal|kappa0 lin vs no-lin coverage differ < 0.01,0.4,32,32,R2
+E1.2c|normal|kappa0 lin vs no-lin coverage differ < 0.01,0.7,32,32,R2
+E1.2c|normal|kappa0 lin vs no-lin coverage differ < 0.01,0.9,32,32,R2
+E1.2c|skewed|kappa0 lin vs no-lin coverage differ < 0.01,0.0,32,32,R2
+E1.2c|skewed|kappa0 lin vs no-lin coverage differ < 0.01,0.2,32,32,R2
+E1.2c|skewed|kappa0 lin vs no-lin coverage differ < 0.01,0.4,32,32,R2
+E1.2c|skewed|kappa0 lin vs no-lin coverage differ < 0.01,0.7,32,32,R2
+E1.2c|skewed|kappa0 lin vs no-lin coverage differ < 0.01,0.9,32,32,R2
+"E1.3a|heavy|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",0.4,48,39,R2
+"E1.3a|heavy|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",0.7,48,32,R2
+"E1.3a|heavy|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",0.9,48,30,R2
+"E1.3a|normal|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",0.4,48,29,R2
+"E1.3a|normal|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",0.7,48,27,R2
+"E1.3a|normal|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",0.9,48,19,R2
+"E1.3a|skewed|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",0.4,48,35,R2
+"E1.3a|skewed|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",0.7,48,32,R2
+"E1.3a|skewed|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",0.9,48,22,R2
+"E1.3b|heavy|classical minus final est/emp < 0.05, G51 nL6-12",0.0,18,18,R2
+"E1.3b|heavy|classical minus final est/emp < 0.05, G51 nL6-12",0.2,18,18,R2
+"E1.3b|heavy|classical minus final est/emp < 0.05, G51 nL6-12",0.4,18,18,R2
+"E1.3b|heavy|classical minus final est/emp < 0.05, G51 nL6-12",0.7,18,13,R2
+"E1.3b|heavy|classical minus final est/emp < 0.05, G51 nL6-12",0.9,18,5,R2
+"E1.3b|normal|classical minus final est/emp < 0.05, G51 nL6-12",0.0,18,18,R2
+"E1.3b|normal|classical minus final est/emp < 0.05, G51 nL6-12",0.2,18,18,R2
+"E1.3b|normal|classical minus final est/emp < 0.05, G51 nL6-12",0.4,18,18,R2
+"E1.3b|normal|classical minus final est/emp < 0.05, G51 nL6-12",0.7,18,18,R2
+"E1.3b|normal|classical minus final est/emp < 0.05, G51 nL6-12",0.9,18,16,R2
+"E1.3b|skewed|classical minus final est/emp < 0.05, G51 nL6-12",0.0,18,18,R2
+"E1.3b|skewed|classical minus final est/emp < 0.05, G51 nL6-12",0.2,18,18,R2
+"E1.3b|skewed|classical minus final est/emp < 0.05, G51 nL6-12",0.4,18,18,R2
+"E1.3b|skewed|classical minus final est/emp < 0.05, G51 nL6-12",0.7,18,15,R2
+"E1.3b|skewed|classical minus final est/emp < 0.05, G51 nL6-12",0.9,18,14,R2
+E1.4a|normal G24 nL8 classical per-population 5-95 range >= 0.03,0.0,6,4,R2
+E1.4a|normal G24 nL8 classical per-population 5-95 range >= 0.03,0.2,6,6,R2
+E1.4a|normal G24 nL8 classical per-population 5-95 range >= 0.03,0.4,6,6,R2
+E1.4a|normal G24 nL8 classical per-population 5-95 range >= 0.03,0.7,6,6,R2
+E1.4a|normal G24 nL8 classical per-population 5-95 range >= 0.03,0.9,6,6,R2
+E1.4b|normal G24 nL8 classical per-population p05 > 0.87,0.0,6,6,R2
+E1.4b|normal G24 nL8 classical per-population p05 > 0.87,0.2,6,6,R2
+E1.4b|normal G24 nL8 classical per-population p05 > 0.87,0.4,6,6,R2
+E1.4b|normal G24 nL8 classical per-population p05 > 0.87,0.7,6,6,R2
+E1.4b|normal G24 nL8 classical per-population p05 > 0.87,0.9,6,6,R2
+E1.5a|heavy|tuned/classical variance < 1 above break-even,0.2,24,24,R2
+E1.5a|heavy|tuned/classical variance < 1 above break-even,0.4,42,42,R2
+E1.5a|heavy|tuned/classical variance < 1 above break-even,0.7,60,60,R2
+E1.5a|heavy|tuned/classical variance < 1 above break-even,0.9,60,60,R2
+E1.5a|normal|tuned/classical variance < 1 above break-even,0.2,24,21,R2
+E1.5a|normal|tuned/classical variance < 1 above break-even,0.4,42,42,R2
+E1.5a|normal|tuned/classical variance < 1 above break-even,0.7,60,60,R2
+E1.5a|normal|tuned/classical variance < 1 above break-even,0.9,60,60,R2
+E1.5a|skewed|tuned/classical variance < 1 above break-even,0.2,24,24,R2
+E1.5a|skewed|tuned/classical variance < 1 above break-even,0.4,42,42,R2
+E1.5a|skewed|tuned/classical variance < 1 above break-even,0.7,60,60,R2
+E1.5a|skewed|tuned/classical variance < 1 above break-even,0.9,60,60,R2
+E1.5b|heavy|tuned/classical variance > 1 in >= half below break-even (nL>=6),0.2,54,1,R2
+E1.5b|heavy|tuned/classical variance > 1 in >= half below break-even (nL>=6),0.4,36,0,R2
+E1.5b|heavy|tuned/classical variance > 1 in >= half below break-even (nL>=6),0.7,18,0,R2
+E1.5b|heavy|tuned/classical variance > 1 in >= half below break-even (nL>=6),0.9,18,0,R2
+E1.5b|normal|tuned/classical variance > 1 in >= half below break-even (nL>=6),0.2,54,5,R2
+E1.5b|normal|tuned/classical variance > 1 in >= half below break-even (nL>=6),0.4,36,0,R2
+E1.5b|normal|tuned/classical variance > 1 in >= half below break-even (nL>=6),0.7,18,0,R2
+E1.5b|normal|tuned/classical variance > 1 in >= half below break-even (nL>=6),0.9,18,0,R2
+E1.5b|skewed|tuned/classical variance > 1 in >= half below break-even (nL>=6),0.2,54,1,R2
+E1.5b|skewed|tuned/classical variance > 1 in >= half below break-even (nL>=6),0.4,36,0,R2
+E1.5b|skewed|tuned/classical variance > 1 in >= half below break-even (nL>=6),0.7,18,0,R2
+E1.5b|skewed|tuned/classical variance > 1 in >= half below break-even (nL>=6),0.9,18,0,R2
+acceptance3_exceedance,0.0,1,0,R2
+acceptance3_exceedance,0.4,1,0,R2
+acceptance3_exceedance,0.9,1,0,R2
+"E1.1a|heavy|final coverage in [0.88,0.91], nL>=6",0.0,130,0,kappa
+"E1.1a|heavy|final coverage in [0.88,0.91], nL>=6",2.0,130,0,kappa
+"E1.1a|heavy|final coverage in [0.88,0.91], nL>=6",10.0,130,0,kappa
+"E1.1a|normal|final coverage in [0.88,0.91], nL>=6",0.0,130,114,kappa
+"E1.1a|normal|final coverage in [0.88,0.91], nL>=6",2.0,130,112,kappa
+"E1.1a|normal|final coverage in [0.88,0.91], nL>=6",10.0,130,115,kappa
+"E1.1a|skewed|final coverage in [0.88,0.91], nL>=6",0.0,130,3,kappa
+"E1.1a|skewed|final coverage in [0.88,0.91], nL>=6",2.0,130,2,kappa
+"E1.1a|skewed|final coverage in [0.88,0.91], nL>=6",10.0,130,4,kappa
+"E1.1b|heavy|final within 0.02 of classical, nL>=6",0.0,130,83,kappa
+"E1.1b|heavy|final within 0.02 of classical, nL>=6",2.0,130,91,kappa
+"E1.1b|heavy|final within 0.02 of classical, nL>=6",10.0,130,80,kappa
+"E1.1b|normal|final within 0.02 of classical, nL>=6",0.0,130,111,kappa
+"E1.1b|normal|final within 0.02 of classical, nL>=6",2.0,130,112,kappa
+"E1.1b|normal|final within 0.02 of classical, nL>=6",10.0,130,114,kappa
+"E1.1b|skewed|final within 0.02 of classical, nL>=6",0.0,130,93,kappa
+"E1.1b|skewed|final within 0.02 of classical, nL>=6",2.0,130,97,kappa
+"E1.1b|skewed|final within 0.02 of classical, nL>=6",10.0,130,106,kappa
+"E1.2a|heavy|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",10.0,78,78,kappa
+"E1.2a|normal|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",10.0,78,70,kappa
+"E1.2a|skewed|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",10.0,78,74,kappa
+"E1.2b|heavy|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",10.0,78,64,kappa
+"E1.2b|normal|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",10.0,78,69,kappa
+"E1.2b|skewed|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",10.0,78,67,kappa
+E1.2c|heavy|kappa0 lin vs no-lin coverage differ < 0.01,0.0,160,155,kappa
+E1.2c|normal|kappa0 lin vs no-lin coverage differ < 0.01,0.0,160,160,kappa
+E1.2c|skewed|kappa0 lin vs no-lin coverage differ < 0.01,0.0,160,160,kappa
+"E1.3a|heavy|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",0.0,48,34,kappa
+"E1.3a|heavy|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",2.0,48,33,kappa
+"E1.3a|heavy|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",10.0,48,34,kappa
+"E1.3a|normal|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",0.0,48,23,kappa
+"E1.3a|normal|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",2.0,48,27,kappa
+"E1.3a|normal|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",10.0,48,25,kappa
+"E1.3a|skewed|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",0.0,48,31,kappa
+"E1.3a|skewed|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",2.0,48,32,kappa
+"E1.3a|skewed|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",10.0,48,26,kappa
+"E1.3b|heavy|classical minus final est/emp < 0.05, G51 nL6-12",0.0,30,23,kappa
+"E1.3b|heavy|classical minus final est/emp < 0.05, G51 nL6-12",2.0,30,25,kappa
+"E1.3b|heavy|classical minus final est/emp < 0.05, G51 nL6-12",10.0,30,24,kappa
+"E1.3b|normal|classical minus final est/emp < 0.05, G51 nL6-12",0.0,30,29,kappa
+"E1.3b|normal|classical minus final est/emp < 0.05, G51 nL6-12",2.0,30,30,kappa
+"E1.3b|normal|classical minus final est/emp < 0.05, G51 nL6-12",10.0,30,29,kappa
+"E1.3b|skewed|classical minus final est/emp < 0.05, G51 nL6-12",0.0,30,28,kappa
+"E1.3b|skewed|classical minus final est/emp < 0.05, G51 nL6-12",2.0,30,28,kappa
+"E1.3b|skewed|classical minus final est/emp < 0.05, G51 nL6-12",10.0,30,27,kappa
+E1.4a|normal G24 nL8 classical per-population 5-95 range >= 0.03,0.0,10,10,kappa
+E1.4a|normal G24 nL8 classical per-population 5-95 range >= 0.03,2.0,10,10,kappa
+E1.4a|normal G24 nL8 classical per-population 5-95 range >= 0.03,10.0,10,8,kappa
+E1.4b|normal G24 nL8 classical per-population p05 > 0.87,0.0,10,10,kappa
+E1.4b|normal G24 nL8 classical per-population p05 > 0.87,2.0,10,10,kappa
+E1.4b|normal G24 nL8 classical per-population p05 > 0.87,10.0,10,10,kappa
+E1.5a|heavy|tuned/classical variance < 1 above break-even,0.0,62,62,kappa
+E1.5a|heavy|tuned/classical variance < 1 above break-even,2.0,62,62,kappa
+E1.5a|heavy|tuned/classical variance < 1 above break-even,10.0,62,62,kappa
+E1.5a|normal|tuned/classical variance < 1 above break-even,0.0,62,61,kappa
+E1.5a|normal|tuned/classical variance < 1 above break-even,2.0,62,61,kappa
+E1.5a|normal|tuned/classical variance < 1 above break-even,10.0,62,61,kappa
+E1.5a|skewed|tuned/classical variance < 1 above break-even,0.0,62,62,kappa
+E1.5a|skewed|tuned/classical variance < 1 above break-even,2.0,62,62,kappa
+E1.5a|skewed|tuned/classical variance < 1 above break-even,10.0,62,62,kappa
+E1.5b|heavy|tuned/classical variance > 1 in >= half below break-even (nL>=6),0.0,42,0,kappa
+E1.5b|heavy|tuned/classical variance > 1 in >= half below break-even (nL>=6),2.0,42,0,kappa
+E1.5b|heavy|tuned/classical variance > 1 in >= half below break-even (nL>=6),10.0,42,1,kappa
+E1.5b|normal|tuned/classical variance > 1 in >= half below break-even (nL>=6),0.0,42,1,kappa
+E1.5b|normal|tuned/classical variance > 1 in >= half below break-even (nL>=6),2.0,42,1,kappa
+E1.5b|normal|tuned/classical variance > 1 in >= half below break-even (nL>=6),10.0,42,3,kappa
+E1.5b|skewed|tuned/classical variance > 1 in >= half below break-even (nL>=6),0.0,42,0,kappa
+E1.5b|skewed|tuned/classical variance > 1 in >= half below break-even (nL>=6),2.0,42,0,kappa
+E1.5b|skewed|tuned/classical variance > 1 in >= half below break-even (nL>=6),10.0,42,1,kappa
+acceptance3_exceedance,2.0,1,0,kappa
+acceptance3_exceedance,10.0,2,0,kappa
+"E1.1a|heavy|final coverage in [0.88,0.91], nL>=6",0.6,195,0,lambda_star
+"E1.1a|heavy|final coverage in [0.88,0.91], nL>=6",1.2,195,0,lambda_star
+"E1.1a|normal|final coverage in [0.88,0.91], nL>=6",0.6,195,146,lambda_star
+"E1.1a|normal|final coverage in [0.88,0.91], nL>=6",1.2,195,195,lambda_star
+"E1.1a|skewed|final coverage in [0.88,0.91], nL>=6",0.6,195,0,lambda_star
+"E1.1a|skewed|final coverage in [0.88,0.91], nL>=6",1.2,195,9,lambda_star
+"E1.1b|heavy|final within 0.02 of classical, nL>=6",0.6,195,115,lambda_star
+"E1.1b|heavy|final within 0.02 of classical, nL>=6",1.2,195,139,lambda_star
+"E1.1b|normal|final within 0.02 of classical, nL>=6",0.6,195,144,lambda_star
+"E1.1b|normal|final within 0.02 of classical, nL>=6",1.2,195,193,lambda_star
+"E1.1b|skewed|final within 0.02 of classical, nL>=6",0.6,195,132,lambda_star
+"E1.1b|skewed|final within 0.02 of classical, nL>=6",1.2,195,164,lambda_star
+"E1.2a|heavy|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",0.6,39,39,lambda_star
+"E1.2a|heavy|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",1.2,39,39,lambda_star
+"E1.2a|normal|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",0.6,39,39,lambda_star
+"E1.2a|normal|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",1.2,39,31,lambda_star
+"E1.2a|skewed|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",0.6,39,39,lambda_star
+"E1.2a|skewed|no-lin est/emp > 2 in >= half, kappa10 R2>=0.4 nL>=6",1.2,39,35,lambda_star
+"E1.2b|heavy|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",0.6,39,26,lambda_star
+"E1.2b|heavy|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",1.2,39,38,lambda_star
+"E1.2b|normal|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",0.6,39,30,lambda_star
+"E1.2b|normal|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",1.2,39,39,lambda_star
+"E1.2b|skewed|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",0.6,39,28,lambda_star
+"E1.2b|skewed|lin est/emp in [0.85,1.10], kappa10 R2>=0.4 nL>=6",1.2,39,39,lambda_star
+E1.2c|heavy|kappa0 lin vs no-lin coverage differ < 0.01,0.6,80,76,lambda_star
+E1.2c|heavy|kappa0 lin vs no-lin coverage differ < 0.01,1.2,80,79,lambda_star
+E1.2c|normal|kappa0 lin vs no-lin coverage differ < 0.01,0.6,80,80,lambda_star
+E1.2c|normal|kappa0 lin vs no-lin coverage differ < 0.01,1.2,80,80,lambda_star
+E1.2c|skewed|kappa0 lin vs no-lin coverage differ < 0.01,0.6,80,80,lambda_star
+E1.2c|skewed|kappa0 lin vs no-lin coverage differ < 0.01,1.2,80,80,lambda_star
+"E1.3a|heavy|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",0.6,72,32,lambda_star
+"E1.3a|heavy|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",1.2,72,69,lambda_star
+"E1.3a|normal|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",0.6,72,41,lambda_star
+"E1.3a|normal|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",1.2,72,34,lambda_star
+"E1.3a|skewed|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",0.6,72,35,lambda_star
+"E1.3a|skewed|classical minus final est/emp in [0.03,0.15], nL/G>=1/3 R2>=0.4",1.2,72,54,lambda_star
+"E1.3b|heavy|classical minus final est/emp < 0.05, G51 nL6-12",0.6,45,33,lambda_star
+"E1.3b|heavy|classical minus final est/emp < 0.05, G51 nL6-12",1.2,45,39,lambda_star
+"E1.3b|normal|classical minus final est/emp < 0.05, G51 nL6-12",0.6,45,43,lambda_star
+"E1.3b|normal|classical minus final est/emp < 0.05, G51 nL6-12",1.2,45,45,lambda_star
+"E1.3b|skewed|classical minus final est/emp < 0.05, G51 nL6-12",0.6,45,38,lambda_star
+"E1.3b|skewed|classical minus final est/emp < 0.05, G51 nL6-12",1.2,45,45,lambda_star
+E1.4a|normal G24 nL8 classical per-population 5-95 range >= 0.03,0.6,15,14,lambda_star
+E1.4a|normal G24 nL8 classical per-population 5-95 range >= 0.03,1.2,15,14,lambda_star
+E1.4b|normal G24 nL8 classical per-population p05 > 0.87,0.6,15,15,lambda_star
+E1.4b|normal G24 nL8 classical per-population p05 > 0.87,1.2,15,15,lambda_star
+E1.5a|heavy|tuned/classical variance < 1 above break-even,0.6,93,93,lambda_star
+E1.5a|heavy|tuned/classical variance < 1 above break-even,1.2,93,93,lambda_star
+E1.5a|normal|tuned/classical variance < 1 above break-even,0.6,93,90,lambda_star
+E1.5a|normal|tuned/classical variance < 1 above break-even,1.2,93,93,lambda_star
+E1.5a|skewed|tuned/classical variance < 1 above break-even,0.6,93,93,lambda_star
+E1.5a|skewed|tuned/classical variance < 1 above break-even,1.2,93,93,lambda_star
+E1.5b|heavy|tuned/classical variance > 1 in >= half below break-even (nL>=6),0.6,63,1,lambda_star
+E1.5b|heavy|tuned/classical variance > 1 in >= half below break-even (nL>=6),1.2,63,0,lambda_star
+E1.5b|normal|tuned/classical variance > 1 in >= half below break-even (nL>=6),0.6,63,5,lambda_star
+E1.5b|normal|tuned/classical variance > 1 in >= half below break-even (nL>=6),1.2,63,0,lambda_star
+E1.5b|skewed|tuned/classical variance > 1 in >= half below break-even (nL>=6),0.6,63,1,lambda_star
+E1.5b|skewed|tuned/classical variance > 1 in >= half below break-even (nL>=6),1.2,63,0,lambda_star
+acceptance3_exceedance,0.6,2,0,lambda_star
+acceptance3_exceedance,1.2,1,0,lambda_star

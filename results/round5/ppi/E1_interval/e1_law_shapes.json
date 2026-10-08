@@ -1,0 +1,12 @@
+{
+ "target_source": "e1_contribution_moments.csv, CCRCC, theta3, donor-weighted, |skew_z| over 50 genes (zbar_g does not depend on the predictor; arm hoptimus0 rows used)",
+ "ccrcc_median_abs_skew": 1.7577185950460996,
+ "ccrcc_p90_abs_skew": 2.929487767519171,
+ "rule": "sigma such that the median over 20,000 simulated populations of 24 of |sample skewness| of exp(sigma Z) equals the target (bisection, 40 steps)",
+ "sigma_skewed": 0.940959499999249,
+ "sigma_heavy": 1.9394834999993038,
+ "check_median_abs_skew_at_sigma_skewed": 1.7448117412959374,
+ "check_median_abs_skew_at_sigma_heavy": 2.9109112466160667,
+ "population_skewness_skewed": 5.279118757195525,
+ "population_skewness_heavy": 291.8029097954979
+}

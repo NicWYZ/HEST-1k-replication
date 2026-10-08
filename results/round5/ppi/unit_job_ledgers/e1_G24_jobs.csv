@@ -1,0 +1,8 @@
+job_id,stage,unit,purpose,partition,account,node,submit,start,end,elapsed,state,req_mem,req_cpus,max_rss_gb,note
+4199002,E1,G24_smoke,"smoke: normal nL8 R2 0.4 lam 0.6 kappa 10, 50 draws",spill,rc_tengfei_pi,c0413,2026-10-07T18:13:30,2026-10-07T18:14:20,2026-10-07T18:14:29,00:00:09,COMPLETED,8G,2,0.24,"slurm partition general requested, ran on spill; cell took 0.3 s for 50 draws"
+4199048,E1,G24_normal_nl4-6-8,"normal law grid n_L 4,6,8 (90 cells)",spill,rc_tengfei_pi,c0315,2026-10-07T18:14:56,2026-10-07T18:15:17,2026-10-07T18:21:11,00:05:54,COMPLETED,8G,2,0.23,hpc job 69d279db
+4199052,E1,G24_normal_nl12-16-20,"normal law grid n_L 12,16,20 (90 cells)",spill,rc_tengfei_pi,c0402,2026-10-07T18:15:00,2026-10-07T18:16:19,2026-10-07T18:23:38,00:07:19,COMPLETED,8G,2,0.31,hpc job fe1d37a6
+4199526,E1,G24__skewed__nl4-6-8,"skewed log-normal grid, 90 cells",spill,rc_tengfei_pi,c0313,2026-10-07T18:30:37,2026-10-07T18:31:24,2026-10-07T18:38:01,00:06:37,COMPLETED,8G,2,0.32,"partition general requested, ran on spill"
+4199527,E1,G24__skewed__nl12-16-20,"skewed log-normal grid, 90 cells",spill,rc_tengfei_pi,c151409,2026-10-07T18:30:40,2026-10-07T18:31:24,2026-10-07T18:36:30,00:05:06,COMPLETED,8G,2,0.19,"partition general requested, ran on spill"
+4199528,E1,G24__heavy__nl4-6-8,"heavy log-normal grid, 90 cells",spill,rc_tengfei_pi,c151409,2026-10-07T18:30:44,2026-10-07T18:31:24,2026-10-07T18:36:06,00:04:42,COMPLETED,8G,2,0.19,"partition general requested, ran on spill"
+4199531,E1,G24__heavy__nl12-16-20,"heavy log-normal grid, 90 cells",spill,rc_tengfei_pi,c130604,2026-10-07T18:30:48,2026-10-07T18:31:24,2026-10-07T18:37:21,00:05:57,COMPLETED,8G,2,0.21,"partition general requested, ran on spill"
