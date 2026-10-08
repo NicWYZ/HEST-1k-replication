@@ -1,0 +1,9 @@
+# sacct -j 4202818 -X -P
+JobID|Account|Partition|NCPUS|ReqMem|Submit|Start|Elapsed|MaxRSS|State|ExitCode|NodeList
+4202818|rc_tengfei_pi|spill|4|16G|2026-10-07T19:38:08|2026-10-07T19:38:47|00:51:01||COMPLETED|0:0|c130601
+
+# sacct -j 4202818 -P (all steps)
+JobID|Account|Partition|NCPUS|ReqMem|Submit|Start|Elapsed|MaxRSS|State|ExitCode|NodeList
+4202818|rc_tengfei_pi|spill|4|16G|2026-10-07T19:38:08|2026-10-07T19:38:47|00:51:01||COMPLETED|0:0|c130601
+4202818.batch|rc_tengfei_pi||4||2026-10-07T19:38:47|2026-10-07T19:38:47|00:51:01|1730136K|COMPLETED|0:0|c130601
+4202818.extern|rc_tengfei_pi||4||2026-10-07T19:38:47|2026-10-07T19:38:47|00:51:01||COMPLETED|0:0|c130601

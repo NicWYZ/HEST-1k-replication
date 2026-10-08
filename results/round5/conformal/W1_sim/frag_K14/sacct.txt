@@ -1,0 +1,28 @@
+JobID|Account|Partition|NCPUS|ReqMem|Submit|Start|Elapsed|MaxRSS|State|ExitCode|NodeList
+4202822|rc_tengfei_pi|spill|4|16G|2026-10-07T19:38:13|2026-10-07T19:38:47|00:43:45||COMPLETED|0:0|c151412
+---
+JobID|Account|Partition|NCPUS|ReqMem|Submit|Start|Elapsed|MaxRSS|State|ExitCode|NodeList
+4202822|rc_tengfei_pi|spill|4|16G|2026-10-07T19:38:13|2026-10-07T19:38:47|00:43:45||COMPLETED|0:0|c151412
+4202822.batch|rc_tengfei_pi||4||2026-10-07T19:38:47|2026-10-07T19:38:47|00:43:45|1743100K|COMPLETED|0:0|c151412
+4202822.extern|rc_tengfei_pi||4||2026-10-07T19:38:47|2026-10-07T19:38:47|00:43:47||COMPLETED|0:0|c151412
+---
+   ActiveFeatures=rhel9,amd,avx512
+partition=spill node=c151412.ll.unc.edu jobid=4202822
+model name	: AMD EPYC 9654 96-Core Processor
+[selftest] {'n_draws': 400, 'max_endpoint_residual': np.float64(3.552713678800501e-15), 'n_grid_points': 1600400, 'n_mismatch': 0}
+[cell 1/74] normal|K14|N21|share0.1|tau0.0 86s
+[cell 2/74] normal|K14|N21|share0.1|tau0.3 86s
+cmd.sh
+job.sh
+_lock
+_pgid
+_provenance.json
+PROVENANCE.txt
+slurm-4202822.out
+_status.json
+_submitted
+w1_cell_seconds__K14.csv
+w1_grid__K14.csv
+w1_narrowest_valid__K14.csv
+w1_within_full_selftest__K14.csv
+w1_within_full_shape__K14.csv

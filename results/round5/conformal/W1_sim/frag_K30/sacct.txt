@@ -1,0 +1,9 @@
+# sacct -X
+JobID|Account|Partition|NCPUS|ReqMem|Submit|Start|Elapsed|MaxRSS|State|ExitCode|NodeList
+4202827|rc_tengfei_pi|spill|4|16G|2026-10-07T19:38:22|2026-10-07T19:38:47|01:36:44||COMPLETED|0:0|c151604
+
+# sacct with steps
+JobID|Account|Partition|NCPUS|ReqMem|Submit|Start|Elapsed|MaxRSS|State|ExitCode|NodeList
+4202827|rc_tengfei_pi|spill|4|16G|2026-10-07T19:38:22|2026-10-07T19:38:47|01:36:44||COMPLETED|0:0|c151604
+4202827.batch|rc_tengfei_pi||4||2026-10-07T19:38:47|2026-10-07T19:38:47|01:36:44|1764476K|COMPLETED|0:0|c151604
+4202827.extern|rc_tengfei_pi||4||2026-10-07T19:38:47|2026-10-07T19:38:47|01:36:44||COMPLETED|0:0|c151604

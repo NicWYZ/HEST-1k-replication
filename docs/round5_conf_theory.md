@@ -48,4 +48,58 @@ Not found in any paper searched so far. The device in Angelopoulos, Barber and B
 
 ## Part B. Whether HCP can be beaten when $K + 1 \ge 1/\alpha$
 
-Not started.
+### B.1 The optimality theorem for ordinary data, and three senses of "beaten" (transcribed and derived)
+
+Tibshirani, Barber and Ramdas, Theorem 7 (arXiv:2608.27310, p. 12). Fix an i.i.d. law $P = P_{X,Y}^{n+1}$ whose conditional density $p_{Y \mid X}$ is positive. Among all mappings from $X_{n+1}, Z_1, \dots, Z_n$ to a set with coverage $1 - \alpha$ over every exchangeable law, expected Lebesgue measure under $P$ is minimised by the randomised conformal predictor with score $1/p_{Y \mid X = x_{n+1}}(y_{n+1})$. The proof is Neyman and Pearson with a least favourable law, the uniform law over permutations of the observed bag.
+
+Three senses of "beaten" for grouped data, with the method set $\mathcal{V}$ of all methods valid over every law $\Pi$ on group laws.
+
+1. Dominated. Method $A \in \mathcal{V}$ is dominated if some $B \in \mathcal{V}$ has $E_\Pi[\mathrm{width}(B)] \le E_\Pi[\mathrm{width}(A)]$ for every $\Pi$, with strict inequality for some $\Pi$.
+2. Beaten at a law. $A$ is beaten at $\Pi_0$ if some $B \in \mathcal{V}$ has $E_{\Pi_0}[\mathrm{width}(B)] < E_{\Pi_0}[\mathrm{width}(A)]$.
+3. Beaten in the minimax sense over a named class $\mathcal{C}$. Some $B \in \mathcal{V}$ has $\sup_{\Pi \in \mathcal{C}} E_\Pi[\mathrm{width}(B)]/q^\star(\Pi) < \sup_{\Pi \in \mathcal{C}} E_\Pi[\mathrm{width}(A)]/q^\star(\Pi)$.
+
+Theorem 7 answers sense 2, for ordinary data. At each law it names the best valid method, so any method that differs from it on a set of positive probability is beaten at that law. It does not by itself settle sense 1. A dominating method must tie with the pointwise optimum wherever the dominated method is that optimum. Theorem 7 says nothing about whether a fixed-score method can be improved everywhere at once. Sense 3 is not addressed. Round 4's attempt at sense 3 failed (`docs/round4_conf_lower_bound.md` section 6, step 1), because the ratio is unbounded on heavy-tailed degenerate laws for every valid method.
+
+### B.2 The baseline is randomised HCP (definition)
+
+HCP's threshold is $Q_{1-\alpha}(\nu)$, with
+
+$$
+\nu = \frac{1}{K+1} \sum_{k=1}^{K} \frac{1}{N_k} \sum_{i=1}^{N_k} \delta_{s_{ki}} + \frac{1}{K+1} \delta_{+\infty}.
+$$
+
+At the atom where the cumulative mass first reaches $1 - \alpha$, it rounds up. Randomised HCP returns the next lower atom with the probability that makes coverage under the permutation form exactly $1 - \alpha$, in the way the randomised conformal p-value of Theorem 7's form (37) does. Deterministic HCP is beaten at every law by its own randomisation whenever the rounding binds. That is not the question, so randomised HCP is the baseline.
+
+### B.3 The revealed-law model: validity is the permutation form and nothing more (derived)
+
+In the model where each calibration group's law is seen exactly, the data are $F_1, \dots, F_K$ drawn i.i.d. from $\Pi$, and the target is one draw $S \sim F_{K+1}$ with $F_{K+1} \sim \Pi$ unseen. Write $D_{-j}$ for the $K$ laws other than $F_j$.
+
+Claim. A method $\hat q$ that is symmetric in the calibration groups is valid for every $\Pi$ if and only if, for every configuration $\{F_1, \dots, F_{K+1}\}$ of distinct laws,
+
+$$
+\frac{1}{K+1} \sum_{j=1}^{K+1} F_j\bigl(\hat q(D_{-j})\bigr) \ge 1 - \alpha .
+$$
+
+Argument. Sufficiency: condition on the bag of the $K + 1$ laws. Under i.i.d. sampling from $\Pi$, the unseen law is equally likely to be any one of them, so coverage is the average of the left side over bags. Necessity is round 4's section 2. Take $\Pi$ uniform on a large finite set of distinct laws, so that draws are distinct with probability tending to one, and validity at every such $\Pi$ forces the inequality at each configuration. In Tibshirani, Barber and Ramdas' language, this is Neyman structure with respect to the bag of laws. Their completeness step uses the uniform law over permutations of one bag, which is exchangeable but not i.i.d. Round 4's limiting argument is what replaces it for the i.i.d. class. So within the revealed-law model, universality lifts. Every valid symmetric method is characterised by the displayed inequality and by nothing more.
+
+Is HCP a conformal method on this model? HCP keeps $s$ exactly when
+
+$$
+\frac{1}{K+1}\Bigl(1 + \sum_{k=1}^{K} P_{F_k}(S' \ge s)\Bigr) > \alpha ,
+$$
+
+up to the tie convention at the boundary. The left side is the expectation of the single-draw conformal p-value of Dunn, Wasserman and Ramdas' "subsampling once" (their Theorem 5), over the draw of one score per group. So, in the revealed-law limit, HCP is the limit as $B \to \infty$ of their repeated-subsampling p-value, an average of conformal p-values. It is not a conformal set of form (15) for a single draw. That an average of p-values is valid here, where Dunn, Wasserman and Ramdas guarantee only $1 - 2\alpha$ for averages in general, is Lee, Barber and Willett's result. The derivation above shows why. The average is taken over the within-group draw and not over the permutations, so the permutation form still holds exactly. Round 4's section 6 item 2 is a second reading of the same fact: group-level full conformal with the test law replaced by a point mass at the candidate returns HCP's set.
+
+### B.4 What round 4 already settles, stated as a result (derived in round 4, restated)
+
+Result. Let $K + 1 > 1/\alpha$, and let the laws be revealed exactly. The repaired switching rule of `docs/round4_conf_lower_bound.md` section 8.3 is valid for every $\Pi$. Its HCP branch runs at level
+
+$$
+1 - \alpha' = \frac{(K-1)\bigl[(1-\alpha)(K+1)/K + d\bigr] + 1}{K+1},
+$$
+
+and its pooled branch at $1 - \alpha + 2d$, with $d$ the Kolmogorov homogeneity tolerance. On configurations whose laws are all within $d$ of each other, its threshold is the pooled quantile at level $1 - \alpha + 2d$. That is narrower than HCP's, whose level is about $(1-\alpha)(K+1)/K$. So HCP is beaten at the homogeneous law, sense 2. On configurations that fail the check, the rule uses HCP at the stricter level $1 - \alpha' > 1 - \alpha$, so it is wider than HCP there and does not dominate HCP (sense 1). At $K = 10$ and $\alpha = 0.1$, $1 - \alpha'$ is 0.900909 at $d = 0$ and 0.941818 at $d = 0.05$ (`results/round4/conformal/C2_candidates/lower_bound/c2_lb_case3.csv`).
+
+Conditions. The result holds with laws revealed exactly. With finite group sizes the check uses empirical CDFs, and round 4's section 8.4 shows a possible coverage loss of $K\gamma$ for a per-group DKW level $\gamma$. Exact validity then needs $\gamma$ of order $\alpha/K$, charged to the level, and the band widens $d$ by $2\epsilon_{N}$. That is 0.3255, 0.1456 and 0.0728 in Kolmogorov distance at $N_k = 100$, 500 and 2000 with $\gamma = 0.01$ (same file). So at the group sizes of this project the homogeneous-law gain is small or absent.
+
+Step 5 of the instruction's order, the question of dominance, is not started. It belongs to the W3 interval, under the part B cap.
