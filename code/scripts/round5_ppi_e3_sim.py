@@ -39,6 +39,7 @@ Targets.
     variance on the cluster contributions. n_L < G: e_g = zhat_g - lam_c,g f_g + (lam_c,g - cU) Fbar over the
     labelled clusters, CR1 variance n_L/(n_L-1) sum_g (e_g - ebar)^2 / n_L^2 = s_e^2 / n_L, t_{n_L-1},
     centred at the estimator's theta. n_L = G: CR1 over zhat_g, G/(G-1) sum (zhat_g - mean)^2 / G^2, t_{G-1}.
+Intervals are 90% (round4_ppi_estimator.ALPHA = 0.10, t quantile at 1 - ALPHA/2).
 Coverage counts |theta - truth| <= q se + 1e-9 max(1, |truth|); the tolerance only matters for m = all
 with n_L = G, where the interval has zero width and theta equals the truth up to rounding.
 
@@ -80,7 +81,7 @@ def crc(s):
 
 def tq(df):
     if df not in _Q:
-        _Q[df] = stats.t.ppf(0.975, df) if df > 0 else np.nan
+        _Q[df] = stats.t.ppf(1 - E.ALPHA / 2, df) if df > 0 else np.nan
     return _Q[df]
 
 
