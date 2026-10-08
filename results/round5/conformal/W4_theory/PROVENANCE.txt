@@ -1,0 +1,23 @@
+==============================================================================
+Round 5 conformal track, stage W4_hcp_pointwise
+job_name_prefix : r5conf_W4_hcp_pointwise  (the submission route replaces --job-name)
+slurm_job_id    : none
+slurm_partition : none
+slurm_account   : none
+node            : Nicolass-MacBook-Pro-9.local
+cpu_vendor      : arm
+date            : 2026-10-08T18:01:36-04:00
+code_clone      : /Users/nicolaszhang/hest-1k/HEST-1k-replication-conformal
+code_clone_head : 2aae741fb9613bd6e09ebb515de6a4cb8d357b27
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : code/scripts/round5_conf_w4_hcp_pointwise.py --out results/round5/conformal/W4_theory
+pythonhashseed  : unset
+python          : 3.11.15
+numpy           : 2.4.6
+pandas          : 2.3.3
+config_hash     : sha256/16 8d107703716b28c6
+config          : {"seed": 20261008}
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /Users/nicolaszhang/hest-1k/HEST-1k-replication-conformal/code/scripts/round3_a0_harness.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /Users/nicolaszhang/hest-1k/HEST-1k-replication-conformal/code/scripts/round5_conf_io.py
+script_md5      : c81a2c92a60470f7c8726548073e2f5a  /Users/nicolaszhang/hest-1k/HEST-1k-replication-conformal/code/scripts/round5_conf_w4_hcp_pointwise.py
+host            : local (plan section 5 item 7)
