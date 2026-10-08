@@ -1,0 +1,5 @@
+job_id,stage,unit,purpose,partition,account,node,submit,start,end,elapsed,state,req_mem,req_cpus,max_rss_gb,note
+4199045,E1_G15,smoke,"1 cell, 50 draws, timing",spill,rc_tengfei_pi,c0315,2026-10-07T18:14:56,2026-10-07T18:15:17,2026-10-07T18:15:27,00:00:10,COMPLETED,4G,2,0.14,outputs left in frag_G15/smoke on Longleaf; not a deliverable
+4199086,E1_G15,normal_nl4-12,"normal law, n_L 4,6,8,12, 120 cells x 1000 draws",spill,rc_tengfei_pi,c151411,2026-10-07T18:16:01,2026-10-07T18:17:20,2026-10-07T18:21:48,00:04:28,COMPLETED,4G,2,0.26,sacct times cluster local (EDT)
+4199529,E1_G15,skewed_nl4-12,"lognormal sigma 0.940959499999249, 120 cells x 1000 draws",spill,rc_tengfei_pi,c130604,2026-10-07T18:30:47,2026-10-07T18:31:24,2026-10-07T18:38:23,00:06:59,COMPLETED,6G,2,0.3,
+4199535,E1_G15,heavy_nl4-12,"lognormal sigma 1.9394834999993038, 120 cells x 1000 draws",spill,rc_tengfei_pi,c130403,2026-10-07T18:30:51,2026-10-07T18:31:24,2026-10-07T18:38:12,00:06:48,COMPLETED,6G,2,0.33,

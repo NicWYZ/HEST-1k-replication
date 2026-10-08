@@ -1,0 +1,4 @@
+job_id,stage,unit,purpose,partition,account,node,submit,start,end,elapsed,state,req_mem,req_cpus,max_rss_gb,note
+4199216,E2,sim smoke,100 reps mu=0 timing,spill,rc_tengfei_pi,c0304,2026-10-07T18:20:13,2026-10-07T18:21:20,2026-10-07T18:21:42,00:00:22,COMPLETED,8G,2,0.65,"requested general, ran on spill; wall times are cluster local EDT"
+4199277,E2,sim full,"2000 reps, all mu, m, arms, one job",spill,rc_tengfei_pi,c0315,2026-10-07T18:22:16,2026-10-07T18:23:24,2026-10-07T18:27:01,00:03:37,COMPLETED,8G,2,0.72,no split needed; output frag_sim/full_all
+4199452,E2,acceptance 3,"compare with round-4 file, const arm",spill,rc_tengfei_pi,c0309,2026-10-07T18:27:59,2026-10-07T18:29:23,2026-10-07T18:29:27,00:00:04,COMPLETED,4G,2,0.06,output frag_sim/acceptance3

@@ -1,0 +1,7 @@
+job_id,stage,unit,purpose,partition,account,node,submit,start,end,elapsed,state,req_mem,req_cpus,max_rss_gb,note
+4199210,E2_regimeB_ACS_CA_PUMA,smoke,"package m=5, 10 draws, timing and memory",spill (requested general),rc_tengfei_pi,c0309,2026-10-07T18:20:10,2026-10-07T18:21:20,2026-10-07T18:21:38,00:00:18,COMPLETED,8G,2,0.46,"smoke only, outputs not for merging"
+4199270,E2_regimeB_ACS_CA_PUMA,arm_package,"package arm, 12 m x 200 draws",spill (requested general),rc_tengfei_pi,c0302,2026-10-07T18:22:11,2026-10-07T18:23:24,2026-10-07T18:28:45,00:05:21,COMPLETED,4G,2,0.61,
+4199276,E2_regimeB_ACS_CA_PUMA,arm_permuted,"permuted arm, 12 m x 200 draws",spill (requested general),rc_tengfei_pi,c0309,2026-10-07T18:22:16,2026-10-07T18:23:24,2026-10-07T18:28:21,00:04:57,COMPLETED,4G,2,0.32,
+4199279,E2_regimeB_ACS_CA_PUMA,arm_constant,"constant arm, theta3 only",spill (requested general),rc_tengfei_pi,c0411,2026-10-07T18:22:20,2026-10-07T18:23:24,2026-10-07T18:27:22,00:03:58,COMPLETED,4G,2,0.34,
+4199282,E2_regimeB_ACS_CA_PUMA,arm_donor_constant,"donor_constant arm, theta3 only",spill (requested general),rc_tengfei_pi,c151406,2026-10-07T18:22:25,2026-10-07T18:23:24,2026-10-07T18:26:01,00:02:37,COMPLETED,4G,2,0.32,
+4199285,E2_regimeB_ACS_CA_PUMA,acceptance_m_all,"acceptance check 1 (m_all), package",spill (requested general),rc_tengfei_pi,c151411,2026-10-07T18:22:29,2026-10-07T18:23:24,2026-10-07T18:23:34,00:00:10,COMPLETED,4G,2,0.32,

@@ -1,0 +1,24 @@
+                                                     check      n     worst_abs  design_var_max  passes  n_matched  n_ref  n_exact
+0     1_m_all_equals_full_data_abs_below_1e-10|ACS_CA_PUMA      8  5.329071e-15             0.0    True        NaN    NaN      NaN
+1      1_m_all_equals_full_data_abs_below_1e-10|ACS_STATES      8  2.486900e-13             0.0    True        NaN    NaN      NaN
+2           1_m_all_equals_full_data_abs_below_1e-10|CCRCC     16  1.176836e-14             0.0    True        NaN    NaN      NaN
+3    1_m_all_equals_full_data_abs_below_1e-10|CCRCC_merged      8  1.187939e-14             0.0    True        NaN    NaN      NaN
+4  1_m_all_equals_full_data_abs_below_1e-10|INDIANA_KIDNEY      8  8.659740e-15             0.0    True        NaN    NaN      NaN
+5     1_m_all_equals_full_data_abs_below_1e-10|LUNG_XENIUM      8  2.309264e-14             0.0    True        NaN    NaN      NaN
+6            2_reproduce_E0_regimeB_anchor_CCRCC_hoptimus0      6  2.220446e-16             NaN    True       16.0   16.0      NaN
+7             3a_sim_mu0_reproduces_round4_coverage_m5_m20     96  0.000000e+00             NaN    True        NaN    NaN     96.0
+8         3b_sim_mu0_constant_variance_ratio_1_within_0.02     16  1.096780e-02             NaN    True        NaN    NaN      NaN
+9            pairing_classical_width_identical_across_arms  47520  1.853081e-07             NaN   False        NaN    NaN      NaN
+                                                                          prediction  n_cells  n_in_band          band   qty_min  qty_median   qty_max   held
+0   E2.1a|design donor coverage in [0.87,0.92], m>=5, all tasks arms estimands rules     1080        610  [0.87, 0.92]  0.400000    0.887500  0.945000  False
+1                             E2.1b|design donor coverage in [0.78,0.90], m in {2,3}      240        137   [0.78, 0.9]  0.225000    0.880000  0.945000  False
+2                        E2.2a|tissue theta3+theta2|constant width ratio <= permuted       96         93   [None, 0.0] -0.155780   -0.067253  0.119781  False
+3                                  E2.2a|ACS theta3|constant width ratio <= permuted       24         24   [None, 0.0] -0.029076   -0.028521 -0.027872   True
+4                                       E2.2b|tissue|permuted minus constant <= 0.06       96         43  [None, 0.06] -0.119781    0.067253  0.155780  False
+5                               E2.2c|ACS mean|permuted width ratio 1.00 within 0.01       24         23  [None, 0.01]  0.000020    0.000501  0.010824  False
+6                                        E2.3|kidney theta3|real over constant width      108         53   [0.93, 1.0]  0.981286    1.000973  1.042429  False
+7                                        E2.3|kidney theta2|real over constant width      108        104  [0.97, None]  0.944327    1.008715  1.329978  False
+8                                          E2.3|lung theta3|real over constant width       36         35   [0.6, 0.85]  0.739946    0.762746  0.865052  False
+9                                           E2.3|ACS theta3|real over constant width       24         24    [0.4, 0.8]  0.601654    0.619888  0.638703   True
+10                    E2.4|sim constant variance ratio equals 1-L within 0.03, m>=20       16         15  [None, 0.03]  0.000093    0.004503  0.035227  False
+11                               E2.5|real over constant flat in m within 0.03, m>=5       28         16  [None, 0.03]  0.005443    0.018926  0.347799  False

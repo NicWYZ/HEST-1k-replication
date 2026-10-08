@@ -1,0 +1,13 @@
+prediction,n_cells,n_in_band,band,qty_min,qty_median,qty_max,held
+"E2.1a|design donor coverage in [0.87,0.92], m>=5, all tasks arms estimands rules",1080,610,"[0.87, 0.92]",0.4,0.8875,0.945,False
+"E2.1b|design donor coverage in [0.78,0.90], m in {2,3}",240,137,"[0.78, 0.9]",0.225,0.88,0.945,False
+E2.2a|tissue theta3+theta2|constant width ratio <= permuted,96,93,"[None, 0.0]",-0.15577975948003242,-0.06725282818396355,0.1197812486169938,False
+E2.2a|ACS theta3|constant width ratio <= permuted,24,24,"[None, 0.0]",-0.029075861187001895,-0.028521144722164,-0.02787161599357349,True
+E2.2b|tissue|permuted minus constant <= 0.06,96,43,"[None, 0.06]",-0.1197812486169938,0.06725282818396355,0.15577975948003242,False
+E2.2c|ACS mean|permuted width ratio 1.00 within 0.01,24,23,"[None, 0.01]",2.0407383956477787e-05,0.0005007271960768556,0.010824293977800492,False
+E2.3|kidney theta3|real over constant width,108,53,"[0.93, 1.0]",0.981286333486217,1.0009733432077401,1.0424288425510504,False
+E2.3|kidney theta2|real over constant width,108,104,"[0.97, None]",0.9443267902914333,1.0087149444219592,1.3299777087865539,False
+E2.3|lung theta3|real over constant width,36,35,"[0.6, 0.85]",0.7399464494276489,0.7627461417126797,0.8650515202203853,False
+E2.3|ACS theta3|real over constant width,24,24,"[0.4, 0.8]",0.6016541641794907,0.6198880058340283,0.6387032886469471,True
+"E2.4|sim constant variance ratio equals 1-L within 0.03, m>=20",16,15,"[None, 0.03]",9.335368602907644e-05,0.004502628673892735,0.03522743383184013,False
+"E2.5|real over constant flat in m within 0.03, m>=5",28,16,"[None, 0.03]",0.005443412757711985,0.018926160246356794,0.34779852833468394,False
