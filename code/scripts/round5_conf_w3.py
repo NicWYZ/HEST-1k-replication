@@ -256,7 +256,8 @@ def cpu_model():
 
 
 def snapshot_commit():
-    root = os.path.basename(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    # <snapshot>/<full hash>/code/scripts/round5_conf_w3.py
+    root = os.path.basename(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
     return root if re.fullmatch(r"[0-9a-f]{40}", root) else f"not a snapshot ({root})"
 
 
