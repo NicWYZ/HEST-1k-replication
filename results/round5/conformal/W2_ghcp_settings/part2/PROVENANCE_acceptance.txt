@@ -1,0 +1,50 @@
+==============================================================================
+Round 5 conformal track, stage W2p2_accept
+job_name_prefix : r5conf_W2p2_accept  (the submission route replaces --job-name)
+slurm_job_id    : 4217046
+slurm_partition : spill
+slurm_account   : rc_htzhu_pi
+node            : c151408.ll.unc.edu
+cpu_vendor      : AuthenticAMD
+date            : 2026-10-07T22:12:51-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round5-conformal
+code_clone_head : 23dc9d1bd9b603a5ed0e522a2af06de16306d4a6
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : round5_conf_w2_census_accept.py /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W2_ghcp_settings/part2 /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W2_ghcp_settings/part2/acceptance
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+pandas          : 3.0.3
+config_hash     : sha256/16 15073566869183c3
+config          : {"P": "/work/users/w/e/weiyang/hest_replication/results/round5/conformal/W2_ghcp_settings/part2"}
+script_md5      : a54649315e9801e566d3215e22fd46ef  /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/70efa069-bd99-411b-b6da-8bd3473353a8/round5_conf_w2_census_accept.py
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round3_a0_harness.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_io.py
+agree           : 53
+n               : 53
+rule_reproduces_round4_tolerance: False
+==============================================================================
+Round 5 conformal track, stage W2p2_accept
+job_name_prefix : r5conf_W2p2_accept  (the submission route replaces --job-name)
+slurm_job_id    : 4217112
+slurm_partition : spill
+slurm_account   : rc_htzhu_pi
+node            : c151406.ll.unc.edu
+cpu_vendor      : AuthenticAMD
+date            : 2026-10-07T22:14:39-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round5-conformal
+code_clone_head : 23dc9d1bd9b603a5ed0e522a2af06de16306d4a6
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : round5_conf_w2_census_accept.py /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W2_ghcp_settings/part2 /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W2_ghcp_settings/part2/acceptance
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+pandas          : 3.0.3
+config_hash     : sha256/16 15073566869183c3
+config          : {"P": "/work/users/w/e/weiyang/hest_replication/results/round5/conformal/W2_ghcp_settings/part2"}
+script_md5      : af1127619470b7b7536a543c5c0e3856  /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/15b618f0-3c8c-44c5-90fc-4e5b14b5db22/round5_conf_w2_census_accept.py
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round3_a0_harness.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_io.py
+agree           : 53
+n               : 53
+rule_reproduces_round4_tolerance: True

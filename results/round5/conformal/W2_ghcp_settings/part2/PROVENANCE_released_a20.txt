@@ -1,0 +1,27 @@
+==============================================================================
+Round 5 conformal track, stage W2p2_census_released
+job_name_prefix : r5conf_W2p2_census_released  (the submission route replaces --job-name)
+slurm_job_id    : 4203187
+slurm_partition : spill
+slurm_account   : rc_htzhu_pi
+node            : c0402.ll.unc.edu
+cpu_vendor      : GenuineIntel
+date            : 2026-10-07T22:02:37-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round5-conformal
+code_clone_head : 23dc9d1bd9b603a5ed0e522a2af06de16306d4a6
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : round5_conf_w2_census_released.py 0.2 /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W2_ghcp_settings/part2/released_a20 4
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+pandas          : 3.0.3
+config_hash     : sha256/16 587788942a22aa34
+config          : {"alpha": "0.2", "n_workers": "4"}
+script_md5      : 26dd38ea36f2cddc67f278a7342aa40d  /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/6e794e11-a33b-4af5-97a7-591c0b00bc66/round5_conf_w2_census_released.py
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round3_a0_harness.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_io.py
+released_commit : d1a69f4a (per round-4 record)
+tree_files_checked: 51
+input_csv_md5   : 52c89ae44af23ce972a02c13e4ee5648
+commands        : /work/users/w/e/weiyang/hest_code/ghcp_venv/bin/python -u /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W2_ghcp_settings/part2/released_a20/ghcp_tree/code/marginal/run_section_3_2.py --alphas 0.2 --B 1000 --n_workers 4 --skip_stdcp || /work/users/w/e/weiyang/hest_code/ghcp_venv/bin/python -u /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W2_ghcp_settings/part2/released_a20/ghcp_tree/code/marginal/recompute_acs_stdcp_randomized_min21.py --B 1000 --n_workers 4 --alphas 0.2 --skip_plot
+released_tree_md5s: {"code/marginal/recompute_acs_stdcp_randomized_min21.py": "323b998de97d5ae7ee7340487cf17ef1", "code/marginal/run_acs_experiments.py": "7ecc70f4e9c34c716549568c5a9e2d38", "code/marginal/run_acs_stdcp_nodesize1_compare.py": "cd39291f07adb32b914c794adb1bbcec", "code/marginal/run_acs_yoep_fb_min21_permute.py": "4a64cdeef730075b0feaf5e4a194c657", "code/marginal/run_bayes_ghcp_c1.py": "f56a2cf81159fbf6f516b1d1768b6df2", "code/marginal/run_effect_of_weights.py": "2c7e50ed029bd8869c634e526e539d31", "code/marginal/run_effect_of_weights_ud_narrow.py": "418ea017928d605ce957eb8ca021a887", "code/marginal/run_merger_compare_dgp_rf.py": "39d0892d58a52a7fc6353c7068468721", "code/marginal/run_oracleB_vs_re_rf.py": "362f5f49f376f24efa6fbc4a5992573f", "code/marginal/run_re_vs_std_rf.py": "1c9e452f04620175ab34bccc5a7f6b42", "code/marginal/run_section_3_1.py": "e6e0afd852d060336455be746981458a", "code/marginal/run_section_3_2.py": "d0a6460ba6ded3e635606dd21c8dba8e", "code/marginal/run_size_shift_sensitivity.py": "154d63c514e7f35cb375f0afe5b141bc", "code/marginal/run_true_marginal_latent_intercept_experiments.py": "737d3f8d54c71f6fd84b704af4a7ab47", "code/marginal/run_true_marginal_latent_intercept_rf_experiments.py": "891c0e6b7a0886ff283f6c545ccce45f", "real_data/acs/data_processing.py": "376efb546af3436477216caaaac59284", "scores.py": "f3f4d4e857c8fe041a3876fc0250c5d2"}

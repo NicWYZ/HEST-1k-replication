@@ -1,0 +1,38 @@
+Loading paper cohort...
+Loaded 378817 rows from /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W2_ghcp_settings/part2/released_a20/ghcp_tree/real_data/acs/data/acs_data_all50states.csv
+After filtering to 1 specified states: 378817 rows
+After filtering to foreign-born: 98793 rows
+After age filter [25, 54]: 51615 rows
+After recent entry filter (YOEP >= 2000): 22893 rows
+After labor force filter (hours >= 40): 13707 rows
+After requiring non-missing income: 13707 rows
+After dropping non-positive income: 13700 rows
+After dropping missings in key columns: 12285 rows
+
+Final state counts:
+state_abb
+CA    12285
+Name: count, dtype: int64
+  n=12285, eligible PUMAs=212
+
+=== Std-CP randomized studentized alpha20 B=1000 workers=4 ===
+  alpha20: 100/1000
+  alpha20: 200/1000
+  alpha20: 300/1000
+  alpha20: 400/1000
+  alpha20: 500/1000
+  alpha20: 600/1000
+  alpha20: 700/1000
+  alpha20: 800/1000
+  alpha20: 900/1000
+  alpha20: 1000/1000
+Wrote /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W2_ghcp_settings/part2/released_a20/paper-results/acs/results/true_marginal_permuted_rf_income_notrim_yoep2000_alpha20/stdcp_studentized_randomized_alpha20_detailed.csv
+  o=0: cov=1.000±0.000  finite=0/1000  mean_finite_w=nan
+  o=5: cov=0.810±0.012  finite=803/1000  mean_finite_w=142899.9
+  o=10: cov=0.795±0.013  finite=1000/1000  mean_finite_w=148387.2
+  o=15: cov=0.805±0.013  finite=1000/1000  mean_finite_w=129086.3
+  o=20: cov=0.807±0.012  finite=1000/1000  mean_finite_w=114039.4
+  Saved summaries to /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W2_ghcp_settings/part2/released_a20/paper-results/acs/results/true_marginal_permuted_rf_income_notrim_yoep2000_alpha20/summaries
+Patched /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W2_ghcp_settings/part2/released_a20/paper-results/acs/results/true_marginal_permuted_rf_income_notrim_yoep2000_alpha20/acs_true_marg_alpha20_detailed.csv
+  Std-CP finite widths: 3803/5000
+Done.

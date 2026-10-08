@@ -1,0 +1,22 @@
+==============================================================================
+Round 5 conformal track, stage W2p2_root
+job_name_prefix : r5conf_W2p2_root  (the submission route replaces --job-name)
+slurm_job_id    : 4222651
+slurm_partition : spill
+slurm_account   : rc_htzhu_pi
+node            : c0411.ll.unc.edu
+cpu_vendor      : AuthenticAMD
+date            : 2026-10-08T00:04:57-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round5-conformal
+code_clone_head : 23dc9d1bd9b603a5ed0e522a2af06de16306d4a6
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : round5_conf_w2_census_root.py /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W2_ghcp_settings/part2 w2_part2_findings.md w2_census_wrapper_check_merged.csv w2_census_validation_summary_alpha10_K20_B1000.csv handoff_sacct.txt handoff_sacct_max.txt
+pythonhashseed  : unset
+python          : 3.11.16
+numpy           : 2.4.6
+pandas          : 3.0.3
+config_hash     : sha256/16 858f2aca92e7f376
+config          : {"files": ["w2_part2_findings.md", "w2_census_wrapper_check_merged.csv", "w2_census_validation_summary_alpha10_K20_B1000.csv", "handoff_sacct.txt", "handoff_sacct_max.txt"]}
+script_md5      : 2b09d3ee24d622b32a162f08cf9c802b  /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/cb0ff338-1fa8-4858-8288-618e2ff4e031/round5_conf_w2_census_root.py
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round3_a0_harness.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_io.py
