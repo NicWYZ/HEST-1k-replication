@@ -22,7 +22,8 @@ c_crossfit_design, round5_ppi_estimator.design_whole_clusters with the linearise
 E3a correction as a second interval). Under D0 and D2 the interval is textbook_t|fpc|lin (and
 |lin|xf); Fuller (2009) is the reference for using the regression estimator's ordinary variance
 after rejective sampling. Under D1 the stratified estimator sum_h (G_h/G) mean_{L_h}(e_g) + cU Fbar
-with variance sum_h (G_h/G)^2 (1 - 2/G_h) s_{e,h}^2 / 2 and n_L/2 degrees of freedom.
+with variance sum_h (G_h/G)^2 (1 - 2/G_h) s_{e,h}^2 / 2 and n_L/2 degrees of freedom, less one for
+every stratum of two clusters, which is labelled completely and contributes no variance.
 """
 import numpy as np
 
@@ -109,6 +110,7 @@ def estimate_d1(zbar, fbar, Lm, strata, rule, seed):
     H = strata.max() + 1
     theta = cU * Fbar
     var = np.zeros(ncol)
+    dfc = np.zeros(ncol)     # degrees of freedom: strata with G_h > 2 (a stratum of two is labelled completely)
     for h in range(H):
         sh = strata == h
         Gh = sh.sum(0).astype(float)
@@ -119,4 +121,5 @@ def estimate_d1(zbar, fbar, Lm, strata, rule, seed):
         mean_e = eh.sum(0) / 2.0
         s2 = np.where(lh, (e - mean_e) ** 2, 0.0).sum(0) / 1.0
         var = var + (Gh / G) ** 2 * (1.0 - 2.0 / Gh) * s2 / 2.0
-    return {"strat_t": (theta, var, float(H))}, lam
+        dfc = dfc + (Gh > 2)
+    return {"strat_t": (theta, var, np.maximum(dfc, 1.0))}, lam

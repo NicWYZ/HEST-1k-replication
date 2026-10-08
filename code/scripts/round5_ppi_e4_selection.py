@@ -165,7 +165,7 @@ def main(argv=None):
                     for rule in RULES:
                         out, lam = BAL.estimate_d1(zbar, fbar, Lm, st_full, rule, f"r5e4x|{a.vtag}|nL{nL}|d{d}|{est}|{fam}")
                         for iv, (th, v, df) in out.items():
-                            acc.setdefault((rule, iv), []).append((th, v, np.full(ng, df)))
+                            acc.setdefault((rule, iv), []).append((th, v, np.broadcast_to(df, (ng,))))
                 summarise(acc, theta, dict(vtag=a.vtag, arm=a.arm, estimand=est, G=G, n_L=nL, design="D1",
                                            balance=fam.rstrip("1") if fam != "own" else "own", p_a=np.nan,
                                            n_no_accept=0), data["genes"], rows, generows)
