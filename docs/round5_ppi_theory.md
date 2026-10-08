@@ -139,3 +139,81 @@ When the groups' means differ, $D_g$ stays a level term and $V_g$ gains the diff
 3. The level share is a property of the outcome, the weights and the design weights $\omega_g$. It does not involve the predictor at all. E2 computes $L$ from the full data for every task, estimand and gene, and reports $1 - L$ beside the constant predictor's variance ratio (E2.4 in simulation, and the decomposition on the real tasks).
 4. With whole clusters labelled, donor-weighted, the cluster contributions are $\langle z \rangle_g$ and $\langle f \rangle_g = \langle \hat y w \rangle_g$. A constant predictor has $\langle f \rangle_g = c\langle w \rangle_g = 0$, so nothing here touches regime A at $m$ = all, which agrees with the brief.
 5. In the E2 simulation at outcome level $\mu = 0$ the cluster levels are the cluster effects alone, so $C_g$ is not zero and neither is $L$. But the constant predictor's $c$ is the task-wide mean prediction, which is close to zero, and the coefficient is clipped to $[0, 1]$, so $\lambda c$ cannot approach $C_g/A_g$ and the share actually removed is close to zero. This is why E2's acceptance check 3 expects a variance ratio of 1.00 at $\mu = 0$. E2.4 is scored at $\mu > 0$ against $1 - L$ with the clip applied as in section 1.2, and at $\mu = 0$ against the clipped share. Plan section 5 item 2 records this reading.
+
+## 2. The cross-fitting term and the two-level estimator
+
+### 2.0 The cross-fitting term of the design-target interval
+
+This section answers section 5, E3a, of `docs/decisions/round5_ppi_E2_decisions.md`. It concerns the round-4 final design estimator with every unit of a labelled cluster labelled, donor-weighted, rule `c_crossfit_design`, as `round5_ppi_estimator.design_whole_clusters` computes it.
+
+**Setting.** There are $G$ clusters with values $(z_g, f_g)$, the cluster means of $z$ and $f$. The target is $\theta = \bar Z$, the mean of $z_g$ over the $G$ clusters, and $\bar F$ is the mean of $f_g$, which is known. A simple random sample $L$ of $n$ clusters is drawn and split at random into halves $A$ and $B$ of sizes $n_A = \lfloor n/2 \rfloor$ and $n_B = n - n_A$, so $A$ and $B$ are disjoint simple random samples. $\lambda_A$ is a function of the values in $A$ only (the clipped least-squares slope of $z$ on $f$ with intercept, or 0 when $n < 6$), and likewise $\lambda_B$. Clusters in $B$ carry $\lambda_A$ and clusters in $A$ carry $\lambda_B$, so the coefficient of cluster $g$ is $\lambda_{(g)}$ and the coefficient on $\bar F$ is their mean over $L$,
+
+$$
+c' = \frac{n_B\,\lambda_A + n_A\,\lambda_B}{n}.
+$$
+
+Write $\delta = \lambda_B - \lambda_A$, $\Delta = \bar f_A - \bar f_B$ and $\kappa = n_A n_B / n^2$, which is $1/4$ when $n$ is even.
+
+**An exact identity.** The estimator $\hat\theta = c'\bar F + \frac{1}{n}\sum_{g \in L}(z_g - \lambda_{(g)} f_g)$ equals
+
+$$
+\hat\theta = \underbrace{\bar z_L - c'(\bar f_L - \bar F)}_{T_1} \; - \; \underbrace{\kappa\,\delta\,\Delta}_{T_2}.
+$$
+
+To see it, note that $\frac{1}{n}\sum_L \lambda_{(g)} f_g = \frac{1}{n}(n_A \lambda_B \bar f_A + n_B \lambda_A \bar f_B)$, and that $n_A \bar f_A(\lambda_B - c') + n_B \bar f_B(\lambda_A - c') = n_A n_B\,\delta\,\Delta / n$, because $\lambda_B - c' = n_B\delta/n$ and $\lambda_A - c' = -n_A\delta/n$. For even $n$, with $c = (\lambda_A + \lambda_B)/2$ and $d = \delta/2$, this is the memo's form $\bar z_L - c(\bar f_L - \bar F) - \tfrac{d}{2}(\bar f_A - \bar f_B)$. The identity holds draw by draw and needs no approximation.
+
+**Which part the finite-population factor governs.** $T_1$ is a labelled-sample mean minus a coefficient times $\bar f_L - \bar F$. Both $\bar z_L - \bar Z$ and $\bar f_L - \bar F$ have variances proportional to $1 - n/G$, and both are zero when $n = G$. $T_2$ is a difference between the two halves of the sample. For disjoint simple random samples of sizes $n_A$ and $n_B$,
+
+$$
+\text{Var}(\bar f_A - \bar f_B) = \Big(\frac{1}{n_A} + \frac{1}{n_B}\Big) S_f^2 = \frac{n}{n_A n_B}\,S_f^2,
+$$
+
+with $S_f^2$ the population variance of $f_g$ (divisor $G - 1$). The two covariance terms of $-S_f^2/G$ cancel the two finite-population terms, so there is no factor $1 - n/G$. The sharpest form is at $n = G$. Then $T_1 = \bar Z = \theta$ exactly and $\hat\theta - \theta = -\kappa\delta\Delta$, which is not zero whenever the halves' coefficients differ, while the current variance estimate is exactly zero.
+
+**The variance of $T_2$, and the dependence between coefficients and means.** $\delta$ and $\Delta$ are computed from the same halves, so in general
+
+$$
+E[T_2^2] = \kappa^2\,E[\delta^2\Delta^2].
+$$
+
+If $\delta$ and $\Delta$ were independent this would be $\kappa^2 E[\delta^2]\,E[\Delta^2] = \kappa\,E[\delta^2]\,S_f^2/n$. Under a normal population the slope fitted on a half depends on the half's deviations from its own means and not on the means themselves, so $\delta$ and $\Delta$ are independent up to finite-population terms, and $E[T_2] = 0$. Under a skewed population a large $f_g$ raises its half's mean and also has high leverage on its half's slope, so $\delta$ and $\Delta$ are dependent, $E[T_2] = \kappa E[\delta\Delta]$ can differ from zero, and the product form is an approximation. Clipping keeps $|\delta| \le 1$, so $T_2$ is bounded in either case. The cross-moment $E[T_1 T_2]$ vanishes under the normal law by the same argument (the halves' slopes are independent of the halves' means and of the residual means), and is again an approximation under skewness. The skewed grids of E3a measure how much the dependence matters.
+
+**What the current estimate contains.** The current estimate is $(1 - n/G)\,s_e^2/n$ with $e_g = z_g - \lambda_{(g)} f_g + (\lambda_{(g)} - c')\bar F$. Take even $n = 2h$, the unclipped case and a normal population, with $z_g = \alpha + \lambda^\circ f_g + u_g$, $u_g$ of variance $\sigma^2$ independent of $f_g$. Then $\lambda_A = b_A$, the half's own least-squares slope, with intercept $a_A$ and residuals $\varepsilon_g$ that sum to zero and are orthogonal to $f$ within the half. For $g \in A$, $e_g = a_A + \varepsilon_g - \delta f_g + \tfrac{\delta}{2}\bar F$, and for $g \in B$, $e_g = a_B + \varepsilon_g + \delta f_g - \tfrac{\delta}{2}\bar F$. By the orthogonality, the total sum of squares of $e$ over $L$ splits into three parts.
+
+1. The within-half residual sums of squares, $\text{RSS}_A + \text{RSS}_B$, with expectation $(n - 4)\sigma^2$.
+2. The terms $\delta^2(SS_A + SS_B)$, with $SS_h$ the half's sum of squares of $f$. Since $(b_A - \lambda^\circ)^2 SS_A$ has expectation $\sigma^2$ and $(b_B - \lambda^\circ)^2 SS_A$ has expectation $\sigma^2 (h-1)/(h-3)$, this part has expectation $4\sigma^2 (h - 2)/(h - 3) = 4\sigma^2 (n - 4)/(n - 6)$.
+3. The between-half term $\tfrac{n}{4}(\bar e_A - \bar e_B)^2$. Its leading part is $\bar u_A - \bar u_B$, whose variance is $4\sigma^2/n$ with no finite-population factor, so its expectation is about $\sigma^2$.
+
+So
+
+$$
+E[s_e^2] \approx \frac{\sigma^2}{n - 1}\Big[(n - 3) + \frac{4(n - 4)}{n - 6}\Big].
+$$
+
+The true variance follows from the identity. $T_1$ contributes $(1 - n/G)\,(\sigma^2 + \text{Var}(c') S_f^2)/n$, where the second part is the variance of $(c' - \lambda^\circ)(\bar f_L - \bar F)$, and $T_2$ contributes $\kappa E[\delta^2] S_f^2 / n$. With independent halves $\text{Var}(c') = E[\delta^2]/4$, and under the normal law $E[\delta^2] S_f^2 = 2\sigma^2/(h - 3) = 4\sigma^2/(n - 6)$. With $\kappa = 1/4$,
+
+$$
+\text{Var}(\hat\theta) \approx \frac{\sigma^2}{n}\Big[\Big(1 - \frac{n}{G}\Big)\Big(1 + \frac{1}{n - 6}\Big) + \frac{1}{n - 6}\Big].
+$$
+
+The true variance minus the expected current estimate simplifies to
+
+$$
+\frac{\sigma^2}{n}\Big[\Big(1 - \frac{n}{G}\Big)\frac{3 - n}{(n - 1)(n - 6)} + \frac{1}{n - 6}\Big].
+$$
+
+At $n/G \to 0$ this is $\frac{\sigma^2}{n}\cdot\frac{2}{(n-1)(n-6)}$, a shortfall of $2/((n-1)(n-5))$ of the true variance, about 3% at $n = 12$, because the extra $\delta^2$ in $s_e^2$ and the overfitted residuals nearly cancel. At $n = G$ it is $\frac{\sigma^2}{n(n - 6)}$, all of $T_2$. In between, the shortfall grows linearly in $n/G$. At $G = 15$ and $n = 12$ the formulas give a ratio of expected estimate to true variance of 0.65, which is close to the memo's worst cell, 0.69 at $\lambda^\star = 0.6$ (`results/round5/ppi/E1_interval/e1_sim_grid.csv`). The moment $E[\delta^2]$ is finite only for $h > 3$, that is $n \ge 8$. At $n = 6$ only the clip bounds it.
+
+So the memo's reading is right in its conclusion and needs one correction in its reasoning. The current estimate does not carry $d^2 s_f^2$ inside $s_e^2$. It carries about $\delta^2 s_f^2 = 4 d^2 s_f^2$, which together with the overfitted residual variance makes the estimate nearly right when $n/G$ is small. The factor $1 - n/G$ then removes a fraction $n/G$ of the whole $T_2$ term from what would otherwise be about right, which is what is missed. The derivation closes under the normal law, without clipping, to the order shown.
+
+**The corrected estimate.** The candidate of the memo restores what the factor removes,
+
+$$
+\widehat{\text{Var}}_{\text{xf}} = \Big(1 - \frac{n}{G}\Big)\frac{s_e^2}{n} + \frac{n}{G}\cdot\frac{\overline{(\lambda_{(g)} - c')^2}_L\; s_f^2}{n},
+$$
+
+with $s_f^2$ the labelled clusters' sample variance of $f_g$ and $\overline{(\lambda_{(g)} - c')^2}_L$ the mean over $L$ of the squared deviation of each cluster's coefficient from $c'$. That mean equals $\kappa\,\delta^2$ for any split, $\delta^2/4 = d^2$ for even $n$, so for even $n$ this is the memo's formula exactly. The form with the mean over $L$ also covers odd $n$, where the memo's $d^2$ would be off by the factor $4\kappa$. Its expectation under the normal law adds $(n/G)\,\sigma^2/(n(n-6))$ to the current estimate, which removes the $1/(n - 6)$ term of the shortfall above and leaves $(1 - n/G)\,\frac{\sigma^2}{n}\cdot\frac{2}{(n-1)(n-6)}$. At $G = 15$ and $n = 12$ the expected ratio becomes 0.985. It needs no new quantity, since the coefficients and $f_g$ are already at hand.
+
+**Properties that the acceptance checks test.** When both halves get the same coefficient, every $\lambda_{(g)} = c'$, the added term is zero and the two intervals are identical. That includes both halves clipping at the same bound, $n < 6$ (where both coefficients are 0), rule `none` and any fixed coefficient. At $n = G$ the corrected estimate is $\kappa\delta^2 s_f^2/n$ against the current zero. The degrees of freedom stay $n - 1$.
+
+**What is approximate, and what E3a measures.** The derivation treats the halves' coefficients as independent of the halves' means, ignores clipping in the size of $s_{\text{res}}^2$, and uses the normal-law moment of the half slope. Clipping shrinks $\delta$ and so shrinks both the missed term and the correction. Under skewed contributions the dependence between $\delta$ and $\Delta$ makes $E[T_2^2]$ differ from the plug-in. The E3a reruns of the E1 normal and skewed grids on the same seeds, and the masking reruns on the six tasks, measure the corrected interval where these approximations do not hold.
