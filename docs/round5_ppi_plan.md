@@ -218,16 +218,16 @@ The twenty predictions are the oversight chat's and are copied from section 2.1 
 
 | prediction | stage | gate | score |
 |---|---|---|---|
-| E1.1 | E1 | E2 | not yet scored |
-| E1.2 | E1 | E2 | not yet scored |
-| E1.3 | E1 | E2 | not yet scored |
-| E1.4 | E1 | E2 | not yet scored |
-| E1.5 | E1 | E2 | not yet scored |
-| E2.1 | E2 | E2 | not yet scored |
-| E2.2 | E2 | E2 | not yet scored |
-| E2.3 | E2 | E2 | not yet scored |
-| E2.4 | E2 | E2 | not yet scored |
-| E2.5 | E2 | E2 | not yet scored |
+| E1.1 | E1 | E2 | partly held, see `docs/round5_ppi_E2_report.md` section 5 |
+| E1.2 | E1 | E2 | partly held, see `docs/round5_ppi_E2_report.md` section 5 |
+| E1.3 | E1 | E2 | partly held, see `docs/round5_ppi_E2_report.md` section 5 |
+| E1.4 | E1 | E2 | partly held, see `docs/round5_ppi_E2_report.md` section 5 |
+| E1.5 | E1 | E2 | refuted in its second half, see `docs/round5_ppi_E2_report.md` section 5 |
+| E2.1 | E2 | E2 | held for $\theta_3$, refuted for $\theta_2$, see `docs/round5_ppi_E2_report.md` section 5 |
+| E2.2 | E2 | E2 | partly held, see `docs/round5_ppi_E2_report.md` section 5 |
+| E2.3 | E2 | E2 | held in substance, see `docs/round5_ppi_E2_report.md` section 5 |
+| E2.4 | E2 | E2 | partly held, see `docs/round5_ppi_E2_report.md` section 5 |
+| E2.5 | E2 | E2 | held for $\theta_3$, refuted for $\theta_2$, see `docs/round5_ppi_E2_report.md` section 5 |
 | E3.1 | E3 | E4 | not yet scored |
 | E3.2 | E3 | E4 | not yet scored |
 | E3.3 | E3 | E4 | not yet scored |
@@ -241,7 +241,7 @@ The twenty predictions are the oversight chat's and are copied from section 2.1 
 
 ## 4. Parametrisations fixed before the runs that use them
 
-1. The skewed and heavy laws of E1 are standardised log-normals, $(e^{\sigma Z} - e^{\sigma^2/2})/\sqrt{(e^{\sigma^2} - 1)e^{\sigma^2}}$ with $Z$ standard normal, and both $p_g$ and $\xi_g$ are drawn from the same law. The shapes were set on 7 October 2026, before any log-normal simulation job was submitted, by the diagnostic unit (`round5_ppi_e1_diag.py --moments`, Slurm job 4199035). The target is the median over the 50 CCRCC genes of $|\text{skewness}|$ of the 24 donor contributions $\bar z_g$ for $\theta_3$, donor-weighted, which is 1.758, and its 90th percentile, 2.929. $\sigma$ is the value at which the median over 20,000 simulated populations of 24 of the sample $|\text{skewness}|$ of $e^{\sigma Z}$ equals the target, found by bisection. The skewed law has $\sigma = 0.94096$ and the heavy law $\sigma = 1.93948$ (`results/round5/ppi/E1_interval/e1_law_shapes.json`). The heavy law's population skewness is about 292, because the sample skewness of 24 values cannot exceed about 4.6 and a sample median of 2.9 needs a very long tail. At intermediate $R^2$ the contributions $\bar z_g = \lambda^\star p_g + \sigma_\xi \xi_g$ are sums of two independent skewed variables and are less skewed than the target. The normal-law grid was run before the shapes were known, which the plan allowed because it does not use them.
+1. The skewed and heavy laws of E1 are standardised log-normals, $(e^{\sigma Z} - e^{\sigma^2/2})/\sqrt{(e^{\sigma^2} - 1)e^{\sigma^2}}$ with $Z$ standard normal, and both $p_g$ and $\xi_g$ are drawn from the same law. The shapes were set on 7 October 2026, before any log-normal simulation job was submitted, by the diagnostic unit (`round5_ppi_e1_diag.py --moments`, Slurm job 4199035, `results/round5/ppi/unit_job_ledgers/e1_diag_jobs.csv`). The target is the median over the 50 CCRCC genes of $|\text{skewness}|$ of the 24 donor contributions $\bar z_g$ for $\theta_3$, donor-weighted, which is 1.758, and its 90th percentile, 2.929. $\sigma$ is the value at which the median over simulated populations of 24 (their number is in the `rule` field of the JSON file) of the sample $|\text{skewness}|$ of $e^{\sigma Z}$ equals the target, found by bisection. The skewed law has $\sigma = 0.94096$ and the heavy law $\sigma = 1.93948$ (`results/round5/ppi/E1_interval/e1_law_shapes.json`). The heavy law's population skewness is about 292, because the sample skewness of 24 values cannot exceed $(n-2)/\sqrt{n-1}$ with $n = 24$ and a sample median of 2.9 needs a very long tail. At intermediate $R^2$ the contributions $\bar z_g = \lambda^\star p_g + \sigma_\xi \xi_g$ are sums of two independent skewed variables and are less skewed than the target. The normal-law grid was run before the shapes were known, which the plan allowed because it does not use them.
 2. Seeds are `zlib.crc32` of a string naming the stage, the cell and the draw. Round-4 seed strings are kept wherever a round-4 row is reproduced.
 
 ## 5. Points in the brief that look wrong or need a reading
@@ -262,4 +262,6 @@ These are listed and not acted on. Each is repeated in the E2 report.
 
 2. (7 October 2026) One pull request per gate, from `round5-ppi` into `main`, opened when the branch and the gate's tag are pushed. Nicolas merges it after he and the oversight chat have reviewed the gate report. The session never merges. A rejected gate is fixed with new commits on the same open pull request.
 
-No local run has been requested. Nothing runs on Nicolas's Mac.
+3. (8 October 2026) The numeric-claim sweep runs locally in the clone on Nicolas's Mac, at his request, because it measures the documents in place. It is the only local run. It used `code/scripts/verify_numeric_claims.py` unmodified, Python 3.11.15 and pandas 2.3.3, over `README.md` and `docs/round5_ppi_*.md`.
+
+No other local run has been requested. All other computation runs on Longleaf.
