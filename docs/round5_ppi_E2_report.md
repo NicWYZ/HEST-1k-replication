@@ -4,7 +4,7 @@
 
 ## 1. Stage and status
 
-E0, E1 and E2 are complete. Every acceptance check of E0 and E2 passes. E1's acceptance checks 1, 2 and 4 pass, and check 3 passes in 480, 479 and 478 of 480 cells under the normal, skewed and heavy laws, with the three exceptions all under the log-normal laws (section 3, `results/round5/ppi/E1_interval/e1_acceptance.csv`). The reading of section 2.4 of the brief holds for the slope $\theta_3$, and the derivation of `docs/round5_ppi_theory.md` section 1 recovers it as a special case. The group difference $\theta_2$ shows a separate problem in regime B that the brief did not anticipate (section 6.3 and escalation 4). Work has stopped at the gate. Nothing in E3 or E4 has been set up.
+E0, E1 and E2 are complete. Every acceptance check of E0 and E2 passes. E1's acceptance checks 1, 2 and 4 pass, and check 3 passes in 480, 479 and 478 of 480 cells under the normal, skewed and heavy laws, with the three exceptions all under the log-normal laws (section 3, `results/round5/ppi/E1_interval/e1_acceptance.csv`). The reading of section 2.4 of the brief holds for the slope $\theta_3$, and the derivation of `docs/round5_ppi_theory.md` section 1 recovers it as a special case. The group difference $\theta_2$ shows a separate problem in regime B that the brief did not anticipate (section 6.3 and escalation 4). Work has stopped at the gate. Nothing in E3 or E4 has been set up. The gate's pull request is NicWYZ/HEST-1k-replication#15, from `round5-ppi` into `main`, and the tag `round5-ppi-E2` marks the commit that adds this sentence.
 
 ## 2. What was run
 
