@@ -45,12 +45,12 @@ def prepare(y, yhat, w, didx, G, kind, group=None, valid=None):
     y = np.asarray(y, float); yhat = np.asarray(yhat, float)
     w = np.nan_to_num(np.asarray(w, float))
     n, ng = y.shape
-    H = 2 if kind == "theta2" else 1
-    if group is None:
+    # theta2 with group=None is the simple-random-sampling version (one stratum, every unit), used
+    # only to reproduce round 4's rows (forms r4 and P); form C on theta2 needs the groups.
+    H = 2 if (kind == "theta2" and group is not None) else 1
+    if group is None or kind != "theta2":
         group = np.zeros(n, int)
     group = np.asarray(group, int)
-    if kind != "theta2":
-        group = np.zeros(n, int)
     M = np.bincount(didx, minlength=G).astype(float)
     ing = group >= 0
     Mh = np.zeros((G, H))
@@ -71,7 +71,7 @@ def prepare(y, yhat, w, didx, G, kind, group=None, valid=None):
         wc = w - abar[didx]
         s = np.zeros((G, ng)); np.add.at(s, didx, wc[:, None] * yhat)
         T["Swh"] = s / np.maximum(M - 1, 1)[:, None]
-    if kind == "theta2":
+    if kind == "theta2" and H == 2:
         hm = np.zeros((G, 2, ng))
         np.add.at(hm, (didx[ing], group[ing]), yhat[ing])
         T["hbar"] = hm / np.maximum(Mh, 1)[:, :, None]
@@ -203,6 +203,8 @@ def estimate(T, Lmask, sel, estimator, seed, regime_b=False, xf=True, lam_r4=Non
     G, ng, kind = T["G"], T["ng"], T["kind"]
     form, kindc = estimator.split("_")
     ppi = kindc == "ppi"
+    if form == "C" and kind == "theta2" and T["H"] != 2:
+        raise ValueError("form C on theta2 needs the groups (stratified draw)")
     Lc = Lmask & T["valid"]
     sel = np.asarray(sel)
     sel = sel[Lc[T["didx"][sel]]]
@@ -312,7 +314,10 @@ def estimate(T, Lmask, sel, estimator, seed, regime_b=False, xf=True, lam_r4=Non
         em = e.sum(0) / nL
         s2e = np.where(Lm, (e - em) ** 2, 0.0).sum(0) / (nL - 1.0)
         var = (1.0 - nL / Gv) * s2e / nL + V.sum(0) / (Gv * nL)
+        var_noxf = var
         if xf:
             var = var + R5.crossfit_extra("donor", fb, Lm, lam, np.broadcast_to(T["valid"][:, None], (G, ng)))
         df = float(nL - 1)
-    return dict(theta=theta, var=var, df=df, zhat=zhat, V=V, lam_w=lamw, lam_c=lamc, gamma=gam)
+    if regime_b:
+        var_noxf = var
+    return dict(theta=theta, var=var, var_noxf=var_noxf, df=df, zhat=zhat, V=V, lam_w=lamw, lam_c=lamc, gamma=gam)
