@@ -100,7 +100,7 @@ def main():
     finally:
         el = time.time() - t0
         end = dt.datetime.now().astimezone().isoformat(timespec="seconds")
-        mods = sorted({os.path.realpath(m.__file__) for m in list(sys.modules.values())
+        mods = sorted(set([os.path.realpath(__file__)] if os.path.realpath(__file__).startswith(os.path.realpath(scripts)) else []) | {os.path.realpath(m.__file__) for m in list(sys.modules.values())
                        if getattr(m, "__file__", None)
                        and os.path.realpath(m.__file__).startswith(os.path.realpath(scripts))})
         ins = [p for p in a.inputs.split(",") if p]
@@ -123,7 +123,7 @@ def main():
             f.write("start: %s\nend: %s\nelapsed_s: %.1f\nstatus: %s\n" % (start, end, el, status))
             f.write("scripts_executed (md5, path relative to snapshot):\n")
             for m in mods:
-                f.write("  %s  %s\n" % (md5(m), os.path.relpath(m, snap)))
+                f.write("  %s  %s\n" % (md5(m), os.path.relpath(m, os.path.realpath(snap))))
             f.write("inputs (md5, path):\n")
             for p in ins:
                 f.write("  %s  %s\n" % (md5(p), p))
