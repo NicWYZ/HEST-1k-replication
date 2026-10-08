@@ -1,0 +1,70 @@
+selftest within_full: {'n_draws': 400, 'max_endpoint_residual': np.float64(3.552713678800501e-15), 'n_grid_points': 1600400, 'n_mismatch': 0}
+Loaded 378817 rows from /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W2_ghcp_settings/part2/input/data/acs_data_all50states.csv
+After filtering to 1 specified states: 378817 rows
+After filtering to foreign-born: 98793 rows
+After age filter [25, 54]: 51615 rows
+After recent entry filter (YOEP >= 2000): 22893 rows
+After labor force filter (hours >= 40): 13707 rows
+After requiring non-missing income: 13707 rows
+After dropping non-positive income: 13700 rows
+After dropping missings in key columns: 12285 rows
+
+Final state counts:
+state_abb
+CA    12285
+Name: count, dtype: int64
+cohort rows 12285, PUMAs 265, eligible (>=21) 212
+  100/500  1927s
+  200/500  3896s
+  300/500  5903s
+  400/500  7847s
+  500/500  9729s
+          method   o  alpha  n_puma  n_rep  coverage  coverage_se  finite_n  width_mean_finite  width_median_finite  expected_cov  exact_cov_mean  interval_share
+0           GHCP   0    0.1      30    500     0.964     0.008331       500      224105.397120        222312.871079           NaN             NaN             NaN
+1           GHCP   2    0.1      30    500     0.964     0.008331       500      213200.490531        212703.962180           NaN             NaN             NaN
+2           GHCP   5    0.1      30    500     0.960     0.008764       500      199642.274194        198747.181855           NaN             NaN             NaN
+3           GHCP   8    0.1      30    500     0.952     0.009560       500      186985.783188        186545.367181           NaN             NaN             NaN
+4           GHCP   9    0.1      30    500     0.950     0.009747       500      183640.555754        183096.137805           NaN             NaN             NaN
+5           GHCP  10    0.1      30    500     0.956     0.009172       500      180624.358826        179693.587048           NaN             NaN             NaN
+6           GHCP  12    0.1      30    500     0.948     0.009929       500      174039.957713        173787.889593           NaN             NaN             NaN
+7           GHCP  15    0.1      30    500     0.934     0.011104       500      165816.590000        163903.519040           NaN             NaN             NaN
+8           GHCP  17    0.1      30    500     0.932     0.011258       500      159486.876051        158200.657465           NaN             NaN             NaN
+9           GHCP  20    0.1      30    500     0.920     0.012133       500      153111.966090        152911.708801           NaN             NaN             NaN
+10           HCP   0    0.1      30    500     0.968     0.007871       500      223399.020870        222157.870626           NaN             NaN             NaN
+11           HCP   2    0.1      30    500     0.968     0.007871       500      223399.020870        222157.870626           NaN             NaN             NaN
+12           HCP   5    0.1      30    500     0.968     0.007871       500      223399.020870        222157.870626           NaN             NaN             NaN
+13           HCP   8    0.1      30    500     0.968     0.007871       500      223399.020870        222157.870626           NaN             NaN             NaN
+14           HCP   9    0.1      30    500     0.968     0.007871       500      223399.020870        222157.870626           NaN             NaN             NaN
+15           HCP  10    0.1      30    500     0.968     0.007871       500      223399.020870        222157.870626           NaN             NaN             NaN
+16           HCP  12    0.1      30    500     0.968     0.007871       500      223399.020870        222157.870626           NaN             NaN             NaN
+17           HCP  15    0.1      30    500     0.968     0.007871       500      223399.020870        222157.870626           NaN             NaN             NaN
+18           HCP  17    0.1      30    500     0.968     0.007871       500      223399.020870        222157.870626           NaN             NaN             NaN
+19           HCP  20    0.1      30    500     0.968     0.007871       500      223399.020870        222157.870626           NaN             NaN             NaN
+20        Std-CP   0    0.1      30    500     1.000     0.000000         0                NaN                  NaN           NaN             NaN             NaN
+21        Std-CP   2    0.1      30    500     0.920     0.012133        99      124808.686869         72000.000000           NaN             NaN             NaN
+22        Std-CP   5    0.1      30    500     0.900     0.013416       203      166074.585222        108240.000000           NaN             NaN             NaN
+23        Std-CP   8    0.1      30    500     0.922     0.011993       239      165434.628033        113594.000000           NaN             NaN             NaN
+24        Std-CP   9    0.1      30    500     0.918     0.012270       277      178628.751986        115530.000000           NaN             NaN             NaN
+25        Std-CP  10    0.1      30    500     0.914     0.012538       297      172341.055623        120748.800000           NaN             NaN             NaN
+26        Std-CP  12    0.1      30    500     0.916     0.012405       358      179747.001862        127676.000000           NaN             NaN             NaN
+27        Std-CP  15    0.1      30    500     0.922     0.011993       449      203933.344066        142021.714286           NaN             NaN             NaN
+28        Std-CP  17    0.1      30    500     0.930     0.011411       500      217401.358700        146513.750000           NaN             NaN             NaN
+29        Std-CP  20    0.1      30    500     0.918     0.012270       500      224347.473120        151310.800000           NaN             NaN             NaN
+30   within_full   2    0.1      30    500     1.000     0.000000         0                NaN                  NaN      1.000000           1.000             1.0
+31   within_full   5    0.1      30    500     1.000     0.000000         0                NaN                  NaN      1.000000           1.000             1.0
+32   within_full   8    0.1      30    500     1.000     0.000000         0                NaN                  NaN      1.000000           1.000             1.0
+33   within_full   9    0.1      30    500     0.914     0.012538       500      217804.139584        158531.289816      0.900000           0.914             1.0
+34   within_full  10    0.1      30    500     0.932     0.011258       500      230275.145993        166998.039606      0.909091           0.932             1.0
+35   within_full  12    0.1      30    500     0.930     0.011411       500      248245.949546        175499.766528      0.923077           0.930             1.0
+36   within_full  15    0.1      30    500     0.948     0.009929       500      269427.776943        191529.800782      0.937500           0.948             1.0
+37   within_full  17    0.1      30    500     0.956     0.009172       500      283425.940085        200908.442702      0.944444           0.956             1.0
+38   within_full  20    0.1      30    500     0.916     0.012405       500      177490.012855        150445.439911      0.904762           0.916             1.0
+39  within_plain   2    0.1      30    500     1.000     0.000000         0                NaN                  NaN      1.000000             NaN             NaN
+40  within_plain   5    0.1      30    500     1.000     0.000000         0                NaN                  NaN      1.000000             NaN             NaN
+41  within_plain   8    0.1      30    500     1.000     0.000000         0                NaN                  NaN      1.000000             NaN             NaN
+42  within_plain   9    0.1      30    500     0.904     0.013175       500      222117.574108        164337.106949      0.900000             NaN             NaN
+43  within_plain  10    0.1      30    500     0.914     0.012538       500      235539.520656        177278.560076      0.909091             NaN             NaN
+44  within_plain  12    0.1      30    500     0.926     0.011707       500      253915.372831        186916.034678      0.923077             NaN             NaN
+45  within_plain  15    0.1      30    500     0.948     0.009929       500      275545.712385        200051.341725      0.937500             NaN             NaN
+46  within_plain  17    0.1      30    500     0.954     0.009368       500      289287.252134        209902.506708      0.944444             NaN             NaN
+47  within_plain  20    0.1      30    500     0.916     0.012405       500      185756.387486        159735.683227      0.904762             NaN             NaN

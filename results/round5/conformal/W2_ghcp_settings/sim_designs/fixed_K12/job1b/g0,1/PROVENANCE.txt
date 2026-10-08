@@ -1,0 +1,34 @@
+==============================================================================
+Round 5 conformal track, stage W2p1_wrapper
+job_name_prefix : r5conf_W2p1_wrapper  (the submission route replaces --job-name)
+slurm_job_id    : 4244882
+slurm_partition : spill
+slurm_account   : rc_tengfei_pi
+node            : c151609.ll.unc.edu
+cpu_vendor      : AuthenticAMD
+date            : 2026-10-08T02:39:15-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round5-conformal
+code_clone_head : 23dc9d1bd9b603a5ed0e522a2af06de16306d4a6
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/1d148710-f9f4-49d5-808d-2bb9b0b94867/round5_conf_w2_wrapper.py --ghcp-code /work/users/w/e/weiyang/hest_code/ghcp_code --design fixedN21 --k 12 --chunks 0,1 --o-values 0,2,5,8,9,10,12,15,17,20 --alphas-out 0.1,0.2 --diag-reps 0 --out /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W2_ghcp_settings/sim_designs/fixed_K12/job1b/g0,1
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+pandas          : 3.0.3
+config_hash     : sha256/16 89a43b9dd75a83df
+config          : {"alphas_out": "0.1,0.2", "chunks": "0,1", "design": "fixedN21", "diag_reps": 0, "ghcp_code": "/work/users/w/e/weiyang/hest_code/ghcp_code", "k": 12, "max_reps": 0, "o_values": "0,2,5,8,9,10,12,15,17,20", "out": "/work/users/w/e/weiyang/hest_replication/results/round5/conformal/W2_ghcp_settings/sim_designs/fixed_K12/job1b/g0,1", "selftest": false, "total_replicates": 1000}
+script_md5      : 9c64eb0f6b56912e06654442f4a1ae6a  /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/1d148710-f9f4-49d5-808d-2bb9b0b94867/round5_conf_w2_wrapper.py
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round3_a0_harness.py
+script_md5      : 76fda34ee622e299bbaa806e5c8da98a  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round4_conf_sim.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_io.py
+script_md5      : 60777cae1216e945020e6411488d48a1  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_w1_sim.py
+ghcp_commit     : d1a69f4a35b260b592d3ea39d7c7ad7133459cba
+wrapper_md5     : 9c64eb0f6b56912e06654442f4a1ae6a
+wrapper_path    : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/1d148710-f9f4-49d5-808d-2bb9b0b94867/round5_conf_w2_wrapper.py
+R5CONF_FRAME_ID : be714d0a-8cad-4a67-b39d-9e9896bc1406
+sklearn         : 1.8.0
+what            : wrapper
+released_experiments_md5: eaf35d30852531caf7c6dfeac8694a65
+released_donor_hcp_md5: 547620c9c8d7ef7a76267fa3192a8582
+released_sample_hcp_md5: 4412a8e0780c0af3d27ca9452fedc826
+released_launcher_md5: 891c0e6b7a0886ff283f6c545ccce45f

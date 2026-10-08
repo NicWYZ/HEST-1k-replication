@@ -1,0 +1,28 @@
+==============================================================================
+Round 5 conformal track, stage W2_fixed_K12
+job_name_prefix : r5conf_W2_fixed_K12  (the submission route replaces --job-name)
+slurm_job_id    : 4244882
+slurm_partition : spill
+slurm_account   : rc_tengfei_pi
+node            : c151609.ll.unc.edu
+cpu_vendor      : AuthenticAMD
+date            : 2026-10-08T02:40:21-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round5-conformal
+code_clone_head : 23dc9d1bd9b603a5ed0e522a2af06de16306d4a6
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/1d148710-f9f4-49d5-808d-2bb9b0b94867/round5_conf_w2_prov.py --out /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W2_ghcp_settings/sim_designs/fixed_K12/job1b --stage W2_fixed_K12 --main /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/1d148710-f9f4-49d5-808d-2bb9b0b94867/round5_conf_w2_wrapper.py --scripts /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/1d148710-f9f4-49d5-808d-2bb9b0b94867/round5_conf_w2_prov.py,/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/1d148710-f9f4-49d5-808d-2bb9b0b94867/round5_conf_w2_wrapper.py --cfg {"design":"fixedN21","k":12,"chunks":"0,1;2,3;4,5;6,7","o_values":"0,2,5,8,9,10,12,15,17,20","alphas_out":"0.1,0.2"} slurm_job_id_inner=4244882 slurm_partition_inner=spill node_vendor=vendor_id	: AuthenticAMD model name	: AMD EPYC 9654 96-Core Processor
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+pandas          : 3.0.3
+config_hash     : sha256/16 9ab3c5d0a6b9db85
+config          : {"alphas_out": "0.1,0.2", "chunks": "0,1;2,3;4,5;6,7", "design": "fixedN21", "k": 12, "o_values": "0,2,5,8,9,10,12,15,17,20"}
+script_md5      : 9c64eb0f6b56912e06654442f4a1ae6a  /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/1d148710-f9f4-49d5-808d-2bb9b0b94867/round5_conf_w2_wrapper.py
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round3_a0_harness.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_io.py
+slurm_job_id_inner: 4244882
+slurm_partition_inner: spill
+node_vendor     : vendor_id	: AuthenticAMD model name	: AMD EPYC 9654 96-Core Processor
+staged_md5_round5_conf_w2_prov.py: 447c1508a36685166caeb046b12f8348
+staged_md5_round5_conf_w2_wrapper.py: 9c64eb0f6b56912e06654442f4a1ae6a
+R5CONF_FRAME_ID : be714d0a-8cad-4a67-b39d-9e9896bc1406

@@ -285,3 +285,23 @@ docs/round2_results_synthesis.md:0.29	derived: median zero-fraction over the fiv
 15.1	section reference: docs/round4_ppi_plan.md section 15.1
 15.5	section reference: docs/round4_ppi_plan.md section 15.5
 15.7	section reference: docs/round4_ppi_plan.md section 15.7
+# round 5 conformal track, W2 gate report (docs/round5_conf_W2_report.md)
+336	count: rows of results/round5/conformal/W2_ghcp_settings/w2_coverage_z.csv (168 cells for each of within_plain and within_full), docs/round5_conf_W2_report.md section 1
+4201092	Slurm job id (W0 c3 diagnostic), docs/round5_conf_W2_report.md section 2
+4203412	Slurm job id (W2 part 1 cancelled launcher job), docs/round5_conf_W2_report.md section 7
+4244454	Slurm job id (another user's job; refused scancel), docs/round5_conf_W2_report.md section 7
+7702	CPU model name (AMD EPYC 7702), not a measured value, docs/round5_conf_W2_report.md
+9654	CPU model name (AMD EPYC 9654), not a measured value, docs/round5_conf_W2_report.md
+108	count: row files listed in results/round5/conformal/W2_ghcp_settings/merged/w2_merge_inputs.json (88 simulation, 20 census)
+213	count: rows with whose()=sibling in results/round5/conformal/W0_setup/w0_whose_round4.csv
+7.1e-15	largest width difference between the local and the Longleaf W1 merges (results/round5/conformal/W1_sim/merged vs W1_sim root tables), computed by the lead at the time; and the W2 part 1 wrapper check (7.105427357601002e-15 in part1/w2_accept1_raw_columns_poisson.csv)
+1.1102230246251565e-16	largest coverage difference in the W0 sim anchor, a pandas CSV float-parsing artifact (docs/round5_conf_W2_report.md section 3, W0 item 1)
+101	sum: GHCP-narrowest cells at share 0.3 (90) and 0.5 (11) in results/round5/conformal/W1_sim/w1_whole_grid_counts.csv
+107	source line reference: released code/marginal/run_acs_experiments.py line 107 (docs/round5_conf_plan.md section 4 item 7)
+1585	source line reference: released code/marginal/run_acs_experiments.py line 1585 (docs/round5_conf_plan.md section 4 item 7)
+154	source line reference: released methods/donor_hcp.py line 154 (docs/round5_conf_plan.md section 4 item 8)
+172	source line reference: released methods/donor_hcp.py line 172 (docs/round5_conf_plan.md section 4 item 8)
+766	fragment of md5 766b6699bd939e767be124c64cc03174 (old W2 wrapper), docs/round5_conf_plan.md section 4 item 11
+2.9	proposition number in Vovk, Gammerman and Shafer (2022 edition) as cited by arXiv:2608.27310, docs/round5_conf_theory.md reading log
+241	line number in the text extracted from arXiv:2608.27310, docs/round5_conf_theory.md section A.2
+815	line number in the text extracted from arXiv:2608.27310, docs/round5_conf_theory.md section A.2

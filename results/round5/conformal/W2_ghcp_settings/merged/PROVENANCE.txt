@@ -1,0 +1,22 @@
+==============================================================================
+Round 5 conformal track, stage W2_merge
+job_name_prefix : r5conf_W2_merge  (the submission route replaces --job-name)
+slurm_job_id    : 4263968
+slurm_partition : spill
+slurm_account   : rc_tengfei_pi
+node            : c151418.ll.unc.edu
+cpu_vendor      : AuthenticAMD
+date            : 2026-10-08T08:51:42-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round5-conformal
+code_clone_head : 23dc9d1bd9b603a5ed0e522a2af06de16306d4a6
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : -c
+pythonhashseed  : unset
+python          : 3.11.16
+numpy           : 2.4.6
+pandas          : 2.3.3
+config_hash     : sha256/16 ca99730b99c7ac3e
+config          : {"excludes": "fixed_K30/job2b puma15/alpha10_r0-500 puma15/alpha10_r500-1000 puma20/alpha10_r0-500 puma50/alpha10_r0-500 puma50/alpha10_r500-1000 puma50/alpha20_r0-500"}
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round3_a0_harness.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_io.py
+script_md5      : 9a424e1bbb021a0d7dd55a498eddba45  /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W2_ghcp_settings/merged/round5_conf_w2_merge.py

@@ -1,0 +1,89 @@
+design,check,value,tol,passed,note
+sim,merge_duplicated_keys,0,0.0,True,
+sim,merge_replicates_per_unit_alpha,"{""fixed_K10|0.1"": 1000, ""fixed_K10|0.2"": 1000, ""fixed_K12|0.1"": 1000, ""fixed_K12|0.2"": 1000, ""fixed_K15|0.1"": 1000, ""fixed_K15|0.2"": 1000, ""fixed_K20|0.1"": 1000, ""fixed_K20|0.2"": 1000, ""fixed_K30|0.1"": 1000, ""fixed_K30|0.2"": 1000, ""fixed_K50|0.1"": 1000, ""fixed_K50|0.2"": 1000, ""poisson_K20|0.1"": 1000, ""poisson_K20|0.2"": 1000}",,True,
+fixedN21|K10,2_within_plain_finite_from_o9_a0.1,0,0.0,True,6 cells
+fixedN21|K10,2_within_plain_finite_from_o4_a0.2,0,0.0,True,8 cells
+fixedN21|K10,3_within_plain_cov_within_3se,0,0.0,True,14 cells; 0.04 expected by chance; max |z| 2.49; min z -0.87
+fixedN21|K10,4_within_full_finite_from_o9_a0.1,0,0.0,True,6 cells
+fixedN21|K10,4_within_full_finite_from_o4_a0.2,0,0.0,True,8 cells
+fixedN21|K10,4_within_full_cov_within_3se,0,0.0,True,14 cells; 0.04 expected by chance; max |z| 2.33; min z 0.65
+fixedN21|K10,4_within_full_frac_not_interval_max,0.0,,,largest share of replicates in a cell whose kept set is not one interval
+fixedN21|K12,2_within_plain_finite_from_o9_a0.1,0,0.0,True,6 cells
+fixedN21|K12,2_within_plain_finite_from_o4_a0.2,0,0.0,True,8 cells
+fixedN21|K12,3_within_plain_cov_within_3se,0,0.0,True,14 cells; 0.04 expected by chance; max |z| 1.65; min z -0.08
+fixedN21|K12,4_within_full_finite_from_o9_a0.1,0,0.0,True,6 cells
+fixedN21|K12,4_within_full_finite_from_o4_a0.2,0,0.0,True,8 cells
+fixedN21|K12,4_within_full_cov_within_3se,0,0.0,True,14 cells; 0.04 expected by chance; max |z| 2.06; min z 0.22
+fixedN21|K12,4_within_full_frac_not_interval_max,0.0,,,largest share of replicates in a cell whose kept set is not one interval
+fixedN21|K15,2_within_plain_finite_from_o9_a0.1,0,0.0,True,6 cells
+fixedN21|K15,2_within_plain_finite_from_o4_a0.2,0,0.0,True,8 cells
+fixedN21|K15,3_within_plain_cov_within_3se,1,0.0,False,14 cells; 0.04 expected by chance; max |z| 3.29; min z -1.39
+fixedN21|K15,4_within_full_finite_from_o9_a0.1,0,0.0,True,6 cells
+fixedN21|K15,4_within_full_finite_from_o4_a0.2,0,0.0,True,8 cells
+fixedN21|K15,4_within_full_cov_within_3se,0,0.0,True,14 cells; 0.04 expected by chance; max |z| 1.55; min z -1.42
+fixedN21|K15,4_within_full_frac_not_interval_max,0.0,,,largest share of replicates in a cell whose kept set is not one interval
+fixedN21|K20,2_within_plain_finite_from_o9_a0.1,0,0.0,True,6 cells
+fixedN21|K20,2_within_plain_finite_from_o4_a0.2,0,0.0,True,8 cells
+fixedN21|K20,3_within_plain_cov_within_3se,0,0.0,True,14 cells; 0.04 expected by chance; max |z| 2.28; min z -0.97
+fixedN21|K20,4_within_full_finite_from_o9_a0.1,0,0.0,True,6 cells
+fixedN21|K20,4_within_full_finite_from_o4_a0.2,0,0.0,True,8 cells
+fixedN21|K20,4_within_full_cov_within_3se,0,0.0,True,14 cells; 0.04 expected by chance; max |z| 2.56; min z -2.56
+fixedN21|K20,4_within_full_frac_not_interval_max,0.0,,,largest share of replicates in a cell whose kept set is not one interval
+fixedN21|K30,2_within_plain_finite_from_o9_a0.1,0,0.0,True,6 cells
+fixedN21|K30,2_within_plain_finite_from_o4_a0.2,0,0.0,True,8 cells
+fixedN21|K30,3_within_plain_cov_within_3se,0,0.0,True,14 cells; 0.04 expected by chance; max |z| 1.89; min z -1.89
+fixedN21|K30,4_within_full_finite_from_o9_a0.1,0,0.0,True,6 cells
+fixedN21|K30,4_within_full_finite_from_o4_a0.2,0,0.0,True,8 cells
+fixedN21|K30,4_within_full_cov_within_3se,0,0.0,True,14 cells; 0.04 expected by chance; max |z| 1.29; min z -0.91
+fixedN21|K30,4_within_full_frac_not_interval_max,0.0,,,largest share of replicates in a cell whose kept set is not one interval
+fixedN21|K50,2_within_plain_finite_from_o9_a0.1,0,0.0,True,6 cells
+fixedN21|K50,2_within_plain_finite_from_o4_a0.2,0,0.0,True,8 cells
+fixedN21|K50,3_within_plain_cov_within_3se,0,0.0,True,14 cells; 0.04 expected by chance; max |z| 1.26; min z -1.08
+fixedN21|K50,4_within_full_finite_from_o9_a0.1,0,0.0,True,6 cells
+fixedN21|K50,4_within_full_finite_from_o4_a0.2,0,0.0,True,8 cells
+fixedN21|K50,4_within_full_cov_within_3se,0,0.0,True,14 cells; 0.04 expected by chance; max |z| 1.44; min z -1.38
+fixedN21|K50,4_within_full_frac_not_interval_max,0.0,,,largest share of replicates in a cell whose kept set is not one interval
+poissonNmean25|K20,2_within_plain_finite_from_o9_a0.1,0,0.0,True,6 cells
+poissonNmean25|K20,2_within_plain_finite_from_o4_a0.2,0,0.0,True,8 cells
+poissonNmean25|K20,3_within_plain_cov_within_3se,0,0.0,True,14 cells; 0.04 expected by chance; max |z| 2.93; min z -0.29
+poissonNmean25|K20,4_within_full_finite_from_o9_a0.1,0,0.0,True,6 cells
+poissonNmean25|K20,4_within_full_finite_from_o4_a0.2,0,0.0,True,8 cells
+poissonNmean25|K20,4_within_full_cov_within_3se,0,0.0,True,14 cells; 0.04 expected by chance; max |z| 1.22; min z -0.92
+poissonNmean25|K20,4_within_full_frac_not_interval_max,0.0,,,largest share of replicates in a cell whose kept set is not one interval
+census,merge_duplicated_keys,0,0.0,True,
+census,merge_replicates_per_puma_alpha,"{""10|0.1"": 1000, ""10|0.2"": 1000, ""15|0.1"": 1000, ""15|0.2"": 1000, ""20|0.1"": 1000, ""20|0.2"": 1000, ""30|0.1"": 1000, ""30|0.2"": 1000, ""50|0.1"": 1000, ""50|0.2"": 1000}",,True,
+census|puma10,2_within_plain_finite_from_o9_a0.1,0,0.0,True,6 cells
+census|puma10,2_within_plain_finite_from_o4_a0.2,0,0.0,True,8 cells
+census|puma10,3_within_plain_cov_within_3se,0,0.0,True,14 cells; 0.04 expected by chance; max |z| 1.39; min z 0.11
+census|puma10,4_within_full_finite_from_o9_a0.1,0,0.0,True,6 cells
+census|puma10,4_within_full_finite_from_o4_a0.2,0,0.0,True,8 cells
+census|puma10,4_within_full_cov_within_3se,0,0.0,True,14 cells; 0.04 expected by chance; max |z| 0.81; min z -0.39
+census|puma10,4_within_full_frac_not_interval_max,0.0,,,largest share of replicates in a cell whose kept set is not one interval
+census|puma15,2_within_plain_finite_from_o9_a0.1,0,0.0,True,6 cells
+census|puma15,2_within_plain_finite_from_o4_a0.2,0,0.0,True,8 cells
+census|puma15,3_within_plain_cov_within_3se,0,0.0,True,14 cells; 0.04 expected by chance; max |z| 2.76; min z -2.76
+census|puma15,4_within_full_finite_from_o9_a0.1,0,0.0,True,6 cells
+census|puma15,4_within_full_finite_from_o4_a0.2,0,0.0,True,8 cells
+census|puma15,4_within_full_cov_within_3se,0,0.0,True,14 cells; 0.04 expected by chance; max |z| 2.32; min z -2.32
+census|puma15,4_within_full_frac_not_interval_max,0.0,,,largest share of replicates in a cell whose kept set is not one interval
+census|puma20,2_within_plain_finite_from_o9_a0.1,0,0.0,True,6 cells
+census|puma20,2_within_plain_finite_from_o4_a0.2,0,0.0,True,8 cells
+census|puma20,3_within_plain_cov_within_3se,0,0.0,True,14 cells; 0.04 expected by chance; max |z| 1.41; min z -1.41
+census|puma20,4_within_full_finite_from_o9_a0.1,0,0.0,True,6 cells
+census|puma20,4_within_full_finite_from_o4_a0.2,0,0.0,True,8 cells
+census|puma20,4_within_full_cov_within_3se,0,0.0,True,14 cells; 0.04 expected by chance; max |z| 1.47; min z -0.61
+census|puma20,4_within_full_frac_not_interval_max,0.0,,,largest share of replicates in a cell whose kept set is not one interval
+census|puma30,2_within_plain_finite_from_o9_a0.1,0,0.0,True,6 cells
+census|puma30,2_within_plain_finite_from_o4_a0.2,0,0.0,True,8 cells
+census|puma30,3_within_plain_cov_within_3se,0,0.0,True,14 cells; 0.04 expected by chance; max |z| 1.16; min z -0.04
+census|puma30,4_within_full_finite_from_o9_a0.1,0,0.0,True,6 cells
+census|puma30,4_within_full_finite_from_o4_a0.2,0,0.0,True,8 cells
+census|puma30,4_within_full_cov_within_3se,0,0.0,True,14 cells; 0.04 expected by chance; max |z| 1.40; min z -0.45
+census|puma30,4_within_full_frac_not_interval_max,0.0,,,largest share of replicates in a cell whose kept set is not one interval
+census|puma50,2_within_plain_finite_from_o9_a0.1,0,0.0,True,6 cells
+census|puma50,2_within_plain_finite_from_o4_a0.2,0,0.0,True,8 cells
+census|puma50,3_within_plain_cov_within_3se,0,0.0,True,14 cells; 0.04 expected by chance; max |z| 0.96; min z -0.96
+census|puma50,4_within_full_finite_from_o9_a0.1,0,0.0,True,6 cells
+census|puma50,4_within_full_finite_from_o4_a0.2,0,0.0,True,8 cells
+census|puma50,4_within_full_cov_within_3se,0,0.0,True,14 cells; 0.04 expected by chance; max |z| 1.33; min z -1.33
+census|puma50,4_within_full_frac_not_interval_max,0.0,,,largest share of replicates in a cell whose kept set is not one interval

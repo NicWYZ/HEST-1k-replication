@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/8e707071-1466-460e-83de-f7f62ca838ca/round5_conf_w2_wrapper.py", line 460, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/8e707071-1466-460e-83de-f7f62ca838ca/round5_conf_w2_wrapper.py", line 437, in main
+    assert set(alphas_out) <= set(LAUNCHER_ALPHAS) and set(o_out) <= set(LAUNCHER_O)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
