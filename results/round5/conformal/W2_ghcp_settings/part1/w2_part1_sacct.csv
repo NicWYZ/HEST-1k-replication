@@ -1,0 +1,13 @@
+JobID,unit,JobName,Account,Partition,NCPUS,ReqMem,Submit,Start,Elapsed,Timelimit,State,ExitCode,NodeList,MaxRSS
+4203412,launcher_fixed_sub_a,claude-science-f8f5289b,rc_tengfei_pi,spill,4,6G,2026-10-07T19:51:58,2026-10-07T19:52:32,00:10:34,10:30:00,CANCELLED by 375767,0:0,c151605,572236K
+4203414,launcher_fixed_sub_b,claude-science-ad4bc3da,rc_tengfei_pi,spill,4,6G,2026-10-07T19:52:01,2026-10-07T19:52:32,00:10:35,10:30:00,CANCELLED by 375767,0:0,c151604,441064K
+4203415,launcher_poisson_sub_a,claude-science-85fd82c5,rc_tengfei_pi,spill,4,8G,2026-10-07T19:52:05,2026-10-07T19:58:28,00:04:40,08:30:00,CANCELLED by 375767,0:0,c130407,370448K
+4203416,launcher_poisson_sub_b,claude-science-c06d9b86,rc_tengfei_pi,spill,4,8G,2026-10-07T19:52:09,2026-10-07T19:58:28,00:04:41,08:30:00,CANCELLED by 375767,0:0,c151601,579160K
+4203425,smoke,claude-science-b1679922,rc_tengfei_pi,spill,1,6G,2026-10-07T19:52:26,2026-10-07T19:53:31,00:03:41,02:00:00,FAILED,1:0,c0309,167676K
+4204211,diag,claude-science-9231eeb7,rc_tengfei_pi,spill,1,6G,2026-10-07T19:58:36,2026-10-07T19:59:26,00:02:30,01:00:00,COMPLETED,0:0,c0317,339916K
+4204439,combined_fixed_sub_a,claude-science-be1266c9,rc_tengfei_pi,spill,4,6G,2026-10-07T20:03:37,2026-10-07T20:04:44,05:27:47,12:00:00,COMPLETED,0:0,c130407,692172K
+4204440,combined_fixed_sub_b,claude-science-28a2f598,rc_tengfei_pi,spill,4,6G,2026-10-07T20:03:41,2026-10-07T20:04:44,05:15:27,12:00:00,COMPLETED,0:0,c130503,767640K
+4204450,combined_poisson_sub_a,claude-science-1da5de2d,rc_tengfei_pi,spill,4,8G,2026-10-07T20:03:46,2026-10-07T20:04:44,03:11:06,10:00:00,COMPLETED,0:0,c151601,655036K
+4204471,combined_poisson_sub_b,claude-science-c876ab5f,rc_tengfei_pi,spill,4,8G,2026-10-07T20:03:50,2026-10-07T20:04:44,03:08:03,10:00:00,COMPLETED,0:0,c151601,705424K
+4243976,assembly,claude-science-0bc45a8b,rc_tengfei_pi,spill,1,8G,2026-10-08T01:33:03,2026-10-08T01:33:43,00:02:17,03:00:00,COMPLETED,0:0,c130407,430876K
+4244074,node_test,claude-science-4c35af1a,rc_tengfei_pi,spill,1,6G,2026-10-08T01:37:38,2026-10-08T01:38:17,00:01:21,00:40:00,COMPLETED,0:0,c151603,203896K
