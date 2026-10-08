@@ -1,0 +1,24 @@
+==============================================================================
+Round 5 conformal track, stage W1_seedcheck
+job_name_prefix : r5conf_W1_seedcheck  (the submission route replaces --job-name)
+slurm_job_id    : 4215597
+slurm_partition : spill
+slurm_account   : rc_tengfei_pi
+node            : c0301.ll.unc.edu
+cpu_vendor      : GenuineIntel
+date            : 2026-10-07T21:53:28-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round5-conformal
+code_clone_head : 23dc9d1bd9b603a5ed0e522a2af06de16306d4a6
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : ./round5_conf_w1_seedcheck.py /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W1_sim/seedcheck
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+pandas          : 2.3.3
+config_hash     : sha256/16 ffd1b63119137d22
+config          : {"cell": "t3|K16|N100|share0.9|tau0.0", "reps": 5000, "stage": "W1 seed check", "tags": ["C1", "W1seedcheck"]}
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round3_a0_harness.py
+script_md5      : 76fda34ee622e299bbaa806e5c8da98a  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round4_conf_sim.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_io.py
+script_md5      : 60777cae1216e945020e6411488d48a1  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_w1_sim.py
+script_md5      : f5bc7ee669d5da0e70d7d122dcda11d6  /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W1_sim/seedcheck/round5_conf_w1_seedcheck.py

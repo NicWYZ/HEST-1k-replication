@@ -1,0 +1,32 @@
+==============================================================================
+Round 5 conformal track, stage W2p2_census
+job_name_prefix : r5conf_W2p2_census  (the submission route replaces --job-name)
+slurm_job_id    : 4217335
+slurm_partition : spill
+slurm_account   : rc_htzhu_pi
+node            : c151413.ll.unc.edu
+cpu_vendor      : AuthenticAMD
+date            : 2026-10-07T22:18:07-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round5-conformal
+code_clone_head : 23dc9d1bd9b603a5ed0e522a2af06de16306d4a6
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : round5_conf_w2_census.py --alpha 0.2 --n-puma 10 --o 0,2,5,8,9,10,12,15,17,20 --B 1000 --rep-from 0 --rep-to 8 --acs-csv /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W2_ghcp_settings/part2/input/data/acs_data_all50states.csv --out /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W2_ghcp_settings/part2/smoke_ext_a20_K10 --workers 4
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+pandas          : 3.0.3
+config_hash     : sha256/16 08f6e512098a2028
+config          : {"B": 1000, "acs_csv": "/work/users/w/e/weiyang/hest_replication/results/round5/conformal/W2_ghcp_settings/part2/input/data/acs_data_all50states.csv", "alpha": 0.2, "check_against": null, "check_stdcp": null, "n_puma": 10, "o": "0,2,5,8,9,10,12,15,17,20", "out": "/work/users/w/e/weiyang/hest_replication/results/round5/conformal/W2_ghcp_settings/part2/smoke_ext_a20_K10", "rep_from": 0, "rep_to": 8, "skip_stdcp": false, "workers": 4}
+script_md5      : d6fb1322983815461700cc75681d9e70  /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/be550cf3-b49b-4c3d-9e80-6fe12b254afe/round5_conf_w2_census.py
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round3_a0_harness.py
+script_md5      : 76fda34ee622e299bbaa806e5c8da98a  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round4_conf_sim.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_io.py
+script_md5      : 60777cae1216e945020e6411488d48a1  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_w1_sim.py
+input_csv_md5   : 52c89ae44af23ce972a02c13e4ee5648
+replicates_none : 0
+runtime_s       : 52
+released_md5s   : {"code/marginal/run_acs_experiments.py": "7ecc70f4e9c34c716549568c5a9e2d38", "real_data/acs/data_processing.py": "376efb546af3436477216caaaac59284", "methods/donor_hcp.py": "547620c9c8d7ef7a76267fa3192a8582", "scores.py": "f3f4d4e857c8fe041a3876fc0250c5d2"}
+pyarrow_from    : /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/lib/python3.11/site-packages/pyarrow/__init__.py
+numpy_from      : /work/users/w/e/weiyang/hest_code/ghcp_venv/lib/python3.11/site-packages/numpy/__init__.py
+pandas_version  : 3.0.3
+check_rows      : none

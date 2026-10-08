@@ -1,0 +1,29 @@
+==============================================================================
+Round 5 conformal track, stage W2p2_input
+job_name_prefix : r5conf_W2p2_input  (the submission route replaces --job-name)
+slurm_job_id    : 4203080
+slurm_partition : spill
+slurm_account   : rc_htzhu_pi
+node            : c130406.ll.unc.edu
+cpu_vendor      : AuthenticAMD
+date            : 2026-10-07T19:45:43-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round5-conformal
+code_clone_head : 23dc9d1bd9b603a5ed0e522a2af06de16306d4a6
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : round5_conf_w2_census_input.py /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W2_ghcp_settings/part2/input
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+pandas          : 3.0.3
+config_hash     : sha256/16 63d7af3d453f5a78
+config          : {"raw": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q0_setup/acs_pums2018/raw/2018/1-Year/psam_p06.csv", "released_script": "download_acs_ca_pums.main()"}
+script_md5      : c9a4e3aab5bbaa4b8ac4b09acbf976ed  /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/f41c6dc3-eccb-45de-acce-db26d7b59dc3/round5_conf_w2_census_input.py
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round3_a0_harness.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_io.py
+rows            : 378817
+md5             : 52c89ae44af23ce972a02c13e4ee5648
+raw_md5         : fe1e2321f1b69cad23486d2c8f582d28
+manifest_md5    : fe1e2321f1b69cad23486d2c8f582d28
+path            : /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W2_ghcp_settings/part2/input/data/acs_data_all50states.csv
+released_script_md5: 87a6d1442372df57f732836e606c3cd7
+data_processing_md5: 376efb546af3436477216caaaac59284

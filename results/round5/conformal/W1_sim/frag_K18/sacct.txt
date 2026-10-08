@@ -1,0 +1,16 @@
+# sacct -X
+JobID|Account|Partition|NCPUS|ReqMem|Submit|Start|Elapsed|MaxRSS|State|ExitCode|NodeList
+4202823|rc_tengfei_pi|spill|4|16G|2026-10-07T19:38:13|2026-10-07T19:38:47|00:56:12||COMPLETED|0:0|c151411
+
+# sacct with steps
+JobID|Account|Partition|NCPUS|ReqMem|Submit|Start|Elapsed|MaxRSS|State|ExitCode|NodeList
+4202823|rc_tengfei_pi|spill|4|16G|2026-10-07T19:38:13|2026-10-07T19:38:47|00:56:12||COMPLETED|0:0|c151411
+4202823.batch|rc_tengfei_pi||4||2026-10-07T19:38:47|2026-10-07T19:38:47|00:56:12|1824028K|COMPLETED|0:0|c151411
+4202823.extern|rc_tengfei_pi||4||2026-10-07T19:38:47|2026-10-07T19:38:47|00:56:12||COMPLETED|0:0|c151411
+
+# node features and steps
+   ActiveFeatures=rhel9,amd,avx512
+JobID|MaxRSS|AveCPU|Elapsed
+4202823|||00:56:12
+4202823.batch|1824028K|03:25:47|00:56:12
+4202823.extern|||00:56:12

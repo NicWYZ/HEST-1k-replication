@@ -1,0 +1,250 @@
+==============================================================================
+Round 5 conformal track, stage W1
+job_name_prefix : r5conf_W1  (the submission route replaces --job-name)
+slurm_job_id    : 4201564
+slurm_partition : spill
+slurm_account   : rc_tengfei_pi
+node            : c0316.ll.unc.edu
+cpu_vendor      : GenuineIntel
+date            : 2026-10-07T19:08:52-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round5-conformal
+code_clone_head : 23dc9d1bd9b603a5ed0e522a2af06de16306d4a6
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_w1_sim.py --K 9 --out /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W1_sim/smoke --reps 200 --tag __smoke --cells-regex ^(normal\|K[0-9]+\|N(500|unequal|21)\|share0\.3\|tau0\.0|semireal\|K[0-9]+\|Ndata)
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+pandas          : 2.3.3
+config_hash     : sha256/16 04060aa25414eaaf
+config          : {"K": 9, "N": ["21", "100", "500", "unequal"], "alphas": [0.1, 0.2], "cells_regex": "^(normal\\|K[0-9]+\\|N(500|unequal|21)\\|share0\\.3\\|tau0\\.0|semireal\\|K[0-9]+\\|Ndata)", "methods": ["pooled", "hcp", "one_per", "ghcp", "within", "within_plain", "within_full"], "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_md5": "27352567fdbeab21d830e57a3b28fbec", "n_cells": 4, "o_grid": [0, 3, 5, 9, 10, 12, 15, 17, 20, 25, 35, 50, 100], "reps": 200, "seed": "zlib.crc32 keys C1|cell|rep (round 4's)", "shares": [0.1, 0.3, 0.5, 0.9], "stage": "W1", "taus": [0.0, 0.3]}
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round3_a0_harness.py
+script_md5      : 76fda34ee622e299bbaa806e5c8da98a  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round4_conf_sim.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_io.py
+script_md5      : 60777cae1216e945020e6411488d48a1  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_w1_sim.py
+wall_seconds    : 154
+selftest        : {'n_draws': 400, 'max_endpoint_residual': np.float64(3.552713678800501e-15), 'n_grid_points': 1600400, 'n_mismatch': 0}
+==============================================================================
+Round 5 conformal track, stage W1
+job_name_prefix : r5conf_W1  (the submission route replaces --job-name)
+slurm_job_id    : 4201564
+slurm_partition : spill
+slurm_account   : rc_tengfei_pi
+node            : c0316.ll.unc.edu
+cpu_vendor      : GenuineIntel
+date            : 2026-10-07T19:11:24-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round5-conformal
+code_clone_head : 23dc9d1bd9b603a5ed0e522a2af06de16306d4a6
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_w1_sim.py --K 10 --out /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W1_sim/smoke --reps 200 --tag __smoke --cells-regex ^(normal\|K[0-9]+\|N(500|unequal|21)\|share0\.3\|tau0\.0|semireal\|K[0-9]+\|Ndata)
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+pandas          : 2.3.3
+config_hash     : sha256/16 642959b8f0b0eeac
+config          : {"K": 10, "N": ["21", "100", "500", "unequal"], "alphas": [0.1, 0.2], "cells_regex": "^(normal\\|K[0-9]+\\|N(500|unequal|21)\\|share0\\.3\\|tau0\\.0|semireal\\|K[0-9]+\\|Ndata)", "methods": ["pooled", "hcp", "one_per", "ghcp", "within", "within_plain", "within_full"], "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_md5": "27352567fdbeab21d830e57a3b28fbec", "n_cells": 4, "o_grid": [0, 3, 5, 9, 10, 12, 15, 17, 20, 25, 35, 50, 100], "reps": 200, "seed": "zlib.crc32 keys C1|cell|rep (round 4's)", "shares": [0.1, 0.3, 0.5, 0.9], "stage": "W1", "taus": [0.0, 0.3]}
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round3_a0_harness.py
+script_md5      : 76fda34ee622e299bbaa806e5c8da98a  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round4_conf_sim.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_io.py
+script_md5      : 60777cae1216e945020e6411488d48a1  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_w1_sim.py
+wall_seconds    : 148
+selftest        : {'n_draws': 400, 'max_endpoint_residual': np.float64(3.552713678800501e-15), 'n_grid_points': 1600400, 'n_mismatch': 0}
+==============================================================================
+Round 5 conformal track, stage W1
+job_name_prefix : r5conf_W1  (the submission route replaces --job-name)
+slurm_job_id    : 4201564
+slurm_partition : spill
+slurm_account   : rc_tengfei_pi
+node            : c0316.ll.unc.edu
+cpu_vendor      : GenuineIntel
+date            : 2026-10-07T19:13:55-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round5-conformal
+code_clone_head : 23dc9d1bd9b603a5ed0e522a2af06de16306d4a6
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_w1_sim.py --K 12 --out /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W1_sim/smoke --reps 200 --tag __smoke --cells-regex ^(normal\|K[0-9]+\|N(500|unequal|21)\|share0\.3\|tau0\.0|semireal\|K[0-9]+\|Ndata)
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+pandas          : 2.3.3
+config_hash     : sha256/16 90ade2ae5ff73534
+config          : {"K": 12, "N": ["21", "100", "500", "unequal"], "alphas": [0.1, 0.2], "cells_regex": "^(normal\\|K[0-9]+\\|N(500|unequal|21)\\|share0\\.3\\|tau0\\.0|semireal\\|K[0-9]+\\|Ndata)", "methods": ["pooled", "hcp", "one_per", "ghcp", "within", "within_plain", "within_full"], "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_md5": "27352567fdbeab21d830e57a3b28fbec", "n_cells": 4, "o_grid": [0, 3, 5, 9, 10, 12, 15, 17, 20, 25, 35, 50, 100], "reps": 200, "seed": "zlib.crc32 keys C1|cell|rep (round 4's)", "shares": [0.1, 0.3, 0.5, 0.9], "stage": "W1", "taus": [0.0, 0.3]}
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round3_a0_harness.py
+script_md5      : 76fda34ee622e299bbaa806e5c8da98a  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round4_conf_sim.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_io.py
+script_md5      : 60777cae1216e945020e6411488d48a1  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_w1_sim.py
+wall_seconds    : 149
+selftest        : {'n_draws': 400, 'max_endpoint_residual': np.float64(3.552713678800501e-15), 'n_grid_points': 1600400, 'n_mismatch': 0}
+==============================================================================
+Round 5 conformal track, stage W1
+job_name_prefix : r5conf_W1  (the submission route replaces --job-name)
+slurm_job_id    : 4201564
+slurm_partition : spill
+slurm_account   : rc_tengfei_pi
+node            : c0316.ll.unc.edu
+cpu_vendor      : GenuineIntel
+date            : 2026-10-07T19:16:33-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round5-conformal
+code_clone_head : 23dc9d1bd9b603a5ed0e522a2af06de16306d4a6
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_w1_sim.py --K 14 --out /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W1_sim/smoke --reps 200 --tag __smoke --cells-regex ^(normal\|K[0-9]+\|N(500|unequal|21)\|share0\.3\|tau0\.0|semireal\|K[0-9]+\|Ndata)
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+pandas          : 2.3.3
+config_hash     : sha256/16 8621e0c894705444
+config          : {"K": 14, "N": ["21", "100", "500", "unequal"], "alphas": [0.1, 0.2], "cells_regex": "^(normal\\|K[0-9]+\\|N(500|unequal|21)\\|share0\\.3\\|tau0\\.0|semireal\\|K[0-9]+\\|Ndata)", "methods": ["pooled", "hcp", "one_per", "ghcp", "within", "within_plain", "within_full"], "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_md5": "27352567fdbeab21d830e57a3b28fbec", "n_cells": 4, "o_grid": [0, 3, 5, 9, 10, 12, 15, 17, 20, 25, 35, 50, 100], "reps": 200, "seed": "zlib.crc32 keys C1|cell|rep (round 4's)", "shares": [0.1, 0.3, 0.5, 0.9], "stage": "W1", "taus": [0.0, 0.3]}
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round3_a0_harness.py
+script_md5      : 76fda34ee622e299bbaa806e5c8da98a  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round4_conf_sim.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_io.py
+script_md5      : 60777cae1216e945020e6411488d48a1  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_w1_sim.py
+wall_seconds    : 155
+selftest        : {'n_draws': 400, 'max_endpoint_residual': np.float64(3.552713678800501e-15), 'n_grid_points': 1600400, 'n_mismatch': 0}
+==============================================================================
+Round 5 conformal track, stage W1
+job_name_prefix : r5conf_W1  (the submission route replaces --job-name)
+slurm_job_id    : 4201564
+slurm_partition : spill
+slurm_account   : rc_tengfei_pi
+node            : c0316.ll.unc.edu
+cpu_vendor      : GenuineIntel
+date            : 2026-10-07T19:19:23-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round5-conformal
+code_clone_head : 23dc9d1bd9b603a5ed0e522a2af06de16306d4a6
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_w1_sim.py --K 16 --out /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W1_sim/smoke --reps 200 --tag __smoke --cells-regex ^(normal\|K[0-9]+\|N(500|unequal|21)\|share0\.3\|tau0\.0|semireal\|K[0-9]+\|Ndata)
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+pandas          : 2.3.3
+config_hash     : sha256/16 509a235e32b70608
+config          : {"K": 16, "N": ["21", "100", "500", "unequal"], "alphas": [0.1, 0.2], "cells_regex": "^(normal\\|K[0-9]+\\|N(500|unequal|21)\\|share0\\.3\\|tau0\\.0|semireal\\|K[0-9]+\\|Ndata)", "methods": ["pooled", "hcp", "one_per", "ghcp", "within", "within_plain", "within_full"], "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_md5": "27352567fdbeab21d830e57a3b28fbec", "n_cells": 4, "o_grid": [0, 3, 5, 9, 10, 12, 15, 17, 20, 25, 35, 50, 100], "reps": 200, "seed": "zlib.crc32 keys C1|cell|rep (round 4's)", "shares": [0.1, 0.3, 0.5, 0.9], "stage": "W1", "taus": [0.0, 0.3]}
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round3_a0_harness.py
+script_md5      : 76fda34ee622e299bbaa806e5c8da98a  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round4_conf_sim.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_io.py
+script_md5      : 60777cae1216e945020e6411488d48a1  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_w1_sim.py
+wall_seconds    : 167
+selftest        : {'n_draws': 400, 'max_endpoint_residual': np.float64(3.552713678800501e-15), 'n_grid_points': 1600400, 'n_mismatch': 0}
+==============================================================================
+Round 5 conformal track, stage W1
+job_name_prefix : r5conf_W1  (the submission route replaces --job-name)
+slurm_job_id    : 4201564
+slurm_partition : spill
+slurm_account   : rc_tengfei_pi
+node            : c0316.ll.unc.edu
+cpu_vendor      : GenuineIntel
+date            : 2026-10-07T19:22:11-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round5-conformal
+code_clone_head : 23dc9d1bd9b603a5ed0e522a2af06de16306d4a6
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_w1_sim.py --K 18 --out /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W1_sim/smoke --reps 200 --tag __smoke --cells-regex ^(normal\|K[0-9]+\|N(500|unequal|21)\|share0\.3\|tau0\.0|semireal\|K[0-9]+\|Ndata)
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+pandas          : 2.3.3
+config_hash     : sha256/16 f1361808cdb8cc4e
+config          : {"K": 18, "N": ["21", "100", "500", "unequal"], "alphas": [0.1, 0.2], "cells_regex": "^(normal\\|K[0-9]+\\|N(500|unequal|21)\\|share0\\.3\\|tau0\\.0|semireal\\|K[0-9]+\\|Ndata)", "methods": ["pooled", "hcp", "one_per", "ghcp", "within", "within_plain", "within_full"], "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_md5": "27352567fdbeab21d830e57a3b28fbec", "n_cells": 4, "o_grid": [0, 3, 5, 9, 10, 12, 15, 17, 20, 25, 35, 50, 100], "reps": 200, "seed": "zlib.crc32 keys C1|cell|rep (round 4's)", "shares": [0.1, 0.3, 0.5, 0.9], "stage": "W1", "taus": [0.0, 0.3]}
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round3_a0_harness.py
+script_md5      : 76fda34ee622e299bbaa806e5c8da98a  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round4_conf_sim.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_io.py
+script_md5      : 60777cae1216e945020e6411488d48a1  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_w1_sim.py
+wall_seconds    : 165
+selftest        : {'n_draws': 400, 'max_endpoint_residual': np.float64(3.552713678800501e-15), 'n_grid_points': 1600400, 'n_mismatch': 0}
+==============================================================================
+Round 5 conformal track, stage W1
+job_name_prefix : r5conf_W1  (the submission route replaces --job-name)
+slurm_job_id    : 4201564
+slurm_partition : spill
+slurm_account   : rc_tengfei_pi
+node            : c0316.ll.unc.edu
+cpu_vendor      : GenuineIntel
+date            : 2026-10-07T19:25:09-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round5-conformal
+code_clone_head : 23dc9d1bd9b603a5ed0e522a2af06de16306d4a6
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_w1_sim.py --K 20 --out /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W1_sim/smoke --reps 200 --tag __smoke --cells-regex ^(normal\|K[0-9]+\|N(500|unequal|21)\|share0\.3\|tau0\.0|semireal\|K[0-9]+\|Ndata)
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+pandas          : 2.3.3
+config_hash     : sha256/16 c045eeb698f95411
+config          : {"K": 20, "N": ["21", "100", "500", "unequal"], "alphas": [0.1, 0.2], "cells_regex": "^(normal\\|K[0-9]+\\|N(500|unequal|21)\\|share0\\.3\\|tau0\\.0|semireal\\|K[0-9]+\\|Ndata)", "methods": ["pooled", "hcp", "one_per", "ghcp", "within", "within_plain", "within_full"], "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_md5": "27352567fdbeab21d830e57a3b28fbec", "n_cells": 4, "o_grid": [0, 3, 5, 9, 10, 12, 15, 17, 20, 25, 35, 50, 100], "reps": 200, "seed": "zlib.crc32 keys C1|cell|rep (round 4's)", "shares": [0.1, 0.3, 0.5, 0.9], "stage": "W1", "taus": [0.0, 0.3]}
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round3_a0_harness.py
+script_md5      : 76fda34ee622e299bbaa806e5c8da98a  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round4_conf_sim.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_io.py
+script_md5      : 60777cae1216e945020e6411488d48a1  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_w1_sim.py
+wall_seconds    : 175
+selftest        : {'n_draws': 400, 'max_endpoint_residual': np.float64(3.552713678800501e-15), 'n_grid_points': 1600400, 'n_mismatch': 0}
+==============================================================================
+Round 5 conformal track, stage W1
+job_name_prefix : r5conf_W1  (the submission route replaces --job-name)
+slurm_job_id    : 4201564
+slurm_partition : spill
+slurm_account   : rc_tengfei_pi
+node            : c0316.ll.unc.edu
+cpu_vendor      : GenuineIntel
+date            : 2026-10-07T19:28:34-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round5-conformal
+code_clone_head : 23dc9d1bd9b603a5ed0e522a2af06de16306d4a6
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_w1_sim.py --K 25 --out /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W1_sim/smoke --reps 200 --tag __smoke --cells-regex ^(normal\|K[0-9]+\|N(500|unequal|21)\|share0\.3\|tau0\.0|semireal\|K[0-9]+\|Ndata)
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+pandas          : 2.3.3
+config_hash     : sha256/16 0f67e2482b32f2a9
+config          : {"K": 25, "N": ["21", "100", "500", "unequal"], "alphas": [0.1, 0.2], "cells_regex": "^(normal\\|K[0-9]+\\|N(500|unequal|21)\\|share0\\.3\\|tau0\\.0|semireal\\|K[0-9]+\\|Ndata)", "methods": ["pooled", "hcp", "one_per", "ghcp", "within", "within_plain", "within_full"], "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_md5": "27352567fdbeab21d830e57a3b28fbec", "n_cells": 4, "o_grid": [0, 3, 5, 9, 10, 12, 15, 17, 20, 25, 35, 50, 100], "reps": 200, "seed": "zlib.crc32 keys C1|cell|rep (round 4's)", "shares": [0.1, 0.3, 0.5, 0.9], "stage": "W1", "taus": [0.0, 0.3]}
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round3_a0_harness.py
+script_md5      : 76fda34ee622e299bbaa806e5c8da98a  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round4_conf_sim.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_io.py
+script_md5      : 60777cae1216e945020e6411488d48a1  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_w1_sim.py
+wall_seconds    : 203
+selftest        : {'n_draws': 400, 'max_endpoint_residual': np.float64(3.552713678800501e-15), 'n_grid_points': 1600400, 'n_mismatch': 0}
+==============================================================================
+Round 5 conformal track, stage W1
+job_name_prefix : r5conf_W1  (the submission route replaces --job-name)
+slurm_job_id    : 4201564
+slurm_partition : spill
+slurm_account   : rc_tengfei_pi
+node            : c0316.ll.unc.edu
+cpu_vendor      : GenuineIntel
+date            : 2026-10-07T19:31:59-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round5-conformal
+code_clone_head : 23dc9d1bd9b603a5ed0e522a2af06de16306d4a6
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_w1_sim.py --K 30 --out /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W1_sim/smoke --reps 200 --tag __smoke --cells-regex ^(normal\|K[0-9]+\|N(500|unequal|21)\|share0\.3\|tau0\.0|semireal\|K[0-9]+\|Ndata)
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+pandas          : 2.3.3
+config_hash     : sha256/16 90c2ea712079939a
+config          : {"K": 30, "N": ["21", "100", "500", "unequal"], "alphas": [0.1, 0.2], "cells_regex": "^(normal\\|K[0-9]+\\|N(500|unequal|21)\\|share0\\.3\\|tau0\\.0|semireal\\|K[0-9]+\\|Ndata)", "methods": ["pooled", "hcp", "one_per", "ghcp", "within", "within_plain", "within_full"], "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_md5": "27352567fdbeab21d830e57a3b28fbec", "n_cells": 4, "o_grid": [0, 3, 5, 9, 10, 12, 15, 17, 20, 25, 35, 50, 100], "reps": 200, "seed": "zlib.crc32 keys C1|cell|rep (round 4's)", "shares": [0.1, 0.3, 0.5, 0.9], "stage": "W1", "taus": [0.0, 0.3]}
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round3_a0_harness.py
+script_md5      : 76fda34ee622e299bbaa806e5c8da98a  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round4_conf_sim.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_io.py
+script_md5      : 60777cae1216e945020e6411488d48a1  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_w1_sim.py
+wall_seconds    : 202
+selftest        : {'n_draws': 400, 'max_endpoint_residual': np.float64(3.552713678800501e-15), 'n_grid_points': 1600400, 'n_mismatch': 0}
+==============================================================================
+Round 5 conformal track, stage W1
+job_name_prefix : r5conf_W1  (the submission route replaces --job-name)
+slurm_job_id    : 4201564
+slurm_partition : spill
+slurm_account   : rc_tengfei_pi
+node            : c0316.ll.unc.edu
+cpu_vendor      : GenuineIntel
+date            : 2026-10-07T19:36:30-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round5-conformal
+code_clone_head : 23dc9d1bd9b603a5ed0e522a2af06de16306d4a6
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_w1_sim.py --K 50 --out /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W1_sim/smoke --reps 200 --tag __smoke --cells-regex ^(normal\|K[0-9]+\|N(500|unequal|21)\|share0\.3\|tau0\.0|semireal\|K[0-9]+\|Ndata)
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+pandas          : 2.3.3
+config_hash     : sha256/16 e09cf61c8aa69310
+config          : {"K": 50, "N": ["21", "100", "500", "unequal"], "alphas": [0.1, 0.2], "cells_regex": "^(normal\\|K[0-9]+\\|N(500|unequal|21)\\|share0\\.3\\|tau0\\.0|semireal\\|K[0-9]+\\|Ndata)", "methods": ["pooled", "hcp", "one_per", "ghcp", "within", "within_plain", "within_full"], "moments": "/work/users/w/e/weiyang/hest_replication/results/round3/A2_conditional/a2_score_moments__resnet50.parquet", "moments_md5": "27352567fdbeab21d830e57a3b28fbec", "n_cells": 4, "o_grid": [0, 3, 5, 9, 10, 12, 15, 17, 20, 25, 35, 50, 100], "reps": 200, "seed": "zlib.crc32 keys C1|cell|rep (round 4's)", "shares": [0.1, 0.3, 0.5, 0.9], "stage": "W1", "taus": [0.0, 0.3]}
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round3_a0_harness.py
+script_md5      : 76fda34ee622e299bbaa806e5c8da98a  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round4_conf_sim.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_io.py
+script_md5      : 60777cae1216e945020e6411488d48a1  /work/users/w/e/weiyang/hest_code/round5-conformal/code/scripts/round5_conf_w1_sim.py
+wall_seconds    : 268
+selftest        : {'n_draws': 400, 'max_endpoint_residual': np.float64(3.552713678800501e-15), 'n_grid_points': 1600400, 'n_mismatch': 0}

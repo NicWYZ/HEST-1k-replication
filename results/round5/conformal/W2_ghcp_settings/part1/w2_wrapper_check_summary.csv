@@ -1,0 +1,11 @@
+design,wrapper_method,rows,n_compared,n_missing,n_cov_mismatch,n_finiteness_mismatch,max_abs_width_diff,part_of_pass
+fixedN21,ghcp,10,10000,0,1208,0,51.24994802015546,False
+fixedN21,hcp,10,10000,0,0,0,7.105427357601002e-15,False
+fixedN21,released_ghcp,10,10000,0,0,0,7.105427357601002e-15,True
+fixedN21,released_hcp,2,2000,0,0,0,7.105427357601002e-15,True
+fixedN21,released_stdcp,10,10000,0,0,0,1.7763568394002505e-15,True
+poissonNmean25,ghcp,10,10000,0,629,0,34.644178915304906,False
+poissonNmean25,hcp,10,10000,0,0,0,2.5112298595567353,False
+poissonNmean25,released_ghcp,10,10000,0,0,0,7.105427357601002e-15,True
+poissonNmean25,released_hcp,2,2000,0,0,0,7.105427357601002e-15,True
+poissonNmean25,released_stdcp,10,10000,0,0,0,1.7763568394002505e-15,True

@@ -1,0 +1,45 @@
+node=c0514.ll.unc.edu partition=spill jobid=4198244
+[load] CCRCC:24 uni_v2: 74,220 spots x 1536 dims, 24 slides, 24 donors, n_match=35996, 50s
+[c3] 6/72 fits 61.4s per fit
+[c3] 12/72 fits 52.2s per fit
+[c3] 18/72 fits 46.1s per fit
+[c3] 24/72 fits 43.4s per fit
+[c3] 30/72 fits 41.3s per fit
+[c3] 36/72 fits 40.0s per fit
+[c3] 42/72 fits 39.5s per fit
+[c3] 48/72 fits 39.4s per fit
+[c3] 54/72 fits 39.5s per fit
+[c3] 60/72 fits 39.1s per fit
+[c3] 66/72 fits 39.2s per fit
+[c3] 72/72 fits 38.9s per fit
+                                              check         value           tol  passed
+0              selftest:split_q_cols_vs_SIM.split_q  0.000000e+00  1.000000e-12    True
+1                     selftest:wq_cols_vs_SIM.hcp_q  0.000000e+00  1.000000e-12    True
+2            selftest:ghcp_cols_vs_SIM.ghcp_q[ghcp]  4.440892e-16  1.000000e-12    True
+3       selftest:ghcp_cols_vs_SIM.ghcp_q[ghcp_noad]  0.000000e+00  1.000000e-12    True
+4        selftest:ghcp_cols_vs_SIM.ghcp_q[ghcp_r05]  5.551115e-17  1.000000e-12    True
+5   selftest:ghcp_cols_vs_SIM.ghcp_q[ghcp_r05_noad]  0.000000e+00  1.000000e-12    True
+6    selftest:ghcp_cols_vs_SIM.ghcp_q[ghcp_r05code]  5.551115e-17  1.000000e-12    True
+7               selftest:metrics_vs_A3_cell_metrics  3.552714e-15  1.000000e-12    True
+8                               rows_only_in_round4  0.000000e+00  0.000000e+00    True
+9                               rows_only_in_round5  0.000000e+00  0.000000e+00    True
+10                                     rows_matched  2.203200e+04           NaN    True
+11                            max_abs_diff:coverage  1.110223e-16  0.000000e+00   False
+12                          max_abs_diff:width_mean  1.910470e-08  3.000000e-10   False
+13                        max_abs_diff:width_median  1.315764e-09  3.000000e-10   False
+14                              max_abs_diff:n_test  0.000000e+00  0.000000e+00    True
+15                              max_abs_diff:finite  0.000000e+00  0.000000e+00    True
+[done] anchor c3 passed=False
+anchor exit code 3
+total 2.4M
+-rw-r--r-- 1 weiyang users  757 Oct  7 18:00 cmd.sh
+-rw-r--r-- 1 weiyang users 1.7K Oct  7 18:00 job.sh
+drwxr-xr-x 2 weiyang users 4.0K Oct  7 18:00 _lock
+-rw-r--r-- 1 weiyang users   18 Oct  7 18:01 _pgid
+-rw-r--r-- 1 weiyang users  314 Oct  7 18:48 _provenance.json
+-rw-r--r-- 1 weiyang users 2.0K Oct  7 18:48 PROVENANCE.txt
+-rw-r--r-- 1 weiyang users 2.0K Oct  7 18:48 slurm-4198244.out
+-rw-r--r-- 1 weiyang users   52 Oct  7 18:01 _status.json
+-rw-r--r-- 1 weiyang users  152 Oct  7 18:00 _submitted
+-rw-r--r-- 1 weiyang users  871 Oct  7 18:48 w0_c3_anchor.csv
+-rw-r--r-- 1 weiyang users 2.3M Oct  7 18:48 w0_c3_rows.csv

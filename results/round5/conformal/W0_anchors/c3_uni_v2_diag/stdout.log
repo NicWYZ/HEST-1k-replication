@@ -1,0 +1,29 @@
+/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/2d96eedf-de18-415e-a942-f9fddb8353f3/r5conf_b3.bundle is okay
+The bundle contains this ref:
+a7c583de91dc042e22cb7348f8e12f29f21838a9 refs/heads/round5-conformal
+The bundle requires this ref:
+6a46a2d6150de57df8fd5b2ab287fe166b368a23 
+The bundle uses this hash algorithm: sha1
+clone_head=a7c583de91dc042e22cb7348f8e12f29f21838a9
+     ref_vendor      n  folds  max_d_coverage  n_coverage_nonzero  max_d_width_mean  n_width_mean_over_3e10  max_d_width_median  n_width_median_over_3e10  max_rel_width_mean
+0  AuthenticAMD  16524     18             0.0                   0      1.910470e-08                     223        1.315764e-09                        83        7.661535e-09
+1  GenuineIntel   5508      6             0.0                   0      8.881784e-16                       0        8.881784e-16                         0        2.459146e-16
+total 29
+-rw-r--r-- 1 weiyang users 1052 Oct  7 18:55 cmd.sh
+-rw-r--r-- 1 weiyang users 1676 Oct  7 18:55 job.sh
+drwxr-xr-x 2 weiyang users 4096 Oct  7 18:55 _lock
+-rw-r--r-- 1 weiyang users   18 Oct  7 18:56 _pgid
+-rw-r--r-- 1 weiyang users  335 Oct  7 18:56 _provenance.json
+-rw-r--r-- 1 weiyang users 2352 Oct  7 18:56 PROVENANCE.txt
+-rw-r--r-- 1 weiyang users 1162 Oct  7 18:55 r5conf_b3.bundle
+-rw-r--r-- 1 weiyang users 1857 Oct  7 18:55 run_info__ccrcc24_uni_v2_s0of2.json
+-rw-r--r-- 1 weiyang users 1440 Oct  7 18:55 run_info__ccrcc24_uni_v2_s1of4.json
+-rw-r--r-- 1 weiyang users 1444 Oct  7 18:55 run_info__ccrcc24_uni_v2_s3of4.json
+-rw-r--r-- 1 weiyang users  918 Oct  7 18:56 slurm-4201202.out
+-rw-r--r-- 1 weiyang users  125 Oct  7 18:55 _staged
+-rw-r--r-- 1 weiyang users   52 Oct  7 18:56 _status.json
+-rw-r--r-- 1 weiyang users  152 Oct  7 18:55 _submitted
+-rw-r--r-- 1 weiyang users  354 Oct  7 18:56 w0_c3_diag_by_vendor.csv
+-rw-r--r-- 1 weiyang users 2374 Oct  7 18:56 w0_c3_diag_by_vendor_o_method.csv
+-rw-r--r-- 1 weiyang users  183 Oct  7 18:56 w0_c3_diag_coverage_nonzero.csv
+-rw-r--r-- 1 weiyang users 9066 Oct  7 18:56 w0_c3_diag_worst_width.csv

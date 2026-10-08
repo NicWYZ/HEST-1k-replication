@@ -1,0 +1,39 @@
+partition=spill node=c151402.ll.unc.edu jobid=4198457
+model name	: AMD EPYC 7763 64-Core Processor
+                         check   n     max_diff  n_nonzero
+                   ghcp_centre 179 4.440892e-16          0
+                ghcp_halfwidth 400 1.000000e+00          8
+                           hcp 400 9.064716e-02          1
+pool_code_rule_equals_released 400 0.000000e+00          0
+    pool_size_code_minus_paper 400 1.000000e+00        258
+round4_script_exit=5
+                            check  n_r4   max_diff_r4  n_nonzero_r4  n_r5   max_diff_r5  n_nonzero_r5  passed
+0                     ghcp_centre   179  4.440892e-16             0   179  4.440892e-16             0    True
+1                  ghcp_halfwidth   400  1.000000e+00             8   400  1.000000e+00             8    True
+2                             hcp   400  9.064716e-02             1   400  9.064716e-02             1    True
+3  pool_code_rule_equals_released   400  0.000000e+00             0   400  0.000000e+00             0    True
+4      pool_size_code_minus_paper   400  1.000000e+00           258   400  1.000000e+00           258    True
+[done] anchor codepath passed=True
+anchor_script_exit=0
+/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/154461ee-67d3-43ec-967f-15c9e439ed86:
+total 9
+-rw-r--r-- 1 weiyang users  989 Oct  7 18:03 cmd.sh
+drwxr-xr-x 2 weiyang users 4096 Oct  7 18:04 fresh
+-rw-r--r-- 1 weiyang users 1689 Oct  7 18:03 job.sh
+drwxr-xr-x 2 weiyang users 4096 Oct  7 18:03 _lock
+-rw-r--r-- 1 weiyang users   17 Oct  7 18:04 _pgid
+-rw-r--r-- 1 weiyang users  322 Oct  7 18:04 _provenance.json
+-rw-r--r-- 1 weiyang users 1622 Oct  7 18:04 PROVENANCE.txt
+-rw-r--r-- 1 weiyang users 1190 Oct  7 18:04 slurm-4198457.out
+-rw-r--r-- 1 weiyang users   52 Oct  7 18:04 _status.json
+-rw-r--r-- 1 weiyang users  152 Oct  7 18:03 _submitted
+-rw-r--r-- 1 weiyang users  357 Oct  7 18:04 w0_codepath_anchor.csv
+
+/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/154461ee-67d3-43ec-967f-15c9e439ed86/fresh:
+total 104
+-rw-r--r-- 1 weiyang users    202 Oct  7 18:04 c1_codepath.csv
+-rw-r--r-- 1 weiyang users 103552 Oct  7 18:04 c1_codepath_rows.csv
+-rw-r--r-- 1 weiyang users   1213 Oct  7 18:04 PROVENANCE.txt
+
+/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/154461ee-67d3-43ec-967f-15c9e439ed86/_lock:
+total 0
