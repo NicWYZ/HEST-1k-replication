@@ -209,10 +209,14 @@ def figure(NV, out):
         ax.set_xlabel("labelled units in the test cluster, o")
         ax.set_title(f"between-cluster share of score variance {s}", loc="left")
     axs[0].set_ylabel("calibration clusters, K")
-    used = [m for m in ("hcp", "ghcp", "ghcp_noad", "within_plain", "within", "within_full") if (NV.narrowest == m).any()]
+    sl = NV[(NV.gen == "normal") & (NV.tau == 0.0) & (NV.N.astype(str) == "500") & (NV.alpha == 0.1) & NV.share.isin(shares)]
+    used = [m for m in ("hcp", "ghcp", "ghcp_noad", "within_plain", "within", "within_full") if (sl.narrowest == m).any()]
     fig.legend(handles=[Patch(color=col[m], label=f"{abbr[m]}  {names[m]}") for m in used], loc="lower center",
-               ncol=len(used), frameon=False, bbox_to_anchor=(0.5, -0.02))
-    fig.subplots_adjust(bottom=0.3, top=0.9, left=0.08, right=0.99)
+               ncol=min(len(used), 4), frameon=False, bbox_to_anchor=(0.5, 0.0))
+    fig.suptitle("Narrowest method with a finite-sample guarantee; normal tails, no scale variation, 500 units per "
+                 "cluster, alpha 0.1, 5,000 replicates; pale cells: margin within 2 MC standard errors",
+                 x=0.08, ha="left", fontsize=7)
+    fig.subplots_adjust(bottom=0.24, top=0.84, left=0.08, right=0.99)
     fig.savefig(os.path.join(out, "fig_w1_map.png"), dpi=300)
 
 

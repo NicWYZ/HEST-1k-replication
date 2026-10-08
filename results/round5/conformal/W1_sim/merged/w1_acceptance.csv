@@ -1,0 +1,16 @@
+check,value,tol,passed,note
+1_rows_compared,15312.0,,True,0 expected rows missing
+1_max_abs_diff_coverage,0.0,0.0001,True,
+1_max_rel_diff_price,8.561087141255486e-16,1e-06,True,
+1_max_abs_diff_frac_infinite,0.0,0.0,True,
+2_within_plain_finite_from_o9_a0.1,0.0,0.0,True,8880 rows
+2_within_plain_finite_from_o4_a0.2,0.0,0.0,True,8880 rows
+2_within_finite_from_o17_a0.1,0.0,0.0,True,8880 rows
+2_within_finite_from_o7_a0.2,0.0,0.0,True,8880 rows
+4_within_full_finite_from_o9_a0.1,0.0,0.0,True,8880 rows
+4_within_full_finite_from_o4_a0.2,0.0,0.0,True,8880 rows
+3_within_cov_within_3se,26.0,0.0,False,11840 cells; 32.0 expected by chance; max |z| 3.60
+3_within_plain_cov_within_3se,52.0,0.0,False,15540 cells; 42.0 expected by chance; max |z| 4.80
+4_within_full_exact_cov_within_3se,34.0,0.0,False,15540 cells; 42.0 expected by chance; max |z| 5.27
+4_within_full_frac_not_interval_max,0.0,,,share of replicates whose set is not one interval
+4_within_full_hull_minus_exact_cov_max,4.440892098500626e-16,,,
