@@ -284,7 +284,11 @@ def run_replicate(c, e, chunk, offset, o_out, alphas_out, diag):
         lo, hi = (mu_b_hat - T, mu_b_hat + T) if np.isfinite(T) else (-np.inf, np.inf)
         rows.append(interval_row(base, a, 0, "released_hcp", lo, hi, y_t))
     fit_cache = {}
-    for o in LAUNCHER_O:
+    # Round 5 lead's change (W2 production): o values outside the launcher's grid are computed too.
+    # Only the launcher-grid o values advance numpy's global stream (emulate_sr_draws below); the
+    # methods computed here use their own seeded generators, so the extra o values leave the stream,
+    # and therefore every later replicate, unchanged.
+    for o in sorted(set(LAUNCHER_O) | set(o_out)):
         if o in o_out:
             res = DH.compute_donor_hcp_randomized_interval(
                 U_calibration=U_cal, Z_calibration=Z_cal, U_test=U_test, Z_test=Z_test,
@@ -364,8 +368,9 @@ def run_replicate(c, e, chunk, offset, o_out, alphas_out, diag):
                                     abs(y_t - (mu_r + cen)) <= q if np.isfinite(q) else True,
                                     released_half=rel_half, centre_diff=(mu_r + cen) - rel_c
                                     if np.isfinite(rel_c) else math.nan))
-        for _a in LAUNCHER_ALPHAS:
-            emulate_sr_draws(R, N, K, o)
+        if o in LAUNCHER_O:
+            for _a in LAUNCHER_ALPHAS:
+                emulate_sr_draws(R, N, K, o)
     return rows
 
 
@@ -434,7 +439,7 @@ def main(argv=None):
         return 0 if all(r[1] for r in res) else 6
     o_out = tuple(int(x) for x in a.o_values.split(","))
     alphas_out = tuple(float(x) for x in a.alphas_out.split(","))
-    assert set(alphas_out) <= set(LAUNCHER_ALPHAS) and set(o_out) <= set(LAUNCHER_O)
+    assert set(alphas_out) <= set(LAUNCHER_ALPHAS) and all(0 <= o <= TARGET_INDEX for o in o_out)
     c = make_ctx(R, a.design, a.k)
     n_chunks = int(np.ceil(a.total_replicates / CHUNK_SIZE[a.design]))
     sizes = R["LCH"].split_counts(a.total_replicates, n_chunks)
