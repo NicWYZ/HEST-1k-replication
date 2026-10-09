@@ -1,6 +1,6 @@
 W3 report numbers, prediction scores and figures (local run, extension 3 of the plan)
 date            : 2026-10-09T01:21:40-04:00
-host            : local (darwin, )
+host            : local (darwin 26.6.2, arm64; CPU model not readable from the sandbox)
 command         : python code/scripts/round5_conf_w3_report.py --map results/round5/conformal/W3_real/merged/w3_map_by_task.csv --out results/round5/conformal/W3_real
 script_md5      : 442fa4567221b037caedd43d416c0b12  code/scripts/round5_conf_w3_report.py
 input_md5       : 4ee7bbf2801f54c0ac1fbb7c309eeba9  results/round5/conformal/W3_real/merged/w3_map_by_task.csv (merge Slurm 4351817, snapshot c474859)
