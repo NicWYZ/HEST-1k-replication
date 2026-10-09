@@ -1,0 +1,20 @@
+platform: local (Nicolas's Mac), plan section 7.4
+PYTHONHASHSEED: 
+host: macOS-26.6.2-arm64-arm-64bit
+python: 3.11.15 at /Users/nicolaszhang/.claude-science/conda/envs/python/bin/python3.11
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+snapshot_commit: 9cf4ab7de2de6b27f228ec3aa2a502dbfd351221
+snapshot: /tmp/r5ppi_snapshots/9cf4ab7de2de6b27f228ec3aa2a502dbfd351221
+unit: E4b_tests
+stage: E4b
+workers: 
+command: round5_ppi_e4b_tests.py
+start: 2026-10-09T10:58:39-04:00
+end: 2026-10-09T10:58:41-04:00
+elapsed_s: 2.3
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  d79e69aa65800b9d24de556e019a0c64  code/scripts/round4_ppi_estimator.py
+  d78b654d7fd8e6a824f73dd50ee2a0c1  code/scripts/round5_ppi_balance.py
+  2de31569ffe72239062fbeb0c9a50fc5  code/scripts/round5_ppi_estimator.py
+inputs (md5, path):
