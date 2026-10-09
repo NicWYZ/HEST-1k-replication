@@ -380,6 +380,11 @@ def _small_file_values(df, fv):
         except Exception:
             continue
         for cell in uniq:
+            # Under pandas 3, astype(str) keeps a missing cell as a float NaN rather than
+            # the string "nan", so a text column with an empty cell would raise here and
+            # the whole file would be reported unreadable.
+            if not isinstance(cell, str):
+                continue
             for mm in re.finditer(r"[+\-\u2212]?\d*\.?\d+(?:[eE][+\-]?\d+)?", cell):
                 try:
                     fv.tagged.append((f"text:{col}", float(_norm_minus(mm.group()))))
