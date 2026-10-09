@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Run one round-5 PPI script from a read-only snapshot of a delivered or committed commit.
 
-Stage: interval 2, plan sections 7.3 and 7.4. Every job of interval 2, on Longleaf or local,
+Stage: interval 2, plan sections 7.3 and 7.4; interval 3 adds --frame-id (plan section 8.3 item 1). Every job of interval 2, on Longleaf or local,
 runs its script through this runner, from a snapshot and never from a working tree or a clone,
 in its own output directory, and leaves a PROVENANCE.txt with the snapshot's commit and the md5
 of every module it executed, and a one-row `_run_row.csv`.
@@ -66,6 +66,8 @@ def main():
     ap.add_argument("--stage", required=True)
     ap.add_argument("--workers", default="")
     ap.add_argument("--inputs", default="", help="comma list of input files to md5")
+    ap.add_argument("--frame-id", default="", help="interval 3 (plan 8.3 item 1): the owning sub-agent's own "
+                    "frame id; the output directory is stamped with it (round5_ppi_common.stamp_dir) before the run")
     ap.add_argument("rest", nargs=argparse.REMAINDER)
     a = ap.parse_args()
     rest = a.rest[1:] if a.rest and a.rest[0] == "--" else a.rest
@@ -83,6 +85,9 @@ def main():
     os.makedirs(a.out_dir, exist_ok=True)
     os.chdir(a.out_dir)
     sys.path.insert(0, scripts)
+    if a.frame_id:
+        import round5_ppi_common as C
+        C.stamp_dir(".", a.frame_id, note=f"{a.stage} {a.unit}")
     os.environ["PYTHONPATH"] = scripts + os.pathsep + os.environ.get("PYTHONPATH", "")
     import numpy, pandas, scipy  # noqa: E401  (versions are recorded)
     t0 = time.time()

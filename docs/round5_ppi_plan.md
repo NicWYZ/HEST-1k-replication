@@ -230,7 +230,7 @@ The twenty predictions are the oversight chat's and are copied from section 2.1 
 | E2.5 | E2 | E2 | held for $\theta_3$, refuted for $\theta_2$, see `docs/round5_ppi_E2_report.md` section 5 |
 | E3.1 | E3 | E4 | held (`docs/round5_ppi_E4_report.md` section 5) |
 | E3.2 | E3 | E4 | partly held (`docs/round5_ppi_E4_report.md` section 5) |
-| E3.3 | E3 | E4 | partly held (`docs/round5_ppi_E4_report.md` section 5) |
+| E3.3 | E3 | E4 | held for theta3, not applicable to theta2 (rescored by `docs/decisions/round5_ppi_E4_decisions.md` section 2; the report had partly held) |
 | E3.4 | E3 | E4 | held (`docs/round5_ppi_E4_report.md` section 5) |
 | E3.5 | E3 | E4 | refuted (`docs/round5_ppi_E4_report.md` section 5) |
 | E4.1 | E4 | E4 | partly held (`docs/round5_ppi_E4_report.md` section 5) |
@@ -332,3 +332,82 @@ E4 uses the interval chosen by E3a. Six task units on Longleaf in parallel and o
 | E3a.3 | E3a | E4 | held for theta3 (`docs/round5_ppi_E4_report.md` section 5) |
 | E3.6 | E3 | E4 | held (`docs/round5_ppi_E4_report.md` section 5) |
 | E3.7 | E3 | E4 | partly held (`docs/round5_ppi_E4_report.md` section 5) |
+
+## 8. Interval 3, from the E4 decision memo
+
+The memo is `docs/decisions/round5_ppi_E4_decisions.md` (md5 `a5f008f6d107c323b5089da5e6ebba55`), committed unchanged together with this section. Where this section and the memo differ, the memo holds. Interval 3 runs E4b and E5 and ends at the E5 gate, which is the track's last.
+
+### 8.1 The gate rule
+
+As in section 7.1. Inside the interval there are no interim reports and no interim stops. Anything that would have halted work is handled under the decision boundaries of brief section 9 and recorded in the "Escalations" section of the final report, and work continues. The exception is the stop-and-report case of the memo, a derivation of E4b that does not close. Contact with anyone outside the project is never the session's decision. Every sub-agent brief carries the sentence "Sub-agents report to the lead and to no one else, Nicolas included."
+
+### 8.2 What the memo accepts and corrects
+
+The E4 report is accepted. E3.3 is rescored as held for $\theta_3$ and not applicable to $\theta_2$, because the 144 cells in the band are exactly the $\theta_3$ cells and the two classical forms give the same width for the stratified $\theta_2$. The regime B minimum of 0.500 is on census by state at one labelled unit per state, not on census by area. E4 acceptance check 2's band was the oversight chat's error and is redone in E4b. The three records naming `8b879bb` were the oversight chat's misreading, and the provenance index stands. The memo adds two findings that the final report carries. The classical interval under D2 does not see the variance reduction, because the simple-random-sampling formula uses the spread of $\bar z_g$, which balance does not change. E3.5's second clause compared the allocation formula with a fitted curve that cannot express a between-cluster gain that is zero below $n_L = 6$. Pull requests #17 and #18 are merged (checked on 9 October), so the push at the E5 gate is allowed.
+
+### 8.3 What stays in force, and four additions
+
+Sections 7.3 (code delivery by bundle and snapshot, pushes, shared files, provenance) and 7.4 (local runs) stay in force. The additions are these.
+
+1. **Frame ids.** The lead sends each sub-agent its own frame id as soon as it has started and before it writes anything, writes it into the unit's record, and compares the id in every returned stamp with the assigned one before merging that unit. A stamp with the wrong id is fixed before the merge. `code/scripts/round5_ppi_e4_stamp_check.py` is extended to the E4b units and reports zero mismatches before the merge.
+2. **Shared files.** The two `.gitignore` entries of pull request #17 are accepted. Any further change outside the track's areas is an escalation in the final report.
+3. **The tag.** `round5-ppi-final` goes on the last commit of the push, after every wording correction.
+4. **Briefs.** Before dispatch the lead checks each brief against the unit it is for (stage, task, script, output directory) and records the check in the unit ledger.
+
+### 8.4 E4b, an interval that uses the balance (first in the interval)
+
+1. **Theory section 3** of `docs/round5_ppi_theory.md`, before any E4b job. D2 with $k$ balance variables and Mahalanobis acceptance. Decompose $\bar z_L - \bar Z = (\bar e_L - \bar E) + B^\top(\bar x_L - \bar X)$ with $B$ the population least-squares coefficient over the $G$ clusters. Derive the variance of the classical mean under rejective acceptance with the finite-population factor, using the scaling $v_a = P(\chi^2_{k+2} \le q_a)/P(\chi^2_k \le q_a)$, and the estimate $\widehat{\text{Var}}_{\text{rej}} = (1 - n_L/G)(s^2_{\text{res}} + v_a\,\hat b^\top S_x \hat b)/n_L$ with $s^2_{\text{res}}$ on divisor $n_L - k - 1$ and reference $t_{n_L - k - 1}$. State the conditions, including the number of distinct samples the design can accept. Confirm Morgan and Rubin (2012) Theorem 3.1 and Fuller (2009) as references before relying on them, from the papers themselves where they can be fetched, and say which parts were confirmed and how. If the derivation does not close, stop and report.
+2. **Code**, committed and delivered by bundle before any job. `rej_t` in `round5_ppi_balance.py`, D2 only, needing $n_L - k - 1 \ge 2$, with skipped cells listed. A cluster-level null control `perm_cluster`, the `resnet50` arm's own $\bar f_g$ permuted across clusters with a crc32 seed per gene, beside the unit-level `perm`. In the simulation and the real-task runs, a draw with no accepted candidate draws further candidates until one is accepted, never falls back to its last candidate, and records the number of candidates used. Unit tests: the point estimate of `rej_t` equals the classical mean; $v_a$ against a Monte Carlo of the $\chi^2_k$ truncation; `rej_t` on a synthetic population against the empirical variance under D2.
+3. **Runs.** E4's real-task masking on all six tasks with 2,000 accepted draws per cell, the first 200 on E4's seeds. Designs D0, D1 and D2 at $p_a \in \{0.1, 0.01\}$. Balance variables `own`, `pcF2`, `pcE2`, `perm`, `perm_cluster`. $\theta_3$ and $\theta_2$, donor-weighted, every unit labelled, design target, $n_L \in \{4, 6, 8, 12\}$, arms `hoptimus0`, `uni_v2`, `resnet50` and `permuted` (on census, `package` and `permuted`, and `pcE2` is not formed, as in E4). Intervals `textbook_t|fpc|lin` for the classical mean, `textbook_t|fpc|lin|xf` for the tuned estimator, `rej_t` under D2 and `strat_t` under D1. Beside every D2 cell, its support $p_a\binom{G}{n_L}$ (with $G$ the valid clusters of the estimand), the standard deviation over clusters of the inclusion frequency, its Spearman correlation with $|\bar f_g - \bar F|$ for the balance variable, and the share of genes with standardised bias above 3. E4's simulation is rerun with `rej_t` added. The real-task units keep per-draw, per-gene variance and estimate arrays (or per-draw per-gene summaries sufficient for the bootstrap) so that acceptance 3 can be computed.
+4. **Fan-out.** Six task units on Longleaf in parallel, one local simulation unit under section 7.4, at most eight local worker processes. Each sub-agent is given its own frame id (8.3 item 1) and its brief is checked (8.3 item 4).
+5. **Acceptance.** (1) The first 200 draws of every D0 and D1 cell reproduce E4's rows at the E0 tolerances; D2's rows are set beside E4's without a tolerance, with the change in threshold reported. (2) `rej_t`'s point estimate equals the classical estimate on every draw. (3) Check 2 restated. A bootstrap over draws, resampling the 2,000 draws of each design with replacement jointly for all genes, 500 times, gives a standard error for the ratio of median variances under D2 and D0, and with `perm_cluster` the ratio is within three standard errors of 1 in every cell with support at least 1,000. A failure is an escalation, and work continues.
+6. **Predictions** E4b.1 to E4b.4 as the memo states them, scored in the final report.
+
+### 8.5 E5, as the brief says with the memo's changes
+
+1. **`docs/round5_ppi_estimator_definition.md`.** Form C within clusters, the between coefficient under `c_crossfit_design`, the interval `textbook_t|fpc|lin|xf`, regime B's reference with $\sum_g (m_g - 2)$ degrees of freedom for $\theta_3$ and $\sum_{g,h}(m_{h,g} - 1)$ for $\theta_2$, and the stratified draw for $\theta_2$ over the donors where both groups are present. Where E4's code drew from all donors and dropped draws, the share dropped per cell is reported, without a rerun. D2 with `rej_t` enters as the design option, with its support condition, only if E4b's acceptance passes and E4b.1's coverage clause holds; otherwise the document says that balance reduces the variance and that no interval run here captures it. The document also says where the superpopulation-target interval covers below 0.85 in E3's simulation. Simulated behaviour is quoted beside each choice.
+2. **Allocation.** Theory section 2.4's result is stated for coefficients fixed in advance. `results/round5/ppi/E5_joint/e5_allocation.csv`, computed locally from committed files, one row per task, encoder and $n_L$, for form C and $\theta_3$, with $1 - R^2_w$ and $1 - R^2_c$ from `e3_components.csv`, the measured between ratio $\rho_c(n_L)$ (median variance of `C_ppi` over `C_classical` at every unit labelled, `e3_masking_grid.csv`), the classical $m^\star$ at $c_d/c_s = 100$ from the components, $m^\star_{\text{PP}}(n_L) = m^\star\sqrt{(1 - R^2_w)/\rho_c(n_L)}$, and the fitted values of `e3_components_fitted.csv` beside them. This gives census by state its form C value.
+3. **The joint design table** `results/round5/ppi/E5_joint/e5_joint_design.csv` uses form C, one row per task and $m \in \{5, 10, 15, 20, 25, 50, 100\}$, with regime B's width against the form C classical estimator and its coverage. Pull request #18 is merged, so `results/round5/conformal/W3_real/merged/w3_map_by_task.csv` is read from `origin/main` after `git fetch`, by `git show`, without checking anything out, and the commit is recorded. The narrowest valid prediction set at $o = m$ is added with its coverage and width for each number of calibration clusters that file carries.
+4. **Regime B coverage statements** only at budgets where every cluster gets at least the form's smallest number of labelled units (3 for $\theta_3$ intervals, 4 for the stratified $\theta_2$). Other cells are marked.
+5. **`docs/round5_ppi_final_report.md`** in the format of brief section 8, covering E1 to E5 and E4b, the full predictions-against-outcomes table with E4b.1 to E4b.4 scored, an "Escalations" section, the corrections of memo section 2, a section listing every round-4 statement this round changes with old and new values, and the closing page "What the round-5 inference track established", at most one page, every sentence naming its file.
+6. **The sweep** over `docs/round5_ppi_*.md` with `.verify-exceptions-round5-ppi`. An exception stating a derived value is recomputed by a committed script before it is declared. The README is not swept.
+7. **The push.** Tag `round5-ppi-final` on the last commit, push the branch and tag once, open one pull request into `main`, and stop.
+
+### 8.6 New predictions
+
+| prediction | stage | gate | score |
+|---|---|---|---|
+| E4b.1 | E4b | E5 | held (`e4b_prediction_scores.csv`) |
+| E4b.2 | E4b | E5 | held (`e4b_prediction_scores.csv`) |
+| E4b.3 | E4b | E5 | held (`e4b_prediction_scores.csv`) |
+| E4b.4 | E4b | E5 | held (`e4b_prediction_scores.csv`) |
+
+## 9. The end of the track, from the E5 decision memo
+
+The memo is `docs/decisions/round5_ppi_E5_decisions.md` (md5 `058b7569e59337aa37963d6b2a6c42de`), committed unchanged together with this section. Where this section and the memo differ, the memo holds. The memo closes the track.
+
+### 9.1 What the memo accepts
+
+The final report is accepted and the track is complete. Predictions are scored as the report scores them. The definition document's strict reading of the rule, which left balanced selection out, was the right reading as written. The process record holds, with 191 of 191 stamps carrying the sub-agent's own frame id and the provenance index failing only in the same 5 rows as at the E4 gate.
+
+### 9.2 What the memo adds
+
+1. Why acceptance check 3 fails on census by state at $n_L = 4$ is not established. Uneven inclusion does not single out the failing cells, and the check's bootstrap standard error leaves out the spread over permutations. The decision does not depend on it, because the design result is stated only for $n_L$ of 8 or more.
+2. With one balance variable on the estimand's own $\bar f_g$, `rej_t` covers within 0.03 of the D0 classical interval in every supported cell at $n_L$ of 8 and 12. Its failures are with two balance variables on tissue tasks, the worst at three residual degrees of freedom, which fits the report's escalation 7.
+3. On allocation the paper leads with the formula with the measured $\rho_c(n_L)$ and gives the fitted value beside it. The optimum is flat, since on lung with `hoptimus0` the two values differ by a factor of 1.6 and cost about 6% in variance (memo section 2).
+
+### 9.3 Readings for the paper
+
+As memo section 3. The definition document stands, with the allocation choice of section 9.2 item 3. Balanced selection with `rej_t` enters the paper as a design result under its conditions (one balance variable, the estimand's own $\bar f_g$, support of at least 1,000 and $n_L$ of 8 or more), with where it failed, and the definition document's default stays simple random selection. The superpopulation interval is stated with its limit.
+
+### 9.4 Answers to the escalations
+
+As memo section 4. One correction to the final report's escalation 12. On census `pcF2` is recorded with $k = 1$ in `E4b/e4b_d2_diagnostics.csv`, so its rows repeat the own rows with $k = 1$, not 2. For the next round's briefs, the frame id goes in the first message to each sub-agent.
+
+### 9.5 The question the track leaves
+
+A Horvitz-Thompson or Hájek mean under D2, weighted by inclusion probabilities simulated from label-free quantities, is the first question for the next round (memo section 5). Nothing is run for it in this track.
+
+### 9.6 What the session does before stopping
+
+This commit, carrying the memo unchanged and this section, and nothing else edited. No tag and no delivery to Longleaf, since the commit changes documents only. The memo's section 6 item 2 has the commit pushed after pull request #20 is merged and carried by a new pull request. Nicolas instead asked, on 9 October 2026, that the commit go onto the still-open pull request #20 so that he does one final merge, so it is pushed once to `round5-ppi` and no second pull request is opened. Then the session stops.

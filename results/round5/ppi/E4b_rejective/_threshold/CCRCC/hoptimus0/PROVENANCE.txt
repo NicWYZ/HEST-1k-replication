@@ -1,0 +1,34 @@
+platform: Longleaf, plan section 7.3
+slurm_job_id: 4383374
+slurm_job_partition: spill
+slurm_job_account: rc_tengfei_pi
+slurm_cpus_on_node: 2
+node: c130501.ll.unc.edu
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python3.11
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+snapshot_commit: 0776327f48f71ee89030b58c32892f3086b0dec6
+snapshot: /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6
+unit: E4b_threshold_CCRCC_hoptimus0
+stage: E4b
+workers: 
+command: round5_ppi_e4b_threshold.py --parquet /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__hoptimus0.parquet --perm-parquet /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__resnet50.parquet --vtag CCRCC --arm hoptimus0 --out-dir .
+start: 2026-10-09T11:31:29-04:00
+end: 2026-10-09T11:38:24-04:00
+elapsed_s: 415.7
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  544721f07cb3d74dc5b92456d61fe450  code/scripts/round3_b1_ppi.py
+  d79e69aa65800b9d24de556e019a0c64  code/scripts/round4_ppi_estimator.py
+  15f51917a5fb79702ba239e520e7ff86  code/scripts/round4_ppi_q2_masking.py
+  6097231bc238c0a23387ce76029acefd  code/scripts/round4_ppi_q3_regimes.py
+  d78b654d7fd8e6a824f73dd50ee2a0c1  code/scripts/round5_ppi_balance.py
+  122375c3acb103ed93e3e687644d7f6d  code/scripts/round5_ppi_common.py
+  b6e9ecc52ac5539682487d8e7c1451c6  code/scripts/round5_ppi_e2_regimeB.py
+  d886d3db94f4f12364ac072b6485f08f  code/scripts/round5_ppi_e4_selection.py
+  228972e745a16ad91b5a368600e6acda  code/scripts/round5_ppi_e4b_rejective.py
+  82d389fdf6e0d2108e31022b76e4f677  code/scripts/round5_ppi_e4b_threshold.py
+  2de31569ffe72239062fbeb0c9a50fc5  code/scripts/round5_ppi_estimator.py
+  05b04038b56b1ad2ee0b5394eb82037e  code/scripts/round5_ppi_run.py
+inputs (md5, path):

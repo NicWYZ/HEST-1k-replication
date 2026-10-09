@@ -1,0 +1,23 @@
+	Command being timed: "/work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/9185bc6be157ee9c62d8d1067e5ad9e14f53984e/code/scripts/round5_ppi_run.py --snapshot-dir /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/9185bc6be157ee9c62d8d1067e5ad9e14f53984e --out-dir /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E4b_rejective/LUNG_XENIUM/permuted/theta2_nL8 --unit LUNG_XENIUM --stage E4b --frame-id 1ced51e2-8b37-4848-935c-97525647d387 -- round5_ppi_e4b_rejective.py --parquet /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__resnet50.parquet --perm-parquet /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__resnet50.parquet --ref-parquet /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__resnet50.parquet --ref-arm resnet50 --vtag LUNG_XENIUM --arm permuted --estimands theta2 --nl-grid 8 --out-dir ."
+	User time (seconds): 569.55
+	System time (seconds): 14.74
+	Percent of CPU this job got: 98%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 9:53.00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1968360
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 960057
+	Voluntary context switches: 16713
+	Involuntary context switches: 525
+	Swaps: 0
+	File system inputs: 88888
+	File system outputs: 33504
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

@@ -1,0 +1,58 @@
+check,scope,metric,value,detail
+acc1,"D0+D1 first-200 rows, all 32 cells",rows_compared,352.0,"E4b rows with n_sub<=200 vs E4, same arm/estimand/n_L/design/balance/rule/interval; perm_cluster excluded. snapshot 9185bc6 for 24 cells; b410529 for the 8 theta2 n_L 4/12 cells"
+acc1,"D0+D1 first-200 rows, all 32 cells",rows_matched,352.0,
+acc1,"D0+D1 first-200 rows, all 32 cells",rows_failed,0.0,
+acc1,"D0+D1 first-200 rows, all 32 cells",max_d_cov_med,0.0,tolerance 0.005
+acc1,"D0+D1 first-200 rows, all 32 cells",max_d_cov_mean,0.0,tolerance 0.005
+acc1,"D0+D1 first-200 rows, all 32 cells",max_rel_emp_var_median,0.0,tolerance 1e-05
+acc1,"D0+D1 first-200 rows, all 32 cells",max_rel_est_var_over_emp_var_median,0.0,tolerance 1e-05
+acc1,"D0+D1 first-200 rows, all 32 cells",max_rel_width_median,0.0,tolerance 1e-05
+acc1,"new 8 cells (theta2 nL4,12 at b410529)",rows_compared,64.0,
+acc1,"new 8 cells (theta2 nL4,12 at b410529)",rows_matched,64.0,max differences 0.0 on all five metrics
+acc1,"D0+D1 first-200 rows, all 32 cells",rows_with_n_sub_not_200,32.0,"theta2 nL4: n_sub 162, theta2 nL6: n_sub 195 (first 200 draws with >=2 valid donors; E4 n_draws equal in every compared row)"
+acc1,theta2 nL12 D1,E4_rows_without_E4b_counterpart,16.0,"E4 has D1 rows for theta2 nL12; E4b skips strat_t there (20 skipped rows, see e4b_skipped); not compared"
+acc1,perm_cluster,rows_without_E4_counterpart,56.0,"D0/D1 perm_cluster rows, not compared"
+acc1b_D2,all32 bal=own p_a=0.01,cells_compared,128.0,"E4b first-200 D2 rows beside E4 D2 rows (classical and tuned, both rules)"
+acc1b_D2,all32 bal=own p_a=0.01,emp_var_ratio_E4b_over_E4_median,1.0,range 0.8168 to 1.0273
+acc1b_D2,all32 bal=own p_a=0.01,coverage_median_diff_median,0.0,range -0.0050 to 0.0250
+acc1b_D2,all32 bal=own p_a=0.01,threshold_E4b_median_over_cells,2.1818756067659702e-05,E4 did not write its threshold
+acc1b_D2,all32 bal=own p_a=0.1,cells_compared,128.0,"E4b first-200 D2 rows beside E4 D2 rows (classical and tuned, both rules)"
+acc1b_D2,all32 bal=own p_a=0.1,emp_var_ratio_E4b_over_E4_median,1.0,range 0.9864 to 1.0346
+acc1b_D2,all32 bal=own p_a=0.1,coverage_median_diff_median,0.0,range -0.0050 to 0.0050
+acc1b_D2,all32 bal=own p_a=0.1,threshold_E4b_median_over_cells,0.0019751390791497,E4 did not write its threshold
+acc1b_D2,all32 bal=pcE2 p_a=0.01,cells_compared,128.0,"E4b first-200 D2 rows beside E4 D2 rows (classical and tuned, both rules)"
+acc1b_D2,all32 bal=pcE2 p_a=0.01,emp_var_ratio_E4b_over_E4_median,1.0,range 0.6260 to 1.0928
+acc1b_D2,all32 bal=pcE2 p_a=0.01,coverage_median_diff_median,0.0,range -0.0400 to 0.1550
+acc1b_D2,all32 bal=pcE2 p_a=0.01,threshold_E4b_median_over_cells,0.0014787262189201,E4 did not write its threshold
+acc1b_D2,all32 bal=pcE2 p_a=0.1,cells_compared,128.0,"E4b first-200 D2 rows beside E4 D2 rows (classical and tuned, both rules)"
+acc1b_D2,all32 bal=pcE2 p_a=0.1,emp_var_ratio_E4b_over_E4_median,1.0,range 0.9622 to 1.0180
+acc1b_D2,all32 bal=pcE2 p_a=0.1,coverage_median_diff_median,0.0,range -0.0050 to 0.0100
+acc1b_D2,all32 bal=pcE2 p_a=0.1,threshold_E4b_median_over_cells,0.0237577967345714,E4 did not write its threshold
+acc1b_D2,all32 bal=pcF2 p_a=0.01,cells_compared,128.0,"E4b first-200 D2 rows beside E4 D2 rows (classical and tuned, both rules)"
+acc1b_D2,all32 bal=pcF2 p_a=0.01,emp_var_ratio_E4b_over_E4_median,1.0,range 0.6153 to 1.0338
+acc1b_D2,all32 bal=pcF2 p_a=0.01,coverage_median_diff_median,0.0,range -0.0100 to 0.0500
+acc1b_D2,all32 bal=pcF2 p_a=0.01,threshold_E4b_median_over_cells,0.0037788496119901,E4 did not write its threshold
+acc1b_D2,all32 bal=pcF2 p_a=0.1,cells_compared,128.0,"E4b first-200 D2 rows beside E4 D2 rows (classical and tuned, both rules)"
+acc1b_D2,all32 bal=pcF2 p_a=0.1,emp_var_ratio_E4b_over_E4_median,1.0,range 0.9721 to 1.0214
+acc1b_D2,all32 bal=pcF2 p_a=0.1,coverage_median_diff_median,0.0,range -0.0050 to 0.0050
+acc1b_D2,all32 bal=pcF2 p_a=0.1,threshold_E4b_median_over_cells,0.0307961646467447,E4 did not write its threshold
+acc1b_D2,all32 bal=perm p_a=0.01,cells_compared,128.0,"E4b first-200 D2 rows beside E4 D2 rows (classical and tuned, both rules)"
+acc1b_D2,all32 bal=perm p_a=0.01,emp_var_ratio_E4b_over_E4_median,0.9811634674808024,range 0.8149 to 1.0195
+acc1b_D2,all32 bal=perm p_a=0.01,coverage_median_diff_median,0.0,range -0.0050 to 0.0200
+acc1b_D2,all32 bal=perm p_a=0.01,threshold_E4b_median_over_cells,2.7618887543212622e-05,E4 did not write its threshold
+acc1b_D2,all32 bal=perm p_a=0.1,cells_compared,128.0,"E4b first-200 D2 rows beside E4 D2 rows (classical and tuned, both rules)"
+acc1b_D2,all32 bal=perm p_a=0.1,emp_var_ratio_E4b_over_E4_median,1.0,range 0.9633 to 1.0346
+acc1b_D2,all32 bal=perm p_a=0.1,coverage_median_diff_median,0.0,range -0.0050 to 0.0050
+acc1b_D2,all32 bal=perm p_a=0.1,threshold_E4b_median_over_cells,0.002299609943293,E4 did not write its threshold
+acc1b_D2,all 32 cells,emp_var_ratio_median,1.0,range 0.6153 to 1.0928; n=1024
+acc1b_D2,all 32 cells,coverage_median_diff_median,0.0,range -0.0400 to 0.1550
+acc1b_D2,new 8 cells,emp_var_ratio_median,1.0,range 0.9985 to 1.0067; n=256
+acc1b_D2,new 8 cells,coverage_median_diff_median,0.0,range -0.0050 to 0.0000
+acc2,"all D2 cells, 32 cells",max_acc2_rej_minus_classical_max,0.0,over 288 D2 diagnostic rows with rej_t (320 total); 32 NaN rows where rej_t skipped
+acc2,"all D2 cells, 32 cells",cells_nonzero,0.0,
+acc2,new 8 cells,max_acc2_rej_minus_classical_max,0.0,"over 64 rows; 16 NaN (rej_t skipped, theta2 nL4 pcF2/pcE2 and nL12)"
+skipped,all,skipped_files_rows,52.0,"theta3 nL4 rej_t (n_L-k-1<2, pcF2/pcE2) 16; theta2 nL4 rej_t (n_L-k-1<2) 16; theta2 nL12 strat_t ('n_L exceeds the valid clusters') 20"
+skipped,all,n_beyond_first_batch_total,0.0,"draws beyond first 2,000 candidates; 0 in every cell"
+skipped,all,candidates_max_overall,1729.0,
+support,theta2 nL12,"support_p_a_times_C(G,n_L)",0.0,"G=9 valid donors < n_L=12, so C(G,n_L)=0 by formula; D2 at nL12 labels 12 of 15 donors, of which a variable number are valid. Treat nL12 theta2 D2 rows as degenerate/not comparable to support-based reading"
+support,all lung D2 cells,max_support,643.5,all below 1000; no cell qualifies for acceptance 3's support>=1000 condition

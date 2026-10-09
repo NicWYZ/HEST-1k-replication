@@ -9,3 +9,11 @@
 0.76	historical: development run of the sample-centred variance without the (m/(m-1))^2 factor, output not kept; quoted in theory 2.x as "about"
 1.30	derived: ratio of the median absolute deviations from 1 of ratio_of_median_emp_var and of 1/est_var_over_emp_var_median_D0 in e4_perm_balance_diagnostic.csv, census by area
 2.10	derived: the same ratio, CCRCC_merged
+394	historical: provenance_index_summary.csv at the E4 gate (jobs, commit 4f5f65a); the file now covers E0 to E4b
+351	historical: provenance_index_summary.csv at the E4 gate (jobs_longleaf, commit 4f5f65a); the file now covers E0 to E4b
+8.3	reference: plan section number (docs/round5_ppi_plan.md section 8.3), not a result
+1282	reference: page number of Morgan and Rubin (2012), Annals of Statistics 40
+944	reference: page number of Fuller (2009), Biometrika 96
+403	reference: HTTP status returned by the publisher for Fuller (2009)
+7,355	read: smallest support among test 3's large-support cases, in the detail text "7355; within 0.15" of results/round5/ppi/E4b_rejective/tests/e4b_tests.csv
+644	read: support of test 3's G = 15, n = 8, p_a = 0.1 case, in the detail text "644; within 0.15" of results/round5/ppi/E4b_rejective/tests/e4b_tests.csv

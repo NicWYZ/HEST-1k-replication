@@ -1,0 +1,5 @@
+prediction,verdict,summary
+E4b.1,held,"normal law, own balance, p_a 0.01, n_L >= 6, support >= 1000: rej_t coverage in 0.88-0.92 in 60 of 60 cells (range 0.894 to 0.906); narrower than the tuned D0 interval in 24 of 24 cells with n_L <= 8 and R2 >= 0.4 (width ratio 0.734 to 0.967)"
+E4b.2,held,"theta3, n_L 8, own balance, p_a 0.01: band: 5 of 5; narrower_than_tuned_D0: 6 of 6; coverage_within_0.03_of_D0_classical: 6 of 6; band values CCRCC uni_v2 0.726, ACS_STATES package 0.551, LUNG_XENIUM hoptimus0 0.531, LUNG_XENIUM resnet50 0.599, LUNG_XENIUM uni_v2 0.553"
+E4b.3,held,"kidney cancer tasks, theta2, D2: outside 3 bootstrap se of 1 in 44 of 64 perm cells and 8 of 64 perm_cluster cells"
+E4b.4,held,"lung, theta3, n_L 8, own balance, p_a 0.01, median over genes of the D2 over D0 classical variance ratio: hoptimus0 0.255 (E4 0.255), resnet50 0.336 (E4 0.330), uni_v2 0.277 (E4 0.285)"

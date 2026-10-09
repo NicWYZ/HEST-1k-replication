@@ -1,0 +1,28 @@
+platform: local (Nicolas's Mac), plan section 7.4
+PYTHONHASHSEED: 
+host: macOS-26.6.2-arm64-arm-64bit
+python: 3.11.15 at /Users/nicolaszhang/.claude-science/conda/envs/python/bin/python3.11
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+snapshot_commit: b410529ee93fe637be752ec2116edafbe6577c59
+snapshot: /tmp/r5ppi_snapshots/b410529ee93fe637be752ec2116edafbe6577c59
+unit: E4b_tests
+stage: E4b
+workers: 
+command: round5_ppi_e4b_tests.py
+start: 2026-10-09T11:46:39-04:00
+end: 2026-10-09T11:46:42-04:00
+elapsed_s: 3.5
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  544721f07cb3d74dc5b92456d61fe450  code/scripts/round3_b1_ppi.py
+  d79e69aa65800b9d24de556e019a0c64  code/scripts/round4_ppi_estimator.py
+  15f51917a5fb79702ba239e520e7ff86  code/scripts/round4_ppi_q2_masking.py
+  6097231bc238c0a23387ce76029acefd  code/scripts/round4_ppi_q3_regimes.py
+  d78b654d7fd8e6a824f73dd50ee2a0c1  code/scripts/round5_ppi_balance.py
+  122375c3acb103ed93e3e687644d7f6d  code/scripts/round5_ppi_common.py
+  b6e9ecc52ac5539682487d8e7c1451c6  code/scripts/round5_ppi_e2_regimeB.py
+  d886d3db94f4f12364ac072b6485f08f  code/scripts/round5_ppi_e4_selection.py
+  059c18e1b4998b1ac9c9685ba324a872  code/scripts/round5_ppi_e4b_rejective.py
+  5ac80fae6f77e22f0d7886060d6081d7  code/scripts/round5_ppi_e4b_tests.py
+  2de31569ffe72239062fbeb0c9a50fc5  code/scripts/round5_ppi_estimator.py
+inputs (md5, path):

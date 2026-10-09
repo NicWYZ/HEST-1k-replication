@@ -1,0 +1,6 @@
+check,n,n_pass,worst_abs_coverage,worst_rel,passed,note
+1 D0 and D1 first 200 draws reproduce E4,1824,1824.0,0.0,0.0,True,"1824 comparable rows (perm_cluster excluded), 1824 matched"
+"1 D2 threshold change, E4b over E4 (median over genes)",1216,,,,,"ratio median 1.000, range 0.929 to 1.094"
+1 D2 first 200 draws beside E4 (no tolerance),4864,,0.15500000000000003,0.384674472049518,,"emp_var ratio median 1.000, range 0.615 to 1.093"
+2 rej_t point estimate equals the classical estimate,1408,1408.0,,0.0,True,"largest |rej_t - classical| over draws and genes, per D2 cell"
+"3 perm_cluster D2 ratio within 3 bootstrap se of 1, support >= 1000",208,204.0,,3.8130393663137863,False,worst_rel holds the largest |z|

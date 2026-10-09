@@ -1,0 +1,149 @@
+vtag,arm,estimand,G,n_L,design,balance,p_a,n_draws,interval,reason
+CCRCC,hoptimus0,theta2,23,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 0 < 2
+CCRCC,hoptimus0,theta2,23,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,hoptimus0,theta2,23,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,hoptimus0,theta2,23,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,hoptimus0,theta3,24,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,hoptimus0,theta3,24,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,hoptimus0,theta3,24,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,hoptimus0,theta3,24,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,permuted,theta2,23,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 0 < 2
+CCRCC,permuted,theta2,23,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,permuted,theta2,23,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,permuted,theta2,23,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,permuted,theta3,24,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,permuted,theta3,24,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,permuted,theta3,24,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,permuted,theta3,24,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,resnet50,theta2,23,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,resnet50,theta2,23,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,resnet50,theta2,23,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,resnet50,theta2,23,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,resnet50,theta3,24,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,resnet50,theta3,24,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,resnet50,theta3,24,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,resnet50,theta3,24,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,uni_v2,theta2,23,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,uni_v2,theta2,23,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,uni_v2,theta2,23,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,uni_v2,theta2,23,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,uni_v2,theta3,24,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,uni_v2,theta3,24,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,uni_v2,theta3,24,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC,uni_v2,theta3,24,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,hoptimus0,theta2,22,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 0 < 2
+CCRCC_merged,hoptimus0,theta2,22,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,hoptimus0,theta2,22,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,hoptimus0,theta2,22,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,hoptimus0,theta3,23,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,hoptimus0,theta3,23,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,hoptimus0,theta3,23,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,hoptimus0,theta3,23,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,permuted,theta2,22,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 0 < 2
+CCRCC_merged,permuted,theta2,22,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,permuted,theta2,22,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,permuted,theta2,22,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,permuted,theta3,23,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,permuted,theta3,23,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,permuted,theta3,23,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,permuted,theta3,23,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,resnet50,theta2,22,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,resnet50,theta2,22,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,resnet50,theta2,22,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,resnet50,theta2,22,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,resnet50,theta3,23,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,resnet50,theta3,23,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,resnet50,theta3,23,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,resnet50,theta3,23,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,uni_v2,theta2,22,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 0 < 2
+CCRCC_merged,uni_v2,theta2,22,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,uni_v2,theta2,22,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,uni_v2,theta2,22,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,uni_v2,theta3,23,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,uni_v2,theta3,23,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,uni_v2,theta3,23,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+CCRCC_merged,uni_v2,theta3,23,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+INDIANA_KIDNEY,hoptimus0,theta2,20,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 0 < 2
+INDIANA_KIDNEY,hoptimus0,theta2,20,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = -1 < 2
+INDIANA_KIDNEY,hoptimus0,theta2,20,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+INDIANA_KIDNEY,hoptimus0,theta2,20,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+INDIANA_KIDNEY,hoptimus0,theta3,25,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+INDIANA_KIDNEY,hoptimus0,theta3,25,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+INDIANA_KIDNEY,hoptimus0,theta3,25,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+INDIANA_KIDNEY,hoptimus0,theta3,25,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+INDIANA_KIDNEY,permuted,theta2,20,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 0 < 2
+INDIANA_KIDNEY,permuted,theta2,20,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = -1 < 2
+INDIANA_KIDNEY,permuted,theta2,20,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+INDIANA_KIDNEY,permuted,theta2,20,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 0 < 2
+INDIANA_KIDNEY,permuted,theta3,25,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+INDIANA_KIDNEY,permuted,theta3,25,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+INDIANA_KIDNEY,permuted,theta3,25,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+INDIANA_KIDNEY,permuted,theta3,25,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+INDIANA_KIDNEY,resnet50,theta2,20,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 0 < 2
+INDIANA_KIDNEY,resnet50,theta2,20,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+INDIANA_KIDNEY,resnet50,theta2,20,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+INDIANA_KIDNEY,resnet50,theta2,20,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 0 < 2
+INDIANA_KIDNEY,resnet50,theta3,25,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+INDIANA_KIDNEY,resnet50,theta3,25,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+INDIANA_KIDNEY,resnet50,theta3,25,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+INDIANA_KIDNEY,resnet50,theta3,25,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+INDIANA_KIDNEY,uni_v2,theta2,20,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = -1 < 2
+INDIANA_KIDNEY,uni_v2,theta2,20,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 0 < 2
+INDIANA_KIDNEY,uni_v2,theta2,20,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+INDIANA_KIDNEY,uni_v2,theta2,20,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+INDIANA_KIDNEY,uni_v2,theta3,25,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+INDIANA_KIDNEY,uni_v2,theta3,25,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+INDIANA_KIDNEY,uni_v2,theta3,25,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+INDIANA_KIDNEY,uni_v2,theta3,25,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+LUNG_XENIUM,hoptimus0,theta2,9,12,D1,own,,,strat_t,n_L exceeds the valid clusters
+LUNG_XENIUM,hoptimus0,theta2,9,12,D1,pcF,,,strat_t,n_L exceeds the valid clusters
+LUNG_XENIUM,hoptimus0,theta2,9,12,D1,perm,,,strat_t,n_L exceeds the valid clusters
+LUNG_XENIUM,hoptimus0,theta2,9,12,D1,perm_cluster,,,strat_t,n_L exceeds the valid clusters
+LUNG_XENIUM,hoptimus0,theta2,9,12,D1,pcE,,,strat_t,n_L exceeds the valid clusters
+LUNG_XENIUM,hoptimus0,theta2,9,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 0 < 2
+LUNG_XENIUM,hoptimus0,theta2,9,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 0 < 2
+LUNG_XENIUM,hoptimus0,theta2,9,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 0 < 2
+LUNG_XENIUM,hoptimus0,theta2,9,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 0 < 2
+LUNG_XENIUM,hoptimus0,theta3,15,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+LUNG_XENIUM,hoptimus0,theta3,15,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+LUNG_XENIUM,hoptimus0,theta3,15,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+LUNG_XENIUM,hoptimus0,theta3,15,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+LUNG_XENIUM,permuted,theta2,9,12,D1,own,,,strat_t,n_L exceeds the valid clusters
+LUNG_XENIUM,permuted,theta2,9,12,D1,pcF,,,strat_t,n_L exceeds the valid clusters
+LUNG_XENIUM,permuted,theta2,9,12,D1,perm,,,strat_t,n_L exceeds the valid clusters
+LUNG_XENIUM,permuted,theta2,9,12,D1,perm_cluster,,,strat_t,n_L exceeds the valid clusters
+LUNG_XENIUM,permuted,theta2,9,12,D1,pcE,,,strat_t,n_L exceeds the valid clusters
+LUNG_XENIUM,permuted,theta2,9,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 0 < 2
+LUNG_XENIUM,permuted,theta2,9,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = -1 < 2
+LUNG_XENIUM,permuted,theta2,9,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 0 < 2
+LUNG_XENIUM,permuted,theta2,9,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 0 < 2
+LUNG_XENIUM,permuted,theta3,15,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+LUNG_XENIUM,permuted,theta3,15,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+LUNG_XENIUM,permuted,theta3,15,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+LUNG_XENIUM,permuted,theta3,15,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+LUNG_XENIUM,resnet50,theta2,9,12,D1,own,,,strat_t,n_L exceeds the valid clusters
+LUNG_XENIUM,resnet50,theta2,9,12,D1,pcF,,,strat_t,n_L exceeds the valid clusters
+LUNG_XENIUM,resnet50,theta2,9,12,D1,perm,,,strat_t,n_L exceeds the valid clusters
+LUNG_XENIUM,resnet50,theta2,9,12,D1,perm_cluster,,,strat_t,n_L exceeds the valid clusters
+LUNG_XENIUM,resnet50,theta2,9,12,D1,pcE,,,strat_t,n_L exceeds the valid clusters
+LUNG_XENIUM,resnet50,theta2,9,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 0 < 2
+LUNG_XENIUM,resnet50,theta2,9,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 0 < 2
+LUNG_XENIUM,resnet50,theta2,9,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 0 < 2
+LUNG_XENIUM,resnet50,theta2,9,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 0 < 2
+LUNG_XENIUM,resnet50,theta3,15,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+LUNG_XENIUM,resnet50,theta3,15,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+LUNG_XENIUM,resnet50,theta3,15,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+LUNG_XENIUM,resnet50,theta3,15,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+LUNG_XENIUM,uni_v2,theta2,9,12,D1,own,,,strat_t,n_L exceeds the valid clusters
+LUNG_XENIUM,uni_v2,theta2,9,12,D1,pcF,,,strat_t,n_L exceeds the valid clusters
+LUNG_XENIUM,uni_v2,theta2,9,12,D1,perm,,,strat_t,n_L exceeds the valid clusters
+LUNG_XENIUM,uni_v2,theta2,9,12,D1,perm_cluster,,,strat_t,n_L exceeds the valid clusters
+LUNG_XENIUM,uni_v2,theta2,9,12,D1,pcE,,,strat_t,n_L exceeds the valid clusters
+LUNG_XENIUM,uni_v2,theta2,9,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 0 < 2
+LUNG_XENIUM,uni_v2,theta2,9,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 0 < 2
+LUNG_XENIUM,uni_v2,theta2,9,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 0 < 2
+LUNG_XENIUM,uni_v2,theta2,9,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 0 < 2
+LUNG_XENIUM,uni_v2,theta3,15,4,D2,pcF2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+LUNG_XENIUM,uni_v2,theta3,15,4,D2,pcF2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2
+LUNG_XENIUM,uni_v2,theta3,15,4,D2,pcE2,0.1,2000.0,rej_t,n_L - k - 1 = 1 < 2
+LUNG_XENIUM,uni_v2,theta3,15,4,D2,pcE2,0.01,2000.0,rej_t,n_L - k - 1 = 1 < 2

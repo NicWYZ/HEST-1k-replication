@@ -303,3 +303,82 @@ $$
 $$
 
 as the oversight chat worked it out. The two halves' means are uncorrelated, since each half's error and its own fitted coefficient are uncorrelated given the regressors, and the other half's centred regressor mean has mean zero, so the ratio holds for the cross-fitted estimator over $n_L = 2n_h$ clusters. It is below 1 when $(1 - R^2_p)(n_h - 2) < n_h - p - 2$, that is $n_h > 2 + p/R^2_p$, or $n_L > 4 + 2p/R^2_p$. At $p = 1$ this is round 4's rule. The derivation is in the superpopulation, without the finite-population factor and without the clip. Section 2.0 shows that under the design with a large sampling fraction the cross-fitting adds the term that the factor does not scale, and E1 showed that clipping lowers the cost below this value, so the count is conservative under the design rule.
+
+## 3. An interval that uses the balance (E4b)
+
+This section answers section 5, E4b, of `docs/decisions/round5_ppi_E4_decisions.md`. It concerns the classical mean of the labelled clusters under design D2 of E4, every unit of a labelled cluster labelled, donor-weighted, design target.
+
+### 3.1 Setting
+
+There are $G$ clusters with values $z_g$ (the cluster's contribution to the estimand, as in section 2.0) and $k$ balance variables $x_g \in \mathbb{R}^k$, known for every cluster and computed from no label. The target is $\theta = \bar Z$, the mean of $z_g$ over the $G$ clusters, and $\bar X$ is the mean of $x_g$. Write $S_X$ for the population covariance matrix of $x_g$ (divisor $G - 1$), $B = S_X^{-1} S_{Xz}$ for the population least-squares coefficient of $z_g$ on $x_g$, and
+
+$$
+e_g = z_g - \bar Z - B^\top(x_g - \bar X),
+$$
+
+so that $\sum_g e_g = 0$ and $\sum_g e_g (x_g - \bar X) = 0$. Let $S_e^2$ be the population variance of $e_g$ and $f = n/G$, with $n = n_L$. Design D2 draws simple random samples $L$ of size $n$ in turn and accepts the first whose distance
+
+$$
+M_L = (\bar x_L - \bar X)^\top S_X^{-1} (\bar x_L - \bar X)
+$$
+
+is at most the threshold $t_a$, the $p_a$ quantile of $M_L$ over simple random samples (`round5_ppi_balance.mahalanobis_pool` and `d2_select`). The estimator is the classical mean $\hat\theta = \bar z_L$, in which no coefficient enters.
+
+### 3.2 The decomposition and its behaviour under simple random sampling
+
+For every sample, exactly,
+
+$$
+\bar z_L - \bar Z = (\bar e_L - \bar E) + B^\top(\bar x_L - \bar X),
+$$
+
+with $\bar E = 0$. Under simple random sampling of $n$ of the $G$ clusters, $\text{Var}(\bar e_L) = (1 - f)S_e^2/n$, $\text{Cov}(\bar x_L) = (1 - f)S_X/n$, and $\text{Cov}(\bar e_L, \bar x_L) = (1 - f)S_{eX}/n = 0$ because $B$ is the population least-squares coefficient. The two terms are uncorrelated for every $G$ and $n$, which is an exact property of the design. The finite-population central limit theorem makes $(\bar e_L, \bar x_L - \bar X)$ approximately jointly normal when $n$ and $G - n$ are both large and no cluster dominates. Uncorrelated jointly normal terms are independent, and $M_L \cdot n/(1 - f)$ is then approximately $\chi^2_k$. $M_L$ differs from the standardised form by the constant $n/(1 - f)$, so the threshold $t_a$ is approximately $q_a(1 - f)/n$ with $q_a$ the $p_a$ quantile of $\chi^2_k$, and acceptance is the event $\chi^2 \le q_a$ in the standardised variable.
+
+### 3.3 The variance of the classical mean under D2
+
+Under the normal approximation, conditioning on $M_L \le t_a$ restricts only $\bar x_L - \bar X$. It leaves the distribution of $\bar e_L$ unchanged, because $\bar e_L$ is independent of $\bar x_L$. In the canonical form where $\text{Cov}(\bar x_L) = I$ the acceptance region is a ball, so the accepted $\bar x_L - \bar X$ keeps mean zero and its covariance becomes $v_a$ times the original, with
+
+$$
+v_a = \frac{P(\chi^2_{k+2} \le q_a)}{P(\chi^2_k \le q_a)}.
+$$
+
+This is Theorem 3.1 of Morgan and Rubin (2012), proved there for the difference in covariate means between two treatment groups. The proof (their appendix) uses only that the vector being restricted is normal and that the acceptance region is a ball in its canonical form, so it applies unchanged to $\bar x_L - \bar X$ under simple random sampling. Their Theorem 3.2 then gives the outcome variance through the same decomposition as here, the residual term unchanged and the covariate term scaled by $v_a$. Hence, to the order of the normal approximation,
+
+$$
+E_{D2}(\hat\theta) = \theta, \qquad \text{Var}_{D2}(\hat\theta) = \frac{1 - f}{n}\Big(S_e^2 + v_a\,B^\top S_X B\Big).
+$$
+
+Against simple random sampling, where the bracket is $S_e^2 + B^\top S_X B = S_z^2$, the ratio is $1 - (1 - v_a)R^2_c$ with $R^2_c = B^\top S_X B / S_z^2$ the population $R^2$ of $z_g$ on $x_g$ over the $G$ clusters. With $k = 1$, $v_a$ is 0.0053 at $p_a = 0.1$ and 0.00005 at $p_a = 0.01$, and with $k = 2$ it is 0.0518 and 0.0050 (`round5_ppi_balance.va_nominal`, values in `results/round5/ppi/E5_joint/e5_report_numbers.csv`, names `va|...`), so the ratio is close to $1 - R^2_c$ as E4.1 predicted.
+
+### 3.4 The estimate and the interval
+
+Fit $z_g$ on $x_g$ with an intercept by least squares over the labelled clusters, giving $\hat b$ and residuals with $s^2_{\text{res}} = \text{RSS}/(n - k - 1)$, and let $S_x$ be the labelled clusters' sample covariance matrix of $x_g$. Then
+
+$$
+\widehat{\text{Var}}_{\text{rej}} = \Big(1 - \frac{n}{G}\Big)\frac{s^2_{\text{res}} + v_a\,\hat b^\top S_x\,\hat b}{n}
+$$
+
+with reference $t_{n - k - 1}$, the residual degrees of freedom. Each piece is a ratio of sample moments that is consistent under simple random sampling, and conditioning on an event of fixed probability $p_a > 0$ keeps it consistent, so $\widehat{\text{Var}}_{\text{rej}}$ is consistent for the variance of section 3.3. The point estimate is $\bar z_L$, so $\hat b$ enters only the variance estimate and there is no tuning cost of the kind of section 2.6. The degrees of freedom are a convention taken from the regression residuals and are not derived. The interval is `rej_t` in `round5_ppi_balance.py`. It needs $n - k - 1 \ge 2$, so at $n_L = 4$ it is formed for $k = 1$ only.
+
+The classical interval `textbook_t|fpc|lin` uses $(1 - f)s_z^2/n$ with $s_z^2$ the labelled sample variance of $z_g$. Balance on the mean of $x_g$ does not change the expected spread of $z_g$ within the sample, so that interval estimates the simple-random-sampling variance and does not see the reduction, which is the finding of memo section 2.
+
+### 3.5 Conditions
+
+The approximation needs the following.
+
+1. **A normal approximation over clusters.** $n$ and $G - n$ large enough, and no cluster with an extreme $z_g$ or $x_g$, for $(\bar e_L, \bar x_L)$ to be near jointly normal. With $G = 15$ the sampling distribution of $\bar x_L$ is discrete and the $\chi^2_k$ quantile describes $M_L$ only roughly.
+2. **Enough distinct accepted samples.** The design accepts about $p_a\binom{G}{n}$ distinct samples, its support. Section 3.3 treats the accepted set as a smooth truncation of a continuous distribution. When the support is small the accepted set is a handful of samples, $\bar e_L$ over that set no longer has the variance $(1 - f)S_e^2/n$, and the mean over the set can differ from $\theta$ by a fixed amount, which is what E4 saw on lung (6,435 samples at $G = 15$, $n_L = 8$, about 64 accepted at $p_a = 0.01$). The memo's cut of a support of at least 1,000 is used for acceptance 3 and E4b.1.
+3. **$p_a$ fixed and not too small** relative to the support, so that the sample moments in section 3.4 keep their simple-random-sampling behaviour.
+4. **The threshold.** D2's threshold is the empirical $p_a$ quantile of $M_L$ over a pool of candidate samples, not the $\chi^2_k$ quantile. Since $v_a = E(\chi^2 \mid \chi^2 \le q_a)/k$ (Morgan and Rubin 2012, equation 23 with $E\chi^2_k = k$), its empirical counterpart is the mean of $M_L$ over accepted candidates divided by its mean over all candidates. The code reports this beside the nominal value, and `rej_t` uses the nominal value as the memo states.
+5. **Per-gene designs.** With balance on the estimand's own $\bar f_g$ every gene has its own design, and sections 3.3 and 3.4 apply gene by gene. With `pcF2` and `pcE2` one design serves every gene with $k = 2$.
+6. **$\theta_2$.** $G$ is the number of valid clusters of the estimand, as in E4.
+
+### 3.6 References, and what was confirmed
+
+Morgan and Rubin (2012), "Rerandomization to improve covariate balance in experiments", Annals of Statistics 40, 1263 to 1282 (doi 10.1214/12-AOS1008). The full text (arXiv 1207.5625) was read. Theorem 3.1 states $\text{cov}(\bar X_T - \bar X_C \mid x, \phi_M = 1) = v_a\,\text{cov}(\bar X_T - \bar X_C \mid x)$ with $v_a$ as above, under a two-group experiment with $p_w = 1/2$ and multivariate normal covariate means, Theorem 3.2 gives the percent reduction $100(1 - v_a)R^2$ for the estimated effect, and the appendix proves Theorem 3.1 from the normality of the restricted vector and the spherical acceptance region. The paper does not treat sampling from a finite population. The sampling form used here is the session's transfer of that argument through section 3.2, not a statement of the paper.
+
+Fuller (2009), "Some design properties of a rejective sampling procedure", Biometrika 96, 933 to 944 (doi 10.1093/biomet/asp042). The full text could not be fetched (not open access; the publisher returned 403), so only the abstract was read. It considers rejecting a probability sample unless the sample mean of an auxiliary vector is within a specified distance of the population mean, which is design D2, and proves that the large-sample mean and variance of the regression estimator are the same under the rejective design as under the original design and that the usual variance estimator of the regression estimator remains appropriate. That supports section 3.3's reading of the residual term, since the regression estimator removes $B^\top(\bar x_L - \bar X)$. Whether the paper also gives the variance of the unadjusted mean in the form of section 3.3 was not confirmed.
+
+### 3.7 A synthetic check
+
+Test 3 of `code/scripts/round5_ppi_e4b_tests.py` uses a normal synthetic population with $z_g = 0.8\,\mathbf{1}^\top x_g + \varepsilon_g$, 200,000 simple random samples and acceptance at the empirical $p_a$ quantile of $M_L$. At $(G, n, k) \in \{(51, 8, 1), (51, 8, 2), (24, 8, 1), (51, 12, 2)\}$ and $p_a \in \{0.1, 0.01\}$, where the support is 7,355 or more, the empirical variance of the accepted classical means is 1.017 to 1.077 times section 3.3's value, and the mean of $\widehat{\text{Var}}_{\text{rej}}$ is 0.916 to 1.039 times the empirical variance. At $G = 15$ and $n = 8$, with supports of 644 and 64, the second ratio is 1.120 and 1.065. The output is `results/round5/ppi/E4b_rejective/tests/e4b_tests.csv`.
