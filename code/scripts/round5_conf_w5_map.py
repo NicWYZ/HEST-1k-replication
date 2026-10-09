@@ -262,9 +262,9 @@ def figures(W):
         used |= tiles(ax, S[S.share == s], f"share {s:g}")
         ax.tick_params(axis="x", labelrotation=90)
     np.atleast_1d(axes)[0].set_ylabel(ylab)
-    fig.supxlabel("labelled units in the target cluster, o (normal tails, 21 units per cluster, no scale spread, 90%; share = between-cluster share of score variance)", y=0.2, fontsize=7)
+    fig.supxlabel("labelled units in the target cluster, o (normal tails, 21 units per cluster, no scale spread, 90%; share = between-cluster share of score variance)", y=0.15, fontsize=7)
     legend(fig, used)
-    fig.subplots_adjust(left=0.08, right=0.99, top=0.9, bottom=0.33)
+    fig.subplots_adjust(left=0.08, right=0.99, top=0.9, bottom=0.36)
     fig.savefig(os.path.join(OUT, "fig_w5_map_simulation.png")); plt.close(fig)
     # GHCP designs: fixed, Poisson, census; 90%
     G = W[(W.source == "ghcp_designs") & (W.alpha == 0.1)]
@@ -291,9 +291,9 @@ def figures(W):
         used |= tiles(ax, R[R.task == t], names.get(t, t))
         ax.tick_params(axis="x", labelrotation=90)
     axes[0].set_ylabel(ylab + " (K)")
-    fig.supxlabel("labelled spots in the target donor, o (K = 10: part 1 grid; K > 10: part 2 grid; 90%)", y=0.2, fontsize=8)
+    fig.supxlabel("labelled spots in the target donor, o (K = 10: part 1 grid; K > 10: part 2 grid; 90%)", y=0.15, fontsize=8)
     legend(fig, used)
-    fig.subplots_adjust(left=0.08, right=0.99, top=0.9, bottom=0.33)
+    fig.subplots_adjust(left=0.08, right=0.99, top=0.9, bottom=0.36)
     fig.savefig(os.path.join(OUT, "fig_w5_map_real_data.png")); plt.close(fig)
 
 
