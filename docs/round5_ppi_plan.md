@@ -382,3 +382,32 @@ Sections 7.3 (code delivery by bundle and snapshot, pushes, shared files, proven
 | E4b.3 | E4b | E5 | held (`e4b_prediction_scores.csv`) |
 | E4b.4 | E4b | E5 | held (`e4b_prediction_scores.csv`) |
 
+## 9. The end of the track, from the E5 decision memo
+
+The memo is `docs/decisions/round5_ppi_E5_decisions.md` (md5 `058b7569e59337aa37963d6b2a6c42de`), committed unchanged together with this section. Where this section and the memo differ, the memo holds. The memo closes the track.
+
+### 9.1 What the memo accepts
+
+The final report is accepted and the track is complete. Predictions are scored as the report scores them. The definition document's strict reading of the rule, which left balanced selection out, was the right reading as written. The process record holds, with 191 of 191 stamps carrying the sub-agent's own frame id and the provenance index failing only in the same 5 rows as at the E4 gate.
+
+### 9.2 What the memo adds
+
+1. Why acceptance check 3 fails on census by state at $n_L = 4$ is not established. Uneven inclusion does not single out the failing cells, and the check's bootstrap standard error leaves out the spread over permutations. The decision does not depend on it, because the design result is stated only for $n_L$ of 8 or more.
+2. With one balance variable on the estimand's own $\bar f_g$, `rej_t` covers within 0.03 of the D0 classical interval in every supported cell at $n_L$ of 8 and 12. Its failures are with two balance variables on tissue tasks, the worst at three residual degrees of freedom, which fits the report's escalation 7.
+3. On allocation the paper leads with the formula with the measured $\rho_c(n_L)$ and gives the fitted value beside it. The optimum is flat, since on lung with `hoptimus0` the two values differ by a factor of 1.6 and cost about 6% in variance (memo section 2).
+
+### 9.3 Readings for the paper
+
+As memo section 3. The definition document stands, with the allocation choice of section 9.2 item 3. Balanced selection with `rej_t` enters the paper as a design result under its conditions (one balance variable, the estimand's own $\bar f_g$, support of at least 1,000 and $n_L$ of 8 or more), with where it failed, and the definition document's default stays simple random selection. The superpopulation interval is stated with its limit.
+
+### 9.4 Answers to the escalations
+
+As memo section 4. One correction to the final report's escalation 12. On census `pcF2` is recorded with $k = 1$ in `E4b/e4b_d2_diagnostics.csv`, so its rows repeat the own rows with $k = 1$, not 2. For the next round's briefs, the frame id goes in the first message to each sub-agent.
+
+### 9.5 The question the track leaves
+
+A Horvitz-Thompson or Hájek mean under D2, weighted by inclusion probabilities simulated from label-free quantities, is the first question for the next round (memo section 5). Nothing is run for it in this track.
+
+### 9.6 What the session does before stopping
+
+This commit, carrying the memo unchanged and this section, and nothing else edited. No tag and no delivery to Longleaf, since the commit changes documents only. The memo's section 6 item 2 has the commit pushed after pull request #20 is merged and carried by a new pull request. Nicolas instead asked, on 9 October 2026, that the commit go onto the still-open pull request #20 so that he does one final merge, so it is pushed once to `round5-ppi` and no second pull request is opened. Then the session stops.
