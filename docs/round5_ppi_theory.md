@@ -348,7 +348,7 @@ $$
 E_{D2}(\hat\theta) = \theta, \qquad \text{Var}_{D2}(\hat\theta) = \frac{1 - f}{n}\Big(S_e^2 + v_a\,B^\top S_X B\Big).
 $$
 
-Against simple random sampling, where the bracket is $S_e^2 + B^\top S_X B = S_z^2$, the ratio is $1 - (1 - v_a)R^2_c$ with $R^2_c = B^\top S_X B / S_z^2$ the population $R^2$ of $z_g$ on $x_g$ over the $G$ clusters. With $k = 1$, $v_a$ is 0.0053 at $p_a = 0.1$ and 0.00005 at $p_a = 0.01$, and with $k = 2$ it is 0.0518 and 0.0050, so the ratio is close to $1 - R^2_c$ as E4.1 predicted.
+Against simple random sampling, where the bracket is $S_e^2 + B^\top S_X B = S_z^2$, the ratio is $1 - (1 - v_a)R^2_c$ with $R^2_c = B^\top S_X B / S_z^2$ the population $R^2$ of $z_g$ on $x_g$ over the $G$ clusters. With $k = 1$, $v_a$ is 0.0053 at $p_a = 0.1$ and 0.00005 at $p_a = 0.01$, and with $k = 2$ it is 0.0518 and 0.0050 (`round5_ppi_balance.va_nominal`, values in `results/round5/ppi/E5_joint/e5_report_numbers.csv`, names `va|...`), so the ratio is close to $1 - R^2_c$ as E4.1 predicted.
 
 ### 3.4 The estimate and the interval
 
