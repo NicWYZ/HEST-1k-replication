@@ -129,3 +129,89 @@ def estimate_d1(zbar, fbar, Lm, strata, rule, seed):
         var = var + (Gh / G) ** 2 * (1.0 - 2.0 / Gh) * s2 / 2.0
         dfc = dfc + (Gh > 2)
     return {"strat_t": (theta, var, np.maximum(dfc, 1.0))}, lam
+
+
+# ---------------------------------------------------------------------------------------------
+# Interval 3, stage E4b: an interval that uses the balance (docs/round5_ppi_theory.md section 3)
+# ---------------------------------------------------------------------------------------------
+
+def va_nominal(k, p_a):
+    """Morgan and Rubin (2012) Theorem 3.1: v_a = P(chi2_{k+2} <= q_a) / P(chi2_k <= q_a), q_a the
+    p_a quantile of chi2_k. 1.0 at p_a >= 1 (no restriction)."""
+    from scipy import stats
+    if p_a >= 1:
+        return 1.0
+    q = stats.chi2.ppf(p_a, k)
+    return float(stats.chi2.cdf(q, k + 2) / p_a)
+
+
+def rej_t(zbar, X, Lm, p_a):
+    """The rejective-sampling interval for the classical mean under D2 (theory section 3.4).
+
+    zbar (G, ncol) cluster values; X (G, ncol, k) balance variables (k = 1 per-column, or a shared
+    design broadcast to every column); Lm (G, ncol) bool labelled clusters, n per column.
+    Returns (theta, var, df): theta the classical mean of the labelled clusters, var
+    (1 - n/G)(s2_res + v_a b' S_x b)/n with b and s2_res (divisor n - k - 1) from least squares of
+    zbar on X with an intercept over the labelled clusters, S_x their sample covariance of X, and
+    df = n - k - 1. Columns with n - k - 1 < 2 get var = nan."""
+    G, ncol = zbar.shape
+    k = X.shape[2]
+    if X.shape[1] == 1 and ncol > 1:
+        X = np.broadcast_to(X, (G, ncol, k))
+    nn = Lm.sum(0)
+    if not (nn == nn[0]).all():
+        # columns with different numbers of labelled clusters (theta2 per-gene designs): by group
+        theta, var, dfa = np.full(ncol, np.nan), np.full(ncol, np.nan), np.full(ncol, np.nan)
+        for nv in np.unique(nn):
+            c = np.flatnonzero(nn == nv)
+            if nv < 2:
+                continue
+            t_, v_, d_ = rej_t(zbar[:, c], X[:, c, :], Lm[:, c], p_a)
+            theta[c], var[c], dfa[c] = t_, v_, d_
+        return theta, var, dfa
+    n = int(nn[0])
+    # gather the labelled clusters per column: idx (ncol, n)
+    idx = np.argsort(~Lm, axis=0, kind="stable")[:n].T
+    cols = np.arange(ncol)[:, None]
+    zl = zbar[idx, cols]                         # (ncol, n)
+    xl = X[idx, cols, :]                         # (ncol, n, k)
+    theta = zl.mean(1)
+    zc = zl - theta[:, None]
+    xc = xl - xl.mean(1, keepdims=True)
+    Sxx = np.einsum("cni,cnj->cij", xc, xc)      # (ncol, k, k)
+    Sxz = np.einsum("cni,cn->ci", xc, zc)
+    df = n - k - 1
+    with np.errstate(invalid="ignore", divide="ignore"):
+        b = np.linalg.solve(Sxx + 0.0, Sxz[:, :, None])[:, :, 0] if df >= 1 else np.full((ncol, k), np.nan)
+        res = zc - np.einsum("cni,ci->cn", xc, b)
+        s2 = (res ** 2).sum(1) / df if df >= 1 else np.full(ncol, np.nan)
+        Sx = Sxx / (n - 1)
+        quad = np.einsum("ci,cij,cj->c", b, Sx, b)
+        var = (1.0 - n / G) * (s2 + va_nominal(k, p_a) * quad) / n
+    if df < 2:
+        var = np.full(ncol, np.nan)
+    return theta, var, np.full(ncol, float(df))
+
+
+def perm_cluster_variable(f_ref, genes, seed_prefix):
+    """The cluster-level null control: f_ref (G, ng), the reference arm's own fbar_g over the valid
+    clusters, permuted across clusters with one crc32 seed per gene ('<seed_prefix>|<gene>'), so
+    each gene keeps its distribution over clusters and loses any link to a cluster's own weights.
+    Returns (G, ng, 1)."""
+    import zlib
+    G, ng = f_ref.shape
+    out = np.empty_like(f_ref)
+    for j, g in enumerate(genes):
+        p = np.random.default_rng(zlib.crc32(f"{seed_prefix}|{g}".encode())).permutation(G)
+        out[:, j] = f_ref[p, j]
+    return out[:, :, None]
+
+
+def first_accepted(dist_batch, thr, k0, done):
+    """dist_batch (K, ncol) distances of candidates k0..k0+K-1 of one draw; thr (ncol,); done (ncol,)
+    bool columns already accepted. Returns (kacc (ncol,) int or -1, done updated)."""
+    ok = dist_batch <= thr[None, :]
+    has = ok.any(0) & ~done
+    kacc = np.full(dist_batch.shape[1], -1)
+    kacc[has] = k0 + ok[:, has].argmax(0)
+    return kacc, done | has
