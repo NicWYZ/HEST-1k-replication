@@ -238,3 +238,49 @@ Staging committed scripts into jobs (W2 report, escalation 4) ends here, and sna
 
 The README value 0.1018 is the oversight chat's to fix.
 
+## 7. The W5 decision memo, transcribed
+
+The oversight chat's memo of 9 October 2026 is committed unchanged as `docs/decisions/round5_conformal_W5_decisions.md`. It closes the track. This section transcribes it. After it, the session pushes `round5-conformal` once, opens one pull request into `main` and stops.
+
+**7.1 The gate rule.** As 6.1. This was the track's last gate.
+
+**7.2 Acceptance of W5.** The closing report (`docs/round5_conf_final_report.md`, tag `round5-conf-final`, `33aa6c4`, pull request #18) is accepted and the track is complete. The predictions are scored as the report scores them.
+
+- W3 acceptance checks 1 and 3 fail as written. Both are accepted without a rerun.
+- Check 1's two failing round-4 rows are `within` at $o = 10$, where the half split calibrates on 5 scores. One differs by one test spot in coverage, the other by $5.9 \times 10^{-8}$ in median width.
+- Check 3's coverage is exact. Its mean width differs by at most $1.08 \times 10^{-8}$ and its median width by at most $1.4 \times 10^{-7}$, only where one run used an E5-2680 v4 or E5-2643 v3 node (`results/round5/conformal/W3_real/merged/w3_p3p2_by_cpu.csv`).
+- The code-delivery rules worked. There were four deliveries with one snapshot each, no script ran from the clone, and the lead made both cancellations after checking the queue. The provenance index traces every record.
+
+**7.3 Four corrections, recorded here and in the memo only.** The report, `.verify-exceptions-round5-conformal` and the result files stay as committed.
+
+1. The rows matched in W3 check 1 number 1,694,142, the sum of the six rows of `W3_real/merged/w3_reproduction.csv`, not 1,693,662 as the report and the exceptions file give. The failing matches are four, two in part 1 and two in part 2, from the same two round-4 rows.
+2. The provenance index covers 87 Slurm jobs and the local runs. The 88 distinct values of `slurm_job_id` in `provenance_index.csv` include `none`, which marks local runs.
+3. The closing page says the simulation's map holds on every task at $K = 10$. On Indiana at $o$ from 9 to 15 the plain split is narrower than `within_full`, by at most 2% (W3.2, margin down to $-0.0192$ in `W3_real/w3_report_numbers.csv`).
+4. The W2 memo's "3 to 4 times narrower" for `within_full` against GHCP from 9 labelled units is, wherever the released GHCP is finite, 2.0 to 4.1 times over $o$ from 9 to 20 and every number of groups, and 2.6 to 4.1 times at 20 groups (`W2_ghcp_settings/w2_sim_designs.csv`). The ratio is largest at $o = 9$ and smallest at $o = 17$ to 20. With 10 groups GHCP is infinite in every replicate at $o$ from 9 to 12, and with 12 groups at $o = 9$.
+
+**7.4 Readings for the paper's prediction-set section** (memo section 3).
+
+1. *The map on real data at $K = 10$, at 90%.* HCP with no labelled target spots is the narrowest valid method up to $o = 5$ on every task. From $o = 9$, `within_full` is 0.416 to 0.677 of HCP's width on every task. It is the narrowest method there except at $o = 17$, where `within` is narrower by discreteness, and on Indiana at $o$ from 9 to 15, where the plain split is narrower by at most 2%. `within_full` covers 0.900 to 0.923 at $o$ of 10, 25 and 100, in line with its guarantee $\lceil (o+1)(1-\alpha) \rceil/(o+1)$, which W3's check 2 confirms to within 0.005 (`W5_map/w5_report_numbers.csv`).
+2. *The within-donor family.* Round 4 recommended the plain split from $o = 10$ and `within` from $o = 25$. `within_full` replaces both from $o = 9$. On CCRCC it is 2.116 wide at $o = 10$ against the plain split's 2.321, 1.967 at $o = 25$ against 2.137 and 2.300, and 1.709 at $o = 100$ against 1.754 and 2.109 (`w5_report_numbers.csv`).
+3. *GHCP and the number of calibration clusters.* At $K = 10$ GHCP is 1.23 to 1.55 times HCP's width and covers 0.992 to 0.999. As $K$ rises on CCRCC, GHCP at $o = 5$ becomes narrower than HCP from $K = 12$, reaching 0.831 at $K = 20$, and 0.796 on the merged label set. On Indiana, at $K$ from 14 to 20, it stays within 4% of HCP. With the head held fixed, GHCP at $o = 5$ on CCRCC falls from 5.30 to 2.70 as $K$ goes from 10 to 20, against HCP's 4.47 to 3.25, so the calibration count alone produces the fall (`w5_report_numbers.csv`, parts 2 and 3).
+4. *GHCP's own designs.* From 9 labelled units `within_full` is 2 to 4 times narrower than GHCP at every number of groups where GHCP is finite. Below 9, GHCP is the narrowest method finite in every replicate from 20 groups, at 0.825 of HCP's width at $o = 5$. The released code calibrates HCP on half of the reference groups, so the design of 20 groups sits at 10 calibration clusters on the map's axis, the same as the real-data map at $K = 10$ (`W5_map/w5_method_groups.csv`, `w5_map.csv`). Every row of the paper's map states, per method, the clusters it calibrates on and the clusters it fits its score on.
+5. *Theory.* Two parts of Proposition 2 are direct corollaries of Tibshirani, Barber and Ramdas, Theorems 3 and 7. The bound for randomised methods and the floor of Proposition 1 rest on the round-4 proofs and were not found in print. The paper gives one remark with the proofs in an appendix. For $K + 1 \ge 1/\alpha$, in the revealed-law model, HCP is not tight, and no valid symmetric method is narrower than HCP at a configuration of continuous laws, none lying wholly below HCP's threshold, without being wider at another configuration. That other configuration contains one group whose scores are all equal, so the paper states the result with that condition. Whether HCP is dominated in expected width is open, and the paper says so in its discussion.
+
+**7.5 The two items the report left open.** The two unreproduced round-4 rows are not rerun, since the cause is understood and the effect is one test spot in coverage on one row and a width difference in the eighth decimal place on the other. Dominance of HCP in expected width is not pursued in this round, and the paper states it as open.
+
+**7.6 Answers to the W5 escalations.** All nine are accepted:
+
+- escalation 1: by 7.5;
+- escalation 2: the pattern by CPU family is recorded as an inference;
+- escalation 3: the cancellations followed the W2 memo's rule;
+- escalation 4: the comparison rules did not change;
+- escalation 5: accepted, with the whole file on Longleaf and each piece's md5 committed;
+- escalations 6 and 7: accepted, the stray file as left;
+- escalation 8: accepted, since every stamp carries the frame id assigned to its unit;
+- escalation 9: accepted, since the choices were committed before the merge.
+
+**7.7 What the session does before stopping.**
+
+1. Commit this section and the memo in one commit. Nothing else is edited.
+2. Pull request #18 is merged (9 October 2026). Push `round5-conformal` once, with no tag, and open one pull request into `main` carrying that commit. Nothing is delivered to Longleaf, since the commit changes documents only.
+3. Stop. The track is closed.
