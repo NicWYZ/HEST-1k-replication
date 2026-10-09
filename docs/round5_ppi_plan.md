@@ -236,7 +236,7 @@ The twenty predictions are the oversight chat's and are copied from section 2.1 
 | E4.1 | E4 | E4 | partly held (`docs/round5_ppi_E4_report.md` section 5) |
 | E4.2 | E4 | E4 | partly held (`docs/round5_ppi_E4_report.md` section 5) |
 | E4.3 | E4 | E4 | partly held (`docs/round5_ppi_E4_report.md` section 5) |
-| E4.4 | E4 | E4 | refuted in its main part (`docs/round5_ppi_E4_report.md` section 5) |
+| E4.4 | E4 | E4 | D2 over-coverage refuted, other parts partly held (`docs/round5_ppi_E4_report.md` section 5) |
 | E4.5 | E4 | E4 | partly held (`docs/round5_ppi_E4_report.md` section 5) |
 
 ## 4. Parametrisations fixed before the runs that use them

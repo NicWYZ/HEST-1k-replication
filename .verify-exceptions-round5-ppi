@@ -7,3 +7,5 @@
 480	derived: row count, 480 cells of E4.4_classical_D2 in e4_sim_prediction_cells.csv and 480 rows of sim/_merge/d2_misses.csv
 3,000	parameter: number of synthetic draws in code/scripts/round5_ppi_e3_tests.py test 4 (range(3000))
 0.76	historical: development run of the sample-centred variance without the (m/(m-1))^2 factor, output not kept; quoted in theory 2.x as "about"
+1.30	derived: ratio of the median absolute deviations from 1 of ratio_of_median_emp_var and of 1/est_var_over_emp_var_median_D0 in e4_perm_balance_diagnostic.csv, census by area
+2.10	derived: the same ratio, CCRCC_merged
