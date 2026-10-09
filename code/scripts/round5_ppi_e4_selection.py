@@ -8,8 +8,9 @@ Balance variables (none computed from a label):
     own      the estimand's own fbar_g, one variable per gene (one design per gene)
     pcF<k>   the first k principal components (k = 1, 2, 3) of the G x genes matrix of fbar_g,
              genes standardised, one design for all genes
-    pcE<k>   the first k principal components of the donors' mean embeddings (round-4 Q5 cluster
-             table), the arm's encoder (resnet50 for permuted); tissue tasks only
+    pcE<k>   the first k principal components of the donors' mean embeddings (round-4 Q5
+             q5_mean_embeddings parquets, array column 'mean_embedding'), the arm's encoder
+             (resnet50 for permuted); tissue tasks only
     perm     the permuted predictor's fbar_g, per gene (the control)
 Designs: D0; D1 on the first variable of own, pcF, pcE and perm; D2 with p_a in {0.1, 0.01} on
 every balance variable; and D2 with the threshold at infinity on own ('D2_inf'), which must equal D0.
@@ -64,9 +65,19 @@ def embeddings(root, vtag, enc, donors):
     key = next((c for c in e.columns if c in ("mean_embedding_row_key", "row_key", "donor", "donor_id", "key")), None)
     if key is not None:
         e = e.set_index(key)
-    num = e.select_dtypes(include=[np.number])
-    num.index = num.index.astype(str)
-    return num.reindex([str(d) for d in donors]).to_numpy(float)
+    e.index = e.index.astype(str)
+    e = e.reindex([str(d) for d in donors])
+    # the round-4 parquet stores each donor's mean embedding as one array-valued column
+    # ('mean_embedding', over joined spots); count columns such as n_spots are not embeddings
+    col = "mean_embedding" if "mean_embedding" in e.columns else None
+    if col is None:
+        arr = [c for c in e.columns if e[c].dtype == object and hasattr(e[c].dropna().iloc[0], "__len__")]
+        col = arr[0] if arr else None
+    if col is None:
+        raise ValueError(f"no array-valued embedding column in {p}: {list(e.columns)}")
+    if e[col].isna().any():
+        return None
+    return np.stack([np.asarray(v, float) for v in e[col]])
 
 
 def main(argv=None):
@@ -125,7 +136,7 @@ def main(argv=None):
             mv = masks[:, vid]
             nlab = mv.sum(1)
             if (nlab < 2).any():
-                mv = mv & (nlab >= 2)[:, None]
+                mv = mv & (nlab >= 2)[:, None]      # such candidates get an infinite distance below
             designs = [("D0", "none", 1.0)]
             for b in ("own",) + tuple(x for x in bal if x != "own"):
                 for pa in (0.1, 0.01):
@@ -133,7 +144,10 @@ def main(argv=None):
             designs.append(("D2_inf", "own", 1.0))
             dists = {}
             for b in bal:
-                dists[b] = BAL.mahalanobis_pool(mv, bal[b])
+                with np.errstate(invalid="ignore", divide="ignore"):
+                    dd = BAL.mahalanobis_pool(mv, bal[b])
+                dd[nlab < 2] = np.inf
+                dists[b] = dd
             for dname, b, pa in designs:
                 acc = {}
                 if dname == "D0":

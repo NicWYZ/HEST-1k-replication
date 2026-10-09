@@ -58,7 +58,13 @@ def d2_select(dist, n_draws, n_cand, p_a):
     """dist (n_draws * n_cand, ncol) in draw-major order (candidate k of draw d at d*n_cand + k).
     Returns (n_draws, ncol) index of the accepted candidate (k) per draw and column, the threshold
     per column, and the number of draws with no accepted candidate (then the last candidate)."""
-    thr = np.full(dist.shape[1], np.inf) if p_a >= 1 else np.quantile(dist, p_a, axis=0)
+    # a candidate whose distance is not finite (fewer than two valid labelled clusters) is never
+    # accepted below a finite threshold and does not enter the quantile
+    dist = np.where(np.isfinite(dist), dist, np.inf)
+    if p_a >= 1:
+        thr = np.full(dist.shape[1], np.inf)
+    else:
+        thr = np.nanquantile(np.where(np.isfinite(dist), dist, np.nan), p_a, axis=0)
     D = dist.reshape(n_draws, n_cand, -1)
     ok = D <= thr[None, None, :]
     first = np.where(ok.any(1), ok.argmax(1), n_cand - 1)
