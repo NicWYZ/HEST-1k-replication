@@ -1,0 +1,2 @@
+platform,slurm_job_id,stage,unit,start,end,elapsed_s,status,commit,workers,out_dir,command
+longleaf,4340378,E4,e4_inclusion_INDIANA_KIDNEY,2026-10-08T21:42:07-04:00,2026-10-08T21:43:30-04:00,83.6,COMPLETED,d7ab177959c50e7be04582cde9016ee245494ce8,,/work/users/w/e/weiyang/hest_replication/results/round5/ppi/E4_selection/INDIANA_KIDNEY/_inclusion,round5_ppi_e4_inclusion.py --perm-parquet /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions_INDIANA_KIDNEY/b1_predictions__INDIANA_KIDNEY__resnet50.parquet --vtag INDIANA_KIDNEY --out-dir .

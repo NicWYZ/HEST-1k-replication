@@ -98,3 +98,8 @@ results/round4/conformal/C1_testbed/ghcp_repro/
 results/round4/conformal/C2_candidates/frag_*/local_aborted*
 results/round4/conformal/C2_candidates/frag_*/local_partial_aborted/
 .DS_Store
+
+# round 5 PPI: regenerable by code/scripts/round5_ppi_e3_merge.py (132 MB)
+results/round5/ppi/E3_twolevel/e3_gene_ratios.csv.gz
+# round 5 PPI: mixed-provenance E3 sim run, identical to r5e3sim_final (see E4 report)
+results/round5/ppi/E3_twolevel/sim/r5e3sim_main90/

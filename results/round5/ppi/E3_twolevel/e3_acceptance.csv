@@ -1,0 +1,273 @@
+check,detail,worst_value,n_compared,threshold,passed,acceptance,arm,worst_value_2,metric,tolerance,quantity,worst,n,note,subset,tol,verdict,estimator,n_rows,n_matched,worst_abs_coverage_diff,worst_rel_emp_var_diff,worst_rel_est_over_emp_diff,pass_,item,value
+1_e3_accept_identity,"r4 engine vs round-4 code, all draws, regime A+B, package+permuted",max_abs_theta=1.599e-14; max_rel_var=3.673e-13,7200.0,~1e-12,True,,,,,,,,,,,,,,,,,,,,,
+2_vs_q4_main_table,A_all_C_ppi,max_abs_d_coverage_median=0.000e+00; max_rel_emp_var_median=9.770e-15; max_rel_est_var_over_emp_var_median=1.066e-14,16.0,0.005; 1e-5,True,,,,,,,,,,,,,,,,,,,,,
+2_vs_q4_main_table,A_all_P_ppi,max_abs_d_coverage_median=0.000e+00; max_rel_emp_var_median=9.770e-15; max_rel_est_var_over_emp_var_median=1.066e-14,16.0,0.005; 1e-5,True,,,,,,,,,,,,,,,,,,,,,
+2_vs_q4_main_table,A_all_r4_ppi,max_abs_d_coverage_median=0.000e+00; max_rel_emp_var_median=6.217e-15; max_rel_est_var_over_emp_var_median=1.432e-14,16.0,0.005; 1e-5,True,,,,,,,,,,,,,,,,,,,,,
+2_vs_q4_main_table,A_budget2400,max_abs_d_coverage_median=0.000e+00; max_rel_emp_var_median=1.887e-14; max_rel_est_var_over_emp_var_median=5.884e-15,16.0,0.005; 1e-5,True,,,,,,,,,,,,,,,,,,,,,
+2_vs_q4_main_table,B,max_abs_d_coverage_median=0.000e+00; max_rel_emp_var_median=0.000e+00; max_rel_est_var_over_emp_var_median=3.553e-15,4.0,0.005; 1e-5,True,,,,,,,,,,,,,,,,,,,,,
+3_formC_identity,"constant+donor_constant, all e3_*_formC_identity files (masking, regb, regcomp)",max_abs_theta_Cppi_minus_Ccl=3.220e-15; max_abs_var_Cppi_minus_Ccl=3.018e-16,130.0,1e-10,True,,,,,,,,,,,,,,,,,,,,,
+4_regb_width_ratio_P_ppi_over_P_classical,"constant, theta3, m>=20 (1 gene)",min=1.0000; max=1.0000,4.0,0.97-1.05 (constant only; donor_constant no band),True,,,,,,,,,,,,,,,,,,,,,
+4_regb_width_ratio_P_ppi_over_P_classical,"donor_constant, theta3, m>=20 (1 gene)",min=0.9866; max=0.9868,4.0,0.97-1.05 (constant only; donor_constant no band),,,,,,,,,,,,,,,,,,,,,,
+,"r4 engine vs round-4 code, all draws (3600 rows)",7.851497230149107e-13,,,True,1i_e3_accept_identity,package,2.408429011779845e-11,max_abs_theta | max_rel_var,~1e-12 expected,,,,,,,,,,,,,,,,
+,"r4 engine vs round-4 code, all draws (3600 rows)",7.851497230149107e-13,,,True,1i_e3_accept_identity,permuted,2.408429011779845e-11,max_abs_theta | max_rel_var,~1e-12 expected,,,,,,,,,,,,,,,,
+,A_m=2400/nL_r4_ppi: 8/8 rows matched,0.0,,,True,1ii_vs_q4_main_table,package,1.807293941070286e-14,"max_abs_cov | max_rel(emp_var,est/emp)",0.005 | 1e-5,,,,,,,,,,,,,,,,
+,A_m=2400/nL_r4_ppi: 8/8 rows matched,0.0,,,True,1ii_vs_q4_main_table,permuted,1.136171103962905e-14,"max_abs_cov | max_rel(emp_var,est/emp)",0.005 | 1e-5,,,,,,,,,,,,,,,,
+,A_m=all_r4+P+C: 24/24 rows matched,0.0,,,True,1ii_vs_q4_main_table,package,2.994131498521434e-12,"max_abs_cov | max_rel(emp_var,est/emp)",0.005 | 1e-5,,,,,,,,,,,,,,,,
+,A_m=all_r4+P+C: 24/24 rows matched,0.0,,,True,1ii_vs_q4_main_table,permuted,2.4257621834545666e-12,"max_abs_cov | max_rel(emp_var,est/emp)",0.005 | 1e-5,,,,,,,,,,,,,,,,
+,B_r4_ppi_regB_t: 2/2 rows matched,0.0,,,True,1ii_vs_q4_main_table,package,1.4050218597170858e-13,"max_abs_cov | max_rel(emp_var,est/emp)",0.005 | 1e-5,,,,,,,,,,,,,,,,
+,B_r4_ppi_regB_t: 2/2 rows matched,0.0,,,True,1ii_vs_q4_main_table,permuted,2.0600421062921737e-15,"max_abs_cov | max_rel(emp_var,est/emp)",0.005 | 1e-5,,,,,,,,,,,,,,,,
+,"3 files, 77 rows",2.90878432451791e-14,,,True,3_formC_identity,constant,5.1209037010835345e-15,max_abs_theta | max_abs_var (C_ppi - C_classical),<=1e-10,,,,,,,,,,,,,,,,
+,"3 files, 77 rows",3.7414515929867775e-14,,,True,3_formC_identity,donor_constant,5.8772431366094224e-15,max_abs_theta | max_abs_var (C_ppi - C_classical),<=1e-10,,,,,,,,,,,,,,,,
+,"theta3 only (ACS mean skipped for constant arms), 1 gene; m in 20,25,50,100",1.0,,,True,4_regb_width_ratio_P,constant,1.0,"min ratio | max ratio, P_ppi/P_classical",band 0.97-1.05,,,,,,,,,,,,,,,,
+,"theta3 only (ACS mean skipped for constant arms), 1 gene; m in 20,25,50,100 (no band, reported)",0.9986674985473456,,,,4_regb_width_ratio_P,donor_constant,0.998861667123148,"min ratio | max ratio, P_ppi/P_classical",none,,,,,,,,,,,,,,,,
+1i_identity,,,,,True,,hoptimus0,,,1e-10,1_regimeA_r4_vs_round4_code: max_abs_theta,1.4432899320127035e-14,3200.0,,,,,,,,,,,,,
+1i_identity,,,,,True,,hoptimus0,,,1e-10,1_regimeA_r4_vs_round4_code: max_rel_var,4.0889513996944515e-13,3200.0,NaN rows: 0,,,,,,,,,,,,
+1i_identity,,,,,True,,hoptimus0,,,1e-10,1_regimeB_r4_vs_round4_code: max_abs_theta,1.7763568394002505e-15,400.0,,,,,,,,,,,,,
+1i_identity,,,,,True,,hoptimus0,,,1e-10,1_regimeB_r4_vs_round4_code: max_rel_var,1.7763568394002505e-15,400.0,NaN rows: 0,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,hoptimus0,,,0.005,A_budget2400 [r4_ppi]: max abs diff coverage_median,0.0,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,hoptimus0,,,1e-05,A_budget2400 [r4_ppi]: max rel diff emp_var_median,2.6645352591003757e-15,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,hoptimus0,,,1e-05,A_budget2400 [r4_ppi]: max rel diff est_var_over_emp_var_median,6.661338147750939e-16,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,hoptimus0,,,0.005,A_all [C_ppi]: max abs diff coverage_median,0.0,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,hoptimus0,,,1e-05,A_all [C_ppi]: max rel diff emp_var_median,2.242650509742816e-14,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,hoptimus0,,,1e-05,A_all [C_ppi]: max rel diff est_var_over_emp_var_median,2.4424906541753444e-15,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,hoptimus0,,,0.005,A_all [P_ppi]: max abs diff coverage_median,0.0,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,hoptimus0,,,1e-05,A_all [P_ppi]: max rel diff emp_var_median,2.242650509742816e-14,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,hoptimus0,,,1e-05,A_all [P_ppi]: max rel diff est_var_over_emp_var_median,2.997602166487923e-15,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,hoptimus0,,,0.005,A_all [r4_ppi]: max abs diff coverage_median,0.0,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,hoptimus0,,,1e-05,A_all [r4_ppi]: max rel diff emp_var_median,2.242650509742816e-14,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,hoptimus0,,,1e-05,A_all [r4_ppi]: max rel diff est_var_over_emp_var_median,1.4432899320127037e-15,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,hoptimus0,,,0.005,B_budget2400 [r4_ppi]: max abs diff coverage_median,0.0,2.0,matched 2/2,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,hoptimus0,,,1e-05,B_budget2400 [r4_ppi]: max rel diff emp_var_median,0.0,2.0,matched 2/2,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,hoptimus0,,,1e-05,B_budget2400 [r4_ppi]: max rel diff est_var_over_emp_var_median,2.220446049250313e-16,2.0,matched 2/2,,,,,,,,,,,,
+1i_identity,,,,,True,,uni_v2,,,1e-10,1_regimeA_r4_vs_round4_code: max_abs_theta,1.4432899320127035e-14,3200.0,,,,,,,,,,,,,
+1i_identity,,,,,True,,uni_v2,,,1e-10,1_regimeA_r4_vs_round4_code: max_rel_var,4.0889513996944515e-13,3200.0,NaN rows: 0,,,,,,,,,,,,
+1i_identity,,,,,True,,uni_v2,,,1e-10,1_regimeB_r4_vs_round4_code: max_abs_theta,1.5543122344752196e-15,400.0,,,,,,,,,,,,,
+1i_identity,,,,,True,,uni_v2,,,1e-10,1_regimeB_r4_vs_round4_code: max_rel_var,1.5543122344752196e-15,400.0,NaN rows: 0,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,uni_v2,,,0.005,A_budget2400 [r4_ppi]: max abs diff coverage_median,0.0,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,uni_v2,,,1e-05,A_budget2400 [r4_ppi]: max rel diff emp_var_median,3.3306690738754696e-15,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,uni_v2,,,1e-05,A_budget2400 [r4_ppi]: max rel diff est_var_over_emp_var_median,6.661338147750939e-16,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,uni_v2,,,0.005,A_all [C_ppi]: max abs diff coverage_median,0.0,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,uni_v2,,,1e-05,A_all [C_ppi]: max rel diff emp_var_median,7.993605777301127e-15,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,uni_v2,,,1e-05,A_all [C_ppi]: max rel diff est_var_over_emp_var_median,2.997602166487923e-15,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,uni_v2,,,0.005,A_all [P_ppi]: max abs diff coverage_median,0.0,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,uni_v2,,,1e-05,A_all [P_ppi]: max rel diff emp_var_median,7.993605777301127e-15,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,uni_v2,,,1e-05,A_all [P_ppi]: max rel diff est_var_over_emp_var_median,3.1086244689504387e-15,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,uni_v2,,,0.005,A_all [r4_ppi]: max abs diff coverage_median,0.0,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,uni_v2,,,1e-05,A_all [r4_ppi]: max rel diff emp_var_median,7.993605777301127e-15,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,uni_v2,,,1e-05,A_all [r4_ppi]: max rel diff est_var_over_emp_var_median,2.220446049250313e-15,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,uni_v2,,,0.005,B_budget2400 [r4_ppi]: max abs diff coverage_median,0.0,2.0,matched 2/2,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,uni_v2,,,1e-05,B_budget2400 [r4_ppi]: max rel diff emp_var_median,0.0,2.0,matched 2/2,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,uni_v2,,,1e-05,B_budget2400 [r4_ppi]: max rel diff est_var_over_emp_var_median,4.440892098500626e-16,2.0,matched 2/2,,,,,,,,,,,,
+1i_identity,,,,,True,,resnet50,,,1e-10,1_regimeA_r4_vs_round4_code: max_abs_theta,1.4432899320127035e-14,3200.0,,,,,,,,,,,,,
+1i_identity,,,,,True,,resnet50,,,1e-10,1_regimeA_r4_vs_round4_code: max_rel_var,4.0889513996944515e-13,3200.0,NaN rows: 0,,,,,,,,,,,,
+1i_identity,,,,,True,,resnet50,,,1e-10,1_regimeB_r4_vs_round4_code: max_abs_theta,1.7763568394002505e-15,400.0,,,,,,,,,,,,,
+1i_identity,,,,,True,,resnet50,,,1e-10,1_regimeB_r4_vs_round4_code: max_rel_var,1.5543122344752196e-15,400.0,NaN rows: 0,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,resnet50,,,0.005,A_budget2400 [r4_ppi]: max abs diff coverage_median,0.0,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,resnet50,,,1e-05,A_budget2400 [r4_ppi]: max rel diff emp_var_median,2.220446049250313e-15,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,resnet50,,,1e-05,A_budget2400 [r4_ppi]: max rel diff est_var_over_emp_var_median,5.551115123125784e-16,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,resnet50,,,0.005,A_all [C_ppi]: max abs diff coverage_median,0.0,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,resnet50,,,1e-05,A_all [C_ppi]: max rel diff emp_var_median,7.549516567451064e-15,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,resnet50,,,1e-05,A_all [C_ppi]: max rel diff est_var_over_emp_var_median,2.109423746787798e-15,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,resnet50,,,0.005,A_all [P_ppi]: max abs diff coverage_median,0.0,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,resnet50,,,1e-05,A_all [P_ppi]: max rel diff emp_var_median,7.549516567451064e-15,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,resnet50,,,1e-05,A_all [P_ppi]: max rel diff est_var_over_emp_var_median,3.3306690738754696e-15,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,resnet50,,,0.005,A_all [r4_ppi]: max abs diff coverage_median,0.0,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,resnet50,,,1e-05,A_all [r4_ppi]: max rel diff emp_var_median,7.549516567451064e-15,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,resnet50,,,1e-05,A_all [r4_ppi]: max rel diff est_var_over_emp_var_median,2.6645352591003757e-15,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,resnet50,,,0.005,B_budget2400 [r4_ppi]: max abs diff coverage_median,0.0,2.0,matched 2/2,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,resnet50,,,1e-05,B_budget2400 [r4_ppi]: max rel diff emp_var_median,1.7763568394002505e-15,2.0,matched 2/2,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,resnet50,,,1e-05,B_budget2400 [r4_ppi]: max rel diff est_var_over_emp_var_median,0.0,2.0,matched 2/2,,,,,,,,,,,,
+1i_identity,,,,,True,,permuted,,,1e-10,1_regimeA_r4_vs_round4_code: max_abs_theta,1.4432899320127035e-14,3200.0,,,,,,,,,,,,,
+1i_identity,,,,,True,,permuted,,,1e-10,1_regimeA_r4_vs_round4_code: max_rel_var,4.0889513996944515e-13,3200.0,NaN rows: 0,,,,,,,,,,,,
+1i_identity,,,,,True,,permuted,,,1e-10,1_regimeB_r4_vs_round4_code: max_abs_theta,1.3322676295501878e-15,400.0,,,,,,,,,,,,,
+1i_identity,,,,,True,,permuted,,,1e-10,1_regimeB_r4_vs_round4_code: max_rel_var,1.5543122344752196e-15,400.0,NaN rows: 0,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,permuted,,,0.005,A_budget2400 [r4_ppi]: max abs diff coverage_median,0.0,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,permuted,,,1e-05,A_budget2400 [r4_ppi]: max rel diff emp_var_median,2.4424906541753444e-15,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,permuted,,,1e-05,A_budget2400 [r4_ppi]: max rel diff est_var_over_emp_var_median,4.440892098500626e-16,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,permuted,,,0.005,A_all [C_ppi]: max abs diff coverage_median,0.0,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,permuted,,,1e-05,A_all [C_ppi]: max rel diff emp_var_median,1.1324274851176595e-14,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,permuted,,,1e-05,A_all [C_ppi]: max rel diff est_var_over_emp_var_median,1.1102230246251563e-15,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,permuted,,,0.005,A_all [P_ppi]: max abs diff coverage_median,0.0,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,permuted,,,1e-05,A_all [P_ppi]: max rel diff emp_var_median,1.1324274851176595e-14,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,permuted,,,1e-05,A_all [P_ppi]: max rel diff est_var_over_emp_var_median,3.3306690738754696e-15,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,permuted,,,0.005,A_all [r4_ppi]: max abs diff coverage_median,0.0,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,permuted,,,1e-05,A_all [r4_ppi]: max rel diff emp_var_median,1.1324274851176595e-14,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,permuted,,,1e-05,A_all [r4_ppi]: max rel diff est_var_over_emp_var_median,6.661338147750939e-16,8.0,matched 8/8,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,permuted,,,0.005,B_budget2400 [r4_ppi]: max abs diff coverage_median,0.0,2.0,matched 2/2,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,permuted,,,1e-05,B_budget2400 [r4_ppi]: max rel diff emp_var_median,0.0,2.0,matched 2/2,,,,,,,,,,,,
+1ii_vs_q4,,,,,True,,permuted,,,1e-05,B_budget2400 [r4_ppi]: max rel diff est_var_over_emp_var_median,2.220446049250313e-16,2.0,matched 2/2,,,,,,,,,,,,
+3_formC_identity,,,,,True,,constant,,,1e-10,max_abs_theta_Cppi_minus_Ccl,4.1910919179599666e-14,160.0,"files 3; NaN 0; by estimand max: {""theta2"": 4.1910919179599666e-14, ""theta3"": 2.775557561562891e-16}",,,,,,,,,,,,
+3_formC_identity,,,,,True,,constant,,,1e-10,max_abs_var_Cppi_minus_Ccl,1.0547118733938987e-14,160.0,"files 3; NaN 0; by estimand max: {""theta2"": 1.0547118733938987e-14, ""theta3"": 1.6653345369377348e-16}",,,,,,,,,,,,
+3_formC_identity,,,,,True,,donor_constant,,,1e-10,max_abs_theta_Cppi_minus_Ccl,3.799738301779598e-14,160.0,"files 3; NaN 0; by estimand max: {""theta2"": 3.799738301779598e-14, ""theta3"": 4.163336342344337e-16}",,,,,,,,,,,,
+3_formC_identity,,,,,True,,donor_constant,,,1e-10,max_abs_var_Cppi_minus_Ccl,1.9040324872321435e-14,160.0,"files 3; NaN 0; by estimand max: {""theta2"": 1.9040324872321435e-14, ""theta3"": 2.220446049250313e-16}",,,,,,,,,,,,
+4_regb_width_ratio_P,,,,,True,,constant,,,0.97..1.05,"theta2: median-over-genes P_ppi/P_classical, m>=20, min..max over m (20,25,50,100)",1.0,4.0,min 1.0000 max 1.0000,,,,,,,,,,,,
+4_regb_width_ratio_P,,,,,True,,constant,,,0.97..1.05,"theta3: median-over-genes P_ppi/P_classical, m>=20, min..max over m (20,25,50,100)",1.0,4.0,min 1.0000 max 1.0000,,,,,,,,,,,,
+4_regb_width_ratio_P,,,,,,,donor_constant,,,no band,"theta2: median-over-genes P_ppi/P_classical, m>=20, min..max over m (20,25,50,100)",1.0,4.0,min 1.0000 max 1.0000,,,,,,,,,,,,
+4_regb_width_ratio_P,,,,,,,donor_constant,,,no band,"theta3: median-over-genes P_ppi/P_classical, m>=20, min..max over m (20,25,50,100)",1.0039096992009071,4.0,min 1.0015 max 1.0039,,,,,,,,,,,,
+1i_identity,,,,,,,hoptimus0,,max_abs_theta,,,1.199040866595169e-14,3600.0,,all,,report (expected <=~1e-12),,,,,,,,,
+1i_identity,,,,,,,hoptimus0,,max_rel_var,,,7.739364704661966e-13,3600.0,,all,,report (expected <=~1e-12),,,,,,,,,
+1i_identity,,,,,,,hoptimus0,,max_abs_theta,,,1.199040866595169e-14,3200.0,,1_regimeA_r4_vs_round4_code,,report (expected <=~1e-12),,,,,,,,,
+1i_identity,,,,,,,hoptimus0,,max_rel_var,,,7.739364704661966e-13,3200.0,,1_regimeA_r4_vs_round4_code,,report (expected <=~1e-12),,,,,,,,,
+1i_identity,,,,,,,hoptimus0,,max_abs_theta,,,2.220446049250313e-15,400.0,,1_regimeB_r4_vs_round4_code,,report (expected <=~1e-12),,,,,,,,,
+1i_identity,,,,,,,hoptimus0,,max_rel_var,,,1.4432899320127037e-15,400.0,,1_regimeB_r4_vs_round4_code,,report (expected <=~1e-12),,,,,,,,,
+1i_identity,,,,,,,uni_v2,,max_abs_theta,,,1.199040866595169e-14,3600.0,,all,,report (expected <=~1e-12),,,,,,,,,
+1i_identity,,,,,,,uni_v2,,max_rel_var,,,7.739364704661966e-13,3600.0,,all,,report (expected <=~1e-12),,,,,,,,,
+1i_identity,,,,,,,uni_v2,,max_abs_theta,,,1.199040866595169e-14,3200.0,,1_regimeA_r4_vs_round4_code,,report (expected <=~1e-12),,,,,,,,,
+1i_identity,,,,,,,uni_v2,,max_rel_var,,,7.739364704661966e-13,3200.0,,1_regimeA_r4_vs_round4_code,,report (expected <=~1e-12),,,,,,,,,
+1i_identity,,,,,,,uni_v2,,max_abs_theta,,,1.7763568394002505e-15,400.0,,1_regimeB_r4_vs_round4_code,,report (expected <=~1e-12),,,,,,,,,
+1i_identity,,,,,,,uni_v2,,max_rel_var,,,1.4432899320127037e-15,400.0,,1_regimeB_r4_vs_round4_code,,report (expected <=~1e-12),,,,,,,,,
+1i_identity,,,,,,,resnet50,,max_abs_theta,,,1.199040866595169e-14,3600.0,,all,,report (expected <=~1e-12),,,,,,,,,
+1i_identity,,,,,,,resnet50,,max_rel_var,,,7.739364704661966e-13,3600.0,,all,,report (expected <=~1e-12),,,,,,,,,
+1i_identity,,,,,,,resnet50,,max_abs_theta,,,1.199040866595169e-14,3200.0,,1_regimeA_r4_vs_round4_code,,report (expected <=~1e-12),,,,,,,,,
+1i_identity,,,,,,,resnet50,,max_rel_var,,,7.739364704661966e-13,3200.0,,1_regimeA_r4_vs_round4_code,,report (expected <=~1e-12),,,,,,,,,
+1i_identity,,,,,,,resnet50,,max_abs_theta,,,1.5543122344752196e-15,400.0,,1_regimeB_r4_vs_round4_code,,report (expected <=~1e-12),,,,,,,,,
+1i_identity,,,,,,,resnet50,,max_rel_var,,,1.3322676295501878e-15,400.0,,1_regimeB_r4_vs_round4_code,,report (expected <=~1e-12),,,,,,,,,
+1i_identity,,,,,,,permuted,,max_abs_theta,,,1.199040866595169e-14,3600.0,,all,,report (expected <=~1e-12),,,,,,,,,
+1i_identity,,,,,,,permuted,,max_rel_var,,,7.739364704661966e-13,3600.0,,all,,report (expected <=~1e-12),,,,,,,,,
+1i_identity,,,,,,,permuted,,max_abs_theta,,,1.199040866595169e-14,3200.0,,1_regimeA_r4_vs_round4_code,,report (expected <=~1e-12),,,,,,,,,
+1i_identity,,,,,,,permuted,,max_rel_var,,,7.739364704661966e-13,3200.0,,1_regimeA_r4_vs_round4_code,,report (expected <=~1e-12),,,,,,,,,
+1i_identity,,,,,,,permuted,,max_abs_theta,,,1.7763568394002505e-15,400.0,,1_regimeB_r4_vs_round4_code,,report (expected <=~1e-12),,,,,,,,,
+1i_identity,,,,,,,permuted,,max_rel_var,,,1.3322676295501878e-15,400.0,,1_regimeB_r4_vs_round4_code,,report (expected <=~1e-12),,,,,,,,,
+1ii_vs_round4,,,,,,,hoptimus0,,max_abs_diff_coverage_median,,,0.0,8.0,,A_m2400/nL,0.005,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,hoptimus0,,max_rel_diff_emp_var_median,,,2.6018514301186265e-15,8.0,,A_m2400/nL,1e-05,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,hoptimus0,,max_rel_diff_est_var_over_emp_var_median,,,5.822949159734217e-16,8.0,,A_m2400/nL,1e-05,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,hoptimus0,,max_abs_diff_coverage_median,,,0.0,24.0,,A_m_all,0.005,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,hoptimus0,,max_rel_diff_emp_var_median,,,6.021317838924143e-15,24.0,,A_m_all,1e-05,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,hoptimus0,,max_rel_diff_est_var_over_emp_var_median,,,4.440282411075929e-15,24.0,,A_m_all,1e-05,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,hoptimus0,,max_abs_diff_coverage_median,,,0.0,1.0,,B_2400,0.005,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,hoptimus0,,max_rel_diff_emp_var_median,,,0.0,1.0,,B_2400,1e-05,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,hoptimus0,,max_rel_diff_est_var_over_emp_var_median,,,0.0,1.0,,B_2400,1e-05,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,uni_v2,,max_abs_diff_coverage_median,,,0.0,8.0,,A_m2400/nL,0.005,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,uni_v2,,max_rel_diff_emp_var_median,,,2.4936639975235412e-15,8.0,,A_m2400/nL,1e-05,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,uni_v2,,max_rel_diff_est_var_over_emp_var_median,,,1.1020705965261032e-15,8.0,,A_m2400/nL,1e-05,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,uni_v2,,max_abs_diff_coverage_median,,,0.0,24.0,,A_m_all,0.005,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,uni_v2,,max_rel_diff_emp_var_median,,,8.310321841837254e-15,24.0,,A_m_all,1e-05,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,uni_v2,,max_rel_diff_est_var_over_emp_var_median,,,2.948899439677137e-15,24.0,,A_m_all,1e-05,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,uni_v2,,max_abs_diff_coverage_median,,,0.0,1.0,,B_2400,0.005,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,uni_v2,,max_rel_diff_emp_var_median,,,0.0,1.0,,B_2400,1e-05,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,uni_v2,,max_rel_diff_est_var_over_emp_var_median,,,0.0,1.0,,B_2400,1e-05,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,resnet50,,max_abs_diff_coverage_median,,,0.0,8.0,,A_m2400/nL,0.005,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,resnet50,,max_rel_diff_emp_var_median,,,2.224645641508654e-15,8.0,,A_m2400/nL,1e-05,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,resnet50,,max_rel_diff_est_var_over_emp_var_median,,,5.822949159734217e-16,8.0,,A_m2400/nL,1e-05,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,resnet50,,max_abs_diff_coverage_median,,,0.0,24.0,,A_m_all,0.005,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,resnet50,,max_rel_diff_emp_var_median,,,7.716735979550657e-15,24.0,,A_m_all,1e-05,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,resnet50,,max_rel_diff_est_var_over_emp_var_median,,,8.374926781511413e-15,24.0,,A_m_all,1e-05,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,resnet50,,max_abs_diff_coverage_median,,,0.0,1.0,,B_2400,0.005,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,resnet50,,max_rel_diff_emp_var_median,,,0.0,1.0,,B_2400,1e-05,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,resnet50,,max_rel_diff_est_var_over_emp_var_median,,,4.2412748562455356e-16,1.0,,B_2400,1e-05,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,permuted,,max_abs_diff_coverage_median,,,0.0,8.0,,A_m2400/nL,0.005,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,permuted,,max_rel_diff_emp_var_median,,,2.0651344398620906e-15,8.0,,A_m2400/nL,1e-05,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,permuted,,max_rel_diff_est_var_over_emp_var_median,,,6.646859411264947e-16,8.0,,A_m2400/nL,1e-05,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,permuted,,max_abs_diff_coverage_median,,,0.0,24.0,,A_m_all,0.005,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,permuted,,max_rel_diff_emp_var_median,,,7.180558514070353e-15,24.0,,A_m_all,1e-05,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,permuted,,max_rel_diff_est_var_over_emp_var_median,,,8.713435729233967e-15,24.0,,A_m_all,1e-05,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,permuted,,max_abs_diff_coverage_median,,,0.0,1.0,,B_2400,0.005,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,permuted,,max_rel_diff_emp_var_median,,,0.0,1.0,,B_2400,1e-05,pass,,,,,,,,,
+1ii_vs_round4,,,,,,,permuted,,max_rel_diff_est_var_over_emp_var_median,,,4.232534551088267e-16,1.0,,B_2400,1e-05,pass,,,,,,,,,
+3_formC_identity,,,,,,,constant,,max_abs_theta_Cppi_minus_Ccl,,,4.3853809472693683e-14,60.0,,e3_masking,1e-10,pass,,,,,,,,,
+3_formC_identity,,,,,,,constant,,max_abs_var_Cppi_minus_Ccl,,,1.2712053631958042e-14,60.0,,e3_masking,1e-10,pass,,,,,,,,,
+3_formC_identity,,,,,,,constant,,max_abs_theta_Cppi_minus_Ccl,,,1.2559397966072083e-14,22.0,,e3_regb,1e-10,pass,,,,,,,,,
+3_formC_identity,,,,,,,constant,,max_abs_var_Cppi_minus_Ccl,,,5.551115123125783e-17,22.0,,e3_regb,1e-10,pass,,,,,,,,,
+3_formC_identity,,,,,,,constant,,max_abs_theta_Cppi_minus_Ccl,,,3.9857006584043126e-14,78.0,,e3_regcomp,1e-10,pass,,,,,,,,,
+3_formC_identity,,,,,,,constant,,max_abs_var_Cppi_minus_Ccl,,,1.0297318553398328e-14,78.0,,e3_regcomp,1e-10,pass,,,,,,,,,
+3_formC_identity,,,,,,,constant,,max_of_both,,,4.3853809472693683e-14,160.0,,ALL (3 files),1e-10,pass,,,,,,,,,
+3_formC_identity,,,,,,,donor_constant,,max_abs_theta_Cppi_minus_Ccl,,,4.3048897779840445e-14,60.0,,e3_masking,1e-10,pass,,,,,,,,,
+3_formC_identity,,,,,,,donor_constant,,max_abs_var_Cppi_minus_Ccl,,,2.425837308805967e-14,60.0,,e3_masking,1e-10,pass,,,,,,,,,
+3_formC_identity,,,,,,,donor_constant,,max_abs_theta_Cppi_minus_Ccl,,,1.2101430968414206e-14,22.0,,e3_regb,1e-10,pass,,,,,,,,,
+3_formC_identity,,,,,,,donor_constant,,max_abs_var_Cppi_minus_Ccl,,,1.6653345369377348e-16,22.0,,e3_regb,1e-10,pass,,,,,,,,,
+3_formC_identity,,,,,,,donor_constant,,max_abs_theta_Cppi_minus_Ccl,,,4.325706459695766e-14,78.0,,e3_regcomp,1e-10,pass,,,,,,,,,
+3_formC_identity,,,,,,,donor_constant,,max_abs_var_Cppi_minus_Ccl,,,2.9531932455029164e-14,78.0,,e3_regcomp,1e-10,pass,,,,,,,,,
+3_formC_identity,,,,,,,donor_constant,,max_of_both,,,4.325706459695766e-14,160.0,,ALL (3 files),1e-10,pass,,,,,,,,,
+4_regb_width_ratio,,,,,,,constant,,min_median_ratio_m>=20,,,1.0,4.0,,theta2,0.97,pass,,,,,,,,,
+4_regb_width_ratio,,,,,,,constant,,max_median_ratio_m>=20,,,1.0,4.0,,theta2,1.05,pass,,,,,,,,,
+4_regb_width_ratio,,,,,,,constant,,min_median_ratio_m>=20,,,1.0,4.0,,theta3,0.97,pass,,,,,,,,,
+4_regb_width_ratio,,,,,,,constant,,max_median_ratio_m>=20,,,1.0,4.0,,theta3,1.05,pass,,,,,,,,,
+4_regb_width_ratio,,,,,,,donor_constant,,min_median_ratio_m>=20,,,1.0,4.0,,theta2,0.97,no band (reported),,,,,,,,,
+4_regb_width_ratio,,,,,,,donor_constant,,max_median_ratio_m>=20,,,1.0,4.0,,theta2,1.05,no band (reported),,,,,,,,,
+4_regb_width_ratio,,,,,,,donor_constant,,min_median_ratio_m>=20,,,1.0039069489745105,4.0,,theta3,0.97,no band (reported),,,,,,,,,
+4_regb_width_ratio,,,,,,,donor_constant,,max_median_ratio_m>=20,,,1.0055969391191169,4.0,,theta3,1.05,no band (reported),,,,,,,,,
+accept2_regimeA_m2400,,,,,,,,,,"cov 0.005, rel 1e-5",,,,,,,,r4_ppi,32.0,32.0,0.0,2.4424906541753444e-15,1.5543122344752194e-15,True,,
+accept2_regimeA_mall,,,,,,,,,,"cov 0.005, rel 1e-5",,,,,,,,C_ppi,32.0,32.0,0.0,1.1102230246251564e-14,2.4424906541753444e-15,True,,
+accept2_regimeA_mall,,,,,,,,,,"cov 0.005, rel 1e-5",,,,,,,,P_ppi,32.0,32.0,0.0,1.1102230246251564e-14,9.769962616701378e-15,True,,
+accept2_regimeA_mall,,,,,,,,,,"cov 0.005, rel 1e-5",,,,,,,,r4_ppi,32.0,32.0,0.0,6.8833827526759706e-15,1.5543122344752194e-15,True,,
+accept2_regimeB_2400,,,,,,,,,,"cov 0.005, rel 1e-5",,,,,,,,r4_ppi,8.0,8.0,0.0,0.0,4.440892098500626e-16,True,,
+accept1_identity_1_regimeA_r4_vs_round4_code,,,,,,,,,,theta/var ~1e-12 or smaller,,,,,,,,r4_ppi,12800.0,12800.0,2.6978419498391304e-14,1.1336487304447473e-12,,True,,
+accept1_identity_1_regimeB_r4_vs_round4_code,,,,,,,,,,theta/var ~1e-12 or smaller,,,,,,,,r4_ppi,1600.0,1600.0,1.9984014443252818e-15,2.886579864025407e-15,,True,,
+accept3_formC_identity,,,,,,,,,,"<= 1e-10 (cols: theta, var diffs)",,,,,,,,constant,160.0,160.0,2.8976820942716586e-14,2.6367796834847468e-14,,True,,
+accept3_formC_identity,,,,,,,,,,"<= 1e-10 (cols: theta, var diffs)",,,,,,,,donor_constant,160.0,160.0,4.007905118896815e-14,3.7692071686024065e-14,,True,,
+accept4_regB_P_width_ratio,,,,,,,,,,"band 0.97-1.05 (cols: min, max over m>=20 of median-over-genes ratio)",,,,,,,,constant:theta2,4.0,4.0,1.0,1.0,,True,,
+accept4_regB_P_width_ratio,,,,,,,,,,"band 0.97-1.05 (cols: min, max over m>=20 of median-over-genes ratio)",,,,,,,,constant:theta3,4.0,4.0,1.0,1.0,,True,,
+accept4_regB_P_width_ratio,,,,,,,,,,no band (reported),,,,,,,,donor_constant:theta2,4.0,4.0,1.0,1.0,,,,
+accept4_regB_P_width_ratio,,,,,,,,,,no band (reported),,,,,,,,donor_constant:theta3,4.0,4.0,0.9993177544323008,1.000572136536761,,,,
+1i_identity,,,,,True,,hoptimus0,,,1e-10,,,,n=3200,,,,,,,,,,,1_regimeA_r4_vs_round4_code|max_abs_theta,3.6415315207705135e-14
+1i_identity,,,,,True,,hoptimus0,,,1e-10,,,,n=3200,,,,,,,,,,,1_regimeA_r4_vs_round4_code|max_rel_var,7.500733367749035e-11
+1i_identity,,,,,True,,hoptimus0,,,1e-10,,,,n=400,,,,,,,,,,,1_regimeB_r4_vs_round4_code|max_abs_theta,2.220446049250313e-15
+1i_identity,,,,,True,,hoptimus0,,,1e-10,,,,n=400,,,,,,,,,,,1_regimeB_r4_vs_round4_code|max_rel_var,1.7763568394002505e-15
+1i_identity,,,,,True,,uni_v2,,,1e-10,,,,n=3200,,,,,,,,,,,1_regimeA_r4_vs_round4_code|max_abs_theta,3.6415315207705135e-14
+1i_identity,,,,,True,,uni_v2,,,1e-10,,,,n=3200,,,,,,,,,,,1_regimeA_r4_vs_round4_code|max_rel_var,7.500733367749035e-11
+1i_identity,,,,,True,,uni_v2,,,1e-10,,,,n=400,,,,,,,,,,,1_regimeB_r4_vs_round4_code|max_abs_theta,2.6645352591003757e-15
+1i_identity,,,,,True,,uni_v2,,,1e-10,,,,n=400,,,,,,,,,,,1_regimeB_r4_vs_round4_code|max_rel_var,1.887379141862766e-15
+1i_identity,,,,,True,,resnet50,,,1e-10,,,,n=3200,,,,,,,,,,,1_regimeA_r4_vs_round4_code|max_abs_theta,3.6415315207705135e-14
+1i_identity,,,,,True,,resnet50,,,1e-10,,,,n=3200,,,,,,,,,,,1_regimeA_r4_vs_round4_code|max_rel_var,8.110179194886769e-11
+1i_identity,,,,,True,,resnet50,,,1e-10,,,,n=400,,,,,,,,,,,1_regimeB_r4_vs_round4_code|max_abs_theta,2.6645352591003757e-15
+1i_identity,,,,,True,,resnet50,,,1e-10,,,,n=400,,,,,,,,,,,1_regimeB_r4_vs_round4_code|max_rel_var,1.9984014443252818e-15
+1i_identity,,,,,True,,permuted,,,1e-10,,,,n=3200,,,,,,,,,,,1_regimeA_r4_vs_round4_code|max_abs_theta,3.6415315207705135e-14
+1i_identity,,,,,True,,permuted,,,1e-10,,,,n=3200,,,,,,,,,,,1_regimeA_r4_vs_round4_code|max_rel_var,8.110179194886769e-11
+1i_identity,,,,,True,,permuted,,,1e-10,,,,n=400,,,,,,,,,,,1_regimeB_r4_vs_round4_code|max_abs_theta,4.884981308350689e-15
+1i_identity,,,,,True,,permuted,,,1e-10,,,,n=400,,,,,,,,,,,1_regimeB_r4_vs_round4_code|max_rel_var,2.220446049250313e-15
+1ii_vs_q4,,,,,True,,hoptimus0,,,0.005,,,,n=24,,,,,,,,,,,A_all|max_abs_coverage_median,0.005
+1ii_vs_q4,,,,,True,,hoptimus0,,,1e-05,,,,n=24,,,,,,,,,,,A_all|max_rel_emp_var_median,4.7295500849031675e-14
+1ii_vs_q4,,,,,True,,hoptimus0,,,1e-05,,,,n=24,,,,,,,,,,,A_all|max_rel_est_var_over_emp_var_median,1.532107773982716e-14
+1ii_vs_q4,,,,,True,,hoptimus0,,,0.005,,,,n=8,,,,,,,,,,,A_m2400nL|max_abs_coverage_median,0.0
+1ii_vs_q4,,,,,True,,hoptimus0,,,1e-05,,,,n=8,,,,,,,,,,,A_m2400nL|max_rel_emp_var_median,2.4424906541753444e-15
+1ii_vs_q4,,,,,True,,hoptimus0,,,1e-05,,,,n=8,,,,,,,,,,,A_m2400nL|max_rel_est_var_over_emp_var_median,5.551115123125784e-16
+1ii_vs_q4,,,,,True,,hoptimus0,,,0.005,,,,n=2,,,,,,,,,,,B_2400|max_abs_coverage_median,0.0
+1ii_vs_q4,,,,,True,,hoptimus0,,,1e-05,,,,n=2,,,,,,,,,,,B_2400|max_rel_emp_var_median,0.0
+1ii_vs_q4,,,,,True,,hoptimus0,,,1e-05,,,,n=2,,,,,,,,,,,B_2400|max_rel_est_var_over_emp_var_median,6.661338147750939e-16
+1ii_vs_q4,,,,,False,,permuted,,,0.005,,,,n=24,,,,,,,,,,,A_all|max_abs_coverage_median,0.015
+1ii_vs_q4,,,,,True,,permuted,,,1e-05,,,,n=24,,,,,,,,,,,A_all|max_rel_emp_var_median,1.754152378907747e-14
+1ii_vs_q4,,,,,True,,permuted,,,1e-05,,,,n=24,,,,,,,,,,,A_all|max_rel_est_var_over_emp_var_median,2.3203661214665772e-14
+1ii_vs_q4,,,,,True,,permuted,,,0.005,,,,n=8,,,,,,,,,,,A_m2400nL|max_abs_coverage_median,0.0
+1ii_vs_q4,,,,,True,,permuted,,,1e-05,,,,n=8,,,,,,,,,,,A_m2400nL|max_rel_emp_var_median,2.4424906541753444e-15
+1ii_vs_q4,,,,,True,,permuted,,,1e-05,,,,n=8,,,,,,,,,,,A_m2400nL|max_rel_est_var_over_emp_var_median,4.440892098500626e-16
+1ii_vs_q4,,,,,True,,permuted,,,0.005,,,,n=2,,,,,,,,,,,B_2400|max_abs_coverage_median,0.0
+1ii_vs_q4,,,,,True,,permuted,,,1e-05,,,,n=2,,,,,,,,,,,B_2400|max_rel_emp_var_median,0.0
+1ii_vs_q4,,,,,True,,permuted,,,1e-05,,,,n=2,,,,,,,,,,,B_2400|max_rel_est_var_over_emp_var_median,4.440892098500626e-16
+1ii_vs_q4,,,,,True,,resnet50,,,0.005,,,,n=24,,,,,,,,,,,A_all|max_abs_coverage_median,0.0
+1ii_vs_q4,,,,,True,,resnet50,,,1e-05,,,,n=24,,,,,,,,,,,A_all|max_rel_emp_var_median,3.996802888650563e-14
+1ii_vs_q4,,,,,True,,resnet50,,,1e-05,,,,n=24,,,,,,,,,,,A_all|max_rel_est_var_over_emp_var_median,7.66053886991358e-15
+1ii_vs_q4,,,,,True,,resnet50,,,0.005,,,,n=8,,,,,,,,,,,A_m2400nL|max_abs_coverage_median,0.0
+1ii_vs_q4,,,,,True,,resnet50,,,1e-05,,,,n=8,,,,,,,,,,,A_m2400nL|max_rel_emp_var_median,2.4424906541753444e-15
+1ii_vs_q4,,,,,True,,resnet50,,,1e-05,,,,n=8,,,,,,,,,,,A_m2400nL|max_rel_est_var_over_emp_var_median,8.881784197001252e-16
+1ii_vs_q4,,,,,True,,resnet50,,,0.005,,,,n=2,,,,,,,,,,,B_2400|max_abs_coverage_median,0.0
+1ii_vs_q4,,,,,True,,resnet50,,,1e-05,,,,n=2,,,,,,,,,,,B_2400|max_rel_emp_var_median,8.881784197001252e-16
+1ii_vs_q4,,,,,True,,resnet50,,,1e-05,,,,n=2,,,,,,,,,,,B_2400|max_rel_est_var_over_emp_var_median,2.220446049250313e-16
+1ii_vs_q4,,,,,True,,uni_v2,,,0.005,,,,n=24,,,,,,,,,,,A_all|max_abs_coverage_median,0.0
+1ii_vs_q4,,,,,True,,uni_v2,,,1e-05,,,,n=24,,,,,,,,,,,A_all|max_rel_emp_var_median,1.8318679906315083e-14
+1ii_vs_q4,,,,,True,,uni_v2,,,1e-05,,,,n=24,,,,,,,,,,,A_all|max_rel_est_var_over_emp_var_median,1.431077478741827e-13
+1ii_vs_q4,,,,,True,,uni_v2,,,0.005,,,,n=8,,,,,,,,,,,A_m2400nL|max_abs_coverage_median,0.0
+1ii_vs_q4,,,,,True,,uni_v2,,,1e-05,,,,n=8,,,,,,,,,,,A_m2400nL|max_rel_emp_var_median,2.4424906541753444e-15
+1ii_vs_q4,,,,,True,,uni_v2,,,1e-05,,,,n=8,,,,,,,,,,,A_m2400nL|max_rel_est_var_over_emp_var_median,8.881784197001252e-16
+1ii_vs_q4,,,,,True,,uni_v2,,,0.005,,,,n=2,,,,,,,,,,,B_2400|max_abs_coverage_median,0.0
+1ii_vs_q4,,,,,True,,uni_v2,,,1e-05,,,,n=2,,,,,,,,,,,B_2400|max_rel_emp_var_median,0.0
+1ii_vs_q4,,,,,True,,uni_v2,,,1e-05,,,,n=2,,,,,,,,,,,B_2400|max_rel_est_var_over_emp_var_median,2.220446049250313e-16
+3_formC_identity,,,,,True,,constant,,,1e-10,,,,files=3 rows=156,,,,,,,,,,,max_abs_theta_Cppi_minus_Ccl,2.058908599167353e-13
+3_formC_identity,,,,,True,,constant,,,1e-10,,,,files=3 rows=156,,,,,,,,,,,max_abs_var_Cppi_minus_Ccl,2.3803181647963356e-13
+3_formC_identity,,,,,True,,donor_constant,,,1e-10,,,,files=3 rows=156,,,,,,,,,,,max_abs_theta_Cppi_minus_Ccl,1.8174350913113813e-13
+3_formC_identity,,,,,True,,donor_constant,,,1e-10,,,,files=3 rows=156,,,,,,,,,,,max_abs_var_Cppi_minus_Ccl,3.153033389935445e-13
+4_regB_width_ratio_P,,,,,True,,constant,,,0.97-1.05,,,,n_genes=343,,,,,,,,,,,theta2|m=20|median_P_ppi_over_P_classical,1.0
+4_regB_width_ratio_P,,,,,True,,constant,,,0.97-1.05,,,,n_genes=343,,,,,,,,,,,theta2|m=25|median_P_ppi_over_P_classical,1.0
+4_regB_width_ratio_P,,,,,True,,constant,,,0.97-1.05,,,,n_genes=343,,,,,,,,,,,theta2|m=50|median_P_ppi_over_P_classical,1.0
+4_regB_width_ratio_P,,,,,True,,constant,,,0.97-1.05,,,,n_genes=343,,,,,,,,,,,theta2|m=100|median_P_ppi_over_P_classical,1.0
+4_regB_width_ratio_P,,,,,True,,constant,,,0.97-1.05,,,,n_genes=343,,,,,,,,,,,theta3|m=20|median_P_ppi_over_P_classical,1.0
+4_regB_width_ratio_P,,,,,True,,constant,,,0.97-1.05,,,,n_genes=343,,,,,,,,,,,theta3|m=25|median_P_ppi_over_P_classical,1.0
+4_regB_width_ratio_P,,,,,True,,constant,,,0.97-1.05,,,,n_genes=343,,,,,,,,,,,theta3|m=50|median_P_ppi_over_P_classical,1.0
+4_regB_width_ratio_P,,,,,True,,constant,,,0.97-1.05,,,,n_genes=343,,,,,,,,,,,theta3|m=100|median_P_ppi_over_P_classical,1.0
+4_regB_width_ratio_P,,,,,,,donor_constant,,,none,,,,n_genes=343,,,,,,,,,,,theta2|m=20|median_P_ppi_over_P_classical,1.0
+4_regB_width_ratio_P,,,,,,,donor_constant,,,none,,,,n_genes=343,,,,,,,,,,,theta2|m=25|median_P_ppi_over_P_classical,1.0
+4_regB_width_ratio_P,,,,,,,donor_constant,,,none,,,,n_genes=343,,,,,,,,,,,theta2|m=50|median_P_ppi_over_P_classical,1.0
+4_regB_width_ratio_P,,,,,,,donor_constant,,,none,,,,n_genes=343,,,,,,,,,,,theta2|m=100|median_P_ppi_over_P_classical,1.0
+4_regB_width_ratio_P,,,,,,,donor_constant,,,none,,,,n_genes=343,,,,,,,,,,,theta3|m=20|median_P_ppi_over_P_classical,0.99188775177652
+4_regB_width_ratio_P,,,,,,,donor_constant,,,none,,,,n_genes=343,,,,,,,,,,,theta3|m=25|median_P_ppi_over_P_classical,0.9949247019818128
+4_regB_width_ratio_P,,,,,,,donor_constant,,,none,,,,n_genes=343,,,,,,,,,,,theta3|m=50|median_P_ppi_over_P_classical,0.996308246073221
+4_regB_width_ratio_P,,,,,,,donor_constant,,,none,,,,n_genes=343,,,,,,,,,,,theta3|m=100|median_P_ppi_over_P_classical,0.996557033394792

@@ -1,0 +1,31 @@
+check,interval,column,rows,matched,unmatched,max_abs_diff,max_rel_diff,tolerance,passed
+a_reproduce_q4a,textbook_t|fpc|lin,emp_var_median,304,304.0,0.0,0.0,0.0,1e-5 rel,True
+a_reproduce_q4a,textbook_t|fpc|lin,coverage_median,304,304.0,0.0,0.0,0.0,0.005 abs,True
+a_reproduce_q4a,textbook_t|fpc|lin,est_var_over_emp_var_median,304,304.0,0.0,0.0,0.0,1e-5 rel,True
+a_reproduce_q4a,textbook_t|fpc|lin,lambda_median,304,304.0,0.0,0.0,0.0,1e-5 rel,True
+a_reproduce_q4a,textbook_t|fpc|lin,emp_var_ratio_median,304,304.0,0.0,0.0,0.0,1e-5 rel,True
+a_reproduce_q4a,textbook_t|fpc,emp_var_median,304,304.0,0.0,0.0,0.0,1e-5 rel,True
+a_reproduce_q4a,textbook_t|fpc,coverage_median,304,304.0,0.0,0.0,0.0,0.005 abs,True
+a_reproduce_q4a,textbook_t|fpc,est_var_over_emp_var_median,304,304.0,0.0,0.0,0.0,1e-5 rel,True
+a_reproduce_q4a,textbook_t|fpc,lambda_median,304,304.0,0.0,0.0,0.0,1e-5 rel,True
+a_reproduce_q4a,textbook_t|fpc,emp_var_ratio_median,304,304.0,0.0,0.0,0.0,1e-5 rel,True
+b_none_xf_equals_lin,textbook_t|fpc|lin|xf,G,152,152.0,0.0,0.0,,identical,True
+b_none_xf_equals_lin,textbook_t|fpc|lin|xf,m,152,152.0,0.0,0.0,,identical,True
+b_none_xf_equals_lin,textbook_t|fpc|lin|xf,m_eff,152,152.0,0.0,0.0,,identical,True
+b_none_xf_equals_lin,textbook_t|fpc|lin|xf,n_draws,152,152.0,0.0,0.0,,identical,True
+b_none_xf_equals_lin,textbook_t|fpc|lin|xf,n_genes,152,152.0,0.0,0.0,,identical,True
+b_none_xf_equals_lin,textbook_t|fpc|lin|xf,emp_var_median,152,152.0,0.0,0.0,,identical,True
+b_none_xf_equals_lin,textbook_t|fpc|lin|xf,est_var_over_emp_var_median,152,152.0,0.0,0.0,,identical,True
+b_none_xf_equals_lin,textbook_t|fpc|lin|xf,coverage_median,152,152.0,0.0,0.0,,identical,True
+b_none_xf_equals_lin,textbook_t|fpc|lin|xf,coverage_mean,152,152.0,0.0,0.0,,identical,True
+b_none_xf_equals_lin,textbook_t|fpc|lin|xf,coverage_min,152,152.0,0.0,0.0,,identical,True
+b_none_xf_equals_lin,textbook_t|fpc|lin|xf,width_ratio_median,152,152.0,0.0,0.0,,identical,True
+b_none_xf_equals_lin,textbook_t|fpc|lin|xf,emp_var_ratio_median,152,152.0,0.0,0.0,,identical,True
+b_none_xf_equals_lin,textbook_t|fpc|lin|xf,lambda_median,152,152.0,0.0,0.0,,identical,True
+b_none_xf_equals_lin,textbook_t|fpc|lin|xf,lambda_frac_zero,152,152.0,0.0,0.0,,identical,True
+b_none_xf_equals_lin,textbook_t|fpc|lin|xf,lambda_se_median,152,152.0,0.0,,,identical,True
+b_none_xf_equals_lin,textbook_t|fpc|lin|xf,lambda_raw_mean_median,152,152.0,0.0,,,identical,True
+b_none_xf_equals_lin,textbook_t|fpc|lin|xf,lambda_raw_mean_se_median,152,152.0,0.0,,,identical,True
+b_none_xf_equals_lin,textbook_t|fpc|lin|xf,valid_donors,152,152.0,0.0,0.0,,identical,True
+b_none_xf_equals_lin,textbook_t|fpc|lin|xf,xf_extra_over_lin_var_median,152,152.0,0.0,0.0,,== 0 (extra term),True
+c_skipped_cells,,LUNG_XENIUM: n_L=16 skipped (n_L > G-2 = 13; G=15),912,,,,,,True

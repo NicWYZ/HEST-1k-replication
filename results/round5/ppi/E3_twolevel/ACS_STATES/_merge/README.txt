@@ -1,0 +1,1 @@
+Local merge of ACS_STATES E3 results: acc1_vs_q4.csv, acc3_formC.csv, acc4_width_ratios.csv, row_counts.csv; summary in ../e3_unit_acceptance__ACS_STATES.csv. Production jobs: 22 (arm x part, 200 draws); _pilot__package is a 2-draw timing pilot, not production. Computed by an inline session script from result files only.

@@ -1,0 +1,2 @@
+platform,slurm_job_id,stage,unit,start,end,elapsed_s,status,commit,workers,out_dir,command
+longleaf,4317242,E3,ACS_CA_PUMA,2026-10-08T17:17:37-04:00,2026-10-08T17:19:13-04:00,96.3,COMPLETED,f3fb87699dd336377e1f1fefef22cbb9932f0de0,,/work/users/w/e/weiyang/hest_replication/results/round5/ppi/E3_twolevel/ACS_CA_PUMA/constant__masking,round5_ppi_e3_twolevel.py --parquet /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_CA_PUMA.parquet --vtag ACS_CA_PUMA --arm constant --parts masking --draws 200 --theta2-kind mean --out-dir .

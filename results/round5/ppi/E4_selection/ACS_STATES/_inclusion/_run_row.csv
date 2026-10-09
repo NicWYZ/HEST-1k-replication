@@ -1,0 +1,2 @@
+platform,slurm_job_id,stage,unit,start,end,elapsed_s,status,commit,workers,out_dir,command
+longleaf,4340421,E4,e4_inclusion_ACS_STATES,2026-10-08T21:42:07-04:00,2026-10-08T21:43:21-04:00,74.1,COMPLETED,d7ab177959c50e7be04582cde9016ee245494ce8,,/work/users/w/e/weiyang/hest_replication/results/round5/ppi/E4_selection/ACS_STATES/_inclusion,round5_ppi_e4_inclusion.py --perm-parquet /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_STATES.parquet --vtag ACS_STATES --theta2-kind mean --out-dir .

@@ -1,0 +1,20 @@
+platform: local (Nicolas's Mac), plan section 7.4
+PYTHONHASHSEED: 0
+host: macOS-26.6.2-arm64-arm-64bit
+python: 3.11.15 at /Users/nicolaszhang/.claude-science/conda/envs/python/bin/python3.11
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+snapshot_commit: 7f7b089d0cceb23e2abb76e876cccc1086c6fe8c
+snapshot: /tmp/r5ppi_snapshots/7f7b089d0cceb23e2abb76e876cccc1086c6fe8c
+unit: G15_skewed
+stage: E3a
+workers: 1
+command: round5_ppi_e3a_sim.py --G 15 --laws lognormal:0.940959499999249 --tag G15_skewed --out-dir .
+start: 2026-10-08T16:26:29-04:00
+end: 2026-10-08T16:29:13-04:00
+elapsed_s: 164.8
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  d79e69aa65800b9d24de556e019a0c64  code/scripts/round4_ppi_estimator.py
+  372d272e3822f5dab55c1850fb4e3d3d  code/scripts/round5_ppi_e1_sim.py
+  2de31569ffe72239062fbeb0c9a50fc5  code/scripts/round5_ppi_estimator.py
+inputs (md5, path):

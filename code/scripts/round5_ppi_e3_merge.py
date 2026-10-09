@@ -127,7 +127,7 @@ def main():
             vr = (pv["greg_ppi"] / pv["greg_classical"]).groupby(level=[0, 1, 2]).median().rename("var_ratio").reset_index()
             u_ok = vr["var_ratio"].between(0.95, 1.15)
             u_txt = f"; unit-weighted permuted variance ratio at n_L >= 8 in 0.95-1.15 in {int(u_ok.sum())} of {len(vr)} cells, range {vr['var_ratio'].min():.3f} to {vr['var_ratio'].max():.3f}"
-            vr["prediction_part"] = "unitw"; add("E3.1b", "see summary", u_txt.strip("; "), vr)
+            vr["prediction_part"] = "unitw"; add("E3.1b", "held" if u_ok.all() else "partly held", u_txt.strip("; "), vr)
     add("E3.1", "held" if ok.all() else ("partly held" if ok.mean() >= 0.5 else "refuted"),
         f"regime B permuted C_ppi/C_classical width at m >= 10 in 0.97-1.05 in {int(ok.sum())} of {len(x)} cells, "
         f"range {x['width_over_own_classical'].min():.3f} to {x['width_over_own_classical'].max():.3f}{u_txt}", x)
@@ -219,7 +219,8 @@ def main():
         er = pd.concat(er, ignore_index=True).merge(thm, on=["vtag", "arm", "form"], how="inner")
         er["rel_diff"] = er["emp_ratio"] / er["theory_ratio"] - 1
         okr = er["rel_diff"].abs() <= 0.15
-        add("E3.5", "see summary",
+        v5 = "held" if (fall.all() and okr.all()) else ("partly held" if (fall.mean() >= 0.5 and okr.mean() >= 0.5) else "refuted")
+        add("E3.5", v5,
             f"classical m* at cd 100 below round 4 in {int(fall.sum())} of {len(t5)} task-form pairs; "
             f"m*_PP/m* within 15% of sqrt((1-R2w)/(1-R2c)) in {int(okr.sum())} of {len(er)} task-arm-form cells",
             pd.concat([t5.assign(kind="mstar"), er.assign(kind="ratio")], ignore_index=True))
@@ -254,7 +255,7 @@ def main():
         okk, oko = k["diff"].abs() <= 0.10, o["diff"].between(-0.20, -0.05)
         add("E3.7", "held" if okk.all() and oko.all() else ("partly held" if (okk.mean() >= 0.5 or oko.mean() >= 0.5) else "refuted"),
             f"kidney: |two-level - classical| B/A ratio <= 0.10 in {int(okk.sum())} of {len(k)}; lung and ACS: two-level lower by 0.05-0.20 in "
-            f"{int(oko.sum())} of {len(o)} (diff range {o['diff'].min():.3f} to {o['diff'].max():.3f})", c7)
+            f"{int(oko.sum())} of {len(o)} (diff range {o['diff'].min():.3f} to {o['diff'].max():.3f}; median diff lung {o[o['vtag']=='LUNG_XENIUM']['diff'].median():.3f}, ACS_STATES {o[o['vtag']=='ACS_STATES']['diff'].median():.3f}, ACS_CA_PUMA {o[o['vtag']=='ACS_CA_PUMA']['diff'].median():.3f})", c7)
         c7.to_csv(f"{D}/e3_regime_ratio_two_level_vs_classical.csv", index=False)
     pd.DataFrame(scores).to_csv(f"{D}/e3_prediction_scores.csv", index=False)
     if cells:

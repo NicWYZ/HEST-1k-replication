@@ -1,0 +1,36 @@
+check,n_rows,n_unmatched,max_abs_diff,passed,note
+A1a D2_inf rows == D0 rows (summary),64,0,0.0,True,
+A1a D2_inf rows == D0 rows (genes),64,0,0.0,True,
+"A1b D0 vs q4a_table61 (lin; emp_var 1e-5 rel, coverage 0.005, est/emp 1e-5 rel)",32,0,5.551115123125783e-15,True,"matched 32; max |dcov| 0.00e+00, max rel var 0.00e+00, max rel est/emp 5.55e-15; unmatched: "
+A2 perm balance package/theta2/nL4/p_a0.01,1,0,1.0572150185843028,True,median-over-genes variance ratio to D0 classical
+A2 perm balance package/theta2/nL4/p_a0.1,1,0,0.9882382798014674,True,median-over-genes variance ratio to D0 classical
+A2 perm balance package/theta2/nL6/p_a0.01,1,0,1.2698314388024785,False,median-over-genes variance ratio to D0 classical
+A2 perm balance package/theta2/nL6/p_a0.1,1,0,0.9073744570036036,False,median-over-genes variance ratio to D0 classical
+A2 perm balance package/theta2/nL8/p_a0.01,1,0,0.9400788233495315,True,median-over-genes variance ratio to D0 classical
+A2 perm balance package/theta2/nL8/p_a0.1,1,0,1.3015004315079515,False,median-over-genes variance ratio to D0 classical
+A2 perm balance package/theta2/nL12/p_a0.01,1,0,1.119751618550276,False,median-over-genes variance ratio to D0 classical
+A2 perm balance package/theta2/nL12/p_a0.1,1,0,1.0291617239099333,True,median-over-genes variance ratio to D0 classical
+A2 perm balance package/theta3/nL4/p_a0.01,1,0,0.9188868079233337,False,median-over-genes variance ratio to D0 classical
+A2 perm balance package/theta3/nL4/p_a0.1,1,0,0.8786721081926375,False,median-over-genes variance ratio to D0 classical
+A2 perm balance package/theta3/nL6/p_a0.01,1,0,0.8208206474723839,False,median-over-genes variance ratio to D0 classical
+A2 perm balance package/theta3/nL6/p_a0.1,1,0,0.9231940907613986,False,median-over-genes variance ratio to D0 classical
+A2 perm balance package/theta3/nL8/p_a0.01,1,0,0.8988877915545758,False,median-over-genes variance ratio to D0 classical
+A2 perm balance package/theta3/nL8/p_a0.1,1,0,0.8861780546453184,False,median-over-genes variance ratio to D0 classical
+A2 perm balance package/theta3/nL12/p_a0.01,1,0,0.9016939146140618,False,median-over-genes variance ratio to D0 classical
+A2 perm balance package/theta3/nL12/p_a0.1,1,0,0.896232789723091,False,median-over-genes variance ratio to D0 classical
+A2 perm balance permuted/theta2/nL4/p_a0.01,1,0,1.0572150185843028,True,median-over-genes variance ratio to D0 classical
+A2 perm balance permuted/theta2/nL4/p_a0.1,1,0,0.9882382798014674,True,median-over-genes variance ratio to D0 classical
+A2 perm balance permuted/theta2/nL6/p_a0.01,1,0,1.2698314388024785,False,median-over-genes variance ratio to D0 classical
+A2 perm balance permuted/theta2/nL6/p_a0.1,1,0,0.9073744570036036,False,median-over-genes variance ratio to D0 classical
+A2 perm balance permuted/theta2/nL8/p_a0.01,1,0,0.9400788233495315,True,median-over-genes variance ratio to D0 classical
+A2 perm balance permuted/theta2/nL8/p_a0.1,1,0,1.3015004315079515,False,median-over-genes variance ratio to D0 classical
+A2 perm balance permuted/theta2/nL12/p_a0.01,1,0,1.119751618550276,False,median-over-genes variance ratio to D0 classical
+A2 perm balance permuted/theta2/nL12/p_a0.1,1,0,1.0291617239099333,True,median-over-genes variance ratio to D0 classical
+A2 perm balance permuted/theta3/nL4/p_a0.01,1,0,0.9188868079233337,False,median-over-genes variance ratio to D0 classical
+A2 perm balance permuted/theta3/nL4/p_a0.1,1,0,0.8786721081926375,False,median-over-genes variance ratio to D0 classical
+A2 perm balance permuted/theta3/nL6/p_a0.01,1,0,0.8208206474723839,False,median-over-genes variance ratio to D0 classical
+A2 perm balance permuted/theta3/nL6/p_a0.1,1,0,0.9231940907613986,False,median-over-genes variance ratio to D0 classical
+A2 perm balance permuted/theta3/nL8/p_a0.01,1,0,0.8988877915545758,False,median-over-genes variance ratio to D0 classical
+A2 perm balance permuted/theta3/nL8/p_a0.1,1,0,0.8861780546453184,False,median-over-genes variance ratio to D0 classical
+A2 perm balance permuted/theta3/nL12/p_a0.01,1,0,0.9016939146140618,False,median-over-genes variance ratio to D0 classical
+A2 perm balance permuted/theta3/nL12/p_a0.1,1,0,0.896232789723091,False,median-over-genes variance ratio to D0 classical

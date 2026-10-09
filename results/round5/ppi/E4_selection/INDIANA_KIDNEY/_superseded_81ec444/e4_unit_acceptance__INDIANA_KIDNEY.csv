@@ -1,0 +1,137 @@
+check,arm,estimand,n_L,p_a,value,passed,note
+acc1_D2inf_equals_D0,all,theta2,4,,3.0,False,"max abs diff over summary columns; fails: candidate 0 has <2 valid labelled, NaN distance, D2 takes candidate 1999 while D0 skips the draw"
+acc1_D2inf_equals_D0,all,theta2,6,,0.0,True,max abs diff over summary columns
+acc1_D2inf_equals_D0,all,theta2,8,,0.0,True,max abs diff over summary columns
+acc1_D2inf_equals_D0,all,theta2,12,,0.0,True,max abs diff over summary columns
+acc1_D2inf_equals_D0,all,theta3,4,,0.0,True,max abs diff over summary columns
+acc1_D2inf_equals_D0,all,theta3,6,,0.0,True,max abs diff over summary columns
+acc1_D2inf_equals_D0,all,theta3,8,,0.0,True,max abs diff over summary columns
+acc1_D2inf_equals_D0,all,theta3,12,,0.0,True,max abs diff over summary columns
+acc1_D0_vs_q4a,hoptimus0,theta2,4,,0.013515228426396075,False,rule=c_crossfit_design matched=True dcov=0.01352 rel_emp_var=0.1 rel_ratio=0.0697; n_draws=197
+acc1_D0_vs_q4a,hoptimus0,theta2,4,,0.013515228426396075,False,rule=none matched=True dcov=0.01352 rel_emp_var=0.1 rel_ratio=0.0697; n_draws=197
+acc1_D0_vs_q4a,hoptimus0,theta2,6,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,hoptimus0,theta2,6,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,hoptimus0,theta2,8,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,hoptimus0,theta2,8,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,hoptimus0,theta2,12,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,hoptimus0,theta2,12,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,hoptimus0,theta3,4,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,hoptimus0,theta3,4,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,hoptimus0,theta3,6,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,hoptimus0,theta3,6,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,hoptimus0,theta3,8,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,hoptimus0,theta3,8,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,hoptimus0,theta3,12,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=2.42e-16; n_draws=200
+acc1_D0_vs_q4a,hoptimus0,theta3,12,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,permuted,theta2,4,,0.013515228426396075,False,rule=c_crossfit_design matched=True dcov=0.01352 rel_emp_var=0.1 rel_ratio=0.0697; n_draws=197
+acc1_D0_vs_q4a,permuted,theta2,4,,0.013515228426396075,False,rule=none matched=True dcov=0.01352 rel_emp_var=0.1 rel_ratio=0.0697; n_draws=197
+acc1_D0_vs_q4a,permuted,theta2,6,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,permuted,theta2,6,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,permuted,theta2,8,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,permuted,theta2,8,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,permuted,theta2,12,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,permuted,theta2,12,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,permuted,theta3,4,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,permuted,theta3,4,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,permuted,theta3,6,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,permuted,theta3,6,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,permuted,theta3,8,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,permuted,theta3,8,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,permuted,theta3,12,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,permuted,theta3,12,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,resnet50,theta2,4,,0.013515228426396075,False,rule=c_crossfit_design matched=True dcov=0.01352 rel_emp_var=0.1 rel_ratio=0.0697; n_draws=197
+acc1_D0_vs_q4a,resnet50,theta2,4,,0.013515228426396075,False,rule=none matched=True dcov=0.01352 rel_emp_var=0.1 rel_ratio=0.0697; n_draws=197
+acc1_D0_vs_q4a,resnet50,theta2,6,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,resnet50,theta2,6,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,resnet50,theta2,8,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=2.21e-16; n_draws=200
+acc1_D0_vs_q4a,resnet50,theta2,8,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,resnet50,theta2,12,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,resnet50,theta2,12,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,resnet50,theta3,4,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,resnet50,theta3,4,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,resnet50,theta3,6,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,resnet50,theta3,6,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,resnet50,theta3,8,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,resnet50,theta3,8,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,resnet50,theta3,12,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,resnet50,theta3,12,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,uni_v2,theta2,4,,0.013515228426396075,False,rule=c_crossfit_design matched=True dcov=0.01352 rel_emp_var=0.1 rel_ratio=0.0697; n_draws=197
+acc1_D0_vs_q4a,uni_v2,theta2,4,,0.013515228426396075,False,rule=none matched=True dcov=0.01352 rel_emp_var=0.1 rel_ratio=0.0697; n_draws=197
+acc1_D0_vs_q4a,uni_v2,theta2,6,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,uni_v2,theta2,6,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,uni_v2,theta2,8,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,uni_v2,theta2,8,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,uni_v2,theta2,12,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,uni_v2,theta2,12,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,uni_v2,theta3,4,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,uni_v2,theta3,4,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,uni_v2,theta3,6,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,uni_v2,theta3,6,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,uni_v2,theta3,8,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=2.33e-16; n_draws=200
+acc1_D0_vs_q4a,uni_v2,theta3,8,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,uni_v2,theta3,12,,0.0,True,rule=c_crossfit_design matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc1_D0_vs_q4a,uni_v2,theta3,12,,0.0,True,rule=none matched=True dcov=0 rel_emp_var=0 rel_ratio=0; n_draws=200
+acc2_perm_balance_classical_ratio,hoptimus0,theta2,4,0.01,1.0745944492505144,False,"band 0.93-1.07; INVALID cell: NaN threshold, no draw had an accepted candidate"
+acc2_perm_balance_classical_ratio,hoptimus0,theta2,4,0.1,1.0745944492505144,False,"band 0.93-1.07; INVALID cell: NaN threshold, no draw had an accepted candidate"
+acc2_perm_balance_classical_ratio,hoptimus0,theta2,6,0.01,0.9015217951103078,False,"band 0.93-1.07; INVALID cell: NaN threshold, no draw had an accepted candidate"
+acc2_perm_balance_classical_ratio,hoptimus0,theta2,6,0.1,0.9015217951103078,False,"band 0.93-1.07; INVALID cell: NaN threshold, no draw had an accepted candidate"
+acc2_perm_balance_classical_ratio,hoptimus0,theta2,8,0.01,0.9681301387058848,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,hoptimus0,theta2,8,0.1,0.9550527318377163,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,hoptimus0,theta2,12,0.01,0.9915616445664308,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,hoptimus0,theta2,12,0.1,0.9580095073767692,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,hoptimus0,theta3,4,0.01,0.9985619276387561,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,hoptimus0,theta3,4,0.1,1.0687055488770598,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,hoptimus0,theta3,6,0.01,0.9491458139087321,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,hoptimus0,theta3,6,0.1,0.9257807366072577,False,band 0.93-1.07
+acc2_perm_balance_classical_ratio,hoptimus0,theta3,8,0.01,0.9695772996885762,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,hoptimus0,theta3,8,0.1,0.9756371534552557,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,hoptimus0,theta3,12,0.01,0.9712952899820692,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,hoptimus0,theta3,12,0.1,0.9807688028078065,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,permuted,theta2,4,0.01,1.0745944492505144,False,"band 0.93-1.07; INVALID cell: NaN threshold, no draw had an accepted candidate"
+acc2_perm_balance_classical_ratio,permuted,theta2,4,0.1,1.0745944492505144,False,"band 0.93-1.07; INVALID cell: NaN threshold, no draw had an accepted candidate"
+acc2_perm_balance_classical_ratio,permuted,theta2,6,0.01,0.9015217951103078,False,"band 0.93-1.07; INVALID cell: NaN threshold, no draw had an accepted candidate"
+acc2_perm_balance_classical_ratio,permuted,theta2,6,0.1,0.9015217951103078,False,"band 0.93-1.07; INVALID cell: NaN threshold, no draw had an accepted candidate"
+acc2_perm_balance_classical_ratio,permuted,theta2,8,0.01,0.9681301387058848,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,permuted,theta2,8,0.1,0.9550527318377163,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,permuted,theta2,12,0.01,0.9915616445664308,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,permuted,theta2,12,0.1,0.9580095073767692,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,permuted,theta3,4,0.01,0.9985619276387561,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,permuted,theta3,4,0.1,1.0687055488770598,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,permuted,theta3,6,0.01,0.9491458139087321,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,permuted,theta3,6,0.1,0.9257807366072577,False,band 0.93-1.07
+acc2_perm_balance_classical_ratio,permuted,theta3,8,0.01,0.9695772996885762,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,permuted,theta3,8,0.1,0.9756371534552557,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,permuted,theta3,12,0.01,0.9712952899820692,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,permuted,theta3,12,0.1,0.9807688028078065,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,resnet50,theta2,4,0.01,1.0745944492505144,False,"band 0.93-1.07; INVALID cell: NaN threshold, no draw had an accepted candidate"
+acc2_perm_balance_classical_ratio,resnet50,theta2,4,0.1,1.0745944492505144,False,"band 0.93-1.07; INVALID cell: NaN threshold, no draw had an accepted candidate"
+acc2_perm_balance_classical_ratio,resnet50,theta2,6,0.01,0.9015217951103078,False,"band 0.93-1.07; INVALID cell: NaN threshold, no draw had an accepted candidate"
+acc2_perm_balance_classical_ratio,resnet50,theta2,6,0.1,0.9015217951103078,False,"band 0.93-1.07; INVALID cell: NaN threshold, no draw had an accepted candidate"
+acc2_perm_balance_classical_ratio,resnet50,theta2,8,0.01,0.9681301387058848,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,resnet50,theta2,8,0.1,0.9550527318377163,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,resnet50,theta2,12,0.01,0.9915616445664308,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,resnet50,theta2,12,0.1,0.9580095073767692,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,resnet50,theta3,4,0.01,0.9985619276387561,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,resnet50,theta3,4,0.1,1.0687055488770598,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,resnet50,theta3,6,0.01,0.9491458139087321,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,resnet50,theta3,6,0.1,0.9257807366072577,False,band 0.93-1.07
+acc2_perm_balance_classical_ratio,resnet50,theta3,8,0.01,0.9695772996885762,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,resnet50,theta3,8,0.1,0.9756371534552557,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,resnet50,theta3,12,0.01,0.9712952899820692,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,resnet50,theta3,12,0.1,0.9807688028078065,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,uni_v2,theta2,4,0.01,1.0745944492505144,False,"band 0.93-1.07; INVALID cell: NaN threshold, no draw had an accepted candidate"
+acc2_perm_balance_classical_ratio,uni_v2,theta2,4,0.1,1.0745944492505144,False,"band 0.93-1.07; INVALID cell: NaN threshold, no draw had an accepted candidate"
+acc2_perm_balance_classical_ratio,uni_v2,theta2,6,0.01,0.9015217951103078,False,"band 0.93-1.07; INVALID cell: NaN threshold, no draw had an accepted candidate"
+acc2_perm_balance_classical_ratio,uni_v2,theta2,6,0.1,0.9015217951103078,False,"band 0.93-1.07; INVALID cell: NaN threshold, no draw had an accepted candidate"
+acc2_perm_balance_classical_ratio,uni_v2,theta2,8,0.01,0.9681301387058848,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,uni_v2,theta2,8,0.1,0.9550527318377163,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,uni_v2,theta2,12,0.01,0.9915616445664308,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,uni_v2,theta2,12,0.1,0.9580095073767692,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,uni_v2,theta3,4,0.01,0.9985619276387561,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,uni_v2,theta3,4,0.1,1.0687055488770598,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,uni_v2,theta3,6,0.01,0.9491458139087321,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,uni_v2,theta3,6,0.1,0.9257807366072577,False,band 0.93-1.07
+acc2_perm_balance_classical_ratio,uni_v2,theta3,8,0.01,0.9695772996885762,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,uni_v2,theta3,8,0.1,0.9756371534552557,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,uni_v2,theta3,12,0.01,0.9712952899820692,True,band 0.93-1.07
+acc2_perm_balance_classical_ratio,uni_v2,theta3,12,0.1,0.9807688028078065,True,band 0.93-1.07

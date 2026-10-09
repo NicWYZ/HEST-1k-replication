@@ -1,0 +1,2 @@
+platform,slurm_job_id,stage,unit,start,end,elapsed_s,status,commit,workers,out_dir,command
+longleaf,4320849,E3,CCRCC_merged,2026-10-08T17:21:58-04:00,2026-10-08T17:22:15-04:00,16.8,COMPLETED,f3fb87699dd336377e1f1fefef22cbb9932f0de0,,/work/users/w/e/weiyang/hest_replication/results/round5/ppi/E3_twolevel/CCRCC_merged/resnet50__unitw,round5_ppi_e3_twolevel.py --parquet /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC_merged__resnet50.parquet --vtag CCRCC_merged --arm resnet50 --parts unitw --draws 200 --out-dir .

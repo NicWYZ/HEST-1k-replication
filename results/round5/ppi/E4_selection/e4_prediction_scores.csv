@@ -1,0 +1,6 @@
+prediction,verdict,summary
+E4.1,partly held,"simulated classical variance under D2 (p_a 0.01, balance on fbar) within 0.05 of 1 - R^2 in 189 of 240 cells (G = 15: 48 of 80; G = 24: 63 of 80; G = 51: 78 of 80); differences -0.350 to 0.092"
+E4.2,partly held,"n_L = 8, theta3: LUNG_XENIUM hoptimus0 0.255 (band 0.25-0.4, tuned D0 0.428); LUNG_XENIUM resnet50 0.330 (band 0.25-0.4, tuned D0 0.540); LUNG_XENIUM uni_v2 0.285 (band 0.25-0.4, tuned D0 0.470); CCRCC uni_v2 0.604 (band 0.55-0.7, tuned D0 0.844); ACS_STATES package 0.264 (band 0.28-0.4, tuned D0 0.434)"
+E4.3,partly held,"theta3, n_L = 8: lung fraction of the own-balance gain recovered by pcF2 0.89, 0.81, 0.94; kidney cancer 1.22, 1.36, 1.81"
+E4.4,D2 over-coverage refuted; D2 final vs D0 partly held; D1 partly held,"real tasks, own balance: D2 classical coverage >= 0.93 in 95 of 320 cells (median 0.905; p_a 0.01: 48 of 160, median 0.905; p_a 0.1: 47 of 160, median 0.905); D2 final (c_crossfit_design, xf interval) within 0.02 of D0 in 172 of 320 (differences -0.070 to 0.120); D1 strat_t in 0.88-0.92 in 665 of 1184 (median 0.885)"
+E4.5,partly held,"kidney tasks, embedding balance, D2: classical variance ratio >= 0.9 in 466 of 576 cells (range 0.468 to 1.504)"

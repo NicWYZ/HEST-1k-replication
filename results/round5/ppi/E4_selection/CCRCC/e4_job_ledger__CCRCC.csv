@@ -1,0 +1,5 @@
+job_id,purpose,partition,account,node,submit,start,end,elapsed,state,req_mem,req_cpus,max_rss_gb
+4338777,E4 CCRCC full hoptimus0 (3f037cc),spill,rc_tengfei_pi,c0402,2026-10-08T21:24:32,2026-10-08T21:25:13,2026-10-08T21:28:53,00:03:40,COMPLETED,16G,2,1.295
+4338780,E4 CCRCC full uni_v2 (3f037cc),spill,rc_tengfei_pi,c0401,2026-10-08T21:24:35,2026-10-08T21:25:13,2026-10-08T21:28:55,00:03:42,COMPLETED,16G,2,1.293
+4338782,E4 CCRCC full resnet50 (3f037cc),spill,rc_tengfei_pi,c0317,2026-10-08T21:24:39,2026-10-08T21:25:13,2026-10-08T21:28:47,00:03:34,COMPLETED,16G,2,1.218
+4338786,E4 CCRCC full permuted (3f037cc),spill,rc_tengfei_pi,c0317,2026-10-08T21:24:42,2026-10-08T21:25:13,2026-10-08T21:28:47,00:03:34,COMPLETED,16G,2,1.207

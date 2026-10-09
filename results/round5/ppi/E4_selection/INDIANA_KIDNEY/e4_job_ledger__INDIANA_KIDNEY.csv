@@ -1,0 +1,5 @@
+job_id,uuid,purpose,partition,account,node,submit,start,end,elapsed,state,req_mem,req_cpus,max_rss_gb
+4338848,33e51f4a,"E4 rerun hoptimus0 snapshot 3f037cc, 200 draws x 2000 cand, grid 4,6,8,12",spill,rc_tengfei_pi,c0311,2026-10-08T21:25:45,2026-10-08T21:27:10,2026-10-08T21:30:59,00:03:49,COMPLETED,24G,2.0,1.016
+4338855,38cf37ca,"E4 rerun uni_v2 snapshot 3f037cc, 200 draws x 2000 cand, grid 4,6,8,12",spill,rc_tengfei_pi,c0405,2026-10-08T21:25:48,2026-10-08T21:27:10,2026-10-08T21:31:03,00:03:53,COMPLETED,24G,2.0,1.266
+4338856,dbe175e0,"E4 rerun resnet50 snapshot 3f037cc, 200 draws x 2000 cand, grid 4,6,8,12",spill,rc_tengfei_pi,c0406,2026-10-08T21:25:51,2026-10-08T21:27:10,2026-10-08T21:30:34,00:03:24,COMPLETED,24G,2.0,0.999
+4338857,4e4eb37c,"E4 rerun permuted snapshot 3f037cc, 200 draws x 2000 cand, grid 4,6,8,12",spill,rc_tengfei_pi,c0407,2026-10-08T21:25:54,2026-10-08T21:27:10,2026-10-08T21:30:38,00:03:28,COMPLETED,24G,2.0,1.0
