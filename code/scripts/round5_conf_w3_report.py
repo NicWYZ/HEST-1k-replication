@@ -206,7 +206,7 @@ def fig_map(M, path):
         ax.set_xscale("log")
         ax.set_xticks([3, 5, 10, 20, 50, 100]); ax.set_xticklabels(["3", "5", "10", "20", "50", "100"])
         ax.minorticks_off()
-        ax.set_title(f"{SHORT.get(t, t)}\n{P.n_T_donors.median():.0f} test donors per fold")
+        ax.set_title(f"{SHORT.get(t, t)}\nhead fitted on {P.n_T_donors.median():.0f} donors")
         ax.margins(0.04)
     axes[0][0].set_ylabel("90% width relative to HCP")
     axes[0][0].text(3.2, 1.02, "HCP", fontsize=7, va="bottom")

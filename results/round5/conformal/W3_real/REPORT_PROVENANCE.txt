@@ -2,7 +2,7 @@ W3 report numbers, prediction scores and figures (local run, extension 3 of the 
 date            : 2026-10-09T01:21:40-04:00
 host            : local (darwin 26.6.2, arm64; CPU model not readable from the sandbox)
 command         : python code/scripts/round5_conf_w3_report.py --map results/round5/conformal/W3_real/merged/w3_map_by_task.csv --out results/round5/conformal/W3_real
-script_md5      : 442fa4567221b037caedd43d416c0b12  code/scripts/round5_conf_w3_report.py
+script_md5      : 60ab3948f2320f9734f761198980b5e8  code/scripts/round5_conf_w3_report.py
 input_md5       : 4ee7bbf2801f54c0ac1fbb7c309eeba9  results/round5/conformal/W3_real/merged/w3_map_by_task.csv (merge Slurm 4351817, snapshot c474859)
 python          : 3.11.15; pandas 2.3.3; matplotlib 3.11.0
 scoring rules   : fixed in the script docstring at commit e1bf886 before any production row was merged; the scoring code is unchanged since (only the figure functions were restyled)
