@@ -1,0 +1,23 @@
+item,quantity,value,detail
+1_acceptance1_D0_D1_n_sub200_vs_E4,rows_compared,384.0,rows with n_sub=200 in E4b: 448; no E4 counterpart: 64 (all D1 perm_cluster strat_t)
+1_acceptance1,rows_matched,384.0,"tolerances: 0.005 abs on coverage_median, coverage_mean; 1e-5 rel on emp_var_median, est_var_over_emp_var_median, width_median"
+1_acceptance1,rows_failed,0.0,
+1_acceptance1,largest_d_coverage_median,0.0,at hoptimus0/theta2/12/D0/none/none/textbook_t|fpc|lin
+1_acceptance1,largest_d_coverage_mean,0.0,at hoptimus0/theta2/12/D0/none/none/textbook_t|fpc|lin
+1_acceptance1,largest_d_emp_var_median,0.0,at hoptimus0/theta2/12/D0/none/none/textbook_t|fpc|lin
+1_acceptance1,largest_d_est_var_over_emp_var_median,0.0,at hoptimus0/theta2/12/D0/none/none/textbook_t|fpc|lin
+1_acceptance1,largest_d_width_median,0.0,at hoptimus0/theta2/12/D0/none/none/textbook_t|fpc|lin
+2_D2_n_sub200_vs_E4,"emp_var_ratio_E4b_over_E4 [c_crossfit_design; textbook_t|fpc|lin] median (min..max), n=256",1.0,0.9599..1.0353
+2_D2_n_sub200_vs_E4,coverage_median_diff_E4b_minus_E4 [c_crossfit_design; textbook_t|fpc|lin] median (min..max),0.0,-0.0125..0.0100
+2_D2_n_sub200_vs_E4,"emp_var_ratio_E4b_over_E4 [c_crossfit_design; textbook_t|fpc|lin|xf] median (min..max), n=256",1.0,0.9599..1.0353
+2_D2_n_sub200_vs_E4,coverage_median_diff_E4b_minus_E4 [c_crossfit_design; textbook_t|fpc|lin|xf] median (min..max),0.0,-0.0075..0.0075
+2_D2_n_sub200_vs_E4,"emp_var_ratio_E4b_over_E4 [none; textbook_t|fpc|lin] median (min..max), n=256",1.0,0.9599..1.0284
+2_D2_n_sub200_vs_E4,coverage_median_diff_E4b_minus_E4 [none; textbook_t|fpc|lin] median (min..max),0.0,-0.0075..0.0100
+2_D2_n_sub200_vs_E4,"emp_var_ratio_E4b_over_E4 [none; textbook_t|fpc|lin|xf] median (min..max), n=256",1.0,0.9599..1.0284
+2_D2_n_sub200_vs_E4,coverage_median_diff_E4b_minus_E4 [none; textbook_t|fpc|lin|xf] median (min..max),0.0,-0.0075..0.0100
+2_D2_threshold,"e4b_threshold_median (median over D2 cells), p_a=0.1",0.0035617059329524,range of cell medians 0.0007..0.0729; E4 did not write its threshold
+2_D2_threshold,"e4b_threshold_median (median over D2 cells), p_a=0.01",3.3870961487991735e-05,range of cell medians 7e-06..0.0139; E4 did not write its threshold
+3_acceptance2,max acc2_rej_minus_classical_max over D2 cells,0.0,min 0.0; 320 D2 diagnostic cells
+4_skipped_cells,rej_t rows skipped (n_L-k-1<2),32.0,no whole cell skipped (G=23/24 > n_L+2 for all n_L); skips are rej_t only: theta2 nL4 pcE2 p_a=0.01: 4 arms; theta2 nL4 pcE2 p_a=0.1: 4 arms; theta2 nL4 pcF2 p_a=0.01: 4 arms; theta2 nL4 pcF2 p_a=0.1: 2 arms; theta2 nL4 pcF2 p_a=0.1: 2 arms; theta3 nL4 pcE2 p_a=0.01: 4 arms; theta3 nL4 pcE2 p_a=0.1: 4 arms; theta3 nL4 pcF2 p_a=0.01: 4 arms; theta3 nL4 pcF2 p_a=0.1: 4 arms
+4_candidates,n_beyond_first_batch total,0.0,max over cells 0; max candidates used by any draw 1654 (< 2000)
+5_bootstrap,rows in e4b_bootstrap_all__CCRCC.csv,480.0,acceptance 3 is not computed here (lead merges)

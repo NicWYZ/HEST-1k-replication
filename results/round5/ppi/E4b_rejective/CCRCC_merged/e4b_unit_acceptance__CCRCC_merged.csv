@@ -1,0 +1,92 @@
+check,scope,metric,value,detail,frame_id
+acc1,D0 n_sub=200,rows_compared,128,,fbc2a913-66f7-4784-9f96-33695a91e337
+acc1,D0 n_sub=200,rows_matched,128,,fbc2a913-66f7-4784-9f96-33695a91e337
+acc1,D0 n_sub=200,rows_failed,0,,fbc2a913-66f7-4784-9f96-33695a91e337
+acc1,D1 n_sub=200,rows_compared,256,,fbc2a913-66f7-4784-9f96-33695a91e337
+acc1,D1 n_sub=200,rows_matched,256,,fbc2a913-66f7-4784-9f96-33695a91e337
+acc1,D1 n_sub=200,rows_failed,0,,fbc2a913-66f7-4784-9f96-33695a91e337
+acc1,D0+D1 n_sub=200,rows_compared,384,,fbc2a913-66f7-4784-9f96-33695a91e337
+acc1,D0+D1 n_sub=200,rows_matched,384,,fbc2a913-66f7-4784-9f96-33695a91e337
+acc1,D0+D1 n_sub=200,rows_failed,0,,fbc2a913-66f7-4784-9f96-33695a91e337
+acc1,D0+D1 n_sub=200,max_abs_diff_coverage_median,0.0,hoptimus0 theta3 nL4 D0 none none textbook_t|fpc|lin,fbc2a913-66f7-4784-9f96-33695a91e337
+acc1,D0+D1 n_sub=200,max_abs_diff_coverage_mean,0.0,hoptimus0 theta3 nL4 D0 none none textbook_t|fpc|lin,fbc2a913-66f7-4784-9f96-33695a91e337
+acc1,D0+D1 n_sub=200,max_rel_diff_emp_var_median,0.0,hoptimus0 theta3 nL4 D0 none none textbook_t|fpc|lin,fbc2a913-66f7-4784-9f96-33695a91e337
+acc1,D0+D1 n_sub=200,max_rel_diff_est_var_over_emp_var_median,0.0,hoptimus0 theta3 nL4 D0 none none textbook_t|fpc|lin,fbc2a913-66f7-4784-9f96-33695a91e337
+acc1,D0+D1 n_sub=200,max_rel_diff_width_median,0.0,hoptimus0 theta3 nL4 D0 none none textbook_t|fpc|lin,fbc2a913-66f7-4784-9f96-33695a91e337
+acc1,D1 perm_cluster n_sub=200,rows_without_E4_counterpart,64,perm_cluster has no E4 counterpart; excluded from comparison,fbc2a913-66f7-4784-9f96-33695a91e337
+acc1,tolerances,E0 tolerances,"coverage_median/coverage_mean abs 0.005; emp_var_median, est_var_over_emp_var_median, width_median rel 1e-5",,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin,n_rows,256,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin,ev_ratio_median,1.0,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin,ev_ratio_min,0.9496636195187272,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin,ev_ratio_max,1.0267307137308281,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin,cov_diff_median,0.0,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin,cov_diff_min,-0.0050000000000001155,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin,cov_diff_max,0.007500000000000062,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin balance=own,ev_ratio_median,1.0,"range [0.9774, 1.027] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin balance=own,cov_diff_median,0.0,"range [-0.005, 0.005] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin balance=pcE2,ev_ratio_median,1.0,"range [0.9838, 1.024] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin balance=pcE2,cov_diff_median,0.0,"range [-0.005, 0.0075] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin balance=pcF2,ev_ratio_median,1.0,"range [0.9497, 1.022] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin balance=pcF2,cov_diff_median,0.0,"range [-0.005, 0.005] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin balance=perm,ev_ratio_median,0.9998003714742709,"range [0.9644, 1.021] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin balance=perm,cov_diff_median,0.0,"range [-0.005, 0.0075] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin|xf,n_rows,256,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin|xf,ev_ratio_median,1.0,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin|xf,ev_ratio_min,0.9496636195187272,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin|xf,ev_ratio_max,1.0267307137308281,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin|xf,cov_diff_median,0.0,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin|xf,cov_diff_min,-0.007500000000000062,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin|xf,cov_diff_max,0.007499999999999951,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin|xf balance=own,ev_ratio_median,1.0,"range [0.9774, 1.027] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin|xf balance=own,cov_diff_median,0.0,"range [-0.005, 0.005] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin|xf balance=pcE2,ev_ratio_median,1.0,"range [0.9838, 1.024] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin|xf balance=pcE2,cov_diff_median,0.0,"range [-0.005, 0.0075] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin|xf balance=pcF2,ev_ratio_median,1.0,"range [0.9497, 1.022] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin|xf balance=pcF2,cov_diff_median,0.0,"range [-0.0075, 0.005] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin|xf balance=perm,ev_ratio_median,0.9998003714742709,"range [0.9644, 1.021] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 c_crossfit_design textbook_t|fpc|lin|xf balance=perm,cov_diff_median,0.0,"range [-0.005, 0.005] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin,n_rows,256,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin,ev_ratio_median,1.0,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin,ev_ratio_min,0.9281954874785486,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin,ev_ratio_max,1.028754784444779,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin,cov_diff_median,0.0,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin,cov_diff_min,-0.0050000000000001155,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin,cov_diff_max,0.007500000000000062,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin balance=own,ev_ratio_median,1.0000291318567904,"range [0.9774, 1.027] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin balance=own,cov_diff_median,0.0,"range [-0.005, 0.005] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin balance=pcE2,ev_ratio_median,1.0,"range [0.9816, 1.019] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin balance=pcE2,cov_diff_median,0.0,"range [-0.0025, 0.005] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin balance=pcF2,ev_ratio_median,1.0,"range [0.9282, 1.029] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin balance=pcF2,cov_diff_median,0.0,"range [-0.005, 0.0075] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin balance=perm,ev_ratio_median,1.0016288396198716,"range [0.9851, 1.022] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin balance=perm,cov_diff_median,0.0,"range [0, 0.0025] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin|xf,n_rows,256,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin|xf,ev_ratio_median,1.0,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin|xf,ev_ratio_min,0.9281954874785486,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin|xf,ev_ratio_max,1.028754784444779,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin|xf,cov_diff_median,0.0,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin|xf,cov_diff_min,-0.0050000000000001155,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin|xf,cov_diff_max,0.007500000000000062,,fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin|xf balance=own,ev_ratio_median,1.0000291318567904,"range [0.9774, 1.027] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin|xf balance=own,cov_diff_median,0.0,"range [-0.005, 0.005] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin|xf balance=pcE2,ev_ratio_median,1.0,"range [0.9816, 1.019] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin|xf balance=pcE2,cov_diff_median,0.0,"range [-0.0025, 0.005] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin|xf balance=pcF2,ev_ratio_median,1.0,"range [0.9282, 1.029] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin|xf balance=pcF2,cov_diff_median,0.0,"range [-0.005, 0.0075] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin|xf balance=perm,ev_ratio_median,1.0016288396198716,"range [0.9851, 1.022] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_vs_E4,D2 n_sub=200 none textbook_t|fpc|lin|xf balance=perm,cov_diff_median,0.0,"range [0, 0.0025] n=64",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_threshold,balance=own p_a=0.01,threshold_median_over_cells,1.768146694303141e-05,"min 6.703e-06 max 3.841e-05; E4 did not write its threshold, so no E4 value to compare",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_threshold,balance=own p_a=0.1,threshold_median_over_cells,0.00187251088209445,"min 0.0006738 max 0.00365; E4 did not write its threshold, so no E4 value to compare",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_threshold,balance=pcE2 p_a=0.01,threshold_median_over_cells,0.0021489522769115,"min 0.0004947 max 0.007132; E4 did not write its threshold, so no E4 value to compare",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_threshold,balance=pcE2 p_a=0.1,threshold_median_over_cells,0.02106436807662245,"min 0.006275 max 0.06381; E4 did not write its threshold, so no E4 value to compare",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_threshold,balance=pcF2 p_a=0.01,threshold_median_over_cells,0.0027551266830414,"min 0.0008782 max 0.009687; E4 did not write its threshold, so no E4 value to compare",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_threshold,balance=pcF2 p_a=0.1,threshold_median_over_cells,0.02714277710765595,"min 0.009208 max 0.05095; E4 did not write its threshold, so no E4 value to compare",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_threshold,balance=perm p_a=0.01,threshold_median_over_cells,1.768146694303141e-05,"min 6.713e-06 max 3.583e-05; E4 did not write its threshold, so no E4 value to compare",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_threshold,balance=perm p_a=0.1,threshold_median_over_cells,0.00187251088209445,"min 0.0006758 max 0.00349; E4 did not write its threshold, so no E4 value to compare",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_threshold,balance=perm_cluster p_a=0.01,threshold_median_over_cells,1.786598977560061e-05,"min 6.712e-06 max 3.563e-05; E4 did not write its threshold, so no E4 value to compare",fbc2a913-66f7-4784-9f96-33695a91e337
+D2_threshold,balance=perm_cluster p_a=0.1,threshold_median_over_cells,0.0017728094244375,"min 0.000673 max 0.003659; E4 did not write its threshold, so no E4 value to compare",fbc2a913-66f7-4784-9f96-33695a91e337
+acc2,all D2 cells,acc2_rej_minus_classical_max_largest,0.0,max abs 0.0; cells=320; NaN=32,fbc2a913-66f7-4784-9f96-33695a91e337
+skipped,all,skipped_rows,32,"all rej_t at n_L=4 for pcF2/pcE2 (k=2): n_L-k-1<2 (also theta2 pcF2 p_a=0.1 gives 0); no cell skipped for n_L>G-2 (G=23 theta3, 22 theta2)",fbc2a913-66f7-4784-9f96-33695a91e337
+skipped,all,cells_with_skip_file,8,hoptimus0/theta2_nL4; hoptimus0/theta3_nL4; permuted/theta2_nL4; permuted/theta3_nL4; resnet50/theta2_nL4; resnet50/theta3_nL4; uni_v2/theta2_nL4; uni_v2/theta3_nL4,fbc2a913-66f7-4784-9f96-33695a91e337
+beyond_first_batch,all D2 cells,n_beyond_first_batch_total,1,max 1; cells with >0: 1 of 320,fbc2a913-66f7-4784-9f96-33695a91e337
+beyond_first_batch,"('uni_v2', 'theta2', np.int64(12), 'own', np.float64(0.01))",n_beyond_first_batch,1,,fbc2a913-66f7-4784-9f96-33695a91e337

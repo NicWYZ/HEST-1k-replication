@@ -27,3 +27,5 @@ test,n_checked,n_pass,worst,tolerance
 3_synth_G15_n8_k1_pa0.01_rej_over_emp,2000,1,1.064995243790218,"support 64; within 0.15 when support >= 1000, reported otherwise"
 4_perm_cluster_multiset_and_repro,5,1,0.0,exact
 5_first_accepted,3,1,0.0,exact
+6_small_support_threshold_accepts_nL4,80,1,0.0,columns with no accepted pool candidate; 0 required; the float32 threshold of 9185bc6 fails this check
+6_small_support_threshold_accepts_nL12,80,1,0.0,columns with no accepted pool candidate; 0 required; the float32 threshold of 9185bc6 fails this check

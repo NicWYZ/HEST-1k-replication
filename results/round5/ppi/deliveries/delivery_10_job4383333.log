@@ -1,0 +1,82 @@
+slurm_job_id=4383333 partition=spill node=c151410.ll.unc.edu date=2026-10-09T11:29:56-04:00
+bundle_md5=5ac9067a224aa59058788f4628904abd
+branch=round5-ppi
+head_before=9185bc6be157ee9c62d8d1067e5ad9e14f53984e
+status_before:
+/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/f0bedd24-28a6-4792-ac5c-cb6dde1a7ad9/r5ppi_delivery_10.bundle is okay
+The bundle contains this ref:
+0776327f48f71ee89030b58c32892f3086b0dec6 refs/heads/round5-ppi
+The bundle requires this ref:
+9185bc6be157ee9c62d8d1067e5ad9e14f53984e 
+The bundle uses this hash algorithm: sha1
+verify_rc=0
+From /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/f0bedd24-28a6-4792-ac5c-cb6dde1a7ad9/r5ppi_delivery_10.bundle
+ * branch            round5-ppi -> FETCH_HEAD
+fetch_rc=0
+Updating 9185bc6..0776327
+Fast-forward
+ code/scripts/round5_ppi_e4b_stamp_check.py         | 30 +++++++++
+ code/scripts/round5_ppi_e4b_threshold.py           | 72 ++++++++++++++++++++++
+ code/scripts/round5_ppi_e5_allocation.py           | 59 ++++++++++++++++++
+ code/scripts/round5_ppi_e5_joint.py                | 72 ++++++++++++++++++++++
+ code/scripts/round5_ppi_e5_theta2_drops.py         | 37 +++++++++++
+ .../ppi/E4b_rejective/e4b_assigned_frame_ids.csv   |  8 +++
+ results/round5/ppi/code_deliveries.csv             |  1 +
+ .../ppi/deliveries/delivery_09_job4381768.log      | 72 ++++++++++++++++++++++
+ results/round5/ppi/r5ppi_slurm_jobs.csv            |  2 +
+ 9 files changed, 353 insertions(+)
+ create mode 100644 code/scripts/round5_ppi_e4b_stamp_check.py
+ create mode 100644 code/scripts/round5_ppi_e4b_threshold.py
+ create mode 100644 code/scripts/round5_ppi_e5_allocation.py
+ create mode 100644 code/scripts/round5_ppi_e5_joint.py
+ create mode 100644 code/scripts/round5_ppi_e5_theta2_drops.py
+ create mode 100644 results/round5/ppi/E4b_rejective/e4b_assigned_frame_ids.csv
+ create mode 100644 results/round5/ppi/deliveries/delivery_09_job4381768.log
+merge_rc=0
+head_after=0776327f48f71ee89030b58c32892f3086b0dec6
+commits_carried:
+0776327f48f71ee89030b58c32892f3086b0dec6 Round 5 PPI E4b/E5: threshold comparison, stamp check, E5 allocation, joint table and theta2 drop scripts
+snapshot=/work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6
+snapshot_files=238
+d78b654d7fd8e6a824f73dd50ee2a0c1  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_balance.py
+122375c3acb103ed93e3e687644d7f6d  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_common.py
+1c334fc84714a655f3f2b31bf9183914  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e0_checks.py
+cd1c7abb33b63f9e39a9e9ff68a931ac  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e0_compare.py
+956a15c3214ce97ff3fe81bd5fd1ced6  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e1_diag.py
+0f3b0e5b1cf1b9a402cd3fb8471c9c98  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e1_merge.py
+372d272e3822f5dab55c1850fb4e3d3d  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e1_sim.py
+b63bc1990bd5c0931ecd8b07182d8186  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e2_diag.py
+c3f80f48ac4e802077c1c408406dc228  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e2_levelcheck.py
+186a5d80b26b884f77563784f8219486  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e2_merge.py
+b6e9ecc52ac5539682487d8e7c1451c6  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e2_regimeB.py
+5a98dc0028adf1e2f9e6aea0b6182a2a  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e2_report_extra.py
+134ef9676919ab1326329d1d528ff866  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e2_sim.py
+885fb62e8f7a48c2f57431bfe59818fe  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e3a_masking.py
+bdd4cd490bfde66c665aea1f88a3fe9a  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e3a_sim.py
+039c489a40f88ef81e69651d04865ea9  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e3a_tests.py
+cc0472412f4fb15286f906c5c333950c  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e3_figures.py
+5d7af79f2cb139b437a34686b688c901  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e3_merge.py
+885918ff61abd753bffb14b49457d001  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e3_sim.py
+46c6c5b5ceb161d741bd4ddf67a421e0  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e3_superseded.py
+814455077be2acdf13e07b86bf8b7b36  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e3_tests.py
+80e52bfe1b2cf9e48c82f3828689d78f  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e3_twolevel.py
+228972e745a16ad91b5a368600e6acda  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e4b_rejective.py
+368c41fbf7f66bf0578d59e3fb0eb351  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e4b_sim.py
+2c0d4fd615fdca92e4e77bde9e492e01  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e4b_stamp_check.py
+060b14b98d60602eafcc0fb9d5970d72  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e4b_tests.py
+82d389fdf6e0d2108e31022b76e4f677  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e4b_threshold.py
+527acc29c2bbd0ca46b46e8597e13968  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e4_figures.py
+150416bb17920ae5934a922209b30517  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e4_inclusion.py
+93157006d8ad2b0c11996c1086a5e55b  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e4_merge.py
+d886d3db94f4f12364ac072b6485f08f  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e4_selection.py
+62b9521109c3166fcdb89491608ba2f0  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e4_sim.py
+31f438694726b2c37725a3aa62cc29d0  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e4_stamp_check.py
+3e45804f0eff3dc71a5eaf322e3adbc6  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e5_allocation.py
+e83d1085c2bc9977cb9924f5e355b99a  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e5_joint.py
+d07236c355c12335cf91e602bbc5ff36  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_e5_theta2_drops.py
+2de31569ffe72239062fbeb0c9a50fc5  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_estimator.py
+b3fd2ae2e2e6f410fb3283c7d9841eec  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_provenance_index.py
+05b04038b56b1ad2ee0b5394eb82037e  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_run.py
+e13183a4ffdddf4f01ba5136844c606d  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/0776327f48f71ee89030b58c32892f3086b0dec6/code/scripts/round5_ppi_twolevel.py
+4383333|spill|rc_tengfei_pi|c151410|2026-10-09T11:29:16|2026-10-09T11:29:55|2026-10-09T11:30:02|00:00:07|COMPLETED|2G|1
+4383333.batch|48728K
