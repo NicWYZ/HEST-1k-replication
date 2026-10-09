@@ -9,6 +9,7 @@
 4. perm_cluster keeps each gene's values over clusters and is reproducible.
 5. first_accepted: the first candidate at or below the threshold, per column, and columns already
    accepted are left alone.
+6. With a support of a few samples the pool threshold accepts a candidate in every column.
 Writes e4b_tests.csv in the working directory.
 """
 import csv
@@ -80,6 +81,20 @@ def main():
     kacc, done = BAL.first_accepted(d, np.array([1.0, 1.0, 1.0]), 10, np.array([False, True, False]))
     ok5 = list(kacc) == [11, -1, -1] and list(done) == [True, True, False]
     out.append(("5_first_accepted", 3, int(ok5), 0.0, "exact"))
+    # 6: with a support of a few samples (9 valid of 15 clusters, n_L 4 and 12) every column's pool threshold
+    # accepts at least one candidate of the pool itself (the float32 threshold of 9185bc6 did not)
+    import round5_ppi_e4b_rejective as RJ
+    G, nv = 15, 9
+    vid = np.sort(rng.choice(G, nv, replace=False))
+    Xg = rng.normal(size=(nv, 40, 1)) / 3.0
+    for nL in (4, 12):
+        idx = np.stack([np.sort(rng.choice(G, nL, replace=False)) for _ in range(20000)])
+        pool = RJ.masks_from(idx, G)
+        thr, _ = RJ.pool_thresholds(pool, vid, Xg, (0.1, 0.01))
+        dd, _ = RJ.dist_valid(pool, vid, Xg)
+        never = sum(int((~(dd <= thr[pa][None, :]).any(0)).sum()) for pa in (0.1, 0.01))
+        out.append((f"6_small_support_threshold_accepts_nL{nL}", 80, int(never == 0), float(never),
+                    "columns with no accepted pool candidate; 0 required; the float32 threshold of 9185bc6 fails this check"))
     w = csv.writer(sys.stdout)
     w.writerow(["test", "n_checked", "n_pass", "worst", "tolerance"]); w.writerows(out)
     with open("e4b_tests.csv", "w", newline="") as fh:

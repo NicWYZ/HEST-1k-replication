@@ -81,7 +81,7 @@ def dist_valid(masks_all, vid, X):
     return np.where(np.isfinite(dd), dd, np.inf), mv
 
 
-def pool_thresholds(pool_masks, vid, X, pas, chunk_cols=40, chunk_rows=200000):
+def pool_thresholds(pool_masks, vid, X, pas, chunk_cols=20, chunk_rows=200000):
     """Per column p_a quantiles of the distance over the pool, and the empirical v_a."""
     ncol = X.shape[1]
     thr = {pa: np.full(ncol, np.inf) for pa in pas}
@@ -91,7 +91,9 @@ def pool_thresholds(pool_masks, vid, X, pas, chunk_cols=40, chunk_rows=200000):
         parts = []
         for r0 in range(0, len(pool_masks), chunk_rows):
             dd, _ = dist_valid(pool_masks[r0:r0 + chunk_rows], vid, X[:, cs, :])
-            parts.append(dd.astype(np.float32))
+            # float64: a float32 threshold can round below the smallest distance when the support is a
+            # handful of samples (lung theta2), and then no candidate is ever accepted
+            parts.append(dd)
         D = np.concatenate(parts, 0)
         fin = np.isfinite(D)
         Dn = np.where(fin, D, np.nan)
