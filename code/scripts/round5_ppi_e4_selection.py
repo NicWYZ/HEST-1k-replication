@@ -168,7 +168,13 @@ def main(argv=None):
                                            balance=b, p_a=pa, n_no_accept=nmiss), data["genes"], rows, generows)
             # D1
             for fam in ("own", "pcF1", "pcE1", "perm"):
-                if fam not in bal or nL < 4 or nL % 2:
+                # two per stratum needs at least n_L valid clusters (lung theta2 has 9): skip, recorded
+                if fam not in bal or nL < 4 or nL % 2 or nL > G:
+                    if fam in bal and nL > G:
+                        rows.append(dict(vtag=a.vtag, arm=a.arm, estimand=est, G=G, n_L=nL, design="D1",
+                                         balance=fam.rstrip("1") if fam != "own" else "own", p_a=np.nan,
+                                         n_no_accept=0, rule="", interval="", n_draws=0,
+                                         note="skipped: n_L exceeds the valid clusters"))
                     continue
                 st = BAL.d1_strata(bal[fam][:, :, 0], nL)
                 st_full = np.ascontiguousarray(np.broadcast_to(st, (G, ng)))
