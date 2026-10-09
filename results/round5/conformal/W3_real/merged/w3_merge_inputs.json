@@ -1,0 +1,713 @@
+{
+ "exclude": [
+  "p2_ccrcc23m/resnet50_g1/",
+  "p2_ccrcc23m/resnet50_g2/",
+  "p2_ccrcc23m/resnet50_g3/",
+  "p2_ccrcc23m/resnet50_g4/",
+  "/merged_prelim/"
+ ],
+ "files": [
+  {
+   "file": "p1_ccrcc23m/hoptimus0_s1/w3_full__CCRCC_23merged_p1_hoptimus0_fINT1-INT13-INT17-INT20-INT3-INT7.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_ccrcc23m/hoptimus0_s2/w3_full__CCRCC_23merged_p1_hoptimus0_fINT10-INT14-INT18-INT21-INT4+INT24-INT8.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_ccrcc23m/hoptimus0_s3/w3_full__CCRCC_23merged_p1_hoptimus0_fINT11-INT15-INT19-INT22-INT5-INT9.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_ccrcc23m/hoptimus0_s4/w3_full__CCRCC_23merged_p1_hoptimus0_fINT12-INT16-INT2-INT23-INT6.csv.gz",
+   "rows": 39690,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_ccrcc23m/resnet50_s1/w3_full__CCRCC_23merged_p1_resnet50_fINT1-INT13-INT17-INT20-INT3-INT7.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_ccrcc23m/resnet50_s2/w3_full__CCRCC_23merged_p1_resnet50_fINT10-INT14-INT18-INT21-INT4+INT24-INT8.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_ccrcc23m/resnet50_s3/w3_full__CCRCC_23merged_p1_resnet50_fINT11-INT15-INT19-INT22-INT5-INT9.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_ccrcc23m/resnet50_s4/w3_full__CCRCC_23merged_p1_resnet50_fINT12-INT16-INT2-INT23-INT6.csv.gz",
+   "rows": 39690,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_ccrcc23m/uni_v2_s1/w3_full__CCRCC_23merged_p1_uni_v2_fINT1-INT13-INT17-INT20-INT3-INT7.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_ccrcc23m/uni_v2_s2/w3_full__CCRCC_23merged_p1_uni_v2_fINT10-INT14-INT18-INT21-INT4+INT24-INT8.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_ccrcc23m/uni_v2_s3/w3_full__CCRCC_23merged_p1_uni_v2_fINT11-INT15-INT19-INT22-INT5-INT9.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_ccrcc23m/uni_v2_s4/w3_full__CCRCC_23merged_p1_uni_v2_fINT12-INT16-INT2-INT23-INT6.csv.gz",
+   "rows": 39690,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_ccrcc24/hoptimus0_s1/w3_full__CCRCC_p1_hoptimus0_fINT1-INT2-INT3-INT4-INT5-INT6.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_ccrcc24/hoptimus0_s2/w3_full__CCRCC_p1_hoptimus0_fINT7-INT8-INT9-INT10-INT11-INT12.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_ccrcc24/hoptimus0_s3/w3_full__CCRCC_p1_hoptimus0_fINT13-INT14-INT15-INT16-INT17-INT18.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_ccrcc24/hoptimus0_s4/w3_full__CCRCC_p1_hoptimus0_fINT19-INT20-INT21-INT22-INT23-INT24.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_ccrcc24/resnet50_s1/w3_full__CCRCC_p1_resnet50_fINT1-INT2-INT3-INT4-INT5-INT6.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_ccrcc24/resnet50_s2/w3_full__CCRCC_p1_resnet50_fINT7-INT8-INT9-INT10-INT11-INT12.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_ccrcc24/resnet50_s3/w3_full__CCRCC_p1_resnet50_fINT13-INT14-INT15-INT16-INT17-INT18.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_ccrcc24/resnet50_s4/w3_full__CCRCC_p1_resnet50_fINT19-INT20-INT21-INT22-INT23-INT24.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_ccrcc24/uni_v2_s1/w3_full__CCRCC_p1_uni_v2_fINT1-INT2-INT3-INT4-INT5-INT6.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_ccrcc24/uni_v2_s2/w3_full__CCRCC_p1_uni_v2_fINT7-INT8-INT9-INT10-INT11-INT12.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_ccrcc24/uni_v2_s3/w3_full__CCRCC_p1_uni_v2_fINT13-INT14-INT15-INT16-INT17-INT18.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_ccrcc24/uni_v2_s4/w3_full__CCRCC_p1_uni_v2_fINT19-INT20-INT21-INT22-INT23-INT24.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_indiana/hoptimus0_a1/w3_full__INDIANA_KIDNEY_p1_hoptimus0_fkidVis_atlas_21-015-kidVis_atlas_21-019-kidVis_atlas_27-10066-kidVis_atlas_28-12265-kidVis_atlas_29-10012-kidVis_atlas_29-10013-kidVis_atlas_29-10280.csv.gz",
+   "rows": 55566,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_indiana/hoptimus0_a2/w3_full__INDIANA_KIDNEY_p1_hoptimus0_fkidVis_atlas_29-10282-kidVis_atlas_29-10404-kidVis_atlas_30-10125-kidVis_atlas_30-10631-kidVis_atlas_30-10929-kidVis_atlas_31-10042.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_indiana/hoptimus0_a3/w3_full__INDIANA_KIDNEY_p1_hoptimus0_fkidVis_atlas_31-10221-kidVis_atlas_32-10003-kidVis_atlas_32-10074-kidVis_atlas_33-10331-kidVis_atlas_IU-13437-kidVis_atlas_IU-F52.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_indiana/hoptimus0_a4/w3_full__INDIANA_KIDNEY_p1_hoptimus0_fkidVis_atlas_IU-F59-kidVis_atlas_IU-M32-kidVis_atlas_IU-M61-kidVis_papilla_20-0034-kidVis_papilla_KRP428-kidVis_papilla_M50.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_indiana/resnet50_a1/w3_full__INDIANA_KIDNEY_p1_resnet50_fkidVis_atlas_21-015-kidVis_atlas_21-019-kidVis_atlas_27-10066-kidVis_atlas_28-12265-kidVis_atlas_29-10012-kidVis_atlas_29-10013-kidVis_atlas_29-10280.csv.gz",
+   "rows": 55566,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_indiana/resnet50_a2/w3_full__INDIANA_KIDNEY_p1_resnet50_fkidVis_atlas_29-10282-kidVis_atlas_29-10404-kidVis_atlas_30-10125-kidVis_atlas_30-10631-kidVis_atlas_30-10929-kidVis_atlas_31-10042.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_indiana/resnet50_a3/w3_full__INDIANA_KIDNEY_p1_resnet50_fkidVis_atlas_31-10221-kidVis_atlas_32-10003-kidVis_atlas_32-10074-kidVis_atlas_33-10331-kidVis_atlas_IU-13437-kidVis_atlas_IU-F52.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_indiana/resnet50_a4/w3_full__INDIANA_KIDNEY_p1_resnet50_fkidVis_atlas_IU-F59-kidVis_atlas_IU-M32-kidVis_atlas_IU-M61-kidVis_papilla_20-0034-kidVis_papilla_KRP428-kidVis_papilla_M50.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_indiana/uni_v2_a1/w3_full__INDIANA_KIDNEY_p1_uni_v2_fkidVis_atlas_21-015-kidVis_atlas_21-019-kidVis_atlas_27-10066-kidVis_atlas_28-12265-kidVis_atlas_29-10012-kidVis_atlas_29-10013-kidVis_atlas_29-10280.csv.gz",
+   "rows": 55566,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_indiana/uni_v2_a2/w3_full__INDIANA_KIDNEY_p1_uni_v2_fkidVis_atlas_29-10282-kidVis_atlas_29-10404-kidVis_atlas_30-10125-kidVis_atlas_30-10631-kidVis_atlas_30-10929-kidVis_atlas_31-10042.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_indiana/uni_v2_a3/w3_full__INDIANA_KIDNEY_p1_uni_v2_fkidVis_atlas_31-10221-kidVis_atlas_32-10003-kidVis_atlas_32-10074-kidVis_atlas_33-10331-kidVis_atlas_IU-13437-kidVis_atlas_IU-F52.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_indiana/uni_v2_a4/w3_full__INDIANA_KIDNEY_p1_uni_v2_fkidVis_atlas_IU-F59-kidVis_atlas_IU-M32-kidVis_atlas_IU-M61-kidVis_papilla_20-0034-kidVis_papilla_KRP428-kidVis_papilla_M50.csv.gz",
+   "rows": 47628,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_lung/hopt_A/w3_full__LUNG_XENIUM_p1_hoptimus0_flungXen_THD0008-lungXen_THD0011-lungXen_TILD117-lungXen_TILD175-lungXen_VUHD069-lungXen_VUHD116-lungXen_VUILD102-lungXen_VUILD105.csv.gz",
+   "rows": 63504,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_lung/hopt_B/w3_full__LUNG_XENIUM_p1_hoptimus0_flungXen_VUILD106-lungXen_VUILD107-lungXen_VUILD110-lungXen_VUILD115-lungXen_VUILD78-lungXen_VUILD91-lungXen_VUILD96.csv.gz",
+   "rows": 55566,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_lung/res_A/w3_full__LUNG_XENIUM_p1_resnet50_flungXen_THD0008-lungXen_THD0011-lungXen_TILD117-lungXen_TILD175-lungXen_VUHD069-lungXen_VUHD116-lungXen_VUILD102-lungXen_VUILD105.csv.gz",
+   "rows": 63504,
+   "cpu_model": "AMD EPYC 9654 96-Core Processor",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_lung/res_B/w3_full__LUNG_XENIUM_p1_resnet50_flungXen_VUILD106-lungXen_VUILD107-lungXen_VUILD110-lungXen_VUILD115-lungXen_VUILD78-lungXen_VUILD91-lungXen_VUILD96.csv.gz",
+   "rows": 55566,
+   "cpu_model": "AMD EPYC 9654 96-Core Processor",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_lung/uni_A/w3_full__LUNG_XENIUM_p1_uni_v2_flungXen_THD0008-lungXen_THD0011-lungXen_TILD117-lungXen_TILD175-lungXen_VUHD069-lungXen_VUHD116-lungXen_VUILD102-lungXen_VUILD105.csv.gz",
+   "rows": 63504,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p1_lung/uni_B/w3_full__LUNG_XENIUM_p1_uni_v2_flungXen_VUILD106-lungXen_VUILD107-lungXen_VUILD110-lungXen_VUILD115-lungXen_VUILD78-lungXen_VUILD91-lungXen_VUILD96.csv.gz",
+   "rows": 55566,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/hoptimus0_g1/w3_full__CCRCC_23merged_p2_hoptimus0_fINT1-INT10-INT11.csv.gz",
+   "rows": 78084,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/hoptimus0_g2/w3_full__CCRCC_23merged_p2_hoptimus0_fINT12-INT13-INT14.csv.gz",
+   "rows": 78084,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/hoptimus0_g3/w3_full__CCRCC_23merged_p2_hoptimus0_fINT15-INT16-INT17.csv.gz",
+   "rows": 78084,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/hoptimus0_g4/w3_full__CCRCC_23merged_p2_hoptimus0_fINT18-INT19-INT2.csv.gz",
+   "rows": 78084,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/hoptimus0_g5/w3_full__CCRCC_23merged_p2_hoptimus0_fINT20-INT21-INT22.csv.gz",
+   "rows": 78084,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2643 v3 @ 3.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/hoptimus0_g6/w3_full__CCRCC_23merged_p2_hoptimus0_fINT23-INT3-INT4+INT24.csv.gz",
+   "rows": 78084,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2643 v3 @ 3.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/hoptimus0_g7/w3_full__CCRCC_23merged_p2_hoptimus0_fINT5-INT6-INT7.csv.gz",
+   "rows": 78084,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2643 v3 @ 3.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/hoptimus0_g8/w3_full__CCRCC_23merged_p2_hoptimus0_fINT8-INT9.csv.gz",
+   "rows": 52056,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2643 v3 @ 3.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/resnet50_g1_K10-12-14/w3_full__CCRCC_23merged_p2_resnet50_fINT1-INT10-INT11.csv.gz",
+   "rows": 39042,
+   "cpu_model": "AMD EPYC 7713 64-Core Processor",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/resnet50_g1_K16-18-20/w3_full__CCRCC_23merged_p2_resnet50_fINT1-INT10-INT11.csv.gz",
+   "rows": 39042,
+   "cpu_model": "AMD EPYC 9654 96-Core Processor",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/resnet50_g2_K10-12-14/w3_full__CCRCC_23merged_p2_resnet50_fINT12-INT13-INT14.csv.gz",
+   "rows": 39042,
+   "cpu_model": "AMD EPYC 7713 64-Core Processor",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/resnet50_g2_K16-18-20/w3_full__CCRCC_23merged_p2_resnet50_fINT12-INT13-INT14.csv.gz",
+   "rows": 39042,
+   "cpu_model": "AMD EPYC 9654 96-Core Processor",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/resnet50_g3_K10-12-14/w3_full__CCRCC_23merged_p2_resnet50_fINT15-INT16-INT17.csv.gz",
+   "rows": 39042,
+   "cpu_model": "AMD EPYC 7713 64-Core Processor",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/resnet50_g3_K16-18-20/w3_full__CCRCC_23merged_p2_resnet50_fINT15-INT16-INT17.csv.gz",
+   "rows": 39042,
+   "cpu_model": "AMD EPYC 9654 96-Core Processor",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/resnet50_g4_K10-12-14/w3_full__CCRCC_23merged_p2_resnet50_fINT18-INT19-INT2.csv.gz",
+   "rows": 39042,
+   "cpu_model": "AMD EPYC 7713 64-Core Processor",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/resnet50_g4_K16-18-20/w3_full__CCRCC_23merged_p2_resnet50_fINT18-INT19-INT2.csv.gz",
+   "rows": 39042,
+   "cpu_model": "AMD EPYC 9654 96-Core Processor",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/resnet50_g5/w3_full__CCRCC_23merged_p2_resnet50_fINT20-INT21-INT22.csv.gz",
+   "rows": 78084,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/resnet50_g6/w3_full__CCRCC_23merged_p2_resnet50_fINT23-INT3-INT4+INT24.csv.gz",
+   "rows": 78084,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/resnet50_g7/w3_full__CCRCC_23merged_p2_resnet50_fINT5-INT6-INT7.csv.gz",
+   "rows": 78084,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/resnet50_g8/w3_full__CCRCC_23merged_p2_resnet50_fINT8-INT9.csv.gz",
+   "rows": 52056,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/uni_v2_g1/w3_full__CCRCC_23merged_p2_uni_v2_fINT1-INT10-INT11.csv.gz",
+   "rows": 78084,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/uni_v2_g2/w3_full__CCRCC_23merged_p2_uni_v2_fINT12-INT13-INT14.csv.gz",
+   "rows": 78084,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/uni_v2_g3/w3_full__CCRCC_23merged_p2_uni_v2_fINT15-INT16-INT17.csv.gz",
+   "rows": 78084,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/uni_v2_g4/w3_full__CCRCC_23merged_p2_uni_v2_fINT18-INT19-INT2.csv.gz",
+   "rows": 78084,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/uni_v2_g5/w3_full__CCRCC_23merged_p2_uni_v2_fINT20-INT21-INT22.csv.gz",
+   "rows": 78084,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/uni_v2_g6/w3_full__CCRCC_23merged_p2_uni_v2_fINT23-INT3-INT4+INT24.csv.gz",
+   "rows": 78084,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/uni_v2_g7/w3_full__CCRCC_23merged_p2_uni_v2_fINT5-INT6-INT7.csv.gz",
+   "rows": 78084,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc23m/uni_v2_g8/w3_full__CCRCC_23merged_p2_uni_v2_fINT8-INT9.csv.gz",
+   "rows": 52056,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc24/hoptimus0_g1/w3_full__CCRCC_p2_hoptimus0_fINT1-INT10-INT11-INT12-INT13-INT14.csv.gz",
+   "rows": 156168,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc24/hoptimus0_g2/w3_full__CCRCC_p2_hoptimus0_fINT15-INT16-INT17-INT18-INT19-INT2.csv.gz",
+   "rows": 156168,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc24/hoptimus0_g3/w3_full__CCRCC_p2_hoptimus0_fINT20-INT21-INT22-INT23-INT24-INT3.csv.gz",
+   "rows": 156168,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc24/hoptimus0_g4/w3_full__CCRCC_p2_hoptimus0_fINT4-INT5-INT6-INT7-INT8-INT9.csv.gz",
+   "rows": 156168,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc24/resnet50_g1/w3_full__CCRCC_p2_resnet50_fINT1-INT10-INT11-INT12-INT13-INT14.csv.gz",
+   "rows": 156168,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2643 v3 @ 3.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc24/resnet50_g2/w3_full__CCRCC_p2_resnet50_fINT15-INT16-INT17-INT18-INT19-INT2.csv.gz",
+   "rows": 156168,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2643 v3 @ 3.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc24/resnet50_g3/w3_full__CCRCC_p2_resnet50_fINT20-INT21-INT22-INT23-INT24-INT3.csv.gz",
+   "rows": 156168,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2643 v3 @ 3.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc24/resnet50_g4/w3_full__CCRCC_p2_resnet50_fINT4-INT5-INT6-INT7-INT8-INT9.csv.gz",
+   "rows": 156168,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2643 v3 @ 3.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc24/uni_v2_g1/w3_full__CCRCC_p2_uni_v2_fINT1-INT10-INT11-INT12-INT13-INT14.csv.gz",
+   "rows": 156168,
+   "cpu_model": "AMD EPYC 9654 96-Core Processor",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc24/uni_v2_g2/w3_full__CCRCC_p2_uni_v2_fINT15-INT16-INT17-INT18-INT19-INT2.csv.gz",
+   "rows": 156168,
+   "cpu_model": "AMD EPYC 9654 96-Core Processor",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc24/uni_v2_g3/w3_full__CCRCC_p2_uni_v2_fINT20-INT21-INT22-INT23-INT24-INT3.csv.gz",
+   "rows": 156168,
+   "cpu_model": "AMD EPYC 9654 96-Core Processor",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_ccrcc24/uni_v2_g4/w3_full__CCRCC_p2_uni_v2_fINT4-INT5-INT6-INT7-INT8-INT9.csv.gz",
+   "rows": 156168,
+   "cpu_model": "AMD EPYC 9654 96-Core Processor",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_indiana/hoptimus0_c1/w3_full__INDIANA_KIDNEY_p2_hoptimus0_fkidVis_atlas_21-015-kidVis_atlas_21-019-kidVis_atlas_27-10066-kidVis_atlas_28-12265-kidVis_atlas_29-10012-kidVis_atlas_29-10013-kidVis_atlas_29-10280-kidVis_atlas_29-10282.csv.gz",
+   "rows": 138816,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_indiana/hoptimus0_c2/w3_full__INDIANA_KIDNEY_p2_hoptimus0_fkidVis_atlas_29-10404-kidVis_atlas_30-10125-kidVis_atlas_30-10631-kidVis_atlas_30-10929-kidVis_atlas_31-10042-kidVis_atlas_31-10221-kidVis_atlas_32-10003-kidVis_atlas_32-10074.csv.gz",
+   "rows": 138816,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_indiana/hoptimus0_c3/w3_full__INDIANA_KIDNEY_p2_hoptimus0_fkidVis_atlas_33-10331-kidVis_atlas_IU-13437-kidVis_atlas_IU-F52-kidVis_atlas_IU-F59-kidVis_atlas_IU-M32-kidVis_atlas_IU-M61-kidVis_papilla_20-0034-kidVis_papilla_KRP428-kidVis_papilla_M50.csv.gz",
+   "rows": 156168,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_indiana/resnet50_c1/w3_full__INDIANA_KIDNEY_p2_resnet50_fkidVis_atlas_21-015-kidVis_atlas_21-019-kidVis_atlas_27-10066-kidVis_atlas_28-12265-kidVis_atlas_29-10012-kidVis_atlas_29-10013-kidVis_atlas_29-10280-kidVis_atlas_29-10282.csv.gz",
+   "rows": 138816,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_indiana/resnet50_c2/w3_full__INDIANA_KIDNEY_p2_resnet50_fkidVis_atlas_29-10404-kidVis_atlas_30-10125-kidVis_atlas_30-10631-kidVis_atlas_30-10929-kidVis_atlas_31-10042-kidVis_atlas_31-10221-kidVis_atlas_32-10003-kidVis_atlas_32-10074.csv.gz",
+   "rows": 138816,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_indiana/resnet50_c3/w3_full__INDIANA_KIDNEY_p2_resnet50_fkidVis_atlas_33-10331-kidVis_atlas_IU-13437-kidVis_atlas_IU-F52-kidVis_atlas_IU-F59-kidVis_atlas_IU-M32-kidVis_atlas_IU-M61-kidVis_papilla_20-0034-kidVis_papilla_KRP428-kidVis_papilla_M50.csv.gz",
+   "rows": 156168,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_indiana/uni_v2_c1/w3_full__INDIANA_KIDNEY_p2_uni_v2_fkidVis_atlas_21-015-kidVis_atlas_21-019-kidVis_atlas_27-10066-kidVis_atlas_28-12265-kidVis_atlas_29-10012-kidVis_atlas_29-10013-kidVis_atlas_29-10280-kidVis_atlas_29-10282.csv.gz",
+   "rows": 138816,
+   "cpu_model": "Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_indiana/uni_v2_c2/w3_full__INDIANA_KIDNEY_p2_uni_v2_fkidVis_atlas_29-10404-kidVis_atlas_30-10125-kidVis_atlas_30-10631-kidVis_atlas_30-10929-kidVis_atlas_31-10042-kidVis_atlas_31-10221-kidVis_atlas_32-10003-kidVis_atlas_32-10074.csv.gz",
+   "rows": 138816,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p2_indiana/uni_v2_c3/w3_full__INDIANA_KIDNEY_p2_uni_v2_fkidVis_atlas_33-10331-kidVis_atlas_IU-13437-kidVis_atlas_IU-F52-kidVis_atlas_IU-F59-kidVis_atlas_IU-M32-kidVis_atlas_IU-M61-kidVis_papilla_20-0034-kidVis_papilla_KRP428-kidVis_papilla_M50.csv.gz",
+   "rows": 156168,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/ccrcc24_hoptimus0_g1a/w3_full__CCRCC_p3_hoptimus0_fINT1-INT10-INT11-INT12.csv.gz",
+   "rows": 104112,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/ccrcc24_hoptimus0_g1b/w3_full__CCRCC_p3_hoptimus0_fINT13-INT14-INT15-INT16.csv.gz",
+   "rows": 104112,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/ccrcc24_hoptimus0_g2a/w3_full__CCRCC_p3_hoptimus0_fINT17-INT18-INT19-INT2.csv.gz",
+   "rows": 104112,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/ccrcc24_hoptimus0_g2b/w3_full__CCRCC_p3_hoptimus0_fINT20-INT21-INT22-INT23.csv.gz",
+   "rows": 104112,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/ccrcc24_hoptimus0_g3a/w3_full__CCRCC_p3_hoptimus0_fINT24-INT3-INT4-INT5.csv.gz",
+   "rows": 104112,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/ccrcc24_hoptimus0_g3b/w3_full__CCRCC_p3_hoptimus0_fINT6-INT7-INT8-INT9.csv.gz",
+   "rows": 104112,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/ccrcc24_resnet50_g1a/w3_full__CCRCC_p3_resnet50_fINT1-INT10-INT11-INT12.csv.gz",
+   "rows": 104112,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/ccrcc24_resnet50_g1b/w3_full__CCRCC_p3_resnet50_fINT13-INT14-INT15-INT16.csv.gz",
+   "rows": 104112,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/ccrcc24_resnet50_g2a/w3_full__CCRCC_p3_resnet50_fINT17-INT18-INT19-INT2.csv.gz",
+   "rows": 104112,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/ccrcc24_resnet50_g2b/w3_full__CCRCC_p3_resnet50_fINT20-INT21-INT22-INT23.csv.gz",
+   "rows": 104112,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/ccrcc24_resnet50_g3/w3_full__CCRCC_p3_resnet50_fINT24-INT3-INT4-INT5-INT6-INT7-INT8-INT9.csv.gz",
+   "rows": 208224,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/ccrcc24_uni_v2_g1a/w3_full__CCRCC_p3_uni_v2_fINT1-INT10-INT11-INT12.csv.gz",
+   "rows": 104112,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/ccrcc24_uni_v2_g1b/w3_full__CCRCC_p3_uni_v2_fINT13-INT14-INT15-INT16.csv.gz",
+   "rows": 104112,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/ccrcc24_uni_v2_g2a/w3_full__CCRCC_p3_uni_v2_fINT17-INT18-INT19-INT2.csv.gz",
+   "rows": 104112,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/ccrcc24_uni_v2_g2b/w3_full__CCRCC_p3_uni_v2_fINT20-INT21-INT22-INT23.csv.gz",
+   "rows": 104112,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/ccrcc24_uni_v2_g3a/w3_full__CCRCC_p3_uni_v2_fINT24-INT3-INT4-INT5.csv.gz",
+   "rows": 104112,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/ccrcc24_uni_v2_g3b/w3_full__CCRCC_p3_uni_v2_fINT6-INT7-INT8-INT9.csv.gz",
+   "rows": 104112,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/indiana_hoptimus0_g1/w3_full__INDIANA_KIDNEY_p3_hoptimus0_fkidVis_atlas_21-015-kidVis_atlas_21-019-kidVis_atlas_27-10066-kidVis_atlas_28-12265-kidVis_atlas_29-10012-kidVis_atlas_29-10013-kidVis_atlas_29-10280-kidVis_atlas_29-10282-kidVis_atlas_29-10404.csv.gz",
+   "rows": 156168,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/indiana_hoptimus0_g2/w3_full__INDIANA_KIDNEY_p3_hoptimus0_fkidVis_atlas_30-10125-kidVis_atlas_30-10631-kidVis_atlas_30-10929-kidVis_atlas_31-10042-kidVis_atlas_31-10221-kidVis_atlas_32-10003-kidVis_atlas_32-10074-kidVis_atlas_33-10331.csv.gz",
+   "rows": 138816,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/indiana_hoptimus0_g3/w3_full__INDIANA_KIDNEY_p3_hoptimus0_fkidVis_atlas_IU-13437-kidVis_atlas_IU-F52-kidVis_atlas_IU-F59-kidVis_atlas_IU-M32-kidVis_atlas_IU-M61-kidVis_papilla_20-0034-kidVis_papilla_KRP428-kidVis_papilla_M50.csv.gz",
+   "rows": 138816,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/indiana_resnet50_g1/w3_full__INDIANA_KIDNEY_p3_resnet50_fkidVis_atlas_21-015-kidVis_atlas_21-019-kidVis_atlas_27-10066-kidVis_atlas_28-12265-kidVis_atlas_29-10012-kidVis_atlas_29-10013-kidVis_atlas_29-10280-kidVis_atlas_29-10282-kidVis_atlas_29-10404.csv.gz",
+   "rows": 156168,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/indiana_resnet50_g2/w3_full__INDIANA_KIDNEY_p3_resnet50_fkidVis_atlas_30-10125-kidVis_atlas_30-10631-kidVis_atlas_30-10929-kidVis_atlas_31-10042-kidVis_atlas_31-10221-kidVis_atlas_32-10003-kidVis_atlas_32-10074-kidVis_atlas_33-10331.csv.gz",
+   "rows": 138816,
+   "cpu_model": "AMD EPYC 9654 96-Core Processor",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/indiana_resnet50_g3/w3_full__INDIANA_KIDNEY_p3_resnet50_fkidVis_atlas_IU-13437-kidVis_atlas_IU-F52-kidVis_atlas_IU-F59-kidVis_atlas_IU-M32-kidVis_atlas_IU-M61-kidVis_papilla_20-0034-kidVis_papilla_KRP428-kidVis_papilla_M50.csv.gz",
+   "rows": 138816,
+   "cpu_model": "AMD EPYC 9654 96-Core Processor",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/indiana_uni_v2_g1/w3_full__INDIANA_KIDNEY_p3_uni_v2_fkidVis_atlas_21-015-kidVis_atlas_21-019-kidVis_atlas_27-10066-kidVis_atlas_28-12265-kidVis_atlas_29-10012-kidVis_atlas_29-10013-kidVis_atlas_29-10280-kidVis_atlas_29-10282-kidVis_atlas_29-10404.csv.gz",
+   "rows": 156168,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/indiana_uni_v2_g2/w3_full__INDIANA_KIDNEY_p3_uni_v2_fkidVis_atlas_30-10125-kidVis_atlas_30-10631-kidVis_atlas_30-10929-kidVis_atlas_31-10042-kidVis_atlas_31-10221-kidVis_atlas_32-10003-kidVis_atlas_32-10074-kidVis_atlas_33-10331.csv.gz",
+   "rows": 138816,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  },
+  {
+   "file": "p3_fixedhead/indiana_uni_v2_g3/w3_full__INDIANA_KIDNEY_p3_uni_v2_fkidVis_atlas_IU-13437-kidVis_atlas_IU-F52-kidVis_atlas_IU-F59-kidVis_atlas_IU-M32-kidVis_atlas_IU-M61-kidVis_papilla_20-0034-kidVis_papilla_KRP428-kidVis_papilla_M50.csv.gz",
+   "rows": 138816,
+   "cpu_model": "Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz",
+   "snapshot_commit": "2aae741fb9613bd6e09ebb515de6a4cb8d357b27"
+  }
+ ]
+}

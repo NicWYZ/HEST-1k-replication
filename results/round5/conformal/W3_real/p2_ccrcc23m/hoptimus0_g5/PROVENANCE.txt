@@ -1,0 +1,29 @@
+==============================================================================
+Round 5 conformal track, stage W3_p2
+job_name_prefix : r5conf_W3_p2  (the submission route replaces --job-name)
+slurm_job_id    : 4322337
+slurm_partition : spill
+slurm_account   : rc_tengfei_pi
+node            : c140701.ll.unc.edu
+cpu_vendor      : GenuineIntel
+date            : 2026-10-08T19:43:35-04:00
+code_clone      : /work/users/w/e/weiyang/hest_code/round5-conformal_snapshots/2aae741fb9613bd6e09ebb515de6a4cb8d357b27
+code_clone_head : unreadable (FileNotFoundError)
+data_root       : /work/users/w/e/weiyang/hest_replication
+command_line    : /work/users/w/e/weiyang/hest_code/round5-conformal_snapshots/2aae741fb9613bd6e09ebb515de6a4cb8d357b27/code/scripts/round5_conf_w3.py --task CCRCC:23_merged --part 2 --K 10 12 14 16 18 20 --encoders hoptimus0 --folds INT20,INT21,INT22 --out /work/users/w/e/weiyang/hest_replication/results/round5/conformal/W3_real/p2_ccrcc23m/hoptimus0_g5
+pythonhashseed  : 0
+python          : 3.11.16
+numpy           : 2.4.6
+pandas          : 2.3.3
+config_hash     : sha256/16 4035191a6e1b4bdb
+config          : {"K": [10, 12, 14, 16, 18, 20], "alphas": [0.1, 0.2], "cal_draws": 3, "encoders": "hoptimus0", "folds": "INT20,INT21,INT22", "label_draws": 20, "methods": ["pooled", "hcp", "one_per", "ghcp", "ghcp_noad", "within", "within_plain", "recentred", "within_full"], "o_grid": [0, 5, 10, 15, 17, 25, 50], "part": 2, "task": "CCRCC:23_merged"}
+script_md5      : 0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-conformal_snapshots/2aae741fb9613bd6e09ebb515de6a4cb8d357b27/code/scripts/round3_a0_harness.py
+script_md5      : 2d8418677cf8290eec89a14c315b92cd  /work/users/w/e/weiyang/hest_code/round5-conformal_snapshots/2aae741fb9613bd6e09ebb515de6a4cb8d357b27/code/scripts/round4_conf_c3.py
+script_md5      : 1936e4350d2dfc5816b0fd45e343e810  /work/users/w/e/weiyang/hest_code/round5-conformal_snapshots/2aae741fb9613bd6e09ebb515de6a4cb8d357b27/code/scripts/round4_conf_io.py
+script_md5      : 76fda34ee622e299bbaa806e5c8da98a  /work/users/w/e/weiyang/hest_code/round5-conformal_snapshots/2aae741fb9613bd6e09ebb515de6a4cb8d357b27/code/scripts/round4_conf_sim.py
+script_md5      : f18747b8a837e4e3b504edaf10999351  /work/users/w/e/weiyang/hest_code/round5-conformal_snapshots/2aae741fb9613bd6e09ebb515de6a4cb8d357b27/code/scripts/round5_conf_io.py
+script_md5      : 737a452b090da9609c798cc482f6896d  /work/users/w/e/weiyang/hest_code/round5-conformal_snapshots/2aae741fb9613bd6e09ebb515de6a4cb8d357b27/code/scripts/round5_conf_w3.py
+snapshot_commit : 2aae741fb9613bd6e09ebb515de6a4cb8d357b27
+cpu_model       : Intel(R) Xeon(R) CPU E5-2643 v3 @ 3.40GHz
+rows            : 78084
+wall_seconds    : 7342

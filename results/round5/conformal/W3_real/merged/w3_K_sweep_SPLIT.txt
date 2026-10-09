@@ -1,0 +1,9 @@
+w3_K_sweep.csv.gz (part 2 rows, 4,971,348 rows, 123,730,538 bytes, md5 40fa22a6b8dae5196b9274b808650a7c)
+is over GitHub's 100 MB limit even compressed. The whole file stays on Longleaf at
+/work/users/w/e/weiyang/hest_replication/results/round5/conformal/W3_real/merged/w3_K_sweep.csv.gz.
+It is committed here split by task, same 16 columns, rows in the same order within each task:
+  w3_K_sweep__CCRCC.csv.gz            1,874,016 rows  md5 9d2efb2f300ff03df0b3b3ca423241ed
+  w3_K_sweep__CCRCC_23merged.csv.gz   1,795,932 rows  md5 b1abb2fd2a514a19bf939cb6d943614b
+  w3_K_sweep__INDIANA_KIDNEY.csv.gz   1,301,400 rows  md5 c2946f72de52c8fa86bcc1c28c188a7b
+Split by Slurm job on Longleaf (pandas groupby on task, gzip mtime 0); the three pieces sum to
+4,971,348 rows. Concatenating them in this order gives the whole table's rows.

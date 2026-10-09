@@ -1,0 +1,22 @@
+source,method,calibrates_on,fits_score_on,code
+simulation,hcp,K,0 (scores from the generator),"code/scripts/round4_conf_sim.py hcp_q, ghcp_q, restricted_pool (eta = 0); round5_conf_w1_sim.py"
+simulation,one_per,K,0 (scores from the generator),"code/scripts/round4_conf_sim.py hcp_q, ghcp_q, restricted_pool (eta = 0); round5_conf_w1_sim.py"
+simulation,ghcp,|S| - 1 (K - 1 when every N_k > o),0 (scores from the generator),"code/scripts/round4_conf_sim.py hcp_q, ghcp_q, restricted_pool (eta = 0); round5_conf_w1_sim.py"
+simulation,ghcp_noad,|S| - 1,0 (scores from the generator),"code/scripts/round4_conf_sim.py hcp_q, ghcp_q, restricted_pool (eta = 0); round5_conf_w1_sim.py"
+simulation,within,0 (o - floor(o/2) target units),0 (scores from the generator),"code/scripts/round4_conf_sim.py hcp_q, ghcp_q, restricted_pool (eta = 0); round5_conf_w1_sim.py"
+simulation,within_plain,0 (o target units),0 (scores from the generator),"code/scripts/round4_conf_sim.py hcp_q, ghcp_q, restricted_pool (eta = 0); round5_conf_w1_sim.py"
+simulation,within_full,0 (o target units),0 (scores from the generator),"code/scripts/round4_conf_sim.py hcp_q, ghcp_q, restricted_pool (eta = 0); round5_conf_w1_sim.py"
+ghcp_designs,released_hcp,ceil(n/2) groups (restricted pool),n - ceil(n/2) groups,"methods/donor_hcp.py get_hcp_train_cal_split (o = 0, alpha_selection 0.5)"
+ghcp_designs,hcp,ceil(n/2) groups (released_hcp's scores),n - ceil(n/2) groups,round5_conf_w2_wrapper.py hcp
+ghcp_designs,released_ghcp,ceil(n/2) groups (S_tilde of ceil(n/2) + 1 minus the donor),n - ceil(n/2) - 1 groups,"methods/donor_hcp.py get_donor_style_train_cal_split, _select_s_tilde_with_tie_randomization"
+ghcp_designs,ghcp,ceil(n/2) - 1 groups (paper pool of ceil(n/2) minus the donor),n - ceil(n/2) groups,"round5_conf_w2_wrapper.py ghcp; round4_conf_sim.restricted_pool (eta 0.5, rule paper)"
+ghcp_designs,released_stdcp,0 groups (o - o//2 target units),"0 groups (o//2 target units, local forest)",simulation launcher run_one_experiment; code/marginal/run_acs_experiments.py _compute_std_cp_interval
+ghcp_designs,within_plain,0 groups (o target units),n - ceil(n/2) groups,round5_conf_w2_wrapper.py within_plain
+ghcp_designs,within_full,0 groups (o target units),n - ceil(n/2) groups,round5_conf_w2_wrapper.py within_full
+real_data,hcp,K donors,n_T_donors training donors,"code/scripts/round4_conf_c3.py (Fit, ghcp_cols), round5_conf_w3.py"
+real_data,one_per,K donors,n_T_donors training donors,"code/scripts/round4_conf_c3.py (Fit, ghcp_cols), round5_conf_w3.py"
+real_data,ghcp,K - 1 donors,n_T_donors training donors,"code/scripts/round4_conf_c3.py (Fit, ghcp_cols), round5_conf_w3.py"
+real_data,ghcp_noad,K - 1 donors,n_T_donors training donors,"code/scripts/round4_conf_c3.py (Fit, ghcp_cols), round5_conf_w3.py"
+real_data,within,0 (o - floor(o/2) target spots),n_T_donors training donors,"code/scripts/round4_conf_c3.py (Fit, ghcp_cols), round5_conf_w3.py"
+real_data,within_plain,0 (o target spots),n_T_donors training donors,"code/scripts/round4_conf_c3.py (Fit, ghcp_cols), round5_conf_w3.py"
+real_data,within_full,0 (o target spots),n_T_donors training donors,"code/scripts/round4_conf_c3.py (Fit, ghcp_cols), round5_conf_w3.py"

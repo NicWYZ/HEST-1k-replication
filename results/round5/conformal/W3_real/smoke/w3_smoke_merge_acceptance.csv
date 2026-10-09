@@ -1,0 +1,15 @@
+check,value,tol,passed,note
+merge_duplicated_keys,0.0,0.0,True,
+merge_part1_tasks,7938.0,,,"{""CCRCC"": 7938}"
+merge_part2_tasks,4338.0,,,"{""CCRCC"": 4338}"
+merge_part3_tasks,13014.0,,,"{""CCRCC"": 13014}"
+1_reproduce_c3_o_sweep_part1,0.0,0.0,False,"3018 matched of 217296, 214278 missing; max cov diff 0.0, max width diff 0"
+1_reproduce_c3_o_sweep_part2,0.0,0.0,False,"0 matched of 174096, 174096 missing; max cov diff nan, max width diff nan"
+1_reproduce_c3_K_sweep_part1,0.0,0.0,False,"378 matched of 27216, 26838 missing; max cov diff 0.0, max width diff 5.03e-11"
+1_reproduce_c3_K_sweep_part2,0.0,0.0,False,"378 matched of 163296, 162918 missing; max cov diff 0.0, max width diff 4.95e-11"
+1_reproduce_ghcp_o25_part1,0.0,0.0,False,"360 matched of 25920, 25560 missing; max cov diff 0.0, max width diff 0"
+1_reproduce_ghcp_o25_part2,0.0,0.0,False,"360 matched of 155520, 155160 missing; max cov diff 0.0, max width diff 0"
+p3_K20_equals_p2_K20,,0.0,,not both present
+2_within_plain_cov_within_0.005,24.0,0.0,False,63 cells; max |diff| 0.0191
+2_within_cov_within_0.005,36.0,0.0,False,46 cells; max |diff| 0.0120
+3_within_full_cov_within_0.005,19.0,0.0,False,63 cells; max |diff| 0.0170

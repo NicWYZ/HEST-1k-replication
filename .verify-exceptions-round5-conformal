@@ -1,0 +1,45 @@
+# Round 5 prediction-set track: values that are legitimately not present in any cited file, each with a reason.
+# Format: value<TAB>reason. Used only for this track's documents (W2 decisions memo, section 4).
+
+# docs/round5_conf_final_report.md
+17.7	cost: peak batch memory in GB, sacct MaxRSS in KB (results/round5/conformal/W3_real/w3_jobs.csv) divided by 1e6
+17.4	cost: as 17.7
+8.6	cost: as 17.7
+23.5	cost: as 17.7
+32.1	cost: as 17.7
+24.9	cost: as 17.7
+13.9	cost: as 17.7
+36.6	cost: as 17.7
+9.6	cost: peak memory of merge job 4351817 in GB, sacct MaxRSS 9570980K in w3_jobs.csv
+10,218,582	derived: sum of the rows column of W3_real/merged/w3_merge_inputs.json (117 files); equals the three part counts in w3_acceptance.csv
+2,646	derived: rows per part-1 fit, part-1 rows of a fit as reported by each unit and implied by w3_acceptance.csv counts over fits
+1,693,662	derived: sum of rows_matched over the six rows of W3_real/merged/w3_reproduction.csv
+2.77	derived: -0.0277 (W3.4 b, max relative increase of GHCP width between successive K on CCRCC, w3_report_numbers.csv) as a percentage fall
+19,940	derived: row count of W5_map/w5_map.csv
+19,240	derived: rows of W5_map/w5_map.csv with source simulation (one per row of W1_sim/merged/w1_narrowest_valid.csv)
+
+# Carried unchanged from .verify-exceptions (W2 gate report, plan and theory document)
+336	count: rows of results/round5/conformal/W2_ghcp_settings/w2_coverage_z.csv (168 cells for each of within_plain and within_full), docs/round5_conf_W2_report.md section 1
+4201092	Slurm job id (W0 c3 diagnostic), docs/round5_conf_W2_report.md section 2
+4203412	Slurm job id (W2 part 1 cancelled launcher job), docs/round5_conf_W2_report.md section 7
+4244454	Slurm job id (another user's job; refused scancel), docs/round5_conf_W2_report.md section 7
+7702	CPU model name (AMD EPYC 7702), not a measured value, docs/round5_conf_W2_report.md
+9654	CPU model name (AMD EPYC 9654), not a measured value, docs/round5_conf_W2_report.md
+108	count: row files listed in results/round5/conformal/W2_ghcp_settings/merged/w2_merge_inputs.json (88 simulation, 20 census)
+213	count: rows with whose()=sibling in results/round5/conformal/W0_setup/w0_whose_round4.csv
+7.1e-15	largest width difference between the local and the Longleaf W1 merges (results/round5/conformal/W1_sim/merged vs W1_sim root tables), computed by the lead at the time; and the W2 part 1 wrapper check (7.105427357601002e-15 in part1/w2_accept1_raw_columns_poisson.csv)
+1.1102230246251565e-16	largest coverage difference in the W0 sim anchor, a pandas CSV float-parsing artifact (docs/round5_conf_W2_report.md section 3, W0 item 1)
+101	sum: GHCP-narrowest cells at share 0.3 (90) and 0.5 (11) in results/round5/conformal/W1_sim/w1_whole_grid_counts.csv
+107	source line reference: released code/marginal/run_acs_experiments.py line 107 (docs/round5_conf_plan.md section 4 item 7)
+1585	source line reference: released code/marginal/run_acs_experiments.py line 1585 (docs/round5_conf_plan.md section 4 item 7)
+154	source line reference: released methods/donor_hcp.py line 154 (docs/round5_conf_plan.md section 4 item 8)
+172	source line reference: released methods/donor_hcp.py line 172 (docs/round5_conf_plan.md section 4 item 8)
+766	fragment of md5 766b6699bd939e767be124c64cc03174 (old W2 wrapper), docs/round5_conf_plan.md section 4 item 11
+2.9	proposition number in Vovk, Gammerman and Shafer (2022 edition) as cited by arXiv:2608.27310, docs/round5_conf_theory.md reading log
+241	line number in the text extracted from arXiv:2608.27310, docs/round5_conf_theory.md section A.2
+815	line number in the text extracted from arXiv:2608.27310, docs/round5_conf_theory.md section A.2
+115	source line reference: released code/marginal/run_acs_experiments.py lines 107 to 115 (docs/round5_conf_plan.md section 4 item 7); at W2 this matched an unrelated round-2 entry in .verify-exceptions
+1584	source line reference: released code/marginal/run_acs_experiments.py line 1584 (docs/round5_conf_plan.md section 4 item 7)
+173	count: numeric-claim sweep result for this report (section 10)
+100	count: sweep result for docs/round5_conf_plan.md (section 10)
+23	count: sweep result for docs/round5_conf_theory.md (section 10)

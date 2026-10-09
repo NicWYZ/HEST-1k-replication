@@ -1,0 +1,9 @@
+W5 map (local run, extension 3 of the plan)
+date        : 2026-10-09T01:25:51-04:00
+host        : local (darwin, arm64)
+command     : python code/scripts/round5_conf_w5_map.py   (run from the repository root)
+script_md5  : d698a0c843249bdad3fb0b034ca9ea14  code/scripts/round5_conf_w5_map.py
+input_md5   : 464e07e03f54e73aecee0b94aa022df8  results/round5/conformal/W1_sim/merged/w1_narrowest_valid.csv
+input_md5   : 649457dbc08eaf5e760d98fdeeb99a92  results/round5/conformal/W2_ghcp_settings/w2_narrowest_valid.csv
+input_md5   : 4ee7bbf2801f54c0ac1fbb7c309eeba9  results/round5/conformal/W3_real/merged/w3_map_by_task.csv
+outputs     : 21edf715f2eb22c7cefd5e9cac9c758b w5_map.csv;612d86ef0ed2b46dc53ba546d71bfba8 w5_method_groups.csv;67ceae425649910ed9fc85124622d50c fig_w5_map_ghcp_designs.png;086fe8d1eebb56192e1ba39f4d739e82 fig_w5_map_real_data.png;12cc8115f79d042176e136bb9a4f495c fig_w5_map_simulation.png

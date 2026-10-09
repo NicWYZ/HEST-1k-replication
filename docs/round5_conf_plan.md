@@ -170,10 +170,71 @@ These are listed under W0 item 1 and repeated in the W2 report. The instruction 
 Instructions, decisions and extensions given by Nicolas in chat on 7 October 2026. Items 5 and 6 are the local compute extensions.
 
 1. **One pull request per gate.** There is exactly one pull request at W2 and one at W5. Each is opened only after its gate report is written, and Nicolas merges it after he and the oversight chat have reviewed the report. The session never merges. A rejected gate is fixed with new commits on the same open pull request.
-2. **No push to GitHub between gates.** The branch and its tag are pushed only at a gate, together with that gate's pull request. Between gates, commits reach the Longleaf clone `/work/users/w/e/weiyang/hest_code/round5-conformal/` as a git bundle carried in a job's inputs, and the clone is fast-forwarded from the bundle. So commit hashes are the same as on the branch, and the clone is still updated only by fast-forward. This replaces the instruction's "fast-forward from your pushed branch" for the time between gates. The clone's `origin` stays GitHub, so after a gate push it can be fast-forwarded from there.
+2. **No push to GitHub between gates.** The branch and its tag are pushed only at a gate, together with that gate's pull request. Between gates, commits reach the Longleaf clone `/work/users/w/e/weiyang/hest_code/round5-conformal/` as a git bundle carried in a job's inputs, and the clone is fast-forwarded from the bundle. So commit hashes are the same as on the branch, and the clone is still updated only by fast-forward. This replaces the instruction's "fast-forward from your pushed branch" for the time between gates. From interval 2 the clone never fetches from GitHub. It is updated only from bundles, as section 6 item 4.2 sets out (W2 decision memo section 4 item 2).
 3. **Parallel work always goes to sub-agents.** Every task that can run in parallel is given to its own sub-agent, as section 4 of the instruction says for each stage's units. This includes the three W0 anchors once the Longleaf clone exists. Each brief carries the sub-agent's own frame id and the stamp sentence of section 4. Sub-agents run no git command, and the lead checks every returned stamp and commits.
 4. **The W0 c3 anchor is accepted as passing (7 October 2026).** At the literal tolerances the anchor did not pass (`results/round5/conformal/W0_anchors/c3_uni_v2/w0_c3_anchor.csv`), and a diagnostic, approved by Nicolas, broke the differences down by the vendor of the round-4 reference (`results/round5/conformal/W0_anchors/c3_uni_v2_diag/w0_c3_diag_by_vendor.csv`). The six folds whose reference ran on Intel, the rerun's vendor, agree to 8.881784197001252e-16. All 223 width_mean rows above 3e-10 are in the 18 AMD-reference folds, with a maximum of 1.91047000441813e-08. Coverage is identical on every row. Nicolas decided that the anchor passes on same-vendor agreement and identical coverage. The cross-vendor drift on $o > 0$ rows, at most 1.91047000441813e-08 in width, is an escalation for the W2 report and the width tolerance for W3's cross-vendor reproduction checks. Coverage stays at 0.0.
 5. **Extension 1, local reading of result tables (7 October 2026).** Nicolas allowed small local tabulations of returned result files (reads, filters, group-bys) for writing the W1 and W2 report, for this interval only. Merges, figures and all computation stay on Longleaf.
 6. **Extension 2, local compute where faster (7 October 2026).** Nicolas wrote in chat that if local compute is faster, it should be used. For the rest of this interval, up to the W2 gate, a task runs on his Mac when that is clearly faster than Longleaf. Each local run's PROVENANCE.txt records the host, library versions, the md5 of every script and input, and the command line. The exception is runs that must match an existing Longleaf result at a tight tolerance: W2 acceptance checks 1 and 2, and any table whose rows sit beside Longleaf rows. Those stay on Longleaf, because round 4 found that the two platforms' Python versions give the released GHCP code different random streams. Each table is produced on one platform only.
 
-Apart from extensions 1 and 2 above, nothing runs on Nicolas's Mac except git operations in this clone and reading committed files, unless he asks for a specific task here first. Merges, comparisons, figures and the numeric-claim sweep run on Longleaf by default. Before this was written down, two small comparisons ran locally on files already in the clone. One checked the instruction's quoted numbers against the round-4 tables for section 4. The other rechecked the W0 sim anchor's 120 returned rows against `c1_grid.csv`. Both are recorded here and in the W2 report.
+7. **Extension 3, local compute in interval 2 (8 October 2026).** Nicolas wrote in chat that local compute is preferred if it is genuinely faster, until he says stop. It applies on the same terms as extension 2. Each local run's PROVENANCE.txt records the host, library versions, the md5 of every script and input, and the command line, and each table comes from one platform. Runs that must reproduce Longleaf rows at a tight tolerance stay on Longleaf, and so does any run whose inputs live only there. That covers the W3 production, which reproduces round-4 rows to $1.91 \times 10^{-8}$ from embeddings on Longleaf. Merges, tabulations, figures and the numeric-claim sweep of this track's documents run locally when that is faster.
+
+Apart from extensions 1 to 3 above, nothing runs on Nicolas's Mac except git operations in this clone and reading committed files, unless he asks for a specific task here first. Merges, comparisons, figures and the numeric-claim sweep run on Longleaf by default. Before this was written down, two small comparisons ran locally on files already in the clone. One checked the instruction's quoted numbers against the round-4 tables for section 4. The other rechecked the W0 sim anchor's 120 returned rows against `c1_grid.csv`. Both are recorded here and in the W2 report.
+
+## 6. The W2 decision memo, transcribed
+
+The oversight chat's memo of 8 October 2026 is committed unchanged as `docs/decisions/round5_conformal_W2_decisions.md`. This section transcribes what it changes. Interval 2 (W3, the rest of W4, W5) starts once this section and the memo are committed locally.
+
+**6.1 The gate rule.** No stage after a gate starts until the oversight chat has reviewed the report and replied, and that means every stage. Inside an interval there are no interim reports or stop conditions. Anything that would have halted work is handled under the decision boundaries, recorded in the "Escalations" section of the next report, and work continues. Contact with anyone outside the project is never the session's decision. This track's gates are W2 and W5.
+
+**6.2 Acceptance of W2.** The W2 report is accepted.
+
+- W1 checks 3 and 4 pass against chance.
+- W2 check 1 passes under the agreement rule.
+- W2 check 4 passes.
+- W1.4's first sentence is the one that holds.
+- W2.4 and W2.5 could not be scored as written at 90%.
+
+Nicolas merges pull request #16. Nothing is pushed to `round5-conformal` until that merge has happened.
+
+**6.3 Readings for the paper** (memo section 3; used in the W5 closing page).
+
+1. *The map in simulation.* At 90%, normal tails and share 0.3 or more, the narrowest method is HCP at $o = 0$, GHCP at 3 to 5 labelled units from about 14 calibration clusters, and `within_full` from $o = 9$. The exception at $o = 17$ is discreteness, stated in one sentence.
+2. *GHCP's own designs.* From 9 labelled units `within_full` is 3 to 4 times narrower than GHCP at every number of groups. Below 9, GHCP is the narrowest method finite in every replicate from 20 groups. On the census, GHCP is narrowest at every $o \ge 2$ with 30 or 50 PUMAs, and `within_full` is narrower at $o = 9$ and 10 with 20. GHCP's guarantee held throughout.
+3. *The number of groups.* The released code calibrates HCP on half of the reference groups. So every GHCP-design row states, per method, how many groups it calibrates on and how many it uses to fit its score.
+
+**6.4 Code delivery and provenance** (memo section 4, shared with the inference track; it replaces any earlier practice).
+
+1. One GitHub push per gate: the branch and the tag together, then one pull request. Nothing is pushed while a gate pull request is open and unmerged.
+2. Commits reach Longleaf as `git bundle create <file> <last delivered>..round5-conformal`. A short Slurm job in `/work/users/w/e/weiyang/hest_code/round5-conformal/` runs `git bundle verify`, `git fetch <file> round5-conformal` and `git merge --ff-only FETCH_HEAD`, then prints the new HEAD. A failed fast-forward changes nothing and is recorded. The clone never fetches from GitHub, and is never rebased, reset or switched to another branch.
+3. The same job writes the delivered commit's `code/` to `/work/users/w/e/weiyang/hest_code/round5-conformal_snapshots/<full hash>/` with `git archive` and removes write permission from it. Jobs put that snapshot's `code/scripts` on `PYTHONPATH`, run scripts from there, and run from their own output directory. They never run from the clone or from scripts copied loose into a job directory. Committed data files are read from the clone. Nothing is edited on Longleaf.
+4. Each delivery is one row of `results/round5/conformal/code_deliveries.csv`: date, Slurm job id, HEAD before and after, bundle md5, the commits carried, and the snapshot path.
+5. Every job records its snapshot commit and the md5 of each script it ran. Commits that change only documents or results need not be delivered.
+6. Before each gate push, `results/round5/conformal/provenance_index.csv` lists one row per job and script, with two checks. The first is that the recorded commit is an ancestor of the gate tag. The second is that the md5 equals the script's md5 at that commit. Failures are listed in the report. At W5 it also covers every W0 to W2 job.
+7. Results come back by the route in use and are committed locally.
+8. Only the lead cancels a Slurm job, after confirming it with `squeue -u weiyang` and the track's job ledger. A sub-agent never runs `scancel`; it asks the lead.
+9. New sweep exceptions go to `.verify-exceptions-round5-conformal`, and this track sweeps its own documents with `--exceptions` pointing at it. The W2 lines already in `.verify-exceptions` stay. The README is swept by the oversight chat. No file outside this track's areas is edited.
+
+Staging committed scripts into jobs (W2 report, escalation 4) ends here, and snapshots replace it. The first delivery carries everything from the clone's HEAD, `aec684f`, to the commit that adds the memo.
+
+**6.5 W3, changed.**
+
+1. Reproduction tolerances: coverage agrees exactly, and width agrees within $1.91 \times 10^{-8}$, in place of $3 \times 10^{-10}$. Every W3 job records its CPU model. A row whose coverage differs is reported with both CPU models. W3 uses no random forest, so its production is not pinned to a node class.
+2. The fixed-design T2 chunks are not rerun on round 4's node class.
+3. W3.1 is amended. Its last clause reads: "and from $o = 9$ the narrowest valid method is `within_full`, except at $o = 17$, at 0.45 to 0.65 of HCP's width for $o$ from 9 to 15". Both the amended and the original wording are scored.
+4. In `w3_map_by_task.csv`, $K$ is the number of calibration donors and `n_T_donors` the number the head was trained on.
+
+**6.6 W4.** Part A is accepted as closed. W4.1 is scored as partly held at W5. Part B step 5, dominance, runs beside W3 under part B's cap of three and a half days, plus part A's unused time.
+
+**6.7 W5, with one addition.** `w5_map.csv` places every row on one axis: the number of clusters each method calibrates on. For each W2 method, it gives the number of groups calibrated on and the number used to fit the score, read from the released code (`methods/donor_hcp.py`, `get_hcp_train_cal_split`, and the matching GHCP and Std-CP code). The closing page's GHCP paragraph states items 2 and 3 of 6.3 in numbers.
+
+**6.8 Answers to the W2 escalations.** All thirteen are accepted or resolved as follows:
+
+- escalation 1: by 6.5 item 1;
+- escalation 4: by 6.4 item 3;
+- escalation 5: no rerun;
+- escalation 6: one node class per production table, with the W2 tables as the record, and their differences from part 1 and round 4 stated once at W5;
+- escalation 9: both HCPs are reported where they differ;
+- escalation 12: by 6.4 item 8.
+
+The README value 0.1018 is the oversight chat's to fix.
+

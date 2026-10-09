@@ -1,0 +1,15 @@
+check,value,tol,passed,note
+merge_duplicated_keys,0.0,0.0,True,
+merge_part1_tasks,2071818.0,,,"{""CCRCC"": 571536, ""CCRCC_23merged"": 547722, ""INDIANA_KIDNEY"": 595350, ""LUNG_XENIUM"": 357210}"
+merge_part2_tasks,4971348.0,,,"{""CCRCC"": 1874016, ""CCRCC_23merged"": 1795932, ""INDIANA_KIDNEY"": 1301400}"
+merge_part3_tasks,3175416.0,,,"{""CCRCC"": 1874016, ""INDIANA_KIDNEY"": 1301400}"
+1_reproduce_c3_o_sweep_part1,2.0,0.0,False,"787698 matched of 787698, 0 missing; max cov diff 1.186239620409868e-05, max width diff 1.17e-08"
+1_reproduce_c3_o_sweep_part2,2.0,0.0,False,"522288 matched of 522288, 0 missing; max cov diff 1.186239620409868e-05, max width diff 1.17e-08"
+1_reproduce_c3_K_sweep_part1,0.0,0.0,True,"30618 matched of 30618, 0 missing; max cov diff 0.0, max width diff 4.52e-09"
+1_reproduce_c3_K_sweep_part2,0.0,0.0,True,"172098 matched of 172098, 0 missing; max cov diff 0.0, max width diff 4.52e-09"
+1_reproduce_ghcp_o25_part1,0.0,0.0,True,"25920 matched of 25920, 0 missing; max cov diff 0.0, max width diff 4.52e-09"
+1_reproduce_ghcp_o25_part2,0.0,0.0,True,"155520 matched of 155520, 0 missing; max cov diff 0.0, max width diff 4.52e-09"
+p3_K20_equals_p2_K20,1.0840379590654606e-08,0.0,False,637686 rows of 637686
+2_within_plain_cov_within_0.005,0.0,0.0,True,362 cells; max |diff| 0.0033
+2_within_cov_within_0.005,0.0,0.0,True,264 cells; max |diff| 0.0035
+3_within_full_cov_within_0.005,0.0,0.0,True,362 cells; max |diff| 0.0025

@@ -1,0 +1,9 @@
+check,value,tol,passed
+c3_selftest:split_q_cols_vs_SIM.split_q,0.0,1e-12,True
+c3_selftest:wq_cols_vs_SIM.hcp_q,0.0,1e-12,True
+c3_selftest:ghcp_cols_vs_SIM.ghcp_q[ghcp],5.551115123125783e-17,1e-12,True
+c3_selftest:ghcp_cols_vs_SIM.ghcp_q[ghcp_noad],0.0,1e-12,True
+c3_selftest:ghcp_cols_vs_SIM.ghcp_q[ghcp_r05],5.551115123125783e-17,1e-12,True
+c3_selftest:ghcp_cols_vs_SIM.ghcp_q[ghcp_r05_noad],0.0,1e-12,True
+c3_selftest:ghcp_cols_vs_SIM.ghcp_q[ghcp_r05code],5.551115123125783e-17,1e-12,True
+c3_selftest:metrics_vs_A3_cell_metrics,1.7763568394002505e-14,1e-12,True
