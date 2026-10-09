@@ -1,0 +1,25 @@
+#source: /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_LUNG_XENIUM/arm_donor_constant/PROVENANCE.txt
+stage: E2_regimeB_LUNG_XENIUM_arm_donor_constant
+intended_job_prefix: r5ppi_
+frame_id: 55a7b894-6f2d-4cee-8a96-c4e4258dcfc1
+slurm_job_id: 4199326
+partition: spill
+account: rc_tengfei_pi
+node: c0411.ll.unc.edu
+cpu: x86_64
+date_utc: 2026-10-07T23:39:21+00:00
+code_clone: /work/users/w/e/weiyang/hest_code/round5-ppi
+code_clone_HEAD: unreadable ([Errno 2] No such file or directory: 'git')
+PYTHONHASHSEED: 0
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_LUNG_XENIUM/arm_donor_constant/_scripts/round5_ppi_e2_regimeB.py --parquet /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__resnet50.parquet --vtag LUNG_XENIUM --arm donor_constant --draws 200 --out-dir .
+config: {"arm": "donor_constant", "extra_args": "--draws 200", "job": "arm_donor_constant", "rc": 0, "vtag": "LUNG_XENIUM"}
+config_md5: a8b01e2ca158565c98b866e2643e04d8
+script_md5:
+  b6e9ecc52ac5539682487d8e7c1451c6  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_LUNG_XENIUM/arm_donor_constant/_scripts/round5_ppi_e2_regimeB.py
+  122375c3acb103ed93e3e687644d7f6d  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_LUNG_XENIUM/arm_donor_constant/_scripts/round5_ppi_common.py
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+uploaded_scripts_local_commit: c7d2c95645b1a03c0a4fb698ca779b212492ed23
+uploaded_e2_scripts_local_commit: 26482f4e0a623dd69a465b828d41dddb91627024
+intended_job_prefix: r5ppi_E2
+unit: E2 part 1 regime B LUNG_XENIUM

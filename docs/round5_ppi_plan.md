@@ -228,16 +228,16 @@ The twenty predictions are the oversight chat's and are copied from section 2.1 
 | E2.3 | E2 | E2 | held in substance, see `docs/round5_ppi_E2_report.md` section 5 |
 | E2.4 | E2 | E2 | partly held, see `docs/round5_ppi_E2_report.md` section 5 |
 | E2.5 | E2 | E2 | held for $\theta_3$, refuted for $\theta_2$, see `docs/round5_ppi_E2_report.md` section 5 |
-| E3.1 | E3 | E4 | not yet scored |
-| E3.2 | E3 | E4 | not yet scored |
-| E3.3 | E3 | E4 | not yet scored |
-| E3.4 | E3 | E4 | not yet scored |
-| E3.5 | E3 | E4 | not yet scored |
-| E4.1 | E4 | E4 | not yet scored |
-| E4.2 | E4 | E4 | not yet scored |
-| E4.3 | E4 | E4 | not yet scored |
-| E4.4 | E4 | E4 | not yet scored |
-| E4.5 | E4 | E4 | not yet scored |
+| E3.1 | E3 | E4 | held (`docs/round5_ppi_E4_report.md` section 5) |
+| E3.2 | E3 | E4 | partly held (`docs/round5_ppi_E4_report.md` section 5) |
+| E3.3 | E3 | E4 | partly held (`docs/round5_ppi_E4_report.md` section 5) |
+| E3.4 | E3 | E4 | held (`docs/round5_ppi_E4_report.md` section 5) |
+| E3.5 | E3 | E4 | refuted (`docs/round5_ppi_E4_report.md` section 5) |
+| E4.1 | E4 | E4 | partly held (`docs/round5_ppi_E4_report.md` section 5) |
+| E4.2 | E4 | E4 | partly held (`docs/round5_ppi_E4_report.md` section 5) |
+| E4.3 | E4 | E4 | partly held (`docs/round5_ppi_E4_report.md` section 5) |
+| E4.4 | E4 | E4 | refuted in its main part (`docs/round5_ppi_E4_report.md` section 5) |
+| E4.5 | E4 | E4 | partly held (`docs/round5_ppi_E4_report.md` section 5) |
 
 ## 4. Parametrisations fixed before the runs that use them
 
@@ -321,14 +321,14 @@ Local runs are the simulations: E3a's reruns of the E1 normal and skewed grids, 
 
 ### 7.7 E4, as the brief says
 
-E4 uses the interval chosen by E3a. Six task units on Longleaf in parallel and one local simulation unit. Its code can be written while E3's units run, and its units are submitted once E3's results are merged. The E4 report `docs/round5_ppi_E4_report.md` covers E3a, E3 and E4 in the format of brief section 8, and adds the delivery ledger, the two checks of section 7.3 item 6, the E3a derivation and results, the stratified $\theta_2$ results, and `e3_superseded_round4_numbers.csv` including round 4's regime B and regime A $\theta_2$ rows with $m <$ all. Then the sweep of section 7.3 item 9, tag `round5-ppi-E4`, push and pull request once #15 is merged, and stop.
+E4 uses the interval chosen by E3a. Six task units on Longleaf in parallel and one local simulation unit. Its code can be written while E3's units run, and its units are submitted once E3's results are merged. As run, the E4 task units were submitted after five of the six E3 task units had been merged and while lung's E3 unit was still running, since no E4 input depends on E3's lung rows. The E3 and E4 merges ran locally on committed result files. The E4 report `docs/round5_ppi_E4_report.md` covers E3a, E3 and E4 in the format of brief section 8, and adds the delivery ledger, the two checks of section 7.3 item 6, the E3a derivation and results, the stratified $\theta_2$ results, and `e3_superseded_round4_numbers.csv` including round 4's regime B and regime A $\theta_2$ rows with $m <$ all. Then the sweep of section 7.3 item 9, tag `round5-ppi-E4`, push and pull request once #15 is merged, and stop.
 
 ### 7.8 New predictions
 
 | prediction | stage | gate | score |
 |---|---|---|---|
-| E3a.1 | E3a | E4 | not yet scored |
-| E3a.2 | E3a | E4 | not yet scored |
-| E3a.3 | E3a | E4 | not yet scored |
-| E3.6 | E3 | E4 | not yet scored |
-| E3.7 | E3 | E4 | not yet scored |
+| E3a.1 | E3a | E4 | held (`docs/round5_ppi_E4_report.md` section 5) |
+| E3a.2 | E3a | E4 | held (`docs/round5_ppi_E4_report.md` section 5) |
+| E3a.3 | E3a | E4 | held for theta3 (`docs/round5_ppi_E4_report.md` section 5) |
+| E3.6 | E3 | E4 | held (`docs/round5_ppi_E4_report.md` section 5) |
+| E3.7 | E3 | E4 | partly held (`docs/round5_ppi_E4_report.md` section 5) |

@@ -1,0 +1,24 @@
+#source: /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_LUNG_XENIUM/cluster_sizes/PROVENANCE.txt
+stage: E2_regimeB_LUNG_XENIUM_cluster_sizes
+intended_job_prefix: r5ppi_
+frame_id: 55a7b894-6f2d-4cee-8a96-c4e4258dcfc1
+slurm_job_id: 4202909
+partition: spill
+account: rc_tengfei_pi
+node: c0404.ll.unc.edu
+cpu: x86_64
+date_utc: 2026-10-07T23:40:51+00:00
+code_clone: /work/users/w/e/weiyang/hest_code/round5-ppi
+code_clone_HEAD: unreadable ([Errno 2] No such file or directory: 'git')
+PYTHONHASHSEED: 0
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+command: cluster_sizes
+config: {"arm": "hoptimus0", "extra_args": "", "job": "cluster_sizes", "rc": 0, "vtag": "LUNG_XENIUM"}
+config_md5: 1e5957946881e7ccf0e5d8455e8a7932
+script_md5:
+  122375c3acb103ed93e3e687644d7f6d  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_LUNG_XENIUM/cluster_sizes/_scripts/round5_ppi_common.py
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+uploaded_scripts_local_commit: c7d2c95645b1a03c0a4fb698ca779b212492ed23
+uploaded_e2_scripts_local_commit: 26482f4e0a623dd69a465b828d41dddb91627024
+intended_job_prefix: r5ppi_E2
+unit: E2 part 1 regime B LUNG_XENIUM

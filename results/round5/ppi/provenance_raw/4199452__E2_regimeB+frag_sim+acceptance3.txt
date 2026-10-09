@@ -1,0 +1,24 @@
+#source: /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_sim/acceptance3/PROVENANCE.txt
+stage: E2_acceptance3
+intended_job_prefix: r5ppi_
+frame_id: 3c179230-1efb-43ff-afa6-6eb7f6a01c34
+slurm_job_id: 4199452
+partition: spill
+account: rc_tengfei_pi
+node: c0309.ll.unc.edu
+cpu: x86_64
+date_utc: 2026-10-07T22:29:26+00:00
+code_clone: /work/users/w/e/weiyang/hest_code/round5-ppi
+code_clone_HEAD: d82c3f33ce37fe2d7dbf5b527bfee9a9fb9ee935
+PYTHONHASHSEED: 0
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python e2_accept3.py
+config: {"exit": 0}
+config_md5: 395292f20c78a8bb689708b26fd9b97a
+script_md5:
+  44a544c9d7595ce88f9e3d5336c6a7cb  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_sim/acceptance3/_scripts/e2_accept3.py
+  122375c3acb103ed93e3e687644d7f6d  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_sim/acceptance3/_scripts/round5_ppi_common.py
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+uploaded_scripts_local_commit: c7d2c95645b1a03c0a4fb698ca779b212492ed23
+intended_job_prefix: r5ppi_E2
+inputs: round4 regimeB_sim__G24.csv; frag_sim/full_all/e2_sim__G24_all.csv

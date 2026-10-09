@@ -1,0 +1,26 @@
+#source: /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E1_interval/frag_G24/smoke/PROVENANCE.txt
+stage: E1_G24_smoke
+intended_job_prefix: r5ppi_
+frame_id: 7190eda6-ddfd-40ae-a424-0a9c83c2aaa3
+slurm_job_id: 4199002
+partition: spill
+account: rc_tengfei_pi
+node: c0413.ll.unc.edu
+cpu: x86_64
+date_utc: 2026-10-07T22:14:28+00:00
+code_clone: /work/users/w/e/weiyang/hest_code/round5-ppi
+code_clone_HEAD: d82c3f33ce37fe2d7dbf5b527bfee9a9fb9ee935
+PYTHONHASHSEED: 0
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E1_interval/frag_G24/smoke/_scripts/round5_ppi_e1_sim.py --G 24 --laws normal --nl 8 --r2 0.4 --lamstar 0.6 --kappa 10 --draws 50 --tag smoke --out-dir .
+config: {"G": 24, "args": "--G 24 --laws normal --nl 8 --r2 0.4 --lamstar 0.6 --kappa 10 --draws 50", "tag": "smoke"}
+config_md5: 7004b837cbaa5b0faf2e06a861af7b1e
+script_md5:
+  122375c3acb103ed93e3e687644d7f6d  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E1_interval/frag_G24/smoke/_scripts/round5_ppi_common.py
+  6a2d0ac0e07f707cafe0d65cbdc2f8a1  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E1_interval/frag_G24/smoke/_scripts/round5_ppi_estimator.py
+  372d272e3822f5dab55c1850fb4e3d3d  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E1_interval/frag_G24/smoke/_scripts/round5_ppi_e1_sim.py
+  d79e69aa65800b9d24de556e019a0c64  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round4_ppi_estimator.py
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+intended_job_prefix: r5ppi_E1
+uploaded_scripts_local_commit: c7d2c95645b1a03c0a4fb698ca779b212492ed23
+slurm_job_id_note: see slurm_job_id above

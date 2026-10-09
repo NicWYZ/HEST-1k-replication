@@ -1,0 +1,9 @@
+# Round 5 PPI track sweep exceptions. Format: value<TAB>reason (docs/WAYS_OF_WORKING.md).
+2.6	reference: theory section number (sections 2.1 to 2.6 of docs/round5_ppi_theory.md), not a result
+6,435	derived: binomial coefficient C(15, 8), the number of possible lung theta3 samples at n_L = 8
+51	derived: 240 - 189 misses of E4.1 in e4_prediction_scores.csv
+32	derived: 80 - 48 misses at G = 15 in e4_prediction_scores.csv
+17	derived: 80 - 63 misses at G = 24 in e4_prediction_scores.csv
+480	derived: row count, 480 cells of E4.4_classical_D2 in e4_sim_prediction_cells.csv and 480 rows of sim/_merge/d2_misses.csv
+3,000	parameter: number of synthetic draws in code/scripts/round5_ppi_e3_tests.py test 4 (range(3000))
+0.76	historical: development run of the sample-centred variance without the (m/(m-1))^2 factor, output not kept; quoted in theory 2.x as "about"

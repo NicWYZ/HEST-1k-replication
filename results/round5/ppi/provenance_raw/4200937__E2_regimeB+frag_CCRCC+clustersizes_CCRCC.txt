@@ -1,0 +1,23 @@
+#source: /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_CCRCC/clustersizes_CCRCC/PROVENANCE.txt
+stage: E2_regimeB_clustersizes
+intended_job_prefix: r5ppi_
+frame_id: f7b709d0-5e73-4eda-871b-112acf93963f
+slurm_job_id: 4200937
+partition: spill
+account: rc_tengfei_pi
+node: c0316.ll.unc.edu
+cpu: x86_64
+date_utc: 2026-10-07T22:51:26+00:00
+code_clone: /work/users/w/e/weiyang/hest_code/round5-ppi
+code_clone_HEAD: d82c3f33ce37fe2d7dbf5b527bfee9a9fb9ee935
+PYTHONHASHSEED: 0
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+command: python sizes.py
+config: {"parquet": "resnet50"}
+config_md5: 0deaae12ba4c83b1bafdd4aa12f0e2ac
+script_md5:
+  122375c3acb103ed93e3e687644d7f6d  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_CCRCC/clustersizes_CCRCC/_scripts/round5_ppi_common.py
+  0bce9a19e9736c1a3f7c2c6ed67cfa37  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_CCRCC/clustersizes_CCRCC/sizes.py
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+uploaded_scripts_local_commit: c7d2c95645b1a03c0a4fb698ca779b212492ed23
+intended_job_prefix: r5ppi_E2

@@ -1,0 +1,22 @@
+#source: /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/PROVENANCE.txt
+stage: E2 merge
+intended_job_prefix: r5ppi_
+frame_id: e5d5217d-4382-43ce-9cdc-7b08d2cba953
+slurm_job_id: 4203178
+partition: spill
+account: rc_tengfei_pi
+node: c0404.ll.unc.edu
+cpu: x86_64
+date_utc: 2026-10-07T23:47:01+00:00
+code_clone: /work/users/w/e/weiyang/hest_code/round5-ppi
+code_clone_HEAD: d82c3f33ce37fe2d7dbf5b527bfee9a9fb9ee935
+PYTHONHASHSEED: 0
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python _lead_scripts/round5_ppi_e2_merge.py --frames CCRCC=f7b709d0-5e73-4eda-871b-112acf93963f,CCRCC_merged=1c0d26a9-e67c-4c79-b3a8-2ec49a86dc9a,INDIANA_KIDNEY=991e8051-44c5-477d-b07b-9cf75f7c1394,LUNG_XENIUM=55a7b894-6f2d-4cee-8a96-c4e4258dcfc1,ACS_STATES=282d0df5-8570-49d5-b16e-0c9c425ac5a3,ACS_CA_PUMA=c6b91010-c7d0-467e-b34e-32836e795bc1,sim=3c179230-1efb-43ff-afa6-6eb7f6a01c34 --round4-sim /work/users/w/e/weiyang/hest_code/round5-ppi/results/round4/ppi/Q3_regimes/sim_regimeB/regimeB_sim__G24.csv --e1-dir /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E1_interval
+config: {"stage": "E2 merge"}
+config_md5: eaf585461edbaeb663fae397ff9cdcda
+script_md5:
+  186a5d80b26b884f77563784f8219486  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/_lead_scripts/round5_ppi_e2_merge.py
+  122375c3acb103ed93e3e687644d7f6d  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/_lead_scripts/round5_ppi_common.py
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+uploaded_scripts_local_commit: b993f94d34fa88d39ce4c757fa10a1d8bc86abd7
