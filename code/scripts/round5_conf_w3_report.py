@@ -168,59 +168,86 @@ def verdict(h):
     return "held" if all(h) else ("refuted" if not any(h) else "partly held")
 
 
+LABEL = {"hcp": "HCP (hcp)", "ghcp": "GHCP (ghcp)", "ghcp_noad": "GHCP, no size adjustment (ghcp_noad)",
+         "within": "within donor, half split (within)", "within_plain": "within donor, split (within_plain)",
+         "within_full": "within donor, full conformal (within_full)", "one_per": "one spot per donor (one_per)"}
+SHORT = {"CCRCC": "CCRCC, 24 donors", "CCRCC_23merged": "CCRCC, 23 merged", "INDIANA_KIDNEY": "Indiana kidney",
+         "LUNG_XENIUM": "Lung (Xenium)"}
+COL = {"hcp": "#000000", "ghcp": "#1b6ca8", "ghcp_noad": "#8fbbd9", "within": "#c98a1b",
+       "within_plain": "#e8a87c", "within_full": "#8e2c1f", "one_per": "#8c8c8c"}
+
+
+def _style():
+    import matplotlib as mpl
+    mpl.rcParams.update({"font.size": 8, "axes.titlesize": 8, "axes.labelsize": 8, "legend.fontsize": 7,
+                         "xtick.labelsize": 6, "ytick.labelsize": 6, "axes.spines.top": False,
+                         "axes.spines.right": False, "axes.titlelocation": "left", "savefig.dpi": 300})
+
+
 def fig_map(M, path):
     from matplotlib import pyplot as plt
+    _style()
     T = sorted(M[M.part == 1].task.unique())
     meths = ["ghcp", "ghcp_noad", "within", "within_plain", "within_full", "one_per"]
-    col = {"ghcp": "#1b6ca8", "ghcp_noad": "#7fb3d5", "within": "#b9770e", "within_plain": "#e59866",
-           "within_full": "#943126", "one_per": "#7f8c8d"}
-    fig, axes = plt.subplots(1, len(T), figsize=(3.2 * len(T), 3.2), sharey=True, squeeze=False)
+    fig, axes = plt.subplots(1, len(T), figsize=(7.2, 2.6), sharey=True, squeeze=False,
+                             gridspec_kw=dict(wspace=0.06))
     for ax, t in zip(axes[0], T):
         P = M[(M.task == t) & (M.part == 1) & (M.alpha == A) & (M.K == 10)]
         h = P[P.method == "hcp"].set_index("o").width_mean
         for m in meths:
             q = P[(P.method == m) & (P.o > 0)].set_index("o").width_mean
             r = (q / h.reindex(q.index)).replace([np.inf], np.nan)
-            ax.plot(r.index, r.values, marker="o", ms=3, lw=1.2, color=col[m], label=m)
+            ax.plot(r.index, r.values, marker="o", ms=2.5, lw=1.4 if m in ("ghcp", "within_full") else 0.9,
+                    color=COL[m], label=LABEL[m], zorder=2)
             nv = P[(P.method == m) & P.narrowest_valid & (P.o > 0)]
-            ax.scatter(nv.o, (nv.set_index("o").width_mean / h.reindex(nv.o)).values, s=40,
-                       facecolors="none", edgecolors="k", lw=0.8, zorder=3)
-        ax.axhline(1, color="k", lw=0.8, ls="--")
+            ax.scatter(nv.o, (nv.set_index("o").width_mean / h.reindex(nv.o)).values, s=34,
+                       facecolors="none", edgecolors="k", lw=0.7, zorder=3)
+        ax.axhline(1, color="k", lw=0.7, ls="--", zorder=1)
         ax.set_xscale("log")
         ax.set_xticks([3, 5, 10, 20, 50, 100]); ax.set_xticklabels(["3", "5", "10", "20", "50", "100"])
-        nT = P.n_T_donors.median()
-        ax.set_title(f"{t} (K = 10, test donors {nT:.0f})", fontsize=9)
-        ax.set_xlabel("labelled spots in the target donor, o")
-    axes[0][0].set_ylabel("width relative to HCP (90%)")
-    axes[0][-1].legend(fontsize=7, frameon=False, loc="upper right")
-    fig.text(0.01, 0.01, "Open circles: narrowest valid method at that o. Infinite widths are not drawn.", fontsize=7)
-    fig.tight_layout(rect=(0, 0.04, 1, 1))
-    fig.savefig(path, dpi=200)
+        ax.minorticks_off()
+        ax.set_title(f"{SHORT.get(t, t)}\n{P.n_T_donors.median():.0f} test donors per fold")
+        ax.margins(0.04)
+    axes[0][0].set_ylabel("90% width relative to HCP")
+    axes[0][0].text(3.2, 1.02, "HCP", fontsize=7, va="bottom")
+    h, l = axes[0][0].get_legend_handles_labels()
+    h.append(plt.Line2D([], [], ls="", marker="o", ms=6, mfc="none", mec="k", mew=0.7)); l.append("narrowest valid method")
+    fig.supxlabel("labelled spots in the target donor, o (log scale)", y=0.23, fontsize=8)
+    fig.legend(h, l, loc="lower center", ncol=3, frameon=False, bbox_to_anchor=(0.5, 0.0))
+    fig.subplots_adjust(left=0.08, right=0.99, top=0.86, bottom=0.36)
+    fig.savefig(path)
+    return fig
 
 
 def fig_fixed(M, path):
     from matplotlib import pyplot as plt
+    _style()
     T = sorted(M[M.part == 3].task.unique())
     if not T:
-        return
+        return None
     O = [5, 15, 25]
-    col = {"hcp": "k", "ghcp": "#1b6ca8", "within_full": "#943126", "within_plain": "#e59866"}
-    fig, axes = plt.subplots(len(T), len(O), figsize=(3.0 * len(O), 2.7 * len(T)), squeeze=False)
+    meths = ["hcp", "ghcp", "within_plain", "within_full"]
+    fig, axes = plt.subplots(len(T), len(O), figsize=(7.2, 2.3 * len(T) + 0.5), squeeze=False)
     for i, t in enumerate(T):
         for j, o in enumerate(O):
             ax = axes[i][j]
             P = M[(M.task == t) & (M.part == 3) & (M.alpha == A) & (M.o == o)]
-            for m, c in col.items():
+            for m in meths:
                 q = P[P.method == m].sort_values("K")
                 q = q[np.isfinite(q.width_mean)]
-                ax.plot(q.K, q.width_mean, marker="o", ms=3, lw=1.2, color=c, label=m)
-            ax.set_title(f"{t}, o = {o}", fontsize=9)
-            ax.set_xlabel("reference donors K (fixed head)")
+                ax.plot(q.K, q.width_mean, marker="o", ms=2.5, lw=1.4 if m in ("ghcp", "within_full") else 0.9,
+                        color=COL[m], label=LABEL[m])
+            ax.set_xticks(sorted(P.K.unique()))
+            ax.set_title(f"{SHORT.get(t, t)}, o = {o}")
             if j == 0:
-                ax.set_ylabel("mean width (90%)")
-    axes[0][-1].legend(fontsize=7, frameon=False)
-    fig.tight_layout()
-    fig.savefig(path, dpi=200)
+                ax.set_ylabel("mean 90% width")
+            ax.margins(0.04)
+    h, l = axes[0][0].get_legend_handles_labels()
+    fig.supxlabel("reference donors K (prediction head fitted once, at K = 20)", y=0.075, fontsize=8)
+    fig.legend(h, l, loc="lower center", ncol=4, frameon=False, bbox_to_anchor=(0.5, 0.0))
+    fig.subplots_adjust(left=0.08, right=0.99, top=0.95, bottom=0.17, hspace=0.45, wspace=0.22)
+    fig.savefig(path)
+    return fig
 
 
 def main(a):

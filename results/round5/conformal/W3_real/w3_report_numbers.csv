@@ -1,0 +1,226 @@
+prediction,clause,task,part,K,o,quantity,value,lo,hi,holds
+W3.1,a,CCRCC,1,10,3,ghcp/hcp,1.3823848052652496,1.2,1.5,True
+W3.1,a,CCRCC,1,10,5,ghcp/hcp,1.328284720759955,1.2,1.5,True
+W3.1,b,CCRCC,1,10,9,narrowest_valid=within_full,0.5063493755072328,,,True
+W3.1,b,CCRCC,1,10,10,narrowest_valid=within_full,0.5148102679313623,,,True
+W3.1,b,CCRCC,1,10,12,narrowest_valid=within_full,0.5312470672988558,,,True
+W3.1,b,CCRCC,1,10,15,narrowest_valid=within_full,0.5503862496276926,,,True
+W3.1,b,CCRCC,1,10,17,narrowest_valid=within,0.48857132974005213,,,False
+W3.1,b,CCRCC,1,10,20,narrowest_valid=within_full,0.45461371935691675,,,True
+W3.1,b,CCRCC,1,10,25,narrowest_valid=within_full,0.4786004898253106,,,True
+W3.1,b,CCRCC,1,10,50,narrowest_valid=within_full,0.42436426066648336,,,True
+W3.1,b,CCRCC,1,10,100,narrowest_valid=within_full,0.41579367600274614,,,True
+W3.1,c,CCRCC,1,10,9,within_full/hcp,0.5063493755072328,0.45,0.65,True
+W3.1,c,CCRCC,1,10,10,within_full/hcp,0.5148102679313623,0.45,0.65,True
+W3.1,c,CCRCC,1,10,12,within_full/hcp,0.5312470672988558,0.45,0.65,True
+W3.1,c,CCRCC,1,10,15,within_full/hcp,0.5503862496276926,0.45,0.65,True
+W3.2,a,CCRCC,1,10,9,1-within_full/within_plain,0.08656615257045785,0.05,0.15,True
+W3.2,a,CCRCC,1,10,10,1-within_full/within_plain,0.08852229785736254,0.05,0.15,True
+W3.2,a,CCRCC,1,10,12,1-within_full/within_plain,0.09115849746234017,0.05,0.15,True
+W3.2,a,CCRCC,1,10,15,1-within_full/within_plain,0.09359767225714921,0.05,0.15,True
+W3.2,a,CCRCC,1,10,17,1-within_full/within_plain,0.09532810218666166,0.05,0.15,True
+W3.2,a,CCRCC,1,10,20,1-within_full/within_plain,0.15137469065922726,0.05,0.15,False
+W3.2,a,CCRCC,1,10,25,1-within_full/within_plain,0.14507656320864337,0.05,0.15,True
+W3.2,a,CCRCC,1,10,50,1-within_full/within_plain,0.1819522762933511,0.05,0.15,False
+W3.2,a,CCRCC,1,10,100,1-within_full/within_plain,0.18982132359920967,0.05,0.15,False
+W3.2,b,CCRCC,1,10,20,1-within_full/within,0.08212111968074853,0.05,0.12,True
+W3.2,b,CCRCC,1,10,25,1-within_full/within,0.07962449300952279,0.05,0.12,True
+W3.2,b,CCRCC,1,10,50,1-within_full/within,0.10783808521125537,0.05,0.12,True
+W3.2,b,CCRCC,1,10,100,1-within_full/within,0.025693625769145134,0.05,0.12,False
+W3.1,a,CCRCC_23merged,1,10,3,ghcp/hcp,1.3872435132364975,1.2,1.5,True
+W3.1,a,CCRCC_23merged,1,10,5,ghcp/hcp,1.3358537829600754,1.2,1.5,True
+W3.1,b,CCRCC_23merged,1,10,9,narrowest_valid=within_full,0.5066798460848773,,,True
+W3.1,b,CCRCC_23merged,1,10,10,narrowest_valid=within_full,0.5155608247427128,,,True
+W3.1,b,CCRCC_23merged,1,10,12,narrowest_valid=within_full,0.5310868133578466,,,True
+W3.1,b,CCRCC_23merged,1,10,15,narrowest_valid=within_full,0.5510175746062314,,,True
+W3.1,b,CCRCC_23merged,1,10,17,narrowest_valid=within,0.4959451142165785,,,False
+W3.1,b,CCRCC_23merged,1,10,20,narrowest_valid=within_full,0.45840074099619266,,,True
+W3.1,b,CCRCC_23merged,1,10,25,narrowest_valid=within_full,0.48317991172313246,,,True
+W3.1,b,CCRCC_23merged,1,10,50,narrowest_valid=within_full,0.42935713797522546,,,True
+W3.1,b,CCRCC_23merged,1,10,100,narrowest_valid=within_full,0.4211843961935888,,,True
+W3.1,c,CCRCC_23merged,1,10,9,within_full/hcp,0.5066798460848773,0.45,0.65,True
+W3.1,c,CCRCC_23merged,1,10,10,within_full/hcp,0.5155608247427128,0.45,0.65,True
+W3.1,c,CCRCC_23merged,1,10,12,within_full/hcp,0.5310868133578466,0.45,0.65,True
+W3.1,c,CCRCC_23merged,1,10,15,within_full/hcp,0.5510175746062314,0.45,0.65,True
+W3.2,a,CCRCC_23merged,1,10,9,1-within_full/within_plain,0.08875940689874617,0.05,0.15,True
+W3.2,a,CCRCC_23merged,1,10,10,1-within_full/within_plain,0.09239302537635563,0.05,0.15,True
+W3.2,a,CCRCC_23merged,1,10,12,1-within_full/within_plain,0.0935323857101531,0.05,0.15,True
+W3.2,a,CCRCC_23merged,1,10,15,1-within_full/within_plain,0.09378150465951596,0.05,0.15,True
+W3.2,a,CCRCC_23merged,1,10,17,1-within_full/within_plain,0.09560051457078089,0.05,0.15,True
+W3.2,a,CCRCC_23merged,1,10,20,1-within_full/within_plain,0.1494899776149321,0.05,0.15,True
+W3.2,a,CCRCC_23merged,1,10,25,1-within_full/within_plain,0.14358024056853924,0.05,0.15,True
+W3.2,a,CCRCC_23merged,1,10,50,1-within_full/within_plain,0.17668366773496025,0.05,0.15,False
+W3.2,a,CCRCC_23merged,1,10,100,1-within_full/within_plain,0.1842796390461804,0.05,0.15,False
+W3.2,b,CCRCC_23merged,1,10,20,1-within_full/within,0.08719590914685738,0.05,0.12,True
+W3.2,b,CCRCC_23merged,1,10,25,1-within_full/within,0.0852257400264782,0.05,0.12,True
+W3.2,b,CCRCC_23merged,1,10,50,1-within_full/within,0.10737236109446513,0.05,0.12,True
+W3.2,b,CCRCC_23merged,1,10,100,1-within_full/within,0.025981183274259467,0.05,0.12,False
+W3.1,a,INDIANA_KIDNEY,1,10,3,ghcp/hcp,1.5522308689682478,1.2,1.5,False
+W3.1,a,INDIANA_KIDNEY,1,10,5,ghcp/hcp,1.4887056931256244,1.2,1.5,True
+W3.1,b,INDIANA_KIDNEY,1,10,9,narrowest_valid=within_plain,0.598325919754829,,,False
+W3.1,b,INDIANA_KIDNEY,1,10,10,narrowest_valid=within_plain,0.6128462182899905,,,False
+W3.1,b,INDIANA_KIDNEY,1,10,12,narrowest_valid=within_plain,0.640630877709783,,,False
+W3.1,b,INDIANA_KIDNEY,1,10,15,narrowest_valid=within_plain,0.6731774300605876,,,False
+W3.1,b,INDIANA_KIDNEY,1,10,17,narrowest_valid=within,0.5882543271999163,,,False
+W3.1,b,INDIANA_KIDNEY,1,10,20,narrowest_valid=within_full,0.5418047533520571,,,True
+W3.1,b,INDIANA_KIDNEY,1,10,25,narrowest_valid=within_full,0.5773052376302363,,,True
+W3.1,b,INDIANA_KIDNEY,1,10,50,narrowest_valid=within_full,0.49811714724501055,,,True
+W3.1,b,INDIANA_KIDNEY,1,10,100,narrowest_valid=within_full,0.48506267072978726,,,True
+W3.1,c,INDIANA_KIDNEY,1,10,9,within_full/hcp,0.6097850514437301,0.45,0.65,True
+W3.1,c,INDIANA_KIDNEY,1,10,10,within_full/hcp,0.6218294565781235,0.45,0.65,True
+W3.1,c,INDIANA_KIDNEY,1,10,12,within_full/hcp,0.6464642974115528,0.45,0.65,True
+W3.1,c,INDIANA_KIDNEY,1,10,15,within_full/hcp,0.6765139992668308,0.45,0.65,False
+W3.2,a,INDIANA_KIDNEY,1,10,9,1-within_full/within_plain,-0.01915198942676044,0.05,0.15,False
+W3.2,a,INDIANA_KIDNEY,1,10,10,1-within_full/within_plain,-0.01465822586488108,0.05,0.15,False
+W3.2,a,INDIANA_KIDNEY,1,10,12,1-within_full/within_plain,-0.009105742331096733,0.05,0.15,False
+W3.2,a,INDIANA_KIDNEY,1,10,15,1-within_full/within_plain,-0.004956448415008419,0.05,0.15,False
+W3.2,a,INDIANA_KIDNEY,1,10,17,1-within_full/within_plain,-0.0028614877880654976,0.05,0.15,False
+W3.2,a,INDIANA_KIDNEY,1,10,20,1-within_full/within_plain,0.04125890915100072,0.05,0.15,False
+W3.2,a,INDIANA_KIDNEY,1,10,25,1-within_full/within_plain,0.03659563860672599,0.05,0.15,False
+W3.2,a,INDIANA_KIDNEY,1,10,50,1-within_full/within_plain,0.07012555194747461,0.05,0.15,True
+W3.2,a,INDIANA_KIDNEY,1,10,100,1-within_full/within_plain,0.07771195115019214,0.05,0.15,True
+W3.2,b,INDIANA_KIDNEY,1,10,20,1-within_full/within,0.10293752107444898,0.05,0.12,True
+W3.2,b,INDIANA_KIDNEY,1,10,25,1-within_full/within,0.0966045724848339,0.05,0.12,True
+W3.2,b,INDIANA_KIDNEY,1,10,50,1-within_full/within,0.1264343620142736,0.05,0.12,False
+W3.2,b,INDIANA_KIDNEY,1,10,100,1-within_full/within,0.027946870972890836,0.05,0.12,False
+W3.1,a,LUNG_XENIUM,1,10,3,ghcp/hcp,1.5072473849374584,1.2,1.5,False
+W3.1,a,LUNG_XENIUM,1,10,5,ghcp/hcp,1.45778851399527,1.2,1.5,True
+W3.1,b,LUNG_XENIUM,1,10,9,narrowest_valid=within_full,0.6010561370612374,,,True
+W3.1,b,LUNG_XENIUM,1,10,10,narrowest_valid=within_full,0.6134566029809524,,,True
+W3.1,b,LUNG_XENIUM,1,10,12,narrowest_valid=within_full,0.6398968997285853,,,True
+W3.1,b,LUNG_XENIUM,1,10,15,narrowest_valid=within_full,0.6681588968270319,,,True
+W3.1,b,LUNG_XENIUM,1,10,17,narrowest_valid=within,0.5988419822224695,,,False
+W3.1,b,LUNG_XENIUM,1,10,20,narrowest_valid=within_full,0.5471005435500974,,,True
+W3.1,b,LUNG_XENIUM,1,10,25,narrowest_valid=within_full,0.5784903109647668,,,True
+W3.1,b,LUNG_XENIUM,1,10,50,narrowest_valid=within_full,0.5093524909580684,,,True
+W3.1,b,LUNG_XENIUM,1,10,100,narrowest_valid=within_full,0.49761698835780865,,,True
+W3.1,c,LUNG_XENIUM,1,10,9,within_full/hcp,0.6010561370612374,0.45,0.65,True
+W3.1,c,LUNG_XENIUM,1,10,10,within_full/hcp,0.6134566029809524,0.45,0.65,True
+W3.1,c,LUNG_XENIUM,1,10,12,within_full/hcp,0.6398968997285853,0.45,0.65,True
+W3.1,c,LUNG_XENIUM,1,10,15,within_full/hcp,0.6681588968270319,0.45,0.65,False
+W3.2,a,LUNG_XENIUM,1,10,9,1-within_full/within_plain,0.05043712122078403,0.05,0.15,True
+W3.2,a,LUNG_XENIUM,1,10,10,1-within_full/within_plain,0.05462105000425366,0.05,0.15,True
+W3.2,a,LUNG_XENIUM,1,10,12,1-within_full/within_plain,0.05738411545722977,0.05,0.15,True
+W3.2,a,LUNG_XENIUM,1,10,15,1-within_full/within_plain,0.06083752304593537,0.05,0.15,True
+W3.2,a,LUNG_XENIUM,1,10,17,1-within_full/within_plain,0.06225113980997554,0.05,0.15,True
+W3.2,a,LUNG_XENIUM,1,10,20,1-within_full/within_plain,0.09956613163347872,0.05,0.15,True
+W3.2,a,LUNG_XENIUM,1,10,25,1-within_full/within_plain,0.09772692385627169,0.05,0.15,True
+W3.2,a,LUNG_XENIUM,1,10,50,1-within_full/within_plain,0.12371155431478009,0.05,0.15,True
+W3.2,a,LUNG_XENIUM,1,10,100,1-within_full/within_plain,0.13064211774213907,0.05,0.15,True
+W3.2,b,LUNG_XENIUM,1,10,20,1-within_full/within,0.10321781211895842,0.05,0.12,True
+W3.2,b,LUNG_XENIUM,1,10,25,1-within_full/within,0.09627829285794898,0.05,0.12,True
+W3.2,b,LUNG_XENIUM,1,10,50,1-within_full/within,0.12010250528144795,0.05,0.12,False
+W3.2,b,LUNG_XENIUM,1,10,100,1-within_full/within,0.023508774084399886,0.05,0.12,False
+W3.3,a,CCRCC,2,12,5,ghcp/hcp-1,-0.03652290571552519,-0.08,0.08,True
+W3.3,a,CCRCC,2,14,5,ghcp/hcp-1,-0.06845103906897498,-0.08,0.08,True
+W3.3,a,CCRCC,2,16,5,ghcp/hcp-1,-0.09819953206570697,-0.08,0.08,False
+W3.3,a,CCRCC,2,18,5,ghcp/hcp-1,-0.12746445389887961,-0.08,0.08,False
+W3.3,a,CCRCC,2,20,5,ghcp/hcp-1,-0.16937477899039033,-0.08,0.08,False
+W3.3,b,CCRCC,1,10,3,ghcp/narrowest_other,1.3823848052652496,0.95,,True
+W3.3,b,CCRCC,1,10,5,ghcp/narrowest_other,1.328284720759955,0.95,,True
+W3.3,b,CCRCC,2,10,5,ghcp/narrowest_other,1.328284720409814,0.95,,True
+W3.3,b,CCRCC,2,12,5,ghcp/narrowest_other,0.9634770942844748,0.95,,True
+W3.3,b,CCRCC,2,14,5,ghcp/narrowest_other,0.931548960931025,0.95,,False
+W3.3,b,CCRCC,2,16,5,ghcp/narrowest_other,0.901800467934293,0.95,,False
+W3.3,b,CCRCC,2,18,5,ghcp/narrowest_other,0.8725355461011204,0.95,,False
+W3.3,b,CCRCC,2,20,5,ghcp/narrowest_other,0.8306252210096097,0.95,,False
+W3.3,a,CCRCC_23merged,2,12,5,ghcp/hcp-1,-0.04187199642788797,-0.08,0.08,True
+W3.3,a,CCRCC_23merged,2,14,5,ghcp/hcp-1,-0.08534415342024304,-0.08,0.08,False
+W3.3,a,CCRCC_23merged,2,16,5,ghcp/hcp-1,-0.11720822467710057,-0.08,0.08,False
+W3.3,a,CCRCC_23merged,2,18,5,ghcp/hcp-1,-0.14855414486401897,-0.08,0.08,False
+W3.3,a,CCRCC_23merged,2,20,5,ghcp/hcp-1,-0.20426154257431306,-0.08,0.08,False
+W3.3,b,CCRCC_23merged,1,10,3,ghcp/narrowest_other,1.3872435132364975,0.95,,True
+W3.3,b,CCRCC_23merged,1,10,5,ghcp/narrowest_other,1.3358537829600754,0.95,,True
+W3.3,b,CCRCC_23merged,2,10,5,ghcp/narrowest_other,1.3358537827892054,0.95,,True
+W3.3,b,CCRCC_23merged,2,12,5,ghcp/narrowest_other,0.958128003572112,0.95,,True
+W3.3,b,CCRCC_23merged,2,14,5,ghcp/narrowest_other,0.914655846579757,0.95,,False
+W3.3,b,CCRCC_23merged,2,16,5,ghcp/narrowest_other,0.8827917753228994,0.95,,False
+W3.3,b,CCRCC_23merged,2,18,5,ghcp/narrowest_other,0.851445855135981,0.95,,False
+W3.3,b,CCRCC_23merged,2,20,5,ghcp/narrowest_other,0.7957384574256869,0.95,,False
+W3.3,a,INDIANA_KIDNEY,2,14,5,ghcp/hcp-1,0.005295655997830329,-0.08,0.08,True
+W3.3,a,INDIANA_KIDNEY,2,18,5,ghcp/hcp-1,-0.02642079528283514,-0.08,0.08,True
+W3.3,a,INDIANA_KIDNEY,2,20,5,ghcp/hcp-1,-0.03822437211053986,-0.08,0.08,True
+W3.3,b,INDIANA_KIDNEY,1,10,3,ghcp/narrowest_other,1.5522308689682478,0.95,,True
+W3.3,b,INDIANA_KIDNEY,1,10,5,ghcp/narrowest_other,1.4887056931256244,0.95,,True
+W3.3,b,INDIANA_KIDNEY,2,10,5,ghcp/narrowest_other,1.4887056931256244,0.95,,True
+W3.3,b,INDIANA_KIDNEY,2,14,5,ghcp/narrowest_other,1.0052956559978303,0.95,,True
+W3.3,b,INDIANA_KIDNEY,2,18,5,ghcp/narrowest_other,0.9735792047171649,0.95,,True
+W3.3,b,INDIANA_KIDNEY,2,20,5,ghcp/narrowest_other,0.9617756278894601,0.95,,True
+W3.4,a,CCRCC,3,-1,17,within rel range over K,0.0,,1e-08,True
+W3.4,a,CCRCC,3,-1,25,within rel range over K,0.0,,1e-08,True
+W3.4,a,CCRCC,3,-1,50,within rel range over K,0.0,,1e-08,True
+W3.4,a,CCRCC,3,-1,10,within_plain rel range over K,0.0,,1e-08,True
+W3.4,a,CCRCC,3,-1,15,within_plain rel range over K,0.0,,1e-08,True
+W3.4,a,CCRCC,3,-1,17,within_plain rel range over K,0.0,,1e-08,True
+W3.4,a,CCRCC,3,-1,25,within_plain rel range over K,0.0,,1e-08,True
+W3.4,a,CCRCC,3,-1,50,within_plain rel range over K,0.0,,1e-08,True
+W3.4,a,CCRCC,3,-1,10,within_full rel range over K,0.0,,1e-08,True
+W3.4,a,CCRCC,3,-1,15,within_full rel range over K,0.0,,1e-08,True
+W3.4,a,CCRCC,3,-1,17,within_full rel range over K,0.0,,1e-08,True
+W3.4,a,CCRCC,3,-1,25,within_full rel range over K,0.0,,1e-08,True
+W3.4,a,CCRCC,3,-1,50,within_full rel range over K,0.0,,1e-08,True
+W3.4,b,CCRCC,3,-1,5,ghcp max relative increase between successive K,-0.03494344833806424,,1e-08,True
+W3.4,b,CCRCC,3,-1,10,ghcp max relative increase between successive K,-0.030572981157561786,,1e-08,True
+W3.4,b,CCRCC,3,-1,15,ghcp max relative increase between successive K,-0.029296268665228643,,1e-08,True
+W3.4,b,CCRCC,3,-1,17,ghcp max relative increase between successive K,-0.028900936338305563,,1e-08,True
+W3.4,b,CCRCC,3,-1,25,ghcp max relative increase between successive K,-0.02787808660586408,,1e-08,True
+W3.4,b,CCRCC,3,-1,50,ghcp max relative increase between successive K,-0.02768348173206638,,1e-08,True
+W3.4,c,CCRCC,3,10,10,ghcp/narrowest_other,2.2478133702717504,0.95,,True
+W3.4,c,CCRCC,3,10,15,ghcp/narrowest_other,2.0012749677649078,0.95,,True
+W3.4,c,CCRCC,3,10,17,ghcp/narrowest_other,2.2198780169647505,0.95,,True
+W3.4,c,CCRCC,3,10,25,ghcp/narrowest_other,2.171654375212621,0.95,,True
+W3.4,c,CCRCC,3,12,10,ghcp/narrowest_other,1.4101233150654466,0.95,,True
+W3.4,c,CCRCC,3,12,15,ghcp/narrowest_other,1.2787586857525808,0.95,,True
+W3.4,c,CCRCC,3,12,17,ghcp/narrowest_other,1.4171810702213687,0.95,,True
+W3.4,c,CCRCC,3,12,25,ghcp/narrowest_other,1.4023478697003013,0.95,,True
+W3.4,c,CCRCC,3,14,10,ghcp/narrowest_other,1.270288730036859,0.95,,True
+W3.4,c,CCRCC,3,14,15,ghcp/narrowest_other,1.1518712402325149,0.95,,True
+W3.4,c,CCRCC,3,14,17,ghcp/narrowest_other,1.2809923669372982,0.95,,True
+W3.4,c,CCRCC,3,14,25,ghcp/narrowest_other,1.267673764375092,0.95,,True
+W3.4,c,CCRCC,3,16,10,ghcp/narrowest_other,1.2105792926797048,0.95,,True
+W3.4,c,CCRCC,3,16,15,ghcp/narrowest_other,1.0948973208052344,0.95,,True
+W3.4,c,CCRCC,3,16,17,ghcp/narrowest_other,1.2178101517048427,0.95,,True
+W3.4,c,CCRCC,3,16,25,ghcp/narrowest_other,1.2038970976346053,0.95,,True
+W3.4,c,CCRCC,3,18,10,ghcp/narrowest_other,1.1646762878912131,0.95,,True
+W3.4,c,CCRCC,3,18,15,ghcp/narrowest_other,1.0556240400085675,0.95,,True
+W3.4,c,CCRCC,3,18,17,ghcp/narrowest_other,1.1755923113579185,0.95,,True
+W3.4,c,CCRCC,3,18,25,ghcp/narrowest_other,1.1624476118679357,0.95,,True
+W3.4,c,CCRCC,3,20,10,ghcp/narrowest_other,1.1290686616868562,0.95,,True
+W3.4,c,CCRCC,3,20,15,ghcp/narrowest_other,1.0246981945230025,0.95,,True
+W3.4,c,CCRCC,3,20,17,ghcp/narrowest_other,1.141616592807562,0.95,,True
+W3.4,c,CCRCC,3,20,25,ghcp/narrowest_other,1.1300407966695014,0.95,,True
+W3.4,a,INDIANA_KIDNEY,3,-1,17,within rel range over K,0.0,,1e-08,True
+W3.4,a,INDIANA_KIDNEY,3,-1,25,within rel range over K,0.0,,1e-08,True
+W3.4,a,INDIANA_KIDNEY,3,-1,50,within rel range over K,0.0,,1e-08,True
+W3.4,a,INDIANA_KIDNEY,3,-1,10,within_plain rel range over K,0.0,,1e-08,True
+W3.4,a,INDIANA_KIDNEY,3,-1,15,within_plain rel range over K,0.0,,1e-08,True
+W3.4,a,INDIANA_KIDNEY,3,-1,17,within_plain rel range over K,0.0,,1e-08,True
+W3.4,a,INDIANA_KIDNEY,3,-1,25,within_plain rel range over K,0.0,,1e-08,True
+W3.4,a,INDIANA_KIDNEY,3,-1,50,within_plain rel range over K,0.0,,1e-08,True
+W3.4,a,INDIANA_KIDNEY,3,-1,10,within_full rel range over K,0.0,,1e-08,True
+W3.4,a,INDIANA_KIDNEY,3,-1,15,within_full rel range over K,0.0,,1e-08,True
+W3.4,a,INDIANA_KIDNEY,3,-1,17,within_full rel range over K,0.0,,1e-08,True
+W3.4,a,INDIANA_KIDNEY,3,-1,25,within_full rel range over K,0.0,,1e-08,True
+W3.4,a,INDIANA_KIDNEY,3,-1,50,within_full rel range over K,0.0,,1e-08,True
+W3.4,b,INDIANA_KIDNEY,3,-1,5,ghcp max relative increase between successive K,-0.033158452355541004,,1e-08,True
+W3.4,b,INDIANA_KIDNEY,3,-1,10,ghcp max relative increase between successive K,-0.031938344571052296,,1e-08,True
+W3.4,b,INDIANA_KIDNEY,3,-1,15,ghcp max relative increase between successive K,-0.0318882487923522,,1e-08,True
+W3.4,b,INDIANA_KIDNEY,3,-1,17,ghcp max relative increase between successive K,-0.03150851702057296,,1e-08,True
+W3.4,b,INDIANA_KIDNEY,3,-1,25,ghcp max relative increase between successive K,-0.03066812807567017,,1e-08,True
+W3.4,b,INDIANA_KIDNEY,3,-1,50,ghcp max relative increase between successive K,-0.030744878912511514,,1e-08,True
+W3.4,c,INDIANA_KIDNEY,3,10,10,ghcp/narrowest_other,2.177849799986766,0.95,,True
+W3.4,c,INDIANA_KIDNEY,3,10,15,ghcp/narrowest_other,1.8962762550420773,0.95,,True
+W3.4,c,INDIANA_KIDNEY,3,10,17,ghcp/narrowest_other,2.130548016451979,0.95,,True
+W3.4,c,INDIANA_KIDNEY,3,10,25,ghcp/narrowest_other,2.056442865269874,0.95,,True
+W3.4,c,INDIANA_KIDNEY,3,14,10,ghcp/narrowest_other,1.1810871577112985,0.95,,True
+W3.4,c,INDIANA_KIDNEY,3,14,15,ghcp/narrowest_other,1.0737110183571372,0.95,,True
+W3.4,c,INDIANA_KIDNEY,3,14,17,ghcp/narrowest_other,1.2236116435257105,0.95,,True
+W3.4,c,INDIANA_KIDNEY,3,14,25,ghcp/narrowest_other,1.2307722066931148,0.95,,True
+W3.4,c,INDIANA_KIDNEY,3,18,10,ghcp/narrowest_other,1.0624308985868762,0.95,,True
+W3.4,c,INDIANA_KIDNEY,3,18,15,ghcp/narrowest_other,0.9667302012819784,0.95,,True
+W3.4,c,INDIANA_KIDNEY,3,18,17,ghcp/narrowest_other,1.1016053923932103,0.95,,True
+W3.4,c,INDIANA_KIDNEY,3,18,25,ghcp/narrowest_other,1.1099644700057287,0.95,,True
+W3.4,c,INDIANA_KIDNEY,3,20,10,ghcp/narrowest_other,1.028498614464876,0.95,,True
+W3.4,c,INDIANA_KIDNEY,3,20,15,ghcp/narrowest_other,0.9359028681084179,0.95,,False
+W3.4,c,INDIANA_KIDNEY,3,20,17,ghcp/narrowest_other,1.0668954401370339,0.95,,True
+W3.4,c,INDIANA_KIDNEY,3,20,25,ghcp/narrowest_other,1.0759239374801497,0.95,,True

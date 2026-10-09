@@ -1,0 +1,7 @@
+task,cpu_model_p2,cpu_model_p3,rows,cov_max,width_mean_max,width_median_max,rows_width_differs,same_cpu
+CCRCC,AMD EPYC 9654 96-Core Processor,Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz,104112,0.0,0.0,0.0,0,False
+CCRCC,Intel(R) Xeon(R) CPU E5-2643 v3 @ 3.40GHz,Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz,104112,0.0,7.921389811511024e-09,1.369769284320883e-07,90136,False
+CCRCC,Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz,Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz,104112,0.0,1.0840379590654606e-08,5.332967247804338e-09,89667,False
+INDIANA_KIDNEY,Intel(R) Xeon(R) CPU E5-2680 v4 @ 2.40GHz,Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz,143154,0.0,3.545470529655978e-14,2.833067112907649e-13,120844,False
+INDIANA_KIDNEY,Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz,AMD EPYC 9654 96-Core Processor,69408,0.0,0.0,0.0,0,False
+INDIANA_KIDNEY,Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz,Intel(R) Xeon(R) Gold 6140 CPU @ 2.30GHz,112788,0.0,0.0,0.0,0,True
