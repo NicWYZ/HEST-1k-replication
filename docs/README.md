@@ -8,15 +8,13 @@ The files themselves are not moved. Every instruction document, plan and report 
 
 ## Start here
 
-To get up to speed in about an hour, read these in order.
+From 9 October 2026 the project's state is kept in `../CLAUDE.md` and not in handoff documents. A new oversight session reads, in order,
 
-1. `../README.md`, the repository's entry point (status, key findings, the benchmark's properties, known limitations).
-2. `decisions/round5_oversight_handoff.md`, the latest oversight handoff (4 October). It carries round 4 from start to close with reasons, the six results and what a literature check did to them, the key numbers with their files, the state of the second advisor deck, and the open decisions.
-3. `decisions/round4_oversight_handoff.md`, the handoff before it (30 September), for the path from the literature review to the start of round 4. Its sections 3, 5, 6 and 12 still hold.
-4. `decisions/round3_oversight_handoff.md` (22 September), for rounds 1 and 2 in detail. Its sections 0, 2, 6 and 10 still hold.
-5. The closing pages of `round3_final_report.md`, `round4_ppi_final_report.md` and `round4_conf_final_report.md`.
-6. `decisions/round3_directions.md` and `decisions/round4_originality_check.md`, the two documents where the project changed direction, and `deck2/deck2_literature_check.md`, which changed how two of round 4's results are described.
-7. `WAYS_OF_WORKING.md`, the procedures, each tied to the failure it prevents.
+1. `../CLAUDE.md`, the operating file. It holds the current state, the plan, Nicolas's preferences and the hard rules, and says when to come back here.
+2. `progress-log.md`, what happened at each step and why the project moved, newest first.
+3. The round sections below, for any document the first two point to.
+
+For the longer story up to 4 October, the three oversight handoffs remain the record. `decisions/round5_oversight_handoff.md` (4 October) covers round 4 and the second deck, `decisions/round4_oversight_handoff.md` (30 September) the path from the literature review to round 4, and `decisions/round3_oversight_handoff.md` (22 September) rounds 1 and 2. The closing pages of `round3_final_report.md`, `round4_ppi_final_report.md`, `round4_conf_final_report.md` and `round5_conf_final_report.md` are the best one-page summaries of their rounds. `WAYS_OF_WORKING.md` has the procedures, each tied to the failure it prevents.
 
 For the methods themselves, derived from scratch, read `reference/methods_and_state_of_play.md` and `reference/concepts_explained_round4.md`.
 
@@ -153,12 +151,31 @@ The deck's numbers are in `results/summary/deck2_numbers.csv`, written by `code/
 
 ## Round 5, two tracks (from 7 October)
 
-Instructions only so far. Each session starts from the `main` commit that carries its instruction.
+Each session starts from the `main` commit that carries its instruction. Each gate's report arrives as a pull request into `main`, merged by Nicolas.
+
+**The inference track** (branch `round5-ppi`, stages E0 to E5 and E4b, gates E2, E4, E5; in progress).
 
 | document | date | role |
 |---|---|---|
-| `decisions/round5_ppi_track.md` | 7 Oct | instruction for the inference track (branch `round5-ppi`, stages E0 to E5, gates E2, E4, E5). Its section 2.4 sets out the oversight chat's reading that regime B's classical comparator has no intercept, which stage E2 tests |
-| `decisions/round5_conformal_track.md` | 7 Oct | instruction for the prediction-set track (branch `round5-conformal`, stages W0 to W5, gates W2, W5) |
+| `decisions/round5_ppi_track.md` | 7 Oct | instruction. Its section 2.4 sets out the oversight chat's reading that regime B's classical comparator has no intercept, which stage E2 tests |
+| `round5_ppi_plan.md` | 7 Oct onward | plan; section 7 transcribes the E2 memo and section 8 the E4 memo |
+| `round5_ppi_theory.md` | 7 Oct onward | the level term (section 1), the cross-fitting term and the two-level estimator (section 2), the interval for balanced selection (section 3, from E4b) |
+| `round5_ppi_E2_report.md` | 8 Oct | report at the E2 gate (E1 and E2); tag `round5-ppi-E2` |
+| `decisions/round5_ppi_E2_decisions.md` | 8 Oct | decision at E2. Its section 4 sets the code-delivery rules both tracks follow |
+| `round5_ppi_E4_report.md` | 9 Oct | report at the E4 gate (E3a, E3, E4); tag `round5-ppi-E4` |
+| `decisions/round5_ppi_E4_decisions.md` | 9 Oct | decision at E4. Form C becomes the paper's within-cluster estimator; adds stage E4b before E5 |
+
+**The prediction-set track** (branch `round5-conformal`, stages W0 to W5, gates W2, W5; complete).
+
+| document | date | role |
+|---|---|---|
+| `decisions/round5_conformal_track.md` | 7 Oct | instruction |
+| `round5_conf_plan.md` | 7 Oct onward | plan; section 6 transcribes the W2 memo and section 7 the W5 memo |
+| `round5_conf_theory.md` | 7 Oct onward | the two theory questions (W4). Part A, whether the small-$K$ propositions are in print. Part B, whether HCP can be beaten |
+| `round5_conf_W2_report.md` | 8 Oct | report at the W2 gate (W1, W2); tag `round5-conf-W2` |
+| `decisions/round5_conformal_W2_decisions.md` | 8 Oct | decision at W2. Its section 4 is the same code-delivery section as the E2 memo's |
+| `round5_conf_final_report.md` | 9 Oct | end-of-track report (W3 to W5); tag `round5-conf-final`. Its closing page, "What the round-5 prediction-set track established", is the summary |
+| `decisions/round5_conformal_W5_decisions.md` | 9 Oct | acceptance and close of the track, with four corrections for the record |
 
 ---
 
@@ -166,6 +183,8 @@ Instructions only so far. Each session starts from the `main` commit that carrie
 
 | document | what it is |
 |---|---|
+| `../CLAUDE.md` | the oversight chat's operating file: state, plan, preferences, hard rules. Kept current by every oversight session |
+| `progress-log.md` | what happened and why, newest first; an entry for every memo, gate review and decision |
 | `WAYS_OF_WORKING.md` | procedures, each tied to the failure it prevents; added to every round |
 | `README.md` (this file) | the reading guide; update it when a document is added |
 
