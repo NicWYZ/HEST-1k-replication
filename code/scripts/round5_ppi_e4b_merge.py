@@ -144,7 +144,19 @@ def main():
           .agg(wr_D0cl=("wr_D0cl", "median"), wr_D0tuned=("wr_D0tuned", "median"), var_ratio=("var_ratio", "median"),
                coverage=("coverage", "median"), coverage_D0cl=("coverage_D0cl", "median"), n_genes=("gene", "nunique"))
           .reset_index())
+    sup = diag[["vtag", "arm", "estimand", "n_L", "balance", "p_a", "support", "frac_genes_abs_bias_z_gt_3"]].drop_duplicates()
+    wm = wm.merge(sup, on=["vtag", "arm", "estimand", "n_L", "balance", "p_a"], how="left")
+    wm["coverage_minus_D0cl"] = wm["coverage"] - wm["coverage_D0cl"]
     wm.to_csv(f"{D}/e4b_rej_width_ratios.csv", index=False)
+    for lab, z in (("support_ge_1000", wm[wm["support"] >= 1000]), ("support_lt_1000", wm[wm["support"] < 1000]),
+                   ("support_ge_1000_nL_ge_6", wm[(wm["support"] >= 1000) & (wm["n_L"] >= 6)])):
+        num(f"rej|{lab}|n_cells", len(z), "e4b_rej_width_ratios.csv")
+        num(f"rej|{lab}|coverage_median", z["coverage"].median(), "e4b_rej_width_ratios.csv")
+        num(f"rej|{lab}|coverage_min", z["coverage"].min(), "e4b_rej_width_ratios.csv")
+        num(f"rej|{lab}|coverage_max", z["coverage"].max(), "e4b_rej_width_ratios.csv")
+        num(f"rej|{lab}|n_within_0.03_of_D0cl", int((z["coverage_minus_D0cl"].abs() <= 0.03).sum()), "e4b_rej_width_ratios.csv")
+        num(f"rej|{lab}|coverage_minus_D0cl_median", z["coverage_minus_D0cl"].median(), "e4b_rej_width_ratios.csv")
+        num(f"rej|{lab}|coverage_minus_D0cl_min", z["coverage_minus_D0cl"].min(), "e4b_rej_width_ratios.csv")
     # E4b.2
     x = wm[(wm["n_L"] == 8) & (wm["estimand"] == "theta3") & (wm["balance"] == "own") & (wm["p_a"] == 0.01)]
     bands = [("CCRCC", ("uni_v2",), (0.72, 0.88)), ("ACS_STATES", ("package",), (0.45, 0.62)),

@@ -377,8 +377,8 @@ Sections 7.3 (code delivery by bundle and snapshot, pushes, shared files, proven
 
 | prediction | stage | gate | score |
 |---|---|---|---|
-| E4b.1 | E4b | E5 | not yet scored |
-| E4b.2 | E4b | E5 | not yet scored |
-| E4b.3 | E4b | E5 | not yet scored |
-| E4b.4 | E4b | E5 | not yet scored |
+| E4b.1 | E4b | E5 | held (`e4b_prediction_scores.csv`) |
+| E4b.2 | E4b | E5 | held (`e4b_prediction_scores.csv`) |
+| E4b.3 | E4b | E5 | held (`e4b_prediction_scores.csv`) |
+| E4b.4 | E4b | E5 | held (`e4b_prediction_scores.csv`) |
 
