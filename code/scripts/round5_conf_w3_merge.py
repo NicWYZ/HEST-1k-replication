@@ -102,10 +102,18 @@ def load(root, excl):
 
 
 def r4_refs(r4):
-    o = pd.read_csv(os.path.join(r4, "c3_o_sweep.csv.gz"), dtype={"fold": str})
+    """Round-4 references. Accepts the repository layout (c3_o_sweep.csv.gz, one merged
+    c3_full_ghcp_o25__CCRCC.csv) and the Longleaf results layout (c3_o_sweep.csv, and the
+    o = 25 rows in the shard files frag_CCRCC_K/ghcp_o25/*/c3_full__*.csv)."""
+    p = os.path.join(r4, "c3_o_sweep.csv.gz")
+    o = pd.read_csv(p if os.path.exists(p) else os.path.join(r4, "c3_o_sweep.csv"), dtype={"fold": str})
     k = pd.read_csv(os.path.join(r4, "c3_K_sweep.csv"), dtype={"fold": str})
-    g = pd.read_csv(os.path.join(r4, "frag_CCRCC_K", "ghcp_o25", "c3_full_ghcp_o25__CCRCC.csv"),
-                    dtype={"fold": str})
+    g25 = os.path.join(r4, "frag_CCRCC_K", "ghcp_o25")
+    p = os.path.join(g25, "c3_full_ghcp_o25__CCRCC.csv")
+    fs = [p] if os.path.exists(p) else sorted(glob.glob(os.path.join(g25, "*", "c3_full__*.csv")))
+    if not fs:
+        raise FileNotFoundError(f"no round-4 o = 25 rows under {g25}")
+    g = pd.concat([pd.read_csv(f, dtype={"fold": str}) for f in fs], ignore_index=True)
     return {"c3_o_sweep": o, "c3_K_sweep": k[k.K >= 10], "ghcp_o25": g[g.K >= 10]}
 
 
