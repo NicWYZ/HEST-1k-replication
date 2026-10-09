@@ -1,0 +1,5 @@
+check,n,n_pass,worst,tolerance
+A_reproduction_exact_rows,5760,1230,5.684341886080803e-14,"exact (E0: 0.005 abs coverage, 1e-5 rel variance)"
+B_rules_none_oracle_lin_vs_xf,1920,1920,0.0,exact
+B_c_crossfit_nL4_lin_vs_xf,180,180,0.0,exact
+"A_reproduction_within_E0_tolerance (worst abs 5.7e-14, worst rel 7.2e-13; coverage cols exact)",5760,5760,5.684341886080802e-14,0.005 abs coverage; 1e-5 rel variance

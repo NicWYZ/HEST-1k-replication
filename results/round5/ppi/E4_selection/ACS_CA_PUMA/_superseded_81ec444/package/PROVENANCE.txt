@@ -1,0 +1,32 @@
+platform: Longleaf, plan section 7.3
+slurm_job_id: 4335607
+slurm_job_partition: spill
+slurm_job_account: rc_tengfei_pi
+slurm_cpus_on_node: 2
+node: c0405.ll.unc.edu
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python3.11
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+snapshot_commit: 81ec444ab5b8d205dc3ca73b76c51783848c599b
+snapshot: /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b
+unit: ACS_CA_PUMA
+stage: E4
+workers: 
+command: round5_ppi_e4_selection.py --parquet /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_CA_PUMA.parquet --perm-parquet /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_CA_PUMA.parquet --vtag ACS_CA_PUMA --arm package --theta2-kind mean --out-dir .
+start: 2026-10-08T20:59:52-04:00
+end: 2026-10-08T21:02:28-04:00
+elapsed_s: 156.1
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  544721f07cb3d74dc5b92456d61fe450  code/scripts/round3_b1_ppi.py
+  d79e69aa65800b9d24de556e019a0c64  code/scripts/round4_ppi_estimator.py
+  15f51917a5fb79702ba239e520e7ff86  code/scripts/round4_ppi_q2_masking.py
+  6097231bc238c0a23387ce76029acefd  code/scripts/round4_ppi_q3_regimes.py
+  943c9bd55bb58d3f0c2edde6d8c64b77  code/scripts/round5_ppi_balance.py
+  b6e9ecc52ac5539682487d8e7c1451c6  code/scripts/round5_ppi_e2_regimeB.py
+  bd969049cd410bdcf5ccc4617195f88f  code/scripts/round5_ppi_e4_selection.py
+  2de31569ffe72239062fbeb0c9a50fc5  code/scripts/round5_ppi_estimator.py
+  ba8f82be458b63fc22f07f6e6b54c041  code/scripts/round5_ppi_run.py
+inputs (md5, path):
+  c581e8d0a04c989cfebfe6ee888feb90  /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_CA_PUMA.parquet

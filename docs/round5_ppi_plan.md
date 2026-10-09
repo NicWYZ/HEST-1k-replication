@@ -228,16 +228,16 @@ The twenty predictions are the oversight chat's and are copied from section 2.1 
 | E2.3 | E2 | E2 | held in substance, see `docs/round5_ppi_E2_report.md` section 5 |
 | E2.4 | E2 | E2 | partly held, see `docs/round5_ppi_E2_report.md` section 5 |
 | E2.5 | E2 | E2 | held for $\theta_3$, refuted for $\theta_2$, see `docs/round5_ppi_E2_report.md` section 5 |
-| E3.1 | E3 | E4 | not yet scored |
-| E3.2 | E3 | E4 | not yet scored |
-| E3.3 | E3 | E4 | not yet scored |
-| E3.4 | E3 | E4 | not yet scored |
-| E3.5 | E3 | E4 | not yet scored |
-| E4.1 | E4 | E4 | not yet scored |
-| E4.2 | E4 | E4 | not yet scored |
-| E4.3 | E4 | E4 | not yet scored |
-| E4.4 | E4 | E4 | not yet scored |
-| E4.5 | E4 | E4 | not yet scored |
+| E3.1 | E3 | E4 | held (`docs/round5_ppi_E4_report.md` section 5) |
+| E3.2 | E3 | E4 | partly held (`docs/round5_ppi_E4_report.md` section 5) |
+| E3.3 | E3 | E4 | partly held (`docs/round5_ppi_E4_report.md` section 5) |
+| E3.4 | E3 | E4 | held (`docs/round5_ppi_E4_report.md` section 5) |
+| E3.5 | E3 | E4 | refuted (`docs/round5_ppi_E4_report.md` section 5) |
+| E4.1 | E4 | E4 | partly held (`docs/round5_ppi_E4_report.md` section 5) |
+| E4.2 | E4 | E4 | partly held (`docs/round5_ppi_E4_report.md` section 5) |
+| E4.3 | E4 | E4 | partly held (`docs/round5_ppi_E4_report.md` section 5) |
+| E4.4 | E4 | E4 | D2 over-coverage refuted, other parts partly held (`docs/round5_ppi_E4_report.md` section 5) |
+| E4.5 | E4 | E4 | partly held (`docs/round5_ppi_E4_report.md` section 5) |
 
 ## 4. Parametrisations fixed before the runs that use them
 
@@ -264,4 +264,71 @@ These are listed and not acted on. Each is repeated in the E2 report.
 
 3. (8 October 2026) The numeric-claim sweep runs locally in the clone on Nicolas's Mac, at his request, because it measures the documents in place. It is the only local run. It used `code/scripts/verify_numeric_claims.py` unmodified, Python 3.11.15 and pandas 2.3.3, over `README.md` and `docs/round5_ppi_*.md`.
 
-No other local run has been requested. All other computation runs on Longleaf.
+Extension 1 is replaced by section 4 of the E2 decision memo, transcribed in section 7.3 below. Extensions 2 and 3 stand, with the change in section 7.3 that the track sweeps only its own documents.
+
+4. (8 October 2026) Nicolas said local compute is preferred where it is genuinely faster, until he says stop. He chose on the same day that the real-task units stay on Longleaf, because their prediction parquets exist only there and no data is copied to the Mac. So the simulations of interval 2 run locally and every unit that reads task data runs on Longleaf. Section 7.4 gives the rules for local runs.
+
+## 7. Interval 2, from the E2 decision memo
+
+The memo is `docs/decisions/round5_ppi_E2_decisions.md` (md5 `8a2117e26a5d69877855240ba06501d2`), committed unchanged. Where this section and the memo differ, the memo holds. Interval 2 runs E3a, E3 and E4 and ends at the E4 gate.
+
+### 7.1 The gate rule and the people
+
+No stage after a gate starts, is set up, staged or piloted until the oversight chat has reviewed the gate report and replied. Inside the interval there are no interim reports and no interim stops. Anything that would have halted work is handled under the decision boundaries of brief section 9, recorded in the "Escalations" section of the E4 report, and work continues. The exceptions are the stop-and-report cases of brief section 9 and of the memo (a derivation of E3a or E3 that does not close, E3 acceptance check 3 or 4 failing). Contact with anyone outside the project is never the session's decision. Every sub-agent brief of interval 2 carries the sentence "Sub-agents report to the lead and to no one else, Nicolas included."
+
+### 7.2 What the memo accepts and answers
+
+The E2 report is accepted. Escalations 1 and 2 are accepted as recorded, escalation 3 is answered by section 7.3, escalation 4 by the stratified draw of section 7.6, escalation 5 by the provenance index of section 7.3 item 6. The heavy-law outlier of report section 6.1 is not pursued. Nicolas merges pull request #15. Nothing is pushed to `round5-ppi` until that merge has happened.
+
+The readings of memo section 3 stand as the paper's readings. The constant predictor is the primary control from now on, and the permuted predictor is reported beside it.
+
+### 7.3 Code delivery, pushes and shared files (memo section 4)
+
+1. GitHub sees one push per gate, the branch and the tag together, with one pull request into `main`. No push before pull request #15 is merged. If it is not merged when the E4 report is ready, the session commits and tags locally and waits.
+2. Commits reach Longleaf as a git bundle, `git bundle create <file> <last delivered commit>..round5-ppi`, copied as job input. A short Slurm job in `/work/users/w/e/weiyang/hest_code/round5-ppi/` runs `git bundle verify`, `git fetch <file> round5-ppi` and `git merge --ff-only FETCH_HEAD`, and prints the new HEAD. A failed fast-forward changes nothing and is recorded. The clone never fetches from GitHub, is never rebased or reset, and never has another branch checked out.
+3. The same job writes `git -C <clone> archive <commit> code | tar -x -C /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/<full hash>/` and removes write permission from it. Every job puts that snapshot's `code/scripts` on `PYTHONPATH`, runs its scripts from there and runs from its own output directory. No script is copied loose into a job directory. Committed data files are read from the clone. Nothing is edited on Longleaf.
+4. Each delivery is one row of `results/round5/ppi/code_deliveries.csv`: date, Slurm job id, HEAD before and after, bundle md5, commits carried, snapshot path.
+5. Every job records its snapshot's commit and the md5 of each script it executed. Commits of documents or results only need not be delivered.
+6. Before the E4 gate push, `results/round5/ppi/provenance_index.csv` gets one row per job and script (job id, unit, script path, md5, recorded commit, and the two checks: the commit is an ancestor of the gate tag, and the md5 equals the script's md5 at that commit). It includes rows for every E0 to E2 job, read from the Longleaf `PROVENANCE.txt` files, and the three records naming `8b879bb` listed as failing the second check, with `4f52b0c` and `f75950f` beside them. The report lists every failing row.
+7. Results computed on Longleaf come back by the route in use and are committed locally.
+8. Only the lead cancels a Slurm job, after checking `squeue -u weiyang` and the ledger. A sub-agent never runs `scancel`.
+9. The track's sweep exceptions go in `.verify-exceptions-round5-ppi`, and the sweep runs with `--exceptions` pointing at it, over `docs/round5_ppi_*.md` only. The README is swept by the oversight chat.
+
+The first delivery carries `d82c3f3..` the commit that adds this section and the memo, and makes the first snapshot. No job of interval 2 runs an uploaded script.
+
+### 7.4 Local runs (extension 4)
+
+Local runs are the simulations: E3a's reruns of the E1 normal and skewed grids, `round5_ppi_e3_sim.py` and `round5_ppi_e4_sim.py`. They follow the same discipline as Longleaf jobs. Each runs from a read-only snapshot of a committed commit made with `git archive <commit> code`, outside the clone's tracked tree, in its own output directory, and writes a `PROVENANCE.txt` with the host, the Python, numpy, scipy and pandas versions, the snapshot commit, the md5 of every script and input, and the command line. Each local run is one row of `results/round5/ppi/r5ppi_local_runs.csv`. Any table holds rows of one platform only. Where an acceptance check compares a local rerun with a Longleaf row (E3a's reproduction of the E1 grid), the comparison is made at the E0 tolerances and the largest difference is reported. If it fails because of the platform, that part reruns on Longleaf and the report says so. Sub-agents may run local simulations in parallel, at most eight worker processes at a time across the session.
+
+### 7.5 E3a, the cross-fitting term (first in the interval)
+
+1. Theory section 2.0 before any E3a job. Derive the design variance of $\hat\theta = \bar z_L - c(\bar f_L - \bar F) - \tfrac{d}{2}(\bar f_A - \bar f_B)$, keeping the dependence between the halves' coefficients and means, say how much of the last term the current estimate misses, and derive or correct the candidate $\widehat{\text{Var}}_{\text{xf}} = (1 - n_L/G)\,s_e^2/n_L + (n_L/G)\,d^2 s_f^2/n_L$. If the derivation does not close, stop and report.
+2. Add `textbook_t|fpc|lin|xf` to `round5_ppi_estimator.py`.
+3. Locally, rerun E1's normal and skewed grids at $G \in \{15, 24, 51\}$ with both intervals on the same seeds.
+4. On Longleaf, rerun the masking with every unit labelled, $n_L \in \{6, 8, 12, 16\}$, $\theta_3$ and $\theta_2$, donor-weighted, design target, rules `none` and `c_crossfit_design`, both intervals, on all six tasks, one unit per task in parallel. A cell with $n_L$ above the task's valid donors is skipped and recorded (lung $\theta_2$ has 9).
+5. Acceptance: with $d = 0$ and under rule `none` the two intervals are identical; the `textbook_t|fpc|lin` rows reproduce E1 and `q4a_table61.csv`.
+6. Predictions E3a.1 to E3a.3, scored at the E4 gate. If the acceptance passes, E3 and E4 report the corrected interval as primary and the uncorrected beside it. Otherwise they use `textbook_t|fpc|lin` and the failure is an escalation.
+
+### 7.6 E3, as the brief says with the memo's changes
+
+1. Theory section 2, items 1 to 5 of brief E3, plus the stratified form C for $\theta_2$ in item 1, before any E3 job.
+2. Stratified draws for $\theta_2$. Every $\theta_2$ row with $m <$ all, in regime B and regime A, draws inside each cluster by group (neoplastic-dominant and stromal-dominant spots), $\lfloor m/2 \rfloor$ and $\lceil m/2 \rceil$ with the larger share to the rarer group, each capped at the group's size and any shortfall given to the other group. A group smaller than its share is labelled completely and has no sampling variance. The smallest $m$ for $\theta_2$ is 4. Units in neither group are not labelled for $\theta_2$. The estimate is the difference of the two groups' labelled means of $y - \lambda^w_g \hat y$ plus $\lambda^w_g$ times the difference of their all-unit means of $\hat y$, with variance $\sum_h (1 - m_h/M_h)\,s_h^2/m_h$. The $\theta_2$ rows of E2 are rerun under this draw. The simple random rows of E2 stay as the record.
+3. The constant predictor is the primary control, the permuted predictor beside it.
+4. `e3_regime_comparison.csv` adds the ratio of regime B to regime A width with the form C classical estimator in both, beside the same ratio with the two-level estimator.
+5. The masking grid carries the interval chosen by E3a.
+6. Fan-out: six task units on Longleaf in parallel, one local simulation unit. Acceptance as in the brief, with check 3 covering the stratified $\theta_2$ form.
+7. Predictions E3.1 to E3.5 of the brief and E3.6, E3.7 of the memo.
+
+### 7.7 E4, as the brief says
+
+E4 uses the interval chosen by E3a. Six task units on Longleaf in parallel and one local simulation unit. Its code can be written while E3's units run, and its units are submitted once E3's results are merged. As run, the E4 task units were submitted after five of the six E3 task units had been merged and while lung's E3 unit was still running, since no E4 input depends on E3's lung rows. The E3 and E4 merges ran locally on committed result files. The E4 report `docs/round5_ppi_E4_report.md` covers E3a, E3 and E4 in the format of brief section 8, and adds the delivery ledger, the two checks of section 7.3 item 6, the E3a derivation and results, the stratified $\theta_2$ results, and `e3_superseded_round4_numbers.csv` including round 4's regime B and regime A $\theta_2$ rows with $m <$ all. Then the sweep of section 7.3 item 9, tag `round5-ppi-E4`, push and pull request once #15 is merged, and stop.
+
+### 7.8 New predictions
+
+| prediction | stage | gate | score |
+|---|---|---|---|
+| E3a.1 | E3a | E4 | held (`docs/round5_ppi_E4_report.md` section 5) |
+| E3a.2 | E3a | E4 | held (`docs/round5_ppi_E4_report.md` section 5) |
+| E3a.3 | E3a | E4 | held for theta3 (`docs/round5_ppi_E4_report.md` section 5) |
+| E3.6 | E3 | E4 | held (`docs/round5_ppi_E4_report.md` section 5) |
+| E3.7 | E3 | E4 | partly held (`docs/round5_ppi_E4_report.md` section 5) |

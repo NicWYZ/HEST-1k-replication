@@ -1,0 +1,10 @@
+check,detail,worst_value,n_compared,threshold,passed
+1_e3_accept_identity,"r4 engine vs round-4 code, all draws, regime A+B, package+permuted",max_abs_theta=1.599e-14; max_rel_var=3.673e-13,7200,~1e-12,True
+2_vs_q4_main_table,A_all_C_ppi,max_abs_d_coverage_median=0.000e+00; max_rel_emp_var_median=9.770e-15; max_rel_est_var_over_emp_var_median=1.066e-14,16,0.005; 1e-5,True
+2_vs_q4_main_table,A_all_P_ppi,max_abs_d_coverage_median=0.000e+00; max_rel_emp_var_median=9.770e-15; max_rel_est_var_over_emp_var_median=1.066e-14,16,0.005; 1e-5,True
+2_vs_q4_main_table,A_all_r4_ppi,max_abs_d_coverage_median=0.000e+00; max_rel_emp_var_median=6.217e-15; max_rel_est_var_over_emp_var_median=1.432e-14,16,0.005; 1e-5,True
+2_vs_q4_main_table,A_budget2400,max_abs_d_coverage_median=0.000e+00; max_rel_emp_var_median=1.887e-14; max_rel_est_var_over_emp_var_median=5.884e-15,16,0.005; 1e-5,True
+2_vs_q4_main_table,B,max_abs_d_coverage_median=0.000e+00; max_rel_emp_var_median=0.000e+00; max_rel_est_var_over_emp_var_median=3.553e-15,4,0.005; 1e-5,True
+3_formC_identity,"constant+donor_constant, all e3_*_formC_identity files (masking, regb, regcomp)",max_abs_theta_Cppi_minus_Ccl=3.220e-15; max_abs_var_Cppi_minus_Ccl=3.018e-16,130,1e-10,True
+4_regb_width_ratio_P_ppi_over_P_classical,"constant, theta3, m>=20 (1 gene)",min=1.0000; max=1.0000,4,0.97-1.05 (constant only; donor_constant no band),True
+4_regb_width_ratio_P_ppi_over_P_classical,"donor_constant, theta3, m>=20 (1 gene)",min=0.9866; max=0.9868,4,0.97-1.05 (constant only; donor_constant no band),n/a

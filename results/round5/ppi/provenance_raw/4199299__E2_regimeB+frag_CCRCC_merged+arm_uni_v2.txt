@@ -1,0 +1,24 @@
+#source: /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_CCRCC_merged/arm_uni_v2/PROVENANCE.txt
+stage: E2_regimeB
+intended_job_prefix: r5ppi_
+frame_id: 1c0d26a9-e67c-4c79-b3a8-2ec49a86dc9a
+slurm_job_id: 4199299
+partition: spill
+account: rc_tengfei_pi
+node: c151609.ll.unc.edu
+cpu: x86_64
+date_utc: 2026-10-07T22:38:55+00:00
+code_clone: /work/users/w/e/weiyang/hest_code/round5-ppi
+code_clone_HEAD: d82c3f33ce37fe2d7dbf5b527bfee9a9fb9ee935
+PYTHONHASHSEED: 0
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_CCRCC_merged/arm_uni_v2/_scripts/round5_ppi_e2_regimeB.py --parquet /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC_merged__uni_v2.parquet --vtag CCRCC_merged --arm uni_v2 --draws 200 --out-dir .
+config: {"arm": "uni_v2", "draws": 200, "m_grid": "2,3,4,5,6,8,10,15,20,25,50,100", "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC_merged__uni_v2.parquet", "vtag": "CCRCC_merged"}
+config_md5: f608377ac815c5eb0f98a92e7f4816ec
+script_md5:
+  122375c3acb103ed93e3e687644d7f6d  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_CCRCC_merged/arm_uni_v2/_scripts/round5_ppi_common.py
+  b6e9ecc52ac5539682487d8e7c1451c6  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_CCRCC_merged/arm_uni_v2/_scripts/round5_ppi_e2_regimeB.py
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+uploaded_scripts_local_commit: c7d2c95645b1a03c0a4fb698ca779b212492ed23 (E2 scripts: 26482f4e0a623dd69a465b828d41dddb91627024)
+intended_job_prefix: r5ppi_E2
+exit_code: 0

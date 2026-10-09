@@ -1,0 +1,25 @@
+#source: /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E0_anchors/PROVENANCE.txt
+stage: E0 (q1b tests rerun with --ref-module)
+intended_job_prefix: r5ppi_
+frame_id: e5d5217d-4382-43ce-9cdc-7b08d2cba953
+slurm_job_id: 4198575
+partition: spill
+account: rc_tengfei_pi
+node: c141601.ll.unc.edu
+cpu: x86_64
+date_utc: 2026-10-07T22:06:34+00:00
+code_clone: /work/users/w/e/weiyang/hest_code/round5-ppi
+code_clone_HEAD: d82c3f33ce37fe2d7dbf5b527bfee9a9fb9ee935
+PYTHONHASHSEED: 0
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+command: round4_ppi_q1b_tests.py --ref-module ref_estimator_de3d1f2.py --out-dir q1b (from tests/)
+config: {"ref_module": "round4_ppi_estimator.py at de3d1f2, md5 10c76fd4706435a2ad71a8c5f53fb938 as in round-4 job 3240806", "stage": "E0"}
+config_md5: fc256f0845a8da2b9cfd9ef9db234fbe
+script_md5:
+  90fd589f98cbea127ed06c7b6dd5f4db  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round4_ppi_q1b_tests.py
+  10c76fd4706435a2ad71a8c5f53fb938  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E0_anchors/tests/ref_estimator_de3d1f2.py
+  d79e69aa65800b9d24de556e019a0c64  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round4_ppi_estimator.py
+  873dad7f383eb99826b2d0b990cd6914  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round4_ppi_q1_sim.py
+  416318688d6c0c2c6254dc87442b19c0  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round4_ppi_q1b_sim.py
+  0ad7ae8efe554c1f285e5f384a9fb7f5  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round3_a0_harness.py
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1

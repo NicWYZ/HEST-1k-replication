@@ -1,0 +1,52 @@
+slurm_job_id=4325514 partition=spill node=c0414.ll.unc.edu date=2026-10-08T18:14:12-04:00
+bundle_md5=dd5b4885fa473edba929752203119292
+branch=round5-ppi
+head_before=3894ad6c61b5a6bf1ee8a1225157680fa40679d9
+status_before:
+/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/79d9cec5-00a9-43cf-bba7-3622b0ec48fb/r5ppi_delivery_04.bundle is okay
+The bundle contains this ref:
+81ec444ab5b8d205dc3ca73b76c51783848c599b refs/heads/round5-ppi
+The bundle requires this ref:
+3894ad6c61b5a6bf1ee8a1225157680fa40679d9 
+The bundle uses this hash algorithm: sha1
+verify_rc=0
+From /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/79d9cec5-00a9-43cf-bba7-3622b0ec48fb/r5ppi_delivery_04.bundle
+ * branch            round5-ppi -> FETCH_HEAD
+fetch_rc=0
+Updating 3894ad6..81ec444
+Fast-forward
+ code/scripts/round5_ppi_balance.py      | 7 +++++--
+ code/scripts/round5_ppi_e3_sim.py       | 3 ++-
+ code/scripts/round5_ppi_e4_selection.py | 2 +-
+ 3 files changed, 8 insertions(+), 4 deletions(-)
+merge_rc=0
+head_after=81ec444ab5b8d205dc3ca73b76c51783848c599b
+commits_carried:
+81ec444ab5b8d205dc3ca73b76c51783848c599b Round 5 PPI E4: D1 degrees of freedom exclude strata of two clusters
+126c9d48bfb366f49dc50fa2c74e1e6f84476a80 Round 5 PPI E3 sim: use 90% intervals (round4_ppi_estimator.ALPHA) not 95%
+snapshot=/work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b
+snapshot_files=222
+943c9bd55bb58d3f0c2edde6d8c64b77  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b/code/scripts/round5_ppi_balance.py
+122375c3acb103ed93e3e687644d7f6d  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b/code/scripts/round5_ppi_common.py
+1c334fc84714a655f3f2b31bf9183914  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b/code/scripts/round5_ppi_e0_checks.py
+cd1c7abb33b63f9e39a9e9ff68a931ac  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b/code/scripts/round5_ppi_e0_compare.py
+956a15c3214ce97ff3fe81bd5fd1ced6  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b/code/scripts/round5_ppi_e1_diag.py
+0f3b0e5b1cf1b9a402cd3fb8471c9c98  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b/code/scripts/round5_ppi_e1_merge.py
+372d272e3822f5dab55c1850fb4e3d3d  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b/code/scripts/round5_ppi_e1_sim.py
+b63bc1990bd5c0931ecd8b07182d8186  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b/code/scripts/round5_ppi_e2_diag.py
+c3f80f48ac4e802077c1c408406dc228  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b/code/scripts/round5_ppi_e2_levelcheck.py
+186a5d80b26b884f77563784f8219486  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b/code/scripts/round5_ppi_e2_merge.py
+b6e9ecc52ac5539682487d8e7c1451c6  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b/code/scripts/round5_ppi_e2_regimeB.py
+5a98dc0028adf1e2f9e6aea0b6182a2a  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b/code/scripts/round5_ppi_e2_report_extra.py
+134ef9676919ab1326329d1d528ff866  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b/code/scripts/round5_ppi_e2_sim.py
+885fb62e8f7a48c2f57431bfe59818fe  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b/code/scripts/round5_ppi_e3a_masking.py
+bdd4cd490bfde66c665aea1f88a3fe9a  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b/code/scripts/round5_ppi_e3a_sim.py
+039c489a40f88ef81e69651d04865ea9  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b/code/scripts/round5_ppi_e3a_tests.py
+885918ff61abd753bffb14b49457d001  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b/code/scripts/round5_ppi_e3_sim.py
+814455077be2acdf13e07b86bf8b7b36  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b/code/scripts/round5_ppi_e3_tests.py
+80e52bfe1b2cf9e48c82f3828689d78f  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b/code/scripts/round5_ppi_e3_twolevel.py
+bd969049cd410bdcf5ccc4617195f88f  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b/code/scripts/round5_ppi_e4_selection.py
+62b9521109c3166fcdb89491608ba2f0  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b/code/scripts/round5_ppi_e4_sim.py
+2de31569ffe72239062fbeb0c9a50fc5  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b/code/scripts/round5_ppi_estimator.py
+ba8f82be458b63fc22f07f6e6b54c041  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b/code/scripts/round5_ppi_run.py
+e13183a4ffdddf4f01ba5136844c606d  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/81ec444ab5b8d205dc3ca73b76c51783848c599b/code/scripts/round5_ppi_twolevel.py

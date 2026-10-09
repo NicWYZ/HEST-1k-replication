@@ -9,6 +9,9 @@ Imports the round-4 modules unmodified (round4_ppi_estimator.py md5 d79e69aa6580
 2. oracle_lambda: the lambda dict of a fixed coefficient, the population's own least-squares slope.
 3. johnson_interval: Johnson's (1978) skewness-adjusted t interval applied to the contributions
    e_g, a diagnostic of E1 capped at half a day.
+4. crossfit_extra (interval 2, E3a): the cross-fitting term that the finite-population factor
+   must not scale, docs/round5_ppi_theory.md section 2.0. design_whole_clusters(..., xf=True)
+   gives the interval textbook_t|fpc|lin|xf.
 """
 import numpy as np
 from scipy import stats
@@ -26,7 +29,7 @@ def contributions_textbook(pop, zbar, fbar, M=None):
     return zbar * M[:, None], fbar * M[:, None]
 
 
-def design_whole_clusters(pop, zbar, fbar, Lm, lam, Am=None, M=None, lin=True):
+def design_whole_clusters(pop, zbar, fbar, Lm, lam, Am=None, M=None, lin=True, xf=False):
     """Design-target estimator with every unit of each labelled cluster labelled.
 
     zbar, fbar: (G, ncol) cluster means of z and f over all units. Lm: (G, ncol) labelled mask.
@@ -66,7 +69,33 @@ def design_whole_clusters(pop, zbar, fbar, Lm, lam, Am=None, M=None, lin=True):
     em = e.sum(0) / GL
     s2 = np.where(Lm, (e - em) ** 2, 0.0).sum(0) / (GL - 1.0)
     var = (1.0 - GL / G) * s2 / GL
+    if xf:
+        var = var + crossfit_extra(pop, fbar, Lm, lam, Am)
     return dict(theta=theta, var=var, df=GL - 1.0, e=e)
+
+
+def crossfit_extra(pop, fbar, Lm, lam, Am=None):
+    """Theory section 2.0. The term of the cross-fitted estimator that is a difference between
+    the two halves of the labelled sample, kappa * delta * (fbar_A - fbar_B), has a design
+    variance with no finite-population factor. The current estimate scales it by (1 - n_L/G);
+    the corrected estimate adds back the fraction n_L/G:
+        extra = (n_L/G) * mean_L[(lamL_g - cU)^2] * s_f^2 / n_L,
+    with s_f^2 the labelled clusters' sample variance of fbar_g (donor-weighted). The mean over L
+    of (lamL_g - cU)^2 equals n_A n_B (lam_B - lam_A)^2 / n_L^2, which is d^2 for even n_L. It is
+    zero whenever every labelled cluster carries the same coefficient (rule none, a fixed
+    coefficient, both halves clipped to the same bound, n_L < 6), so the intervals then agree.
+    fbar: (G, ncol) cluster means of f. Donor-weighted only."""
+    if pop != "donor":
+        raise NotImplementedError("crossfit_extra is derived for the donor-weighted target only")
+    if Am is None:
+        Am = np.ones_like(Lm, dtype=bool)
+    lamL, cU = lam["lamL"], lam["cU"]
+    GL = Lm.sum(0).astype(float)
+    G = Am.sum(0).astype(float)
+    dev2 = np.where(Lm, (lamL - cU[None, :]) ** 2, 0.0).sum(0) / GL
+    fm = np.where(Lm, fbar, 0.0).sum(0) / GL
+    sf2 = np.where(Lm, (fbar - fm) ** 2, 0.0).sum(0) / (GL - 1.0)
+    return (GL / G) * dev2 * sf2 / GL
 
 
 def oracle_lambda(pop, zbar, fbar, Lm, Am=None, M=None):

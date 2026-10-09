@@ -1,0 +1,59 @@
+vtag,check,arm,estimand,n_L,n_compared,n_unmatched,max_abs_diff,tol,passed,rule,max_cov_diff,p_a
+ACS_STATES,A1a_D2inf_equals_D0,all,all,all,64,0.0,0.0,0.0,True,,,
+ACS_STATES,A1a_D2inf_equals_D0,package,theta2,4,4,0.0,0.0,0.0,True,,,
+ACS_STATES,A1a_D2inf_equals_D0,package,theta2,6,4,0.0,0.0,0.0,True,,,
+ACS_STATES,A1a_D2inf_equals_D0,package,theta2,8,4,0.0,0.0,0.0,True,,,
+ACS_STATES,A1a_D2inf_equals_D0,package,theta2,12,4,0.0,0.0,0.0,True,,,
+ACS_STATES,A1a_D2inf_equals_D0,package,theta3,4,4,0.0,0.0,0.0,True,,,
+ACS_STATES,A1a_D2inf_equals_D0,package,theta3,6,4,0.0,0.0,0.0,True,,,
+ACS_STATES,A1a_D2inf_equals_D0,package,theta3,8,4,0.0,0.0,0.0,True,,,
+ACS_STATES,A1a_D2inf_equals_D0,package,theta3,12,4,0.0,0.0,0.0,True,,,
+ACS_STATES,A1a_D2inf_equals_D0,permuted,theta2,4,4,0.0,0.0,0.0,True,,,
+ACS_STATES,A1a_D2inf_equals_D0,permuted,theta2,6,4,0.0,0.0,0.0,True,,,
+ACS_STATES,A1a_D2inf_equals_D0,permuted,theta2,8,4,0.0,0.0,0.0,True,,,
+ACS_STATES,A1a_D2inf_equals_D0,permuted,theta2,12,4,0.0,0.0,0.0,True,,,
+ACS_STATES,A1a_D2inf_equals_D0,permuted,theta3,4,4,0.0,0.0,0.0,True,,,
+ACS_STATES,A1a_D2inf_equals_D0,permuted,theta3,6,4,0.0,0.0,0.0,True,,,
+ACS_STATES,A1a_D2inf_equals_D0,permuted,theta3,8,4,0.0,0.0,0.0,True,,,
+ACS_STATES,A1a_D2inf_equals_D0,permuted,theta3,12,4,0.0,0.0,0.0,True,,,
+ACS_STATES,A1a_D2inf_equals_D0_genes_file,all,all,all,64,0.0,0.0,0.0,True,,,
+ACS_STATES,A1b_D0_vs_q4a,package,theta2,"4,6,8,12 (matched 4,6,8,12)",4,0.0,1.065404149541578e-14,rel 1e-5 var; 0.005 cov,True,c_crossfit_design,0.0,
+ACS_STATES,A1b_D0_vs_q4a,package,theta2,"4,6,8,12 (matched 4,6,8,12)",4,0.0,0.0,rel 1e-5 var; 0.005 cov,True,none,0.0,
+ACS_STATES,A1b_D0_vs_q4a,package,theta3,"4,6,8,12 (matched 4,6,8,12)",4,0.0,9.259518074224742e-16,rel 1e-5 var; 0.005 cov,True,c_crossfit_design,0.0,
+ACS_STATES,A1b_D0_vs_q4a,package,theta3,"4,6,8,12 (matched 4,6,8,12)",4,0.0,0.0,rel 1e-5 var; 0.005 cov,True,none,0.0,
+ACS_STATES,A1b_D0_vs_q4a,permuted,theta2,"4,6,8,12 (matched 4,6,8,12)",4,0.0,3.099909043914454e-15,rel 1e-5 var; 0.005 cov,True,c_crossfit_design,0.0,
+ACS_STATES,A1b_D0_vs_q4a,permuted,theta2,"4,6,8,12 (matched 4,6,8,12)",4,0.0,0.0,rel 1e-5 var; 0.005 cov,True,none,0.0,
+ACS_STATES,A1b_D0_vs_q4a,permuted,theta3,"4,6,8,12 (matched 4,6,8,12)",4,0.0,0.0,rel 1e-5 var; 0.005 cov,True,c_crossfit_design,0.0,
+ACS_STATES,A1b_D0_vs_q4a,permuted,theta3,"4,6,8,12 (matched 4,6,8,12)",4,0.0,0.0,rel 1e-5 var; 0.005 cov,True,none,0.0,
+ACS_STATES,A2_perm_balance_classical_ratio,package,theta2,4,1,,0.877958084795712,0.93-1.07,False,,,0.01
+ACS_STATES,A2_perm_balance_classical_ratio,package,theta2,4,1,,0.9525529959879312,0.93-1.07,True,,,0.1
+ACS_STATES,A2_perm_balance_classical_ratio,package,theta2,6,1,,1.0510304200902998,0.93-1.07,True,,,0.01
+ACS_STATES,A2_perm_balance_classical_ratio,package,theta2,6,1,,1.129724584877956,0.93-1.07,False,,,0.1
+ACS_STATES,A2_perm_balance_classical_ratio,package,theta2,8,1,,0.9112587357471229,0.93-1.07,False,,,0.01
+ACS_STATES,A2_perm_balance_classical_ratio,package,theta2,8,1,,0.8365690769634266,0.93-1.07,False,,,0.1
+ACS_STATES,A2_perm_balance_classical_ratio,package,theta2,12,1,,1.03147306586604,0.93-1.07,True,,,0.01
+ACS_STATES,A2_perm_balance_classical_ratio,package,theta2,12,1,,1.1723312882342551,0.93-1.07,False,,,0.1
+ACS_STATES,A2_perm_balance_classical_ratio,package,theta3,4,1,,0.9732467336678827,0.93-1.07,True,,,0.01
+ACS_STATES,A2_perm_balance_classical_ratio,package,theta3,4,1,,0.9191400122451339,0.93-1.07,False,,,0.1
+ACS_STATES,A2_perm_balance_classical_ratio,package,theta3,6,1,,1.2327618080825258,0.93-1.07,False,,,0.01
+ACS_STATES,A2_perm_balance_classical_ratio,package,theta3,6,1,,1.1779329578077469,0.93-1.07,False,,,0.1
+ACS_STATES,A2_perm_balance_classical_ratio,package,theta3,8,1,,0.815671202975968,0.93-1.07,False,,,0.01
+ACS_STATES,A2_perm_balance_classical_ratio,package,theta3,8,1,,0.8818085284275324,0.93-1.07,False,,,0.1
+ACS_STATES,A2_perm_balance_classical_ratio,package,theta3,12,1,,1.0989187811255885,0.93-1.07,False,,,0.01
+ACS_STATES,A2_perm_balance_classical_ratio,package,theta3,12,1,,0.9884535524848832,0.93-1.07,True,,,0.1
+ACS_STATES,A2_perm_balance_classical_ratio,permuted,theta2,4,1,,0.877958084795712,0.93-1.07,False,,,0.01
+ACS_STATES,A2_perm_balance_classical_ratio,permuted,theta2,4,1,,0.9525529959879312,0.93-1.07,True,,,0.1
+ACS_STATES,A2_perm_balance_classical_ratio,permuted,theta2,6,1,,1.0510304200902998,0.93-1.07,True,,,0.01
+ACS_STATES,A2_perm_balance_classical_ratio,permuted,theta2,6,1,,1.129724584877956,0.93-1.07,False,,,0.1
+ACS_STATES,A2_perm_balance_classical_ratio,permuted,theta2,8,1,,0.9112587357471229,0.93-1.07,False,,,0.01
+ACS_STATES,A2_perm_balance_classical_ratio,permuted,theta2,8,1,,0.8365690769634266,0.93-1.07,False,,,0.1
+ACS_STATES,A2_perm_balance_classical_ratio,permuted,theta2,12,1,,1.03147306586604,0.93-1.07,True,,,0.01
+ACS_STATES,A2_perm_balance_classical_ratio,permuted,theta2,12,1,,1.1723312882342551,0.93-1.07,False,,,0.1
+ACS_STATES,A2_perm_balance_classical_ratio,permuted,theta3,4,1,,0.9732467336678827,0.93-1.07,True,,,0.01
+ACS_STATES,A2_perm_balance_classical_ratio,permuted,theta3,4,1,,0.9191400122451339,0.93-1.07,False,,,0.1
+ACS_STATES,A2_perm_balance_classical_ratio,permuted,theta3,6,1,,1.2327618080825258,0.93-1.07,False,,,0.01
+ACS_STATES,A2_perm_balance_classical_ratio,permuted,theta3,6,1,,1.1779329578077469,0.93-1.07,False,,,0.1
+ACS_STATES,A2_perm_balance_classical_ratio,permuted,theta3,8,1,,0.815671202975968,0.93-1.07,False,,,0.01
+ACS_STATES,A2_perm_balance_classical_ratio,permuted,theta3,8,1,,0.8818085284275324,0.93-1.07,False,,,0.1
+ACS_STATES,A2_perm_balance_classical_ratio,permuted,theta3,12,1,,1.0989187811255885,0.93-1.07,False,,,0.01
+ACS_STATES,A2_perm_balance_classical_ratio,permuted,theta3,12,1,,0.9884535524848832,0.93-1.07,True,,,0.1

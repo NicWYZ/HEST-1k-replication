@@ -1,0 +1,9 @@
+prediction,verdict,summary
+E3.1b,held,"unit-weighted permuted variance ratio at n_L >= 8 in 0.95-1.15 in 34 of 34 cells, range 0.992 to 1.027"
+E3.1,held,"regime B permuted C_ppi/C_classical width at m >= 10 in 0.97-1.05 in 72 of 72 cells, range 1.000 to 1.017; unit-weighted permuted variance ratio at n_L >= 8 in 0.95-1.15 in 34 of 34 cells, range 0.992 to 1.027"
+E3.2,partly held,"|C_ppi/C_classical - E2 encoder/donor_constant| <= 0.05 in 242 of 274 cells; by estimand theta2: 89 of 120 (max 0.344); theta3: 153 of 154 (max 0.056) (E2's theta2 rows used the simple random draw, E3's the stratified draw)"
+E3.3,partly held,C_classical/P_classical width at m >= 10 on tissue in 0.80-0.97 in 144 of 288 cells (range 0.818 to 1.003); form C coverage at m >= 5 in 0.87-0.92 in 864 of 864 cells (range 0.875 to 0.917)
+E3.4,held,"C_ppi: B narrower in 210 of 232 comparisons, median ratio 0.430; P_ppi: B narrower in 211 of 232 comparisons, median ratio 0.513"
+E3.5,refuted,classical m* at cd 100 below round 4 in 6 of 8 task-form pairs; m*_PP/m* within 15% of sqrt((1-R2w)/(1-R2c)) in 10 of 28 task-arm-form cells
+E3.6,held,"theta2 stratified regime B coverage (C_ppi, median over genes) at m >= 6 in 0.86-0.92 in 192 of 192 cells (range 0.885 to 0.913); at m = 4 in 0.83-0.92 in 24 of 24 (range 0.890 to 0.905)"
+E3.7,partly held,"kidney: |two-level - classical| B/A ratio <= 0.10 in 216 of 216; lung and ACS: two-level lower by 0.05-0.20 in 20 of 112 (diff range -0.625 to 0.290; median diff lung 0.056, ACS_STATES -0.056, ACS_CA_PUMA 0.146)"

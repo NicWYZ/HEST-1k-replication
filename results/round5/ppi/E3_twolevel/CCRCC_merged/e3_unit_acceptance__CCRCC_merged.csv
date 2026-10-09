@@ -1,0 +1,83 @@
+check,arm,subset,n,metric,worst,tol,verdict
+1i_identity,hoptimus0,all,3600,max_abs_theta,1.199040866595169e-14,,report (expected <=~1e-12)
+1i_identity,hoptimus0,all,3600,max_rel_var,7.739364704661966e-13,,report (expected <=~1e-12)
+1i_identity,hoptimus0,1_regimeA_r4_vs_round4_code,3200,max_abs_theta,1.199040866595169e-14,,report (expected <=~1e-12)
+1i_identity,hoptimus0,1_regimeA_r4_vs_round4_code,3200,max_rel_var,7.739364704661966e-13,,report (expected <=~1e-12)
+1i_identity,hoptimus0,1_regimeB_r4_vs_round4_code,400,max_abs_theta,2.220446049250313e-15,,report (expected <=~1e-12)
+1i_identity,hoptimus0,1_regimeB_r4_vs_round4_code,400,max_rel_var,1.4432899320127037e-15,,report (expected <=~1e-12)
+1i_identity,uni_v2,all,3600,max_abs_theta,1.199040866595169e-14,,report (expected <=~1e-12)
+1i_identity,uni_v2,all,3600,max_rel_var,7.739364704661966e-13,,report (expected <=~1e-12)
+1i_identity,uni_v2,1_regimeA_r4_vs_round4_code,3200,max_abs_theta,1.199040866595169e-14,,report (expected <=~1e-12)
+1i_identity,uni_v2,1_regimeA_r4_vs_round4_code,3200,max_rel_var,7.739364704661966e-13,,report (expected <=~1e-12)
+1i_identity,uni_v2,1_regimeB_r4_vs_round4_code,400,max_abs_theta,1.7763568394002505e-15,,report (expected <=~1e-12)
+1i_identity,uni_v2,1_regimeB_r4_vs_round4_code,400,max_rel_var,1.4432899320127037e-15,,report (expected <=~1e-12)
+1i_identity,resnet50,all,3600,max_abs_theta,1.199040866595169e-14,,report (expected <=~1e-12)
+1i_identity,resnet50,all,3600,max_rel_var,7.739364704661966e-13,,report (expected <=~1e-12)
+1i_identity,resnet50,1_regimeA_r4_vs_round4_code,3200,max_abs_theta,1.199040866595169e-14,,report (expected <=~1e-12)
+1i_identity,resnet50,1_regimeA_r4_vs_round4_code,3200,max_rel_var,7.739364704661966e-13,,report (expected <=~1e-12)
+1i_identity,resnet50,1_regimeB_r4_vs_round4_code,400,max_abs_theta,1.5543122344752194e-15,,report (expected <=~1e-12)
+1i_identity,resnet50,1_regimeB_r4_vs_round4_code,400,max_rel_var,1.3322676295501878e-15,,report (expected <=~1e-12)
+1i_identity,permuted,all,3600,max_abs_theta,1.199040866595169e-14,,report (expected <=~1e-12)
+1i_identity,permuted,all,3600,max_rel_var,7.739364704661966e-13,,report (expected <=~1e-12)
+1i_identity,permuted,1_regimeA_r4_vs_round4_code,3200,max_abs_theta,1.199040866595169e-14,,report (expected <=~1e-12)
+1i_identity,permuted,1_regimeA_r4_vs_round4_code,3200,max_rel_var,7.739364704661966e-13,,report (expected <=~1e-12)
+1i_identity,permuted,1_regimeB_r4_vs_round4_code,400,max_abs_theta,1.7763568394002505e-15,,report (expected <=~1e-12)
+1i_identity,permuted,1_regimeB_r4_vs_round4_code,400,max_rel_var,1.3322676295501878e-15,,report (expected <=~1e-12)
+1ii_vs_round4,hoptimus0,A_m2400/nL,8,max_abs_diff_coverage_median,0.0,0.005,pass
+1ii_vs_round4,hoptimus0,A_m2400/nL,8,max_rel_diff_emp_var_median,2.6018514301186265e-15,1e-05,pass
+1ii_vs_round4,hoptimus0,A_m2400/nL,8,max_rel_diff_est_var_over_emp_var_median,5.822949159734216e-16,1e-05,pass
+1ii_vs_round4,hoptimus0,A_m_all,24,max_abs_diff_coverage_median,0.0,0.005,pass
+1ii_vs_round4,hoptimus0,A_m_all,24,max_rel_diff_emp_var_median,6.021317838924143e-15,1e-05,pass
+1ii_vs_round4,hoptimus0,A_m_all,24,max_rel_diff_est_var_over_emp_var_median,4.440282411075929e-15,1e-05,pass
+1ii_vs_round4,hoptimus0,B_2400,1,max_abs_diff_coverage_median,0.0,0.005,pass
+1ii_vs_round4,hoptimus0,B_2400,1,max_rel_diff_emp_var_median,0.0,1e-05,pass
+1ii_vs_round4,hoptimus0,B_2400,1,max_rel_diff_est_var_over_emp_var_median,0.0,1e-05,pass
+1ii_vs_round4,uni_v2,A_m2400/nL,8,max_abs_diff_coverage_median,0.0,0.005,pass
+1ii_vs_round4,uni_v2,A_m2400/nL,8,max_rel_diff_emp_var_median,2.4936639975235412e-15,1e-05,pass
+1ii_vs_round4,uni_v2,A_m2400/nL,8,max_rel_diff_est_var_over_emp_var_median,1.1020705965261032e-15,1e-05,pass
+1ii_vs_round4,uni_v2,A_m_all,24,max_abs_diff_coverage_median,0.0,0.005,pass
+1ii_vs_round4,uni_v2,A_m_all,24,max_rel_diff_emp_var_median,8.310321841837254e-15,1e-05,pass
+1ii_vs_round4,uni_v2,A_m_all,24,max_rel_diff_est_var_over_emp_var_median,2.948899439677137e-15,1e-05,pass
+1ii_vs_round4,uni_v2,B_2400,1,max_abs_diff_coverage_median,0.0,0.005,pass
+1ii_vs_round4,uni_v2,B_2400,1,max_rel_diff_emp_var_median,0.0,1e-05,pass
+1ii_vs_round4,uni_v2,B_2400,1,max_rel_diff_est_var_over_emp_var_median,0.0,1e-05,pass
+1ii_vs_round4,resnet50,A_m2400/nL,8,max_abs_diff_coverage_median,0.0,0.005,pass
+1ii_vs_round4,resnet50,A_m2400/nL,8,max_rel_diff_emp_var_median,2.224645641508654e-15,1e-05,pass
+1ii_vs_round4,resnet50,A_m2400/nL,8,max_rel_diff_est_var_over_emp_var_median,5.822949159734216e-16,1e-05,pass
+1ii_vs_round4,resnet50,A_m_all,24,max_abs_diff_coverage_median,0.0,0.005,pass
+1ii_vs_round4,resnet50,A_m_all,24,max_rel_diff_emp_var_median,7.716735979550657e-15,1e-05,pass
+1ii_vs_round4,resnet50,A_m_all,24,max_rel_diff_est_var_over_emp_var_median,8.374926781511413e-15,1e-05,pass
+1ii_vs_round4,resnet50,B_2400,1,max_abs_diff_coverage_median,0.0,0.005,pass
+1ii_vs_round4,resnet50,B_2400,1,max_rel_diff_emp_var_median,0.0,1e-05,pass
+1ii_vs_round4,resnet50,B_2400,1,max_rel_diff_est_var_over_emp_var_median,4.2412748562455356e-16,1e-05,pass
+1ii_vs_round4,permuted,A_m2400/nL,8,max_abs_diff_coverage_median,0.0,0.005,pass
+1ii_vs_round4,permuted,A_m2400/nL,8,max_rel_diff_emp_var_median,2.0651344398620902e-15,1e-05,pass
+1ii_vs_round4,permuted,A_m2400/nL,8,max_rel_diff_est_var_over_emp_var_median,6.646859411264946e-16,1e-05,pass
+1ii_vs_round4,permuted,A_m_all,24,max_abs_diff_coverage_median,0.0,0.005,pass
+1ii_vs_round4,permuted,A_m_all,24,max_rel_diff_emp_var_median,7.180558514070353e-15,1e-05,pass
+1ii_vs_round4,permuted,A_m_all,24,max_rel_diff_est_var_over_emp_var_median,8.713435729233967e-15,1e-05,pass
+1ii_vs_round4,permuted,B_2400,1,max_abs_diff_coverage_median,0.0,0.005,pass
+1ii_vs_round4,permuted,B_2400,1,max_rel_diff_emp_var_median,0.0,1e-05,pass
+1ii_vs_round4,permuted,B_2400,1,max_rel_diff_est_var_over_emp_var_median,4.232534551088267e-16,1e-05,pass
+3_formC_identity,constant,e3_masking,60,max_abs_theta_Cppi_minus_Ccl,4.385380947269368e-14,1e-10,pass
+3_formC_identity,constant,e3_masking,60,max_abs_var_Cppi_minus_Ccl,1.2712053631958042e-14,1e-10,pass
+3_formC_identity,constant,e3_regb,22,max_abs_theta_Cppi_minus_Ccl,1.2559397966072083e-14,1e-10,pass
+3_formC_identity,constant,e3_regb,22,max_abs_var_Cppi_minus_Ccl,5.551115123125783e-17,1e-10,pass
+3_formC_identity,constant,e3_regcomp,78,max_abs_theta_Cppi_minus_Ccl,3.9857006584043126e-14,1e-10,pass
+3_formC_identity,constant,e3_regcomp,78,max_abs_var_Cppi_minus_Ccl,1.0297318553398328e-14,1e-10,pass
+3_formC_identity,constant,ALL (3 files),160,max_of_both,4.385380947269368e-14,1e-10,pass
+3_formC_identity,donor_constant,e3_masking,60,max_abs_theta_Cppi_minus_Ccl,4.3048897779840445e-14,1e-10,pass
+3_formC_identity,donor_constant,e3_masking,60,max_abs_var_Cppi_minus_Ccl,2.4258373088059674e-14,1e-10,pass
+3_formC_identity,donor_constant,e3_regb,22,max_abs_theta_Cppi_minus_Ccl,1.2101430968414206e-14,1e-10,pass
+3_formC_identity,donor_constant,e3_regb,22,max_abs_var_Cppi_minus_Ccl,1.6653345369377348e-16,1e-10,pass
+3_formC_identity,donor_constant,e3_regcomp,78,max_abs_theta_Cppi_minus_Ccl,4.325706459695766e-14,1e-10,pass
+3_formC_identity,donor_constant,e3_regcomp,78,max_abs_var_Cppi_minus_Ccl,2.9531932455029164e-14,1e-10,pass
+3_formC_identity,donor_constant,ALL (3 files),160,max_of_both,4.325706459695766e-14,1e-10,pass
+4_regb_width_ratio,constant,theta2,4,min_median_ratio_m>=20,1.0,0.97,pass
+4_regb_width_ratio,constant,theta2,4,max_median_ratio_m>=20,1.0,1.05,pass
+4_regb_width_ratio,constant,theta3,4,min_median_ratio_m>=20,1.0,0.97,pass
+4_regb_width_ratio,constant,theta3,4,max_median_ratio_m>=20,1.0,1.05,pass
+4_regb_width_ratio,donor_constant,theta2,4,min_median_ratio_m>=20,1.0,0.97,no band (reported)
+4_regb_width_ratio,donor_constant,theta2,4,max_median_ratio_m>=20,1.0,1.05,no band (reported)
+4_regb_width_ratio,donor_constant,theta3,4,min_median_ratio_m>=20,1.0039069489745103,0.97,no band (reported)
+4_regb_width_ratio,donor_constant,theta3,4,max_median_ratio_m>=20,1.0055969391191169,1.05,no band (reported)

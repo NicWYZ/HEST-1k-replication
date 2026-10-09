@@ -1,0 +1,31 @@
+#source: /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_ACS_CA_PUMA/smoke_package_m5/PROVENANCE.txt
+stage: E2_regimeB_ACS_CA_PUMA
+intended_job_prefix: r5ppi_
+frame_id: c6b91010-c7d0-467e-b34e-32836e795bc1
+slurm_job_id: 4199210
+partition: spill
+account: rc_tengfei_pi
+node: c0309.ll.unc.edu
+cpu: x86_64
+date_utc: 2026-10-07T22:21:37+00:00
+code_clone: /work/users/w/e/weiyang/hest_code/round5-ppi
+code_clone_HEAD: d82c3f33ce37fe2d7dbf5b527bfee9a9fb9ee935
+PYTHONHASHSEED: 0
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_ACS_CA_PUMA/smoke_package_m5/_scripts/round5_ppi_e2_regimeB.py --parquet /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_CA_PUMA.parquet --vtag ACS_CA_PUMA --arm package --theta2-kind mean --m-grid 5  --draws 10 --out-dir .
+config: {"acceptance": false, "arm": "package", "draws": 10, "exit_code": 0, "m_grid": "5", "theta2_kind": "mean"}
+config_md5: c7d84b497da71a49d55a11d1a636f5b6
+script_md5:
+  122375c3acb103ed93e3e687644d7f6d  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_ACS_CA_PUMA/smoke_package_m5/_scripts/round5_ppi_common.py
+  956a15c3214ce97ff3fe81bd5fd1ced6  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_ACS_CA_PUMA/smoke_package_m5/_scripts/round5_ppi_e1_diag.py
+  372d272e3822f5dab55c1850fb4e3d3d  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_ACS_CA_PUMA/smoke_package_m5/_scripts/round5_ppi_e1_sim.py
+  b6e9ecc52ac5539682487d8e7c1451c6  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_ACS_CA_PUMA/smoke_package_m5/_scripts/round5_ppi_e2_regimeB.py
+  134ef9676919ab1326329d1d528ff866  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_ACS_CA_PUMA/smoke_package_m5/_scripts/round5_ppi_e2_sim.py
+  6a2d0ac0e07f707cafe0d65cbdc2f8a1  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_ACS_CA_PUMA/smoke_package_m5/_scripts/round5_ppi_estimator.py
+  d79e69aa65800b9d24de556e019a0c64  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round4_ppi_estimator.py
+  15f51917a5fb79702ba239e520e7ff86  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round4_ppi_q2_masking.py
+  6097231bc238c0a23387ce76029acefd  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round4_ppi_q3_regimes.py
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+uploaded_scripts_local_commit: c7d2c95645b1a03c0a4fb698ca779b212492ed23
+e2_scripts_local_commit: 26482f4e0a623dd69a465b828d41dddb91627024
+intended_job_prefix: r5ppi_E2

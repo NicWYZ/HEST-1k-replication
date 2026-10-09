@@ -1,0 +1,22 @@
+#source: /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/diag/PROVENANCE.txt
+stage: E2 report extra
+intended_job_prefix: r5ppi_
+frame_id: e5d5217d-4382-43ce-9cdc-7b08d2cba953
+slurm_job_id: 4203742
+partition: spill
+account: rc_tengfei_pi
+node: c151404.ll.unc.edu
+cpu: x86_64
+date_utc: 2026-10-07T23:55:35+00:00
+code_clone: /work/users/w/e/weiyang/hest_code/round5-ppi
+code_clone_HEAD: d82c3f33ce37fe2d7dbf5b527bfee9a9fb9ee935
+PYTHONHASHSEED: 0
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python _scripts/round5_ppi_e2_report_extra.py
+config: {"stage": "E2 report extra"}
+config_md5: 59fcb34d343d98325aa94bcdaf0239ae
+script_md5:
+  5a98dc0028adf1e2f9e6aea0b6182a2a  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/diag/_scripts/round5_ppi_e2_report_extra.py
+  122375c3acb103ed93e3e687644d7f6d  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/diag/_scripts/round5_ppi_common.py
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+uploaded_scripts_local_commit: f75950f164b3c8fedc1d65792493635f656611c5

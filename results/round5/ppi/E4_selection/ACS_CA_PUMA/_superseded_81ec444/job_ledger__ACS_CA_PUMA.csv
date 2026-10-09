@@ -1,0 +1,4 @@
+job_id,purpose,partition,account,node,submit,start,end,elapsed,state,req_mem,req_cpus,max_rss_gb
+4335458,pilot package draws3 ncand100,spill,rc_tengfei_pi,c130604,2026-10-08T20:54:44,2026-10-08T20:55:56,2026-10-08T20:56:06,00:00:10,COMPLETED,16G,2,0.35
+4335607,full package,spill,rc_tengfei_pi,c0405,2026-10-08T20:56:35,2026-10-08T20:59:49,2026-10-08T21:02:31,00:02:42,COMPLETED,16G,2,1.36
+4335608,full permuted,spill,rc_tengfei_pi,c151601,2026-10-08T20:56:40,2026-10-08T20:59:49,2026-10-08T21:01:19,00:01:30,COMPLETED,16G,2,1.55

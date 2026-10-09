@@ -1,0 +1,26 @@
+#source: /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E1_interval/frag_diag/masking_INDIANA_KIDNEY/PROVENANCE.txt
+stage: E1_diag_masking_INDIANA_KIDNEY
+intended_job_prefix: r5ppi_
+frame_id: 7edb66c6-59c7-4570-97fe-b4293e44126d
+slurm_job_id: 4199036
+partition: spill
+account: rc_tengfei_pi
+node: c0401.ll.unc.edu
+cpu: x86_64
+date_utc: 2026-10-07T22:20:22+00:00
+code_clone: /work/users/w/e/weiyang/hest_code/round5-ppi
+code_clone_HEAD: d82c3f33ce37fe2d7dbf5b527bfee9a9fb9ee935
+PYTHONHASHSEED: 0
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round4_ppi_q2_masking.py --parquet /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions_INDIANA_KIDNEY/b1_predictions__INDIANA_KIDNEY__hoptimus0.parquet --vtag INDIANA_KIDNEY --arm hoptimus0 --nl-grid 8 --m-grid 0 --draws 200 --rules none --out-dir .
+config: {"stage": "E1_diag_masking_INDIANA_KIDNEY"}
+config_md5: 71e6c6dc0d0c6e7c7de08e585cdc1a2a
+script_md5:
+  544721f07cb3d74dc5b92456d61fe450  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round3_b1_ppi.py
+  d79e69aa65800b9d24de556e019a0c64  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round4_ppi_estimator.py
+  15f51917a5fb79702ba239e520e7ff86  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round4_ppi_q2_masking.py
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+uploaded_scripts_local_commit: c7d2c95645b1a03c0a4fb698ca779b212492ed23
+intended_job_prefix: r5ppi_E1
+code_clone_HEAD_read_from_gitfile: d82c3f33ce37fe2d7dbf5b527bfee9a9fb9ee935
+exit_code_of_run: 0

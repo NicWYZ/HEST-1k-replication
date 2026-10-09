@@ -1,0 +1,31 @@
+#source: /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_CCRCC/grid_uni_v2/PROVENANCE.txt
+stage: E2_regimeB_grid
+intended_job_prefix: r5ppi_
+frame_id: f7b709d0-5e73-4eda-871b-112acf93963f
+slurm_job_id: 4199283
+partition: spill
+account: rc_tengfei_pi
+node: c151406.ll.unc.edu
+cpu: x86_64
+date_utc: 2026-10-07T22:38:09+00:00
+code_clone: /work/users/w/e/weiyang/hest_code/round5-ppi
+code_clone_HEAD: d82c3f33ce37fe2d7dbf5b527bfee9a9fb9ee935
+PYTHONHASHSEED: 0
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_CCRCC/grid_uni_v2/_scripts/round5_ppi_e2_regimeB.py --parquet /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet --vtag CCRCC --arm uni_v2 --draws 200 --out-dir .
+config: {"arm": "uni_v2", "extra": "--draws 200", "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet"}
+config_md5: 4e789faed4c808939aef70ab406c5020
+script_md5:
+  122375c3acb103ed93e3e687644d7f6d  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_CCRCC/grid_uni_v2/_scripts/round5_ppi_common.py
+  6a2d0ac0e07f707cafe0d65cbdc2f8a1  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_CCRCC/grid_uni_v2/_scripts/round5_ppi_estimator.py
+  372d272e3822f5dab55c1850fb4e3d3d  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_CCRCC/grid_uni_v2/_scripts/round5_ppi_e1_sim.py
+  956a15c3214ce97ff3fe81bd5fd1ced6  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_CCRCC/grid_uni_v2/_scripts/round5_ppi_e1_diag.py
+  b6e9ecc52ac5539682487d8e7c1451c6  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_CCRCC/grid_uni_v2/_scripts/round5_ppi_e2_regimeB.py
+  134ef9676919ab1326329d1d528ff866  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E2_regimeB/frag_CCRCC/grid_uni_v2/_scripts/round5_ppi_e2_sim.py
+  d79e69aa65800b9d24de556e019a0c64  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round4_ppi_estimator.py
+  15f51917a5fb79702ba239e520e7ff86  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round4_ppi_q2_masking.py
+  6097231bc238c0a23387ce76029acefd  /work/users/w/e/weiyang/hest_code/round5-ppi/code/scripts/round4_ppi_q3_regimes.py
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+uploaded_scripts_local_commit: c7d2c95645b1a03c0a4fb698ca779b212492ed23
+e2_scripts_local_commit: 26482f4e0a623dd69a465b828d41dddb91627024
+intended_job_prefix: r5ppi_E2

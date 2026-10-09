@@ -1,0 +1,14 @@
+check,estimator,n_rows,n_matched,worst_abs_coverage_diff,worst_rel_emp_var_diff,worst_rel_est_over_emp_diff,tolerance,pass_
+accept2_regimeA_m2400,r4_ppi,32,32,0.0,2.4424906541753444e-15,1.5543122344752192e-15,"cov 0.005, rel 1e-5",True
+accept2_regimeA_mall,C_ppi,32,32,0.0,1.1102230246251565e-14,2.4424906541753444e-15,"cov 0.005, rel 1e-5",True
+accept2_regimeA_mall,P_ppi,32,32,0.0,1.1102230246251565e-14,9.769962616701378e-15,"cov 0.005, rel 1e-5",True
+accept2_regimeA_mall,r4_ppi,32,32,0.0,6.8833827526759706e-15,1.5543122344752192e-15,"cov 0.005, rel 1e-5",True
+accept2_regimeB_2400,r4_ppi,8,8,0.0,0.0,4.440892098500626e-16,"cov 0.005, rel 1e-5",True
+accept1_identity_1_regimeA_r4_vs_round4_code,r4_ppi,12800,12800,2.6978419498391304e-14,1.1336487304447473e-12,,theta/var ~1e-12 or smaller,True
+accept1_identity_1_regimeB_r4_vs_round4_code,r4_ppi,1600,1600,1.9984014443252818e-15,2.886579864025407e-15,,theta/var ~1e-12 or smaller,True
+accept3_formC_identity,constant,160,160,2.8976820942716586e-14,2.6367796834847468e-14,,"<= 1e-10 (cols: theta, var diffs)",True
+accept3_formC_identity,donor_constant,160,160,4.007905118896815e-14,3.7692071686024065e-14,,"<= 1e-10 (cols: theta, var diffs)",True
+accept4_regB_P_width_ratio,constant:theta2,4,4,1.0,1.0,,"band 0.97-1.05 (cols: min, max over m>=20 of median-over-genes ratio)",True
+accept4_regB_P_width_ratio,constant:theta3,4,4,1.0,1.0,,"band 0.97-1.05 (cols: min, max over m>=20 of median-over-genes ratio)",True
+accept4_regB_P_width_ratio,donor_constant:theta2,4,4,1.0,1.0,,no band (reported),
+accept4_regB_P_width_ratio,donor_constant:theta3,4,4,0.9993177544323008,1.000572136536761,,no band (reported),

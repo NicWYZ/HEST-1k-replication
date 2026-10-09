@@ -1,0 +1,26 @@
+#source: /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E1_interval/frag_G51/heavy_nl4-6-8/PROVENANCE.txt
+stage: E1
+intended_job_prefix: r5ppi_
+frame_id: b9e3feaa-c69f-4aec-8c5e-72d379c7e8ad
+slurm_job_id: 4199537
+partition: spill
+account: rc_tengfei_pi
+node: c130402.ll.unc.edu
+cpu: x86_64
+date_utc: 2026-10-07T22:38:19+00:00
+code_clone: /work/users/w/e/weiyang/hest_code/round5-ppi
+code_clone_HEAD: d82c3f33ce37fe2d7dbf5b527bfee9a9fb9ee935
+PYTHONHASHSEED: 0
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E1_interval/frag_G51/heavy_nl4-6-8/_scripts/round5_ppi_e1_sim.py --G 51 --laws lognormal:1.9394834999993038 --nl 4,6,8 --draws 1000 --tag G51__heavy__nl4-6-8 --out-dir .
+config: {"G": 51, "args": "--laws lognormal:1.9394834999993038 --nl 4,6,8 --draws 1000", "tag": "G51__heavy__nl4-6-8"}
+config_md5: c99a32db7bfed408a4e60eb19a3f1d98
+script_md5:
+  122375c3acb103ed93e3e687644d7f6d  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E1_interval/frag_G51/heavy_nl4-6-8/_scripts/round5_ppi_common.py
+  956a15c3214ce97ff3fe81bd5fd1ced6  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E1_interval/frag_G51/heavy_nl4-6-8/_scripts/round5_ppi_e1_diag.py
+  372d272e3822f5dab55c1850fb4e3d3d  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E1_interval/frag_G51/heavy_nl4-6-8/_scripts/round5_ppi_e1_sim.py
+  6a2d0ac0e07f707cafe0d65cbdc2f8a1  /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E1_interval/frag_G51/heavy_nl4-6-8/_scripts/round5_ppi_estimator.py
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+uploaded_scripts_local_commit: c7d2c95645b1a03c0a4fb698ca779b212492ed23
+intended_job_prefix: r5ppi_E1
+exit_code: 0

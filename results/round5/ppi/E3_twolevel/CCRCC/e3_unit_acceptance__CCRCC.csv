@@ -1,0 +1,85 @@
+check,arm,quantity,worst,tolerance,passed,n,note
+1i_identity,hoptimus0,1_regimeA_r4_vs_round4_code: max_abs_theta,1.4432899320127035e-14,1e-10,True,3200,
+1i_identity,hoptimus0,1_regimeA_r4_vs_round4_code: max_rel_var,4.0889513996944515e-13,1e-10,True,3200,NaN rows: 0
+1i_identity,hoptimus0,1_regimeB_r4_vs_round4_code: max_abs_theta,1.7763568394002505e-15,1e-10,True,400,
+1i_identity,hoptimus0,1_regimeB_r4_vs_round4_code: max_rel_var,1.7763568394002505e-15,1e-10,True,400,NaN rows: 0
+1ii_vs_q4,hoptimus0,A_budget2400 [r4_ppi]: max abs diff coverage_median,0.0,0.005,True,8,matched 8/8
+1ii_vs_q4,hoptimus0,A_budget2400 [r4_ppi]: max rel diff emp_var_median,2.6645352591003757e-15,1e-05,True,8,matched 8/8
+1ii_vs_q4,hoptimus0,A_budget2400 [r4_ppi]: max rel diff est_var_over_emp_var_median,6.661338147750939e-16,1e-05,True,8,matched 8/8
+1ii_vs_q4,hoptimus0,A_all [C_ppi]: max abs diff coverage_median,0.0,0.005,True,8,matched 8/8
+1ii_vs_q4,hoptimus0,A_all [C_ppi]: max rel diff emp_var_median,2.2426505097428162e-14,1e-05,True,8,matched 8/8
+1ii_vs_q4,hoptimus0,A_all [C_ppi]: max rel diff est_var_over_emp_var_median,2.4424906541753444e-15,1e-05,True,8,matched 8/8
+1ii_vs_q4,hoptimus0,A_all [P_ppi]: max abs diff coverage_median,0.0,0.005,True,8,matched 8/8
+1ii_vs_q4,hoptimus0,A_all [P_ppi]: max rel diff emp_var_median,2.2426505097428162e-14,1e-05,True,8,matched 8/8
+1ii_vs_q4,hoptimus0,A_all [P_ppi]: max rel diff est_var_over_emp_var_median,2.9976021664879227e-15,1e-05,True,8,matched 8/8
+1ii_vs_q4,hoptimus0,A_all [r4_ppi]: max abs diff coverage_median,0.0,0.005,True,8,matched 8/8
+1ii_vs_q4,hoptimus0,A_all [r4_ppi]: max rel diff emp_var_median,2.2426505097428162e-14,1e-05,True,8,matched 8/8
+1ii_vs_q4,hoptimus0,A_all [r4_ppi]: max rel diff est_var_over_emp_var_median,1.4432899320127035e-15,1e-05,True,8,matched 8/8
+1ii_vs_q4,hoptimus0,B_budget2400 [r4_ppi]: max abs diff coverage_median,0.0,0.005,True,2,matched 2/2
+1ii_vs_q4,hoptimus0,B_budget2400 [r4_ppi]: max rel diff emp_var_median,0.0,1e-05,True,2,matched 2/2
+1ii_vs_q4,hoptimus0,B_budget2400 [r4_ppi]: max rel diff est_var_over_emp_var_median,2.220446049250313e-16,1e-05,True,2,matched 2/2
+1i_identity,uni_v2,1_regimeA_r4_vs_round4_code: max_abs_theta,1.4432899320127035e-14,1e-10,True,3200,
+1i_identity,uni_v2,1_regimeA_r4_vs_round4_code: max_rel_var,4.0889513996944515e-13,1e-10,True,3200,NaN rows: 0
+1i_identity,uni_v2,1_regimeB_r4_vs_round4_code: max_abs_theta,1.5543122344752194e-15,1e-10,True,400,
+1i_identity,uni_v2,1_regimeB_r4_vs_round4_code: max_rel_var,1.5543122344752194e-15,1e-10,True,400,NaN rows: 0
+1ii_vs_q4,uni_v2,A_budget2400 [r4_ppi]: max abs diff coverage_median,0.0,0.005,True,8,matched 8/8
+1ii_vs_q4,uni_v2,A_budget2400 [r4_ppi]: max rel diff emp_var_median,3.3306690738754696e-15,1e-05,True,8,matched 8/8
+1ii_vs_q4,uni_v2,A_budget2400 [r4_ppi]: max rel diff est_var_over_emp_var_median,6.661338147750939e-16,1e-05,True,8,matched 8/8
+1ii_vs_q4,uni_v2,A_all [C_ppi]: max abs diff coverage_median,0.0,0.005,True,8,matched 8/8
+1ii_vs_q4,uni_v2,A_all [C_ppi]: max rel diff emp_var_median,7.993605777301127e-15,1e-05,True,8,matched 8/8
+1ii_vs_q4,uni_v2,A_all [C_ppi]: max rel diff est_var_over_emp_var_median,2.9976021664879227e-15,1e-05,True,8,matched 8/8
+1ii_vs_q4,uni_v2,A_all [P_ppi]: max abs diff coverage_median,0.0,0.005,True,8,matched 8/8
+1ii_vs_q4,uni_v2,A_all [P_ppi]: max rel diff emp_var_median,7.993605777301127e-15,1e-05,True,8,matched 8/8
+1ii_vs_q4,uni_v2,A_all [P_ppi]: max rel diff est_var_over_emp_var_median,3.1086244689504383e-15,1e-05,True,8,matched 8/8
+1ii_vs_q4,uni_v2,A_all [r4_ppi]: max abs diff coverage_median,0.0,0.005,True,8,matched 8/8
+1ii_vs_q4,uni_v2,A_all [r4_ppi]: max rel diff emp_var_median,7.993605777301127e-15,1e-05,True,8,matched 8/8
+1ii_vs_q4,uni_v2,A_all [r4_ppi]: max rel diff est_var_over_emp_var_median,2.220446049250313e-15,1e-05,True,8,matched 8/8
+1ii_vs_q4,uni_v2,B_budget2400 [r4_ppi]: max abs diff coverage_median,0.0,0.005,True,2,matched 2/2
+1ii_vs_q4,uni_v2,B_budget2400 [r4_ppi]: max rel diff emp_var_median,0.0,1e-05,True,2,matched 2/2
+1ii_vs_q4,uni_v2,B_budget2400 [r4_ppi]: max rel diff est_var_over_emp_var_median,4.440892098500626e-16,1e-05,True,2,matched 2/2
+1i_identity,resnet50,1_regimeA_r4_vs_round4_code: max_abs_theta,1.4432899320127035e-14,1e-10,True,3200,
+1i_identity,resnet50,1_regimeA_r4_vs_round4_code: max_rel_var,4.0889513996944515e-13,1e-10,True,3200,NaN rows: 0
+1i_identity,resnet50,1_regimeB_r4_vs_round4_code: max_abs_theta,1.7763568394002505e-15,1e-10,True,400,
+1i_identity,resnet50,1_regimeB_r4_vs_round4_code: max_rel_var,1.5543122344752194e-15,1e-10,True,400,NaN rows: 0
+1ii_vs_q4,resnet50,A_budget2400 [r4_ppi]: max abs diff coverage_median,0.0,0.005,True,8,matched 8/8
+1ii_vs_q4,resnet50,A_budget2400 [r4_ppi]: max rel diff emp_var_median,2.220446049250313e-15,1e-05,True,8,matched 8/8
+1ii_vs_q4,resnet50,A_budget2400 [r4_ppi]: max rel diff est_var_over_emp_var_median,5.551115123125783e-16,1e-05,True,8,matched 8/8
+1ii_vs_q4,resnet50,A_all [C_ppi]: max abs diff coverage_median,0.0,0.005,True,8,matched 8/8
+1ii_vs_q4,resnet50,A_all [C_ppi]: max rel diff emp_var_median,7.549516567451064e-15,1e-05,True,8,matched 8/8
+1ii_vs_q4,resnet50,A_all [C_ppi]: max rel diff est_var_over_emp_var_median,2.1094237467877974e-15,1e-05,True,8,matched 8/8
+1ii_vs_q4,resnet50,A_all [P_ppi]: max abs diff coverage_median,0.0,0.005,True,8,matched 8/8
+1ii_vs_q4,resnet50,A_all [P_ppi]: max rel diff emp_var_median,7.549516567451064e-15,1e-05,True,8,matched 8/8
+1ii_vs_q4,resnet50,A_all [P_ppi]: max rel diff est_var_over_emp_var_median,3.3306690738754696e-15,1e-05,True,8,matched 8/8
+1ii_vs_q4,resnet50,A_all [r4_ppi]: max abs diff coverage_median,0.0,0.005,True,8,matched 8/8
+1ii_vs_q4,resnet50,A_all [r4_ppi]: max rel diff emp_var_median,7.549516567451064e-15,1e-05,True,8,matched 8/8
+1ii_vs_q4,resnet50,A_all [r4_ppi]: max rel diff est_var_over_emp_var_median,2.6645352591003757e-15,1e-05,True,8,matched 8/8
+1ii_vs_q4,resnet50,B_budget2400 [r4_ppi]: max abs diff coverage_median,0.0,0.005,True,2,matched 2/2
+1ii_vs_q4,resnet50,B_budget2400 [r4_ppi]: max rel diff emp_var_median,1.7763568394002505e-15,1e-05,True,2,matched 2/2
+1ii_vs_q4,resnet50,B_budget2400 [r4_ppi]: max rel diff est_var_over_emp_var_median,0.0,1e-05,True,2,matched 2/2
+1i_identity,permuted,1_regimeA_r4_vs_round4_code: max_abs_theta,1.4432899320127035e-14,1e-10,True,3200,
+1i_identity,permuted,1_regimeA_r4_vs_round4_code: max_rel_var,4.0889513996944515e-13,1e-10,True,3200,NaN rows: 0
+1i_identity,permuted,1_regimeB_r4_vs_round4_code: max_abs_theta,1.3322676295501878e-15,1e-10,True,400,
+1i_identity,permuted,1_regimeB_r4_vs_round4_code: max_rel_var,1.5543122344752194e-15,1e-10,True,400,NaN rows: 0
+1ii_vs_q4,permuted,A_budget2400 [r4_ppi]: max abs diff coverage_median,0.0,0.005,True,8,matched 8/8
+1ii_vs_q4,permuted,A_budget2400 [r4_ppi]: max rel diff emp_var_median,2.4424906541753444e-15,1e-05,True,8,matched 8/8
+1ii_vs_q4,permuted,A_budget2400 [r4_ppi]: max rel diff est_var_over_emp_var_median,4.440892098500626e-16,1e-05,True,8,matched 8/8
+1ii_vs_q4,permuted,A_all [C_ppi]: max abs diff coverage_median,0.0,0.005,True,8,matched 8/8
+1ii_vs_q4,permuted,A_all [C_ppi]: max rel diff emp_var_median,1.1324274851176597e-14,1e-05,True,8,matched 8/8
+1ii_vs_q4,permuted,A_all [C_ppi]: max rel diff est_var_over_emp_var_median,1.1102230246251565e-15,1e-05,True,8,matched 8/8
+1ii_vs_q4,permuted,A_all [P_ppi]: max abs diff coverage_median,0.0,0.005,True,8,matched 8/8
+1ii_vs_q4,permuted,A_all [P_ppi]: max rel diff emp_var_median,1.1324274851176597e-14,1e-05,True,8,matched 8/8
+1ii_vs_q4,permuted,A_all [P_ppi]: max rel diff est_var_over_emp_var_median,3.3306690738754696e-15,1e-05,True,8,matched 8/8
+1ii_vs_q4,permuted,A_all [r4_ppi]: max abs diff coverage_median,0.0,0.005,True,8,matched 8/8
+1ii_vs_q4,permuted,A_all [r4_ppi]: max rel diff emp_var_median,1.1324274851176597e-14,1e-05,True,8,matched 8/8
+1ii_vs_q4,permuted,A_all [r4_ppi]: max rel diff est_var_over_emp_var_median,6.661338147750939e-16,1e-05,True,8,matched 8/8
+1ii_vs_q4,permuted,B_budget2400 [r4_ppi]: max abs diff coverage_median,0.0,0.005,True,2,matched 2/2
+1ii_vs_q4,permuted,B_budget2400 [r4_ppi]: max rel diff emp_var_median,0.0,1e-05,True,2,matched 2/2
+1ii_vs_q4,permuted,B_budget2400 [r4_ppi]: max rel diff est_var_over_emp_var_median,2.220446049250313e-16,1e-05,True,2,matched 2/2
+3_formC_identity,constant,max_abs_theta_Cppi_minus_Ccl,4.1910919179599666e-14,1e-10,True,160,"files 3; NaN 0; by estimand max: {""theta2"": 4.1910919179599666e-14, ""theta3"": 2.775557561562891e-16}"
+3_formC_identity,constant,max_abs_var_Cppi_minus_Ccl,1.0547118733938987e-14,1e-10,True,160,"files 3; NaN 0; by estimand max: {""theta2"": 1.0547118733938987e-14, ""theta3"": 1.6653345369377348e-16}"
+3_formC_identity,donor_constant,max_abs_theta_Cppi_minus_Ccl,3.799738301779598e-14,1e-10,True,160,"files 3; NaN 0; by estimand max: {""theta2"": 3.799738301779598e-14, ""theta3"": 4.163336342344337e-16}"
+3_formC_identity,donor_constant,max_abs_var_Cppi_minus_Ccl,1.9040324872321435e-14,1e-10,True,160,"files 3; NaN 0; by estimand max: {""theta2"": 1.9040324872321435e-14, ""theta3"": 2.220446049250313e-16}"
+4_regb_width_ratio_P,constant,"theta2: median-over-genes P_ppi/P_classical, m>=20, min..max over m (20,25,50,100)",1.0,0.97..1.05,True,4,min 1.0000 max 1.0000
+4_regb_width_ratio_P,constant,"theta3: median-over-genes P_ppi/P_classical, m>=20, min..max over m (20,25,50,100)",1.0,0.97..1.05,True,4,min 1.0000 max 1.0000
+4_regb_width_ratio_P,donor_constant,"theta2: median-over-genes P_ppi/P_classical, m>=20, min..max over m (20,25,50,100)",1.0,no band,,4,min 1.0000 max 1.0000
+4_regb_width_ratio_P,donor_constant,"theta3: median-over-genes P_ppi/P_classical, m>=20, min..max over m (20,25,50,100)",1.0039096992009071,no band,,4,min 1.0015 max 1.0039

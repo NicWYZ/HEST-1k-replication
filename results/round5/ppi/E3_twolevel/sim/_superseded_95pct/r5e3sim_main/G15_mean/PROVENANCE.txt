@@ -1,0 +1,25 @@
+platform: local (Nicolas's Mac), plan section 7.4
+PYTHONHASHSEED: 0
+host: macOS-26.6.2-arm64-arm-64bit
+python: 3.11.15 at /Users/nicolaszhang/.claude-science/conda/envs/python/bin/python3.11
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+snapshot_commit: 76c428fca4ce7caf0b553b9a2053749a6d2b59c3
+snapshot: /tmp/r5ppi_snapshots/76c428fca4ce7caf0b553b9a2053749a6d2b59c3
+unit: e3_sim_G15_mean
+stage: E3
+workers: 1
+command: round5_ppi_e3_sim.py --G 15 --est mean --mus 0,3,10 --reps 2000
+start: 2026-10-08T16:48:34-04:00
+end: 2026-10-08T17:04:31-04:00
+elapsed_s: 957.2
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  544721f07cb3d74dc5b92456d61fe450  code/scripts/round3_b1_ppi.py
+  d79e69aa65800b9d24de556e019a0c64  code/scripts/round4_ppi_estimator.py
+  873dad7f383eb99826b2d0b990cd6914  code/scripts/round4_ppi_q1_sim.py
+  15f51917a5fb79702ba239e520e7ff86  code/scripts/round4_ppi_q2_masking.py
+  6097231bc238c0a23387ce76029acefd  code/scripts/round4_ppi_q3_regimes.py
+  a165e46358e5679cb6816d28e406bb8a  code/scripts/round5_ppi_e3_sim.py
+  2de31569ffe72239062fbeb0c9a50fc5  code/scripts/round5_ppi_estimator.py
+  91956ca4259d1709b894bf584bd8b8b1  code/scripts/round5_ppi_twolevel.py
+inputs (md5, path):

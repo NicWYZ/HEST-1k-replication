@@ -1,0 +1,1 @@
+Local merge for E3 ACS_CA_PUMA acceptance 1-4: reads only result files under ../<arm>__<part>/ and results/round4/ppi/Q4_tables/q4_main_table.csv. Outputs: ../e3_unit_acceptance__ACS_CA_PUMA.csv, acc4_width_ratios.csv, acc2_q4_comparison_rows.csv. Computed interactively; rules in task brief.

@@ -1,0 +1,31 @@
+/work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/f3fb87699dd336377e1f1fefef22cbb9932f0de0/code/scripts/round5_ppi_e3_twolevel.py:166: RuntimeWarning: All-NaN slice encountered
+  float(np.nanmax(np.abs(th["C_ppi"][1] - th["C_classical"][1]))))
+/work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/f3fb87699dd336377e1f1fefef22cbb9932f0de0/code/scripts/round5_ppi_e3_twolevel.py:165: RuntimeWarning: All-NaN slice encountered
+  return (float(np.nanmax(np.abs(th["C_ppi"][0] - th["C_classical"][0]))),
+/work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/f3fb87699dd336377e1f1fefef22cbb9932f0de0/code/scripts/round4_ppi_q2_masking.py:362: RuntimeWarning: All-NaN slice encountered
+  width_ratio_median=float(np.nanmedian(w[ok] / wc[ok])) if ok.any() else np.nan,
+/work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/f3fb87699dd336377e1f1fefef22cbb9932f0de0/code/scripts/round4_ppi_q2_masking.py:363: RuntimeWarning: All-NaN slice encountered
+  emp_var_ratio_median=float(np.nanmedian(ev[ok] / evc[ok])) if ok.any() else np.nan,
+	Command being timed: "/work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/f3fb87699dd336377e1f1fefef22cbb9932f0de0/code/scripts/round5_ppi_run.py --snapshot-dir /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/f3fb87699dd336377e1f1fefef22cbb9932f0de0 --out-dir /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E3_twolevel/LUNG_XENIUM/hoptimus0__regcomp --unit E3_LUNG_XENIUM_hoptimus0__regcomp --stage E3 --inputs /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__hoptimus0.parquet -- round5_ppi_e3_twolevel.py --parquet /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__hoptimus0.parquet --vtag LUNG_XENIUM --arm hoptimus0 --parts regcomp --draws 200 --out-dir ."
+	User time (seconds): 14742.75
+	System time (seconds): 1073.12
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:25:53
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1331892
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 158
+	Minor (reclaiming a frame) page faults: 100890101
+	Voluntary context switches: 12720
+	Involuntary context switches: 25347
+	Swaps: 0
+	File system inputs: 141992
+	File system outputs: 20736
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

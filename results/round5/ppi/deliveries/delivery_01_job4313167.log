@@ -1,0 +1,239 @@
+slurm_job_id=4313167 partition=spill node=c141601.ll.unc.edu date=2026-10-08T16:46:01-04:00
+bundle_md5=8ec9dfaeb3da271e74d40a6341de0916
+branch=round5-ppi
+head_before=d82c3f33ce37fe2d7dbf5b527bfee9a9fb9ee935
+status_before:
+/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/a4ac5ed1-429c-4083-a345-3dfc3d2ac289/r5ppi_delivery_01.bundle is okay
+The bundle contains this ref:
+a2ee717fed30dfd6a7ecd6f4a5718e5ab1582cea refs/heads/round5-ppi
+The bundle requires this ref:
+d82c3f33ce37fe2d7dbf5b527bfee9a9fb9ee935 
+The bundle uses this hash algorithm: sha1
+verify_rc=0
+From /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/a4ac5ed1-429c-4083-a345-3dfc3d2ac289/r5ppi_delivery_01.bundle
+ * branch            round5-ppi -> FETCH_HEAD
+fetch_rc=0
+Updating d82c3f3..a2ee717
+Fast-forward
+ code/scripts/round5_ppi_common.py                  |   138 +
+ code/scripts/round5_ppi_e0_checks.py               |   140 +
+ code/scripts/round5_ppi_e0_compare.py              |    81 +
+ code/scripts/round5_ppi_e1_diag.py                 |   216 +
+ code/scripts/round5_ppi_e1_merge.py                |   239 +
+ code/scripts/round5_ppi_e1_sim.py                  |   194 +
+ code/scripts/round5_ppi_e2_diag.py                 |    94 +
+ code/scripts/round5_ppi_e2_levelcheck.py           |    21 +
+ code/scripts/round5_ppi_e2_merge.py                |   286 +
+ code/scripts/round5_ppi_e2_regimeB.py              |   222 +
+ code/scripts/round5_ppi_e2_report_extra.py         |    51 +
+ code/scripts/round5_ppi_e2_sim.py                  |   161 +
+ code/scripts/round5_ppi_estimator.py               |   136 +
+ docs/decisions/round5_ppi_E2_decisions.md          |   111 +
+ docs/round5_ppi_E2_report.md                       |   156 +
+ docs/round5_ppi_plan.md                            |   334 +
+ docs/round5_ppi_theory.md                          |   141 +
+ results/round5/ppi/E0_anchors/PROVENANCE.txt       |    57 +
+ results/round5/ppi/E0_anchors/_provenance.json     |    10 +
+ .../round5/ppi/E0_anchors/e0_anchor_masking.csv    |     9 +
+ .../ppi/E0_anchors/e0_anchor_masking_rows.csv      |    41 +
+ .../round5/ppi/E0_anchors/e0_anchor_regimeB.csv    |    10 +
+ .../ppi/E0_anchors/e0_anchor_regimeB_rows.csv      |    17 +
+ results/round5/ppi/E0_anchors/e0_brief_claims.csv  | 15080 +++++++++++++++++++
+ results/round5/ppi/E0_anchors/e0_checks.log        |     1 +
+ results/round5/ppi/E0_anchors/e0_parquet_md5.csv   |    15 +
+ results/round5/ppi/E0_anchors/e0_round4_stamps.csv |   161 +
+ results/round5/ppi/E0_anchors/e0_setup_checks.csv  |    36 +
+ results/round5/ppi/E0_anchors/masking/masking.log  |     2 +
+ .../masking/q2_summary__CCRCC__hoptimus0.json      |    23 +
+ .../masking/q2_variance_grid__CCRCC__hoptimus0.csv |    41 +
+ .../regimeB/q3_acceptance__CCRCC__hoptimus0.csv    |     1 +
+ .../q3_regime_comparison__CCRCC__hoptimus0.csv     |    17 +
+ results/round5/ppi/E0_anchors/regimeB/regimeB.log  |     6 +
+ results/round5/ppi/E0_anchors/tests/q1b_tests.csv  |   136 +
+ .../ppi/E0_anchors/tests/q1b_tests_stdout.txt      |   146 +
+ .../q1b_tests_stdout_first_attempt_missing_ref.txt |     2 +
+ .../ppi/E0_anchors/tests/q4a_tests_stdout.txt      |    14 +
+ results/round5/ppi/E1_interval/PROVENANCE.txt      |    22 +
+ results/round5/ppi/E1_interval/_provenance.json    |    10 +
+ results/round5/ppi/E1_interval/e1_acceptance.csv   |     7 +
+ results/round5/ppi/E1_interval/e1_acceptance1.csv  |    13 +
+ .../ppi/E1_interval/e1_contribution_moments.csv    |  3953 +++++
+ results/round5/ppi/E1_interval/e1_johnson.csv      |    19 +
+ results/round5/ppi/E1_interval/e1_law_shapes.json  |    12 +
+ results/round5/ppi/E1_interval/e1_merge.log        |    41 +
+ .../round5/ppi/E1_interval/e1_prediction_cells.csv |  5002 ++++++
+ .../ppi/E1_interval/e1_prediction_scores.csv       |    32 +
+ .../E1_interval/e1_real_coverage_vs_skewness.csv   |    13 +
+ .../round5/ppi/E1_interval/e1_report_numbers.csv   |   187 +
+ results/round5/ppi/E1_interval/e1_sim_grid.csv     | 12961 ++++++++++++++++
+ results/round5/ppi/E1_interval/e1_stamp_check.csv  |    28 +
+ results/round5/ppi/E1_interval/e1_tabulations.csv  |   476 +
+ results/round5/ppi/E1_interval/fig_e1_coverage.png |   Bin 0 -> 173476 bytes
+ results/round5/ppi/E2_regimeB/PROVENANCE.txt       |    22 +
+ results/round5/ppi/E2_regimeB/_provenance.json     |    10 +
+ results/round5/ppi/E2_regimeB/diag/PROVENANCE.txt  |    44 +
+ .../E2_regimeB/diag/PROVENANCE__report_extra.txt   |    66 +
+ .../round5/ppi/E2_regimeB/diag/_provenance.json    |    10 +
+ results/round5/ppi/E2_regimeB/diag/e2_diag.log     |    74 +
+ .../E2_regimeB/diag/e2_level_share_vs_constant.csv |   145 +
+ .../round5/ppi/E2_regimeB/diag/e2_levelcheck.log   |    37 +
+ .../ppi/E2_regimeB/diag/e2_pairing_check.csv       |    25 +
+ .../round5/ppi/E2_regimeB/diag/e2_report_extra.log |     1 +
+ .../E2_regimeB/diag/e2_report_numbers_extra.csv    |   496 +
+ .../ppi/E2_regimeB/diag/e2_theta2_rare_group.csv   |    49 +
+ results/round5/ppi/E2_regimeB/e2_acceptance.csv    |    11 +
+ results/round5/ppi/E2_regimeB/e2_decomposition.csv |  2881 ++++
+ .../ppi/E2_regimeB/e2_decomposition_genes.csv.gz   |   Bin 0 -> 3685064 bytes
+ results/round5/ppi/E2_regimeB/e2_level_share.csv   |  1441 ++
+ results/round5/ppi/E2_regimeB/e2_merge.log         |    24 +
+ .../round5/ppi/E2_regimeB/e2_prediction_cells.csv  |  1881 +++
+ .../round5/ppi/E2_regimeB/e2_prediction_scores.csv |    13 +
+ results/round5/ppi/E2_regimeB/e2_regimeB_grid.csv  |  5761 +++++++
+ .../round5/ppi/E2_regimeB/e2_report_numbers.csv    |  1249 ++
+ .../round5/ppi/E2_regimeB/e2_shares_genes.csv.gz   |   Bin 0 -> 8407265 bytes
+ results/round5/ppi/E2_regimeB/e2_sim.csv           |   897 ++
+ results/round5/ppi/E2_regimeB/e2_stamp_check.csv   |    57 +
+ .../round5/ppi/E2_regimeB/fig_e2_coverage_by_m.png |   Bin 0 -> 440842 bytes
+ .../round5/ppi/E2_regimeB/fig_e2_decomposition.png |   Bin 0 -> 134440 bytes
+ results/round5/ppi/r5ppi_slurm_jobs.csv            |     9 +
+ .../round5/ppi/unit_job_ledgers/e1_G15_jobs.csv    |     5 +
+ .../round5/ppi/unit_job_ledgers/e1_G24_jobs.csv    |     8 +
+ .../round5/ppi/unit_job_ledgers/e1_diag_jobs.csv   |     5 +
+ .../ppi/unit_job_ledgers/e2_ACS_STATES_jobs.csv    |     8 +
+ .../e2_regimeB_ACS_CA_PUMA_jobs.csv                |     7 +
+ .../ppi/unit_job_ledgers/e2_regimeB_CCRCC_jobs.csv |    11 +
+ .../e2_regimeB_CCRCC_merged_jobs.csv               |    10 +
+ .../e2_regimeB_INDIANA_KIDNEY_jobs.csv             |    10 +
+ .../round5/ppi/unit_job_ledgers/e2_sim_jobs.csv    |     4 +
+ .../round5/ppi/unit_job_ledgers/jobs_E1_G51.csv    |     8 +
+ .../round5_E2_regimeB_LUNG_XENIUM_jobs.csv         |    11 +
+ 92 files changed, 56612 insertions(+)
+ create mode 100644 code/scripts/round5_ppi_common.py
+ create mode 100644 code/scripts/round5_ppi_e0_checks.py
+ create mode 100644 code/scripts/round5_ppi_e0_compare.py
+ create mode 100644 code/scripts/round5_ppi_e1_diag.py
+ create mode 100644 code/scripts/round5_ppi_e1_merge.py
+ create mode 100644 code/scripts/round5_ppi_e1_sim.py
+ create mode 100644 code/scripts/round5_ppi_e2_diag.py
+ create mode 100644 code/scripts/round5_ppi_e2_levelcheck.py
+ create mode 100644 code/scripts/round5_ppi_e2_merge.py
+ create mode 100644 code/scripts/round5_ppi_e2_regimeB.py
+ create mode 100644 code/scripts/round5_ppi_e2_report_extra.py
+ create mode 100644 code/scripts/round5_ppi_e2_sim.py
+ create mode 100644 code/scripts/round5_ppi_estimator.py
+ create mode 100644 docs/decisions/round5_ppi_E2_decisions.md
+ create mode 100644 docs/round5_ppi_E2_report.md
+ create mode 100644 docs/round5_ppi_plan.md
+ create mode 100644 docs/round5_ppi_theory.md
+ create mode 100644 results/round5/ppi/E0_anchors/PROVENANCE.txt
+ create mode 100644 results/round5/ppi/E0_anchors/_provenance.json
+ create mode 100644 results/round5/ppi/E0_anchors/e0_anchor_masking.csv
+ create mode 100644 results/round5/ppi/E0_anchors/e0_anchor_masking_rows.csv
+ create mode 100644 results/round5/ppi/E0_anchors/e0_anchor_regimeB.csv
+ create mode 100644 results/round5/ppi/E0_anchors/e0_anchor_regimeB_rows.csv
+ create mode 100644 results/round5/ppi/E0_anchors/e0_brief_claims.csv
+ create mode 100644 results/round5/ppi/E0_anchors/e0_checks.log
+ create mode 100644 results/round5/ppi/E0_anchors/e0_parquet_md5.csv
+ create mode 100644 results/round5/ppi/E0_anchors/e0_round4_stamps.csv
+ create mode 100644 results/round5/ppi/E0_anchors/e0_setup_checks.csv
+ create mode 100644 results/round5/ppi/E0_anchors/masking/masking.log
+ create mode 100644 results/round5/ppi/E0_anchors/masking/q2_summary__CCRCC__hoptimus0.json
+ create mode 100644 results/round5/ppi/E0_anchors/masking/q2_variance_grid__CCRCC__hoptimus0.csv
+ create mode 100644 results/round5/ppi/E0_anchors/regimeB/q3_acceptance__CCRCC__hoptimus0.csv
+ create mode 100644 results/round5/ppi/E0_anchors/regimeB/q3_regime_comparison__CCRCC__hoptimus0.csv
+ create mode 100644 results/round5/ppi/E0_anchors/regimeB/regimeB.log
+ create mode 100644 results/round5/ppi/E0_anchors/tests/q1b_tests.csv
+ create mode 100644 results/round5/ppi/E0_anchors/tests/q1b_tests_stdout.txt
+ create mode 100644 results/round5/ppi/E0_anchors/tests/q1b_tests_stdout_first_attempt_missing_ref.txt
+ create mode 100644 results/round5/ppi/E0_anchors/tests/q4a_tests_stdout.txt
+ create mode 100644 results/round5/ppi/E1_interval/PROVENANCE.txt
+ create mode 100644 results/round5/ppi/E1_interval/_provenance.json
+ create mode 100644 results/round5/ppi/E1_interval/e1_acceptance.csv
+ create mode 100644 results/round5/ppi/E1_interval/e1_acceptance1.csv
+ create mode 100644 results/round5/ppi/E1_interval/e1_contribution_moments.csv
+ create mode 100644 results/round5/ppi/E1_interval/e1_johnson.csv
+ create mode 100644 results/round5/ppi/E1_interval/e1_law_shapes.json
+ create mode 100644 results/round5/ppi/E1_interval/e1_merge.log
+ create mode 100644 results/round5/ppi/E1_interval/e1_prediction_cells.csv
+ create mode 100644 results/round5/ppi/E1_interval/e1_prediction_scores.csv
+ create mode 100644 results/round5/ppi/E1_interval/e1_real_coverage_vs_skewness.csv
+ create mode 100644 results/round5/ppi/E1_interval/e1_report_numbers.csv
+ create mode 100644 results/round5/ppi/E1_interval/e1_sim_grid.csv
+ create mode 100644 results/round5/ppi/E1_interval/e1_stamp_check.csv
+ create mode 100644 results/round5/ppi/E1_interval/e1_tabulations.csv
+ create mode 100644 results/round5/ppi/E1_interval/fig_e1_coverage.png
+ create mode 100644 results/round5/ppi/E2_regimeB/PROVENANCE.txt
+ create mode 100644 results/round5/ppi/E2_regimeB/_provenance.json
+ create mode 100644 results/round5/ppi/E2_regimeB/diag/PROVENANCE.txt
+ create mode 100644 results/round5/ppi/E2_regimeB/diag/PROVENANCE__report_extra.txt
+ create mode 100644 results/round5/ppi/E2_regimeB/diag/_provenance.json
+ create mode 100644 results/round5/ppi/E2_regimeB/diag/e2_diag.log
+ create mode 100644 results/round5/ppi/E2_regimeB/diag/e2_level_share_vs_constant.csv
+ create mode 100644 results/round5/ppi/E2_regimeB/diag/e2_levelcheck.log
+ create mode 100644 results/round5/ppi/E2_regimeB/diag/e2_pairing_check.csv
+ create mode 100644 results/round5/ppi/E2_regimeB/diag/e2_report_extra.log
+ create mode 100644 results/round5/ppi/E2_regimeB/diag/e2_report_numbers_extra.csv
+ create mode 100644 results/round5/ppi/E2_regimeB/diag/e2_theta2_rare_group.csv
+ create mode 100644 results/round5/ppi/E2_regimeB/e2_acceptance.csv
+ create mode 100644 results/round5/ppi/E2_regimeB/e2_decomposition.csv
+ create mode 100644 results/round5/ppi/E2_regimeB/e2_decomposition_genes.csv.gz
+ create mode 100644 results/round5/ppi/E2_regimeB/e2_level_share.csv
+ create mode 100644 results/round5/ppi/E2_regimeB/e2_merge.log
+ create mode 100644 results/round5/ppi/E2_regimeB/e2_prediction_cells.csv
+ create mode 100644 results/round5/ppi/E2_regimeB/e2_prediction_scores.csv
+ create mode 100644 results/round5/ppi/E2_regimeB/e2_regimeB_grid.csv
+ create mode 100644 results/round5/ppi/E2_regimeB/e2_report_numbers.csv
+ create mode 100644 results/round5/ppi/E2_regimeB/e2_shares_genes.csv.gz
+ create mode 100644 results/round5/ppi/E2_regimeB/e2_sim.csv
+ create mode 100644 results/round5/ppi/E2_regimeB/e2_stamp_check.csv
+ create mode 100644 results/round5/ppi/E2_regimeB/fig_e2_coverage_by_m.png
+ create mode 100644 results/round5/ppi/E2_regimeB/fig_e2_decomposition.png
+ create mode 100644 results/round5/ppi/r5ppi_slurm_jobs.csv
+ create mode 100644 results/round5/ppi/unit_job_ledgers/e1_G15_jobs.csv
+ create mode 100644 results/round5/ppi/unit_job_ledgers/e1_G24_jobs.csv
+ create mode 100644 results/round5/ppi/unit_job_ledgers/e1_diag_jobs.csv
+ create mode 100644 results/round5/ppi/unit_job_ledgers/e2_ACS_STATES_jobs.csv
+ create mode 100644 results/round5/ppi/unit_job_ledgers/e2_regimeB_ACS_CA_PUMA_jobs.csv
+ create mode 100644 results/round5/ppi/unit_job_ledgers/e2_regimeB_CCRCC_jobs.csv
+ create mode 100644 results/round5/ppi/unit_job_ledgers/e2_regimeB_CCRCC_merged_jobs.csv
+ create mode 100644 results/round5/ppi/unit_job_ledgers/e2_regimeB_INDIANA_KIDNEY_jobs.csv
+ create mode 100644 results/round5/ppi/unit_job_ledgers/e2_sim_jobs.csv
+ create mode 100644 results/round5/ppi/unit_job_ledgers/jobs_E1_G51.csv
+ create mode 100644 results/round5/ppi/unit_job_ledgers/round5_E2_regimeB_LUNG_XENIUM_jobs.csv
+merge_rc=0
+head_after=a2ee717fed30dfd6a7ecd6f4a5718e5ab1582cea
+commits_carried:
+a2ee717fed30dfd6a7ecd6f4a5718e5ab1582cea Round 5 PPI: E2 decision memo, unchanged, and plan section 7
+b4e8ef570d9dc7e9c41d79513354060c219ba214 Round 5 PPI: record the gate E2 pull request number in the report
+21671bc1d5d3630dfad2609db2f620740c461f11 Round 5 PPI: E2 gate report; plan scores and extension 3
+6b4ee98a17117286fdf98f31f6746994e0a25f14 Round 5 PPI: E1 and E2 merged results, ledgers and figures
+f75950f164b3c8fedc1d65792493635f656611c5 Round 5 PPI E2: extra report numbers by subset
+4f52b0c0f77f8f73eb89e9d8d53d8220031a48bc Round 5 PPI E2: level share against the constant predictor width ratio
+8b879bb816328e6fab0f0ca63b0fae33d767965e Round 5 PPI E2: pairing and theta2 rare-group diagnostics
+b993f94d34fa88d39ce4c757fa10a1d8bc86abd7 Round 5 PPI E2: merge, decomposition, acceptance and prediction scoring script
+5a65c417c1862b1398db3ac42d66cb6295f1dc57 Round 5 PPI E1: merge, acceptance and prediction scoring script
+eb61f3014098e5a8433670c8a56c651d81a87f73 Round 5 PPI E1: law shapes recorded in plan section 4 before the log-normal runs
+26482f4e0a623dd69a465b828d41dddb91627024 Round 5 PPI E2: regime B equal-m script with controls and level shares, and the simulation with an outcome level
+33b619f2854923d20fbd99a2ed9405de1aa2a4e0 Round 5 PPI E2: theory section 1, the level term in regime B
+c7d2c95645b1a03c0a4fb698ca779b212492ed23 Round 5 PPI E1: estimator additions, simulation and real-task diagnostic scripts
+5010a3d360ac29cd855e3d20757f1f43866802c1 Round 5 PPI E0: setup checks and anchors pass on Longleaf
+6443f99797229d2b4434f813127f84aae3b2f66d Round 5 PPI E0: setup checks, anchor comparison and shared provenance helpers
+08f43faada963408fa19b75608ada945a39f8cab Round 5 PPI plan: extension 2, one pull request per gate
+b7629d464b4c6a6ffd342a4cb97d10fb11076933 Round 5 PPI E0.1: operating plan transcribed from the brief
+snapshot=/work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/a2ee717fed30dfd6a7ecd6f4a5718e5ab1582cea
+snapshot_files=211
+dr-xr-xr-x 2 weiyang users 4096 Oct  8 16:46 /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/a2ee717fed30dfd6a7ecd6f4a5718e5ab1582cea
+dr-xr-xr-x 2 weiyang users 4096 Oct  8 16:14 /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/a2ee717fed30dfd6a7ecd6f4a5718e5ab1582cea/code/scripts
+122375c3acb103ed93e3e687644d7f6d  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/a2ee717fed30dfd6a7ecd6f4a5718e5ab1582cea/code/scripts/round5_ppi_common.py
+1c334fc84714a655f3f2b31bf9183914  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/a2ee717fed30dfd6a7ecd6f4a5718e5ab1582cea/code/scripts/round5_ppi_e0_checks.py
+cd1c7abb33b63f9e39a9e9ff68a931ac  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/a2ee717fed30dfd6a7ecd6f4a5718e5ab1582cea/code/scripts/round5_ppi_e0_compare.py
+956a15c3214ce97ff3fe81bd5fd1ced6  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/a2ee717fed30dfd6a7ecd6f4a5718e5ab1582cea/code/scripts/round5_ppi_e1_diag.py
+0f3b0e5b1cf1b9a402cd3fb8471c9c98  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/a2ee717fed30dfd6a7ecd6f4a5718e5ab1582cea/code/scripts/round5_ppi_e1_merge.py
+372d272e3822f5dab55c1850fb4e3d3d  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/a2ee717fed30dfd6a7ecd6f4a5718e5ab1582cea/code/scripts/round5_ppi_e1_sim.py
+b63bc1990bd5c0931ecd8b07182d8186  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/a2ee717fed30dfd6a7ecd6f4a5718e5ab1582cea/code/scripts/round5_ppi_e2_diag.py
+c3f80f48ac4e802077c1c408406dc228  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/a2ee717fed30dfd6a7ecd6f4a5718e5ab1582cea/code/scripts/round5_ppi_e2_levelcheck.py
+186a5d80b26b884f77563784f8219486  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/a2ee717fed30dfd6a7ecd6f4a5718e5ab1582cea/code/scripts/round5_ppi_e2_merge.py
+b6e9ecc52ac5539682487d8e7c1451c6  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/a2ee717fed30dfd6a7ecd6f4a5718e5ab1582cea/code/scripts/round5_ppi_e2_regimeB.py
+5a98dc0028adf1e2f9e6aea0b6182a2a  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/a2ee717fed30dfd6a7ecd6f4a5718e5ab1582cea/code/scripts/round5_ppi_e2_report_extra.py
+134ef9676919ab1326329d1d528ff866  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/a2ee717fed30dfd6a7ecd6f4a5718e5ab1582cea/code/scripts/round5_ppi_e2_sim.py
+6a2d0ac0e07f707cafe0d65cbdc2f8a1  /work/users/w/e/weiyang/hest_code/round5-ppi_snapshots/a2ee717fed30dfd6a7ecd6f4a5718e5ab1582cea/code/scripts/round5_ppi_estimator.py

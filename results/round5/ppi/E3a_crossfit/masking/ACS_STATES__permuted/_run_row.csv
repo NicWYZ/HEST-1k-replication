@@ -1,0 +1,2 @@
+platform,slurm_job_id,stage,unit,start,end,elapsed_s,status,commit,workers,out_dir,command
+longleaf,4316778,E3a,E3a_masking_ACS_STATES_permuted,2026-10-08T17:17:36-04:00,2026-10-08T17:19:19-04:00,102.8,COMPLETED,f3fb87699dd336377e1f1fefef22cbb9932f0de0,,/work/users/w/e/weiyang/hest_replication/results/round5/ppi/E3a_crossfit/masking/ACS_STATES__permuted,round5_ppi_e3a_masking.py --parquet /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_STATES.parquet --vtag ACS_STATES --arm permuted --theta2-kind mean --out-dir .

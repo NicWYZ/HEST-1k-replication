@@ -1,0 +1,6 @@
+check,scope,n_compared,max_abs_diff,n_fail,passed,detail,n_unmatched,max_rel_emp_var,max_abs_coverage,max_rel_est_over_emp,min_ratio,max_ratio
+A1a_D2inf_equals_D0,"all arms, estimands, n_L, rules, intervals",128,0.0,0,True,all non-key columns,,,,,,
+A1a_D2inf_equals_D0_genes,gene-level,6400,0.0,0,True,"emp_var, est_var, coverage, width",,,,,,
+A1b_D0_vs_q4a_table61,"rules none, c_crossfit_design; interval textbook_t|fpc|lin",64,,0,True,unmatched: ,0.0,0.0,0.0,2.601674595539579e-16,,
+A2_perm_balance_classical_var_ratio,"D2 balance=perm, p_a 0.1 and 0.01, rule none, |lin; per arm, estimand, n_L",64,,44,False,"band 0.93-1.07, median over genes of per-gene ratio",,,,,0.8216775755901966,0.9723069424137618
+no_accepted_candidate,all D2 cells,2048,,0,True,max n_no_accept 0,,,,,,
