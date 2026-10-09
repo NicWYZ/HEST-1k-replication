@@ -2,7 +2,7 @@
 
 **Read this paragraph first, whoever you are.** This repository is worked on by two kinds of session. If you are an **execution session** (a Claude Science session on a track branch such as `round5-ppi`), your instructions are your track's instruction document in `docs/decisions/`, the operating plan you transcribed from it, and every decision memo since. This file belongs to the oversight chat. Do not edit it and do not act on its plan. The copy on your branch was frozen when the branch started and may be out of date. Section 5's rules apply to you as well. If you are the **oversight chat**, this is your operating file. It replaces the oversight handoff documents, and keeping it current is part of your job.
 
-**Last updated:** 2026-10-09 (oversight, cloud session; the inference track's closing memo written, so both round-5 tracks are closed)
+**Last updated:** 2026-10-09 (oversight, cloud session; round 5 closed, its steps archived to the progress log)
 
 The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at UNC, in Dr. Hongtu Zhu's lab and supervised by Dr. Daiwei (David) Zhang. The advisors want methods, not applied analysis, with a submittable paper by spring 2027. The paper is "Labelling budgets for prediction-powered inference with clustered data", methodology and theory first, applied to HEST-1k spatial transcriptomics and ACS PUMS 2018 income (`docs/decisions/round4_originality_check.md`).
 
@@ -34,34 +34,24 @@ When in doubt, update. A stale file costs more than an extra commit.
 
 ## 2. Current state (9 October 2026)
 
-- **Round 5's two tracks are both closed.** The prediction-set track's closing report `docs/round5_conf_final_report.md` and memo `docs/decisions/round5_conformal_W5_decisions.md` are on `main`. The inference track's final report `docs/round5_ppi_final_report.md` (tag `round5-ppi-final`, pull request #20) and its closing memo `docs/decisions/round5_ppi_E5_decisions.md` are written. The memo is on `main`. The report and the paper's estimator definition `docs/round5_ppi_estimator_definition.md` reach `main` when Nicolas merges #20, after which the session pushes its transcription of the memo once and opens one more pull request.
-- **What the paper takes from round 5** is in section 3 of each closing memo. Its estimator is the definition document's. Balanced selection of the labelled clusters with `rej_t` enters as a design result with conditions, not as the default.
-- **Next action.** Close round 5 (section 3). Then, with Nicolas, the next advisor presentation and a writing plan for the paper. The first methods question for a next round is inclusion-probability weighting under rejective selection (`docs/decisions/round5_ppi_E5_decisions.md` section 5).
+- **Round 5 is closed.** Both tracks finished and everything is on `main` (pull requests #14 to #20). No execution session is running and nothing is running on Longleaf for this project. What goes into the paper is in section 3 of the two closing memos, `docs/decisions/round5_ppi_E5_decisions.md` and `docs/decisions/round5_conformal_W5_decisions.md`, and on the closing pages of the final reports of rounds 4 and 5 (listed in `docs/README.md`). The paper's estimator is `docs/round5_ppi_estimator_definition.md`, with its allocation sentence settled by the E5 memo's section 2.
+- **Next action.** Ask Nicolas what comes next. The candidates are the next advisor presentation, a writing plan for the paper, and a next round (section 3). The first methods question for a next round is weighting the labelled clusters by their inclusion probabilities under rejective selection (`docs/decisions/round5_ppi_E5_decisions.md` section 5). Whether a next round runs, and with what scope, is Nicolas's.
 - **What the advisors have seen.** Nicolas reported on 7 October that the second advisor meeting stopped at slide 8, so the advisors have seen the project up to the pivot and the originality check and not the round-4 or round-5 results (`docs/decisions/round5_ppi_track.md` section 2.1). The deck preparation is in `docs/deck2/`.
-- **Waiting on Nicolas or his advisors.** Whether regime B (a few labelled spots on every donor) can be bought on a spatial platform, and at what cost, has not been asked of David. Whether to contact the GHCP authors is Nicolas's with his advisors, never a session's. The venue and which result the paper leads with are not yet raised. Whether a next round runs, and with what scope, is Nicolas's.
-- **Owed by the oversight chat.** The README sweep, which finds a value of 0.1018 it cannot match. The root `README.md` still describes the project at round 2 and needs rewriting at round 5's close. The numeric-claim checker's pandas-3 TypeError fix.
+- **Waiting on Nicolas or his advisors.** Whether regime B (a few labelled spots on every donor) can be bought on a spatial platform, and at what cost, has not been asked of David. Whether to contact the GHCP authors is Nicolas's with his advisors, never a session's. The venue and which result the paper leads with are not yet raised.
+- **Pending with Nicolas.** Branch `oversight-checker-pandas3` fixes the numeric-claim checker under pandas 3, adds a fixture test, and declares the README's 0.1018 as a derived value. It needs a pull request that Nicolas opens and merges. Until then the checker reports any file with an empty text cell as unreadable, so a sweep under pandas 3 understates what it verified. A tag `round5-final` on `main` at the round's close is proposed and not made.
+- **Carried housekeeping from earlier rounds,** not urgent. The D4 probe rerun, the ten unresolved claims in two pre-round-3 documents, the `r5c_leak_summary.csv` reading, and the reorganisation of `docs/` into round folders (`docs/decisions/round5_oversight_handoff.md` section 12).
 
 ## 3. Operating plan (oversight)
 
 ### Done
 
 - **Rounds 1 to 4** (12 September to 4 October). Replication, instrumentation, the two pivots, round 4's two tracks and the second deck's preparation. Summary and pointers in `docs/progress-log.md`. The handoffs `docs/decisions/round3_oversight_handoff.md`, `round4_oversight_handoff.md` and `round5_oversight_handoff.md` are the full history up to 4 October.
+- **Round 5** (7 to 9 October). Instructions for two tracks, five gate memos, the move from handoffs to this file, and the round's close. Each step has an entry in `docs/progress-log.md`.
 
-### Round 5 (current)
+### Next (outline; expand when Nicolas chooses)
 
-- [x] **Instructions for the two tracks** (7 October, pull request #14).
-- [x] **E2 gate memo** (8 October, `docs/decisions/round5_ppi_E2_decisions.md`).
-- [x] **W2 gate memo** (8 October, `docs/decisions/round5_conformal_W2_decisions.md`).
-- [x] **E4 gate memo** (9 October, `docs/decisions/round5_ppi_E4_decisions.md`).
-- [x] **W5 closing memo** (9 October, `docs/decisions/round5_conformal_W5_decisions.md`).
-- [x] **State kept in this file in place of handoffs** (9 October, see the progress log).
-- [x] **E5 review and the inference track's closing memo** (9 October, `docs/decisions/round5_ppi_E5_decisions.md`).
-- [ ] **Close round 5.** After pull request #20 and the session's last pull request are merged. Sweep the README and fix the 0.1018 entry, rewrite the root `README.md` status, update `docs/README.md` and the progress log, propose a tag on `main` for Nicolas, and archive this section.
-
-### After round 5 (outline; expand when current)
-
-- [ ] **The next advisor presentation,** from the literature landscape and the two original topics through the roadblocks, the pivot, the originality check, the revised directions and the results of rounds 4 and 5.
-- [ ] **The paper,** a writing plan from the two tracks' closing pages, the two closing memos' readings and the E5 estimator definition.
+- [ ] **The next advisor presentation,** from the literature landscape and the two original topics through the roadblocks, the pivot, the originality check, the revised directions and the results of rounds 4 and 5. Read `docs/deck2/` and the advisor-presentation preferences in section 4 first.
+- [ ] **The paper,** a writing plan from the four closing pages, the two round-5 closing memos' readings and the estimator definition.
 - [ ] **A next round, if Nicolas wants one,** starting from inclusion-probability weighting under rejective selection.
 
 ## 4. Working preferences (Nicolas's)
@@ -105,7 +95,7 @@ The procedures behind these, each tied to the failure that produced it, are in `
 
 ```
 CLAUDE.md                 this file: protocol, state, plan, preferences, rules
-README.md                 the repository's public entry point (status stale since round 2)
+README.md                 the repository's public entry point, status through round 5
 docs/README.md            the reading guide: every document, by round, with its role
 docs/progress-log.md      what happened and why, newest first
 docs/WAYS_OF_WORKING.md   procedures, each tied to the failure that produced it

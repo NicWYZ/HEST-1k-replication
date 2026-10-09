@@ -1,13 +1,17 @@
 # HEST-1k benchmark replication and instrumentation
 
-Replication of the HEST-1k benchmark (Jaume et al., NeurIPS 2024, arXiv:2406.16192) on UNC
-Longleaf, instrumented so its byproducts support downstream work on calibrated uncertainty for
-histology-to-expression prediction.
+This repository began as a replication of the HEST-1k benchmark (Jaume et al., NeurIPS 2024,
+arXiv:2406.16192) on UNC Longleaf, instrumented so its byproducts could support work on uncertainty
+for histology-to-expression prediction. It now also holds the methods work that grew out of it, a
+paper in preparation titled "Labelling budgets for prediction-powered inference with clustered
+data", applied to HEST-1k spatial transcriptomics and ACS PUMS 2018 income.
 
 **Contains no gated data** — see [What is not here](#what-is-not-here).
 
-This repository holds results, code and reference documentation only. Narrative write-ups and
-working documents are kept outside it; this README is the entry point.
+This repository holds results, code and documentation. [`docs/README.md`](docs/README.md) is the
+guide to every document, round by round, and [`docs/progress-log.md`](docs/progress-log.md) says
+what was found at each step and why the project moved. [`CLAUDE.md`](CLAUDE.md) is the operating
+file for the Claude sessions that work on the project.
 
 ## Status
 
@@ -21,11 +25,18 @@ working documents are kept outside it; this README is the entry point.
 | 5 · STFlow stronger baseline | setup complete; training not yet run (CUDA-only, GPU queue) |
 | round 2 · replication extensions (splits, probes, θ₁, variance) | complete |
 | round 2 closeout (freeze, numeric-claim sweep, IDC-attribution note) | complete |
+| round 3 · first experiments for both original topics | complete (tag `round3-final-r2`) |
+| round 4 · data pull, then the inference and prediction-set tracks | complete (tags `round4-data-v2`, `round4-ppi-final`, `round4-conf-final`) |
+| round 5 · the inference and prediction-set tracks | complete (tags `round5-ppi-final`, `round5-conf-final`) |
 
-Repository tagged [`round2-final`](../../releases/tag/round2-final) at the closeout commit; `HEAD`
-is five commits past the tag (the closeout report and IDC fetch log, a documentation cleanup, the
-seven-figure deck under committed scripts, and two AppleDouble-sidecar removals) — no results
-changed in those five commits.
+Every gate of rounds 2 to 5 is tagged. The sections below, from the headline result to the known
+limitations, describe the benchmark work of rounds 1 and 2 and have not changed since the round-2
+closeout. The methods results of rounds 4 and 5 are summarised on the closing pages of
+[`docs/round4_ppi_final_report.md`](docs/round4_ppi_final_report.md),
+[`docs/round4_conf_final_report.md`](docs/round4_conf_final_report.md),
+[`docs/round5_ppi_final_report.md`](docs/round5_ppi_final_report.md) and
+[`docs/round5_conf_final_report.md`](docs/round5_conf_final_report.md), and the paper's estimator is
+defined in [`docs/round5_ppi_estimator_definition.md`](docs/round5_ppi_estimator_definition.md).
 
 ## Headline result
 

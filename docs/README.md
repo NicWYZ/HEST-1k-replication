@@ -149,9 +149,9 @@ The deck's numbers are in `results/summary/deck2_numbers.csv`, written by `code/
 
 ---
 
-## Round 5, two tracks (from 7 October)
+## Round 5, two tracks (7 to 9 October)
 
-Each session starts from the `main` commit that carries its instruction. Each gate's report arrives as a pull request into `main`, merged by Nicolas.
+Each session started from the `main` commit that carries its instruction. Each gate's report arrived as a pull request into `main`, merged by Nicolas. Both tracks are complete and everything below is on `main`. The readings for the paper are in section 3 of the two closing memos.
 
 **The inference track** (branch `round5-ppi`, stages E0 to E5 and E4b, gates E2, E4, E5; complete).
 
@@ -164,8 +164,8 @@ Each session starts from the `main` commit that carries its instruction. Each ga
 | `decisions/round5_ppi_E2_decisions.md` | 8 Oct | decision at E2. Its section 4 sets the code-delivery rules both tracks follow |
 | `round5_ppi_E4_report.md` | 9 Oct | report at the E4 gate (E3a, E3, E4); tag `round5-ppi-E4` |
 | `decisions/round5_ppi_E4_decisions.md` | 9 Oct | decision at E4. Form C becomes the paper's within-cluster estimator; adds stage E4b before E5 |
-| `round5_ppi_final_report.md` | 9 Oct | end-of-track report (E4b and E5, with E1 to E4 in brief); tag `round5-ppi-final`, on `main` with pull request #20. Its closing page, "What the round-5 inference track established", is the summary |
-| `round5_ppi_estimator_definition.md` | 9 Oct | the paper's estimator, defined once, after E3 and the E4 memo; on `main` with pull request #20 |
+| `round5_ppi_final_report.md` | 9 Oct | end-of-track report (E4b and E5, with E1 to E4 in brief); tag `round5-ppi-final`. Its closing page, "What the round-5 inference track established", is the summary |
+| `round5_ppi_estimator_definition.md` | 9 Oct | the paper's estimator, defined once, after E3 and the E4 memo. The E5 memo's section 2 settles its allocation sentence |
 | `decisions/round5_ppi_E5_decisions.md` | 9 Oct | acceptance and close of the track. Balanced cluster selection enters the paper as a design result with conditions; the allocation uses the measured between ratio; the next round's first question |
 
 **The prediction-set track** (branch `round5-conformal`, stages W0 to W5, gates W2, W5; complete).
