@@ -1,5 +1,5 @@
 # Round 5 PPI track sweep exceptions. Format: value<TAB>reason (docs/WAYS_OF_WORKING.md).
-2.6	reference: theory section number (sections 2.1 to 2.6 of docs/round5_ppi_theory.md), not a result
+2.6	reference: theory section number (sections 2.1 to 2.6 of docs/round05/tracks/ppi/round5_ppi_theory.md), not a result
 6,435	derived: binomial coefficient C(15, 8), the number of possible lung theta3 samples at n_L = 8
 51	derived: 240 - 189 misses of E4.1 in e4_prediction_scores.csv
 32	derived: 80 - 48 misses at G = 15 in e4_prediction_scores.csv
@@ -11,7 +11,7 @@
 2.10	derived: the same ratio, CCRCC_merged
 394	historical: provenance_index_summary.csv at the E4 gate (jobs, commit 4f5f65a); the file now covers E0 to E4b
 351	historical: provenance_index_summary.csv at the E4 gate (jobs_longleaf, commit 4f5f65a); the file now covers E0 to E4b
-8.3	reference: plan section number (docs/round5_ppi_plan.md section 8.3), not a result
+8.3	reference: plan section number (docs/round05/tracks/ppi/round5_ppi_plan.md section 8.3), not a result
 1282	reference: page number of Morgan and Rubin (2012), Annals of Statistics 40
 944	reference: page number of Fuller (2009), Biometrika 96
 403	reference: HTTP status returned by the publisher for Fuller (2009)
