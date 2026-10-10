@@ -1,4 +1,4 @@
-> **Reference document, dated 27 September 2026.** Written by the oversight chat for Nicolas; every method derived from scratch and every round-3 result read with its file. Not maintained; the round-4 changes are in `../decisions/round4_originality_check.md` and `concepts_explained_round4.md`.
+> **Reference document, dated 27 September 2026.** Written by the oversight chat for Nicolas; every method derived from scratch and every round-3 result read with its file. Not maintained; the round-4 changes are in `docs/round04/00_prep/round4_originality_check.md` and `concepts_explained_round4.md`.
 
 # The methods, what we did with them, and what the data still holds
 

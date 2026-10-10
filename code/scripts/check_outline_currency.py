@@ -32,7 +32,7 @@ import subprocess
 import sys
 
 ROOT = os.environ.get("HEST_ROOT", "/work/users/w/e/weiyang/hest_replication")
-DOC = sys.argv[1] if len(sys.argv) > 1 else "docs/deck_master_outline.md"
+DOC = sys.argv[1] if len(sys.argv) > 1 else "docs/round02/tracks/deck/deck_master_outline.md"
 
 # ---------------------------------------------------------------- check 1
 # (pattern, what it was, why it was withdrawn)
@@ -130,7 +130,7 @@ print(f"  {hits1} quoted as current, {retracted} appearing inside a retraction")
 
 print(f"\n=== check 2: claims that resolve ONLY against a retired file")
 V = os.path.join(ROOT, "code/scripts/verify_numeric_claims.py")
-base = ["--search-dir", ".", "--exceptions", "docs/.verify-exceptions-deck",
+base = ["--search-dir", ".", "--exceptions", "docs/round02/tracks/deck/.verify-exceptions-deck",
         "--always", "results/summary/deck_numbers.csv"]
 
 

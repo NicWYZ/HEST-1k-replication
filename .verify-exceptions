@@ -222,36 +222,36 @@
 
 # --- docs_clean_report.md, this stage own report. Scoped keys: these numerals mean
 # something else in other documents, so a bare key would be a false pass there.
-docs/docs_clean_report.md:1,786	cost: total claims across the 16 documents as the PRE-FIX checker counted them; a sweep-snapshot number, not a value any result file holds. Column sum of the table it appears in, reproducible with code/scripts/sweep_table.py before
-docs/docs_clean_report.md:1,809	cost: total claims across the 16 documents as the POST-FIX checker counts them; column sum of the same table, reproducible with code/scripts/sweep_table.py after
-docs/docs_clean_report.md:688	cost: total unresolved claims before triage; column sum of the same table. Stated as a sum rather than an estimate because an earlier version of the gate report gave a figure by eye and understated it
-docs/docs_clean_report.md:121	cost: two distinct counts share this numeral in this document: the intermediate unresolved count for round2_R0_R1_stage_report.md after the placeholder fix and before triage, and the number of historical-class exception entries. Neither is a measurement from a result file
-docs/docs_clean_report.md:150	diagnostic: illustrative ratio of the wrong tolerance to the right one for 3.15e-02 (0.005 against 3.3e-05); computed while diagnosing the scientific-notation defect and not persisted
-docs/docs_clean_report.md:2.55	diagnostic: the value a wrong formula produced for the PRAD patient-2 pixel-size fold-ratio before the task filter was added; a defect measurement, deliberately not checkpointed. The correct value 1.02 IS checked, by a derived formula
-docs/docs_clean_report.md:0.0080	diagnostic: the within-patient pixel-size RANGE, which a wrong formula produced where the inter-session GAP was meant; kept in the text to show what the derived check caught. The correct value 0.0066 is checked by a derived formula
-docs/docs_clean_report.md:117	cost: number of entries in .verify-derived; a count of file lines, not a measurement. Verifiable with `grep -vc '^#' .verify-derived`
-docs/docs_clean_report.md:0.217627	historical: the transposed value as round2_R3_stage_report.md printed it before correction; quoted here to record the error. The correct 0.217672 is in results/round2/R3_splits/
-docs/docs_clean_report.md:0.217672	historical: the corrected worst-cell value, quoted from round2_R3_stage_report.md section 3.2 where it is itself checked against its source file
-docs/docs_clean_report.md:3022	historical: the incorrect epsilon multiple as round2_R0_R1_stage_report.md printed it before correction; quoted to record the error. The correct 3095 is checked in that document
-docs/docs_clean_report.md:1.2636e-05	diagnostic: 106 times float32 epsilon, computed while establishing that the document's 1.265e-05 is a rounded characterisation rather than an identity; the product itself is not stored anywhere
-docs/docs_clean_report.md:2,150	cost: number of files that the basename citation `results.json` resolves to in the faithful results tree; a file count, verifiable with `find results/faithful -name results.json | wc -l`
-docs/docs_clean_report.md:1,811	cost: total claims across the 16 documents as the POST-FIX checker counts them after the outline correction; column sum of the table it appears in, reproducible with code/scripts/sweep_table.py after
-docs/literature_landscape.md:367	external: HEST-1k's count of cancer samples (367, from 25 cancer types), Jaume et al., HEST-1k, NeurIPS 2024
-docs/literature_landscape.md:4,293,195	external: STImage-1K4M's total spot count across 1,149 ST slides, Chen & Zou, STImage-1K4M, NeurIPS 2024
-docs/literature_landscape.md:21.8	external: STImage-1K4M's brain-tissue share of slides (21.8%, the largest tissue), Chen & Zou, STImage-1K4M, NeurIPS 2024
-docs/literature_landscape.md:251	external: STImage-1K4M's brain-tissue slide count (251 of 1,149), Chen & Zou, STImage-1K4M, NeurIPS 2024
-docs/literature_landscape.md:22.2	external: single-cell foundation-model pretraining corpus size (22.2 million cells), DenAdel, Hughes, Thoutam et al., Nature Methods 23:1447-1457, Jul 2026
-docs/literature_landscape.md:6,400	external: number of scaling-law experiments run in the cited study, DenAdel, Hughes, Thoutam et al., Nature Methods 23:1447-1457, Jul 2026
-docs/literature_landscape.md:122	external: UNI2-h's approximate HuggingFace download count (~122k), cited in the batch-dominance discussion of pathology foundation-model embeddings (arXiv:2606.28697 and related)
-docs/literature_landscape.md:3090	external: NVIDIA RTX 3090, the GPU the original HEST-1k benchmark was run on, Jaume et al., NeurIPS 2024; restated once more in the Recommendations section
-docs/literature_landscape.md:40964396	external: PMID for the bioRxiv data-quality-ablation study cited in this section; misparsed as a plain integer by the checker (same class as the arXiv-id exception above)
-docs/literature_landscape.md:635	external: number of ST datasets hosted by the Spatial GWAS Atlas, NAR 2025
-docs/literature_landscape.md:3,854	external: number of GWAS studies hosted by the Spatial GWAS Atlas, NAR 2025
-docs/literature_landscape.md:300	external: Xenium's smallest standard gene-panel size (300 genes, scaling up to 5K), platform specification cited in the cross-panel-generalization problem statement
-docs/round2_results_synthesis.md:80	diagnostic: measured inside the replicate-leak design's abandoned first-attempt version (held out both TENX slides together); superseded by the size-matched, then equal-size-training-set design that shipped, and never checkpointed to a results file
-docs/round2_results_synthesis.md:0.31	historical: an early (pre-fix) leakage-gap figure from the first version of the split-decomposition write-up, before the pooled-Pearson artefact was diagnosed and the metric changed to within-slide Pearson; the pooled metric was withdrawn and no source file for it was retained
-docs/round2_results_synthesis.md:0.76	derived: cross-task correlation between the per-task gene-set-difference magnitude and the selection-protocol Pearson gap; a correlation coefficient across tasks, not expressible as arithmetic over single file references
-docs/round2_results_synthesis.md:0.29	derived: median zero-fraction over the five Xenium tasks (COAD, IDC, LUNG, PAAD, SKCM) from results/tailored/counts/count_diagnostics.csv's zero_frac column; a two-level groupby (gene -> task -> assay) the formula language cannot express. Recomputed by hand: 0.2856, which rounds to the document's 0.29
+docs/round02/i02/deck/docs_clean_report.md:1,786	cost: total claims across the 16 documents as the PRE-FIX checker counted them; a sweep-snapshot number, not a value any result file holds. Column sum of the table it appears in, reproducible with code/scripts/sweep_table.py before
+docs/round02/i02/deck/docs_clean_report.md:1,809	cost: total claims across the 16 documents as the POST-FIX checker counts them; column sum of the same table, reproducible with code/scripts/sweep_table.py after
+docs/round02/i02/deck/docs_clean_report.md:688	cost: total unresolved claims before triage; column sum of the same table. Stated as a sum rather than an estimate because an earlier version of the gate report gave a figure by eye and understated it
+docs/round02/i02/deck/docs_clean_report.md:121	cost: two distinct counts share this numeral in this document: the intermediate unresolved count for round2_R0_R1_stage_report.md after the placeholder fix and before triage, and the number of historical-class exception entries. Neither is a measurement from a result file
+docs/round02/i02/deck/docs_clean_report.md:150	diagnostic: illustrative ratio of the wrong tolerance to the right one for 3.15e-02 (0.005 against 3.3e-05); computed while diagnosing the scientific-notation defect and not persisted
+docs/round02/i02/deck/docs_clean_report.md:2.55	diagnostic: the value a wrong formula produced for the PRAD patient-2 pixel-size fold-ratio before the task filter was added; a defect measurement, deliberately not checkpointed. The correct value 1.02 IS checked, by a derived formula
+docs/round02/i02/deck/docs_clean_report.md:0.0080	diagnostic: the within-patient pixel-size RANGE, which a wrong formula produced where the inter-session GAP was meant; kept in the text to show what the derived check caught. The correct value 0.0066 is checked by a derived formula
+docs/round02/i02/deck/docs_clean_report.md:117	cost: number of entries in .verify-derived; a count of file lines, not a measurement. Verifiable with `grep -vc '^#' .verify-derived`
+docs/round02/i02/deck/docs_clean_report.md:0.217627	historical: the transposed value as round2_R3_stage_report.md printed it before correction; quoted here to record the error. The correct 0.217672 is in results/round2/R3_splits/
+docs/round02/i02/deck/docs_clean_report.md:0.217672	historical: the corrected worst-cell value, quoted from round2_R3_stage_report.md section 3.2 where it is itself checked against its source file
+docs/round02/i02/deck/docs_clean_report.md:3022	historical: the incorrect epsilon multiple as round2_R0_R1_stage_report.md printed it before correction; quoted to record the error. The correct 3095 is checked in that document
+docs/round02/i02/deck/docs_clean_report.md:1.2636e-05	diagnostic: 106 times float32 epsilon, computed while establishing that the document's 1.265e-05 is a rounded characterisation rather than an identity; the product itself is not stored anywhere
+docs/round02/i02/deck/docs_clean_report.md:2,150	cost: number of files that the basename citation `results.json` resolves to in the faithful results tree; a file count, verifiable with `find results/faithful -name results.json | wc -l`
+docs/round02/i02/deck/docs_clean_report.md:1,811	cost: total claims across the 16 documents as the POST-FIX checker counts them after the outline correction; column sum of the table it appears in, reproducible with code/scripts/sweep_table.py after
+docs/round00/literature_landscape.md:367	external: HEST-1k's count of cancer samples (367, from 25 cancer types), Jaume et al., HEST-1k, NeurIPS 2024
+docs/round00/literature_landscape.md:4,293,195	external: STImage-1K4M's total spot count across 1,149 ST slides, Chen & Zou, STImage-1K4M, NeurIPS 2024
+docs/round00/literature_landscape.md:21.8	external: STImage-1K4M's brain-tissue share of slides (21.8%, the largest tissue), Chen & Zou, STImage-1K4M, NeurIPS 2024
+docs/round00/literature_landscape.md:251	external: STImage-1K4M's brain-tissue slide count (251 of 1,149), Chen & Zou, STImage-1K4M, NeurIPS 2024
+docs/round00/literature_landscape.md:22.2	external: single-cell foundation-model pretraining corpus size (22.2 million cells), DenAdel, Hughes, Thoutam et al., Nature Methods 23:1447-1457, Jul 2026
+docs/round00/literature_landscape.md:6,400	external: number of scaling-law experiments run in the cited study, DenAdel, Hughes, Thoutam et al., Nature Methods 23:1447-1457, Jul 2026
+docs/round00/literature_landscape.md:122	external: UNI2-h's approximate HuggingFace download count (~122k), cited in the batch-dominance discussion of pathology foundation-model embeddings (arXiv:2606.28697 and related)
+docs/round00/literature_landscape.md:3090	external: NVIDIA RTX 3090, the GPU the original HEST-1k benchmark was run on, Jaume et al., NeurIPS 2024; restated once more in the Recommendations section
+docs/round00/literature_landscape.md:40964396	external: PMID for the bioRxiv data-quality-ablation study cited in this section; misparsed as a plain integer by the checker (same class as the arXiv-id exception above)
+docs/round00/literature_landscape.md:635	external: number of ST datasets hosted by the Spatial GWAS Atlas, NAR 2025
+docs/round00/literature_landscape.md:3,854	external: number of GWAS studies hosted by the Spatial GWAS Atlas, NAR 2025
+docs/round00/literature_landscape.md:300	external: Xenium's smallest standard gene-panel size (300 genes, scaling up to 5K), platform specification cited in the cross-panel-generalization problem statement
+docs/round02/i05/exec/round2_results_synthesis.md:80	diagnostic: measured inside the replicate-leak design's abandoned first-attempt version (held out both TENX slides together); superseded by the size-matched, then equal-size-training-set design that shipped, and never checkpointed to a results file
+docs/round02/i05/exec/round2_results_synthesis.md:0.31	historical: an early (pre-fix) leakage-gap figure from the first version of the split-decomposition write-up, before the pooled-Pearson artefact was diagnosed and the metric changed to within-slide Pearson; the pooled metric was withdrawn and no source file for it was retained
+docs/round02/i05/exec/round2_results_synthesis.md:0.76	derived: cross-task correlation between the per-task gene-set-difference magnitude and the selection-protocol Pearson gap; a correlation coefficient across tasks, not expressible as arithmetic over single file references
+docs/round02/i05/exec/round2_results_synthesis.md:0.29	derived: median zero-fraction over the five Xenium tasks (COAD, IDC, LUNG, PAAD, SKCM) from results/tailored/counts/count_diagnostics.csv's zero_frac column; a two-level groupby (gene -> task -> assay) the formula language cannot express. Recomputed by hand: 0.2856, which rounds to the document's 0.29
 2.01	derived (round-3 D0): decimal-TB conversion of bytes_all_components_all_samples = 2014162991885 in results/round3/D0_inventory/inventory_report.json; 2014162991885/1e12
 443.8	derived (round-3 D0): decimal-GB conversion of bytes_four_components_all_samples = 443802803691 in results/round3/D0_inventory/inventory_report.json; 443802803691/1e9
 2.4	derived (round-3 D0): the union ask as a percentage of the whole archive; 47654363040/2014162991885, the numerator from expansion_candidates.csv bytes_total_four_components on the union row
@@ -259,8 +259,8 @@ docs/round2_results_synthesis.md:0.29	derived: median zero-fraction over the fiv
 82.2	derived (round-3 D0): decimal-GB conversion of the project-tree byte count 82232314368 recorded by du in results/round3/D0_inventory/storage_context.txt
 4.2	derived (round-3 D0): decimal-GB conversion of the 4163M home-filesystem usage reported by quota in results/round3/D0_inventory/storage_context.txt
 51.2	derived (round-3 D0): decimal-GB conversion of the 51200M home soft quota reported by quota in results/round3/D0_inventory/storage_context.txt
-4.9	derived (round-4 PPI Q1): 4.895786742675767e-08 in results/round4/ppi/Q1_estimator/permuted_mechanism/q1_permuted_lambda_mechanism_check.csv, written as 4.9 x 10^-8 in docs/round4_ppi_Q1_report.md
-0.0067	derived (round-4 PPI plan): Monte Carlo standard error of a 90% coverage at 2,000 replicates, sqrt(0.09/2000), as written in docs/round4_ppi_plan.md section 11
+4.9	derived (round-4 PPI Q1): 4.895786742675767e-08 in results/round4/ppi/Q1_estimator/permuted_mechanism/q1_permuted_lambda_mechanism_check.csv, written as 4.9 x 10^-8 in docs/round04/i01/ppi/round4_ppi_Q1_report.md
+0.0067	derived (round-4 PPI plan): Monte Carlo standard error of a 90% coverage at 2,000 replicates, sqrt(0.09/2000), as written in docs/round04/tracks/ppi/round4_ppi_plan.md section 11
 28,720	observed (round-4 PPI plan section 12): pending jobs on spill in a squeue snapshot on 30 September 2026; not stored in a file
 292	observed (round-4 PPI plan section 12): median priority of pending spill jobs in the same squeue snapshot
 228	observed (round-4 PPI plan section 12): priority of this track's pending jobs on rc_tengfei_pi in the same squeue snapshot
@@ -272,36 +272,36 @@ docs/round2_results_synthesis.md:0.29	derived: median zero-fraction over the fiv
 0.029	derived: maximum over cells of |oracle_emp_var_ratio - finite_m_ratio_lambda_A| in results/round4/ppi/Q2_theory/theorem_v2/q2_sim_theorem.csv
 1.76	derived: maximum over cells of that difference divided by oracle_emp_var_ratio_mc_se, same file
 31,915	derived: length of target_genes.list in results/round3/D4_expansion/task_defs/INDIANA_KIDNEY.json (Indiana kidney candidate panel)
-5.1	section reference: docs/round4_ppi_theory.md section 5.1, not a numeric claim
-0.44	derived: worked example of the break-even rule n_L > 4 + 2/R2 in docs/round4_ppi_theory.md section 5, R2 = 0.44 gives 8.5
-8.5	derived: 4 + 2/0.44 = 8.55, the worked example in docs/round4_ppi_theory.md section 5
+5.1	section reference: docs/round04/tracks/ppi/round4_ppi_theory.md section 5.1, not a numeric claim
+0.44	derived: worked example of the break-even rule n_L > 4 + 2/R2 in docs/round04/tracks/ppi/round4_ppi_theory.md section 5, R2 = 0.44 gives 8.5
+8.5	derived: 4 + 2/0.44 = 8.55, the worked example in docs/round04/tracks/ppi/round4_ppi_theory.md section 5
 834	upper end of the range written 824-834 in results/round4/ppi/Q4_tables/unit_tables/CCRCC_t3/PROVENANCE_phase2.txt, which the resolver reads as -834
-14.4	section reference: docs/round4_ppi_plan.md section 14.4
-14.9	section reference: docs/round4_ppi_plan.md section 14.9
-0.75	prediction threshold: Q4a.1 (lung hoptimus0 below 0.75), transcribed verbatim in docs/round4_ppi_plan.md section 4 from the Q3 memo
-0.09	derived: binomial variance 0.9 x 0.1 in the Monte Carlo error of docs/round4_ppi_plan.md section 8 item 2
-0.04	prediction threshold: Q1b.3 (CR1 loses 0.02 to 0.04), transcribed verbatim in docs/round4_ppi_plan.md section 4
-0.01	prediction threshold: Q1b.3 (CR1 and CR2 within 0.01), transcribed verbatim in docs/round4_ppi_plan.md section 4
-15.1	section reference: docs/round4_ppi_plan.md section 15.1
-15.5	section reference: docs/round4_ppi_plan.md section 15.5
-15.7	section reference: docs/round4_ppi_plan.md section 15.7
-# round 5 conformal track, W2 gate report (docs/round5_conf_W2_report.md)
-336	count: rows of results/round5/conformal/W2_ghcp_settings/w2_coverage_z.csv (168 cells for each of within_plain and within_full), docs/round5_conf_W2_report.md section 1
-4201092	Slurm job id (W0 c3 diagnostic), docs/round5_conf_W2_report.md section 2
-4203412	Slurm job id (W2 part 1 cancelled launcher job), docs/round5_conf_W2_report.md section 7
-4244454	Slurm job id (another user's job; refused scancel), docs/round5_conf_W2_report.md section 7
-7702	CPU model name (AMD EPYC 7702), not a measured value, docs/round5_conf_W2_report.md
-9654	CPU model name (AMD EPYC 9654), not a measured value, docs/round5_conf_W2_report.md
+14.4	section reference: docs/round04/tracks/ppi/round4_ppi_plan.md section 14.4
+14.9	section reference: docs/round04/tracks/ppi/round4_ppi_plan.md section 14.9
+0.75	prediction threshold: Q4a.1 (lung hoptimus0 below 0.75), transcribed verbatim in docs/round04/tracks/ppi/round4_ppi_plan.md section 4 from the Q3 memo
+0.09	derived: binomial variance 0.9 x 0.1 in the Monte Carlo error of docs/round04/tracks/ppi/round4_ppi_plan.md section 8 item 2
+0.04	prediction threshold: Q1b.3 (CR1 loses 0.02 to 0.04), transcribed verbatim in docs/round04/tracks/ppi/round4_ppi_plan.md section 4
+0.01	prediction threshold: Q1b.3 (CR1 and CR2 within 0.01), transcribed verbatim in docs/round04/tracks/ppi/round4_ppi_plan.md section 4
+15.1	section reference: docs/round04/tracks/ppi/round4_ppi_plan.md section 15.1
+15.5	section reference: docs/round04/tracks/ppi/round4_ppi_plan.md section 15.5
+15.7	section reference: docs/round04/tracks/ppi/round4_ppi_plan.md section 15.7
+# round 5 conformal track, W2 gate report (docs/round05/i01/conformal/round5_conf_W2_report.md)
+336	count: rows of results/round5/conformal/W2_ghcp_settings/w2_coverage_z.csv (168 cells for each of within_plain and within_full), docs/round05/i01/conformal/round5_conf_W2_report.md section 1
+4201092	Slurm job id (W0 c3 diagnostic), docs/round05/i01/conformal/round5_conf_W2_report.md section 2
+4203412	Slurm job id (W2 part 1 cancelled launcher job), docs/round05/i01/conformal/round5_conf_W2_report.md section 7
+4244454	Slurm job id (another user's job; refused scancel), docs/round05/i01/conformal/round5_conf_W2_report.md section 7
+7702	CPU model name (AMD EPYC 7702), not a measured value, docs/round05/i01/conformal/round5_conf_W2_report.md
+9654	CPU model name (AMD EPYC 9654), not a measured value, docs/round05/i01/conformal/round5_conf_W2_report.md
 108	count: row files listed in results/round5/conformal/W2_ghcp_settings/merged/w2_merge_inputs.json (88 simulation, 20 census)
 213	count: rows with whose()=sibling in results/round5/conformal/W0_setup/w0_whose_round4.csv
 7.1e-15	largest width difference between the local and the Longleaf W1 merges (results/round5/conformal/W1_sim/merged vs W1_sim root tables), computed by the lead at the time; and the W2 part 1 wrapper check (7.105427357601002e-15 in part1/w2_accept1_raw_columns_poisson.csv)
-1.1102230246251565e-16	largest coverage difference in the W0 sim anchor, a pandas CSV float-parsing artifact (docs/round5_conf_W2_report.md section 3, W0 item 1)
+1.1102230246251565e-16	largest coverage difference in the W0 sim anchor, a pandas CSV float-parsing artifact (docs/round05/i01/conformal/round5_conf_W2_report.md section 3, W0 item 1)
 101	sum: GHCP-narrowest cells at share 0.3 (90) and 0.5 (11) in results/round5/conformal/W1_sim/w1_whole_grid_counts.csv
-107	source line reference: released code/marginal/run_acs_experiments.py line 107 (docs/round5_conf_plan.md section 4 item 7)
-1585	source line reference: released code/marginal/run_acs_experiments.py line 1585 (docs/round5_conf_plan.md section 4 item 7)
-154	source line reference: released methods/donor_hcp.py line 154 (docs/round5_conf_plan.md section 4 item 8)
-172	source line reference: released methods/donor_hcp.py line 172 (docs/round5_conf_plan.md section 4 item 8)
-766	fragment of md5 766b6699bd939e767be124c64cc03174 (old W2 wrapper), docs/round5_conf_plan.md section 4 item 11
-2.9	proposition number in Vovk, Gammerman and Shafer (2022 edition) as cited by arXiv:2608.27310, docs/round5_conf_theory.md reading log
-241	line number in the text extracted from arXiv:2608.27310, docs/round5_conf_theory.md section A.2
-815	line number in the text extracted from arXiv:2608.27310, docs/round5_conf_theory.md section A.2
+107	source line reference: released code/marginal/run_acs_experiments.py line 107 (docs/round05/tracks/conformal/round5_conf_plan.md section 4 item 7)
+1585	source line reference: released code/marginal/run_acs_experiments.py line 1585 (docs/round05/tracks/conformal/round5_conf_plan.md section 4 item 7)
+154	source line reference: released methods/donor_hcp.py line 154 (docs/round05/tracks/conformal/round5_conf_plan.md section 4 item 8)
+172	source line reference: released methods/donor_hcp.py line 172 (docs/round05/tracks/conformal/round5_conf_plan.md section 4 item 8)
+766	fragment of md5 766b6699bd939e767be124c64cc03174 (old W2 wrapper), docs/round05/tracks/conformal/round5_conf_plan.md section 4 item 11
+2.9	proposition number in Vovk, Gammerman and Shafer (2022 edition) as cited by arXiv:2608.27310, docs/round05/tracks/conformal/round5_conf_theory.md reading log
+241	line number in the text extracted from arXiv:2608.27310, docs/round05/tracks/conformal/round5_conf_theory.md section A.2
+815	line number in the text extracted from arXiv:2608.27310, docs/round05/tracks/conformal/round5_conf_theory.md section A.2

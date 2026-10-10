@@ -1,9 +1,9 @@
-> **Superseded on 22 September 2026 by `docs/round3_A1_stage_report.md`, and moved here rather
+> **Superseded on 22 September 2026 by `docs/round03/i01/exec/round3_A1_stage_report.md`, and moved here rather
 > than deleted.** This was the live note written when the session parked mid-interval-1. Its
 > A0 numbers are correct and are restated in the stage report; its D0 section was explicitly
 > labelled as unverified leads and several of those leads were refined once the D0 tables were
 > built, in particular the institution-set finding, which the proposal states precisely. Read
-> the stage report and `docs/round3_d0_expansion_proposal.md` instead of this file.
+> the stage report and `docs/round03/i01/exec/round3_d0_expansion_proposal.md` instead of this file.
 
 > **Live note, opened 2026-09-22.** Where round 3 stood when the session parked, and what the next
 > session does first. Deleted or folded into the A1 stage report once interval 1 closes.
@@ -86,8 +86,8 @@ from `results/round3/A0_smoke/` and `results/round3/D0_inventory/` on Longleaf.
 2. Read the two queued jobs' state and outputs, and fold the third encoder's H1 and H2 rows into the
    acceptance tables. Finish D0 from `hf_file_listing.csv.gz` and `release_tables/`, which are
    already on disk, so the HuggingFace listing does not need re-fetching.
-3. Run A1, then write `docs/round3_A1_stage_report.md`. A1 runs `slide_out` only on PRAD, READ and
-   IDC under audited labels, for the reason in `docs/round3_execution_plan.md` § 10 item 3.
+3. Run A1, then write `docs/round03/i01/exec/round3_A1_stage_report.md`. A1 runs `slide_out` only on PRAD, READ and
+   IDC under audited labels, for the reason in `docs/round03/tracks/exec/round3_execution_plan.md` § 10 item 3.
 
 Then stop at the gate and wait for the decision memo.
 

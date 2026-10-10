@@ -1,0 +1,94 @@
+# Moved documents
+
+On 9 October 2026 the documents under `docs/` were moved from a flat layout into folders by round, interval and track (see `docs/README.md` for the layout and `docs/progress-log.md` for the entry). Every file kept its name. Paths inside documents, including frozen ones, were rewritten to the new locations by Nicolas's decision. Files under `results/` and comments in older scripts still carry the old paths, and this table resolves them.
+
+| Old path | New path |
+|---|---|
+| `docs/first_year_ST_project_proposal.md` | `docs/round00/first_year_ST_project_proposal.md` |
+| `docs/literature_landscape.md` | `docs/round00/literature_landscape.md` |
+| `docs/HEST_replication_handoff.md` | `docs/round01/i01/exec/HEST_replication_handoff.md` |
+| `docs/round1_final_stage_report.md` | `docs/round01/i01/exec/round1_final_stage_report.md` |
+| `docs/HEST_replication_review.md` | `docs/round02/00_prep/HEST_replication_review.md` |
+| `docs/round2_execution_plan.md` | `docs/round02/i01/exec/round2_execution_plan.md` |
+| `docs/round2_R0_R1_stage_report.md` | `docs/round02/i01/exec/round2_R0_R1_stage_report.md` |
+| `docs/decisions/round2_R1_decisions.md` | `docs/round02/i02/exec/round2_R1_decisions.md` |
+| `docs/round2_R3_stage_report.md` | `docs/round02/i02/exec/round2_R3_stage_report.md` |
+| `docs/decisions/round2_R3_decisions.md` | `docs/round02/i03/exec/round2_R3_decisions.md` |
+| `docs/r5_idc_provenance.md` | `docs/round02/i03/exec/r5_idc_provenance.md` |
+| `docs/round2_R5_stage_report.md` | `docs/round02/i03/exec/round2_R5_stage_report.md` |
+| `docs/decisions/round2_R5_decisions.md` | `docs/round02/i04/exec/round2_R5_decisions.md` |
+| `docs/round2_R8_stage_report.md` | `docs/round02/i04/exec/round2_R8_stage_report.md` |
+| `docs/decisions/round2_closeout_decisions.md` | `docs/round02/i05/exec/round2_closeout_decisions.md` |
+| `docs/round2_closeout_report.md` | `docs/round02/i05/exec/round2_closeout_report.md` |
+| `docs/round2_results_synthesis.md` | `docs/round02/i05/exec/round2_results_synthesis.md` |
+| `docs/hest_bench_issue_draft.md` | `docs/round02/i05/exec/hest_bench_issue_draft.md` |
+| `docs/decisions/deck_figures_and_repo_update.md` | `docs/round02/i01/deck/deck_figures_and_repo_update.md` |
+| `docs/closeout_gate_report.md` | `docs/round02/i01/deck/closeout_gate_report.md` |
+| `docs/decisions/post_deck_repo_instructions.md` | `docs/round02/i02/deck/post_deck_repo_instructions.md` |
+| `docs/docs_clean_report.md` | `docs/round02/i02/deck/docs_clean_report.md` |
+| `docs/deck_master_outline.md` | `docs/round02/tracks/deck/deck_master_outline.md` |
+| `docs/deck_speaker_scripts.md` | `docs/round02/tracks/deck/deck_speaker_scripts.md` |
+| `docs/.verify-exceptions-deck` | `docs/round02/tracks/deck/.verify-exceptions-deck` |
+| `docs/deck_round2/` | `docs/round02/tracks/deck/deck_round2/` |
+| `docs/decisions/round3_oversight_handoff.md` | `docs/round03/00_prep/round3_oversight_handoff.md` |
+| `docs/decisions/round3_execution_handoff.md` | `docs/round03/i01/exec/round3_execution_handoff.md` |
+| `docs/round3_d0_expansion_proposal.md` | `docs/round03/i01/exec/round3_d0_expansion_proposal.md` |
+| `docs/round3_A1_stage_report.md` | `docs/round03/i01/exec/round3_A1_stage_report.md` |
+| `docs/decisions/round3_A1_decisions.md` | `docs/round03/i02/exec/round3_A1_decisions.md` |
+| `docs/round3_A3_stage_report.md` | `docs/round03/i02/exec/round3_A3_stage_report.md` |
+| `docs/decisions/round3_A3_decisions.md` | `docs/round03/i03/exec/round3_A3_decisions.md` |
+| `docs/round3_final_report.md` | `docs/round03/i03/exec/round3_final_report.md` |
+| `docs/round3_execution_plan.md` | `docs/round03/tracks/exec/round3_execution_plan.md` |
+| `docs/decisions/round3_directions.md` | `docs/round04/00_prep/round3_directions.md` |
+| `docs/decisions/round4_originality_check.md` | `docs/round04/00_prep/round4_originality_check.md` |
+| `docs/decisions/round4_data_pull.md` | `docs/round04/i01/data/round4_data_pull.md` |
+| `docs/decisions/round4_data_P1_decision.md` | `docs/round04/i01/data/round4_data_P1_decision.md` |
+| `docs/round4_data_report.md` | `docs/round04/i01/data/round4_data_report.md` |
+| `docs/decisions/round4_data_P7_decisions.md` | `docs/round04/i02/data/round4_data_P7_decisions.md` |
+| `docs/round4_data_P8_report.md` | `docs/round04/i02/data/round4_data_P8_report.md` |
+| `docs/round4_data_plan.md` | `docs/round04/tracks/data/round4_data_plan.md` |
+| `docs/decisions/round4_oversight_handoff.md` | `docs/round04/oversight/round4_oversight_handoff.md` |
+| `docs/decisions/round4_ppi_track.md` | `docs/round04/i01/ppi/round4_ppi_track.md` |
+| `docs/decisions/round4_ppi_addendum1.md` | `docs/round04/i01/ppi/round4_ppi_addendum1.md` |
+| `docs/round4_ppi_Q1_report.md` | `docs/round04/i01/ppi/round4_ppi_Q1_report.md` |
+| `docs/decisions/round4_ppi_Q1_decisions.md` | `docs/round04/i02/ppi/round4_ppi_Q1_decisions.md` |
+| `docs/round4_ppi_Q3_report.md` | `docs/round04/i02/ppi/round4_ppi_Q3_report.md` |
+| `docs/decisions/round4_ppi_Q3_decisions.md` | `docs/round04/i03/ppi/round4_ppi_Q3_decisions.md` |
+| `docs/decisions/round4_ppi_addendum2.md` | `docs/round04/i03/ppi/round4_ppi_addendum2.md` |
+| `docs/round4_ppi_final_report.md` | `docs/round04/i03/ppi/round4_ppi_final_report.md` |
+| `docs/decisions/round4_ppi_Q5_decisions.md` | `docs/round04/i04/ppi/round4_ppi_Q5_decisions.md` |
+| `docs/decisions/round4_ppi_Q5a_closing.md` | `docs/round04/i05/ppi/round4_ppi_Q5a_closing.md` |
+| `docs/round4_ppi_plan.md` | `docs/round04/tracks/ppi/round4_ppi_plan.md` |
+| `docs/round4_ppi_theory.md` | `docs/round04/tracks/ppi/round4_ppi_theory.md` |
+| `docs/round4_ppi_estimator_definition.md` | `docs/round04/tracks/ppi/round4_ppi_estimator_definition.md` |
+| `docs/decisions/round4_conformal_track.md` | `docs/round04/i01/conformal/round4_conformal_track.md` |
+| `docs/decisions/round4_conformal_addendum1.md` | `docs/round04/i01/conformal/round4_conformal_addendum1.md` |
+| `docs/round4_conf_candidate_definitions.md` | `docs/round04/i01/conformal/round4_conf_candidate_definitions.md` |
+| `docs/round4_conf_lower_bound.md` | `docs/round04/i01/conformal/round4_conf_lower_bound.md` |
+| `docs/round4_conf_C2_report.md` | `docs/round04/i01/conformal/round4_conf_C2_report.md` |
+| `docs/decisions/round4_conformal_C2_decisions.md` | `docs/round04/i02/conformal/round4_conformal_C2_decisions.md` |
+| `docs/round4_conf_final_report.md` | `docs/round04/i02/conformal/round4_conf_final_report.md` |
+| `docs/decisions/round4_conformal_C4_decisions.md` | `docs/round04/i03/conformal/round4_conformal_C4_decisions.md` |
+| `docs/round4_conf_plan.md` | `docs/round04/tracks/conformal/round4_conf_plan.md` |
+| `docs/deck2/` | `docs/round05/00_prep/deck2/` |
+| `docs/decisions/round5_oversight_handoff.md` | `docs/round05/00_prep/round5_oversight_handoff.md` |
+| `docs/decisions/round5_ppi_track.md` | `docs/round05/i01/ppi/round5_ppi_track.md` |
+| `docs/round5_ppi_E2_report.md` | `docs/round05/i01/ppi/round5_ppi_E2_report.md` |
+| `docs/decisions/round5_ppi_E2_decisions.md` | `docs/round05/i02/ppi/round5_ppi_E2_decisions.md` |
+| `docs/round5_ppi_E4_report.md` | `docs/round05/i02/ppi/round5_ppi_E4_report.md` |
+| `docs/decisions/round5_ppi_E4_decisions.md` | `docs/round05/i03/ppi/round5_ppi_E4_decisions.md` |
+| `docs/round5_ppi_final_report.md` | `docs/round05/i03/ppi/round5_ppi_final_report.md` |
+| `docs/decisions/round5_ppi_E5_decisions.md` | `docs/round05/i04/ppi/round5_ppi_E5_decisions.md` |
+| `docs/round5_ppi_plan.md` | `docs/round05/tracks/ppi/round5_ppi_plan.md` |
+| `docs/round5_ppi_theory.md` | `docs/round05/tracks/ppi/round5_ppi_theory.md` |
+| `docs/round5_ppi_estimator_definition.md` | `docs/round05/tracks/ppi/round5_ppi_estimator_definition.md` |
+| `docs/decisions/round5_conformal_track.md` | `docs/round05/i01/conformal/round5_conformal_track.md` |
+| `docs/round5_conf_W2_report.md` | `docs/round05/i01/conformal/round5_conf_W2_report.md` |
+| `docs/decisions/round5_conformal_W2_decisions.md` | `docs/round05/i02/conformal/round5_conformal_W2_decisions.md` |
+| `docs/round5_conf_final_report.md` | `docs/round05/i02/conformal/round5_conf_final_report.md` |
+| `docs/decisions/round5_conformal_W5_decisions.md` | `docs/round05/i03/conformal/round5_conformal_W5_decisions.md` |
+| `docs/round5_conf_plan.md` | `docs/round05/tracks/conformal/round5_conf_plan.md` |
+| `docs/round5_conf_theory.md` | `docs/round05/tracks/conformal/round5_conf_theory.md` |
+| `docs/.DS_Store` | removed |
+
+The old `docs/decisions/` folder held every instruction and memo. It was split, and each of its files is listed above. Some frozen documents still say that memos are committed under `docs/decisions/`. Those sentences describe the layout at the time they were written and were left as they are.

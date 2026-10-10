@@ -117,7 +117,7 @@ it does not start early at all, and a long limit is exactly what makes a job uns
 backfill window. In A3 the five A2 jobs still pending after 2 h 40 min had been submitted with 16 h
 limits; lowering the limits in place to 3 h, bounded from a sibling job's measured runtime, started
 all five within minutes, with nothing about the jobs' work, resources or seeds changed
-(`docs/round3_A3_stage_report.md` section 2, `docs/decisions/round3_A3_decisions.md` section 3.5).
+(`docs/round03/i02/exec/round3_A3_stage_report.md` section 2, `docs/round03/i03/exec/round3_A3_decisions.md` section 3.5).
 So: size the Slurm `--time` at about three times the expected runtime, take the expectation from a
 sibling's `sacct` rather than from intuition, smoke-test first when there is no sibling to measure,
 and never submit a blanket 16 h. The submission harness's own `run_timeout_s` is the opposite case
@@ -207,7 +207,7 @@ the executed script's md5 too.** In round 3's D2 the first `hoptimus0` and `uni_
 `commit` that did not correspond to the file that produced their output, because the script had
 been edited in the working copy after that commit; the two differ, and the discrepancy surfaced
 only when the runs failed on the breast set and had to be rerun
-(`docs/round3_A3_stage_report.md` section 7 item 15). A commit hash answers "which revision was
+(`docs/round03/i02/exec/round3_A3_stage_report.md` section 7 item 15). A commit hash answers "which revision was
 checked out", which is not the question provenance is asked. So every job's provenance now records
 the md5 of the script file it executed, computed inside the job, alongside the job id, partition,
 node, GPU where there is one, commit, command line, config hash and `PYTHONHASHSEED`.
@@ -320,7 +320,7 @@ day. The two largest counts — `round2_R3_stage_report` and `round2_R5_stage_re
 unmentioned, and one document, `round2_R0_R1_stage_report`, had never been assessed at all and was
 not disclosed as such. The per-document data was available when that message was written, so this
 was an omission, not something the sweep failed to surface. Corrected in `2f20dc4` and
-`docs/closeout_gate_report.md`.
+`docs/round02/i01/deck/closeout_gate_report.md`.
 
 There is a second, sharper lesson from the same episode. The correcting file itself then said
 "roughly `350` unresolved entries across twelve documents" where summing its own table
@@ -442,17 +442,18 @@ by the wider window.
 ## Required before any document is handed over
 
 **Run the numeric-claim sweep and fix what it flags.** This is a required step, not advisory.
-The gate is two invocations over one document set, and this is what `code/scripts/sweep_table.py`
-actually runs. Run from the repository root:
+The gate is two invocations over one document set. `code/scripts/sweep_table.py` ran the same
+two invocations over the flat layout of round 2 and is kept as that round's record, so use the
+commands below, which follow the layout by round of 9 October 2026. Run from the repository root:
 
 ```
-DOCS=$(ls docs/*.md | grep -v deck_master_outline)
+DOCS=$(git ls-files 'docs/*.md' 'docs/**/*.md' | grep -v -e deck_master_outline -e docs/moved.md)
 python code/scripts/verify_numeric_claims.py README.md $DOCS \
     --search-dir . --exceptions .verify-exceptions --derived .verify-derived \
     --always results/summary/deck_numbers.csv
 
-python code/scripts/verify_numeric_claims.py docs/deck_master_outline.md \
-    --search-dir . --exceptions docs/.verify-exceptions-deck --derived .verify-derived \
+python code/scripts/verify_numeric_claims.py docs/round02/tracks/deck/deck_master_outline.md \
+    --search-dir . --exceptions docs/round02/tracks/deck/.verify-exceptions-deck --derived .verify-derived \
     --always results/summary/deck_numbers.csv
 ```
 
@@ -463,12 +464,12 @@ Each invocation exits non-zero if any claim is unresolved, so either can gate a 
 files rather than a stored cell, and without it every one of them is read as unresolved.
 `--always results/summary/deck_numbers.csv` adds the deck's number table to the cited set of every
 scope, which is how the deck documents and the proposal quote it without repeating the citation in
-each paragraph. `docs/deck_master_outline.md` goes in its own invocation because it keeps its own
-exceptions file, `docs/.verify-exceptions-deck`; measured against the repository-root exceptions
+each paragraph. `docs/round02/tracks/deck/deck_master_outline.md` goes in its own invocation because it keeps its own
+exceptions file, `docs/round02/tracks/deck/.verify-exceptions-deck`; measured against the repository-root exceptions
 file it reports unresolved claims that it does not have. An earlier revision of this section printed
 the command without the last two flags, and run as printed it reported more unresolved claims than
 the gate does, on documents that pass it. The escalation that found this is in
-`docs/round3_A1_stage_report.md`, under discrepancies, open questions and escalations.
+`docs/round03/i01/exec/round3_A1_stage_report.md`, under discrepancies, open questions and escalations.
 
 All documents go through one invocation per group rather than one per document: the resolver indexes
 each search directory once per process, so per-document runs walk the tree once per document, which
@@ -514,3 +515,27 @@ README and the R8 report quoted *different* values for the same width–score co
 against −0.950) because one used round 1's 11-encoder cohort and the other round 2's 12; both were
 right and neither said which. Broken citations and unlabelled cohorts are the failure modes a
 numeric sweep surfaces on the way to checking the numbers.
+
+---
+
+## Guardrails register
+
+Some procedures exist because of how the models and the harness behave today, not because of
+the research. Sessions remember nothing between conversations, attention fades in long
+contexts, bookkeeping is skipped under load, and hooks do not fire in sessions that start
+outside the repository. This register lists them, so that a review can tell which still earn
+their place when the model or the harness changes. The project's own rules (the gate rule,
+reading numbers back from files, frozen reports) are not in it and are not relaxed by a review.
+Add a dated incident line whenever a guardrail catches something or something slips past one.
+
+Last reviewed: 9 October 2026, when it was written.
+
+| Guardrail | Failure it prevents | Since | Incidents |
+|---|---|---|---|
+| The project instructions point to `CLAUDE.md` | `CLAUDE.md` is never read, since it does not load on its own in a claude.ai project session | 9 Oct | |
+| State updates in the same commit as each memo | A fresh session resumes from a stale state | 9 Oct | On 9 Oct `CLAUDE.md` still listed pull request #21 as pending after it merged, and the staleness check found it |
+| `code/scripts/state_check.py` run by hand | Drift that a hook would have caught goes unnoticed | 9 Oct | |
+| The mandatory round-close check | A round starts on a record with gaps or contradictions | 9 Oct | |
+| An independent checker agent on high-stakes memos | The oversight chat grades its own work | round 4 | |
+| Intervals sized so a session can resume from its plan after a compaction | An execution session loses detail mid-interval | round 5 | |
+

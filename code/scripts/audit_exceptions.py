@@ -22,7 +22,7 @@ import sys
 # external, and not derivable from anything committed. Filing them as "cost" would have
 # been false, so the class was added and disclosed rather than the entries misfiled.
 CLASSES = ("derived", "cost", "historical", "external", "diagnostic")
-FILES = sys.argv[1:] or [".verify-exceptions", "docs/.verify-exceptions-deck",
+FILES = sys.argv[1:] or [".verify-exceptions", "docs/round02/tracks/deck/.verify-exceptions-deck",
                          ".verify-derived"]
 
 bad = 0
