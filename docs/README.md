@@ -43,6 +43,7 @@ Each stage of work produces the same chain. The oversight chat writes an instruc
 | 3 | 22 to 24 September | `docs/round03/` | the first experiments for both topics, after which Topics A and B as framed were retired | `docs/round03/README.md` |
 | 4 | 28 September to 3 October | `docs/round04/` | after the change of direction to labelling budgets for prediction-powered inference with clustered data, a data pull and two tracks (inference and prediction sets) | `docs/round04/README.md` |
 | 5 | 7 to 9 October | `docs/round05/` | the inference track's final interval, regime B, regression form and cluster selection, and the prediction-set map above 10 calibration donors | `docs/round05/README.md` |
+| 6 | in preparation | `docs/round06/` | no masterplan yet; `00_prep/` holds the explainer of round 5's results | `docs/round06/README.md` |
 
 ## Superseded and withdrawn
 
