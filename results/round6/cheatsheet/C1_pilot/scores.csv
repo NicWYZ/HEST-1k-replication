@@ -1,0 +1,17 @@
+trial_id,slot,arm,size,model,replicate,role,writer_trial_id,rbar,n_constant_pred
+2c344396,sonnet.baseline.AB.0.r1,AB,0,claude-sonnet-5-5,1,baseline,,0.3391467465474036,0
+e60b5e68,haiku.baseline.AB.0.r1,AB,0,claude-haiku-5-5,1,baseline,,0.18642599191689296,0
+db165b99,sonnet.predictor.B.32768.r1,B,32768,claude-sonnet-5-5,1,predictor,d96d2f78,0.3999707864635313,0
+d0d348e1,haiku.baseline.AB.0.r1,AB,0,claude-haiku-5-5,1,baseline,,0.316116074012211,0
+4619b5cb,haiku.baseline.AB.0.r1,AB,0,claude-haiku-5-5,1,baseline,,0.2896957480688623,0
+de61b7c1,sonnet.combined.B.inf.r1,B,inf,claude-sonnet-5-5,1,combined,,0.6693622813822461,0
+3941d3c8,haiku.baseline.AB.0.r1,AB,0,claude-haiku-5-5,1,baseline,,0.2599476831613217,0
+a64a6260,opus.baseline.AB.0.r1,AB,0,claude-opus-5-5,1,baseline,,0.5021366616880308,0
+2ac6a268,haiku.predictor.B.32768.r1,B,32768,claude-haiku-5-5,1,predictor,443f584b,0.5454022027681029,0
+15e9b886,haiku.combined.B.inf.r1,B,inf,claude-haiku-5-5,1,combined,,0.6748002088474869,0
+d094a562,opus.predictor.B.32768.r1,B,32768,claude-opus-5-5,1,predictor,50e31fff,0.600008457593844,0
+c1fdb6c5,opus.combined.B.inf.r1,B,inf,claude-opus-5-5,1,combined,,0.6975826739274683,0
+90a46114,opus.combined.B.inf.r1,B,inf,claude-opus-5-5,1,combined,,0.7054740968134445,0
+67c1edd1,haiku.combined.B.inf.r1,B,inf,claude-haiku-5-5,1,combined,,0.6954668627186222,0
+b0271ebb,haiku.combined.B.inf.r1,B,inf,claude-haiku-5-5,1,combined,,0.6813119127056979,0
+663707b2,haiku.combined.B.inf.r1,B,inf,claude-haiku-5-5,1,combined,,0.6394225820300682,3

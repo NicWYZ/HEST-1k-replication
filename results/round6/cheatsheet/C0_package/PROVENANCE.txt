@@ -1,0 +1,18 @@
+stage: C0.3 data package
+frame_id: r6cs_package_4612750
+slurm_job_id: 4612750
+partition: spill
+account: rc_htzhu_pi
+node: c151412.ll.unc.edu
+date_utc: 2026-10-12T03:18:05Z
+code_commit: b1130651d76f1bbc0e4a636690df2a93861e2723
+code_clone: /work/users/w/e/weiyang/hest_code/r6_cheatsheet
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python /work/users/w/e/weiyang/hest_replication/results/round6/cheatsheet/C0_package/job_4612750/code/code/scripts/round6_cheatsheet_package.py --proj /work/users/w/e/weiyang/hest_replication --out package --frame-id r6cs_package_4612750
+PYTHONHASHSEED: 0
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 pyarrow 25.0.1 h5py 3.16.0 anndata 0.12.19 Pillow 12.3.0
+script_md5:
+  5ead4c7e0e76762a41660fc19283a6db  /work/users/w/e/weiyang/hest_replication/results/round6/cheatsheet/C0_package/job_4612750/code/code/scripts/round6_cheatsheet_package.py
+  3e1f7f7a7387e4d2254a2271e8b54709  /work/users/w/e/weiyang/hest_replication/results/round6/cheatsheet/C0_package/job_4612750/code/code/scripts/round6_cheatsheet_package.sbatch
+exit_code: 0
+wall_seconds: 36
