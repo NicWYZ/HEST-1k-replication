@@ -125,6 +125,9 @@ def main():
     ap.add_argument("--out", default=os.path.join(REPO, "results/round6/cheatsheet/C0_isolation"))
     ap.add_argument("--remove-canaries", action="store_true")
     ap.add_argument("--model", default=MODEL)
+    ap.add_argument("--probes", nargs="+", default=["I1", "I2", "I3"],
+                    help="a container rebuilt after a reclaim reruns I2 and I3 (instruction section 5)")
+    ap.add_argument("--effort", default="high", help="C0 ran the probes at high effort")
     a = ap.parse_args()
     if a.remove_canaries:
         remove()
@@ -141,18 +144,19 @@ def main():
 
     def run_holder():
         hold["r"] = C.run(holder_dir, "claude-haiku-5-5", HOLD_PROMPT, log_dir, f"{state['holder_id']}_hold",
-                          max_turns=6, timeout=1200)
+                          max_turns=6, timeout=1200, effort=a.effort)
 
     th = threading.Thread(target=run_holder)
     th.start()
     time.sleep(45)  # let the holder start its sleep before the probes run
 
-    probes = [("I1", I1_PROMPT), ("I2", I2_PROMPT.format(paths=paths)), ("I3", I3_PROMPT)]
+    probes = [p for p in [("I1", I1_PROMPT), ("I2", I2_PROMPT.format(paths=paths)), ("I3", I3_PROMPT)]
+              if p[0] in a.probes]
     results = {}
 
     def run_probe(name, prompt):
         tid, d = new_trial_dir()
-        r = C.run(d, a.model, prompt, log_dir, f"{tid}_{name}", max_turns=80, timeout=3 * 3600)
+        r = C.run(d, a.model, prompt, log_dir, f"{tid}_{name}", max_turns=80, timeout=3 * 3600, effort=a.effort)
         results[name] = (tid, d, r)
 
     ths = [threading.Thread(target=run_probe, args=p) for p in probes]
