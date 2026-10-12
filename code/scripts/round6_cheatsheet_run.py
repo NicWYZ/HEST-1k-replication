@@ -138,6 +138,9 @@ class Stage:
             row["writer_trial_id"] = wrow["trial_id"]
             cheatsheet = os.path.join(self.out, "cheatsheets", f"{wrow['trial_id']}.txt")
         d, maps = B.build(self.P, {"trial_id": tid, "role": r["role"], "arm": r["arm"]}, cheatsheet=cheatsheet)
+        blind = S.blinding_scan_tree(d)  # I4, before the child starts
+        if blind:
+            raise RuntimeError(f"I4 blinding hit in {tid}: {blind[:3]}")
         prompt = PR.prompt_for(r["role"], r["size"] if r["role"] == "writer" else None)
         res = C.run(d, r["model"], prompt, self.logs, tid, max_turns=80)
         s = C.summarise(res["stream"])
