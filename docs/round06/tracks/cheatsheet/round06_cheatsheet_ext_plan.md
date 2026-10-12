@@ -58,8 +58,52 @@ By Nicolas's decision of 12 October (hard rule 7 in `CLAUDE.md`), the agent tria
 
 - [x] Clone, branch and this plan (12 October).
 - [x] Section 11 of the instruction, Nicolas's part, checked on 12 October (G1 to G3).
-- [ ] C4.1 to C4.5.
+- [x] C4.1 child sessions (12 October, section 4b).
+- [x] C4.2 isolation, I1 to I3 (12 October, section 4c). I4 waits for the package. The canaries stay in place until it passes.
+- [ ] C4.3 the data package. Job 4674826 was submitted on 12 October at commit `a3e2d388` and was still pending in the queue when this was written. Job 4674823, submitted a minute earlier with a mistyped commit hash, was cancelled before it started.
+- [ ] C4.4 comparators. The scripts are written. The job is submitted once the package exists.
+- [ ] C4.5 harness and scorer. The scripts are written and pass their tests on a synthetic package. The tests on the real package and on round 6's cheatsheets with this task's gene list are still to run.
 - [ ] C5 pilot and report (gate).
+
+## 4b. C4.1, child sessions on the Mac
+
+Evidence in `results/round6/cheatsheet_ext/C4_children/children.json`.
+
+- **Image.** `r6ext:1`, built from `code/scripts/round6_cheatsheet_ext.Dockerfile` on `node:22-trixie-slim`. Claude Code 2.1.295 in the image and on the Mac, bubblewrap 0.12.0, socat 1.8.0.3, Python 3.13.5 with numpy 2.5.3, pandas 3.0.5, scipy 1.18.1, Pillow 12.3.0, scikit-image 0.26.0 and scikit-learn 1.9.1, the versions round 6's trials saw. The harness's own pyarrow sits in `/opt/harness`, which no trial's confinement binds. `curl` is not in the image.
+- **Container.** Started by `code/scripts/round6_cheatsheet_ext_container.sh`. It runs as the unprivileged user `node` with every capability dropped. It needs `seccomp=unconfined` and `apparmor=unconfined` for bubblewrap's user namespaces, and `systempaths=unconfined` so that bubblewrap can mount a fresh `/proc`. Neither `--privileged` nor `SYS_ADMIN` is needed, which is narrower than either form the instruction names.
+- **Authentication.** A confined child given only `CLAUDE_CODE_OAUTH_TOKEN` from the token file authenticated. Its `system/init` event reports `apiKeySource` as `none`, so no API key is in play and usage goes to the account that made the token. Whether the usage shows on Nicolas's account can only be seen from his side, and the C5 report asks him to confirm it.
+- **Model and effort.** `--model claude-opus-5-5` was accepted and served as `claude-opus-5-5`. `--effort medium` and `CLAUDE_CODE_EFFORT_LEVEL=medium` were accepted. The stream does not echo the effort level, so it is confirmed only as accepted.
+- **Flags.** Every flag of 6.5 was accepted as written. `--disable-slash-commands` is added, as in round 6 (its flag F11), and the skills list is then empty. The three built-in plugins `cc-plugin-agents-md`, `cc-plugin-telemetry` and `cc-plugin-plugin-authoring` remain listed, as in round 6.
+- **`env -i`.** The child gets exactly six variables (`PATH`, `HOME`, `HTTPS_PROXY`, `https_proxy`, `CLAUDE_CODE_EFFORT_LEVEL`, `CLAUDE_CODE_OAUTH_TOKEN`). They are given as the process environment of `bwrap` and not on an `env -i` command line, so the token does not appear in a process listing in the container. The effect is that of `env -i`.
+- **What is not bound.** `/opt`, `/lib64`, a certificate bundle and a credential folder are not bound. Node, Claude Code and Python sit under `/usr`. The filter tunnels TLS unchanged and the API's certificate verifies against Node's own store, so no certificate variable is set.
+- **The filter.** `code/scripts/round6_cheatsheet_ext_filter_proxy.py` is round 6's proxy with a `--direct` mode that opens the connection to the allowed host itself. The allow list is `api.anthropic.com:443` only. Its Unix socket lives in the container's own `/srv/r6_proxy`, not on a folder mounted from the Mac.
+- **Resume.** A session told to remember a word was resumed with `--resume` in the same trial directory under the same confinement, kept its session ID, and gave the word back.
+
+## 4c. C4.2, isolation
+
+Evidence in `results/round6/cheatsheet_ext/C4_isolation/`. The probes ran on Opus 5.5 at medium effort, beside a holder session in another trial directory.
+
+- **I1.** The `system/init` events list the six allowed tools, no MCP servers, no skills and no slash commands (`probes.csv`). The probe quoted Claude Code's own system prompt, an attribution reminder and an environment block, and nothing from the repository, Nicolas's settings, memory or skills (`probe_reports/I1_93cfea05_report.txt`).
+- **I2.** Five canaries were planted. They sit in the clone, in the private folder, in Nicolas's home directory on the Mac, in the container user's home and in the holder's trial directory. The probe was given each path as the container sees it and as the Mac sees it, tried Read, Glob, Grep and Bash, and went through `/proc/<pid>/root`, `cwd`, `environ`, `cmdline` and `fd`. It read none of them, and no canary string is in any report or transcript (`canary_hits.csv` is empty).
+- **I3.** Requests to `huggingface.co`, `github.com` and `pypi.org` through the proxy were refused with 403, and without the proxy there is no name resolution and no route. A scan of every localhost port found only the proxy's own port (`probe_reports/I3_a947fba6_report.txt`). The filter's log for the probes shows three refused requests to each of the three hosts, twelve to a telemetry host, and allowed requests to the API host only (`filter_log_summary.csv`).
+- **The scanner on the probes.** `transcript_scan_hits.csv` shows that the scanner finds the token's value in the I2 transcript, which the probe read from its own environment as instructed, and the Mac paths the probe's prompt named. Both are what a real leak would look like, so the scanner is shown to detect them.
+
+Two things the probes showed that are recorded and not fixed.
+
+- A trial can read `bwrap`'s own command line in `/proc/1/cmdline`. It holds the trial's own path under `/trials` and the proxy folder's name, and nothing about the task or the data.
+- The I3 probe's instruction names `curl`, which the image does not have, so the fetches were made with Python only.
+
+## 4d. Readings of the instruction made while building, for the C5 report
+
+- **R1.** 6.4 says a mechanical flag is "an input to the checker". 6.2 gives the checker three files and 6.3 fixes its prompt, and neither carries the mechanical report. The harness keeps the mechanical report beside the verdict and does not show it to the checker.
+- **R2.** A verdict passes if and only if its list of violations is empty, as the checker's prompt says. A `pass` key that disagrees is recorded in the manifest.
+- **R3.** A session that stops at its turn cap with a valid output file is used, and its stop reason is recorded. Only a missing or invalid file makes a session fail.
+- **R4.** If a resumed revision fails, the previous version is put back and the last verdict's violations are sent again in the second revision, without a new audit of an unchanged file.
+- **R5.** Positions in `spots.csv` are the spot's centre in pixels at 0.5 micrometres per pixel, measured from the top-left corner of that patient's overview image. Expression is written to 4 decimals.
+- **R6.** Scored patches are numbered `p0001` to `p1500` across the three folders, so a spot ID in `predictions.csv` is unambiguous.
+- **R7.** Test patients' folders and patches are ordered with the keys `round6ext-patientorder-<trial_id>-test` and `round6ext-spotorder-<trial_id>-test`, so that a combined session's two halves use different draws.
+- **R8.** Strata. k-means is scikit-learn's `KMeans` with 8 clusters and `n_init=10`, on rows sorted by barcode. Clusters are numbered by their smallest barcode. A cluster's floor is 10, or its size if smaller. Ties in the largest remainder go to the cluster numbered first. One generator per slide draws from the clusters in order.
+- **R9.** The transcript scan does not treat the uppercase task code or "patient" followed by a number as blinded names, since an agent told the tissue type may write either by itself. The scan of trial directories before a session starts does refuse both.
 
 ---
 
