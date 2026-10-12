@@ -16,6 +16,7 @@ C0 and C1 are done and the session has stopped at the C1 gate. Eleven of the twe
 - Trial counts by status over the pilot's 19 attempts are 11 done and 8 excluded, with no failure from an invalid output (`results/round6/cheatsheet/C1_pilot/manifest.csv`).
 - C0's own child sessions (the authentication tests, the model checks and the isolation probes) are not grid trials and are listed in the plan, section 3.
 - The numeric-claim sweep over this report and the plan, with exceptions in `.verify-exceptions-cheatsheet`, verifies all 159 claims in this report. The plan has no unresolved claim and 36 uncited ones, most in its copy of the instruction's sections 6 to 8.
+- The repository's `.gitignore` excludes `*.parquet`, and no parquet file was tracked before. The instruction asks for one prediction parquet per stage, so `results/round6/cheatsheet/C1_pilot/predictions.parquet` (the 8 counted scored trials, 500 spots by 50 genes each) is added with `git add -f`.
 - Transcripts are in `NicWYZ/hest-r6-data` under `transcripts/C0_isolation/` and `transcripts/C1_pilot/`, with their md5s in `results/round6/cheatsheet/C0_isolation/transcripts_md5.csv`, `results/round6/cheatsheet/C0_isolation/rerun/transcripts_md5.csv` and `results/round6/cheatsheet/C1_pilot/transcripts_md5.csv`. All 19 pilot transcripts were checked against their md5 after the push.
 
 ## 3. Acceptance checks
