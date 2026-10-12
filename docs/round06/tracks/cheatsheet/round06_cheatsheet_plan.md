@@ -20,6 +20,8 @@ Living document of the execution session. Started 12 October 2026.
 
 ## 2. Flags, recorded without changing the instruction
 
+Design figures quoted in this section (sizes, buffers, spot counts of the design) are from `docs/round06/i01/cheatsheet/round06_cheatsheet_track.md` and `docs/round06/masterplan.md`. The mask check of F16 is in `results/round6/cheatsheet/C0_package/overview_mask_check.csv`.
+
 - **F1.** The container has 4 CPUs and about 15 GB, more than the instruction's 2 and 7. The default of two trials at once stands until C1 measures what fits.
 - **F2.** This session has no link to Nicolas's Mac. The instruction's revision of 11 October, 22:50 already moves the package and transcripts to `NicWYZ/hest-r6-data`.
 - **F3.** The variables copied to the child include `CLAUDE_CODE_SESSION_ID` and `CLAUDE_CODE_REMOTE_SESSION_ID` of this parent session. If the child does not need them, they should be dropped so that child sessions cannot write into the parent's session record. C0.1's leave-one-out test settles this.
@@ -43,11 +45,11 @@ Living document of the execution session. Started 12 October 2026.
 |---|---|
 | C0.1 child sessions | done. Confined children authenticate with none of the thirteen variables (leave-one-out, and all dropped), so none is passed (F3). `claude-haiku-5-5`, `claude-sonnet-5-5` and `claude-opus-5-5` each answered at `--effort high` and were served under the same IDs. Flags as 6.4 plus `--disable-slash-commands` (F11), CA bind order (F6), pipes for output (F12) |
 | C0.2 isolation with child probes | done. Two runs on Opus, the second on the final harness (`results/round6/cheatsheet/C0_isolation/` and `rerun/`). No canary string in any output, I2 failed on all four canaries by every route, I3 refused everywhere. The I1 rerun was stopped by the API's prompt-extraction safeguard, so I1 rests on the first run and the init events. Canaries removed on 12 October. I2's reports name the credential files and are kept private, not committed |
-| C0.3 package and builder | done. Job 4612750 on `spill`, from commit `b1130651`, wrote the package, which Nicolas pushed to `NicWYZ/hest-r6-data` (commit `7653838`). Staged into `/srv/r6_private/package` with all 20 md5s matching the job's manifest. Counts and shares are in `results/round6/cheatsheet/C0_package/package_summary.json`. Axis correction F16 |
-| C0.2 confinement without a child | the filtering proxy `round6_cheatsheet_filter_proxy.py` and the bubblewrap confinement were tested with curl. Inside, only `lo` exists, `/proc` shows only the confined processes, and `/home`, `/root` and `/srv` are empty. The proxy allowed `CONNECT api.anthropic.com:443` (the API answered 401 without a key) and refused huggingface.co, github.com and pypi.org, and nothing reached the network with the proxy bypassed |
+| C0.3 package and builder | done (`results/round6/cheatsheet/C0_package/PROVENANCE.txt`). Job 4612750 on `spill`, from commit `b1130651`, wrote the package, which Nicolas pushed to `NicWYZ/hest-r6-data` (commit `7653838`). Staged into `/srv/r6_private/package` with all 20 md5s matching the job's manifest. Counts and shares are in `results/round6/cheatsheet/C0_package/package_summary.json`. Axis correction F16 |
+| C0.2 confinement without a child | the filtering proxy `round6_cheatsheet_filter_proxy.py` and the bubblewrap confinement were tested with curl. Inside, only `lo` exists, `/proc` shows only the confined processes, and `/home`, `/root` and `/srv` are empty. The proxy allowed `CONNECT api.anthropic.com:443` (the API answered with an authentication error, since curl sent no key) and refused huggingface.co, github.com and pypi.org, and nothing reached the network with the proxy bypassed |
 | C0.4 comparators | done. The anchor passes in all four cells (`results/round6/cheatsheet/C0_comparators/anchor.csv`), and the comparators on S1* and S2* are in `comparators.csv` beside it |
 | C0.5 harness and scorer | runner, manifest, builder and scanner written. An end-to-end smoke test on the synthetic package with Haiku (outside `results/`) ran a baseline, a writer, its predictor and a combined session to valid scored outputs. Scorer tests pass on synthetic data and on S1*'s real targets (`results/round6/cheatsheet/C0_comparators/scorer_tests.csv`) |
-| C1 plan | `results/round6/cheatsheet/C1_pilot/plan.csv`, twelve slots, in the instruction's order within each model |
+| C1 pilot | done, from commit `55913b0`. Eleven of twelve slots counted, Haiku's arm B combined slot failed after four excluded attempts. Report `docs/round06/i01/cheatsheet/round06_cheatsheet_C1_report.md`. Stopped at the C1 gate |
 | C1 pilot | not started |
 
 ---
