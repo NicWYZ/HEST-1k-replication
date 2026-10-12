@@ -1,0 +1,12 @@
+container_id: container_01X2Wndmgtf3F8ecgnayq6C3
+date_utc: 2026-10-12T03:53:35Z
+code_commit: 063a8017b1a08707b627c183067e926e1ff7ea17 (scripts as committed with these results)
+command: PYTHONHASHSEED=0 python3 code/scripts/round6_cheatsheet_comparators.py --out results/round6/cheatsheet/C0_comparators ; python3 round6_cheatsheet_score_test.py --truth /srv/r6_private/truth/S1star.parquet --out .../scorer_tests.csv
+PYTHONHASHSEED: 0
+package: NicWYZ/hest-r6-data commit 7653838, job 4612750, MANIFEST.tsv md5 ecf072aa4eaf934d8cb0c9a4068686a6
+versions: numpy 2.5.3 pandas 3.0.5 scikit-learn 1.9.1
+script_md5:
+  f24209e89208191432ce43df80d9d6e0  code/scripts/round6_cheatsheet_comparators.py
+  17247857aa0d2e31c41dcb1b0d61d2a7  code/scripts/round6_cheatsheet_score.py
+  6de2f0e1e5febd0d2c61394acbc94c0b  code/scripts/round6_cheatsheet_score_test.py
+  d719587655da75b16bc2f4e0245b1437  code/scripts/round6_cheatsheet_derive.py

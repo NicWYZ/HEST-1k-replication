@@ -48,7 +48,11 @@ class Package:
         self.s2 = pd.read_parquet(os.path.join(self.pkg, "S2_spots.parquet"))
         self.t1 = pd.read_parquet(os.path.join(self.pkg, "S1_target.parquet")).set_index("barcode")
         self.t2 = pd.read_parquet(os.path.join(self.pkg, "S2_target.parquet")).set_index("barcode")
-        self.frame = json.load(open(os.path.join(self.pkg, "overview.json")))
+        # image-frame axes and overview, from round6_cheatsheet_derive.py (flag F16)
+        der = os.path.join(private, "derived")
+        self.axes = json.load(open(os.path.join(der, "axes.json")))
+        self.frame = json.load(open(os.path.join(der, "overview.json")))
+        self.overview_png = os.path.join(der, "S1_overview.png")
         self.summary = json.load(open(os.path.join(self.pkg, "package_summary.json")))
         self.patch_dir = {"S1": os.path.join(private, "patches", "S1"), "S2": os.path.join(private, "patches", "S2star")}
         self.star1 = self.s1.loc[self.s1["in_S1star"], "barcode"].tolist()
@@ -69,6 +73,20 @@ class Package:
         raise ValueError(arm)
 
 
+class PackageNoDerived(Package):
+    """The package before round6_cheatsheet_derive.py has run (staging only)."""
+    def __init__(self, private=PRIVATE):
+        self.private = private
+        self.pkg = os.path.join(private, "package")
+        self.genes = json.load(open(os.path.join(self.pkg, "genes.json")))["genes"]
+        self.s1 = pd.read_parquet(os.path.join(self.pkg, "S1_spots.parquet"))
+        self.s2 = pd.read_parquet(os.path.join(self.pkg, "S2_spots.parquet"))
+        self.t1 = pd.read_parquet(os.path.join(self.pkg, "S1_target.parquet")).set_index("barcode")
+        self.t2 = pd.read_parquet(os.path.join(self.pkg, "S2_target.parquet")).set_index("barcode")
+        self.star1 = self.s1.loc[self.s1["in_S1star"], "barcode"].tolist()
+        self.star2 = self.s2.loc[self.s2["in_S2star"], "barcode"].tolist()
+
+
 def stage(private=PRIVATE):
     """Unpack the patch shards and write the S1*/S2* truth tables."""
     pkg = os.path.join(private, "package")
@@ -82,7 +100,7 @@ def stage(private=PRIVATE):
                         assert "/" not in m.name and m.name.endswith(".png"), m.name
                         with open(os.path.join(d, m.name), "wb") as fh:
                             fh.write(tf.extractfile(m).read())
-    P = Package(private)
+    P = PackageNoDerived(private)
     os.makedirs(os.path.join(private, "truth"), exist_ok=True)
     for name, star, t in (("S1star", P.star1, P.t1), ("S2star", P.star2, P.t2)):
         df = t.loc[star, P.genes].reset_index().rename(columns={"barcode": "spot"})
@@ -98,21 +116,27 @@ def clean_png(src, dst):
 
 
 def overview_for(P, arm, dst):
-    im = Image.open(os.path.join(P.pkg, "S1_overview.png")).convert("RGB")
+    im = Image.open(P.overview_png).convert("RGB")
     if arm == "B":  # arm B writers and arm B combined sessions only
         f = P.frame
-        x0, y0, x1, y1 = P.summary["S1_bbox_um_xmin_ymin_xmax_ymax"]
+        # the package's blocks are in the stored frame: block_j along stored x (x_um),
+        # block_i along stored y (y_um). Map each held-out block's two intervals to the
+        # image axes with the derived axis assignment.
+        sx0, sy0, sx1, sy1 = P.summary["S1_bbox_um_xmin_ymin_xmax_ymax"]
         bw, bh = P.summary["S1_block_w_um"], P.summary["S1_block_h_um"]
         draw = ImageDraw.Draw(im)
         for i in range(4):
             for j in range(4):
                 if (i + j) % 2 == 1:
-                    # the outer blocks are extended to the image border, which the patch
+                    iv = {"x_um": (sx0 + j * bw, sx0 + (j + 1) * bw, j), "y_um": (sy0 + i * bh, sy0 + (i + 1) * bh, i)}
+                    xa, xb, xk = iv[P.axes["image_x_column"]]
+                    ya, yb, yk = iv[P.axes["image_y_column"]]
+                    # outer blocks are extended to the image border, which the patch
                     # half-width beyond the bounding box would otherwise leave visible
-                    lx = 0 if j == 0 else (x0 + j * bw - f["origin_x_um"]) / f["um_per_px"]
-                    rx = f["width_px"] if j == 3 else (x0 + (j + 1) * bw - f["origin_x_um"]) / f["um_per_px"]
-                    ty = 0 if i == 0 else (y0 + i * bh - f["origin_y_um"]) / f["um_per_px"]
-                    by = f["height_px"] if i == 3 else (y0 + (i + 1) * bh - f["origin_y_um"]) / f["um_per_px"]
+                    lx = 0 if xk == 0 else (xa - f["origin_x_um"]) / f["um_per_px"]
+                    rx = f["width_px"] if xk == 3 else (xb - f["origin_x_um"]) / f["um_per_px"]
+                    ty = 0 if yk == 0 else (ya - f["origin_y_um"]) / f["um_per_px"]
+                    by = f["height_px"] if yk == 3 else (yb - f["origin_y_um"]) / f["um_per_px"]
                     draw.rectangle([int(np.floor(lx)), int(np.floor(ty)), int(np.ceil(rx)), int(np.ceil(by))],
                                    fill=(255, 255, 255))
     Image.fromarray(np.asarray(im)).save(dst, format="PNG")
@@ -125,8 +149,8 @@ def build_writer_dir(P, d, arm, trial_id, maps):
     sp = spots.iloc[order].reset_index(drop=True)
     sids = [f"s{k + 1:04d}" for k in range(len(sp))]
     f = P.frame
-    x = (sp["x_um"].to_numpy() - f["origin_x_um"]) / PATCH_PX_UM
-    y = (sp["y_um"].to_numpy() - f["origin_y_um"]) / PATCH_PX_UM
+    x = (sp[P.axes["image_x_column"]].to_numpy() - f["origin_x_um"]) / PATCH_PX_UM
+    y = (sp[P.axes["image_y_column"]].to_numpy() - f["origin_y_um"]) / PATCH_PX_UM
     pd.DataFrame({"spot_id": sids, "x": np.round(x, 1), "y": np.round(y, 1)}).to_csv(
         os.path.join(d, "spots.csv"), index=False)
     ex = P.t1.loc[sp["barcode"], P.genes].copy()

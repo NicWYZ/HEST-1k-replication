@@ -1,0 +1,17 @@
+{
+ "image_x_column": "y_um",
+ "image_y_column": "x_um",
+ "swapped_relative_to_package": true,
+ "check": {
+  "stored_col0_is_x": {
+   "mean_abs_diff": 38.10118055555555,
+   "pairs": 300
+  },
+  "stored_col1_is_x": {
+   "mean_abs_diff": 2.71450355489418,
+   "pairs": 300
+  }
+ },
+ "nn_spacing_um_min": 99.95110024449832,
+ "nn_spacing_um_median": 99.95110024449878
+}

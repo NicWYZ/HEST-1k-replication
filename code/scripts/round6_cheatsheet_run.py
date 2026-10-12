@@ -284,6 +284,11 @@ def provenance(out, cmd):
     lines = [f"container_id: {os.environ.get('CLAUDE_CODE_CONTAINER_ID', '')}", f"date_utc: {now()}",
              f"code_commit: {head}", f"command: {cmd}", f"PYTHONHASHSEED: {os.environ.get('PYTHONHASHSEED', '')}",
              f"python: {platform.python_version()}", f"claude_code: {ver}",
+             "python_libs_seen_by_trials: " + subprocess.run(
+                 ["/usr/bin/python3", "-c", "import numpy, pandas, scipy, PIL, skimage, sklearn; print("
+                  "'numpy', numpy.__version__, 'pandas', pandas.__version__, 'scipy', scipy.__version__, "
+                  "'Pillow', PIL.__version__, 'scikit-image', skimage.__version__, 'scikit-learn', sklearn.__version__)"],
+                 capture_output=True, text=True).stdout.strip(),
              f"package_manifest_md5: {md5(pkg) if os.path.exists(pkg) else 'absent'}", "script_md5:"]
     lines += [f"  {md5(os.path.join(os.path.dirname(os.path.abspath(__file__)), s))}  {s}" for s in scripts]
     with open(os.path.join(out, "PROVENANCE.txt"), "a") as fh:
