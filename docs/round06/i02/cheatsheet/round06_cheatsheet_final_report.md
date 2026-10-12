@@ -171,7 +171,7 @@ The grid cost 7.91 US dollars in total, against 22.35 that the C1 projection giv
 
 ### Escalations
 
-- **E10. Branch name.** The instruction names `round6-cheatsheet`. This session's own configuration requires branch `claude/beautiful-mccarthy-feog45`, so C2 and C3 are there, created from `main` at `31355f7` (plan flag F17). The C1 memo is on it unchanged, from `main`. Nicolas can rename the branch before merging if he prefers. The tag `round6-cheatsheet-final` points at this branch's last commit.
+- **E10. Branch name.** The instruction names `round6-cheatsheet`. This session's own configuration requires branch `claude/beautiful-mccarthy-feog45`, so C2 and C3 are there, created from `main` at `31355f7` (plan flag F17). The C1 memo is on it unchanged, from `main`. Nicolas can rename the branch before merging if he prefers. The tag `round6-cheatsheet-final` was made on commit `7d6f8d2`, the commit that adds this report, but this session's git proxy refused to push it (HTTP 403) while branch pushes went through. Nicolas pushes it (section 9).
 - **E11. Four writers started before the prompt revision was fetched.** The grid first started at 06:20 UTC from commit `b661d1e`, without the sentence of 02:20. Nicolas asked the session to check `main` for prompt edits, and the runner and its four writers (`1586411e`, `5d97cece`, `bea5ffb5`, `f14e17ab`) were stopped about a minute after they started. None had written a cheatsheet, and no manifest row exists for them. They are handled as interrupted trials under instruction section 5. Their directories and logs are kept privately and their transcripts were not pushed. `results/round6/cheatsheet/C2_grid/PROVENANCE.txt` keeps the entry of that start (plan flag F20).
 - **E12. The container was rebuilt.** The interval 1 container had been reclaimed, so packages were reinstalled, the package restaged and checked, the filtering proxy and its `start.sh` rewritten (the script had not been committed in interval 1), and I2 and I3 rerun, as section 5 of the instruction says (plan section 1a, flag F18).
 - **E13. How rule (b) reads "credential contents".** The scanner does not read the credential files, so it cannot match their exact contents. It excludes credential-shaped strings and any tool call that reads a file inside the credential folder, and records listings and file names without excluding (plan flag F19). No C2 trial touched the folder.
@@ -202,7 +202,7 @@ The grid cost 7.91 US dollars in total, against 22.35 that the C1 projection giv
 
 ## 9. Proposed next step
 
-The track is complete. The oversight chat reviews this report and writes the closing memo. Nothing further is set up.
+The track is complete. The oversight chat reviews this report and writes the closing memo. Nothing further is set up. Nicolas tags the report's commit and pushes the tag, `git tag round6-cheatsheet-final 7d6f8d2 && git push origin round6-cheatsheet-final`, since this session could not push it.
 
 ## What the cheatsheet experiment established
 
