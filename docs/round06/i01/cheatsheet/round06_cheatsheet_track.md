@@ -1,6 +1,6 @@
 # Round 6, the cheatsheet track, on how large a cheatsheet a language model needs to predict expression from histology
 
-11 October 2026. Prepared by the oversight chat for a fresh Claude Code session on Longleaf. This document is self-contained. The track starts from `main` of `NicWYZ/HEST-1k-replication` at the commit that carries this document, on its own branch `round6-cheatsheet`. Read this document fully, then transcribe sections 6 and 7 into `docs/round06/tracks/cheatsheet/round06_cheatsheet_plan.md` before running anything. The round's plan is `docs/round06/masterplan.md`.
+11 October 2026, revised the same evening before any session started. Prepared by the oversight chat for a fresh Claude Code cloud session, started by Nicolas from the Claude desktop app with this repository attached and the session linked to his Mac. This document is self-contained. The track starts from `main` of `NicWYZ/HEST-1k-replication` at the commit that carries this document, on its own branch `round6-cheatsheet`. Read this document fully, then transcribe sections 6 and 7 into `docs/round06/tracks/cheatsheet/round06_cheatsheet_plan.md` before running anything. The round's plan is `docs/round06/masterplan.md`.
 
 ---
 
@@ -8,9 +8,9 @@
 
 You are the execution agent. A separate chat session, the oversight chat, reviews your reports, makes scope decisions and writes decision memos, which Nicolas hands to you in full. Nicolas Weiyang Zhang (Longleaf ONYEN `weiyang`, Slurm accounts `rc_htzhu_pi` and `rc_tengfei_pi`) is the first-year biostatistics PhD student whose project this is. He reads every command before it runs and will ask why. His advisors are Dr. Hongtu Zhu and Dr. Daiwei (David) Zhang at UNC. David proposed this experiment.
 
-The repository's `CLAUDE.md` loads into your session because you run inside the clone. It belongs to the oversight chat. Do not edit it and do not act on its plan. Its section 7 rules apply to you, except that rule 5's route of bundles is replaced for this track by section 5 here, because you work on Longleaf directly.
+If the repository's `CLAUDE.md` is in your context, it belongs to the oversight chat. Do not edit it and do not act on its plan. Its section 7 rules apply to you, with two exceptions for this track that Nicolas decided on 11 October. The trials and the analysis run in your cloud container rather than on Longleaf (rule 7), and code reaches Longleaf by Nicolas pulling your pushed branch rather than as bundles (rule 5).
 
-Your responsibilities are to build the trial harness, run the trials on Longleaf through Slurm, verify every stage's output against an expected value before moving on, write reports in the format of section 9, commit and push on your branch, and stop at each gate. You do not make scope decisions. Anything this document does not cover is reported as a proposal, not done.
+Your responsibilities are to build the trial harness, run the trials as child processes in your container, verify every stage's output against an expected value before moving on, write reports in the format of section 9, commit and push on your branch, and stop at each gate. You do not make scope decisions. Anything this document does not cover is reported as a proposal, not done.
 
 **The gate rule, in the wording Nicolas approved.** Report-and-wait means that no stage after the gated stage starts until the oversight chat has reviewed the report and replied. Not the dependent stages only, and not the expensive ones only. Every stage. Nothing after the gate is set up, staged or piloted. Inside an interval there are no interim reports and no interim stop conditions; anything that would have halted work is handled under the decision boundaries, recorded in an "Escalations" section of the next report, and work continues. Contact with anyone outside the project is never the session's decision.
 
@@ -34,19 +34,24 @@ What is not claimed. This track builds no method for the paper and makes no clai
 
 **Repository** at the starting commit. Everything under `results/` from rounds 1 to 5 is read-only for you, and so is every earlier script and document. `docs/WAYS_OF_WORKING.md` is the accumulated procedure. Read it before your first job.
 
-**Longleaf project tree** `/work/users/w/e/weiyang/hest_replication`, on `main` at tag `round4-data-v2`. Keep its checkout as it is. Never compute on the login node. The project's Python is `/work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python`, called by absolute path in every job script.
+**Your container** has no Longleaf and no HEST data. It has Python 3 with numpy, pandas, scipy, Pillow, scikit-image and scikit-learn, Claude Code itself, and `apt-get` and `pip` through the container's network allowlist. Its egress allowlist already refuses HuggingFace and 10x Genomics (checked by the oversight chat on 11 October), but it reaches GitHub and the package registries. It has 2 CPUs and about 7 GB of memory. It is reclaimed after a period of inactivity, so anything not pushed or copied to Nicolas's Mac can be lost (section 5).
 
-| asset | path | what it gives you |
+**The data package** is built on Longleaf by one job you write (C0.3), because the data is there. On Longleaf the project tree `/work/users/w/e/weiyang/hest_replication` is on `main` at tag `round4-data-v2`, its checkout is never changed, nothing runs on the login node, and the project's Python is `/work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python`, called by absolute path.
+
+| asset on Longleaf | path in the project tree | what the package takes from it |
 |---|---|---|
-| benchmark data | `bench_data/SKCM/` in the project tree, with `adata/*.h5ad`, the patches, the splits and `var_50genes.json` | the two slides, their spots, the 50 genes and the target |
-| embeddings | `embeddings/SKCM/<encoder>/<sample>.h5` in the project tree | `uni_v2` and `hoptimus1` embeddings for every spot |
+| benchmark data | `bench_data/SKCM/` (`adata/*.h5ad`, the patches, the splits, `var_50genes.json`) | the two slides' spots, positions, patches, the 50 genes and the target, computed with the round-1 pipeline's own loading code |
+| embeddings | `embeddings/SKCM/<encoder>/<sample>.h5` | `uni_v2` and `hoptimus1` embeddings for every spot of both slides |
+
+| asset in the repository | path | what it gives you |
+|---|---|---|
 | round-1 faithful runs | `results/faithful/pca_ridge/<encoder>/SKCM/split0/` and `split1/` (`config.json`, `results.json`) | the benchmark head's configuration and its per-direction Pearson, the anchor of C0.4 |
-| the round-1 pipeline | `code/scripts/` of the repository, the faithful HEST-bench harness of round 1 | how the target is computed from counts. Reuse it unmodified for the target and the comparator head |
+| the round-1 pipeline | `code/scripts/`, the faithful HEST-bench harness of round 1 | how the target is computed from counts, reused unmodified by the packaging job |
 | inventory | `results/round3/D0_inventory/hest_inventory.csv` | `TENX115`, patient 2, 3,886 spots under tissue. `TENX117`, patient 1, 1,830 spots. Both Xenium |
 
-**Known values for anchoring.** The benchmark head's mean Pearson on SKCM per direction is 0.6763 and 0.6462 for `uni_v2`, and 0.7069 and 0.6109 for `hoptimus1` (`results/faithful/pca_ridge/<encoder>/SKCM/split<k>/results.json`). Which split tests which slide is in the task's splits files, which you read and record.
+**Known values for anchoring.** The benchmark head's mean Pearson on SKCM per direction is 0.6763 and 0.6462 for `uni_v2`, and 0.7069 and 0.6109 for `hoptimus1` (`results/faithful/pca_ridge/<encoder>/SKCM/split<k>/results.json`). Which split tests which slide is in the task's splits files, which the packaging job reads and records.
 
-**Contamination.** Both slides are public 10x datasets from 2023 and are certainly in the models' training data as datasets. Memorised per-spot values are implausible, but download during a trial is possible, which is why section 6.4 blocks the network. The reports say plainly that the slides are public.
+**Contamination.** Both slides are public 10x datasets from 2023 and are certainly in the models' training data as datasets. Memorised per-spot values are implausible, but download during a trial is possible, which is why section 6.5 blocks the network. The reports say plainly that the slides are public.
 
 ---
 
@@ -57,26 +62,27 @@ What is not claimed. This track builds no method for the paper and makes no clai
 - Read the whole grid before writing a headline. Before a summary sentence goes into a report, tabulate the quantity over every axis the experiment varied, which here are arm, size, model and replicate, and check that the sentence holds in each cell it claims.
 - Before naming the cause of a difference, list in writing every variable that differs between its arms.
 - Write predictions down before running, and report them beside the outcomes.
-- Longleaf is where work runs. Nothing runs on Nicolas's Mac unless he asks for that specific task in chat. Such a request is written into the plan as a numbered extension before the task runs.
-- A job that has waited four hours is reported to Nicolas in chat with what it needs, and it keeps waiting. A pending job may be switched between `rc_htzhu_pi` and `rc_tengfei_pi`.
-- Every output directory gets `PROVENANCE.txt` (job id, partition, node, date, the code commit, command line, `PYTHONHASHSEED`, md5 of every script that ran, and for trials the Claude Code version and the served model ID) and is stamped with `stamp_dir()` from the `longleaf-provenance` skill, written by the job on the node. Before reusing or rebuilding any output you did not create, run `whose()` on it. If the verdict is `sibling` or `unstamped`, ask the oversight chat.
+- Trials, comparators and analysis run in your container, by Nicolas's decision of 11 October. The packaging job runs on Longleaf through Slurm. Nothing computes on Nicolas's Mac, which only holds files in transit.
+- The packaging job's output directory gets `PROVENANCE.txt` (job id, partition, node, date, the code commit, command line, md5 of every script) and a provenance stamp (section 5). Only Nicolas can see the queue, so ask him for its state when you check on the job. Every output directory in your container gets `PROVENANCE.txt` with the container's ID (`CLAUDE_CODE_CONTAINER_ID`), the date, the code commit, the command line, `PYTHONHASHSEED`, the md5 of every script and of the data package, and for trials the Claude Code version and the served model ID.
 - Seeds from `zlib.crc32` of a written key, never `hash()`. Explicit `pa.schema` on every parquet.
 - Commit messages through a file. Sub-agents run no git command. You are the only committer and check every hand-back against its primary tables before commit.
 - Do not edit `CLAUDE.md`, `README.md`, `docs/README.md`, `docs/WAYS_OF_WORKING.md`, `docs/round06/README.md`, the masterplan or any earlier round's files. Proposed edits go in the report.
 - Run `code/scripts/verify_numeric_claims.py` over `docs/round06/**/round06_cheatsheet_*.md` before every handover, in the form `docs/WAYS_OF_WORKING.md` gives for the layout by round, with your exceptions in `.verify-exceptions-cheatsheet`.
 - After opening a pull request, confirm on GitHub that it exists and put its number in the report.
 
-**Your own sub-agents.** You may use your session's sub-agent tool for building, checking and analysis. A trial is never run through that tool, because a sub-agent shares your files and context. Every trial is a separate headless Claude Code process started by the harness (section 6).
+**Your own sub-agents.** You may use your session's sub-agent tool for building, checking and analysis. A trial is never run through that tool, because a sub-agent shares your files and context. Every trial is a separate headless Claude Code process started by the harness inside its own confinement (section 6.4).
 
 ---
 
 ## 5. Working copies, code delivery and where to write
 
-**Your session** runs in a clone at `/work/users/w/e/weiyang/hest_code/round6-cheatsheet/`, which Nicolas clones before starting you (section 11). Confirm it is on `main` at the starting commit with a clean tree, then create branch `round6-cheatsheet` there. Record the starting commit's hash in the plan. The clone is yours alone. The project tree is not a working copy for you.
+**Your session** works in its own clone of the repository in the cloud container. Confirm it is on `main` at the starting commit with a clean tree, then create branch `round6-cheatsheet`. Record the starting commit's hash in the plan.
 
-**Jobs** run from a read-only snapshot of a committed state (`git archive` of the commit into the job's output directory), never from inside the clone, and record that commit. This replaces round 5's bundle route, since you work on Longleaf directly.
+**The packaging job on Longleaf.** Commit and push the packaging script and its Slurm script, then give Nicolas the exact commands. He pulls your branch into a clone on Longleaf that only he uses (his existing clone under `/work/users/w/e/weiyang/hest_code/`, which already pushes and pulls over SSH), checks out the commit you name, and submits the job. The job script copies that commit with `git archive` into its output directory and runs from the copy, not from the clone. Longleaf may not have the `longleaf-provenance` skill's code on your side, so the packaging script carries its own stamping code, copied from that skill if you have it and written to the same fields if you do not. The job writes the package to its own stamped output directory under `results/round6/cheatsheet/C0_package/` in the project tree. Nicolas then copies the package to `~/hest-1k/round6_package/` on his Mac, and you stage it into your container through the link to his Mac and check every md5 against the job's manifest. Keep each file under 400 MB so it can be staged, splitting archives if needed.
 
-**Trial directories** live under `/work/users/w/e/weiyang/agent_trials/r6/`, outside the repository and the project tree, one directory per trial. A trial's directory and its ID are an opaque random string of eight hexadecimal characters, so the path tells the agent nothing about its arm, size, role or model. The manifest holds the meaning of each ID. Confirm in C0 that no `CLAUDE.md` exists in any parent of that path.
+**What the package holds.** For S1, every spot's patch as PNG, position, target values and embeddings, the pixel size in micrometres, the coordinate frame of the positions, the tissue bounding box, and a low-resolution image of the whole section in the same frame for `overview.png`. For S2, every spot's target values and embeddings, and the patches of S2*. The blocks, S1* and S2*. The 50 genes. A manifest with md5s. Nothing in it is blinded yet. Blinding happens when trial directories are built in your container.
+
+**Trial directories** live under `/srv/r6/` in your container, outside your clone, one directory per trial. A trial's directory and its ID are an opaque random string of eight hexadecimal characters, so the path tells the agent nothing about its arm, size, role or model. The manifest holds the meaning of each ID. The data package, the ground truth and the ID mappings live under `/srv/r6_private/`, which no trial can see (section 6.4).
 
 **Your areas.** Scripts `code/scripts/round6_cheatsheet_*.py`. Results `results/round6/cheatsheet/<STAGE>/`. Documents:
 
@@ -86,9 +92,11 @@ What is not claimed. This track builds no method for the paper and makes no clai
 | `docs/round06/i01/cheatsheet/round06_cheatsheet_C1_report.md` | report at the C1 gate |
 | `docs/round06/i02/cheatsheet/round06_cheatsheet_final_report.md` | report at the C3 gate, end of track |
 
-What is committed. Every trial's manifest row, every cheatsheet (`results/round6/cheatsheet/<STAGE>/cheatsheets/<trial_id>.txt`), every prediction file as one parquet per stage, every score and every comparator table. Transcripts stay on Longleaf under the trial directories, compressed, with their md5s committed in `results/round6/cheatsheet/<STAGE>/transcripts_md5.csv`, because they may contain credentials in environment output and are large.
+What is committed. Every trial's manifest row, every cheatsheet (`results/round6/cheatsheet/<STAGE>/cheatsheets/<trial_id>.txt`), every prediction file as one parquet per stage, every score and every comparator table. No patch, expression value or embedding from the package is committed. Transcripts are compressed and copied to `~/hest-1k/round6_transcripts/` on Nicolas's Mac through the link, with their md5s committed in `results/round6/cheatsheet/<STAGE>/transcripts_md5.csv`. They are not committed because they are large and can contain credentials (section 6.4).
 
-**Pull requests and tags.** At each gate you commit, tag and push your branch, open a pull request into `main`, and stop. Tags `round6-cheatsheet-C1` and `round6-cheatsheet-final`. You never merge. Nicolas merges with a merge commit after the oversight chat accepts the report. Branches are never rebased, squashed, amended after a push or force-pushed. A rejected gate is fixed with new commits on the same open pull request.
+**Because the container can be reclaimed,** commit and push the manifest, cheatsheets, predictions and scores to your branch after every batch of trials, and copy that batch's transcripts to the Mac, compressed into files of at most 30 MB. The pull request still comes once per gate. Run trials in the background and keep the session active by checking on them with a Bash call at least every ten minutes. If the container is reclaimed, a new session on your branch reinstalls `bubblewrap` and `socat`, restarts the filtering proxy, restages the package into `/srv/r6_private/`, checks its md5s, reruns the I2 and I3 probes, and resumes from the pushed manifest. A trial interrupted by a reclaim is rerun from scratch under a new ID and does not count as a failure. A trial whose transcript never reached the Mac is rerun, because the scanner cannot clear it.
+
+**Pull requests and tags.** At each gate you commit, tag and push your branch, open a pull request into `main` or ask Nicolas to open it if your session cannot, and stop. Tags `round6-cheatsheet-C1` and `round6-cheatsheet-final`. You never merge. Nicolas merges with a merge commit after the oversight chat accepts the report. Branches are never rebased, squashed, amended after a push or force-pushed. A rejected gate is fixed with new commits on the same open pull request.
 
 ---
 
@@ -142,10 +150,22 @@ A writer for arms A and C has all of S1's spots. A writer for arm B has the trai
 
 ### 6.4 How a trial runs
 
-Each trial is one headless Claude Code process, started by the harness inside a Slurm job, in its own trial directory. The starting point, from the Claude Code documentation as read on 11 October, is below. Each flag is `[verify]` until C0.1 confirms it on Longleaf.
+Each trial is one headless Claude Code process started by the harness in your container, inside a bubblewrap confinement that shows it only its own trial directory. The oversight chat tested this route in a cloud container on 11 October. `bwrap` and `socat` installed with `apt-get` after `apt-get update`. A child `claude -p` started with the recipe below authenticated on Nicolas's account and answered with Haiku. It could not see a file planted in `/home/claude`. Its request to GitHub was refused by the filter, it had no route out with the proxy variables unset, and `/proc` showed only its own processes. The filter's log showed requests to the API host and refused ones to GitHub and to a telemetry host, which the child does without. Each flag stays `[verify]` until C0.1 confirms it in your container.
 
 ```
-env -u ANTHROPIC_API_KEY CLAUDE_CODE_EFFORT_LEVEL=high \
+bwrap --unshare-all --new-session --die-with-parent \
+      --ro-bind /usr /usr --ro-bind /lib /lib --ro-bind /lib64 /lib64 \
+      --ro-bind /bin /bin --ro-bind /sbin /sbin --ro-bind /etc /etc \
+      --ro-bind /opt /opt --ro-bind "$CA_BUNDLE" "$CA_BUNDLE" \
+      --proc /proc --dev /dev --tmpfs /tmp --tmpfs /home --tmpfs /srv --tmpfs /root \
+      --ro-bind "$AUTH_DIR" "$AUTH_DIR" \
+      --bind "$PROXY_SOCKET_DIR" /run/proxy \
+      --bind "/srv/r6/$TRIAL_ID" /work --chdir /work \
+  /run/proxy/start.sh \
+  env -i PATH=/usr/bin:/bin:/opt/node22/bin HOME=/work \
+      HTTPS_PROXY=http://127.0.0.1:3128 https_proxy=http://127.0.0.1:3128 \
+      SSL_CERT_FILE="$CA_BUNDLE" NODE_EXTRA_CA_CERTS="$CA_BUNDLE" \
+      CLAUDE_CODE_EFFORT_LEVEL=high $AUTH_ENV \
   claude --safe-mode -p "$PROMPT" \
     --session-id "$UUID" --model "$MODEL" --effort high \
     --tools "Bash,Read,Write,Edit,Glob,Grep" \
@@ -156,12 +176,16 @@ env -u ANTHROPIC_API_KEY CLAUDE_CODE_EFFORT_LEVEL=high \
     --output-format stream-json --verbose
 ```
 
-- `$MODEL` is `claude-haiku-5-5`, `claude-sonnet-5-5` or `claude-opus-5-5`. If a full ID is refused, use the alias `haiku`, `sonnet` or `opus`. Record the served model ID from the stream's `system/init` event for every trial.
-- `--safe-mode` keeps out `CLAUDE.md`, skills, plugins, hooks, MCP servers and memory while keeping subscription login. `--bare` would also do this but cannot use a subscription token.
-- The Bash sandbox of Claude Code does not cover the Read tool, so it cannot give the file confinement of 6.5 on its own. Candidate mechanisms for 6.5 are an Apptainer container that binds only the trial directory and a read-only Python environment, and the Anthropic sandbox runtime (`@anthropic-ai/sandbox-runtime`), which wraps the whole process and allows named hosts. You choose the mechanism and record it.
-- Inside the confinement the agent has Python 3 with numpy, pandas, scipy, Pillow, scikit-image and scikit-learn, and no pretrained model weights of any kind. Record the versions.
-- Authentication is by `CLAUDE_CODE_OAUTH_TOKEN` for a subscription, or by `ANTHROPIC_API_KEY` if Nicolas chooses that (open question R6-1 in the masterplan). The token is passed in the environment and never written to a trial directory or a committed file.
-- At most two trials run at once unless Nicolas says otherwise. The harness keeps a manifest with a status per trial, so a stop at a usage limit resumes where it stopped.
+- `--unshare-all` gives the trial its own process, network, IPC and user namespaces. With its own process namespace, `/proc` shows only the trial's processes, so it cannot reach other processes' files, environments or command lines. With its own network namespace, it has no route out at all except the one below.
+- The only route out is a Unix socket. Outside the confinement, a small filtering proxy you write listens on `$PROXY_SOCKET_DIR/filter.sock`, accepts `CONNECT` only to the Anthropic API host, and forwards it through the container's own proxy (`$HTTPS_PROXY` of your session). Inside, `start.sh`, a short script in `$PROXY_SOCKET_DIR`, runs `socat TCP-LISTEN:3128,bind=127.0.0.1,fork,reuseaddr UNIX-CONNECT:/run/proxy/filter.sock &` and then executes its arguments, so `socat` turns that socket into `127.0.0.1:3128`. A script file is used rather than `sh -c`, which Claude Code's own safety check refused in the oversight chat's test. Unsetting the proxy variables or trying other ports reaches nothing, because the namespace has no other interface. This gives property I3 of 6.5. Log every `CONNECT` the filter receives.
+- `$AUTH_DIR` is the folder holding the session's own credentials, `/home/claude/.claude/remote` in the oversight chat's container, and `$AUTH_ENV` the environment variables the child needs to authenticate, found by test in C0.1. In the oversight chat's test these were `ANTHROPIC_BASE_URL`, `CLAUDE_CODE_REMOTE`, `CLAUDE_CODE_REMOTE_ENVIRONMENT_TYPE`, `CLAUDE_SESSION_INGRESS_TOKEN_FILE`, `CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST`, `CLAUDE_CODE_ACCOUNT_UUID`, `CLAUDE_CODE_ORGANIZATION_UUID`, `CLAUDE_CODE_USE_CCR_V2`, `CLAUDE_CODE_PROXY_RESOLVES_HOSTS`, `CLAUDE_CODE_ENTRYPOINT`, `SESSION_INGRESS_URL`, `CLAUDE_CODE_REMOTE_SESSION_ID` and `CLAUDE_CODE_SESSION_ID`, copied from the parent session. Whether all are needed was not tested. Binding the folder lets the child authenticate, which also means the agent could read the credentials. So every file is scanned for them before it is committed or copied (6.5), and transcripts are never committed. C0.1 also checks that a child running longer than an hour keeps authenticating with the folder bound read-only.
+- `$CA_BUNDLE` is the container proxy's certificate bundle (`/root/.ccr/ca-bundle.crt` in the oversight chat's container). Only that file is bound, not its folder, whose README describes the container's proxy.
+- The agent can see the `claude` binary, so it could start a nested session or call the API directly and get round `--tools`, the turn cap and the cost record. The scanner flags any Bash command in a transcript that runs `claude`, calls the API host or reads `$AUTH_DIR`, and such a trial is excluded and rerun. Report how many there were.
+- `$MODEL` is `claude-haiku-5-5`, `claude-sonnet-5-5` or `claude-opus-5-5`. The Haiku ID was served in the oversight chat's test. If a full ID is refused, use the alias `haiku`, `sonnet` or `opus`. Record the served model ID from the stream's `system/init` event for every trial.
+- `--safe-mode` keeps out `CLAUDE.md`, skills, plugins, hooks, MCP servers and memory while keeping the session's login. `env -i` starts the child with only the variables listed, rather than your session's whole environment.
+- Inside the confinement the agent has the container's Python 3 with numpy, pandas, scipy, Pillow, scikit-image and scikit-learn, and no pretrained model weights of any kind. Record the versions.
+- Usage is billed to Nicolas's account through the session's own login, which is what he chose (masterplan open question R6-1).
+- Two trials run at once by default, since the container has 2 CPUs. C1 measures whether more fit, and the C1 report proposes the number. The harness keeps a manifest with a status per trial, so a stop at a usage limit or a reclaimed container resumes where it stopped.
 - A writer's file is measured in UTF-8 bytes. If it exceeds $b$, the harness keeps the first $b$ bytes, cutting at the last whole character, and records both sizes. The writer is not asked again.
 - A trial that ends without a valid output file (missing, unreadable, missing spots or genes, non-numeric values) is run once more as a new session with a new ID. If the second also fails, it is recorded as failed and the report counts it. A missing gene or spot is never filled in.
 - Every trial records in the manifest its ID, arm, size, model, replicate, role, the writer it depends on, session ID, status, bytes written and kept, input and output tokens with cache reads and writes, estimated cost, turns, wall time, Claude Code version and served model.
@@ -171,11 +195,11 @@ env -u ANTHROPIC_API_KEY CLAUDE_CODE_EFFORT_LEVEL=high \
 | # | property | how C0.2 tests it |
 |---|---|---|
 | I1 | No project context. The session's context holds the prompt and Claude Code's own system prompt, and nothing from this repository, the user's settings, memory, skills or MCP servers | the `system/init` event lists only the six tools and no MCP servers or plugins, and a probe session asked to quote every instruction it has received beyond the prompt quotes nothing from the project |
-| I2 | File confinement. The session cannot read or list any file outside its trial directory, through any tool | an adversarial probe session told to read canary files at given absolute paths, one in the project tree, one in your clone, one in the home directory and one in another trial directory, fails on all four, with Read, Glob, Grep and Bash each tried |
-| I3 | No network except the Anthropic API | an adversarial probe told to fetch `https://huggingface.co` and `https://www.10xgenomics.com` with Bash, curl and Python fails |
+| I2 | File confinement. The session cannot read or list any file outside its trial directory, through any tool | an adversarial probe session told to read canary files at given absolute paths, one in your clone, one in `/srv/r6_private/`, one in the home directory and one in another trial directory running at the same time, fails on all four, with Read, Glob, Grep and Bash each tried, and also through `/proc/*/root`, `/proc/*/cwd` and `/proc/*/environ` |
+| I3 | No network except the Anthropic API | an adversarial probe told to fetch `https://huggingface.co`, `https://github.com` and `https://pypi.org` with Bash, curl and Python, with the proxy variables set and unset, and to open sockets to every localhost port it can find, fails on all of them |
 | I4 | Blinding | a script finds no sample ID, patient label, dataset title, oncotree code or HEST file name in any trial file or path |
 
-Run the I2 and I3 probes on Opus, the most capable model. After every stage, a script scans every transcript for the canary strings, the sample IDs, any URL other than the API's, any absolute path outside the trial directory, and the authentication token. Any hit excludes that trial, which is rerun, and is reported.
+Run the I2 and I3 probes on Opus, the most capable model. After every batch, a script scans every transcript for the canary strings, the sample IDs, any URL other than the API's, any absolute path outside the trial directory, the nested-session signs of 6.4 and the credentials. Any hit excludes that trial, which is rerun, and is reported. Before anything is committed or copied to the Mac, every cheatsheet, prediction file and manifest is scanned for the credentials too.
 
 ### 6.6 Scoring and comparators
 
@@ -192,11 +216,11 @@ Four stages. Gates at C1 and C3.
 
 #### C0. Setup (two days, capped at three)
 
-**C0.1 Claude Code on Longleaf.** Install Claude Code in Nicolas's user space if it is not there, record its version, and confirm `claude auth status` with the method Nicolas chose. On a compute node, confirm that the API is reachable and that each model ID answers a one-line prompt at `--effort high`. Confirm each flag of 6.4, and record any that differs from the documentation with what you used instead.
+**C0.1 Child sessions in the container.** Record the Claude Code version. Install `bubblewrap` and `socat`. Confirm that a child session started as in 6.4 authenticates, that each model ID answers a one-line prompt at `--effort high`, and which environment variables it needs. Confirm each flag of 6.4, and record any that differs from the documentation with what you used instead.
 
-**C0.2 Isolation.** Build the confinement of 6.4 and run the probes of 6.5. Write the canary files with a unique random string each, and remove them only after C0.2 passes.
+**C0.2 Isolation.** Write the filtering proxy, build the confinement of 6.4 and run the probes of 6.5. Write the canary files with a unique random string each, and remove them only after C0.2 passes.
 
-**C0.3 Data and trial inputs.** Build S1, S2, the blocks, S1*, S2* and the target, and write a builder that makes every trial directory of 6.2 from a trial's manifest row. Record the spot counts actually used, each half's share of S1 and the md5 of every input file.
+**C0.3 The data package and trial inputs.** Write the packaging job of section 5 and hand Nicolas the commands. While it runs, write the builder that makes every trial directory of 6.2 from a trial's manifest row. When the package arrives, check its md5s, build S1*, S2* and the blocks from it as 6.1 defines them (the job computes them, and the builder checks them), and record the spot counts actually used, each half's share of S1 and the md5 of every input file.
 
 **C0.4 Comparators.** Compute every comparator on S1* and S2*. As the anchor, the benchmark head fitted on one slide and scored on all spots of the other must reproduce the round-1 value of that direction within 0.01, for both encoders and both directions.
 
@@ -226,6 +250,8 @@ Tag `round6-cheatsheet-C1`, open the pull request, and stop.
 #### C2. The grid
 
 Every trial of the grid the C1 memo sets, writers before their predictors, with the scanner run after each batch. Arms A and C use the same writers.
+
+**Parallel sessions** `[proposed]`. To finish sooner, the grid can be split by model across up to three cloud sessions, each with its own container, run at the same time. You run the Opus grid. Nicolas starts two worker sessions from the desktop app, linked to his Mac, for Haiku and Sonnet, with the prompt the C1 memo gives, which tells each to read this instruction and the memo and to run C2 for its model only. Each worker starts from tag `round6-cheatsheet-C1`, builds the same harness, stages the same package, checks its md5s, sets up the confinement and reruns the I2 and I3 probes. It skips its model's trials that the C1 manifest marks done. It works on its own branch (`round6-cheatsheet-haiku`, `round6-cheatsheet-sonnet`), writes only under `results/round6/cheatsheet/C2_grid/<model>/` with one parquet per kind of file, pushes after every batch, and copies its transcripts to `~/hest-1k/round6_transcripts/<model>/`. It opens no pull request. When all three have finished, you merge the workers' branches into yours with merge commits, check that every manifest row and file arrived, combine the per-model files into one per kind for C3, and write C3. The split is by model because a model's trials depend on nothing outside it, while arms A and C share writers. The sessions draw on the same usage limits of Nicolas's account, so the speed-up stops where those limits bind. The C1 memo decides whether to split.
 
 #### C3. Analysis and the closing report (gate, end of track)
 
@@ -262,18 +288,18 @@ After each gate, in this order. 1. Stage and status. 2. What was run (scripts wi
 
 ## 10. Decision boundaries
 
-**You decide alone.** Your own sub-agents. The confinement mechanism, provided I1 to I4 pass. Job sizing and the order of trials within a stage. Replacing a flag the documentation names with its working equivalent, recorded. The exact target wording of 6.3's one exception.
+**You decide alone.** Your own sub-agents. The details of the confinement and the filtering proxy, provided I1 to I4 pass. Job sizing and the order of trials within a stage. Replacing a flag the documentation names with its working equivalent, recorded. The exact target wording of 6.3's one exception.
 
-**Record as an escalation and continue.** A spot count that differs from the inventory. A half of S1 under 35% of its spots. A trial that fails twice. A writer that exceeds its size, which is truncated as 6.4 says. A comparator anchor off by more than 0.01 in one cell when the others pass (investigate, say what you found). Any new property of the data. A usage limit that stops the harness for more than a day.
+**Record as an escalation and continue.** A spot count that differs from the inventory. A half of S1 under 35% of its spots. A trial that fails twice. A writer that exceeds its size, which is truncated as 6.4 says. A comparator anchor off by more than 0.01 in one cell when the others pass (investigate, say what you found). Any new property of the data. A usage limit that stops the harness for more than a day. A container reclaimed mid-batch.
 
-**Stop and report.** Any of I1 to I3 that no mechanism you can build satisfies. The API unreachable from compute nodes. A model ID that cannot be served by any name, or a model that refuses `--effort high`. The comparator anchor failing in more than one cell. Any sign that a trial saw expression it should not have.
+**Stop and report.** Any of I1 to I3 that no confinement you can build satisfies. A child session that cannot authenticate inside the confinement. A model ID that cannot be served by any name, or a model that refuses `--effort high`. The comparator anchor failing in more than one cell. Any sign that a trial saw expression it should not have.
 
-**Never yours.** Contact with anyone outside the project, David included. Changing a prompt, an input layout, a size, a model or the effort level after the first trial has run. Any download of data. Running a trial through your own sub-agent tool. Any local run that Nicolas has not asked for in chat. Changes to `main`, to earlier rounds' files or to the project tree's checkout. Any claim of novelty.
+**Never yours.** Contact with anyone outside the project, David included. Changing a prompt, an input layout, a size, a model or the effort level after the first trial has run. Any download of data. Running a trial through your own sub-agent tool. Computing anything on Nicolas's Mac. Changes to `main`, to earlier rounds' files or to the project tree's checkout. Any claim of novelty.
 
 ---
 
 ## 11. Before starting, Nicolas does
 
-1. Decides open question R6-1, subscription or API key, and makes the credential available on Longleaf (`claude setup-token` on a machine with a browser gives a long-lived token for `CLAUDE_CODE_OAUTH_TOKEN`).
-2. Gives the clone on Longleaf a way to push to GitHub (a credential for `gh` or an SSH key), or tells the session to deliver commits another way.
-3. Clones the repository to `/work/users/w/e/weiyang/hest_code/round6-cheatsheet/` (`git clone https://github.com/NicWYZ/HEST-1k-replication.git round6-cheatsheet` inside `hest_code/`), starts Claude Code there on a login node inside `tmux`, and pastes the line "Read docs/round06/i01/cheatsheet/round06_cheatsheet_track.md in full and follow it."
+1. Starts a new cloud session from the Claude desktop app, outside the claude.ai project (whose instructions are for the oversight chat), with `NicWYZ/HEST-1k-replication` attached with push access and the session linked to his Mac, and pastes the line "Read docs/round06/i01/cheatsheet/round06_cheatsheet_track.md in full and follow it."
+2. When the session hands him the packaging commands, runs them on Longleaf and copies the package to `~/hest-1k/round6_package/` on his Mac.
+3. After the C1 gate, if the memo splits the grid, starts the two worker sessions the same way, each with the worker prompt the memo gives.

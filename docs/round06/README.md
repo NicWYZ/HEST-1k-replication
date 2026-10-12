@@ -2,7 +2,7 @@
 
 David proposed an experiment by email. An agent predicts the expression of 50 genes from H&E patches. A second agent, which saw the measured expression, writes a text cheatsheet of limited size that the first may use. The question is how large the cheatsheet must be for the predictions to reach a given accuracy. Nicolas decided on 11 October to run it as round 6, with the purpose of learning whether few-shot prediction with a general-purpose language model can beat pathology foundation models. The PPI paper's next round becomes round 7.
 
-**Track.** cheatsheet (branch `round6-cheatsheet`, stages C0 to C3, run by a Claude Code session on Longleaf). **Starts from** `main` at the commit that carries the masterplan and the instruction.
+**Track.** cheatsheet (branch `round6-cheatsheet`, stages C0 to C3, run by a Claude Code cloud session, with one packaging job on Longleaf). **Starts from** `main` at the commit that carries the masterplan and the instruction.
 
 ## Gates
 

@@ -82,11 +82,13 @@ Over the three models this is 117 sessions. The pilot in the first interval runs
 
 ## The track
 
-One track, `cheatsheet`, on branch `round6-cheatsheet`, run by a Claude Code session on Longleaf. Claude Code rather than Claude Science, by Nicolas's rule of 11 October, since Claude Science shows no advantage for this job and the trials themselves must be scriptable headless Claude Code processes. Trials run inside Slurm jobs on compute nodes under `rc_htzhu_pi` or `rc_tengfei_pi`.
+One track, `cheatsheet`, on branch `round6-cheatsheet`, run by a Claude Code cloud session that Nicolas starts from the Claude desktop app, so that usage is billed to his account. Claude Code rather than Claude Science, by Nicolas's rule of 11 October, since Claude Science shows no advantage for this job and the trials themselves must be scriptable headless Claude Code processes. Each trial is a child process in the session's container, confined by bubblewrap to its own directory, with network only to the Anthropic API. The oversight chat checked on 11 October that a child session authenticates and runs inside such a confinement. The one step on Longleaf is a packaging job that extracts the two slides' patches, targets and embeddings, which Nicolas runs and copies to his Mac for the session to stage.
+
+In the second interval the grid can be split by model across up to three cloud sessions running at once `[proposed]`, since a model's trials depend on nothing outside it while arms A and C share writers. Each session has its own container with 2 CPUs, so the split adds compute, but all of them draw on the same usage limits of Nicolas's account. The C1 memo decides whether to split.
 
 | Interval | Stages | Gate |
 |---|---|---|
-| i01 | C0, setup. Install and confirm Claude Code on Longleaf, build the isolation and pass the leak probes, build the data and the blinded trial inputs, compute the comparators with the round-1 anchor, write and test the harness and scorer. C1, pilot. Four sessions per model, measuring tokens, cost, time and failure modes, and projecting the cost of the grid | C1 |
+| i01 | C0, setup. Confirm child sessions in the container, build the isolation and pass the leak probes, build the data package on Longleaf and the blinded trial inputs, compute the comparators with the round-1 anchor, write and test the harness and scorer. C1, pilot. Four sessions per model, measuring tokens, cost, time and failure modes, and projecting the cost of the grid | C1 |
 | i02 | C2, the grid. C3, the analysis and the closing report | C3, end of track |
 
 ## Predictions
@@ -102,14 +104,15 @@ The oversight chat's, written before any run. The instruction numbers them for s
 
 ## Schedule
 
-Nicolas gave no dates for this round. The estimate is three to four days for i01, a day for the gate, two to four days for C2 depending on usage limits, and a day for C3, which puts the close around 20 October. The PPI paper's next round starts after it.
+Nicolas gave no dates for this round. The estimate is three to four days for i01, a day for the gate, two to four days for C2 depending on usage limits and whether it is split, and a day for C3, which puts the close around 20 October. The PPI paper's next round starts after it.
 
 ## Open questions
 
+R6-1, how trials are billed, was settled on 11 October. They run in a cloud session on Nicolas's own usage.
+
 | # | Question | Who decides | Default |
 |---|---|---|---|
-| R6-1 | Are trial sessions billed to Nicolas's Claude subscription or to an API key? | Nicolas, before C0 | subscription, through a long-lived token from `claude setup-token`, with `ANTHROPIC_API_KEY` unset and at most two sessions at once |
-| R6-2 | The budget for the i02 grid | Nicolas, at the C1 gate | the full grid if the projected cost is acceptable to him, otherwise the cut order above |
+| R6-2 | The budget for the i02 grid, and whether the grid is split across three cloud sessions by model | Nicolas, at the C1 gate | the full grid if the projected cost is acceptable to him, otherwise the cut order above, in one session |
 | R6-3 | Whether and when results go to David | Nicolas | nothing is sent by any session |
 
 ## What closes the round
@@ -118,4 +121,4 @@ The C3 report is reviewed, its closing memo is written and its pull request is m
 
 ## Amendments
 
-None yet.
+- 11 October, evening, before any session started. Execution moved from a Claude Code session on Longleaf to a cloud session started from the desktop app, at Nicolas's request, with one packaging job left on Longleaf. Open question R6-1 was settled by this, and the split of the second interval by model was proposed. The text above was revised in place because nothing had been handed over (`docs/progress-log.md`, entry of the same evening).

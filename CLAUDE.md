@@ -2,7 +2,7 @@
 
 **Read this paragraph first, whoever you are.** This repository is worked on by two kinds of session. If you are an **execution session** (a Claude Science or Claude Code session on a track branch such as `round6-cheatsheet`), your instructions are your track's instruction document in `docs/roundNN/i01/<track>/`, the operating plan you transcribed from it, and every decision memo since. This file belongs to the oversight chat. Do not edit it and do not act on its plan. The copy on your branch was frozen when the branch started and may be out of date. Section 7's rules apply to you as well. If you are the **oversight chat**, this is your operating file. It replaces the oversight handoff documents, and keeping it current is part of your job.
 
-**Last updated:** 2026-10-11 (oversight, cloud session; round 6 opened with the cheatsheet masterplan and instruction)
+**Last updated:** 2026-10-11 (oversight, cloud session; round 6 opened, then its execution moved to a cloud session before it started)
 
 The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at UNC, in Dr. Hongtu Zhu's lab and supervised by Dr. Daiwei (David) Zhang. The advisors want methods, not applied analysis, with a submittable paper by spring 2027. The paper is "Labelling budgets for prediction-powered inference with clustered data", methodology and theory first, applied to HEST-1k spatial transcriptomics and ACS PUMS 2018 income (`docs/round04/00_prep/round4_originality_check.md`).
 
@@ -12,7 +12,7 @@ The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at U
 
 1. Clone or fetch `NicWYZ/HEST-1k-replication` and read this file in full.
 2. Check for staleness before trusting section 2. Run `git fetch origin --tags`, then `python3 code/scripts/state_check.py --standing-dirs reference superseded`, and list the open pull requests (`gh api repos/NicWYZ/HEST-1k-replication/pulls?state=open`). If the script is not on `main` yet, run `git log --oneline --first-parent $(git log -1 --format=%h origin/main -- CLAUDE.md)..origin/main` instead. Read every commit, tag or report after the last change to this file, and correct section 2 first.
-3. Note where you are running. A **cloud session** has the repository clone you make, no Longleaf and no data. When the session is **linked to Nicolas's Mac**, the clones under `~/hest-1k` are reachable (section 10). Longleaf is reached only through execution sessions.
+3. Note where you are running. A **cloud session** has the repository clone you make, no Longleaf and no data. When the session is **linked to Nicolas's Mac**, the clones under `~/hest-1k` are reachable (section 10). Longleaf is reached only through execution sessions or through Nicolas.
 4. Read `docs/README.md`, the current round's `README.md` and `masterplan.md`, and the documents section 2 names for the work in hand. For history, read `docs/progress-log.md` and follow it to the files. Do not rely on memory or reconstruct history from summaries.
 
 **At every gate**
@@ -31,7 +31,7 @@ The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at U
 
 ## 2. Current state (11 October 2026)
 
-- **Round 6 is open** (`docs/round06/README.md`, `docs/round06/masterplan.md`). One track, `cheatsheet`, runs David's cheatsheet experiment, on whether few-shot prediction with a general-purpose language model can beat pathology foundation models. Its instruction is `docs/round06/i01/cheatsheet/round06_cheatsheet_track.md`. The track has not started. It waits on Nicolas for open question R6-1 and the three steps in section 11 of the instruction (a credential on Longleaf, a push route from Longleaf, and starting Claude Code in a fresh clone). Its first gate is C1.
+- **Round 6 is open** (`docs/round06/README.md`, `docs/round06/masterplan.md`). One track, `cheatsheet`, runs David's cheatsheet experiment, on whether few-shot prediction with a general-purpose language model can beat pathology foundation models. Its instruction is `docs/round06/i01/cheatsheet/round06_cheatsheet_track.md`. The track has not started. It waits on Nicolas to start it as a cloud session from the desktop app, outside the claude.ai project, with the repository attached and the session linked to his Mac (instruction section 11). It will ask him to run one packaging job on Longleaf and copy the package to his Mac. Its first gate is C1.
 - **Next action.** When Nicolas has started the session, nothing until the C1 report arrives. Then review it against the files, with the cost projection and the proposed i02 grid first, since Nicolas sets the i02 budget at that gate (R6-2).
 - **The PPI paper** waits for round 7. Round 5 closed on 9 October and everything is on `main` (pull requests #14 to #22). What goes into the paper is in section 3 of the two closing memos, `docs/round05/i04/ppi/round5_ppi_E5_decisions.md` and `docs/round05/i03/conformal/round5_conformal_W5_decisions.md`. The paper's estimator is `docs/round05/tracks/ppi/round5_ppi_estimator_definition.md`. The first methods question for round 7 is weighting the labelled clusters by their inclusion probabilities under rejective selection (the E5 memo's section 5). The explainer of round 5's results is `docs/round06/00_prep/round06_round5_results_explained.md`.
 - **What the advisors have seen.** Nicolas reported on 7 October that the second advisor meeting stopped at slide 8, so the advisors have seen the project up to the pivot and the originality check and not the round-4 or round-5 results (`docs/round05/i01/ppi/round5_ppi_track.md` section 2.1). The deck preparation is in `docs/round05/00_prep/deck2/`.
@@ -45,8 +45,7 @@ The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at U
 | Q2 | Should the GHCP authors be contacted? | Nicolas, with his advisors, never a session | no contact |
 | Q3 | Which venue, and which result does the paper lead with? Not yet raised | Nicolas, with his advisors | open |
 | Q4 | Tag `round5-final` on `main` at the round's close `[proposed]` | Nicolas | no tag |
-| R6-1 | Are round 6's trial sessions billed to Nicolas's Claude subscription or to an API key? | Nicolas, before the track starts | subscription, through a token from `claude setup-token`, at most two sessions at once |
-| R6-2 | The budget for round 6's second interval | Nicolas, at the C1 gate | the masterplan's grid if its projected cost suits him, otherwise its cut order |
+| R6-2 | The budget for round 6's second interval, and whether its grid is split across three cloud sessions by model | Nicolas, at the C1 gate | the masterplan's grid if its projected cost suits him, otherwise its cut order, in one session |
 | R6-3 | Whether and when round 6's results go to David | Nicolas, never a session | nothing is sent |
 
 ## 3. Where the record is
@@ -80,7 +79,7 @@ The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at U
 - **Project state.** No more oversight handoff documents. State lives in this file, which points to `docs/README.md` for history (9 October). `docs/` is filed chronologically by round, interval and track, with the round's masterplan at the round level. Within a round, memos, gate reports and the reading guides are added as the work goes, and this file is updated at every gate. At each round's close a consistency and currency check between this file and `docs/` is mandatory (9 October).
 - **Compute.** Longleaf by default. In round 5 he allowed the tracks' simulations to run on his Mac where that is genuinely faster, until he says stop (8 October, `docs/round05/tracks/ppi/round5_ppi_plan.md` extension 4).
 - **Delegation.** For tedious mechanical work he asked for subagents on a smaller model at medium effort (9 October, the path rewrite of the migration).
-- **Agent experiments.** Every trial is a fresh agent with no context on the project, in its own sandbox. Use Claude Code rather than Claude Science unless Science has an obvious advantage. Keep trial counts small enough not to use up his tokens (11 October).
+- **Agent experiments.** Every trial is a fresh agent with no context on the project, in its own sandbox. Use Claude Code rather than Claude Science unless Science has an obvious advantage. Run it as a cloud session started from the desktop app, so it uses his usage credits. Keep trial counts small enough not to use up his tokens, and run in parallel where it speeds things up (11 October).
 
 ## 7. Hard rules
 
@@ -90,9 +89,9 @@ These are not preferences. Breaking one invalidates the work. The procedures beh
 2. **Every number is read back from its file before it is asserted,** and a derived value (a sum, a ratio) is recomputed before it is declared.
 3. **Predictions are written before the run** and scored afterwards as held, partly held, refuted or not tested.
 4. **Frozen reports are not edited.** Corrections go in the next memo or report. The one exception so far is the path rewrite of 9 October, which changed only paths, by Nicolas's decision.
-5. **Git.** Execution tracks push once per gate, the branch and the tag together, with one pull request that Nicolas merges with a merge commit after review. No rebase, squash, amend or force-push. Commits reach Longleaf as bundles and jobs run from read-only snapshots (`docs/round05/i02/ppi/round5_ppi_E2_decisions.md` section 4). A track whose session works on Longleaf directly commits there and runs jobs from `git archive` snapshots (`docs/round06/i01/cheatsheet/round06_cheatsheet_track.md` section 5).
+5. **Git.** Execution tracks push once per gate, the branch and the tag together, with one pull request that Nicolas merges with a merge commit after review. No rebase, squash, amend or force-push. Commits reach Longleaf as bundles and jobs run from read-only snapshots (`docs/round05/i02/ppi/round5_ppi_E2_decisions.md` section 4). Round 6's track works in a cloud session that can be reclaimed, so it pushes its branch after every batch, with still one pull request per gate. Nicolas pulls its branch on Longleaf for its one job, which runs from a `git archive` copy (`docs/round06/i01/cheatsheet/round06_cheatsheet_track.md` section 5).
 6. **Other sessions' clones are read only,** with `git --no-optional-locks`. Never write there.
-7. **Longleaf is where work runs.** A local run needs Nicolas to ask for that task in chat and is recorded in the plan before it runs.
+7. **Longleaf is where work runs.** A local run needs Nicolas to ask for that task in chat and is recorded in the plan before it runs. Round 6's agent trials and analysis run in a cloud session's container instead, by his decision of 11 October.
 8. **No claim of novelty** without a literature check (`docs/round04/00_prep/round4_originality_check.md`, `docs/round05/00_prep/deck2/deck2_literature_check.md`).
 9. **Contact with anyone outside the project** is Nicolas's decision, never a session's.
 
@@ -126,12 +125,12 @@ code/scripts/             every script, including state_check.py; results/ the o
 superseded/               a superseded manifest
 ```
 
-On Nicolas's Mac, `~/hest-1k` holds `HEST-1k-replication-oversight` (the oversight clone, on `main`), `HEST-1k-replication-PPI` and `HEST-1k-replication-conformal` (the tracks' clones, read only), and `acs_pums2018` (the raw census fetch, not in the repository). On Longleaf, the project tree `/work/users/w/e/weiyang/hest_replication` is on `main` at tag `round4-data-v2`, and the tracks' code clones are under `/work/users/w/e/weiyang/hest_code/`. Round 6's agent trials run in `/work/users/w/e/weiyang/agent_trials/r6/`, outside the repository.
+On Nicolas's Mac, `~/hest-1k` holds `HEST-1k-replication-oversight` (the oversight clone, on `main`), `HEST-1k-replication-PPI` and `HEST-1k-replication-conformal` (the tracks' clones, read only), and `acs_pums2018` (the raw census fetch, not in the repository). On Longleaf, the project tree `/work/users/w/e/weiyang/hest_replication` is on `main` at tag `round4-data-v2`, and the tracks' code clones are under `/work/users/w/e/weiyang/hest_code/`. Round 6's agent trials run in the execution session's cloud container. Its data package goes from Longleaf to `~/hest-1k/round6_package/` on the Mac, and its transcripts to `~/hest-1k/round6_transcripts/`.
 
 ## 11. Environment and git
 
 - **People.** Nicolas (Longleaf ONYEN `weiyang`, Slurm accounts `rc_htzhu_pi` and `rc_tengfei_pi`). Dr. Hongtu Zhu, the PI. Dr. Daiwei (David) Zhang, his GRA supervisor.
-- **Sessions.** Execution sessions run on Longleaf, take no scope decisions and report at gates. The oversight chat writes instructions and memos, reviews reports against the files, explains, researches and steers.
+- **Sessions.** Execution sessions run on Longleaf or, in round 6, as cloud sessions. They take no scope decisions and report at gates. The oversight chat writes instructions and memos, reviews reports against the files, explains, researches and steers.
 - **Git from the cloud.** Clone over HTTPS, with the repository attached with push access. Pushing to `main` needs only the documentation rule of section 1. Pull requests cannot be opened from here with `gh pr create`, so tell Nicolas when one is needed.
 - **On the Mac.** A plain `git status` on the mounted folder can leave `.git/index.lock` behind and block the next commit there. The device shell cannot delete files without Nicolas's permission. Commit and push from the cloud clone.
 - **Commit messages** go through a file, and end with the attribution lines the session is given.
