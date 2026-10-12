@@ -5,6 +5,7 @@
 **Revisions.**
 - 11 October, 22:50. A cloud session cannot link to Nicolas's Mac, so the data package and the transcripts move through a private GitHub repository, `NicWYZ/hest-r6-data`, instead (sections 3, 5, 6.5, 7 and 11). Work that needs neither, such as child sessions, the confinement, the probes, the harness and the packaging script, goes ahead as before.
 - 12 October, at the C1 gate (`docs/round06/i02/cheatsheet/round06_cheatsheet_C1_decisions.md`). Reasoning effort is medium for every C2 trial (6.4), by Nicolas's decision, so the pilot's trials become a high-effort reference and every grid slot is run afresh. One sentence is added to each prompt (6.3). Trials are excluded only for the leak signs of the memo's section 3.2 (6.5). Up to four trials run at once (6.4). Replicate 1 of every cell runs before any replicate 2 (7, C2).
+- 12 October, 02:20. The writer prompt (6.3) asks the writer to use as much of the allowed size as helps, because no pilot writer came near its allowance (6,890 to 17,690 of 32,768 bytes). C3 reports each cheatsheet's bytes written beside its allowance and plots accuracy against both.
 - 12 October, 02:10. C2 runs Opus only, at medium effort, one replicate per cell, 20 sessions (C1 memo, section 3.4). Haiku's and Sonnet's pilot trials are kept as high-effort reference values. The track starts from `main` of `NicWYZ/HEST-1k-replication` at the commit that carries this document, on its own branch `round6-cheatsheet`. Read this document fully, then transcribe sections 6 and 7 into `docs/round06/tracks/cheatsheet/round06_cheatsheet_plan.md` before running anything. The round's plan is `docs/round06/masterplan.md`.
 
 ---
@@ -139,7 +140,7 @@ A writer for arms A and C has all of S1's spots. A writer for arm B has the trai
 >
 > Later, a different agent will predict the expression of the same 50 genes from H&E patches of this kind of tissue. That agent will see only the patch images, under new IDs and without positions, and one text file written by you. It will not see these measurements.
 >
-> Write that file as `cheatsheet.txt` in this directory. It may contain anything that you think will help the other agent predict accurately. It must be at most {B} bytes in UTF-8. Anything beyond {B} bytes will be cut off. You may use the tools available to you, including Python, to study the data. There is no internet access, and no pretrained models or files other than those in this directory are available. When the file is written, stop.
+> Write that file as `cheatsheet.txt` in this directory. It may contain anything that you think will help the other agent predict accurately. It must be at most {B} bytes in UTF-8. Anything beyond {B} bytes will be cut off. Use as much of the allowed size as helps; more detail is generally better. You may use the tools available to you, including Python, to study the data. There is no internet access, and no pretrained models or files other than those in this directory are available. When the file is written, stop.
 
 **Predictor.** For a baseline, the second paragraph is left out.
 
