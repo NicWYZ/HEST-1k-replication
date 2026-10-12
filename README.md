@@ -28,8 +28,9 @@ file for the Claude sessions that work on the project.
 | round 3 · first experiments for both original topics | complete (tag `round3-final-r2`) |
 | round 4 · data pull, then the inference and prediction-set tracks | complete (tags `round4-data-v2`, `round4-ppi-final`, `round4-conf-final`) |
 | round 5 · the inference and prediction-set tracks | complete (tags `round5-ppi-final`, `round5-conf-final`) |
+| round 6 · a side experiment, language-model prediction from histology with a size-limited cheatsheet | complete (tags `round6-cheatsheet-C1`, `round6-cheatsheet-final`), summary in [`docs/round06/oversight/round06_cheatsheet_summary.md`](docs/round06/oversight/round06_cheatsheet_summary.md) |
 
-Every gate of rounds 2 to 5 is tagged. The sections below, from the headline result to the known
+Every gate of rounds 2 to 6 is tagged. The sections below, from the headline result to the known
 limitations, describe the benchmark work of rounds 1 and 2 and have not changed since the round-2
 closeout. The methods results of rounds 4 and 5 are summarised on the closing pages of
 [`docs/round04/i03/ppi/round4_ppi_final_report.md`](docs/round04/i03/ppi/round4_ppi_final_report.md),

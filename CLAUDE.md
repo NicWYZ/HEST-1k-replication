@@ -44,7 +44,7 @@ The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at U
 | Q1 | Can regime B (a few labelled spots on every donor) be bought on a spatial platform, and at what cost? Not yet asked of David | Nicolas, with David | the paper treats regime B as a design comparison, with no cost claim |
 | Q2 | Should the GHCP authors be contacted? | Nicolas, with his advisors, never a session | no contact |
 | Q3 | Which venue, and which result does the paper lead with? Not yet raised | Nicolas, with his advisors | open |
-| Q4 | Tag `round5-final` on `main` at the round's close `[proposed]` | Nicolas | no tag |
+| Q4 | Tags `round5-final` and `round6-close` on `main` at those rounds' closes `[proposed]` | Nicolas | no tags |
 | R6-3 | Whether and when round 6's results go to David | Nicolas, never a session | nothing is sent |
 
 ## 3. Where the record is
@@ -111,7 +111,7 @@ Independent, checkable jobs go to subagents, several at once when they do not de
 
 ```
 CLAUDE.md                 this file, with protocol, state, preferences and rules
-README.md                 the repository's public entry point, status through round 5
+README.md                 the repository's public entry point, status through round 6
 docs/README.md            the reading guide, with the layout and one row per round
 docs/progress-log.md      what happened and why, newest first
 docs/WAYS_OF_WORKING.md   procedures, each tied to the failure that produced it, and the guardrails register
@@ -128,7 +128,7 @@ On Nicolas's Mac, `~/hest-1k` holds `HEST-1k-replication-oversight` (the oversig
 ## 11. Environment and git
 
 - **People.** Nicolas (Longleaf ONYEN `weiyang`, Slurm accounts `rc_htzhu_pi` and `rc_tengfei_pi`). Dr. Hongtu Zhu, the PI. Dr. Daiwei (David) Zhang, his GRA supervisor.
-- **Sessions.** Execution sessions run on Longleaf or, in round 6, as cloud sessions. They take no scope decisions and report at gates. The oversight chat writes instructions and memos, reviews reports against the files, explains, researches and steers.
+- **Sessions.** Execution sessions run on Longleaf, or as Claude Code cloud sessions as in round 6. They take no scope decisions and report at gates. The oversight chat writes instructions and memos, reviews reports against the files, explains, researches and steers.
 - **Git from the cloud.** Clone over HTTPS, with the repository attached with push access. Pushing to `main` needs only the documentation rule of section 1. Pull requests cannot be opened from here with `gh pr create`, so tell Nicolas when one is needed.
 - **On the Mac.** A plain `git status` on the mounted folder can leave `.git/index.lock` behind and block the next commit there. The device shell cannot delete files without Nicolas's permission. Commit and push from the cloud clone.
 - **Commit messages** go through a file, and end with the attribution lines the session is given.
