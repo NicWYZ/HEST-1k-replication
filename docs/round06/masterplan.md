@@ -48,9 +48,9 @@ $$
 
 where $\bar r(b)$ is the mean over replicates. It is reported as a bracket between adjacent grid sizes, or as not reached. Two thresholds are reported. One is $\tau = 0.8$, David's figure. The other is the $\bar r$ of the `uni_v2` benchmark head on the same spots, the primary comparator, so that $b^*$ says how large a cheatsheet must be for the model to match a pathology foundation model. The other comparators are reported beside it.
 
-**Sizes.** $\mathcal{B} = \{0,\ 4{,}096,\ 32{,}768,\ 262{,}144,\ \infty\}$ bytes, where $b = 0$ is the baseline and $b = \infty$ the combined session. For scale, the S1 expression matrix at one byte per value is $3{,}886 \times 50 = 194{,}300$ bytes, so the largest finite size can hold all of it and $b^*(0.8)$ in arm A can be bracketed below $\infty$.
+**Sizes.** $\mathcal{B} = \{0,\ 4{,}096,\ 32{,}768,\ 262{,}144,\ \infty\}$ bytes, where $b = 0$ is the baseline and $b = \infty$ the combined session. For scale, the expression of S1's 1,741 spots with a benchmark patch, at one byte per value, is $1{,}741 \times 50 = 87{,}050$ bytes, so the largest finite size can hold all of it three times over and $b^*(0.8)$ in arm A can be bracketed below $\infty$.
 
-**Models.** Haiku 5.5, Sonnet 5.5 and Opus 5.5, each at high reasoning effort, with the writer and predictor of a replicate on the same model.
+**Models.** Haiku 5.5, Sonnet 5.5 and Opus 5.5, each at medium reasoning effort (high in the C1 pilot, see the amendments), with the writer and predictor of a replicate on the same model.
 
 **Comparators, which need no language model.**
 
@@ -65,6 +65,14 @@ Nicolas did not ask for these. Each has a reason and he can change any of them b
 - Writer and predictor of a replicate use the same model, so that each model is measured as a whole system.
 - Inside a trial the agent cannot start sub-agents of its own, which keeps the cost of a trial bounded and comparable across models. It has Python with the usual scientific libraries and no pretrained model weights, since a trial has no network to fetch them.
 - A trial stops after 80 turns, a cap the pilot will show to be loose or tight.
+
+## Three points explained
+
+**Why scored spots are a sample.** A predictor looks at every patch it is given, so its cost grows with the number of patches. Scoring 500 spots rather than all of them cuts the predictor's cost several times, and 500 spots already pin each gene's correlation to within about $\pm 0.045$. Arms A and B are scored on the same 500 spots, S1*, drawn from the held-out blocks. In arm A the writer saw those spots and in arm B it did not, while the predictor sees the same patches in both, so the difference between A and B is whether the writer had seen the scored spots and nothing else. Arm C is scored on 500 spots of S2, all of which are unseen.
+
+**What the size-matched codebook is.** A reference that needs no language model, asking what $b$ bytes of expression information buy a reader that is a pathology foundation model. The writer's spots are grouped into $k$ clusters by their `uni_v2` embeddings, and each cluster's mean of each gene is stored at one byte, which is $50k$ bytes. A scored spot is predicted by the means of the cluster whose centre is nearest its embedding. At 4,096 bytes that allows $k = 81$. The cluster centres are not counted in $b$.
+
+**What a replicate is.** One repeat of a condition with fresh agents. Two writers given the same inputs write different cheatsheets, and two predictors given the same cheatsheet predict differently, so each condition runs twice. For a cheatsheet condition, replicate 1 is one fresh writer with the predictors that use its file and replicate 2 is a second fresh writer with its own predictors. For the baseline and the combined session a replicate is one more fresh session. The reported value is the mean of the two, with both shown.
 
 ## Trial count
 
@@ -108,11 +116,10 @@ Nicolas gave no dates for this round. The estimate is three to four days for i01
 
 ## Open questions
 
-R6-1, how trials are billed, was settled on 11 October. They run in a cloud session on Nicolas's own usage.
+R6-1, how trials are billed, was settled on 11 October. They run in a cloud session on Nicolas's own usage. R6-2, the second interval's grid and whether to split it, was settled at the C1 gate on 12 October. The full grid runs at medium effort in one session.
 
 | # | Question | Who decides | Default |
 |---|---|---|---|
-| R6-2 | The budget for the i02 grid, and whether the grid is split across three cloud sessions by model | Nicolas, at the C1 gate | the full grid if the projected cost is acceptable to him, otherwise the cut order above, in one session |
 | R6-3 | Whether and when results go to David | Nicolas | nothing is sent by any session |
 
 ## What closes the round
@@ -123,3 +130,4 @@ The C3 report is reviewed, its closing memo is written and its pull request is m
 
 - 11 October, evening, before any session started. Execution moved from a Claude Code session on Longleaf to a cloud session started from the desktop app, at Nicolas's request, with one packaging job left on Longleaf. Open question R6-1 was settled by this, and the split of the second interval by model was proposed. The text above was revised in place because nothing had been handed over (`docs/progress-log.md`, entry of the same evening).
 - 11 October, 22:50. A cloud session cannot link to Nicolas's Mac, so the package and the transcripts move through the private repository `NicWYZ/hest-r6-data` instead. Nicolas decided that the instruction and this masterplan stay living documents on `main`, revised in place with a dated line, and that he tells the session to check for updates rather than pasting changes.
+- 12 October, at the C1 gate (`i02/cheatsheet/round06_cheatsheet_C1_decisions.md`). Reasoning effort becomes medium for every trial, by Nicolas's decision after the pilot's cost and run time, so the pilot's trials are kept as a high-effort reference and every grid slot is run afresh. Trials are excluded only for signs of a leak, not for refused network attempts. One sentence telling agents there is no internet access is added to every prompt. The grid runs in one session at up to four trials at once, which settles R6-2. The scale note now uses the 1,741 S1 spots with a benchmark patch (C1 report, E1). The section "Three points explained" was added for Nicolas.

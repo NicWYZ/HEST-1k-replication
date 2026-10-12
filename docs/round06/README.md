@@ -8,7 +8,7 @@ David proposed an experiment by email. An agent predicts the expression of 50 ge
 
 | Date | Track | Gate | Report | Answered by | Tag | Pull request |
 |---|---|---|---|---|---|---|
-| pending | cheatsheet | C1 | to come in interval 1 | | `round6-cheatsheet-C1` | |
+| 12 Oct | cheatsheet | C1 | `i01/cheatsheet/round06_cheatsheet_C1_report.md` | `i02/cheatsheet/round06_cheatsheet_C1_decisions.md` | `round6-cheatsheet-C1` | #23 |
 | pending | cheatsheet | C3 | to come in interval 2 | | `round6-cheatsheet-final` | |
 
 ## Documents
@@ -17,4 +17,7 @@ David proposed an experiment by email. An agent predicts the expression of 50 ge
 |---|---|---|
 | `masterplan.md` | 11 Oct | the round's plan, with the design, the trial count, the oversight chat's choices, the predictions and the open questions |
 | `00_prep/round06_round5_results_explained.md` | 11 Oct | for Nicolas, the four main round-5 results explained with their theory (the level term in regime B, the cross-fitting term of the design-target interval, the full conformal set inside the target donor, balanced selection of the labelled clusters), the other results briefly, and what is not established |
-| `i01/cheatsheet/round06_cheatsheet_track.md` | 11 Oct | instruction for the cheatsheet track, with the fixed prompts, the isolation properties and stages C0 to C3 |
+| `i01/cheatsheet/round06_cheatsheet_track.md` | 11 Oct, living | instruction for the cheatsheet track, with the fixed prompts, the isolation properties and stages C0 to C3, revised in place with a dated list at its top |
+| `i01/cheatsheet/round06_cheatsheet_C1_report.md` | 12 Oct | report at the C1 gate (C0 setup and the pilot of twelve slots at high effort) |
+| `i02/cheatsheet/round06_cheatsheet_C1_decisions.md` | 12 Oct | decision at C1. Medium effort from here, exclusion only for leak signs, one sentence added to every prompt, the full grid in one session at up to four trials at once |
+| `tracks/cheatsheet/round06_cheatsheet_plan.md` | 11 Oct onward, living | the session's operating plan, with flags F1 to F16 |

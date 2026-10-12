@@ -3,7 +3,8 @@
 11 October 2026, revised the same evening. Prepared by the oversight chat for a fresh Claude Code cloud session, started by Nicolas from the Claude desktop app with this repository attached. This document is self-contained. It is kept current on `main`. When Nicolas tells you to check for updates, fetch `main`, read the "Revisions" list below and the masterplan's amendments, and transcribe what changed into your plan.
 
 **Revisions.**
-- 11 October, 22:50. A cloud session cannot link to Nicolas's Mac, so the data package and the transcripts move through a private GitHub repository, `NicWYZ/hest-r6-data`, instead (sections 3, 5, 6.5, 7 and 11). Work that needs neither, such as child sessions, the confinement, the probes, the harness and the packaging script, goes ahead as before. The track starts from `main` of `NicWYZ/HEST-1k-replication` at the commit that carries this document, on its own branch `round6-cheatsheet`. Read this document fully, then transcribe sections 6 and 7 into `docs/round06/tracks/cheatsheet/round06_cheatsheet_plan.md` before running anything. The round's plan is `docs/round06/masterplan.md`.
+- 11 October, 22:50. A cloud session cannot link to Nicolas's Mac, so the data package and the transcripts move through a private GitHub repository, `NicWYZ/hest-r6-data`, instead (sections 3, 5, 6.5, 7 and 11). Work that needs neither, such as child sessions, the confinement, the probes, the harness and the packaging script, goes ahead as before.
+- 12 October, at the C1 gate (`docs/round06/i02/cheatsheet/round06_cheatsheet_C1_decisions.md`). Reasoning effort is medium for every C2 trial (6.4), by Nicolas's decision, so the pilot's trials become a high-effort reference and every grid slot is run afresh. One sentence is added to each prompt (6.3). Trials are excluded only for the leak signs of the memo's section 3.2 (6.5). Up to four trials run at once (6.4). Replicate 1 of every cell runs before any replicate 2 (7, C2). The track starts from `main` of `NicWYZ/HEST-1k-replication` at the commit that carries this document, on its own branch `round6-cheatsheet`. Read this document fully, then transcribe sections 6 and 7 into `docs/round06/tracks/cheatsheet/round06_cheatsheet_plan.md` before running anything. The round's plan is `docs/round06/masterplan.md`.
 
 ---
 
@@ -27,7 +28,7 @@ This track's gates are C1 and C3.
 
 David's question. An agent predicts the expression of 50 genes from H&E patches. A second agent, which saw the measured expression, writes a text cheatsheet of limited size, and the predicting agent may use it. How large must the cheatsheet be for the predictions to reach a given accuracy? Nicolas's purpose, set on 11 October, is to learn whether one-shot or few-shot prediction with a general-purpose language model can beat pathology foundation models. So nothing restricts what a cheatsheet contains, and every result is set beside the benchmark's encoders given the same labelled spots.
 
-The design is in `docs/round06/masterplan.md`, sections "Design" and "Trial count". In short, the writer and the predictor are always separate fresh sessions. Three arms separate copying from learning. Arm A scores the predictor on spots the writer saw, arm B on a held-out region of the same section, and arm C on a second patient's slide. Sizes run over $0$, $4{,}096$, $32{,}768$ and $262{,}144$ bytes, and a combined session that sees the labelled spots and the targets together gives $b = \infty$. Three models run at high reasoning effort.
+The design is in `docs/round06/masterplan.md`, sections "Design" and "Trial count". In short, the writer and the predictor are always separate fresh sessions. Three arms separate copying from learning. Arm A scores the predictor on spots the writer saw, arm B on a held-out region of the same section, and arm C on a second patient's slide. Sizes run over $0$, $4{,}096$, $32{,}768$ and $262{,}144$ bytes, and a combined session that sees the labelled spots and the targets together gives $b = \infty$. Three models run at medium reasoning effort from C2 on. The pilot ran at high effort.
 
 What is not claimed. This track builds no method for the paper and makes no claim of novelty in any document. It measures and reports.
 
@@ -137,7 +138,7 @@ A writer for arms A and C has all of S1's spots. A writer for arm B has the trai
 >
 > Later, a different agent will predict the expression of the same 50 genes from H&E patches of this kind of tissue. That agent will see only the patch images, under new IDs and without positions, and one text file written by you. It will not see these measurements.
 >
-> Write that file as `cheatsheet.txt` in this directory. It may contain anything that you think will help the other agent predict accurately. It must be at most {B} bytes in UTF-8. Anything beyond {B} bytes will be cut off. You may use the tools available to you, including Python, to study the data. When the file is written, stop.
+> Write that file as `cheatsheet.txt` in this directory. It may contain anything that you think will help the other agent predict accurately. It must be at most {B} bytes in UTF-8. Anything beyond {B} bytes will be cut off. You may use the tools available to you, including Python, to study the data. There is no internet access, and no pretrained models or files other than those in this directory are available. When the file is written, stop.
 
 **Predictor.** For a baseline, the second paragraph is left out.
 
@@ -145,13 +146,13 @@ A writer for arms A and C has all of S1's spots. A writer for arm B has the trai
 >
 > `cheatsheet.txt` was written by someone who had measured the expression of these genes in tissue of this kind. Use it as a reference to help you make your predictions.
 >
-> Predict the expression of each of the 50 genes at every spot, as log(1 + count). Write `predictions.csv` with one row per spot, a column `spot_id` followed by one column per gene, named as in `genes.txt`. Every spot and every gene must have a number. You may use the tools available to you, including Python. When the file is written, stop.
+> Predict the expression of each of the 50 genes at every spot, as log(1 + count). Write `predictions.csv` with one row per spot, a column `spot_id` followed by one column per gene, named as in `genes.txt`. Every spot and every gene must have a number. You may use the tools available to you, including Python. There is no internet access, and no pretrained models or files other than those in this directory are available. When the file is written, stop.
 
 **Combined session** ($b = \infty$).
 
 > You are working in a directory with two folders from spatial transcriptomics of human skin melanoma (10x Xenium, aggregated to spots). In `labelled/`, `patches/` holds one H&E image per spot, 224 by 224 pixels at 0.5 micrometres per pixel, named by spot ID, `spots.csv` gives each spot's position in pixels, `expression.csv` gives each spot's expression of 50 genes, as log(1 + count), and `overview.png` is a low-resolution image of the whole section those spots come from. In `target/`, `patches/` holds H&E images of the spots whose expression you are to predict, with no measurements, and `genes.txt` lists the 50 genes.
 >
-> Predict the expression of each of the 50 genes at every spot in `target/patches/`, as log(1 + count). Write `predictions.csv` in this directory with one row per target spot, a column `spot_id` followed by one column per gene, named as in `target/genes.txt`. Every spot and every gene must have a number. You may use the tools available to you, including Python. When the file is written, stop.
+> Predict the expression of each of the 50 genes at every spot in `target/patches/`, as log(1 + count). Write `predictions.csv` in this directory with one row per target spot, a column `spot_id` followed by one column per gene, named as in `target/genes.txt`. Every spot and every gene must have a number. You may use the tools available to you, including Python. There is no internet access, and no pretrained models or files other than those in this directory are available. When the file is written, stop.
 
 ### 6.4 How a trial runs
 
@@ -170,9 +171,9 @@ bwrap --unshare-all --new-session --die-with-parent \
   env -i PATH=/usr/bin:/bin:/opt/node22/bin HOME=/work \
       HTTPS_PROXY=http://127.0.0.1:3128 https_proxy=http://127.0.0.1:3128 \
       SSL_CERT_FILE="$CA_BUNDLE" NODE_EXTRA_CA_CERTS="$CA_BUNDLE" \
-      CLAUDE_CODE_EFFORT_LEVEL=high $AUTH_ENV \
+      CLAUDE_CODE_EFFORT_LEVEL=medium $AUTH_ENV \
   claude --safe-mode -p "$PROMPT" \
-    --session-id "$UUID" --model "$MODEL" --effort high \
+    --session-id "$UUID" --model "$MODEL" --effort medium \
     --tools "Bash,Read,Write,Edit,Glob,Grep" \
     --disallowedTools "WebFetch" "WebSearch" "Agent" \
     --allowedTools "Read" "Write" "Edit" "Glob" "Grep" "Bash" \
@@ -190,7 +191,7 @@ bwrap --unshare-all --new-session --die-with-parent \
 - `--safe-mode` keeps out `CLAUDE.md`, skills, plugins, hooks, MCP servers and memory while keeping the session's login. `env -i` starts the child with only the variables listed, rather than your session's whole environment.
 - Inside the confinement the agent has the container's Python 3 with numpy, pandas, scipy, Pillow, scikit-image and scikit-learn, and no pretrained model weights of any kind. Record the versions.
 - Usage is billed to Nicolas's account through the session's own login, which is what he chose (masterplan open question R6-1).
-- Two trials run at once by default, since the container has 2 CPUs. C1 measures whether more fit, and the C1 report proposes the number. The harness keeps a manifest with a status per trial, so a stop at a usage limit or a reclaimed container resumes where it stopped.
+- Up to four trials run at once from C2 on, since the container has 4 CPUs and about 15 GB. Measure memory per trial in the first batch, and drop to three if peak memory across the running trials passes 12 GB. The pilot ran at C1 with high effort (`--effort high`, `CLAUDE_CODE_EFFORT_LEVEL=high`) and two at once. The harness keeps a manifest with a status per trial, so a stop at a usage limit or a reclaimed container resumes where it stopped.
 - A writer's file is measured in UTF-8 bytes. If it exceeds $b$, the harness keeps the first $b$ bytes, cutting at the last whole character, and records both sizes. The writer is not asked again.
 - A trial that ends without a valid output file (missing, unreadable, missing spots or genes, non-numeric values) is run once more as a new session with a new ID. If the second also fails, it is recorded as failed and the report counts it. A missing gene or spot is never filled in.
 - Every trial records in the manifest its ID, arm, size, model, replicate, role, the writer it depends on, session ID, status, bytes written and kept, input and output tokens with cache reads and writes, estimated cost, turns, wall time, Claude Code version and served model.
@@ -204,7 +205,7 @@ bwrap --unshare-all --new-session --die-with-parent \
 | I3 | No network except the Anthropic API | an adversarial probe told to fetch `https://huggingface.co`, `https://github.com` and `https://pypi.org` with Bash, curl and Python, with the proxy variables set and unset, and to open sockets to every localhost port it can find, fails on all of them |
 | I4 | Blinding | a script finds no sample ID, patient label, dataset title, oncotree code or HEST file name in any trial file or path |
 
-Run the I2 and I3 probes on Opus, the most capable model. After every batch, a script scans every transcript for the canary strings, the sample IDs, any URL other than the API's, any absolute path outside the trial directory, the nested-session signs of 6.4 and the credentials. Any hit excludes that trial, which is rerun, and is reported. Before anything is committed or pushed to either repository, every cheatsheet, prediction file and manifest is scanned for the credentials too. Transcripts go only to the private repository.
+Run the I2 and I3 probes on Opus, the most capable model. After every batch, a script scans every transcript for the canary strings, the sample IDs, any URL other than the API's, any absolute path outside the trial directory, the nested-session signs of 6.4 and the credentials. From C2 on, a trial is excluded only for a canary string, a sample ID or other blinded name, credential contents, a nested `claude` session or a direct API call, or any content that came back from a host other than the API. Listings of empty or absent directories and network attempts the filter refused are recorded per trial and reported, but do not exclude (C1 memo, section 3.2). An excluded trial is rerun and reported. Before anything is committed or pushed to either repository, every cheatsheet, prediction file and manifest is scanned for the credentials too. Transcripts go only to the private repository.
 
 ### 6.6 Scoring and comparators
 
@@ -254,7 +255,7 @@ Tag `round6-cheatsheet-C1`, open the pull request, and stop.
 
 #### C2. The grid
 
-Every trial of the grid the C1 memo sets, writers before their predictors, with the scanner run after each batch. Arms A and C use the same writers.
+Every trial of the grid the C1 memo sets, writers before their predictors, with the scanner run after each batch. Arms A and C use the same writers. Replicate 1 of every cell, across all arms, sizes and models, runs before any replicate 2.
 
 **Parallel sessions** `[proposed]`. To finish sooner, the grid can be split by model across up to three cloud sessions, each with its own container, run at the same time. You run the Opus grid. Nicolas starts two worker sessions from the desktop app, with both repositories attached, for Haiku and Sonnet, with the prompt the C1 memo gives, which tells each to read this instruction and the memo and to run C2 for its model only. Each worker starts from tag `round6-cheatsheet-C1`, builds the same harness, clones the package from `NicWYZ/hest-r6-data`, checks its md5s, sets up the confinement and reruns the I2 and I3 probes. It skips its model's trials that the C1 manifest marks done. It works on its own branch (`round6-cheatsheet-haiku`, `round6-cheatsheet-sonnet`), writes only under `results/round6/cheatsheet/C2_grid/<model>/` with one parquet per kind of file, pushes after every batch, and pushes its transcripts to `NicWYZ/hest-r6-data` under `transcripts/C2/<model>/`. It opens no pull request. When all three have finished, you merge the workers' branches into yours with merge commits, check that every manifest row and file arrived, combine the per-model files into one per kind for C3, and write C3. The split is by model because a model's trials depend on nothing outside it, while arms A and C share writers. The sessions draw on the same usage limits of Nicolas's account, so the speed-up stops where those limits bind. The C1 memo decides whether to split.
 
@@ -299,7 +300,7 @@ After each gate, in this order. 1. Stage and status. 2. What was run (scripts wi
 
 **Stop and report.** Any of I1 to I3 that no confinement you can build satisfies. A child session that cannot authenticate inside the confinement. A model ID that cannot be served by any name, or a model that refuses `--effort high`. The comparator anchor failing in more than one cell. Any sign that a trial saw expression it should not have.
 
-**Never yours.** Contact with anyone outside the project, David included. Changing a prompt, an input layout, a size, a model or the effort level after the first trial has run. Any download of data. Running a trial through your own sub-agent tool. Putting any package file or transcript into `NicWYZ/HEST-1k-replication`. Changes to `main`, to earlier rounds' files or to the project tree's checkout. Any claim of novelty.
+**Never yours.** Contact with anyone outside the project, David included. Changing a prompt, an input layout, a size, a model or the effort level after the first C2 trial has run. Any download of data. Running a trial through your own sub-agent tool. Putting any package file or transcript into `NicWYZ/HEST-1k-replication`. Changes to `main`, to earlier rounds' files or to the project tree's checkout. Any claim of novelty.
 
 ---
 
