@@ -1,6 +1,6 @@
 # Round 6, the cheatsheet track, C1 gate report
 
-12 October 2026. Execution session (Claude Code cloud session, container `container_01X2Wndmgtf3F8ecgnayq6C3`), branch `round6-cheatsheet`. The instruction is `docs/round06/i01/cheatsheet/round06_cheatsheet_track.md` at revision 11 October, 22:50. The operating plan with flags F1 to F16 is `docs/round06/tracks/cheatsheet/round06_cheatsheet_plan.md`.
+12 October 2026. Pull request [NicWYZ/HEST-1k-replication#23](https://github.com/NicWYZ/HEST-1k-replication/pull/23), confirmed open on GitHub. Tag `round6-cheatsheet-C1`, which the session could not push (HTTP 403 from its git proxy) and Nicolas pushes. Execution session (Claude Code cloud session, container `container_01X2Wndmgtf3F8ecgnayq6C3`), branch `round6-cheatsheet`. The instruction is `docs/round06/i01/cheatsheet/round06_cheatsheet_track.md` at revision 11 October, 22:50. The operating plan with flags F1 to F16 is `docs/round06/tracks/cheatsheet/round06_cheatsheet_plan.md`.
 
 The gate rule. Report-and-wait means that no stage after the gated stage starts until the oversight chat has reviewed the report and replied. Not the dependent stages only, and not the expensive ones only. Every stage. Nothing after the gate is set up, staged or piloted. Inside an interval there are no interim reports and no interim stop conditions; anything that would have halted work is handled under the decision boundaries, recorded in an "Escalations" section of the next report, and work continues. Contact with anyone outside the project is never the session's decision.
 
