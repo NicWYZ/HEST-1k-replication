@@ -46,7 +46,7 @@ reported as a bracket between the sizes tried.
 
 - **Isolation.** Every agent ran as its own fresh Claude session, confined so that it saw only its own folder, with file names that did not reveal the sample, and could reach nothing on the network except the model's API. Deliberate attempts to read files outside the folder or to reach other hosts all failed.
 - **Inputs.** The predictor saw the patches under random IDs with no positions, which is what the benchmark's encoders see. The prompts were fixed in advance and identical across arms and sizes. Writers were asked to use as much of their allowance as helps.
-- **Runs.** The results below come from Claude Opus 5.5, one run per arm and size, 20 runs in all. They took 13 minutes and cost about 8 US dollars. A smaller pilot also tried Haiku and Sonnet on the unseen-region arm.
+- **Runs.** The results below come from Claude Opus 5.5, one run per arm and size, 20 runs in all. They took 13 minutes and cost about 8 US dollars. A smaller pilot also tried Haiku and Sonnet on the unseen-region arm, shown at the end of the results.
 
 ## Results
 
@@ -62,6 +62,24 @@ reported as a bracket between the sizes tried.
 2. **A cheatsheet helps everywhere.** On the second patient, 4 KB of text lifted accuracy from 0.35 to 0.65, and larger cheatsheets added only 0.025 more.
 3. **It never beat the pathology model on unseen spots.** In arm B the best value was 0.62 against 0.76. On the second patient it was 0.67 against 0.68, a gap that one trial cannot separate from chance. The agent that held every labelled spot also stayed below the pathology model.
 4. **The 0.8 target was reached only by copying.** In arm A at 256 KB, the writer listed every spot with an image fingerprint and its 50 gene values, and the predictor looked the scored spots up.
+
+### Pilot across three models
+
+Before the main grid, a pilot ran Haiku, Sonnet and Opus at high reasoning effort on the unseen-region arm (B), at three points. These were image only, a 32 KB cheatsheet, and the labelled spots in hand. Opus then reran the same three points at medium effort as part of the main grid. Each bar is one run on the same 500 spots.
+
+| model and effort | image only | 32 KB cheatsheet | labels in hand | cost per run, US dollars |
+|---|---|---|---|---|
+| Haiku, high | 0.19 | 0.55 | 0.67 | 0.01 to 0.03 |
+| Sonnet, high | 0.34 | 0.40 | 0.67 | 0.06 to 0.17 |
+| Opus, high | 0.50 | 0.60 | 0.70 | 0.31 to 1.45 |
+| Opus, medium | 0.43 | 0.55 | 0.68 | 0.14 to 0.85 |
+
+![Pilot across models and effort](round06_cheatsheet_pilot.png)
+
+- **Every model gained from a cheatsheet and gained more from the labels**, and none reached the pathology model's 0.76 on these spots.
+- **With the labels in hand the three models nearly tie**, at 0.67 to 0.70. The models differ most when working from the image alone, where Opus is clearly ahead.
+- **Sonnet's cheatsheet helped least**, 0.34 to 0.40. With one run per bar this may be that writer's draw rather than a property of the model.
+- **Medium effort cost Opus about 0.4 times as much** and scored 0.01 to 0.08 lower. Only the image-only gap is larger than the roughly 0.05 that one run cannot resolve. The medium-effort runs also had two extra prompt sentences, saying there is no internet access and asking writers to use their allowance, so effort is not the only difference.
 
 ## Discussion
 
