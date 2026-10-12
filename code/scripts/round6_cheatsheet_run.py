@@ -224,6 +224,10 @@ class Stage:
             st, _ = self.slot_state(r["slot"])
             if st != "pending":
                 continue
+            if r.get("after", ""):  # keeps the order the instruction gives within a model
+                ast, _ = self.slot_state(r["after"])
+                if ast == "pending":
+                    continue
             if r["role"] == "predictor":
                 wst, _ = self.slot_state(r["writer_slot"])
                 if wst == "failed":

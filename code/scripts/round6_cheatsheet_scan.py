@@ -45,10 +45,16 @@ CREDENTIAL = [
     r"Bearer\s+[A-Za-z0-9._\-]{20,}", r"\.oauth_token", r"\.session_ingress_token", r"\.credentials\.json",
     r"/home/claude/\.claude", r"SESSION_INGRESS", r"CLAUDE_CODE_OAUTH",
 ]
-SYSTEM_PREFIXES = ("/usr/", "/bin/", "/lib", "/etc/", "/opt/", "/dev/null", "/dev/std", "/dev/fd",
-                   "/tmp", "/proc/self", "/proc/cpuinfo", "/proc/meminfo", "/sbin/")
+SYSTEM_PREFIXES = ("/usr", "/bin", "/lib", "/etc", "/opt", "/dev", "/tmp", "/proc", "/sbin")
 URL_RE = re.compile(r"https?://([A-Za-z0-9.\-]+)")
-ABS_RE = re.compile(r"(?<![A-Za-z0-9_.\-~:/])(/(?:[A-Za-z0-9_.\-]+/?)+)")
+# An absolute path is a "/" not preceded by a word character, a closing bracket or
+# a dot, whose first component is a top-level directory. Without the last
+# condition Python division ("x / 255", "a / np.sqrt(b)") reads as a path, which
+# the C0 smoke test found (four writers wrongly excluded).
+TOP_LEVEL = sorted(set(os.listdir("/")) | {"home", "root", "srv", "run", "mnt", "data", "media", "var", "sys",
+                                           "proc", "workspace", "Users", "private", "Volumes", "work"})
+ABS_RE = re.compile(r"(?<![A-Za-z0-9_.)\]}\-~:/])(/(?:" + "|".join(map(re.escape, TOP_LEVEL))
+                    + r")(?![A-Za-z0-9_.\-])(?:/[A-Za-z0-9_.\-*]+)*/?)")
 NESTED = [r"(^|[\s;&|(`])claude(\s|$)", r"api\.anthropic\.com", r"/home/claude", r"/opt/claude-code",
           r"/opt/node22/bin/claude"]
 
