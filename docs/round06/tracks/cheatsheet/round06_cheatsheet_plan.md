@@ -23,7 +23,7 @@ Living document of the execution session. Started 12 October 2026.
 
 - Container ID `container_01YH5Tt446ni87y9nji7Gakc`, 4 CPUs and 15 GB as before. Claude Code 2.1.296.
 - The interval 1 container was reclaimed, so section 5 of the instruction was followed. `bubblewrap` 0.9.0 and `socat` 1.8.0.0 installed with `apt-get`, scipy, scikit-image, scikit-learn, pyarrow and h5py with `pip`, at the same versions the pilot's trials saw (numpy 2.5.3, pandas 3.0.5, scipy 1.18.1, Pillow 12.3.0, scikit-image 0.26.0, scikit-learn 1.9.1).
-- `NicWYZ/hest-r6-data` cloned at commit `da21ced`. Its `package/` copied to `/srv/r6_private/package`, and all 20 md5s match `MANIFEST.tsv`, which is identical to the committed `results/round6/cheatsheet/C0_package/MANIFEST.tsv`. Staging gives 1,741 S1 spots, 1,293 S2 spots and 500 spots each in S1* and S2*. `round6_cheatsheet_derive.py` rebuilt `axes.json` and `overview.json` identical to the committed copies.
+- `NicWYZ/hest-r6-data` cloned at commit `da21ced`. Its `package/` copied to `/srv/r6_private/package`, and all 20 md5s match `MANIFEST.tsv`, which is identical to the committed `results/round6/cheatsheet/C0_package/MANIFEST.tsv`. Staging gives 1,741 S1 spots, 1,293 S2 spots and 500 spots each in S1* and S2*, the counts of `results/round6/cheatsheet/C0_package/package_summary.json`. `round6_cheatsheet_derive.py` rebuilt `axes.json` and `overview.json` identical to the committed copies.
 - The filtering proxy restarted on `/srv/r6_proxy/filter.sock`, logging to `/srv/r6_private/filter.log`, with `start.sh` as instruction 6.4 describes it (flag F18).
 - The I2 and I3 probes are rerun on Opus at medium effort before the grid, into `results/round6/cheatsheet/C2_grid/isolation_rerun/`.
 
@@ -65,8 +65,8 @@ Design figures quoted in this section (sizes, buffers, spot counts of the design
 | C1 pilot | done, from commit `55913b0`. Eleven of twelve slots counted, Haiku's arm B combined slot failed after four excluded attempts. Report `docs/round06/i01/cheatsheet/round06_cheatsheet_C1_report.md`. Stopped at the C1 gate |
 | C1 gate | passed on 12 October (pull request #23, memo `docs/round06/i02/cheatsheet/round06_cheatsheet_C1_decisions.md`) |
 | C2 setup in the new container | done (section 1a). Harness changed as the memo requires (section 4a) |
-| C2 grid | in progress |
-| C3 report | not started |
+| C2 grid | done. 20 of 20 trials done, none excluded or failed (`results/round6/cheatsheet/C2_grid/manifest.csv`) |
+| C3 report | done, `docs/round06/i02/cheatsheet/round06_cheatsheet_final_report.md`. Stopped at the C3 gate |
 
 ---
 
