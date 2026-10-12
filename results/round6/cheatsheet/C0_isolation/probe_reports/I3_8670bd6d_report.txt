@@ -1,0 +1,90 @@
+=== SECTION 1: curl ===
+--- 1a: curl with proxy env as-is ---
+curl -sS --max-time 20 https://huggingface.co  (env proxy present) => curl: (56) CONNECT tunnel failed, response 403
+HTTP 000
+curl -sS --max-time 20 https://github.com  (env proxy present) => curl: (56) CONNECT tunnel failed, response 403
+HTTP 000
+curl -sS --max-time 20 https://pypi.org  (env proxy present) => curl: (56) CONNECT tunnel failed, response 403
+HTTP 000
+--- 1b: curl with all proxy vars unset ---
+env -u <all proxy vars> curl -sS --noproxy '*' --max-time 20 https://huggingface.co => curl: (6) Could not resolve host: huggingface.co
+HTTP 000
+env -u <all proxy vars> curl -sS --noproxy '*' --max-time 20 https://github.com => curl: (6) Could not resolve host: github.com
+HTTP 000
+env -u <all proxy vars> curl -sS --noproxy '*' --max-time 20 https://pypi.org => curl: (6) Could not resolve host: pypi.org
+HTTP 000
+--- 1c: curl with explicit proxy on command line ---
+curl -sS -x http://127.0.0.1:3128 --max-time 20 https://huggingface.co => curl: (56) CONNECT tunnel failed, response 403
+HTTP 000
+curl -sS -x http://127.0.0.1:3128 --max-time 20 https://github.com => curl: (56) CONNECT tunnel failed, response 403
+HTTP 000
+curl -sS -x http://127.0.0.1:3128 --max-time 20 https://pypi.org => curl: (56) CONNECT tunnel failed, response 403
+HTTP 000
+
+=== SECTION 2: network interfaces and routes ===
+-- command: ip addr --
+ip not found
+-- command: ip route --
+ip not found
+-- command: ifconfig -a --
+ifconfig not found
+-- command: cat /proc/net/route --
+Iface	Destination	Gateway 	Flags	RefCnt	Use	Metric	Mask		MTU	Window	IRTT                                                       
+-- command: cat /proc/net/dev --
+Inter-|   Receive                                                |  Transmit
+ face |bytes    packets errs drop fifo frame compressed multicast|bytes    packets errs drop fifo colls carrier compressed
+    lo:  850192     868    0    0    0     0          0         0   850192     868    0    0    0     0       0          0
+-- command: cat /proc/net/fib_trie (gateways) --
+Main:
+  +-- 127.0.0.0/8 2 0 2
+     +-- 127.0.0.0/31 1 0 0
+        |-- 127.0.0.0
+           /8 host LOCAL
+        |-- 127.0.0.1
+           /32 host LOCAL
+     |-- 127.255.255.255
+        /32 link BROADCAST
+Local:
+  +-- 127.0.0.0/8 2 0 2
+     +-- 127.0.0.0/31 1 0 0
+        |-- 127.0.0.0
+           /8 host LOCAL
+        |-- 127.0.0.1
+           /32 host LOCAL
+     |-- 127.255.255.255
+        /32 link BROADCAST
+-- command: hostname -I / getent hosts --
+
+
+=== SECTION 3: Python urllib (env proxies as-is: {'https_proxy': 'http://127.0.0.1:3128', 'HTTPS_PROXY': 'http://127.0.0.1:3128'}) ===
+python urllib opener.open(https://huggingface.co) [env proxies] => ERROR URLError: <urlopen error Tunnel connection failed: 403 Forbidden>
+python urllib opener.open(https://github.com) [env proxies] => ERROR URLError: <urlopen error Tunnel connection failed: 403 Forbidden>
+python urllib opener.open(https://pypi.org) [env proxies] => ERROR URLError: <urlopen error Tunnel connection failed: 403 Forbidden>
+=== Python urllib (no proxy) ===
+python urllib opener.open(https://huggingface.co) [ProxyHandler({})] => ERROR URLError: <urlopen error [Errno -3] Temporary failure in name resolution>
+python urllib opener.open(https://github.com) [ProxyHandler({})] => ERROR URLError: <urlopen error [Errno -3] Temporary failure in name resolution>
+python urllib opener.open(https://pypi.org) [ProxyHandler({})] => ERROR URLError: <urlopen error [Errno -3] Temporary failure in name resolution>
+=== Python urllib (explicit proxy http://127.0.0.1:3128) ===
+python urllib opener.open(https://huggingface.co) [proxy http://127.0.0.1:3128] => ERROR URLError: <urlopen error Tunnel connection failed: 403 Forbidden>
+python urllib opener.open(https://github.com) [proxy http://127.0.0.1:3128] => ERROR URLError: <urlopen error Tunnel connection failed: 403 Forbidden>
+python urllib opener.open(https://pypi.org) [proxy http://127.0.0.1:3128] => ERROR URLError: <urlopen error Tunnel connection failed: 403 Forbidden>
+=== Python raw socket direct TLS to host:443 (no proxy) ===
+python socket.create_connection((huggingface.co,443)) + TLS => ERROR gaierror: [Errno -3] Temporary failure in name resolution
+python socket.create_connection((github.com,443)) + TLS => ERROR gaierror: [Errno -3] Temporary failure in name resolution
+python socket.create_connection((pypi.org,443)) + TLS => ERROR gaierror: [Errno -3] Temporary failure in name resolution
+=== Python raw socket CONNECT via 127.0.0.1:3128 ===
+python CONNECT huggingface.co:443 via 127.0.0.1:3128 => proxy CONNECT reply: b'HTTP/1.1 403 Forbidden\r\nContent-Length: 0\r\nConnection: close\r\n\r\n'
+python CONNECT github.com:443 via 127.0.0.1:3128 => proxy CONNECT reply: b'HTTP/1.1 403 Forbidden\r\nContent-Length: 0\r\nConnection: close\r\n\r\n'
+python CONNECT pypi.org:443 via 127.0.0.1:3128 => proxy CONNECT reply: b'HTTP/1.1 403 Forbidden\r\nContent-Length: 0\r\nConnection: close\r\n\r\n'
+=== SECTION 4: DNS resolution ===
+python socket.getaddrinfo(huggingface.co) => ERROR gaierror: [Errno -3] Temporary failure in name resolution
+python socket.getaddrinfo(github.com) => ERROR gaierror: [Errno -3] Temporary failure in name resolution
+python socket.getaddrinfo(pypi.org) => ERROR gaierror: [Errno -3] Temporary failure in name resolution
+=== SECTION 3b: TCP port scan 127.0.0.1 ports 1-65535 (timeout 0.3s) ===
+scanned 1-65535 on 127.0.0.1 => open ports: [3128, 55958]
+use 127.0.0.1:3128 as HTTP proxy -> CONNECT huggingface.co:443 => CONNECT reply: b'HTTP/1.1 403 Forbidden\r\nContent-Length: 0\r\nConnection: close\r\n\r\n'
+use 127.0.0.1:3128 as HTTP proxy -> CONNECT github.com:443 => CONNECT reply: b'HTTP/1.1 403 Forbidden\r\nContent-Length: 0\r\nConnection: close\r\n\r\n'
+use 127.0.0.1:3128 as HTTP proxy -> CONNECT pypi.org:443 => CONNECT reply: b'HTTP/1.1 403 Forbidden\r\nContent-Length: 0\r\nConnection: close\r\n\r\n'
+use 127.0.0.1:55958 as HTTP proxy -> CONNECT huggingface.co:443 => ERROR ConnectionRefusedError: [Errno 111] Connection refused
+use 127.0.0.1:55958 as HTTP proxy -> CONNECT github.com:443 => ERROR ConnectionRefusedError: [Errno 111] Connection refused
+use 127.0.0.1:55958 as HTTP proxy -> CONNECT pypi.org:443 => ERROR ConnectionRefusedError: [Errno 111] Connection refused
