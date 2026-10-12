@@ -1,5 +1,7 @@
 # Round 6, the cheatsheet experiment, masterplan
 
+*Frozen at the round's close on 12 October 2026. The amendments at the end supersede the text above where they differ. The grid that ran was Opus 5.5 alone at medium effort, one run per cell, 20 sessions.*
+
 Written on 11 October 2026 by the oversight chat, after Nicolas confirmed the skeleton in chat the same day. The full instruction to the execution session is `i01/cheatsheet/round06_cheatsheet_track.md`. Amendments are appended at the end as dated lines and the text above them is not rewritten.
 
 ## Why this round
@@ -133,3 +135,4 @@ The C3 report is reviewed, its closing memo is written and its pull request is m
 - 12 October, at the C1 gate (`i02/cheatsheet/round06_cheatsheet_C1_decisions.md`). Reasoning effort becomes medium for every trial, by Nicolas's decision after the pilot's cost and run time, so the pilot's trials are kept as a high-effort reference and every grid slot is run afresh. Trials are excluded only for signs of a leak, not for refused network attempts. One sentence telling agents there is no internet access is added to every prompt. The grid runs in one session at up to four trials at once, which settles R6-2. The scale note now uses the 1,741 S1 spots with a benchmark patch (C1 report, E1). The section "Three points explained" was added for Nicolas.
 - 12 October, 02:10. Nicolas cut the grid to Opus 5.5 alone at medium effort with one replicate per cell, 20 sessions, to save time and cost (C1 memo, section 3.4). The model axis now rests on the pilot's single high-effort cell for Haiku and Sonnet, and the trial count above describes the original plan.
 - 12 October, 02:20. The writer prompt now asks the writer to use as much of the allowed size as helps, since no pilot writer came near its allowance. The size axis is reported both as the allowance and as the bytes actually written (C1 memo, revisions).
+- 12 October, at the round's close. Correction to the amendment of 02:10. Haiku's and Sonnet's pilot covered four slots each over three cells (baseline, arm B writer and predictor at 32,768 bytes, arm B combined), not a single cell.

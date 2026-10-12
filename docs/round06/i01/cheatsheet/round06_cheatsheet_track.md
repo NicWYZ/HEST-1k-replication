@@ -1,5 +1,7 @@
 # Round 6, the cheatsheet track, on how large a cheatsheet a language model needs to predict expression from histology
 
+*Frozen at the round's close on 12 October 2026. It is no longer revised.*
+
 11 October 2026, revised the same evening. Prepared by the oversight chat for a fresh Claude Code cloud session, started by Nicolas from the Claude desktop app with this repository attached. This document is self-contained. It is kept current on `main`. When Nicolas tells you to check for updates, fetch `main`, read the "Revisions" list below and the masterplan's amendments, and transcribe what changed into your plan.
 
 **Revisions.**

@@ -4,7 +4,7 @@
 
 **Revisions.**
 - 12 October, 02:20. One sentence added to the writer prompt, "Use as much of the allowed size as helps; more detail is generally better." In the pilot no writer came near its 32,768-byte allowance (Haiku 6,990, Sonnet 6,892, Opus 17,688 bytes, `results/round6/cheatsheet/C1_pilot/manifest.csv`), so without it the larger sizes might not differ from the smaller ones. C3 reports bytes written beside the allowance and plots accuracy against both.
-- 12 October, 02:10. Nicolas cut the grid to Opus alone at medium effort with one replicate per cell, 20 sessions (sections 3.4, 3.5 and 4). Haiku's and Sonnet's pilot trials stay as high-effort reference points at their twelve slots and are not rerun.
+- 12 October, 02:10. Nicolas cut the grid to Opus alone at medium effort with one replicate per cell, 20 sessions (sections 3.4, 3.5 and 4). Haiku's and Sonnet's pilot trials stay as high-effort reference points at their four slots each and are not rerun. (Corrected at the round's close, which had read "their twelve slots", the total over three models.)
 
 **What was read and checked.** The C1 report `docs/round06/i01/cheatsheet/round06_cheatsheet_C1_report.md` in full. Against the files, the pilot manifest (19 attempts, 11 done and 8 excluded, 5.1957 US dollars over all attempts, `results/round6/cheatsheet/C1_pilot/manifest.csv`), the per-attempt scores and the scan hits behind E4 (`scan_hits.csv`), the comparator table and the anchor (`results/round6/cheatsheet/C0_comparators/comparators.csv`, `anchor.csv`), and the projection totals (`results/round6/cheatsheet/C1_pilot/c1_projection_totals.csv`). Every number quoted below was read back from those files.
 

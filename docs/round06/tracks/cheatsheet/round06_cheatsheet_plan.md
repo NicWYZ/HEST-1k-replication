@@ -1,5 +1,7 @@
 # Round 6, the cheatsheet track, operating plan
 
+*Frozen at the round's close on 12 October 2026. It is no longer revised.*
+
 Living document of the execution session. Started 12 October 2026.
 
 ## 0. Where this plan comes from

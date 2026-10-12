@@ -2,7 +2,7 @@
 
 **Read this paragraph first, whoever you are.** This repository is worked on by two kinds of session. If you are an **execution session** (a Claude Science or Claude Code session on a track branch such as `round6-cheatsheet`), your instructions are your track's instruction document in `docs/roundNN/i01/<track>/`, the operating plan you transcribed from it, and every decision memo since. This file belongs to the oversight chat. Do not edit it and do not act on its plan. The copy on your branch was frozen when the branch started and may be out of date. Section 7's rules apply to you as well. If you are the **oversight chat**, this is your operating file. It replaces the oversight handoff documents, and keeping it current is part of your job.
 
-**Last updated:** 2026-10-12 (oversight, cloud session; C1 gate of round 6, effort medium, grid cut to Opus with one replicate)
+**Last updated:** 2026-10-12 (oversight, cloud session; round 6 closed, summary written, next is round 7 on the PPI paper)
 
 The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at UNC, in Dr. Hongtu Zhu's lab and supervised by Dr. Daiwei (David) Zhang. The advisors want methods, not applied analysis, with a submittable paper by spring 2027. The paper is "Labelling budgets for prediction-powered inference with clustered data", methodology and theory first, applied to HEST-1k spatial transcriptomics and ACS PUMS 2018 income (`docs/round04/00_prep/round4_originality_check.md`).
 
@@ -31,9 +31,9 @@ The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at U
 
 ## 2. Current state (12 October 2026)
 
-- **Round 6 is open** (`docs/round06/README.md`, `docs/round06/masterplan.md`). One track, `cheatsheet`, runs David's cheatsheet experiment, on whether few-shot prediction with a general-purpose language model can beat pathology foundation models. Its instruction is `docs/round06/i01/cheatsheet/round06_cheatsheet_track.md`. The execution session is a Claude Code cloud session. The data package and transcripts live in the private repository `NicWYZ/hest-r6-data`. The C1 gate passed on 12 October (pull request #23, memo `docs/round06/i02/cheatsheet/round06_cheatsheet_C1_decisions.md`). The track is in interval 2. C2 runs Opus only, at medium effort, one replicate per cell, 20 sessions (Nicolas, 12 October, 02:10), then the closing report (C3).
-- **Next action.** Nothing until the final report arrives, unless Nicolas asks for changes or the session reports a usage limit. Then review it against the files, starting with the medium-against-high comparison at the pilot's slots and the comparison with the benchmark head.
-- **The PPI paper** waits for round 7. Round 5 closed on 9 October and everything is on `main` (pull requests #14 to #22). What goes into the paper is in section 3 of the two closing memos, `docs/round05/i04/ppi/round5_ppi_E5_decisions.md` and `docs/round05/i03/conformal/round5_conformal_W5_decisions.md`. The paper's estimator is `docs/round05/tracks/ppi/round5_ppi_estimator_definition.md`. The first methods question for round 7 is weighting the labelled clusters by their inclusion probabilities under rejective selection (the E5 memo's section 5). The explainer of round 5's results is `docs/round06/00_prep/round06_round5_results_explained.md`.
+- **Between rounds.** Round 6 closed on 12 October (`docs/round06/README.md`, closing memo `docs/round06/i03/cheatsheet/round06_cheatsheet_final_decisions.md`, pull requests #23 and #24). It ran David's cheatsheet experiment. With a size-limited cheatsheet, Opus 5.5 did not beat the `uni_v2` benchmark head on unseen spots, and it reached 0.8 on seen spots only by copying. Nicolas decided nothing further is pursued. The two-page summary for the advisors, presented in place of slides, is `docs/round06/oversight/round06_cheatsheet_summary.md`. No execution session is running.
+- **Next action.** Ask Nicolas what comes next. Round 7 returns to the PPI paper. Its candidates are a writing plan for the paper, the next advisor presentation, and the first methods question below.
+- **The PPI paper.** Round 5 closed on 9 October and everything is on `main` (pull requests #14 to #22). What goes into the paper is in section 3 of the two closing memos, `docs/round05/i04/ppi/round5_ppi_E5_decisions.md` and `docs/round05/i03/conformal/round5_conformal_W5_decisions.md`. The paper's estimator is `docs/round05/tracks/ppi/round5_ppi_estimator_definition.md`. The first methods question for round 7 is weighting the labelled clusters by their inclusion probabilities under rejective selection (the E5 memo's section 5). The explainer of round 5's results is `docs/round06/00_prep/round06_round5_results_explained.md`.
 - **What the advisors have seen.** Nicolas reported on 7 October that the second advisor meeting stopped at slide 8, so the advisors have seen the project up to the pivot and the originality check and not the round-4 or round-5 results (`docs/round05/i01/ppi/round5_ppi_track.md` section 2.1). The deck preparation is in `docs/round05/00_prep/deck2/`.
 - **Carried housekeeping from earlier rounds,** not urgent. The D4 probe rerun, the ten unresolved claims in two pre-round-3 documents, and the `r5c_leak_summary.csv` reading (`docs/round05/00_prep/round5_oversight_handoff.md` section 12).
 
@@ -55,15 +55,14 @@ The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at U
 
 - **Rounds 1 to 4** (12 September to 4 October). Replication, instrumentation, the two pivots, round 4's tracks and the second deck's preparation. Summaries in `docs/round01/README.md` to `docs/round04/README.md`. The handoffs `docs/round03/00_prep/round3_oversight_handoff.md`, `docs/round04/oversight/round4_oversight_handoff.md` and `docs/round05/00_prep/round5_oversight_handoff.md` are the full history up to 4 October.
 - **Round 5** (7 to 9 October). Instructions for two tracks, five gate memos, the move from handoffs to this file, and the round's close. Summary in `docs/round05/README.md`, and each step has an entry in `docs/progress-log.md`.
-- **Between rounds 5 and 6** (9 to 11 October). `docs/` moved to the layout by round, interval and track (pull request #22), and round 5's results were explained for Nicolas. Both have entries in the progress log.
+- **Between rounds 5 and 6** (9 to 11 October). `docs/` moved to the layout by round, interval and track (pull request #22), and round 5's results were explained for Nicolas.
+- **Round 6** (11 to 12 October). David's cheatsheet experiment, one track in a Claude Code cloud session, two gates and the close. Summary in `docs/round06/README.md`, and each step has an entry in the progress log.
 
-## 5. Oversight steps (round 6)
+## 5. Oversight steps (between rounds)
 
-- [x] **R6a. Open round 6.** Done on 11 October in a cloud session. The masterplan, the instruction, the round's reading guide and the progress-log entry. An independent check found four flaws (a leak through the arm B overview, "hest" in the trial path, a size grid below the S1 matrix's 194,300 bytes, a buffer narrower than a patch), all fixed before commit.
-- [x] **R6b. Review the C1 report.** Done on 12 October in a cloud session. Numbers read back from the manifest, comparators, anchor and projection. Memo `docs/round06/i02/cheatsheet/round06_cheatsheet_C1_decisions.md`, with medium effort at Nicolas's request, exclusion only for leak signs, a sentence added to every prompt, and the full grid in one session at up to four at once. Instruction and masterplan revised to match.
-- [ ] **R6c. Review the final report** and write the closing memo, which sits alone in the track's third interval.
-- [ ] **R6d. Close round 6** with `/project-state-keeping`.
-- [ ] **Not in this round, carried.** The next advisor presentation (read `docs/round05/00_prep/deck2/` and the presentation preferences in section 6 first). A writing plan for the paper from the closing pages of rounds 4 and 5, the two round-5 closing memos and the estimator definition.
+- [ ] **The paper,** a writing plan from the closing pages of rounds 4 and 5, the two round-5 closing memos and the estimator definition.
+- [ ] **The next advisor presentation,** from the literature landscape and the two original topics through the pivot, the originality check and the results of rounds 4 and 5. Read `docs/round05/00_prep/deck2/` and the presentation preferences in section 6 first. Round 6's summary is ready as its own short item.
+- [ ] **Round 7, if Nicolas wants one,** starting from inclusion-probability weighting under rejective selection.
 
 ## 6. Working preferences (Nicolas's)
 
@@ -90,7 +89,7 @@ These are not preferences. Breaking one invalidates the work. The procedures beh
 4. **Frozen reports are not edited.** Corrections go in the next memo or report. The one exception so far is the path rewrite of 9 October, which changed only paths, by Nicolas's decision.
 5. **Git.** Execution tracks push once per gate, the branch and the tag together, with one pull request that Nicolas merges with a merge commit after review. No rebase, squash, amend or force-push. Commits reach Longleaf as bundles and jobs run from read-only snapshots (`docs/round05/i02/ppi/round5_ppi_E2_decisions.md` section 4). Round 6's track works in a cloud session that can be reclaimed, so it pushes its branch after every batch, with still one pull request per gate. Nicolas pulls its branch on Longleaf for its one job, which runs from a `git archive` copy (`docs/round06/i01/cheatsheet/round06_cheatsheet_track.md` section 5).
 6. **Other sessions' clones are read only,** with `git --no-optional-locks`. Never write there.
-7. **Longleaf is where work runs.** A local run needs Nicolas to ask for that task in chat and is recorded in the plan before it runs. Round 6's agent trials and analysis run in a cloud session's container instead, by his decision of 11 October.
+7. **Longleaf is where work runs.** A local run needs Nicolas to ask for that task in chat and is recorded in the plan before it runs. Round 6's agent trials and analysis ran in a cloud session's container instead, by his decision of 11 October.
 8. **No claim of novelty** without a literature check (`docs/round04/00_prep/round4_originality_check.md`, `docs/round05/00_prep/deck2/deck2_literature_check.md`).
 9. **Contact with anyone outside the project** is Nicolas's decision, never a session's.
 
@@ -124,7 +123,7 @@ code/scripts/             every script, including state_check.py; results/ the o
 superseded/               a superseded manifest
 ```
 
-On Nicolas's Mac, `~/hest-1k` holds `HEST-1k-replication-oversight` (the oversight clone, on `main`), `HEST-1k-replication-PPI` and `HEST-1k-replication-conformal` (the tracks' clones, read only), and `acs_pums2018` (the raw census fetch, not in the repository). On Longleaf, the project tree `/work/users/w/e/weiyang/hest_replication` is on `main` at tag `round4-data-v2`, and the tracks' code clones are under `/work/users/w/e/weiyang/hest_code/`. Round 6's agent trials run in the execution session's cloud container. Its data package and transcripts live in the private repository `NicWYZ/hest-r6-data`, never in this public one.
+On Nicolas's Mac, `~/hest-1k` holds `HEST-1k-replication-oversight` (the oversight clone, on `main`), `HEST-1k-replication-PPI` and `HEST-1k-replication-conformal` (the tracks' clones, read only), and `acs_pums2018` (the raw census fetch, not in the repository). On Longleaf, the project tree `/work/users/w/e/weiyang/hest_replication` is on `main` at tag `round4-data-v2`, and the tracks' code clones are under `/work/users/w/e/weiyang/hest_code/`. Round 6's data package and transcripts live in the private repository `NicWYZ/hest-r6-data`, never in this public one.
 
 ## 11. Environment and git
 
