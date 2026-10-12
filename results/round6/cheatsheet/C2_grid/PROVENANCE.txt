@@ -25,3 +25,30 @@ script_md5:
   17247857aa0d2e31c41dcb1b0d61d2a7  round6_cheatsheet_score.py
   6de2f0e1e5febd0d2c61394acbc94c0b  round6_cheatsheet_score_test.py
 
+container_id: container_01YH5Tt446ni87y9nji7Gakc
+date_utc: 2026-10-12T06:22:10+00:00
+code_commit: 889c7f48b279076005f000747f608f59af16ecd0
+command: code/scripts/round6_cheatsheet_run.py results/round6/cheatsheet/C2_grid/plan.csv --stage C2_grid --parallel 4 --effort medium --rule b
+PYTHONHASHSEED: 0
+python: 3.13.16
+claude_code: 2.1.296 (Claude Code)
+python_libs_seen_by_trials: numpy 2.5.3 pandas 3.0.5 scipy 1.18.1 Pillow 12.3.0 scikit-image 0.26.0 scikit-learn 1.9.1
+package_manifest_md5: ecf072aa4eaf934d8cb0c9a4068686a6
+script_md5:
+  ff2ba6f5e070e2a0780c2f88b34e6055  round6_cheatsheet_build.py
+  989560b5ee64d02efa77bb38d6fba762  round6_cheatsheet_c1_summary.py
+  633585f1eeaffa61bce07afd48545516  round6_cheatsheet_child.py
+  f24209e89208191432ce43df80d9d6e0  round6_cheatsheet_comparators.py
+  d719587655da75b16bc2f4e0245b1437  round6_cheatsheet_derive.py
+  d6d41797ede011bfe5aa5b08d5355471  round6_cheatsheet_filter_proxy.py
+  ec398d75c3480e817c312b10b796b822  round6_cheatsheet_memwatch.py
+  5ead4c7e0e76762a41660fc19283a6db  round6_cheatsheet_package.py
+  3e1f7f7a7387e4d2254a2271e8b54709  round6_cheatsheet_package.sbatch
+  dee84ba79f1189ce973d20ffae1e3b76  round6_cheatsheet_pilot_reread.py
+  97cc481a03c54964a4bbc10072192d59  round6_cheatsheet_probes.py
+  d7b78c56191acd96469a7ba1aabbe1da  round6_cheatsheet_prompts.py
+  58238cd62a502f4cde6df64283b4f544  round6_cheatsheet_run.py
+  34c1a4c11885c85d035c04adc1b7c2e0  round6_cheatsheet_scan.py
+  17247857aa0d2e31c41dcb1b0d61d2a7  round6_cheatsheet_score.py
+  6de2f0e1e5febd0d2c61394acbc94c0b  round6_cheatsheet_score_test.py
+
