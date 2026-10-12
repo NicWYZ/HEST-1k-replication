@@ -1,8 +1,10 @@
-# Round 6, the cheatsheet experiment (11 to 12 October 2026)
+# Round 6, the cheatsheet experiment (11 to 12 October 2026, reopened 12 October)
 
 David proposed an experiment by email. An agent predicts the expression of 50 genes from H&E patches. A second agent, which saw the measured expression, writes a text cheatsheet of limited size that the first may use. The question is how large the cheatsheet must be for the predictions to reach a given accuracy. Nicolas decided on 11 October to run it as round 6, with the purpose of learning whether few-shot prediction with a general-purpose language model can beat pathology foundation models. The PPI paper's next round becomes round 7.
 
 **Track.** cheatsheet (branch `round6-cheatsheet` for C0 and C1, and `claude/beautiful-mccarthy-feog45` for C2 and C3, stages C0 to C3, run by a Claude Code cloud session, with one packaging job on Longleaf). **Starts from** `main` at the commit that carries the masterplan and the instruction.
+
+**Reopened.** Nicolas reopened the round on 12 October, after its close, for an extension on held-out patients in intervals i04 and i05 of the same track. It keeps only arm C, uses 10 FFPE slides of HEST-bench `CCRCC` (7 for writers, 3 for testing), sizes from 256 to 65,536 bytes, and a rubric for biological, transferable cheatsheets that a checker agent enforces. It runs in a local Claude Code session on Nicolas's Mac that reaches Longleaf over SSH, on branch `round6-cheatsheet-ext`, stages C4 to C7. The plan is the masterplan's section "Extension" and the instruction is `i04/cheatsheet/round06_cheatsheet_ext_track.md`. The sections from "What the round established" on describe intervals i01 to i03 and are extended when the extension closes.
 
 ## Gates
 
@@ -15,7 +17,7 @@ David proposed an experiment by email. An agent predicts the expression of 50 ge
 
 | Document | Date | Role |
 |---|---|---|
-| `masterplan.md` | 11 Oct, amended to 12 Oct, frozen 12 Oct | the round's plan, with the design, the trial count, the oversight chat's choices, the predictions, the open questions, three points explained for Nicolas, and dated amendments |
+| `masterplan.md` | 11 Oct, amended to 12 Oct, frozen 12 Oct, reopened 12 Oct with a living section "Extension" | the round's plan, with the design, the trial count, the oversight chat's choices, the predictions, the open questions, three points explained for Nicolas, and dated amendments |
 | `00_prep/round06_round5_results_explained.md` | 11 Oct | for Nicolas, the four main round-5 results explained with their theory (the level term in regime B, the cross-fitting term of the design-target interval, the full conformal set inside the target donor, balanced selection of the labelled clusters), the other results briefly, and what is not established |
 | `i01/cheatsheet/round06_cheatsheet_track.md` | 11 Oct, living, frozen 12 Oct | instruction for the cheatsheet track, with the fixed prompts, the isolation properties and stages C0 to C3, revised in place with a dated list at its top |
 | `i01/cheatsheet/round06_cheatsheet_C1_report.md` | 12 Oct | report at the C1 gate (C0 setup and the pilot of twelve slots at high effort) |
@@ -24,6 +26,7 @@ David proposed an experiment by email. An agent predicts the expression of 50 ge
 | `i03/cheatsheet/round06_cheatsheet_final_decisions.md` | 12 Oct | acceptance and close of the track, with the readings for the record and one correction |
 | `oversight/round06_cheatsheet_summary.md` | 12 Oct | the two-page summary of design, method, implementation, results and discussion, presented in place of slides |
 | `tracks/cheatsheet/round06_cheatsheet_plan.md` | 11 to 12 Oct, living, frozen 12 Oct | the session's operating plan, with flags F1 to F20 |
+| `i04/cheatsheet/round06_cheatsheet_ext_track.md` | 12 Oct, living | instruction for the extension, stages C4 to C7, with the slides, sampling, rubric, prompts, audit loop, isolation on the Mac, comparators and predictions X.1 to X.8 |
 
 ## What the round established
 

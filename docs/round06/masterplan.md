@@ -2,6 +2,8 @@
 
 *Frozen at the round's close on 12 October 2026. The amendments at the end supersede the text above where they differ. The grid that ran was Opus 5.5 alone at medium effort, one run per cell, 20 sessions.*
 
+*Reopened on 12 October 2026, after the close, for an extension in intervals i04 and i05. The text above the section "Extension" stays frozen. That section and the amendments dated after the close are living until the extension closes.*
+
 Written on 11 October 2026 by the oversight chat, after Nicolas confirmed the skeleton in chat the same day. The full instruction to the execution session is `i01/cheatsheet/round06_cheatsheet_track.md`. Amendments are appended at the end as dated lines and the text above them is not rewritten.
 
 ## Why this round
@@ -136,3 +138,42 @@ The C3 report is reviewed, its closing memo is written and its pull request is m
 - 12 October, 02:10. Nicolas cut the grid to Opus 5.5 alone at medium effort with one replicate per cell, 20 sessions, to save time and cost (C1 memo, section 3.4). The model axis now rests on the pilot's single high-effort cell for Haiku and Sonnet, and the trial count above describes the original plan.
 - 12 October, 02:20. The writer prompt now asks the writer to use as much of the allowed size as helps, since no pilot writer came near its allowance. The size axis is reported both as the allowance and as the bytes actually written (C1 memo, revisions).
 - 12 October, at the round's close. Correction to the amendment of 02:10. Haiku's and Sonnet's pilot covered four slots each over three cells (baseline, arm B writer and predictor at 32,768 bytes, arm B combined), not a single cell.
+- 12 October, after the close. Nicolas reopened the round for an extension on held-out patients, in new intervals i04 and i05 of the same track. The section "Extension" below is its plan, and its instruction is `i04/cheatsheet/round06_cheatsheet_ext_track.md`.
+
+## Extension (intervals i04 and i05)
+
+Written on 12 October 2026 by the oversight chat after Nicolas confirmed the design in chat the same day. The full instruction is `i04/cheatsheet/round06_cheatsheet_ext_track.md`.
+
+**Why.** Round 6 tested one writer slide against one unseen patient, and its large cheatsheets became training tables and feature-extraction code. Nicolas wants to know how much of the relation between tissue appearance and expression can be passed on as biological text that transfers to new patients, with more training and test data. So only round 6's arm C is kept, every cheatsheet must follow a rubric, and a separate checker agent enforces it.
+
+**Design.**
+
+- **Data.** HEST-bench `CCRCC`, the only task with at least 10 slides from different patients. Only its 12 FFPE slides are used, because its other 12 are frozen sections that look different under H&E. Ten are drawn by seed, seven for training and three for testing. Each slide contributes a fixed sample of 500 spots, stratified by expression clusters, so writers see 3,500 labelled spots and predictors are scored on 1,500.
+- **Why 7 training slides.** Round 6's writers never opened single patches. They viewed montages of 12 patches, 72 to 132 patches in all, and peaked at 25,000 to 58,000 tokens of context (transcripts in `NicWYZ/hest-r6-data`, `transcripts/C2_grid/`). A montage costs about 800 tokens. A budget of about 60 montages, roughly 48,000 tokens of images, keeps a writer's peak near 100,000 tokens, and at about 8 montages per slide that covers 7 slides.
+- **Sizes.** $b \in \{0\} \cup \{2^{8}, \ldots, 2^{16}\}$ bytes. The largest, 65,536 bytes, is what a writer can fill with descriptions and per-class tables under the rubric, and what a predictor can read whole in one or two reads. At 32,768 bytes, round 6's two writers wrote 21,755 and 24,647 bytes, code included, and most of the gain on the unseen patient came by 4,096 bytes (`results/round6/cheatsheet/C3_report/grid.csv`).
+- **The rubric.** Allowed are histological descriptions, per-class gene levels, gradients judged by eye, gene modules, patient variation described by appearance, cautions, and overall gene levels. Forbidden are code and model recipes, computed image measurements, anything keyed to a training spot, section or patient, encoded data, advice about scoring, and technical properties as predictors. A fresh checker agent audits each cheatsheet. Violations go back to the writer, up to two revisions, and a cheatsheet still failing is scored, flagged and reported separately.
+- **Metric.** The mean over the three test slides of the within-slide mean Pearson over the 50 genes, since round 1 showed that pooling across patients inflates the correlation. The pooled value is reported beside it.
+- **Comparators.** The benchmark head on `uni_v2` (primary) and `virchow2`, the best encoder on CCRCC in round 1, fitted on the 3,500 writer spots and also on every patched spot of the training slides, a size-matched codebook, and a mean predictor.
+- **Sessions.** Opus 5.5 at medium effort, one run per cell. Nine writers, nine predictors, the baseline at $b = 0$ and one combined session that holds all 3,500 labelled spots, 20 in all, plus at least nine checker sessions.
+- **Where it runs.** A local Claude Code session on Nicolas's Mac, which reaches Longleaf over SSH (his decision of 12 October). The data package and the comparators are built on Longleaf. The trials run on the Mac, confined as in round 6 inside a Linux container `[proposed]`, with isolation properties I1 to I4 tested before any trial. The package stays off GitHub, and transcripts go to `NicWYZ/hest-r6-data`.
+
+**Stages and gates.**
+
+| Interval | Stages | Gate |
+|---|---|---|
+| i04 | C4, setup (child sessions, isolation, the package, comparators, harness and scorer). C5, pilot (the baseline, the 4,096-byte writer with its audit loop, and its predictor) | C5 |
+| i05 | C6, the grid. C7, analysis and the closing report | C7, end of the extension |
+
+**Predictions.** X.1 to X.8 in the instruction's section 8, written before any run. In short, the baseline lands between 0.03 and 0.20, the curve rises up to 4,096 bytes and is flat after, no cheatsheet reaches the `uni_v2` head but the best comes within 0.05 of it, large writers leave much of their allowance unused, at least three writers need a revision, and the combined session scores below the best cheatsheet.
+
+**Cost and schedule.** Round 6's 20 sessions cost 7.91 US dollars at API prices (`results/round6/cheatsheet/C3_report/cost_totals.csv`). With seven slides per writer, three times the predictor's patches and the checkers, the oversight chat's rough estimate is about 20 US dollars, drawn on Nicolas's own plan. The pilot replaces this estimate. Setup takes two to three days, the pilot a day, the grid under a day and the analysis a day, which puts the close around 16 October. Round 7 on the PPI paper follows.
+
+**Open questions.**
+
+| # | Question | Who decides | Default |
+|---|---|---|---|
+| R6-3 | Whether and when round 6's results, including the extension's, go to David | Nicolas | nothing is sent by any session |
+| R6-4 | The confinement's route on the Mac, a Linux container running round 6's confinement or another route with the same properties | the session, within the instruction's decision boundaries, reported at C5 | a Linux container `[proposed]` |
+
+**What closes the extension.** The C7 report is reviewed, its closing memo is written in `i06/cheatsheet/`, its pull request is merged, and the close check of the project-state-keeping skill runs again for round 6.
+
