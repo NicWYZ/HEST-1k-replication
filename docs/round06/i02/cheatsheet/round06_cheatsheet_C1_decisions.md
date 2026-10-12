@@ -2,6 +2,9 @@
 
 12 October 2026. Written by the oversight chat after Nicolas merged pull request #23 and asked for medium reasoning effort. This memo opens interval 2 of the track. The instruction `docs/round06/i01/cheatsheet/round06_cheatsheet_track.md` and the masterplan are updated on `main` to match, each with a dated line, so the instruction stays the one document to run from.
 
+**Revisions.**
+- 12 October, 02:10. Nicolas cut the grid to Opus alone at medium effort with one replicate per cell, 20 sessions (sections 3.4, 3.5 and 4). Haiku's and Sonnet's pilot trials stay as high-effort reference points at their twelve slots and are not rerun.
+
 **What was read and checked.** The C1 report `docs/round06/i01/cheatsheet/round06_cheatsheet_C1_report.md` in full. Against the files, the pilot manifest (19 attempts, 11 done and 8 excluded, 5.1957 US dollars over all attempts, `results/round6/cheatsheet/C1_pilot/manifest.csv`), the per-attempt scores and the scan hits behind E4 (`scan_hits.csv`), the comparator table and the anchor (`results/round6/cheatsheet/C0_comparators/comparators.csv`, `anchor.csv`), and the projection totals (`results/round6/cheatsheet/C1_pilot/c1_projection_totals.csv`). Every number quoted below was read back from those files.
 
 **The gate rule.** Report-and-wait means that no stage after the gated stage starts until the oversight chat has reviewed the report and replied. Not the dependent stages only, and not the expensive ones only. Every stage. Nothing after the gate is set up, staged or piloted. Inside an interval there are no interim reports and no interim stop conditions; anything that would have halted work is handled under the decision boundaries, recorded in an "Escalations" section of the next report, and work continues. Contact with anyone outside the project is never the session's decision.
@@ -53,15 +56,25 @@ In the pilot, agents spent turns looking for data in `/data`, `/home` and `/mnt`
 
 ### 3.4 The grid
 
-The masterplan's full grid, at medium effort. That is 39 sessions per model, 117 in all, with the pilot's slots rerun.
+Opus 5.5 only, at medium effort, one replicate per cell (Nicolas, 12 October, to cut time and cost further). That is 20 sessions.
 
-**Order.** Run replicate 1 of every cell, across all arms, sizes and models, before any replicate 2, with writers before their predictors. If a usage limit stops the run, what has finished is then a complete one-replicate grid rather than half the arms.
+| sessions | count |
+|---|---|
+| baselines, one on S1* (serving arms A and B) and one on S2* (serving arm C) | 2 |
+| writers, 3 sizes, for all of S1 (serving A and C) and for the training blocks (serving B) | 6 |
+| predictors, 3 sizes, one each in arms A, B and C | 9 |
+| combined sessions ($b = \infty$), one in each arm | 3 |
+| **total** | **20** |
 
-**Budget.** Nicolas has not set a budget. The full grid at high effort projected to 48.05 US dollars at API prices, and medium should cost less. No cut is taken.
+Opus's four pilot slots are rerun at medium as part of these 20. Haiku's and Sonnet's pilot trials are not rerun. They stay in the report as high-effort reference values at their slots.
+
+**Order.** Writers before their predictors. Otherwise any order.
+
+**Cost.** At high effort the pilot's Opus trials averaged about 1.08 US dollars each at API prices (4.32 over its four counted slots, `results/round6/cheatsheet/C1_pilot/c1_by_model_role.csv`), so 20 trials would be about 22 dollars at high effort and less at medium.
 
 ### 3.5 One session, more trials at once
 
-The container has 4 CPUs and about 15 GB (E8). Run up to four trials at once. Measure memory per trial in the first batch, and drop to three if peak memory across the running trials passes 12 GB. At high effort the full grid projected to 5.2 hours at two at once. At four at once and medium effort it should fit well inside a day, so the grid is not split across sessions. Open question R6-2 is settled this way.
+The container has 4 CPUs and about 15 GB (E8). Run up to four trials at once. Measure memory per trial in the first batch, and drop to three if peak memory across the running trials passes 12 GB. With 20 trials and the dependency of predictors on writers, four at once should finish in a few hours, so the grid is not split across sessions. Open question R6-2 is settled this way.
 
 ### 3.6 Answers to the other escalations
 
@@ -77,16 +90,16 @@ The container has 4 CPUs and about 15 GB (E8). Run up to four trials at once. Me
 **Stages.**
 - C2 runs the grid of 3.4 under 3.1 to 3.5.
 - C3 is the analysis and closing report of instruction section 7, unchanged, with four additions:
-  1. Every pilot slot's rerun at medium beside its high-effort reference, with cost, turns and wall time for each.
+  1. Opus's four pilot slots at medium beside their high-effort references, with cost, turns and wall time, and Haiku's and Sonnet's high-effort pilot values shown as reference points.
   2. Per trial, the count of refused network attempts and empty-directory listings recorded under 3.2.
   3. The cost and wall time of C2 per model and role, against the C1 projection.
-  4. An answer, for the pilot's twelve slots, to the question whether medium effort costs accuracy.
+  4. An answer, for Opus's four pilot slots, to the question whether medium effort costs accuracy. With one trial per slot, say that a difference of under about 0.05 cannot be told from chance.
 
 **Paths.** The final report goes to `docs/round06/i02/cheatsheet/round06_cheatsheet_final_report.md`. Results go under `results/round6/cheatsheet/C2_grid/` and `results/round6/cheatsheet/C3_report/`. The plan is `docs/round06/tracks/cheatsheet/round06_cheatsheet_plan.md`, where you transcribe this memo before starting C2. Commit this memo unchanged on your branch. The tag is `round6-cheatsheet-final`.
 
-**Predictions.** C.2 to C.6 stand as written in instruction section 8. C.1 was scored at C1 and is scored again on the medium-effort baselines. Two predictions are added.
-- **C.7** At the pilot's twelve slots, each model's medium-effort score is within 0.08 of its high-effort reference.
-- **C.8** Opus's cost per trial at medium effort is at most two thirds of its cost at high effort, averaged over the pilot's slots.
+**Predictions.** With Opus alone and one replicate, the predictions are scored for Opus and on single values. C.2 to C.5 stand, read as statements about Opus. C.6, the ordering of models, cannot be tested and is reported as not tested. C.1 was scored at C1 and is scored again on Opus's medium-effort baseline. Two predictions are added.
+- **C.7** At Opus's four pilot slots, its medium-effort score is within 0.08 of its high-effort reference.
+- **C.8** Opus's cost per trial at medium effort is at most two thirds of its cost at high effort, averaged over those four slots.
 
 ## 5. What Nicolas does
 
