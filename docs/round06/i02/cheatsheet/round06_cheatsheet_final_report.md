@@ -202,6 +202,8 @@ The grid cost 7.91 US dollars in total, against 22.35 that the C1 projection giv
 
 ## 9. Proposed next step
 
+The pull request is [NicWYZ/HEST-1k-replication#24](https://github.com/NicWYZ/HEST-1k-replication/pull/24), opened as a draft and confirmed on GitHub.
+
 The track is complete. The oversight chat reviews this report and writes the closing memo. Nothing further is set up. Nicolas tags the report's commit and pushes the tag, `git tag round6-cheatsheet-final 7d6f8d2 && git push origin round6-cheatsheet-final`, since this session could not push it.
 
 ## What the cheatsheet experiment established
