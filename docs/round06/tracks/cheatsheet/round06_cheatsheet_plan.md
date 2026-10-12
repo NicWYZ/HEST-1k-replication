@@ -7,6 +7,7 @@ Living document of the execution session. Started 12 October 2026.
 - Instruction: `docs/round06/i01/cheatsheet/round06_cheatsheet_track.md` on `main`, including its revision of 11 October, 22:50 (package and transcripts through the private repository `NicWYZ/hest-r6-data`).
 - Masterplan: `docs/round06/masterplan.md`, including its two amendments of 11 October.
 - Starting commit: `23cbb0d8e88a5ae185600ca78b56a74b517a08e1` on `main` (clean tree). Branch `round6-cheatsheet` created from it on 12 October.
+- Interval 2 (12 October): the C1 decision memo `docs/round06/i02/cheatsheet/round06_cheatsheet_C1_decisions.md` with its revision of 02:10, and the instruction's and masterplan's revisions of 12 October, read on `main` at commit `31355f7`. Interval 2 runs in a new session and a new container (section 1a), on branch `claude/beautiful-mccarthy-feog45`, which the session's own configuration names (flag F17). Its transcription is section 4a below.
 - Sections 1 to 3 below are this session's own. Section 4 onward transcribes the instruction's sections 6, 7 and 8 unchanged, so the predictions are on record before any trial runs.
 
 ## 1. Facts of this container, recorded at the start
@@ -17,6 +18,14 @@ Living document of the execution session. Started 12 October 2026.
 - Python 3.13.16 at `/usr/bin/python3`.
 - `nproc` reports 4 CPUs and `free` reports 15 GB of memory, not the 2 CPUs and 7 GB the instruction expects (flag F1).
 - An unconfined child `claude --safe-mode -p` with `env -i` and the thirteen variables of instruction section 6.4 authenticated and answered on `claude-haiku-5-5`. Its `system/init` event reported model `claude-haiku-5-5`, Claude Code 2.1.296 and no MCP servers.
+
+## 1a. The interval 2 container, recorded at the start of C2
+
+- Container ID `container_01YH5Tt446ni87y9nji7Gakc`, 4 CPUs and 15 GB as before. Claude Code 2.1.296.
+- The interval 1 container was reclaimed, so section 5 of the instruction was followed. `bubblewrap` 0.9.0 and `socat` 1.8.0.0 installed with `apt-get`, scipy, scikit-image, scikit-learn, pyarrow and h5py with `pip`, at the same versions the pilot's trials saw (numpy 2.5.3, pandas 3.0.5, scipy 1.18.1, Pillow 12.3.0, scikit-image 0.26.0, scikit-learn 1.9.1).
+- `NicWYZ/hest-r6-data` cloned at commit `da21ced`. Its `package/` copied to `/srv/r6_private/package`, and all 20 md5s match `MANIFEST.tsv`, which is identical to the committed `results/round6/cheatsheet/C0_package/MANIFEST.tsv`. Staging gives 1,741 S1 spots, 1,293 S2 spots and 500 spots each in S1* and S2*, the counts of `results/round6/cheatsheet/C0_package/package_summary.json`. `round6_cheatsheet_derive.py` rebuilt `axes.json` and `overview.json` identical to the committed copies.
+- The filtering proxy restarted on `/srv/r6_proxy/filter.sock`, logging to `/srv/r6_private/filter.log`, with `start.sh` as instruction 6.4 describes it (flag F18).
+- The I2 and I3 probes are rerun on Opus at medium effort before the grid, into `results/round6/cheatsheet/C2_grid/isolation_rerun/`.
 
 ## 2. Flags, recorded without changing the instruction
 
@@ -32,6 +41,10 @@ Design figures quoted in this section (sizes, buffers, spot counts of the design
 - **F14.** The child cannot log in without the credential folder bound (tested on 12 October with Nicolas's approval in chat: "Not logged in"). So the folder stays bound as 6.4 says, and an agent that explores the filesystem can see the credential files' names. In the C0 smoke test one Haiku baseline listed that folder while looking for labelled data, and the scanner excluded it as 6.4 requires. If this is frequent, the rerun rule selects for agents that do not explore, which C1 measures and reports.
 - **F15.** The scanner's first path pattern read Python division (`x / 255`) as absolute paths and wrongly excluded four smoke-test writers. It now counts a path only when its first component is a top-level directory, and the smoke transcripts were rescanned with only the genuine case excluded.
 - **F16.** The packaging job's axis check found no overlapping neighbour pairs, because its cut-off excluded pairs exactly 200 patch pixels apart, which is the 100 µm grid spacing, so it kept the stored column order. Rerun in the container with the cut-off at the patch width (`code/scripts/round6_cheatsheet_derive.py`), over 300 pairs, the overlapping pixels differ by 38.1 grey levels on average when stored column 0 is read as x and by 2.7 when stored column 1 is read as x (`results/round6/cheatsheet/C0_package/axes.json`). So the stored columns are transposed relative to the images, which agrees with round 3's finding for bench coordinates. The blocks, held-out flags, eligibility and S1* are unaffected, because the 4 by 4 grid is the same set of rectangles under transposition and the parity i + j is symmetric. The overview mosaic and the writers' positions are rebuilt in the image frame in the container, and the package's own `S1_overview.png` is not used. Checked by eye (the mosaic is seamless) and numerically (every held-out spot's centre is white in the arm B overview, and the only training spots with a white centre are the 59 that lie within 0.14 µm of a block edge).
+- **F17 (interval 2).** The instruction names branch `round6-cheatsheet`. This session's own configuration requires it to develop and push on `claude/beautiful-mccarthy-feog45`, created from `main` at `31355f7`, which already carries the C1 memo unchanged. The C2 and C3 work is on that branch, with one pull request at the C3 gate. Nicolas can rename it if he prefers.
+- **F18 (interval 2).** `start.sh` was not committed in interval 1, so it was rewritten in the new container as 6.4 describes (socat from `127.0.0.1:3128` to `/run/proxy/filter.sock` in the background, a pause of 0.3 seconds, then `exec "$@"`). The probes' rerun confirms it.
+- **F19 (interval 2).** Rule (b) of the C1 memo names "credential contents" as a cause for exclusion. The scanner's patterns for credential-shaped strings (`sk-ant-`, JWT, `Bearer`) stay excluding. A tool call that reads a file's bytes inside the credential folder (Read or Grep on it, or a Bash command other than `ls`, `find`, `stat`, `du`, `file` or `test` on it) is also treated as credential contents and excludes, because the scanner does not read the credential files and so cannot match their exact contents. Only a listing of the folder, or its file names, is recorded without excluding. Any mention of the API host in a tool call's input counts as a direct API call and excludes. Re-read under both rules, the pilot's 19 transcripts reproduce interval 1's eight exclusions under rule (a) exactly, and none of them is excluded under rule (b).
+- **F20 (interval 2).** The grid was first started at 06:20 UTC on 12 October from commit `b661d1e`, before the writer prompt's revision of 02:20 had been fetched. Nicolas asked the session to check `main` for prompt edits, and the runner and its four confined children were stopped about a minute after they started. All four were writers (IDs `1586411e`, `5d97cece`, `bea5ffb5`, `f14e17ab`), none had written a cheatsheet, and no manifest row was written. They are handled as interrupted trials (instruction section 5): not counted, not failures, their directories, logs and maps kept privately under `/srv/r6_private/interrupted/`, and their transcripts not pushed. The runner's `PROVENANCE.txt` keeps the entry of that start. The grid restarted after the merge.
 - **F5.** The container did not have scipy, scikit-image, scikit-learn, pyarrow or h5py, although the instruction lists the first three. They were installed with `pip` on 12 October (scipy 1.18.1, scikit-image 0.26.0, scikit-learn 1.9.1, pyarrow 26.0.0, h5py 3.16.0, with anndata for the packaging smoke test). A reclaimed container must install them again.
 - **F6.** In the bubblewrap command of instruction 6.4, `--ro-bind "$CA_BUNDLE" "$CA_BUNDLE"` comes before `--tmpfs /root`, and the bundle lives under `/root`, so the later tmpfs hides it and TLS fails inside the confinement (curl exit 77). The working order puts the bundle's bind after `--tmpfs /root`. This is a flag replaced by its working equivalent, which section 10 lets the session decide, and it is recorded here.
 - **F7.** The round-1 benchmark patches cover only some of each slide's spots. The subagent's reading of `bench_data/INVENTORY.md` and the patch files gives 1,741 patched spots of TENX115's 3,886 and 1,293 of TENX117's 1,830. Every arm, comparator and writer therefore works on the patched spots only, since a spot without a patch cannot be shown to a predictor and has no embedding. This is an escalation (a spot count that differs from the inventory). The package job records the counts it finds. One consequence is that the S1 expression matrix at one byte per value is about 87 kB rather than the masterplan's 194,300 bytes, so 262,144 bytes is still above it.
@@ -50,7 +63,10 @@ Design figures quoted in this section (sizes, buffers, spot counts of the design
 | C0.4 comparators | done. The anchor passes in all four cells (`results/round6/cheatsheet/C0_comparators/anchor.csv`), and the comparators on S1* and S2* are in `comparators.csv` beside it |
 | C0.5 harness and scorer | runner, manifest, builder and scanner written. An end-to-end smoke test on the synthetic package with Haiku (outside `results/`) ran a baseline, a writer, its predictor and a combined session to valid scored outputs. Scorer tests pass on synthetic data and on S1*'s real targets (`results/round6/cheatsheet/C0_comparators/scorer_tests.csv`) |
 | C1 pilot | done, from commit `55913b0`. Eleven of twelve slots counted, Haiku's arm B combined slot failed after four excluded attempts. Report `docs/round06/i01/cheatsheet/round06_cheatsheet_C1_report.md`. Stopped at the C1 gate |
-| C1 pilot | not started |
+| C1 gate | passed on 12 October (pull request #23, memo `docs/round06/i02/cheatsheet/round06_cheatsheet_C1_decisions.md`) |
+| C2 setup in the new container | done (section 1a). Harness changed as the memo requires (section 4a) |
+| C2 grid | done. 20 of 20 trials done, none excluded or failed (`results/round6/cheatsheet/C2_grid/manifest.csv`) |
+| C3 report | done, `docs/round06/i02/cheatsheet/round06_cheatsheet_final_report.md`. Stopped at the C3 gate |
 
 ---
 
@@ -235,4 +251,34 @@ The oversight chat's, from the masterplan, numbered for scoring. Copy them into 
 Most of the project's magnitude predictions in earlier rounds were refuted, so a refuted prediction is reported as plainly as a held one.
 
 ---
+
+---
+
+## 4a. Interval 2, transcribed from the C1 decision memo
+
+Source `docs/round06/i02/cheatsheet/round06_cheatsheet_C1_decisions.md`, with its revision of 12 October, 02:10, and the matching revisions of the instruction (6.3, 6.4, 6.5, C2) and the masterplan. Where the copy of the instruction above differs, this section governs.
+
+**Gate rule.** Report-and-wait means that no stage after the gated stage starts until the oversight chat has reviewed the report and replied. Not the dependent stages only, and not the expensive ones only. Every stage. Nothing after the gate is set up, staged or piloted. Inside an interval there are no interim reports and no interim stop conditions; anything that would have halted work is handled under the decision boundaries, recorded in an "Escalations" section of the next report, and work continues. Contact with anyone outside the project is never the session's decision.
+
+**Decisions to apply.**
+1. Effort (memo 3.1). Every C2 trial runs with `--effort medium` and `CLAUDE_CODE_EFFORT_LEVEL=medium`. The pilot's eleven counted trials do not count towards the grid and are kept as a high-effort reference. Code: `round6_cheatsheet_child.py` takes `effort`, default medium. `round6_cheatsheet_run.py --effort medium` is the default and is written to each manifest row.
+2. Exclusion (memo 3.2, rule b). A trial is excluded only for a canary string, a sample ID or other blinded name, credential contents, a nested `claude` session or an API call outside the child's own process, or content that came back from a host other than the API. Empty or absent directory listings and refused network attempts are recorded per trial (manifest columns `scan_network_attempts`, `scan_outside_paths`, `scan_credential_refs`) and do not exclude. How credential contents are judged is flag F19. The filter's log is checked after each batch for any allowed host other than the API.
+3. The high-effort reference (memo 3.2). The pilot's attempts are re-read under rule (b), and the first attempt in each slot that passes is that slot's reference value, reported beside the value counted under rule (a).
+4. Prompts (memo 3.3). "There is no internet access, and no pretrained models or files other than those in this directory are available." goes before "When the file is written, stop." in the writer, predictor, baseline and combined prompts. The memo's revision of 12 October, 02:20 adds to the writer prompt only, after "Anything beyond {B} bytes will be cut off.", the sentence "Use as much of the allowed size as helps; more detail is generally better." `round6_cheatsheet_prompts.py` was checked byte for byte against the instruction's revised 6.3, after `main` at `c3af6f3` was merged into the branch.
+5. Grid (memo 3.4). Opus 5.5 only, medium effort, one replicate per cell, 20 sessions. Two baselines (arm AB on S1*, arm C on S2*), six writers (arm AC and arm B at 4,096, 32,768 and 262,144 bytes), nine predictors (arms A, B and C at three sizes, A and C using the AC writers), three combined sessions (arms A, B and C). Writers before their predictors, otherwise any order. The plan is `results/round6/cheatsheet/C2_grid/plan.csv`.
+6. Concurrency (memo 3.5). Up to four trials at once in this one session. Memory is sampled every 10 seconds by `round6_cheatsheet_memwatch.py` into `results/round6/cheatsheet/C2_grid/memory.csv`, and the runner drops to three at once if the container's used memory passes 12 GB.
+7. Escalation answers (memo 3.6). E1, every arm uses 1,741 S1 and 1,293 S2 spots. E2, the C3 report says the overview is a mosaic of patches. E5, every committed file is scanned. E7 to E9, costs are Claude Code's estimates at API prices.
+
+**C3 (instruction section 7, unchanged) with the memo's four additions.**
+1. Opus's four pilot slots at medium beside their high-effort references, with cost, turns and wall time, and Haiku's and Sonnet's high-effort pilot values as reference points.
+2. Per trial, the counts of refused network attempts and empty-directory listings.
+3. C2's cost and wall time per role, against the C1 projection.
+4. Whether medium effort costs accuracy at Opus's four pilot slots, saying that with one trial per slot a difference under about 0.05 cannot be told from chance.
+5. From the revision of 02:20, each cheatsheet's bytes written beside its allowance, and accuracy plotted against both. The pilot's Opus writer saw no such sentence, so its slot differs from C2's in effort, the no-internet sentence and this one.
+
+**Paths.** Final report `docs/round06/i02/cheatsheet/round06_cheatsheet_final_report.md`. Results under `results/round6/cheatsheet/C2_grid/` and `results/round6/cheatsheet/C3_report/`. Transcripts to `NicWYZ/hest-r6-data` under `transcripts/C2_grid/`. Tag `round6-cheatsheet-final`.
+
+**Predictions, as the memo sets them.** C.2 to C.5 stand, read as statements about Opus on single values. C.6 cannot be tested and is reported as not tested. C.1 was scored at C1 and is scored again on Opus's medium-effort baseline. Two are added.
+- **C.7** At Opus's four pilot slots, its medium-effort score is within 0.08 of its high-effort reference.
+- **C.8** Opus's cost per trial at medium effort is at most two thirds of its cost at high effort, averaged over those four slots.
 

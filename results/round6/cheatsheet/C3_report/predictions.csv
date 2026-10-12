@@ -1,0 +1,9 @@
+id,prediction,outcome,score,note
+C.1,"At b = 0, Opus's rbar on S1* is between 0.05 and 0.35, and Haiku's is below Opus's","Opus at medium 0.427 (at high in C1, 0.502); Haiku's pilot value is at high effort",refuted,the range clause fails at both efforts; the Haiku clause compares across efforts and is not tested at medium
+C.2,In arm C no model reaches the uni_v2 comparator's rbar on S2* at any finite size,"Opus 0.647, 0.652, 0.672 against 0.683",held,for Opus only; the margin at 262144 is under 0.05
+C.3,"In arm C Opus's combined session is above its own 262,144-byte value and below the uni_v2 comparator","combined 0.581, 262144 0.672, head 0.683",partly held,"below the head, but not above the 262144 value"
+C.4,"In arm A no model reaches 0.8 at 32,768 bytes, and at least one reaches it at 262,144","Opus 0.654 at 32768, 0.903 at 262144",held,for Opus only
+C.5,"In arm B, rbar at 262,144 is within 0.05 of 32,768 and below arm A at 262,144",B 0.554 and 0.621 (difference 0.067); A at 262144 0.903,partly held,"the first clause fails, the second holds"
+C.6,"Replicate means ordered Opus, Sonnet, Haiku in two thirds of arm and size pairs",only Opus ran in C2,not tested,"C1 memo, section 4"
+C.7,"At Opus's four pilot slots, medium is within 0.08 of the high-effort reference",baseline 0.427 vs 0.502; predictor 0.554 vs 0.600; combined 0.684 vs 0.698; the writer slot has no score of its own,held,scored on the three slots with a score; the baseline is within 0.08 by under 0.01
+C.8,"Opus's cost per trial at medium is at most two thirds of high, averaged over the four slots","ratio 0.43 against the rule (b) references, 0.36 against rule (a)",held,

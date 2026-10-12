@@ -7,7 +7,11 @@ ID; a second failure marks the slot failed. A trial the scanner excludes, or
 one interrupted by a reclaimed container, is rerun and does not count as a
 failure (instruction 6.4, 6.5, section 5).
 
-    python round6_cheatsheet_run.py PLAN_CSV --stage C1_pilot [--parallel 2]
+    python round6_cheatsheet_run.py PLAN_CSV --stage C1_pilot [--parallel 2] [--effort high]
+
+From C2 on (C1 memo, sections 3.1, 3.2 and 3.5) every trial runs at medium
+effort, the scanner excludes by rule (b), and up to four trials run at once.
+The C1 pilot ran at high effort under rule (a), two at once.
 
 Committed outputs, under results/round6/cheatsheet/<stage>/
   manifest.csv          one row per trial (attempt), the fields of 6.4
@@ -55,9 +59,11 @@ MANIFEST_COLS = [
     "writer_trial_id", "session_id", "status", "fail_reason", "bytes_written", "bytes_kept",
     "input_tokens", "output_tokens", "cache_read", "cache_write", "cost_usd", "turns", "wall_s",
     "claude_code_version", "served_model", "result_subtype", "started_utc", "finished_utc", "rbar",
-    "n_constant_pred", "scan_excluding_hits", "scan_system_paths",
+    "n_constant_pred", "scan_excluding_hits", "scan_system_paths", "effort", "scan_rule",
+    "scan_network_attempts", "scan_outside_paths", "scan_credential_refs",
 ]
 LOCK = threading.Lock()
+MEM_FLAG = os.path.join(PRIVATE, "mem_over_limit")  # written by round6_cheatsheet_memwatch.py
 
 
 def now():
@@ -87,7 +93,8 @@ def truncate_utf8(data, b):
 
 
 class Stage:
-    def __init__(self, plan_csv, stage, parallel, out=None):
+    def __init__(self, plan_csv, stage, parallel, out=None, effort="medium", rule="b"):
+        self.effort, self.rule = effort, rule
         self.plan = pd.read_csv(plan_csv, dtype=str).fillna("")
         self.stage = stage
         self.out = out or os.path.join(REPO, "results/round6/cheatsheet", stage)
@@ -142,7 +149,7 @@ class Stage:
         if blind:
             raise RuntimeError(f"I4 blinding hit in {tid}: {blind[:3]}")
         prompt = PR.prompt_for(r["role"], r["size"] if r["role"] == "writer" else None)
-        res = C.run(d, r["model"], prompt, self.logs, tid, max_turns=80)
+        res = C.run(d, r["model"], prompt, self.logs, tid, max_turns=80, effort=self.effort)
         s = C.summarise(res["stream"])
         row.update({"session_id": res["session_id"], "wall_s": res["wall_s"], "served_model": s["served_model"],
                     "claude_code_version": s["claude_code_version"], "turns": s["num_turns"],
@@ -154,10 +161,14 @@ class Stage:
         status, reason, extra = self.collect(r, tid, d, maps, raw)
         row.update(extra)
         # transcript: scan, compress, md5
-        hits = S.scan_transcript(res["stream"], tid)
+        hits = S.scan_transcript(res["stream"], tid, rule=self.rule)
         excl = [h for h in hits if h["excludes"]]
         row["scan_excluding_hits"] = len(excl)
-        row["scan_system_paths"] = sum(1 for h in hits if not h["excludes"])
+        row["scan_system_paths"] = sum(1 for h in hits if h["kind"] == "path_system")
+        row["scan_network_attempts"] = sum(1 for h in hits if h["kind"] == "url")
+        row["scan_outside_paths"] = sum(1 for h in hits if h["kind"] == "path")
+        row["scan_credential_refs"] = sum(1 for h in hits if h["kind"] == "credential_ref")
+        row["effort"], row["scan_rule"] = self.effort, self.rule
         if excl and status == "done":
             status, reason = "excluded", "scanner: " + "; ".join(sorted({h["kind"] for h in excl}))
         gz = os.path.join(self.tx, f"{tid}.jsonl.gz")
@@ -244,6 +255,9 @@ class Stage:
         running = {}
         with ThreadPoolExecutor(self.parallel) as ex:
             while True:
+                if self.parallel > 3 and os.path.exists(MEM_FLAG):  # C1 memo 3.5
+                    print(now(), "memory passed 12 GB, running at most three at once", flush=True)
+                    self.parallel = 3
                 for r in self.ready(running):
                     if len(running) >= self.parallel:
                         break
@@ -302,9 +316,11 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("plan")
     ap.add_argument("--stage", required=True)
-    ap.add_argument("--parallel", type=int, default=2)
+    ap.add_argument("--parallel", type=int, default=4)
+    ap.add_argument("--effort", default="medium")
+    ap.add_argument("--rule", default="b", choices=["a", "b"])
     ap.add_argument("--out", default=None, help="only for smoke tests outside results/")
     a = ap.parse_args()
-    st = Stage(a.plan, a.stage, a.parallel, a.out)
+    st = Stage(a.plan, a.stage, a.parallel, a.out, a.effort, a.rule)
     provenance(st.out, " ".join(sys.argv))
     st.run()

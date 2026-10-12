@@ -1,0 +1,15 @@
+trial_id,slot,arm,size,model,replicate,role,writer_trial_id,rbar,n_constant_pred
+bb8dd75f,opus.combined.B.inf.r1,B,inf,claude-opus-5-5,1,combined,,0.6837061987420364,0
+1890b351,opus.combined.A.inf.r1,A,inf,claude-opus-5-5,1,combined,,0.9237033988864002,0
+3220d38e,opus.baseline.AB.0.r1,AB,0,claude-opus-5-5,1,baseline,,0.42745603107207364,0
+a5ffd417,opus.baseline.C.0.r1,C,0,claude-opus-5-5,1,baseline,,0.3451353446463267,0
+20f82047,opus.predictor.A.4096.r1,A,4096,claude-opus-5-5,1,predictor,54ff6aa7,0.5703474097550479,0
+563b17b6,opus.predictor.A.32768.r1,A,32768,claude-opus-5-5,1,predictor,2f377ae5,0.6539353605663186,0
+0d3a10c6,opus.predictor.A.262144.r1,A,262144,claude-opus-5-5,1,predictor,8cd478c7,0.9025543256493022,0
+83f473fd,opus.predictor.B.4096.r1,B,4096,claude-opus-5-5,1,predictor,8ed62d30,0.491411688405598,0
+3ac51704,opus.predictor.B.32768.r1,B,32768,claude-opus-5-5,1,predictor,82963062,0.5544613835652744,0
+71142368,opus.predictor.B.262144.r1,B,262144,claude-opus-5-5,1,predictor,c381fe74,0.6212921439333499,0
+fa76d63c,opus.combined.C.inf.r1,C,inf,claude-opus-5-5,1,combined,,0.5805871872677228,0
+ddd6cf04,opus.predictor.C.262144.r1,C,262144,claude-opus-5-5,1,predictor,8cd478c7,0.6719708857593012,0
+39d268c2,opus.predictor.C.32768.r1,C,32768,claude-opus-5-5,1,predictor,2f377ae5,0.6522909316305029,0
+586e1447,opus.predictor.C.4096.r1,C,4096,claude-opus-5-5,1,predictor,54ff6aa7,0.6469840503297368,0

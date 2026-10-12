@@ -12,6 +12,8 @@ Departures from the instruction's command, recorded in the plan:
   Claude Code's bundled skills in the session (flag F11).
 - no authentication variables are passed by default: C0.1's leave-one-out
   test found that the child authenticates with none of them (flag F3).
+- reasoning effort is a parameter. C0 and the C1 pilot ran at high; from C2
+  on every trial runs at medium (C1 memo, section 3.1), which is the default.
 
     python round6_cheatsheet_child.py TRIAL_DIR MODEL PROMPT_FILE [--max-turns 80]
            [--auth-vars VAR ...] [--timeout SECONDS]
@@ -42,7 +44,7 @@ DEFAULT_AUTH_VARS = [
 TOOLS = "Bash,Read,Write,Edit,Glob,Grep"
 
 
-def command(trial_dir, model, prompt, session_id, max_turns, auth_vars):
+def command(trial_dir, model, prompt, session_id, max_turns, auth_vars, effort="medium"):
     auth_env = [f"{v}={os.environ[v]}" for v in auth_vars if v in os.environ]
     bw = [
         "bwrap", "--unshare-all", "--new-session", "--die-with-parent",
@@ -61,11 +63,11 @@ def command(trial_dir, model, prompt, session_id, max_turns, auth_vars):
         "env", "-i", "PATH=/usr/bin:/bin:/opt/node22/bin", "HOME=/work",
         "HTTPS_PROXY=http://127.0.0.1:3128", "https_proxy=http://127.0.0.1:3128",
         f"SSL_CERT_FILE={CA_BUNDLE}", f"NODE_EXTRA_CA_CERTS={CA_BUNDLE}",
-        "CLAUDE_CODE_EFFORT_LEVEL=high",
+        f"CLAUDE_CODE_EFFORT_LEVEL={effort}",
     ] + auth_env
     cl = [
         "claude", "--safe-mode", "--disable-slash-commands", "-p", prompt,
-        "--session-id", session_id, "--model", model, "--effort", "high",
+        "--session-id", session_id, "--model", model, "--effort", effort,
         "--tools", TOOLS,
         "--disallowedTools", "WebFetch", "WebSearch", "Agent",
         "--allowedTools", "Read", "Write", "Edit", "Glob", "Grep", "Bash",
@@ -76,10 +78,10 @@ def command(trial_dir, model, prompt, session_id, max_turns, auth_vars):
     return bw + env + cl
 
 
-def run(trial_dir, model, prompt, log_dir, name, max_turns=80, auth_vars=None, timeout=4 * 3600):
+def run(trial_dir, model, prompt, log_dir, name, max_turns=80, auth_vars=None, timeout=4 * 3600, effort="medium"):
     os.makedirs(log_dir, exist_ok=True)
     sid = str(uuid.uuid4())
-    cmd = command(trial_dir, model, prompt, sid, max_turns, [] if auth_vars is None else auth_vars)
+    cmd = command(trial_dir, model, prompt, sid, max_turns, [] if auth_vars is None else auth_vars, effort)
     out = os.path.join(log_dir, f"{name}.stream.jsonl")
     err = os.path.join(log_dir, f"{name}.stderr.txt")
     t0 = time.time()
@@ -140,8 +142,9 @@ if __name__ == "__main__":
     ap.add_argument("--max-turns", type=int, default=80)
     ap.add_argument("--timeout", type=int, default=4 * 3600)
     ap.add_argument("--auth-vars", nargs="*", default=None)
+    ap.add_argument("--effort", default="medium")
     a = ap.parse_args()
     r = run(a.trial_dir, a.model, open(a.prompt_file).read(), a.log_dir, a.name,
-            a.max_turns, a.auth_vars, a.timeout)
+            a.max_turns, a.auth_vars, a.timeout, a.effort)
     r.update(summarise(r["stream"]))
     print(json.dumps(r))
