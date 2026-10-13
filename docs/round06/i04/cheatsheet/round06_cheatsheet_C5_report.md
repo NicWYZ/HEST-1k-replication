@@ -10,7 +10,7 @@ One thing changed from the instruction during the interval, by Nicolas's decisio
 
 ## 2. What was run
 
-**Commits.** The branch `round6-cheatsheet-ext` started from `4230b713` and was fast-forwarded to `1cb6b08f` when the instruction's revision of 12 October, 15:30 arrived, before it had a commit of its own. Its commits are listed by `git log 1cb6b08f..round6-cheatsheet-C5`.
+**Commits.** The branch `round6-cheatsheet-ext` started from `4230b713` and was fast-forwarded to `1cb6b08f` when the instruction's revision of 12 October, 15:30 arrived, before it had a commit of its own. Its commits are listed by `git log 1cb6b08f..round6-cheatsheet-C5`. The tag `round6-cheatsheet-C5` is at `1058d5f8`, and one later commit adds this sentence. The pull request is number 25 of `NicWYZ/HEST-1k-replication`, confirmed open on GitHub. The transcripts are in `NicWYZ/hest-r6-data` at commit `7a6b15a`, under `transcripts/ext/C4/` and `transcripts/ext/C5/`.
 
 **Scripts.** All are `code/scripts/round6_cheatsheet_ext_*`, with md5s in each stage's `PROVENANCE.txt` under `R`. They are the Dockerfile and the container's start script, the filtering proxy with its direct mode and its `start.sh` (committed, as the closing memo of round 6 asked), the child runner, the probes, the scanner, the packaging script, the comparators, the prompts, the mechanical check, the builder, the harness, the scorer with its tests, and the pilot's summary script.
 
