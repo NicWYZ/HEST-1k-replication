@@ -8,11 +8,14 @@ Living document of the execution session. Started 13 October 2026. The instructi
 - **Branch.** `round7-fedlearn` in `~/hest-1k/HEST-1k-replication-fedlearn`, created from the starting commit. Not pushed.
 - **Starting commit.** `3c328ccc4d68b44d0795cfb9c91ff332c3b399d3`. It is the only commit on `main` that touches the instruction, so it carries both revision lines of 13 October. `main` was at `b84187b65b61365e1348ba2d5c98b43c606f27e1` when the branch was made, one commit later, and that commit changes only `CLAUDE.md`.
 - **Longleaf.** Reached on 13 October from `longleaf-login4`. The project tree is on `main` at `9d7277dc8c4bfade08d5895051666ee134b8396a` (tag `round4-data-v2`), read with `git --no-optional-locks`. `results/round7/` does not exist there yet. The project's environment has `h5py`, `anndata`, `pyarrow` and `zarr`.
-- **Code clone on Longleaf.** Not yet made.
-- **Jobs.** None submitted.
+- **Code clone on Longleaf.** Job 1 submitted 13 October as Slurm 4803248, pending at the time of writing.
+- **Jobs.** See the job ledger. Job 1 was moved while pending from `rc_htzhu_pi` to `rc_tengfei_pi` with `scontrol update`, as section 4 allows.
+- **F1.** The seven theme sub-agents T1 to T7 were dispatched on 13 October while the F0 jobs queue, since the instruction has the inventory job run while F1 proceeds and there is no gate between F0 and F1. Their frame ids are in the sub-agent table below.
 - **Last delivered commit.** None.
 - **Papers folder.** `~/hest-1k/fedlearn_papers/` exists and is empty. The session has read and write access to it.
-- **Next action.** Write the search protocol, then the inventory script, then the three jobs of F0.
+- **F1 progress.** All seven theme fragments returned (488 rows, merged into 404 papers in `results/round7/fedlearn/F1_search/evidence_table.csv`, 695 search-log rows). The lead chose 84 core papers and re-verified each record against Crossref, PubMed, Europe PMC, arXiv or a proceedings page. Five core papers without an open full text were sent to Nicolas on 13 October (`paper_requests.md`). Three reader sub-agents are reading the 22 core papers that were at abstract level and have open copies.
+- **Read level.** In this track "full text" means the full text was opened and its methods, results and discussion were read where they bear on the questions, not every line. Several fragments used the same definition. Where only a preprint version was read, the row says so.
+- **Next action.** Submit job 2 when job 1 has finished and been checked, then job 3. Fold the readers' notes into the evidence table and commit F1.
 
 ## Extensions
 
@@ -197,7 +200,7 @@ A query with no relevant hits is a row of the search log with `included = 0`, an
 
 | # | stage | purpose | Slurm id | account, partition | state | output |
 |---|---|---|---|---|---|---|
-| 1 | F0 | make the Longleaf code clone | | | not submitted | |
+| 1 | F0 | make the Longleaf code clone | 4803248 | submitted on `rc_htzhu_pi`, moved while pending to `rc_tengfei_pi`; `spill` | pending | |
 | 2 | F0 | deliver the first bundle and write the snapshot | | | not submitted | |
 | 3 | F0 | the inventory of F2 step 4 | | | not submitted | `results/round7/fedlearn/F2_inventory/` |
 
@@ -208,6 +211,30 @@ Job names carry the prefix `r7fl_` and the stage in `PROVENANCE.txt`, because th
 - **Job 1** clones `git@github.com:NicWYZ/HEST-1k-replication.git` over the SSH key on Longleaf into `/work/users/w/e/weiyang/hest_code/round7-fedlearn/`, then runs `git checkout -b round7-fedlearn 3c328ccc4d68b44d0795cfb9c91ff332c3b399d3`, since the branch is not on GitHub before the F2 push. It prints HEAD and confirms it equals the starting commit. From then on the clone never fetches from GitHub.
 - **Job 2** applies `git bundle create r7fl_delivery_01.bundle 3c328ccc4d68b44d0795cfb9c91ff332c3b399d3..round7-fedlearn`, copied to Longleaf, with `git bundle verify`, `git fetch <bundle> round7-fedlearn` and `git merge --ff-only FETCH_HEAD`. It then writes `/work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/<full hash>/` with `git archive <hash> code | tar -x` and removes write permission. Its log comes back as `results/round7/fedlearn/deliveries/delivery_01_job<id>.log`, and it is row 1 of `results/round7/fedlearn/code_deliveries.csv`, in the columns of round 5's file.
 - **Job 3** runs `code/scripts/round7_fedlearn_f2_inventory.py` from that snapshot, with the snapshot's `code/scripts` on `PYTHONPATH`, from its own output directory `results/round7/fedlearn/F2_inventory/` in the project tree, with the project's Python by absolute path, 4 CPUs and an explicit memory request.
+
+## Sub-agents of F1
+
+| theme | questions | frame id | fragment directory |
+|---|---|---|---|
+| T1 | Q6 | `9ef88f09-c873-4961-9afd-06411f9bd293` | `results/round7/fedlearn/F1_search/fragments/T1/` |
+| T2 | Q3;Q5 | `2cf11025-bf4b-4547-900c-6b9c4434b588` | `results/round7/fedlearn/F1_search/fragments/T2/` |
+| T3 | Q1;Q2 | `7ed66b13-b09f-4181-a1e3-213a2cc78a1c` | `results/round7/fedlearn/F1_search/fragments/T3/` |
+| T4 | Q7 | `3ce4ad9b-dd8e-4531-baf4-4dd3de2ac9e1` | `results/round7/fedlearn/F1_search/fragments/T4/` |
+| T5 | Q4 | `54a93196-a4cd-4da2-a1cb-d4c8212f1a14` | `results/round7/fedlearn/F1_search/fragments/T5/` |
+| T6 | Q5 | `50761697-26e9-4ab1-8b77-399ef856c709` | `results/round7/fedlearn/F1_search/fragments/T6/` |
+| T7 | Q8;Q9 | `5dc14bbb-9e27-4a40-9cc1-5ff30d21aa49` | `results/round7/fedlearn/F1_search/fragments/T7/` |
+
+Each brief carries the theme's questions, section 2.3 and section 2.4 of the instruction, the theme's query set, the literature rules of section 4, the fragment format and the sentence "Write only into your fragment directory, run no git command, and cite nothing you have not opened." Full texts go to `~/hest-1k/fedlearn_papers/<theme>/`. The searching sub-agents run at the session's default sub-agent tier.
+
+### Readers of F1 step 4
+
+| reader | frame id | papers |
+|---|---|---|
+| Reader 1 | `15c936b1-0606-43e5-9b70-011349229b58` | P001, P006, P183, P267, P287, P293, P321, P401 |
+| Reader 2 | `9cb95535-96d1-4676-8bf2-00ae8b6035a2` | P003, P042, P205, P268, P289, P294, P329 |
+| Reader 3 | `723116ff-235c-4bc8-9760-7dacadead704` | P005, P131, P266, P273, P292, P315, P339 |
+
+Readers write `results/round7/fedlearn/F1_search/reading/R<k>/reading_notes.csv` and save full texts to `~/hest-1k/fedlearn_papers/reading/`.
 
 ## Section 7 of the instruction, transcribed
 

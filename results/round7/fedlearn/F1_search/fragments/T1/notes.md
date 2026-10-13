@@ -1,0 +1,29 @@
+# T1 notes: prior art on federated expression-from-histology and federated omics (Q6)
+
+Searched 13 October 2026. Sources: PubMed (E-utilities), Europe PMC (including bioRxiv/medRxiv records), arXiv (API; website search for q01 after HTTP 429), web_search, NeurIPS and PMLR (local title matching over fetched listings), MICCAI (through web_search, because papers.miccai.org redirects to miccai.org, which is not on the allowlist). 95 rows in search_log.csv (28 query ids); 41 papers in evidence.csv. All statements below hold only within these sources and queries.
+
+## Q6 by topic
+
+**Federated prediction of expression from histology.** One paper found: PPML-Omics (doi 10.1126/sciadv.adh8601, PMID 38295178; preprint 10.1101/2022.03.23.485485). It wraps ST-Net in differentially private federated training; the reported metric is MSE (0.9108 and 0.9094 at epsilon 0.01 and 0.1, against 0.9083 central), not per-gene correlation, and the preprint text I read does not give the client count or any pooled-versus-federated learning curve. No other paper surfaced for q01, q02, q03, q07, q12, q13, q20, q22, q25 (PubMed 0 hits for q02, q03, q07; arXiv 0 for q02, q22, q25; NeurIPS, PMLR 0 title hits for all ten queries; MICCAI-worded searches returned only centralised expression-prediction papers and federated image classification).
+**Privacy-preserving, not federated:** privateST (10.1038/s41598-026-55961-4) is homomorphic-encryption inference with local training; PCC 0.317 against 0.324 unencrypted (100 genes, one test patient).
+**Nothing found** for: a head fitted on frozen foundation-model features from per-centre summary statistics (C1); centres with different gene panels; a federated nearest-neighbour expression database (C4); weak supervision from H&E plus bulk RNA-seq in a federation (C3); any learning curve over centres for histology-to-expression prediction.
+
+**Federated or swarm learning in computational pathology (classification and mutation labels, not expression).** Lu 2022 (10.1016/j.media.2021.102298), Saldanha 2022 (10.1038/s41591-022-01768-5; BRAF AUROC local 0.707-0.736, merged 0.757, swarm 0.763; also a 100-400 patients-per-site restriction test), Cong 2026 FedDFP (10.1038/s41746-026-02710-6, prompts on patch embeddings), encrypted federated learning for cancer imaging (10.1016/j.media.2023.103059), gastric swarm (10.1007/s10120-022-01347-0), FedWSIDD (MICCAI 2025), Di Salvo et al. (MICCAI 2025, DP generative model on foundation-model embeddings), Adnan 2022, Hosseini 2023, hyper-network WSI, simplified swarm (arXiv:2504.16732). Federated-versus-pooled comparisons exist here (Lu, Saldanha, the encrypted-FL paper, Cong); none predicts expression.
+
+**Federated learning in single-cell and spatial omics.** Cell-type annotation: scFed (10.1093/bib/bbad507), scPrivacy (10.1007/s11427-022-2224-4), scKSFD (10.1186/s12859-026-06508-x), SwarmMAP (10.1038/s41540-026-00667-6; heart F1 0.947, 0.957, 0.958 for 1, 2, 3 training studies; swarm average 0.907, p=0.937 against pooled), Clifti-GPT (10.1186/s13040-026-00582-w, federated scGPT), Tabula (10.1101/2025.01.06.631427; arXiv:2607.19400). Batch correction and summary-statistic methods: Federated Harmony (10.1371/journal.pcbi.1013526; includes 10x mouse-brain spatial data, expression only), FedscGen, fedRBE (arXiv:2412.05894), Flimma, FedProt, privateQTL, FPLIER (arXiv:2605.29587), federated tensor decomposition (arXiv:2606.24938), NoisyFlow. Spatial: INFL (arXiv:2603.28334) clusters spatial expression under federation, no histology. Swarm learning on transcriptomes: Warnat-Herresthal (10.1038/s41586-021-03583-3). Forward citations of PPML-Omics (30 records), scFed (7), FedscGen (4), Federated Harmony (3) contained no histology-to-expression federated paper.
+
+## Core candidates (marked yes in evidence.csv)
+PPML-Omics, privateST, scFed, Federated Harmony, SwarmMAP, fedRBE, Saldanha 2022, Lu 2022, Cong 2026, INFL. Reasons: they are the nearest prior art to Q6 or give federated-versus-pooled or data-scaling evidence.
+
+## Read levels and what was not retrieved
+Full text read (sections relevant to Q6): PPML-Omics (preprint version only), privateST, Saldanha, Federated Harmony, INFL. For scFed, SwarmMAP, Lu, Cong, fedRBE, FedscGen, Warnat-Herresthal, the encrypted-FL paper, scKSFD and scPrivacy the full text was retrieved to fedlearn_papers/T1 but I read the abstract plus targeted windows only; they are marked abstract only. Not retrieved: the published Science Advances text of PPML-Omics (10.1126/sciadv.adh8601), bioRxiv full text of Tabula (10.1101/2025.01.06.631427), Hosseini TMI 2023 (10.1109/tmi.2023.3234450, abstract only). Lead may request these.
+
+## Discrepancies
+- fedRBE: arXiv:2412.05894 now carries the title "Batch effects can impair federated learning in multi-center omics studies" (v2, adds Hartebrodt as author); the FedRBE title in the brief belongs to v1.
+- scFed: Crossref year 2023 (online 13 Jan 2024); volume 25 issue 1 as described.
+- PPML-Omics: record agrees (Zhou et al., Sci Adv 10(5)); only the preprint text was available to me.
+- Lu et al.: the DP claim has no epsilon value in the text I extracted; a web summary (Pith) makes the same criticism, which I did not rely on.
+- Not verified here (outside T1): Tsai FedSDA (AAAI 2026), Kairouz, FedAvg and other [verify] items belong to other themes.
+
+## Limits
+NeurIPS listings covered main track 2016-2024 and only 64 titles for 2025; no NeurIPS Datasets and Benchmarks listing. PMLR: 43 volumes not retrieved. Europe PMC and PubMed screening used title screening with a keyword pre-filter beyond the first 100 for hits above 100 (first 100 by relevance only); q02, q03 and q07 titles were read in full. PubMed and arXiv all-words queries are strict, so loose phrasings (q11 to q27) were added on Europe PMC and arXiv. Web search returns about nine results per query, so web hit counts are not totals. The limits above are the only reductions in scope.
