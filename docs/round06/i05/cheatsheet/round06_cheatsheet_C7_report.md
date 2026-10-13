@@ -8,7 +8,7 @@ C6 (the grid) and C7 (the analysis) are complete. All 31 sessions of C6 ended wi
 
 ## 2. What was run
 
-**Commits.** The branch `round6-cheatsheet-ext` was fast-forwarded to `main` at `509d9387`, the merge of pull request #25, and its commits since are listed by `git log 509d9387..round6-cheatsheet-C7`. The C5 decision memo was transcribed into the plan's section 4f before C6 started.
+**Commits.** The branch `round6-cheatsheet-ext` was fast-forwarded to `main` at `509d9387`, the merge of pull request #25, and its commits since are listed by `git log 509d9387..round6-cheatsheet-C7`. The C5 decision memo was transcribed into the plan's section 4f before C6 started. The tag `round6-cheatsheet-C7` is at `faf3ca8c`, and one later commit adds this sentence. The pull request is number 26 of `NicWYZ/HEST-1k-replication`, confirmed open on GitHub.
 
 **Scripts.** The harness is unchanged since C5. The md5 of every script is in `R/C6_grid/PROVENANCE.txt` and `R/C7_report/PROVENANCE.txt`. One script is new, `code/scripts/round6_cheatsheet_ext_c7_analysis.py`.
 
