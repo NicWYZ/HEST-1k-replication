@@ -1,0 +1,12 @@
+stage: C4.3 data package
+machine: Nicolas's Mac (arm64, macOS 26.6.2), in the container r6ext (image r6ext:1), by his decision of 12 October (plan section 4-bis)
+date_utc: 2026-10-12T23:58:48+00:00
+code_commit: fb104a58 (the packaging script is unchanged since a3e2d388)
+command: /opt/harness/bin/python -B /repo/code/scripts/round6_cheatsheet_ext_package.py --proj /private/tree --out package
+PYTHONHASHSEED: 0
+inputs: a copy by rsync of the project tree's CCRCC files from Longleaf, 96 files, every md5 equal to Longleaf's (tree_md5_longleaf.txt in the private folder)
+python: Python 3.13.5
+versions: numpy 2.5.3 anndata==0.12.19 h5py==3.16.0 pandas==2.3.3 pillow==12.3.0 pyarrow==26.0.0 scanpy==1.11.5 scikit-learn==1.9.1
+script_md5:
+  af22623150e4780d514f5bcac3e68e43  round6_cheatsheet_ext_package.py
+package_manifest_md5: 9c6308763ad75e95d8bc672b3e3e7d29

@@ -1,0 +1,15 @@
+stage: C4.2 I4 blinding
+machine: Nicolas's Mac (arm64, macOS 26.6.2), in the container r6ext (image r6ext:1), by his decision of 12 October (plan section 4-bis)
+date_utc: 2026-10-13T00:01:26+00:00
+code_commit: fb104a58, with the scripts' md5s below
+command: round6_cheatsheet_ext_build.build() for each of the five roles, then round6_cheatsheet_ext_scan.scan_tree()
+PYTHONHASHSEED: 0
+python: Python 3.13.5
+versions: anndata==0.12.19 h5py==3.16.0 numpy==2.5.3 pandas==2.3.3 pillow==12.3.0 pyarrow==26.0.0 scanpy==1.11.5 scikit-learn==1.9.1 scipy==1.18.1 (system numpy 2.5.3 is the one in use)
+data_package_manifest_md5: 9c6308763ad75e95d8bc672b3e3e7d29
+script_md5:
+  fcc3782a0699e2789d38c5e144ece709  round6_cheatsheet_ext_build.py
+  4fdedb30208b0cf9e9cfe36444177b0d  round6_cheatsheet_ext_scan.py
+  34c1a4c11885c85d035c04adc1b7c2e0  round6_cheatsheet_scan.py
+  164121a26e077cc39faeae7ccb19c0c4  round6_cheatsheet_ext_prompts.py
+  a84b5878f1c2f06c661969af06d078f3  round6_cheatsheet_ext_check_cheatsheet.py

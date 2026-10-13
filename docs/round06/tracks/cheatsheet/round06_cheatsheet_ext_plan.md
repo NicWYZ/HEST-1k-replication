@@ -54,16 +54,28 @@ By Nicolas's decision of 12 October (hard rule 7 in `CLAUDE.md`), the agent tria
 | every trial, writer revision and checker audit (C5, C6), each a separate headless Claude Code process in its own confinement | Nicolas's decision |
 | scoring and analysis (C5, C7) | Nicolas's decision |
 
+## 4-bis. Change of 12 October, evening. Data preparation and comparators move to the Mac
+
+Job 4674826 waited in the Longleaf queue for about four hours behind 824 jobs of higher priority, with the account's fair share at 0.013. Nicolas then wrote in chat, "just rsync the data to my disk what are we even waiting for longleaf for". By that decision C4.3 and C4.4 run on the Mac, which changes hard rule 7's split for this track. The job was cancelled before it started.
+
+| what now runs locally | why |
+|---|---|
+| a copy by `rsync` from the project tree on Longleaf to `~/hest-1k/r6ext_private/tree/`, about 10 GB. The patch files of the 10 slides, the count files and both encoders' embeddings of all 24 slides, the splits, the gene list and HEST's metadata table | Nicolas's decision. The 24 slides are needed for the anchor, whose split uses slides outside the 10 |
+| the packaging script, unchanged, in the container | Nicolas's decision |
+| the anchor and the comparators, unchanged, in the container | Nicolas's decision |
+
+The copy sits in the private folder, which no trial can see and which never enters either repository. Nothing on Longleaf is changed. The container's harness environment gains `h5py`, `anndata` and `scanpy` for these two steps, in `/opt/harness`, which no trial's confinement binds, so a trial's Python is unchanged. scikit-learn is 1.9.1 on both machines. The raw patch files are deleted from the Mac once the package's md5s are recorded, since the disk has under 20 GB free and they remain on Longleaf.
+
 ## 4a. Progress
 
 - [x] Clone, branch and this plan (12 October).
 - [x] Section 11 of the instruction, Nicolas's part, checked on 12 October (G1 to G3).
 - [x] C4.1 child sessions (12 October, section 4b).
-- [x] C4.2 isolation, I1 to I3 (12 October, section 4c). I4 waits for the package. The canaries stay in place until it passes.
-- [ ] C4.3 the data package. Job 4674826 was submitted on 12 October at commit `a3e2d388` and was still pending in the queue when this was written. Job 4674823, submitted a minute earlier with a mistyped commit hash, was cancelled before it started.
-- [ ] C4.4 comparators. The scripts are written. The job is submitted once the package exists.
-- [ ] C4.5 harness and scorer. The scripts are written and pass their tests on a synthetic package. The tests on the real package and on round 6's cheatsheets with this task's gene list are still to run.
-- [ ] C5 pilot and report (gate).
+- [x] C4.2 isolation, I1 to I4 (12 October, section 4c). The canaries were removed after I4 passed.
+- [x] C4.3 the data package, on the Mac (12 October, sections 4-bis and 4e). Jobs 4674823 (mistyped commit hash) and 4674826 (four hours in the queue) were both cancelled before they started.
+- [x] C4.4 the anchor and the comparators, on the Mac (12 October, section 4e).
+- [x] C4.5 harness and scorer tests (12 October, section 4e).
+- [ ] C5 pilot and report (gate). The baseline, then the writer at 4,096 bytes with its audit loop, then its predictor.
 
 ## 4b. C4.1, child sessions on the Mac
 
@@ -92,6 +104,19 @@ Two things the probes showed that are recorded and not fixed.
 
 - A trial can read `bwrap`'s own command line in `/proc/1/cmdline`. It holds the trial's own path under `/trials` and the proxy folder's name, and nothing about the task or the data.
 - The I3 probe's instruction names `curl`, which the image does not have, so the fetches were made with Python only.
+
+## 4e. C4.3 to C4.5, what the files show
+
+- **Package** (`results/round6/cheatsheet_ext/C4_package/`). 78 files, every md5 equal to its manifest entry. The two draws are those of section 3 (`draws.json`). Every one of the 10 slides has as many patched spots as the inventory's spots under tissue (`package_summary.json`).
+- **FFPE.** The inventory and HEST's own table give the same `subseries` strings, 12 of them `ccRCC tumor ffpe_*`, from 12 distinct patients (`ffpe_check.csv`). HEST's `preservation_method` column is empty for all 24 slides, so the subseries string is the only evidence of preservation in either table.
+- **Target.** Counts are integers, and the target equals scanpy's `log1p` to within 3e-7 on every slide, so it is the natural log of one plus the count and the prompts' phrase stands.
+- **Pixels and frame.** The patch files' `patch_size` is 245 full-resolution pixels for 112 micrometres (244 on `INT18`), so a 224-pixel patch is at 0.5 micrometres per pixel. The stored coordinates were transposed on all 10 slides, as round 6's flag F16 found on its slides, and are corrected in the package. On `INT18` the overlap check had only 3 and 4 usable pairs, so its mosaic was also looked at, and it shows continuous tissue.
+- **Representativeness** (`representativeness.csv`). Nine slides fail on 0 to 3 of 50 genes. `INT24`, a test slide, fails on 9, which is over the limit of 5. Its sample is kept and this is an escalation for the C5 report.
+- **I4** (`C4_blinding/i4_tree_scan.csv`). One trial directory of each of the five kinds, built from the real package, has no blinded name in any path, text file or PNG metadata.
+- **Anchor** (`C4_comparators/tables/anchor.csv`). The head on round 1's split 0 gives 0.2205 for `uni_v2` and 0.2377 for `virchow2`, against round 1's 0.2205 and 0.2378. Both are within 0.01.
+- **Comparators** (`C4_comparators/tables/comparators.csv`). On the 1,500 scored spots the `uni_v2` head fitted on the 3,500 writer spots has mean within-slide Pearson 0.184, and 0.221 when fitted on all 31,075 patched spots of the training slides. The `virchow2` head has 0.126 and 0.180. The codebook runs from -0.041 at 256 bytes to 0.151 at 16,384 bytes. No gene is constant in the measurements on any test slide.
+- **Scorer tests** (`C4_tests/score_test_real.json`). All five pass on the real test-slide values.
+- **Mechanical check on round 6's nine cheatsheets** (`C4_tests/check_cheatsheet_on_round6.csv`). Seven are flagged, among them every one with a code or table flag. The two not flagged are 3,816 and 6,990 bytes.
 
 ## 4d. Readings of the instruction made while building, for the C5 report
 

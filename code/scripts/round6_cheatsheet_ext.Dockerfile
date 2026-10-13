@@ -15,7 +15,7 @@ RUN pip3 install --no-cache-dir --break-system-packages \
         numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 Pillow==12.3.0 \
         scikit-image==0.26.0 scikit-learn==1.9.1
 RUN python3 -m venv --system-site-packages /opt/harness \
-    && /opt/harness/bin/pip install --no-cache-dir pyarrow
+    && /opt/harness/bin/pip install --no-cache-dir pyarrow h5py anndata==0.12.19 scanpy==1.11.5
 RUN npm install -g @anthropic-ai/claude-code@${CLAUDE_CODE_VERSION} && npm cache clean --force
 RUN mkdir -p /srv/r6_proxy && chown node:node /srv/r6_proxy
 CMD ["sleep", "infinity"]
