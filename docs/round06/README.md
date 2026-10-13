@@ -12,6 +12,7 @@ David proposed an experiment by email. An agent predicts the expression of 50 ge
 |---|---|---|---|---|---|---|
 | 12 Oct | cheatsheet | C1 | `i01/cheatsheet/round06_cheatsheet_C1_report.md` | `i02/cheatsheet/round06_cheatsheet_C1_decisions.md` | `round6-cheatsheet-C1` | #23 |
 | 12 Oct | cheatsheet | C3 | `i02/cheatsheet/round06_cheatsheet_final_report.md` | `i03/cheatsheet/round06_cheatsheet_final_decisions.md` | `round6-cheatsheet-final` | #24 |
+| 12 Oct | cheatsheet | C5 (extension) | `i04/cheatsheet/round06_cheatsheet_C5_report.md` | `i05/cheatsheet/round06_cheatsheet_C5_decisions.md` | `round6-cheatsheet-C5` | #25 |
 
 ## Documents
 
@@ -27,6 +28,9 @@ David proposed an experiment by email. An agent predicts the expression of 50 ge
 | `oversight/round06_cheatsheet_summary.md` | 12 Oct | the two-page summary of design, method, implementation, results and discussion, presented in place of slides |
 | `tracks/cheatsheet/round06_cheatsheet_plan.md` | 11 to 12 Oct, living, frozen 12 Oct | the session's operating plan, with flags F1 to F20 |
 | `i04/cheatsheet/round06_cheatsheet_ext_track.md` | 12 Oct, living | instruction for the extension, stages C4 to C7, with the slides, sampling, rubric, prompts, audit loop, isolation on the Mac, comparators and predictions X.1 to X.8 |
+| `i04/cheatsheet/round06_cheatsheet_C5_report.md` | 13 Oct | report at the C5 gate (C4 setup on the Mac and the pilot of three sessions) |
+| `i05/cheatsheet/round06_cheatsheet_C5_decisions.md` | 12 Oct | decision at C5. Harness accepted unchanged, the pilot counts, the grid runs as planned |
+| `tracks/cheatsheet/round06_cheatsheet_ext_plan.md` | 12 Oct, living | the extension session's operating plan |
 
 ## What the round established
 

@@ -3,6 +3,7 @@
 12 October 2026. Prepared by the oversight chat for a fresh local Claude Code session on Nicolas's Mac, which reaches Longleaf over SSH. This document is self-contained. It is kept current on `main`. When Nicolas tells you to check for updates, fetch `main`, read the "Revisions" list below and the masterplan's amendments, and transcribe what changed into your plan.
 
 **Revisions.**
+- 12 October, at the C5 gate (`docs/round06/i05/cheatsheet/round06_cheatsheet_C5_decisions.md`). Data preparation and comparators ran on the Mac rather than Longleaf, by Nicolas's decision in chat. The grid runs as section 7 plans it.
 - 12 October, 15:30. Longleaf is reached through Nicolas's existing `Host longleaf` alias and SSH key, and a shared connection is needed only if Duo prompts (5, 11). Section 11 says why the trials need their own token.
 - 12 October, before handover. An independent check found eleven problems, all fixed in place. The container mounts and the Mac-specific parts of the confinement (6.5), patient labels `P1` to `P7` and a mechanical check that no longer flags class letters or gene lists (6.1, 6.4), the mechanics of the audit loop (6.4), rubric clarifications with examples (6.4), `virchow2` as the second encoder (3, 6.7), the anchor's inputs (C4.4), the seeds and the sampling rule (6.1), and three gaps in the metric (6.7).
 

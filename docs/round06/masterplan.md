@@ -175,5 +175,7 @@ Written on 12 October 2026 by the oversight chat after Nicolas confirmed the des
 | R6-3 | Whether and when round 6's results, including the extension's, go to David | Nicolas | nothing is sent by any session |
 | R6-4 | The confinement's route on the Mac, a Linux container running round 6's confinement or another route with the same properties | the session, within the instruction's decision boundaries, reported at C5 | a Linux container `[proposed]` |
 
+**Amendment, 12 October, at the C5 gate** (`i05/cheatsheet/round06_cheatsheet_C5_decisions.md`). The data package and the comparators were built on Nicolas's Mac rather than Longleaf, at his request in chat, after a packaging job waited four hours in the queue. The grid runs as planned.
+
 **What closes the extension.** The C7 report is reviewed, its closing memo is written in `i06/cheatsheet/`, its pull request is merged, and the close check of the project-state-keeping skill runs again for round 6.
 
