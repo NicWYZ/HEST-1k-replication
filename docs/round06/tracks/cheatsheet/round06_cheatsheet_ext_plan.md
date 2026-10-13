@@ -76,8 +76,8 @@ The copy sits in the private folder, which no trial can see and which never ente
 - [x] C4.4 the anchor and the comparators, on the Mac (12 October, section 4e).
 - [x] C4.5 harness and scorer tests (12 October, section 4e).
 - [x] C5 pilot and report (13 October). The baseline, the writer at 4,096 bytes with one audit and no revision, and its predictor ran without a failure. The report is `docs/round06/i04/cheatsheet/round06_cheatsheet_C5_report.md`. Tag `round6-cheatsheet-C5`. The session stops here until the C5 decision memo arrives.
-- [ ] C6 the grid (section 4f), started 13 October.
-- [ ] C7 analysis and the closing report (gate, end of track).
+- [x] C6 the grid (13 October). 31 sessions, all valid on the first attempt, none excluded, three writers revised once and every final version passed. Outputs in `results/round6/cheatsheet_ext/C6_grid/`.
+- [x] C7 analysis and the closing report (13 October). Tables in `results/round6/cheatsheet_ext/C7_report/`, report `docs/round06/i05/cheatsheet/round06_cheatsheet_C7_report.md`, tag `round6-cheatsheet-C7`. The track ends here.
 
 ## 4b. C4.1, child sessions on the Mac
 

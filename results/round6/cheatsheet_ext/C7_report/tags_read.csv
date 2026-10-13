@@ -1,0 +1,10 @@
+size,writer,A1,A2,A3,A4,A5,A6,A7,differs_from_script,note
+256,ad72c3c0,True,True,True,False,False,True,False,A1 A3 A6,"three tissue classes are named in one line; the rule that expression tracks cellularity is a gradient by eye; ""Stain hue varies; ignore it"" is a caution"
+512,8d900dcf,True,True,True,False,False,True,True,A1 A3 A6,"five tissue classes with values; all genes lower in acellular tissue and highest in dense tumour; ignore hue"
+1024,f699b1b9,True,True,True,True,True,True,True,A3 A6,"cellularity rule; five section types by look; judge by cell density and form, not colour"
+2048,7c192e84,True,True,True,True,True,True,True,A3 A5 A6,"cell-density rule; six types described as section-wide tumour types; judge by cells, not stain colour"
+4096,d35a522f,True,True,True,True,True,True,True,none,"seven section types, five gene groups, a cellularity scaling rule"
+8192,1f2bc1d4,True,True,True,True,True,True,True,A3 A6,"six patterns with a full gene table per pattern; patch adjustments by what is visible; stain colour is not biology"
+16384,a7092022,True,True,True,True,True,True,True,A3 A6,"six tumour types with a full gene table per type; patch-content adjustments; ignore overall hue"
+32768,477e9a00,True,True,True,True,True,True,True,none,"seven phenotypes, one per training tumour by the file's own words, with a full gene table and a table of spreads"
+65536,c2adaa46,True,True,True,True,True,True,True,none,"seven section types, one per training section by the file's own words, with a section-average table, two compartment tables and a line per gene"

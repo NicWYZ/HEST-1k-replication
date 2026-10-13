@@ -1,0 +1,14 @@
+{
+ "pass": false,
+ "violations": [
+  {
+   "lines": "141-142",
+   "rule": "F6",
+   "reason": "It tells the reader to pool several patches from the same case to choose the tumour type, which uses case/section membership as a predictor rather than anything visible in the single patch being judged, contrary to the one-patch test."
+  }
+ ],
+ "audit_id": "995b9bd4",
+ "writer": "a7092022",
+ "version": 1,
+ "size": 16384
+}

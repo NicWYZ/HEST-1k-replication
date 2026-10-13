@@ -1,0 +1,14 @@
+{
+ "pass": false,
+ "violations": [
+  {
+   "lines": "619-622",
+   "rule": "F6",
+   "reason": "It uses a technical image-quality property (out-of-focus blur, together with the stain batch 'in pink sections') as a predictor of what tissue lies underneath, rather than describing visible tissue appearance."
+  }
+ ],
+ "audit_id": "aff8922b",
+ "writer": "c2adaa46",
+ "version": 1,
+ "size": 65536
+}

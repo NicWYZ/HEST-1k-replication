@@ -1,0 +1,654 @@
+CHEATSHEET: PREDICTING 50-GENE EXPRESSION FROM H&E PATCHES OF CLEAR CELL RENAL CELL CARCINOMA (ccRCC)
+==============================
+
+What this is based on
+---------------------
+Visium spatial transcriptomics of ccRCC resection sections from seven patients (500 spots per section, 3500 in all).
+Each spot is 55 micrometres across; each patch is 224 x 224 pixels at 0.5 micrometres per pixel, i.e. a 112 x 112
+micrometre square centred on the spot, so the spot itself covers roughly the central half of the patch width
+(the central circle of about 110 pixels diameter). Tissue at the patch edge contributes less than tissue in the centre.
+
+Values are log(1 + count) per spot for 50 genes, with no normalisation for sequencing depth. Counts are LOW:
+for most genes the median spot has 0 counts, and a value of 0.69 means one count, 1.10 two counts, 1.39 three,
+1.61 four, 1.79 five, 1.95 six, 2.08 seven, 2.20 eight, 2.30 nine, 2.40 ten, 3.04 twenty, 3.43 thirty, 4.62 one hundred.
+So each spot's value is very noisy (Poisson-like sampling of a few molecules). What is predictable from a
+patch is the EXPECTED level, i.e. the average value that patches looking like this one tend to have.
+Expected (average) values are therefore usually fractional numbers between 0 and 2, even though single spots
+show 0, 0.69, 1.10 and so on.
+
+The three things that matter most, in order:
+ 1. The kind of SECTION / tumour the patch comes from (tumour grade, cytoplasm type, inflammation, how much
+    of the section is stroma). Differences between sections are much larger than differences between tissue
+    compartments inside one section. Seven section types seen in training are described in detail below.
+ 2. Whether the patch centre is viable tumour epithelium (higher for almost every gene) or stroma, blood,
+    acellular hyaline/oedematous material or pale loose degenerate tissue (lower for almost every gene).
+ 3. Specific cell types: inflammatory cells (S100A9, CD14, TRBC1, GPNMB, interferon genes), clear tumour cells
+    with alveolar capillary network (LRRC41, SLC39A14, TMEM91, SLC15A4, NOL3, SCARB1, PTGS1), high-grade
+    tumour (CPE, CD109, CKB, SEMA4B, CIB1, FLNB, LY6E), haemorrhage (HMOX1, HSPA1A, EGFL7 relatively spared),
+    fibroblast/vascular-mural cells (HTRA1, NOTCH3, EGFL7).
+
+A general fact: almost all 50 genes rise and fall together with the overall RNA richness of a spot (more
+viable, cytoplasm-rich, metabolically active cells = more of everything). The genes that track total RNA most
+strongly are LY6E, IFI27, LRRC41, CPE, HTRA1, CIB1, FLNB, PXN, VMP1, SEMA4B, SLC39A14, CD109. So once you decide
+a patch is "rich" or "poor", move all genes in the same direction, then adjust the cell-type-specific genes.
+
+Overall level and spread of each gene (all 3500 spots of the seven sections pooled)
+------------------------------
+mean and sd are of log(1+count); "nonzero" = share of spots with at least one count; quantiles of single spots.
+If you know nothing about a patch, the pooled mean is the safest value. Genes with mean below about 0.35 are
+mostly zeros everywhere; for them the differences between classes are small in absolute terms.
+
+GENE      mean   sd  nonzero  median  q75  q90  q99
+AKAP8      0.34  0.45    39%    0.00  0.69  1.10  1.61
+BLVRB      0.21  0.37    27%    0.00  0.69  0.69  1.39
+BTF3       0.27  0.41    33%    0.00  0.69  0.69  1.39
+CD109      0.45  0.66    40%    0.00  0.69  1.39  2.56
+CD14       0.53  0.66    47%    0.00  0.69  1.61  2.48
+CHST15     0.51  0.55    53%    0.69  0.69  1.39  1.95
+CIB1       0.60  0.64    55%    0.69  1.10  1.39  2.40
+CKB        0.33  0.57    32%    0.00  0.69  1.10  2.30
+CPD        0.39  0.49    43%    0.00  0.69  1.10  1.61
+CPE        1.05  1.15    67%    0.69  1.39  3.05  4.43
+DERL1      0.53  0.57    53%    0.69  1.10  1.39  1.95
+DNAJB12    0.28  0.43    34%    0.00  0.69  0.69  1.61
+EGFL7      0.29  0.44    34%    0.00  0.69  1.10  1.61
+FLNB       0.58  0.68    51%    0.69  1.10  1.61  2.40
+GADD45B    0.52  0.55    54%    0.69  0.69  1.39  1.95
+GPNMB      0.36  0.52    37%    0.00  0.69  1.10  1.95
+H3F3A      0.29  0.42    35%    0.00  0.69  0.69  1.39
+HMOX1      0.29  0.44    33%    0.00  0.69  1.10  1.61
+HNRNPK     0.48  0.53    51%    0.69  0.69  1.10  1.79
+HSPA1A     0.78  0.64    69%    0.69  1.10  1.61  2.30
+HTRA1      1.03  0.98    72%    0.69  1.39  2.30  4.30
+IFI27      1.22  0.88    79%    1.10  1.95  2.40  3.09
+IFI6       0.87  0.72    71%    0.69  1.39  1.79  2.77
+IRF7       0.28  0.44    32%    0.00  0.69  0.69  1.61
+ISG15      0.48  0.58    48%    0.00  0.69  1.39  2.08
+KRTCAP2    0.28  0.43    33%    0.00  0.69  1.10  1.61
+LAPTM4B    0.48  0.57    48%    0.00  0.69  1.39  2.08
+LRRC41     0.78  0.78    60%    0.69  1.39  1.95  2.71
+LY6E       1.13  0.86    75%    1.10  1.79  2.30  3.04
+NAMPT      0.54  0.56    55%    0.69  1.10  1.39  1.95
+NOL3       0.39  0.50    42%    0.00  0.69  1.10  1.79
+NOTCH3     0.42  0.51    45%    0.00  0.69  1.10  1.79
+NT5DC2     0.39  0.60    36%    0.00  0.69  1.39  2.20
+PARP10     0.39  0.51    42%    0.00  0.69  1.10  1.79
+PTGS1      0.34  0.50    37%    0.00  0.69  1.10  1.79
+PXN        0.60  0.61    57%    0.69  1.10  1.39  2.08
+RXRA       0.43  0.51    46%    0.00  0.69  1.10  1.79
+S100A9     0.43  0.68    36%    0.00  0.69  1.39  2.57
+SCARB1     0.40  0.51    43%    0.00  0.69  1.10  1.79
+SEMA4B     0.45  0.60    44%    0.00  0.69  1.39  2.20
+SLC15A4    0.47  0.54    48%    0.00  0.69  1.10  1.95
+SLC39A14   0.67  0.83    53%    0.69  1.10  1.95  3.14
+STK39      0.39  0.49    43%    0.00  0.69  1.10  1.61
+TFRC       0.51  0.63    47%    0.00  0.69  1.39  2.30
+TM2D3      0.27  0.41    33%    0.00  0.69  0.69  1.39
+TMEM91     0.45  0.55    46%    0.00  0.69  1.39  1.95
+TP53INP1   0.30  0.44    35%    0.00  0.69  1.10  1.61
+TRBC1      0.58  0.70    50%    0.00  1.10  1.61  2.56
+VMP1       0.62  0.57    62%    0.69  1.10  1.39  1.95
+YWHAE      0.29  0.43    35%    0.00  0.69  1.10  1.39
+
+Rank of genes by overall level (highest first): IFI27 1.22, LY6E 1.13, CPE 1.05, HTRA1 1.03, IFI6 0.87,
+HSPA1A 0.78, LRRC41 0.78, SLC39A14 0.67, VMP1 0.62, CIB1 0.60, PXN 0.60, FLNB 0.58, TRBC1 0.58, NAMPT 0.54,
+CD14 0.53, DERL1 0.53, GADD45B 0.52, CHST15 0.51, TFRC 0.51; then a large group around 0.4-0.5 (ISG15, HNRNPK,
+LAPTM4B, SLC15A4, CD109, SEMA4B, TMEM91, RXRA, NOTCH3, S100A9) and a low group around 0.2-0.35 (AKAP8, CKB,
+GPNMB, CPD, NOL3, NT5DC2, PARP10, PTGS1, SCARB1, STK39, TP53INP1, EGFL7, H3F3A, HMOX1, DNAJB12, IRF7, KRTCAP2,
+YWHAE, BTF3, TM2D3, BLVRB 0.21 lowest).
+
+Genes with the widest spread (most worth getting right): CPE (sd 1.15, range 0 to 5.5), HTRA1 (0.98), IFI27,
+LY6E, SLC39A14, LRRC41, TRBC1, S100A9, CD109, CD14, FLNB. Each of these is very high in one or two section types
+and low elsewhere (see section types). Genes with narrow spread: BLVRB, BTF3, TM2D3, H3F3A, YWHAE, DNAJB12,
+KRTCAP2, TP53INP1, AKAP8 - predict close to their means (0.2-0.35), nudged by RNA richness.
+
+What the genes are and where they are made (biology, to reason about new tissue)
+------------------------------
+Groups of genes that rise and fall together (beyond the shared "RNA richness" effect):
+
+* Interferon / antiviral response: IFI6, ISG15, IFI27, IRF7, PARP10, LY6E (weaker: NAMPT, GADD45B).
+  Made by tumour cells, endothelium and immune cells when interferon is around. Highest where tumour is
+  infiltrated by many inflammatory cells, and in high-grade tumour. IFI27 is also strongly expressed by ccRCC
+  tumour cells and tumour capillaries, which is why it is the highest gene overall, and why it is high in
+  almost any viable tumour (typical 1.4-2.2 in tumour areas of RNA-rich sections, 0.5-0.9 in stroma).
+  LY6E is the second-highest gene, a broad epithelial/interferon gene; high in all viable tumour.
+
+* Myeloid / inflammatory: CD14 (monocytes/macrophages), S100A9 (neutrophils and monocytes), GPNMB (macrophages,
+  especially foamy or lipid-laden ones; also some tumour cells), HMOX1 (macrophages handling haem; rises in
+  haemorrhage and haemosiderin areas). TRBC1 (T lymphocytes) travels with this group because T cells and
+  myeloid cells infiltrate together. S100A9 is near zero (mean about 0.15-0.35) wherever there are no
+  neutrophils, and jumps to about 1.7 in a heavily inflamed tumour. Plain lymphoid aggregates of small round
+  lymphocytes raise TRBC1 (by about +0.2 over the section's average) and slightly CD14/ISG15/IRF7, but do NOT
+  raise the total; isolated lymphoid aggregates in stroma are actually fairly RNA-poor in this assay.
+
+* Clear-cell tumour module: LRRC41, SLC39A14, TMEM91, SLC15A4, NOL3, SCARB1 (HDL/cholesterol uptake - lipid-rich
+  clear cytoplasm), PTGS1, STK39, AKAP8. These are highest in nests of cells with water-clear or finely
+  vacuolated cytoplasm surrounded by a delicate "chicken-wire" capillary network, and drop sharply outside
+  tumour (LRRC41 about 1.4 in clear tumour vs 0.35 in stroma and 0.2 in blood). SLC39A14 is the most extreme:
+  in one classic alveolar clear-cell tumour it averaged 2.4 in tumour nests (97% of spots non-zero), but 0.4-0.6
+  in other clear-cell tumours, so treat a SLC39A14 value above 1 as reserved for very typical, well-preserved,
+  nested clear-cell carcinoma with a crisp capillary network.
+
+* High-grade / dedifferentiating tumour-cell module: CPE, CD109, CKB, SEMA4B, CIB1, FLNB, PXN, DERL1, CHST15,
+  KRTCAP2, VMP1, LY6E. Very high in a tumour with large vesicular nuclei, prominent nucleoli and abundant
+  amphophilic-to-clear cytoplasm (ISUP grade 3-4). CPE (carboxypeptidase E, a neuroendocrine/secretory enzyme)
+  reached 3.7 on average there (about 40 counts per spot) but is 0.4-1.2 in other tumours. CKB and CD109
+  similarly 1.2-1.9 there and 0.1-0.5 elsewhere.
+
+* Proliferation / iron / lysosome: TFRC (transferrin receptor), NT5DC2, LAPTM4B, DNAJB12, HNRNPK. Highest in
+  the heavily inflamed eosinophilic tumour (TFRC 1.4, NT5DC2 1.4, LAPTM4B 1.0); NT5DC2 is otherwise near 0.1-0.4.
+
+* Stroma / vessel wall: HTRA1 (fibroblasts and matrix-rich areas, also expressed by spindle-shaped tumour
+  cells), NOTCH3 (pericytes and vascular smooth muscle; raised where there are many small vessels or
+  muscular vessel walls), EGFL7 (endothelium; slightly raised in blood-filled areas and vascular stroma).
+  Note that in this tumour type even fibrous stroma is not much richer in HTRA1/NOTCH3 than the tumour
+  nests, because ccRCC nests are themselves full of capillaries and pericytes.
+
+* Stress / immediate-early: HSPA1A (heat shock), GADD45B, NAMPT, H3F3A, TP53INP1. These do not follow tumour
+  vs stroma much. HSPA1A is relatively high (about 0.9-1.0) in the haemorrhagic low-grade, high-grade, inflamed and
+  dense lymphocyte-rich tumours, lower (about 0.55-0.6) in the classic alveolar clear-cell, spindled and
+  stroma-dominated tissue, and keeps its level even in blood-filled and poorly cellular patches
+  (HSPA1A is the gene least reduced in haemorrhage; it is even slightly higher there). GADD45B is relatively
+  high in normal-looking renal tubules and in fibromuscular stroma-dominated sections (about 0.55-1.1).
+
+* Housekeeping-like, uniformly low: BTF3, YWHAE, TM2D3, BLVRB, AKAP8, KRTCAP2, DNAJB12, H3F3A, CPD, RXRA.
+  Predict 0.1-0.5 depending on RNA richness (0.1 in poor sections and acellular areas, 0.4-0.5 in rich tumour).
+
+SEVEN SECTION TYPES SEEN IN TRAINING (the most important part)
+==============================
+Every training section had a distinct overall character, and the gene profile followed that character much
+more than it followed the local compartment. With a new patch, first decide which of these types the tissue
+most resembles (look at nuclear size and grade, cytoplasm, how many inflammatory cells, how much stroma),
+then start from that type's numbers, then adjust for the compartment at the patch centre (next chapter).
+If a new patch fits none of them well, blend the two closest, or use the pooled class table.
+The letters are only names for the descriptions here.
+
+TYPE A - "High-grade, large-nucleus tumour" (RNA richest of all; total counts per spot about 5x the poorest types)
+  Look: purple/lilac staining. Solid sheets and nests of large polygonal tumour cells with LARGE round-oval
+  vesicular nuclei, open chromatin and conspicuous nucleoli (ISUP grade 3-4); nuclei often 2-3x the size of a
+  lymphocyte nucleus. Cytoplasm abundant, pale amphophilic to lightly eosinophilic, partly clear or vacuolated.
+  Thin fibrovascular septa with a few red cells. Some areas are looser and paler, with spindled or
+  degenerate-looking cells, oedema and scattered extravasated red cells. Little stroma overall, few lymphocytes.
+  Expression: highest CPE (3.3 section average; 3.7 in solid tumour areas, 1.9 in pale loose areas),
+  CD109 1.5 (1.9 in tumour), CKB 1.2 (1.3-1.6), SEMA4B 1.2 (1.4-1.5), CIB1 1.3, FLNB 1.4, LY6E 1.9 (2.2 in
+  tumour), IFI27 1.6, LRRC41 1.3, PXN 1.0, DERL1 0.9, CHST15 0.9, VMP1 0.9, KRTCAP2 0.5 (highest of all types),
+  SLC15A4 0.75. Low: S100A9 0.34, TRBC1 0.36, NT5DC2 0.23, EGFL7 0.17 (lowest), PTGS1 0.26.
+  Within this type the pale, loose, spindled or degenerate areas are MUCH lower than the solid nests:
+  roughly CPE 1.9 vs 3.7, CD109 0.7 vs 1.9, FLNB 0.4 vs 1.7, LY6E 0.9 vs 2.2, IFI27 0.7 vs 1.9, LRRC41 0.45 vs
+  1.6 - about a quarter of the RNA. Fibrous stroma between nests sits in between (CPE 2.9, CD109 1.4).
+
+TYPE B - "Inflamed eosinophilic tumour" (RNA rich)
+  Look: very pink/magenta stain with weak haematoxylin, so nuclei look pale pink-purple rather than blue (do
+  not mistake the weak nuclear stain for necrosis). Tumour cells with abundant eosinophilic to granular
+  cytoplasm and enlarged nuclei, often discohesive with many small slit-like or irregular retraction spaces;
+  densely mixed with small round inflammatory cells (neutrophils, lymphocytes, macrophages), so the tissue
+  looks busy and crowded. Some patches show thin bands of collagen; little haemorrhage.
+  Expression: the immune and interferon genes peak: S100A9 1.7 (98% of spots non-zero; elsewhere 0.15-0.35),
+  CD14 1.6, TRBC1 1.6, IFI27 2.2, IFI6 1.75, ISG15 1.0, IRF7 0.67, PARP10 0.8, GPNMB 0.86, HMOX1 0.5.
+  Also peak: NT5DC2 1.4, TFRC 1.4, LAPTM4B 1.0, DNAJB12 0.6, HNRNPK 0.85, GADD45B 0.9, RXRA 0.74, SCARB1 0.73,
+  CPD 0.65, FLNB 1.1, CIB1 0.9, LY6E 1.7. Low for a rich tumour: LRRC41 0.4, CKB 0.1 (lowest of all types),
+  CPE 0.45, TMEM91 0.3, SLC39A14 0.6.
+  Within this type tumour and the collagen bands differ little (stroma patches: CD14 1.4, S100A9 1.7, TRBC1
+  1.5) because inflammatory cells are everywhere; NOTCH3 and EGFL7 slightly higher in the stromal/vascular
+  patches (0.74 and 0.65 vs 0.5 and 0.2).
+
+TYPE C - "Classic alveolar clear-cell carcinoma" (RNA rich)
+  Look: pink stain. Nests and alveoli of cells with water-clear or finely vacuolated cytoplasm, distinct cell
+  membranes and small to medium round nuclei (grade 2-ish), each nest outlined by a delicate, crisp
+  "chicken-wire" network of thin-walled capillaries. Some broad fibrous septa and capsule-like bands of dense
+  pink collagen; occasional small lymphoid clusters at the edges. Very little haemorrhage or necrosis.
+  Expression: the clear-cell module peaks: SLC39A14 2.2 (2.4 in tumour nests, 1.4 in septa), LRRC41 1.6
+  (1.8 tumour), IFI27 1.8, TMEM91 0.75, SLC15A4 0.75, NOL3 0.67, SCARB1 0.7, PTGS1 0.7, AKAP8 0.6 (highest),
+  STK39 0.57, TP53INP1 0.47, NOTCH3 0.7, EGFL7 0.47 (highest; capillary-rich), HTRA1 1.1, CPE 1.2, TRBC1 0.75.
+  Low: CKB 0.28, GPNMB 0.26, S100A9 0.14, CD109 0.4, FLNB 0.37, NT5DC2 0.27.
+  Fibrous septa: everything about 30-40% lower than tumour nests, but EGFL7 and NOTCH3 hold up (0.7 and 0.4).
+
+TYPE D - "Spindled / fibrous tumour with eosinophilic epithelioid cells" (RNA moderately rich)
+  Look: pink stain. Interlacing fascicles of spindle cells and wavy collagen, mixed with clusters and cords of
+  epithelioid tumour cells with eosinophilic cytoplasm and vesicular oval nuclei; little clear cytoplasm;
+  scattered lymphocytes and some dense lymphocyte clusters; small vessels. Possible sarcomatoid or desmoplastic
+  pattern. About half the patches are spindle/fibrous, half epithelioid tumour.
+  Expression: HTRA1 peaks at 2.7 (98% non-zero; 2.8 in epithelioid tumour, 2.5 in spindle/fibrous areas, 2.2 in
+  lymphoid clusters) - in this type HTRA1 is made by the tumour and its spindle cells, not just by ordinary
+  fibroblasts. NOTCH3 0.72 (high), LAPTM4B 0.72, LY6E 1.5, BTF3 0.43 and YWHAE 0.47 (highest of all types),
+  IFI6 0.84, IFI27 0.9, CPE 0.9. Low: LRRC41 0.25, CKB 0.17, CD109 0.24, S100A9 0.18, TRBC1 0.22 (despite the
+  lymphocytes), GPNMB 0.19, SCARB1 0.24, TMEM91 0.32, PTGS1 0.23, PARP10 0.25.
+  Spindle/fibrous patches are only slightly lower than epithelioid tumour patches here.
+
+TYPE E - "Dense small-cell clear tumour with many lymphocytes" (RNA moderate)
+  Look: purple/blue stain, very cellular. Sheets and small nests of tumour cells with clear to faintly
+  granular cytoplasm and small dark round nuclei, packed closely, with many interspersed lymphocytes so the
+  patch looks dark-dotted; a thick fibrous capsule and fibrous bands with vessels, some dilated thin-walled
+  vessels, a few lymphoid aggregates (sometimes with dark brown-black pigment), a little haemorrhage.
+  Expression: middle of the range. LY6E 1.2, HSPA1A 1.0, LRRC41 0.86, IFI27 0.9, TMEM91 0.74, CIB1 0.64,
+  DERL1 0.62, CPE 0.6, HTRA1 0.6, SLC39A14 0.55, CPD 0.5, TP53INP1 0.45 (relatively high), TRBC1 0.46.
+  Low: NT5DC2 0.09, GADD45B 0.24, CD109 0.2, CKB 0.2, IRF7 0.15, S100A9 0.23, NOTCH3 0.24.
+  Tumour vs fibrous band: LRRC41 1.0 vs 0.5, LY6E 1.2 vs 0.8, TMEM91 0.7 vs 0.45; lymphoid areas similar to
+  tumour overall but TRBC1 0.74 vs 0.42 and ISG15 0.63 vs 0.24.
+
+TYPE F - "Low-grade clear-cell tumour with haemorrhage and hyaline stroma" (RNA poor)
+  Look: purple-blue stain. Large nodules of low-grade clear-cell carcinoma (clear cytoplasm, small round
+  uniform nuclei, delicate capillaries), separated by broad zones of paucicellular, glassy pink hyalinised
+  or oedematous loose stroma; extensive fresh haemorrhage (patches entirely filled with red cells), dilated
+  vessels, haemosiderin-laden macrophages (golden-brown pigment), and occasional dense lymphoid aggregates.
+  Expression: low overall; tumour nests are reasonable (LRRC41 1.2, HSPA1A 1.1, IFI27 0.9, VMP1 0.66,
+  SLC15A4 0.58, LY6E 0.54, HTRA1 0.55, CPE 0.7, TRBC1 0.5, CHST15 0.45, SLC39A14 0.48, CD14 0.43, NOL3 0.34) but
+  stroma, blood and hyaline zones are very poor (most genes 0-0.2). Section averages: HSPA1A 0.94, LRRC41 0.8,
+  IFI27 0.63, HTRA1 0.52, CPE 0.42, LY6E 0.34 (low for a tumour), IFI6 0.37, and almost everything else
+  0.1-0.3; BLVRB 0.08, BTF3 0.11, KRTCAP2 0.11, YWHAE 0.11, CD109 0.11, NT5DC2 0.09, IRF7 0.10.
+  Blood-filled patches here: HMOX1 0.8, HSPA1A 1.4, H3F3A 0.66, EGFL7 0.5, GADD45B 0.43 - these are higher than
+  in the tumour nests; LRRC41 0.3, LY6E 0.15, IFI27 0.3, CHST15 0.15, GPNMB 0 - much lower.
+  Hyaline/acellular patches: nearly everything 0-0.2 (HSPA1A 0.5, LRRC41 0.3, IFI27 0.2).
+
+TYPE G - "Stroma-dominated fibromuscular tissue with few tumour cells" (RNA poorest)
+  Look: pink stain. Most patches are dense collagen and smooth-muscle-like fascicles (wavy or parallel pink
+  fibres with sparse elongated nuclei), thick-walled small arteries and veins, scattered and clustered
+  lymphocytes and plasma cells, haemosiderin and some haemorrhage, a few atrophic or normal-looking renal
+  tubules (round profiles lined by cuboidal eosinophilic epithelium, some with pink casts), and only rare tumour
+  cell groups. This is the pseudocapsule / fibrotic edge of a tumour or perinephric/hilar tissue.
+  Expression: low for almost everything. Section averages: IFI6 0.74 and GADD45B 0.57 (relatively preserved),
+  IFI27 0.55, HSPA1A 0.54, HTRA1 0.59, CPE 0.54, RXRA 0.39, NAMPT 0.38, NOTCH3 0.36, TRBC1 0.32, PTGS1 0.31,
+  LY6E 0.27 (lowest of all), LRRC41 0.21, and 0.1-0.25 for the rest (BTF3 0.09, YWHAE 0.09, IRF7 0.09,
+  SCARB1 0.10, GPNMB 0.10, NOL3 0.11, KRTCAP2 0.11, TMEM91 0.13, HMOX1 0.13).
+  Lymphocyte clusters in this tissue are NOT richer than the stroma (total even lower). Renal tubules were
+  slightly richer (GADD45B about 1.1, VMP1 0.76, IFI6 0.96, RXRA 0.5) but there were few of them.
+
+Full section-average table for the seven types
+------------------------------
+Each cell: section mean of log(1+count) / share of spots with at least one count.
+A-hgrade = Type A high-grade large-nucleus tumour; B-inflam = Type B inflamed eosinophilic tumour;
+C-alveol = Type C classic alveolar clear-cell; D-spindl = Type D spindled/fibrous with epithelioid cells;
+E-dense = Type E dense small-cell clear tumour with lymphocytes; F-lowgr = Type F low-grade clear-cell with
+haemorrhage and hyaline stroma; G-strom = Type G stroma-dominated fibromuscular tissue.
+These averages include all compartments of the section in their natural proportions (types A, B, C are about
+85-95% tumour; D about half tumour; E about half tumour, a fifth lymphoid, the rest fibrous bands;
+F a little over half tumour, the rest blood, stroma and hyaline zones; G about 70% stroma, 10% lymphoid, few tubules).
+
+GENE       A-hgrade  B-inflam  C-alveol  D-spindl  E-dense   F-lowgr   G-strom
+AKAP8      0.35/41%  0.44/50%  0.60/62%  0.30/37%  0.28/34%  0.21/27%  0.20/25%
+BLVRB      0.29/36%  0.27/33%  0.30/37%  0.23/30%  0.20/26%  0.08/11%  0.10/13%
+BTF3       0.39/44%  0.34/43%  0.27/33%  0.43/50%  0.25/32%  0.11/15%  0.09/12%
+CD109      1.53/88%  0.52/56%  0.40/46%  0.24/31%  0.20/26%  0.11/15%  0.15/19%
+CD14       0.59/57%  1.59/96%  0.46/52%  0.29/36%  0.38/42%  0.23/28%  0.15/20%
+CHST15     0.91/76%  0.71/71%  0.50/55%  0.40/46%  0.47/52%  0.30/36%  0.26/32%
+CIB1       1.29/84%  0.90/80%  0.39/45%  0.45/51%  0.64/65%  0.28/35%  0.23/27%
+CKB        1.22/84%  0.10/13%  0.28/34%  0.17/21%  0.20/26%  0.14/18%  0.24/26%
+CPD        0.34/39%  0.65/64%  0.43/48%  0.38/45%  0.51/55%  0.18/23%  0.22/27%
+CPE        3.27/98%  0.45/46%  1.20/87%  0.87/75%  0.59/63%  0.42/46%  0.54/55%
+DERL1      0.92/76%  0.68/69%  0.56/57%  0.60/62%  0.62/63%  0.18/24%  0.15/19%
+DNAJB12    0.39/45%  0.60/62%  0.24/31%  0.22/28%  0.21/27%  0.14/18%  0.18/23%
+EGFL7      0.17/21%  0.21/26%  0.47/51%  0.39/43%  0.27/34%  0.31/35%  0.25/30%
+FLNB       1.38/84%  1.13/85%  0.37/43%  0.33/40%  0.36/44%  0.23/27%  0.29/33%
+GADD45B    0.58/60%  0.92/83%  0.55/59%  0.58/60%  0.24/32%  0.20/25%  0.57/57%
+GPNMB      0.61/60%  0.86/75%  0.26/30%  0.19/25%  0.30/34%  0.19/23%  0.10/13%
+H3F3A      0.38/42%  0.39/47%  0.29/37%  0.17/22%  0.26/32%  0.33/39%  0.23/28%
+HMOX1      0.23/28%  0.50/53%  0.44/50%  0.20/25%  0.26/33%  0.27/31%  0.13/15%
+HNRNPK     0.56/57%  0.85/77%  0.50/55%  0.48/53%  0.43/49%  0.30/36%  0.26/32%
+HSPA1A     0.96/76%  0.91/77%  0.59/60%  0.57/60%  0.98/79%  0.94/77%  0.54/58%
+HTRA1      0.77/70%  0.89/76%  1.11/85%  2.73/98%  0.61/62%  0.52/56%  0.59/57%
+IFI27      1.60/90%  2.18/99%  1.77/96%  0.91/77%  0.88/77%  0.63/61%  0.55/53%
+IFI6       0.91/73%  1.75/97%  0.89/77%  0.84/78%  0.56/61%  0.37/42%  0.74/69%
+IRF7       0.32/38%  0.67/65%  0.34/41%  0.27/32%  0.15/20%  0.10/14%  0.09/11%
+ISG15      0.74/65%  1.03/84%  0.39/45%  0.47/49%  0.31/38%  0.17/23%  0.25/29%
+KRTCAP2    0.52/53%  0.44/49%  0.26/32%  0.29/34%  0.24/30%  0.11/15%  0.11/16%
+LAPTM4B    0.42/47%  1.04/80%  0.36/42%  0.72/70%  0.37/44%  0.16/21%  0.29/33%
+LRRC41     1.34/84%  0.41/47%  1.59/94%  0.25/31%  0.86/73%  0.81/66%  0.21/25%
+LY6E       1.93/93%  1.73/98%  0.98/83%  1.51/94%  1.16/86%  0.34/40%  0.27/34%
+NAMPT      0.80/72%  0.81/75%  0.55/58%  0.55/57%  0.44/49%  0.28/34%  0.38/41%
+NOL3       0.48/52%  0.43/48%  0.67/64%  0.40/43%  0.44/50%  0.18/23%  0.11/15%
+NOTCH3     0.29/36%  0.42/48%  0.70/70%  0.72/68%  0.24/30%  0.19/24%  0.36/40%
+NT5DC2     0.23/28%  1.40/92%  0.27/33%  0.40/46%  0.09/13%  0.09/12%  0.21/27%
+PARP10     0.60/60%  0.82/74%  0.49/55%  0.25/32%  0.22/27%  0.17/21%  0.17/23%
+PTGS1      0.26/30%  0.54/59%  0.69/67%  0.23/29%  0.22/27%  0.14/18%  0.31/27%
+PXN        1.01/81%  0.88/77%  0.83/73%  0.59/59%  0.45/52%  0.26/32%  0.18/23%
+RXRA       0.56/57%  0.74/73%  0.45/50%  0.46/51%  0.21/27%  0.18/23%  0.39/42%
+S100A9     0.34/40%  1.70/98%  0.14/19%  0.18/22%  0.23/26%  0.19/23%  0.22/25%
+SCARB1     0.45/49%  0.73/70%  0.69/65%  0.24/30%  0.29/35%  0.29/35%  0.10/13%
+SEMA4B     1.20/80%  0.57/58%  0.30/37%  0.33/39%  0.42/47%  0.14/18%  0.22/27%
+SLC15A4    0.75/67%  0.44/51%  0.75/70%  0.35/41%  0.49/54%  0.33/38%  0.14/17%
+SLC39A14   0.38/43%  0.58/60%  2.17/97%  0.42/48%  0.55/60%  0.36/36%  0.24/25%
+STK39      0.37/42%  0.46/52%  0.57/57%  0.50/55%  0.33/39%  0.28/31%  0.21/25%
+TFRC       0.71/66%  1.36/90%  0.36/42%  0.40/46%  0.31/37%  0.21/26%  0.21/25%
+TM2D3      0.34/39%  0.33/40%  0.34/40%  0.26/33%  0.29/35%  0.15/20%  0.16/20%
+TMEM91     0.70/64%  0.29/36%  0.75/71%  0.32/38%  0.74/71%  0.24/30%  0.13/15%
+TP53INP1   0.33/37%  0.30/37%  0.47/50%  0.20/26%  0.45/50%  0.17/22%  0.17/23%
+TRBC1      0.36/38%  1.57/95%  0.75/66%  0.22/26%  0.46/49%  0.39/39%  0.32/35%
+VMP1       0.86/73%  0.89/80%  0.71/70%  0.60/64%  0.54/61%  0.37/42%  0.36/42%
+YWHAE      0.41/45%  0.46/52%  0.23/29%  0.47/53%  0.28/35%  0.11/15%  0.09/11%
+
+TISSUE COMPARTMENTS INSIDE A SECTION
+==============================
+Classes used (judge what fills the central ~110 pixels of the patch):
+  clear  = tumour nests with clear / vacuolated cytoplasm and a fine capillary network
+  eosin  = tumour with eosinophilic, granular or amphophilic cytoplasm, or solid high-grade tumour
+  paleS  = pale, loose, oedematous or degenerate-looking tumour areas with spindled cells and scattered red
+           cells inside a high-grade tumour (seen only in Type A; about a fifth of the RNA of solid tumour)
+  lymph  = dense lymphocytes (lymphoid aggregate or heavy lymphocytic band)
+  strom  = fibrous / fibromuscular stroma, septa, capsule, vessel walls (including mixed tumour+stroma)
+  haem   = patch mostly filled with red blood cells (fresh haemorrhage, blood-filled vessel lumen)
+  tubul  = non-neoplastic renal tubules (few examples; treat as rough)
+  acell  = hyalinised acellular collagen, oedema fluid, fibrin, empty space with few cells
+
+Table 1. Pooled class means (absolute, all labelled patches of all seven sections). These mix the section
+effect with the class effect: 'eosin' is dominated by the inflamed Type B and the high-grade Type A, 'clear' by
+Types C, F and E, 'strom' by Types G and D. Use these when you cannot place the section; otherwise use the
+section types plus Table 2.
+
+GENE      clear  eosin  paleS  lymph  strom   haem  tubul  acell
+AKAP8      0.40   0.42   0.17   0.22   0.21   0.14   0.12   0.17
+BLVRB      0.26   0.30   0.21   0.20   0.15   0.15   0.23   0.03
+BTF3       0.34   0.42   0.30   0.28   0.23   0.23   0.00   0.12
+CD109      0.48   0.86   0.67   0.20   0.20   0.27   0.00   0.21
+CD14       0.40   1.05   0.26   0.49   0.31   0.31   0.35   0.26
+CHST15     0.58   0.71   0.38   0.42   0.36   0.14   0.23   0.14
+CIB1       0.51   0.95   0.51   0.46   0.34   0.22   0.30   0.36
+CKB        0.38   0.40   0.57   0.27   0.22   0.17   0.41   0.07
+CPD        0.36   0.52   0.21   0.32   0.27   0.25   0.35   0.10
+CPE        1.17   1.34   1.89   0.82   0.77   0.68   0.65   0.35
+DERL1      0.58   0.85   0.33   0.38   0.31   0.12   0.12   0.16
+DNAJB12    0.25   0.52   0.00   0.22   0.19   0.15   0.23   0.12
+EGFL7      0.30   0.26   0.00   0.38   0.30   0.39   0.12   0.12
+FLNB       0.47   0.99   0.38   0.48   0.41   0.35   0.53   0.32
+GADD45B    0.38   0.68   0.21   0.42   0.52   0.33   1.10   0.28
+GPNMB      0.28   0.70   0.23   0.36   0.22   0.00   0.12   0.14
+H3F3A      0.23   0.39   0.05   0.27   0.21   0.33   0.37   0.21
+HMOX1      0.35   0.40   0.09   0.26   0.18   0.49   0.12   0.03
+HNRNPK     0.47   0.73   0.31   0.36   0.35   0.18   0.48   0.09
+HSPA1A     0.76   0.81   0.59   0.70   0.70   0.92   0.66   0.60
+HTRA1      0.77   1.41   0.26   0.93   1.11   0.63   0.58   0.46
+IFI27      1.39   1.91   0.73   0.83   0.80   0.70   0.65   0.47
+IFI6       0.74   1.33   0.35   0.64   0.79   0.51   0.96   0.33
+IRF7       0.26   0.49   0.05   0.15   0.17   0.08   0.00   0.12
+ISG15      0.35   0.81   0.30   0.48   0.33   0.12   0.23   0.23
+KRTCAP2    0.29   0.42   0.14   0.21   0.13   0.15   0.00   0.09
+LAPTM4B    0.37   0.82   0.26   0.36   0.36   0.15   0.23   0.16
+LRRC41     1.43   0.69   0.45   0.66   0.34   0.19   0.12   0.31
+LY6E       1.02   1.83   0.90   1.01   0.77   0.38   0.30   0.44
+NAMPT      0.53   0.78   0.35   0.42   0.39   0.51   0.12   0.44
+NOL3       0.57   0.46   0.14   0.31   0.22   0.12   0.23   0.12
+NOTCH3     0.44   0.51   0.09   0.33   0.49   0.29   0.23   0.18
+NT5DC2     0.20   0.87   0.00   0.20   0.26   0.20   0.18   0.15
+PARP10     0.38   0.66   0.17   0.32   0.20   0.12   0.41   0.09
+PTGS1      0.45   0.49   0.17   0.21   0.26   0.10   0.27   0.12
+PXN        0.66   0.89   0.51   0.51   0.37   0.35   0.12   0.22
+RXRA       0.37   0.65   0.18   0.31   0.35   0.19   0.53   0.12
+S100A9     0.22   0.94   0.18   0.30   0.29   0.24   0.41   0.17
+SCARB1     0.51   0.59   0.17   0.29   0.21   0.29   0.12   0.24
+SEMA4B     0.41   0.76   0.38   0.38   0.29   0.12   0.41   0.19
+SLC15A4    0.70   0.52   0.17   0.40   0.29   0.35   0.12   0.19
+SLC39A14   1.28   0.50   0.24   0.46   0.40   0.12   0.46   0.03
+STK39      0.47   0.52   0.14   0.28   0.27   0.30   0.30   0.07
+TFRC       0.39   0.97   0.22   0.30   0.30   0.23   0.30   0.26
+TM2D3      0.31   0.35   0.21   0.16   0.23   0.18   0.00   0.07
+TMEM91     0.68   0.42   0.23   0.37   0.24   0.00   0.12   0.19
+TP53INP1   0.39   0.28   0.25   0.38   0.22   0.19   0.23   0.17
+TRBC1      0.50   0.98   0.14   0.58   0.39   0.33   0.18   0.14
+VMP1       0.72   0.90   0.34   0.52   0.43   0.22   0.76   0.33
+YWHAE      0.24   0.45   0.17   0.16   0.21   0.12   0.35   0.19
+
+Table 2. Change relative to the SECTION AVERAGE when the patch is of this class (within-section difference,
+same sections, log(1+count) units). Add these to the section-type average (from the type table) to get a
+patch-level value. Example: a blood-filled patch in a Type F section: LRRC41 0.81 - 0.51 = 0.30; HMOX1
+0.27 + 0.25 = 0.52.
+The 'paleS' and 'tubul' columns rest on few patches from one section each; trust them for direction only.
+
+GENE      clear  eosin  paleS  lymph  strom   haem  tubul  acell
+AKAP8     -0.00  +0.04  -0.19  -0.08  -0.07  -0.10  -0.08  -0.07
+BLVRB     +0.04  +0.03  -0.08  +0.01  -0.02  +0.02  +0.13  -0.10
+BTF3      +0.10  +0.05  -0.09  +0.02  -0.00  +0.07  -0.09  -0.05
+CD109     +0.08  +0.17  -0.86  -0.09  -0.06  -0.11  -0.15  -0.02
+CD14      +0.01  +0.06  -0.33  +0.17  -0.04  -0.03  +0.20  -0.08
+CHST15    +0.10  +0.03  -0.53  -0.01  -0.03  -0.28  -0.03  -0.24
+CIB1      +0.00  +0.08  -0.78  -0.05  -0.11  -0.26  +0.06  -0.08
+CKB       +0.06  +0.00  -0.66  +0.01  -0.02  -0.18  +0.18  -0.15
+CPD       -0.01  +0.03  -0.13  -0.07  -0.07  +0.01  +0.13  -0.19
+CPE       +0.10  +0.08  -1.38  -0.01  +0.02  -0.25  +0.11  -0.28
+DERL1     +0.08  +0.14  -0.58  -0.12  -0.10  -0.21  -0.03  -0.19
+DNAJB12   +0.03  +0.07  -0.39  +0.01  -0.04  -0.06  +0.05  -0.07
+EGFL7     -0.05  +0.02  -0.17  +0.08  +0.01  +0.13  -0.13  -0.16
+FLNB      +0.04  +0.01  -1.00  +0.09  +0.01  -0.13  +0.24  -0.05
+GADD45B   -0.01  -0.06  -0.37  -0.01  +0.01  -0.08  +0.53  -0.04
+GPNMB     -0.00  +0.08  -0.38  +0.11  -0.01  -0.27  +0.02  -0.11
+H3F3A     -0.07  +0.06  -0.33  +0.02  -0.03  +0.02  +0.14  -0.09
+HMOX1     +0.01  +0.05  -0.14  +0.02  -0.04  +0.25  -0.01  -0.23
+HNRNPK    +0.03  +0.06  -0.24  -0.05  -0.06  -0.19  +0.22  -0.28
+HSPA1A    -0.05  -0.01  -0.37  -0.06  +0.01  +0.09  +0.12  -0.29
+HTRA1     -0.03  +0.09  -0.51  -0.12  -0.02  +0.02  -0.01  -0.23
+IFI27     +0.15  +0.22  -0.87  -0.11  -0.10  -0.16  +0.09  -0.34
+IFI6      +0.07  +0.04  -0.57  -0.05  +0.01  -0.13  +0.22  -0.24
+IRF7      +0.03  +0.02  -0.27  -0.03  -0.03  -0.09  -0.09  -0.03
+ISG15     +0.01  +0.01  -0.43  +0.13  -0.05  -0.22  -0.02  -0.07
+KRTCAP2   +0.05  +0.00  -0.39  -0.03  -0.09  -0.04  -0.11  -0.09
+LAPTM4B   +0.05  +0.03  -0.16  -0.05  -0.08  -0.14  -0.06  -0.14
+LRRC41    +0.24  +0.09  -0.89  -0.05  -0.17  -0.51  -0.09  -0.43
+LY6E      +0.08  +0.13  -1.02  -0.01  -0.12  -0.29  +0.02  -0.27
+NAMPT     +0.05  +0.05  -0.45  -0.05  -0.08  +0.09  -0.26  +0.06
+NOL3      +0.10  +0.04  -0.34  -0.07  -0.08  -0.11  +0.12  -0.14
+NOTCH3    +0.02  +0.05  -0.20  -0.07  +0.06  +0.02  -0.12  -0.08
+NT5DC2    +0.02  +0.04  -0.23  +0.00  -0.04  -0.02  -0.03  -0.04
+PARP10    +0.03  +0.05  -0.44  +0.06  -0.07  -0.16  +0.24  -0.15
+PTGS1     +0.06  +0.10  -0.10  -0.08  -0.04  -0.13  -0.04  -0.08
+PXN       +0.05  +0.07  -0.49  +0.03  -0.07  -0.05  -0.07  -0.16
+RXRA      +0.04  +0.03  -0.38  -0.02  -0.04  -0.14  +0.14  -0.14
+S100A9    +0.02  -0.01  -0.16  +0.09  -0.01  -0.07  +0.19  -0.11
+SCARB1    +0.04  +0.07  -0.28  -0.00  -0.06  +0.00  +0.01  -0.06
+SEMA4B    +0.04  +0.10  -0.82  +0.01  -0.04  -0.25  +0.19  -0.09
+SLC15A4   +0.12  +0.02  -0.59  -0.03  -0.05  -0.01  -0.02  -0.18
+SLC39A14  +0.15  +0.02  -0.14  -0.16  -0.08  -0.23  +0.22  -0.36
+STK39     +0.05  +0.08  -0.23  -0.08  -0.08  +0.01  +0.09  -0.24
+TFRC      +0.04  +0.04  -0.49  -0.03  -0.06  -0.12  +0.09  -0.06
+TM2D3     +0.03  +0.03  -0.13  -0.10  +0.00  -0.02  -0.16  -0.14
+TMEM91    +0.08  +0.03  -0.47  -0.13  -0.10  -0.29  -0.01  -0.17
+TP53INP1  +0.03  +0.00  -0.08  +0.06  -0.03  -0.01  +0.06  -0.07
+TRBC1     -0.05  +0.07  -0.22  +0.18  -0.04  -0.11  -0.14  -0.31
+VMP1      +0.13  +0.10  -0.52  -0.02  -0.08  -0.26  +0.40  -0.13
+YWHAE     +0.02  +0.00  -0.24  -0.10  -0.03  -0.06  +0.26  +0.00
+
+Key reading of Table 2:
+ * Viable tumour (clear or eosinophilic) is above the section average for nearly every gene, typically
+   +0.05 to +0.25. The clear-cell module (LRRC41 +0.24, SLC39A14 +0.15, IFI27 +0.15, VMP1 +0.13, SLC15A4 +0.12,
+   NOL3 +0.10, BTF3 +0.10) gains most in clear tumour; eosinophilic tumour gains IFI27 +0.22, CD109 +0.17,
+   DERL1 +0.14, LY6E +0.13.
+ * Stroma is a little below average for most genes (-0.05 to -0.17; LRRC41 -0.17, LY6E -0.12, CIB1 -0.11),
+   and about level for NOTCH3 (+0.06), HTRA1, EGFL7, GADD45B, HSPA1A and CPE.
+ * Haemorrhage: big losses for LRRC41 (-0.51), LY6E, TMEM91, CHST15, GPNMB, CIB1, VMP1, CPE, SEMA4B, SLC39A14,
+   ISG15, DERL1; GAINS for HMOX1 (+0.25), EGFL7 (+0.13), HSPA1A (+0.09), NAMPT (+0.09), BTF3; unchanged H3F3A.
+ * Hyaline / acellular / oedema: lowest of all (total counts about half the section average); LRRC41 -0.43,
+   SLC39A14 -0.36, IFI27 -0.34, TRBC1 -0.31, HSPA1A -0.29, HNRNPK -0.28, CPE -0.28, LY6E -0.27, IFI6 -0.24.
+ * Lymphoid: TRBC1 +0.18, CD14 +0.17, ISG15 +0.13, GPNMB +0.11, S100A9 +0.09, EGFL7 +0.08; most tumour genes
+   slightly down (SLC39A14 -0.16, TMEM91 -0.13, DERL1 -0.12, HTRA1 -0.12, IFI27 -0.11).
+
+Tumour vs stroma, section by section (spot totals; and the gap is gene-wide):
+ * In poor, haemorrhagic, hyalinised sections (Type F) the gap is largest: stroma has about 40% of the RNA of
+   tumour nests; hyaline zones about 20%.
+ * In classic clear-cell (Type C) septa have about 55% of the tumour's RNA; LRRC41 1.8 vs 1.3, SLC39A14 2.4 vs 1.4.
+ * In high-grade (Type A) the fibrous septa have about half the RNA but still high module genes.
+ * In inflamed (Type B) and spindled (Type D) sections stroma and tumour are close (80-90% of the tumour's
+   RNA), because the "stroma" is itself cellular (inflammatory cells, spindle cells). In the dense
+   lymphocyte-rich Type E the fibrous bands have about 65% of the tumour's RNA and the lymphoid areas match
+   the tumour.
+So: the more cellular the stroma (spindle cells, inflammatory cells), the closer it is to tumour; the more
+glassy, pale and acellular, the lower everything is.
+
+GENE-BY-GENE SUMMARY
+====================
+For each gene: pooled level, the two section types where it is highest and lowest (section averages), and the
+compartments that are clearly above or below their section's average (within-section differences).
+
+AKAP8: overall mean 0.34 (nonzero in 39% of spots). Highest section types: C alveolar clear 0.60, B inflamed 0.44. Lowest: F low-grade haemorrhagic 0.21, G stroma-dominated 0.20. Below in: haemorrhage -0.10.
+BLVRB: overall mean 0.21 (nonzero in 27% of spots). Highest section types: C alveolar clear 0.30, A high-grade 0.29. Lowest: G stroma-dominated 0.10, F low-grade haemorrhagic 0.08. Below in: acellular/hyaline -0.10.
+BTF3: overall mean 0.27 (nonzero in 33% of spots). Highest section types: D spindled 0.43, A high-grade 0.39. Lowest: F low-grade haemorrhagic 0.11, G stroma-dominated 0.09. Above section average in: clear tumour +0.10.
+CD109: overall mean 0.45 (nonzero in 40% of spots). Highest section types: A high-grade 1.53, B inflamed 0.52. Lowest: G stroma-dominated 0.15, F low-grade haemorrhagic 0.11. Above section average in: eosinophilic tumour +0.17; clear tumour +0.08. Below in: haemorrhage -0.11.
+CD14: overall mean 0.53 (nonzero in 47% of spots). Highest section types: B inflamed 1.59, A high-grade 0.59. Lowest: F low-grade haemorrhagic 0.23, G stroma-dominated 0.15. Above section average in: lymphoid +0.17.
+CHST15: overall mean 0.51 (nonzero in 53% of spots). Highest section types: A high-grade 0.91, B inflamed 0.71. Lowest: F low-grade haemorrhagic 0.30, G stroma-dominated 0.26. Above section average in: clear tumour +0.10. Below in: haemorrhage -0.28; acellular/hyaline -0.24.
+CIB1: overall mean 0.60 (nonzero in 55% of spots). Highest section types: A high-grade 1.29, B inflamed 0.90. Lowest: F low-grade haemorrhagic 0.28, G stroma-dominated 0.23. Above section average in: eosinophilic tumour +0.08. Below in: haemorrhage -0.26; stroma -0.11.
+CKB: overall mean 0.33 (nonzero in 32% of spots). Highest section types: A high-grade 1.22, C alveolar clear 0.28. Lowest: F low-grade haemorrhagic 0.14, B inflamed 0.10. Below in: haemorrhage -0.18; acellular/hyaline -0.15.
+CPD: overall mean 0.39 (nonzero in 43% of spots). Highest section types: B inflamed 0.65, E dense lymphocyte-rich 0.51. Lowest: G stroma-dominated 0.22, F low-grade haemorrhagic 0.18. Below in: acellular/hyaline -0.19.
+CPE: overall mean 1.05 (nonzero in 67% of spots). Highest section types: A high-grade 3.27, C alveolar clear 1.20. Lowest: B inflamed 0.45, F low-grade haemorrhagic 0.42. Above section average in: clear tumour +0.10; eosinophilic tumour +0.08. Below in: acellular/hyaline -0.28; haemorrhage -0.25.
+DERL1: overall mean 0.53 (nonzero in 53% of spots). Highest section types: A high-grade 0.92, B inflamed 0.68. Lowest: F low-grade haemorrhagic 0.18, G stroma-dominated 0.15. Above section average in: eosinophilic tumour +0.14; clear tumour +0.08. Below in: haemorrhage -0.21; acellular/hyaline -0.19; lymphoid -0.12.
+DNAJB12: overall mean 0.28 (nonzero in 34% of spots). Highest section types: B inflamed 0.60, A high-grade 0.39. Lowest: G stroma-dominated 0.18, F low-grade haemorrhagic 0.14. Above section average in: eosinophilic tumour +0.07.
+EGFL7: overall mean 0.29 (nonzero in 34% of spots). Highest section types: C alveolar clear 0.47, D spindled 0.39. Lowest: B inflamed 0.21, A high-grade 0.17. Above section average in: haemorrhage +0.13; lymphoid +0.08. Below in: acellular/hyaline -0.16.
+FLNB: overall mean 0.58 (nonzero in 51% of spots). Highest section types: A high-grade 1.38, B inflamed 1.13. Lowest: G stroma-dominated 0.29, F low-grade haemorrhagic 0.23. Above section average in: lymphoid +0.09. Below in: haemorrhage -0.13.
+GADD45B: overall mean 0.52 (nonzero in 54% of spots). Highest section types: B inflamed 0.92, A high-grade 0.58. Lowest: E dense lymphocyte-rich 0.24, F low-grade haemorrhagic 0.20.
+GPNMB: overall mean 0.36 (nonzero in 37% of spots). Highest section types: B inflamed 0.86, A high-grade 0.61. Lowest: F low-grade haemorrhagic 0.19, G stroma-dominated 0.10. Above section average in: lymphoid +0.11; eosinophilic tumour +0.08. Below in: haemorrhage -0.27; acellular/hyaline -0.11.
+H3F3A: overall mean 0.29 (nonzero in 35% of spots). Highest section types: B inflamed 0.39, A high-grade 0.38. Lowest: G stroma-dominated 0.23, D spindled 0.17.
+HMOX1: overall mean 0.29 (nonzero in 33% of spots). Highest section types: B inflamed 0.50, C alveolar clear 0.44. Lowest: D spindled 0.20, G stroma-dominated 0.13. Above section average in: haemorrhage +0.25. Below in: acellular/hyaline -0.23.
+HNRNPK: overall mean 0.48 (nonzero in 51% of spots). Highest section types: B inflamed 0.85, A high-grade 0.56. Lowest: F low-grade haemorrhagic 0.30, G stroma-dominated 0.26. Below in: acellular/hyaline -0.28; haemorrhage -0.19.
+HSPA1A: overall mean 0.78 (nonzero in 69% of spots). Highest section types: E dense lymphocyte-rich 0.98, A high-grade 0.96. Lowest: D spindled 0.57, G stroma-dominated 0.54. Above section average in: haemorrhage +0.09. Below in: acellular/hyaline -0.29.
+HTRA1: overall mean 1.03 (nonzero in 72% of spots). Highest section types: D spindled 2.73, C alveolar clear 1.11. Lowest: G stroma-dominated 0.59, F low-grade haemorrhagic 0.52. Above section average in: eosinophilic tumour +0.09. Below in: acellular/hyaline -0.23; lymphoid -0.12.
+IFI27: overall mean 1.22 (nonzero in 79% of spots). Highest section types: B inflamed 2.18, C alveolar clear 1.77. Lowest: F low-grade haemorrhagic 0.63, G stroma-dominated 0.55. Above section average in: eosinophilic tumour +0.22; clear tumour +0.15. Below in: acellular/hyaline -0.34; haemorrhage -0.16; lymphoid -0.11.
+IFI6: overall mean 0.87 (nonzero in 71% of spots). Highest section types: B inflamed 1.75, A high-grade 0.91. Lowest: E dense lymphocyte-rich 0.56, F low-grade haemorrhagic 0.37. Below in: acellular/hyaline -0.24; haemorrhage -0.13.
+IRF7: overall mean 0.28 (nonzero in 32% of spots). Highest section types: B inflamed 0.67, C alveolar clear 0.34. Lowest: F low-grade haemorrhagic 0.10, G stroma-dominated 0.09.
+ISG15: overall mean 0.48 (nonzero in 48% of spots). Highest section types: B inflamed 1.03, A high-grade 0.74. Lowest: G stroma-dominated 0.25, F low-grade haemorrhagic 0.17. Above section average in: lymphoid +0.13. Below in: haemorrhage -0.22.
+KRTCAP2: overall mean 0.28 (nonzero in 33% of spots). Highest section types: A high-grade 0.52, B inflamed 0.44. Lowest: G stroma-dominated 0.11, F low-grade haemorrhagic 0.11.
+LAPTM4B: overall mean 0.48 (nonzero in 48% of spots). Highest section types: B inflamed 1.04, D spindled 0.72. Lowest: G stroma-dominated 0.29, F low-grade haemorrhagic 0.16. Below in: acellular/hyaline -0.14; haemorrhage -0.14.
+LRRC41: overall mean 0.78 (nonzero in 60% of spots). Highest section types: C alveolar clear 1.59, A high-grade 1.34. Lowest: D spindled 0.25, G stroma-dominated 0.21. Above section average in: clear tumour +0.24; eosinophilic tumour +0.09. Below in: haemorrhage -0.51; acellular/hyaline -0.43; stroma -0.17.
+LY6E: overall mean 1.13 (nonzero in 75% of spots). Highest section types: A high-grade 1.93, B inflamed 1.73. Lowest: F low-grade haemorrhagic 0.34, G stroma-dominated 0.27. Above section average in: eosinophilic tumour +0.13; clear tumour +0.08. Below in: haemorrhage -0.29; acellular/hyaline -0.27; stroma -0.12.
+NAMPT: overall mean 0.54 (nonzero in 55% of spots). Highest section types: B inflamed 0.81, A high-grade 0.80. Lowest: G stroma-dominated 0.38, F low-grade haemorrhagic 0.28. Above section average in: haemorrhage +0.09.
+NOL3: overall mean 0.39 (nonzero in 42% of spots). Highest section types: C alveolar clear 0.67, A high-grade 0.48. Lowest: F low-grade haemorrhagic 0.18, G stroma-dominated 0.11. Above section average in: clear tumour +0.10. Below in: acellular/hyaline -0.14; haemorrhage -0.11.
+NOTCH3: overall mean 0.42 (nonzero in 45% of spots). Highest section types: D spindled 0.72, C alveolar clear 0.70. Lowest: E dense lymphocyte-rich 0.24, F low-grade haemorrhagic 0.19.
+NT5DC2: overall mean 0.39 (nonzero in 36% of spots). Highest section types: B inflamed 1.40, D spindled 0.40. Lowest: E dense lymphocyte-rich 0.09, F low-grade haemorrhagic 0.09.
+PARP10: overall mean 0.39 (nonzero in 42% of spots). Highest section types: B inflamed 0.82, A high-grade 0.60. Lowest: G stroma-dominated 0.17, F low-grade haemorrhagic 0.17. Below in: haemorrhage -0.16; acellular/hyaline -0.15.
+PTGS1: overall mean 0.34 (nonzero in 37% of spots). Highest section types: C alveolar clear 0.69, B inflamed 0.54. Lowest: E dense lymphocyte-rich 0.22, F low-grade haemorrhagic 0.14. Above section average in: eosinophilic tumour +0.10. Below in: haemorrhage -0.13.
+PXN: overall mean 0.60 (nonzero in 57% of spots). Highest section types: A high-grade 1.01, B inflamed 0.88. Lowest: F low-grade haemorrhagic 0.26, G stroma-dominated 0.18. Below in: acellular/hyaline -0.16.
+RXRA: overall mean 0.43 (nonzero in 46% of spots). Highest section types: B inflamed 0.74, A high-grade 0.56. Lowest: E dense lymphocyte-rich 0.21, F low-grade haemorrhagic 0.18. Below in: acellular/hyaline -0.14; haemorrhage -0.14.
+S100A9: overall mean 0.43 (nonzero in 36% of spots). Highest section types: B inflamed 1.70, A high-grade 0.34. Lowest: D spindled 0.18, C alveolar clear 0.14. Above section average in: lymphoid +0.09. Below in: acellular/hyaline -0.11.
+SCARB1: overall mean 0.40 (nonzero in 43% of spots). Highest section types: B inflamed 0.73, C alveolar clear 0.69. Lowest: D spindled 0.24, G stroma-dominated 0.10.
+SEMA4B: overall mean 0.45 (nonzero in 44% of spots). Highest section types: A high-grade 1.20, B inflamed 0.57. Lowest: G stroma-dominated 0.22, F low-grade haemorrhagic 0.14. Above section average in: eosinophilic tumour +0.10. Below in: haemorrhage -0.25.
+SLC15A4: overall mean 0.47 (nonzero in 48% of spots). Highest section types: C alveolar clear 0.75, A high-grade 0.75. Lowest: F low-grade haemorrhagic 0.33, G stroma-dominated 0.14. Above section average in: clear tumour +0.12. Below in: acellular/hyaline -0.18.
+SLC39A14: overall mean 0.67 (nonzero in 53% of spots). Highest section types: C alveolar clear 2.17, B inflamed 0.58. Lowest: F low-grade haemorrhagic 0.36, G stroma-dominated 0.24. Above section average in: clear tumour +0.15. Below in: acellular/hyaline -0.36; haemorrhage -0.23; lymphoid -0.16.
+STK39: overall mean 0.39 (nonzero in 43% of spots). Highest section types: C alveolar clear 0.57, D spindled 0.50. Lowest: F low-grade haemorrhagic 0.28, G stroma-dominated 0.21. Above section average in: eosinophilic tumour +0.08. Below in: acellular/hyaline -0.24.
+TFRC: overall mean 0.51 (nonzero in 47% of spots). Highest section types: B inflamed 1.36, A high-grade 0.71. Lowest: F low-grade haemorrhagic 0.21, G stroma-dominated 0.21. Below in: haemorrhage -0.12.
+TM2D3: overall mean 0.27 (nonzero in 33% of spots). Highest section types: A high-grade 0.34, C alveolar clear 0.34. Lowest: G stroma-dominated 0.16, F low-grade haemorrhagic 0.15. Below in: acellular/hyaline -0.14; lymphoid -0.10.
+TMEM91: overall mean 0.45 (nonzero in 46% of spots). Highest section types: C alveolar clear 0.75, E dense lymphocyte-rich 0.74. Lowest: F low-grade haemorrhagic 0.24, G stroma-dominated 0.13. Above section average in: clear tumour +0.08. Below in: haemorrhage -0.29; acellular/hyaline -0.17; lymphoid -0.13.
+TP53INP1: overall mean 0.30 (nonzero in 35% of spots). Highest section types: C alveolar clear 0.47, E dense lymphocyte-rich 0.45. Lowest: F low-grade haemorrhagic 0.17, G stroma-dominated 0.17.
+TRBC1: overall mean 0.58 (nonzero in 50% of spots). Highest section types: B inflamed 1.57, C alveolar clear 0.75. Lowest: G stroma-dominated 0.32, D spindled 0.22. Above section average in: lymphoid +0.18; eosinophilic tumour +0.07. Below in: acellular/hyaline -0.31; haemorrhage -0.11.
+VMP1: overall mean 0.62 (nonzero in 62% of spots). Highest section types: B inflamed 0.89, A high-grade 0.86. Lowest: F low-grade haemorrhagic 0.37, G stroma-dominated 0.36. Above section average in: clear tumour +0.13; eosinophilic tumour +0.10. Below in: haemorrhage -0.26; acellular/hyaline -0.13.
+YWHAE: overall mean 0.29 (nonzero in 35% of spots). Highest section types: D spindled 0.47, B inflamed 0.46. Lowest: F low-grade haemorrhagic 0.11, G stroma-dominated 0.09. Below in: lymphoid -0.10.
+
+HOW TO WORK THROUGH ONE PATCH (by eye)
+==============================
+Step 1 - What is at the centre? Decide the compartment of the central ~110 pixels: clear tumour, eosinophilic or
+  high-grade tumour, pale loose degenerate tumour, fibrous stroma, lymphoid, haemorrhage, hyaline/acellular,
+  normal tubules. If the centre is mixed, weigh the compartments by area.
+
+Step 2 - What kind of tumour/section is this? Use the cells you can see in the patch:
+  * Nuclei large (clearly bigger than red cells, 2-3x a lymphocyte nucleus), vesicular, with visible nucleoli,
+    cytoplasm abundant and pale/amphophilic -> Type A profile (high CPE, CD109, CKB, SEMA4B, CIB1, FLNB, LY6E).
+  * Many small round inflammatory cells (neutrophils with lobed nuclei, lymphocytes, macrophages) mixed in
+    among eosinophilic tumour cells, discohesive tissue with retraction spaces -> Type B profile (high S100A9,
+    CD14, TRBC1, IFI6/IFI27/ISG15, TFRC, NT5DC2, GPNMB, LAPTM4B).
+  * Textbook clear cells in round nests with crisp thin capillaries, no inflammation -> Type C profile (high
+    SLC39A14, LRRC41, TMEM91, SLC15A4, NOL3, SCARB1, PTGS1, AKAP8, EGFL7).
+  * Spindle cells in fascicles with interspersed epithelioid eosinophilic tumour cells -> Type D profile (high
+    HTRA1, NOTCH3, LAPTM4B, LY6E; low LRRC41).
+  * Crowded small clear cells with small dark nuclei and many lymphocytes, purple-dense look -> Type E profile
+    (moderate everything; LY6E about 1.2, LRRC41 0.9, TMEM91 0.7, low NT5DC2/CD109/CKB).
+  * Low-grade clear cells next to haemorrhage, hyalinised glassy stroma, haemosiderin -> Type F profile (tumour
+    nests modest, everything else very low; HSPA1A and LRRC41 the strongest genes).
+  * Fibromuscular stroma, thick-walled vessels, scattered lymphocytes, tubules, almost no tumour -> Type G
+    profile (lowest of all; IFI6 0.7, GADD45B 0.6, HSPA1A/HTRA1/CPE/IFI27 about 0.55, rest 0.1-0.4).
+  A single patch only shows a little of the section; use whatever clues are present (nuclear grade of any
+  tumour cells in the patch is the best clue; for a pure stroma or blood patch, inflammatory cell content and
+  stroma cellularity are the clues). If you cannot tell, use the pooled class table (Table 1).
+
+Step 3 - Start from the type's section average, then add the compartment change (Table 2), or directly use the
+  compartment numbers given inside each type description.
+
+Step 4 - Adjust for richness you can see:
+  * More viable, intact, cytoplasm-rich cells in the centre -> raise all genes a little (up to +0.2 for the
+    high genes). Good nuclear detail, crisp membranes and intact cells suggest well-preserved, RNA-rich tissue.
+  * Large empty spaces (lumen, tears, cyst spaces, oedema fluid) or glassy acellular material in the centre ->
+    lower all genes in proportion to the empty fraction (half the centre empty -> roughly halve counts, i.e.
+    subtract about 0.2-0.4 from genes around 1, less from low genes).
+  * Patch filled with red cells -> use the haemorrhage pattern (HMOX1, HSPA1A, EGFL7 up; tumour genes down).
+  * Golden-brown haemosiderin and foamy macrophages -> raise HMOX1, CD14, GPNMB a little (+0.1 to +0.3).
+  * Many neutrophils -> S100A9 up strongly (toward 1.5-2); many lymphocytes -> TRBC1 up (+0.2 to +0.5 when the
+    centre is a dense lymphocyte sheet in an otherwise rich section; little change in poor stroma).
+  * Many small vessels / pericytes / smooth muscle -> NOTCH3 and EGFL7 up by about 0.1-0.3.
+
+Step 5 - Keep values realistic: section-type averages for most genes lie between 0.1 and 1.0; only a handful
+  of gene/type combinations exceed 1.5 (CPE in Type A up to about 3.7 in solid nests; HTRA1 in Type D about
+  2.7; SLC39A14 in Type C about 2.2-2.4; IFI27 in B, C, A about 1.6-2.2; LY6E in A, B, D about 1.5-2.2;
+  S100A9, CD14, TRBC1 in B about 1.6-1.7; LRRC41 in C about 1.6-1.8). Genes that are mostly zero (BLVRB,
+  BTF3, TM2D3, IRF7, KRTCAP2, YWHAE, H3F3A, DNAJB12) rarely average more than 0.5 even in the richest tissue.
+
+Worked examples (expected values, log(1+count)):
+  a) Solid high-grade tumour with big nucleolated nuclei, centre fully cellular:
+     CPE 3.5, LY6E 2.1, CD109 1.8, IFI27 1.9, FLNB 1.6, CIB1 1.5, LRRC41 1.6, CKB 1.4, SEMA4B 1.4, PXN 1.2,
+     DERL1 1.2, IFI6 1.1, VMP1 1.1, CHST15 1.0, NAMPT 1.0, HTRA1 1.0, SLC15A4 0.9, TMEM91 0.9, HSPA1A 0.9,
+     ISG15 0.85, TFRC 0.9, GPNMB 0.75, CD14 0.7, PARP10 0.7, KRTCAP2 0.7, HNRNPK 0.65, NOL3 0.65, RXRA 0.6,
+     SCARB1 0.55, NOTCH3 0.45, AKAP8 0.45, BTF3 0.5, DNAJB12 0.5, SLC39A14 0.45, TRBC1 0.5, H3F3A 0.5, others 0.3-0.5.
+  b) Classic clear-cell nest with fine capillaries, no inflammation, well preserved:
+     SLC39A14 2.0 (if very typical; 0.5-1.0 if the section looks otherwise), LRRC41 1.6, IFI27 1.7, LY6E 1.0,
+     CPE 1.2, HTRA1 1.0, IFI6 0.9, PXN 0.8, NOL3 0.7, SLC15A4 0.8, TMEM91 0.8, SCARB1 0.7, PTGS1 0.65, VMP1 0.7,
+     NOTCH3 0.7, AKAP8 0.55, HSPA1A 0.6, TRBC1 0.55, STK39 0.55, CHST15 0.55, DERL1 0.55, others 0.2-0.5;
+     S100A9 0.2, CKB 0.3, GPNMB 0.2, NT5DC2 0.3.
+  c) Eosinophilic tumour heavily infiltrated by neutrophils, lymphocytes and macrophages:
+     IFI27 2.3, IFI6 1.8, S100A9 1.75, CD14 1.65, TRBC1 1.65, LY6E 1.8, NT5DC2 1.45, TFRC 1.3, FLNB 1.1,
+     LAPTM4B 1.1, ISG15 1.05, CIB1 1.0, GPNMB 0.95, GADD45B 0.9, PARP10 0.85, HNRNPK 0.85, HTRA1 0.85,
+     PXN 0.9, VMP1 0.9, HSPA1A 0.8, NAMPT 0.75, RXRA 0.75, SCARB1 0.75, CHST15 0.75, DNAJB12 0.7,
+     DERL1 0.7, CPD 0.65, PTGS1 0.65, SEMA4B 0.65, IRF7 0.6, CD109 0.6, HMOX1 0.55, CPE 0.5, LRRC41 0.5,
+     CKB 0.1, EGFL7 0.2.
+  d) Dense hyalinised collagen with a few nuclei, next to low-grade clear-cell tumour:
+     HSPA1A 0.5, LRRC41 0.3, HTRA1 0.3-0.4, CPE 0.3, IFI27 0.3, LY6E 0.2, IFI6 0.2, most others 0.0-0.15.
+  e) Sheet of red cells (haemorrhage) in a low-grade clear-cell tumour section:
+     HSPA1A 1.3, HMOX1 0.7, H3F3A 0.5, EGFL7 0.45, HTRA1 0.55, CPE 0.4, GADD45B 0.4, SCARB1 0.4, LRRC41 0.3,
+     IFI27 0.4, IFI6 0.45, TRBC1 0.45, NAMPT 0.4, SLC15A4 0.4, others 0.05-0.3.
+  f) Spindle-cell fascicles with some epithelioid tumour cells:
+     HTRA1 2.6, LY6E 1.5, IFI27 1.05, IFI6 0.95, CPE 0.85, NOTCH3 0.8, LAPTM4B 0.7, VMP1 0.6, NAMPT 0.6,
+     DERL1 0.6, HSPA1A 0.6, GADD45B 0.55, HNRNPK 0.55, ISG15 0.5, BTF3 0.5, YWHAE 0.45, others 0.15-0.45;
+     LRRC41 0.25, S100A9 0.15.
+  g) Fibromuscular stroma with scattered lymphocytes, no tumour:
+     IFI6 0.75, GADD45B 0.6, IFI27 0.5, HSPA1A 0.55, HTRA1 0.55, CPE 0.55, NOTCH3 0.45, RXRA 0.37, TRBC1 0.25,
+     NAMPT 0.3, LY6E 0.2, LRRC41 0.15, most others 0.1-0.25.
+
+CAUTIONS ABOUT APPEARANCE
+=========================
+* Stain colour varies enormously between sections and is NOT itself a guide to expression. Three training
+  sections were purple-blue with strong haematoxylin; four were intensely pink-magenta with weak, pinkish
+  nuclear staining. Both colour groups contained an RNA-rich and an RNA-poor section (the richest high-grade
+  tumour was purple; the poorest low-grade haemorrhagic tumour was also purple; among pink sections the
+  inflamed tumour was rich and the stroma-dominated tissue was poor). Judge cell types, nuclear size and
+  grade, cytoplasm and architecture instead of colour.
+* In strongly pink sections, eosinophilic-looking cytoplasm may simply be stain; check for granularity and
+  cell outlines. Clear cells still show as empty-looking cytoplasm with a crisp membrane, and red cells are
+  still recognisable as small uniform biconcave discs (orange-red in purple sections, deep pink-red in pink ones).
+* Weak haematoxylin makes lymphocytes look like faint pink dots; look for small round, evenly spaced nuclei
+  without visible cytoplasm. Neutrophils show lobed nuclei.
+* Artefacts seen in patches: dark folds or a black-brown fibre/hair across the patch, dark blurred smudges
+  (out of focus), ink or pigment specks, knife chatter, tears. Judge the tissue around them; a fold over
+  tumour does not reduce expression much. Out-of-focus dark smudges in pink sections usually overlie
+  ordinary tumour.
+* Brown-black granular pigment in lymphoid or stromal cells is haemosiderin or anthracotic pigment in
+  macrophages; it marks old haemorrhage (HMOX1, CD14 slightly up).
+* Patch edges: the measured spot covers mainly the central half of the patch width. A blood vessel or
+  stroma band at the very edge matters little.
+* Single-spot values are noisy (a gene whose average is 0.5 is 0 in about half of the spots of that kind).
+* Lymphoid aggregates are not always "rich": in the stroma-dominated fibromuscular tissue they were among the
+  poorest patches; in the dense lymphocyte-rich tumour they matched the tumour. Expect TRBC1 to go up
+  relative to the surroundings, not necessarily the other genes.
+* Necrosis was rare in the training material. Expect true coagulative necrosis (ghost cells, nuclear dust,
+  no intact nuclei) to behave like the acellular class or lower: all genes near zero, HSPA1A and HMOX1 a
+  little preserved. Viable tumour right next to necrosis may show raised S100A9 and CD14 (neutrophils).
+* Normal kidney (glomeruli, proximal tubules with brush border, distal tubules) was barely present; the few
+  tubule patches were similar to stroma in total level, with GADD45B (about 1.1), VMP1, IFI6, RXRA, YWHAE
+  relatively higher and the tumour modules (LRRC41, CD109, CPE, DERL1, PXN) low.
+
+SHORT SUMMARY
+=============
+Highest-yield cues, roughly in order of how much they move predictions:
+ 1. Large nucleolated nuclei with abundant pale cytoplasm (high grade) -> CPE very high (about 3-3.7), CD109,
+    CKB, SEMA4B, CIB1, FLNB high (1.2-1.9), LY6E about 2; everything raised.
+ 2. Dense mixed inflammatory infiltrate in tumour -> S100A9, CD14, TRBC1 about 1.6-1.7; IFI6 1.8, IFI27 2.2,
+    ISG15 1.0, NT5DC2 1.4, TFRC 1.3.
+ 3. Textbook alveolar clear-cell nests with chicken-wire capillaries -> SLC39A14 up to 2.4, LRRC41 1.6-1.8,
+    IFI27 1.8, NOL3/SCARB1/PTGS1/TMEM91/SLC15A4 about 0.7-0.8.
+ 4. Spindle-cell fascicles with eosinophilic epithelioid cells -> HTRA1 2.5-2.8, NOTCH3 0.7-0.85.
+ 5. Haemorrhage, glassy hyalinised stroma, oedema, empty space, fibromuscular stroma -> low everything
+    (most genes 0.05-0.3), except HSPA1A (0.5-1.4), HMOX1 in blood (0.5-0.8), IFI6/GADD45B in fibromuscular
+    stroma (about 0.6-0.75).
+ 6. If nothing distinctive: typical viable ccRCC tumour patch IFI27 about 1.4, LY6E 1.0-1.2, LRRC41 1.0-1.4,
+    CPE 1.0, HTRA1 0.8, IFI6 0.75, HSPA1A 0.8, SLC39A14 0.6-1.0, VMP1 0.7, PXN 0.65, SLC15A4 0.65, TMEM91 0.65,
+    CHST15 0.55, DERL1 0.55, NOL3 0.5, NAMPT 0.5, CIB1 0.5, TRBC1 0.5, SCARB1 0.5, others 0.2-0.45;
+    typical stroma patch about 55-65% of those counts (subtract roughly 0.1-0.3 from genes near 1).
