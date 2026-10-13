@@ -7,6 +7,7 @@ This instruction stays living on `main` while the track runs. The oversight chat
 **Revisions**
 - 13 October 2026. First version.
 - 13 October 2026, before handover. Revised after an independent check. The federated and pooled fits are compared with an exact head, the inventory job uses delivered code, full texts have a folder outside the clone, there is one list of papers, and the entry gate, the needs, the exit items of F4 and several paths were added.
+- 13 October 2026, evening. Round 7's inference track now runs at the same time on branch `round7-ppi`, with its own areas, and both tracks use the same Slurm accounts. Section 4 gains the rule that only the lead cancels a job, after checking that it is this track's own.
 
 ---
 
@@ -126,7 +127,7 @@ Where the embeddings of the `CCRCC` and `INDIANA_KIDNEY` tasks live on Longleaf 
 - Before naming the effect of a comparison, list in writing every variable that differs between its arms.
 - Write predictions down before running, and report them beside the outcomes. Do not quote a ratio whose denominator is within noise of zero.
 - Longleaf is where work runs. Nothing runs on Nicolas's Mac unless he asks for that specific task in chat. Such a request is written into the plan as a numbered extension before the task runs, covers the work it names, and does not carry across a gate. A local run records the host, the library versions, the md5 of every script and input, and the command line in place of the Slurm fields.
-- A job that has waited four hours is reported to Nicolas in chat with what it needs, and it keeps waiting. A pending job may be switched between `rc_htzhu_pi` and `rc_tengfei_pi`.
+- A job that has waited four hours is reported to Nicolas in chat with what it needs, and it keeps waiting. A pending job of this track's own may be switched between `rc_htzhu_pi` and `rc_tengfei_pi`. Only the lead cancels a Slurm job, and only after confirming with `squeue -u weiyang` and the track's job ledger, `results/round7/fedlearn/r7fl_slurm_jobs.csv`, that the job is this track's own. Round 7's inference track (branch `round7-ppi`, areas `results/round7/ppi/`, `code/scripts/round7_ppi_*.py`, `docs/round07/**/round07_ppi_*.md` and `.verify-exceptions-round7-ppi`) runs at the same time on the same accounts. A sub-agent never runs `scancel`, and you never write in the inference track's areas.
 - Every output directory gets `PROVENANCE.txt` (job id, partition actually used, node, date, the commit of the snapshot the job ran from, command line, config hash with its config, `PYTHONHASHSEED`, md5 of every script that ran) and is stamped with `stamp_dir()` from the `longleaf-provenance` skill, written by the job on the node. Before reusing any output you did not create, run `whose()` on it, and if the verdict is `sibling` or `unstamped`, ask the oversight chat through the report.
 - The submission route replaces `--job-name`, so jobs are identified by Slurm id. Record the intended prefix `r7fl_` and the stage in `PROVENANCE.txt`.
 - Give every parquet an explicit `pa.schema`, write summaries before bulk tables, and take seeds from `zlib.crc32`, never from `hash()`.

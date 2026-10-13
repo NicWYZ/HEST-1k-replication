@@ -2,7 +2,7 @@
 
 The advisor meeting of 12 October added a second line of work. David argued that predicting expression from foundation-model embeddings of H&E has reached a bottleneck, and proposed a textual knowledge base written by agents. Dr. Zhu proposed federated learning instead. Nicolas's assignment is a literature review of the viability of federated learning for this problem, toward a proof-of-concept methods paper. Before the PPI paper resumes, an overlap check against a lab manuscript and the newer literature found that the paper's direction stands but its claims of novelty must be repositioned. The plan is `masterplan.md`.
 
-**Tracks.** fedlearn (branch `round7-fedlearn`, stages F0 to F4, run by a Claude Science session with sub-agents, computation on Longleaf). ppi, to be opened by an amendment after the positioning note if Nicolas accepts the reframed question. **Starts from** `main` at the commit that carries the masterplan and the fedlearn instruction.
+**Tracks.** fedlearn (branch `round7-fedlearn`, stages F0 to F4, run by a Claude Science session with sub-agents, computation on Longleaf). ppi (branch `round7-ppi`, stages S0 to S5, opened on 13 October after Nicolas accepted the reframed question, run by a Claude Science session, computation on Longleaf). **Starts from** `main` at the commit that carries the masterplan and the fedlearn instruction.
 
 ## Gates
 
@@ -18,6 +18,7 @@ The advisor meeting of 12 October added a second line of work. David argued that
 | `masterplan.md` | 13 Oct, living | the round's plan, with the tracks, the schedule, the open questions and amendments |
 | `i01/fedlearn/round07_fedlearn_track.md` | 13 Oct, living | instruction for the fedlearn track, with the review's nine questions, the starting points, the sub-agent themes, stages F0 to F4, the rule for papers that cannot be retrieved, and predictions F.1 to F.10 |
 | `oversight/round07_ppi_positioning.md` | 13 Oct | the PPI paper's positioning after a full reading of Broska and Howes, Chen et al. and the cluster parts of Kluger et al., with what the paper can claim and a recommendation on O2 |
+| `i01/ppi/round07_ppi_track.md` | 13 Oct, living | instruction for the inference track, with inclusion-probability weighting under rejective selection, Broska and Howes's and Kluger et al.'s comparators, a cluster-level balanced adaptive design, the k-center check, stages S0 to S5 and predictions S1.1 to S4.2 |
 
 ## Corrections recorded this round
 
