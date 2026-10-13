@@ -12,7 +12,10 @@ recorded and do not exclude.
 Blinded names differ by use. The tree scan (I4, before a trial runs) is strict
 and also refuses the task's code and patient numbers. The transcript scan
 leaves those two out, because an agent told the tissue is clear cell renal
-cell carcinoma may write the abbreviation or "patient 3" by itself.
+cell carcinoma may write the abbreviation or "patient 3" by itself. A sample
+ID or barcode must stand apart from letters, digits and the base64 characters
++, / and =, because the images a session views are in its transcript as
+base64, where the three letters and a digit occur by chance (found in C5).
 
 File scan, before anything is committed or pushed. Token and canary patterns
 over cheatsheets, verdicts, prediction files, manifests and reports, plus the
@@ -35,9 +38,9 @@ TOKEN_FILES = ("/private/oauth_token", os.path.expanduser("~/hest-1k/r6ext_priva
 CANARY_STATES = ("/private/canaries.json", os.path.expanduser("~/hest-1k/r6ext_private/canaries.json"))
 
 BLINDING_TRANSCRIPT = [
-    r"(?-i:(?<![A-Za-z0-9])INT\d{1,2}(?![0-9]))", r"\bhest\b", r"\bhest[-_ ]?1k\b", r"Meylan", r"Tertiary lymphoid structures generate",
+    r"(?-i:(?<![A-Za-z0-9+/])INT\d{1,2}(?![A-Za-z0-9+/=]))", r"\bhest\b", r"\bhest[-_ ]?1k\b", r"Meylan", r"Tertiary lymphoid structures generate",
     r"\bGSE\d{5,}\b", r"\bbench_data\b", r"var_50genes", r"\buni_v2\b", r"\bvirchow", r"ffpe_c_\d+",
-    r"frozen_[abc]_\d+", r"(?-i:(?<![A-Za-z0-9])[ACGT]{16}-1(?![0-9]))", r"round6ext", r"r6ext",
+    r"frozen_[abc]_\d+", r"(?-i:(?<![A-Za-z0-9+/])[ACGT]{16}-1(?![A-Za-z0-9+/=]))", r"round6ext", r"r6ext",
 ]
 BLINDING_TREE = BLINDING_TRANSCRIPT + [r"(?-i:(?<![A-Za-z0-9])S?CCRCC(?![A-Za-z0-9]))", r"\bpatient[ _-]?\d{1,2}\b", r"(?-i:(?<![A-Za-z0-9])INT(?![A-Za-z0-9]))"]
 

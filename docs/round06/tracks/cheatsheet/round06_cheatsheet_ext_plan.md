@@ -75,7 +75,8 @@ The copy sits in the private folder, which no trial can see and which never ente
 - [x] C4.3 the data package, on the Mac (12 October, sections 4-bis and 4e). Jobs 4674823 (mistyped commit hash) and 4674826 (four hours in the queue) were both cancelled before they started.
 - [x] C4.4 the anchor and the comparators, on the Mac (12 October, section 4e).
 - [x] C4.5 harness and scorer tests (12 October, section 4e).
-- [ ] C5 pilot and report (gate). The baseline, then the writer at 4,096 bytes with its audit loop, then its predictor.
+- [x] C5 pilot and report (13 October). The baseline, the writer at 4,096 bytes with one audit and no revision, and its predictor ran without a failure. The report is `docs/round06/i04/cheatsheet/round06_cheatsheet_C5_report.md`. Tag `round6-cheatsheet-C5`. The session stops here until the C5 decision memo arrives.
+- [ ] C6 and C7, after the memo.
 
 ## 4b. C4.1, child sessions on the Mac
 
@@ -128,6 +129,7 @@ Two things the probes showed that are recorded and not fixed.
 - **R6.** Scored patches are numbered `p0001` to `p1500` across the three folders, so a spot ID in `predictions.csv` is unambiguous.
 - **R7.** Test patients' folders and patches are ordered with the keys `round6ext-patientorder-<trial_id>-test` and `round6ext-spotorder-<trial_id>-test`, so that a combined session's two halves use different draws.
 - **R8.** Strata. k-means is scikit-learn's `KMeans` with 8 clusters and `n_init=10`, on rows sorted by barcode. Clusters are numbered by their smallest barcode. A cluster's floor is 10, or its size if smaller. Ties in the largest remainder go to the cluster numbered first. One generator per slide draws from the clusters in order.
+- **R10.** In the transcript scan a sample ID or barcode must stand apart from letters, digits and the base64 characters, because viewed images sit in a transcript as base64 and matched by chance in the pilot.
 - **R9.** The transcript scan does not treat the uppercase task code or "patient" followed by a number as blinded names, since an agent told the tissue type may write either by itself. The scan of trial directories before a session starts does refuse both.
 
 ---

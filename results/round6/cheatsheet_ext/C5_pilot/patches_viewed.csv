@@ -1,0 +1,8 @@
+trial_id,role,images_returned,image_group,images_in_group,patches_per_image,patches_shown,how_counted
+d35a522f,writer,26,one montage per patient of 24 random patches,7,24,168,the command samples 24 spot IDs per patient into a 6 by 4 grid
+d35a522f,writer,26,montages of the 4 lowest and 4 highest spots per patient for the total and for three genes,4,56,224,the script pastes 8 patches for each of 7 patients
+d35a522f,writer,26,one sheet of the seven overviews with spots drawn as coloured dots,1,0,0,overviews only and no patch
+d35a522f,writer,26,numbered grids of 30 random patches per patient,14,15,210,the script writes 210 patches in sheets of 15
+e64d3aba,predictor,4,one montage per folder of 24 random patches,3,24,72,the command samples 24 files per folder into a 6 by 4 grid
+e64d3aba,predictor,4,a second montage of folder b,1,35,35,the command samples 35 files into a 7 by 5 grid
+eb295869,baseline,1,one montage of the first 8 patches of each folder,1,24,24,the command takes 8 files from each of 3 folders
