@@ -1,5 +1,7 @@
 # Round 6 extension, the cheatsheet track on held-out patients, operating plan
 
+*Frozen at the extension's close on 13 October 2026, after pull request #26 merged. It is no longer revised.*
+
 Living document of the execution session. Started 12 October 2026.
 
 ## 0. Where this plan comes from
