@@ -1,0 +1,24 @@
+stage: F2 step 4 (submitted in F0)
+intended_job_prefix: r7fl_
+frame_id: 8a6be84e-6b5d-4289-aaaf-100d3c5b6c05
+slurm_job_id: 4806992
+partition: spill
+account: rc_tengfei_pi
+node: c151418.ll.unc.edu
+cpu: x86_64
+date_utc: 2026-10-13T22:57:39+00:00
+snapshot_commit: f1f11c901e440023cadb7f992e4c8c12be3ccbad
+code_clone: /work/users/w/e/weiyang/hest_code/round7-fedlearn
+code_clone_HEAD: f1f11c901e440023cadb7f992e4c8c12be3ccbad
+PYTHONHASHSEED: 0
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/f1f11c901e440023cadb7f992e4c8c12be3ccbad/code/scripts/round7_fedlearn_f2_inventory.py --frame-id 8a6be84e-6b5d-4289-aaaf-100d3c5b6c05
+config: {"cap_minutes": 45.0, "clone": "/work/users/w/e/weiyang/hest_code/round7-fedlearn", "data_roots": ["bench_data", "embeddings", "embeddings_ext", "hest_ext"], "exclude_top": [".git", "code", "env"], "inventory": "results/round3/D0_inventory/hest_inventory.csv", "root": "/work/users/w/e/weiyang/hest_replication", "task_def_globs": ["results/round3/task_defs/*.json", "results/round3/D4_expansion/task_defs/*.json", "results/round4/data/P5_task/*.json"]}
+config_md5: c083a3ca9b2d7036c03cd0ab0549b22a
+script_md5:
+  e5b12550229ca4187fcdcee7f19bd286  code/scripts/round7_fedlearn_f2_inventory.py
+  69a4cdb299564fc079b683f0a3219dbc  code/scripts/round7_fedlearn_common.py
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+walk_complete: True
+outputs: inventory_summary.json centers_by_group.csv inventory.csv file_listing.csv
+

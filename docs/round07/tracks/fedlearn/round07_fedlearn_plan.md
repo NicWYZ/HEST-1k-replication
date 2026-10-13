@@ -4,18 +4,19 @@ Living document of the execution session. Started 13 October 2026. The instructi
 
 ## Current state
 
-- **Stage.** F0 complete on 13 October (plan and protocol committed, delivery 1 made, inventory job submitted). F1 complete except reader R1. F2 in progress.
+- **Stage.** Stopped at the F2 gate, 13 October. F0, F1 and F2 complete.
 - **Branch.** `round7-fedlearn` in `~/hest-1k/HEST-1k-replication-fedlearn`, created from the starting commit. Not pushed.
 - **Starting commit.** `3c328ccc4d68b44d0795cfb9c91ff332c3b399d3`. It is the only commit on `main` that touches the instruction, so it carries both revision lines of 13 October. `main` was at `b84187b65b61365e1348ba2d5c98b43c606f27e1` when the branch was made, one commit later, and that commit changes only `CLAUDE.md`.
 - **Longleaf.** Reached on 13 October from `longleaf-login4`. The project tree is on `main` at `9d7277dc8c4bfade08d5895051666ee134b8396a` (tag `round4-data-v2`), read with `git --no-optional-locks`. `results/round7/` does not exist there yet. The project's environment has `h5py`, `anndata`, `pyarrow` and `zarr`.
-- **Code clone on Longleaf.** Made by job 1 (Slurm 4803248), on branch `round7-fedlearn` at the starting commit, clean. Delivery 1 (Slurm 4806950) fast-forwarded it to `f1f11c901e440023cadb7f992e4c8c12be3ccbad` and wrote the snapshot `/work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/f1f11c901e440023cadb7f992e4c8c12be3ccbad/`.
+- **Code clone on Longleaf.** Made by job 1 (Slurm 4803248, `results/round7/fedlearn/job_accounting.csv`), on branch `round7-fedlearn` at the starting commit, clean. Delivery 1 (Slurm 4806950) fast-forwarded it to `f1f11c901e440023cadb7f992e4c8c12be3ccbad` and wrote the snapshot `/work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/f1f11c901e440023cadb7f992e4c8c12be3ccbad/`.
 - **Jobs.** See the job ledger. Job 1 was moved while pending from `rc_htzhu_pi` to `rc_tengfei_pi` with `scontrol update`, as section 4 allows.
 - **F1.** The seven theme sub-agents T1 to T7 were dispatched on 13 October while the F0 jobs queue, since the instruction has the inventory job run while F1 proceeds and there is no gate between F0 and F1. Their frame ids are in the sub-agent table below.
 - **Last delivered commit.** `f1f11c901e440023cadb7f992e4c8c12be3ccbad` (row 1 of `results/round7/fedlearn/code_deliveries.csv`).
 - **Papers folder.** `~/hest-1k/fedlearn_papers/` exists and is empty. The session has read and write access to it.
-- **F1 progress.** All seven theme fragments returned (488 rows, merged into 404 papers in `results/round7/fedlearn/F1_search/evidence_table.csv`, 695 search-log rows). The lead chose 84 core papers and re-verified each record against Crossref, PubMed, Europe PMC, arXiv or a proceedings page. Five core papers without an open full text were sent to Nicolas on 13 October (`paper_requests.md`). Three reader sub-agents are reading the 22 core papers that were at abstract level and have open copies.
+- **F1 progress.** All seven theme fragments returned (488 rows, merged into 404 papers in `results/round7/fedlearn/F1_search/evidence_table.csv`, 695 search-log rows). The lead chose 84 core papers and re-verified each record against Crossref, PubMed, Europe PMC, arXiv or a proceedings page. Five core papers without an open full text were sent to Nicolas on 13 October (`paper_requests.md`). Three reader sub-agents read the core papers left at abstract level that have open copies. R2 and R3 returned 16 rows of notes. R1 parked on a network approval it requested against its brief and was stopped before the gate, without notes.
 - **Read level.** In this track "full text" means the full text was opened and its methods, results and discussion were read where they bear on the questions, not every line. Several fragments used the same definition. Where only a preprint version was read, the row says so.
-- **Next action.** Submit job 2 when job 1 has finished and been checked, then job 3. Fold the readers' notes into the evidence table and commit F1.
+- **F2.** Report `docs/round07/i01/fedlearn/round07_fedlearn_F2_report.md` handed over with tag `round7-fedlearn-F2` and pull request #28. The session is stopped at the gate.
+- **Next action.** Wait for the F2 decision memo. Nothing of interval 2 is set up before it.
 
 ## Extensions
 
@@ -84,7 +85,7 @@ Sources as above, plus the MICCAI open-access site, NeurIPS proceedings and PMLR
 9. `secure multi-party computation transcriptomics`
 10. `swarm learning transcriptomics`
 
-Seeds from section 2.4 of the instruction: PPML-Omics, privateST, scFed, Federated Harmony, SwarmMAP, fedRBE. Each is re-verified, and its citing papers are screened by a forward search on Europe PMC or the web search.
+The seeds from section 2.4 of the instruction are PPML-Omics, privateST, scFed, Federated Harmony, SwarmMAP, fedRBE. Each is re-verified, and its citing papers are screened by a forward search on Europe PMC or the web search.
 
 ### T2. Federated computational pathology and medical imaging (Q3, Q5)
 
@@ -100,7 +101,7 @@ Sources as above, plus the MICCAI site, NeurIPS, PMLR, OpenReview, and AAAI thro
 8. `federated learning versus centralized training pathology performance`
 9. `federated prompt learning frozen features`
 
-Seeds: Lu et al. 2022, Saldanha et al. 2022, Adnan et al. 2022, Hosseini et al. 2023, Cong et al. 2026, Tsai et al. 2026, Rieke et al. 2020, Pati et al. 2022, Dayan et al. 2021.
+The seeds are Lu et al. 2022, Saldanha et al. 2022, Adnan et al. 2022, Hosseini et al. 2023, Cong et al. 2026, Tsai et al. 2026, Rieke et al. 2020, Pati et al. 2022, Dayan et al. 2021.
 
 ### T3. Data scale and the data centers hold (Q1, Q2)
 
@@ -116,7 +117,7 @@ Sources as above, plus NeurIPS (Datasets and Benchmarks), PMLR and OpenReview.
 8. `weakly supervised spatial gene expression from bulk`
 9. `TCGA H&E transcriptome prediction external validation`
 
-Seeds: Jaume et al. 2024, Wang et al. 2025, STPath, STFlow, HESCAPE, ST-Net, HE2RNA, BLEEP.
+The seeds are Jaume et al. 2024, Wang et al. 2025, STPath, STFlow, HESCAPE, ST-Net, HE2RNA, BLEEP.
 
 ### T4. Distributed and federated statistical estimation (Q7)
 
@@ -133,7 +134,7 @@ Sources as above, plus PMLR, NeurIPS and the web search for Annals of Statistics
 9. `meta-analysis individual participant data equivalence summary statistics`
 10. `federated inference confidence intervals heterogeneity`
 
-Seeds: Jordan, Lee and Yang 2019; Battey et al. 2018; Dobriban and Sheng 2021; Fan, Guo and Wang 2023; Gaye et al. 2014; Grammenos et al. 2020; Duan and colleagues 2020; Li, Cai and Duan 2023.
+The seeds are Jordan, Lee and Yang 2019; Battey et al. 2018; Dobriban and Sheng 2021; Fan, Guo and Wang 2023; Gaye et al. 2014; Grammenos et al. 2020; Duan and colleagues 2020; Li, Cai and Duan 2023.
 
 ### T5. Heterogeneity across centers (Q4)
 
@@ -149,7 +150,7 @@ Sources as above, plus NeurIPS, PMLR, OpenReview and the MICCAI site.
 8. `federated learning site effects random effects`
 9. `spatial transcriptomics gene panel harmonization Xenium Visium`
 
-Seeds: FedProx, SCAFFOLD, FedBN, FedSDA, fedRBE, Federated Harmony.
+The seeds are FedProx, SCAFFOLD, FedBN, FedSDA, fedRBE, Federated Harmony.
 
 ### T6. Privacy and governance (Q5)
 
@@ -164,7 +165,7 @@ Sources as above, plus NeurIPS, PMLR and the web search.
 7. `federated learning governance data use agreement consortium`
 8. `secure aggregation federated learning`
 
-Seeds: the attacks and defences cited by PPML-Omics and by Lu et al. 2022, Kairouz et al. 2021.
+The seeds are the attacks and defences cited by PPML-Omics and by Lu et al. 2022, Kairouz et al. 2021.
 
 ### T7. Alternatives and public stand-ins for a federation (Q8, Q9)
 
@@ -179,7 +180,7 @@ Sources as above, plus NeurIPS, PMLR, OpenReview and arXiv.
 7. `TCGA tissue source site batch effect`
 8. `multi-center spatial transcriptomics benchmark`
 
-Seeds: BLEEP, HESCAPE, STPath, and round 6's results (`docs/round06/README.md`).
+The seeds are BLEEP, HESCAPE, STPath, and round 6's results (`docs/round06/README.md`).
 
 ### Searches that find nothing
 
@@ -197,6 +198,8 @@ A query with no relevant hits is a row of the search log with `included = 0`, an
 - No header errors on the benchmark and expansion files, since every one was read by an earlier round.
 
 ## Job ledger
+
+Accounting from `sacct` is in `results/round7/fedlearn/job_accounting.csv`.
 
 | # | stage | purpose | Slurm id | account, partition | state | output |
 |---|---|---|---|---|---|---|
