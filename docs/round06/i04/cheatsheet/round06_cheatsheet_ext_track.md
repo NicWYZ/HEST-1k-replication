@@ -1,5 +1,7 @@
 # Round 6 extension, the cheatsheet track on held-out patients, instruction
 
+*Frozen at the extension's close on 13 October 2026. It is no longer revised.*
+
 12 October 2026. Prepared by the oversight chat for a fresh local Claude Code session on Nicolas's Mac, which reaches Longleaf over SSH. This document is self-contained. It is kept current on `main`. When Nicolas tells you to check for updates, fetch `main`, read the "Revisions" list below and the masterplan's amendments, and transcribe what changed into your plan.
 
 **Revisions.**

@@ -1,10 +1,10 @@
-# Round 6, the cheatsheet experiment (11 to 12 October 2026, reopened 12 October)
+# Round 6, the cheatsheet experiment (11 to 13 October 2026, reopened 12 October for an extension)
 
 David proposed an experiment by email. An agent predicts the expression of 50 genes from H&E patches. A second agent, which saw the measured expression, writes a text cheatsheet of limited size that the first may use. The question is how large the cheatsheet must be for the predictions to reach a given accuracy. Nicolas decided on 11 October to run it as round 6, with the purpose of learning whether few-shot prediction with a general-purpose language model can beat pathology foundation models. The PPI paper's next round becomes round 7.
 
 **Track.** cheatsheet (branch `round6-cheatsheet` for C0 and C1, and `claude/beautiful-mccarthy-feog45` for C2 and C3, stages C0 to C3, run by a Claude Code cloud session, with one packaging job on Longleaf). **Starts from** `main` at the commit that carries the masterplan and the instruction.
 
-**Reopened.** Nicolas reopened the round on 12 October, after its close, for an extension on held-out patients in intervals i04 and i05 of the same track. It keeps only arm C, uses 10 FFPE slides of HEST-bench `CCRCC` (7 for writers, 3 for testing), sizes from 256 to 65,536 bytes, and a rubric for biological, transferable cheatsheets that a checker agent enforces. It runs in a local Claude Code session on Nicolas's Mac that reaches Longleaf over SSH, on branch `round6-cheatsheet-ext`, stages C4 to C7. The plan is the masterplan's section "Extension" and the instruction is `i04/cheatsheet/round06_cheatsheet_ext_track.md`. The sections from "What the round established" on describe intervals i01 to i03 and are extended when the extension closes.
+**Reopened.** Nicolas reopened the round on 12 October, after its close, for an extension on held-out patients in intervals i04 and i05 of the same track. It keeps only arm C, uses 10 FFPE slides of HEST-bench `CCRCC` (7 for writers, 3 for testing), sizes from 256 to 65,536 bytes, and a rubric for biological, transferable cheatsheets that a checker agent enforces. It ran in a local Claude Code session on Nicolas's Mac, which was to reach Longleaf over SSH but in the end ran everything on the Mac, on branch `round6-cheatsheet-ext`, stages C4 to C7. The plan is the masterplan's section "Extension" and the instruction is `i04/cheatsheet/round06_cheatsheet_ext_track.md`. The extension closed on 13 October, and the sections from "What the round established" on cover both parts.
 
 ## Gates
 
@@ -13,6 +13,7 @@ David proposed an experiment by email. An agent predicts the expression of 50 ge
 | 12 Oct | cheatsheet | C1 | `i01/cheatsheet/round06_cheatsheet_C1_report.md` | `i02/cheatsheet/round06_cheatsheet_C1_decisions.md` | `round6-cheatsheet-C1` | #23 |
 | 12 Oct | cheatsheet | C3 | `i02/cheatsheet/round06_cheatsheet_final_report.md` | `i03/cheatsheet/round06_cheatsheet_final_decisions.md` | `round6-cheatsheet-final` | #24 |
 | 12 Oct | cheatsheet | C5 (extension) | `i04/cheatsheet/round06_cheatsheet_C5_report.md` | `i05/cheatsheet/round06_cheatsheet_C5_decisions.md` | `round6-cheatsheet-C5` | #25 |
+| 13 Oct | cheatsheet | C7 (extension) | `i05/cheatsheet/round06_cheatsheet_C7_report.md` | `i06/cheatsheet/round06_cheatsheet_C7_decisions.md` | `round6-cheatsheet-C7` | #26 |
 
 ## Documents
 
@@ -27,10 +28,13 @@ David proposed an experiment by email. An agent predicts the expression of 50 ge
 | `i03/cheatsheet/round06_cheatsheet_final_decisions.md` | 12 Oct | acceptance and close of the track, with the readings for the record and one correction |
 | `oversight/round06_cheatsheet_summary.md` | 12 Oct | the two-page summary of design, method, implementation, results and discussion, presented in place of slides |
 | `tracks/cheatsheet/round06_cheatsheet_plan.md` | 11 to 12 Oct, living, frozen 12 Oct | the session's operating plan, with flags F1 to F20 |
-| `i04/cheatsheet/round06_cheatsheet_ext_track.md` | 12 Oct, living | instruction for the extension, stages C4 to C7, with the slides, sampling, rubric, prompts, audit loop, isolation on the Mac, comparators and predictions X.1 to X.8 |
+| `i04/cheatsheet/round06_cheatsheet_ext_track.md` | 12 Oct, living, frozen 13 Oct | instruction for the extension, stages C4 to C7, with the slides, sampling, rubric, prompts, audit loop, isolation on the Mac, comparators and predictions X.1 to X.8 |
 | `i04/cheatsheet/round06_cheatsheet_C5_report.md` | 13 Oct | report at the C5 gate (C4 setup on the Mac and the pilot of three sessions) |
 | `i05/cheatsheet/round06_cheatsheet_C5_decisions.md` | 12 Oct | decision at C5. Harness accepted unchanged, the pilot counts, the grid runs as planned |
-| `tracks/cheatsheet/round06_cheatsheet_ext_plan.md` | 12 Oct, living | the extension session's operating plan |
+| `i05/cheatsheet/round06_cheatsheet_C7_report.md` | 13 Oct | end-of-extension report (C6 and C7), with its closing page "What the extension established" |
+| `i06/cheatsheet/round06_cheatsheet_C7_decisions.md` | 13 Oct | acceptance and close of the extension, with the readings for the record |
+| `oversight/round06_cheatsheet_ext_summary.md` | 13 Oct | the short summary of the extension, in the form of the first summary |
+| `tracks/cheatsheet/round06_cheatsheet_ext_plan.md` | 12 to 13 Oct, living, frozen 13 Oct | the extension session's operating plan |
 
 ## What the round established
 
@@ -41,17 +45,32 @@ David proposed an experiment by email. An agent predicts the expression of 50 ge
 - Medium effort cost 0.43 times high effort at four slots with no difference that one trial per slot can resolve, except at the baseline (same memo, item 5).
 - A confined child Claude Code session in a cloud container, with its own process and network namespaces and a filtering proxy, can run blind trials that reach nothing but the API (`i01/cheatsheet/round06_cheatsheet_C1_report.md`, section 3).
 
+**The extension (intervals i04 to i06), on three held-out CCRCC patients with rubric-bound cheatsheets.**
+
+- Zero-shot Opus 5.5 scored $-0.009$ on the mean within-slide Pearson (`i06/cheatsheet/round06_cheatsheet_C7_decisions.md`, section 2 item 1).
+- Every one of nine cheatsheets from 256 to 65,536 bytes beat the baseline, at 0.041 to 0.158, and accuracy did not rise with size (rank correlation $-0.017$). A 248-byte cheatsheet scored 0.105 (same memo, item 2).
+- No cheatsheet reached the `uni_v2` head on the same 3,500 spots, at 0.184 (same memo, item 3).
+- Seven sizes lie within about the spread a size-matched codebook shows from 512 bytes up with no agent, and the two low sizes cannot be told from session noise with one trial each (same memo, item 4).
+- The rubric and its checker held, with no code, model recipe or computed measurement in any final version (same memo, item 5).
+- Most added bytes described the training patients' levels, which a within-slide metric does not reward. The useful within-slide rule, that expression tracks cellularity, fits in a few hundred bytes (same memo, item 6).
+- A session given the labelled spots directly matched the `uni_v2` head within noise, at 0.194 (same memo, item 7).
+- A local Claude Code session on the Mac can run the same confinement inside a Docker container without `--privileged` (`i04/cheatsheet/round06_cheatsheet_C5_report.md`, section 3).
+
 ## Corrections and withdrawn readings
 
 - The instruction's revision line of 02:20 gives the pilot writers' sizes as 6,890 and 17,690 bytes. The manifest holds 6,892 and 17,688 (`i03/cheatsheet/round06_cheatsheet_final_decisions.md`, section 3).
 - The instruction first routed files through Nicolas's Mac, which a Claude Code cloud session cannot reach. The route was replaced by the private repository `NicWYZ/hest-r6-data` before any data moved (the instruction's revision of 11 October, 22:50).
 - Prediction C.1, that zero-shot Opus would score 0.05 to 0.35, was refuted at 0.502 (high effort) and 0.427 (medium) (`i02/cheatsheet/round06_cheatsheet_final_report.md`, section 5).
 - Arm A's 0.903 is a copying check and is not reported as a result on its own (`i03/cheatsheet/round06_cheatsheet_final_decisions.md`, section 2).
+- In the extension's design, `hoptimus0` was first named as CCRCC's best encoder. Round 1's best is `virchow2`, and the instruction was corrected before handover (`i04/cheatsheet/round06_cheatsheet_ext_track.md`, revisions).
+- The C5 report is headed 13 October. It was written on 12 October, before the C5 memo that answers it.
+- The extension's instruction placed data preparation on Longleaf. It ran on the Mac by Nicolas's decision (`i05/cheatsheet/round06_cheatsheet_C5_decisions.md`, section 5).
+- Five of the extension's eight predictions were refuted, among them the baseline range, the rise from 256 to 4,096 bytes and the combined session scoring below the best cheatsheet (`i05/cheatsheet/round06_cheatsheet_C7_report.md`, section 5).
 
 ## Carried forward
 
-- Nothing from this track. Nicolas decided on 12 October that nothing further is pursued.
-- Whether and when the summary goes to David is Nicolas's decision (open question R6-3 in `CLAUDE.md`).
+- Nothing from this track. Nicolas decided on 12 October, and again at the extension's close on 13 October, that nothing further is pursued.
+- Whether and when the two summaries go to David is Nicolas's decision (open question R6-3 in `CLAUDE.md`).
 - If a cloud execution track runs again, its instruction should not fix a branch name, and the confinement's scripts should be committed in the first interval (`i03/cheatsheet/round06_cheatsheet_final_decisions.md`, section 3).
 
 ## Read first next round

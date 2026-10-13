@@ -5,7 +5,7 @@ This is the map of the project's documents. Since 9 October 2026 they are filed 
 ## Start here
 
 1. `CLAUDE.md`, the operating file. It holds the current state, the next action, Nicolas's preferences and the hard rules.
-2. The reading guide of the latest round, `docs/round06/README.md`. Round 6 was reopened on 12 October for an extension, whose plan is the masterplan's section "Extension". Its last four sections say what the first three intervals established, what was corrected, what was carried forward and what to read first for the next round. Round 7 returns to the PPI paper, so round 5's guide, `docs/round05/README.md`, matters most for it.
+2. The reading guide of the latest round, `docs/round06/README.md`. Round 6 was reopened on 12 October for an extension and closed again on 13 October. Its last four sections say what the round established, what was corrected, what was carried forward and what to read first for the next round. Round 7 returns to the PPI paper, so round 5's guide, `docs/round05/README.md`, matters most for it.
 3. `docs/progress-log.md`, what happened at each step and why the project moved, newest first.
 
 For the methods themselves, derived from scratch, read `docs/reference/methods_and_state_of_play.md` and `docs/reference/concepts_explained_round4.md`.
@@ -43,7 +43,7 @@ Each stage of work produces the same chain. The oversight chat writes an instruc
 | 3 | 22 to 24 September | `docs/round03/` | the first experiments for both topics, after which Topics A and B as framed were retired | `docs/round03/README.md` |
 | 4 | 28 September to 3 October | `docs/round04/` | after the change of direction to labelling budgets for prediction-powered inference with clustered data, a data pull and two tracks (inference and prediction sets) | `docs/round04/README.md` |
 | 5 | 7 to 9 October | `docs/round05/` | the inference track's final interval, regime B, regression form and cluster selection, and the prediction-set map above 10 calibration donors | `docs/round05/README.md` |
-| 6 | 11 to 12 October, reopened 12 October | `docs/round06/` | David's cheatsheet experiment. With a size-limited cheatsheet, Opus did not beat a pathology foundation model on unseen spots, and reached 0.8 on seen spots only by copying. Reopened for an extension on held-out CCRCC patients with a rubric for biological cheatsheets, in intervals i04 and i05 | `docs/round06/README.md` |
+| 6 | 11 to 13 October, reopened 12 October | `docs/round06/` | David's cheatsheet experiment. With a size-limited cheatsheet, Opus did not beat a pathology foundation model on unseen spots, and reached 0.8 on seen spots only by copying. Reopened for an extension on held-out CCRCC patients with rubric-bound cheatsheets, where any cheatsheet helped, size did not, and none reached the pathology model | `docs/round06/README.md` |
 
 ## Superseded and withdrawn
 

@@ -2,7 +2,7 @@
 
 **Read this paragraph first, whoever you are.** This repository is worked on by two kinds of session. If you are an **execution session** (a Claude Science or Claude Code session on a track branch such as `round6-cheatsheet`), your instructions are your track's instruction document in `docs/roundNN/i01/<track>/`, the operating plan you transcribed from it, and every decision memo since. This file belongs to the oversight chat. Do not edit it and do not act on its plan. The copy on your branch was frozen when the branch started and may be out of date. Section 7's rules apply to you as well. If you are the **oversight chat**, this is your operating file. It replaces the oversight handoff documents, and keeping it current is part of your job.
 
-**Last updated:** 2026-10-12 (oversight, cloud session; C5 memo of the round 6 extension written, grid runs as planned)
+**Last updated:** 2026-10-13 (oversight, cloud session; round 6 closed after its extension, summary written)
 
 The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at UNC, in Dr. Hongtu Zhu's lab and supervised by Dr. Daiwei (David) Zhang. The advisors want methods, not applied analysis, with a submittable paper by spring 2027. The paper is "Labelling budgets for prediction-powered inference with clustered data", methodology and theory first, applied to HEST-1k spatial transcriptomics and ACS PUMS 2018 income (`docs/round04/00_prep/round4_originality_check.md`).
 
@@ -29,10 +29,10 @@ The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at U
 
 **How updates reach `main`.** The oversight chat pushes documentation-only commits straight to `main` (Nicolas, 9 October 2026). Documentation means this file, `README.md` and everything under `docs/` except a running track's own areas. Code, results, `.verify-*` files and anything in a running track's areas go through a pull request that Nicolas merges. Pull before committing, and never force-push.
 
-## 2. Current state (12 October 2026)
+## 2. Current state (13 October 2026)
 
-- **Round 6 reopened.** Round 6 closed on 12 October after its first three intervals (`docs/round06/README.md`, closing memo `docs/round06/i03/cheatsheet/round06_cheatsheet_final_decisions.md`, pull requests #23 and #24). With a size-limited cheatsheet, Opus 5.5 did not beat the `uni_v2` benchmark head on unseen spots, and reached 0.8 on seen spots only by copying. The two-page summary for the advisors is `docs/round06/oversight/round06_cheatsheet_summary.md`. Nicolas then reopened the round the same day for an extension on held-out CCRCC patients with rubric-bound cheatsheets (masterplan section "Extension", instruction `docs/round06/i04/cheatsheet/round06_cheatsheet_ext_track.md`). It runs in a local Claude Code session on his Mac, branch `round6-cheatsheet-ext`, stages C4 to C7, gates C5 and C7. C5 is answered (`docs/round06/i05/cheatsheet/round06_cheatsheet_C5_decisions.md`, pull request #25, not yet merged), and C6, the grid, runs as planned. In the pilot, zero-shot Opus scored $-0.009$ and the 4,096-byte cheatsheet $0.041$ within slides, against $0.184$ for the `uni_v2` head.
-- **Next action.** Nicolas merges #25 and hands the C5 memo to the session. The oversight chat waits for the C7 report, then closes the extension with a memo in `docs/round06/i06/cheatsheet/` and the close check. Nicolas still confirms billing on his usage page (escalation E3). Round 7 on the PPI paper follows.
+- **Between rounds.** Round 6 is closed, including its extension (`docs/round06/README.md`). The first part (closing memo `docs/round06/i03/cheatsheet/round06_cheatsheet_final_decisions.md`) found that a size-limited cheatsheet did not let Opus 5.5 beat the `uni_v2` head on unseen spots. The extension on held-out CCRCC patients (closing memo `docs/round06/i06/cheatsheet/round06_cheatsheet_C7_decisions.md`, pull requests #25 and #26) found that any rubric-bound cheatsheet helped, that size did not, and that none reached the head. The summaries are `docs/round06/oversight/round06_cheatsheet_summary.md` and `docs/round06/oversight/round06_cheatsheet_ext_summary.md`. Nicolas decided nothing further is pursued. No execution session is running.
+- **Next action.** Ask Nicolas what comes next. Round 7 returns to the PPI paper, with a writing plan, the next advisor presentation and the first methods question below as candidates. If pull request #26 is still open, he merges it, and the oversight chat then marks `docs/round06/tracks/cheatsheet/round06_cheatsheet_ext_plan.md` frozen.
 - **The PPI paper.** Round 5 closed on 9 October and everything is on `main` (pull requests #14 to #22). What goes into the paper is in section 3 of the two closing memos, `docs/round05/i04/ppi/round5_ppi_E5_decisions.md` and `docs/round05/i03/conformal/round5_conformal_W5_decisions.md`. The paper's estimator is `docs/round05/tracks/ppi/round5_ppi_estimator_definition.md`. The first methods question for round 7 is weighting the labelled clusters by their inclusion probabilities under rejective selection (the E5 memo's section 5). The explainer of round 5's results is `docs/round06/00_prep/round06_round5_results_explained.md`.
 - **What the advisors have seen.** Nicolas reported on 7 October that the second advisor meeting stopped at slide 8, so the advisors have seen the project up to the pivot and the originality check and not the round-4 or round-5 results (`docs/round05/i01/ppi/round5_ppi_track.md` section 2.1). The deck preparation is in `docs/round05/00_prep/deck2/`.
 - **Carried housekeeping from earlier rounds,** not urgent. The D4 probe rerun, the ten unresolved claims in two pre-round-3 documents, and the `r5c_leak_summary.csv` reading (`docs/round05/00_prep/round5_oversight_handoff.md` section 12).
@@ -45,8 +45,7 @@ The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at U
 | Q2 | Should the GHCP authors be contacted? | Nicolas, with his advisors, never a session | no contact |
 | Q3 | Which venue, and which result does the paper lead with? Not yet raised | Nicolas, with his advisors | open |
 | Q4 | Tag `round5-final` on `main` at round 5's close `[proposed]`. `round6-close` exists | Nicolas | no tag |
-| R6-3 | Whether and when round 6's results, including the extension's, go to David | Nicolas, never a session | nothing is sent |
-| R6-4 | The confinement's route on the Mac | the session, within its decision boundaries, reported at C5 | round 6's confinement inside a Linux container `[proposed]` |
+| R6-3 | Whether and when round 6's two summaries go to David | Nicolas, never a session | nothing is sent |
 
 ## 3. Where the record is
 
@@ -57,16 +56,12 @@ The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at U
 - **Rounds 1 to 4** (12 September to 4 October). Replication, instrumentation, the two pivots, round 4's tracks and the second deck's preparation. Summaries in `docs/round01/README.md` to `docs/round04/README.md`. The handoffs `docs/round03/00_prep/round3_oversight_handoff.md`, `docs/round04/oversight/round4_oversight_handoff.md` and `docs/round05/00_prep/round5_oversight_handoff.md` are the full history up to 4 October.
 - **Round 5** (7 to 9 October). Instructions for two tracks, five gate memos, the move from handoffs to this file, and the round's close. Summary in `docs/round05/README.md`, and each step has an entry in `docs/progress-log.md`.
 - **Between rounds 5 and 6** (9 to 11 October). `docs/` moved to the layout by round, interval and track (pull request #22), and round 5's results were explained for Nicolas.
-- **Round 6** (11 to 12 October). David's cheatsheet experiment, one track in a Claude Code cloud session, two gates and the close. Summary in `docs/round06/README.md`, and each step has an entry in the progress log.
+- **Round 6** (11 to 13 October). David's cheatsheet experiment, one track in a Claude Code cloud session with two gates, then an extension on held-out CCRCC patients in a local session on the Mac with two more gates, and the close. Summary in `docs/round06/README.md`, and each step has an entry in the progress log.
 
 ## 5. Oversight steps
 
-- [x] **X0. Reopen round 6 for the extension.** 12 October, cloud session. Design checked against the data and round 6's transcripts, confirmed by Nicolas in chat. Masterplan amendment and section "Extension", instruction, reading guides, progress log and this file updated.
-- [x] **X1. C5 gate memo.** 12 October, cloud session. Report checked against the branch's files and the ID mapping code. Harness accepted, pilot counts. Nicolas declined a second predictor and a pooled co-headline, so the grid runs as planned.
-- [ ] **X2. C7 closing memo** in `docs/round06/i06/cheatsheet/`, then the close check for round 6 again.
-
 - [ ] **The paper,** a writing plan from the closing pages of rounds 4 and 5, the two round-5 closing memos and the estimator definition.
-- [ ] **The next advisor presentation,** from the literature landscape and the two original topics through the pivot, the originality check and the results of rounds 4 and 5. Read `docs/round05/00_prep/deck2/` and the presentation preferences in section 6 first. Round 6's summary is ready as its own short item.
+- [ ] **The next advisor presentation,** from the literature landscape and the two original topics through the pivot, the originality check and the results of rounds 4 and 5. Read `docs/round05/00_prep/deck2/` and the presentation preferences in section 6 first. Round 6's two summaries are ready as a short item.
 - [ ] **Round 7, if Nicolas wants one,** starting from inclusion-probability weighting under rejective selection.
 
 ## 6. Working preferences (Nicolas's)

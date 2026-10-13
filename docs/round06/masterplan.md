@@ -2,7 +2,7 @@
 
 *Frozen at the round's close on 12 October 2026. The amendments at the end supersede the text above where they differ. The grid that ran was Opus 5.5 alone at medium effort, one run per cell, 20 sessions.*
 
-*Reopened on 12 October 2026, after the close, for an extension in intervals i04 and i05. The text above the section "Extension" stays frozen. That section and the amendments dated after the close are living until the extension closes.*
+*Reopened on 12 October 2026, after the close, for an extension in intervals i04 and i05. The extension closed on 13 October, and the whole masterplan, including the section "Extension", is frozen from then.*
 
 Written on 11 October 2026 by the oversight chat, after Nicolas confirmed the skeleton in chat the same day. The full instruction to the execution session is `i01/cheatsheet/round06_cheatsheet_track.md`. Amendments are appended at the end as dated lines and the text above them is not rewritten.
 
