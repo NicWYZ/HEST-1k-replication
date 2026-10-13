@@ -1,0 +1,14 @@
+stage: C4.5 tests
+machine: Nicolas's Mac (arm64, macOS 26.6.2), in the container r6ext (image r6ext:1), by his decision of 12 October (plan section 4-bis)
+date_utc: 2026-10-13T00:01:26+00:00
+code_commit: fb104a58, with the scripts' md5s below
+command: round6_cheatsheet_ext_score_test.py [/private/c4_test_truth.parquet]; round6_cheatsheet_ext_check_cheatsheet.check() on round 6's nine cheatsheets
+PYTHONHASHSEED: 0
+python: Python 3.13.5
+versions: anndata==0.12.19 h5py==3.16.0 numpy==2.5.3 pandas==2.3.3 pillow==12.3.0 pyarrow==26.0.0 scanpy==1.11.5 scikit-learn==1.9.1 scipy==1.18.1 (system numpy 2.5.3 is the one in use)
+data_package_manifest_md5: 9c6308763ad75e95d8bc672b3e3e7d29
+script_md5:
+  28b9bc06a005aff434d0d3697b84071c  round6_cheatsheet_ext_score_test.py
+  67ff655ed560aa3671f6078887cbcb37  round6_cheatsheet_ext_score.py
+  17247857aa0d2e31c41dcb1b0d61d2a7  round6_cheatsheet_score.py
+  a84b5878f1c2f06c661969af06d078f3  round6_cheatsheet_ext_check_cheatsheet.py

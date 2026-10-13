@@ -1,0 +1,37 @@
+{
+ "truth": "synthetic",
+ "n_spots": 1500,
+ "n_genes": 50,
+ "t1_true_values": {
+  "rbar": 1.0,
+  "pooled": 1.0,
+  "min_cell": 0.9999999999999998,
+  "pass": true
+ },
+ "t2_permuted": {
+  "mean_rbar": -0.0002275799192763375,
+  "min": -0.02796644720606484,
+  "max": 0.02305335918765838,
+  "pass": true
+ },
+ "t3_constant_gene": {
+  "slide": "a",
+  "gene": "G00",
+  "r": 0.0,
+  "flag": true,
+  "n_flagged": 1,
+  "pass": true
+ },
+ "t4_missing_spot": {
+  "pass": true,
+  "reason": "missing spots: 1"
+ },
+ "t4_full_file_validates": true,
+ "t5_constant_truth": {
+  "r_is_nan": true,
+  "flag": true,
+  "genes_in_that_slides_mean": 49,
+  "pass": true
+ },
+ "all_pass": true
+}

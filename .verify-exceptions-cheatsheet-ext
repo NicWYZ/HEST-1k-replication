@@ -1,0 +1,25 @@
+4674823	a Slurm job ID, cancelled before it started, not a measured value
+4674826	a Slurm job ID, cancelled before it started, not a measured value
+0.143	difference 0.184 - 0.041 of two values in comparators.csv and results/round6/cheatsheet_ext/C5_pilot/scores.csv
+0.050	difference 0.0409 - (-0.0093) of two values in results/round6/cheatsheet_ext/C5_pilot/scores.csv
+602	sum of the writer's patches_shown column in results/round6/cheatsheet_ext/C5_pilot/patches_viewed.csv, 168 + 224 + 0 + 210
+107	sum of the predictor's patches_shown column in results/round6/cheatsheet_ext/C5_pilot/patches_viewed.csv, 72 + 35
+0.82	largest memory sample, 838.6 MiB, in results/round6/cheatsheet_ext/C5_pilot/memory_samples.csv, converted to GiB
+6.2	section number of the instruction, not a measured value
+6.3	section number of the instruction, not a measured value
+6.4	section number of the instruction, not a measured value
+6.5	section number of the instruction, not a measured value
+543059522	crc32 of the key round6ext-slides, also in results/round6/cheatsheet_ext/C4_package/draws.json
+4254856531	crc32 of the key round6ext-split, also in results/round6/cheatsheet_ext/C4_package/draws.json
+245	the patch_size attribute, in results/round6/cheatsheet_ext/C4_package/package_summary.json as a string
+244	the patch_size attribute of INT18, 112 / 0.459, from um_per_fullres_px_from_patch_size in package_summary.json
+112	the patch extent in micrometres, 224 pixels at 0.5 micrometres per pixel, a design constant
+224	the patch width in pixels, a design constant quoted in the prompts
+500	the number of sampled spots per slide, a design constant of instruction section 6.1
+1,500	the number of scored spots, 3 x 500, a design constant of instruction section 6.1
+3,500	the number of writer spots, 7 x 500, a design constant of instruction section 6.1
+75	a percentage threshold transcribed from instruction section 6.5
+1cb6b08f	a commit hash, not a measured value
+1058d5f8	a commit hash, not a measured value
+7a6b15a	a commit hash, not a measured value
+25	the pull request number, confirmed with gh pr list
