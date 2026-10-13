@@ -70,4 +70,4 @@ The fedlearn track's closing memo is written after its F4 report is reviewed and
 
 ## Amendments
 
-None yet.
+- 13 October 2026. The PPI positioning note is written (`oversight/round07_ppi_positioning.md`). It recommends accepting O2 with three changes. The core question becomes inclusion-probability weighting for fixed-size rejective selection at few clusters, beside Kluger et al.'s independent Bernoulli selection. Broska and Howes's interval becomes a comparator in every design. And the adaptive arm becomes a cluster-level version of Chen et al.'s balanced design. The PPI track is still not opened, and waits for Nicolas's decision on O2.
