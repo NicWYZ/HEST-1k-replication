@@ -4,14 +4,14 @@ Living document of the execution session. Started 13 October 2026. The instructi
 
 ## Current state
 
-- **Stage.** F0, setup and the search protocol, in progress.
+- **Stage.** F0 complete on 13 October (plan and protocol committed, delivery 1 made, inventory job submitted). F1 complete except reader R1. F2 in progress.
 - **Branch.** `round7-fedlearn` in `~/hest-1k/HEST-1k-replication-fedlearn`, created from the starting commit. Not pushed.
 - **Starting commit.** `3c328ccc4d68b44d0795cfb9c91ff332c3b399d3`. It is the only commit on `main` that touches the instruction, so it carries both revision lines of 13 October. `main` was at `b84187b65b61365e1348ba2d5c98b43c606f27e1` when the branch was made, one commit later, and that commit changes only `CLAUDE.md`.
 - **Longleaf.** Reached on 13 October from `longleaf-login4`. The project tree is on `main` at `9d7277dc8c4bfade08d5895051666ee134b8396a` (tag `round4-data-v2`), read with `git --no-optional-locks`. `results/round7/` does not exist there yet. The project's environment has `h5py`, `anndata`, `pyarrow` and `zarr`.
-- **Code clone on Longleaf.** Job 1 submitted 13 October as Slurm 4803248, pending at the time of writing.
+- **Code clone on Longleaf.** Made by job 1 (Slurm 4803248), on branch `round7-fedlearn` at the starting commit, clean. Delivery 1 (Slurm 4806950) fast-forwarded it to `f1f11c901e440023cadb7f992e4c8c12be3ccbad` and wrote the snapshot `/work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/f1f11c901e440023cadb7f992e4c8c12be3ccbad/`.
 - **Jobs.** See the job ledger. Job 1 was moved while pending from `rc_htzhu_pi` to `rc_tengfei_pi` with `scontrol update`, as section 4 allows.
 - **F1.** The seven theme sub-agents T1 to T7 were dispatched on 13 October while the F0 jobs queue, since the instruction has the inventory job run while F1 proceeds and there is no gate between F0 and F1. Their frame ids are in the sub-agent table below.
-- **Last delivered commit.** None.
+- **Last delivered commit.** `f1f11c901e440023cadb7f992e4c8c12be3ccbad` (row 1 of `results/round7/fedlearn/code_deliveries.csv`).
 - **Papers folder.** `~/hest-1k/fedlearn_papers/` exists and is empty. The session has read and write access to it.
 - **F1 progress.** All seven theme fragments returned (488 rows, merged into 404 papers in `results/round7/fedlearn/F1_search/evidence_table.csv`, 695 search-log rows). The lead chose 84 core papers and re-verified each record against Crossref, PubMed, Europe PMC, arXiv or a proceedings page. Five core papers without an open full text were sent to Nicolas on 13 October (`paper_requests.md`). Three reader sub-agents are reading the 22 core papers that were at abstract level and have open copies.
 - **Read level.** In this track "full text" means the full text was opened and its methods, results and discussion were read where they bear on the questions, not every line. Several fragments used the same definition. Where only a preprint version was read, the row says so.
@@ -200,9 +200,9 @@ A query with no relevant hits is a row of the search log with `included = 0`, an
 
 | # | stage | purpose | Slurm id | account, partition | state | output |
 |---|---|---|---|---|---|---|
-| 1 | F0 | make the Longleaf code clone | 4803248 | submitted on `rc_htzhu_pi`, moved while pending to `rc_tengfei_pi`; `spill` | pending | |
-| 2 | F0 | deliver the first bundle and write the snapshot | | | not submitted | |
-| 3 | F0 | the inventory of F2 step 4 | | | not submitted | `results/round7/fedlearn/F2_inventory/` |
+| 1 | F0 | make the Longleaf code clone | 4803248 | submitted on `rc_htzhu_pi`, moved while pending to `rc_tengfei_pi`; ran on `spill`, node c130502 | completed, 1 min 46 s, MaxRSS 2091724K, after 1 h 42 min pending | `hest_code/round7-fedlearn` at `3c328ccc` |
+| 2 | F0 | deliver the first bundle and write the snapshot | 4806950 | `rc_tengfei_pi`; ran on `spill`, node c0413 | completed | `results/round7/fedlearn/deliveries/delivery_01_job4806950.log` |
+| 3 | F0 | the inventory of F2 step 4 | 4806992 | `rc_tengfei_pi` | submitted 13 October | `results/round7/fedlearn/F2_inventory/` |
 
 Job names carry the prefix `r7fl_` and the stage in `PROVENANCE.txt`, because the submission route replaces `--job-name`.
 
