@@ -1,0 +1,28 @@
+stage: C7 analysis
+machine: Nicolas's Mac (arm64, macOS 26.6.2), in the container r6ext (image r6ext:1)
+date_utc: 2026-10-13T04:49:35+00:00
+code_commit: 5af4de8a for the grid's sessions, with the C7 analysis script added after it
+commands: /opt/harness/bin/python -B /repo/code/scripts/round6_cheatsheet_ext_c7_analysis.py
+PYTHONHASHSEED: 0
+claude_code_version: 2.1.295 (Claude Code)
+served_model: claude-opus-5-5
+effort: medium
+data_package_manifest_md5: 9c6308763ad75e95d8bc672b3e3e7d29
+trial_python: Python 3.13.5, numpy 2.5.3, pandas 3.0.5, scipy 1.18.1, Pillow 12.3.0, scikit-image 0.26.0, scikit-learn 1.9.1
+script_md5:
+  fcc3782a0699e2789d38c5e144ece709  round6_cheatsheet_ext_build.py
+  7881e4756446af7b67e05ac4b197f053  round6_cheatsheet_ext_c5_summary.py
+  b401adacc6576d5e8fbd8f677fc5ee67  round6_cheatsheet_ext_c7_analysis.py
+  a84b5878f1c2f06c661969af06d078f3  round6_cheatsheet_ext_check_cheatsheet.py
+  356b53d5c64789d9cf87452097cb60d5  round6_cheatsheet_ext_child.py
+  a354a1b46b1ddc24c243e81cda6de0bc  round6_cheatsheet_ext_comparators.py
+  f1cb2d7af228499908d2897fe186dc5b  round6_cheatsheet_ext_filter_proxy.py
+  af22623150e4780d514f5bcac3e68e43  round6_cheatsheet_ext_package.py
+  ebb67e46b02d5ad09fa1f04cbcd5f443  round6_cheatsheet_ext_probes.py
+  164121a26e077cc39faeae7ccb19c0c4  round6_cheatsheet_ext_prompts.py
+  f0310b1018d339c9e8a8bf1ba646356a  round6_cheatsheet_ext_run.py
+  85113c72c715bbf68ce34f2cbf9b4666  round6_cheatsheet_ext_scan.py
+  67ff655ed560aa3671f6078887cbcb37  round6_cheatsheet_ext_score.py
+  28b9bc06a005aff434d0d3697b84071c  round6_cheatsheet_ext_score_test.py
+  17247857aa0d2e31c41dcb1b0d61d2a7  round6_cheatsheet_score.py
+  34c1a4c11885c85d035c04adc1b7c2e0  round6_cheatsheet_scan.py

@@ -76,7 +76,8 @@ The copy sits in the private folder, which no trial can see and which never ente
 - [x] C4.4 the anchor and the comparators, on the Mac (12 October, section 4e).
 - [x] C4.5 harness and scorer tests (12 October, section 4e).
 - [x] C5 pilot and report (13 October). The baseline, the writer at 4,096 bytes with one audit and no revision, and its predictor ran without a failure. The report is `docs/round06/i04/cheatsheet/round06_cheatsheet_C5_report.md`. Tag `round6-cheatsheet-C5`. The session stops here until the C5 decision memo arrives.
-- [ ] C6 and C7, after the memo.
+- [x] C6 the grid (13 October). 31 sessions, all valid on the first attempt, none excluded, three writers revised once and every final version passed. Outputs in `results/round6/cheatsheet_ext/C6_grid/`.
+- [x] C7 analysis and the closing report (13 October). Tables in `results/round6/cheatsheet_ext/C7_report/`, report `docs/round06/i05/cheatsheet/round06_cheatsheet_C7_report.md`, tag `round6-cheatsheet-C7`. The track ends here.
 
 ## 4b. C4.1, child sessions on the Mac
 
@@ -118,6 +119,46 @@ Two things the probes showed that are recorded and not fixed.
 - **Comparators** (`C4_comparators/tables/comparators.csv`). On the 1,500 scored spots the `uni_v2` head fitted on the 3,500 writer spots has mean within-slide Pearson 0.184, and 0.221 when fitted on all 31,075 patched spots of the training slides. The `virchow2` head has 0.126 and 0.180. The codebook runs from -0.041 at 256 bytes to 0.151 at 16,384 bytes. No gene is constant in the measurements on any test slide.
 - **Scorer tests** (`C4_tests/score_test_real.json`). All five pass on the real test-slide values.
 - **Mechanical check on round 6's nine cheatsheets** (`C4_tests/check_cheatsheet_on_round6.csv`). Seven are flagged, among them every one with a code or table flag. The two not flagged are 3,816 and 6,990 bytes.
+
+## 4f. Interval i05, from the C5 decision memo
+
+The memo is `docs/round06/i05/cheatsheet/round06_cheatsheet_C5_decisions.md`, read on `main` at commit `509d9387`, which is also the merge of pull request #25. The branch was fast-forwarded to it on 13 October. The instruction's revision line of 12 October at the C5 gate and the masterplan's amendment of the same date record the move of data preparation to the Mac and change nothing else. What follows is the memo's gate rule, acceptance, next interval and answers, copied unchanged.
+
+**The gate rule.** Report-and-wait means that no stage after the gated stage starts until the oversight chat has reviewed the report and replied. Not the dependent stages only, and not the expensive ones only. Every stage. Nothing after the gate is set up, staged or piloted. Inside an interval there are no interim reports and no interim stop conditions; anything that would have halted work is handled under the decision boundaries, recorded in an "Escalations" section of the next report, and work continues. Contact with anyone outside the project is never the session's decision.
+
+**Acceptance.**
+
+C4 and C5 are accepted, and the harness is accepted unchanged. The pilot's three sessions (the baseline `eb295869`, the writer `d35a522f` with its audit `727d88f6`, and the predictor `e64d3aba`) count as grid sessions (Q2).
+
+**The next interval.**
+
+Nicolas decided on 12 October that C6 runs as the instruction plans it, with no second predictor and no change to the metric or the prompts. The pooled value is reported beside the within-slide one, as section 6.7 already says.
+
+**C6.** The remaining eight writers with their audit loops (256, 512, 1,024, 2,048, 8,192, 16,384, 32,768 and 65,536 bytes), their eight predictors, and the combined session. Up to four sessions at once. The scanner runs after each batch.
+
+**C7.** As the instruction's section 7 says. In the comparison of sizes, give the codebook's spread across sizes (reading 2) beside the agents' curve, so the reader can judge how much of the curve's shape one fit or one trial can move. Report per-slide values throughout, with `INT24`'s failed representativeness check noted beside them.
+
+**Files.** The C7 report goes to `docs/round06/i05/cheatsheet/round06_cheatsheet_C7_report.md`, results to `results/round6/cheatsheet_ext/C6_grid/` and `results/round6/cheatsheet_ext/C7_report/`, transcripts to `NicWYZ/hest-r6-data` under `transcripts/ext/C6/`. Tag `round6-cheatsheet-C7`. Transcribe this memo into your plan before C6 starts.
+
+**Predictions.** X.1 is refuted at $-0.009$ and X.8 at a gap of 0.037. The other six stand as written in the instruction's section 8 and are scored at C7.
+
+**Answers to escalations and open questions.**
+
+- **E1. Data preparation and comparators on the Mac.** Accepted. It was Nicolas's decision in chat on 12 October. The instruction, the masterplan and `CLAUDE.md` record it. The Longleaf code clone and the empty folder in the project tree may stay as they are.
+- **E2. `INT24`'s sample.** Accepted and kept, as section 6.1 says. Report it as in section 4 above.
+- **E3. Billing.** Nicolas checks his usage page. It does not block C6.
+- **Readings R1 to R9 of the plan.** Accepted. In particular, the checker sees only the files of section 6.2, so the mechanical report is not shown to it, and the instruction's phrase "an input to the checker" is read as the harness's record, not the checker's input. A session that stops at its turn cap with a valid output is used, with its stop reason recorded.
+- **Q1. Predictors writing feature scripts after a few montages.** This is the behaviour the fixed prompts allow, and the baseline measures the same behaviour. No prompt changes.
+- **Q2.** Yes, the pilot counts (section 1).
+- **Q3. `curl`.** Not needed. A trial's network namespace has no route out whatever tool it uses, and the image has no `curl` for a trial to use either.
+- **Token in the I2 transcript.** Accepted as handled, with both md5s recorded.
+
+**How this session runs C6**, within its decision boundaries.
+
+- The stage is `C6_grid`. The pilot's four sessions stay in `C5_pilot` and are joined to the grid's tables in C7.
+- Two batches of four sizes, each size a writer with its audit loop followed by its predictor, four sizes at once. The first batch is 256, 512, 1,024 and 2,048 bytes and the second 8,192, 16,384, 32,768 and 65,536 bytes. The combined session runs after them.
+- The scanner runs after each batch and before the next starts. A session it excludes is rerun as a new session.
+- Container memory is sampled every 30 seconds. If it passes 75% of the container's memory in the first batch, the second runs three at once.
 
 ## 4d. Readings of the instruction made while building, for the C5 report
 

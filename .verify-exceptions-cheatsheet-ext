@@ -23,3 +23,22 @@
 1058d5f8	a commit hash, not a measured value
 7a6b15a	a commit hash, not a measured value
 25	the pull request number, confirmed with gh pr list
+425	the number of path_system rows in results/round6/cheatsheet_ext/C6_grid/transcript_scan_hits.csv, a row count
+0.026	difference 0.1838 - 0.1576 of two values in results/round6/cheatsheet_ext/C7_report/comparators.csv and grid.csv
+0.024	0.05 - 0.026, the margin by which prediction X.4 holds
+0.167	difference 0.1576 - (-0.0093) of two values in results/round6/cheatsheet_ext/C7_report/grid.csv
+0.064	difference 0.1053 - 0.0409 of two values in results/round6/cheatsheet_ext/C7_report/grid.csv
+0.056	difference 0.1053 - 0.0490 of two values in results/round6/cheatsheet_ext/C7_report/grid.csv
+0.052	difference 0.1576 - 0.1053, the span of the seven higher sizes in results/round6/cheatsheet_ext/C7_report/grid.csv
+0.036	difference 0.1938 - 0.1576 of two values in results/round6/cheatsheet_ext/C7_report/combined.json and grid.csv
+0.010	difference 0.1938 - 0.1838 of two values in results/round6/cheatsheet_ext/C7_report/combined.json and comparators.csv
+0.12	the combined session's own reported held-out correlation, quoted from its transcript
+14.40	sum of cost_own_usd over the C6_grid rows of results/round6/cheatsheet_ext/C7_report/sessions.csv
+86	ratio 0.1576 / 0.1838 as a percentage, from results/round6/cheatsheet_ext/C7_report/grid.csv and comparators.csv
+95	ratio 0.6470 / 0.6829 as a percentage, from results/round6/cheatsheet/C3_report/grid.csv
+56	3,342.5 seconds in minutes, from results/round6/cheatsheet_ext/C7_report/cost_by_role.csv
+509d9387	a commit hash, not a measured value
+31,075	the number of patched spots of the seven training slides, n_fit in results/round6/cheatsheet_ext/C4_comparators/tables/comparators.csv
+ba02c81	a commit hash, not a measured value
+faf3ca8c	a commit hash, not a measured value
+26	the pull request number, confirmed with gh pr list

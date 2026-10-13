@@ -1,0 +1,24 @@
+{
+ "pass": false,
+ "violations": [
+  {
+   "lines": "115-116",
+   "rule": "F3",
+   "reason": "It describes how one training section was stained (\"The section was stained strongly pink\"), and because each phenotype is one tumour (lines 108-109), this ties the description to a single training section."
+  },
+  {
+   "lines": "124",
+   "rule": "F6",
+   "reason": "\"Stained purple-blue (hematoxylin-heavy)\" offers a section's stain batch as a cue for recognising the CCb phenotype, and the file itself says on line 311 that stain colour is a lab and batch property, not tumour appearance."
+  },
+  {
+   "lines": "167",
+   "rule": "F6",
+   "reason": "\"Purple-stained\" offers the stain colour of one section as a cue for recognising the HG phenotype, which uses a batch property as a predictor instead of tissue appearance."
+  }
+ ],
+ "audit_id": "fa0cd2a6",
+ "writer": "477e9a00",
+ "version": 1,
+ "size": 32768
+}

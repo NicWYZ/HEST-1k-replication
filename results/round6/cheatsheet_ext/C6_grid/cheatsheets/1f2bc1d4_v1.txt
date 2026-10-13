@@ -1,0 +1,96 @@
+CHEATSHEET: clear cell renal cell carcinoma (ccRCC), Visium spots (55 um), 50 genes, values = log(1+count)
+
+1. WHAT DRIVES THE NUMBERS
+- Counts are low: most genes are 0 in 45-70% of spots; non-zero values are mostly 0.69, 1.10, 1.39. Only CPE, HTRA1, IFI27, LY6E, LRRC41, SLC39A14 often reach 2-3.
+- Two things set a spot's level. (a) What tumour/tissue pattern the whole section shows. Differences between sections are larger than differences inside one. (b) How cellular the patch is: cell-rich tumour > lymphoid > haemorrhage > fibrous/hyaline stroma.
+- Nearly all 50 genes rise and fall together with cellularity (see 5).
+- Stain colour (hot pink to blue/purple) varies between sections and is not biology. Judge morphology (nuclear size, cytoplasm, architecture, cell density), not hue.
+
+2. STEP 1 - DECIDE WHICH PATTERN THE PATCH BELONGS TO
+A. Eosinophilic/epithelioid tumour cells with vesicular nuclei and visible nucleoli, mixed with spindle cells and collagen bundles in a sarcomatoid or fasciculating pattern. Lymphocytes appear in streaks. HTRA1 is very high (about 2.7, often 3+ in epithelioid tumour areas), and NOTCH3 and LAPTM4B are raised. Immune genes are low.
+B. High-grade tumour: solid sheets of large cells with large round pleomorphic nuclei, prominent nucleoli and abundant clear-to-amphophilic/granular cytoplasm; occasional giant cells. Highest total counts. CPE is very high (about 3.3, usually 3-4). CD109, CKB, SEMA4B, FLNB, CIB1, LRRC41, LY6E (about 1.9) and IFI27 are high. HTRA1 and NOTCH3 are only modest.
+C1. Classic clear cell carcinoma, cell-rich: compact alveolar/acinar nests of cells with optically clear cytoplasm, crisp cell membranes and small round dark nuclei (low grade), separated by a delicate capillary network. It may contain scattered lymphocytes. LRRC41, SLC39A14, TMEM91, SLC15A4, NOL3, SCARB1, PTGS1 and IFI27 are high. When the nests are crisp and densely packed, SLC39A14 reaches about 2 and LRRC41 about 1.6. In looser sheets these are about 0.5 and 0.9.
+C2. Clear cell carcinoma that is sparse: clear cells with much haemorrhage (sheets of red cells), oedema, hyalinised pink stroma, hemosiderin and empty spaces. Everything is low: about half of C1, with total counts about 40% of B. Only HSPA1A (about 0.9) and LRRC41 (about 0.8) stay moderate.
+D. No obvious tumour: dense fibrosis/scar, atrophic or thyroidized tubules, thick-walled vessels, lymphoplasmacytic infiltrates and hemosiderin. Every gene is low; GADD45B (about 0.6) and HSPA1A (about 0.5) are relatively the highest.
+E. Eosinophilic tumour in a loose, cleft-rich, oedematous stroma with many inflammatory cells: neutrophils, lymphocytes, foamy macrophages and blood in the spaces. Myeloid, interferon and T-cell genes are high: S100A9 (about 1.7), CD14 (about 1.6), TRBC1 (about 1.6), IFI6, ISG15, IRF7, PARP10 and GPNMB. TFRC and NT5DC2 (about 1.4), IFI27 (about 2.2) and LY6E are also high. Total counts are as high as B.
+If unsure, use "All" (average over all this tissue).
+
+3. MEAN PER PATTERN (whole sections, tumour+stroma mixed)
+gene         A    B   C1   C2    D    E  All
+AKAP8     0.30 0.35 0.44 0.21 0.20 0.44 0.34
+BLVRB     0.23 0.29 0.25 0.08 0.10 0.27 0.21
+BTF3      0.43 0.39 0.26 0.11 0.09 0.34 0.27
+CD109     0.24 1.53 0.30 0.11 0.15 0.52 0.45
+CD14      0.29 0.59 0.42 0.23 0.15 1.59 0.53
+CHST15    0.40 0.91 0.48 0.30 0.26 0.71 0.51
+CIB1      0.45 1.29 0.51 0.28 0.23 0.90 0.60
+CKB       0.17 1.22 0.24 0.14 0.24 0.10 0.33
+CPD       0.38 0.34 0.47 0.18 0.22 0.65 0.39
+CPE       0.87 3.27 0.90 0.42 0.54 0.45 1.05
+DERL1     0.60 0.92 0.59 0.18 0.15 0.68 0.53
+DNAJB12   0.22 0.39 0.22 0.14 0.18 0.60 0.28
+EGFL7     0.39 0.17 0.37 0.31 0.25 0.21 0.29
+FLNB      0.33 1.38 0.37 0.23 0.29 1.13 0.58
+GADD45B   0.58 0.58 0.40 0.20 0.57 0.92 0.52
+GPNMB     0.19 0.61 0.28 0.19 0.10 0.86 0.36
+H3F3A     0.17 0.38 0.28 0.33 0.23 0.39 0.29
+HMOX1     0.20 0.23 0.35 0.27 0.13 0.50 0.29
+HNRNPK    0.48 0.56 0.47 0.30 0.26 0.85 0.48
+HSPA1A    0.57 0.96 0.78 0.94 0.54 0.91 0.78
+HTRA1     2.73 0.77 0.86 0.52 0.59 0.89 1.03
+IFI27     0.91 1.60 1.32 0.63 0.55 2.18 1.22
+IFI6      0.84 0.91 0.73 0.37 0.74 1.75 0.87
+IRF7      0.27 0.32 0.24 0.10 0.09 0.67 0.28
+ISG15     0.47 0.74 0.35 0.17 0.25 1.03 0.48
+KRTCAP2   0.29 0.52 0.25 0.11 0.11 0.44 0.28
+LAPTM4B   0.72 0.42 0.37 0.16 0.29 1.04 0.48
+LRRC41    0.25 1.34 1.22 0.81 0.21 0.41 0.78
+LY6E      1.51 1.93 1.07 0.34 0.27 1.73 1.13
+NAMPT     0.55 0.80 0.49 0.28 0.38 0.81 0.54
+NOL3      0.40 0.48 0.56 0.18 0.11 0.43 0.39
+NOTCH3    0.72 0.29 0.47 0.19 0.36 0.42 0.42
+NT5DC2    0.40 0.23 0.18 0.09 0.21 1.40 0.39
+PARP10    0.25 0.60 0.36 0.17 0.17 0.82 0.39
+PTGS1     0.23 0.26 0.46 0.14 0.31 0.54 0.34
+PXN       0.59 1.01 0.64 0.26 0.18 0.88 0.60
+RXRA      0.46 0.56 0.33 0.18 0.39 0.74 0.43
+S100A9    0.18 0.34 0.18 0.19 0.22 1.70 0.43
+SCARB1    0.24 0.45 0.49 0.29 0.10 0.73 0.40
+SEMA4B    0.33 1.20 0.36 0.14 0.22 0.57 0.45
+SLC15A4   0.35 0.75 0.62 0.33 0.14 0.44 0.47
+SLC39A14  0.42 0.38 1.36 0.36 0.24 0.58 0.67
+STK39     0.50 0.37 0.45 0.28 0.21 0.46 0.39
+TFRC      0.40 0.71 0.33 0.21 0.21 1.36 0.51
+TM2D3     0.26 0.34 0.31 0.15 0.16 0.33 0.27
+TMEM91    0.32 0.70 0.75 0.24 0.13 0.29 0.45
+TP53INP1  0.20 0.33 0.46 0.17 0.17 0.30 0.30
+TRBC1     0.22 0.36 0.61 0.39 0.32 1.57 0.58
+VMP1      0.60 0.86 0.63 0.37 0.36 0.89 0.62
+YWHAE     0.47 0.41 0.25 0.11 0.09 0.46 0.29
+
+4. STEP 2 - ADJUST FOR WHAT IS INSIDE THIS PATCH (relative to the pattern mean above)
+- Cell-rich tumour (nests/sheets filling the patch): x1.1-1.2 for all genes.
+- Fibrous or hyalinised stroma, few nuclei, wavy pink collagen, smooth muscle: about x0.75 overall. Tumour genes drop most: LRRC41 -0.7, IFI27 -0.6, LY6E -0.5, SLC39A14 -0.4, DERL1 -0.4, SEMA4B -0.35, PXN, PARP10, CD109, CPD and HNRNPK about -0.3. RXRA, GADD45B, NOTCH3, HMOX1, EGFL7, CD14 and NT5DC2 barely change.
+- Nearly acellular hyaline tissue or mostly empty patch: lowest; most genes 0, top genes 0.3-0.7.
+- Haemorrhage (sheets of red cells): about x0.85. LY6E, LRRC41, FLNB, HNRNPK, HSPA1A and VMP1 fall by 0.4-0.7. NAMPT, CHST15, EGFL7, CKB and IRF7 rise slightly (+0.15-0.25).
+- Dense lymphocytes (small round dark nuclei packed together): about x0.9. TRBC1 is slightly up, and GPNMB, S100A9 and BLVRB are slightly up. SLC39A14 (-0.75), LY6E, HTRA1 (-0.4), HNRNPK, SCARB1 and TFRC drop.
+- Tumour by a vessel lumen: CPE, HTRA1, TFRC, HSPA1A slightly up (+0.2-0.4).
+- Neutrophils, foamy macrophages or fibrinous inflammatory exudate: S100A9, CD14, GPNMB, HMOX1 and NAMPT up. S100A9 is the most specific of these, and is near 0 where these cells are absent.
+- Within one section, clear versus eosinophilic cytoplasm changes values little (<0.3).
+
+5. GENE GROUPS (biology)
+- Tumour cell / RNA-content group (move together most tightly): IFI27, LY6E, LRRC41, CIB1, CPE, FLNB, SEMA4B, CD109, DERL1, PXN, SLC15A4, VMP1, HNRNPK, KRTCAP2.
+- ccRCC clear-cell (hypoxia/lipid) program: SLC39A14, LRRC41, TMEM91, NOL3, SCARB1, SLC15A4 and PTGS1 are highest in low-grade clear nests.
+- High-grade program: CPE, CD109, CKB, SEMA4B, FLNB and CIB1 are highest in large-nucleus, nucleolated tumour.
+- Interferon: IFI27, IFI6, ISG15, IRF7, PARP10 and LY6E are highest where tumour is inflamed. IFI27 is also high in endothelium-rich clear-cell tumour.
+- Myeloid: CD14, S100A9 (neutrophils/monocytes), GPNMB (macrophages), HMOX1 (iron-laden macrophages, near haemorrhage).
+- T cells: TRBC1 is high where lymphocytes infiltrate tumour (about 1.5 in inflamed tumour). In quiet sections and acellular stroma it is 0.2-0.4.
+- Stroma/vascular mural: HTRA1, NOTCH3 and EGFL7 (endothelium). HTRA1 is also made by sarcomatoid/epithelioid tumour cells (pattern A).
+- HSPA1A and GADD45B (stress) are fairly flat (0.5-1.0).
+- TFRC, NT5DC2 and LAPTM4B are higher in eosinophilic, metabolically active tumour (patterns A, E).
+
+6. QUICK RULES
+- Scar with atrophic tubules and no tumour cells: use D (very low).
+- Large nucleolated nuclei across the whole patch: B. Expect CPE 3+.
+- Crisp small clear cells in delicate capillary nests: C1. Expect SLC39A14 and LRRC41 near the top of the gene list.
+- Lots of inflammatory cells plus eosinophilic tumour: E. Expect S100A9, CD14 and TRBC1 above 1.
