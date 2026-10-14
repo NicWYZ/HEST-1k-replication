@@ -124,6 +124,17 @@ def main():
         n1.add(f"S1m_max_over_D2_cells|{col}", d2diag[col].max(), S1D)
     d0 = dg[dg["part"] == "D0_identity"]
     n1.add("S1m_D0_identity_HT_minus_classical_max", d0["ht_minus_classical_max"].max(), S1D)
+    # Bias of the weighted estimators against a zero pi_hat in the cell (S2 report, expectation 1 of theory 1.8).
+    zc = d2diag["n_columns_with_pi_zero"] > 0
+    for t in TISSUE + CENSUS:
+        n1.add(f"S1m_D2_cells_with_pi_zero_column|{t}", int((zc & (d2diag["vtag"] == t)).sum()), S1D)
+    for e_ in ("classical", "HT", "H"):
+        col = f"share_genes_bias_z_gt3_{e_}"
+        hi = d2diag[col] > 0.1
+        n1.add(f"S1m_D2_cells_bias_share_gt_0.1|{e_}", int(hi.sum()), S1D, "share of genes with |z| > 3 above 0.1")
+        n1.add(f"S1m_D2_cells_bias_share_gt_0.1_with_pi_zero_column|{e_}", int((hi & zc).sum()), S1D)
+        n1.add(f"S1m_median_bias_share_cells_without_pi_zero_column|{e_}", d2diag.loc[~zc, col].median(), S1D)
+        n1.add(f"S1m_median_bias_share_cells_with_pi_zero_column|{e_}", d2diag.loc[zc, col].median(), S1D)
     sd2 = s[s["design"] == "D2"]
     for est, var, ref in (("classical", LIN, "n1"), ("classical", "rej_t", "res"), ("HT", "sim", "res"), ("H", "sim", "res"),
                           ("H", "sim", "n1"), ("H", "apx_size", "res"), ("H", "apx_bal", "res"), ("HTl", "sim", "res"), ("BH", "bh", "normal")):
@@ -189,7 +200,7 @@ def main():
                     n2.add(f"S2m_coverage_median_over_cells|{tag}", xx[f"coverage_{tg}_median"].median(), S2M)
                     n2.add(f"S2m_coverage_min|{tag}", xx[f"coverage_{tg}_median"].min(), S2M)
                     n2.add(f"S2m_coverage_max|{tag}", xx[f"coverage_{tg}_median"].max(), S2M)
-                n2.add(f"S2m_wr_D0cl_median|{setname}|{dname}|{est}|{iv}", x["wr_D0cl_median"].median(), S2M)
+            n2.add(f"S2m_wr_D0cl_median|{setname}|{dname}|{est}|{iv}", x["wr_D0cl_median"].median(), S2M)
     for (dname, est, iv, G), x in s2.groupby(["design", "estimator", "interval", "G"]):
         for tg in ("design", "super"):
             for nl in sorted(x["n_L"].unique()):
