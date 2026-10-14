@@ -1,0 +1,41 @@
+r7ppi_ S0 delivery 01 slurm_job_id=4816974 partition=spill account=rc_htzhu_pi node=c151406.ll.unc.edu date=2026-10-13T21:12:04-04:00
+bundle_md5=3fc9876a8b214ab95b62d6c8e066f771
+head_before=c2af4630fe601c255c927d2a3f5a76b19a53d9f2
+/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/82ac9cb8-35b9-492b-a684-a84c592ca552/r7ppi_delivery_01.bundle is okay
+The bundle contains this ref:
+c9570f7b63b8c0eb5245e6700380054b0e19a654 refs/heads/round7-ppi
+The bundle requires this ref:
+c2af4630fe601c255c927d2a3f5a76b19a53d9f2 
+The bundle uses this hash algorithm: sha1
+verify_rc=0
+From /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/82ac9cb8-35b9-492b-a684-a84c592ca552/r7ppi_delivery_01.bundle
+ * branch              round7-ppi -> FETCH_HEAD
+fetch_rc=0
+Updating c2af4630..c9570f7b
+Fast-forward
+ code/scripts/round7_ppi_d2.py               | 257 ++++++++++++++++++++++++++++
+ code/scripts/round7_ppi_run.py              | 129 ++++++++++++++
+ docs/round07/tracks/ppi/round07_ppi_plan.md | 193 +++++++++++++++++++++
+ results/round7/ppi/code_deliveries.csv      |   1 +
+ results/round7/ppi/r7ppi_slurm_jobs.csv     |   1 +
+ 5 files changed, 581 insertions(+)
+ create mode 100644 code/scripts/round7_ppi_d2.py
+ create mode 100644 code/scripts/round7_ppi_run.py
+ create mode 100644 docs/round07/tracks/ppi/round07_ppi_plan.md
+ create mode 100644 results/round7/ppi/code_deliveries.csv
+ create mode 100644 results/round7/ppi/r7ppi_slurm_jobs.csv
+merge_rc=0
+head_after=c9570f7b63b8c0eb5245e6700380054b0e19a654
+commits_carried:
+c9570f7b63b8c0eb5245e6700380054b0e19a654 Round 7 PPI S0: job runner and the new D2 code for anchor arm 2
+03ed06c59048496379707e3c0a7b2f9fd92a7aff Round 7 PPI S0: operating plan and empty ledgers
+snapshot=/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/c9570f7b63b8c0eb5245e6700380054b0e19a654
+snapshot_files=311
+snapshot_writable_files=0
+2de31569ffe72239062fbeb0c9a50fc5  round5_ppi_estimator.py
+e13183a4ffdddf4f01ba5136844c606d  round5_ppi_twolevel.py
+d78b654d7fd8e6a824f73dd50ee2a0c1  round5_ppi_balance.py
+059c18e1b4998b1ac9c9685ba324a872  round5_ppi_e4b_rejective.py
+122375c3acb103ed93e3e687644d7f6d  round5_ppi_common.py
+446a124f2bcc1ceddcfcb4690d7aef25  round7_ppi_d2.py
+3f37e77c2abe22afa6eca8772282f4f0  round7_ppi_run.py
