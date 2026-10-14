@@ -12,7 +12,14 @@ Sent to Nicolas in chat on 13 October 2026, as section 8 of the instruction asks
 
 ## What arrived
 
-Nothing yet.
+Recorded on 14 October 2026 (interval i02).
+
+- Papers 2 (Sankararaman et al. 2009) and 4 (Hosseini et al. 2023) arrived from Nicolas on 13 October and are in `~/hest-1k/fedlearn_papers/requested/`. They are read in i02.
+- Papers 1, 3 and 5 could not be obtained through the library proxy. A sub-agent (frame `eeade669-d2de-4732-90f4-34c658d0432e`) looked for free versions on Europe PMC, the PMC ID converter, Crossref, arXiv and the web search. None of the links it found could be opened from the sandbox, because their hosts are not on the allowlist, and Unpaywall was not consulted. The links were passed to Nicolas as unverified.
+  - Paper 1: a PDF on the first author's Stanford page, `https://ai.stanford.edu/~bryanhe/publications/stnet.pdf`. It is not in PMC and no preprint was found.
+  - Paper 3: no stand-alone free copy. A. Ziller's TUM doctoral thesis on mediaTUM (`https://mediatum.ub.tum.de/doc/1747238/document.pdf`) includes the article as a chapter. arXiv 2012.06354 is a different, shorter workshop paper and is not a version of this article.
+  - Paper 5: no free copy found. Europe PMC marks it as subscription only (PMID 41295085).
+- On 14 October Nicolas obtained paper 1 (He et al. 2020) from the Stanford link and saved it as `~/hest-1k/fedlearn_papers/requested/stnet.pdf`. Papers 3 and 5 could not be obtained, so claims that rest on them stay at the abstract level.
 
 ## Claims that still rest on abstracts
 

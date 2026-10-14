@@ -8,7 +8,8 @@ Living document of the execution session. Started 13 October 2026. The instructi
 - **Branch.** `round7-fedlearn` in `~/hest-1k/HEST-1k-replication-fedlearn`, from `3c328ccc4d68b44d0795cfb9c91ff332c3b399d3`. Pull request #28 (F2) was merged by Nicolas. Nothing has been merged into the branch.
 - **Longleaf.** Code clone `/work/users/w/e/weiyang/hest_code/round7-fedlearn`, last delivered commit `f1f11c901e440023cadb7f992e4c8c12be3ccbad` (row 1 of `results/round7/fedlearn/code_deliveries.csv`). The project tree stays on `main` at `round4-data-v2`.
 - **Job ledger.** `results/round7/fedlearn/r7fl_slurm_jobs.csv`, from interval i02 on (amendment A1). The F0 jobs are copied into it.
-- **Papers.** Nicolas is fetching the 5 requested papers into `~/hest-1k/fedlearn_papers/requested/`.
+- **Papers.** Papers 1, 2 and 4 of `paper_requests.md` arrived in `~/hest-1k/fedlearn_papers/requested/` and are to be read. Papers 3 and 5 could not be obtained (14 October). Reader 4 has read P006, P183, P267, P287 and P321 (`F1_search/reading/R4/reading_notes.csv`), still to be folded into the evidence table and the review.
+- **Standing rules.** `docs/EXECUTION_RULES.md` was read in full on 14 October at `main` commit `a7008bb1`. It gathers rules this plan already follows, so no amendment is needed. Two points are applied from now on: Slurm time limits are set at about three times the expected runtime, and every sub-agent brief carries the sub-agent's frame id and the stamping sentence of its section 6.
 - **Next action.** Write the i02 scripts, deliver them, run F3.00 and F3.0, then V1 to V4 once both anchors pass.
 
 ## Extensions
@@ -18,6 +19,8 @@ None. A local run that Nicolas asks for in chat is written here as a numbered ex
 ## Escalations recorded so far
 
 None yet beyond the source notes of the next section, which are recorded under decision boundaries as sources that cannot be reached.
+
+- 14 October. The brief of the link-finding sub-agent (frame `eeade669-d2de-4732-90f4-34c658d0432e`, dispatched at Nicolas's request to find free versions of requested papers 1, 3 and 5) did not carry its own frame id, because the id is assigned at dispatch. It wrote no files, ran no job and returned links only. The briefs of later sub-agents follow section 6 of `docs/EXECUTION_RULES.md`, with the frame id sent in the first message after dispatch.
 
 ## Amendments at the F2 gate (13 October 2026)
 
