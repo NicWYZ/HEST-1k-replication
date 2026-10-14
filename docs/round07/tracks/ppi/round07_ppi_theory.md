@@ -423,6 +423,16 @@ On the populations of S1's synthetic test (section 1.9, `round7_ppi_s1_tests.pop
 4. The second score, a distance in embedding space, is unrelated to the residuals, so it gains nothing over uniform probabilities and loses a little width against the first score.
 5. The mixture with $\epsilon = 0.5$ is wider than the cube design, since half its draws carry no balance, which is prediction S3.5.
 
+### 3.8 What the synthetic test showed, written after it
+
+The test ran as Slurm job 4900059 on the snapshot of `df344a76`, and every number here is read from `results/round7/ppi/S3_adaptive/tests/run1/s3_tests.csv`.
+
+**The sampler passes.** Over the 180 clusters of the six cells, the largest standardised difference between $\hat\pi_g$ and its target is 3.64, at $G = 15$ with the normal law, and it is the only one above 3, about what 180 independent comparisons give by chance. The Horvitz-Thompson mean with the target probabilities has standardised biases between $-1.11$ and $1.19$ over 20,000 draws. No pair of clusters has $\hat\pi_{gh} = 0$ in any cell, so the Sen-Yates-Grundy form with simulated pair probabilities is defined under the cube design, unlike under D2.
+
+**The landing never leaves the balance exact.** Every draw in every cell has a relative balance residual above $10^{-9}$, so the count of inexact draws planned in section 3.2 is the whole sample and carries no information. With $n_L$ of 6 or 8, the at most two clusters decided in the landing carry weights $1/\pi_g$ of about $G/n_L$, so the imbalance they leave is of the order of a few clusters' share of $\sum_g \lvert\bar f_g\rvert$. Its median over draws is 0.071 to 0.094 of that sum, and its largest value 0.29 to 0.39. The real-task runs report the median residual instead of the count.
+
+**The primary variance falls short at small $G$.** In the normal-law cells, the mean of the residual-form variance of the Hájek mean over the empirical variance is 0.979 at $G = 51$, 0.894 at $G = 24$ and 0.811 at $G = 15$, so it is within 0.10 at $G = 51$ only, and misses by 0.006 at $G = 24$. The Sen-Yates-Grundy form with simulated $\hat\pi_{gh}$ gives 0.980, 0.915 and 0.958 in the same cells, and the Hájek coverages are 0.896, 0.875 and 0.846 with the residual form against 0.899, 0.880 and 0.913 with the Sen-Yates-Grundy form. The shortfall grows as $n_L/G$ grows and is what the landing term of section 3.4 predicts, since the form assumes exact balance on $\bar f_g$ and the landing leaves an imbalance of the order of one cluster. The residual form stays the primary interval as written in section 3.4, because the choice was made before the test, and the Sen-Yates-Grundy form is reported beside it in every cell. Which of the two the paper should use is a question for the S4 memo.
+
 ## 4. Greedy k-center (S4)
 
 Written on 14 October 2026, before any S4 run, from section 2.3 of the track document and the S4 part of section 5 of the S2 memo.
