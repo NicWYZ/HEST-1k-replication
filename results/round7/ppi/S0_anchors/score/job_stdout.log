@@ -1,0 +1,7 @@
+         vtag                  anchor_arm     value  target_wr_D0cl          diff  passed
+0       CCRCC            arm1_round5_code  0.726296        0.726296  0.000000e+00    True
+1       CCRCC  arm2_round5_draws_new_code  0.726296        0.726296  2.220446e-16    True
+2       CCRCC              arm2_new_draws  0.731627        0.726296  5.331110e-03    True
+3  ACS_STATES            arm1_round5_code  0.551291        0.551291  0.000000e+00    True
+4  ACS_STATES  arm2_round5_draws_new_code  0.551291        0.551291 -2.220446e-16    True
+5  ACS_STATES              arm2_new_draws  0.552327        0.551291  1.036263e-03    True

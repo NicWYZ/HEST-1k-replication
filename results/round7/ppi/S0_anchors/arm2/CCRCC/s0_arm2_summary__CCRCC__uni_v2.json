@@ -1,0 +1,20 @@
+{
+ "wall_s": 112.8536126613617,
+ "seed_prefix": "r7ppi|S0|CCRCC|uni_v2|theta3|nL8|own|pa0.01|eval",
+ "args": {
+  "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+  "perm_parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__resnet50.parquet",
+  "ref_parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__resnet50.parquet",
+  "ref_arm": "resnet50",
+  "vtag": "CCRCC",
+  "arm": "uni_v2",
+  "estimand": "theta3",
+  "theta2_kind": "neo_minus_stroma",
+  "nl": 8,
+  "balance": "own",
+  "p_a": 0.01,
+  "draws": 2000,
+  "root": "/work/users/w/e/weiyang/hest_replication",
+  "out_dir": "."
+ }
+}

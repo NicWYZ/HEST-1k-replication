@@ -6,17 +6,17 @@ Living document. Written 14 October 2026 by the execution session and approved b
 
 | field | value |
 |---|---|
-| stage | S0 in progress. S0.1 (reading) done. S0.2 (branch, this plan as the first commit) in progress |
+| stage | S0 complete, both anchors pass (`results/round7/ppi/S0_anchors/s0_anchors.csv`). S1.1 (theory section 1) next |
 | starting commit | `c2af4630fe601c255c927d2a3f5a76b19a53d9f2` (13 October 2026, "Docs: open round 7's inference track after O2 was accepted") |
 | `origin/main` when read | `690b999b99460e5d341edc6aeba3f1d01a99c93f` (merge of pull request #28, `round7-fedlearn`). The track document has no later revision there |
 | track document revisions transcribed | the two lines dated 13 October 2026 (first version, and the revision before handover) |
-| branch | `round7-ppi`, not yet created |
-| Longleaf code clone | `/work/users/w/e/weiyang/hest_code/round7-ppi/`, not yet created |
-| last delivered commit | none |
+| branch | `round7-ppi` from `c2af4630` |
+| Longleaf code clone | `/work/users/w/e/weiyang/hest_code/round7-ppi/`, made by Slurm job 4816458 |
+| last delivered commit | `2703752215e85c2ba2ae1203308cc6750db311ad` (delivery 2, Slurm job 4817708) |
 | open pull request | none |
 | plan extensions | none |
 | escalations recorded for the next report | none |
-| next action | S0.3, the Longleaf code clone |
+| next action | S1.1, theory section 1, then Broska and Howes's interval and its first check, which S1's runs need |
 
 A restarted session resumes from this block, the job ledger `results/round7/ppi/r7ppi_slurm_jobs.csv` and `results/round7/ppi/code_deliveries.csv`.
 

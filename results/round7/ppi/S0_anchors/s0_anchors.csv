@@ -1,0 +1,7 @@
+estimand,n_L,balance,p_a,vtag,arm,target_wr_D0cl,threshold_median_round7,threshold_median_round5,threshold_median_ratio,anchor_arm,value,n_genes,se,diff,tolerance,passed,z
+theta3,8,own,0.01,CCRCC,uni_v2,0.7262961345,1.538263386e-05,1.538263496e-05,0.9999999285,arm1_round5_code,0.7262961345,50,,0,equal to four decimals,True,
+theta3,8,own,0.01,CCRCC,uni_v2,0.7262961345,1.538263386e-05,1.538263496e-05,0.9999999285,arm2_round5_draws_new_code,0.7262961345,50,0.008231775241,2.220446049e-16,equal to arm 1 to 1e-9,True,
+theta3,8,own,0.01,CCRCC,uni_v2,0.7262961345,1.538263386e-05,1.538263496e-05,0.9999999285,arm2_new_draws,0.731627244,50,0.008675744384,0.005331109531,2 x sqrt(se_r5^2 + se_new^2) = 0.023919,True,0.445761984
+theta3,8,own,0.01,ACS_STATES,package,0.55129056,1.763476589e-05,1.763476575e-05,1.000000008,arm1_round5_code,0.55129056,1,,0,equal to four decimals,True,
+theta3,8,own,0.01,ACS_STATES,package,0.55129056,1.763476589e-05,1.763476575e-05,1.000000008,arm2_round5_draws_new_code,0.55129056,1,0.004417400794,-2.220446049e-16,equal to arm 1 to 1e-9,True,
+theta3,8,own,0.01,ACS_STATES,package,0.55129056,1.763476589e-05,1.763476575e-05,1.000000008,arm2_new_draws,0.5523268228,1,0.004647773627,0.001036262785,2 x sqrt(se_r5^2 + se_new^2) = 0.012824,True,0.1616101163
