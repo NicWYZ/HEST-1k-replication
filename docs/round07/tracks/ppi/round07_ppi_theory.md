@@ -422,3 +422,28 @@ On the populations of S1's synthetic test (section 1.9, `round7_ppi_s1_tests.pop
 3. On the real tasks, the cube design with the first score is as balanced on $\bar f_g$ as D2 at a small $p_a$, but its weights cost width, so its Hájek interval has a width ratio to D2's `rej_t` of about 1.0 to 1.2 at $n_L = 8$, in line with prediction S3.1.
 4. The second score, a distance in embedding space, is unrelated to the residuals, so it gains nothing over uniform probabilities and loses a little width against the first score.
 5. The mixture with $\epsilon = 0.5$ is wider than the cube design, since half its draws carry no balance, which is prediction S3.5.
+
+## 4. Greedy k-center (S4)
+
+Written on 14 October 2026, before any S4 run, from section 2.3 of the track document and the S4 part of section 5 of the S2 memo.
+
+### 4.1 The design and its exact probabilities
+
+On a tissue task, take the mean embedding of each cluster of the estimand (all clusters for $\theta_3$, the valid ones for $\theta_2$) under the arm's encoder, with `resnet50` for the permuted and constant arms, whose predictions do not enter the selection. Let $d(g, h)$ be the Euclidean distance between clusters $g$ and $h$ in the first 10 principal components of those embeddings (`pcs`, as round 5 computes them). From a start $s$, the rule labels $s$, then repeatedly the cluster whose distance to its nearest labelled cluster is largest, ties going to the lowest index, until $n_L$ clusters are labelled. Call that sample $S(s)$. The start is uniform over the $G$ clusters, so the design has at most $G$ distinct samples, and
+
+$$
+\pi_g = \frac{1}{G}\sum_{s=1}^{G}\mathbb{1}\{g \in S(s)\}, \qquad \pi_{gh} = \frac{1}{G}\sum_{s=1}^{G}\mathbb{1}\{g \in S(s),\, h \in S(s)\},
+$$
+
+exactly. Every $\pi_g \ge 1/G$, since $g \in S(g)$, so $\hat\theta_{\mathrm{HT}}$ is design-unbiased. At most $G\binom{n_L}{2}$ ordered starts contribute pairs, against $\binom{G}{2}$ pairs in all, and the farthest-point rule tends to return the same outlying clusters from most starts, so most $\pi_{gh}$ are zero and no design-based variance estimate exists.
+
+### 4.2 What is computed, exactly
+
+Every quantity is an average over the $G$ equally likely starts, so it is exact and carries no Monte Carlo error. For each interval, the coverage is $\frac{1}{G}\sum_s \mathbb{1}\{\theta \in I(S(s))\}$, with a start whose interval is not formed counted as a miss beside the conditional coverage and the share formed. The intervals are `textbook_t|fpc|lin` for the classical mean applied as if the sample were simple random, Broska and Howes's interval with `bh_t` and `bh_t_fpc` applied the same way (section 2.1), and the Hájek mean with the exact $\pi_g$ and the `apx_size` approximation of section 1.5 built from them, with $t_{n_L - 1}$ since nothing is balanced. The exact standard deviation of $\hat\theta_{\mathrm{HT}}$ is $\big(\frac{1}{G}\sum_s(\hat\theta_{\mathrm{HT}}(S(s)) - \theta)^2\big)^{1/2}$, its mean being $\theta$, and the classical mean's exact bias and root mean squared error are reported beside it. The same quantities under D0 and under D2 with own balance at the same $n_L$ are read from S1's per-gene tables (`s1m_genes`), the D0 standard deviation being that of the classical mean over its 2,000 draws.
+
+### 4.3 What I expect, written before any S4 run
+
+1. The farthest-point rule labels the outlying clusters from almost every start, so the $\pi_g$ range from $1/G$ to nearly 1 and the share of pairs with $\pi_{gh} = 0$ is above one half at $n_L \le 8$.
+2. The classical mean is biased towards the outlying clusters' values, and the interval applied as if the sample were simple random covers well below nominal for $\theta_3$, which is prediction S4.1, wherever the outlying clusters in embedding space differ in expression from the rest.
+3. $\hat\theta_{\mathrm{HT}}$ divides the values of the clusters labelled only from their own start by $1/G$, which multiplies them by $G$ in the sum, so its exact standard deviation is several times that of the classical mean under D0, prediction S4.2.
+4. `apx_size` assumes a design of high entropy, and k-center is close to the lowest-entropy design there is, so the Hájek interval built on it has no reason to cover and I expect it to miss in either direction.
