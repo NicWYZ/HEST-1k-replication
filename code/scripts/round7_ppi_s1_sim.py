@@ -16,7 +16,7 @@ lambda* in {0.6, 1.2}, kappa = 0, 60 populations per cell as columns (round5_ppi
   apx_bal) and the difference form (sim), each with references 'res' (t_{n-k-1}, floor 2) and 'n1' (t_{n-1});
   Broska and Howes as if unbalanced; D0 with the classical and tuned estimators and Broska and Howes.
 
-Output s1_sim__<tag>.csv, one row per cell and interval: coverage mean and 5% quantile over populations, mean width,
+With --by-population, also s1_sim_pop__<tag>.csv (S2b item 2). Output s1_sim__<tag>.csv, one row per cell and interval: coverage mean and 5% quantile over populations, mean width,
 mean ratio of estimated to empirical variance, the mean over populations of |bias| / sd and its noise-corrected root
 mean square, the share of populations with |standardised bias| > 3, and the cell's design diagnostics.
 """
@@ -91,6 +91,8 @@ def main():
     ap.add_argument("--r2", default=",".join(map(str, R2_GRID)))
     ap.add_argument("--lamstar", default=",".join(map(str, LAMSTAR)))
     ap.add_argument("--out-dir", default=".")
+    ap.add_argument("--by-population", action="store_true",
+                    help="also write s1_sim_pop__<tag>.csv, one row per D2 cell, estimator and population (S2 memo, S2b item 2)")
     a = ap.parse_args()
     np.seterr(all="ignore")
     t0 = time.time()
@@ -103,6 +105,7 @@ def main():
     vid = np.arange(G)
     R = int(min(1_000_000, max(100_000, math.ceil(400 / (nL * (nL - 1) / (G * (G - 1)))))))
     rows = []
+    poprows = []
     for R2, ls in itertools.product(map(float, a.r2.split(",")), map(float, a.lamstar.split(","))):
         z, f = populations(G, R2, ls, 0.0, law)
         npop = z.shape[1]
@@ -192,9 +195,23 @@ def main():
                     rows.append(cell_row(base, (e_, vnm, "res"), summ(w[e_]["theta"], w[e_]["var"][vnm], nL - k - 1, theta), a.draws))
                     rows.append(cell_row(base, (e_, vnm, "n1"), summ(w[e_]["theta"], w[e_]["var"][vnm], nL - 1, theta, nofloor=True), a.draws))
             rows.append(cell_row(base, ("BH", "bh", "normal"), summ(bhr["theta"], bhr["se"] ** 2, np.inf, theta, normal=True), a.draws))
+            if a.by_population:
+                pz = (pgh[:, off] <= 0).mean(1)
+                for nm, (th_, v_, df_) in (("classical", res[("classical", LIN)]),
+                                           ("HT", (w["HT"]["theta"], w["HT"]["var"]["sim"], nL - k - 1)),
+                                           ("H", (w["H"]["theta"], w["H"]["var"]["sim"], nL - k - 1))):
+                    sp = summ(th_, v_, df_, theta)
+                    for p_ in range(npop):
+                        poprows.append(dict(base0, p_a=pa_, estimator=nm, population=p_, pi_ratio_min=float(ratio[:, p_].min()),
+                                            n_clusters_pi_zero=int((pi[:, p_] <= 0).sum()), share_pairs_pgh_zero=float(pz[p_]),
+                                            bias=float(sp["bias"][p_]), sd=float(np.sqrt(sp["emp_var"][p_])),
+                                            bias_z=float(sp["bias_z"][p_]), coverage=float(sp["coverage"][p_]),
+                                            share_formed=float(sp["share_formed"][p_])))
             print(f"{tag} R2{R2} lam{ls} pa{pa_} {time.time() - t0:.0f}s", flush=True)
         os.makedirs(a.out_dir, exist_ok=True)
         pd.DataFrame(rows).to_csv(os.path.join(a.out_dir, f"s1_sim__{tag}.csv"), index=False, float_format="%.10g")
+        if a.by_population:
+            pd.DataFrame(poprows).to_csv(os.path.join(a.out_dir, f"s1_sim_pop__{tag}.csv"), index=False, float_format="%.10g")
     json.dump(dict(tag=tag, R=R, draws=a.draws, n_cand=a.n_cand, n_rows=len(rows), wall_s=time.time() - t0),
               open(os.path.join(a.out_dir, f"s1_sim_summary__{tag}.json"), "w"), indent=1)
 

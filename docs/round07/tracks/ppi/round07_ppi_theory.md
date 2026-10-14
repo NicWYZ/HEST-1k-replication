@@ -251,6 +251,34 @@ $$
 
 It is $1/(1 - f)$ at $R^2 = 0$, which is the missing finite-population factor alone, and grows with $R^2$, because their variance treats the unlabelled clusters' predictions as random while the design target holds them fixed. At $f = 0.5$ it is 2 at $R^2 = 0$ and 6 at $R^2 = 0.8$, so a nominal 0.90 interval would have the width of a 0.98 or a 0.9999 interval if the variance were known. At small $n_L$ two effects pull the other way, the normal quantile in place of a $t$ quantile and the divisor $n$ in place of $n - 1$. So the design-target coverage of their interval should fall below nominal at small $n_L$ and small $f$, and rise above it as $f$ grows, by more where $R^2$ is high.
 
+**Two small-sample variants (S2b item 3, written before the run).** The S2 memo asks for two variants with the same $\hat\theta^{PP}_{\hat\lambda}$ and $\hat\lambda$. Split the expanded form above into its two terms,
+
+$$
+\frac{\hat\sigma^2_{\hat\lambda}}{n} = T_L + T_U, \qquad T_L = \frac{1}{n^2}\sum_{g \in L}\Big(\big(z_g - \hat\theta^{PP}_{\hat\lambda}\big) - \hat\lambda\big(f_g - \bar F\big)\Big)^2, \qquad T_U = \frac{\hat\lambda^2 r^2}{n^2}\sum_{g \in U}\big(f_g - \bar F\big)^2 .
+$$
+
+`bh_t` replaces the divisor $n$ of the labelled mean square by $n - 1$ and the normal quantile by a $t$ quantile,
+
+$$
+\widehat{\text{Var}}_{\text{bh\_t}} = \frac{n}{n - 1}\,T_L + T_U, \qquad \hat\theta^{PP}_{\hat\lambda} \pm t_{n - 1,\,1 - \alpha/2}\sqrt{\widehat{\text{Var}}_{\text{bh\_t}}},
+$$
+
+and S2b reports beside it the same variance with $t_{n - 2}$, since $\hat\lambda$ is fitted from the same labelled clusters. The unlabelled term is left as it is, because its divisor is $N$, which is not small. `bh_t_fpc` multiplies the whole variance by the finite-population factor,
+
+$$
+\widehat{\text{Var}}_{\text{bh\_t\_fpc}} = \Big(1 - \frac{n}{G}\Big)\widehat{\text{Var}}_{\text{bh\_t}}, \qquad \hat\theta^{PP}_{\hat\lambda} \pm t_{n - 1,\,1 - \alpha/2}\sqrt{\widehat{\text{Var}}_{\text{bh\_t\_fpc}}} .
+$$
+
+For $\theta_2$ the count $n$ is the number of valid labelled clusters in the draw, so the factor and the degrees of freedom vary from draw to draw, and a draw with $n - 2 < 1$ forms no interval in the $t_{n-2}$ version.
+
+What to expect. To leading order the expectation of $\widehat{\text{Var}}_{\text{bh\_t}}$ is that of $\hat\sigma^2_{\hat\lambda}/n$, so for the design target under D0 it still carries the factor $\rho_{\mathrm{BH}}(f, R^2)$, and the change at small $n$ is only the factor $n/(n - 1)$ on $T_L$ and the wider quantile. At $n = 4$ the two together widen the interval by at most $\frac{t_{3,0.95}}{z_{0.95}}\sqrt{4/3}$, about 1.65, as the memo computes. `bh_t_fpc` removes the factor $1/(1 - f)$ of $\rho_{\mathrm{BH}}$ and leaves
+
+$$
+\frac{\text{E}\,\widehat{\text{Var}}_{\text{bh\_t\_fpc}}}{\text{Var}_{D0}\big(\hat\theta^{PP}_\lambda\big)} \approx \frac{1 - (1 - f)R^2}{1 - R^2},
+$$
+
+which is 1 at $R^2 = 0$ and grows with $R^2$, so for the design target it should be conservative wherever the cluster-level $R^2$ is not small. For the superpopulation target the finite-population factor does not belong, so `bh_t_fpc` should cover less than `bh_t` there, by more as $f$ grows. S2b reports beside every cell the median over genes of the cluster-level $R^2$, the factor $\rho_{\mathrm{BH}}(n_L/G, R^2)$ at that median, and the measured ratio of the mean variance estimate to the empirical variance of $\hat\theta^{PP}_{\hat\lambda}$ over the draws, which is what $\rho_{\mathrm{BH}}$ predicts for the published interval.
+
 **Under D2.** S1 applies the interval to D2's labelled clusters as if they had been drawn without balance. Its variance estimate is built from the labelled clusters' spread, which balance on the mean of $x$ does not reduce, so it carries the factor above and misses D2's variance reduction as well.
 
 **For the superpopulation target** their interval is the large-$G$ interval they derive, and its shortfall at few clusters is what S2 measures.
