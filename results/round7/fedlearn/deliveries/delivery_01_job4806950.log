@@ -1,0 +1,32 @@
+slurm_job_id=4806950 partition=spill account=rc_tengfei_pi node=c0413.ll.unc.edu date=2026-10-13T18:55:09-04:00
+bundle_md5=446dfd08db2e56d6e904aafea91d76be
+branch=round7-fedlearn
+head_before=3c328ccc4d68b44d0795cfb9c91ff332c3b399d3
+status_before_lines=0
+/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/683b6ee8-797e-4551-82c2-34c4445802da/r7fl_delivery_01.bundle is okay
+The bundle contains this ref:
+f1f11c901e440023cadb7f992e4c8c12be3ccbad refs/heads/round7-fedlearn
+The bundle requires this ref:
+3c328ccc4d68b44d0795cfb9c91ff332c3b399d3 
+The bundle uses this hash algorithm: sha1
+verify_rc=0
+From /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/683b6ee8-797e-4551-82c2-34c4445802da/r7fl_delivery_01.bundle
+ * branch              round7-fedlearn -> FETCH_HEAD
+fetch_rc=0
+Updating 3c328ccc..f1f11c90
+Fast-forward
+ .verify-exceptions-round7-fedlearn                 |   1 +
+ code/scripts/round7_fedlearn_common.py             | 144 ++++++++++
+ code/scripts/round7_fedlearn_f2_inventory.py       | 274 +++++++++++++++++++
+ .../tracks/fedlearn/round07_fedlearn_plan.md       | 298 +++++++++++++++++++++
+ 4 files changed, 717 insertions(+)
+ create mode 100644 .verify-exceptions-round7-fedlearn
+ create mode 100644 code/scripts/round7_fedlearn_common.py
+ create mode 100644 code/scripts/round7_fedlearn_f2_inventory.py
+ create mode 100644 docs/round07/tracks/fedlearn/round07_fedlearn_plan.md
+head_after=f1f11c901e440023cadb7f992e4c8c12be3ccbad
+commits=f1f11c901e440023cadb7f992e4c8c12be3ccbad 
+snapshot=/work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/f1f11c901e440023cadb7f992e4c8c12be3ccbad
+69a4cdb299564fc079b683f0a3219dbc  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/f1f11c901e440023cadb7f992e4c8c12be3ccbad/code/scripts/round7_fedlearn_common.py
+e5b12550229ca4187fcdcee7f19bd286  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/f1f11c901e440023cadb7f992e4c8c12be3ccbad/code/scripts/round7_fedlearn_f2_inventory.py
+f1f11c901e440023cadb7f992e4c8c12be3ccbad Round 7 fedlearn F0: operating plan, search protocol and the inventory script

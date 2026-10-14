@@ -1,0 +1,26 @@
+paper_id,audit_finding,change_made,status
+P006,claim mixed two arXiv versions,reworded with both versions and their bounds; note in evidence table,fixed
+P017,about a thousand parameters overstated,0.4K to 1.02K per round,fixed
+P046,two ranges conflated,within 2% or 2 to 6% below; privacy-preserving variants 0.2 to 6% below,fixed
+P047,three-country and firewalls not the paper's description,"three clients, four networks in four countries, open server port solved by AWS hosting",fixed
+P052,4% applies to out-of-domain non-identical tasks,added the 0.5% in-domain figure and the qualifier,fixed
+P077,three hospitals not supported by the preprint read,"hospital count dropped, preprint version named in the review and the table",fixed; published count not verified
+P099,segmentation not supported by the citations,"changed to classification, response prediction and survival",fixed
+P129,388 misdescribed as the cohort,split described as 388 against 78 to all patients in the MSI hospital,fixed
+P141,claim beyond the abstract,reworded to the abstract and marked (abstract),fixed
+P159,count from the main text marked as abstract,source of the count stated,fixed
+P173,"main method averages least-squares, not ridge, fits",reworded,fixed
+P183,missing (abstract) mark; figure is from simulations,mark added and simulations named,fixed
+P200,listed as one-round though iterative,moved to exact iterative fits in sections 4 and 8,fixed
+P266,year 2018 against venue MLSys 2020,year 2020 and venue noted in the table,fixed
+P267,missing (abstract) mark; venue ICML 2020,mark added; venue corrected in the table,fixed
+P289,all 14 encoders overstated; five scans per slide wording,"most of 14 encoders, 384 slides scanned on five devices",fixed
+P339,at most 77 dimensions not supported for all 36 datasets,main-text examples at most 77 dimensions,fixed
+P344,0.937 is not 0.03 below non-private; attack needed frozen BN,"reworded to matching the non-private model, with the 0.03 drop on large-share clients and the frozen-BN condition",fixed
+P378,every metric not universal,in-slide evaluation qualified and the ovary result added; 24-slide model named for the fusion gain,fixed
+P379,1.33% belongs to the most-improved encoder; absolute gains 0.003 to 0.006,reworded with UNIv2 0.4142 to 0.4186; gains given as 0.003 to 0.013 with Filiot,fixed
+P392,Visium and inter-patient go beyond the abstract,26 public spatial transcriptomics datasets,fixed
+P406,natural images inaccurate; subject is exact unlearning,reworded and marked (abstract),fixed
+P407,not a pure closed-form head; frozen and natural images not in abstract,reworded and marked (abstract),fixed
+"P126, P339, P342, P389, P406, P407",venue given as arXiv only,published or accepted venue from the arXiv comment added to the table,fixed
+"P013, P014, P132, P147, P156, P159, P186, P200, P273","author lists truncated at 15 names plus et al., as the fragment format asked",not changed; first three authors match,not changed
