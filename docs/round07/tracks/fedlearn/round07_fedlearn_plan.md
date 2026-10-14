@@ -21,6 +21,7 @@ None. A local run that Nicolas asks for in chat is written here as a numbered ex
 None yet beyond the source notes of the next section, which are recorded under decision boundaries as sources that cannot be reached.
 
 - 14 October. The brief of the link-finding sub-agent (frame `eeade669-d2de-4732-90f4-34c658d0432e`, dispatched at Nicolas's request to find free versions of requested papers 1, 3 and 5) did not carry its own frame id, because the id is assigned at dispatch. It wrote no files, ran no job and returned links only. The briefs of later sub-agents follow section 6 of `docs/EXECUTION_RULES.md`, with the frame id sent in the first message after dispatch.
+- 14 October. Ownership checks on the inputs that F3.0 to V4 reuse (`results/round7/fedlearn/F3_reuse_verdicts.csv`, read from each directory's `_provenance.json` on the login node). Every input is `unstamped` except the lung Xenium embeddings, which are `sibling` (stamped by the round 4 transfer session of this project). These are the project tree's data and the round 1 result that the instruction itself names, nothing is rebuilt or written there, and the question goes to the oversight chat in the F4 report. Work continues.
 
 ## Amendments at the F2 gate (13 October 2026)
 

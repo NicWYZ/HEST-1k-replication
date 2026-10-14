@@ -63,10 +63,30 @@ def read_barcodes_and_X(path):
     return bc, X
 
 
+def patched(td, sid, enc):
+    """The embedding file's barcodes and rows, less the task file's dropped_patch_barcodes (patch
+    barcodes with no expression row, as round4_conf_io.load_set_dropped applies them)."""
+    bc, X = read_barcodes_and_X(emb_path(td, sid, enc))
+    drop = set(td.get("dropped_patch_barcodes", {}).get(sid, []))
+    if drop:
+        keep = np.array([b not in drop for b in bc], bool)
+        assert int((~keep).sum()) == len(drop & set(bc)), f"{sid}: drop list mismatch"
+        bc, X = [b for b, k in zip(bc, keep) if k], X[keep]
+    return bc, X
+
+
+def _select_rows(A, sid, bc):
+    """A[bc] with the checks of round3_d4_sets.load_set: every barcode present, one row each."""
+    assert set(bc) <= set(map(str, A.obs_names)), f"{sid}: patch barcode not in expression"
+    sub = A[bc]
+    assert sub.n_obs == len(bc), f"{sid}: expression barcode index is not unique"
+    return sub
+
+
 def read_raw_adata(td, sid, bc):
     import anndata as ad
     A = ad.read_h5ad(adata_path(td, sid))
-    return A[bc].copy()
+    return _select_rows(A, sid, bc).copy()
 
 
 def load_expression(td, sid, bc, genes):
@@ -75,7 +95,7 @@ def load_expression(td, sid, bc, genes):
     A = ad.read_h5ad(adata_path(td, sid))
     missing = [g for g in genes if g not in A.var_names]
     assert not missing, f"{sid}: {len(missing)} target genes absent, first {missing[:3]}"
-    sub = A[bc, genes]
+    sub = _select_rows(A, sid, bc)[:, genes]
     Y = sub.X.toarray() if hasattr(sub.X, "toarray") else np.asarray(sub.X)
     return np.log1p(np.asarray(Y, dtype=np.float64)).astype(np.float32)
 
@@ -84,7 +104,7 @@ def load_samples(td, sids, enc, genes):
     """dict sid -> (X float32, Y float32, barcodes)."""
     out = {}
     for sid in sids:
-        bc, X = read_barcodes_and_X(emb_path(td, sid, enc))
+        bc, X = patched(td, sid, enc)
         out[sid] = (X, load_expression(td, sid, bc, genes), bc)
     return out
 
@@ -98,7 +118,7 @@ def select_genes(td, sids, enc, k=50):
     panel = None if td["task"] == "CCRCC" else list(td["target_genes"]["list"])
     adatas = []
     for sid in sids:
-        bc, _ = read_barcodes_and_X(emb_path(td, sid, enc))
+        bc, _ = patched(td, sid, enc)
         A = read_raw_adata(td, sid, bc)
         if panel is not None:
             A = A[:, [g for g in panel if g in A.var_names]].copy()

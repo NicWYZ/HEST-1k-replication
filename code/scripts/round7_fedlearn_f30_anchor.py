@@ -117,6 +117,7 @@ def main():
     C.stamp_dir(out, a.frame_id, note="round 7 fedlearn F3.0 anchors")
     t0 = time.time()
     F, r1_mean = faithful_anchor(a.clone)
+    F.to_csv("f30_faithful.csv", index=False)
     E, genes_used = exact_anchor(a.clone)
     hest_mean = float(F.hest_pearson_mean.mean())
     summary = dict(
@@ -126,7 +127,6 @@ def main():
         exact=dict(max_rel_diff=float(E.rel_diff.max()), tol=TOL_EXACT, passes=bool(E.passes.all()), n_designs=len(E)),
         genes_used=genes_used, wall_seconds=round(time.time() - t0, 1))
     json.dump(summary, open("f30_summary.json", "w"), indent=2)
-    F.to_csv("f30_faithful.csv", index=False)
     E.to_csv("f30_exact.csv", index=False)
     here = os.path.dirname(os.path.abspath(__file__))
     C.write_provenance(out, "F3.0", a.frame_id, " ".join([sys.executable] + sys.argv),

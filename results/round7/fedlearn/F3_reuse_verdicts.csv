@@ -1,0 +1,8 @@
+input,verdict,note
+"bench_data/CCRCC",unstamped,"HEST-bench data package placed in the project tree before stamping began; named by the instruction (CCRCC benchmark splits and genes)"
+"embeddings/CCRCC/{uni_v2",hoptimus0,"resnet50},unstamped,round 1 embeddings in the project tree; named by the instruction"
+"embeddings_ext/kidney_visium_cell/uni_v2 (and the other two encoders)",unstamped,"round 3 expansion embeddings; used by the committed task definitions INDIANA_KIDNEY and KIDNEY_POP54"
+"embeddings_ext/lung_xenium/uni_v2 (and the other two encoders)",sibling,"stamped by frame dab7c82a-7762-41ec-aaf1-9a41e6afaff2 (round 4 transfer session of this project); used by the committed task definition LUNG_XENIUM"
+"embeddings_ext/institution_breast_xenium/uni_v2 (and the other two encoders)",unstamped,"round 3 expansion embeddings; used by the committed task definition BREAST_XENIUM"
+"hest_ext/{kidney_visium_cell",lung_xenium,"institution_breast_xenium}/st,unstamped,expression files of the expansion tasks"
+"results/faithful/pca_ridge/uni_v2/CCRCC",unstamped,"round 1 faithful result; tracked in git on main (results_kfold.json); the F3.0 anchor's reference"

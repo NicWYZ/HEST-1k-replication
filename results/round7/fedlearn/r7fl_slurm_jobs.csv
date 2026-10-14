@@ -2,3 +2,6 @@ job,stage,purpose,slurm_job_id,account,partition,state,output
 F0-1,F0,code clone,4803248,rc_tengfei_pi (moved from rc_htzhu_pi),spill,COMPLETED,hest_code/round7-fedlearn
 F0-2,F0,delivery 1,4806950,rc_tengfei_pi,spill,COMPLETED,results/round7/fedlearn/deliveries/delivery_01_job4806950.log
 F0-3,F0 (F2 step 4),inventory,4806992,rc_tengfei_pi,spill,COMPLETED,results/round7/fedlearn/F2_inventory/
+I02-1,i02,delivery 2,4820166,rc_htzhu_pi (moved from rc_tengfei_pi while pending),spill,COMPLETED,results/round7/fedlearn/deliveries/delivery_02_job4820166.log
+I02-2,F3.00,corrected grouping,4824298,rc_htzhu_pi,spill,COMPLETED,results/round7/fedlearn/F3_00_grouping/
+I02-3,F3.0,anchors (attempt 1; faithful part ran, exact part raised KeyError on LUNG_XENIUM NCBI865 dropped patch barcode 051x019),4824300,rc_htzhu_pi,spill,FAILED,results/round7/fedlearn/F3_anchor/
