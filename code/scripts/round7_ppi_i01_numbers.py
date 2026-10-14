@@ -2,7 +2,8 @@
 
 Reads the merged tables (round7_ppi_merge.py) from --s1-dir and --s2-dir and writes in the working directory
 s1_report_numbers.csv, s2_report_numbers.csv (name, value, source, note), i01_prediction_scores.csv and
-i01_prediction_cells.csv. Every number of the S2 report that is pooled over cells is a row here.
+i01_prediction_cells.csv, and i01_rej_t_vs_round5.csv, rej_t under D2 against round 5's E4b table cell by cell.
+Every number of the S2 report that is pooled over cells is a row here.
 Operational definitions of the predictions are in the docstrings of score_* and are repeated in the report.
 """
 import argparse
@@ -33,6 +34,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--s1-dir", required=True)
     ap.add_argument("--s2-dir", required=True)
+    ap.add_argument("--r5-e4b", default="/work/users/w/e/weiyang/hest_code/round7-ppi/results/round5/ppi/E4b_rejective/e4b_rej_width_ratios.csv",
+                    help="round 5's E4b rej_t table, read from the code clone (committed data)")
     a = ap.parse_args()
     S1M = os.path.join(a.s1_dir, "s1_masking_grid.csv"); S1D = os.path.join(a.s1_dir, "s1_masking_diag.csv")
     S1S = os.path.join(a.s1_dir, "s1_sim.csv"); S2M = os.path.join(a.s2_dir, "s2_masking_grid.csv")
@@ -151,6 +154,36 @@ def main():
                 n1.add(f"S1s_share_cells_bias_gt_0.1sd|{tag}", (x["bias_over_sd_rms_corrected"] > 0.1).mean(), S1S)
     n1.add("S1s_D2_cells_with_pgh_zero", int((sd2.drop_duplicates(["G", "n_L", "R2", "lambda_star", "law", "k", "p_a"])["share_pairs_pgh_zero"] > 0).sum()), S1S)
     n1.add("S1s_D2_cells", int(len(sd2.drop_duplicates(["G", "n_L", "R2", "lambda_star", "law", "k", "p_a"]))), S1S)
+
+    # ---------------- rej_t under D2 against round 5's E4b, cell by cell (the S0 anchor covers theta3 own only).
+    # Round 7 replays E4b's draws but scans past 2,000 candidates until one is accepted; round 5 fell back to the
+    # last candidate. Writes i01_rej_t_vs_round5.csv.
+    r5 = pd.read_csv(a.r5_e4b)
+    kk = ["vtag", "arm", "estimand", "n_L", "balance", "p_a"]
+    rj7 = m[(m["design"] == "D2") & (m["estimator"] == "classical") & (m["variance"] == "rej_t")][kk + ["coverage_median", "wr_D0cl_median", "coverage_D0cl_median"]]
+    jn = rj7.merge(r5[kk + ["coverage", "wr_D0cl", "coverage_D0cl", "support"]].rename(columns={"support": "support_r5", "coverage": "coverage_r5", "wr_D0cl": "wr_D0cl_r5", "coverage_D0cl": "coverage_D0cl_r5"}), on=kk)
+    jn["d_coverage"] = jn["coverage_median"] - jn["coverage_r5"]
+    jn["d_wr_D0cl"] = jn["wr_D0cl_median"] - jn["wr_D0cl_r5"]
+    jn["d_coverage_D0cl"] = jn["coverage_D0cl_median"] - jn["coverage_D0cl_r5"]
+    jn.to_csv("i01_rej_t_vs_round5.csv", index=False, float_format="%.10g")
+    R5T = "i01_rej_t_vs_round5.csv"
+    n1.add("S1r5_cells_matched", len(jn), R5T, f"of {len(rj7)} round 7 rej_t cells")
+    for e_ in ("theta3", "theta2"):
+        x = jn[jn["estimand"] == e_]
+        big = x["d_coverage"].abs() > 0.03
+        n1.add(f"S1r5_cells|{e_}", len(x), R5T)
+        n1.add(f"S1r5_cells_dcov_gt_0.03|{e_}", int(big.sum()), R5T)
+        n1.add(f"S1r5_max_abs_dcov|{e_}", x["d_coverage"].abs().max(), R5T)
+        n1.add(f"S1r5_max_abs_dcov_D0cl|{e_}", x["d_coverage_D0cl"].abs().max(), R5T)
+        n1.add(f"S1r5_max_support_r5_where_dcov_gt_0.03|{e_}", x.loc[big, "support_r5"].max() if big.any() else np.nan, R5T)
+        n1.add(f"S1r5_median_dcov_where_gt_0.03|{e_}", x.loc[big, "d_coverage"].median() if big.any() else np.nan, R5T)
+        for t in TISSUE + CENSUS:
+            xt = x[x["vtag"] == t]
+            n1.add(f"S1r5_cells_dcov_gt_0.03|{e_}|{t}", int((xt["d_coverage"].abs() > 0.03).sum()), R5T, f"of {len(xt)}")
+            n1.add(f"S1r5_max_abs_dcov|{e_}|{t}", xt["d_coverage"].abs().max(), R5T)
+            for nl in sorted(xt["n_L"].unique()):
+                xn = xt[xt["n_L"] == nl]
+                n1.add(f"S1r5_cells_dcov_gt_0.03|{e_}|{t}|nL{nl}", int((xn["d_coverage"].abs() > 0.03).sum()), R5T, f"of {len(xn)}")
 
     # ---------------- S2 predictions
     A = m2[m2["set"] == "A_fixed"]; Bw = m2[m2["set"] == "B_world"]
