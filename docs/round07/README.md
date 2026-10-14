@@ -8,6 +8,7 @@ The advisor meeting of 12 October added a second line of work. David argued that
 
 | Date | Track | Gate | Report | Answered by | Tag | Pull request |
 |---|---|---|---|---|---|---|
+| 13 Oct | fedlearn | F2 | `i01/fedlearn/round07_fedlearn_F2_report.md` | `i02/fedlearn/round07_fedlearn_F2_decisions.md` | `round7-fedlearn-F2` | #28 |
 
 ## Documents
 
@@ -19,6 +20,10 @@ The advisor meeting of 12 October added a second line of work. David argued that
 | `i01/fedlearn/round07_fedlearn_track.md` | 13 Oct, living | instruction for the fedlearn track, with the review's nine questions, the starting points, the sub-agent themes, stages F0 to F4, the rule for papers that cannot be retrieved, and predictions F.1 to F.10 |
 | `oversight/round07_ppi_positioning.md` | 13 Oct | the PPI paper's positioning after a full reading of Broska and Howes, Chen et al. and the cluster parts of Kluger et al., with what the paper can claim and a recommendation on O2 |
 | `i01/ppi/round07_ppi_track.md` | 13 Oct, living | instruction for the inference track, with inclusion-probability weighting under rejective selection, Broska and Howes's and Kluger et al.'s comparators, a cluster-level balanced adaptive design, the k-center check, stages S0 to S5 and predictions S1.1 to S4.2 |
+| `i01/fedlearn/round07_fedlearn_F2_report.md` | 13 Oct | report at the F2 gate (F0 to F2), with the search, the citation audit, the inventory and the proposal for interval 2 |
+| `i02/fedlearn/round07_fedlearn_F2_decisions.md` | 13 Oct | decision at F2. Accepted, the shared-queue revision carried in full, a center may be a study, V1 and V2 as proposed, V3 (privacy cost) and V4 (partial gene overlap) added, predictions F.11 and F.12 |
+| `tracks/fedlearn/round07_fedlearn_plan.md` | 13 Oct, living | the fedlearn session's operating plan |
+| `tracks/fedlearn/round07_fedlearn_literature_review.md` | 13 Oct, living | the literature review, with the nine questions, graded evidence, verdicts on the routes and concepts, and the novelty statement |
 
 ## Corrections recorded this round
 

@@ -8,6 +8,7 @@ This instruction stays living on `main` while the track runs. The oversight chat
 - 13 October 2026. First version.
 - 13 October 2026, before handover. Revised after an independent check. The federated and pooled fits are compared with an exact head, the inventory job uses delivered code, full texts have a folder outside the clone, there is one list of papers, and the entry gate, the needs, the exit items of F4 and several paths were added.
 - 13 October 2026, evening. Round 7's inference track now runs at the same time on branch `round7-ppi`, with its own areas, and both tracks use the same Slurm accounts. Section 4 gains the rule that only the lead cancels a job, after checking that it is this track's own.
+- 13 October 2026, F2 gate. The session had not fetched the evening revision, so the F2 decision memo carries it in full (section 2 of `docs/round07/i02/fedlearn/round07_fedlearn_F2_decisions.md`). Interval i02 is fixed by that memo, which adds V3 and V4.
 
 ---
 
