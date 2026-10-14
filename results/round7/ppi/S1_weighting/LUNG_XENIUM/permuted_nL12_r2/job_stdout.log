@@ -1,0 +1,32 @@
+theta3 first 95s
+theta3 D0 121s
+theta3 own pa0.1 301s R 100000 cand 1000000
+theta3 own pa0.01 491s R 100000 cand 9200000
+theta3 pcF2 pa0.1 524s R 100000 cand 1000000
+theta3 pcF2 pa0.01 566s R 100000 cand 9120000
+theta3 pcE2 pa0.1 598s R 100000 cand 1000000
+theta3 pcE2 pa0.01 637s R 100000 cand 9120000
+theta3 perm_cluster pa0.1 810s R 100000 cand 1000000
+theta3 perm_cluster pa0.01 991s R 100000 cand 9200000
+theta2 first 1085s
+theta2 D0 1107s
+theta2 own pa0.1 1240s R 100000 cand 1000000
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/136ed26f0a9d98657098670a4b80926e3bc584e4/code/scripts/round7_ppi_weighting.py:342: RuntimeWarning: Mean of empty slice
+  return dict(coverage=np.nanmean(cov, 0), width=np.nanmean(2 * q * se, 0), emp_var=sd ** 2,
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/136ed26f0a9d98657098670a4b80926e3bc584e4/code/scripts/round7_ppi_weighting.py:343: RuntimeWarning: Mean of empty slice
+  est_var=np.nanmean(vv, 0), bias=mean - theta, bias_z=bz, share_formed=formed.mean(0),
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/136ed26f0a9d98657098670a4b80926e3bc584e4/code/scripts/round7_ppi_s1_masking.py:294: RuntimeWarning: Mean of empty slice
+  return dict(coverage=np.nanmean(cov, 0), width=np.nanmean(2 * q * se, 0), emp_var=sd ** 2,
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/136ed26f0a9d98657098670a4b80926e3bc584e4/code/scripts/round7_ppi_s1_masking.py:295: RuntimeWarning: Mean of empty slice
+  est_var=np.nanmean(vv, 0), bias=mean - theta, bias_z=bz, share_formed=formed.mean(0),
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/136ed26f0a9d98657098670a4b80926e3bc584e4/code/scripts/round7_ppi_weighting.py:338: RuntimeWarning: Mean of empty slice
+  mean = np.nanmean(thf, 0)
+/work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/lib/python3.11/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+theta2 own pa0.01 3132s R 100000 cand 191780000
+theta2 pcF2 pa0.1 3156s R 100000 cand 920000
+theta2 pcF2 pa0.01 3201s R 100000 cand 24620000
+theta2 pcE2 pa0.1 3225s R 100000 cand 1000000
+theta2 pcE2 pa0.01 3272s R 100000 cand 27960000
+theta2 perm_cluster pa0.1 3397s R 100000 cand 1000000
+theta2 perm_cluster pa0.01 5436s R 100000 cand 203760000

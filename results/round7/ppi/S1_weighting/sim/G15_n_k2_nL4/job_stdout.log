@@ -1,0 +1,30 @@
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/ba3129e41d6557f29c56b7a020d73ef9d4c7edbd/code/scripts/round7_ppi_weighting.py:327: RuntimeWarning: Mean of empty slice
+  return dict(coverage=np.nanmean(cov, 0), width=np.nanmean(2 * q * se, 0), emp_var=sd ** 2,
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/ba3129e41d6557f29c56b7a020d73ef9d4c7edbd/code/scripts/round7_ppi_weighting.py:328: RuntimeWarning: Mean of empty slice
+  est_var=np.nanmean(vv, 0), bias=mean - theta, bias_z=bz, share_formed=formed.mean(0),
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/ba3129e41d6557f29c56b7a020d73ef9d4c7edbd/code/scripts/round7_ppi_s1_sim.py:76: RuntimeWarning: Mean of empty slice
+  coverage_mean=float(np.nanmean(s["coverage"])), coverage_p05=float(np.nanquantile(s["coverage"], 0.05)),
+/work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/lib/python3.11/site-packages/numpy/lib/_nanfunctions_impl.py:1573: RuntimeWarning: All-NaN slice encountered
+  return _nanquantile_unchecked(
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/ba3129e41d6557f29c56b7a020d73ef9d4c7edbd/code/scripts/round7_ppi_s1_sim.py:77: RuntimeWarning: Mean of empty slice
+  width_mean=float(np.nanmean(s["width"])), est_over_emp_mean=float(np.nanmean(s["est_var"] / s["emp_var"])),
+G15_n_k2_nL4 R20.0 lam0.6 pa0.1 44s
+G15_n_k2_nL4 R20.0 lam0.6 pa0.01 163s
+G15_n_k2_nL4 R20.0 lam1.2 pa0.1 191s
+G15_n_k2_nL4 R20.0 lam1.2 pa0.01 276s
+G15_n_k2_nL4 R20.2 lam0.6 pa0.1 292s
+G15_n_k2_nL4 R20.2 lam0.6 pa0.01 342s
+G15_n_k2_nL4 R20.2 lam1.2 pa0.1 359s
+G15_n_k2_nL4 R20.2 lam1.2 pa0.01 409s
+G15_n_k2_nL4 R20.4 lam0.6 pa0.1 426s
+G15_n_k2_nL4 R20.4 lam0.6 pa0.01 475s
+G15_n_k2_nL4 R20.4 lam1.2 pa0.1 491s
+G15_n_k2_nL4 R20.4 lam1.2 pa0.01 533s
+G15_n_k2_nL4 R20.7 lam0.6 pa0.1 547s
+G15_n_k2_nL4 R20.7 lam0.6 pa0.01 588s
+G15_n_k2_nL4 R20.7 lam1.2 pa0.1 601s
+G15_n_k2_nL4 R20.7 lam1.2 pa0.01 639s
+G15_n_k2_nL4 R20.9 lam0.6 pa0.1 653s
+G15_n_k2_nL4 R20.9 lam0.6 pa0.01 689s
+G15_n_k2_nL4 R20.9 lam1.2 pa0.1 703s
+G15_n_k2_nL4 R20.9 lam1.2 pa0.01 748s

@@ -1,0 +1,15 @@
+# Round 7 PPI track sweep exceptions. Format: value<TAB>reason (docs/WAYS_OF_WORKING.md).
+308	derived: number of distinct job ids (PROVENANCE.txt records) in results/round7/ppi/provenance_index.csv
+320	derived: row count of results/round7/ppi/r7ppi_slurm_jobs.csv
+162	derived: row count of results/round7/ppi/S1_weighting/_merged/s1_stamp_check.csv (unit directories found by the S1 merge)
+0.095	derived: simple-random Sen-Yates-Grundy weight (G - n)/(G(n - 1)) at G = 24, n = 8 (theory 1.3)
+1.7	derived: simple-random pi_gh = n(n - 1)/(G(G - 1)) at G = 265, n = 4, times 10^4 (theory 1.3)
+400	parameter: R = max(100,000, ceil(400 / pi_gh^SRS)) in code/scripts/round7_ppi_s1_masking.py (theory 1.3)
+0.48	reference: round 5 E4b, smallest share of genes with |z| > 3 for the classical mean in the kidney cancer pcF2 cells at n_L 6 and 8, quoted in theory 1.8 before any S1 run
+0.94	reference: round 5 E4b, largest such share, quoted in theory 1.8 before any S1 run
+0.003	derived: two-sided normal tail probability beyond 3 (0.0027), theory 1.8
+0.05	parameter: tolerance of expectation 2 of theory 1.8, written before any S1 run
+1.05	parameter: lower end of the width ratio expected in theory 1.8, written before any S1 run
+4824390	reference: Slurm job id of the S1.2 synthetic test, run 2, a row of results/round7/ppi/r7ppi_slurm_jobs.csv
+0.98	derived: coverage of a nominal 0.90 normal interval widened by sqrt(2) (theory 2.1)
+0.9999	derived: coverage of a nominal 0.90 normal interval widened by sqrt(6) (theory 2.1)

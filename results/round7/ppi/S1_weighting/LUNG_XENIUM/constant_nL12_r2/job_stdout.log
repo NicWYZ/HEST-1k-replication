@@ -1,0 +1,28 @@
+theta3 first 29s
+theta3 D0 60s
+theta3 own pa0.1 222s R 100000 cand 1000000
+theta3 own pa0.01 430s R 100000 cand 9180000
+theta3 pcF2 pa0.1 467s R 100000 cand 1000000
+theta3 pcF2 pa0.01 512s R 100000 cand 9120000
+theta3 perm_cluster pa0.1 668s R 100000 cand 1000000
+theta3 perm_cluster pa0.01 867s R 100000 cand 9200000
+theta2 first 896s
+theta2 D0 922s
+theta2 own pa0.1 1076s R 100000 cand 1000000
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/136ed26f0a9d98657098670a4b80926e3bc584e4/code/scripts/round7_ppi_weighting.py:342: RuntimeWarning: Mean of empty slice
+  return dict(coverage=np.nanmean(cov, 0), width=np.nanmean(2 * q * se, 0), emp_var=sd ** 2,
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/136ed26f0a9d98657098670a4b80926e3bc584e4/code/scripts/round7_ppi_weighting.py:343: RuntimeWarning: Mean of empty slice
+  est_var=np.nanmean(vv, 0), bias=mean - theta, bias_z=bz, share_formed=formed.mean(0),
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/136ed26f0a9d98657098670a4b80926e3bc584e4/code/scripts/round7_ppi_s1_masking.py:294: RuntimeWarning: Mean of empty slice
+  return dict(coverage=np.nanmean(cov, 0), width=np.nanmean(2 * q * se, 0), emp_var=sd ** 2,
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/136ed26f0a9d98657098670a4b80926e3bc584e4/code/scripts/round7_ppi_s1_masking.py:295: RuntimeWarning: Mean of empty slice
+  est_var=np.nanmean(vv, 0), bias=mean - theta, bias_z=bz, share_formed=formed.mean(0),
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/136ed26f0a9d98657098670a4b80926e3bc584e4/code/scripts/round7_ppi_weighting.py:338: RuntimeWarning: Mean of empty slice
+  mean = np.nanmean(thf, 0)
+/work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/lib/python3.11/site-packages/numpy/lib/_nanfunctions_impl.py:1997: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  var = nanvar(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+theta2 own pa0.01 2257s R 100000 cand 86400000
+theta2 pcF2 pa0.1 2283s R 100000 cand 920000
+theta2 pcF2 pa0.01 2315s R 100000 cand 7080000
+theta2 perm_cluster pa0.1 2465s R 100000 cand 1000000
+theta2 perm_cluster pa0.01 4941s R 100000 cand 201040000

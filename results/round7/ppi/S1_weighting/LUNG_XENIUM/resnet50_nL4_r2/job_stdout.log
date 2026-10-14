@@ -1,0 +1,32 @@
+theta3 first 44s
+theta3 D0 57s
+theta3 own pa0.1 120s R 100000 cand 1020000
+theta3 own pa0.01 386s R 100000 cand 9840000
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/136ed26f0a9d98657098670a4b80926e3bc584e4/code/scripts/round7_ppi_weighting.py:342: RuntimeWarning: Mean of empty slice
+  return dict(coverage=np.nanmean(cov, 0), width=np.nanmean(2 * q * se, 0), emp_var=sd ** 2,
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/136ed26f0a9d98657098670a4b80926e3bc584e4/code/scripts/round7_ppi_weighting.py:343: RuntimeWarning: Mean of empty slice
+  est_var=np.nanmean(vv, 0), bias=mean - theta, bias_z=bz, share_formed=formed.mean(0),
+theta3 pcF2 pa0.1 400s R 100000 cand 1000000
+theta3 pcF2 pa0.01 419s R 100000 cand 9720000
+theta3 pcE2 pa0.1 433s R 100000 cand 1000000
+theta3 pcE2 pa0.01 449s R 100000 cand 9760000
+theta3 perm_cluster pa0.1 515s R 100000 cand 1020000
+theta3 perm_cluster pa0.01 669s R 100000 cand 9880000
+theta2 first 712s
+theta2 D0 721s
+theta2 own pa0.1 835s R 100000 cand 1180000
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/136ed26f0a9d98657098670a4b80926e3bc584e4/code/scripts/round7_ppi_weighting.py:342: RuntimeWarning: Mean of empty slice
+  return dict(coverage=np.nanmean(cov, 0), width=np.nanmean(2 * q * se, 0), emp_var=sd ** 2,
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/136ed26f0a9d98657098670a4b80926e3bc584e4/code/scripts/round7_ppi_weighting.py:343: RuntimeWarning: Mean of empty slice
+  est_var=np.nanmean(vv, 0), bias=mean - theta, bias_z=bz, share_formed=formed.mean(0),
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/136ed26f0a9d98657098670a4b80926e3bc584e4/code/scripts/round7_ppi_s1_masking.py:294: RuntimeWarning: Mean of empty slice
+  return dict(coverage=np.nanmean(cov, 0), width=np.nanmean(2 * q * se, 0), emp_var=sd ** 2,
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/136ed26f0a9d98657098670a4b80926e3bc584e4/code/scripts/round7_ppi_s1_masking.py:295: RuntimeWarning: Mean of empty slice
+  est_var=np.nanmean(vv, 0), bias=mean - theta, bias_z=bz, share_formed=formed.mean(0),
+theta2 own pa0.01 947s R 100000 cand 11440000
+theta2 pcF2 pa0.1 957s R 100000 cand 1060000
+theta2 pcF2 pa0.01 970s R 100000 cand 9080000
+theta2 pcE2 pa0.1 980s R 100000 cand 1140000
+theta2 pcE2 pa0.01 992s R 100000 cand 8000000
+theta2 perm_cluster pa0.1 1079s R 100000 cand 1180000
+theta2 perm_cluster pa0.01 1395s R 100000 cand 11480000

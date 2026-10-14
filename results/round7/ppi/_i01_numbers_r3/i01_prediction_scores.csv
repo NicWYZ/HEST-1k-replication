@@ -1,0 +1,9 @@
+prediction,verdict,summary
+S1.1,partly held,share of cells with classical bias > 0.1 sd: 0.654 of 240; Hajek (t_(n-k-1)) within 0.03 of 0.90: 0.046; with t_(n-1): 0.000
+S1.2,held,4 cells with rej_t below 0.80 at n_L 6 with pcF2/pcE2; Hajek within 0.03 of D0 classical in 0 (0.000)
+S1.3,partly held,"72 cells; Hajek wider in 0.708; ratio in 1.10-1.50 in 0.194; ratio range 0.869 to 1.891, median 1.028"
+S1.4,held,ACS_STATES min pi_hat / (n_L/G) = 0.0144; ACS_CA_PUMA min pi_hat / (n_L/G) = 0.1464
+S2.1,held,CCRCC 0.698; CCRCC_merged 0.707; INDIANA_KIDNEY 0.698; LUNG_XENIUM 0.724; tasks below 0.85: 4
+S2.2,refuted,5 of 30 cells above 0.95; range 0.878 to 0.995
+S2.3,held,40 of 40 cells below 0.85; range 0.584 to 0.825
+S2.4,held,266 of 266 cells below 0.85; per task median ACS_CA_PUMA 0.765; ACS_STATES 0.757; CCRCC 0.717; CCRCC_merged 0.718; INDIANA_KIDNEY 0.727; LUNG_XENIUM 0.710

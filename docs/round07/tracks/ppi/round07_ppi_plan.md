@@ -6,17 +6,17 @@ Living document. Written 14 October 2026 by the execution session and approved b
 
 | field | value |
 |---|---|
-| stage | S0 complete. S1.1 (theory sections 1 and 2.1) and S1.2 (synthetic test, run 2) done, Broska and Howes's checks pass. S1.3 runs being fanned out |
+| stage | S0, S1 and S2 complete. S2 report written, gate of interval i01. Waiting for the oversight chat's S2 decision memo; nothing of S3 to S5 is set up |
 | starting commit | `c2af4630fe601c255c927d2a3f5a76b19a53d9f2` (13 October 2026, "Docs: open round 7's inference track after O2 was accepted") |
 | `origin/main` when read | `690b999b99460e5d341edc6aeba3f1d01a99c93f` (merge of pull request #28, `round7-fedlearn`). The track document has no later revision there |
 | track document revisions transcribed | the two lines dated 13 October 2026 (first version, and the revision before handover) |
 | branch | `round7-ppi` from `c2af4630` |
 | Longleaf code clone | `/work/users/w/e/weiyang/hest_code/round7-ppi/`, made by Slurm job 4816458 |
-| last delivered commit | `ba3129e41d6557f29c56b7a020d73ef9d4c7edbd` (delivery 4, Slurm job 4824339) |
-| open pull request | none |
+| last delivered commit | `83f9970b50d548de41f3a4901efa53e47d0f5121` (delivery 9, Slurm job 4842129) |
+| open pull request | the S2 gate pull request, number in the S2 report |
 | plan extensions | none |
-| escalations recorded for the next report | none |
-| next action | S1.3, seven sub-agent units (six tasks, one simulation) on snapshot `ba3129e` |
+| escalations recorded for the next report | in section 7 of `docs/round07/i01/ppi/round07_ppi_S2_report.md` |
+| next action | none until the S2 decision memo |
 
 A restarted session resumes from this block, the job ledger `results/round7/ppi/r7ppi_slurm_jobs.csv` and `results/round7/ppi/code_deliveries.csv`.
 
@@ -96,14 +96,14 @@ Copied from the track document before any run. Each is scored in its gate report
 
 | id | prediction | status |
 |---|---|---|
-| S1.1 | Simulation, $k = 2$, $n_L \le 6$. The classical mean's bias exceeds 0.1 of its standard deviation in at least a quarter of the cells, and the Hájek interval covers within 0.03 of nominal in at least three quarters of them | not tested |
-| S1.2 | Real tasks, `pcF2` and `pcE2`, $n_L = 6$. The Hájek interval covers within 0.03 of the D0 classical interval in at most half of the cells where `rej_t` covered below 0.80 | not tested |
-| S1.3 | $n_L = 8$, own balance. The Hájek interval is wider than `rej_t` in every supported cell, by a width ratio of 1.10 to 1.50 | not tested |
-| S1.4 | $\theta_3$, own balance, $p_a = 0.01$, $n_L = 4$. The smallest $\hat\pi_g$ is below 0.5 times $n_L/G$ on both census tasks | not tested |
-| S2.1 | D0, design target. Broska and Howes's interval covers below 0.85 at $n_L = 4$ on at least two of the four tissue tasks | not tested |
-| S2.2 | Design target with $n_L/G \ge 0.5$ (lung at $n_L = 8$ and 12, `CCRCC` and `CCRCC_merged` at $n_L = 12$). It covers above 0.95 at nominal 0.90 | not tested |
-| S2.3 | Superpopulation target. It covers below 0.85 at $n_L \le 6$ in every simulation cell with $G = 15$ | not tested |
-| S2.4 | Superpopulation target. Kluger et al.'s cluster bootstrap covers below 0.85 at $n_L \le 8$ on every task | not tested |
+| S1.1 | Simulation, $k = 2$, $n_L \le 6$. The classical mean's bias exceeds 0.1 of its standard deviation in at least a quarter of the cells, and the Hájek interval covers within 0.03 of nominal in at least three quarters of them | partly held (S2 report) |
+| S1.2 | Real tasks, `pcF2` and `pcE2`, $n_L = 6$. The Hájek interval covers within 0.03 of the D0 classical interval in at most half of the cells where `rej_t` covered below 0.80 | held (S2 report) |
+| S1.3 | $n_L = 8$, own balance. The Hájek interval is wider than `rej_t` in every supported cell, by a width ratio of 1.10 to 1.50 | partly held (S2 report) |
+| S1.4 | $\theta_3$, own balance, $p_a = 0.01$, $n_L = 4$. The smallest $\hat\pi_g$ is below 0.5 times $n_L/G$ on both census tasks | held (S2 report) |
+| S2.1 | D0, design target. Broska and Howes's interval covers below 0.85 at $n_L = 4$ on at least two of the four tissue tasks | held (S2 report) |
+| S2.2 | Design target with $n_L/G \ge 0.5$ (lung at $n_L = 8$ and 12, `CCRCC` and `CCRCC_merged` at $n_L = 12$). It covers above 0.95 at nominal 0.90 | refuted (S2 report) |
+| S2.3 | Superpopulation target. It covers below 0.85 at $n_L \le 6$ in every simulation cell with $G = 15$ | held (S2 report) |
+| S2.4 | Superpopulation target. Kluger et al.'s cluster bootstrap covers below 0.85 at $n_L \le 8$ on every task | held (S2 report) |
 | S3.1 | $n_L = 8$, own balance, first score, $\theta_3$, `CCRCC`, `uni_v2`. The adaptive design's Hájek interval has a width ratio of 0.95 to 1.15 against D2 with `rej_t` | not tested |
 | S3.2 | It covers within 0.03 of nominal in every simulation cell with $n_L \ge 8$ | not tested |
 | S4.1 | $n_L = 8$. The classical interval applied as if simple random covers below 0.80 for $\theta_3$ on at least two tissue tasks | not tested |

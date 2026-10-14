@@ -1,0 +1,2 @@
+slurm_job_id,partition,node,stage,unit,frame_id,start,end,elapsed_s,status,commit,config_sha256,out_dir,command
+4826451,spill,c151414.ll.unc.edu,S2,s2sim_G51_s_nL12,a475380c-f66c-4d8a-a5b0-effd5e46dbb4,2026-10-13T23:01:06-04:00,2026-10-13T23:06:47-04:00,341.6,COMPLETED,d0462a70a72f7d6bd44f98bc50e3d051ee481846,6751130468b5cde7f14284ba9662a0bbbe8683f47594eb440c963756bfcff705,/work/users/w/e/weiyang/hest_replication/results/round7/ppi/S2_comparators/sim/G51_s_nL12,round7_ppi_s2_comparators.py --mode sim --G 51 --law skewed --nl 12 --draws 1000 --out-dir .

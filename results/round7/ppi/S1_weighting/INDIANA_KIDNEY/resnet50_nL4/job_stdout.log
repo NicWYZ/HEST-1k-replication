@@ -1,0 +1,28 @@
+theta3 first 42s
+theta3 D0 46s
+theta3 own pa0.1 57s R 100000 cand 1020000
+theta3 own pa0.01 69s R 100000 cand 10160000
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/ba3129e41d6557f29c56b7a020d73ef9d4c7edbd/code/scripts/round7_ppi_weighting.py:327: RuntimeWarning: Mean of empty slice
+  return dict(coverage=np.nanmean(cov, 0), width=np.nanmean(2 * q * se, 0), emp_var=sd ** 2,
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/ba3129e41d6557f29c56b7a020d73ef9d4c7edbd/code/scripts/round7_ppi_weighting.py:328: RuntimeWarning: Mean of empty slice
+  est_var=np.nanmean(vv, 0), bias=mean - theta, bias_z=bz, share_formed=formed.mean(0),
+theta3 pcF2 pa0.1 75s R 100000 cand 1020000
+theta3 pcF2 pa0.01 82s R 100000 cand 10080000
+theta3 pcE2 pa0.1 87s R 100000 cand 1020000
+theta3 pcE2 pa0.01 94s R 100000 cand 10000000
+theta3 perm_cluster pa0.1 106s R 100000 cand 1020000
+theta3 perm_cluster pa0.01 118s R 100000 cand 10180000
+theta2 first 160s
+theta2 D0 163s
+theta2 own pa0.1 174s R 100000 cand 1040000
+theta2 own pa0.01 186s R 100000 cand 10340000
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/ba3129e41d6557f29c56b7a020d73ef9d4c7edbd/code/scripts/round7_ppi_weighting.py:327: RuntimeWarning: Mean of empty slice
+  return dict(coverage=np.nanmean(cov, 0), width=np.nanmean(2 * q * se, 0), emp_var=sd ** 2,
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/ba3129e41d6557f29c56b7a020d73ef9d4c7edbd/code/scripts/round7_ppi_weighting.py:328: RuntimeWarning: Mean of empty slice
+  est_var=np.nanmean(vv, 0), bias=mean - theta, bias_z=bz, share_formed=formed.mean(0),
+theta2 pcF2 pa0.1 190s R 100000 cand 1020000
+theta2 pcF2 pa0.01 197s R 100000 cand 10060000
+theta2 pcE2 pa0.1 201s R 100000 cand 1020000
+theta2 pcE2 pa0.01 207s R 100000 cand 10160000
+theta2 perm_cluster pa0.1 218s R 100000 cand 1040000
+theta2 perm_cluster pa0.01 231s R 100000 cand 10380000

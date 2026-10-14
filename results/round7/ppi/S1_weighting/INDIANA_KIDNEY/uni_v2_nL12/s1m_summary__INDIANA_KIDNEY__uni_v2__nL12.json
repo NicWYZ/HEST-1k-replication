@@ -1,0 +1,23 @@
+{
+ "tag": "INDIANA_KIDNEY__uni_v2__nL12",
+ "wall_s": 364.8568103313446,
+ "n_cells": 18,
+ "n_rows": 304,
+ "args": {
+  "parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions_INDIANA_KIDNEY/b1_predictions__INDIANA_KIDNEY__uni_v2.parquet",
+  "perm_parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions_INDIANA_KIDNEY/b1_predictions__INDIANA_KIDNEY__resnet50.parquet",
+  "ref_parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions_INDIANA_KIDNEY/b1_predictions__INDIANA_KIDNEY__resnet50.parquet",
+  "ref_arm": "resnet50",
+  "vtag": "INDIANA_KIDNEY",
+  "arm": "uni_v2",
+  "nl": 12,
+  "estimands": "theta3,theta2",
+  "theta2_kind": "neo_minus_stroma",
+  "balances": "",
+  "draws": 2000,
+  "max_genes": 0,
+  "r_cap": 1000000,
+  "root": "/work/users/w/e/weiyang/hest_replication",
+  "out_dir": "."
+ }
+}
