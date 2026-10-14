@@ -136,7 +136,7 @@ def d2_stream(cell, X, thr, nL, n_acc, seed_prefix, batch=20000, max_cand=200_00
         rng = np.random.default_rng(seed_of(f"{seed_prefix}|b{i}"))
         C = srs_batch(rng, cell["Gall"], nL, batch)
         dd = RJ.dist_valid(RJ.masks_from(C, cell["Gall"]), cell["vid"], X)[0]
-        ok = dd <= thr[None, :]
+        ok = dd <= thr[None, :] * (1 + 1e-9)   # as round7_ppi_weighting.TOL
         for j in np.flatnonzero(got < n_acc):
             rows = np.flatnonzero(ok[:, j])[: n_acc - got[j]]
             acc[got[j]:got[j] + len(rows), j] = C[rows]

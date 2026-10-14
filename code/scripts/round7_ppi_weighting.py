@@ -23,6 +23,10 @@ import round5_ppi_balance as BAL
 import round5_ppi_estimator as R5
 
 ALPHA = R5.ALPHA
+# Acceptance is d <= thr * (1 + TOL). The pool quantile can equal a tied distance exactly when the support is a few
+# samples, and the same distance computed in batches of different shape can differ in the last bit, so a boundary
+# sample would be accepted in one computation and not in another (the S1 synthetic test at G = 15, n = 6, p_a = 0.01).
+TOL = 1e-9
 
 
 def seed_of(s):
@@ -87,7 +91,7 @@ def pi_stream(X, vid, Gall, thr, n, R, seed_prefix, batch=20000, max_cand=400_00
         rng = np.random.default_rng(seed_of(f"{seed_prefix}|b{i}"))
         C = srs_idx(rng, Gall, n, batch)
         dd = dist(C)
-        ok = dd <= thr[None, :]
+        ok = dd <= thr[None, :] * (1 + TOL)
         V = dist.vmap[C]                                          # (B, n)
         for j in np.flatnonzero(got < R):
             rows = np.flatnonzero(ok[:, j])[: R - got[j]]
@@ -119,7 +123,7 @@ def pi_exact(X, vid, Gall, thr, n):
     pi = np.zeros((G, ncol)); pgh = np.zeros((ncol, G, G)); nacc = np.zeros(ncol)
     for c0 in range(0, len(allc), 200000):
         C = allc[c0:c0 + 200000]
-        ok = dist(C) <= thr[None, :]
+        ok = dist(C) <= thr[None, :] * (1 + TOL)
         V = dist.vmap[C]
         M = np.zeros((len(C), G))
         for col in range(n):

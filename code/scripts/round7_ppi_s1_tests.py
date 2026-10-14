@@ -59,8 +59,11 @@ def part_s1():
                 if exact:
                     pi_e, pgh_e, nacc = W.pi_exact(X, vid, G, thr, n)
                     worst = float(np.max(np.abs(pi_s - pi_e) / np.maximum(se_s, 1e-12)))
+                    offe = ~np.eye(G, dtype=bool)
+                    zsh = float((pgh_e[0][offe] <= 0).mean())
                     rows.append(dict(test="C_pi_sim_vs_exact", cell=tag, value=worst, tolerance="<= 4.5",
-                                     passed=worst <= 4.5, note=f"exact accepted set {int(nacc[0])}"))
+                                     passed=worst <= 4.5, note=f"exact accepted set {int(nacc[0])}; share of pairs with exact pi_gh = 0: {zsh:.4f}"))
+                    cells.append(dict(cell=tag, pi="exact", estimator="-", part="share_pairs_exact_pgh_zero", value=zsh))
                 # evaluation draws
                 erng_pref = f"r7ppi|S1test|eval|{tag}"
                 acc = []
@@ -68,7 +71,7 @@ def part_s1():
                 while sum(len(a) for a in acc) < 20000:
                     r = np.random.default_rng(W.seed_of(f"{erng_pref}|b{i}"))
                     C = W.srs_idx(r, G, n, 50000)
-                    acc.append(C[dist(C)[:, 0] <= thr[0]]); i += 1
+                    acc.append(C[dist(C)[:, 0] <= thr[0] * (1 + W.TOL)]); i += 1
                 C = np.concatenate(acc)[:20000]
                 D = len(C)
                 L = np.zeros((D, G, 1), bool)
