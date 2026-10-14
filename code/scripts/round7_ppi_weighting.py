@@ -149,10 +149,13 @@ def from_counts(st):
 
 
 def pgh_apx_size(pi):
-    """(G, ncol) -> (ncol, G, G) Hajek's approximation (theory section 1.5), zero diagonal."""
+    """(G, ncol) -> (ncol, G, G) Hajek's approximation (theory section 1.5), zero diagonal. A column whose pi are all
+    0 or 1 (d = 0, a support of one sample) has no approximation and is returned as NaN (S1 lung, Slurm 4826736)."""
     a = pi * (1 - pi)
     d = a.sum(0)
-    P = np.einsum("gc,hc->cgh", pi, pi) - np.einsum("gc,hc->cgh", a, a) / d[:, None, None]
+    with np.errstate(divide="ignore", invalid="ignore"):
+        P = np.einsum("gc,hc->cgh", pi, pi) - np.einsum("gc,hc->cgh", a, a) / d[:, None, None]
+    P[~(d > 0)] = np.nan
     for j in range(P.shape[0]):
         np.fill_diagonal(P[j], 0.0)
     return P
@@ -167,9 +170,16 @@ def pgh_apx_bal(pi, X, va):
     xt = np.einsum("gc,gck->ck", a, X) / d[:, None]
     Xc = X - xt[None]
     V = np.einsum("gc,gci,gcj->cij", a, Xc, Xc)
-    Vi = np.linalg.pinv(V)
+    Vi = np.full_like(V, np.nan)
+    for j in range(ncol):
+        if np.isfinite(V[j]).all():
+            try:
+                Vi[j] = np.linalg.pinv(V[j])
+            except np.linalg.LinAlgError:
+                pass
     q = np.einsum("gci,cij,hcj->cgh", Xc, Vi, Xc)
     P = pgh_apx_size(pi) - (1 - va) * np.einsum("gc,hc->cgh", a, a) * q
+    P[~np.isfinite(Vi).all((1, 2))] = np.nan
     for j in range(ncol):
         np.fill_diagonal(P[j], 0.0)
     return P
@@ -182,6 +192,8 @@ def fix_nonpositive(P):
     G = P.shape[1]
     off = ~np.eye(G, dtype=bool)
     for j in range(P.shape[0]):
+        if not np.isfinite(P[j][off]).all():
+            continue
         bad = off & (P[j] <= 0)
         if bad.any():
             pos = P[j][off & (P[j] > 0)]
@@ -210,6 +222,9 @@ def htv_var(L, b, pi, Q, denom):
 def coef(pi, pgh):
     """SYG W and HT Q coefficient matrices (G, G) for one column; zero where pgh == 0 and on the diagonal."""
     pp = np.outer(pi, pi)
+    if not np.isfinite(pgh).all():          # no approximation for this column: no variance, no interval
+        W = np.full_like(pp, np.nan)
+        return W, W.copy()
     with np.errstate(divide="ignore", invalid="ignore"):
         W = np.where(pgh > 0, pp / pgh - 1.0, 0.0)
         Q = np.where(pgh > 0, 1.0 - pp / pgh, 0.0)
