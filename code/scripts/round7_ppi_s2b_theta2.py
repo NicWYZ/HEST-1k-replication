@@ -156,9 +156,8 @@ def mode_recount(a):
     j = rj.merge(r5[kk + ["coverage", "coverage_D0cl", "wr_D0cl", "support"]].rename(columns={
         "coverage": "coverage_r5", "coverage_D0cl": "coverage_D0cl_r5", "wr_D0cl": "wr_D0cl_r5", "support": "support_r5"}), on=kk)
     d0c = cells[(cells["design"] == "D0") & (cells["estimator"] == "classical") & (cells["variance"] == LIN)][
-        ["vtag", "arm", "n_L", "coverage_cond", "coverage_all", "share_formed", "coverage_D0cl_def", "coverage_all_D0cl_def",
-         "share_formed_D0cl_def"]].rename(columns={"coverage_cond": "d0_r7_cond", "coverage_all": "d0_r7_all",
-                                                    "share_formed": "d0_r7_share_formed"})
+        ["vtag", "arm", "n_L", "coverage_cond", "coverage_all", "share_formed"]].rename(columns={
+            "coverage_cond": "d0_r7_cond", "coverage_all": "d0_r7_all", "share_formed": "d0_r7_share_formed"})
     j = j.merge(d0c, on=["vtag", "arm", "n_L"], how="left")
     j["product_of_medians"] = j["coverage_cond"] * j["share_formed"]
     j["d_cond"] = j["coverage_cond"] - j["coverage_r5"]

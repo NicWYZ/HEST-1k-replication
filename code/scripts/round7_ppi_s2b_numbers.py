@@ -94,12 +94,13 @@ def item3(a, scores):
             for nl, y in x.groupby("n_L"):
                 add(f"cov_median|{st}|{v}|{tg}|nL{nl}", float(y[col].median()), M)
                 add(f"cov_min|{st}|{v}|{tg}|nL{nl}", float(y[col].min()), M)
-                add(f"share_formed_min|{st}|{v}|nL{nl}", float(y["share_formed_median"].min()), M)
+                if tg == "design":
+                    add(f"share_formed_min|{st}|{v}|nL{nl}", float(y["share_formed_median"].min()), M)
                 for t in TISSUE + CENSUS:
                     yt = y[y["vtag"] == t]
                     if len(yt):
                         add(f"cov_task|{st}|{v}|{tg}|{t}|nL{nl}", float(yt[col].median()), M, "median over arms and estimands")
-            add(f"est_over_emp_median|{st}|{v}", float(x["est_over_emp_median"].median()), M)
+        add(f"est_over_emp_median|{st}|{v}", float(x["est_over_emp_median"].median()), M)
     # S2b.3: A_fixed, design, bh_t, every n_L, every tissue task >= 0.85
     x = m[(m["set"] == "A_fixed") & (m["interval"] == "bh_t") & (m["vtag"].isin(TISSUE))]
     t3 = x.groupby(["vtag", "n_L"])["coverage_design_median"].median()
