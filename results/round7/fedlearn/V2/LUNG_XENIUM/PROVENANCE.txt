@@ -1,0 +1,25 @@
+stage: V2
+intended_job_prefix: r7fl_
+frame_id: 8a6be84e-6b5d-4289-aaaf-100d3c5b6c05
+slurm_job_id: 4825175
+partition: spill
+account: rc_htzhu_pi
+node: c0913.ll.unc.edu
+cpu: x86_64
+date_utc: 2026-10-14T05:02:32+00:00
+snapshot_commit: 89d698a6980a0f6f3487e06f22adb239a85b956e
+code_clone: /work/users/w/e/weiyang/hest_code/round7-fedlearn
+code_clone_HEAD: 89d698a6980a0f6f3487e06f22adb239a85b956e
+PYTHONHASHSEED: 0
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/89d698a6980a0f6f3487e06f22adb239a85b956e/code/scripts/round7_fedlearn_v2.py --frame-id 8a6be84e-6b5d-4289-aaaf-100d3c5b6c05 --task LUNG_XENIUM
+config: {"k": 256, "k_centers": 3, "lam_num": 100.0, "n_hold_draws_a": 10, "n_partitions": 10, "task": "LUNG_XENIUM"}
+config_md5: de38445309289bcde3aec7f31b0687db
+script_md5:
+  885bf63339074729fed7066d2434fbd0  code/scripts/round7_fedlearn_v2.py
+  69a4cdb299564fc079b683f0a3219dbc  code/scripts/round7_fedlearn_common.py
+  b5bd975c4f1745d27e7ebb56ead75392  code/scripts/round7_fedlearn_head.py
+  88a2d4c8dc0ed8c75337d29435ae64a1  code/scripts/round7_fedlearn_design.py
+  e267b1e6038daa893647202dd47ffb04  code/scripts/round2_r2_gene_check.py
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+

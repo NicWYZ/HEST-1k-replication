@@ -1,0 +1,26 @@
+stage: V4
+intended_job_prefix: r7fl_
+frame_id: 8a6be84e-6b5d-4289-aaaf-100d3c5b6c05
+slurm_job_id: 4825205
+partition: spill
+account: rc_htzhu_pi
+node: c0819.ll.unc.edu
+cpu: x86_64
+date_utc: 2026-10-14T04:21:14+00:00
+snapshot_commit: 89d698a6980a0f6f3487e06f22adb239a85b956e
+code_clone: /work/users/w/e/weiyang/hest_code/round7-fedlearn
+code_clone_HEAD: 89d698a6980a0f6f3487e06f22adb239a85b956e
+PYTHONHASHSEED: 0
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/89d698a6980a0f6f3487e06f22adb239a85b956e/code/scripts/round7_fedlearn_v4.py --frame-id 8a6be84e-6b5d-4289-aaaf-100d3c5b6c05 --task INDIANA_KIDNEY
+config: {"k": 256, "lam_num": 100.0, "n_masks": 10, "n_measured": 25, "task": "INDIANA_KIDNEY"}
+config_md5: 536f24333055b5ff86833405ccd2954b
+script_md5:
+  ec186e1e5deb37e47031fd3cdbb64f77  code/scripts/round7_fedlearn_v4.py
+  69a4cdb299564fc079b683f0a3219dbc  code/scripts/round7_fedlearn_common.py
+  b5bd975c4f1745d27e7ebb56ead75392  code/scripts/round7_fedlearn_head.py
+  88a2d4c8dc0ed8c75337d29435ae64a1  code/scripts/round7_fedlearn_design.py
+  885bf63339074729fed7066d2434fbd0  code/scripts/round7_fedlearn_v2.py
+  e267b1e6038daa893647202dd47ffb04  code/scripts/round2_r2_gene_check.py
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+

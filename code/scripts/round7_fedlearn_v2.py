@@ -12,7 +12,9 @@ intercept), centred (each center's embeddings centred on that center's mean befo
 At prediction the centred arm subtracts the test center's mean embedding over all of its spots,
 which uses no label and is a transductive step.
 
-Schemes. within: held-out donors of each center. loco: train on the other centers' donors, test on
+Schemes. within: held-out donors of each center, scored per center and averaged over centers.
+within_all_centers: the same predictions with every center's held-out spots scored together, which is
+the pooled Pearson of plan amendment A3 (added in delivery 4 after V2's first run). loco: train on the other centers' donors, test on
 every donor of the left-out center; the local arm there is the mean of the training centers' own
 heads' metrics.
 
@@ -78,6 +80,8 @@ def within_rows(T, train, held, allc, gidx):
     icp = H.fit_intercept(st)
     cen = H.fit_centred(st)
     rows = []
+    pool = {arm: [] for arm in ("local", "federated", "intercept", "centred")}
+    Ys, sls = [], []
     for c in train:
         X, Y, sl = T.test(held[c], gidx)
         loc = H.fit_exact(st[c])
@@ -89,6 +93,15 @@ def within_rows(T, train, held, allc, gidx):
         for arm, (P, ntr) in preds.items():
             rows.append(dict(scheme="within", center=c, arm=arm, n_train_spots=ntr, n_test_spots=len(Y),
                              **score(Y, P, sl)))
+            pool[arm].append(P)
+        Ys.append(Y)
+        sls.append(sl)
+    # A3's pooled Pearson: every held-out spot of every center scored together. The local arm here
+    # predicts each center's held-out spots with that center's own head.
+    Yall, slall = np.vstack(Ys), np.concatenate(sls)
+    for arm, Ps in pool.items():
+        rows.append(dict(scheme="within_all_centers", center="all", arm=arm, n_train_spots=-1,
+                         n_test_spots=len(Yall), **score(Yall, np.vstack(Ps), slall)))
     return rows
 
 

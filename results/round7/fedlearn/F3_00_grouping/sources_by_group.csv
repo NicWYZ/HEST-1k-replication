@@ -1,0 +1,19 @@
+organ,st_technology,n_samples_on_disk,n_samples_with_expression_and_embeddings,n_sources_with_expression_and_embeddings,n_labs,n_studies_as_sources,min_samples_per_source,two_plus_sources,tasks,sources
+Bladder,Visium,6,0,0,0,0,0,False,,
+Bowel,Visium,19,4,1,0,1,4,False,READ,"study: https://www.biorxiv.org/content/10.1101/2023.01.23.525135v2 [study] (samples=4, donor_units=2, disease=Cancer, studies=1)"
+Bowel,Visium HD,4,0,0,0,0,0,False,,
+Bowel,Xenium,4,4,1,1,0,4,False,COAD,"10x Genomics Inc. [lab] (samples=4, donor_units=4, disease=Cancer, studies=2)"
+Brain,Visium,14,0,0,0,0,0,False,,
+Breast,Visium,1,0,0,0,0,0,False,,
+Breast,Xenium,21,18,2,1,1,7,True,BREAST_XENIUM;IDC;IDC_audited,"10x Genomics Inc. [lab] (samples=7, donor_units=7, disease=Cancer, studies=4); study: https://www.biorxiv.org/content/10.64898/2025.12.08.692193v1 [study] (samples=11, donor_units=11, disease=Cancer, studies=1)"
+Kidney,Visium,58,58,5,5,0,1,True,CCRCC;CCRCC_hest_layout;INDIANA_KIDNEY;KIDNEY_POP54,"10x Genomics Inc. [lab] (samples=1, donor_units=0, disease=Healthy, studies=1); Indiana University School of Medicine [lab] (samples=7, donor_units=7, disease=Diseased;Healthy, studies=1); KTH Royal Institute of Technology [lab] (samples=3, donor_units=0, disease=Treated, studies=1); Sorbonne Université [lab] (samples=24, donor_units=24, disease=Cancer, studies=1); Washington University School of Medicine [lab] (samples=23, donor_units=22, disease=Diseased;Healthy, studies=1)"
+Liver,Visium,2,2,1,0,1,2,False,HCC,"study: https://www.biorxiv.org/content/10.1101/2022.11.09.515839v1.full [study] (samples=2, donor_units=2, disease=Cancer, studies=1)"
+Lung,Xenium,24,24,2,2,0,2,True,LUNG;LUNG_XENIUM;LUNG_XENIUM__19_pre_P8,"10x Genomics Inc. [lab] (samples=2, donor_units=2, disease=Cancer, studies=2); Translational Genomics Research Institute [lab] (samples=22, donor_units=15, disease=Diseased;Healthy, studies=2)"
+Lung,Xenium 5k,2,0,0,0,0,0,False,,
+Lymph node,Visium,4,4,1,1,0,4,False,LYMPH_IDC,"Peking University Health Science Center [lab] (samples=4, donor_units=4, disease=Cancer, studies=1)"
+Lymphoid,Xenium,2,0,0,0,0,0,False,,
+Pancreas,Xenium,3,3,1,1,0,3,False,PAAD,"10x Genomics Inc. [lab] (samples=3, donor_units=3, disease=Cancer, studies=3)"
+Prostate,Visium,23,23,1,1,0,23,False,PRAD,"KTH Royal Institute of Technology [lab] (samples=23, donor_units=2, disease=Cancer, studies=1)"
+Skin,Spatial Transcriptomics,12,0,0,0,0,0,False,,
+Skin,Visium,4,0,0,0,0,0,False,,
+Skin,Xenium,2,2,1,1,0,2,False,SKCM,"10x Genomics Inc. [lab] (samples=2, donor_units=2, disease=Cancer, studies=2)"
