@@ -330,3 +330,95 @@ Written before any S2 run. **Simulation.** The populations of round 5's generato
 **Real tasks.** A real task is one fixed set of $G$ clusters, so its superpopulation mean is unknown, and coverage of it cannot be measured from that set alone. S2 measures it in a resampled world. For each draw, $G$ clusters are drawn with replacement from the task's clusters, which makes a population of $G$ clusters drawn independently from the task's empirical distribution, whose mean is the task's $\theta$. The design is then applied to that world, and each interval is scored against the task's $\theta$, the superpopulation target of the world, and against the world's own mean, its design target. This is the bootstrap world of the task's clusters. Its law is discrete, with the task's skewness and its few clusters, so it is a fair stand-in for a superpopulation of clusters like the task's, and it is not the true population that the donors came from. The superpopulation rows of the masking grid are read with that limit. The draws on the fixed task, which score the design target, are the ones of round 5 for D0 (round 4's `draw_L` seeds), and the worlds use new seeds `r7ppi|S2|world|...`.
 
 **The intervals scored against each target.** Under D0: the classical and tuned estimators with `textbook_t|fpc|lin` and `textbook_t|fpc|lin|xf` (design), round 5's superpopulation interval for both (the same point estimate with variance $s_e^2/n_L$, no finite-population factor and no cross-fitting term, $t_{n_L - 1}$, as `round5_ppi_e3_sim.one_draw` computes it in regime A), and Broska and Howes's interval. Under each Bernoulli design: Kluger et al.'s estimator with its cluster bootstrap, and the Horvitz-Thompson and Hájek means with the Poisson-design variance. Every interval is scored against both targets, so that each comparison reads one interval against the target it was built for and against the other.
+
+## 3. The adaptive, balanced design (S3)
+
+Written on 14 October 2026, before any S3 run, from section 2.3 of the track document and section 5 of the S2 memo. Chen, Zhou, Peng and Wang ("Balanced Active Inference", NeurIPS 2025, read in full from `~/hest-1k/ppi_conf_papers/balanced_active_inference.pdf`, section 3 and algorithm 1) draw units with probabilities that mix an uncertainty score with uniform probabilities, $\tau = 0.5$ in their equation (6), and balance the sample by the cube method on the score. Their variance estimators are in a supplement the project does not have. Here the units are whole clusters, and the balance variables are $\pi_g$ and the estimand's own $\bar f_g$, as the track document fixes. For $\theta_2$ the design draws from the valid clusters only, as the estimator definition does, so every draw labels $n_L$ valid clusters.
+
+### 3.1 The target probabilities
+
+With a label-free score $u_g \ge 0$,
+
+$$
+\pi^{(0)}_g = \tau\,\frac{n_L\,u_g}{\sum_h u_h} + (1 - \tau)\,\frac{n_L}{G}, \qquad \tau = 0.5,
+$$
+
+and $\pi^{(0)}_g = n_L/G$ for every $g$ when $\sum_h u_h = 0$, which is the constant arm with the first score. If some $\pi^{(0)}_g$ exceeds 1, the memo's rule sets every such probability to 1 and multiplies the others by the common factor that makes them sum to $n_L$ minus the number capped, and repeats until none exceeds 1. The factor is at least 1 at every round, because the capped probabilities lose mass to the others, so every final $\pi_g \ge (1 - \tau)\,n_L/G = 0.5\,n_L/G$. Scores are $u_g = \lvert\bar f_g - \bar F\rvert$ on every task and, on the tissue tasks, the Euclidean distance from cluster $g$ to its nearest other cluster in the first 10 principal components of the clusters' mean embeddings (the encoder of the arm, `resnet50` for the permuted arm, none for the constant arm, whose second score is therefore not run).
+
+### 3.2 The cube method
+
+Write $x_g = (\pi_g, \bar f_g)^\top$, $p = 2$, and $a_g = x_g/\pi_g$. A sample $\xi \in \{0, 1\}^G$ is balanced when
+
+$$
+\sum_{g=1}^{G} a_g\,\xi_g = \sum_{g=1}^{G} x_g ,
+$$
+
+whose first row says $\sum_g \xi_g = n_L$ and whose second says that the Horvitz-Thompson estimate of $\sum_g \bar f_g$ is exact. The flight phase moves a vector $\pi(t)$, started at $\pi(0) = \pi$, by random steps that keep $\sum_g a_g\pi_g(t)$ fixed. At step $t$, take $p + 1 = 3$ units that are still fractional, in a random order fixed for the draw (the fast version of the method, which works on $p + 1$ units at a time), and a nonzero $v$ with $\sum_{g} a_g v_g = 0$ over those three, which for $p = 2$ is the cross product of the two rows of the $2 \times 3$ matrix of their $a_g$ (and a vector orthogonal to the nonzero row when the rows are dependent). Let $\lambda_1, \lambda_2 > 0$ be the largest steps that keep $\pi(t) + \lambda_1 v$ and $\pi(t) - \lambda_2 v$ in $[0, 1]^G$. Then
+
+$$
+\pi(t + 1) = \begin{cases} \pi(t) + \lambda_1 v & \text{with probability } \lambda_2/(\lambda_1 + \lambda_2), \\ \pi(t) - \lambda_2 v & \text{with probability } \lambda_1/(\lambda_1 + \lambda_2), \end{cases}
+$$
+
+so $\text{E}[\pi(t + 1) \mid \pi(t)] = \pi(t)$, the balance is kept exactly, and at least one more unit becomes 0 or 1. The flight ends when fewer than three units are fractional. The landing phase drops the second balance variable and continues with the first row alone, whose kernel on two fractional units is $v = (1, -1)$, so the sample size stays exactly $n_L$ and only the balance on $\bar f_g$ is lost, on at most two units. Every step of both phases is a martingale step, so
+
+$$
+\text{E}\,\xi_g = \pi_g \quad \text{for every } g,
+$$
+
+exactly, for any order of processing. The second-order probabilities depend on the order and have no closed form, and the track document asks for both orders to be simulated from the implemented sampler. S3 simulates $\hat\pi_g$ and $\hat\pi_{gh}$ from $R = \max(100{,}000, \lceil 400/\pi^{\mathrm{SRS}}_{gh}\rceil)$ draws, capped at $10^6$, with seeds disjoint from the evaluation draws, and the test of section 3.6 checks $\hat\pi_g$ against $\pi_g$. Each draw records its balance residual $\lvert\sum_L \bar f_g/\pi_g - \sum_g \bar f_g\rvert / \sum_g\lvert\bar f_g\rvert$, and a draw is counted as inexact when it exceeds $10^{-9}$.
+
+### 3.3 The estimators
+
+$\hat\theta_{\mathrm{HT}}$ and $\hat\theta_{\mathrm{H}}$ are those of section 1, with the cube's $\pi_g$. The first balance row makes the size fixed, so the Sen-Yates-Grundy form applies. The second makes $\frac{1}{G}\sum_L \bar f_g/\pi_g = \bar F$ exactly after the flight, so the difference form $\hat\theta_{\mathrm{HT},\lambda}$ equals $\hat\theta_{\mathrm{HT}}$ for every $\lambda$ when the landing leaves the balance exact, which is Chen et al.'s remark 1, and S3 does not run it. $\hat N = \sum_L 1/\pi_g$ is not fixed by the balance unless every $\pi_g$ is equal, so the Hájek mean is a ratio and not the Horvitz-Thompson mean.
+
+### 3.4 An interval for the Hájek mean that does not need $\pi_{gh} > 0$
+
+Write $w_g = \xi_g/\pi_g - 1$. The Hájek mean's error is, exactly,
+
+$$
+\hat\theta_{\mathrm{H}} - \theta = \frac{1}{\hat N}\sum_{g=1}^{G}\frac{\xi_g}{\pi_g}\big(\bar z_g - \theta\big) = \frac{1}{\hat N}\sum_{g=1}^{G} w_g\,y_g, \qquad y_g = \bar z_g - \theta,
+$$
+
+because $\sum_g y_g = 0$. The balance says $\sum_g w_g x_g = 0$, so the error depends on $y_g$ only through its part that $x_g$ does not explain. To get a variance, approximate the cube design by a Poisson design with the same $\pi_g$ conditioned on the balance equations. Under the Poisson design the $w_g$ are independent with mean 0 and variance $v_g = (1 - \pi_g)/\pi_g$. Treating $T = \sum_g w_g y_g$ and $S = \sum_g w_g x_g$ as jointly normal and conditioning on $S = 0$,
+
+$$
+\text{Var}(T \mid S = 0) = \sum_g v_g y_g^2 - \Big(\sum_g v_g y_g x_g\Big)^{\!\top}\Big(\sum_g v_g x_g x_g^\top\Big)^{-1}\Big(\sum_g v_g x_g y_g\Big) = \sum_{g=1}^{G} v_g\big(y_g - x_g^\top\beta\big)^2,
+$$
+
+with $\beta = \big(\sum_g v_g x_g x_g^\top\big)^{-1}\sum_g v_g x_g y_g$, the weighted least-squares coefficient (the last step is the usual expansion of a weighted residual sum of squares, skipped). Only the residuals of the regression of $y_g$ on the balance variables, with weights $v_g$, enter, and no $\pi_{gh}$ appears. A cluster with $\pi_g = 1$ has $v_g = 0$ and contributes nothing, as it should, since it is in every sample.
+
+The estimate replaces each population sum by its Horvitz-Thompson estimate over the labelled clusters, $\theta$ by $\hat\theta_{\mathrm{H}}$, and uses the divisor $n_L - p$ in place of $n_L$ for the $p$ fitted coefficients,
+
+$$
+\widehat{\text{Var}}_{\mathrm{res}}\big(\hat\theta_{\mathrm{H}}\big) = \frac{1}{\hat N^2}\,\frac{n_L}{n_L - p}\sum_{g \in L}\frac{v_g}{\pi_g}\,\hat e_g^2, \qquad \hat e_g = u_g - x_g^\top\hat\beta, \qquad \hat\beta = \Big(\sum_{g \in L}\frac{v_g}{\pi_g}x_g x_g^\top\Big)^{-1}\sum_{g \in L}\frac{v_g}{\pi_g}x_g u_g ,
+$$
+
+with $u_g = \bar z_g - \hat\theta_{\mathrm{H}}$ and $p$ the rank of the $x_g$ over the labelled clusters (2, or 1 when $\bar f_g$ is proportional to $\pi_g$, as on the constant arm with uniform probabilities). The factor $1/\hat N^2$ is the ratio estimator's scaling, as in the Hájek form of section 1.4, so the variability of $\hat N$ enters through the residuals $u_g$ and not separately. With equal probabilities $v_g/\pi_g$ is constant, the regression is on an intercept and $\bar f_g$, and the form becomes $(1 - n_L/G)$ times the residual mean square over $n_L$, the regression estimator's variance under simple random selection, which is the structure of `rej_t` without its $v_a$ term.
+
+Two approximations stand behind it. The conditional Poisson design and the normal approximation in the conditioning hold for a balanced design of high entropy with many units, and with $G$ of 15 to 51 they are rough. And the landing phase leaves $\sum_g w_g \bar f_g = \Delta$ slightly off zero, which adds $\hat N^{-1}\beta_f\Delta$ to the error that the form ignores. That term involves at most two clusters, so it should be small except at the smallest $n_L$, and S3 reports the inexact draws separately.
+
+**The reference distribution** is $t_{n_L - p}$, with the floor $n_L - p \ge 2$ of section 1.6, so the interval is formed at $n_L = 4$ with 2 degrees of freedom.
+
+**Which interval is primary.** The residual form is primary under the cube design. It uses only the labelled clusters and the known $\pi_g$, it needs no $\pi_{gh}$, and its structure is the one the balance creates. Beside it S3 reports the Sen-Yates-Grundy form with simulated $\hat\pi_{gh}$, with the share of zero $\hat\pi_{gh}$ in every cell, and the form with the `apx_size` approximation of section 1.5.
+
+### 3.5 The mixture of D2 and D0
+
+Each draw is D2's (own balance, at $p_a$ of 0.1 and 0.01) with probability 0.5 and simple random otherwise, decided by a seeded coin per draw. Its probabilities are exact mixtures,
+
+$$
+\pi^{\mathrm{mix}}_g = 0.5\,\pi^{\mathrm{D2}}_g + 0.5\,\frac{n_L}{G}, \qquad \pi^{\mathrm{mix}}_{gh} = 0.5\,\pi^{\mathrm{D2}}_{gh} + 0.5\,\frac{n_L(n_L - 1)}{G(G - 1)},
+$$
+
+computed from D2's simulated $\hat\pi_g$ and $\hat\pi_{gh}$, so every $\pi^{\mathrm{mix}}_{gh} > 0$ and the Sen-Yates-Grundy form is defined. The same three Hájek intervals are computed. The residual form is not derived for this design, whose balance holds only on its D2 half, so under the mixture the Sen-Yates-Grundy form with these probabilities is the primary interval, and the residual form is reported beside it.
+
+### 3.6 The test
+
+On the populations of S1's synthetic test (section 1.9, `round7_ppi_s1_tests.pop`), with $\bar f_g$ the first balance column and $\bar z_g$ as there, at $(G, n_L) \in \{(51, 8), (24, 8), (15, 6)\}$, normal and skewed. The checks are that $\hat\pi_g$ from $10^6$ draws matches $\pi_g$ within three Monte Carlo standard errors for every cluster, that $\hat\theta_{\mathrm{HT}}$ is unbiased within three Monte Carlo standard errors over 20,000 independent draws, that the mean of the primary variance is within 0.10 of the empirical variance of $\hat\theta_{\mathrm{H}}$ in the normal-law cells, and the share of draws with inexact balance.
+
+### 3.7 What I expect, written before any S3 run
+
+1. The inclusion frequencies match the targets, since every step is a martingale, and the smallest $\hat\pi_g$ is at least $0.5\,n_L/G$ less Monte Carlo error (prediction S3.3).
+2. The residual form has its mean within 0.10 of the empirical variance in the normal-law test cells, and overstates it in the skewed ones less than the Sen-Yates-Grundy form understates it under D2, because it needs no pair probabilities.
+3. On the real tasks, the cube design with the first score is as balanced on $\bar f_g$ as D2 at a small $p_a$, but its weights cost width, so its Hájek interval has a width ratio to D2's `rej_t` of about 1.0 to 1.2 at $n_L = 8$, in line with prediction S3.1.
+4. The second score, a distance in embedding space, is unrelated to the residuals, so it gains nothing over uniform probabilities and loses a little width against the first score.
+5. The mixture with $\epsilon = 0.5$ is wider than the cube design, since half its draws carry no balance, which is prediction S3.5.
