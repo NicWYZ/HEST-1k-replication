@@ -1,0 +1,4 @@
+job,stage,purpose,slurm_job_id,account,partition,state,output
+F0-1,F0,code clone,4803248,rc_tengfei_pi (moved from rc_htzhu_pi),spill,COMPLETED,hest_code/round7-fedlearn
+F0-2,F0,delivery 1,4806950,rc_tengfei_pi,spill,COMPLETED,results/round7/fedlearn/deliveries/delivery_01_job4806950.log
+F0-3,F0 (F2 step 4),inventory,4806992,rc_tengfei_pi,spill,COMPLETED,results/round7/fedlearn/F2_inventory/
