@@ -1,0 +1,39 @@
+theta3 first 157s
+theta3 D0 191s
+theta3 own pa0.1 393s R 100000 cand 1000000
+theta3 own pa0.01 692s R 100000 cand 9200000
+theta3 pcF2 pa0.1 738s R 100000 cand 1000000
+theta3 pcF2 pa0.01 792s R 100000 cand 9120000
+theta3 pcE2 pa0.1 837s R 100000 cand 1000000
+theta3 pcE2 pa0.01 891s R 100000 cand 9120000
+theta3 perm_cluster pa0.1 1096s R 100000 cand 1000000
+theta3 perm_cluster pa0.01 1386s R 100000 cand 9200000
+theta2 first 1543s
+theta2 D0 1573s
+theta2 own pa0.1 1781s R 100000 cand 1000000
+Traceback (most recent call last):
+  File "/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/ba3129e41d6557f29c56b7a020d73ef9d4c7edbd/code/scripts/round7_ppi_run.py", line 129, in <module>
+    main()
+  File "/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/ba3129e41d6557f29c56b7a020d73ef9d4c7edbd/code/scripts/round7_ppi_run.py", line 80, in main
+    runpy.run_path(script, run_name="__main__")
+  File "<frozen runpy>", line 291, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/ba3129e41d6557f29c56b7a020d73ef9d4c7edbd/code/scripts/round7_ppi_s1_masking.py", line 300, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/ba3129e41d6557f29c56b7a020d73ef9d4c7edbd/code/scripts/round7_ppi_s1_masking.py", line 193, in main
+    Pb, nfb = W.fix_nonpositive(W.pgh_apx_bal(pi, X, va))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/ba3129e41d6557f29c56b7a020d73ef9d4c7edbd/code/scripts/round7_ppi_weighting.py", line 170, in pgh_apx_bal
+    Vi = np.linalg.pinv(V)
+         ^^^^^^^^^^^^^^^^^
+  File "/work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/lib/python3.11/site-packages/numpy/linalg/_linalg.py", line 2257, in pinv
+    u, s, vt = svd(a, full_matrices=False, hermitian=hermitian)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/lib/python3.11/site-packages/numpy/linalg/_linalg.py", line 1841, in svd
+    u, s, vh = gufunc(a, signature=signature)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/lib/python3.11/site-packages/numpy/linalg/_linalg.py", line 153, in _raise_linalgerror_svd_nonconvergence
+    raise LinAlgError("SVD did not converge")
+numpy.linalg.LinAlgError: SVD did not converge

@@ -1,0 +1,50 @@
+test,cell,value,tolerance,passed,note
+A_HT_unbiased,G51_n8_k1_normal_pa0.1_sim,-0.5899715838,|z| <= 3,True,classical z 1.58
+B_SYG_mean_over_emp,G51_n8_k1_normal_pa0.1,0.9829893032,within 0.10 when support >= 1000,True,support 63676305
+A_HT_unbiased,G51_n8_k1_normal_pa0.01_sim,1.666474889,|z| <= 3,True,classical z 3.37
+B_SYG_mean_over_emp,G51_n8_k1_normal_pa0.01,1.013900353,within 0.10 when support >= 1000,True,support 6367630
+A_HT_unbiased,G51_n8_k1_skewed_pa0.1_sim,0.2557588545,|z| <= 3,True,classical z -16.00
+B_SYG_mean_over_emp,G51_n8_k1_skewed_pa0.1,-0.1684027842,within 0.10 when support >= 1000,False,support 63676305
+A_HT_unbiased,G51_n8_k1_skewed_pa0.01_sim,-1.575751896,|z| <= 3,True,classical z -17.43
+B_SYG_mean_over_emp,G51_n8_k1_skewed_pa0.01,0.1969453112,within 0.10 when support >= 1000,False,support 6367630
+A_HT_unbiased,G51_n8_k2_normal_pa0.1_sim,1.606776318,|z| <= 3,True,classical z -4.83
+B_SYG_mean_over_emp,G51_n8_k2_normal_pa0.1,1.016081444,within 0.10 when support >= 1000,True,support 63676305
+A_HT_unbiased,G51_n8_k2_normal_pa0.01_sim,0.9759018525,|z| <= 3,True,classical z -6.62
+B_SYG_mean_over_emp,G51_n8_k2_normal_pa0.01,1.031688318,within 0.10 when support >= 1000,True,support 6367630
+A_HT_unbiased,G51_n8_k2_skewed_pa0.1_sim,1.09889326,|z| <= 3,True,classical z -5.18
+B_SYG_mean_over_emp,G51_n8_k2_skewed_pa0.1,0.438891062,within 0.10 when support >= 1000,False,support 63676305
+A_HT_unbiased,G51_n8_k2_skewed_pa0.01_sim,-0.1922838615,|z| <= 3,True,classical z -3.07
+B_SYG_mean_over_emp,G51_n8_k2_skewed_pa0.01,0.03379458929,within 0.10 when support >= 1000,False,support 6367630
+C_pi_sim_vs_exact,G24_n8_k1_normal_pa0.1,3.192090736,<= 4.5,True,exact accepted set 73113; share of pairs with exact pi_gh = 0: 0.0000
+A_HT_unbiased,G24_n8_k1_normal_pa0.1_sim,-1.508945202,|z| <= 3,True,classical z 0.68
+B_SYG_mean_over_emp,G24_n8_k1_normal_pa0.1,1.000476114,within 0.10 when support >= 1000,True,support 73547
+A_HT_unbiased,G24_n8_k1_normal_pa0.1_exact,-1.210104477,|z| <= 3,True,classical z 0.68
+C_pi_sim_vs_exact,G24_n8_k1_normal_pa0.01,2.579366742,<= 4.5,True,exact accepted set 7459; share of pairs with exact pi_gh = 0: 0.0000
+A_HT_unbiased,G24_n8_k1_normal_pa0.01_sim,1.607246452,|z| <= 3,True,classical z 2.94
+B_SYG_mean_over_emp,G24_n8_k1_normal_pa0.01,1.012396987,within 0.10 when support >= 1000,True,support 7355
+A_HT_unbiased,G24_n8_k1_normal_pa0.01_exact,1.23713624,|z| <= 3,True,classical z 2.94
+C_pi_sim_vs_exact,G24_n8_k1_skewed_pa0.1,2.089669259,<= 4.5,True,exact accepted set 73118; share of pairs with exact pi_gh = 0: 0.0072
+A_HT_unbiased,G24_n8_k1_skewed_pa0.1_sim,-0.2771831479,|z| <= 3,True,classical z -20.31
+B_SYG_mean_over_emp,G24_n8_k1_skewed_pa0.1,-0.02983141695,within 0.10 when support >= 1000,False,support 73547
+A_HT_unbiased,G24_n8_k1_skewed_pa0.1_exact,-0.4493029644,|z| <= 3,True,classical z -20.31
+C_pi_sim_vs_exact,G24_n8_k1_skewed_pa0.01,2.53094833,<= 4.5,True,exact accepted set 7354; share of pairs with exact pi_gh = 0: 0.0072
+A_HT_unbiased,G24_n8_k1_skewed_pa0.01_sim,1.541500596,|z| <= 3,True,classical z -20.05
+B_SYG_mean_over_emp,G24_n8_k1_skewed_pa0.01,-0.03019299441,within 0.10 when support >= 1000,False,support 7355
+A_HT_unbiased,G24_n8_k1_skewed_pa0.01_exact,1.794931099,|z| <= 3,True,classical z -20.05
+C_pi_sim_vs_exact,G15_n6_k2_normal_pa0.1,1.746111667,<= 4.5,True,exact accepted set 500; share of pairs with exact pi_gh = 0: 0.0000
+A_HT_unbiased,G15_n6_k2_normal_pa0.1_sim,1.483984507,|z| <= 3,True,classical z -4.48
+B_SYG_mean_over_emp,G15_n6_k2_normal_pa0.1,1.004893794,within 0.10 when support >= 1000,True,"support 500, reported only"
+A_HT_unbiased,G15_n6_k2_normal_pa0.1_exact,1.581218727,|z| <= 3,True,classical z -4.48
+C_pi_sim_vs_exact,G15_n6_k2_normal_pa0.01,1.739933695,<= 4.5,True,exact accepted set 50; share of pairs with exact pi_gh = 0: 0.0000
+A_HT_unbiased,G15_n6_k2_normal_pa0.01_sim,-0.9569894124,|z| <= 3,True,classical z -9.94
+B_SYG_mean_over_emp,G15_n6_k2_normal_pa0.01,0.9190678323,within 0.10 when support >= 1000,True,"support 50, reported only"
+A_HT_unbiased,G15_n6_k2_normal_pa0.01_exact,-0.7465775163,|z| <= 3,True,classical z -9.94
+C_pi_sim_vs_exact,G15_n6_k2_skewed_pa0.1,1.429172817,<= 4.5,True,exact accepted set 502; share of pairs with exact pi_gh = 0: 0.0095
+A_HT_unbiased,G15_n6_k2_skewed_pa0.1_sim,-0.4678980275,|z| <= 3,True,classical z -22.24
+B_SYG_mean_over_emp,G15_n6_k2_skewed_pa0.1,0.5297732098,within 0.10 when support >= 1000,True,"support 500, reported only"
+A_HT_unbiased,G15_n6_k2_skewed_pa0.1_exact,-0.4804671458,|z| <= 3,True,classical z -22.24
+C_pi_sim_vs_exact,G15_n6_k2_skewed_pa0.01,1.737880578,<= 4.5,True,exact accepted set 50; share of pairs with exact pi_gh = 0: 0.0571
+A_HT_unbiased,G15_n6_k2_skewed_pa0.01_sim,-2.180888033,|z| <= 3,True,classical z -37.39
+B_SYG_mean_over_emp,G15_n6_k2_skewed_pa0.01,-1.819680698,within 0.10 when support >= 1000,True,"support 50, reported only"
+A_HT_unbiased,G15_n6_k2_skewed_pa0.01_exact,-2.103606065,|z| <= 3,True,classical z -37.39
+D_srs_identity,"G24n8,G51n4,G15n12",8.900043146e-14,<= 1e-12,True,max abs theta diff and max relative var diff

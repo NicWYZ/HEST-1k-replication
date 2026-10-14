@@ -1,0 +1,5 @@
+test,value,tolerance,passed,note
+s2_bh3_equals_bh,0,<= 1e-12,True,"3 designs, 40 draws, 7 columns"
+s2_pi_score_sums_to_nL,7.1054273576e-15,<= 1e-9,True,lognormal scores
+s2_pi_score_capped,0,<= 0,True,
+s2_kluger_constant_predictor,4.85722573274e-17,<= 1e-12,True,Omega = 0 and the estimate is the labelled mean

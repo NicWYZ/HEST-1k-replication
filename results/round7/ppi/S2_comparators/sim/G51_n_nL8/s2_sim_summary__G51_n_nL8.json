@@ -1,0 +1,24 @@
+{
+ "tag": "G51_n_nL8",
+ "wall_s": 371.68653297424316,
+ "args": {
+  "mode": "sim",
+  "parquet": null,
+  "perm_parquet": null,
+  "ref_parquet": null,
+  "ref_arm": null,
+  "vtag": null,
+  "arm": null,
+  "nl": 8,
+  "estimands": "theta3,theta2",
+  "theta2_kind": "neo_minus_stroma",
+  "G": 51,
+  "law": "normal",
+  "r2": "0.0,0.2,0.4,0.7,0.9",
+  "lamstar": "0.6,1.2",
+  "draws": 1000,
+  "max_genes": 0,
+  "root": "/work/users/w/e/weiyang/hest_replication",
+  "out_dir": "."
+ }
+}

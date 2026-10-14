@@ -1,0 +1,2 @@
+slurm_job_id,partition,node,stage,unit,frame_id,start,end,elapsed_s,status,commit,config_sha256,out_dir,command
+4826118,spill,c0413.ll.unc.edu,S1,sim_G24_n_k2_nL4,38f638e9-8e8e-4aad-a4f0-c96d7384f6ae,2026-10-13T22:56:08-04:00,2026-10-13T23:07:52-04:00,704.0,COMPLETED,ba3129e41d6557f29c56b7a020d73ef9d4c7edbd,2c83766f5386663cbe27df5ae87e4a465e99f96147a5ca5be568deb37ec13c6c,/work/users/w/e/weiyang/hest_replication/results/round7/ppi/S1_weighting/sim/G24_n_k2_nL4,round7_ppi_s1_sim.py --G 24 --law normal --k 2 --nl 4 --out-dir .

@@ -1,0 +1,37 @@
+r7ppi_ S0 delivery 06 slurm_job_id=4825331 partition=spill account=rc_htzhu_pi node=c0412.ll.unc.edu date=2026-10-13T22:40:06-04:00
+bundle_md5=fb2b00d065711bd9e8187610a98c7cc5
+head_before=739c3c17639c4a44a75fe0a7a886de327618942e
+/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/b98609dc-3773-418e-9395-cbbcc1aee4fb/r7ppi_delivery_06.bundle is okay
+The bundle contains this ref:
+d0462a70a72f7d6bd44f98bc50e3d051ee481846 refs/heads/round7-ppi
+The bundle requires this ref:
+739c3c17639c4a44a75fe0a7a886de327618942e 
+The bundle uses this hash algorithm: sha1
+verify_rc=0
+From /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/b98609dc-3773-418e-9395-cbbcc1aee4fb/r7ppi_delivery_06.bundle
+ * branch              round7-ppi -> FETCH_HEAD
+fetch_rc=0
+Updating 739c3c17..d0462a70
+Fast-forward
+ code/scripts/round7_ppi_s2_comparators.py | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+merge_rc=0
+head_after=d0462a70a72f7d6bd44f98bc50e3d051ee481846
+commits_carried:
+d0462a70a72f7d6bd44f98bc50e3d051ee481846 Round 7 PPI S2: Omega = 0 for a constant predictor in Kluger et al.'s tuning
+snapshot=/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/d0462a70a72f7d6bd44f98bc50e3d051ee481846
+snapshot_files=317
+snapshot_writable_files=0
+2de31569ffe72239062fbeb0c9a50fc5  round5_ppi_estimator.py
+e13183a4ffdddf4f01ba5136844c606d  round5_ppi_twolevel.py
+d78b654d7fd8e6a824f73dd50ee2a0c1  round5_ppi_balance.py
+059c18e1b4998b1ac9c9685ba324a872  round5_ppi_e4b_rejective.py
+122375c3acb103ed93e3e687644d7f6d  round5_ppi_common.py
+31d5b0e396d85d3c49709f216d89d4af  round7_ppi_d2.py
+3f37e77c2abe22afa6eca8772282f4f0  round7_ppi_run.py
+46995769fdd92c8982531dfa96b7892c  round7_ppi_s0_anchors.py
+9e945ff59c4363a5121e16335e2d6dcb  round7_ppi_s1_masking.py
+f14f4527435618596d0097ab41bb51e2  round7_ppi_s1_sim.py
+7874b9fb676ef6047d2a05c71a2071e4  round7_ppi_s1_tests.py
+7fc22eab8e5ef6f9f6047281878629be  round7_ppi_s2_comparators.py
+ee9f238c793912cd3045e88aba89c5e8  round7_ppi_weighting.py

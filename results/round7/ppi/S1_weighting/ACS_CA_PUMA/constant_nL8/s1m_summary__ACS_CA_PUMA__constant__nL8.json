@@ -1,0 +1,23 @@
+{
+ "tag": "ACS_CA_PUMA__constant__nL8",
+ "wall_s": 102.68180227279663,
+ "n_cells": 5,
+ "n_rows": 80,
+ "args": {
+  "parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_CA_PUMA.parquet",
+  "perm_parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_CA_PUMA.parquet",
+  "ref_parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_CA_PUMA.parquet",
+  "ref_arm": "package",
+  "vtag": "ACS_CA_PUMA",
+  "arm": "constant",
+  "nl": 8,
+  "estimands": "theta3,theta2",
+  "theta2_kind": "mean",
+  "balances": "",
+  "draws": 2000,
+  "max_genes": 0,
+  "r_cap": 1000000,
+  "root": "/work/users/w/e/weiyang/hest_replication",
+  "out_dir": "."
+ }
+}

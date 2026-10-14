@@ -1,0 +1,40 @@
+r7ppi_ S2 delivery 09 slurm_job_id=4842129 partition=spill account=rc_htzhu_pi node=c151404.ll.unc.edu date=2026-10-14T02:42:11-04:00
+bundle_md5=c338e9e1c1b81996012684faa7f753eb
+head_before=e74913ec1cf0ac4cac113e513a875afc301c90b6
+/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/375ef216-8a56-403b-bcf6-be5bddb06e4e/r7ppi_delivery_09.bundle is okay
+The bundle contains this ref:
+83f9970b50d548de41f3a4901efa53e47d0f5121 refs/heads/round7-ppi
+The bundle requires this ref:
+e74913ec1cf0ac4cac113e513a875afc301c90b6 
+The bundle uses this hash algorithm: sha1
+verify_rc=0
+From /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/375ef216-8a56-403b-bcf6-be5bddb06e4e/r7ppi_delivery_09.bundle
+ * branch              round7-ppi -> FETCH_HEAD
+fetch_rc=0
+Updating e74913ec..83f9970b
+Fast-forward
+ code/scripts/round7_ppi_i01_numbers.py | 35 +++++++++++++++++++++++++++++++++-
+ 1 file changed, 34 insertions(+), 1 deletion(-)
+merge_rc=0
+head_after=83f9970b50d548de41f3a4901efa53e47d0f5121
+commits_carried:
+83f9970b50d548de41f3a4901efa53e47d0f5121 Round 7 PPI: rej_t under D2 against round 5's E4b, cell by cell, in the i01 numbers
+snapshot=/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/83f9970b50d548de41f3a4901efa53e47d0f5121
+snapshot_files=320
+snapshot_writable_files=0
+2de31569ffe72239062fbeb0c9a50fc5  round5_ppi_estimator.py
+e13183a4ffdddf4f01ba5136844c606d  round5_ppi_twolevel.py
+d78b654d7fd8e6a824f73dd50ee2a0c1  round5_ppi_balance.py
+059c18e1b4998b1ac9c9685ba324a872  round5_ppi_e4b_rejective.py
+122375c3acb103ed93e3e687644d7f6d  round5_ppi_common.py
+31d5b0e396d85d3c49709f216d89d4af  round7_ppi_d2.py
+93069cf054df1796ba64ce6c8d597d09  round7_ppi_i01_numbers.py
+c8ad6fd5f63296a85c7f664d871631bb  round7_ppi_merge.py
+a7ba2f2d8dfd181bf6bc89eb74e6f8a7  round7_ppi_provenance_index.py
+3f37e77c2abe22afa6eca8772282f4f0  round7_ppi_run.py
+46995769fdd92c8982531dfa96b7892c  round7_ppi_s0_anchors.py
+9e945ff59c4363a5121e16335e2d6dcb  round7_ppi_s1_masking.py
+f14f4527435618596d0097ab41bb51e2  round7_ppi_s1_sim.py
+7874b9fb676ef6047d2a05c71a2071e4  round7_ppi_s1_tests.py
+7fc22eab8e5ef6f9f6047281878629be  round7_ppi_s2_comparators.py
+19137aac514748f8aa6b054157067e29  round7_ppi_weighting.py

@@ -1,0 +1,28 @@
+platform: Longleaf
+slurm_job_id: 4818386
+slurm_job_partition: spill
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 4096
+node: c130602.ll.unc.edu
+job_prefix_intended: r7ppi_S0
+stage: S0
+unit: score
+frame_id: 89b5f4ed-6180-409e-831d-0fecc6ce5f4e
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python3.11
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 2703752215e85c2ba2ae1203308cc6750db311ad
+snapshot: /work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/2703752215e85c2ba2ae1203308cc6750db311ad
+command: round7_ppi_s0_anchors.py --s0-dir /work/users/w/e/weiyang/hest_replication/results/round7/ppi/S0_anchors
+config: {"command":"round7_ppi_s0_anchors.py --s0-dir /work/users/w/e/weiyang/hest_replication/results/round7/ppi/S0_anchors","inputs":[],"snapshot_commit":"2703752215e85c2ba2ae1203308cc6750db311ad","stage":"S0","unit":"score"}
+config_sha256: 5b5d7604f5e8838d53a2f3f60ae8ca94e048d4137a696aab22427d9c283609b4
+start: 2026-10-13T21:36:12-04:00
+end: 2026-10-13T21:36:12-04:00
+elapsed_s: 0.2
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  3f37e77c2abe22afa6eca8772282f4f0  code/scripts/round7_ppi_run.py
+  46995769fdd92c8982531dfa96b7892c  code/scripts/round7_ppi_s0_anchors.py
+inputs (md5, path):

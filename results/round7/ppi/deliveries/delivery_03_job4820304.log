@@ -1,0 +1,129 @@
+r7ppi_ S0 delivery 03 slurm_job_id=4820304 partition=spill account=rc_htzhu_pi node=c130502.ll.unc.edu date=2026-10-13T21:51:12-04:00
+bundle_md5=9ddffd151e02d89324f052e05098db9f
+head_before=2703752215e85c2ba2ae1203308cc6750db311ad
+/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/da3585e0-bf13-4803-9caf-b04de58bd15d/r7ppi_delivery_03.bundle is okay
+The bundle contains this ref:
+ba4853e668f494050b4d0ca3bbe04a7ef4f985bb refs/heads/round7-ppi
+The bundle requires this ref:
+2703752215e85c2ba2ae1203308cc6750db311ad 
+The bundle uses this hash algorithm: sha1
+verify_rc=0
+From /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/da3585e0-bf13-4803-9caf-b04de58bd15d/r7ppi_delivery_03.bundle
+ * branch              round7-ppi -> FETCH_HEAD
+fetch_rc=0
+Updating 27037522..ba4853e6
+Fast-forward
+ code/scripts/round7_ppi_s1_masking.py              | 300 +++++++++++++++++++
+ code/scripts/round7_ppi_s1_tests.py                | 196 +++++++++++++
+ code/scripts/round7_ppi_weighting.py               | 325 +++++++++++++++++++++
+ docs/round07/tracks/ppi/round07_ppi_plan.md        |  10 +-
+ docs/round07/tracks/ppi/round07_ppi_theory.md      | 252 ++++++++++++++++
+ .../ppi/S0_anchors/arm1/ACS_STATES/PROVENANCE.txt  |  37 +++
+ .../S0_anchors/arm1/ACS_STATES/_provenance.json    |  10 +
+ .../ppi/S0_anchors/arm1/ACS_STATES/_run_row.csv    |   2 +
+ .../e4b_bootstrap__ACS_STATES__package.csv         |  13 +
+ .../e4b_d2_diagnostics__ACS_STATES__package.csv    |   9 +
+ .../e4b_rejective__ACS_STATES__package.csv         | 105 +++++++
+ ...e4b_rejective_genes__ACS_STATES__package.csv.gz | Bin 0 -> 1648 bytes
+ ...e4b_rejective_summary__ACS_STATES__package.json |  12 +
+ .../e4b_skipped__ACS_STATES__package.csv           |   1 +
+ .../ppi/S0_anchors/arm1/ACS_STATES/job_stdout.log  |   1 +
+ .../ppi/S0_anchors/arm1/CCRCC/PROVENANCE.txt       |  38 +++
+ .../ppi/S0_anchors/arm1/CCRCC/_provenance.json     |  10 +
+ .../round7/ppi/S0_anchors/arm1/CCRCC/_run_row.csv  |   2 +
+ .../arm1/CCRCC/e4b_bootstrap__CCRCC__uni_v2.csv    |  16 +
+ .../CCRCC/e4b_d2_diagnostics__CCRCC__uni_v2.csv    |  11 +
+ .../arm1/CCRCC/e4b_rejective__CCRCC__uni_v2.csv    | 129 ++++++++
+ .../e4b_rejective_genes__CCRCC__uni_v2.csv.gz      | Bin 0 -> 90665 bytes
+ .../e4b_rejective_summary__CCRCC__uni_v2.json      |  12 +
+ .../arm1/CCRCC/e4b_skipped__CCRCC__uni_v2.csv      |   1 +
+ .../ppi/S0_anchors/arm1/CCRCC/job_stdout.log       |   1 +
+ .../ppi/S0_anchors/arm2/ACS_STATES/PROVENANCE.txt  |  38 +++
+ .../S0_anchors/arm2/ACS_STATES/_provenance.json    |  10 +
+ .../ppi/S0_anchors/arm2/ACS_STATES/_run_row.csv    |   2 +
+ .../ppi/S0_anchors/arm2/ACS_STATES/job_stdout.log  |   3 +
+ .../ACS_STATES/s0_arm2__ACS_STATES__package.csv    |   3 +
+ .../s0_arm2_summary__ACS_STATES__package.json      |  20 ++
+ .../s0_thresholds__ACS_STATES__package.csv         |   2 +
+ .../ppi/S0_anchors/arm2/CCRCC/PROVENANCE.txt       |  39 +++
+ .../ppi/S0_anchors/arm2/CCRCC/_provenance.json     |  10 +
+ .../round7/ppi/S0_anchors/arm2/CCRCC/_run_row.csv  |   2 +
+ .../ppi/S0_anchors/arm2/CCRCC/job_stdout.log       |   3 +
+ .../arm2/CCRCC/s0_arm2__CCRCC__uni_v2.csv          |   3 +
+ .../arm2/CCRCC/s0_arm2_summary__CCRCC__uni_v2.json |  20 ++
+ .../arm2/CCRCC/s0_thresholds__CCRCC__uni_v2.csv    |  51 ++++
+ results/round7/ppi/S0_anchors/s0_anchors.csv       |   7 +
+ results/round7/ppi/S0_anchors/score/PROVENANCE.txt |  28 ++
+ .../round7/ppi/S0_anchors/score/_provenance.json   |  10 +
+ results/round7/ppi/S0_anchors/score/_run_row.csv   |   2 +
+ results/round7/ppi/S0_anchors/score/job_stdout.log |   7 +
+ results/round7/ppi/S0_anchors/score/s0_anchors.csv |   7 +
+ results/round7/ppi/code_deliveries.csv             |   1 +
+ .../ppi/deliveries/delivery_02_job4817708.log      |  39 +++
+ results/round7/ppi/r7ppi_slurm_jobs.csv            |   7 +
+ 48 files changed, 1802 insertions(+), 5 deletions(-)
+ create mode 100644 code/scripts/round7_ppi_s1_masking.py
+ create mode 100644 code/scripts/round7_ppi_s1_tests.py
+ create mode 100644 code/scripts/round7_ppi_weighting.py
+ create mode 100644 docs/round07/tracks/ppi/round07_ppi_theory.md
+ create mode 100644 results/round7/ppi/S0_anchors/arm1/ACS_STATES/PROVENANCE.txt
+ create mode 100644 results/round7/ppi/S0_anchors/arm1/ACS_STATES/_provenance.json
+ create mode 100644 results/round7/ppi/S0_anchors/arm1/ACS_STATES/_run_row.csv
+ create mode 100644 results/round7/ppi/S0_anchors/arm1/ACS_STATES/e4b_bootstrap__ACS_STATES__package.csv
+ create mode 100644 results/round7/ppi/S0_anchors/arm1/ACS_STATES/e4b_d2_diagnostics__ACS_STATES__package.csv
+ create mode 100644 results/round7/ppi/S0_anchors/arm1/ACS_STATES/e4b_rejective__ACS_STATES__package.csv
+ create mode 100644 results/round7/ppi/S0_anchors/arm1/ACS_STATES/e4b_rejective_genes__ACS_STATES__package.csv.gz
+ create mode 100644 results/round7/ppi/S0_anchors/arm1/ACS_STATES/e4b_rejective_summary__ACS_STATES__package.json
+ create mode 100644 results/round7/ppi/S0_anchors/arm1/ACS_STATES/e4b_skipped__ACS_STATES__package.csv
+ create mode 100644 results/round7/ppi/S0_anchors/arm1/ACS_STATES/job_stdout.log
+ create mode 100644 results/round7/ppi/S0_anchors/arm1/CCRCC/PROVENANCE.txt
+ create mode 100644 results/round7/ppi/S0_anchors/arm1/CCRCC/_provenance.json
+ create mode 100644 results/round7/ppi/S0_anchors/arm1/CCRCC/_run_row.csv
+ create mode 100644 results/round7/ppi/S0_anchors/arm1/CCRCC/e4b_bootstrap__CCRCC__uni_v2.csv
+ create mode 100644 results/round7/ppi/S0_anchors/arm1/CCRCC/e4b_d2_diagnostics__CCRCC__uni_v2.csv
+ create mode 100644 results/round7/ppi/S0_anchors/arm1/CCRCC/e4b_rejective__CCRCC__uni_v2.csv
+ create mode 100644 results/round7/ppi/S0_anchors/arm1/CCRCC/e4b_rejective_genes__CCRCC__uni_v2.csv.gz
+ create mode 100644 results/round7/ppi/S0_anchors/arm1/CCRCC/e4b_rejective_summary__CCRCC__uni_v2.json
+ create mode 100644 results/round7/ppi/S0_anchors/arm1/CCRCC/e4b_skipped__CCRCC__uni_v2.csv
+ create mode 100644 results/round7/ppi/S0_anchors/arm1/CCRCC/job_stdout.log
+ create mode 100644 results/round7/ppi/S0_anchors/arm2/ACS_STATES/PROVENANCE.txt
+ create mode 100644 results/round7/ppi/S0_anchors/arm2/ACS_STATES/_provenance.json
+ create mode 100644 results/round7/ppi/S0_anchors/arm2/ACS_STATES/_run_row.csv
+ create mode 100644 results/round7/ppi/S0_anchors/arm2/ACS_STATES/job_stdout.log
+ create mode 100644 results/round7/ppi/S0_anchors/arm2/ACS_STATES/s0_arm2__ACS_STATES__package.csv
+ create mode 100644 results/round7/ppi/S0_anchors/arm2/ACS_STATES/s0_arm2_summary__ACS_STATES__package.json
+ create mode 100644 results/round7/ppi/S0_anchors/arm2/ACS_STATES/s0_thresholds__ACS_STATES__package.csv
+ create mode 100644 results/round7/ppi/S0_anchors/arm2/CCRCC/PROVENANCE.txt
+ create mode 100644 results/round7/ppi/S0_anchors/arm2/CCRCC/_provenance.json
+ create mode 100644 results/round7/ppi/S0_anchors/arm2/CCRCC/_run_row.csv
+ create mode 100644 results/round7/ppi/S0_anchors/arm2/CCRCC/job_stdout.log
+ create mode 100644 results/round7/ppi/S0_anchors/arm2/CCRCC/s0_arm2__CCRCC__uni_v2.csv
+ create mode 100644 results/round7/ppi/S0_anchors/arm2/CCRCC/s0_arm2_summary__CCRCC__uni_v2.json
+ create mode 100644 results/round7/ppi/S0_anchors/arm2/CCRCC/s0_thresholds__CCRCC__uni_v2.csv
+ create mode 100644 results/round7/ppi/S0_anchors/s0_anchors.csv
+ create mode 100644 results/round7/ppi/S0_anchors/score/PROVENANCE.txt
+ create mode 100644 results/round7/ppi/S0_anchors/score/_provenance.json
+ create mode 100644 results/round7/ppi/S0_anchors/score/_run_row.csv
+ create mode 100644 results/round7/ppi/S0_anchors/score/job_stdout.log
+ create mode 100644 results/round7/ppi/S0_anchors/score/s0_anchors.csv
+ create mode 100644 results/round7/ppi/deliveries/delivery_02_job4817708.log
+merge_rc=0
+head_after=ba4853e668f494050b4d0ca3bbe04a7ef4f985bb
+commits_carried:
+ba4853e668f494050b4d0ca3bbe04a7ef4f985bb Round 7 PPI S1: weighting library, synthetic tests, masking driver
+a4d07a8e905d3f27042f5569de73c89b5da9f518 Round 7 PPI S1.1: theory section 1 and section 2.1, before any S1 run
+c57b7d6c56911c40105a564f831fecb5dd53ece8 Round 7 PPI S0: anchors pass
+snapshot=/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/ba4853e668f494050b4d0ca3bbe04a7ef4f985bb
+snapshot_files=315
+snapshot_writable_files=0
+2de31569ffe72239062fbeb0c9a50fc5  round5_ppi_estimator.py
+e13183a4ffdddf4f01ba5136844c606d  round5_ppi_twolevel.py
+d78b654d7fd8e6a824f73dd50ee2a0c1  round5_ppi_balance.py
+059c18e1b4998b1ac9c9685ba324a872  round5_ppi_e4b_rejective.py
+122375c3acb103ed93e3e687644d7f6d  round5_ppi_common.py
+446a124f2bcc1ceddcfcb4690d7aef25  round7_ppi_d2.py
+3f37e77c2abe22afa6eca8772282f4f0  round7_ppi_run.py
+46995769fdd92c8982531dfa96b7892c  round7_ppi_s0_anchors.py
+9e945ff59c4363a5121e16335e2d6dcb  round7_ppi_s1_masking.py
+0c7fe699f5214ed051ea50051ade3690  round7_ppi_s1_tests.py
+656448ed210c855998075b423b06bfde  round7_ppi_weighting.py

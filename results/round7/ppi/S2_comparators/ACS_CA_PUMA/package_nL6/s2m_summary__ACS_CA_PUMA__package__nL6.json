@@ -1,0 +1,24 @@
+{
+ "tag": "ACS_CA_PUMA__package__nL6",
+ "wall_s": 426.73154616355896,
+ "args": {
+  "mode": "masking",
+  "parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_CA_PUMA.parquet",
+  "perm_parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_CA_PUMA.parquet",
+  "ref_parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_CA_PUMA.parquet",
+  "ref_arm": "package",
+  "vtag": "ACS_CA_PUMA",
+  "arm": "package",
+  "nl": 6,
+  "estimands": "theta3,theta2",
+  "theta2_kind": "mean",
+  "G": null,
+  "law": null,
+  "r2": "0.0,0.2,0.4,0.7,0.9",
+  "lamstar": "0.6,1.2",
+  "draws": 2000,
+  "max_genes": 0,
+  "root": "/work/users/w/e/weiyang/hest_replication",
+  "out_dir": "."
+ }
+}

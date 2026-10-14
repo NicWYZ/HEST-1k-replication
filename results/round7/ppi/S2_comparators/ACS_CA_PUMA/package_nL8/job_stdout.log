@@ -1,0 +1,14 @@
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/d0462a70a72f7d6bd44f98bc50e3d051ee481846/code/scripts/round7_ppi_s2_comparators.py:98: RuntimeWarning: Mean of empty slice
+  cov = np.nanmean((tbm - np.nanmean(tbm, 0)) * (gbm - np.nanmean(gbm, 0)), 0)
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/d0462a70a72f7d6bd44f98bc50e3d051ee481846/code/scripts/round7_ppi_s2_comparators.py:99: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  den = np.nanvar(gbm, 0) + np.nanvar(obm, 0)
+/work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/lib/python3.11/site-packages/numpy/lib/_nanfunctions_impl.py:1593: RuntimeWarning: All-NaN slice encountered
+  return fnb._ureduce(a,
+theta3 350s
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/d0462a70a72f7d6bd44f98bc50e3d051ee481846/code/scripts/round7_ppi_s2_comparators.py:98: RuntimeWarning: Mean of empty slice
+  cov = np.nanmean((tbm - np.nanmean(tbm, 0)) * (gbm - np.nanmean(gbm, 0)), 0)
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/d0462a70a72f7d6bd44f98bc50e3d051ee481846/code/scripts/round7_ppi_s2_comparators.py:99: RuntimeWarning: Degrees of freedom <= 0 for slice.
+  den = np.nanvar(gbm, 0) + np.nanvar(obm, 0)
+/work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/lib/python3.11/site-packages/numpy/lib/_nanfunctions_impl.py:1593: RuntimeWarning: All-NaN slice encountered
+  return fnb._ureduce(a,
+theta2 699s
