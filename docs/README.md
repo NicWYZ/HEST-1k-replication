@@ -28,6 +28,7 @@ Each stage of work produces the same chain. The oversight chat writes an instruc
 |---|---|
 | `docs/progress-log.md` | what happened and why, newest first, with an entry for every memo, gate review and decision |
 | `docs/WAYS_OF_WORKING.md` | procedures, each tied to the failure it prevents, and the guardrails register |
+| `docs/EXECUTION_RULES.md` | the standing rules every execution session follows, from 13 October 2026. Track instructions and memos cite it instead of restating it |
 | `docs/moved.md` | each old path and its new path, from the move on 9 October 2026 |
 | `docs/reference/methods_and_state_of_play.md` | every method derived from scratch, every round-3 result with how and why, what has not been tried, and what the rest of HEST-1k holds (27 September) |
 | `docs/reference/concepts_explained_round4.md` | the nineteen concepts Nicolas asked about, with the regime B correction in its section 4 (28 to 29 September) |
