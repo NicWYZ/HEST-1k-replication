@@ -6,17 +6,18 @@ Living document. Written 14 October 2026 by the execution session and approved b
 
 | field | value |
 |---|---|
-| stage | S0, S1 and S2 complete. S2 report written, gate of interval i01. Waiting for the oversight chat's S2 decision memo; nothing of S3 to S5 is set up |
+| stage | Interval i02 opened by `docs/round07/i02/ppi/round07_ppi_S2_decisions.md` (committed unchanged as `72431846`). Next is S2b, then S3, then S4, then the S4 gate |
 | starting commit | `c2af4630fe601c255c927d2a3f5a76b19a53d9f2` (13 October 2026, "Docs: open round 7's inference track after O2 was accepted") |
-| `origin/main` when read | `690b999b99460e5d341edc6aeba3f1d01a99c93f` (merge of pull request #28, `round7-fedlearn`). The track document has no later revision there |
+| `origin/main` when read | `72c630c6` (14 October 2026, merge of pull request #30, `round7-fedlearn`), after pull request #29 (`round7-ppi`, S2 gate) was merged as `2063d248`. The track document has no revision after 13 October there |
+| standing rules | `docs/EXECUTION_RULES.md` at its revision of 14 October, read in full, adopted from the S2 memo on |
 | track document revisions transcribed | the two lines dated 13 October 2026 (first version, and the revision before handover) |
-| branch | `round7-ppi` from `c2af4630` |
+| branch | `round7-ppi` from `c2af4630`, with nothing merged into it |
 | Longleaf code clone | `/work/users/w/e/weiyang/hest_code/round7-ppi/`, made by Slurm job 4816458 |
 | last delivered commit | `83f9970b50d548de41f3a4901efa53e47d0f5121` (delivery 9, Slurm job 4842129) |
-| open pull request | the S2 gate pull request, number in the S2 report |
+| open pull request | none (#29 merged) |
 | plan extensions | none |
-| escalations recorded for the next report | in section 7 of `docs/round07/i01/ppi/round07_ppi_S2_report.md` |
-| next action | none until the S2 decision memo |
+| escalations recorded for the next report | none yet in i02 |
+| next action | S2b item 1, the $\theta_2$ recount |
 
 A restarted session resumes from this block, the job ledger `results/round7/ppi/r7ppi_slurm_jobs.csv` and `results/round7/ppi/code_deliveries.csv`.
 
@@ -79,8 +80,8 @@ S0 is capped at one day. Expected Slurm use is four short jobs (clone, delivery,
 | S0 | none, the lead does it | lead |
 | S1 | six task units (`CCRCC`, `CCRCC_merged`, `INDIANA_KIDNEY`, `LUNG_XENIUM`, `ACS_STATES`, `ACS_CA_PUMA`) and one simulation unit | sub-agents for the runs, the lead for the theory section and the synthetic test |
 | S2 | the same six task units and one simulation unit | sub-agents for the runs, the lead for the theory section and both Broska and Howes checks |
-| S3 (if the S2 memo keeps it) | six task units and one simulation unit | the lead implements and tests the cube method, sub-agents run |
-| S4 (if kept) | four tissue task units | sub-agents |
+| S3 | six task units and one simulation unit | the lead implements and tests the cube method, sub-agents run |
+| S4 | four tissue task units | sub-agents |
 
 Each brief carries the sub-agent's frame id in its first message and the sentence of section 4 of the track document on `stamp_dir()` and `whose()`. Sub-agents run no git command and never run `scancel`. Each writes its own fragment and its own job ledger fragment. I check the frame id in every returned stamp, merge, recompute every pooled number from the merged tables into `<stage>_report_numbers.csv`, check each hand-back against its primary tables, and commit. Mechanical runs may use a model one tier below mine. Derivations stay with me.
 
@@ -92,7 +93,7 @@ Nothing of S3, S4 or S5 is set up, staged or piloted before the corresponding de
 
 ## 7. Predictions
 
-Copied from the track document before any run. Each is scored in its gate report as held, partly held, refuted or not tested.
+Copied from the track document before any run, and for interval i02 from section 6 of the S2 memo before any i02 run. Each is scored in its gate report as held, partly held, refuted or not tested.
 
 | id | prediction | status |
 |---|---|---|
@@ -108,6 +109,13 @@ Copied from the track document before any run. Each is scored in its gate report
 | S3.2 | It covers within 0.03 of nominal in every simulation cell with $n_L \ge 8$ | not tested |
 | S4.1 | $n_L = 8$. The classical interval applied as if simple random covers below 0.80 for $\theta_3$ on at least two tissue tasks | not tested |
 | S4.2 | $n_L = 8$. The exact standard deviation of $\hat\theta_{\mathrm{HT}}$ under k-center is at least 1.5 times that of the classical mean under D0 on every tissue task | not tested |
+| S2b.1 | In every $\theta_2$ cell outside `LUNG_XENIUM`, round 5's coverage equals round 7's conditional coverage times its share formed to within 0.03 | not tested |
+| S2b.2 | In the skewed simulation cell, at least 90% of the populations in which $\hat\theta_{\mathrm{HT}}$ has a standardised bias above 3 have a smallest $\hat\pi_g$ below $0.01\,n_L/G$ | not tested |
+| S2b.3 | Under D0 for the design target, `bh_t` covers at 0.85 or above at every $n_L$ on every tissue task (median over arms and estimands of the median over genes) | not tested |
+| S2b.4 | For the superpopulation target in set `B_world`, `bh_t` covers at 0.80 or above at $n_L = 4$ on every task | not tested |
+| S3.3 | In every S3 cell the smallest $\hat\pi_g$ is at least $0.45\,n_L/G$ | not tested |
+| S3.4 | On the supported real-task cells, S3's Hájek interval with its primary variance covers within 0.03 of D0 classical in at least 0.85 of the cells, where D2's Hájek interval with simulated pair probabilities did so in 0.71 | not tested |
+| S3.5 | At $n_L = 8$ with own balance, the cube design's Hájek interval is narrower than the Hájek interval under the mixture of D2 and D0 in at least three quarters of the supported cells | not tested |
 
 ## 8. Plan extensions
 
@@ -191,3 +199,32 @@ Greedy k-center on the tissue tasks of the shared masking grid, at $n_L \in \{4,
 ##### S5. The closing report (one day; gate, end of track)
 
 `docs/round07/i03/ppi/round07_ppi_final_report.md`, ending with a closing page "What the inference track established in round 7". It states, for each design, whether the paper can recommend it, under which conditions, and against which comparator, and lists what is not established. The memo at S4 may add stages before S5.
+
+## 10. Interval i02, as fixed by the S2 memo
+
+Transcribed on 14 October 2026 from section 5 of `docs/round07/i02/ppi/round07_ppi_S2_decisions.md`. Section 9's text for S3 and S4 is the default, and the memo's changes below take precedence. Theory goes into new sections of `docs/round07/tracks/ppi/round07_ppi_theory.md` before any run that uses it (section 3 for S3, section 4 for S4, and the two Broska and Howes variants in section 2.1). Every $\theta_2$ coverage from here on carries its share of draws with an interval formed, and the primary figure counts a draw with no interval as a miss.
+
+### S2b. Three diagnostics (capped at one day, before S3)
+
+- [ ] **1. The $\theta_2$ recount**, from existing outputs with no new draws, into `results/round7/ppi/S2b_diagnostics/theta2_recount/`. Every $\theta_2$ row of the S2 report's section 6.1 table and of its section 6.5 comparison in three forms (over all draws with a miss for no interval, over draws with an interval, share formed), for every estimator. A cell-by-cell check of the memo's section 3, listing cells where round 5's coverage is not round 7's conditional coverage times its share formed within Monte Carlo error. The D0 classical rule for $\theta_2$ in round 5, in round 7, and in `docs/round05/tracks/ppi/round5_ppi_estimator_definition.md`, and `wr_D0cl` for $\theta_2$ under the definition's rule, rerunning only the D0 classical rows of the $\theta_2$ tissue cells if 1-degree-of-freedom intervals are needed. Each $\theta_2$ cell's support over all clusters and over valid ones, and the lung $\theta_2$ cells whose thresholds differ from round 5's medians.
+- [ ] **2. The simulation bias by population**, into `results/round7/ppi/S2b_diagnostics/sim_by_population/`. `round7_ppi_s1_sim.py` writes per population the smallest $\hat\pi_g$, the share of pairs with $\hat\pi_{gh} = 0$, and the signed standardised bias of the classical mean, $\hat\theta_{\mathrm{HT}}$ and $\hat\theta_{\mathrm{H}}$. Rerun $G = 51$, $n_L = 8$, $k = 1$, $\lambda^\star = 0.6$, skewed, both $p_a$, 1,000 draws, and say whether the biased populations are those with a zero or near-zero $\hat\pi_g$.
+- [ ] **3. Broska and Howes with small-sample corrections**, into `results/round7/ppi/S2b_diagnostics/bh_small_sample/`. `bh_t` (labelled term times $n_L/(n_L - 1)$, $t_{n_L-1}$, and beside it $t_{n_L-2}$) and `bh_t_fpc` (`bh_t` times $1 - n_L/G$), written in theory section 2.1 before the run, on S2's D0 grids, real tasks and simulation, both targets. Per cell the median over genes of the cluster-level $R^2$, $\rho_{\mathrm{BH}}(n_L/G, R^2)$, and the measured ratio of Broska and Howes's variance estimate to the empirical variance.
+
+### S3. The adaptive, balanced design (two days)
+
+- [ ] **Theory section 3** before any run. The target probabilities with the cap rule of the memo (cap at 1, rescale the uncapped proportionally to $n_L$ minus the capped count, repeat), so every $\pi^{(\tau)}_g \ge 0.5\,n_L/G$. An interval for $\hat\theta_{\mathrm{H}}$ under the cube design that does not need $\pi_{gh} > 0$, derived from the cube method's balancing equations (candidate is the residual form on $(\bar z_g - \hat\theta_{\mathrm{H}})/\pi_g$ regressed on the balance variables over $\pi_g$), saying how it treats $\hat N$, what the landing phase does to it, its reference distribution and degrees of freedom, and which interval is primary and why. Deville and Tillé's variance paper is not held, so its formula is not cited.
+- [ ] **Cube method** flight and landing phases in Python, capped at one day, with conditional Poisson sampling with rejection as the recorded fallback.
+- [ ] **Test** on the synthetic populations of S1's test. Inclusion frequencies against targets within Monte Carlo error, $\hat\theta_{\mathrm{HT}}$ unbiased, the primary variance's mean within 0.10 of the empirical variance in the normal-law cells, and the draws whose landing left the balance inexact reported separately.
+- [ ] **Runs**, fanned out by task (six units) plus one simulation unit, on the shared grids. Scores $u_g = \lvert\bar f_g - \bar F\rvert$ (every task) and the nearest-neighbour distance in 10 embedding principal components (tissue). Balance on $\pi_g$ and own $\bar f_g$. Comparators D2 with `rej_t`, D0 classical and tuned, Broska and Howes with `bh_t` and `bh_t_fpc`, and the mixture of D2 and D0 with $\epsilon = 0.5$ with simulated $\hat\pi_g$, $\hat\pi_{gh}$ and the same Hájek intervals. The Sen-Yates-Grundy form with simulated $\hat\pi_{gh}$ and `apx_size` reported beside the primary, with the smallest $\hat\pi_g$ and the share of zero $\hat\pi_{gh}$ in every cell. Outputs in `results/round7/ppi/S3_adaptive/` (`tests/`, `s3_sim.csv`, `s3_masking_grid.csv`, `s3_report_numbers.csv`).
+
+### S4. Greedy k-center (one day; gate)
+
+- [ ] **Theory section 4** before the run.
+- [ ] **Runs**, four tissue units, as section 9 says, with `bh_t` and `bh_t_fpc` beside Broska and Howes and the Hájek interval with `apx_size` added, its exact coverage by enumeration of the $G$ starts. Outputs in `results/round7/ppi/S4_kcenter/`.
+- [ ] **S4 report** in `docs/round07/i02/ppi/round07_ppi_S4_report.md`, covering S2b, S3 and S4 in the format of section 7 of `docs/EXECUTION_RULES.md`, with S3.1 to S4.2 and S2b.1 to S3.5 scored, the `LUNG_XENIUM` $\theta_2$ cells at $n_L = 12$ and $p_a = 0.01$ listed as degenerate. Sweep, commit, tag `round7-ppi-S4`, push branch and tag together, open one pull request, confirm it, and stop.
+
+**Exit items.** S2b item 1 confirms or corrects the memo's section 3 cell by cell. The cube test passes or its fallback is recorded. Every cell has run or is listed. The predictions are scored. The provenance index passes both checks.
+
+### 10.1 What looks wrong, flagged without changing the memo
+
+1. `docs/EXECUTION_RULES.md` section 5 asks for the pull request's number in the report, and also allows one push per gate. The pull request can only be opened after the commit that holds the report. At the S2 gate the report said so and gave the number in chat. I will do the same at S4 unless the memo for S4 says otherwise.
