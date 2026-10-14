@@ -6,6 +6,7 @@ Your track's instruction and memos say what to do. This file says how. Where an 
 
 **Revisions**
 - 13 October 2026. First version, gathered from the round-7 instructions and the hard rules of `CLAUDE.md`.
+- 14 October 2026. Section 4, provenance: reading an input that your instruction or a committed task definition names needs no question, whatever `whose()` says. Section 6: when a sub-agent's frame id exists only once it is spawned, the id may follow in a second message, provided the brief forbids any job until it arrives. Both from the round-7 gates F4 and S2.
 
 ## 1. Your role and the people
 
@@ -51,7 +52,7 @@ Plain, natural prose. No em-dashes. No sentence that states something and then g
 - Take memory and time from a sibling job's `sacct`, and set time limits at about three times the expected runtime. Put a time cap on anything that is not analysis, and stop at the cap.
 
 **Provenance.**
-- Every output directory gets `PROVENANCE.txt` (job id, partition actually used, node, date, the commit of the snapshot the job ran from, command line, config hash with its config, `PYTHONHASHSEED`, md5 of every script that ran) and is stamped with `stamp_dir()` from the `longleaf-provenance` skill, written by the job on the node. Before reusing or rebuilding any output you did not create, run `whose()` on it, and if the verdict is `sibling` or `unstamped`, ask the oversight chat through the report.
+- Every output directory gets `PROVENANCE.txt` (job id, partition actually used, node, date, the commit of the snapshot the job ran from, command line, config hash with its config, `PYTHONHASHSEED`, md5 of every script that ran) and is stamped with `stamp_dir()` from the `longleaf-provenance` skill, written by the job on the node. Before reusing or rebuilding any output you did not create, run `whose()` on it, and if the verdict is `sibling` or `unstamped`, ask the oversight chat through the report. Reading an input that your instruction or a committed task definition names, without rebuilding or overwriting it, needs no question. Record its `whose()` verdict in your results directory.
 - The submission route replaces `--job-name`, so jobs are identified by Slurm id. Record your track's job prefix and the stage in `PROVENANCE.txt`.
 - Give every parquet an explicit `pa.schema`, write summaries before bulk tables, and take seeds from `zlib.crc32`, never from `hash()`.
 
@@ -71,7 +72,7 @@ Plain, natural prose. No em-dashes. No sentence that states something and then g
 
 ## 6. Sub-agents
 
-Dispatch one sub-agent per independent unit with a written brief. Put the sub-agent's frame id in the first message of its brief, with the sentence "Stamp every output directory with `stamp_dir()` from the `longleaf-provenance` skill under the frame id given in this brief. Before reusing or rebuilding any output you did not create, run `whose()` on it; if the verdict is `sibling` or `unstamped`, ask me rather than rebuilding." Compare the id in every returned stamp with the one you assigned before merging. Sub-agents run no git command and never cancel a job. A sub-agent's request for access the brief did not grant is answered no and recorded. Mechanical work may run one model tier below yours. Derivations, verdicts and the text of reports stay with you. The lead is the only committer, checks every hand-back against its sources before committing, and recomputes every pooled number from the merged tables.
+Dispatch one sub-agent per independent unit with a written brief. Put the sub-agent's frame id in the first message of its brief, with the sentence "Stamp every output directory with `stamp_dir()` from the `longleaf-provenance` skill under the frame id given in this brief. Before reusing or rebuilding any output you did not create, run `whose()` on it; if the verdict is `sibling` or `unstamped`, ask me rather than rebuilding." If the id exists only once the sub-agent is spawned, the brief says that the id follows and forbids any job before it arrives, and the id goes in the second message. Compare the id in every returned stamp with the one you assigned before merging. Sub-agents run no git command and never cancel a job. A sub-agent's request for access the brief did not grant is answered no and recorded. Mechanical work may run one model tier below yours. Derivations, verdicts and the text of reports stay with you. The lead is the only committer, checks every hand-back against its sources before committing, and recomputes every pooled number from the merged tables.
 
 ## 7. Reports
 
