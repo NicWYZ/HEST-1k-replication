@@ -1,0 +1,150 @@
+slurm_job_id=4820166 partition=spill account=rc_htzhu_pi node=c130403.ll.unc.edu date=2026-10-13T22:11:09-04:00
+bundle_md5=7dcf35a192e135e693a7fe28d3e11bcc
+branch=round7-fedlearn
+head_before=f1f11c901e440023cadb7f992e4c8c12be3ccbad
+status_before_lines=0
+/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/f7c73cb9-b5c2-4827-9b83-f2377b6627e8/r7fl_delivery_02.bundle is okay
+The bundle contains this ref:
+fb62f73e5a600fdeb3f48c4b2d6551fe3b71d083 refs/heads/round7-fedlearn
+The bundle requires this ref:
+f1f11c901e440023cadb7f992e4c8c12be3ccbad 
+The bundle uses this hash algorithm: sha1
+verify_rc=0
+From /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/f7c73cb9-b5c2-4827-9b83-f2377b6627e8/r7fl_delivery_02.bundle
+ * branch              round7-fedlearn -> FETCH_HEAD
+fetch_rc=0
+Updating f1f11c90..fb62f73e
+Fast-forward
+ .verify-exceptions-round7-fedlearn                 |    14 +
+ code/scripts/round7_fedlearn_design.py             |   106 +
+ code/scripts/round7_fedlearn_f300_grouping.py      |    88 +
+ code/scripts/round7_fedlearn_f30_anchor.py         |   140 +
+ code/scripts/round7_fedlearn_head.py               |   317 +
+ code/scripts/round7_fedlearn_provenance_index.py   |    79 +
+ code/scripts/round7_fedlearn_v1.py                 |    95 +
+ code/scripts/round7_fedlearn_v2.py                 |   246 +
+ code/scripts/round7_fedlearn_v3.py                 |   188 +
+ code/scripts/round7_fedlearn_v4.py                 |   124 +
+ .../i01/fedlearn/round07_fedlearn_F2_report.md     |   136 +
+ .../i02/fedlearn/round07_fedlearn_F2_decisions.md  |    73 +
+ .../fedlearn/round07_fedlearn_literature_review.md |   276 +
+ .../tracks/fedlearn/round07_fedlearn_plan.md       |   165 +-
+ .../round7/fedlearn/F1_search/evidence_table.csv   |   407 +
+ .../fedlearn/F1_search/fragments/T1/evidence.csv   |    42 +
+ .../fedlearn/F1_search/fragments/T1/notes.md       |    29 +
+ .../fedlearn/F1_search/fragments/T1/search_log.csv |    96 +
+ .../fedlearn/F1_search/fragments/T2/evidence.csv   |    96 +
+ .../fedlearn/F1_search/fragments/T2/notes.md       |    38 +
+ .../fedlearn/F1_search/fragments/T2/search_log.csv |   139 +
+ .../fedlearn/F1_search/fragments/T3/evidence.csv   |    49 +
+ .../fedlearn/F1_search/fragments/T3/notes.md       |    27 +
+ .../fedlearn/F1_search/fragments/T3/search_log.csv |    89 +
+ .../fedlearn/F1_search/fragments/T4/evidence.csv   |    96 +
+ .../fedlearn/F1_search/fragments/T4/notes.md       |    63 +
+ .../fedlearn/F1_search/fragments/T4/search_log.csv |   123 +
+ .../fedlearn/F1_search/fragments/T5/evidence.csv   |    84 +
+ .../fedlearn/F1_search/fragments/T5/notes.md       |    31 +
+ .../fedlearn/F1_search/fragments/T5/search_log.csv |   104 +
+ .../fedlearn/F1_search/fragments/T6/evidence.csv   |    86 +
+ .../fedlearn/F1_search/fragments/T6/notes.md       |    34 +
+ .../fedlearn/F1_search/fragments/T6/search_log.csv |    64 +
+ .../fedlearn/F1_search/fragments/T7/evidence.csv   |    42 +
+ .../fedlearn/F1_search/fragments/T7/notes.md       |    34 +
+ .../fedlearn/F1_search/fragments/T7/search_log.csv |    87 +
+ .../round7/fedlearn/F1_search/merge_collisions.csv |    56 +
+ .../round7/fedlearn/F1_search/paper_requests.md    |    26 +
+ .../F1_search/reading/R2/reading_notes.csv         |     9 +
+ .../F1_search/reading/R3/reading_notes.csv         |     9 +
+ .../F1_search/reading/R4/reading_notes.csv         |     6 +
+ .../search_coverage_by_theme_and_source.csv        |     8 +
+ results/round7/fedlearn/F1_search/search_log.csv   |   696 +
+ results/round7/fedlearn/F2_audit/audit_fixes.csv   |    26 +
+ results/round7/fedlearn/F2_audit/audit_notes.md    |    35 +
+ .../round7/fedlearn/F2_audit/citation_audit.csv    |    92 +
+ .../round7/fedlearn/F2_audit/numeric_sweep_F2.txt  |     3 +
+ .../round7/fedlearn/F2_inventory/PROVENANCE.txt    |    24 +
+ .../round7/fedlearn/F2_inventory/_provenance.json  |    10 +
+ .../fedlearn/F2_inventory/centers_by_group.csv     |    19 +
+ .../round7/fedlearn/F2_inventory/file_listing.csv  | 26593 +++++++++++++++++++
+ results/round7/fedlearn/F2_inventory/inventory.csv |   206 +
+ .../fedlearn/F2_inventory/inventory_stdout.txt     |    17 +
+ .../fedlearn/F2_inventory/inventory_summary.json   |    41 +
+ results/round7/fedlearn/code_deliveries.csv        |     2 +
+ .../fedlearn/deliveries/delivery_01_job4806950.log |    32 +
+ results/round7/fedlearn/job_accounting.csv         |     4 +
+ results/round7/fedlearn/provenance_index.csv       |     3 +
+ results/round7/fedlearn/r7fl_slurm_jobs.csv        |     4 +
+ 59 files changed, 31809 insertions(+), 19 deletions(-)
+ create mode 100644 code/scripts/round7_fedlearn_design.py
+ create mode 100644 code/scripts/round7_fedlearn_f300_grouping.py
+ create mode 100644 code/scripts/round7_fedlearn_f30_anchor.py
+ create mode 100644 code/scripts/round7_fedlearn_head.py
+ create mode 100644 code/scripts/round7_fedlearn_provenance_index.py
+ create mode 100644 code/scripts/round7_fedlearn_v1.py
+ create mode 100644 code/scripts/round7_fedlearn_v2.py
+ create mode 100644 code/scripts/round7_fedlearn_v3.py
+ create mode 100644 code/scripts/round7_fedlearn_v4.py
+ create mode 100644 docs/round07/i01/fedlearn/round07_fedlearn_F2_report.md
+ create mode 100644 docs/round07/i02/fedlearn/round07_fedlearn_F2_decisions.md
+ create mode 100644 docs/round07/tracks/fedlearn/round07_fedlearn_literature_review.md
+ create mode 100644 results/round7/fedlearn/F1_search/evidence_table.csv
+ create mode 100644 results/round7/fedlearn/F1_search/fragments/T1/evidence.csv
+ create mode 100644 results/round7/fedlearn/F1_search/fragments/T1/notes.md
+ create mode 100644 results/round7/fedlearn/F1_search/fragments/T1/search_log.csv
+ create mode 100644 results/round7/fedlearn/F1_search/fragments/T2/evidence.csv
+ create mode 100644 results/round7/fedlearn/F1_search/fragments/T2/notes.md
+ create mode 100644 results/round7/fedlearn/F1_search/fragments/T2/search_log.csv
+ create mode 100644 results/round7/fedlearn/F1_search/fragments/T3/evidence.csv
+ create mode 100644 results/round7/fedlearn/F1_search/fragments/T3/notes.md
+ create mode 100644 results/round7/fedlearn/F1_search/fragments/T3/search_log.csv
+ create mode 100644 results/round7/fedlearn/F1_search/fragments/T4/evidence.csv
+ create mode 100644 results/round7/fedlearn/F1_search/fragments/T4/notes.md
+ create mode 100644 results/round7/fedlearn/F1_search/fragments/T4/search_log.csv
+ create mode 100644 results/round7/fedlearn/F1_search/fragments/T5/evidence.csv
+ create mode 100644 results/round7/fedlearn/F1_search/fragments/T5/notes.md
+ create mode 100644 results/round7/fedlearn/F1_search/fragments/T5/search_log.csv
+ create mode 100644 results/round7/fedlearn/F1_search/fragments/T6/evidence.csv
+ create mode 100644 results/round7/fedlearn/F1_search/fragments/T6/notes.md
+ create mode 100644 results/round7/fedlearn/F1_search/fragments/T6/search_log.csv
+ create mode 100644 results/round7/fedlearn/F1_search/fragments/T7/evidence.csv
+ create mode 100644 results/round7/fedlearn/F1_search/fragments/T7/notes.md
+ create mode 100644 results/round7/fedlearn/F1_search/fragments/T7/search_log.csv
+ create mode 100644 results/round7/fedlearn/F1_search/merge_collisions.csv
+ create mode 100644 results/round7/fedlearn/F1_search/paper_requests.md
+ create mode 100644 results/round7/fedlearn/F1_search/reading/R2/reading_notes.csv
+ create mode 100644 results/round7/fedlearn/F1_search/reading/R3/reading_notes.csv
+ create mode 100644 results/round7/fedlearn/F1_search/reading/R4/reading_notes.csv
+ create mode 100644 results/round7/fedlearn/F1_search/search_coverage_by_theme_and_source.csv
+ create mode 100644 results/round7/fedlearn/F1_search/search_log.csv
+ create mode 100644 results/round7/fedlearn/F2_audit/audit_fixes.csv
+ create mode 100644 results/round7/fedlearn/F2_audit/audit_notes.md
+ create mode 100644 results/round7/fedlearn/F2_audit/citation_audit.csv
+ create mode 100644 results/round7/fedlearn/F2_audit/numeric_sweep_F2.txt
+ create mode 100644 results/round7/fedlearn/F2_inventory/PROVENANCE.txt
+ create mode 100644 results/round7/fedlearn/F2_inventory/_provenance.json
+ create mode 100644 results/round7/fedlearn/F2_inventory/centers_by_group.csv
+ create mode 100644 results/round7/fedlearn/F2_inventory/file_listing.csv
+ create mode 100644 results/round7/fedlearn/F2_inventory/inventory.csv
+ create mode 100644 results/round7/fedlearn/F2_inventory/inventory_stdout.txt
+ create mode 100644 results/round7/fedlearn/F2_inventory/inventory_summary.json
+ create mode 100644 results/round7/fedlearn/code_deliveries.csv
+ create mode 100644 results/round7/fedlearn/deliveries/delivery_01_job4806950.log
+ create mode 100644 results/round7/fedlearn/job_accounting.csv
+ create mode 100644 results/round7/fedlearn/provenance_index.csv
+ create mode 100644 results/round7/fedlearn/r7fl_slurm_jobs.csv
+head_after=fb62f73e5a600fdeb3f48c4b2d6551fe3b71d083
+commits=ab51cac28242e1e60e2acf1bae8e5e3fb46d9d75 9a977457891e400ff0310e226b291ff9d51a0eda 68d904a390cae58b8fb5406ecf3c9899dec5ad20 32eb0cb419231829473b227f645cff6235a3de6f ce536a2121f9fd83349fd645c407ab7294cff302 fb62f73e5a600fdeb3f48c4b2d6551fe3b71d083 
+snapshot=/work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/fb62f73e5a600fdeb3f48c4b2d6551fe3b71d083
+69a4cdb299564fc079b683f0a3219dbc  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/fb62f73e5a600fdeb3f48c4b2d6551fe3b71d083/code/scripts/round7_fedlearn_common.py
+88a2d4c8dc0ed8c75337d29435ae64a1  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/fb62f73e5a600fdeb3f48c4b2d6551fe3b71d083/code/scripts/round7_fedlearn_design.py
+e5b12550229ca4187fcdcee7f19bd286  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/fb62f73e5a600fdeb3f48c4b2d6551fe3b71d083/code/scripts/round7_fedlearn_f2_inventory.py
+aacf1aea20e2b33fdd965c6fc37cb3d7  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/fb62f73e5a600fdeb3f48c4b2d6551fe3b71d083/code/scripts/round7_fedlearn_f300_grouping.py
+5df5fe81508171ab51a870e2dd8cb09e  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/fb62f73e5a600fdeb3f48c4b2d6551fe3b71d083/code/scripts/round7_fedlearn_f30_anchor.py
+edcfe81b0bcbcfd72b477849299ee6ae  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/fb62f73e5a600fdeb3f48c4b2d6551fe3b71d083/code/scripts/round7_fedlearn_head.py
+f3efe1c8288c413f56de120cecf68875  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/fb62f73e5a600fdeb3f48c4b2d6551fe3b71d083/code/scripts/round7_fedlearn_provenance_index.py
+4bede77b0a8e22d9b85146f162e534dc  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/fb62f73e5a600fdeb3f48c4b2d6551fe3b71d083/code/scripts/round7_fedlearn_v1.py
+885bf63339074729fed7066d2434fbd0  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/fb62f73e5a600fdeb3f48c4b2d6551fe3b71d083/code/scripts/round7_fedlearn_v2.py
+0d9fe879ba8471c8a876b634a7e08368  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/fb62f73e5a600fdeb3f48c4b2d6551fe3b71d083/code/scripts/round7_fedlearn_v3.py
+ec186e1e5deb37e47031fd3cdbb64f77  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/fb62f73e5a600fdeb3f48c4b2d6551fe3b71d083/code/scripts/round7_fedlearn_v4.py
+e267b1e6038daa893647202dd47ffb04  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/fb62f73e5a600fdeb3f48c4b2d6551fe3b71d083/code/scripts/round2_r2_gene_check.py
+fb62f73e5a600fdeb3f48c4b2d6551fe3b71d083 Round 7 fedlearn i02: head, designs and the F3.00 to V4 scripts

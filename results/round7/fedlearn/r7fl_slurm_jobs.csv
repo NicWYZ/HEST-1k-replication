@@ -1,0 +1,27 @@
+job,stage,purpose,slurm_job_id,account,partition,state,output,note
+F0-1,F0,code clone,4803248,rc_tengfei_pi (moved from rc_htzhu_pi),spill,COMPLETED,hest_code/round7-fedlearn,
+F0-2,F0,delivery 1,4806950,rc_tengfei_pi,spill,COMPLETED,results/round7/fedlearn/deliveries/delivery_01_job4806950.log,
+F0-3,F0 (F2 step 4),inventory,4806992,rc_tengfei_pi,spill,COMPLETED,results/round7/fedlearn/F2_inventory/,
+I02-1,i02,delivery 2,4820166,rc_htzhu_pi (moved from rc_tengfei_pi while pending),spill,COMPLETED,results/round7/fedlearn/deliveries/delivery_02_job4820166.log,
+I02-2,F3.00,corrected grouping,4824298,rc_htzhu_pi,spill,COMPLETED,results/round7/fedlearn/F3_00_grouping/,
+I02-3,F3.0,anchors (attempt 1; faithful part ran; exact part raised KeyError on LUNG_XENIUM NCBI865 dropped patch barcode 051x019),4824300,rc_htzhu_pi,spill,FAILED,results/round7/fedlearn/F3_anchor/,
+I02-4,i02,delivery 3,4824673,rc_htzhu_pi,spill,COMPLETED,results/round7/fedlearn/deliveries/delivery_03_job4824673.log,
+I02-5,F3.0,anchors (attempt 2; both pass),4824765,rc_htzhu_pi,spill,COMPLETED,results/round7/fedlearn/F3_anchor_attempt2/,
+I02-6,V1,learning curve CCRCC,4825169,rc_htzhu_pi,spill,COMPLETED,results/round7/fedlearn/V1/CCRCC/,"memory lowered from 64G to 32G and time limit from 8 h to 4 h while pending (scontrol), after F3.0 peaked at 18.6 GiB in 8 min"
+I02-7,V1,learning curve INDIANA_KIDNEY,4825170,rc_htzhu_pi (moved from rc_tengfei_pi while pending),spill,COMPLETED,results/round7/fedlearn/V1/INDIANA_KIDNEY/,"memory lowered from 64G to 32G and time limit from 8 h to 4 h while pending (scontrol), after F3.0 peaked at 18.6 GiB in 8 min"
+I02-8,V1,learning curve LUNG_XENIUM,4825172,rc_htzhu_pi,spill,COMPLETED,results/round7/fedlearn/V1/LUNG_XENIUM/,"memory lowered from 64G to 32G and time limit from 8 h to 4 h while pending (scontrol), after F3.0 peaked at 18.6 GiB in 8 min"
+I02-9,V2,pseudo-centers CCRCC,4825173,rc_htzhu_pi (moved from rc_tengfei_pi while pending),spill,COMPLETED,results/round7/fedlearn/V2/CCRCC/,"memory lowered from 64G to 32G and time limit from 8 h to 4 h while pending (scontrol), after F3.0 peaked at 18.6 GiB in 8 min"
+I02-10,V2,pseudo-centers INDIANA_KIDNEY,4825174,rc_htzhu_pi,spill,COMPLETED,results/round7/fedlearn/V2/INDIANA_KIDNEY/,"memory lowered from 64G to 32G and time limit from 8 h to 4 h while pending (scontrol), after F3.0 peaked at 18.6 GiB in 8 min"
+I02-11,V2,pseudo-centers LUNG_XENIUM,4825175,rc_htzhu_pi (moved from rc_tengfei_pi while pending),spill,COMPLETED,results/round7/fedlearn/V2/LUNG_XENIUM/,"memory lowered from 64G to 32G and time limit from 8 h to 4 h while pending (scontrol), after F3.0 peaked at 18.6 GiB in 8 min"
+I02-12,V2,sources KIDNEY_POP54,4825188,rc_htzhu_pi,spill,COMPLETED,results/round7/fedlearn/V2/KIDNEY_POP54/,"memory lowered from 64G to 32G and time limit from 8 h to 4 h while pending (scontrol), after F3.0 peaked at 18.6 GiB in 8 min"
+I02-13,V2,sources BREAST_XENIUM,4825201,rc_htzhu_pi (moved from rc_tengfei_pi while pending),spill,COMPLETED,results/round7/fedlearn/V2/BREAST_XENIUM/,"memory lowered from 64G to 32G and time limit from 8 h to 4 h while pending (scontrol), after F3.0 peaked at 18.6 GiB in 8 min"
+I02-14,V3,differential privacy CCRCC uni_v2,4825203,rc_htzhu_pi,spill,COMPLETED,results/round7/fedlearn/V3/,"memory lowered from 64G to 32G and time limit from 8 h to 4 h while pending (scontrol), after F3.0 peaked at 18.6 GiB in 8 min"
+I02-15,V4,partial gene overlap CCRCC,4825204,rc_htzhu_pi (moved from rc_tengfei_pi while pending),spill,COMPLETED,results/round7/fedlearn/V4/CCRCC/,"memory lowered from 64G to 32G and time limit from 8 h to 4 h while pending (scontrol), after F3.0 peaked at 18.6 GiB in 8 min"
+I02-16,V4,partial gene overlap INDIANA_KIDNEY,4825205,rc_htzhu_pi,spill,COMPLETED,results/round7/fedlearn/V4/INDIANA_KIDNEY/,"memory lowered from 64G to 32G and time limit from 8 h to 4 h while pending (scontrol), after F3.0 peaked at 18.6 GiB in 8 min"
+I02-17,V4,partial gene overlap LUNG_XENIUM,4825208,rc_htzhu_pi (moved from rc_tengfei_pi while pending),spill,COMPLETED,results/round7/fedlearn/V4/LUNG_XENIUM/,"memory lowered from 64G to 32G and time limit from 8 h to 4 h while pending (scontrol), after F3.0 peaked at 18.6 GiB in 8 min"
+I02-18,i02,delivery 4,4839667,rc_htzhu_pi,spill,COMPLETED,results/round7/fedlearn/deliveries/delivery_04_job4839667.log,
+I02-19,V2 run 2,CCRCC with all-centers scoring,4839784,rc_htzhu_pi,spill,COMPLETED,results/round7/fedlearn/V2_run2/CCRCC/,
+I02-20,V2 run 2,INDIANA_KIDNEY with all-centers scoring,4839791,rc_htzhu_pi,spill,COMPLETED,results/round7/fedlearn/V2_run2/INDIANA_KIDNEY/,
+I02-21,V2 run 2,LUNG_XENIUM with all-centers scoring,4839835,rc_htzhu_pi,spill,COMPLETED,results/round7/fedlearn/V2_run2/LUNG_XENIUM/,
+I02-22,V2 run 2,KIDNEY_POP54 with all-centers scoring,4839836,rc_htzhu_pi,spill,COMPLETED,results/round7/fedlearn/V2_run2/KIDNEY_POP54/,
+I02-23,V2 run 2,BREAST_XENIUM with all-centers scoring,4839837,rc_htzhu_pi,spill,COMPLETED,results/round7/fedlearn/V2_run2/BREAST_XENIUM/,

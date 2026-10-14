@@ -1,0 +1,45 @@
+slurm_job_id=4824673 partition=spill account=rc_htzhu_pi node=c151401.ll.unc.edu date=2026-10-13T22:27:07-04:00
+bundle_md5=3c25b1d6e5ffcd2c79b45d656d3a51a6
+branch=round7-fedlearn
+head_before=fb62f73e5a600fdeb3f48c4b2d6551fe3b71d083
+status_before_lines=0
+/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/8aef344b-86b5-4fc6-868c-38413acf6631/r7fl_delivery_03.bundle is okay
+The bundle contains this ref:
+89d698a6980a0f6f3487e06f22adb239a85b956e refs/heads/round7-fedlearn
+The bundle requires this ref:
+fb62f73e5a600fdeb3f48c4b2d6551fe3b71d083 
+The bundle uses this hash algorithm: sha1
+verify_rc=0
+From /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/8aef344b-86b5-4fc6-868c-38413acf6631/r7fl_delivery_03.bundle
+ * branch              round7-fedlearn -> FETCH_HEAD
+fetch_rc=0
+Updating fb62f73e..89d698a6
+Fast-forward
+ code/scripts/round7_fedlearn_f30_anchor.py         |   2 +-
+ code/scripts/round7_fedlearn_head.py               |  28 +++-
+ .../tracks/fedlearn/round07_fedlearn_plan.md       |   1 +
+ .../reading/R5_requested/reading_notes.csv         |   4 +
+ results/round7/fedlearn/F3_reuse_verdicts.csv      |   8 ++
+ results/round7/fedlearn/code_deliveries.csv        |   1 +
+ .../fedlearn/deliveries/delivery_02_job4820166.log | 150 +++++++++++++++++++++
+ results/round7/fedlearn/r7fl_slurm_jobs.csv        |   3 +
+ 8 files changed, 192 insertions(+), 5 deletions(-)
+ create mode 100644 results/round7/fedlearn/F1_search/reading/R5_requested/reading_notes.csv
+ create mode 100644 results/round7/fedlearn/F3_reuse_verdicts.csv
+ create mode 100644 results/round7/fedlearn/deliveries/delivery_02_job4820166.log
+head_after=89d698a6980a0f6f3487e06f22adb239a85b956e
+commits=89d698a6980a0f6f3487e06f22adb239a85b956e 
+snapshot=/work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/89d698a6980a0f6f3487e06f22adb239a85b956e
+69a4cdb299564fc079b683f0a3219dbc  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/89d698a6980a0f6f3487e06f22adb239a85b956e/code/scripts/round7_fedlearn_common.py
+88a2d4c8dc0ed8c75337d29435ae64a1  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/89d698a6980a0f6f3487e06f22adb239a85b956e/code/scripts/round7_fedlearn_design.py
+e5b12550229ca4187fcdcee7f19bd286  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/89d698a6980a0f6f3487e06f22adb239a85b956e/code/scripts/round7_fedlearn_f2_inventory.py
+aacf1aea20e2b33fdd965c6fc37cb3d7  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/89d698a6980a0f6f3487e06f22adb239a85b956e/code/scripts/round7_fedlearn_f300_grouping.py
+98f6ba21e67e74a010a6d25cc9110add  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/89d698a6980a0f6f3487e06f22adb239a85b956e/code/scripts/round7_fedlearn_f30_anchor.py
+b5bd975c4f1745d27e7ebb56ead75392  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/89d698a6980a0f6f3487e06f22adb239a85b956e/code/scripts/round7_fedlearn_head.py
+f3efe1c8288c413f56de120cecf68875  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/89d698a6980a0f6f3487e06f22adb239a85b956e/code/scripts/round7_fedlearn_provenance_index.py
+4bede77b0a8e22d9b85146f162e534dc  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/89d698a6980a0f6f3487e06f22adb239a85b956e/code/scripts/round7_fedlearn_v1.py
+885bf63339074729fed7066d2434fbd0  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/89d698a6980a0f6f3487e06f22adb239a85b956e/code/scripts/round7_fedlearn_v2.py
+0d9fe879ba8471c8a876b634a7e08368  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/89d698a6980a0f6f3487e06f22adb239a85b956e/code/scripts/round7_fedlearn_v3.py
+ec186e1e5deb37e47031fd3cdbb64f77  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/89d698a6980a0f6f3487e06f22adb239a85b956e/code/scripts/round7_fedlearn_v4.py
+e267b1e6038daa893647202dd47ffb04  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/89d698a6980a0f6f3487e06f22adb239a85b956e/code/scripts/round2_r2_gene_check.py
+89d698a6980a0f6f3487e06f22adb239a85b956e Round 7 fedlearn i02: apply dropped patch barcodes and check row selection in the head loader

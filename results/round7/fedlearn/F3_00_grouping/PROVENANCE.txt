@@ -1,0 +1,22 @@
+stage: F3.00
+intended_job_prefix: r7fl_
+frame_id: 8a6be84e-6b5d-4289-aaaf-100d3c5b6c05
+slurm_job_id: 4824298
+partition: spill
+account: rc_htzhu_pi
+node: c130604.ll.unc.edu
+cpu: x86_64
+date_utc: 2026-10-14T02:13:12+00:00
+snapshot_commit: fb62f73e5a600fdeb3f48c4b2d6551fe3b71d083
+code_clone: /work/users/w/e/weiyang/hest_code/round7-fedlearn
+code_clone_HEAD: fb62f73e5a600fdeb3f48c4b2d6551fe3b71d083
+PYTHONHASHSEED: 0
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/fb62f73e5a600fdeb3f48c4b2d6551fe3b71d083/code/scripts/round7_fedlearn_f300_grouping.py --frame-id 8a6be84e-6b5d-4289-aaaf-100d3c5b6c05
+config: {"merge": {"10x Genomics Inc. (vendor product page)": "10x Genomics Inc.", "Translational Genomics Research Institute (TGen)": "Translational Genomics Research Institute"}}
+config_md5: 8d67ac229fd2b6126591c21551239e2a
+script_md5:
+  aacf1aea20e2b33fdd965c6fc37cb3d7  code/scripts/round7_fedlearn_f300_grouping.py
+  69a4cdb299564fc079b683f0a3219dbc  code/scripts/round7_fedlearn_common.py
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1
+

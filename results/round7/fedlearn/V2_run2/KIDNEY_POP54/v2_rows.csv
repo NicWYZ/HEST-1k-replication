@@ -1,0 +1,385 @@
+task,design,encoder,draw,scheme,center,arm,n_train_spots,n_test_spots,within_slide,n_test_slides_scored,pooled_pearson,center_kind
+KIDNEY_POP54,a_sources,hoptimus0,0,within,cordeliers_ccRCC,local,52887,20926,0.206611646210879,6,0.3290154951618862,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,0,within,cordeliers_ccRCC,federated,80730,20926,0.21559723306648984,6,0.35612845588752196,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,0,within,cordeliers_ccRCC,intercept,80730,20926,0.21552556561144068,6,0.3599305433382723,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,0,within,cordeliers_ccRCC,centred,80730,20926,0.212009345404767,6,0.3634024848494961,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,0,within,indiana_nontumour,local,27843,3582,0.11902530179476446,6,0.11423243706372042,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,0,within,indiana_nontumour,federated,80730,3582,0.08530286641955792,6,0.08151179354158518,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,0,within,indiana_nontumour,intercept,80730,3582,0.08710025252656733,6,0.08926530486046567,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,0,within,indiana_nontumour,centred,80730,3582,0.0896635280342582,6,0.09312617374665982,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,0,within_all_centers,all,local,-1,24508,0.1628184740028217,12,0.33579086048345497,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,0,within_all_centers,all,federated,-1,24508,0.1504500497430239,12,0.36187686719241924,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,0,within_all_centers,all,intercept,-1,24508,0.15131290906900402,12,0.36644152750551096,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,0,within_all_centers,all,centred,-1,24508,0.1508364367195126,12,0.32279212391282797,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,0,loco,cordeliers_ccRCC,local,31425,73813,0.06819606707884934,24,0.11998157334346145,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,0,loco,cordeliers_ccRCC,federated,31425,73813,0.06819606707884934,24,0.11998157334346145,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,0,loco,cordeliers_ccRCC,intercept,31425,73813,0.06819606707884934,24,0.11998157334346145,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,0,loco,cordeliers_ccRCC,centred,31425,73813,0.06819606707884937,24,0.11998157334346217,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,0,loco,indiana_nontumour,local,73813,31425,0.03522503888921063,26,0.08487876258753482,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,0,loco,indiana_nontumour,federated,73813,31425,0.03522503888921063,26,0.08487876258753482,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,0,loco,indiana_nontumour,intercept,73813,31425,0.03522503888921063,26,0.08487876258753482,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,0,loco,indiana_nontumour,centred,73813,31425,0.03522503888921062,26,0.08487876258753482,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,1,within,cordeliers_ccRCC,local,55336,18477,0.23469384545495084,6,0.3627429548273718,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,1,within,cordeliers_ccRCC,federated,74583,18477,0.23192771736381437,6,0.3523774376898457,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,1,within,cordeliers_ccRCC,intercept,74583,18477,0.231565664556688,6,0.3578723997268674,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,1,within,cordeliers_ccRCC,centred,74583,18477,0.23106447760101587,6,0.3618488689599215,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,1,within,indiana_nontumour,local,19247,12178,0.11025100567822439,7,0.1648218408363345,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,1,within,indiana_nontumour,federated,74583,12178,0.08417713269707337,7,0.13262503977031517,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,1,within,indiana_nontumour,intercept,74583,12178,0.08675538151326657,7,0.1316803135603978,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,1,within,indiana_nontumour,centred,74583,12178,0.08744652414915285,7,0.1330150797484678,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,1,within_all_centers,all,local,-1,30655,0.16768616249825197,13,0.4352694740444303,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,1,within_all_centers,all,federated,-1,30655,0.1523697102355692,13,0.4315733874106557,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,1,within_all_centers,all,intercept,-1,30655,0.15359089676407645,13,0.43679122614807075,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,1,within_all_centers,all,centred,-1,30655,0.1537317334346281,13,0.3443545817014593,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,2,within,cordeliers_ccRCC,local,59961,13852,0.15125705349480437,6,0.2447213187313658,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,2,within,cordeliers_ccRCC,federated,81326,13852,0.15848801190990847,6,0.2613696431424578,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,2,within,cordeliers_ccRCC,intercept,81326,13852,0.15760036983061096,6,0.2626634487582141,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,2,within,cordeliers_ccRCC,centred,81326,13852,0.16263746171652957,6,0.269046473518957,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,2,within,indiana_nontumour,local,21365,10060,0.09726138081410904,7,0.16774334471343333,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,2,within,indiana_nontumour,federated,81326,10060,0.06551168588107562,7,0.12120970927989662,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,2,within,indiana_nontumour,intercept,81326,10060,0.06795582733126541,7,0.1228140729977626,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,2,within,indiana_nontumour,centred,81326,10060,0.06734637883220508,7,0.11901551917179314,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,2,within_all_centers,all,local,-1,23912,0.12218246051289147,13,0.2962325076402179,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,2,within_all_centers,all,federated,-1,23912,0.10842383635592154,13,0.3009833408194641,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,2,within_all_centers,all,intercept,-1,23912,0.1093302315617326,13,0.3021122093614933,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,2,within_all_centers,all,centred,-1,23912,0.11132687862497022,13,0.23794056066473254,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,3,within,cordeliers_ccRCC,local,54109,19704,0.21036322446879874,6,0.34641556062248957,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,3,within,cordeliers_ccRCC,federated,78955,19704,0.19686316253048708,6,0.3333801511376005,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,3,within,cordeliers_ccRCC,intercept,78955,19704,0.1952243414432374,6,0.3368162099897552,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,3,within,cordeliers_ccRCC,centred,78955,19704,0.19716846634429372,6,0.3428327249658927,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,3,within,indiana_nontumour,local,24846,6579,0.13582140992237454,6,0.1518359232755981,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,3,within,indiana_nontumour,federated,78955,6579,0.0989764143101551,6,0.10922094219039888,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,3,within,indiana_nontumour,intercept,78955,6579,0.10112366237017922,6,0.11171703013877794,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,3,within,indiana_nontumour,centred,78955,6579,0.0967939819425207,6,0.10933714701195063,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,3,within_all_centers,all,local,-1,26283,0.17309231719558668,12,0.38751965493495755,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,3,within_all_centers,all,federated,-1,26283,0.14791978842032114,12,0.3767353677047974,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,3,within_all_centers,all,intercept,-1,26283,0.14817400190670832,12,0.3799599717391419,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,3,within_all_centers,all,centred,-1,26283,0.14698122414340722,12,0.3290346865552183,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,4,within,cordeliers_ccRCC,local,60738,13075,0.19694197323084398,6,0.41027302899741586,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,4,within,cordeliers_ccRCC,federated,85034,13075,0.18545981203756598,6,0.38096316322428114,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,4,within,cordeliers_ccRCC,intercept,85034,13075,0.1857484688540226,6,0.38531266379119505,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,4,within,cordeliers_ccRCC,centred,85034,13075,0.1877257666793264,6,0.3927730368214605,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,4,within,indiana_nontumour,local,24296,7129,0.10464632646596693,7,0.12367293369882319,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,4,within,indiana_nontumour,federated,85034,7129,0.07282997121820327,7,0.0871737613419095,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,4,within,indiana_nontumour,intercept,85034,7129,0.07246628501030762,7,0.08856695809208222,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,4,within,indiana_nontumour,centred,85034,7129,0.07359441602633791,7,0.09100294260777948,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,4,within_all_centers,all,local,-1,20204,0.1472443172805256,13,0.4194843697763174,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,4,within_all_centers,all,federated,-1,20204,0.12481297467329376,13,0.3934734643028108,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,4,within_all_centers,all,intercept,-1,20204,0.124750369861253,13,0.39676962218566614,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,4,within_all_centers,all,centred,-1,20204,0.12627042402002492,13,0.32727285299151687,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,5,within,cordeliers_ccRCC,local,54521,19292,0.15584809336688624,6,0.32703806916415784,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,5,within,cordeliers_ccRCC,federated,80257,19292,0.15774537814343428,6,0.3132957632976809,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,5,within,cordeliers_ccRCC,intercept,80257,19292,0.15650120065432047,6,0.31334717536574597,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,5,within,cordeliers_ccRCC,centred,80257,19292,0.15989154254991264,6,0.31728790946904,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,5,within,indiana_nontumour,local,25736,5689,0.13296806891580537,6,0.16334719446130402,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,5,within,indiana_nontumour,federated,80257,5689,0.08669936088647644,6,0.07760325367471953,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,5,within,indiana_nontumour,intercept,80257,5689,0.08846747739195966,6,0.08074901714323252,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,5,within,indiana_nontumour,centred,80257,5689,0.08634006282128685,6,0.07898923527528139,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,5,within_all_centers,all,local,-1,24981,0.1444080811413458,12,0.33356370266952295,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,5,within_all_centers,all,federated,-1,24981,0.12222236951495535,12,0.31322995364961786,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,5,within_all_centers,all,intercept,-1,24981,0.12248433902314006,12,0.31361637284156246,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,5,within_all_centers,all,centred,-1,24981,0.12311580268559975,12,0.2728563434306886,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,6,within,cordeliers_ccRCC,local,51586,22227,0.15742747531037113,6,0.1991183977899328,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,6,within,cordeliers_ccRCC,federated,76377,22227,0.15287866962122854,6,0.21049911681800007,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,6,within,cordeliers_ccRCC,intercept,76377,22227,0.15451210265383636,6,0.21440498821104967,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,6,within,cordeliers_ccRCC,centred,76377,22227,0.15716378484167293,6,0.22631513032716044,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,6,within,indiana_nontumour,local,24791,6634,0.13200708884772447,6,0.18003266303089685,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,6,within,indiana_nontumour,federated,76377,6634,0.09231975574318695,6,0.11751212556223832,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,6,within,indiana_nontumour,intercept,76377,6634,0.09559517423908348,6,0.12352095690013036,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,6,within,indiana_nontumour,centred,76377,6634,0.09443290812044813,6,0.12007606487494585,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,6,within_all_centers,all,local,-1,28861,0.14471728207904783,12,0.2711539746720472,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,6,within_all_centers,all,federated,-1,28861,0.12259921268220775,12,0.2727512880052996,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,6,within_all_centers,all,intercept,-1,28861,0.12505363844645992,12,0.2776603707536749,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,6,within_all_centers,all,centred,-1,28861,0.12579834648106053,12,0.20674670413999496,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,7,within,cordeliers_ccRCC,local,57550,16263,0.18690249106350634,6,0.23343921438729087,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,7,within,cordeliers_ccRCC,federated,79910,16263,0.19779407009149344,6,0.25264124934908816,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,7,within,cordeliers_ccRCC,intercept,79910,16263,0.1974521463305665,6,0.25139868710021945,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,7,within,cordeliers_ccRCC,centred,79910,16263,0.19748449498481588,6,0.2516059475005547,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,7,within,indiana_nontumour,local,22360,9065,0.11915793629000164,6,0.16578502599842668,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,7,within,indiana_nontumour,federated,79910,9065,0.08187934428834218,6,0.12390198355351738,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,7,within,indiana_nontumour,intercept,79910,9065,0.08296600504167596,6,0.12191888814492499,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,7,within,indiana_nontumour,centred,79910,9065,0.0828908936021427,6,0.11484520127067704,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,7,within_all_centers,all,local,-1,25328,0.153030213676754,12,0.3049386349011833,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,7,within_all_centers,all,federated,-1,25328,0.1398367071899178,12,0.3120599607465917,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,7,within_all_centers,all,intercept,-1,25328,0.14020907568612123,12,0.3119336008960639,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,7,within_all_centers,all,centred,-1,25328,0.1401876942934793,12,0.23744861926830618,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,8,within,cordeliers_ccRCC,local,60302,13511,0.22297866687815457,6,0.37303413620532827,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,8,within,cordeliers_ccRCC,federated,85455,13511,0.22484847430396657,6,0.3821753274613902,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,8,within,cordeliers_ccRCC,intercept,85455,13511,0.22425612803515985,6,0.38465709554230415,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,8,within,cordeliers_ccRCC,centred,85455,13511,0.22235435133705642,6,0.3835726056016111,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,8,within,indiana_nontumour,local,25153,6272,0.1145846065520983,6,0.17510007634415278,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,8,within,indiana_nontumour,federated,85455,6272,0.09313928993341834,6,0.1410226866932749,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,8,within,indiana_nontumour,intercept,85455,6272,0.09485455093335804,6,0.14640888661394913,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,8,within,indiana_nontumour,centred,85455,6272,0.09638100584601157,6,0.15002853843092023,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,8,within_all_centers,all,local,-1,19783,0.16878163671512644,12,0.4151557590338153,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,8,within_all_centers,all,federated,-1,19783,0.15899388211869245,12,0.4288826502590532,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,8,within_all_centers,all,intercept,-1,19783,0.15955533948425896,12,0.4314187163178739,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,8,within_all_centers,all,centred,-1,19783,0.159367678591534,12,0.3505187098740279,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,9,within,cordeliers_ccRCC,local,57643,16170,0.16633432195559758,6,0.29748203097618103,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,9,within,cordeliers_ccRCC,federated,81236,16170,0.1717506496160913,6,0.2788239099278933,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,9,within,cordeliers_ccRCC,intercept,81236,16170,0.16739901798452536,6,0.2803394852227283,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,9,within,cordeliers_ccRCC,centred,81236,16170,0.16620876248770816,6,0.28631928017823777,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,hoptimus0,9,within,indiana_nontumour,local,23593,7832,0.09242341056349022,6,0.161234879602146,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,9,within,indiana_nontumour,federated,81236,7832,0.07631412397348311,6,0.14822449168003113,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,9,within,indiana_nontumour,intercept,81236,7832,0.07592538341672785,6,0.147728928751804,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,9,within,indiana_nontumour,centred,81236,7832,0.07104162432331035,6,0.14046749843245712,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,hoptimus0,9,within_all_centers,all,local,-1,24002,0.1293788662595439,12,0.29866521833786963,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,9,within_all_centers,all,federated,-1,24002,0.12403238679478722,12,0.2843431559561014,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,9,within_all_centers,all,intercept,-1,24002,0.12166220070062661,12,0.2848885551967615,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,hoptimus0,9,within_all_centers,all,centred,-1,24002,0.11862519340550921,12,0.24580788516167715,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,0,within,cordeliers_ccRCC,local,52887,20926,0.19337965658224776,6,0.2927375760915274,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,0,within,cordeliers_ccRCC,federated,80730,20926,0.19598218784569385,6,0.28741462208270224,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,0,within,cordeliers_ccRCC,intercept,80730,20926,0.19581641487808774,6,0.2906346554927128,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,0,within,cordeliers_ccRCC,centred,80730,20926,0.1959519157502121,6,0.29062294809325806,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,0,within,indiana_nontumour,local,27843,3582,0.07675917333378736,6,0.04718612009392956,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,0,within,indiana_nontumour,federated,80730,3582,0.05716937911991298,6,0.060700644165433394,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,0,within,indiana_nontumour,intercept,80730,3582,0.060630998054584107,6,0.06913957632545528,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,0,within,indiana_nontumour,centred,80730,3582,0.05824556064679474,6,0.05730503426568748,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,0,within_all_centers,all,local,-1,24508,0.13506941495801755,12,0.3081562253281841,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,0,within_all_centers,all,federated,-1,24508,0.1265757834828034,12,0.3067437242138055,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,0,within_all_centers,all,intercept,-1,24508,0.1282237064663359,12,0.3111984275232283,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,0,within_all_centers,all,centred,-1,24508,0.12709873819850342,12,0.26813201031088946,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,0,loco,cordeliers_ccRCC,local,31425,73813,0.09202619193214663,24,0.10382013546712728,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,0,loco,cordeliers_ccRCC,federated,31425,73813,0.09202619193214663,24,0.10382013546712728,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,0,loco,cordeliers_ccRCC,intercept,31425,73813,0.09202619193214663,24,0.10382013546712728,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,0,loco,cordeliers_ccRCC,centred,31425,73813,0.09202619193214656,24,0.10382013546712734,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,0,loco,indiana_nontumour,local,73813,31425,-0.012465951392271106,26,0.05643528474172091,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,0,loco,indiana_nontumour,federated,73813,31425,-0.012465951392271106,26,0.05643528474172091,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,0,loco,indiana_nontumour,intercept,73813,31425,-0.012465951392271106,26,0.05643528474172091,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,0,loco,indiana_nontumour,centred,73813,31425,-0.012465951392271139,26,0.05643528474172089,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,1,within,cordeliers_ccRCC,local,55336,18477,0.20431215629582386,6,0.27948782068697275,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,1,within,cordeliers_ccRCC,federated,74583,18477,0.19529659581701986,6,0.2896414133643555,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,1,within,cordeliers_ccRCC,intercept,74583,18477,0.19097630434319454,6,0.29296259469586344,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,1,within,cordeliers_ccRCC,centred,74583,18477,0.1897396388138067,6,0.2876255983949742,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,1,within,indiana_nontumour,local,19247,12178,0.06991593318239821,7,0.12492671698757331,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,1,within,indiana_nontumour,federated,74583,12178,0.03376107251417278,7,0.08653614285029347,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,1,within,indiana_nontumour,intercept,74583,12178,0.035762269644465834,7,0.0869351609376138,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,1,within,indiana_nontumour,centred,74583,12178,0.03938842949879773,7,0.09385815120142413,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,1,within_all_centers,all,local,-1,30655,0.1319449592347485,13,0.37815411651404546,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,1,within_all_centers,all,federated,-1,30655,0.10831592942317911,13,0.3825877979010012,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,1,within_all_centers,all,intercept,-1,30655,0.10739951642849446,13,0.3839861820693822,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,1,within_all_centers,all,centred,-1,30655,0.10878129533649417,13,0.2800286837197867,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,2,within,cordeliers_ccRCC,local,59961,13852,0.12140426805615284,6,0.2351436622281607,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,2,within,cordeliers_ccRCC,federated,81326,13852,0.1216142835822121,6,0.22269311691429408,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,2,within,cordeliers_ccRCC,intercept,81326,13852,0.12003698927772517,6,0.22595951542593926,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,2,within,cordeliers_ccRCC,centred,81326,13852,0.11747408030638107,6,0.22379611411137876,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,2,within,indiana_nontumour,local,21365,10060,0.07570374975251405,7,0.1456015580200892,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,2,within,indiana_nontumour,federated,81326,10060,0.037224355311000705,7,0.082373197794876,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,2,within,indiana_nontumour,intercept,81326,10060,0.03750223192045021,7,0.08080198897500264,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,2,within,indiana_nontumour,centred,81326,10060,0.03723541436140555,7,0.08252541042853637,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,2,within_all_centers,all,local,-1,23912,0.0967962966618858,13,0.29130906249753474,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,2,within_all_centers,all,federated,-1,23912,0.07617355297463671,13,0.2745575934805379,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,2,within_all_centers,all,intercept,-1,23912,0.0755951968545771,13,0.27694545945343024,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,2,within_all_centers,all,centred,-1,23912,0.0742686447975481,13,0.20242530451871077,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,3,within,cordeliers_ccRCC,local,54109,19704,0.16277362558874856,6,0.31445620664086793,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,3,within,cordeliers_ccRCC,federated,78955,19704,0.16106912377521013,6,0.3089783613223426,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,3,within,cordeliers_ccRCC,intercept,78955,19704,0.15828211954059482,6,0.3147378036943515,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,3,within,cordeliers_ccRCC,centred,78955,19704,0.15691728132041452,6,0.31166129036092866,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,3,within,indiana_nontumour,local,24846,6579,0.11018548105127551,6,0.12430685228333,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,3,within,indiana_nontumour,federated,78955,6579,0.06050233704971977,6,0.07792268970828942,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,3,within,indiana_nontumour,intercept,78955,6579,0.06187528729242703,6,0.08024857680990037,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,3,within,indiana_nontumour,centred,78955,6579,0.06828240596129902,6,0.08577297982490614,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,3,within_all_centers,all,local,-1,26283,0.13647955332001202,12,0.3587030275789298,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,3,within_all_centers,all,federated,-1,26283,0.11078573041246496,12,0.35138234090685727,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,3,within_all_centers,all,intercept,-1,26283,0.11007870341651094,12,0.35640049712089245,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,3,within_all_centers,all,centred,-1,26283,0.11259984364085678,12,0.28680578115252175,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,4,within,cordeliers_ccRCC,local,60738,13075,0.18657084766586504,6,0.3912487025688825,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,4,within,cordeliers_ccRCC,federated,85034,13075,0.1803236269951062,6,0.378979118306879,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,4,within,cordeliers_ccRCC,intercept,85034,13075,0.17318866218726678,6,0.37874645656192657,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,4,within,cordeliers_ccRCC,centred,85034,13075,0.16958579661722015,6,0.37448929726039654,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,4,within,indiana_nontumour,local,24296,7129,0.07751160844273762,7,0.08740709935633269,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,4,within,indiana_nontumour,federated,85034,7129,0.05203958368177895,7,0.03856801114122174,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,4,within,indiana_nontumour,intercept,85034,7129,0.055138185516320944,7,0.04800004201141114,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,4,within,indiana_nontumour,centred,85034,7129,0.05589406477227464,7,0.04531712959660354,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,4,within_all_centers,all,local,-1,20204,0.1278466419303349,13,0.4001970585735434,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,4,within_all_centers,all,federated,-1,20204,0.11124760367254535,13,0.3853242947650775,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,4,within_all_centers,all,intercept,-1,20204,0.10962302090291133,13,0.3865063088054777,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,4,within_all_centers,all,centred,-1,20204,0.10836717177763407,13,0.30707847983753445,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,5,within,cordeliers_ccRCC,local,54521,19292,0.14451252889189017,6,0.30801171329648386,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,5,within,cordeliers_ccRCC,federated,80257,19292,0.14667778949455004,6,0.29537257078751944,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,5,within,cordeliers_ccRCC,intercept,80257,19292,0.14668789500232376,6,0.2991891465741836,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,5,within,cordeliers_ccRCC,centred,80257,19292,0.14690925313497857,6,0.2993716735566079,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,5,within,indiana_nontumour,local,25736,5689,0.09345239871512968,6,0.10171912969225999,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,5,within,indiana_nontumour,federated,80257,5689,0.058813990251016045,6,0.03231493719930291,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,5,within,indiana_nontumour,intercept,80257,5689,0.06104427291911727,6,0.033088687287566074,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,5,within,indiana_nontumour,centred,80257,5689,0.06071623410727044,6,0.03080389020230164,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,5,within_all_centers,all,local,-1,24981,0.11898246380350992,12,0.3132618876701924,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,5,within_all_centers,all,federated,-1,24981,0.10274588987278305,12,0.294439660157925,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,5,within_all_centers,all,intercept,-1,24981,0.10386608396072051,12,0.29816198248626274,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,5,within_all_centers,all,centred,-1,24981,0.10381274362112448,12,0.24807641817606854,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,6,within,cordeliers_ccRCC,local,51586,22227,0.15168286005471168,6,0.19830133552909704,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,6,within,cordeliers_ccRCC,federated,76377,22227,0.15362378765545273,6,0.20233644681718643,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,6,within,cordeliers_ccRCC,intercept,76377,22227,0.1526260709056564,6,0.2041763659948302,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,6,within,cordeliers_ccRCC,centred,76377,22227,0.1510630968762938,6,0.20151895864280717,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,6,within,indiana_nontumour,local,24791,6634,0.0981830148840074,6,0.16119885005382228,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,6,within,indiana_nontumour,federated,76377,6634,0.05668374811388604,6,0.1123129612135062,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,6,within,indiana_nontumour,intercept,76377,6634,0.06333407635367247,6,0.10556492719507567,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,6,within,indiana_nontumour,centred,76377,6634,0.0701407467965245,6,0.10780307840822907,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,6,within_all_centers,all,local,-1,28861,0.12493293746935953,12,0.2801960474874354,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,6,within_all_centers,all,federated,-1,28861,0.1051537678846694,12,0.27610191179403437,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,6,within_all_centers,all,intercept,-1,28861,0.10798007362966446,12,0.27781365025861554,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,6,within_all_centers,all,centred,-1,28861,0.11060192183640914,12,0.19517566651418972,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,7,within,cordeliers_ccRCC,local,57550,16263,0.18243277862103746,6,0.22040178674504013,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,7,within,cordeliers_ccRCC,federated,79910,16263,0.18499832964844262,6,0.20843641618675132,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,7,within,cordeliers_ccRCC,intercept,79910,16263,0.1792014020676297,6,0.20532983615402184,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,7,within,cordeliers_ccRCC,centred,79910,16263,0.17850375735957444,6,0.2052058623225257,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,7,within,indiana_nontumour,local,22360,9065,0.08297853559311132,6,0.14736241286972024,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,7,within,indiana_nontumour,federated,79910,9065,0.04622023728776777,6,0.08599374186369076,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,7,within,indiana_nontumour,intercept,79910,9065,0.048412468333170366,6,0.08119830547795194,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,7,within,indiana_nontumour,centred,79910,9065,0.04906796744999062,6,0.08473388193335611,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,7,within_all_centers,all,local,-1,25328,0.13270565710707435,12,0.2913157863982817,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,7,within_all_centers,all,federated,-1,25328,0.11560928346810519,12,0.2799783620267478,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,7,within_all_centers,all,intercept,-1,25328,0.11380693520040003,12,0.2773686808501289,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,7,within_all_centers,all,centred,-1,25328,0.1137858624047825,12,0.2108038859584198,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,8,within,cordeliers_ccRCC,local,60302,13511,0.20649206258322128,6,0.2981057393679844,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,8,within,cordeliers_ccRCC,federated,85455,13511,0.19500001396843394,6,0.2912636312232299,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,8,within,cordeliers_ccRCC,intercept,85455,13511,0.19248949238227056,6,0.2939872076212219,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,8,within,cordeliers_ccRCC,centred,85455,13511,0.19273988001552542,6,0.29514224906169084,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,8,within,indiana_nontumour,local,25153,6272,0.08592495547397223,6,0.158955110061563,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,8,within,indiana_nontumour,federated,85455,6272,0.051221465839624836,6,0.08743808813951333,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,8,within,indiana_nontumour,intercept,85455,6272,0.05352976418597605,6,0.08948445149168727,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,8,within,indiana_nontumour,centred,85455,6272,0.05445817973510971,6,0.09322869830143288,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,8,within_all_centers,all,local,-1,19783,0.14620850902859675,12,0.3586761447708933,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,8,within_all_centers,all,federated,-1,19783,0.12311073990402939,12,0.34309741818821926,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,8,within_all_centers,all,intercept,-1,19783,0.1230096282841233,12,0.34737765874153126,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,8,within_all_centers,all,centred,-1,19783,0.12359902987531757,12,0.25630301303802916,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,9,within,cordeliers_ccRCC,local,57643,16170,0.1305415222096242,6,0.23992224591608882,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,9,within,cordeliers_ccRCC,federated,81236,16170,0.13936119205486036,6,0.24250873189448502,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,9,within,cordeliers_ccRCC,intercept,81236,16170,0.13411560679732912,6,0.24012359767697308,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,9,within,cordeliers_ccRCC,centred,81236,16170,0.13575599777980898,6,0.24204734361199925,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,resnet50,9,within,indiana_nontumour,local,23593,7832,0.07030349871402046,6,0.1692719363398812,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,9,within,indiana_nontumour,federated,81236,7832,0.03852502482568291,6,0.10120465257213804,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,9,within,indiana_nontumour,intercept,81236,7832,0.03841288350454448,6,0.09630607497416632,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,9,within,indiana_nontumour,centred,81236,7832,0.035372142980332685,6,0.10087323535912893,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,resnet50,9,within_all_centers,all,local,-1,24002,0.10042251046182234,12,0.2605150787242214,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,9,within_all_centers,all,federated,-1,24002,0.08894310844027165,12,0.25553995293527265,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,9,within_all_centers,all,intercept,-1,24002,0.0862642451509368,12,0.2526227201158419,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,resnet50,9,within_all_centers,all,centred,-1,24002,0.08556407038007084,12,0.20337886922467732,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,0,within,cordeliers_ccRCC,local,52887,20926,0.2240945730908932,6,0.3268309893689766,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,0,within,cordeliers_ccRCC,federated,80730,20926,0.23268166218163766,6,0.331290004265288,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,0,within,cordeliers_ccRCC,intercept,80730,20926,0.23322529672720818,6,0.3357563006333406,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,0,within,cordeliers_ccRCC,centred,80730,20926,0.23078204338966826,6,0.33927959009163877,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,0,within,indiana_nontumour,local,27843,3582,0.12176414740053483,6,0.1119538070185116,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,0,within,indiana_nontumour,federated,80730,3582,0.07890901921665743,6,0.10831305634907722,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,0,within,indiana_nontumour,intercept,80730,3582,0.08368788254783201,6,0.11969819440901804,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,0,within,indiana_nontumour,centred,80730,3582,0.08667566919459056,6,0.11602147933426094,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,0,within_all_centers,all,local,-1,24508,0.17292936024571404,12,0.33700315337952147,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,0,within_all_centers,all,federated,-1,24508,0.15579534069914752,12,0.34142609296997306,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,0,within_all_centers,all,intercept,-1,24508,0.1584565896375201,12,0.3471654790658789,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,0,within_all_centers,all,centred,-1,24508,0.15872885629212943,12,0.3036846442762693,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,0,loco,cordeliers_ccRCC,local,31425,73813,0.09219384516334872,24,0.10506932792079303,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,0,loco,cordeliers_ccRCC,federated,31425,73813,0.09219384516334872,24,0.10506932792079303,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,0,loco,cordeliers_ccRCC,intercept,31425,73813,0.09219384516334872,24,0.10506932792079303,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,0,loco,cordeliers_ccRCC,centred,31425,73813,0.09219384516334884,24,0.10506932792079338,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,0,loco,indiana_nontumour,local,73813,31425,0.03196229505646946,26,0.08934761453145583,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,0,loco,indiana_nontumour,federated,73813,31425,0.03196229505646946,26,0.08934761453145583,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,0,loco,indiana_nontumour,intercept,73813,31425,0.03196229505646946,26,0.08934761453145583,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,0,loco,indiana_nontumour,centred,73813,31425,0.03196229505646943,26,0.08934761453145584,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,1,within,cordeliers_ccRCC,local,55336,18477,0.22821747758713026,6,0.3543258249926053,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,1,within,cordeliers_ccRCC,federated,74583,18477,0.22324762576886814,6,0.36999861643501675,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,1,within,cordeliers_ccRCC,intercept,74583,18477,0.22425147715271868,6,0.3734757385215288,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,1,within,cordeliers_ccRCC,centred,74583,18477,0.22462742042359718,6,0.3714070738762016,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,1,within,indiana_nontumour,local,19247,12178,0.10519354670241045,7,0.1774503176510249,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,1,within,indiana_nontumour,federated,74583,12178,0.08550165871252136,7,0.14245789924625443,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,1,within,indiana_nontumour,intercept,74583,12178,0.0891368487611116,7,0.14236028674711187,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,1,within,indiana_nontumour,centred,74583,12178,0.08991468927159059,7,0.14632811756658323,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,1,within_all_centers,all,local,-1,30655,0.16197382249535808,13,0.43248016605322265,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,1,within_all_centers,all,federated,-1,30655,0.14907672043083525,13,0.4333692447973025,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,1,within_all_centers,all,intercept,-1,30655,0.15149744648031488,13,0.43760136180465814,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,1,within_all_centers,all,centred,-1,30655,0.15208979595713207,13,0.3410949700643894,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,2,within,cordeliers_ccRCC,local,59961,13852,0.1338589592184766,6,0.25608886338099673,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,2,within,cordeliers_ccRCC,federated,81326,13852,0.13472765378637708,6,0.2715568421153107,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,2,within,cordeliers_ccRCC,intercept,81326,13852,0.13576550181446725,6,0.2699173768541395,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,2,within,cordeliers_ccRCC,centred,81326,13852,0.13369561781490208,6,0.26337103516446914,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,2,within,indiana_nontumour,local,21365,10060,0.09225160136322079,7,0.1717572857744338,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,2,within,indiana_nontumour,federated,81326,10060,0.08548289327430766,7,0.1504729375909133,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,2,within,indiana_nontumour,intercept,81326,10060,0.08620151062064274,7,0.15330473746677387,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,2,within,indiana_nontumour,centred,81326,10060,0.08448268719131927,7,0.14775539701788745,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,2,within_all_centers,all,local,-1,23912,0.11145499729641578,13,0.3110886602313815,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,2,within_all_centers,all,federated,-1,23912,0.10821124427987816,13,0.318991308956731,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,2,within_all_centers,all,intercept,-1,23912,0.10907719886394636,13,0.3181603531067635,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,2,within_all_centers,all,centred,-1,23912,0.10719634747912672,13,0.24113638599419565,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,3,within,cordeliers_ccRCC,local,54109,19704,0.211332502784875,6,0.36747535409926485,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,3,within,cordeliers_ccRCC,federated,78955,19704,0.21379234595279503,6,0.37554646675247305,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,3,within,cordeliers_ccRCC,intercept,78955,19704,0.21271671009836787,6,0.3790882381083528,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,3,within,cordeliers_ccRCC,centred,78955,19704,0.2128889049286826,6,0.3826991795256346,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,3,within,indiana_nontumour,local,24846,6579,0.1334229750379385,6,0.16705105624378813,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,3,within,indiana_nontumour,federated,78955,6579,0.10894144348869605,6,0.12007264508119811,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,3,within,indiana_nontumour,intercept,78955,6579,0.10622549063432836,6,0.1264710498380321,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,3,within,indiana_nontumour,centred,78955,6579,0.10938771236631963,6,0.12766463931774877,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,3,within_all_centers,all,local,-1,26283,0.17237773891140676,12,0.40238393696327196,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,3,within_all_centers,all,federated,-1,26283,0.16136689472074553,12,0.40661582202455565,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,3,within_all_centers,all,intercept,-1,26283,0.15947110036634812,12,0.4098086286134077,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,3,within_all_centers,all,centred,-1,26283,0.1611383086475011,12,0.36222748278242684,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,4,within,cordeliers_ccRCC,local,60738,13075,0.20790829412026546,6,0.4135154972132419,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,4,within,cordeliers_ccRCC,federated,85034,13075,0.20596275460331545,6,0.4409736077681245,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,4,within,cordeliers_ccRCC,intercept,85034,13075,0.2050623020283541,6,0.43650442745368695,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,4,within,cordeliers_ccRCC,centred,85034,13075,0.20827571878879314,6,0.44015753614628617,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,4,within,indiana_nontumour,local,24296,7129,0.09596353487482777,7,0.1177401082394848,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,4,within,indiana_nontumour,federated,85034,7129,0.09155637412281477,7,0.10985116436412136,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,4,within,indiana_nontumour,intercept,85034,7129,0.09424691144740108,7,0.1123143675608183,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,4,within,indiana_nontumour,centred,85034,7129,0.09437354538272487,7,0.11256195703252675,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,4,within_all_centers,all,local,-1,20204,0.14763034683426055,13,0.41878795773730076,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,4,within_all_centers,all,federated,-1,20204,0.14435931895996892,13,0.43199591825022887,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,4,within_all_centers,all,intercept,-1,20204,0.14539247633091784,13,0.43033390478866396,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,4,within_all_centers,all,centred,-1,20204,0.14694377926244867,13,0.3635230480485951,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,5,within,cordeliers_ccRCC,local,54521,19292,0.15975020383050706,6,0.33933494543183235,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,5,within,cordeliers_ccRCC,federated,80257,19292,0.15709392810884798,6,0.33952698650170904,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,5,within,cordeliers_ccRCC,intercept,80257,19292,0.15666997405514282,6,0.3402196004659187,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,5,within,cordeliers_ccRCC,centred,80257,19292,0.15944925796201798,6,0.3415108538529317,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,5,within,indiana_nontumour,local,25736,5689,0.1275680271523099,6,0.1225689397853415,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,5,within,indiana_nontumour,federated,80257,5689,0.0888523788971171,6,0.0724135273949909,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,5,within,indiana_nontumour,intercept,80257,5689,0.09186818228580422,6,0.07429551725975919,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,5,within,indiana_nontumour,centred,80257,5689,0.09374689387680374,6,0.07011482751953506,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,5,within_all_centers,all,local,-1,24981,0.14365911549140845,12,0.34267103668680454,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,5,within_all_centers,all,federated,-1,24981,0.12297315350298253,12,0.3344987434875508,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,5,within_all_centers,all,intercept,-1,24981,0.12426907817047354,12,0.3354670992907547,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,5,within_all_centers,all,centred,-1,24981,0.12659807591941083,12,0.289374038710026,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,6,within,cordeliers_ccRCC,local,51586,22227,0.17509215551594237,6,0.21383717783391215,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,6,within,cordeliers_ccRCC,federated,76377,22227,0.17534954015159884,6,0.2061324536089565,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,6,within,cordeliers_ccRCC,intercept,76377,22227,0.17578045932387498,6,0.2119680423244723,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,6,within,cordeliers_ccRCC,centred,76377,22227,0.1746338178069435,6,0.210971641206972,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,6,within,indiana_nontumour,local,24791,6634,0.1189259457492741,6,0.17152399141076355,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,6,within,indiana_nontumour,federated,76377,6634,0.10141927801957273,6,0.16257352768570563,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,6,within,indiana_nontumour,intercept,76377,6634,0.10340503116798078,6,0.16245593847786954,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,6,within,indiana_nontumour,centred,76377,6634,0.10180644077721566,6,0.16653327145011726,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,6,within_all_centers,all,local,-1,28861,0.14700905063260825,12,0.2863710887871317,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,6,within_all_centers,all,federated,-1,28861,0.1383844090855858,12,0.28081208920098677,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,6,within_all_centers,all,intercept,-1,28861,0.13959274524592788,12,0.2857451531178219,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,6,within_all_centers,all,centred,-1,28861,0.13822012929207958,12,0.20636299723035212,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,7,within,cordeliers_ccRCC,local,57550,16263,0.19312551579935225,6,0.21363272023710053,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,7,within,cordeliers_ccRCC,federated,79910,16263,0.21007526071378646,6,0.25399528558821494,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,7,within,cordeliers_ccRCC,intercept,79910,16263,0.21035753261998166,6,0.25358976110944037,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,7,within,cordeliers_ccRCC,centred,79910,16263,0.20979658127339174,6,0.25273098023428836,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,7,within,indiana_nontumour,local,22360,9065,0.1097769597677981,6,0.17140331260566652,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,7,within,indiana_nontumour,federated,79910,9065,0.0883873391887091,6,0.13809214304150141,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,7,within,indiana_nontumour,intercept,79910,9065,0.08870712436622813,6,0.14049894922925651,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,7,within,indiana_nontumour,centred,79910,9065,0.09028686757332348,6,0.13968431707756096,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,7,within_all_centers,all,local,-1,25328,0.15145123778357514,12,0.2898908001827547,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,7,within_all_centers,all,federated,-1,25328,0.14923129995124776,12,0.3152281111977763,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,7,within_all_centers,all,intercept,-1,25328,0.1495323284931049,12,0.316460168623317,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,7,within_all_centers,all,centred,-1,25328,0.1500417244233576,12,0.23564031847494804,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,8,within,cordeliers_ccRCC,local,60302,13511,0.23198675335702312,6,0.3740563536835524,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,8,within,cordeliers_ccRCC,federated,85455,13511,0.22854632578326148,6,0.3833077462358234,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,8,within,cordeliers_ccRCC,intercept,85455,13511,0.2276552921404812,6,0.3849225530392603,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,8,within,cordeliers_ccRCC,centred,85455,13511,0.23011759599897444,6,0.387227070442794,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,8,within,indiana_nontumour,local,25153,6272,0.11365037451696376,6,0.18719933303619413,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,8,within,indiana_nontumour,federated,85455,6272,0.09143776110317348,6,0.14847769768688499,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,8,within,indiana_nontumour,intercept,85455,6272,0.09284957282288613,6,0.15521685440680527,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,8,within,indiana_nontumour,centred,85455,6272,0.09365097229091719,6,0.15572051468938305,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,8,within_all_centers,all,local,-1,19783,0.17281856393699344,12,0.4209507199634556,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,8,within_all_centers,all,federated,-1,19783,0.15999204344321746,12,0.42802898421546604,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,8,within_all_centers,all,intercept,-1,19783,0.16025243248168367,12,0.4308408703457015,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,8,within_all_centers,all,centred,-1,19783,0.16188428414494582,12,0.35568591166745506,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,9,within,cordeliers_ccRCC,local,57643,16170,0.14906849392475088,6,0.27837709290556145,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,9,within,cordeliers_ccRCC,federated,81236,16170,0.1610258583450638,6,0.2953541551938283,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,9,within,cordeliers_ccRCC,intercept,81236,16170,0.1580769669995687,6,0.29099189479379806,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,9,within,cordeliers_ccRCC,centred,81236,16170,0.159032453734583,6,0.29196342148267446,"lab (Sorbonne, Centre de Recherche des Cordeliers)"
+KIDNEY_POP54,a_sources,uni_v2,9,within,indiana_nontumour,local,23593,7832,0.0965914920206492,6,0.1846621169075884,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,9,within,indiana_nontumour,federated,81236,7832,0.08351723829144163,6,0.12017328411599619,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,9,within,indiana_nontumour,intercept,81236,7832,0.08296912827186721,6,0.12786397238102837,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,9,within,indiana_nontumour,centred,81236,7832,0.08358610946141369,6,0.1230846060291236,study (kidney atlas; Washington University and Indiana University samples)
+KIDNEY_POP54,a_sources,uni_v2,9,within_all_centers,all,local,-1,24002,0.12282999297270003,12,0.28362603866844255,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,9,within_all_centers,all,federated,-1,24002,0.12227154831825271,12,0.2896067834278402,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,9,within_all_centers,all,intercept,-1,24002,0.12052304763571796,12,0.2872790600065691,pseudo-center (random partition of donor units)
+KIDNEY_POP54,a_sources,uni_v2,9,within_all_centers,all,centred,-1,24002,0.12130928159799835,12,0.25024206439952684,pseudo-center (random partition of donor units)

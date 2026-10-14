@@ -4,19 +4,13 @@ Living document of the execution session. Started 13 October 2026. The instructi
 
 ## Current state
 
-- **Stage.** Stopped at the F2 gate, 13 October. F0, F1 and F2 complete.
-- **Branch.** `round7-fedlearn` in `~/hest-1k/HEST-1k-replication-fedlearn`, created from the starting commit. Not pushed.
-- **Starting commit.** `3c328ccc4d68b44d0795cfb9c91ff332c3b399d3`. It is the only commit on `main` that touches the instruction, so it carries both revision lines of 13 October. `main` was at `b84187b65b61365e1348ba2d5c98b43c606f27e1` when the branch was made, one commit later, and that commit changes only `CLAUDE.md`.
-- **Longleaf.** Reached on 13 October from `longleaf-login4`. The project tree is on `main` at `9d7277dc8c4bfade08d5895051666ee134b8396a` (tag `round4-data-v2`), read with `git --no-optional-locks`. `results/round7/` does not exist there yet. The project's environment has `h5py`, `anndata`, `pyarrow` and `zarr`.
-- **Code clone on Longleaf.** Made by job 1 (Slurm 4803248, `results/round7/fedlearn/job_accounting.csv`), on branch `round7-fedlearn` at the starting commit, clean. Delivery 1 (Slurm 4806950) fast-forwarded it to `f1f11c901e440023cadb7f992e4c8c12be3ccbad` and wrote the snapshot `/work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/f1f11c901e440023cadb7f992e4c8c12be3ccbad/`.
-- **Jobs.** See the job ledger. Job 1 was moved while pending from `rc_htzhu_pi` to `rc_tengfei_pi` with `scontrol update`, as section 4 allows.
-- **F1.** The seven theme sub-agents T1 to T7 were dispatched on 13 October while the F0 jobs queue, since the instruction has the inventory job run while F1 proceeds and there is no gate between F0 and F1. Their frame ids are in the sub-agent table below.
-- **Last delivered commit.** `f1f11c901e440023cadb7f992e4c8c12be3ccbad` (row 1 of `results/round7/fedlearn/code_deliveries.csv`).
-- **Papers folder.** `~/hest-1k/fedlearn_papers/` exists and is empty. The session has read and write access to it.
-- **F1 progress.** All seven theme fragments returned (488 rows, merged into 404 papers in `results/round7/fedlearn/F1_search/evidence_table.csv`, 695 search-log rows). The lead chose 84 core papers and re-verified each record against Crossref, PubMed, Europe PMC, arXiv or a proceedings page. Five core papers without an open full text were sent to Nicolas on 13 October (`paper_requests.md`). Three reader sub-agents read the core papers left at abstract level that have open copies. R2 and R3 returned 16 rows of notes. R1 parked on a network approval it requested against its brief and was stopped before the gate, without notes.
-- **Read level.** In this track "full text" means the full text was opened and its methods, results and discussion were read where they bear on the questions, not every line. Several fragments used the same definition. Where only a preprint version was read, the row says so.
-- **F2.** Report `docs/round07/i01/fedlearn/round07_fedlearn_F2_report.md` handed over with tag `round7-fedlearn-F2` and pull request #28. The session is stopped at the gate.
-- **Next action.** Wait for the F2 decision memo. Nothing of interval 2 is set up before it.
+- **Stage.** F4 handed over on 14 October 2026. The closing report is `docs/round07/i02/fedlearn/round07_fedlearn_final_report.md`. The track ends at this gate, and nothing further runs until the oversight chat replies.
+- **Branch.** `round7-fedlearn`, tag `round7-fedlearn-final`, pull request #30 into `main`, pushed once with the tag. Never merged by the session.
+- **Longleaf.** Code clone `/work/users/w/e/weiyang/hest_code/round7-fedlearn` at `30dffb3d740c4ad147ab7b84b3878e974105a853` (delivery 4, row 4 of `results/round7/fedlearn/code_deliveries.csv`). The project tree stays on `main` at `round4-data-v2`.
+- **Job ledger.** `results/round7/fedlearn/r7fl_slurm_jobs.csv`. No job of this track is queued or running.
+- **Papers.** Requested papers 1, 2 and 4 arrived and were read. Papers 3 and 5 could not be obtained. Reader 4's five papers are read and folded into the evidence table and the review.
+- **Standing rules.** `docs/EXECUTION_RULES.md` was read in full on 14 October at `main` commit `a7008bb1`. It gathers rules this plan already follows. Slurm time limits are set at about three times the expected runtime, and every sub-agent brief carries the sub-agent's frame id and the stamping sentence of its section 6.
+- **Next action.** None. Wait for the oversight chat's reply to the F4 report.
 
 ## Extensions
 
@@ -25,6 +19,110 @@ None. A local run that Nicolas asks for in chat is written here as a numbered ex
 ## Escalations recorded so far
 
 None yet beyond the source notes of the next section, which are recorded under decision boundaries as sources that cannot be reached.
+
+- 14 October. The brief of the link-finding sub-agent (frame `eeade669-d2de-4732-90f4-34c658d0432e`, dispatched at Nicolas's request to find free versions of requested papers 1, 3 and 5) did not carry its own frame id, because the id is assigned at dispatch. It wrote no files, ran no job and returned links only. The briefs of later sub-agents follow section 6 of `docs/EXECUTION_RULES.md`, with the frame id sent in the first message after dispatch.
+- 14 October. Ownership checks on the inputs that F3.0 to V4 reuse (`results/round7/fedlearn/F3_reuse_verdicts.csv`, read from each directory's `_provenance.json` on the login node). Every input is `unstamped` except the lung Xenium embeddings, which are `sibling` (stamped by the round 4 transfer session of this project). These are the project tree's data and the round 1 result that the instruction itself names, nothing is rebuilt or written there, and the question goes to the oversight chat in the F4 report. Work continues.
+
+## Amendments at the F2 gate (13 October 2026)
+
+Transcribed from sections 2, 4, 5 and 6 of the F2 decision memo. Where the memo leaves a choice to the session, the choice is written here before any run.
+
+### A1. Two tracks on the same accounts (memo section 2)
+
+Round 7's inference track runs at the same time on branch `round7-ppi`, with areas `results/round7/ppi/`, `code/scripts/round7_ppi_*.py`, `docs/round07/**/round07_ppi_*.md` and `.verify-exceptions-round7-ppi`, on the same Slurm accounts. A pending job of this track's own may be switched between `rc_htzhu_pi` and `rc_tengfei_pi`. Only the lead cancels a Slurm job, and only after confirming with `squeue -u weiyang` and this track's ledger `results/round7/fedlearn/r7fl_slurm_jobs.csv` that the job is this track's own. A sub-agent never runs `scancel`. This track never writes in the inference track's areas.
+
+### A2. Answers to the F2 escalations (memo section 4)
+
+1. F3.00 recomputes the grouping before V2.
+2. PPML-Omics is quoted from its published table.
+3. Grammenos et al. is recorded as streaming and approximate.
+4. No further action on unreachable sources.
+5. Papers P006, P183, P267, P287 and P321 are read in full in i02, from open full texts only. A sub-agent's request for network access to a host its brief did not name is answered no, recorded, and the work continues. P293 and P401 stay at the abstract level.
+6. The closing report repeats the screening shortfalls in its limits.
+7. The read level stays as defined.
+8. The exceptions file stays as it is. The oversight chat fixes the checker.
+9. The provenance index script is bookkeeping and keeps running in the Mac clone.
+10. In V2 a center is a source, a lab or a study, whichever F3.00 resolves. Every table names which, and the report says that lab, study and disease are mixed in every source contrast.
+
+### A3. Settings common to every fit (memo section 5)
+
+- **The exact head.** From each center's spot count $n_k$, sums $\sum x$ and $\sum y$, and cross-products $\sum x x^\top$ and $\sum x y^\top$, accumulated in float64. The pooled mean and the pooled standard deviation of each embedding dimension (population form, as the benchmark's scaler) come from the same sums. The basis $V$ is the top 256 eigenvectors of the standardised, centred cross-product matrix, by `numpy.linalg.eigh` in float64. The ridge solve is a Cholesky solve with $\lambda = 100/(256 \cdot q)$ on unnormalised sums, $q$ the number of target genes, which is the faithful head's penalty. Predictions add the pooled mean expression back.
+- **The faithful head.** HEST's own sequence, a standard scaler and PCA with 256 components and `random_state=1` on float32 embeddings, then ridge with the `lsqr` solver, no intercept and the same $\lambda$. The F3.0 anchor calls HEST's `train_test_reg` itself. Elsewhere the same calls are made through scikit-learn in the session's code, checked equal to HEST's on the anchor.
+- **Expression.** $\log(1 + \text{count})$ of the h5ad matrix, restricted to the spots of the embedding file, as the project's harness loads it.
+- **The within-slide metric.** For each test slide with at least 50 spots, the Pearson correlation between measured and predicted expression over the slide's spots for each gene, averaged over the genes whose correlation is defined, then averaged over test slides. **The pooled Pearson** is the per-gene correlation over all test spots together, averaged over genes, as HEST-bench reports it.
+- **Seeds** come from `zlib.crc32` of a string naming the task, the design and the draw.
+- **Target genes.** `CCRCC` uses its 50 benchmark genes. `INDIANA_KIDNEY` and `LUNG_XENIUM` use 50 genes chosen once per task by `get_k_genes` of `code/scripts/round2_r2_gene_check.py` (HEST's own rule) on the samples of V1's training pool, so V1's test donors never enter selection. V2 and V4 reuse those gene sets, so in V2 some test donors did enter selection, equally for every arm. `KIDNEY_POP54` uses `CCRCC`'s 50 genes, as the memo says. `BREAST_XENIUM` uses the 50 genes chosen by `get_k_genes` on the training sources' samples within the 151-gene common panel, per fold.
+- **Donor units.** `CCRCC` merges `INT24` into `INT4`, giving 23 units. Other tasks use the committed `donor_id`. In `KIDNEY_POP54` the 4 samples flagged `excluded_from_donor_units` are left out entirely.
+
+### A4. F3.00, the corrected grouping
+
+`code/scripts/round7_fedlearn_f300_grouping.py` reads `results/round7/fedlearn/F2_inventory/inventory.csv` and the committed task definitions. It merges the two 10x Genomics spellings and the two TGen spellings, keeps each unresolved study as its own source named by its link, adds a `source` label (lab where resolved, study otherwise), a `source_kind` (lab or study) and a `study` label (the dataset title), and writes `results/round7/fedlearn/F3_00_grouping/sources_by_group.csv` and `sample_sources.csv`.
+
+### A5. F3.0, the anchors
+
+`code/scripts/round7_fedlearn_f30_anchor.py`. (1) The faithful `pca_ridge` head for `uni_v2` on `CCRCC` on round 1's six splits (`bench_data/CCRCC/splits/`), through HEST's own functions, against round 1's `pearson_mean` in `results/faithful/pca_ridge/uni_v2/CCRCC/results_kfold.json` (0.264 to three decimals), within 0.001. The session's scikit-learn copy of the faithful head is run on the same splits and must give the same predictions. (2) The exact head fitted once on pooled spots and once from per-center sums, for every center split of V2 (both sources of `KIDNEY_POP54` and of `BREAST_XENIUM`, and the first partition of each V2(b) task), with `uni_v2`, comparing predictions on every test spot. The statistic is the largest absolute difference over spots and genes divided by the largest absolute pooled prediction, accepted below $10^{-8}$. Both are acceptance checks, and a failure of either after one fix is a stop.
+
+### A6. V1, the learning curve
+
+`code/scripts/round7_fedlearn_v1.py`, one job per task with the three encoders. Test donors are a fixed quarter of the donor units, rounded to the nearest integer and at least three, drawn once per task by seed: 6 of 23 for `CCRCC`, 6 of 25 for `INDIANA_KIDNEY`, 4 of 15 for `LUNG_XENIUM`. Training sizes are 1, 2, 4, 8, 16 and the full pool, up to the pool size, with 20 draws per size (one at the full pool, since every draw is the same). Each draw's head is the exact head on the sum of the chosen donors' sums. The faithful head is also fitted at the two largest sizes on the same draws. Outputs are one row per task, encoder, size, draw and head with both metrics, and a summary with the mean and standard deviation over draws.
+
+### A7. V2, the simulated federation
+
+`code/scripts/round7_fedlearn_v2.py`.
+
+- **(a) Sources.** `KIDNEY_POP54` with two centers, the Sorbonne cohort (`cordeliers_ccRCC`) and the kidney atlas (`indiana_nontumour`). `BREAST_XENIUM` with two centers, 10x Genomics (both spellings) and the unresolved second study. Lung Xenium is reported from F3.00 and not scored. With two centers, leaving one out leaves a single training center, so the local, federated and intercept arms coincide there, and only the centred arm differs.
+- **(b) Pseudo-centers.** 10 random partitions of each task's donor units into $K = 3$ centers of near-equal size, for `CCRCC`, `INDIANA_KIDNEY` and `LUNG_XENIUM`.
+- **Held-out donors within centers.** In each center a quarter of its donor units, rounded and at least one, is held out, drawn by seed, 10 draws in (a) and one per partition in (b).
+- **Arms.** The local head (the center's own training donors), the federated head (all centers' training donors, equal to the pooled head), the federated head with a center intercept, and the centred head. The intercept model is
+
+$$
+y_{ik} = \alpha_k + B^\top V^\top D^{-1}(x_{ik} - \bar x) + \varepsilon_{ik},
+$$
+
+  where $D$ is the diagonal of pooled standard deviations, $B$ is fitted on within-center centred scores, and $\alpha_k$ is center $k$'s mean expression minus its mean score times $B$. A left-out center gets the spot-weighted mean of the other centers' $\alpha_k$. The centred head replaces each center's embeddings by their deviations from that center's own mean before the basis and the ridge are fitted, and centres a left-out center on its own mean embedding, which uses no label. That is a transductive step a deployed federation would also take, and the report says so.
+- **Leave one center out.** Train on the other centers, test on every donor of the left-out center. The local arm there is each training center's own head, reported as the mean over those heads.
+- Every encoder, both metrics.
+
+### A8. V3, the cost of differential privacy (calibration written before the run)
+
+`code/scripts/round7_fedlearn_v3.py`, on V2(b) for `CCRCC` with `uni_v2`.
+
+- **The unit of privacy is a spot.** Patient-level protection would follow by group privacy at a larger cost, and the report says so.
+- **Clipping.** Before the run, the clip norms are fixed from one training center only, the first center of the first partition, as the 95th percentile of the embedding norms, $C_x$, and of the expression-vector norms, $C_y$, over its training spots. Every spot of every center is clipped to these norms before its sums are formed, in the private arms only.
+- **The released statistic.** Each center releases once the vector of $n_k$, $\sum x$, $\sum y$, the upper triangle of $\sum x x^\top$ and $\sum x y^\top$. Adding or removing one clipped spot changes it by at most
+
+$$
+\Delta = \sqrt{1 + C_x^2 + C_y^2 + C_x^4 + C_x^2 C_y^2}
+$$
+
+  in Euclidean norm.
+- **Noise.** Independent Gaussian noise with standard deviation $\sigma(\varepsilon, \delta, \Delta)$ from the analytic Gaussian mechanism (Balle and Wang 2018), solved by bisection, which is valid for every $\varepsilon$ used here, and the noisy $\sum x x^\top$ is symmetrised from its upper triangle. Budgets are $\varepsilon \in \{0.5, 1, 2, 5, 10\}$ per center, $\delta = 10^{-5}$, 20 noise draws per budget and partition.
+- **Regularisation, after AdaSSP.** The noisy matrices need not be positive definite, so the ridge penalty becomes $\lambda + 2\sigma_{\text{tot}}\sqrt{256}/s^2$. Here $\sigma_{\text{tot}}$ is $\sigma$ times the square root of the number of training centers, and $s$ is the typical pooled standard deviation used in standardisation, so the term bounds the spectral norm of the projected noise with high probability. If a Cholesky factorisation still fails, the draw is recorded as failed, not repaired.
+- **Comparators.** The non-private federated head on unclipped data, and the non-private head on clipped data, so that the cost of clipping and the cost of noise are reported separately.
+
+### A9. V4, partial gene overlap
+
+`code/scripts/round7_fedlearn_v4.py`, on V2(b) for every task and encoder.
+
+- Each center measures a random half of the 50 target genes, 25 of them, drawn independently per center by seed, 10 masks per partition.
+- The basis is formed from all centers' embedding sums.
+- Each gene's ridge is fitted from the centers that measure it, with that subset's own centring and intercept, and the same $\lambda$.
+- A gene that no training center measures cannot be fitted, and is counted and left out of both arms' metrics.
+- The comparator is the full-overlap federated head on the same partition and the same genes.
+- Scoring is held-out donors within centers and leave one center out, with the masks applied to training labels only.
+
+### A10. Predictions for interval i02 (memo section 6)
+
+F.6 to F.10 stand as written in the instruction. The session's own predictions of the F2 report, section 9, are scored beside them. Two more of the oversight chat's follow.
+
+- **F.11** In V3, at $\varepsilon = 10$ the within-slide metric is within 0.01 of the non-private federated head, and at $\varepsilon = 1$ it is more than 0.02 below it.
+- **F.12** In V4, fitting each gene from half the centers lowers the within-slide metric by less than 0.01 against full overlap, on every task.
+
+The session's own predictions for V3 and V4, written now: at $\varepsilon = 10$ the loss is more than 0.01, because spot-level clipping alone costs accuracy at 1,536 dimensions; and in V4 the loss is below 0.01 on every task, as F.12 says.
+
+### A11. Time caps
+
+Two days for F3.00 to V2 together, one day for V3 and V4 together.
 
 ## Literature sources reached (F0 step 3, 13 October 2026)
 
