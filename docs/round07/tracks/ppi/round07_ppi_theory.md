@@ -254,3 +254,51 @@ It is $1/(1 - f)$ at $R^2 = 0$, which is the missing finite-population factor al
 **Under D2.** S1 applies the interval to D2's labelled clusters as if they had been drawn without balance. Its variance estimate is built from the labelled clusters' spread, which balance on the mean of $x$ does not reduce, so it carries the factor above and misses D2's variance reduction as well.
 
 **For the superpopulation target** their interval is the large-$G$ interval they derive, and its shortfall at few clusters is what S2 measures.
+
+### 2.2 Kluger et al.'s design and estimators for whole labelled clusters
+
+Written before any S2 run. Kluger, Lu, Zrnic, Wang and Bates (arXiv:2501.18577v3, appendix B.1) label whole clusters by independent Bernoulli draws $\xi_k \sim \text{Bernoulli}(\pi_k)$ with known $\pi_k$, so $n_L = \sum_k \xi_k$ is random with mean $\sum_k \pi_k$. With each cluster as one unit (outcome $z_k$, prediction $f_k$) and the mean as the estimand, their estimator function $A(\cdot\,; W)$ is the weighted mean, so
+
+$$
+\hat\theta^\bullet = \frac{\sum_k W_k z_k}{\sum_k W_k}, \qquad \hat\gamma^\bullet = \frac{\sum_k W_k f_k}{\sum_k W_k}, \qquad \hat\gamma^\circ = \frac{\sum_k \bar W_k f_k}{\sum_k \bar W_k},
+$$
+
+with $W_k = \xi_k/\pi_k$ and $\bar W_k = (1 - \xi_k)/(1 - \pi_k)$ (their section 2.1). The tuned predict-then-debias estimator is $\hat\theta^{\mathrm{PTD}} = \hat\Omega\hat\gamma^\circ + (\hat\theta^\bullet - \hat\Omega\hat\gamma^\bullet)$, their equation (1). $\hat\Omega$ follows their subroutine 1 with $d = 1$,
+
+$$
+\hat\Omega = \frac{\widehat{\text{Cov}}^*(\hat\theta^\bullet, \hat\gamma^\bullet)}{\widehat{\text{Var}}^*(\hat\gamma^\bullet) + \widehat{\text{Var}}^*(\hat\gamma^\circ)},
+$$
+
+with the moments taken over the bootstrap draws. The interval is the percentile interval of $\hat\theta^{\mathrm{PTD},(b)}$ over $B = 2{,}000$ draws of their algorithm 5, which resamples all $G$ clusters with replacement, labelled and unlabelled, carrying each cluster's weights. A draw that labels fewer than two clusters, or none of whose resamples can form $\hat\theta^\bullet$, gets no interval and is counted. A bootstrap resample with no labelled cluster has no $\hat\theta^{\bullet,(b)}$ and is dropped from the quantiles; the share dropped is recorded.
+
+**The inverse-probability-weighted means beside it.** Under this design $\pi_{gh} = \pi_g\pi_h$, so every Sen-Yates-Grundy coefficient is zero and that form does not apply. The Horvitz-Thompson mean $\hat\theta_{\mathrm{HT}} = \frac{1}{G}\sum_k \xi_k z_k/\pi_k$ has, since the $\xi_k$ are independent with $\text{Var}(\xi_k) = \pi_k(1 - \pi_k)$,
+
+$$
+\text{Var}(\hat\theta_{\mathrm{HT}}) = \frac{1}{G^2}\sum_k \frac{1 - \pi_k}{\pi_k}z_k^2, \qquad \widehat{\text{Var}}_{\mathrm{Pois}}(\hat\theta_{\mathrm{HT}}) = \frac{1}{G^2}\sum_{k \in L}\frac{1 - \pi_k}{\pi_k^2}z_k^2,
+$$
+
+and the estimator is unbiased because each term enters with probability $\pi_k$. It carries the variability of the random sample size, through the uncentred $z_k^2$, so it is not invariant to a shift of $z$. The Hájek mean, which is $\hat\theta^\bullet$ above, linearises as in section 1.2 to $\frac{1}{G}\sum_k \xi_k(z_k - \theta)/\pi_k$, so
+
+$$
+\widehat{\text{Var}}_{\mathrm{Pois}}(\hat\theta_{\mathrm{H}}) = \frac{1}{\hat N^2}\sum_{k \in L}\frac{1 - \pi_k}{\pi_k^2}\big(z_k - \hat\theta_{\mathrm{H}}\big)^2, \qquad \hat N = \sum_{k \in L}\frac{1}{\pi_k}.
+$$
+
+With $\pi_k = f = n/G$ for all $k$, $\hat N = n_L/f$ and this is $\frac{1 - f}{n_L}\cdot\frac{1}{n_L}\sum_L(z_k - \bar z_L)^2$, the classical estimate with divisor $n_L$ in place of $n_L - 1$. The reference for both is $t_{n_L - 1}$ with the realised $n_L$, a convention by analogy with the classical interval.
+
+**The two designs of S2.** The uniform design has $\pi_k = n_L/G$. The score design has
+
+$$
+\pi_k = \frac{1}{2}\cdot\frac{n_L\,u_k}{\sum_h u_h} + \frac{1}{2}\cdot\frac{n_L}{G}, \qquad u_k = \lvert f_k - \bar F\rvert,
+$$
+
+with every $\pi_k$ above 1 set to 1 and the excess spread over the others in proportion to their $\pi_k$, repeated until none exceeds 1. The score is the estimand's own prediction contribution, so each gene has its own design. With a constant predictor every $u_k$ is zero and the score design is the uniform one. For each draw one uniform variable per cluster, shared by all genes, decides $\xi_{kj} = \mathbf{1}\{U_k < \pi_{kj}\}$, so that the genes' designs are coupled the way one physical labelling would be.
+
+**What to expect.** For the design target the Poisson-design interval of the Hájek mean is a design-based interval and should cover near nominal when $n_L$ is not small, while the cluster bootstrap estimates a superpopulation variance and has no finite-population factor, so for the design target it should be conservative as $n_L/G$ grows, by the same mechanism as section 2.1. For the superpopulation target the bootstrap's percentile interval at few labelled clusters is expected to under-cover, as round 4's percentile donor bootstrap did (0.760 at $n_L = 4$ and 0.84 at 8, `docs/round04/tracks/ppi/round4_ppi_estimator_definition.md`), which is prediction S2.4.
+
+### 2.3 The two targets, and how S2 measures the superpopulation target on the real tasks
+
+Written before any S2 run. **Simulation.** The populations of round 5's generator are $G$ independent clusters from a law with mean zero (`round5_ppi_e1_sim.draw_law` standardises both laws), so in every population the design target is the population's mean of $z_g$ and the superpopulation target is zero. Every interval is scored against both.
+
+**Real tasks.** A real task is one fixed set of $G$ clusters, so its superpopulation mean is unknown, and coverage of it cannot be measured from that set alone. S2 measures it in a resampled world. For each draw, $G$ clusters are drawn with replacement from the task's clusters, which makes a population of $G$ clusters drawn independently from the task's empirical distribution, whose mean is the task's $\theta$. The design is then applied to that world, and each interval is scored against the task's $\theta$, the superpopulation target of the world, and against the world's own mean, its design target. This is the bootstrap world of the task's clusters. Its law is discrete, with the task's skewness and its few clusters, so it is a fair stand-in for a superpopulation of clusters like the task's, and it is not the true population that the donors came from. The superpopulation rows of the masking grid are read with that limit. The draws on the fixed task, which score the design target, are the ones of round 5 for D0 (round 4's `draw_L` seeds), and the worlds use new seeds `r7ppi|S2|world|...`.
+
+**The intervals scored against each target.** Under D0: the classical and tuned estimators with `textbook_t|fpc|lin` and `textbook_t|fpc|lin|xf` (design), round 5's superpopulation interval for both (the same point estimate with variance $s_e^2/n_L$, no finite-population factor and no cross-fitting term, $t_{n_L - 1}$, as `round5_ppi_e3_sim.one_draw` computes it in regime A), and Broska and Howes's interval. Under each Bernoulli design: Kluger et al.'s estimator with its cluster bootstrap, and the Horvitz-Thompson and Hájek means with the Poisson-design variance. Every interval is scored against both targets, so that each comparison reads one interval against the target it was built for and against the other.

@@ -192,8 +192,43 @@ def part_bh():
     print(pd.DataFrame(rows).to_string())
 
 
+def part_s2():
+    """S2 implementation checks: bh3 equals W.bh on fixed populations; pi_score sums to n_L and is capped at 1;
+    the Kluger draw with uniform pi and a constant predictor gives Omega = 0 and the Hajek mean."""
+    import round7_ppi_s2_comparators as S2
+    rows = []
+    rng = np.random.default_rng(W.seed_of("r7ppi|S2test|impl"))
+    worst = 0.0
+    for G, n in ((24, 8), (51, 4), (15, 12)):
+        z = rng.normal(size=(G, 7)); f = z * 0.5 + rng.normal(size=(G, 7))
+        L = np.zeros((40, G, 7), bool)
+        for d in range(40):
+            L[d, rng.choice(G, n, replace=False)] = True
+        o = W.bh(z, f, L)
+        th, se = S2.bh3(np.broadcast_to(z, L.shape), np.broadcast_to(f, L.shape), L)
+        worst = max(worst, float(np.max(np.abs(th - o["theta"]))), float(np.max(np.abs(se - o["se"]))))
+    rows.append(dict(test="s2_bh3_equals_bh", value=worst, tolerance="<= 1e-12", passed=worst <= 1e-12, note="3 designs, 40 draws, 7 columns"))
+    worst_s, worst_c = 0.0, 0.0
+    for G, n in ((24, 8), (265, 4), (15, 12), (51, 16)):
+        u = np.abs(rng.lognormal(0, 1.5, size=(G, 9)))
+        p = S2.pi_score(u, n)
+        worst_s = max(worst_s, float(np.max(np.abs(p.sum(0) - n))))
+        worst_c = max(worst_c, float(p.max() - 1.0))
+    rows.append(dict(test="s2_pi_score_sums_to_nL", value=worst_s, tolerance="<= 1e-9", passed=worst_s <= 1e-9, note="lognormal scores"))
+    rows.append(dict(test="s2_pi_score_capped", value=worst_c, tolerance="<= 0", passed=worst_c <= 0, note=""))
+    G, n = 24, 8
+    z = rng.normal(size=(G, 3)); f = np.full((G, 3), 0.7)
+    pi = np.full((G, 3), n / G); xi = np.zeros((G, 3), bool); xi[rng.choice(G, n, replace=False)] = True
+    o = S2.kluger_draw(z, f, pi, xi, np.random.default_rng(1), B=500)
+    dev = float(np.max(np.abs(o["omega"]))) + float(np.max(np.abs(o["ptd"] - z[xi[:, 0], :].mean(0))))
+    rows.append(dict(test="s2_kluger_constant_predictor", value=dev, tolerance="<= 1e-12", passed=dev <= 1e-12,
+                     note="Omega = 0 and the estimate is the labelled mean"))
+    pd.DataFrame(rows).to_csv("s2_impl_tests.csv", index=False, float_format="%.12g")
+    print(pd.DataFrame(rows).to_string())
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--part", choices=("s1", "bh"), required=True)
+    ap.add_argument("--part", choices=("s1", "bh", "s2"), required=True)
     a = ap.parse_args()
-    part_s1() if a.part == "s1" else part_bh()
+    {"s1": part_s1, "bh": part_bh, "s2": part_s2}[a.part]()
