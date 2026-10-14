@@ -97,7 +97,10 @@ def kluger_draw(Z, F, pi, xi, rng, B=B_BOOT):
     tbm = np.where(ok, tb, np.nan); gbm = np.where(ok, gb, np.nan); obm = np.where(ok, ob, np.nan)
     cov = np.nanmean((tbm - np.nanmean(tbm, 0)) * (gbm - np.nanmean(gbm, 0)), 0)
     den = np.nanvar(gbm, 0) + np.nanvar(obm, 0)
-    om = np.where(den > 1e-30, cov / np.where(den > 1e-30, den, 1.0), 0.0)
+    # a constant predictor leaves only rounding noise in the bootstrap variances; treat a variance below 1e-20 of
+    # the predictions' mean square as zero and set Omega = 0 (S2 implementation check, first run Slurm 4824921)
+    tiny = 1e-20 * np.maximum(1.0, (F ** 2).mean(0))
+    om = np.where(den > tiny, cov / np.where(den > tiny, den, 1.0), 0.0)
     ptd = om * ga_o + th_d - om * ga_d
     pb = om * obm + tbm - om * gbm
     lo = np.nanquantile(pb, ALPHA / 2, axis=0); hi = np.nanquantile(pb, 1 - ALPHA / 2, axis=0)
