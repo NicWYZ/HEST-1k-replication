@@ -1,0 +1,230 @@
+slurm_job_id=4839667 partition=spill account=rc_htzhu_pi node=c0411.ll.unc.edu date=2026-10-14T02:02:38-04:00
+bundle_md5=76b004760b1eed39e000676c36303881
+branch=round7-fedlearn
+head_before=89d698a6980a0f6f3487e06f22adb239a85b956e
+status_before_lines=0
+/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/ba2c37f3-034e-42fd-994e-c7c87205b2d3/r7fl_delivery_04.bundle is okay
+The bundle contains this ref:
+30dffb3d740c4ad147ab7b84b3878e974105a853 refs/heads/round7-fedlearn
+The bundle requires this ref:
+89d698a6980a0f6f3487e06f22adb239a85b956e 
+The bundle uses this hash algorithm: sha1
+verify_rc=0
+From /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/ba2c37f3-034e-42fd-994e-c7c87205b2d3/r7fl_delivery_04.bundle
+ * branch              round7-fedlearn -> FETCH_HEAD
+fetch_rc=0
+Updating 89d698a6..30dffb3d
+Fast-forward
+ code/scripts/round7_fedlearn_v2.py                 |   15 +-
+ .../round7/fedlearn/F1_search/evidence_table.csv   |   20 +-
+ .../round7/fedlearn/F3_00_grouping/PROVENANCE.txt  |   22 +
+ .../fedlearn/F3_00_grouping/_provenance.json       |   10 +
+ .../fedlearn/F3_00_grouping/f300_summary.json      |   14 +
+ .../fedlearn/F3_00_grouping/sample_sources.csv     |  206 +
+ .../fedlearn/F3_00_grouping/sources_by_group.csv   |   19 +
+ results/round7/fedlearn/F3_00_grouping/stdout.txt  |   14 +
+ results/round7/fedlearn/F3_anchor/_provenance.json |   10 +
+ results/round7/fedlearn/F3_anchor/stdout.txt       |   51 +
+ .../fedlearn/F3_anchor_attempt2/PROVENANCE.txt     |   25 +
+ .../fedlearn/F3_anchor_attempt2/_provenance.json   |   10 +
+ .../fedlearn/F3_anchor_attempt2/f30_exact.csv      |    6 +
+ .../fedlearn/F3_anchor_attempt2/f30_faithful.csv   |    7 +
+ .../fedlearn/F3_anchor_attempt2/f30_summary.json   |  279 +
+ .../round7/fedlearn/F3_anchor_attempt2/stdout.txt  |   41 +
+ results/round7/fedlearn/V1/CCRCC/PROVENANCE.txt    |   25 +
+ results/round7/fedlearn/V1/CCRCC/_provenance.json  |   10 +
+ results/round7/fedlearn/V1/CCRCC/stdout.txt        |    4 +
+ results/round7/fedlearn/V1/CCRCC/v1_draws.csv      |  367 +
+ results/round7/fedlearn/V1/CCRCC/v1_genes.json     |  944 +++
+ results/round7/fedlearn/V1/CCRCC/v1_summary.csv    |   25 +
+ .../fedlearn/V1/INDIANA_KIDNEY/PROVENANCE.txt      |   25 +
+ .../fedlearn/V1/INDIANA_KIDNEY/_provenance.json    |   10 +
+ .../round7/fedlearn/V1/INDIANA_KIDNEY/stdout.txt   |   10 +
+ .../round7/fedlearn/V1/INDIANA_KIDNEY/v1_draws.csv |  367 +
+ .../fedlearn/V1/INDIANA_KIDNEY/v1_genes.json       |  948 +++
+ .../fedlearn/V1/INDIANA_KIDNEY/v1_summary.csv      |   25 +
+ .../round7/fedlearn/V1/LUNG_XENIUM/PROVENANCE.txt  |   25 +
+ .../fedlearn/V1/LUNG_XENIUM/_provenance.json       |   10 +
+ results/round7/fedlearn/V1/LUNG_XENIUM/stdout.txt  |   10 +
+ .../round7/fedlearn/V1/LUNG_XENIUM/v1_draws.csv    |  307 +
+ .../round7/fedlearn/V1/LUNG_XENIUM/v1_genes.json   |  567 ++
+ .../round7/fedlearn/V1/LUNG_XENIUM/v1_summary.csv  |   22 +
+ .../fedlearn/V2/BREAST_XENIUM/PROVENANCE.txt       |   25 +
+ .../fedlearn/V2/BREAST_XENIUM/_provenance.json     |   10 +
+ .../round7/fedlearn/V2/BREAST_XENIUM/stdout.txt    |   76 +
+ .../round7/fedlearn/V2/BREAST_XENIUM/v2_genes.json | 1190 +++
+ .../round7/fedlearn/V2/BREAST_XENIUM/v2_paired.csv |   73 +
+ .../round7/fedlearn/V2/BREAST_XENIUM/v2_rows.csv   |  265 +
+ .../fedlearn/V2/BREAST_XENIUM/v2_summary.csv       |   25 +
+ results/round7/fedlearn/V2/CCRCC/PROVENANCE.txt    |   25 +
+ results/round7/fedlearn/V2/CCRCC/_provenance.json  |   10 +
+ results/round7/fedlearn/V2/CCRCC/stdout.txt        |    4 +
+ results/round7/fedlearn/V2/CCRCC/v2_genes.json     | 2684 +++++++
+ results/round7/fedlearn/V2/CCRCC/v2_paired.csv     |   73 +
+ results/round7/fedlearn/V2/CCRCC/v2_rows.csv       |  721 ++
+ results/round7/fedlearn/V2/CCRCC/v2_summary.csv    |   25 +
+ .../fedlearn/V2/INDIANA_KIDNEY/PROVENANCE.txt      |   25 +
+ .../fedlearn/V2/INDIANA_KIDNEY/_provenance.json    |   10 +
+ .../round7/fedlearn/V2/INDIANA_KIDNEY/stdout.txt   |   10 +
+ .../fedlearn/V2/INDIANA_KIDNEY/v2_genes.json       | 2704 +++++++
+ .../fedlearn/V2/INDIANA_KIDNEY/v2_paired.csv       |   73 +
+ .../round7/fedlearn/V2/INDIANA_KIDNEY/v2_rows.csv  |  721 ++
+ .../fedlearn/V2/INDIANA_KIDNEY/v2_summary.csv      |   25 +
+ .../round7/fedlearn/V2/KIDNEY_POP54/PROVENANCE.txt |   25 +
+ .../fedlearn/V2/KIDNEY_POP54/_provenance.json      |   10 +
+ results/round7/fedlearn/V2/KIDNEY_POP54/stdout.txt |    4 +
+ .../round7/fedlearn/V2/KIDNEY_POP54/v2_genes.json  | 1487 ++++
+ .../round7/fedlearn/V2/KIDNEY_POP54/v2_paired.csv  |   73 +
+ .../round7/fedlearn/V2/KIDNEY_POP54/v2_rows.csv    |  265 +
+ .../round7/fedlearn/V2/KIDNEY_POP54/v2_summary.csv |   25 +
+ .../round7/fedlearn/V2/LUNG_XENIUM/PROVENANCE.txt  |   25 +
+ .../fedlearn/V2/LUNG_XENIUM/_provenance.json       |   10 +
+ results/round7/fedlearn/V2/LUNG_XENIUM/stdout.txt  |   10 +
+ .../round7/fedlearn/V2/LUNG_XENIUM/v2_genes.json   | 2617 ++++++
+ .../round7/fedlearn/V2/LUNG_XENIUM/v2_paired.csv   |   73 +
+ results/round7/fedlearn/V2/LUNG_XENIUM/v2_rows.csv |  721 ++
+ .../round7/fedlearn/V2/LUNG_XENIUM/v2_summary.csv  |   25 +
+ results/round7/fedlearn/V3/PROVENANCE.txt          |   25 +
+ results/round7/fedlearn/V3/_provenance.json        |   10 +
+ results/round7/fedlearn/V3/stdout.txt              |   11 +
+ results/round7/fedlearn/V3/v3_calibration.json     |   25 +
+ results/round7/fedlearn/V3/v3_paired.csv           |   23 +
+ results/round7/fedlearn/V3/v3_rows.csv             | 1021 +++
+ results/round7/fedlearn/V3/v3_summary.csv          |    8 +
+ results/round7/fedlearn/V4/CCRCC/PROVENANCE.txt    |   26 +
+ results/round7/fedlearn/V4/CCRCC/_provenance.json  |   10 +
+ results/round7/fedlearn/V4/CCRCC/stdout.txt        |    4 +
+ results/round7/fedlearn/V4/CCRCC/v4_genes.json     | 8358 ++++++++++++++++++++
+ results/round7/fedlearn/V4/CCRCC/v4_paired.csv     |   13 +
+ results/round7/fedlearn/V4/CCRCC/v4_rows.csv       | 3601 +++++++++
+ results/round7/fedlearn/V4/CCRCC/v4_summary.csv    |   13 +
+ .../fedlearn/V4/INDIANA_KIDNEY/PROVENANCE.txt      |   26 +
+ .../fedlearn/V4/INDIANA_KIDNEY/_provenance.json    |   10 +
+ .../round7/fedlearn/V4/INDIANA_KIDNEY/stdout.txt   |   10 +
+ .../fedlearn/V4/INDIANA_KIDNEY/v4_genes.json       | 8358 ++++++++++++++++++++
+ .../fedlearn/V4/INDIANA_KIDNEY/v4_paired.csv       |   13 +
+ .../round7/fedlearn/V4/INDIANA_KIDNEY/v4_rows.csv  | 3601 +++++++++
+ .../fedlearn/V4/INDIANA_KIDNEY/v4_summary.csv      |   13 +
+ .../round7/fedlearn/V4/LUNG_XENIUM/PROVENANCE.txt  |   26 +
+ .../fedlearn/V4/LUNG_XENIUM/_provenance.json       |   10 +
+ results/round7/fedlearn/V4/LUNG_XENIUM/stdout.txt  |   10 +
+ .../round7/fedlearn/V4/LUNG_XENIUM/v4_genes.json   | 8358 ++++++++++++++++++++
+ .../round7/fedlearn/V4/LUNG_XENIUM/v4_paired.csv   |   13 +
+ results/round7/fedlearn/V4/LUNG_XENIUM/v4_rows.csv | 3601 +++++++++
+ .../round7/fedlearn/V4/LUNG_XENIUM/v4_summary.csv  |   13 +
+ results/round7/fedlearn/code_deliveries.csv        |    1 +
+ .../fedlearn/deliveries/delivery_03_job4824673.log |   45 +
+ results/round7/fedlearn/r7fl_slurm_jobs.csv        |   28 +-
+ 100 files changed, 55860 insertions(+), 18 deletions(-)
+ create mode 100644 results/round7/fedlearn/F3_00_grouping/PROVENANCE.txt
+ create mode 100644 results/round7/fedlearn/F3_00_grouping/_provenance.json
+ create mode 100644 results/round7/fedlearn/F3_00_grouping/f300_summary.json
+ create mode 100644 results/round7/fedlearn/F3_00_grouping/sample_sources.csv
+ create mode 100644 results/round7/fedlearn/F3_00_grouping/sources_by_group.csv
+ create mode 100644 results/round7/fedlearn/F3_00_grouping/stdout.txt
+ create mode 100644 results/round7/fedlearn/F3_anchor/_provenance.json
+ create mode 100644 results/round7/fedlearn/F3_anchor/stdout.txt
+ create mode 100644 results/round7/fedlearn/F3_anchor_attempt2/PROVENANCE.txt
+ create mode 100644 results/round7/fedlearn/F3_anchor_attempt2/_provenance.json
+ create mode 100644 results/round7/fedlearn/F3_anchor_attempt2/f30_exact.csv
+ create mode 100644 results/round7/fedlearn/F3_anchor_attempt2/f30_faithful.csv
+ create mode 100644 results/round7/fedlearn/F3_anchor_attempt2/f30_summary.json
+ create mode 100644 results/round7/fedlearn/F3_anchor_attempt2/stdout.txt
+ create mode 100644 results/round7/fedlearn/V1/CCRCC/PROVENANCE.txt
+ create mode 100644 results/round7/fedlearn/V1/CCRCC/_provenance.json
+ create mode 100644 results/round7/fedlearn/V1/CCRCC/stdout.txt
+ create mode 100644 results/round7/fedlearn/V1/CCRCC/v1_draws.csv
+ create mode 100644 results/round7/fedlearn/V1/CCRCC/v1_genes.json
+ create mode 100644 results/round7/fedlearn/V1/CCRCC/v1_summary.csv
+ create mode 100644 results/round7/fedlearn/V1/INDIANA_KIDNEY/PROVENANCE.txt
+ create mode 100644 results/round7/fedlearn/V1/INDIANA_KIDNEY/_provenance.json
+ create mode 100644 results/round7/fedlearn/V1/INDIANA_KIDNEY/stdout.txt
+ create mode 100644 results/round7/fedlearn/V1/INDIANA_KIDNEY/v1_draws.csv
+ create mode 100644 results/round7/fedlearn/V1/INDIANA_KIDNEY/v1_genes.json
+ create mode 100644 results/round7/fedlearn/V1/INDIANA_KIDNEY/v1_summary.csv
+ create mode 100644 results/round7/fedlearn/V1/LUNG_XENIUM/PROVENANCE.txt
+ create mode 100644 results/round7/fedlearn/V1/LUNG_XENIUM/_provenance.json
+ create mode 100644 results/round7/fedlearn/V1/LUNG_XENIUM/stdout.txt
+ create mode 100644 results/round7/fedlearn/V1/LUNG_XENIUM/v1_draws.csv
+ create mode 100644 results/round7/fedlearn/V1/LUNG_XENIUM/v1_genes.json
+ create mode 100644 results/round7/fedlearn/V1/LUNG_XENIUM/v1_summary.csv
+ create mode 100644 results/round7/fedlearn/V2/BREAST_XENIUM/PROVENANCE.txt
+ create mode 100644 results/round7/fedlearn/V2/BREAST_XENIUM/_provenance.json
+ create mode 100644 results/round7/fedlearn/V2/BREAST_XENIUM/stdout.txt
+ create mode 100644 results/round7/fedlearn/V2/BREAST_XENIUM/v2_genes.json
+ create mode 100644 results/round7/fedlearn/V2/BREAST_XENIUM/v2_paired.csv
+ create mode 100644 results/round7/fedlearn/V2/BREAST_XENIUM/v2_rows.csv
+ create mode 100644 results/round7/fedlearn/V2/BREAST_XENIUM/v2_summary.csv
+ create mode 100644 results/round7/fedlearn/V2/CCRCC/PROVENANCE.txt
+ create mode 100644 results/round7/fedlearn/V2/CCRCC/_provenance.json
+ create mode 100644 results/round7/fedlearn/V2/CCRCC/stdout.txt
+ create mode 100644 results/round7/fedlearn/V2/CCRCC/v2_genes.json
+ create mode 100644 results/round7/fedlearn/V2/CCRCC/v2_paired.csv
+ create mode 100644 results/round7/fedlearn/V2/CCRCC/v2_rows.csv
+ create mode 100644 results/round7/fedlearn/V2/CCRCC/v2_summary.csv
+ create mode 100644 results/round7/fedlearn/V2/INDIANA_KIDNEY/PROVENANCE.txt
+ create mode 100644 results/round7/fedlearn/V2/INDIANA_KIDNEY/_provenance.json
+ create mode 100644 results/round7/fedlearn/V2/INDIANA_KIDNEY/stdout.txt
+ create mode 100644 results/round7/fedlearn/V2/INDIANA_KIDNEY/v2_genes.json
+ create mode 100644 results/round7/fedlearn/V2/INDIANA_KIDNEY/v2_paired.csv
+ create mode 100644 results/round7/fedlearn/V2/INDIANA_KIDNEY/v2_rows.csv
+ create mode 100644 results/round7/fedlearn/V2/INDIANA_KIDNEY/v2_summary.csv
+ create mode 100644 results/round7/fedlearn/V2/KIDNEY_POP54/PROVENANCE.txt
+ create mode 100644 results/round7/fedlearn/V2/KIDNEY_POP54/_provenance.json
+ create mode 100644 results/round7/fedlearn/V2/KIDNEY_POP54/stdout.txt
+ create mode 100644 results/round7/fedlearn/V2/KIDNEY_POP54/v2_genes.json
+ create mode 100644 results/round7/fedlearn/V2/KIDNEY_POP54/v2_paired.csv
+ create mode 100644 results/round7/fedlearn/V2/KIDNEY_POP54/v2_rows.csv
+ create mode 100644 results/round7/fedlearn/V2/KIDNEY_POP54/v2_summary.csv
+ create mode 100644 results/round7/fedlearn/V2/LUNG_XENIUM/PROVENANCE.txt
+ create mode 100644 results/round7/fedlearn/V2/LUNG_XENIUM/_provenance.json
+ create mode 100644 results/round7/fedlearn/V2/LUNG_XENIUM/stdout.txt
+ create mode 100644 results/round7/fedlearn/V2/LUNG_XENIUM/v2_genes.json
+ create mode 100644 results/round7/fedlearn/V2/LUNG_XENIUM/v2_paired.csv
+ create mode 100644 results/round7/fedlearn/V2/LUNG_XENIUM/v2_rows.csv
+ create mode 100644 results/round7/fedlearn/V2/LUNG_XENIUM/v2_summary.csv
+ create mode 100644 results/round7/fedlearn/V3/PROVENANCE.txt
+ create mode 100644 results/round7/fedlearn/V3/_provenance.json
+ create mode 100644 results/round7/fedlearn/V3/stdout.txt
+ create mode 100644 results/round7/fedlearn/V3/v3_calibration.json
+ create mode 100644 results/round7/fedlearn/V3/v3_paired.csv
+ create mode 100644 results/round7/fedlearn/V3/v3_rows.csv
+ create mode 100644 results/round7/fedlearn/V3/v3_summary.csv
+ create mode 100644 results/round7/fedlearn/V4/CCRCC/PROVENANCE.txt
+ create mode 100644 results/round7/fedlearn/V4/CCRCC/_provenance.json
+ create mode 100644 results/round7/fedlearn/V4/CCRCC/stdout.txt
+ create mode 100644 results/round7/fedlearn/V4/CCRCC/v4_genes.json
+ create mode 100644 results/round7/fedlearn/V4/CCRCC/v4_paired.csv
+ create mode 100644 results/round7/fedlearn/V4/CCRCC/v4_rows.csv
+ create mode 100644 results/round7/fedlearn/V4/CCRCC/v4_summary.csv
+ create mode 100644 results/round7/fedlearn/V4/INDIANA_KIDNEY/PROVENANCE.txt
+ create mode 100644 results/round7/fedlearn/V4/INDIANA_KIDNEY/_provenance.json
+ create mode 100644 results/round7/fedlearn/V4/INDIANA_KIDNEY/stdout.txt
+ create mode 100644 results/round7/fedlearn/V4/INDIANA_KIDNEY/v4_genes.json
+ create mode 100644 results/round7/fedlearn/V4/INDIANA_KIDNEY/v4_paired.csv
+ create mode 100644 results/round7/fedlearn/V4/INDIANA_KIDNEY/v4_rows.csv
+ create mode 100644 results/round7/fedlearn/V4/INDIANA_KIDNEY/v4_summary.csv
+ create mode 100644 results/round7/fedlearn/V4/LUNG_XENIUM/PROVENANCE.txt
+ create mode 100644 results/round7/fedlearn/V4/LUNG_XENIUM/_provenance.json
+ create mode 100644 results/round7/fedlearn/V4/LUNG_XENIUM/stdout.txt
+ create mode 100644 results/round7/fedlearn/V4/LUNG_XENIUM/v4_genes.json
+ create mode 100644 results/round7/fedlearn/V4/LUNG_XENIUM/v4_paired.csv
+ create mode 100644 results/round7/fedlearn/V4/LUNG_XENIUM/v4_rows.csv
+ create mode 100644 results/round7/fedlearn/V4/LUNG_XENIUM/v4_summary.csv
+ create mode 100644 results/round7/fedlearn/deliveries/delivery_03_job4824673.log
+head_after=30dffb3d740c4ad147ab7b84b3878e974105a853
+commits=30dffb3d740c4ad147ab7b84b3878e974105a853 
+snapshot=/work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/30dffb3d740c4ad147ab7b84b3878e974105a853
+69a4cdb299564fc079b683f0a3219dbc  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/30dffb3d740c4ad147ab7b84b3878e974105a853/code/scripts/round7_fedlearn_common.py
+88a2d4c8dc0ed8c75337d29435ae64a1  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/30dffb3d740c4ad147ab7b84b3878e974105a853/code/scripts/round7_fedlearn_design.py
+e5b12550229ca4187fcdcee7f19bd286  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/30dffb3d740c4ad147ab7b84b3878e974105a853/code/scripts/round7_fedlearn_f2_inventory.py
+aacf1aea20e2b33fdd965c6fc37cb3d7  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/30dffb3d740c4ad147ab7b84b3878e974105a853/code/scripts/round7_fedlearn_f300_grouping.py
+98f6ba21e67e74a010a6d25cc9110add  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/30dffb3d740c4ad147ab7b84b3878e974105a853/code/scripts/round7_fedlearn_f30_anchor.py
+b5bd975c4f1745d27e7ebb56ead75392  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/30dffb3d740c4ad147ab7b84b3878e974105a853/code/scripts/round7_fedlearn_head.py
+f3efe1c8288c413f56de120cecf68875  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/30dffb3d740c4ad147ab7b84b3878e974105a853/code/scripts/round7_fedlearn_provenance_index.py
+4bede77b0a8e22d9b85146f162e534dc  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/30dffb3d740c4ad147ab7b84b3878e974105a853/code/scripts/round7_fedlearn_v1.py
+5136d78036162e0b60427cfb6af24dcf  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/30dffb3d740c4ad147ab7b84b3878e974105a853/code/scripts/round7_fedlearn_v2.py
+0d9fe879ba8471c8a876b634a7e08368  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/30dffb3d740c4ad147ab7b84b3878e974105a853/code/scripts/round7_fedlearn_v3.py
+ec186e1e5deb37e47031fd3cdbb64f77  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/30dffb3d740c4ad147ab7b84b3878e974105a853/code/scripts/round7_fedlearn_v4.py
+e267b1e6038daa893647202dd47ffb04  /work/users/w/e/weiyang/hest_code/round7-fedlearn_snapshots/30dffb3d740c4ad147ab7b84b3878e974105a853/code/scripts/round2_r2_gene_check.py
+30dffb3d740c4ad147ab7b84b3878e974105a853 Round 7 fedlearn i02: F3.00, F3.0 and V1 to V4 results; V2 scores all centers' held-out spots together
