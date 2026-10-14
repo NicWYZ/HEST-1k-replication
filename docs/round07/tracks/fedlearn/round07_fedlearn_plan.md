@@ -4,13 +4,13 @@ Living document of the execution session. Started 13 October 2026. The instructi
 
 ## Current state
 
-- **Stage.** Interval i02, opened by the F2 decision memo (`docs/round07/i02/fedlearn/round07_fedlearn_F2_decisions.md`, committed unchanged on 13 October). F3.00 to V4 and F4 to run. Nothing pushed since the F2 gate.
-- **Branch.** `round7-fedlearn` in `~/hest-1k/HEST-1k-replication-fedlearn`, from `3c328ccc4d68b44d0795cfb9c91ff332c3b399d3`. Pull request #28 (F2) was merged by Nicolas. Nothing has been merged into the branch.
-- **Longleaf.** Code clone `/work/users/w/e/weiyang/hest_code/round7-fedlearn`, last delivered commit `f1f11c901e440023cadb7f992e4c8c12be3ccbad` (row 1 of `results/round7/fedlearn/code_deliveries.csv`). The project tree stays on `main` at `round4-data-v2`.
-- **Job ledger.** `results/round7/fedlearn/r7fl_slurm_jobs.csv`, from interval i02 on (amendment A1). The F0 jobs are copied into it.
-- **Papers.** Papers 1, 2 and 4 of `paper_requests.md` arrived in `~/hest-1k/fedlearn_papers/requested/` and are to be read. Papers 3 and 5 could not be obtained (14 October). Reader 4 has read P006, P183, P267, P287 and P321 (`F1_search/reading/R4/reading_notes.csv`), still to be folded into the evidence table and the review.
-- **Standing rules.** `docs/EXECUTION_RULES.md` was read in full on 14 October at `main` commit `a7008bb1`. It gathers rules this plan already follows, so no amendment is needed. Two points are applied from now on: Slurm time limits are set at about three times the expected runtime, and every sub-agent brief carries the sub-agent's frame id and the stamping sentence of its section 6.
-- **Next action.** Write the i02 scripts, deliver them, run F3.00 and F3.0, then V1 to V4 once both anchors pass.
+- **Stage.** F4 handed over on 14 October 2026. The closing report is `docs/round07/i02/fedlearn/round07_fedlearn_final_report.md`. The track ends at this gate, and nothing further runs until the oversight chat replies.
+- **Branch.** `round7-fedlearn`, tag `round7-fedlearn-final`, pull request #30 into `main`, pushed once with the tag. Never merged by the session.
+- **Longleaf.** Code clone `/work/users/w/e/weiyang/hest_code/round7-fedlearn` at `30dffb3d740c4ad147ab7b84b3878e974105a853` (delivery 4, row 4 of `results/round7/fedlearn/code_deliveries.csv`). The project tree stays on `main` at `round4-data-v2`.
+- **Job ledger.** `results/round7/fedlearn/r7fl_slurm_jobs.csv`. No job of this track is queued or running.
+- **Papers.** Requested papers 1, 2 and 4 arrived and were read. Papers 3 and 5 could not be obtained. Reader 4's five papers are read and folded into the evidence table and the review.
+- **Standing rules.** `docs/EXECUTION_RULES.md` was read in full on 14 October at `main` commit `a7008bb1`. It gathers rules this plan already follows. Slurm time limits are set at about three times the expected runtime, and every sub-agent brief carries the sub-agent's frame id and the stamping sentence of its section 6.
+- **Next action.** None. Wait for the oversight chat's reply to the F4 report.
 
 ## Extensions
 
