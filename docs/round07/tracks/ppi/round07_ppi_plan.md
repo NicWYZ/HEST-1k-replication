@@ -6,18 +6,18 @@ Living document. Written 14 October 2026 by the execution session and approved b
 
 | field | value |
 |---|---|
-| stage | Interval i02 opened by `docs/round07/i02/ppi/round07_ppi_S2_decisions.md` (committed unchanged as `72431846`). Next is S2b, then S3, then S4, then the S4 gate |
+| stage | Interval i02 opened by `docs/round07/i02/ppi/round07_ppi_S2_decisions.md` (committed unchanged as `72431846`). S2b done on 14 October. Next is S3, then S4, then the S4 gate |
 | starting commit | `c2af4630fe601c255c927d2a3f5a76b19a53d9f2` (13 October 2026, "Docs: open round 7's inference track after O2 was accepted") |
 | `origin/main` when read | `72c630c6` (14 October 2026, merge of pull request #30, `round7-fedlearn`), after pull request #29 (`round7-ppi`, S2 gate) was merged as `2063d248`. The track document has no revision after 13 October there |
 | standing rules | `docs/EXECUTION_RULES.md` at its revision of 14 October, read in full, adopted from the S2 memo on |
 | track document revisions transcribed | the two lines dated 13 October 2026 (first version, and the revision before handover) |
 | branch | `round7-ppi` from `c2af4630`, with nothing merged into it |
 | Longleaf code clone | `/work/users/w/e/weiyang/hest_code/round7-ppi/`, made by Slurm job 4816458 |
-| last delivered commit | `83f9970b50d548de41f3a4901efa53e47d0f5121` (delivery 9, Slurm job 4842129) |
+| last delivered commit | `3258eb1fa855899e7392c302ebcf2949f3ae3b29` (delivery 12, Slurm job 4892382) |
 | open pull request | none (#29 merged) |
 | plan extensions | none |
-| escalations recorded for the next report | none yet in i02 |
-| next action | S2b item 1, the $\theta_2$ recount |
+| escalations recorded for the next report | recount job 4892100 failed on a merge bug and was rerun; delivery 10 carried the S2 gate commit's results to the code clone |
+| next action | S3 theory section 3, then the cube method |
 
 A restarted session resumes from this block, the job ledger `results/round7/ppi/r7ppi_slurm_jobs.csv` and `results/round7/ppi/code_deliveries.csv`.
 
@@ -206,9 +206,9 @@ Transcribed on 14 October 2026 from section 5 of `docs/round07/i02/ppi/round07_p
 
 ### S2b. Three diagnostics (capped at one day, before S3)
 
-- [ ] **1. The $\theta_2$ recount**, from existing outputs with no new draws, into `results/round7/ppi/S2b_diagnostics/theta2_recount/`. Every $\theta_2$ row of the S2 report's section 6.1 table and of its section 6.5 comparison in three forms (over all draws with a miss for no interval, over draws with an interval, share formed), for every estimator. A cell-by-cell check of the memo's section 3, listing cells where round 5's coverage is not round 7's conditional coverage times its share formed within Monte Carlo error. The D0 classical rule for $\theta_2$ in round 5, in round 7, and in `docs/round05/tracks/ppi/round5_ppi_estimator_definition.md`, and `wr_D0cl` for $\theta_2$ under the definition's rule, rerunning only the D0 classical rows of the $\theta_2$ tissue cells if 1-degree-of-freedom intervals are needed. Each $\theta_2$ cell's support over all clusters and over valid ones, and the lung $\theta_2$ cells whose thresholds differ from round 5's medians.
-- [ ] **2. The simulation bias by population**, into `results/round7/ppi/S2b_diagnostics/sim_by_population/`. `round7_ppi_s1_sim.py` writes per population the smallest $\hat\pi_g$, the share of pairs with $\hat\pi_{gh} = 0$, and the signed standardised bias of the classical mean, $\hat\theta_{\mathrm{HT}}$ and $\hat\theta_{\mathrm{H}}$. Rerun $G = 51$, $n_L = 8$, $k = 1$, $\lambda^\star = 0.6$, skewed, both $p_a$, 1,000 draws, and say whether the biased populations are those with a zero or near-zero $\hat\pi_g$.
-- [ ] **3. Broska and Howes with small-sample corrections**, into `results/round7/ppi/S2b_diagnostics/bh_small_sample/`. `bh_t` (labelled term times $n_L/(n_L - 1)$, $t_{n_L-1}$, and beside it $t_{n_L-2}$) and `bh_t_fpc` (`bh_t` times $1 - n_L/G$), written in theory section 2.1 before the run, on S2's D0 grids, real tasks and simulation, both targets. Per cell the median over genes of the cluster-level $R^2$, $\rho_{\mathrm{BH}}(n_L/G, R^2)$, and the measured ratio of Broska and Howes's variance estimate to the empirical variance.
+- [x] **1. The $\theta_2$ recount** (14 Oct, Slurm 4891599, 4891679, 4891687, 4891691 for the D0 reruns and 4892562 for the recount after 4892100 failed on a merge bug; `S2b_diagnostics/theta2_recount/`), from existing outputs with no new draws, into `results/round7/ppi/S2b_diagnostics/theta2_recount/`. Every $\theta_2$ row of the S2 report's section 6.1 table and of its section 6.5 comparison in three forms (over all draws with a miss for no interval, over draws with an interval, share formed), for every estimator. A cell-by-cell check of the memo's section 3, listing cells where round 5's coverage is not round 7's conditional coverage times its share formed within Monte Carlo error. The D0 classical rule for $\theta_2$ in round 5, in round 7, and in `docs/round05/tracks/ppi/round5_ppi_estimator_definition.md`, and `wr_D0cl` for $\theta_2$ under the definition's rule, rerunning only the D0 classical rows of the $\theta_2$ tissue cells if 1-degree-of-freedom intervals are needed. Each $\theta_2$ cell's support over all clusters and over valid ones, and the lung $\theta_2$ cells whose thresholds differ from round 5's medians.
+- [x] **2. The simulation bias by population** (14 Oct, Slurm 4891624; numbers 4892563), into `results/round7/ppi/S2b_diagnostics/sim_by_population/`. `round7_ppi_s1_sim.py` writes per population the smallest $\hat\pi_g$, the share of pairs with $\hat\pi_{gh} = 0$, and the signed standardised bias of the classical mean, $\hat\theta_{\mathrm{HT}}$ and $\hat\theta_{\mathrm{H}}$. Rerun $G = 51$, $n_L = 8$, $k = 1$, $\lambda^\star = 0.6$, skewed, both $p_a$, 1,000 draws, and say whether the biased populations are those with a zero or near-zero $\hat\pi_g$.
+- [x] **3. Broska and Howes with small-sample corrections** (14 Oct, 12 jobs listed in the ledger; numbers 4892563), into `results/round7/ppi/S2b_diagnostics/bh_small_sample/`. `bh_t` (labelled term times $n_L/(n_L - 1)$, $t_{n_L-1}$, and beside it $t_{n_L-2}$) and `bh_t_fpc` (`bh_t` times $1 - n_L/G$), written in theory section 2.1 before the run, on S2's D0 grids, real tasks and simulation, both targets. Per cell the median over genes of the cluster-level $R^2$, $\rho_{\mathrm{BH}}(n_L/G, R^2)$, and the measured ratio of Broska and Howes's variance estimate to the empirical variance.
 
 ### S3. The adaptive, balanced design (two days)
 

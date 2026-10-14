@@ -1,0 +1,28 @@
+platform: Longleaf
+slurm_job_id: 4892100
+slurm_job_partition: spill
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 24576
+node: c130405.ll.unc.edu
+job_prefix_intended: r7ppi_S2b
+stage: S2b
+unit: theta2_recount
+frame_id: 89b5f4ed-6180-409e-831d-0fecc6ce5f4e
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python3.11
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 4644d70b18f2593d1d0b6fd6f85654d7c0268bb7
+snapshot: /work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/4644d70b18f2593d1d0b6fd6f85654d7c0268bb7
+command: round7_ppi_s2b_theta2.py --mode recount --d0-dir /work/users/w/e/weiyang/hest_replication/results/round7/ppi/S2b_diagnostics/theta2_recount/d0 --out-dir .
+config: {"command":"round7_ppi_s2b_theta2.py --mode recount --d0-dir /work/users/w/e/weiyang/hest_replication/results/round7/ppi/S2b_diagnostics/theta2_recount/d0 --out-dir .","inputs":[],"snapshot_commit":"4644d70b18f2593d1d0b6fd6f85654d7c0268bb7","stage":"S2b","unit":"theta2_recount"}
+config_sha256: 358178623a39e99edba4d446dff08b3abc1d4d23185f37d4c84437df73db7b34
+start: 2026-10-14T13:09:29-04:00
+end: 2026-10-14T13:09:55-04:00
+elapsed_s: 25.6
+status: FAILED KeyError
+scripts_executed (md5, path relative to snapshot):
+  3f37e77c2abe22afa6eca8772282f4f0  code/scripts/round7_ppi_run.py
+  e78b239530bfc3d67cd484fe45121dce  code/scripts/round7_ppi_s2b_theta2.py
+inputs (md5, path):

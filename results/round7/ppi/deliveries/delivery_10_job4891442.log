@@ -1,0 +1,40 @@
+r7ppi_ i02 delivery 10 slurm_job_id=4891442 partition=spill account=rc_htzhu_pi node=c0311.ll.unc.edu date=2026-10-14T12:58:05-04:00
+bundle_md5=4c8b737251c70e6e843c51fae4ba31bb
+head_before=83f9970b50d548de41f3a4901efa53e47d0f5121
+/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/42439cb3-207f-4b20-ab46-d5ccf2e1a1af/r7ppi_delivery_10.bundle is okay
+The bundle contains this ref:
+4644d70b18f2593d1d0b6fd6f85654d7c0268bb7 refs/heads/round7-ppi
+The bundle requires this ref:
+83f9970b50d548de41f3a4901efa53e47d0f5121 
+The bundle uses this hash algorithm: sha1
+verify_rc=0
+From /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/42439cb3-207f-4b20-ab46-d5ccf2e1a1af/r7ppi_delivery_10.bundle
+ * branch              round7-ppi -> FETCH_HEAD
+[file list of the fast-forward omitted; full log at /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/42439cb3-207f-4b20-ab46-d5ccf2e1a1af]
+merge_rc=0
+head_after=4644d70b18f2593d1d0b6fd6f85654d7c0268bb7
+commits_carried:
+4644d70b18f2593d1d0b6fd6f85654d7c0268bb7 Round 7 PPI S2b: theta2 recount, per-population simulation output, Broska and Howes small-sample variants
+a8c335e260f6d28be2f5ca95cfee33a93f87fa86 Round 7 PPI i02: plan transcription of the S2 memo, predictions S2b.1 to S3.5 before any run
+72431846d9a52b8e9a355f989829060720599e2e Docs: round 7 S2 decision memo, unchanged from main (opens interval i02)
+07808abd4c056cdd8298b05432e21e66c1506048 Round 7 PPI: S2 gate report, S1 and S2 results, ledgers and provenance index
+snapshot=/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/4644d70b18f2593d1d0b6fd6f85654d7c0268bb7
+snapshot_files=321
+snapshot_writable_files=0
+2de31569ffe72239062fbeb0c9a50fc5  round5_ppi_estimator.py
+e13183a4ffdddf4f01ba5136844c606d  round5_ppi_twolevel.py
+d78b654d7fd8e6a824f73dd50ee2a0c1  round5_ppi_balance.py
+059c18e1b4998b1ac9c9685ba324a872  round5_ppi_e4b_rejective.py
+122375c3acb103ed93e3e687644d7f6d  round5_ppi_common.py
+31d5b0e396d85d3c49709f216d89d4af  round7_ppi_d2.py
+93069cf054df1796ba64ce6c8d597d09  round7_ppi_i01_numbers.py
+c8ad6fd5f63296a85c7f664d871631bb  round7_ppi_merge.py
+a7ba2f2d8dfd181bf6bc89eb74e6f8a7  round7_ppi_provenance_index.py
+3f37e77c2abe22afa6eca8772282f4f0  round7_ppi_run.py
+46995769fdd92c8982531dfa96b7892c  round7_ppi_s0_anchors.py
+9e945ff59c4363a5121e16335e2d6dcb  round7_ppi_s1_masking.py
+b434987d5bc590945ec3486530bc9681  round7_ppi_s1_sim.py
+7874b9fb676ef6047d2a05c71a2071e4  round7_ppi_s1_tests.py
+e78b239530bfc3d67cd484fe45121dce  round7_ppi_s2b_theta2.py
+a30b7507a4c1e2d4a0efdc76a5032871  round7_ppi_s2_comparators.py
+19137aac514748f8aa6b054157067e29  round7_ppi_weighting.py
