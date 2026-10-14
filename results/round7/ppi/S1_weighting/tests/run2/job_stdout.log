@@ -1,0 +1,68 @@
+G51_n8_k1_normal_pa0.1
+G51_n8_k1_normal_pa0.01
+G51_n8_k1_skewed_pa0.1
+G51_n8_k1_skewed_pa0.01
+G51_n8_k2_normal_pa0.1
+G51_n8_k2_normal_pa0.01
+G51_n8_k2_skewed_pa0.1
+G51_n8_k2_skewed_pa0.01
+G24_n8_k1_normal_pa0.1
+G24_n8_k1_normal_pa0.01
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/ba3129e41d6557f29c56b7a020d73ef9d4c7edbd/code/scripts/round7_ppi_s1_tests.py:126: RuntimeWarning: divide by zero encountered in divide
+  value=float(np.median(np.abs(P / pgh_e[0][off] - 1)))))
+G24_n8_k1_skewed_pa0.1
+G24_n8_k1_skewed_pa0.01
+G15_n6_k2_normal_pa0.1
+G15_n6_k2_normal_pa0.01
+G15_n6_k2_skewed_pa0.1
+G15_n6_k2_skewed_pa0.01
+                   test                           cell         value                         tolerance  passed                                                                   note
+0         A_HT_unbiased     G51_n8_k1_normal_pa0.1_sim -5.899716e-01                          |z| <= 3    True                                                       classical z 1.58
+1   B_SYG_mean_over_emp         G51_n8_k1_normal_pa0.1  9.829893e-01  within 0.10 when support >= 1000    True                                                       support 63676305
+2         A_HT_unbiased    G51_n8_k1_normal_pa0.01_sim  1.666475e+00                          |z| <= 3    True                                                       classical z 3.37
+3   B_SYG_mean_over_emp        G51_n8_k1_normal_pa0.01  1.013900e+00  within 0.10 when support >= 1000    True                                                        support 6367630
+4         A_HT_unbiased     G51_n8_k1_skewed_pa0.1_sim  2.557589e-01                          |z| <= 3    True                                                     classical z -16.00
+5   B_SYG_mean_over_emp         G51_n8_k1_skewed_pa0.1 -1.684028e-01  within 0.10 when support >= 1000   False                                                       support 63676305
+6         A_HT_unbiased    G51_n8_k1_skewed_pa0.01_sim -1.575752e+00                          |z| <= 3    True                                                     classical z -17.43
+7   B_SYG_mean_over_emp        G51_n8_k1_skewed_pa0.01  1.969453e-01  within 0.10 when support >= 1000   False                                                        support 6367630
+8         A_HT_unbiased     G51_n8_k2_normal_pa0.1_sim  1.606776e+00                          |z| <= 3    True                                                      classical z -4.83
+9   B_SYG_mean_over_emp         G51_n8_k2_normal_pa0.1  1.016081e+00  within 0.10 when support >= 1000    True                                                       support 63676305
+10        A_HT_unbiased    G51_n8_k2_normal_pa0.01_sim  9.759019e-01                          |z| <= 3    True                                                      classical z -6.62
+11  B_SYG_mean_over_emp        G51_n8_k2_normal_pa0.01  1.031688e+00  within 0.10 when support >= 1000    True                                                        support 6367630
+12        A_HT_unbiased     G51_n8_k2_skewed_pa0.1_sim  1.098893e+00                          |z| <= 3    True                                                      classical z -5.18
+13  B_SYG_mean_over_emp         G51_n8_k2_skewed_pa0.1  4.388911e-01  within 0.10 when support >= 1000   False                                                       support 63676305
+14        A_HT_unbiased    G51_n8_k2_skewed_pa0.01_sim -1.922839e-01                          |z| <= 3    True                                                      classical z -3.07
+15  B_SYG_mean_over_emp        G51_n8_k2_skewed_pa0.01  3.379459e-02  within 0.10 when support >= 1000   False                                                        support 6367630
+16    C_pi_sim_vs_exact         G24_n8_k1_normal_pa0.1  3.192091e+00                            <= 4.5    True  exact accepted set 73113; share of pairs with exact pi_gh = 0: 0.0000
+17        A_HT_unbiased     G24_n8_k1_normal_pa0.1_sim -1.508945e+00                          |z| <= 3    True                                                       classical z 0.68
+18  B_SYG_mean_over_emp         G24_n8_k1_normal_pa0.1  1.000476e+00  within 0.10 when support >= 1000    True                                                          support 73547
+19        A_HT_unbiased   G24_n8_k1_normal_pa0.1_exact -1.210104e+00                          |z| <= 3    True                                                       classical z 0.68
+20    C_pi_sim_vs_exact        G24_n8_k1_normal_pa0.01  2.579367e+00                            <= 4.5    True   exact accepted set 7459; share of pairs with exact pi_gh = 0: 0.0000
+21        A_HT_unbiased    G24_n8_k1_normal_pa0.01_sim  1.607246e+00                          |z| <= 3    True                                                       classical z 2.94
+22  B_SYG_mean_over_emp        G24_n8_k1_normal_pa0.01  1.012397e+00  within 0.10 when support >= 1000    True                                                           support 7355
+23        A_HT_unbiased  G24_n8_k1_normal_pa0.01_exact  1.237136e+00                          |z| <= 3    True                                                       classical z 2.94
+24    C_pi_sim_vs_exact         G24_n8_k1_skewed_pa0.1  2.089669e+00                            <= 4.5    True  exact accepted set 73118; share of pairs with exact pi_gh = 0: 0.0072
+25        A_HT_unbiased     G24_n8_k1_skewed_pa0.1_sim -2.771831e-01                          |z| <= 3    True                                                     classical z -20.31
+26  B_SYG_mean_over_emp         G24_n8_k1_skewed_pa0.1 -2.983142e-02  within 0.10 when support >= 1000   False                                                          support 73547
+27        A_HT_unbiased   G24_n8_k1_skewed_pa0.1_exact -4.493030e-01                          |z| <= 3    True                                                     classical z -20.31
+28    C_pi_sim_vs_exact        G24_n8_k1_skewed_pa0.01  2.530948e+00                            <= 4.5    True   exact accepted set 7354; share of pairs with exact pi_gh = 0: 0.0072
+29        A_HT_unbiased    G24_n8_k1_skewed_pa0.01_sim  1.541501e+00                          |z| <= 3    True                                                     classical z -20.05
+30  B_SYG_mean_over_emp        G24_n8_k1_skewed_pa0.01 -3.019299e-02  within 0.10 when support >= 1000   False                                                           support 7355
+31        A_HT_unbiased  G24_n8_k1_skewed_pa0.01_exact  1.794931e+00                          |z| <= 3    True                                                     classical z -20.05
+32    C_pi_sim_vs_exact         G15_n6_k2_normal_pa0.1  1.746112e+00                            <= 4.5    True    exact accepted set 500; share of pairs with exact pi_gh = 0: 0.0000
+33        A_HT_unbiased     G15_n6_k2_normal_pa0.1_sim  1.483985e+00                          |z| <= 3    True                                                      classical z -4.48
+34  B_SYG_mean_over_emp         G15_n6_k2_normal_pa0.1  1.004894e+00  within 0.10 when support >= 1000    True                                             support 500, reported only
+35        A_HT_unbiased   G15_n6_k2_normal_pa0.1_exact  1.581219e+00                          |z| <= 3    True                                                      classical z -4.48
+36    C_pi_sim_vs_exact        G15_n6_k2_normal_pa0.01  1.739934e+00                            <= 4.5    True     exact accepted set 50; share of pairs with exact pi_gh = 0: 0.0000
+37        A_HT_unbiased    G15_n6_k2_normal_pa0.01_sim -9.569894e-01                          |z| <= 3    True                                                      classical z -9.94
+38  B_SYG_mean_over_emp        G15_n6_k2_normal_pa0.01  9.190678e-01  within 0.10 when support >= 1000    True                                              support 50, reported only
+39        A_HT_unbiased  G15_n6_k2_normal_pa0.01_exact -7.465775e-01                          |z| <= 3    True                                                      classical z -9.94
+40    C_pi_sim_vs_exact         G15_n6_k2_skewed_pa0.1  1.429173e+00                            <= 4.5    True    exact accepted set 502; share of pairs with exact pi_gh = 0: 0.0095
+41        A_HT_unbiased     G15_n6_k2_skewed_pa0.1_sim -4.678980e-01                          |z| <= 3    True                                                     classical z -22.24
+42  B_SYG_mean_over_emp         G15_n6_k2_skewed_pa0.1  5.297732e-01  within 0.10 when support >= 1000    True                                             support 500, reported only
+43        A_HT_unbiased   G15_n6_k2_skewed_pa0.1_exact -4.804671e-01                          |z| <= 3    True                                                     classical z -22.24
+44    C_pi_sim_vs_exact        G15_n6_k2_skewed_pa0.01  1.737881e+00                            <= 4.5    True     exact accepted set 50; share of pairs with exact pi_gh = 0: 0.0571
+45        A_HT_unbiased    G15_n6_k2_skewed_pa0.01_sim -2.180888e+00                          |z| <= 3    True                                                     classical z -37.39
+46  B_SYG_mean_over_emp        G15_n6_k2_skewed_pa0.01 -1.819681e+00  within 0.10 when support >= 1000    True                                              support 50, reported only
+47        A_HT_unbiased  G15_n6_k2_skewed_pa0.01_exact -2.103606e+00                          |z| <= 3    True                                                     classical z -37.39
+48       D_srs_identity             G24n8,G51n4,G15n12  8.900043e-14                          <= 1e-12    True                           max abs theta diff and max relative var diff

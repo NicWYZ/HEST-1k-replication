@@ -1,0 +1,32 @@
+platform: Longleaf
+slurm_job_id: 4820550
+slurm_job_partition: spill
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 4096
+node: c151404.ll.unc.edu
+job_prefix_intended: r7ppi_S2
+stage: S2
+unit: tests_bh
+frame_id: 89b5f4ed-6180-409e-831d-0fecc6ce5f4e
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python3.11
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: ba4853e668f494050b4d0ca3bbe04a7ef4f985bb
+snapshot: /work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/ba4853e668f494050b4d0ca3bbe04a7ef4f985bb
+command: round7_ppi_s1_tests.py --part bh
+config: {"command":"round7_ppi_s1_tests.py --part bh","inputs":[],"snapshot_commit":"ba4853e668f494050b4d0ca3bbe04a7ef4f985bb","stage":"S2","unit":"tests_bh"}
+config_sha256: a75bc5e24324e6ee5490de0a3a472ba503a44a50663883177f42e67fcd4ca484
+start: 2026-10-13T22:00:14-04:00
+end: 2026-10-13T22:00:17-04:00
+elapsed_s: 3.6
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  d79e69aa65800b9d24de556e019a0c64  code/scripts/round4_ppi_estimator.py
+  d78b654d7fd8e6a824f73dd50ee2a0c1  code/scripts/round5_ppi_balance.py
+  2de31569ffe72239062fbeb0c9a50fc5  code/scripts/round5_ppi_estimator.py
+  3f37e77c2abe22afa6eca8772282f4f0  code/scripts/round7_ppi_run.py
+  0c7fe699f5214ed051ea50051ade3690  code/scripts/round7_ppi_s1_tests.py
+  656448ed210c855998075b423b06bfde  code/scripts/round7_ppi_weighting.py
+inputs (md5, path):

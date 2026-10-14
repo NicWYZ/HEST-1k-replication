@@ -1,0 +1,40 @@
+r7ppi_ S0 delivery 04 slurm_job_id=4824339 partition=spill account=rc_htzhu_pi node=c0411.ll.unc.edu date=2026-10-13T22:15:07-04:00
+bundle_md5=dd97ff96ce610cab723bcad5c4556cd0
+head_before=ba4853e668f494050b4d0ca3bbe04a7ef4f985bb
+/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/97fdd88c-572f-4f3f-9859-7162dfed1f45/r7ppi_delivery_04.bundle is okay
+The bundle contains this ref:
+ba3129e41d6557f29c56b7a020d73ef9d4c7edbd refs/heads/round7-ppi
+The bundle requires this ref:
+ba4853e668f494050b4d0ca3bbe04a7ef4f985bb 
+The bundle uses this hash algorithm: sha1
+verify_rc=0
+From /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/97fdd88c-572f-4f3f-9859-7162dfed1f45/r7ppi_delivery_04.bundle
+ * branch              round7-ppi -> FETCH_HEAD
+fetch_rc=0
+Updating ba4853e6..ba3129e4
+Fast-forward
+ code/scripts/round7_ppi_d2.py        |   2 +-
+ code/scripts/round7_ppi_s1_sim.py    | 203 +++++++++++++++++++++++++++++++++++
+ code/scripts/round7_ppi_s1_tests.py  |   7 +-
+ code/scripts/round7_ppi_weighting.py |   8 +-
+ 4 files changed, 215 insertions(+), 5 deletions(-)
+ create mode 100644 code/scripts/round7_ppi_s1_sim.py
+merge_rc=0
+head_after=ba3129e41d6557f29c56b7a020d73ef9d4c7edbd
+commits_carried:
+ba3129e41d6557f29c56b7a020d73ef9d4c7edbd Round 7 PPI S1: acceptance tolerance at the threshold, sim driver, test reports zero pairs
+snapshot=/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/ba3129e41d6557f29c56b7a020d73ef9d4c7edbd
+snapshot_files=316
+snapshot_writable_files=0
+2de31569ffe72239062fbeb0c9a50fc5  round5_ppi_estimator.py
+e13183a4ffdddf4f01ba5136844c606d  round5_ppi_twolevel.py
+d78b654d7fd8e6a824f73dd50ee2a0c1  round5_ppi_balance.py
+059c18e1b4998b1ac9c9685ba324a872  round5_ppi_e4b_rejective.py
+122375c3acb103ed93e3e687644d7f6d  round5_ppi_common.py
+31d5b0e396d85d3c49709f216d89d4af  round7_ppi_d2.py
+3f37e77c2abe22afa6eca8772282f4f0  round7_ppi_run.py
+46995769fdd92c8982531dfa96b7892c  round7_ppi_s0_anchors.py
+9e945ff59c4363a5121e16335e2d6dcb  round7_ppi_s1_masking.py
+f14f4527435618596d0097ab41bb51e2  round7_ppi_s1_sim.py
+1a8521930d9120e22c553c35a9aec4a3  round7_ppi_s1_tests.py
+ee9f238c793912cd3045e88aba89c5e8  round7_ppi_weighting.py

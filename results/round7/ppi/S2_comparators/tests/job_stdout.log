@@ -1,0 +1,4 @@
+                                test         value                     tolerance  passed                                                                                        note
+0        bh_check1_example1_identity  1.652153e-15                      <= 1e-10    True  200 i.i.d. data sets, sizes 50-2000; max relative variance difference and max |theta diff|
+1  bh_constant_predictor_lambda_zero  0.000000e+00                          == 0    True                                                               Sigma_22 = 0 sets lambda to 0
+2         bh_check2_coverage_large_G  9.025000e-01  within 3 se (0.0142) of 0.90    True                                      G 2000, Bernoulli(0.2) whole clusters, 4000 replicates
