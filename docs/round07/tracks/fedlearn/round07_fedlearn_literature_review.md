@@ -1,5 +1,7 @@
 # Round 7, the federated learning track, literature review
 
+*Frozen at the close of round 7, 15 October 2026.*
+
 Living document of the execution session, first written on 13 October 2026 for the F2 gate. It is frozen at the round's close. It answers the questions of section 2.2 of `docs/round07/i01/fedlearn/round07_fedlearn_track.md`, gives a verdict on each route and candidate concept, and states what the search found on novelty. It does not choose the paper's framing and does not take a side between the advisors.
 
 ## 1. How this review was made, and how to read it

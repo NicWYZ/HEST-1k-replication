@@ -1,5 +1,7 @@
 # Round 7, masterplan
 
+*Frozen at the close of round 7, 15 October 2026.*
+
 *Living while the round runs. The oversight chat revises it by appending dated amendments at the end, and the text above them is not rewritten. It is frozen at the round's close.*
 
 Written on 13 October 2026 by the oversight chat, after Nicolas confirmed the skeleton in chat the same day. The full instruction to the execution session of the one track opened now is `i01/fedlearn/round07_fedlearn_track.md`.
@@ -72,3 +74,8 @@ The fedlearn track's closing memo is written after its F4 report is reviewed and
 
 - 13 October 2026. The PPI positioning note is written (`oversight/round07_ppi_positioning.md`). It recommends accepting O2 with three changes. The core question becomes inclusion-probability weighting for fixed-size rejective selection at few clusters, beside Kluger et al.'s independent Bernoulli selection. Broska and Howes's interval becomes a comparator in every design. And the adaptive arm becomes a cluster-level version of Chen et al.'s balanced design. The PPI track is still not opened, and waits for Nicolas's decision on O2.
 - 13 October 2026, evening. Nicolas accepted O2 with the positioning note's three changes. The `ppi` track opens with its instruction `i01/ppi/round07_ppi_track.md`, branch `round7-ppi`, a Claude Science session from the reused PPI clone `~/hest-1k/HEST-1k-replication-PPI`, computation on Longleaf, stages S0 to S5 with gates at S2, S4 and S5. It runs at the same time as `fedlearn`, with disjoint areas. An independent agent checked the instruction before commit and its findings were worked in. The round now closes when both tracks' closing memos are written and merged.
+- 13 October 2026, night. The F2 memo (`i02/fedlearn/round07_fedlearn_F2_decisions.md`) fixed the fedlearn track's second interval, with V1 and V2 as proposed and V3 (the cost of differential privacy) and V4 (partial gene overlap) added.
+- 14 October 2026. The F4 memo (`i03/fedlearn/round07_fedlearn_final_decisions.md`) closed the fedlearn track. Whether it becomes a paper is Nicolas's decision with his advisors (R7-4).
+- 14 October 2026. The S2 memo (`i02/ppi/round07_ppi_S2_decisions.md`) fixed the ppi track's second interval, adding S2b (a recount of $\theta_2$, the simulation bias by population, and Broska and Howes's interval with small-sample corrections) before S3 and S4.
+- 14 October 2026, night. The S4 memo (`i03/ppi/round07_ppi_S4_decisions.md`) added S4b, the cube design balanced also on the constant, before S5.
+- 15 October 2026. The closing memo of the ppi track (`i04/ppi/round07_ppi_final_decisions.md`) closed it. Both tracks ended and the round closed the same day.

@@ -1,5 +1,7 @@
 # Round 7, the inference track, operating plan
 
+*Frozen at the close of round 7, 15 October 2026.*
+
 Living document. Written 14 October 2026 by the execution session and approved by Nicolas the same day, from `docs/round07/i01/ppi/round07_ppi_track.md` at the starting commit. Section 9 is section 7 of the track document transcribed unchanged. Sections 1 to 8 say how I will carry it out. Nothing in this plan changes the track document. Where the two differ, the track document holds and the difference is a mistake in this plan.
 
 ## 0. Current state

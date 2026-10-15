@@ -1,5 +1,7 @@
 # Round 7, the inference track on choosing the labelled clusters, instruction
 
+*Frozen at the close of round 7, 15 October 2026.*
+
 13 October 2026. Prepared by the oversight chat for a fresh Claude Science session. This document is self-contained. The track starts from `main` of `NicWYZ/HEST-1k-replication` at the commit that carries the first version of this document, on its own branch `round7-ppi`. Record that commit's hash in your plan. Read this document fully, then transcribe section 7 into `docs/round07/tracks/ppi/round07_ppi_plan.md` before running anything.
 
 This instruction stays living on `main` while the track runs. The oversight chat revises it in place and adds a dated line below. When Nicolas tells you to check for updates, fetch `main`, read the revisions, and transcribe any change into your plan.
