@@ -6,18 +6,18 @@ Living document. Written 14 October 2026 by the execution session and approved b
 
 | field | value |
 |---|---|
-| stage | Interval i02 opened by `docs/round07/i02/ppi/round07_ppi_S2_decisions.md` (committed unchanged as `72431846`). S2b, S3 and S4 done on 14 October. The S4 report is written and the track stops at the S4 gate |
+| stage | Interval i03 opened by `docs/round07/i03/ppi/round07_ppi_S4_decisions.md` (committed unchanged as `4d99b33d`). The S4 gate is accepted. Next is S4b, then S5, the closing gate |
 | starting commit | `c2af4630fe601c255c927d2a3f5a76b19a53d9f2` (13 October 2026, "Docs: open round 7's inference track after O2 was accepted") |
-| `origin/main` when read | `72c630c6` (14 October 2026, merge of pull request #30, `round7-fedlearn`), after pull request #29 (`round7-ppi`, S2 gate) was merged as `2063d248`. The track document has no revision after 13 October there |
+| `origin/main` when read | `febfc9a8` (15 October 2026, merge of pull request #31, the S4 gate), with the S4 memo at `cebb34d6`. `docs/EXECUTION_RULES.md` and the track document have no revision since the S2 memo |
 | standing rules | `docs/EXECUTION_RULES.md` at its revision of 14 October, read in full, adopted from the S2 memo on |
 | track document revisions transcribed | the two lines dated 13 October 2026 (first version, and the revision before handover) |
 | branch | `round7-ppi` from `c2af4630`, with nothing merged into it |
 | Longleaf code clone | `/work/users/w/e/weiyang/hest_code/round7-ppi/`, made by Slurm job 4816458 |
 | last delivered commit | `d2b64931ae91498ac1d8085b01b288f06d591680` (delivery 15, Slurm job 4903007) |
-| open pull request | the S4 gate pull request from `round7-ppi`, opened after the commit tagged `round7-ppi-S4`; its number is in the chat handover (#29 merged) |
+| open pull request | none (#29 and #31 merged) |
 | plan extensions | none |
-| escalations recorded for the next report | recount job 4892100 failed on a merge bug and was rerun; delivery 10 carried the S2 gate commit's results to the code clone; the S3 primary variance fails its test at small $G$; two S3 sub-agents stopped on a connection error and were resumed |
-| next action | the S4 decision memo. Nothing of S5 starts before it |
+| escalations recorded for the next report | none yet in i03 |
+| next action | theory section 3 for S4b, then the S4b sampler test |
 
 A restarted session resumes from this block, the job ledger `results/round7/ppi/r7ppi_slurm_jobs.csv` and `results/round7/ppi/code_deliveries.csv`.
 
@@ -75,7 +75,7 @@ S0 is capped at one day. Expected Slurm use is four short jobs (clone, delivery,
 
 ## 5. Fan-out
 
-| stage | Interval i02 opened by `docs/round07/i02/ppi/round07_ppi_S2_decisions.md` (committed unchanged as `72431846`). S2b, S3 and S4 done on 14 October. The S4 report is written and the track stops at the S4 gate |
+| stage | Interval i03 opened by `docs/round07/i03/ppi/round07_ppi_S4_decisions.md` (committed unchanged as `4d99b33d`). The S4 gate is accepted. Next is S4b, then S5, the closing gate |
 |---|---|---|
 | S0 | none, the lead does it | lead |
 | S1 | six task units (`CCRCC`, `CCRCC_merged`, `INDIANA_KIDNEY`, `LUNG_XENIUM`, `ACS_STATES`, `ACS_CA_PUMA`) and one simulation unit | sub-agents for the runs, the lead for the theory section and the synthetic test |
@@ -93,7 +93,7 @@ Nothing of S3, S4 or S5 is set up, staged or piloted before the corresponding de
 
 ## 7. Predictions
 
-Copied from the track document before any run, and for interval i02 from section 6 of the S2 memo before any i02 run. Each is scored in its gate report as held, partly held, refuted or not tested.
+Copied from the track document before any run, for interval i02 from section 6 of the S2 memo before any i02 run, and for interval i03 from section 5 of the S4 memo before any i03 run. Each is scored in its gate report as held, partly held, refuted or not tested.
 
 | id | prediction | status |
 |---|---|---|
@@ -116,6 +116,9 @@ Copied from the track document before any run, and for interval i02 from section
 | S3.3 | In every S3 cell the smallest $\hat\pi_g$ is at least $0.45\,n_L/G$ | held (S4 report, section 5) |
 | S3.4 | On the supported real-task cells, S3's Hájek interval with its primary variance covers within 0.03 of D0 classical in at least 0.85 of the cells, where D2's Hájek interval with simulated pair probabilities did so in 0.71 | refuted (S4 report, section 5) |
 | S3.5 | At $n_L = 8$ with own balance, the cube design's Hájek interval is narrower than the Hájek interval under the mixture of D2 and D0 in at least three quarters of the supported cells | refuted, narrowly (S4 report, section 5) |
+| S4b.1 | On census at $n_L = 8$, the Hájek interval under the cube design with $\pi_g$, $1$ and $\bar f_g$ balanced has a width at most 0.70 of D0 classical, in the median over the informative cells | not tested |
+| S4b.2 | On the matched supported tissue cells at $n_L = 8$, its width is within 0.03 of the S3 cube design's, and its coverage within 0.03 of D0 classical | not tested |
+| S4b.3 | Its Horvitz-Thompson width on census at $n_L = 8$ is below 1 | not tested |
 
 ## 8. Plan extensions
 
@@ -221,10 +224,35 @@ Transcribed on 14 October 2026 from section 5 of `docs/round07/i02/ppi/round07_p
 
 - [x] **Theory section 4** before the run (14 Oct, commit `4102a38c`).
 - [x] **Runs** (14 Oct, pilot 4902613; four sub-agents, 20 jobs on snapshot `4102a38c`; merge 4903160 into `S4_kcenter/_merged/`), four tissue units, as section 9 says, with `bh_t` and `bh_t_fpc` beside Broska and Howes and the Hájek interval with `apx_size` added, its exact coverage by enumeration of the $G$ starts. Outputs in `results/round7/ppi/S4_kcenter/`.
-- [ ] **S4 report** in `docs/round07/i02/ppi/round07_ppi_S4_report.md`, covering S2b, S3 and S4 in the format of section 7 of `docs/EXECUTION_RULES.md`, with S3.1 to S4.2 and S2b.1 to S3.5 scored, the `LUNG_XENIUM` $\theta_2$ cells at $n_L = 12$ and $p_a = 0.01$ listed as degenerate. Sweep, commit, tag `round7-ppi-S4`, push branch and tag together, open one pull request, confirm it, and stop.
+- [x] **S4 report** (14 Oct, commit `96b8ee28`, tag `round7-ppi-S4`, pull request #31, merged as `febfc9a8`) in `docs/round07/i02/ppi/round07_ppi_S4_report.md`, covering S2b, S3 and S4 in the format of section 7 of `docs/EXECUTION_RULES.md`, with S3.1 to S4.2 and S2b.1 to S3.5 scored, the `LUNG_XENIUM` $\theta_2$ cells at $n_L = 12$ and $p_a = 0.01$ listed as degenerate. Sweep, commit, tag `round7-ppi-S4`, push branch and tag together, open one pull request, confirm it, and stop.
 
 **Exit items.** S2b item 1 confirms or corrects the memo's section 3 cell by cell. The cube test passes or its fallback is recorded. Every cell has run or is listed. The predictions are scored. The provenance index passes both checks.
 
 ### 10.1 What looks wrong, flagged without changing the memo
 
 1. `docs/EXECUTION_RULES.md` section 5 asks for the pull request's number in the report, and also allows one push per gate. The pull request can only be opened after the commit that holds the report. At the S2 gate the report said so and gave the number in chat. I will do the same at S4 unless the memo for S4 says otherwise.
+
+## 11. Interval i03, as fixed by the S4 memo
+
+Transcribed on 15 October 2026 from sections 3 and 5 of `docs/round07/i03/ppi/round07_ppi_S4_decisions.md`, committed unchanged as `4d99b33d`. The memo accepts the S4 gate. S4b runs first, then S5, which is the track's closing gate. Nothing beyond S4b and S5 is set up, staged or piloted. From S4b on, the Sen-Yates-Grundy form with simulated $\hat\pi_{gh}$ is the cube design's interval, with the residual form beside it and its failure stated (memo section 3, item 6).
+
+### S4b. The cube design with the constant balanced (capped at one day)
+
+- [ ] **Theory.** In theory section 3, the cube design with balance variables $\pi_g$, $1$ and $\bar f_g$. Why the constant makes $\hat N = G$, what that does to the Hájek and Horvitz-Thompson means, and a check that the flight phase can meet three balance equations at every $n_L$ of the grid. Written before any S4b run.
+- [ ] **Sampler test.** S3's test repeated for the new design, before any other S4b run.
+- [ ] **Runs.** The new design with the first score on all six tasks of the masking grid and on the simulation cells with $n_L \ge 8$. Hájek and Horvitz-Thompson means, the Sen-Yates-Grundy form with simulated $\hat\pi_{gh}$ (primary) and the residual form. Outputs in `results/round7/ppi/S4b_cube_constant/`, merged as in S3 with the stamp check.
+- [ ] **Numbers** for S4b.1 to S4b.3 on Longleaf, copied back.
+
+### S5. The closing report (one day; gate, end of track)
+
+- [ ] **Numbers job** from the merged tables of S1 to S4b, with no new draws, into `results/round7/ppi/S5_numbers/`. Matched cells across designs (task, arm, estimand, $n_L$), D2 cells with support of at least 1,000, degenerate cells dropped, each table with its cell count. Coverage over all draws (a draw without an interval is a miss) as the primary figure, with coverage over formed draws and the share formed beside it. The informative-cell tables of the memo's section 2 at every $n_L$ and both $p_a$, for D0 classical and tuned, D2 `rej_t`, the cube designs of S3 and S4b, the mixture, `bh` and `bh_t`, tissue and census apart, widths against D0 classical and against `rej_t`. `bh_t` and `bh_t_n2` against the tuned interval by $n_L$, for the design target with `textbook_t|fpc|lin|xf` and for the superpopulation target with round 5's tuned superpopulation interval. The control arms (constant, permuted, `perm_cluster`) in a separate table. Horvitz-Thompson and Hájek widths and balance residuals of every cube design, by domain.
+- [ ] **Theory note** in section 2.1 on $\rho_{\mathrm{BH}}$, that the derivation holds $\lambda$ fixed while the empirical variance includes the noise of $\hat\lambda$, marked as an explanation not derived or checked.
+- [ ] **Final report** in `docs/round07/i03/ppi/round07_ppi_final_report.md`, covering S4b and S5 in the format of section 7 of `docs/EXECUTION_RULES.md`, S4b's predictions scored, ending with the closing page "What the inference track established in round 7" as the memo's section 5, item S5.3, describes.
+- [ ] **Sweep, commit, tag `round7-ppi-final`,** push branch and tag together once, open one pull request, confirm it, and stop.
+
+### 11.1 What looks wrong, flagged without changing the memo
+
+1. With uniform probabilities (the constant arm, whose first score is zero everywhere) $\pi_g$ and $1$ are proportional, so the three balance equations have rank 2 there and the new design is S3's. The flight phase works on rank, not on the count of variables, so this needs no special case, and the theory says so.
+2. The landing phase drops balance variables to finish. I will drop $\bar f_g$ first and the constant second, keeping the fixed size to the end, so $\hat N = G$ holds exactly only when the landing ends before the constant is dropped. The theory and the runs report how often $\hat N \neq G$ and by how much.
+3. S4b.2 compares widths "within 0.03". I read it as the width ratio to D0 classical, with the Sen-Yates-Grundy form on both designs, on the memo's matched cells (informative arms, own balance, D2 support of at least 1,000 at $p_a = 0.01$), and coverage over all draws.
+4. As at S2 and S4, the pull request's number can only be given in chat, since the report is in the commit the pull request opens from.
