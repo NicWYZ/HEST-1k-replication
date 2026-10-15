@@ -275,13 +275,127 @@ def run_s4(a):
     print(len(st), int(st["merged"].sum()), len(cells))
 
 
+INFORMATIVE = ("hoptimus0", "uni_v2", "resnet50", "package")
+CENSUS = ("ACS_STATES", "ACS_CA_PUMA")
+
+
+def s3_cube_genes(root, tasks):
+    """S3's per-gene rows for cube_u1, the Hajek and HT means with the Sen-Yates-Grundy form (S3's t_{n-2})."""
+    base = os.path.join(root, "results/round7/ppi/S3_adaptive")
+    out = []
+    for t in tasks:
+        for f in sorted(glob.glob(os.path.join(base, t, "*", "s3m_genes__*.csv.gz"))):
+            g = pd.read_csv(f, low_memory=False)
+            out.append(g[(g["design"] == "cube_u1") & (g["estimator"].isin(["H", "HT"])) & (g["variance"] == "sim")])
+    return pd.concat(out, ignore_index=True)
+
+
+def run_s4b(a):
+    """S4 memo, section 5: merge S4b and score S4b.1 to S4b.3 on the memo's matched informative cells."""
+    sd = "S4b_cube_constant"
+    base = os.path.join(a.root, "results/round7/ppi", sd)
+    asg = pd.read_csv(os.path.join(a.clone, "results/round7/ppi", sd, "s4b_assigned_frame_ids.csv"))
+    assigned = dict(zip(asg["unit"], asg["frame_id"]))
+    tasks = [t for t in assigned if t != "sim"]
+    st, dirs = stamps(base, assigned, tasks + ["sim"])
+    st.to_csv("s4b_stamp_check.csv", index=False)
+    mdirs = [d for d in dirs if "/sim/" not in d]
+    sdirs = [d for d in dirs if "/sim/" in d]
+    cells = read_all(mdirs, "s4bm_cells__*.csv")
+    genes = read_all(mdirs, "s4bm_genes__*.csv.gz")
+    diag = read_all(mdirs, "s4bm_diag__*.csv")
+    diag.to_csv("s4b_masking_diag.csv", index=False, float_format="%.10g")
+    read_all(mdirs, "s4bm_skipped__*.csv").to_csv("s4b_skipped.csv", index=False)
+    g1 = s1_genes(a.root, tasks)
+    comp = comparators(g1)
+    key = ["vtag", "arm", "estimand", "n_L", "gene"]
+    g = genes.merge(comp, on=key, how="left")
+    s3g = s3_cube_genes(a.root, tasks)[key + ["estimator", "width", "coverage", "share_formed"]].rename(
+        columns={"width": "width_S3cube", "coverage": "coverage_S3cube", "share_formed": "share_formed_S3cube"})
+    g = g.merge(s3g, on=key + ["estimator"], how="left")
+    g["wr_D0cl"] = g["width"] / g["width_D0cl"]
+    g["wr_S3cube_D0cl"] = g["width_S3cube"] / g["width_D0cl"]
+    g["wr_S3cube"] = g["width"] / g["width_S3cube"]
+    for pa_ in (0.1, 0.01):
+        g[f"wr_D2rej_pa{pa_}"] = g["width"] / g[f"width_D2rej_pa{pa_}"]
+    ck = ["vtag", "arm", "estimand", "n_L", "design", "estimator", "variance", "ref"]
+    agg = g.groupby(ck, dropna=False).agg(
+        wr_D0cl_median=("wr_D0cl", "median"), wr_S3cube_D0cl_median=("wr_S3cube_D0cl", "median"),
+        wr_S3cube_median=("wr_S3cube", "median"), wr_D2rej_pa01_median=("wr_D2rej_pa0.1", "median"),
+        wr_D2rej_pa001_median=("wr_D2rej_pa0.01", "median"), coverage_D0cl_median=("coverage_D0cl", "median"),
+        coverage_all_D0cl_median=("coverage_all_D0cl", "median")).reset_index()
+    grid = cells.merge(agg, on=ck, how="left")
+    d1 = pd.read_csv(os.path.join(a.root, "results/round7/ppi/S1_weighting/_merged/s1_masking_diag.csv"))
+    d1 = d1[(d1["part"] == "D2") & (d1["balance"] == "own") & np.isclose(d1["p_a"], 0.01)][["vtag", "arm", "estimand", "n_L", "support"]]
+    grid = grid.merge(d1.rename(columns={"support": "support_D2own_pa001"}), on=["vtag", "arm", "estimand", "n_L"], how="left")
+    grid.to_csv("s4b_masking_grid.csv", index=False, float_format="%.10g")
+    sim = read_all(sdirs, "s4b_sim__*.csv")
+    sim.to_csv("s4b_sim.csv", index=False, float_format="%.10g")
+    N = Numbers(); SG, SD, SS = "s4b_masking_grid.csv", "s4b_masking_diag.csv", "s4b_sim.csv"
+    N.add("S4b_stamp_dirs", len(st), "s4b_stamp_check.csv"); N.add("S4b_stamp_merged", int(st["merged"].sum()), "s4b_stamp_check.csv")
+    N.add("S4b_masking_cells", len(diag), SD); N.add("S4b_sim_rows", len(sim), SS)
+    inf = grid[grid["arm"].isin(INFORMATIVE)]
+    cen = inf[inf["vtag"].isin(CENSUS)]
+    tis = inf[~inf["vtag"].isin(CENSUS) & (inf["support_D2own_pa001"] >= 1000)]
+    for ref in ("res", "n2"):
+        # S4b.1
+        x = cen[(cen["n_L"] == 8) & (cen["estimator"] == "H") & (cen["variance"] == "sim") & (cen["ref"] == ref)]
+        N.add(f"S4b.1_census_nL8_H_sim_wr_D0cl_median|{ref}", float(x["wr_D0cl_median"].median()), SG, f"{len(x)} informative census cells")
+        N.add(f"S4b.1_census_nL8_S3cube_H_sim_wr_D0cl_median|{ref}", float(x["wr_S3cube_D0cl_median"].median()), SG)
+        N.add(f"S4b.1_census_nL8_H_sim_coverage_all_median|{ref}", float(x["coverage_all_median"].median()), SG)
+        # S4b.3
+        y = cen[(cen["n_L"] == 8) & (cen["estimator"] == "HT") & (cen["variance"] == "sim") & (cen["ref"] == ref)]
+        N.add(f"S4b.3_census_nL8_HT_sim_wr_D0cl_median|{ref}", float(y["wr_D0cl_median"].median()), SG, f"{len(y)} informative census cells")
+        N.add(f"S4b.3_census_nL8_S3cube_HT_sim_wr_D0cl_median|{ref}", float(y["wr_S3cube_D0cl_median"].median()), SG)
+        # S4b.2
+        z = tis[(tis["n_L"] == 8) & (tis["estimator"] == "H") & (tis["variance"] == "sim") & (tis["ref"] == ref)]
+        N.add(f"S4b.2_tissue_nL8_cells|{ref}", len(z), SG, "informative arms, D2 own support >= 1000 at p_a 0.01")
+        N.add(f"S4b.2_tissue_nL8_H_sim_wr_D0cl_median|{ref}", float(z["wr_D0cl_median"].median()), SG)
+        N.add(f"S4b.2_tissue_nL8_S3cube_H_sim_wr_D0cl_median|{ref}", float(z["wr_S3cube_D0cl_median"].median()), SG)
+        N.add(f"S4b.2_tissue_nL8_width_ratio_to_S3cube_median|{ref}", float(z["wr_S3cube_median"].median()), SG)
+        N.add(f"S4b.2_tissue_nL8_share_cells_wr_within_0.03_of_S3cube|{ref}",
+              float((np.abs(z["wr_D0cl_median"] - z["wr_S3cube_D0cl_median"]) <= 0.03).mean()), SG)
+        N.add(f"S4b.2_tissue_nL8_H_sim_coverage_all_median|{ref}", float(z["coverage_all_median"].median()), SG)
+        N.add(f"S4b.2_tissue_nL8_D0cl_coverage_all_median|{ref}", float(z["coverage_all_D0cl_median"].median()), SG)
+        N.add(f"S4b.2_tissue_nL8_share_cells_coverage_within_0.03_of_D0cl|{ref}",
+              float((np.abs(z["coverage_all_median"] - z["coverage_all_D0cl_median"]) <= 0.03).mean()), SG)
+    # by domain and n_L, informative cells, H and HT with both variances
+    for dom, x in (("census", cen), ("tissue_supported", tis), ("tissue_all", inf[~inf["vtag"].isin(CENSUS)])):
+        for (nL, est, var, ref), y in x.groupby(["n_L", "estimator", "variance", "ref"]):
+            if est not in ("H", "HT") or var not in ("sim", "res"):
+                continue
+            tg = f"{dom}|nL{nL}|{est}_{var}|{ref}"
+            N.add(f"S4b_cells|{tg}", len(y), SG)
+            N.add(f"S4b_coverage_all_median|{tg}", float(y["coverage_all_median"].median()), SG)
+            N.add(f"S4b_wr_D0cl_median|{tg}", float(y["wr_D0cl_median"].median()), SG)
+            N.add(f"S4b_est_over_emp_median|{tg}", float(y["est_over_emp_median"].median()), SG)
+            N.add(f"S4b_share_formed_min|{tg}", float(y["share_formed_min"].min()), SG)
+    for dom, x in (("census", diag[diag["vtag"].isin(CENSUS)]), ("tissue", diag[~diag["vtag"].isin(CENSUS)])):
+        for c_ in ("resid_N_median", "resid_f_median", "pi_hat_ratio_min_min", "share_pairs_pgh_zero", "pi_hat_vs_target_zmax"):
+            N.add(f"S4b_diag_median|{dom}|{c_}", float(x[c_].median()), SD)
+            N.add(f"S4b_diag_max|{dom}|{c_}", float(x[c_].max()), SD)
+        N.add(f"S4b_diag_min|{dom}|pi_hat_ratio_min_min", float(x["pi_hat_ratio_min_min"].min()), SD)
+        N.add(f"S4b_diag_max|{dom}|share_N_exact", float(x["share_N_exact"].max()), SD)
+    if len(sim):
+        y = sim[(sim["estimator"] == "H") & (sim["variance"].isin(["sim", "res"]))]
+        for (var, ref, law), x in y.groupby(["variance", "ref", "law"]):
+            tg = f"H_{var}|{ref}|law_{law}"
+            N.add(f"S4b_sim_coverage_median|{tg}", float(x["coverage_mean"].median()), SS, "n_L >= 8, over cells")
+            N.add(f"S4b_sim_coverage_min|{tg}", float(x["coverage_mean"].min()), SS)
+            N.add(f"S4b_sim_coverage_max|{tg}", float(x["coverage_mean"].max()), SS)
+            N.add(f"S4b_sim_share_within_0.03|{tg}", float((np.abs(x["coverage_mean"] - NOM) <= 0.03).mean()), SS, f"{len(x)} cells")
+            N.add(f"S4b_sim_est_over_emp_median|{tg}", float(x["est_over_emp_mean"].median()), SS)
+    N.write("s4b_report_numbers.csv")
+    print(len(st), int(st["merged"].sum()), len(cells), len(sim))
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--stage", choices=("S3", "S4"), required=True)
+    ap.add_argument("--stage", choices=("S3", "S4", "S4b"), required=True)
     ap.add_argument("--root", default="/work/users/w/e/weiyang/hest_replication")
     ap.add_argument("--clone", default="/work/users/w/e/weiyang/hest_code/round7-ppi")
     a = ap.parse_args()
-    run_s3(a) if a.stage == "S3" else run_s4(a)
+    dict(S3=run_s3, S4=run_s4, S4b=run_s4b)[a.stage](a)
 
 
 if __name__ == "__main__":

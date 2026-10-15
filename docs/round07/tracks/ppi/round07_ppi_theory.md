@@ -455,6 +455,14 @@ The second is the new one. When it holds, $\hat\theta_{\mathrm{H}} = \hat\theta_
 3. On tissue, where $\bar f_g$ varies little in level against its spread across genes, the new design changes little, so the width with S3's quantile is within 0.03 of S3's (S4b.2). With $t_{n_L - 3}$ it is about 4% wider.
 4. The residual form remains too small, as in section 3.8, for the same reason.
 
+### 3.10 What the S4b sampler test showed, written after it
+
+Slurm job 4950711 on the snapshot of `44032ae0`, read from `results/round7/ppi/S4b_cube_constant/tests/run1/s4b_tests.csv`. The sampler passes. No cluster of the 180 has $\hat\pi_g$ more than 3 Monte Carlo standard errors from its target (largest 2.82), and the Horvitz-Thompson mean with the target probabilities has standardised biases from $-1.08$ to $1.93$. No pair has $\hat\pi_{gh} = 0$. The rank of the balance variables is 3 in every cell.
+
+**$\hat N = G$ never holds exactly.** Expectation 1 of section 3.9 is wrong. In every draw of every cell the second landing stage has two units left to resolve, so the constant is always dropped before the end, and $\lvert\hat N/G - 1\rvert$ has a median of 0.028 to 0.048 and a largest value of 0.13 to 0.17. That is about one cluster's weight $1/\pi_g$ against $G$. The balance on $\bar f_g$ is left as inexact as under S3 (median relative residual 0.0725 to 0.1247).
+
+**The primary variance passes.** With the Sen-Yates-Grundy form, the mean of the Hájek variance over the empirical variance is 0.997, 0.977 and 0.985 in the normal-law cells at $G$ of 51, 24 and 15, and 1.003, 0.985 and 0.980 under the skewed law, so it is within 0.10 everywhere. The residual form gives 0.967, 0.829 and 0.913 in the normal-law cells, too small again at $G = 24$.
+
 ## 4. Greedy k-center (S4)
 
 Written on 14 October 2026, before any S4 run, from section 2.3 of the track document and the S4 part of section 5 of the S2 memo.
