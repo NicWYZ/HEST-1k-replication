@@ -88,7 +88,8 @@ def load(root):
                   take(g, (g["design"] == "cube_u1") & (g["estimator"] == "HT") & hs, "cube_S3_HT"),
                   take(g, (g["design"] == "cube_u2") & (g["estimator"] == "H") & hs, "cube_S3_u2"),
                   take(g, (g["design"] == "mix_D2D0") & (g["estimator"] == "H") & hs, "mixture", pa="col")]
-    s4bok = accepted(root, "S4b_cube_constant", "_merged/s4b_stamp_check.csv")
+    s4b_check = os.path.join(root, "results/round7/ppi/S4b_cube_constant/_merged/s4b_stamp_check.csv")
+    s4bok = accepted(root, "S4b_cube_constant", "_merged/s4b_stamp_check.csv") if os.path.exists(s4b_check) else set()
     for f in sorted(glob.glob(os.path.join(root, "results/round7/ppi/S4b_cube_constant/*/*/s4bm_genes__*.csv.gz"))):
         if os.path.dirname(f) not in s4bok:
             continue
@@ -176,7 +177,9 @@ def main():
     support = diag[diag["part"] == "D2"][CELL + ["balance", "p_a", "support"]]
     N = Numbers()
     # 1. matched informative cells, memo section 2
-    m = table(L, support, INFORMATIVE, MATCHED)
+    designs = [d for d in MATCHED if (L["design"] == d).any()]
+    N.add("S5_matched_designs", ",".join(designs), "s5_matched.csv")
+    m = table(L, support, INFORMATIVE, designs)
     mt = agg(m, ["domain", "n_L", "p_a", "design"])
     mt.to_csv("s5_matched.csv", index=False, float_format="%.10g")
     m.to_csv("s5_matched_cells.csv", index=False, float_format="%.10g")
@@ -208,7 +211,7 @@ def main():
         for k in ("n_cells", "coverage_all", "coverage", "share_formed_min", "wr_D0cl"):
             N.add(f"S5bt_{k}|{tg}", r[k], "s5_bh_vs_tuned.csv")
     # 3. controls
-    cc = table(L, support, CONTROLS, MATCHED)
+    cc = table(L, support, CONTROLS, designs)
     cc["group"] = cc["arm"]
     pc = table(L, support, INFORMATIVE, ["D0_classical", "D2pc_rej_t"], balance_support="perm_cluster")
     pc["group"] = "perm_cluster_balance"
@@ -226,7 +229,8 @@ def main():
     c["domain"] = np.where(c["vtag"].isin(CENSUS), "census", "tissue")
     cw = agg(c, ["domain", "n_L", "design"])
     d3 = pd.read_csv(os.path.join(a.root, "results/round7/ppi/S3_adaptive/_merged_r2/s3_masking_diag.csv"))
-    d4 = pd.read_csv(os.path.join(a.root, "results/round7/ppi/S4b_cube_constant/_merged/s4b_masking_diag.csv"))
+    p4 = os.path.join(a.root, "results/round7/ppi/S4b_cube_constant/_merged/s4b_masking_diag.csv")
+    d4 = pd.read_csv(p4) if os.path.exists(p4) else pd.DataFrame(columns=["vtag", "arm", "n_L", "resid_f_median", "resid_N_median"])
     res = []
     for dd, des, col_f, col_n in ((d3[d3["design"] == "cube_u1"], "cube_S3", "resid_median_eval", None),
                                   (d3[d3["design"] == "cube_u2"], "cube_S3_u2", "resid_median_eval", None),
