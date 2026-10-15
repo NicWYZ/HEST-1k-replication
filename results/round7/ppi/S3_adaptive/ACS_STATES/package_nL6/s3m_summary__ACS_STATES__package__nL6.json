@@ -1,0 +1,32 @@
+{
+ "tag": "ACS_STATES__package__nL6",
+ "wall_s": 92.87973165512085,
+ "n_cells": 6,
+ "n_rows": 60,
+ "args": {
+  "mode": "masking",
+  "out_dir": ".",
+  "draws": 2000,
+  "r_cap": 1000000,
+  "test_r": 1000000,
+  "test_eval": 20000,
+  "parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_STATES.parquet",
+  "perm_parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_STATES.parquet",
+  "ref_parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_STATES.parquet",
+  "ref_arm": "package",
+  "vtag": "ACS_STATES",
+  "arm": "package",
+  "nl": 6,
+  "estimands": "theta3,theta2",
+  "theta2_kind": "mean",
+  "designs": "cube_u1,cube_u2,mix",
+  "mix_pa": "0.1,0.01",
+  "max_genes": 0,
+  "root": "/work/users/w/e/weiyang/hest_replication",
+  "G": null,
+  "law": null,
+  "n_cand": 1000,
+  "r2": "0.0,0.2,0.4,0.7,0.9",
+  "lamstar": "0.6,1.2"
+ }
+}

@@ -1,0 +1,6 @@
+vtag,arm,estimand,G,Gall,n_L,design,balance,p_a,R,apx_size_nonpositive_fixed,pi_hat_vs_target_zmax,pi_hat_ratio_min_min,pi_hat_ratio_min_median,pi_target_ratio_min,pi_target_ratio_max,n_capped,share_pairs_pgh_zero,min_pair_count,inexact_share_eval,inexact_share_pi,resid_median_eval,wall_s,n_candidates,share_D2_draws,d2_share_pairs_pgh_zero,mix_share_pairs_pgh_zero,d2_pi_hat_sum_check,draws_with_lt2_valid
+LUNG_XENIUM,constant,theta3,15,15,8,cube_u1,"pi,own",,100000,0,3.530496675,0.51080625,0.56360625,0.5148397411,1.875,609,0,6208,1,1,0.109578878,279.5852997,,,,,,
+LUNG_XENIUM,constant,theta3,15,15,8,mix_D2D0,own,0.1,100000,0,,0.79233125,0.93216875,,,,,,,,,389.8395522,1020000,0.494,0.006663890046,0,1.776356839e-15,0
+LUNG_XENIUM,constant,theta3,15,15,8,mix_D2D0,own,0.01,100000,0,,0.6010625,0.8871125,,,,,,,,,578.6605253,10220000,0.5085,0.009107316396,0,1.776356839e-15,0
+LUNG_XENIUM,constant,theta2,9,15,8,mix_D2D0,own,0.1,100000,0,,0.7051625,0.95838125,,,,,,,,,698.42225,1020000,0.5195,0,0,0,0
+LUNG_XENIUM,constant,theta2,9,15,8,mix_D2D0,own,0.01,100000,0,,0.5,0.797909375,,,,,,,,,868.5376632,10280000,0.501,0.1011499838,0,0,0

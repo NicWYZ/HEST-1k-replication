@@ -1,0 +1,2 @@
+slurm_job_id,partition,node,stage,unit,frame_id,start,end,elapsed_s,status,commit,config_sha256,out_dir,command
+4900558,spill,c0414.ll.unc.edu,S3,pilot_sim_G51_s_k1_nL8,89b5f4ed-6180-409e-831d-0fecc6ce5f4e,2026-10-14T14:05:08-04:00,2026-10-14T14:42:46-04:00,2258.2,COMPLETED,df344a76cb3dbb1e5eea89da1c1e57d3ab001cb2,90e8e38617a8c640d95b1a60814903fa480fc961a76600c1c20d0bbb4db196f2,/work/users/w/e/weiyang/hest_replication/results/round7/ppi/S3_adaptive/_pilot/sim_G51_s_k1_nL8,round7_ppi_s3_cube.py sim --G 51 --law skewed --nl 8 --out-dir . --draws 1000

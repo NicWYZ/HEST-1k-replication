@@ -6,18 +6,18 @@ Living document. Written 14 October 2026 by the execution session and approved b
 
 | field | value |
 |---|---|
-| stage | Interval i02 opened by `docs/round07/i02/ppi/round07_ppi_S2_decisions.md` (committed unchanged as `72431846`). S2b done on 14 October. Next is S3, then S4, then the S4 gate |
+| stage | Interval i02 opened by `docs/round07/i02/ppi/round07_ppi_S2_decisions.md` (committed unchanged as `72431846`). S2b, S3 and S4 done on 14 October. The S4 report is written and the track stops at the S4 gate |
 | starting commit | `c2af4630fe601c255c927d2a3f5a76b19a53d9f2` (13 October 2026, "Docs: open round 7's inference track after O2 was accepted") |
 | `origin/main` when read | `72c630c6` (14 October 2026, merge of pull request #30, `round7-fedlearn`), after pull request #29 (`round7-ppi`, S2 gate) was merged as `2063d248`. The track document has no revision after 13 October there |
 | standing rules | `docs/EXECUTION_RULES.md` at its revision of 14 October, read in full, adopted from the S2 memo on |
 | track document revisions transcribed | the two lines dated 13 October 2026 (first version, and the revision before handover) |
 | branch | `round7-ppi` from `c2af4630`, with nothing merged into it |
 | Longleaf code clone | `/work/users/w/e/weiyang/hest_code/round7-ppi/`, made by Slurm job 4816458 |
-| last delivered commit | `3258eb1fa855899e7392c302ebcf2949f3ae3b29` (delivery 12, Slurm job 4892382) |
-| open pull request | none (#29 merged) |
+| last delivered commit | `d2b64931ae91498ac1d8085b01b288f06d591680` (delivery 15, Slurm job 4903007) |
+| open pull request | the S4 gate pull request from `round7-ppi`, opened after the commit tagged `round7-ppi-S4`; its number is in the chat handover (#29 merged) |
 | plan extensions | none |
-| escalations recorded for the next report | recount job 4892100 failed on a merge bug and was rerun; delivery 10 carried the S2 gate commit's results to the code clone |
-| next action | S3 theory section 3, then the cube method |
+| escalations recorded for the next report | recount job 4892100 failed on a merge bug and was rerun; delivery 10 carried the S2 gate commit's results to the code clone; the S3 primary variance fails its test at small $G$; two S3 sub-agents stopped on a connection error and were resumed |
+| next action | the S4 decision memo. Nothing of S5 starts before it |
 
 A restarted session resumes from this block, the job ledger `results/round7/ppi/r7ppi_slurm_jobs.csv` and `results/round7/ppi/code_deliveries.csv`.
 
@@ -75,7 +75,7 @@ S0 is capped at one day. Expected Slurm use is four short jobs (clone, delivery,
 
 ## 5. Fan-out
 
-| stage | units | who |
+| stage | Interval i02 opened by `docs/round07/i02/ppi/round07_ppi_S2_decisions.md` (committed unchanged as `72431846`). S2b, S3 and S4 done on 14 October. The S4 report is written and the track stops at the S4 gate |
 |---|---|---|
 | S0 | none, the lead does it | lead |
 | S1 | six task units (`CCRCC`, `CCRCC_merged`, `INDIANA_KIDNEY`, `LUNG_XENIUM`, `ACS_STATES`, `ACS_CA_PUMA`) and one simulation unit | sub-agents for the runs, the lead for the theory section and the synthetic test |
@@ -105,17 +105,17 @@ Copied from the track document before any run, and for interval i02 from section
 | S2.2 | Design target with $n_L/G \ge 0.5$ (lung at $n_L = 8$ and 12, `CCRCC` and `CCRCC_merged` at $n_L = 12$). It covers above 0.95 at nominal 0.90 | refuted (S2 report) |
 | S2.3 | Superpopulation target. It covers below 0.85 at $n_L \le 6$ in every simulation cell with $G = 15$ | held (S2 report) |
 | S2.4 | Superpopulation target. Kluger et al.'s cluster bootstrap covers below 0.85 at $n_L \le 8$ on every task | held (S2 report) |
-| S3.1 | $n_L = 8$, own balance, first score, $\theta_3$, `CCRCC`, `uni_v2`. The adaptive design's Hájek interval has a width ratio of 0.95 to 1.15 against D2 with `rej_t` | not tested |
-| S3.2 | It covers within 0.03 of nominal in every simulation cell with $n_L \ge 8$ | not tested |
-| S4.1 | $n_L = 8$. The classical interval applied as if simple random covers below 0.80 for $\theta_3$ on at least two tissue tasks | not tested |
-| S4.2 | $n_L = 8$. The exact standard deviation of $\hat\theta_{\mathrm{HT}}$ under k-center is at least 1.5 times that of the classical mean under D0 on every tissue task | not tested |
-| S2b.1 | In every $\theta_2$ cell outside `LUNG_XENIUM`, round 5's coverage equals round 7's conditional coverage times its share formed to within 0.03 | not tested |
-| S2b.2 | In the skewed simulation cell, at least 90% of the populations in which $\hat\theta_{\mathrm{HT}}$ has a standardised bias above 3 have a smallest $\hat\pi_g$ below $0.01\,n_L/G$ | not tested |
-| S2b.3 | Under D0 for the design target, `bh_t` covers at 0.85 or above at every $n_L$ on every tissue task (median over arms and estimands of the median over genes) | not tested |
-| S2b.4 | For the superpopulation target in set `B_world`, `bh_t` covers at 0.80 or above at $n_L = 4$ on every task | not tested |
-| S3.3 | In every S3 cell the smallest $\hat\pi_g$ is at least $0.45\,n_L/G$ | not tested |
-| S3.4 | On the supported real-task cells, S3's Hájek interval with its primary variance covers within 0.03 of D0 classical in at least 0.85 of the cells, where D2's Hájek interval with simulated pair probabilities did so in 0.71 | not tested |
-| S3.5 | At $n_L = 8$ with own balance, the cube design's Hájek interval is narrower than the Hájek interval under the mixture of D2 and D0 in at least three quarters of the supported cells | not tested |
+| S3.1 | $n_L = 8$, own balance, first score, $\theta_3$, `CCRCC`, `uni_v2`. The adaptive design's Hájek interval has a width ratio of 0.95 to 1.15 against D2 with `rej_t` | held (S4 report, section 5) |
+| S3.2 | It covers within 0.03 of nominal in every simulation cell with $n_L \ge 8$ | refuted (S4 report, section 5) |
+| S4.1 | $n_L = 8$. The classical interval applied as if simple random covers below 0.80 for $\theta_3$ on at least two tissue tasks | partly held (S4 report, section 5) |
+| S4.2 | $n_L = 8$. The exact standard deviation of $\hat\theta_{\mathrm{HT}}$ under k-center is at least 1.5 times that of the classical mean under D0 on every tissue task | held (S4 report, section 5) |
+| S2b.1 | In every $\theta_2$ cell outside `LUNG_XENIUM`, round 5's coverage equals round 7's conditional coverage times its share formed to within 0.03 | held (S4 report, section 5) |
+| S2b.2 | In the skewed simulation cell, at least 90% of the populations in which $\hat\theta_{\mathrm{HT}}$ has a standardised bias above 3 have a smallest $\hat\pi_g$ below $0.01\,n_L/G$ | held (S4 report, section 5) |
+| S2b.3 | Under D0 for the design target, `bh_t` covers at 0.85 or above at every $n_L$ on every tissue task (median over arms and estimands of the median over genes) | held (S4 report, section 5) |
+| S2b.4 | For the superpopulation target in set `B_world`, `bh_t` covers at 0.80 or above at $n_L = 4$ on every task | held (S4 report, section 5) |
+| S3.3 | In every S3 cell the smallest $\hat\pi_g$ is at least $0.45\,n_L/G$ | held (S4 report, section 5) |
+| S3.4 | On the supported real-task cells, S3's Hájek interval with its primary variance covers within 0.03 of D0 classical in at least 0.85 of the cells, where D2's Hájek interval with simulated pair probabilities did so in 0.71 | refuted (S4 report, section 5) |
+| S3.5 | At $n_L = 8$ with own balance, the cube design's Hájek interval is narrower than the Hájek interval under the mixture of D2 and D0 in at least three quarters of the supported cells | refuted, narrowly (S4 report, section 5) |
 
 ## 8. Plan extensions
 
@@ -212,15 +212,15 @@ Transcribed on 14 October 2026 from section 5 of `docs/round07/i02/ppi/round07_p
 
 ### S3. The adaptive, balanced design (two days)
 
-- [ ] **Theory section 3** before any run. The target probabilities with the cap rule of the memo (cap at 1, rescale the uncapped proportionally to $n_L$ minus the capped count, repeat), so every $\pi^{(\tau)}_g \ge 0.5\,n_L/G$. An interval for $\hat\theta_{\mathrm{H}}$ under the cube design that does not need $\pi_{gh} > 0$, derived from the cube method's balancing equations (candidate is the residual form on $(\bar z_g - \hat\theta_{\mathrm{H}})/\pi_g$ regressed on the balance variables over $\pi_g$), saying how it treats $\hat N$, what the landing phase does to it, its reference distribution and degrees of freedom, and which interval is primary and why. Deville and Tillé's variance paper is not held, so its formula is not cited.
-- [ ] **Cube method** flight and landing phases in Python, capped at one day, with conditional Poisson sampling with rejection as the recorded fallback.
-- [ ] **Test** on the synthetic populations of S1's test. Inclusion frequencies against targets within Monte Carlo error, $\hat\theta_{\mathrm{HT}}$ unbiased, the primary variance's mean within 0.10 of the empirical variance in the normal-law cells, and the draws whose landing left the balance inexact reported separately.
-- [ ] **Runs**, fanned out by task (six units) plus one simulation unit, on the shared grids. Scores $u_g = \lvert\bar f_g - \bar F\rvert$ (every task) and the nearest-neighbour distance in 10 embedding principal components (tissue). Balance on $\pi_g$ and own $\bar f_g$. Comparators D2 with `rej_t`, D0 classical and tuned, Broska and Howes with `bh_t` and `bh_t_fpc`, and the mixture of D2 and D0 with $\epsilon = 0.5$ with simulated $\hat\pi_g$, $\hat\pi_{gh}$ and the same Hájek intervals. The Sen-Yates-Grundy form with simulated $\hat\pi_{gh}$ and `apx_size` reported beside the primary, with the smallest $\hat\pi_g$ and the share of zero $\hat\pi_{gh}$ in every cell. Outputs in `results/round7/ppi/S3_adaptive/` (`tests/`, `s3_sim.csv`, `s3_masking_grid.csv`, `s3_report_numbers.csv`).
+- [x] **Theory section 3** before any run (14 Oct, commit `df344a76`; section 3.8 on the test added in `d2b64931`). The target probabilities with the cap rule of the memo (cap at 1, rescale the uncapped proportionally to $n_L$ minus the capped count, repeat), so every $\pi^{(\tau)}_g \ge 0.5\,n_L/G$. An interval for $\hat\theta_{\mathrm{H}}$ under the cube design that does not need $\pi_{gh} > 0$, derived from the cube method's balancing equations (candidate is the residual form on $(\bar z_g - \hat\theta_{\mathrm{H}})/\pi_g$ regressed on the balance variables over $\pi_g$), saying how it treats $\hat N$, what the landing phase does to it, its reference distribution and degrees of freedom, and which interval is primary and why. Deville and Tillé's variance paper is not held, so its formula is not cited.
+- [x] **Cube method** (14 Oct, `round7_ppi_s3_cube.py`, delivered as 13; the fallback was not needed) flight and landing phases in Python, capped at one day, with conditional Poisson sampling with rejection as the recorded fallback.
+- [x] **Test** (14 Oct, Slurm 4900059, `S3_adaptive/tests/run1/`; the sampler passes, the primary variance misses the 0.10 band at $G = 24$ and $G = 15$, every draw's landing leaves the balance inexact; theory 3.8) on the synthetic populations of S1's test. Inclusion frequencies against targets within Monte Carlo error, $\hat\theta_{\mathrm{HT}}$ unbiased, the primary variance's mean within 0.10 of the empirical variance in the normal-law cells, and the draws whose landing left the balance inexact reported separately.
+- [x] **Runs** (14 Oct, three pilots 4900555, 4900557, 4900558; seven sub-agents, 126 jobs on snapshot `df344a76`; merge 4929664 into `S3_adaptive/_merged/`), fanned out by task (six units) plus one simulation unit, on the shared grids. Scores $u_g = \lvert\bar f_g - \bar F\rvert$ (every task) and the nearest-neighbour distance in 10 embedding principal components (tissue). Balance on $\pi_g$ and own $\bar f_g$. Comparators D2 with `rej_t`, D0 classical and tuned, Broska and Howes with `bh_t` and `bh_t_fpc`, and the mixture of D2 and D0 with $\epsilon = 0.5$ with simulated $\hat\pi_g$, $\hat\pi_{gh}$ and the same Hájek intervals. The Sen-Yates-Grundy form with simulated $\hat\pi_{gh}$ and `apx_size` reported beside the primary, with the smallest $\hat\pi_g$ and the share of zero $\hat\pi_{gh}$ in every cell. Outputs in `results/round7/ppi/S3_adaptive/` (`tests/`, `s3_sim.csv`, `s3_masking_grid.csv`, `s3_report_numbers.csv`).
 
 ### S4. Greedy k-center (one day; gate)
 
-- [ ] **Theory section 4** before the run.
-- [ ] **Runs**, four tissue units, as section 9 says, with `bh_t` and `bh_t_fpc` beside Broska and Howes and the Hájek interval with `apx_size` added, its exact coverage by enumeration of the $G$ starts. Outputs in `results/round7/ppi/S4_kcenter/`.
+- [x] **Theory section 4** before the run (14 Oct, commit `4102a38c`).
+- [x] **Runs** (14 Oct, pilot 4902613; four sub-agents, 20 jobs on snapshot `4102a38c`; merge 4903160 into `S4_kcenter/_merged/`), four tissue units, as section 9 says, with `bh_t` and `bh_t_fpc` beside Broska and Howes and the Hájek interval with `apx_size` added, its exact coverage by enumeration of the $G$ starts. Outputs in `results/round7/ppi/S4_kcenter/`.
 - [ ] **S4 report** in `docs/round07/i02/ppi/round07_ppi_S4_report.md`, covering S2b, S3 and S4 in the format of section 7 of `docs/EXECUTION_RULES.md`, with S3.1 to S4.2 and S2b.1 to S3.5 scored, the `LUNG_XENIUM` $\theta_2$ cells at $n_L = 12$ and $p_a = 0.01$ listed as degenerate. Sweep, commit, tag `round7-ppi-S4`, push branch and tag together, open one pull request, confirm it, and stop.
 
 **Exit items.** S2b item 1 confirms or corrects the memo's section 3 cell by cell. The cube test passes or its fallback is recorded. Every cell has run or is listed. The predictions are scored. The provenance index passes both checks.

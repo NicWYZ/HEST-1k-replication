@@ -13,3 +13,32 @@
 4824390	reference: Slurm job id of the S1.2 synthetic test, run 2, a row of results/round7/ppi/r7ppi_slurm_jobs.csv
 0.98	derived: coverage of a nominal 0.90 normal interval widened by sqrt(2) (theory 2.1)
 0.9999	derived: coverage of a nominal 0.90 normal interval widened by sqrt(6) (theory 2.1)
+505	derived: row count of results/round7/ppi/r7ppi_slurm_jobs.csv at the S4 gate
+1311	reference: wall time in seconds of the S3 CCRCC sub-agent, from its delegation result
+1236	reference: wall time in seconds of the S3 CCRCC_merged sub-agent, from its delegation result
+1270	reference: wall time in seconds of the S3 INDIANA_KIDNEY sub-agent, from its delegation result
+19104	reference: wall time in seconds of the S3 LUNG_XENIUM sub-agent, from its delegation result
+366	reference: wall time in seconds of the S3 ACS_STATES sub-agent, from its delegation result
+719	reference: wall time in seconds of the S3 ACS_CA_PUMA sub-agent, from its delegation result
+22507	reference: wall time in seconds of the S3 simulation sub-agent, from its delegation result
+281	reference: wall time in seconds of the S4 CCRCC sub-agent, from its delegation result
+289	reference: wall time in seconds of the S4 CCRCC_merged and LUNG_XENIUM sub-agents, from their delegation results
+4900059	reference: Slurm job id of the S3 synthetic test, a row of results/round7/ppi/r7ppi_slurm_jobs.csv
+4900555	reference: Slurm job id of an S3 pilot, a row of results/round7/ppi/r7ppi_slurm_jobs.csv
+4929664	reference: Slurm job id of the first S3 merge, a row of results/round7/ppi/r7ppi_slurm_jobs.csv
+4930089	reference: Slurm job id of the S3 merge rerun, a row of results/round7/ppi/r7ppi_slurm_jobs.csv
+4903160	reference: Slurm job id of the first S4 merge, a row of results/round7/ppi/r7ppi_slurm_jobs.csv
+4930091	reference: Slurm job id of the S4 merge rerun, a row of results/round7/ppi/r7ppi_slurm_jobs.csv
+4892100	reference: Slurm job id of the failed S2b recount, a row of results/round7/ppi/r7ppi_slurm_jobs.csv
+4892562	reference: Slurm job id of the S2b recount rerun, a row of results/round7/ppi/r7ppi_slurm_jobs.csv
+4891599	reference: Slurm job id of an S2b D0 rerun, a row of results/round7/ppi/r7ppi_slurm_jobs.csv
+4891624	reference: Slurm job id of the S2b by-population rerun, a row of results/round7/ppi/r7ppi_slurm_jobs.csv
+4892563	reference: Slurm job id of the S2b numbers rerun, a row of results/round7/ppi/r7ppi_slurm_jobs.csv
+180	derived: number of clusters over the six S3 test cells, 51 + 51 + 24 + 24 + 15 + 15 (also the number of cube cells with the first score in s3_report_numbers.csv)
+300	derived: number of S3 cube cells, 180 with the first score and 120 with the second (s3_report_numbers.csv)
+8.9	derived: 8.881784197e-16, the largest ht_unbiased_check_max in results/round7/ppi/S4_kcenter/_merged_r2/s4_diag.csv, to two figures
+4.3	section number: theory section 4.3
+0.45	parameter: threshold of prediction S3.3, written by the oversight chat before any run
+1.65	derived: t_{3,0.95}/z_{0.95} times sqrt(4/3) (theory 2.1), as the S2 memo computes
+20,000	parameter: evaluation draws of the S3 synthetic test (theory 3.6, round7_ppi_s3_cube.py --test-eval)
+0.006	derived: 0.10 - (1 - 0.894), the miss of the 0.10 band at G = 24 in s3_tests.csv (theory 3.8)

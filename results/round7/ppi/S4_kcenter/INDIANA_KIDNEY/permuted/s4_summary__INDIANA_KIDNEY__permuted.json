@@ -1,0 +1,18 @@
+{
+ "tag": "INDIANA_KIDNEY__permuted",
+ "wall_s": 1.5920426845550537,
+ "n_rows": 56,
+ "args": {
+  "parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions_INDIANA_KIDNEY/b1_predictions__INDIANA_KIDNEY__resnet50.parquet",
+  "perm_parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions_INDIANA_KIDNEY/b1_predictions__INDIANA_KIDNEY__resnet50.parquet",
+  "ref_parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions_INDIANA_KIDNEY/b1_predictions__INDIANA_KIDNEY__resnet50.parquet",
+  "ref_arm": "resnet50",
+  "vtag": "INDIANA_KIDNEY",
+  "arm": "permuted",
+  "nls": "4,6,8,12",
+  "estimands": "theta3,theta2",
+  "theta2_kind": "neo_minus_stroma",
+  "root": "/work/users/w/e/weiyang/hest_replication",
+  "out_dir": "."
+ }
+}

@@ -1,0 +1,127 @@
+name,value,source,note
+S3_stamp_dirs,126,s3_stamp_check.csv,
+S3_stamp_merged,126,s3_stamp_check.csv,
+S3_masking_cells,680,s3_masking_diag.csv,
+S3_sim_rows,7800,s3_sim.csv,
+S3.1_wr_D2rej|pa0.1|H_res,1.033916825,s3_masking_grid.csv,"CCRCC uni_v2 theta3 nL8 cube_u1, median over genes of the per-gene width ratio"
+S3.1_wr_D2rej|pa0.1|H_sim,1.054461153,s3_masking_grid.csv,"CCRCC uni_v2 theta3 nL8 cube_u1, median over genes of the per-gene width ratio"
+S3.1_wr_D2rej|pa0.1|H_apx_size,1.087915796,s3_masking_grid.csv,"CCRCC uni_v2 theta3 nL8 cube_u1, median over genes of the per-gene width ratio"
+S3.1_wr_D2rej|pa0.01|H_res,1.040054967,s3_masking_grid.csv,"CCRCC uni_v2 theta3 nL8 cube_u1, median over genes of the per-gene width ratio"
+S3.1_wr_D2rej|pa0.01|H_sim,1.063024354,s3_masking_grid.csv,"CCRCC uni_v2 theta3 nL8 cube_u1, median over genes of the per-gene width ratio"
+S3.1_wr_D2rej|pa0.01|H_apx_size,1.097854171,s3_masking_grid.csv,"CCRCC uni_v2 theta3 nL8 cube_u1, median over genes of the per-gene width ratio"
+S3.2_n_cells|H_res|coverage_mean,140,s3_sim.csv,
+S3.2_share_within_0.03|H_res|coverage_mean,0.2428571429,s3_sim.csv,
+S3.2_min|H_res|coverage_mean,0.71355,s3_sim.csv,
+S3.2_max|H_res|coverage_mean,0.8959,s3_sim.csv,
+S3.2_n_cells|H_res|coverage_all_mean,140,s3_sim.csv,
+S3.2_share_within_0.03|H_res|coverage_all_mean,0.2428571429,s3_sim.csv,
+S3.2_min|H_res|coverage_all_mean,0.71355,s3_sim.csv,
+S3.2_max|H_res|coverage_all_mean,0.8959,s3_sim.csv,
+S3.2_share_within_0.03|H_res|law_n,0.4857142857,s3_sim.csv,
+S3.2_share_within_0.03|H_res|law_s,0,s3_sim.csv,
+S3.2_n_cells|H_sim|coverage_mean,140,s3_sim.csv,
+S3.2_share_within_0.03|H_sim|coverage_mean,0.3357142857,s3_sim.csv,
+S3.2_min|H_sim|coverage_mean,0.78235,s3_sim.csv,
+S3.2_max|H_sim|coverage_mean,0.89435,s3_sim.csv,
+S3.2_n_cells|H_sim|coverage_all_mean,140,s3_sim.csv,
+S3.2_share_within_0.03|H_sim|coverage_all_mean,0.3357142857,s3_sim.csv,
+S3.2_min|H_sim|coverage_all_mean,0.78235,s3_sim.csv,
+S3.2_max|H_sim|coverage_all_mean,0.89435,s3_sim.csv,
+S3.2_share_within_0.03|H_sim|law_n,0.6571428571,s3_sim.csv,
+S3.2_share_within_0.03|H_sim|law_s,0.01428571429,s3_sim.csv,
+S3.2_n_cells|H_apx_size|coverage_mean,140,s3_sim.csv,
+S3.2_share_within_0.03|H_apx_size|coverage_mean,0.3142857143,s3_sim.csv,
+S3.2_min|H_apx_size|coverage_mean,0.7814833333,s3_sim.csv,
+S3.2_max|H_apx_size|coverage_mean,0.99935,s3_sim.csv,
+S3.2_n_cells|H_apx_size|coverage_all_mean,140,s3_sim.csv,
+S3.2_share_within_0.03|H_apx_size|coverage_all_mean,0.3142857143,s3_sim.csv,
+S3.2_min|H_apx_size|coverage_all_mean,0.7814833333,s3_sim.csv,
+S3.2_max|H_apx_size|coverage_all_mean,0.99935,s3_sim.csv,
+S3.2_share_within_0.03|H_apx_size|law_n,0.4428571429,s3_sim.csv,
+S3.2_share_within_0.03|H_apx_size|law_s,0.1857142857,s3_sim.csv,
+S3.3_min_pi_hat_ratio|cube_u1|masking,0.489325,s3_masking_diag.csv,
+S3.3_share_cells_ge_0.45|cube_u1|masking,1,s3_masking_diag.csv,
+S3.3_min_pi_hat_ratio|cube_u1|sim,0.4794,s3_sim.csv,
+S3.3_share_cells_ge_0.45|cube_u1|sim,1,s3_sim.csv,
+S3.3_min_pi_hat_ratio|cube_u2|masking,0.6682,s3_masking_diag.csv,
+S3.3_share_cells_ge_0.45|cube_u2|masking,1,s3_masking_diag.csv,
+S3.3_min_pi_hat_ratio|mix_D2D0|masking,0.5,s3_masking_diag.csv,
+S3.3_share_cells_ge_0.45|mix_D2D0|masking,1,s3_masking_diag.csv,
+S3.3_min_pi_hat_ratio|mix_D2D0|sim,0.5,s3_sim.csv,
+S3.3_share_cells_ge_0.45|mix_D2D0|sim,1,s3_sim.csv,
+S3.3_min_pi_hat_ratio_all,0.4794,s3_masking_diag.csv; s3_sim.csv,
+S3_share_pairs_pgh_zero_max|cube_u1,0.001376741173,s3_masking_diag.csv,
+S3_landing_resid_median_median|cube_u1,0.0771942009,s3_masking_diag.csv,
+S3_share_pairs_pgh_zero_max|cube_u2,0,s3_masking_diag.csv,
+S3_landing_resid_median_median|cube_u2,0.1214224739,s3_masking_diag.csv,
+S3_share_pairs_pgh_zero_max|mix_D2D0,0,s3_masking_diag.csv,
+S3.4_share_within_0.03_of_D0cl|cube_u1|H_res|coverage_median,0.6944444444,s3_masking_grid.csv,180 cells
+S3.4_share_within_0.03_of_D0cl|cube_u1|H_res|coverage_all_median,0.6833333333,s3_masking_grid.csv,180 cells
+S3.4_n_cells|cube_u1|H_res,180,s3_masking_grid.csv,
+S3.4_coverage_median_over_cells|cube_u1|H_res,0.875625,s3_masking_grid.csv,
+S3.4_wr_D0cl_median_over_cells|cube_u1|H_res,0.9443214942,s3_masking_grid.csv,
+S3.4_share_below_0.80|cube_u1|H_res,0.03888888889,s3_masking_grid.csv,
+S3.4_share_within_0.03_of_D0cl|cube_u1|H_sim|coverage_median,0.7666666667,s3_masking_grid.csv,180 cells
+S3.4_share_within_0.03_of_D0cl|cube_u1|H_sim|coverage_all_median,0.6944444444,s3_masking_grid.csv,180 cells
+S3.4_n_cells|cube_u1|H_sim,180,s3_masking_grid.csv,
+S3.4_coverage_median_over_cells|cube_u1|H_sim,0.884875,s3_masking_grid.csv,
+S3.4_wr_D0cl_median_over_cells|cube_u1|H_sim,0.9527920938,s3_masking_grid.csv,
+S3.4_share_below_0.80|cube_u1|H_sim,0.01666666667,s3_masking_grid.csv,
+S3.4_share_within_0.03_of_D0cl|cube_u1|H_apx_size|coverage_median,0.5944444444,s3_masking_grid.csv,180 cells
+S3.4_share_within_0.03_of_D0cl|cube_u1|H_apx_size|coverage_all_median,0.5388888889,s3_masking_grid.csv,180 cells
+S3.4_n_cells|cube_u1|H_apx_size,180,s3_masking_grid.csv,
+S3.4_coverage_median_over_cells|cube_u1|H_apx_size,0.89275,s3_masking_grid.csv,
+S3.4_wr_D0cl_median_over_cells|cube_u1|H_apx_size,0.9510169924,s3_masking_grid.csv,
+S3.4_share_below_0.80|cube_u1|H_apx_size,0.02222222222,s3_masking_grid.csv,
+S3.4_share_within_0.03_of_D0cl|cube_u2|H_res|coverage_median,0.2833333333,s3_masking_grid.csv,120 cells
+S3.4_share_within_0.03_of_D0cl|cube_u2|H_res|coverage_all_median,0.275,s3_masking_grid.csv,120 cells
+S3.4_n_cells|cube_u2|H_res,120,s3_masking_grid.csv,
+S3.4_coverage_median_over_cells|cube_u2|H_res,0.845125,s3_masking_grid.csv,
+S3.4_wr_D0cl_median_over_cells|cube_u2|H_res,0.8782621806,s3_masking_grid.csv,
+S3.4_share_below_0.80|cube_u2|H_res,0.2083333333,s3_masking_grid.csv,
+S3.4_share_within_0.03_of_D0cl|cube_u2|H_sim|coverage_median,0.8916666667,s3_masking_grid.csv,120 cells
+S3.4_share_within_0.03_of_D0cl|cube_u2|H_sim|coverage_all_median,0.825,s3_masking_grid.csv,120 cells
+S3.4_n_cells|cube_u2|H_sim,120,s3_masking_grid.csv,
+S3.4_coverage_median_over_cells|cube_u2|H_sim,0.876625,s3_masking_grid.csv,
+S3.4_wr_D0cl_median_over_cells|cube_u2|H_sim,0.9801220269,s3_masking_grid.csv,
+S3.4_share_below_0.80|cube_u2|H_sim,0,s3_masking_grid.csv,
+S3.4_share_within_0.03_of_D0cl|cube_u2|H_apx_size|coverage_median,0.7333333333,s3_masking_grid.csv,120 cells
+S3.4_share_within_0.03_of_D0cl|cube_u2|H_apx_size|coverage_all_median,0.6833333333,s3_masking_grid.csv,120 cells
+S3.4_n_cells|cube_u2|H_apx_size,120,s3_masking_grid.csv,
+S3.4_coverage_median_over_cells|cube_u2|H_apx_size,0.885875,s3_masking_grid.csv,
+S3.4_wr_D0cl_median_over_cells|cube_u2|H_apx_size,1.014191991,s3_masking_grid.csv,
+S3.4_share_below_0.80|cube_u2|H_apx_size,0,s3_masking_grid.csv,
+S3.4_share_within_0.03_of_D0cl|mix_D2D0|H_res|coverage_median,0.4961538462,s3_masking_grid.csv,260 cells; mixture cells with D2 own support >= 1000
+S3.4_share_within_0.03_of_D0cl|mix_D2D0|H_res|coverage_all_median,0.4615384615,s3_masking_grid.csv,260 cells; mixture cells with D2 own support >= 1000
+S3.4_n_cells|mix_D2D0|H_res,260,s3_masking_grid.csv,
+S3.4_coverage_median_over_cells|mix_D2D0|H_res,0.8502125399,s3_masking_grid.csv,
+S3.4_wr_D0cl_median_over_cells|mix_D2D0|H_res,0.952328424,s3_masking_grid.csv,
+S3.4_share_below_0.80|mix_D2D0|H_res,0.1192307692,s3_masking_grid.csv,
+S3.4_share_within_0.03_of_D0cl|mix_D2D0|H_sim|coverage_median,0.9115384615,s3_masking_grid.csv,260 cells; mixture cells with D2 own support >= 1000
+S3.4_share_within_0.03_of_D0cl|mix_D2D0|H_sim|coverage_all_median,0.8692307692,s3_masking_grid.csv,260 cells; mixture cells with D2 own support >= 1000
+S3.4_n_cells|mix_D2D0|H_sim,260,s3_masking_grid.csv,
+S3.4_coverage_median_over_cells|mix_D2D0|H_sim,0.88925,s3_masking_grid.csv,
+S3.4_wr_D0cl_median_over_cells|mix_D2D0|H_sim,1.007847766,s3_masking_grid.csv,
+S3.4_share_below_0.80|mix_D2D0|H_sim,0,s3_masking_grid.csv,
+S3.4_share_within_0.03_of_D0cl|mix_D2D0|H_apx_size|coverage_median,0.7192307692,s3_masking_grid.csv,260 cells; mixture cells with D2 own support >= 1000
+S3.4_share_within_0.03_of_D0cl|mix_D2D0|H_apx_size|coverage_all_median,0.7384615385,s3_masking_grid.csv,260 cells; mixture cells with D2 own support >= 1000
+S3.4_n_cells|mix_D2D0|H_apx_size,260,s3_masking_grid.csv,
+S3.4_coverage_median_over_cells|mix_D2D0|H_apx_size,0.897,s3_masking_grid.csv,
+S3.4_wr_D0cl_median_over_cells|mix_D2D0|H_apx_size,1.030288414,s3_masking_grid.csv,
+S3.4_share_below_0.80|mix_D2D0|H_apx_size,0,s3_masking_grid.csv,
+S3.5_share_cube_narrower|cube_H_res|mix_H_sim|pa0.1,0.7222222222,s3_masking_grid.csv,36 supported cells at nL 8
+S3.5_width_ratio_median|cube_H_res|mix_H_sim|pa0.1,0.9522096939,s3_masking_grid.csv,
+S3.5_share_cube_narrower|cube_H_res|mix_H_sim|pa0.01,0.7222222222,s3_masking_grid.csv,36 supported cells at nL 8
+S3.5_width_ratio_median|cube_H_res|mix_H_sim|pa0.01,0.9547949904,s3_masking_grid.csv,
+S3.5_share_cube_narrower|cube_H_sim|mix_H_sim|pa0.1,0.7222222222,s3_masking_grid.csv,36 supported cells at nL 8
+S3.5_width_ratio_median|cube_H_sim|mix_H_sim|pa0.1,0.955242607,s3_masking_grid.csv,
+S3.5_share_cube_narrower|cube_H_sim|mix_H_sim|pa0.01,0.6944444444,s3_masking_grid.csv,36 supported cells at nL 8
+S3.5_width_ratio_median|cube_H_sim|mix_H_sim|pa0.01,0.9517170559,s3_masking_grid.csv,
+S3.5_share_cube_narrower|cube_H_res|mix_H_res|pa0.1,0.3055555556,s3_masking_grid.csv,36 supported cells at nL 8
+S3.5_width_ratio_median|cube_H_res|mix_H_res|pa0.1,1.030623548,s3_masking_grid.csv,
+S3.5_share_cube_narrower|cube_H_res|mix_H_res|pa0.01,0.2777777778,s3_masking_grid.csv,36 supported cells at nL 8
+S3.5_width_ratio_median|cube_H_res|mix_H_res|pa0.01,1.023020673,s3_masking_grid.csv,
+S3.5_share_cube_narrower|cube_H_apx_size|mix_H_apx_size|pa0.1,0.8333333333,s3_masking_grid.csv,36 supported cells at nL 8
+S3.5_width_ratio_median|cube_H_apx_size|mix_H_apx_size|pa0.1,0.9127813672,s3_masking_grid.csv,
+S3.5_share_cube_narrower|cube_H_apx_size|mix_H_apx_size|pa0.01,0.8611111111,s3_masking_grid.csv,36 supported cells at nL 8
+S3.5_width_ratio_median|cube_H_apx_size|mix_H_apx_size|pa0.01,0.9133304621,s3_masking_grid.csv,

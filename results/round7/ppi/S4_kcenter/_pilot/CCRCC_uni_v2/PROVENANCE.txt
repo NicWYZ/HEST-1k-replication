@@ -1,0 +1,41 @@
+platform: Longleaf
+slurm_job_id: 4902613
+slurm_job_partition: spill
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 8192
+node: c0302.ll.unc.edu
+job_prefix_intended: r7ppi_S4
+stage: S4
+unit: pilot_CCRCC_uni_v2
+frame_id: 89b5f4ed-6180-409e-831d-0fecc6ce5f4e
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python3.11
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 4102a38c2bab93a3951823bbdca3419127cb51b8
+snapshot: /work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/4102a38c2bab93a3951823bbdca3419127cb51b8
+command: round7_ppi_s4_kcenter.py --parquet /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet --perm-parquet /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__resnet50.parquet --ref-parquet /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__resnet50.parquet --ref-arm resnet50 --vtag CCRCC --arm uni_v2 --out-dir .
+config: {"command":"round7_ppi_s4_kcenter.py --parquet /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet --perm-parquet /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__resnet50.parquet --ref-parquet /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__resnet50.parquet --ref-arm resnet50 --vtag CCRCC --arm uni_v2 --out-dir .","inputs":[],"snapshot_commit":"4102a38c2bab93a3951823bbdca3419127cb51b8","stage":"S4","unit":"pilot_CCRCC_uni_v2"}
+config_sha256: f9c3cefcc43147ec185a0e70aaabd9aec2b035f44689a61c7598fc1d61537272
+start: 2026-10-14T14:46:54-04:00
+end: 2026-10-14T14:47:13-04:00
+elapsed_s: 18.3
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  544721f07cb3d74dc5b92456d61fe450  code/scripts/round3_b1_ppi.py
+  d79e69aa65800b9d24de556e019a0c64  code/scripts/round4_ppi_estimator.py
+  15f51917a5fb79702ba239e520e7ff86  code/scripts/round4_ppi_q2_masking.py
+  6097231bc238c0a23387ce76029acefd  code/scripts/round4_ppi_q3_regimes.py
+  d78b654d7fd8e6a824f73dd50ee2a0c1  code/scripts/round5_ppi_balance.py
+  b6e9ecc52ac5539682487d8e7c1451c6  code/scripts/round5_ppi_e2_regimeB.py
+  d886d3db94f4f12364ac072b6485f08f  code/scripts/round5_ppi_e4_selection.py
+  059c18e1b4998b1ac9c9685ba324a872  code/scripts/round5_ppi_e4b_rejective.py
+  2de31569ffe72239062fbeb0c9a50fc5  code/scripts/round5_ppi_estimator.py
+  31d5b0e396d85d3c49709f216d89d4af  code/scripts/round7_ppi_d2.py
+  3f37e77c2abe22afa6eca8772282f4f0  code/scripts/round7_ppi_run.py
+  a30b7507a4c1e2d4a0efdc76a5032871  code/scripts/round7_ppi_s2_comparators.py
+  bdad8f019054140a1ce1a13e73b9bfde  code/scripts/round7_ppi_s3_cube.py
+  9e3a1ebca498e9fc2212a277ead14151  code/scripts/round7_ppi_s4_kcenter.py
+  19137aac514748f8aa6b054157067e29  code/scripts/round7_ppi_weighting.py
+inputs (md5, path):

@@ -1,0 +1,280 @@
+name,value,source,note
+S3_stamp_dirs,126,s3_stamp_check.csv,
+S3_stamp_merged,126,s3_stamp_check.csv,
+S3_masking_cells,680,s3_masking_diag.csv,
+S3_sim_rows,7800,s3_sim.csv,
+S3.1_wr_D2rej|pa0.1|H_res,1.033916825,s3_masking_grid.csv,"CCRCC uni_v2 theta3 nL8 cube_u1, median over genes of the per-gene width ratio"
+S3.1_wr_D2rej|pa0.1|H_sim,1.054461153,s3_masking_grid.csv,"CCRCC uni_v2 theta3 nL8 cube_u1, median over genes of the per-gene width ratio"
+S3.1_wr_D2rej|pa0.1|H_apx_size,1.087915796,s3_masking_grid.csv,"CCRCC uni_v2 theta3 nL8 cube_u1, median over genes of the per-gene width ratio"
+S3.1_wr_D2rej|pa0.01|H_res,1.040054967,s3_masking_grid.csv,"CCRCC uni_v2 theta3 nL8 cube_u1, median over genes of the per-gene width ratio"
+S3.1_wr_D2rej|pa0.01|H_sim,1.063024354,s3_masking_grid.csv,"CCRCC uni_v2 theta3 nL8 cube_u1, median over genes of the per-gene width ratio"
+S3.1_wr_D2rej|pa0.01|H_apx_size,1.097854171,s3_masking_grid.csv,"CCRCC uni_v2 theta3 nL8 cube_u1, median over genes of the per-gene width ratio"
+S3.2_n_cells|H_res|coverage_mean,140,s3_sim.csv,
+S3.2_share_within_0.03|H_res|coverage_mean,0.2428571429,s3_sim.csv,
+S3.2_min|H_res|coverage_mean,0.71355,s3_sim.csv,
+S3.2_max|H_res|coverage_mean,0.8959,s3_sim.csv,
+S3.2_n_cells|H_res|coverage_all_mean,140,s3_sim.csv,
+S3.2_share_within_0.03|H_res|coverage_all_mean,0.2428571429,s3_sim.csv,
+S3.2_min|H_res|coverage_all_mean,0.71355,s3_sim.csv,
+S3.2_max|H_res|coverage_all_mean,0.8959,s3_sim.csv,
+S3.2_share_within_0.03|H_res|law_n,0.4857142857,s3_sim.csv,
+S3.2_share_within_0.03|H_res|law_s,0,s3_sim.csv,
+S3.2_n_cells|H_sim|coverage_mean,140,s3_sim.csv,
+S3.2_share_within_0.03|H_sim|coverage_mean,0.3357142857,s3_sim.csv,
+S3.2_min|H_sim|coverage_mean,0.78235,s3_sim.csv,
+S3.2_max|H_sim|coverage_mean,0.89435,s3_sim.csv,
+S3.2_n_cells|H_sim|coverage_all_mean,140,s3_sim.csv,
+S3.2_share_within_0.03|H_sim|coverage_all_mean,0.3357142857,s3_sim.csv,
+S3.2_min|H_sim|coverage_all_mean,0.78235,s3_sim.csv,
+S3.2_max|H_sim|coverage_all_mean,0.89435,s3_sim.csv,
+S3.2_share_within_0.03|H_sim|law_n,0.6571428571,s3_sim.csv,
+S3.2_share_within_0.03|H_sim|law_s,0.01428571429,s3_sim.csv,
+S3.2_n_cells|H_apx_size|coverage_mean,140,s3_sim.csv,
+S3.2_share_within_0.03|H_apx_size|coverage_mean,0.3142857143,s3_sim.csv,
+S3.2_min|H_apx_size|coverage_mean,0.7814833333,s3_sim.csv,
+S3.2_max|H_apx_size|coverage_mean,0.99935,s3_sim.csv,
+S3.2_n_cells|H_apx_size|coverage_all_mean,140,s3_sim.csv,
+S3.2_share_within_0.03|H_apx_size|coverage_all_mean,0.3142857143,s3_sim.csv,
+S3.2_min|H_apx_size|coverage_all_mean,0.7814833333,s3_sim.csv,
+S3.2_max|H_apx_size|coverage_all_mean,0.99935,s3_sim.csv,
+S3.2_share_within_0.03|H_apx_size|law_n,0.4428571429,s3_sim.csv,
+S3.2_share_within_0.03|H_apx_size|law_s,0.1857142857,s3_sim.csv,
+S3.3_min_pi_hat_ratio|cube_u1|masking,0.489325,s3_masking_diag.csv,
+S3.3_share_cells_ge_0.45|cube_u1|masking,1,s3_masking_diag.csv,
+S3.3_min_pi_hat_ratio|cube_u1|sim,0.4794,s3_sim.csv,
+S3.3_share_cells_ge_0.45|cube_u1|sim,1,s3_sim.csv,
+S3.3_min_pi_hat_ratio|cube_u2|masking,0.6682,s3_masking_diag.csv,
+S3.3_share_cells_ge_0.45|cube_u2|masking,1,s3_masking_diag.csv,
+S3.3_min_pi_hat_ratio|mix_D2D0|masking,0.5,s3_masking_diag.csv,
+S3.3_share_cells_ge_0.45|mix_D2D0|masking,1,s3_masking_diag.csv,
+S3.3_min_pi_hat_ratio|mix_D2D0|sim,0.5,s3_sim.csv,
+S3.3_share_cells_ge_0.45|mix_D2D0|sim,1,s3_sim.csv,
+S3.3_min_pi_hat_ratio_all,0.4794,s3_masking_diag.csv; s3_sim.csv,
+S3_share_pairs_pgh_zero_max|cube_u1,0.001376741173,s3_masking_diag.csv,
+S3_landing_resid_median_median|cube_u1,0.0771942009,s3_masking_diag.csv,
+S3_share_pairs_pgh_zero_max|cube_u2,0,s3_masking_diag.csv,
+S3_landing_resid_median_median|cube_u2,0.1214224739,s3_masking_diag.csv,
+S3_share_pairs_pgh_zero_max|mix_D2D0,0,s3_masking_diag.csv,
+S3.4_share_within_0.03_of_D0cl|cube_u1|H_res|coverage_median,0.6944444444,s3_masking_grid.csv,180 cells
+S3.4_share_within_0.03_of_D0cl|cube_u1|H_res|coverage_all_median,0.6833333333,s3_masking_grid.csv,180 cells
+S3.4_n_cells|cube_u1|H_res,180,s3_masking_grid.csv,
+S3.4_coverage_median_over_cells|cube_u1|H_res,0.875625,s3_masking_grid.csv,
+S3.4_wr_D0cl_median_over_cells|cube_u1|H_res,0.9443214942,s3_masking_grid.csv,
+S3.4_share_below_0.80|cube_u1|H_res,0.03888888889,s3_masking_grid.csv,
+S3.4_share_within_0.03_of_D0cl|cube_u1|H_sim|coverage_median,0.7666666667,s3_masking_grid.csv,180 cells
+S3.4_share_within_0.03_of_D0cl|cube_u1|H_sim|coverage_all_median,0.6944444444,s3_masking_grid.csv,180 cells
+S3.4_n_cells|cube_u1|H_sim,180,s3_masking_grid.csv,
+S3.4_coverage_median_over_cells|cube_u1|H_sim,0.884875,s3_masking_grid.csv,
+S3.4_wr_D0cl_median_over_cells|cube_u1|H_sim,0.9527920938,s3_masking_grid.csv,
+S3.4_share_below_0.80|cube_u1|H_sim,0.01666666667,s3_masking_grid.csv,
+S3.4_share_within_0.03_of_D0cl|cube_u1|H_apx_size|coverage_median,0.5944444444,s3_masking_grid.csv,180 cells
+S3.4_share_within_0.03_of_D0cl|cube_u1|H_apx_size|coverage_all_median,0.5388888889,s3_masking_grid.csv,180 cells
+S3.4_n_cells|cube_u1|H_apx_size,180,s3_masking_grid.csv,
+S3.4_coverage_median_over_cells|cube_u1|H_apx_size,0.89275,s3_masking_grid.csv,
+S3.4_wr_D0cl_median_over_cells|cube_u1|H_apx_size,0.9510169924,s3_masking_grid.csv,
+S3.4_share_below_0.80|cube_u1|H_apx_size,0.02222222222,s3_masking_grid.csv,
+S3.4_share_within_0.03_of_D0cl|cube_u2|H_res|coverage_median,0.2833333333,s3_masking_grid.csv,120 cells
+S3.4_share_within_0.03_of_D0cl|cube_u2|H_res|coverage_all_median,0.275,s3_masking_grid.csv,120 cells
+S3.4_n_cells|cube_u2|H_res,120,s3_masking_grid.csv,
+S3.4_coverage_median_over_cells|cube_u2|H_res,0.845125,s3_masking_grid.csv,
+S3.4_wr_D0cl_median_over_cells|cube_u2|H_res,0.8782621806,s3_masking_grid.csv,
+S3.4_share_below_0.80|cube_u2|H_res,0.2083333333,s3_masking_grid.csv,
+S3.4_share_within_0.03_of_D0cl|cube_u2|H_sim|coverage_median,0.8916666667,s3_masking_grid.csv,120 cells
+S3.4_share_within_0.03_of_D0cl|cube_u2|H_sim|coverage_all_median,0.825,s3_masking_grid.csv,120 cells
+S3.4_n_cells|cube_u2|H_sim,120,s3_masking_grid.csv,
+S3.4_coverage_median_over_cells|cube_u2|H_sim,0.876625,s3_masking_grid.csv,
+S3.4_wr_D0cl_median_over_cells|cube_u2|H_sim,0.9801220269,s3_masking_grid.csv,
+S3.4_share_below_0.80|cube_u2|H_sim,0,s3_masking_grid.csv,
+S3.4_share_within_0.03_of_D0cl|cube_u2|H_apx_size|coverage_median,0.7333333333,s3_masking_grid.csv,120 cells
+S3.4_share_within_0.03_of_D0cl|cube_u2|H_apx_size|coverage_all_median,0.6833333333,s3_masking_grid.csv,120 cells
+S3.4_n_cells|cube_u2|H_apx_size,120,s3_masking_grid.csv,
+S3.4_coverage_median_over_cells|cube_u2|H_apx_size,0.885875,s3_masking_grid.csv,
+S3.4_wr_D0cl_median_over_cells|cube_u2|H_apx_size,1.014191991,s3_masking_grid.csv,
+S3.4_share_below_0.80|cube_u2|H_apx_size,0,s3_masking_grid.csv,
+S3.4_share_within_0.03_of_D0cl|mix_D2D0|H_res|coverage_median,0.4961538462,s3_masking_grid.csv,260 cells; mixture cells with D2 own support >= 1000
+S3.4_share_within_0.03_of_D0cl|mix_D2D0|H_res|coverage_all_median,0.4615384615,s3_masking_grid.csv,260 cells; mixture cells with D2 own support >= 1000
+S3.4_n_cells|mix_D2D0|H_res,260,s3_masking_grid.csv,
+S3.4_coverage_median_over_cells|mix_D2D0|H_res,0.8502125399,s3_masking_grid.csv,
+S3.4_wr_D0cl_median_over_cells|mix_D2D0|H_res,0.952328424,s3_masking_grid.csv,
+S3.4_share_below_0.80|mix_D2D0|H_res,0.1192307692,s3_masking_grid.csv,
+S3.4_share_within_0.03_of_D0cl|mix_D2D0|H_sim|coverage_median,0.9115384615,s3_masking_grid.csv,260 cells; mixture cells with D2 own support >= 1000
+S3.4_share_within_0.03_of_D0cl|mix_D2D0|H_sim|coverage_all_median,0.8692307692,s3_masking_grid.csv,260 cells; mixture cells with D2 own support >= 1000
+S3.4_n_cells|mix_D2D0|H_sim,260,s3_masking_grid.csv,
+S3.4_coverage_median_over_cells|mix_D2D0|H_sim,0.88925,s3_masking_grid.csv,
+S3.4_wr_D0cl_median_over_cells|mix_D2D0|H_sim,1.007847766,s3_masking_grid.csv,
+S3.4_share_below_0.80|mix_D2D0|H_sim,0,s3_masking_grid.csv,
+S3.4_share_within_0.03_of_D0cl|mix_D2D0|H_apx_size|coverage_median,0.7192307692,s3_masking_grid.csv,260 cells; mixture cells with D2 own support >= 1000
+S3.4_share_within_0.03_of_D0cl|mix_D2D0|H_apx_size|coverage_all_median,0.7384615385,s3_masking_grid.csv,260 cells; mixture cells with D2 own support >= 1000
+S3.4_n_cells|mix_D2D0|H_apx_size,260,s3_masking_grid.csv,
+S3.4_coverage_median_over_cells|mix_D2D0|H_apx_size,0.897,s3_masking_grid.csv,
+S3.4_wr_D0cl_median_over_cells|mix_D2D0|H_apx_size,1.030288414,s3_masking_grid.csv,
+S3.4_share_below_0.80|mix_D2D0|H_apx_size,0,s3_masking_grid.csv,
+S3.5_share_cube_narrower|cube_H_res|mix_H_sim|pa0.1,0.7222222222,s3_masking_grid.csv,36 supported cells at nL 8
+S3.5_width_ratio_median|cube_H_res|mix_H_sim|pa0.1,0.9522096939,s3_masking_grid.csv,
+S3.5_share_cube_narrower|cube_H_res|mix_H_sim|pa0.01,0.7222222222,s3_masking_grid.csv,36 supported cells at nL 8
+S3.5_width_ratio_median|cube_H_res|mix_H_sim|pa0.01,0.9547949904,s3_masking_grid.csv,
+S3.5_share_cube_narrower|cube_H_sim|mix_H_sim|pa0.1,0.7222222222,s3_masking_grid.csv,36 supported cells at nL 8
+S3.5_width_ratio_median|cube_H_sim|mix_H_sim|pa0.1,0.955242607,s3_masking_grid.csv,
+S3.5_share_cube_narrower|cube_H_sim|mix_H_sim|pa0.01,0.6944444444,s3_masking_grid.csv,36 supported cells at nL 8
+S3.5_width_ratio_median|cube_H_sim|mix_H_sim|pa0.01,0.9517170559,s3_masking_grid.csv,
+S3.5_share_cube_narrower|cube_H_res|mix_H_res|pa0.1,0.3055555556,s3_masking_grid.csv,36 supported cells at nL 8
+S3.5_width_ratio_median|cube_H_res|mix_H_res|pa0.1,1.030623548,s3_masking_grid.csv,
+S3.5_share_cube_narrower|cube_H_res|mix_H_res|pa0.01,0.2777777778,s3_masking_grid.csv,36 supported cells at nL 8
+S3.5_width_ratio_median|cube_H_res|mix_H_res|pa0.01,1.023020673,s3_masking_grid.csv,
+S3.5_share_cube_narrower|cube_H_apx_size|mix_H_apx_size|pa0.1,0.8333333333,s3_masking_grid.csv,36 supported cells at nL 8
+S3.5_width_ratio_median|cube_H_apx_size|mix_H_apx_size|pa0.1,0.9127813672,s3_masking_grid.csv,
+S3.5_share_cube_narrower|cube_H_apx_size|mix_H_apx_size|pa0.01,0.8611111111,s3_masking_grid.csv,36 supported cells at nL 8
+S3.5_width_ratio_median|cube_H_apx_size|mix_H_apx_size|pa0.01,0.9133304621,s3_masking_grid.csv,
+S3m_est_over_emp_median_over_cells|cube_u1|H_res,0.966368955,s3_masking_grid.csv,
+S3m_share_formed_min|cube_u1|H_res|theta3,1,s3_masking_grid.csv,
+S3m_share_formed_min|cube_u1|H_res|theta2,1,s3_masking_grid.csv,
+S3m_est_over_emp_median_over_cells|cube_u1|H_sim,0.9768260269,s3_masking_grid.csv,
+S3m_share_formed_min|cube_u1|H_sim|theta3,1,s3_masking_grid.csv,
+S3m_share_formed_min|cube_u1|H_sim|theta2,1,s3_masking_grid.csv,
+S3m_est_over_emp_median_over_cells|cube_u1|H_apx_size,0.9377022721,s3_masking_grid.csv,
+S3m_share_formed_min|cube_u1|H_apx_size|theta3,1,s3_masking_grid.csv,
+S3m_share_formed_min|cube_u1|H_apx_size|theta2,1,s3_masking_grid.csv,
+S3m_est_over_emp_median_over_cells|cube_u2|H_res,0.8161661928,s3_masking_grid.csv,
+S3m_share_formed_min|cube_u2|H_res|theta3,1,s3_masking_grid.csv,
+S3m_share_formed_min|cube_u2|H_res|theta2,1,s3_masking_grid.csv,
+S3m_est_over_emp_median_over_cells|cube_u2|H_sim,0.9832120226,s3_masking_grid.csv,
+S3m_share_formed_min|cube_u2|H_sim|theta3,1,s3_masking_grid.csv,
+S3m_share_formed_min|cube_u2|H_sim|theta2,1,s3_masking_grid.csv,
+S3m_est_over_emp_median_over_cells|cube_u2|H_apx_size,0.9871465066,s3_masking_grid.csv,
+S3m_share_formed_min|cube_u2|H_apx_size|theta3,1,s3_masking_grid.csv,
+S3m_share_formed_min|cube_u2|H_apx_size|theta2,1,s3_masking_grid.csv,
+S3m_est_over_emp_median_over_cells|mix_D2D0|H_res,0.8087125847,s3_masking_grid.csv,
+S3m_share_formed_min|mix_D2D0|H_res|theta3,1,s3_masking_grid.csv,
+S3m_share_formed_min|mix_D2D0|H_res|theta2,0.038,s3_masking_grid.csv,
+S3m_est_over_emp_median_over_cells|mix_D2D0|H_sim,0.9759183849,s3_masking_grid.csv,
+S3m_share_formed_min|mix_D2D0|H_sim|theta3,1,s3_masking_grid.csv,
+S3m_share_formed_min|mix_D2D0|H_sim|theta2,0.038,s3_masking_grid.csv,
+S3m_est_over_emp_median_over_cells|mix_D2D0|H_apx_size,0.9872130947,s3_masking_grid.csv,
+S3m_share_formed_min|mix_D2D0|H_apx_size|theta3,1,s3_masking_grid.csv,
+S3m_share_formed_min|mix_D2D0|H_apx_size|theta2,0.038,s3_masking_grid.csv,
+S3s_coverage_min|cube_u1|panan|H_apx_size|law_n,0.83225,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|cube_u1|panan|H_apx_size|law_n,0.91505,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_max|cube_u1|panan|H_apx_size|law_n,0.99935,s3_sim.csv,"n_L >= 8, over cells"
+S3s_est_over_emp_median|cube_u1|panan|H_apx_size|law_n,1.108124785,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|cube_u1|panan|H_apx_size|law_n|G15,0.8740833333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|cube_u1|panan|H_apx_size|law_n|G24,0.9143916667,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|cube_u1|panan|H_apx_size|law_n|G51,0.9382,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_min|cube_u1|panan|H_apx_size|law_s,0.7814833333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|cube_u1|panan|H_apx_size|law_s,0.857525,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_max|cube_u1|panan|H_apx_size|law_s,0.9964333333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_est_over_emp_median|cube_u1|panan|H_apx_size|law_s,1.093258347,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|cube_u1|panan|H_apx_size|law_s|G15,0.8414416667,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|cube_u1|panan|H_apx_size|law_s|G24,0.8621083334,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|cube_u1|panan|H_apx_size|law_s|G51,0.8823083334,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_min|cube_u1|panan|H_res|law_n,0.7188666667,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|cube_u1|panan|H_res|law_n,0.867975,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_max|cube_u1|panan|H_res|law_n,0.8959,s3_sim.csv,"n_L >= 8, over cells"
+S3s_est_over_emp_median|cube_u1|panan|H_res|law_n,0.9003785757,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|cube_u1|panan|H_res|law_n|G15,0.8156416667,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|cube_u1|panan|H_res|law_n|G24,0.874675,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|cube_u1|panan|H_res|law_n|G51,0.8848416666,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_min|cube_u1|panan|H_res|law_s,0.71355,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|cube_u1|panan|H_res|law_s,0.7956333333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_max|cube_u1|panan|H_res|law_s,0.8423,s3_sim.csv,"n_L >= 8, over cells"
+S3s_est_over_emp_median|cube_u1|panan|H_res|law_s,0.9203697642,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|cube_u1|panan|H_res|law_s|G15,0.792625,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|cube_u1|panan|H_res|law_s|G24,0.7928416666,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|cube_u1|panan|H_res|law_s|G51,0.7966166667,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_min|cube_u1|panan|H_sim|law_n,0.8182,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|cube_u1|panan|H_sim|law_n,0.8783583333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_max|cube_u1|panan|H_sim|law_n,0.89435,s3_sim.csv,"n_L >= 8, over cells"
+S3s_est_over_emp_median|cube_u1|panan|H_sim|law_n,0.9551732467,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|cube_u1|panan|H_sim|law_n|G15,0.8666916666,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|cube_u1|panan|H_sim|law_n|G24,0.8786083333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|cube_u1|panan|H_sim|law_n|G51,0.8839583334,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_min|cube_u1|panan|H_sim|law_s,0.78235,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|cube_u1|panan|H_sim|law_s,0.8161916666,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_max|cube_u1|panan|H_sim|law_s,0.87265,s3_sim.csv,"n_L >= 8, over cells"
+S3s_est_over_emp_median|cube_u1|panan|H_sim|law_s,0.9760642542,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|cube_u1|panan|H_sim|law_s|G15,0.83325,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|cube_u1|panan|H_sim|law_s|G24,0.8240583334,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|cube_u1|panan|H_sim|law_s|G51,0.8108583333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_min|mix_D2D0|pa0.01|H_apx_size|law_n,0.8799833333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.01|H_apx_size|law_n,0.9280333333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_max|mix_D2D0|pa0.01|H_apx_size|law_n,0.9535,s3_sim.csv,"n_L >= 8, over cells"
+S3s_est_over_emp_median|mix_D2D0|pa0.01|H_apx_size|law_n,1.193646007,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.01|H_apx_size|law_n|G15,0.9194833333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.01|H_apx_size|law_n|G24,0.9247083333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.01|H_apx_size|law_n|G51,0.93005,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_min|mix_D2D0|pa0.01|H_apx_size|law_s,0.7961833333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.01|H_apx_size|law_s,0.882075,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_max|mix_D2D0|pa0.01|H_apx_size|law_s,0.9387,s3_sim.csv,"n_L >= 8, over cells"
+S3s_est_over_emp_median|mix_D2D0|pa0.01|H_apx_size|law_s,1.188869638,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.01|H_apx_size|law_s|G15,0.8896416666,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.01|H_apx_size|law_s|G24,0.880025,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.01|H_apx_size|law_s|G51,0.8761,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_min|mix_D2D0|pa0.01|H_res|law_n,0.6286833333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.01|H_res|law_n,0.8544416666,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_max|mix_D2D0|pa0.01|H_res|law_n,0.9024166667,s3_sim.csv,"n_L >= 8, over cells"
+S3s_est_over_emp_median|mix_D2D0|pa0.01|H_res|law_n,0.7528235836,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.01|H_res|law_n|G15,0.845225,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.01|H_res|law_n|G24,0.8639833333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.01|H_res|law_n|G51,0.8522583333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_min|mix_D2D0|pa0.01|H_res|law_s,0.5151,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.01|H_res|law_s,0.7561666666,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_max|mix_D2D0|pa0.01|H_res|law_s,0.8836,s3_sim.csv,"n_L >= 8, over cells"
+S3s_est_over_emp_median|mix_D2D0|pa0.01|H_res|law_s,0.6836705872,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.01|H_res|law_s|G15,0.7866333333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.01|H_res|law_s|G24,0.7419333333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.01|H_res|law_s|G51,0.7375583333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_min|mix_D2D0|pa0.01|H_sim|law_n,0.8305833333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.01|H_sim|law_n,0.9072333333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_max|mix_D2D0|pa0.01|H_sim|law_n,0.92755,s3_sim.csv,"n_L >= 8, over cells"
+S3s_est_over_emp_median|mix_D2D0|pa0.01|H_sim|law_n,1.004324876,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.01|H_sim|law_n|G15,0.8942416666,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.01|H_sim|law_n|G24,0.91185,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.01|H_sim|law_n|G51,0.909225,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_min|mix_D2D0|pa0.01|H_sim|law_s,0.7625,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.01|H_sim|law_s,0.8314833334,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_max|mix_D2D0|pa0.01|H_sim|law_s,0.8909166667,s3_sim.csv,"n_L >= 8, over cells"
+S3s_est_over_emp_median|mix_D2D0|pa0.01|H_sim|law_s,0.9954877798,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.01|H_sim|law_s|G15,0.8101333333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.01|H_sim|law_s|G24,0.835,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.01|H_sim|law_s|G51,0.8346333334,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_min|mix_D2D0|pa0.1|H_apx_size|law_n,0.8915,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.1|H_apx_size|law_n,0.928725,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_max|mix_D2D0|pa0.1|H_apx_size|law_n,0.9518833333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_est_over_emp_median|mix_D2D0|pa0.1|H_apx_size|law_n,1.197375543,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.1|H_apx_size|law_n|G15,0.9247166666,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.1|H_apx_size|law_n|G24,0.9263583334,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.1|H_apx_size|law_n|G51,0.929625,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_min|mix_D2D0|pa0.1|H_apx_size|law_s,0.7945,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.1|H_apx_size|law_s,0.8831916666,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_max|mix_D2D0|pa0.1|H_apx_size|law_s,0.9405166667,s3_sim.csv,"n_L >= 8, over cells"
+S3s_est_over_emp_median|mix_D2D0|pa0.1|H_apx_size|law_s,1.182219781,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.1|H_apx_size|law_s|G15,0.8902583333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.1|H_apx_size|law_s|G24,0.8788833334,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.1|H_apx_size|law_s|G51,0.8772166666,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_min|mix_D2D0|pa0.1|H_res|law_n,0.6261333333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.1|H_res|law_n,0.8563666667,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_max|mix_D2D0|pa0.1|H_res|law_n,0.90335,s3_sim.csv,"n_L >= 8, over cells"
+S3s_est_over_emp_median|mix_D2D0|pa0.1|H_res|law_n,0.7568880319,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.1|H_res|law_n|G15,0.858225,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.1|H_res|law_n|G24,0.863225,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.1|H_res|law_n|G51,0.8529833333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_min|mix_D2D0|pa0.1|H_res|law_s,0.5119666667,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.1|H_res|law_s,0.757025,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_max|mix_D2D0|pa0.1|H_res|law_s,0.8747666667,s3_sim.csv,"n_L >= 8, over cells"
+S3s_est_over_emp_median|mix_D2D0|pa0.1|H_res|law_s,0.6826651569,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.1|H_res|law_s|G15,0.7989083333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.1|H_res|law_s|G24,0.7420416667,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.1|H_res|law_s|G51,0.738375,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_min|mix_D2D0|pa0.1|H_sim|law_n,0.8984666667,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.1|H_sim|law_n,0.9099583334,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_max|mix_D2D0|pa0.1|H_sim|law_n,0.9299833333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_est_over_emp_median|mix_D2D0|pa0.1|H_sim|law_n,1.001001593,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.1|H_sim|law_n|G15,0.9103333333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.1|H_sim|law_n|G24,0.9121916667,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.1|H_sim|law_n|G51,0.9084666667,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_min|mix_D2D0|pa0.1|H_sim|law_s,0.7939333333,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.1|H_sim|law_s,0.8440916667,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_max|mix_D2D0|pa0.1|H_sim|law_s,0.91545,s3_sim.csv,"n_L >= 8, over cells"
+S3s_est_over_emp_median|mix_D2D0|pa0.1|H_sim|law_s,0.9985123956,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.1|H_sim|law_s|G15,0.8605666667,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.1|H_sim|law_s|G24,0.842175,s3_sim.csv,"n_L >= 8, over cells"
+S3s_coverage_median|mix_D2D0|pa0.1|H_sim|law_s|G51,0.8370083333,s3_sim.csv,"n_L >= 8, over cells"
