@@ -29,8 +29,9 @@ file for the Claude sessions that work on the project.
 | round 4 · data pull, then the inference and prediction-set tracks | complete (tags `round4-data-v2`, `round4-ppi-final`, `round4-conf-final`) |
 | round 5 · the inference and prediction-set tracks | complete (tags `round5-ppi-final`, `round5-conf-final`) |
 | round 6 · a side experiment, language-model prediction from histology with a size-limited cheatsheet | complete (tags `round6-cheatsheet-C1`, `round6-cheatsheet-final`), summary in [`docs/round06/oversight/round06_cheatsheet_summary.md`](docs/round06/oversight/round06_cheatsheet_summary.md) |
+| round 7 · federated learning for expression prediction, and inference after histology-guided selection of labelled clusters | complete (tags `round7-fedlearn-F2`, `round7-fedlearn-final`, `round7-ppi-S2`, `round7-ppi-S4`, `round7-ppi-final`), summary in [`docs/round07/README.md`](docs/round07/README.md) |
 
-Every gate of rounds 2 to 6 is tagged. The sections below, from the headline result to the known
+Every gate of rounds 2 to 7 is tagged. The sections below, from the headline result to the known
 limitations, describe the benchmark work of rounds 1 and 2 and have not changed since the round-2
 closeout. The methods results of rounds 4 and 5 are summarised on the closing pages of
 [`docs/round04/i03/ppi/round4_ppi_final_report.md`](docs/round04/i03/ppi/round4_ppi_final_report.md),

@@ -50,11 +50,11 @@ The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at U
 | R7-2 | How the federated learning paper is framed relative to David's textual knowledge base | Nicolas, with David and Dr. Zhu | the review compares the routes on evidence and takes no side |
 | R7-3 | Venue and authorship of the federated learning paper | Nicolas, with his advisors | open |
 | R7-4 | Whether the closing recommendation of the fedlearn track becomes the federated learning paper, and whether its first method targets partial gene overlap or private release (`docs/round07/i03/fedlearn/round07_fedlearn_final_decisions.md`, section 4) | Nicolas, with Dr. Zhu and David | no federated learning track opens; the oversight chat's view is partial gene overlap |
-| R7-5 | The PPI paper's positioning against Broska and Howes's interval with small-sample corrections, which covers at four labelled clusters and is narrower there than the paper's tuned interval (`docs/round07/i03/ppi/round07_ppi_S4_decisions.md`, section 4). Feeds O5 | Nicolas, with David | the positioning note is revised after the round closes |
-| R7-6 | Whether the paper's tuned estimator uses a global coefficient below some $n_L$, where `c_crossfit_design` cannot be formed. Changes what round 5 closed | Nicolas | round 5's estimator as defined |
+| R7-5 | The PPI paper's positioning against Broska and Howes's interval with small-sample corrections, which covers at four labelled clusters and is narrower there than the paper's tuned interval (`docs/round07/i04/ppi/round07_ppi_final_decisions.md`, section 4). Feeds O5 | Nicolas, with David | the positioning note is revised once this is decided, and until then carries a banner saying its few-cluster claims are too broad |
+| R7-6 | Whether the paper's tuned estimator uses a global coefficient below six labelled clusters, where rule `c_crossfit_design` sets the coefficient to zero. Changes what round 5 closed | Nicolas | round 5's estimator as defined |
 | R7-7 | Which balanced design the PPI paper recommends (`docs/round07/i04/ppi/round07_ppi_final_decisions.md`, section 4) | Nicolas, with David | `[proposed]` `rej_t` where its support and one balance variable allow, the S4b cube design as the design-based alternative |
 | O3 | How the PPI paper and the lab's manuscript refer to each other | Nicolas, with David and Dr. Zhu | neither refers to the other |
-| O5 | The PPI paper's positioning, as in `docs/round07/oversight/round07_ppi_positioning.md`, section 5 | Nicolas, with David | the paper claims nothing that note marks as prior art, classical or implied |
+| O5 | The PPI paper's positioning, as in `docs/round07/oversight/round07_ppi_positioning.md`, section 5 | Nicolas, with David | the paper claims nothing that note marks as prior art, classical or implied, nor the few-cluster regime in general (its banner of 15 October) |
 
 ## 3. Where the record is
 
@@ -116,7 +116,7 @@ Independent, checkable jobs go to subagents, several at once when they do not de
 - **Filing.** Every document has one place by round, interval and track (`docs/README.md`, "How the folders work"). A gate memo goes in the interval it opens. New file names carry the full prefix (`round06_ppi_E2_report.md`), so every name is unique.
 - **The document chain.** The oversight chat writes an instruction or a decision memo. The execution session transcribes it into its operating plan in `tracks/<track>/`, flags what looks wrong without changing it, and writes a gate report into its interval folder. The next memo answers the report.
 - **Memos.** Each memo opens with what was read and checked, cites the gate rule in `docs/EXECUTION_RULES.md` section 2, then gives acceptance, what was checked, readings for the paper, the next interval with predictions, and answers to every escalation. The oversight chat writes each memo to `main` when Nicolas hands it over, and the track commits the same file unchanged, which merges cleanly. Copies in the claude.ai project docs are for convenience only.
-- **Naming.** Tracks and stages are named per round (`round5_ppi_*`, stages E0 to E5; `round5_conf_*`, stages W0 to W5; `round06_cheatsheet_*` documents and `round6_cheatsheet_*.py` scripts, stages C0 to C7; `round07_fedlearn_*` documents and `round7_fedlearn_*.py` scripts, stages F0 to F4). Tags mark each gate (`round5-ppi-E2`, `round6-cheatsheet-C1`, `round7-fedlearn-F2`).
+- **Naming.** Tracks and stages are named per round (`round5_ppi_*`, stages E0 to E5; `round5_conf_*`, stages W0 to W5; `round06_cheatsheet_*` documents and `round6_cheatsheet_*.py` scripts, stages C0 to C7; `round07_fedlearn_*` documents and `round7_fedlearn_*.py` scripts, stages F0 to F4; `round07_ppi_*` documents and `round7_ppi_*.py` scripts, stages S0 to S5 with S2b and S4b). Tags mark each gate (`round5-ppi-E2`, `round6-cheatsheet-C1`, `round7-fedlearn-F2`).
 - **Numeric-claim sweep.** `code/scripts/verify_numeric_claims.py`, run as `docs/WAYS_OF_WORKING.md` shows, with each track's exceptions in its own `.verify-exceptions-<track>` file. The oversight chat sweeps `README.md`.
 - **Tags.** `[proposed]` marks what the oversight chat proposed and Nicolas has not accepted. `[verify]` marks a statement written from memory.
 - **Before every documentation commit,** run the state check (section 1).
@@ -125,7 +125,7 @@ Independent, checkable jobs go to subagents, several at once when they do not de
 
 ```
 CLAUDE.md                 this file, with protocol, state, preferences and rules
-README.md                 the repository's public entry point, status through round 6
+README.md                 the repository's public entry point, status through round 7
 docs/README.md            the reading guide, with the layout and one row per round
 docs/progress-log.md      what happened and why, newest first
 docs/WAYS_OF_WORKING.md   procedures, each tied to the failure that produced it, and the guardrails register

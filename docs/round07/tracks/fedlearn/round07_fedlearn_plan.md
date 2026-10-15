@@ -1,6 +1,6 @@
 # Round 7, the federated learning track, operating plan
 
-*Frozen at the close of round 7, 15 October 2026.*
+*Frozen at the close of round 7, 15 October 2026. Every pull request of the track has merged, whatever the current-state block below says.*
 
 Living document of the execution session. Started 13 October 2026. The instruction is `docs/round07/i01/fedlearn/round07_fedlearn_track.md` on `main`.
 

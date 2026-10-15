@@ -1,5 +1,7 @@
 # The PPI paper's positioning against cluster-robust PPI, the cluster bootstrap and balanced active inference
 
+*Revised by later results, 15 October 2026. Round 7 found that Broska and Howes's interval with a small-sample correction ($t_{n_L-1}$ and the divisor $n_L - 1$) covers at four labelled clusters and is narrower there than the paper's tuned interval. So the rows and sentences below that claim the few-cluster regime as the paper's own are too broad. What the paper keeps is the finite-population factor and cross-fitting term for the design target and the design results (`docs/round07/i04/ppi/round07_ppi_final_decisions.md`, section 2 item 6, and `docs/round07/oversight/round07_ppi_results_explained.md`, Part C). This note is revised once Nicolas decides R7-5.*
+
 13 October 2026. Written by the oversight chat for Nicolas, as step R7.1 of round 7, after the overlap check (`docs/round07/00_prep/round07_overlap_check.md`). It settles what the paper "Labelling budgets for prediction-powered inference with clustered data" can claim as its own, and what that means for round 7's PPI question (open question O2). Recommendations are `[proposed]` until Nicolas decides. Positioning against published work is his decision with David (open question O5). An independent agent checked this note against the three papers and the repository before commit. It re-derived section 2.2 and found it correct, and its other findings are worked in.
 
 ## 1. What was read

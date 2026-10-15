@@ -126,7 +126,7 @@ When most clusters are labelled, the coefficients fitted on two halves of the la
 ### What changed in round 7
 
 Nothing in the derivation. Two things around it.
-- Broska and Howes's interval has no small-sample correction and no finite-population factor, and they name small-sample corrections as future work. A design-target interval for 4 to 16 labelled clusters remains the paper's own.
+- Broska and Howes's interval has no small-sample correction and no finite-population factor, and they name small-sample corrections as future work. The paper's design-target interval keeps its own finite-population factor and cross-fitting term, but at the smallest $n_L$ a small-sample correction of their interval does as well or better (A5, item 4, and Part C).
 - The estimator's rule `c_crossfit_design` sets the coefficient to zero below six labelled clusters (`docs/round05/tracks/ppi/round5_ppi_estimator_definition.md`), so at four labelled clusters the tuned interval is the classical one. Round 7 found that a single coefficient fitted on all labelled clusters, with a $t$ reference, does better there (A5, item 4). Whether to change the rule is Nicolas's decision (R7-6).
 
 ### The theory
@@ -285,7 +285,7 @@ $$
 \frac{\sum_{g \in L} \bar f_g/\pi_g}{\hat N} = \bar F\,\frac{G}{\hat N},
 $$
 
-which misses $\bar F$ by $\bar F\,(G/\hat N - 1)$, a multiple of the level of the predictions, large for income. Balancing also on the constant, $x_g = 1$, targets $\hat N = G$. It halved the census width, from 0.912 to 0.568 at $n_L = 8$ (`results/round7/ppi/S4b_cube_constant/_merged/s4b_report_numbers.csv`). The cube method's last step never meets that equation exactly, and $|\hat N/G - 1|$ stays near 0.03. The Hájek mean divides by $\hat N$ and is unaffected, but the Horvitz-Thompson mean divides by $G$ and carries the level of income times that deviation, so it stays unusable on census (width 3.48 of D0's). With three balance variables the interval has too few degrees of freedom at $n_L = 4$, so this design is stated for $n_L \ge 6$.
+which misses $\bar F$ by $\bar F\,(G/\hat N - 1)$, a multiple of the level of the predictions, large for income. Balancing also on the constant, $x_g = 1$, targets $\hat N = G$. It halved the census width, from 0.912 to 0.568 at $n_L = 8$ (`results/round7/ppi/S4b_cube_constant/_merged/s4b_report_numbers.csv`). The cube method's last step never meets that equation exactly, and $|\hat N/G - 1|$ stays at a median of 0.03 to 0.05 (`docs/round07/tracks/ppi/round07_ppi_theory.md`, section 3.10). The Hájek mean divides by $\hat N$ and is unaffected, but the Horvitz-Thompson mean divides by $G$ and carries the level of income times that deviation, so it stays unusable on census (width 3.48 of D0's). With three balance variables the interval has too few degrees of freedom at $n_L = 4$, so this design is stated for $n_L \ge 6$.
 
 ### 3. Greedy k-center is a negative result
 
