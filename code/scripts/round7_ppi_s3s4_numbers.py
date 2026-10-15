@@ -180,6 +180,24 @@ def run_s3(a):
             N.add(f"S3.5_share_cube_narrower|cube_H_{vc}|mix_H_{vm}|pa{pa_}", float((jj["width_median_cube"] < jj["width_median_mix"]).mean()), SG,
                   f"{len(jj)} supported cells at nL 8")
             N.add(f"S3.5_width_ratio_median|cube_H_{vc}|mix_H_{vm}|pa{pa_}", float((jj["width_median_cube"] / jj["width_median_mix"]).median()), SG)
+    # further aggregates quoted in the S4 report
+    for des in ("cube_u1", "cube_u2", "mix_D2D0"):
+        for var in ("res", "sim", "apx_size"):
+            x = grid[(grid["design"] == des) & (grid["estimator"] == "H") & (grid["variance"] == var)]
+            N.add(f"S3m_est_over_emp_median_over_cells|{des}|H_{var}", float(x["est_over_emp_median"].median()), SG)
+            for est in ("theta3", "theta2"):
+                y = x[x["estimand"] == est]
+                N.add(f"S3m_share_formed_min|{des}|H_{var}|{est}", float(y["share_formed_min"].min()), SG)
+    if len(sim):
+        y = sim[(sim["estimator"] == "H") & (sim["n_L"] >= 8)]
+        for (des, pa_, var, law), x in y.groupby(["design", "p_a", "variance", "law"], dropna=False):
+            tag = f"{des}|pa{pa_}|H_{var}|law_{law}"
+            N.add(f"S3s_coverage_min|{tag}", float(x["coverage_mean"].min()), SS, "n_L >= 8, over cells")
+            N.add(f"S3s_coverage_median|{tag}", float(x["coverage_mean"].median()), SS, "n_L >= 8, over cells")
+            N.add(f"S3s_coverage_max|{tag}", float(x["coverage_mean"].max()), SS, "n_L >= 8, over cells")
+            N.add(f"S3s_est_over_emp_median|{tag}", float(x["est_over_emp_mean"].median()), SS, "n_L >= 8, over cells")
+            for G, xg in x.groupby("G"):
+                N.add(f"S3s_coverage_median|{tag}|G{G}", float(xg["coverage_mean"].median()), SS, "n_L >= 8, over cells")
     N.write("s3_report_numbers.csv")
     print(len(st), int(st["merged"].sum()), len(cells), len(sim))
 
@@ -238,6 +256,19 @@ def run_s4(a):
             N.add(f"S4.2_HT_sd_ratio_min_over_arms|{est}|{t}", float(x["sd_ratio_D0cl_median"].min()), SG)
         per = ht.groupby("vtag")["sd_ratio_D0cl_median"].median()
         N.add(f"S4.2_n_tasks_ratio_ge_1.5|{est}", int((per >= 1.5).sum()), SG, f"of {len(per)} tasks")
+        # the selection depends only on the encoder (resnet50 for the resnet50, permuted and constant arms), and the
+        # classical mean and HT do not use the predictions, so the encoder is the unit for these two estimators
+        ce = cl.drop_duplicates(["vtag", "encoder"])
+        pe = ce.groupby("vtag")["coverage_median"].median()
+        for t, v in pe.items():
+            N.add(f"S4.1_classical_coverage_median_over_encoders|{est}|{t}", float(v), SG)
+        N.add(f"S4.1_n_tasks_below_0.80_over_encoders|{est}", int((pe < 0.80).sum()), SG, f"of {len(pe)} tasks")
+        for _, r in ce.iterrows():
+            N.add(f"S4.1_classical_coverage|{est}|{r['vtag']}|{r['encoder']}", float(r["coverage_median"]), SG)
+        he = ht.drop_duplicates(["vtag", "encoder"])
+        for _, r in he.iterrows():
+            N.add(f"S4.2_HT_sd_over_D0cl_sd|{est}|{r['vtag']}|{r['encoder']}", float(r["sd_ratio_D0cl_median"]), SG)
+        N.add(f"S4.2_n_task_encoder_cells_ge_1.5|{est}", int((he["sd_ratio_D0cl_median"] >= 1.5).sum()), SG, f"of {len(he)} task and encoder cells")
         for (estr, var), x in grid[(grid["n_L"] == 8) & (grid["estimand"] == est)].groupby(["estimator", "variance"]):
             N.add(f"S4_coverage_median_over_cells|{est}|nL8|{estr}_{var}", float(x["coverage_median"].median()), SG)
     N.write("s4_report_numbers.csv")
