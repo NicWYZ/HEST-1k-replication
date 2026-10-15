@@ -6,18 +6,18 @@ Living document. Written 14 October 2026 by the execution session and approved b
 
 | field | value |
 |---|---|
-| stage | Interval i03 opened by `docs/round07/i03/ppi/round07_ppi_S4_decisions.md` (committed unchanged as `4d99b33d`). The S4 gate is accepted. Next is S4b, then S5, the closing gate |
+| stage | Interval i03 complete. S4b and S5 done on 15 October, the final report is written, and the track ends at the closing gate (tag `round7-ppi-final`) |
 | starting commit | `c2af4630fe601c255c927d2a3f5a76b19a53d9f2` (13 October 2026, "Docs: open round 7's inference track after O2 was accepted") |
 | `origin/main` when read | `febfc9a8` (15 October 2026, merge of pull request #31, the S4 gate), with the S4 memo at `cebb34d6`. `docs/EXECUTION_RULES.md` and the track document have no revision since the S2 memo |
 | standing rules | `docs/EXECUTION_RULES.md` at its revision of 14 October, read in full, adopted from the S2 memo on |
 | track document revisions transcribed | the two lines dated 13 October 2026 (first version, and the revision before handover) |
 | branch | `round7-ppi` from `c2af4630`, with nothing merged into it |
 | Longleaf code clone | `/work/users/w/e/weiyang/hest_code/round7-ppi/`, made by Slurm job 4816458 |
-| last delivered commit | `d2b64931ae91498ac1d8085b01b288f06d591680` (delivery 15, Slurm job 4903007) |
-| open pull request | none (#29 and #31 merged) |
+| last delivered commit | `61a60229f96ef8c54ec5d255da85dddac6b5be94` (delivery 19, Slurm job 4951929) |
+| open pull request | the closing pull request from `round7-ppi`, opened after the commit tagged `round7-ppi-final`; its number is in the chat handover (#29 and #31 merged) |
 | plan extensions | none |
-| escalations recorded for the next report | none yet in i03 |
-| next action | theory section 3 for S4b, then the S4b sampler test |
+| escalations recorded for the next report | none; the final report's section 7 holds i03's |
+| next action | none. The track is closed |
 
 A restarted session resumes from this block, the job ledger `results/round7/ppi/r7ppi_slurm_jobs.csv` and `results/round7/ppi/code_deliveries.csv`.
 
@@ -75,7 +75,7 @@ S0 is capped at one day. Expected Slurm use is four short jobs (clone, delivery,
 
 ## 5. Fan-out
 
-| stage | Interval i03 opened by `docs/round07/i03/ppi/round07_ppi_S4_decisions.md` (committed unchanged as `4d99b33d`). The S4 gate is accepted. Next is S4b, then S5, the closing gate |
+| stage | Interval i03 complete. S4b and S5 done on 15 October, the final report is written, and the track ends at the closing gate (tag `round7-ppi-final`) |
 |---|---|---|
 | S0 | none, the lead does it | lead |
 | S1 | six task units (`CCRCC`, `CCRCC_merged`, `INDIANA_KIDNEY`, `LUNG_XENIUM`, `ACS_STATES`, `ACS_CA_PUMA`) and one simulation unit | sub-agents for the runs, the lead for the theory section and the synthetic test |
@@ -116,9 +116,9 @@ Copied from the track document before any run, for interval i02 from section 6 o
 | S3.3 | In every S3 cell the smallest $\hat\pi_g$ is at least $0.45\,n_L/G$ | held (S4 report, section 5) |
 | S3.4 | On the supported real-task cells, S3's Hájek interval with its primary variance covers within 0.03 of D0 classical in at least 0.85 of the cells, where D2's Hájek interval with simulated pair probabilities did so in 0.71 | refuted (S4 report, section 5) |
 | S3.5 | At $n_L = 8$ with own balance, the cube design's Hájek interval is narrower than the Hájek interval under the mixture of D2 and D0 in at least three quarters of the supported cells | refuted, narrowly (S4 report, section 5) |
-| S4b.1 | On census at $n_L = 8$, the Hájek interval under the cube design with $\pi_g$, $1$ and $\bar f_g$ balanced has a width at most 0.70 of D0 classical, in the median over the informative cells | not tested |
-| S4b.2 | On the matched supported tissue cells at $n_L = 8$, its width is within 0.03 of the S3 cube design's, and its coverage within 0.03 of D0 classical | not tested |
-| S4b.3 | Its Horvitz-Thompson width on census at $n_L = 8$ is below 1 | not tested |
+| S4b.1 | On census at $n_L = 8$, the Hájek interval under the cube design with $\pi_g$, $1$ and $\bar f_g$ balanced has a width at most 0.70 of D0 classical, in the median over the informative cells | held (final report, section 5) |
+| S4b.2 | On the matched supported tissue cells at $n_L = 8$, its width is within 0.03 of the S3 cube design's, and its coverage within 0.03 of D0 classical | held (final report, section 5) |
+| S4b.3 | Its Horvitz-Thompson width on census at $n_L = 8$ is below 1 | refuted (final report, section 5) |
 
 ## 8. Plan extensions
 
@@ -238,16 +238,16 @@ Transcribed on 15 October 2026 from sections 3 and 5 of `docs/round07/i03/ppi/ro
 
 ### S4b. The cube design with the constant balanced (capped at one day)
 
-- [ ] **Theory.** In theory section 3, the cube design with balance variables $\pi_g$, $1$ and $\bar f_g$. Why the constant makes $\hat N = G$, what that does to the Hájek and Horvitz-Thompson means, and a check that the flight phase can meet three balance equations at every $n_L$ of the grid. Written before any S4b run.
-- [ ] **Sampler test.** S3's test repeated for the new design, before any other S4b run.
-- [ ] **Runs.** The new design with the first score on all six tasks of the masking grid and on the simulation cells with $n_L \ge 8$. Hájek and Horvitz-Thompson means, the Sen-Yates-Grundy form with simulated $\hat\pi_{gh}$ (primary) and the residual form. Outputs in `results/round7/ppi/S4b_cube_constant/`, merged as in S3 with the stamp check.
-- [ ] **Numbers** for S4b.1 to S4b.3 on Longleaf, copied back.
+- [x] **Theory** (15 Oct, section 3.9, commit `44032ae0`). In theory section 3, the cube design with balance variables $\pi_g$, $1$ and $\bar f_g$. Why the constant makes $\hat N = G$, what that does to the Hájek and Horvitz-Thompson means, and a check that the flight phase can meet three balance equations at every $n_L$ of the grid. Written before any S4b run.
+- [x] **Sampler test** (15 Oct, Slurm 4950711, theory 3.10; passes, $\hat N = G$ never exact). S3's test repeated for the new design, before any other S4b run.
+- [x] **Runs** (15 Oct, pilots 4951133, 4951135, 4951136; seven sub-agents, 114 jobs on snapshot `44032ae0`). The new design with the first score on all six tasks of the masking grid and on the simulation cells with $n_L \ge 8$. Hájek and Horvitz-Thompson means, the Sen-Yates-Grundy form with simulated $\hat\pi_{gh}$ (primary) and the residual form. Outputs in `results/round7/ppi/S4b_cube_constant/`, merged as in S3 with the stamp check.
+- [x] **Numbers** (15 Oct, merge 4968431 into `S4b_cube_constant/_merged/`) for S4b.1 to S4b.3 on Longleaf, copied back.
 
 ### S5. The closing report (one day; gate, end of track)
 
-- [ ] **Numbers job** from the merged tables of S1 to S4b, with no new draws, into `results/round7/ppi/S5_numbers/`. Matched cells across designs (task, arm, estimand, $n_L$), D2 cells with support of at least 1,000, degenerate cells dropped, each table with its cell count. Coverage over all draws (a draw without an interval is a miss) as the primary figure, with coverage over formed draws and the share formed beside it. The informative-cell tables of the memo's section 2 at every $n_L$ and both $p_a$, for D0 classical and tuned, D2 `rej_t`, the cube designs of S3 and S4b, the mixture, `bh` and `bh_t`, tissue and census apart, widths against D0 classical and against `rej_t`. `bh_t` and `bh_t_n2` against the tuned interval by $n_L$, for the design target with `textbook_t|fpc|lin|xf` and for the superpopulation target with round 5's tuned superpopulation interval. The control arms (constant, permuted, `perm_cluster`) in a separate table. Horvitz-Thompson and Hájek widths and balance residuals of every cube design, by domain.
-- [ ] **Theory note** in section 2.1 on $\rho_{\mathrm{BH}}$, that the derivation holds $\lambda$ fixed while the empirical variance includes the noise of $\hat\lambda$, marked as an explanation not derived or checked.
-- [ ] **Final report** in `docs/round07/i03/ppi/round07_ppi_final_report.md`, covering S4b and S5 in the format of section 7 of `docs/EXECUTION_RULES.md`, S4b's predictions scored, ending with the closing page "What the inference track established in round 7" as the memo's section 5, item S5.3, describes.
+- [x] **Numbers job** (15 Oct, dry run 4951950, final 4968458 into `S5_numbers/run1/`) from the merged tables of S1 to S4b, with no new draws, into `results/round7/ppi/S5_numbers/`. Matched cells across designs (task, arm, estimand, $n_L$), D2 cells with support of at least 1,000, degenerate cells dropped, each table with its cell count. Coverage over all draws (a draw without an interval is a miss) as the primary figure, with coverage over formed draws and the share formed beside it. The informative-cell tables of the memo's section 2 at every $n_L$ and both $p_a$, for D0 classical and tuned, D2 `rej_t`, the cube designs of S3 and S4b, the mixture, `bh` and `bh_t`, tissue and census apart, widths against D0 classical and against `rej_t`. `bh_t` and `bh_t_n2` against the tuned interval by $n_L$, for the design target with `textbook_t|fpc|lin|xf` and for the superpopulation target with round 5's tuned superpopulation interval. The control arms (constant, permuted, `perm_cluster`) in a separate table. Horvitz-Thompson and Hájek widths and balance residuals of every cube design, by domain.
+- [x] **Theory note** (15 Oct) in section 2.1 on $\rho_{\mathrm{BH}}$, that the derivation holds $\lambda$ fixed while the empirical variance includes the noise of $\hat\lambda$, marked as an explanation not derived or checked.
+- [x] **Final report** in `docs/round07/i03/ppi/round07_ppi_final_report.md`, covering S4b and S5 in the format of section 7 of `docs/EXECUTION_RULES.md`, S4b's predictions scored, ending with the closing page "What the inference track established in round 7" as the memo's section 5, item S5.3, describes.
 - [ ] **Sweep, commit, tag `round7-ppi-final`,** push branch and tag together once, open one pull request, confirm it, and stop.
 
 ### 11.1 What looks wrong, flagged without changing the memo

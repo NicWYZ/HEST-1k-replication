@@ -1,0 +1,17 @@
+vtag,arm,estimand,G,Gall,n_L,design,balance,p_a,estimator,variance,ref,n_genes,coverage_median,coverage_all_median,width_median,est_over_emp_median,share_bias_z_gt3,share_formed_median,share_formed_min,share_neg_max
+ACS_CA_PUMA,constant,theta3,265,265,12,cube3_u1,"pi,1,own",,HT,sim,res,1,0.868,0.868,0.1412898698,1.103177805,0,1,1,0.046
+ACS_CA_PUMA,constant,theta3,265,265,12,cube3_u1,"pi,1,own",,HT,sim,n2,1,0.863,0.863,0.1396981012,1.103177805,0,1,1,0.046
+ACS_CA_PUMA,constant,theta3,265,265,12,cube3_u1,"pi,1,own",,HT,res,res,1,0.887,0.887,0.1306830763,0.8859597766,0,1,1,0
+ACS_CA_PUMA,constant,theta3,265,265,12,cube3_u1,"pi,1,own",,HT,res,n2,1,0.8825,0.8825,0.1292108036,0.8859597766,0,1,1,0
+ACS_CA_PUMA,constant,theta3,265,265,12,cube3_u1,"pi,1,own",,HT,apx_size,res,1,0.9865,0.9865,0.2216024918,2.46975333,0,1,1,0
+ACS_CA_PUMA,constant,theta3,265,265,12,cube3_u1,"pi,1,own",,HT,apx_size,n2,1,0.984,0.984,0.2191059231,2.46975333,0,1,1,0
+ACS_CA_PUMA,constant,theta3,265,265,12,cube3_u1,"pi,1,own",,H,sim,res,1,0.906,0.906,0.1313947835,1.030783114,0,1,1,0
+ACS_CA_PUMA,constant,theta3,265,265,12,cube3_u1,"pi,1,own",,H,sim,n2,1,0.901,0.901,0.1299144928,1.030783114,0,1,1,0
+ACS_CA_PUMA,constant,theta3,265,265,12,cube3_u1,"pi,1,own",,H,res,res,1,0.9045,0.9045,0.1306620324,1.00934128,0,1,1,0
+ACS_CA_PUMA,constant,theta3,265,265,12,cube3_u1,"pi,1,own",,H,res,n2,1,0.8995,0.8995,0.1291899968,1.00934128,0,1,1,0
+ACS_CA_PUMA,constant,theta3,265,265,12,cube3_u1,"pi,1,own",,H,apx_size,res,1,0.9015,0.9015,0.1289050428,0.975681104,0,1,1,0
+ACS_CA_PUMA,constant,theta3,265,265,12,cube3_u1,"pi,1,own",,H,apx_size,n2,1,0.9,0.9,0.1274528015,0.975681104,0,1,1,0
+ACS_CA_PUMA,constant,theta3,265,265,12,cube3_u1,"pi,1,own",,BH,bh,normal,1,0.854,0.854,0.1241613003,1.061979763,1,1,1,0
+ACS_CA_PUMA,constant,theta3,265,265,12,cube3_u1,"pi,1,own",,BH,bh_t,n1,1,0.907,0.907,0.1415897305,1.158523377,1,1,1,0
+ACS_CA_PUMA,constant,theta3,265,265,12,cube3_u1,"pi,1,own",,BH,bh_t_n2,n2,1,0.9115,0.9115,0.1428966263,1.158523377,1,1,1,0
+ACS_CA_PUMA,constant,theta3,265,265,12,cube3_u1,"pi,1,own",,BH,bh_t_fpc,n1,1,0.899,0.899,0.1383467874,1.106061942,1,1,1,0

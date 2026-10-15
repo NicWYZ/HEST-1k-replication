@@ -1,0 +1,17 @@
+vtag,arm,estimand,G,Gall,n_L,design,balance,p_a,estimator,variance,ref,n_genes,coverage_median,coverage_all_median,width_median,est_over_emp_median,share_bias_z_gt3,share_formed_median,share_formed_min,share_neg_max
+LUNG_XENIUM,constant,theta3,15,15,8,cube3_u1,"pi,1,own",,HT,sim,res,343,0.8625,0.8625,0.1465450503,0.9985806672,0.002915451895,1,1,0.095
+LUNG_XENIUM,constant,theta3,15,15,8,cube3_u1,"pi,1,own",,HT,sim,n2,343,0.855,0.855,0.14367396,0.9985806672,0.002915451895,1,1,0.095
+LUNG_XENIUM,constant,theta3,15,15,8,cube3_u1,"pi,1,own",,HT,res,res,343,0.8105,0.8105,0.1240235241,0.712301904,0.002915451895,1,1,0
+LUNG_XENIUM,constant,theta3,15,15,8,cube3_u1,"pi,1,own",,HT,res,n2,343,0.8025,0.8025,0.1199076604,0.712301904,0.002915451895,1,1,0
+LUNG_XENIUM,constant,theta3,15,15,8,cube3_u1,"pi,1,own",,HT,apx_size,res,343,0.8785,0.8785,0.1469782337,0.8847451403,0.002915451895,1,1,0
+LUNG_XENIUM,constant,theta3,15,15,8,cube3_u1,"pi,1,own",,HT,apx_size,n2,343,0.8705,0.8705,0.1425161236,0.8847451403,0.002915451895,1,1,0
+LUNG_XENIUM,constant,theta3,15,15,8,cube3_u1,"pi,1,own",,H,sim,res,343,0.863,0.863,0.1502022907,0.9887996365,0,1,1,0.098
+LUNG_XENIUM,constant,theta3,15,15,8,cube3_u1,"pi,1,own",,H,sim,n2,343,0.855,0.855,0.1454539014,0.9887996365,0,1,1,0.098
+LUNG_XENIUM,constant,theta3,15,15,8,cube3_u1,"pi,1,own",,H,res,res,343,0.8055,0.8055,0.1238264785,0.689321265,0,1,1,0
+LUNG_XENIUM,constant,theta3,15,15,8,cube3_u1,"pi,1,own",,H,res,n2,343,0.7945,0.7945,0.1195726226,0.689321265,0,1,1,0
+LUNG_XENIUM,constant,theta3,15,15,8,cube3_u1,"pi,1,own",,H,apx_size,res,343,0.8815,0.8815,0.1597680002,0.9357353673,0,1,1,0
+LUNG_XENIUM,constant,theta3,15,15,8,cube3_u1,"pi,1,own",,H,apx_size,n2,343,0.872,0.872,0.155455058,0.9357353673,0,1,1,0
+LUNG_XENIUM,constant,theta3,15,15,8,cube3_u1,"pi,1,own",,BH,bh,normal,343,0.985,0.985,0.2675280388,4.176612341,0.9620991254,1,1,0
+LUNG_XENIUM,constant,theta3,15,15,8,cube3_u1,"pi,1,own",,BH,bh_t,n1,343,0.998,0.998,0.3294205221,4.773271247,0.9620991254,1,1,0
+LUNG_XENIUM,constant,theta3,15,15,8,cube3_u1,"pi,1,own",,BH,bh_t_n2,n2,343,0.999,0.999,0.3378711555,4.773271247,0.9620991254,1,1,0
+LUNG_XENIUM,constant,theta3,15,15,8,cube3_u1,"pi,1,own",,BH,bh_t_fpc,n1,343,0.9555,0.9555,0.2250370581,2.227526582,0.9620991254,1,1,0

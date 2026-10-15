@@ -1,0 +1,2 @@
+slurm_job_id,partition,node,stage,unit,frame_id,start,end,elapsed_s,status,commit,config_sha256,out_dir,command
+4952393,spill,c0808.ll.unc.edu,S4b,sim_G51_n_k1_nL16,3066688c-fa60-4986-9d3c-6ce728d82ea3,2026-10-15T02:56:51-04:00,2026-10-15T07:13:00-04:00,15369.3,COMPLETED,44032ae061ba1df1d8ace7c217637c211fe97caf,e815ce9dafbb59b63e15e6cf7b46dbddc88b5af04cfaca752896f1701bc53e41,/work/users/w/e/weiyang/hest_replication/results/round7/ppi/S4b_cube_constant/sim/G51_n_k1_nL16,round7_ppi_s4b_cube3.py sim --G 51 --law normal --nl 16 --out-dir . --draws 1000

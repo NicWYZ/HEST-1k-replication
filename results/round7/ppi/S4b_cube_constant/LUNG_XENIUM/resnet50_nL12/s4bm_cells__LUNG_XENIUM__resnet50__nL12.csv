@@ -1,0 +1,17 @@
+vtag,arm,estimand,G,Gall,n_L,design,balance,p_a,estimator,variance,ref,n_genes,coverage_median,coverage_all_median,width_median,est_over_emp_median,share_bias_z_gt3,share_formed_median,share_formed_min,share_neg_max
+LUNG_XENIUM,resnet50,theta3,15,15,12,cube3_u1,"pi,1,own",,HT,sim,res,343,0.855,0.855,0.05678251549,0.9982350609,0,1,1,0.0365
+LUNG_XENIUM,resnet50,theta3,15,15,12,cube3_u1,"pi,1,own",,HT,sim,n2,343,0.8525,0.8525,0.05614280492,0.9982350609,0,1,1,0.0365
+LUNG_XENIUM,resnet50,theta3,15,15,12,cube3_u1,"pi,1,own",,HT,res,res,343,0.7355,0.7355,0.04199875935,0.6036594339,0,1,1,0
+LUNG_XENIUM,resnet50,theta3,15,15,12,cube3_u1,"pi,1,own",,HT,res,n2,343,0.7335,0.7335,0.04152560225,0.6036594339,0,1,1,0
+LUNG_XENIUM,resnet50,theta3,15,15,12,cube3_u1,"pi,1,own",,HT,apx_size,res,343,0.865,0.865,0.0591825672,0.9609799848,0,1,1,0
+LUNG_XENIUM,resnet50,theta3,15,15,12,cube3_u1,"pi,1,own",,HT,apx_size,n2,343,0.8585,0.8585,0.05851581771,0.9609799848,0,1,1,0
+LUNG_XENIUM,resnet50,theta3,15,15,12,cube3_u1,"pi,1,own",,H,sim,res,343,0.85,0.85,0.05440867328,0.9932040522,0,1,1,0.068
+LUNG_XENIUM,resnet50,theta3,15,15,12,cube3_u1,"pi,1,own",,H,sim,n2,343,0.8465,0.8465,0.05379570637,0.9932040522,0,1,1,0.068
+LUNG_XENIUM,resnet50,theta3,15,15,12,cube3_u1,"pi,1,own",,H,res,res,343,0.7545,0.7545,0.0420136399,0.6301937924,0,1,1,0
+LUNG_XENIUM,resnet50,theta3,15,15,12,cube3_u1,"pi,1,own",,H,res,n2,343,0.751,0.751,0.04154031516,0.6301937924,0,1,1,0
+LUNG_XENIUM,resnet50,theta3,15,15,12,cube3_u1,"pi,1,own",,H,apx_size,res,343,0.8525,0.8525,0.05397039014,0.9141498742,0,1,1,0
+LUNG_XENIUM,resnet50,theta3,15,15,12,cube3_u1,"pi,1,own",,H,apx_size,n2,343,0.849,0.849,0.05336236091,0.9141498742,0,1,1,0
+LUNG_XENIUM,resnet50,theta3,15,15,12,cube3_u1,"pi,1,own",,BH,bh,normal,343,1,1,0.1333250537,5.208984468,0.8921282799,1,1,0
+LUNG_XENIUM,resnet50,theta3,15,15,12,cube3_u1,"pi,1,own",,BH,bh_t,n1,343,1,1,0.1506579345,5.583939415,0.8921282799,1,1,0
+LUNG_XENIUM,resnet50,theta3,15,15,12,cube3_u1,"pi,1,own",,BH,bh_t_n2,n2,343,1,1,0.1520485314,5.583939415,0.8921282799,1,1,0
+LUNG_XENIUM,resnet50,theta3,15,15,12,cube3_u1,"pi,1,own",,BH,bh_t_fpc,n1,343,0.9025,0.9025,0.0673762766,1.116787883,0.8921282799,1,1,0
