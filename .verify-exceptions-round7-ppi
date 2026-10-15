@@ -42,3 +42,21 @@
 1.65	derived: t_{3,0.95}/z_{0.95} times sqrt(4/3) (theory 2.1), as the S2 memo computes
 20,000	parameter: evaluation draws of the S3 synthetic test (theory 3.6, round7_ppi_s3_cube.py --test-eval)
 0.006	derived: 0.10 - (1 - 0.894), the miss of the 0.10 band at G = 24 in s3_tests.csv (theory 3.8)
+630	derived: row count of results/round7/ppi/r7ppi_slurm_jobs.csv at the closing gate
+2495	reference: wall time in seconds of the S4b CCRCC sub-agent, from its delegation result
+2441	reference: wall time in seconds of the S4b CCRCC_merged sub-agent, from its delegation result
+2381	reference: wall time in seconds of the S4b INDIANA_KIDNEY sub-agent, from its delegation result
+6156	reference: wall time in seconds of the S4b LUNG_XENIUM sub-agent, from its delegation result
+248	reference: wall time in seconds of the S4b ACS_STATES sub-agent, from its delegation result
+2847	reference: wall time in seconds of the S4b ACS_CA_PUMA sub-agent, from its delegation result
+17198	reference: wall time in seconds of the S4b simulation sub-agent, from its delegation result
+605	derived: number of records and of distinct job ids in results/round7/ppi/provenance_index.csv at the closing gate
+4950711	reference: Slurm job id of the S4b sampler test, a row of results/round7/ppi/r7ppi_slurm_jobs.csv
+4951133	reference: Slurm job id of an S4b pilot, a row of results/round7/ppi/r7ppi_slurm_jobs.csv
+4968431	reference: Slurm job id of the S4b merge, a row of results/round7/ppi/r7ppi_slurm_jobs.csv
+4951950	reference: Slurm job id of the S5 dry run, a row of results/round7/ppi/r7ppi_slurm_jobs.csv
+1.6	section number: theory section 1.6
+6.2	section number: final report section 6.2
+6.4	section number: final report section 6.4
+0.70	parameter: threshold of prediction S4b.1, written by the oversight chat before any run
+0.912	reference: S3 cube design's Hajek width on census at n_L 8, quoted from the S4 memo's section 2 in theory 3.9 before any S4b run

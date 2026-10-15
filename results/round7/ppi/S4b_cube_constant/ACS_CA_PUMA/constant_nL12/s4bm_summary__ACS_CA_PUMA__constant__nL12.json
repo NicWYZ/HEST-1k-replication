@@ -1,0 +1,29 @@
+{
+ "tag": "ACS_CA_PUMA__constant__nL12",
+ "wall_s": 313.17777729034424,
+ "n_cells": 1,
+ "n_rows": 16,
+ "args": {
+  "mode": "masking",
+  "out_dir": ".",
+  "draws": 2000,
+  "r_cap": 1000000,
+  "test_r": 1000000,
+  "test_eval": 20000,
+  "parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_CA_PUMA.parquet",
+  "perm_parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_CA_PUMA.parquet",
+  "ref_parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_CA_PUMA.parquet",
+  "ref_arm": "package",
+  "vtag": "ACS_CA_PUMA",
+  "arm": "constant",
+  "nl": 12,
+  "estimands": "theta3,theta2",
+  "theta2_kind": "mean",
+  "max_genes": 0,
+  "root": "/work/users/w/e/weiyang/hest_replication",
+  "G": null,
+  "law": null,
+  "r2": "0.0,0.2,0.4,0.7,0.9",
+  "lamstar": "0.6,1.2"
+ }
+}

@@ -1,0 +1,29 @@
+{
+ "tag": "LUNG_XENIUM__resnet50__nL8",
+ "wall_s": 1103.8964397907257,
+ "n_cells": 1,
+ "n_rows": 16,
+ "args": {
+  "mode": "masking",
+  "out_dir": ".",
+  "draws": 2000,
+  "r_cap": 1000000,
+  "test_r": 1000000,
+  "test_eval": 20000,
+  "parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__resnet50.parquet",
+  "perm_parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__resnet50.parquet",
+  "ref_parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__resnet50.parquet",
+  "ref_arm": "resnet50",
+  "vtag": "LUNG_XENIUM",
+  "arm": "resnet50",
+  "nl": 8,
+  "estimands": "theta3,theta2",
+  "theta2_kind": "neo_minus_stroma",
+  "max_genes": 0,
+  "root": "/work/users/w/e/weiyang/hest_replication",
+  "G": null,
+  "law": null,
+  "r2": "0.0,0.2,0.4,0.7,0.9",
+  "lamstar": "0.6,1.2"
+ }
+}

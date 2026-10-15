@@ -283,6 +283,8 @@ which is 1 at $R^2 = 0$ and grows with $R^2$, so for the design target it should
 
 **For the superpopulation target** their interval is the large-$G$ interval they derive, and its shortfall at few clusters is what S2 measures.
 
+**A note on $\rho_{\mathrm{BH}}$ after S2b, added on 15 October 2026 at the S4 memo's request.** S2b item 3 found that $\rho_{\mathrm{BH}}$ overstates the measured ratio of Broska and Howes's variance estimate to the empirical variance, by a factor whose median rises from about 0.5 at $n_L = 4$ to about 0.9 at $n_L = 16$ (S4 report, section 6.1), and that `bh_t_fpc` under-covers where the derivation above says it should stay conservative. A likely reason is that the derivation holds $\lambda$ fixed, while the empirical variance of $\hat\theta^{PP}_{\hat\lambda}$ includes the noise of $\hat\lambda$ fitted on a handful of labelled clusters. That noise raises the denominator of the measured ratio, most at small $n_L$, which is the pattern seen. This explanation is not derived and not checked.
+
 ### 2.2 Kluger et al.'s design and estimators for whole labelled clusters
 
 Written before any S2 run. Kluger, Lu, Zrnic, Wang and Bates (arXiv:2501.18577v3, appendix B.1) label whole clusters by independent Bernoulli draws $\xi_k \sim \text{Bernoulli}(\pi_k)$ with known $\pi_k$, so $n_L = \sum_k \xi_k$ is random with mean $\sum_k \pi_k$. With each cluster as one unit (outcome $z_k$, prediction $f_k$) and the mean as the estimand, their estimator function $A(\cdot\,; W)$ is the weighted mean, so
@@ -432,6 +434,36 @@ The test ran as Slurm job 4900059 on the snapshot of `df344a76`, and every numbe
 **The landing never leaves the balance exact.** Every draw in every cell has a relative balance residual above $10^{-9}$, so the count of inexact draws planned in section 3.2 is the whole sample and carries no information. With $n_L$ of 6 or 8, the at most two clusters decided in the landing carry weights $1/\pi_g$ of about $G/n_L$, so the imbalance they leave is of the order of a few clusters' share of $\sum_g \lvert\bar f_g\rvert$. Its median over draws is 0.071 to 0.094 of that sum, and its largest value 0.29 to 0.39. The real-task runs report the median residual instead of the count.
 
 **The primary variance falls short at small $G$.** In the normal-law cells, the mean of the residual-form variance of the Hájek mean over the empirical variance is 0.979 at $G = 51$, 0.894 at $G = 24$ and 0.811 at $G = 15$, so it is within 0.10 at $G = 51$ only, and misses by 0.006 at $G = 24$. The Sen-Yates-Grundy form with simulated $\hat\pi_{gh}$ gives 0.980, 0.915 and 0.958 in the same cells, and the Hájek coverages are 0.896, 0.875 and 0.846 with the residual form against 0.899, 0.880 and 0.913 with the Sen-Yates-Grundy form. The shortfall grows as $n_L/G$ grows and is what the landing term of section 3.4 predicts, since the form assumes exact balance on $\bar f_g$ and the landing leaves an imbalance of the order of one cluster. The residual form stays the primary interval as written in section 3.4, because the choice was made before the test, and the Sen-Yates-Grundy form is reported beside it in every cell. Which of the two the paper should use is a question for the S4 memo.
+
+### 3.9 The cube design with the constant balanced (S4b)
+
+Written on 15 October 2026, before any S4b run, from section 5 of the S4 memo. Every S4b run uses the target probabilities of section 3.1 with the first score.
+
+**The balance equations.** Take $x_g = (\pi_g, 1, \bar f_g)^\top$, so $p = 3$ and $a_g = x_g/\pi_g = (1, 1/\pi_g, \bar f_g/\pi_g)^\top$. A balanced sample satisfies $\sum_g a_g\xi_g = \sum_g x_g$, three equations that say
+
+$$
+\sum_{g \in L} 1 = n_L, \qquad \hat N = \sum_{g \in L}\frac{1}{\pi_g} = G, \qquad \sum_{g \in L}\frac{\bar f_g}{\pi_g} = \sum_{g=1}^{G}\bar f_g .
+$$
+
+The second is the new one. When it holds, $\hat\theta_{\mathrm{H}} = \hat\theta_{\mathrm{HT}}$, since the Hájek mean divides by $\hat N$ and the Horvitz-Thompson mean by $G$. The Hájek mean of the predictions is then $\bar F$ exactly, which removes the error $\bar F(G/\hat N - 1)$ that the S4 memo identified in S3's design. For the outcome, write the error as in section 3.4, $\hat\theta_{\mathrm{HT}} - \theta = \frac{1}{G}\sum_g w_g\bar z_g$ with $w_g = \xi_g/\pi_g - 1$. The new equation is $\sum_g w_g = 0$, so the error no longer depends on the level of $\bar z_g$, only on its part that $(\pi_g, 1, \bar f_g)$ does not explain. On census, where income has a large level against its spread, the Horvitz-Thompson mean under S3's design carried that level, and this design removes it.
+
+**Feasibility.** The flight phase starts from $\pi$ itself, which satisfies the equations, so the equations are met by a fractional point at every $n_L$. Each step works on $p + 1 = 4$ fractional units, takes a nonzero vector in the null space of the $3 \times 4$ matrix of their $a_g$ (found by a singular value decomposition, so a rank below 3 needs no special case), and moves as in section 3.2, keeping all three equations and resolving at least one unit. The flight ends with at most 3 fractional units. The landing then drops $\bar f_g$ and continues on the first two equations, which on 3 fractional units still has a null vector, and ends with at most 2. It then drops the constant and finishes with the size equation alone, by $v = (1, -1)$. Every step is a martingale step, so $\text{E}\,\xi_g = \pi_g$ still holds exactly. The size equation holds exactly. $\hat N = G$ holds exactly when the second landing stage has nothing left to resolve, and otherwise up to the last two units, so each draw records $\lvert\hat N/G - 1\rvert$ beside the residual of the $\bar f_g$ equation. Where every $\pi_g$ is equal (any cell where the first score is zero) $\pi_g$ and $1$ are proportional, the rank is 2, and the design is S3's. On the constant arm $\bar f_g$ is constant too, the rank is 1, and only the size is balanced, a fixed-size design with equal probabilities.
+
+**The intervals.** From S4b on, the primary interval is the Hájek mean with the Sen-Yates-Grundy form and simulated $\hat\pi_{gh}$ (S4 memo, section 3, item 6), with $\hat\pi_g$ and $\hat\pi_{gh}$ from $R$ draws as in section 3.2. The residual form of section 3.4 is reported beside it with $x_g = (\pi_g, 1, \bar f_g)$, and with the failure of section 3.8 stated. The reference distribution is $t_{n_L - p}$, with $p$ the rank of the balance variables over the labelled clusters (3 on informative arms), as $t_{n_L - k - 1}$ in section 1.6 with $k = 2$ balance variables besides the size, and the floor $\nu \ge 2$. So no interval is formed at $n_L = 4$ on informative arms, which counts as a miss in the coverage over all draws. Beside it S4b reports the same intervals with $t_{n_L - 2}$, S3's reference, so that its widths compare with S3's on the same quantile. At $n_L = 8$ the ratio of the two quantiles is $t_{5}/t_{6}$ at 0.95, about 1.04.
+
+**What I expect, written before any S4b run.**
+1. The sampler passes the test of section 3.6 as S3's did, and $\lvert\hat N/G - 1\rvert$ is zero in most draws and small in the rest.
+2. On census, the Hájek width falls well below S3's 0.912 of D0 classical at $n_L = 8$, and the Horvitz-Thompson width, now close to the Hájek width, falls below 1 (S4b.3), since the level of income no longer enters.
+3. On tissue, where $\bar f_g$ varies little in level against its spread across genes, the new design changes little, so the width with S3's quantile is within 0.03 of S3's (S4b.2). With $t_{n_L - 3}$ it is about 4% wider.
+4. The residual form remains too small, as in section 3.8, for the same reason.
+
+### 3.10 What the S4b sampler test showed, written after it
+
+Slurm job 4950711 on the snapshot of `44032ae0`, read from `results/round7/ppi/S4b_cube_constant/tests/run1/s4b_tests.csv`. The sampler passes. No cluster of the 180 has $\hat\pi_g$ more than 3 Monte Carlo standard errors from its target (largest 2.82), and the Horvitz-Thompson mean with the target probabilities has standardised biases from $-1.08$ to $1.93$. No pair has $\hat\pi_{gh} = 0$. The rank of the balance variables is 3 in every cell.
+
+**$\hat N = G$ never holds exactly** (`results/round7/ppi/S4b_cube_constant/tests/run1/s4b_tests.csv`). Expectation 1 of section 3.9 is wrong. In every draw of every cell the second landing stage has two units left to resolve, so the constant is always dropped before the end, and $\lvert\hat N/G - 1\rvert$ has a median of 0.028 to 0.048 and a largest value of 0.13 to 0.17. That is about one cluster's weight $1/\pi_g$ against $G$. The balance on $\bar f_g$ is left as inexact as under S3 (median relative residual 0.073 to 0.125).
+
+**The primary variance passes.** With the Sen-Yates-Grundy form, the mean of the Hájek variance over the empirical variance is 0.997, 0.977 and 0.985 in the normal-law cells at $G$ of 51, 24 and 15, and 1.003, 0.985 and 0.980 under the skewed law, so it is within 0.10 everywhere. The residual form gives 0.967, 0.829 and 0.913 in the normal-law cells, too small again at $G = 24$.
 
 ## 4. Greedy k-center (S4)
 

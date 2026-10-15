@@ -1,0 +1,28 @@
+platform: Longleaf
+slurm_job_id: 4968458
+slurm_job_partition: spill
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 49152
+node: c151609.ll.unc.edu
+job_prefix_intended: r7ppi_S5
+stage: S5
+unit: s5_numbers
+frame_id: 89b5f4ed-6180-409e-831d-0fecc6ce5f4e
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python3.11
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 61a60229f96ef8c54ec5d255da85dddac6b5be94
+snapshot: /work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/61a60229f96ef8c54ec5d255da85dddac6b5be94
+command: round7_ppi_s5_numbers.py
+config: {"command":"round7_ppi_s5_numbers.py","inputs":[],"snapshot_commit":"61a60229f96ef8c54ec5d255da85dddac6b5be94","stage":"S5","unit":"s5_numbers"}
+config_sha256: 9a986aa8524901f965caa37feb91404d54bd0215977d44088ee5ef420c1903be
+start: 2026-10-15T07:21:24-04:00
+end: 2026-10-15T07:21:48-04:00
+elapsed_s: 24.6
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  3f37e77c2abe22afa6eca8772282f4f0  code/scripts/round7_ppi_run.py
+  0af7cd4c926e4a522185fa13b22adc92  code/scripts/round7_ppi_s5_numbers.py
+inputs (md5, path):

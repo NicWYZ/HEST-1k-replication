@@ -1,0 +1,2 @@
+slurm_job_id,partition,node,stage,unit,frame_id,start,end,elapsed_s,status,commit,config_sha256,out_dir,command
+4968431,spill,c151608.ll.unc.edu,S4b,merge_S4b,89b5f4ed-6180-409e-831d-0fecc6ce5f4e,2026-10-15T07:20:02-04:00,2026-10-15T07:20:14-04:00,12.8,COMPLETED,61a60229f96ef8c54ec5d255da85dddac6b5be94,d0a7a2bf3bcd1c5df69d45a615d6a7d85f725366eaae432db5e5d0a564af8498,/work/users/w/e/weiyang/hest_replication/results/round7/ppi/S4b_cube_constant/_merged,round7_ppi_s3s4_numbers.py --stage S4b

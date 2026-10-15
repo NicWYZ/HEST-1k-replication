@@ -1,0 +1,17 @@
+vtag,arm,estimand,G,Gall,n_L,design,balance,p_a,estimator,variance,ref,n_genes,coverage_median,coverage_all_median,width_median,est_over_emp_median,share_bias_z_gt3,share_formed_median,share_formed_min,share_neg_max
+LUNG_XENIUM,permuted,theta3,15,15,12,cube3_u1,"pi,1,own",,HT,sim,res,343,0.8455,0.8455,0.09346550217,1.002490035,0.00583090379,1,1,0.0635
+LUNG_XENIUM,permuted,theta3,15,15,12,cube3_u1,"pi,1,own",,HT,sim,n2,343,0.8425,0.8425,0.09241252189,1.002490035,0.00583090379,1,1,0.0635
+LUNG_XENIUM,permuted,theta3,15,15,12,cube3_u1,"pi,1,own",,HT,res,res,343,0.7545,0.7545,0.0727288786,0.6391200359,0.00583090379,1,1,0
+LUNG_XENIUM,permuted,theta3,15,15,12,cube3_u1,"pi,1,own",,HT,res,n2,343,0.754,0.754,0.07190951666,0.6391200359,0.00583090379,1,1,0
+LUNG_XENIUM,permuted,theta3,15,15,12,cube3_u1,"pi,1,own",,HT,apx_size,res,343,0.8495,0.8495,0.09128413206,0.8824645067,0.00583090379,1,1,0
+LUNG_XENIUM,permuted,theta3,15,15,12,cube3_u1,"pi,1,own",,HT,apx_size,n2,343,0.845,0.845,0.09025572705,0.8824645067,0.00583090379,1,1,0
+LUNG_XENIUM,permuted,theta3,15,15,12,cube3_u1,"pi,1,own",,H,sim,res,343,0.8415,0.8415,0.09220765075,1.000330902,0.00583090379,1,1,0
+LUNG_XENIUM,permuted,theta3,15,15,12,cube3_u1,"pi,1,own",,H,sim,n2,343,0.838,0.838,0.09116884139,1.000330902,0.00583090379,1,1,0
+LUNG_XENIUM,permuted,theta3,15,15,12,cube3_u1,"pi,1,own",,H,res,res,343,0.7615,0.7615,0.07263608162,0.6494927092,0.00583090379,1,1,0
+LUNG_XENIUM,permuted,theta3,15,15,12,cube3_u1,"pi,1,own",,H,res,n2,343,0.7545,0.7545,0.07181776513,0.6494927092,0.00583090379,1,1,0
+LUNG_XENIUM,permuted,theta3,15,15,12,cube3_u1,"pi,1,own",,H,apx_size,res,343,0.8375,0.8375,0.08897049036,0.8737694341,0.00583090379,1,1,0
+LUNG_XENIUM,permuted,theta3,15,15,12,cube3_u1,"pi,1,own",,H,apx_size,n2,343,0.8315,0.8315,0.08796815077,0.8737694341,0.00583090379,1,1,0
+LUNG_XENIUM,permuted,theta3,15,15,12,cube3_u1,"pi,1,own",,BH,bh,normal,343,1,1,0.1982276284,6.000386054,0.9096209913,1,1,0
+LUNG_XENIUM,permuted,theta3,15,15,12,cube3_u1,"pi,1,own",,BH,bh_t,n1,343,1,1,0.2260036672,6.542087643,0.9096209913,1,1,0
+LUNG_XENIUM,permuted,theta3,15,15,12,cube3_u1,"pi,1,own",,BH,bh_t_n2,n2,343,1,1,0.2280897172,6.542087643,0.9096209913,1,1,0
+LUNG_XENIUM,permuted,theta3,15,15,12,cube3_u1,"pi,1,own",,BH,bh_t_fpc,n1,343,0.9095,0.9095,0.1010719126,1.308417529,0.9096209913,1,1,0

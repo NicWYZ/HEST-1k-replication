@@ -1,0 +1,48 @@
+r7ppi_ i02 delivery 17 slurm_job_id=4950694 partition=spill account=rc_htzhu_pi node=c0839.ll.unc.edu date=2026-10-15T01:28:47-04:00
+bundle_md5=83070fb6e3fb170a2e7b1407380a9a6e
+head_before=fa8892c1b46b54c26f7813e98bfdcbf8b810cd41
+/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/4558bdc3-099f-4a99-8bb3-137e89de96ee/r7ppi_delivery_17.bundle is okay
+The bundle contains this ref:
+44032ae061ba1df1d8ace7c217637c211fe97caf refs/heads/round7-ppi
+The bundle requires this ref:
+fa8892c1b46b54c26f7813e98bfdcbf8b810cd41 
+The bundle uses this hash algorithm: sha1
+verify_rc=0
+From /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/4558bdc3-099f-4a99-8bb3-137e89de96ee/r7ppi_delivery_17.bundle
+ * branch              round7-ppi -> FETCH_HEAD
+fetch_rc=0
+Updating fa8892c1..44032ae0
+Fast-forward
+ 1346 files changed, 82482 insertions(+), 4306 deletions(-)
+merge_rc=0
+head_after=44032ae061ba1df1d8ace7c217637c211fe97caf
+commits_carried:
+44032ae061ba1df1d8ace7c217637c211fe97caf round7 ppi S4b: theory 3.9 and the constant-balanced cube module
+f128e416e739db3c2369d6614fd3884f8d44812c Round 7 PPI plan: transcribe interval i03 (S4b, S5)
+4d99b33df4b63bf39ce4c8dae14a8c09ee88e17e Docs: commit the round 7 S4 decision memo unchanged (opens interval i03)
+96b8ee28a7f69a2fc29c9eef761d0b7837dd5328 Round 7 PPI S4 gate: S3 and S4 results, the S4 report
+snapshot=/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/44032ae061ba1df1d8ace7c217637c211fe97caf
+snapshot_files=326
+snapshot_writable_files=0
+2de31569ffe72239062fbeb0c9a50fc5  round5_ppi_estimator.py
+e13183a4ffdddf4f01ba5136844c606d  round5_ppi_twolevel.py
+d78b654d7fd8e6a824f73dd50ee2a0c1  round5_ppi_balance.py
+059c18e1b4998b1ac9c9685ba324a872  round5_ppi_e4b_rejective.py
+122375c3acb103ed93e3e687644d7f6d  round5_ppi_common.py
+31d5b0e396d85d3c49709f216d89d4af  round7_ppi_d2.py
+93069cf054df1796ba64ce6c8d597d09  round7_ppi_i01_numbers.py
+c8ad6fd5f63296a85c7f664d871631bb  round7_ppi_merge.py
+a7ba2f2d8dfd181bf6bc89eb74e6f8a7  round7_ppi_provenance_index.py
+3f37e77c2abe22afa6eca8772282f4f0  round7_ppi_run.py
+46995769fdd92c8982531dfa96b7892c  round7_ppi_s0_anchors.py
+9e945ff59c4363a5121e16335e2d6dcb  round7_ppi_s1_masking.py
+b434987d5bc590945ec3486530bc9681  round7_ppi_s1_sim.py
+7874b9fb676ef6047d2a05c71a2071e4  round7_ppi_s1_tests.py
+678f92e364c1594e242a8f8ba8f22543  round7_ppi_s2b_numbers.py
+6ebcf580572646124b52d6661de0cf43  round7_ppi_s2b_theta2.py
+a30b7507a4c1e2d4a0efdc76a5032871  round7_ppi_s2_comparators.py
+bdad8f019054140a1ce1a13e73b9bfde  round7_ppi_s3_cube.py
+14250ac6609a6d1975d75ab35ff85351  round7_ppi_s3s4_numbers.py
+67a99d8b7a48cb33d903d22681db0491  round7_ppi_s4b_cube3.py
+9e3a1ebca498e9fc2212a277ead14151  round7_ppi_s4_kcenter.py
+19137aac514748f8aa6b054157067e29  round7_ppi_weighting.py

@@ -1,0 +1,10 @@
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/44032ae061ba1df1d8ace7c217637c211fe97caf/code/scripts/round7_ppi_weighting.py:342: RuntimeWarning: Mean of empty slice
+  return dict(coverage=np.nanmean(cov, 0), width=np.nanmean(2 * q * se, 0), emp_var=sd ** 2,
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/44032ae061ba1df1d8ace7c217637c211fe97caf/code/scripts/round7_ppi_weighting.py:343: RuntimeWarning: Mean of empty slice
+  est_var=np.nanmean(vv, 0), bias=mean - theta, bias_z=bz, share_formed=formed.mean(0),
+theta3 cube3_u1 589s R 100000
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/44032ae061ba1df1d8ace7c217637c211fe97caf/code/scripts/round7_ppi_weighting.py:342: RuntimeWarning: Mean of empty slice
+  return dict(coverage=np.nanmean(cov, 0), width=np.nanmean(2 * q * se, 0), emp_var=sd ** 2,
+/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/44032ae061ba1df1d8ace7c217637c211fe97caf/code/scripts/round7_ppi_weighting.py:343: RuntimeWarning: Mean of empty slice
+  est_var=np.nanmean(vv, 0), bias=mean - theta, bias_z=bz, share_formed=formed.mean(0),
+theta2 cube3_u1 1155s R 100000
