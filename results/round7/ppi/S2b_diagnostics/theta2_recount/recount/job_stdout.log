@@ -1,0 +1,34 @@
+Traceback (most recent call last):
+  File "/work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'coverage_all_D0cl_def'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/4644d70b18f2593d1d0b6fd6f85654d7c0268bb7/code/scripts/round7_ppi_run.py", line 129, in <module>
+    main()
+  File "/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/4644d70b18f2593d1d0b6fd6f85654d7c0268bb7/code/scripts/round7_ppi_run.py", line 80, in main
+    runpy.run_path(script, run_name="__main__")
+  File "<frozen runpy>", line 291, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/4644d70b18f2593d1d0b6fd6f85654d7c0268bb7/code/scripts/round7_ppi_s2b_theta2.py", line 242, in <module>
+    main()
+  File "/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/4644d70b18f2593d1d0b6fd6f85654d7c0268bb7/code/scripts/round7_ppi_s2b_theta2.py", line 230, in main
+    return mode_recount(a)
+           ^^^^^^^^^^^^^^^
+  File "/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/4644d70b18f2593d1d0b6fd6f85654d7c0268bb7/code/scripts/round7_ppi_s2b_theta2.py", line 171, in mode_recount
+    j["d_D0cl_def_all"] = j["coverage_all_D0cl_def"] - j["coverage_D0cl_r5"]
+                          ~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/lib/python3.11/site-packages/pandas/core/frame.py", line 4113, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/lib/python3.11/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
+    raise KeyError(key) from err
+KeyError: 'coverage_all_D0cl_def'

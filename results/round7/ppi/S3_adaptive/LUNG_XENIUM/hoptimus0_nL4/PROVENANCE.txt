@@ -1,0 +1,43 @@
+platform: Longleaf
+slurm_job_id: 4902477
+slurm_job_partition: spill
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 16384
+node: c0407.ll.unc.edu
+job_prefix_intended: r7ppi_S3
+stage: S3
+unit: LUNG_XENIUM_hoptimus0_nL4
+frame_id: 11e6fd80-e2ac-4635-aa4b-7b9f103651b1
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python3.11
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: df344a76cb3dbb1e5eea89da1c1e57d3ab001cb2
+snapshot: /work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/df344a76cb3dbb1e5eea89da1c1e57d3ab001cb2
+command: round7_ppi_s3_cube.py masking --parquet /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__hoptimus0.parquet --perm-parquet /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__resnet50.parquet --ref-parquet /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__resnet50.parquet --ref-arm resnet50 --vtag LUNG_XENIUM --arm hoptimus0 --nl 4 --out-dir .
+config: {"command":"round7_ppi_s3_cube.py masking --parquet /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__hoptimus0.parquet --perm-parquet /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__resnet50.parquet --ref-parquet /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__resnet50.parquet --ref-arm resnet50 --vtag LUNG_XENIUM --arm hoptimus0 --nl 4 --out-dir .","inputs":["/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__hoptimus0.parquet","/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__resnet50.parquet"],"snapshot_commit":"df344a76cb3dbb1e5eea89da1c1e57d3ab001cb2","stage":"S3","unit":"LUNG_XENIUM_hoptimus0_nL4"}
+config_sha256: edc29fc663ccf09e7a1030917922a174a224dcad8ee4203e6a13c35f1924a50d
+start: 2026-10-14T14:45:09-04:00
+end: 2026-10-14T15:09:05-04:00
+elapsed_s: 1435.7
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  544721f07cb3d74dc5b92456d61fe450  code/scripts/round3_b1_ppi.py
+  d79e69aa65800b9d24de556e019a0c64  code/scripts/round4_ppi_estimator.py
+  15f51917a5fb79702ba239e520e7ff86  code/scripts/round4_ppi_q2_masking.py
+  6097231bc238c0a23387ce76029acefd  code/scripts/round4_ppi_q3_regimes.py
+  d78b654d7fd8e6a824f73dd50ee2a0c1  code/scripts/round5_ppi_balance.py
+  b6e9ecc52ac5539682487d8e7c1451c6  code/scripts/round5_ppi_e2_regimeB.py
+  d886d3db94f4f12364ac072b6485f08f  code/scripts/round5_ppi_e4_selection.py
+  059c18e1b4998b1ac9c9685ba324a872  code/scripts/round5_ppi_e4b_rejective.py
+  2de31569ffe72239062fbeb0c9a50fc5  code/scripts/round5_ppi_estimator.py
+  31d5b0e396d85d3c49709f216d89d4af  code/scripts/round7_ppi_d2.py
+  3f37e77c2abe22afa6eca8772282f4f0  code/scripts/round7_ppi_run.py
+  9e945ff59c4363a5121e16335e2d6dcb  code/scripts/round7_ppi_s1_masking.py
+  a30b7507a4c1e2d4a0efdc76a5032871  code/scripts/round7_ppi_s2_comparators.py
+  bdad8f019054140a1ce1a13e73b9bfde  code/scripts/round7_ppi_s3_cube.py
+  19137aac514748f8aa6b054157067e29  code/scripts/round7_ppi_weighting.py
+inputs (md5, path):
+  160b62889856e3eea69b977ae513acdb  /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__hoptimus0.parquet
+  080e4ec1dd84e01a62bb9b376e7ede4b  /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__resnet50.parquet

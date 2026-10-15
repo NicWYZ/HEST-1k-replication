@@ -1,0 +1,115 @@
+name,value,source,note
+S4_stamp_dirs,20,s4_stamp_check.csv,
+S4_stamp_merged,20,s4_stamp_check.csv,
+S4_cells,150,s4_diag.csv,
+S4_share_pairs_pgh_zero_median|nL4,0.7316017316,s4_diag.csv,
+S4_share_pairs_pgh_zero_range|nL4,0.3889 to 0.7600,s4_diag.csv,
+S4_n_distinct_median|nL4,18.5,s4_diag.csv,
+S4_share_pairs_pgh_zero_median|nL6,0.557312253,s4_diag.csv,
+S4_share_pairs_pgh_zero_range|nL6,0.1111 to 0.6067,s4_diag.csv,
+S4_n_distinct_median|nL6,17.5,s4_diag.csv,
+S4_share_pairs_pgh_zero_median|nL8,0.4308300395,s4_diag.csv,
+S4_share_pairs_pgh_zero_range|nL8,0.2476 to 0.4867,s4_diag.csv,
+S4_n_distinct_median|nL8,16.0,s4_diag.csv,
+S4_share_pairs_pgh_zero_median|nL12,0.2252964427,s4_diag.csv,
+S4_share_pairs_pgh_zero_range|nL12,0.0476 to 0.2681,s4_diag.csv,
+S4_n_distinct_median|nL12,13.0,s4_diag.csv,
+S4.1_classical_coverage_median_over_arms|theta3|CCRCC,0.8125,s4_grid.csv,"median over arms of the median over genes, exact over the G starts"
+S4.1_classical_coverage_range_over_arms|theta3|CCRCC,0.4167 to 0.8125,s4_grid.csv,
+S4.1_classical_coverage_median_over_arms|theta3|CCRCC_merged,0.7173913043,s4_grid.csv,"median over arms of the median over genes, exact over the G starts"
+S4.1_classical_coverage_range_over_arms|theta3|CCRCC_merged,0.3261 to 0.7174,s4_grid.csv,
+S4.1_classical_coverage_median_over_arms|theta3|INDIANA_KIDNEY,0.92,s4_grid.csv,"median over arms of the median over genes, exact over the G starts"
+S4.1_classical_coverage_range_over_arms|theta3|INDIANA_KIDNEY,0.9200 to 0.9600,s4_grid.csv,
+S4.1_classical_coverage_median_over_arms|theta3|LUNG_XENIUM,1.0,s4_grid.csv,"median over arms of the median over genes, exact over the G starts"
+S4.1_classical_coverage_range_over_arms|theta3|LUNG_XENIUM,0.6667 to 1.0000,s4_grid.csv,
+S4.1_n_tasks_below_0.80|theta3,1,s4_grid.csv,of 4 tasks
+S4.2_HT_sd_over_D0cl_sd_median_over_arms|theta3|CCRCC,2.2907705698725005,s4_grid.csv,"per gene exact sd of HT over the sd of the classical mean under D0 (S1, 2,000 draws); median over genes, then over arms"
+S4.2_HT_sd_ratio_min_over_arms|theta3|CCRCC,2.2907705698725005,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd_median_over_arms|theta3|CCRCC_merged,2.4721139857983774,s4_grid.csv,"per gene exact sd of HT over the sd of the classical mean under D0 (S1, 2,000 draws); median over genes, then over arms"
+S4.2_HT_sd_ratio_min_over_arms|theta3|CCRCC_merged,2.4721139857983774,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd_median_over_arms|theta3|INDIANA_KIDNEY,2.336746441598996,s4_grid.csv,"per gene exact sd of HT over the sd of the classical mean under D0 (S1, 2,000 draws); median over genes, then over arms"
+S4.2_HT_sd_ratio_min_over_arms|theta3|INDIANA_KIDNEY,2.336746441598996,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd_median_over_arms|theta3|LUNG_XENIUM,1.6623782510490828,s4_grid.csv,"per gene exact sd of HT over the sd of the classical mean under D0 (S1, 2,000 draws); median over genes, then over arms"
+S4.2_HT_sd_ratio_min_over_arms|theta3|LUNG_XENIUM,1.3766753287332254,s4_grid.csv,
+S4.2_n_tasks_ratio_ge_1.5|theta3,4,s4_grid.csv,of 4 tasks
+S4.1_classical_coverage_median_over_encoders|theta3|CCRCC,0.4583333333,s4_grid.csv,
+S4.1_classical_coverage_median_over_encoders|theta3|CCRCC_merged,0.4130434783,s4_grid.csv,
+S4.1_classical_coverage_median_over_encoders|theta3|INDIANA_KIDNEY,0.92,s4_grid.csv,
+S4.1_classical_coverage_median_over_encoders|theta3|LUNG_XENIUM,1.0,s4_grid.csv,
+S4.1_n_tasks_below_0.80_over_encoders|theta3,2,s4_grid.csv,of 4 tasks
+S4.1_classical_coverage|theta3|CCRCC|resnet50,0.8125,s4_grid.csv,
+S4.1_classical_coverage|theta3|CCRCC|hoptimus0,0.4166666667,s4_grid.csv,
+S4.1_classical_coverage|theta3|CCRCC|uni_v2,0.4583333333,s4_grid.csv,
+S4.1_classical_coverage|theta3|CCRCC_merged|resnet50,0.7173913043,s4_grid.csv,
+S4.1_classical_coverage|theta3|CCRCC_merged|hoptimus0,0.3260869565,s4_grid.csv,
+S4.1_classical_coverage|theta3|CCRCC_merged|uni_v2,0.4130434783,s4_grid.csv,
+S4.1_classical_coverage|theta3|INDIANA_KIDNEY|resnet50,0.92,s4_grid.csv,
+S4.1_classical_coverage|theta3|INDIANA_KIDNEY|hoptimus0,0.96,s4_grid.csv,
+S4.1_classical_coverage|theta3|INDIANA_KIDNEY|uni_v2,0.92,s4_grid.csv,
+S4.1_classical_coverage|theta3|LUNG_XENIUM|resnet50,1.0,s4_grid.csv,
+S4.1_classical_coverage|theta3|LUNG_XENIUM|hoptimus0,1.0,s4_grid.csv,
+S4.1_classical_coverage|theta3|LUNG_XENIUM|uni_v2,0.6666666667,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd|theta3|CCRCC|resnet50,2.2907705698725005,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd|theta3|CCRCC|hoptimus0,3.3344145789406654,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd|theta3|CCRCC|uni_v2,3.2700472896821724,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd|theta3|CCRCC_merged|resnet50,2.4721139857983774,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd|theta3|CCRCC_merged|hoptimus0,3.3152000015240626,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd|theta3|CCRCC_merged|uni_v2,3.276438876160083,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd|theta3|INDIANA_KIDNEY|resnet50,2.336746441598996,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd|theta3|INDIANA_KIDNEY|hoptimus0,2.4749302107716638,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd|theta3|INDIANA_KIDNEY|uni_v2,2.4826910994290827,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd|theta3|LUNG_XENIUM|resnet50,1.6623782510490828,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd|theta3|LUNG_XENIUM|hoptimus0,1.3766753287332254,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd|theta3|LUNG_XENIUM|uni_v2,2.0211129617811654,s4_grid.csv,
+S4.2_n_task_encoder_cells_ge_1.5|theta3,11,s4_grid.csv,of 12 task and encoder cells
+S4_coverage_median_over_cells|theta3|nL8|BH_bh,0.8547826087,s4_grid.csv,
+S4_coverage_median_over_cells|theta3|nL8|BH_bh_t,0.91833333335,s4_grid.csv,
+S4_coverage_median_over_cells|theta3|nL8|BH_bh_t_fpc,0.8547826087,s4_grid.csv,
+S4_coverage_median_over_cells|theta3|nL8|BH_bh_t_n2,0.9375,s4_grid.csv,
+S4_coverage_median_over_cells|theta3|nL8|H_apx_size,0.59166666665,s4_grid.csv,
+S4_coverage_median_over_cells|theta3|nL8|HT_apx_size,0.5800000000000001,s4_grid.csv,
+S4_coverage_median_over_cells|theta3|nL8|classical_textbook_t|fpc|lin,0.8125,s4_grid.csv,
+S4.1_classical_coverage_median_over_arms|theta2|CCRCC,0.9565217391,s4_grid.csv,"median over arms of the median over genes, exact over the G starts"
+S4.1_classical_coverage_range_over_arms|theta2|CCRCC,0.9130 to 0.9565,s4_grid.csv,
+S4.1_classical_coverage_median_over_arms|theta2|CCRCC_merged,0.8181818182,s4_grid.csv,"median over arms of the median over genes, exact over the G starts"
+S4.1_classical_coverage_range_over_arms|theta2|CCRCC_merged,0.7727 to 0.8864,s4_grid.csv,
+S4.1_classical_coverage_median_over_arms|theta2|INDIANA_KIDNEY,0.85,s4_grid.csv,"median over arms of the median over genes, exact over the G starts"
+S4.1_classical_coverage_range_over_arms|theta2|INDIANA_KIDNEY,0.8500 to 0.9000,s4_grid.csv,
+S4.1_n_tasks_below_0.80|theta2,0,s4_grid.csv,of 3 tasks
+S4.2_HT_sd_over_D0cl_sd_median_over_arms|theta2|CCRCC,2.7005809106278322,s4_grid.csv,"per gene exact sd of HT over the sd of the classical mean under D0 (S1, 2,000 draws); median over genes, then over arms"
+S4.2_HT_sd_ratio_min_over_arms|theta2|CCRCC,2.7005809106278322,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd_median_over_arms|theta2|CCRCC_merged,2.646227994397612,s4_grid.csv,"per gene exact sd of HT over the sd of the classical mean under D0 (S1, 2,000 draws); median over genes, then over arms"
+S4.2_HT_sd_ratio_min_over_arms|theta2|CCRCC_merged,2.646227994397612,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd_median_over_arms|theta2|INDIANA_KIDNEY,1.3929333609575956,s4_grid.csv,"per gene exact sd of HT over the sd of the classical mean under D0 (S1, 2,000 draws); median over genes, then over arms"
+S4.2_HT_sd_ratio_min_over_arms|theta2|INDIANA_KIDNEY,1.3929333609575956,s4_grid.csv,
+S4.2_n_tasks_ratio_ge_1.5|theta2,2,s4_grid.csv,of 3 tasks
+S4.1_classical_coverage_median_over_encoders|theta2|CCRCC,0.9130434783,s4_grid.csv,
+S4.1_classical_coverage_median_over_encoders|theta2|CCRCC_merged,0.8181818182,s4_grid.csv,
+S4.1_classical_coverage_median_over_encoders|theta2|INDIANA_KIDNEY,0.875,s4_grid.csv,
+S4.1_n_tasks_below_0.80_over_encoders|theta2,0,s4_grid.csv,of 3 tasks
+S4.1_classical_coverage|theta2|CCRCC|resnet50,0.9565217391,s4_grid.csv,
+S4.1_classical_coverage|theta2|CCRCC|hoptimus0,0.9130434783,s4_grid.csv,
+S4.1_classical_coverage|theta2|CCRCC|uni_v2,0.9130434783,s4_grid.csv,
+S4.1_classical_coverage|theta2|CCRCC_merged|resnet50,0.8181818182,s4_grid.csv,
+S4.1_classical_coverage|theta2|CCRCC_merged|hoptimus0,0.8863636364,s4_grid.csv,
+S4.1_classical_coverage|theta2|CCRCC_merged|uni_v2,0.7727272727,s4_grid.csv,
+S4.1_classical_coverage|theta2|INDIANA_KIDNEY|resnet50,0.85,s4_grid.csv,
+S4.1_classical_coverage|theta2|INDIANA_KIDNEY|hoptimus0,0.9,s4_grid.csv,
+S4.1_classical_coverage|theta2|INDIANA_KIDNEY|uni_v2,0.875,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd|theta2|CCRCC|resnet50,2.7005809106278322,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd|theta2|CCRCC|hoptimus0,2.8458277045479887,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd|theta2|CCRCC|uni_v2,2.764081297359416,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd|theta2|CCRCC_merged|resnet50,2.646227994397612,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd|theta2|CCRCC_merged|hoptimus0,2.751445551988116,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd|theta2|CCRCC_merged|uni_v2,2.91515362878894,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd|theta2|INDIANA_KIDNEY|resnet50,1.3929333609575956,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd|theta2|INDIANA_KIDNEY|hoptimus0,2.109821708392919,s4_grid.csv,
+S4.2_HT_sd_over_D0cl_sd|theta2|INDIANA_KIDNEY|uni_v2,1.838472378384978,s4_grid.csv,
+S4.2_n_task_encoder_cells_ge_1.5|theta2,8,s4_grid.csv,of 9 task and encoder cells
+S4_coverage_median_over_cells|theta2|nL8|BH_bh,0.85,s4_grid.csv,
+S4_coverage_median_over_cells|theta2|nL8|BH_bh_t,0.9090909091,s4_grid.csv,
+S4_coverage_median_over_cells|theta2|nL8|BH_bh_t_fpc,0.85,s4_grid.csv,
+S4_coverage_median_over_cells|theta2|nL8|BH_bh_t_n2,0.9318181818,s4_grid.csv,
+S4_coverage_median_over_cells|theta2|nL8|H_apx_size,0.7173913043,s4_grid.csv,
+S4_coverage_median_over_cells|theta2|nL8|HT_apx_size,0.6956521739,s4_grid.csv,
+S4_coverage_median_over_cells|theta2|nL8|classical_textbook_t|fpc|lin,0.875,s4_grid.csv,

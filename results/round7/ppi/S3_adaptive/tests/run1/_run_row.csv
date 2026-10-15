@@ -1,0 +1,2 @@
+slurm_job_id,partition,node,stage,unit,frame_id,start,end,elapsed_s,status,commit,config_sha256,out_dir,command
+4900059,spill,c130601.ll.unc.edu,S3,s3_test_run1,89b5f4ed-6180-409e-831d-0fecc6ce5f4e,2026-10-14T13:57:16-04:00,2026-10-14T14:02:39-04:00,323.5,COMPLETED,df344a76cb3dbb1e5eea89da1c1e57d3ab001cb2,37dddcc6869a73c53289b9dd3e3c76bbab6c21f9adaf518ff2d2b835eb658eb2,/work/users/w/e/weiyang/hest_replication/results/round7/ppi/S3_adaptive/tests/run1,round7_ppi_s3_cube.py test

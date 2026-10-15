@@ -1,0 +1,2 @@
+slurm_job_id,partition,node,stage,unit,frame_id,start,end,elapsed_s,status,commit,config_sha256,out_dir,command
+4930089,spill,c151613.ll.unc.edu,S3,merge_S3_r2,89b5f4ed-6180-409e-831d-0fecc6ce5f4e,2026-10-14T21:07:15-04:00,2026-10-14T21:07:26-04:00,10.6,COMPLETED,fa8892c1b46b54c26f7813e98bfdcbf8b810cd41,f02e24ffaeec1ad9fd4a1c68a8128a26bb02601771075e9c3f5e84b66788a80c,/work/users/w/e/weiyang/hest_replication/results/round7/ppi/S3_adaptive/_merged_r2,round7_ppi_s3s4_numbers.py --stage S3

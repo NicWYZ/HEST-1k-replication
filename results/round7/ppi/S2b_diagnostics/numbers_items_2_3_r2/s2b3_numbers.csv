@@ -1,0 +1,736 @@
+name,value,source,note
+anchor_masking_rows,360,s2b3_masking_grid.csv,of 360 bh rows
+anchor_masking_max_abs_diff|coverage_design_median,0,s2b3_masking_grid.csv,
+anchor_masking_max_abs_diff|coverage_super_median,0,s2b3_masking_grid.csv,
+anchor_masking_max_abs_diff|width_median,0,s2b3_masking_grid.csv,
+anchor_sim_rows,260,s2b3_sim.csv,of 260 bh rows
+anchor_sim_max_abs_diff|coverage_design_mean,0,s2b3_sim.csv,
+anchor_sim_max_abs_diff|coverage_super_mean,0,s2b3_sim.csv,
+anchor_sim_max_abs_diff|width_mean,0,s2b3_sim.csv,
+cov_median|A_fixed|bh|design|nL4,0.707,s2b3_masking_grid.csv,
+cov_min|A_fixed|bh|design|nL4,0.5948012232,s2b3_masking_grid.csv,
+share_formed_min|A_fixed|bh|nL4,1,s2b3_masking_grid.csv,
+cov_task|A_fixed|bh|design|CCRCC|nL4,0.69775,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh|design|CCRCC_merged|nL4,0.70725,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh|design|INDIANA_KIDNEY|nL4,0.6978835372,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh|design|LUNG_XENIUM|nL4,0.7239912178,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh|design|ACS_STATES|nL4,0.761,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh|design|ACS_CA_PUMA|nL4,0.7265,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|A_fixed|bh|design|nL6,0.80475,s2b3_masking_grid.csv,
+cov_min|A_fixed|bh|design|nL6,0.71975,s2b3_masking_grid.csv,
+share_formed_min|A_fixed|bh|nL6,1,s2b3_masking_grid.csv,
+cov_task|A_fixed|bh|design|CCRCC|nL6,0.7975,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh|design|CCRCC_merged|nL6,0.803125,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh|design|INDIANA_KIDNEY|nL6,0.7955,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh|design|LUNG_XENIUM|nL6,0.8397039909,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh|design|ACS_STATES|nL6,0.8235,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh|design|ACS_CA_PUMA|nL6,0.819,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|A_fixed|bh|design|nL8,0.85775,s2b3_masking_grid.csv,
+cov_min|A_fixed|bh|design|nL8,0.80175,s2b3_masking_grid.csv,
+share_formed_min|A_fixed|bh|nL8,1,s2b3_masking_grid.csv,
+cov_task|A_fixed|bh|design|CCRCC|nL8,0.85175,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh|design|CCRCC_merged|nL8,0.85025,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh|design|INDIANA_KIDNEY|nL8,0.851125,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh|design|LUNG_XENIUM|nL8,0.9315,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh|design|ACS_STATES|nL8,0.8505,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh|design|ACS_CA_PUMA|nL8,0.8555,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|A_fixed|bh|design|nL12,0.92675,s2b3_masking_grid.csv,
+cov_min|A_fixed|bh|design|nL12,0.848,s2b3_masking_grid.csv,
+share_formed_min|A_fixed|bh|nL12,1,s2b3_masking_grid.csv,
+cov_task|A_fixed|bh|design|CCRCC|nL12,0.918625,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh|design|CCRCC_merged|nL12,0.91875,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh|design|INDIANA_KIDNEY|nL12,0.92025,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh|design|LUNG_XENIUM|nL12,0.9935,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh|design|ACS_STATES|nL12,0.91,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh|design|ACS_CA_PUMA|nL12,0.907,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|A_fixed|bh|design|nL16,0.9405,s2b3_masking_grid.csv,
+cov_min|A_fixed|bh|design|nL16,0.894,s2b3_masking_grid.csv,
+share_formed_min|A_fixed|bh|nL16,1,s2b3_masking_grid.csv,
+cov_task|A_fixed|bh|design|ACS_STATES|nL16,0.9335,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh|design|ACS_CA_PUMA|nL16,0.9475,s2b3_masking_grid.csv,median over arms and estimands
+est_over_emp_median|A_fixed|bh,1.052132495,s2b3_masking_grid.csv,
+cov_median|A_fixed|bh_t|design|nL4,0.887875,s2b3_masking_grid.csv,
+cov_min|A_fixed|bh_t|design|nL4,0.798,s2b3_masking_grid.csv,
+share_formed_min|A_fixed|bh_t|nL4,1,s2b3_masking_grid.csv,
+cov_task|A_fixed|bh_t|design|CCRCC|nL4,0.872875,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t|design|CCRCC_merged|nL4,0.880875,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t|design|INDIANA_KIDNEY|nL4,0.8804580785,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t|design|LUNG_XENIUM|nL4,0.94925,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t|design|ACS_STATES|nL4,0.9105,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t|design|ACS_CA_PUMA|nL4,0.884,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|A_fixed|bh_t|design|nL6,0.906375,s2b3_masking_grid.csv,
+cov_min|A_fixed|bh_t|design|nL6,0.848,s2b3_masking_grid.csv,
+share_formed_min|A_fixed|bh_t|nL6,1,s2b3_masking_grid.csv,
+cov_task|A_fixed|bh_t|design|CCRCC|nL6,0.890125,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t|design|CCRCC_merged|nL6,0.8945,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t|design|INDIANA_KIDNEY|nL6,0.902875,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t|design|LUNG_XENIUM|nL6,0.9586560752,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t|design|ACS_STATES|nL6,0.919,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t|design|ACS_CA_PUMA|nL6,0.904,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|A_fixed|bh_t|design|nL8,0.92175,s2b3_masking_grid.csv,
+cov_min|A_fixed|bh_t|design|nL8,0.87525,s2b3_masking_grid.csv,
+share_formed_min|A_fixed|bh_t|nL8,1,s2b3_masking_grid.csv,
+cov_task|A_fixed|bh_t|design|CCRCC|nL8,0.91325,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t|design|CCRCC_merged|nL8,0.909,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t|design|INDIANA_KIDNEY|nL8,0.919375,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t|design|LUNG_XENIUM|nL8,0.972,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t|design|ACS_STATES|nL8,0.9165,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t|design|ACS_CA_PUMA|nL8,0.918,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|A_fixed|bh_t|design|nL12,0.956,s2b3_masking_grid.csv,
+cov_min|A_fixed|bh_t|design|nL12,0.8935,s2b3_masking_grid.csv,
+share_formed_min|A_fixed|bh_t|nL12,1,s2b3_masking_grid.csv,
+cov_task|A_fixed|bh_t|design|CCRCC|nL12,0.946625,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t|design|CCRCC_merged|nL12,0.9455,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t|design|INDIANA_KIDNEY|nL12,0.953,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t|design|LUNG_XENIUM|nL12,0.9975,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t|design|ACS_STATES|nL12,0.9395,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t|design|ACS_CA_PUMA|nL12,0.94,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|A_fixed|bh_t|design|nL16,0.957,s2b3_masking_grid.csv,
+cov_min|A_fixed|bh_t|design|nL16,0.9215,s2b3_masking_grid.csv,
+share_formed_min|A_fixed|bh_t|nL16,1,s2b3_masking_grid.csv,
+cov_task|A_fixed|bh_t|design|ACS_STATES|nL16,0.954,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t|design|ACS_CA_PUMA|nL16,0.96,s2b3_masking_grid.csv,median over arms and estimands
+est_over_emp_median|A_fixed|bh_t,1.246328306,s2b3_masking_grid.csv,
+cov_median|A_fixed|bh_t_fpc|design|nL4,0.862375,s2b3_masking_grid.csv,
+cov_min|A_fixed|bh_t_fpc|design|nL4,0.7705,s2b3_masking_grid.csv,
+share_formed_min|A_fixed|bh_t_fpc|nL4,1,s2b3_masking_grid.csv,
+cov_task|A_fixed|bh_t_fpc|design|CCRCC|nL4,0.84825,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_fpc|design|CCRCC_merged|nL4,0.853125,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_fpc|design|INDIANA_KIDNEY|nL4,0.85375,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_fpc|design|LUNG_XENIUM|nL4,0.9100398127,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_fpc|design|ACS_STATES|nL4,0.9015,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_fpc|design|ACS_CA_PUMA|nL4,0.881,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|A_fixed|bh_t_fpc|design|nL6,0.858125,s2b3_masking_grid.csv,
+cov_min|A_fixed|bh_t_fpc|design|nL6,0.7778342654,s2b3_masking_grid.csv,
+share_formed_min|A_fixed|bh_t_fpc|nL6,1,s2b3_masking_grid.csv,
+cov_task|A_fixed|bh_t_fpc|design|CCRCC|nL6,0.850625,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_fpc|design|CCRCC_merged|nL6,0.853875,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_fpc|design|INDIANA_KIDNEY|nL6,0.86025,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_fpc|design|LUNG_XENIUM|nL6,0.8591764108,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_fpc|design|ACS_STATES|nL6,0.9015,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_fpc|design|ACS_CA_PUMA|nL6,0.901,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|A_fixed|bh_t_fpc|design|nL8,0.859,s2b3_masking_grid.csv,
+cov_min|A_fixed|bh_t_fpc|design|nL8,0.80675,s2b3_masking_grid.csv,
+share_formed_min|A_fixed|bh_t_fpc|nL8,1,s2b3_masking_grid.csv,
+cov_task|A_fixed|bh_t_fpc|design|CCRCC|nL8,0.853125,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_fpc|design|CCRCC_merged|nL8,0.847,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_fpc|design|INDIANA_KIDNEY|nL8,0.858,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_fpc|design|LUNG_XENIUM|nL8,0.879,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_fpc|design|ACS_STATES|nL8,0.887,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_fpc|design|ACS_CA_PUMA|nL8,0.913,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|A_fixed|bh_t_fpc|design|nL12,0.86175,s2b3_masking_grid.csv,
+cov_min|A_fixed|bh_t_fpc|design|nL12,0.805,s2b3_masking_grid.csv,
+share_formed_min|A_fixed|bh_t_fpc|nL12,1,s2b3_masking_grid.csv,
+cov_task|A_fixed|bh_t_fpc|design|CCRCC|nL12,0.852375,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_fpc|design|CCRCC_merged|nL12,0.847125,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_fpc|design|INDIANA_KIDNEY|nL12,0.853375,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_fpc|design|LUNG_XENIUM|nL12,0.8995,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_fpc|design|ACS_STATES|nL12,0.9065,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_fpc|design|ACS_CA_PUMA|nL12,0.933,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|A_fixed|bh_t_fpc|design|nL16,0.93325,s2b3_masking_grid.csv,
+cov_min|A_fixed|bh_t_fpc|design|nL16,0.8955,s2b3_masking_grid.csv,
+share_formed_min|A_fixed|bh_t_fpc|nL16,1,s2b3_masking_grid.csv,
+cov_task|A_fixed|bh_t_fpc|design|ACS_STATES|nL16,0.9055,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_fpc|design|ACS_CA_PUMA|nL16,0.9575,s2b3_masking_grid.csv,median over arms and estimands
+est_over_emp_median|A_fixed|bh_t_fpc,0.8417361277,s2b3_masking_grid.csv,
+cov_median|A_fixed|bh_t_n2|design|nL4,0.9488251041,s2b3_masking_grid.csv,
+cov_min|A_fixed|bh_t_n2|design|nL4,0.85875,s2b3_masking_grid.csv,
+share_formed_min|A_fixed|bh_t_n2|nL4,0.5216627635,s2b3_masking_grid.csv,
+cov_task|A_fixed|bh_t_n2|design|CCRCC|nL4,0.927,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_n2|design|CCRCC_merged|nL4,0.933,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_n2|design|INDIANA_KIDNEY|nL4,0.9491374182,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_n2|design|LUNG_XENIUM|nL4,0.9819601572,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_n2|design|ACS_STATES|nL4,0.953,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_n2|design|ACS_CA_PUMA|nL4,0.937,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|A_fixed|bh_t_n2|design|nL6,0.92275,s2b3_masking_grid.csv,
+cov_min|A_fixed|bh_t_n2|design|nL6,0.861,s2b3_masking_grid.csv,
+share_formed_min|A_fixed|bh_t_n2|nL6,0.8922216573,s2b3_masking_grid.csv,
+cov_task|A_fixed|bh_t_n2|design|CCRCC|nL6,0.90675,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_n2|design|CCRCC_merged|nL6,0.909,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_n2|design|INDIANA_KIDNEY|nL6,0.919229303,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_n2|design|LUNG_XENIUM|nL6,0.97475,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_n2|design|ACS_STATES|nL6,0.9375,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_n2|design|ACS_CA_PUMA|nL6,0.9175,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|A_fixed|bh_t_n2|design|nL8,0.92725,s2b3_masking_grid.csv,
+cov_min|A_fixed|bh_t_n2|design|nL8,0.88225,s2b3_masking_grid.csv,
+share_formed_min|A_fixed|bh_t_n2|nL8,1,s2b3_masking_grid.csv,
+cov_task|A_fixed|bh_t_n2|design|CCRCC|nL8,0.919625,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_n2|design|CCRCC_merged|nL8,0.916125,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_n2|design|INDIANA_KIDNEY|nL8,0.928125,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_n2|design|LUNG_XENIUM|nL8,0.9755,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_n2|design|ACS_STATES|nL8,0.9235,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_n2|design|ACS_CA_PUMA|nL8,0.925,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|A_fixed|bh_t_n2|design|nL12,0.95725,s2b3_masking_grid.csv,
+cov_min|A_fixed|bh_t_n2|design|nL12,0.899,s2b3_masking_grid.csv,
+share_formed_min|A_fixed|bh_t_n2|nL12,1,s2b3_masking_grid.csv,
+cov_task|A_fixed|bh_t_n2|design|CCRCC|nL12,0.948375,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_n2|design|CCRCC_merged|nL12,0.947,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_n2|design|INDIANA_KIDNEY|nL12,0.9545,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_n2|design|LUNG_XENIUM|nL12,0.998,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_n2|design|ACS_STATES|nL12,0.942,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_n2|design|ACS_CA_PUMA|nL12,0.9435,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|A_fixed|bh_t_n2|design|nL16,0.95775,s2b3_masking_grid.csv,
+cov_min|A_fixed|bh_t_n2|design|nL16,0.923,s2b3_masking_grid.csv,
+share_formed_min|A_fixed|bh_t_n2|nL16,1,s2b3_masking_grid.csv,
+cov_task|A_fixed|bh_t_n2|design|ACS_STATES|nL16,0.955,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|A_fixed|bh_t_n2|design|ACS_CA_PUMA|nL16,0.9605,s2b3_masking_grid.csv,median over arms and estimands
+est_over_emp_median|A_fixed|bh_t_n2,1.246328306,s2b3_masking_grid.csv,
+cov_median|B_world|bh|design|nL4,0.69925,s2b3_masking_grid.csv,
+cov_min|B_world|bh|design|nL4,0.63875,s2b3_masking_grid.csv,
+share_formed_min|B_world|bh|nL4,1,s2b3_masking_grid.csv,
+cov_task|B_world|bh|design|CCRCC|nL4,0.693125,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|design|CCRCC_merged|nL4,0.691625,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|design|INDIANA_KIDNEY|nL4,0.68475,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|design|LUNG_XENIUM|nL4,0.821,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|design|ACS_STATES|nL4,0.7545,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|design|ACS_CA_PUMA|nL4,0.732,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh|design|nL6,0.8015,s2b3_masking_grid.csv,
+cov_min|B_world|bh|design|nL6,0.74825,s2b3_masking_grid.csv,
+share_formed_min|B_world|bh|nL6,1,s2b3_masking_grid.csv,
+cov_task|B_world|bh|design|CCRCC|nL6,0.787625,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|design|CCRCC_merged|nL6,0.79175,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|design|INDIANA_KIDNEY|nL6,0.793,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|design|LUNG_XENIUM|nL6,0.913,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|design|ACS_STATES|nL6,0.816,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|design|ACS_CA_PUMA|nL6,0.8105,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh|design|nL8,0.85575,s2b3_masking_grid.csv,
+cov_min|B_world|bh|design|nL8,0.80475,s2b3_masking_grid.csv,
+share_formed_min|B_world|bh|nL8,1,s2b3_masking_grid.csv,
+cov_task|B_world|bh|design|CCRCC|nL8,0.8495,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|design|CCRCC_merged|nL8,0.85475,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|design|INDIANA_KIDNEY|nL8,0.85425,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|design|LUNG_XENIUM|nL8,0.935,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|design|ACS_STATES|nL8,0.8575,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|design|ACS_CA_PUMA|nL8,0.854,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh|design|nL12,0.9355,s2b3_masking_grid.csv,
+cov_min|B_world|bh|design|nL12,0.869,s2b3_masking_grid.csv,
+share_formed_min|B_world|bh|nL12,1,s2b3_masking_grid.csv,
+cov_task|B_world|bh|design|CCRCC|nL12,0.924875,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|design|CCRCC_merged|nL12,0.930875,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|design|INDIANA_KIDNEY|nL12,0.938,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|design|LUNG_XENIUM|nL12,0.99,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|design|ACS_STATES|nL12,0.9095,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|design|ACS_CA_PUMA|nL12,0.902,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh|design|nL16,0.93125,s2b3_masking_grid.csv,
+cov_min|B_world|bh|design|nL16,0.8735,s2b3_masking_grid.csv,
+share_formed_min|B_world|bh|nL16,1,s2b3_masking_grid.csv,
+cov_task|B_world|bh|design|ACS_STATES|nL16,0.935,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|design|ACS_CA_PUMA|nL16,0.9275,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh|super|nL4,0.6645,s2b3_masking_grid.csv,
+cov_min|B_world|bh|super|nL4,0.59825,s2b3_masking_grid.csv,
+cov_task|B_world|bh|super|CCRCC|nL4,0.6485,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|super|CCRCC_merged|nL4,0.656625,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|super|INDIANA_KIDNEY|nL4,0.658125,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|super|LUNG_XENIUM|nL4,0.7115,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|super|ACS_STATES|nL4,0.711,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|super|ACS_CA_PUMA|nL4,0.6735,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh|super|nL6,0.7465,s2b3_masking_grid.csv,
+cov_min|B_world|bh|super|nL6,0.698,s2b3_masking_grid.csv,
+cov_task|B_world|bh|super|CCRCC|nL6,0.730625,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|super|CCRCC_merged|nL6,0.734875,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|super|INDIANA_KIDNEY|nL6,0.745875,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|super|LUNG_XENIUM|nL6,0.76525,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|super|ACS_STATES|nL6,0.783,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|super|ACS_CA_PUMA|nL6,0.782,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh|super|nL8,0.78375,s2b3_masking_grid.csv,
+cov_min|B_world|bh|super|nL8,0.738,s2b3_masking_grid.csv,
+cov_task|B_world|bh|super|CCRCC|nL8,0.77175,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|super|CCRCC_merged|nL8,0.77675,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|super|INDIANA_KIDNEY|nL8,0.780375,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|super|LUNG_XENIUM|nL8,0.792,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|super|ACS_STATES|nL8,0.824,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|super|ACS_CA_PUMA|nL8,0.8175,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh|super|nL12,0.823,s2b3_masking_grid.csv,
+cov_min|B_world|bh|super|nL12,0.77675,s2b3_masking_grid.csv,
+cov_task|B_world|bh|super|CCRCC|nL12,0.81425,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|super|CCRCC_merged|nL12,0.811,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|super|INDIANA_KIDNEY|nL12,0.829625,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|super|LUNG_XENIUM|nL12,0.815,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|super|ACS_STATES|nL12,0.852,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|super|ACS_CA_PUMA|nL12,0.8515,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh|super|nL16,0.86275,s2b3_masking_grid.csv,
+cov_min|B_world|bh|super|nL16,0.839,s2b3_masking_grid.csv,
+cov_task|B_world|bh|super|ACS_STATES|nL16,0.863,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh|super|ACS_CA_PUMA|nL16,0.8625,s2b3_masking_grid.csv,median over arms and estimands
+est_over_emp_median|B_world|bh,0.7393133756,s2b3_masking_grid.csv,
+cov_median|B_world|bh_t|design|nL4,0.8625,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t|design|nL4,0.795,s2b3_masking_grid.csv,
+share_formed_min|B_world|bh_t|nL4,1,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t|design|CCRCC|nL4,0.852,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|design|CCRCC_merged|nL4,0.857125,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|design|INDIANA_KIDNEY|nL4,0.856125,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|design|LUNG_XENIUM|nL4,0.93175,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|design|ACS_STATES|nL4,0.905,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|design|ACS_CA_PUMA|nL4,0.89,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t|design|nL6,0.89075,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t|design|nL6,0.83575,s2b3_masking_grid.csv,
+share_formed_min|B_world|bh_t|nL6,1,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t|design|CCRCC|nL6,0.877,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|design|CCRCC_merged|nL6,0.87875,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|design|INDIANA_KIDNEY|nL6,0.8855,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|design|LUNG_XENIUM|nL6,0.96025,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|design|ACS_STATES|nL6,0.9155,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|design|ACS_CA_PUMA|nL6,0.9045,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t|design|nL8,0.91225,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t|design|nL8,0.86375,s2b3_masking_grid.csv,
+share_formed_min|B_world|bh_t|nL8,1,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t|design|CCRCC|nL8,0.903,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|design|CCRCC_merged|nL8,0.905625,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|design|INDIANA_KIDNEY|nL8,0.911375,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|design|LUNG_XENIUM|nL8,0.9665,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|design|ACS_STATES|nL8,0.92,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|design|ACS_CA_PUMA|nL8,0.915,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t|design|nL12,0.95725,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t|design|nL12,0.909,s2b3_masking_grid.csv,
+share_formed_min|B_world|bh_t|nL12,1,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t|design|CCRCC|nL12,0.9465,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|design|CCRCC_merged|nL12,0.95275,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|design|INDIANA_KIDNEY|nL12,0.9575,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|design|LUNG_XENIUM|nL12,0.9945,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|design|ACS_STATES|nL12,0.94,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|design|ACS_CA_PUMA|nL12,0.9335,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t|design|nL16,0.95075,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t|design|nL16,0.9045,s2b3_masking_grid.csv,
+share_formed_min|B_world|bh_t|nL16,1,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t|design|ACS_STATES|nL16,0.9565,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|design|ACS_CA_PUMA|nL16,0.945,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t|super|nL4,0.843625,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t|super|nL4,0.76825,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t|super|CCRCC|nL4,0.83375,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|super|CCRCC_merged|nL4,0.837,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|super|INDIANA_KIDNEY|nL4,0.840125,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|super|LUNG_XENIUM|nL4,0.86925,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|super|ACS_STATES|nL4,0.8875,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|super|ACS_CA_PUMA|nL4,0.8575,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t|super|nL6,0.854,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t|super|nL6,0.79475,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t|super|CCRCC|nL6,0.837125,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|super|CCRCC_merged|nL6,0.8415,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|super|INDIANA_KIDNEY|nL6,0.85575,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|super|LUNG_XENIUM|nL6,0.86125,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|super|ACS_STATES|nL6,0.887,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|super|ACS_CA_PUMA|nL6,0.8775,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t|super|nL8,0.8605,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t|super|nL8,0.808,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t|super|CCRCC|nL8,0.841,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|super|CCRCC_merged|nL8,0.8465,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|super|INDIANA_KIDNEY|nL8,0.86225,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|super|LUNG_XENIUM|nL8,0.8625,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|super|ACS_STATES|nL8,0.8975,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|super|ACS_CA_PUMA|nL8,0.888,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t|super|nL12,0.8695,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t|super|nL12,0.82575,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t|super|CCRCC|nL12,0.8585,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|super|CCRCC_merged|nL12,0.856,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|super|INDIANA_KIDNEY|nL12,0.874875,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|super|LUNG_XENIUM|nL12,0.86,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|super|ACS_STATES|nL12,0.899,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|super|ACS_CA_PUMA|nL12,0.897,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t|super|nL16,0.89625,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t|super|nL16,0.87,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t|super|ACS_STATES|nL16,0.8945,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t|super|ACS_CA_PUMA|nL16,0.898,s2b3_masking_grid.csv,median over arms and estimands
+est_over_emp_median|B_world|bh_t,0.8355139546,s2b3_masking_grid.csv,
+cov_median|B_world|bh_t_fpc|design|nL4,0.837125,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t_fpc|design|nL4,0.77075,s2b3_masking_grid.csv,
+share_formed_min|B_world|bh_t_fpc|nL4,1,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t_fpc|design|CCRCC|nL4,0.826125,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|design|CCRCC_merged|nL4,0.828625,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|design|INDIANA_KIDNEY|nL4,0.82975,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|design|LUNG_XENIUM|nL4,0.8905,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|design|ACS_STATES|nL4,0.895,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|design|ACS_CA_PUMA|nL4,0.8855,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t_fpc|design|nL6,0.847,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t_fpc|design|nL6,0.79475,s2b3_masking_grid.csv,
+share_formed_min|B_world|bh_t_fpc|nL6,1,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t_fpc|design|CCRCC|nL6,0.83275,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|design|CCRCC_merged|nL6,0.83525,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|design|INDIANA_KIDNEY|nL6,0.844375,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|design|LUNG_XENIUM|nL6,0.8945,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|design|ACS_STATES|nL6,0.9,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|design|ACS_CA_PUMA|nL6,0.902,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t_fpc|design|nL8,0.8555,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t_fpc|design|nL8,0.80425,s2b3_masking_grid.csv,
+share_formed_min|B_world|bh_t_fpc|nL8,1,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t_fpc|design|CCRCC|nL8,0.84675,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|design|CCRCC_merged|nL8,0.84975,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|design|INDIANA_KIDNEY|nL8,0.8505,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|design|LUNG_XENIUM|nL8,0.885,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|design|ACS_STATES|nL8,0.899,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|design|ACS_CA_PUMA|nL8,0.9105,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t_fpc|design|nL12,0.874,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t_fpc|design|nL12,0.8365,s2b3_masking_grid.csv,
+share_formed_min|B_world|bh_t_fpc|nL12,1,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t_fpc|design|CCRCC|nL12,0.86625,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|design|CCRCC_merged|nL12,0.871875,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|design|INDIANA_KIDNEY|nL12,0.867,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|design|LUNG_XENIUM|nL12,0.8855,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|design|ACS_STATES|nL12,0.907,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|design|ACS_CA_PUMA|nL12,0.928,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t_fpc|design|nL16,0.926,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t_fpc|design|nL16,0.8915,s2b3_masking_grid.csv,
+share_formed_min|B_world|bh_t_fpc|nL16,1,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t_fpc|design|ACS_STATES|nL16,0.9145,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|design|ACS_CA_PUMA|nL16,0.9375,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t_fpc|super|nL4,0.80875,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t_fpc|super|nL4,0.73725,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t_fpc|super|CCRCC|nL4,0.804,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|super|CCRCC_merged|nL4,0.80675,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|super|INDIANA_KIDNEY|nL4,0.8135,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|super|LUNG_XENIUM|nL4,0.78725,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|super|ACS_STATES|nL4,0.8765,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|super|ACS_CA_PUMA|nL4,0.855,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t_fpc|super|nL6,0.786375,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t_fpc|super|nL6,0.648,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t_fpc|super|CCRCC|nL6,0.786375,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|super|CCRCC_merged|nL6,0.78525,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|super|INDIANA_KIDNEY|nL6,0.8065,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|super|LUNG_XENIUM|nL6,0.725,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|super|ACS_STATES|nL6,0.8625,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|super|ACS_CA_PUMA|nL6,0.875,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t_fpc|super|nL8,0.7755,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t_fpc|super|nL8,0.7055,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t_fpc|super|CCRCC|nL8,0.769375,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|super|CCRCC_merged|nL8,0.770625,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|super|INDIANA_KIDNEY|nL8,0.783375,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|super|LUNG_XENIUM|nL8,0.71,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|super|ACS_STATES|nL8,0.8685,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|super|ACS_CA_PUMA|nL8,0.885,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t_fpc|super|nL12,0.7145,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t_fpc|super|nL12,0.5105,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t_fpc|super|CCRCC|nL12,0.7205,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|super|CCRCC_merged|nL12,0.7105,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|super|INDIANA_KIDNEY|nL12,0.72075,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|super|LUNG_XENIUM|nL12,0.5225,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|super|ACS_STATES|nL12,0.851,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|super|ACS_CA_PUMA|nL12,0.89,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t_fpc|super|nL16,0.854,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t_fpc|super|nL16,0.796,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t_fpc|super|ACS_STATES|nL16,0.825,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_fpc|super|ACS_CA_PUMA|nL16,0.887,s2b3_masking_grid.csv,median over arms and estimands
+est_over_emp_median|B_world|bh_t_fpc,0.5556779715,s2b3_masking_grid.csv,
+cov_median|B_world|bh_t_n2|design|nL4,0.91025,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t_n2|design|nL4,0.84925,s2b3_masking_grid.csv,
+share_formed_min|B_world|bh_t_n2|nL4,1,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t_n2|design|CCRCC|nL4,0.90125,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|design|CCRCC_merged|nL4,0.904625,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|design|INDIANA_KIDNEY|nL4,0.904875,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|design|LUNG_XENIUM|nL4,0.96175,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|design|ACS_STATES|nL4,0.9425,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|design|ACS_CA_PUMA|nL4,0.9365,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t_n2|design|nL6,0.90525,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t_n2|design|nL6,0.85025,s2b3_masking_grid.csv,
+share_formed_min|B_world|bh_t_n2|nL6,1,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t_n2|design|CCRCC|nL6,0.891625,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|design|CCRCC_merged|nL6,0.892,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|design|INDIANA_KIDNEY|nL6,0.900875,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|design|LUNG_XENIUM|nL6,0.967,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|design|ACS_STATES|nL6,0.9305,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|design|ACS_CA_PUMA|nL6,0.9195,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t_n2|design|nL8,0.91875,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t_n2|design|nL8,0.87025,s2b3_masking_grid.csv,
+share_formed_min|B_world|bh_t_n2|nL8,1,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t_n2|design|CCRCC|nL8,0.9085,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|design|CCRCC_merged|nL8,0.912125,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|design|INDIANA_KIDNEY|nL8,0.91675,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|design|LUNG_XENIUM|nL8,0.9695,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|design|ACS_STATES|nL8,0.9265,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|design|ACS_CA_PUMA|nL8,0.921,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t_n2|design|nL12,0.9585,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t_n2|design|nL12,0.913,s2b3_masking_grid.csv,
+share_formed_min|B_world|bh_t_n2|nL12,1,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t_n2|design|CCRCC|nL12,0.9475,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|design|CCRCC_merged|nL12,0.953625,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|design|INDIANA_KIDNEY|nL12,0.959,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|design|LUNG_XENIUM|nL12,0.995,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|design|ACS_STATES|nL12,0.943,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|design|ACS_CA_PUMA|nL12,0.9365,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t_n2|design|nL16,0.9525,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t_n2|design|nL16,0.907,s2b3_masking_grid.csv,
+share_formed_min|B_world|bh_t_n2|nL16,1,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t_n2|design|ACS_STATES|nL16,0.957,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|design|ACS_CA_PUMA|nL16,0.948,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t_n2|super|nL4,0.899375,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t_n2|super|nL4,0.82875,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t_n2|super|CCRCC|nL4,0.887625,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|super|CCRCC_merged|nL4,0.891,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|super|INDIANA_KIDNEY|nL4,0.893875,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|super|LUNG_XENIUM|nL4,0.9145,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|super|ACS_STATES|nL4,0.933,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|super|ACS_CA_PUMA|nL4,0.922,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t_n2|super|nL6,0.87225,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t_n2|super|nL6,0.8145,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t_n2|super|CCRCC|nL6,0.8535,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|super|CCRCC_merged|nL6,0.85725,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|super|INDIANA_KIDNEY|nL6,0.875625,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|super|LUNG_XENIUM|nL6,0.87825,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|super|ACS_STATES|nL6,0.903,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|super|ACS_CA_PUMA|nL6,0.8965,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t_n2|super|nL8,0.8685,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t_n2|super|nL8,0.81525,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t_n2|super|CCRCC|nL8,0.84775,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|super|CCRCC_merged|nL8,0.854375,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|super|INDIANA_KIDNEY|nL8,0.87025,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|super|LUNG_XENIUM|nL8,0.8705,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|super|ACS_STATES|nL8,0.9015,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|super|ACS_CA_PUMA|nL8,0.897,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t_n2|super|nL12,0.872,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t_n2|super|nL12,0.82775,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t_n2|super|CCRCC|nL12,0.86175,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|super|CCRCC_merged|nL12,0.859125,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|super|INDIANA_KIDNEY|nL12,0.87725,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|super|LUNG_XENIUM|nL12,0.863,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|super|ACS_STATES|nL12,0.9015,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|super|ACS_CA_PUMA|nL12,0.8985,s2b3_masking_grid.csv,median over arms and estimands
+cov_median|B_world|bh_t_n2|super|nL16,0.897,s2b3_masking_grid.csv,
+cov_min|B_world|bh_t_n2|super|nL16,0.8715,s2b3_masking_grid.csv,
+cov_task|B_world|bh_t_n2|super|ACS_STATES|nL16,0.895,s2b3_masking_grid.csv,median over arms and estimands
+cov_task|B_world|bh_t_n2|super|ACS_CA_PUMA|nL16,0.8995,s2b3_masking_grid.csv,median over arms and estimands
+est_over_emp_median|B_world|bh_t_n2,0.8355139546,s2b3_masking_grid.csv,
+S2b.3_cells,16,s2b3_masking_grid.csv,
+S2b.3_cells_ge_0.85,16,s2b3_masking_grid.csv,
+S2b.3_min,0.872875,s2b3_masking_grid.csv,
+S2b.3_max,0.9975,s2b3_masking_grid.csv,
+S2b.4|ACS_CA_PUMA,0.8575,s2b3_masking_grid.csv,
+S2b.4|ACS_STATES,0.8875,s2b3_masking_grid.csv,
+S2b.4|CCRCC,0.83375,s2b3_masking_grid.csv,
+S2b.4|CCRCC_merged,0.837,s2b3_masking_grid.csv,
+S2b.4|INDIANA_KIDNEY,0.840125,s2b3_masking_grid.csv,
+S2b.4|LUNG_XENIUM,0.86925,s2b3_masking_grid.csv,
+rho|A_fixed|nL4|rho_median,1.260382778,s2b3_masking_grid.csv,
+rho|A_fixed|nL4|measured_median,0.6920694481,s2b3_masking_grid.csv,
+rho|A_fixed|nL4|measured_over_rho_median,0.5262851101,s2b3_masking_grid.csv,
+rho|A_fixed|nL6|rho_median,1.444714022,s2b3_masking_grid.csv,
+rho|A_fixed|nL6|measured_median,0.9137757845,s2b3_masking_grid.csv,
+rho|A_fixed|nL6|measured_over_rho_median,0.6307419948,s2b3_masking_grid.csv,
+rho|A_fixed|nL8|rho_median,1.625788945,s2b3_masking_grid.csv,
+rho|A_fixed|nL8|measured_median,1.12518908,s2b3_masking_grid.csv,
+rho|A_fixed|nL8|measured_over_rho_median,0.6894587336,s2b3_masking_grid.csv,
+rho|A_fixed|nL12|rho_median,2.255027577,s2b3_masking_grid.csv,
+rho|A_fixed|nL12|measured_median,1.659600568,s2b3_masking_grid.csv,
+rho|A_fixed|nL12|measured_over_rho_median,0.7320020021,s2b3_masking_grid.csv,
+rho|A_fixed|nL16|rho_median,1.799281153,s2b3_masking_grid.csv,
+rho|A_fixed|nL16|measured_median,1.45177116,s2b3_masking_grid.csv,
+rho|A_fixed|nL16|measured_over_rho_median,0.8949606928,s2b3_masking_grid.csv,
+rho|A_fixed|spearman_measured_vs_rho,0.7388540799,s2b3_masking_grid.csv,
+rho|sim|G15|nL4|measured_over_rho_median,0.4241636234,s2b3_sim.csv,
+rho|sim|G15|nL6|measured_over_rho_median,0.5071753035,s2b3_sim.csv,
+rho|sim|G15|nL8|measured_over_rho_median,0.5340324901,s2b3_sim.csv,
+rho|sim|G15|nL12|measured_over_rho_median,0.4370612313,s2b3_sim.csv,
+rho|sim|G24|nL4|measured_over_rho_median,0.484596116,s2b3_sim.csv,
+rho|sim|G24|nL6|measured_over_rho_median,0.5821607556,s2b3_sim.csv,
+rho|sim|G24|nL8|measured_over_rho_median,0.6367410717,s2b3_sim.csv,
+rho|sim|G24|nL12|measured_over_rho_median,0.6707532036,s2b3_sim.csv,
+rho|sim|G51|nL4|measured_over_rho_median,0.4996273866,s2b3_sim.csv,
+rho|sim|G51|nL6|measured_over_rho_median,0.6165533706,s2b3_sim.csv,
+rho|sim|G51|nL8|measured_over_rho_median,0.6911907518,s2b3_sim.csv,
+rho|sim|G51|nL12|measured_over_rho_median,0.7636252082,s2b3_sim.csv,
+rho|sim|G51|nL16|measured_over_rho_median,0.8066330577,s2b3_sim.csv,
+sim_cov_mean|bh|design|G15|nL4,0.7831166667,s2b3_sim.csv,
+sim_cov_min|bh|design|G15|nL4,0.66925,s2b3_sim.csv,
+sim_cov_mean|bh|super|G15|nL4,0.6853541667,s2b3_sim.csv,
+sim_cov_min|bh|super|G15|nL4,0.5838333333,s2b3_sim.csv,
+sim_cov_mean|bh|design|G15|nL6,0.8620791667,s2b3_sim.csv,
+sim_cov_min|bh|design|G15|nL6,0.763,s2b3_sim.csv,
+sim_cov_mean|bh|super|G15|nL6,0.7380858333,s2b3_sim.csv,
+sim_cov_min|bh|super|G15|nL6,0.6383833333,s2b3_sim.csv,
+sim_cov_mean|bh|design|G15|nL8,0.9105016667,s2b3_sim.csv,
+sim_cov_min|bh|design|G15|nL8,0.8294333333,s2b3_sim.csv,
+sim_cov_mean|bh|super|G15|nL8,0.7645858333,s2b3_sim.csv,
+sim_cov_min|bh|super|G15|nL8,0.6625833333,s2b3_sim.csv,
+sim_cov_mean|bh|design|G15|nL12,0.9786708333,s2b3_sim.csv,
+sim_cov_min|bh|design|G15|nL12,0.9410666667,s2b3_sim.csv,
+sim_cov_mean|bh|super|G15|nL12,0.7945216667,s2b3_sim.csv,
+sim_cov_min|bh|super|G15|nL12,0.6636333333,s2b3_sim.csv,
+sim_cov_mean|bh|design|G24|nL4,0.7540433333,s2b3_sim.csv,
+sim_cov_min|bh|design|G24|nL4,0.64605,s2b3_sim.csv,
+sim_cov_mean|bh|super|G24|nL4,0.6811983333,s2b3_sim.csv,
+sim_cov_min|bh|super|G24|nL4,0.6074333333,s2b3_sim.csv,
+sim_cov_mean|bh|design|G24|nL6,0.8339916667,s2b3_sim.csv,
+sim_cov_min|bh|design|G24|nL6,0.7367833333,s2b3_sim.csv,
+sim_cov_mean|bh|super|G24|nL6,0.7413508333,s2b3_sim.csv,
+sim_cov_min|bh|super|G24|nL6,0.6729166667,s2b3_sim.csv,
+sim_cov_mean|bh|design|G24|nL8,0.8772041667,s2b3_sim.csv,
+sim_cov_min|bh|design|G24|nL8,0.7890166667,s2b3_sim.csv,
+sim_cov_mean|bh|super|G24|nL8,0.7697641667,s2b3_sim.csv,
+sim_cov_min|bh|super|G24|nL8,0.7070833333,s2b3_sim.csv,
+sim_cov_mean|bh|design|G24|nL12,0.92737,s2b3_sim.csv,
+sim_cov_min|bh|design|G24|nL12,0.8553333333,s2b3_sim.csv,
+sim_cov_mean|bh|super|G24|nL12,0.7972166667,s2b3_sim.csv,
+sim_cov_min|bh|super|G24|nL12,0.7338,s2b3_sim.csv,
+sim_cov_mean|bh|design|G51|nL4,0.7073058333,s2b3_sim.csv,
+sim_cov_min|bh|design|G51|nL4,0.6091833333,s2b3_sim.csv,
+sim_cov_mean|bh|super|G51|nL4,0.6709766667,s2b3_sim.csv,
+sim_cov_min|bh|super|G51|nL4,0.6004833333,s2b3_sim.csv,
+sim_cov_mean|bh|design|G51|nL6,0.7900258333,s2b3_sim.csv,
+sim_cov_min|bh|design|G51|nL6,0.6901166667,s2b3_sim.csv,
+sim_cov_mean|bh|super|G51|nL6,0.7425066667,s2b3_sim.csv,
+sim_cov_min|bh|super|G51|nL6,0.6790166667,s2b3_sim.csv,
+sim_cov_mean|bh|design|G51|nL8,0.8337316667,s2b3_sim.csv,
+sim_cov_min|bh|design|G51|nL8,0.7362833333,s2b3_sim.csv,
+sim_cov_mean|bh|super|G51|nL8,0.7763558333,s2b3_sim.csv,
+sim_cov_min|bh|super|G51|nL8,0.7225,s2b3_sim.csv,
+sim_cov_mean|bh|design|G51|nL12,0.8817933333,s2b3_sim.csv,
+sim_cov_min|bh|design|G51|nL12,0.7967666667,s2b3_sim.csv,
+sim_cov_mean|bh|super|G51|nL12,0.8092325,s2b3_sim.csv,
+sim_cov_min|bh|super|G51|nL12,0.7524,s2b3_sim.csv,
+sim_cov_mean|bh|design|G51|nL16,0.9092675,s2b3_sim.csv,
+sim_cov_min|bh|design|G51|nL16,0.8357666667,s2b3_sim.csv,
+sim_cov_mean|bh|super|G51|nL16,0.82495,s2b3_sim.csv,
+sim_cov_min|bh|super|G51|nL16,0.76,s2b3_sim.csv,
+sim_cov_mean|bh_t|design|G15|nL4,0.9065975,s2b3_sim.csv,
+sim_cov_min|bh_t|design|G15|nL4,0.8113,s2b3_sim.csv,
+sim_cov_mean|bh_t|super|G15|nL4,0.8440166667,s2b3_sim.csv,
+sim_cov_min|bh_t|super|G15|nL4,0.72515,s2b3_sim.csv,
+sim_cov_mean|bh_t|design|G15|nL6,0.9234383333,s2b3_sim.csv,
+sim_cov_min|bh_t|design|G15|nL6,0.841,s2b3_sim.csv,
+sim_cov_mean|bh_t|super|G15|nL6,0.8331483333,s2b3_sim.csv,
+sim_cov_min|bh_t|super|G15|nL6,0.7242,s2b3_sim.csv,
+sim_cov_mean|bh_t|design|G15|nL8,0.9446416667,s2b3_sim.csv,
+sim_cov_min|bh_t|design|G15|nL8,0.8691833333,s2b3_sim.csv,
+sim_cov_mean|bh_t|super|G15|nL8,0.8317066667,s2b3_sim.csv,
+sim_cov_min|bh_t|super|G15|nL8,0.7327333333,s2b3_sim.csv,
+sim_cov_mean|bh_t|design|G15|nL12,0.9849008333,s2b3_sim.csv,
+sim_cov_min|bh_t|design|G15|nL12,0.9535333333,s2b3_sim.csv,
+sim_cov_mean|bh_t|super|G15|nL12,0.8385075,s2b3_sim.csv,
+sim_cov_min|bh_t|super|G15|nL12,0.7255333333,s2b3_sim.csv,
+sim_cov_mean|bh_t|design|G24|nL4,0.8885133333,s2b3_sim.csv,
+sim_cov_min|bh_t|design|G24|nL4,0.78475,s2b3_sim.csv,
+sim_cov_mean|bh_t|super|G24|nL4,0.8407333333,s2b3_sim.csv,
+sim_cov_min|bh_t|super|G24|nL4,0.7595,s2b3_sim.csv,
+sim_cov_mean|bh_t|design|G24|nL6,0.9039166667,s2b3_sim.csv,
+sim_cov_min|bh_t|design|G24|nL6,0.8165,s2b3_sim.csv,
+sim_cov_mean|bh_t|super|G24|nL6,0.836,s2b3_sim.csv,
+sim_cov_min|bh_t|super|G24|nL6,0.7619166667,s2b3_sim.csv,
+sim_cov_mean|bh_t|design|G24|nL8,0.9200066667,s2b3_sim.csv,
+sim_cov_min|bh_t|design|G24|nL8,0.8406666667,s2b3_sim.csv,
+sim_cov_mean|bh_t|super|G24|nL8,0.8365783333,s2b3_sim.csv,
+sim_cov_min|bh_t|super|G24|nL8,0.7733166667,s2b3_sim.csv,
+sim_cov_mean|bh_t|design|G24|nL12,0.946625,s2b3_sim.csv,
+sim_cov_min|bh_t|design|G24|nL12,0.8819666667,s2b3_sim.csv,
+sim_cov_mean|bh_t|super|G24|nL12,0.8396166667,s2b3_sim.csv,
+sim_cov_min|bh_t|super|G24|nL12,0.76665,s2b3_sim.csv,
+sim_cov_mean|bh_t|design|G51|nL4,0.8586641667,s2b3_sim.csv,
+sim_cov_min|bh_t|design|G51|nL4,0.75855,s2b3_sim.csv,
+sim_cov_mean|bh_t|super|G51|nL4,0.8330558333,s2b3_sim.csv,
+sim_cov_min|bh_t|super|G51|nL4,0.7454,s2b3_sim.csv,
+sim_cov_mean|bh_t|design|G51|nL6,0.87303,s2b3_sim.csv,
+sim_cov_min|bh_t|design|G51|nL6,0.784,s2b3_sim.csv,
+sim_cov_mean|bh_t|super|G51|nL6,0.8370791667,s2b3_sim.csv,
+sim_cov_min|bh_t|super|G51|nL6,0.7687166667,s2b3_sim.csv,
+sim_cov_mean|bh_t|design|G51|nL8,0.8877075,s2b3_sim.csv,
+sim_cov_min|bh_t|design|G51|nL8,0.8007166667,s2b3_sim.csv,
+sim_cov_mean|bh_t|super|G51|nL8,0.84333,s2b3_sim.csv,
+sim_cov_min|bh_t|super|G51|nL8,0.7838833333,s2b3_sim.csv,
+sim_cov_mean|bh_t|design|G51|nL12,0.9106025,s2b3_sim.csv,
+sim_cov_min|bh_t|design|G51|nL12,0.8328,s2b3_sim.csv,
+sim_cov_mean|bh_t|super|G51|nL12,0.8511908333,s2b3_sim.csv,
+sim_cov_min|bh_t|super|G51|nL12,0.79425,s2b3_sim.csv,
+sim_cov_mean|bh_t|design|G51|nL16,0.9272541667,s2b3_sim.csv,
+sim_cov_min|bh_t|design|G51|nL16,0.8582,s2b3_sim.csv,
+sim_cov_mean|bh_t|super|G51|nL16,0.8556008333,s2b3_sim.csv,
+sim_cov_min|bh_t|super|G51|nL16,0.79435,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|design|G15|nL4,0.8728716667,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|design|G15|nL4,0.7738166667,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|super|G15|nL4,0.7962091667,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|super|G15|nL4,0.6819833333,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|design|G15|nL6,0.8662475,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|design|G15|nL6,0.7714333333,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|super|G15|nL6,0.7440391667,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|super|G15|nL6,0.64545,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|design|G15|nL8,0.8656508333,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|design|G15|nL8,0.7876666667,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|super|G15|nL8,0.6894491667,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|super|G15|nL8,0.5781833333,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|design|G15|nL12,0.8622,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|design|G15|nL12,0.7437833333,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|super|G15|nL12,0.5172966667,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|super|G15|nL12,0.4201666667,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|design|G24|nL4,0.8669766667,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|design|G24|nL4,0.7610166667,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|super|G24|nL4,0.8134075,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|super|G24|nL4,0.7316166667,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|design|G24|nL6,0.8698408333,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|design|G24|nL6,0.77845,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|super|G24|nL6,0.7880375,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|super|G24|nL6,0.7179333333,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|design|G24|nL8,0.8747033333,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|design|G24|nL8,0.7882166667,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|super|G24|nL8,0.7654841667,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|super|G24|nL8,0.7049,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|design|G24|nL12,0.8792025,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|design|G24|nL12,0.8000166667,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|super|G24|nL12,0.7072391667,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|super|G24|nL12,0.6548833333,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|design|G51|nL4,0.8478525,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|design|G51|nL4,0.7479666667,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|super|G51|nL4,0.8210158333,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|super|G51|nL4,0.7350166667,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|design|G51|nL6,0.8560066667,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|design|G51|nL6,0.7661833333,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|super|G51|nL6,0.8172925,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|super|G51|nL6,0.7515,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|design|G51|nL8,0.8655866667,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|design|G51|nL8,0.7745166667,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|super|G51|nL8,0.8151666667,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|super|G51|nL8,0.758,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|design|G51|nL12,0.8787566667,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|design|G51|nL12,0.7955833333,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|super|G51|nL12,0.804365,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|super|G51|nL12,0.74525,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|design|G51|nL16,0.8859458333,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|design|G51|nL16,0.8093166667,s2b3_sim.csv,
+sim_cov_mean|bh_t_fpc|super|G51|nL16,0.7865925,s2b3_sim.csv,
+sim_cov_min|bh_t_fpc|super|G51|nL16,0.7138833333,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|design|G15|nL4,0.9417666667,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|design|G15|nL4,0.8638,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|super|G15|nL4,0.8966783333,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|super|G15|nL4,0.78745,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|design|G15|nL6,0.933135,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|design|G15|nL6,0.85485,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|super|G15|nL6,0.8500358333,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|super|G15|nL6,0.7419833333,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|design|G15|nL8,0.9483133333,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|design|G15|nL8,0.8741833333,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|super|G15|nL8,0.83977,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|super|G15|nL8,0.7401666667,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|design|G15|nL12,0.98522,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|design|G15|nL12,0.9542333333,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|super|G15|nL12,0.8415108333,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|super|G15|nL12,0.7298166667,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|design|G24|nL4,0.9292975,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|design|G24|nL4,0.8377,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|super|G24|nL4,0.8950966667,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|super|G24|nL4,0.8180333333,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|design|G24|nL6,0.9152883333,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|design|G24|nL6,0.8295333333,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|super|G24|nL6,0.8527075,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|super|G24|nL6,0.7787666667,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|design|G24|nL8,0.9247691667,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|design|G24|nL8,0.8467166667,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|super|G24|nL8,0.8445075,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|super|G24|nL8,0.7805166667,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|design|G24|nL12,0.9478741667,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|design|G24|nL12,0.8839333333,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|super|G24|nL12,0.8425675,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|super|G24|nL12,0.7692,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|design|G51|nL4,0.9065833333,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|design|G51|nL4,0.8113333333,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|super|G51|nL4,0.88814,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|super|G51|nL4,0.8009,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|design|G51|nL6,0.8869658333,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|design|G51|nL6,0.79925,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|super|G51|nL6,0.8536975,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|super|G51|nL6,0.7838,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|design|G51|nL8,0.8937266667,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|design|G51|nL8,0.8072,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|super|G51|nL8,0.8511833333,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|super|G51|nL8,0.7908,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|design|G51|nL12,0.9124833333,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|design|G51|nL12,0.8348833333,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|super|G51|nL12,0.85413,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|super|G51|nL12,0.7970166667,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|design|G51|nL16,0.9281558333,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|design|G51|nL16,0.8594666667,s2b3_sim.csv,
+sim_cov_mean|bh_t_n2|super|G51|nL16,0.8571675,s2b3_sim.csv,
+sim_cov_min|bh_t_n2|super|G51|nL16,0.79595,s2b3_sim.csv,

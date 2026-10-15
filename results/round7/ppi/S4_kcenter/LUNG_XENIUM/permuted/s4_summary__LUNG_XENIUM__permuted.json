@@ -1,0 +1,18 @@
+{
+ "tag": "LUNG_XENIUM__permuted",
+ "wall_s": 6.490054607391357,
+ "n_rows": 42,
+ "args": {
+  "parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__resnet50.parquet",
+  "perm_parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__resnet50.parquet",
+  "ref_parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__resnet50.parquet",
+  "ref_arm": "resnet50",
+  "vtag": "LUNG_XENIUM",
+  "arm": "permuted",
+  "nls": "4,6,8,12",
+  "estimands": "theta3,theta2",
+  "theta2_kind": "neo_minus_stroma",
+  "root": "/work/users/w/e/weiyang/hest_replication",
+  "out_dir": "."
+ }
+}

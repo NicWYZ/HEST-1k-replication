@@ -1,0 +1,18 @@
+{
+ "tag": "CCRCC__hoptimus0",
+ "wall_s": 4.2679760456085205,
+ "n_rows": 56,
+ "args": {
+  "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__hoptimus0.parquet",
+  "perm_parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__resnet50.parquet",
+  "ref_parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__resnet50.parquet",
+  "ref_arm": "resnet50",
+  "vtag": "CCRCC",
+  "arm": "hoptimus0",
+  "nls": "4,6,8,12",
+  "estimands": "theta3,theta2",
+  "theta2_kind": "neo_minus_stroma",
+  "root": "/work/users/w/e/weiyang/hest_replication",
+  "out_dir": "."
+ }
+}

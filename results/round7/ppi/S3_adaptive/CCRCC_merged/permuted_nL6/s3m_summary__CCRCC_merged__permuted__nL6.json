@@ -1,0 +1,32 @@
+{
+ "tag": "CCRCC_merged__permuted__nL6",
+ "wall_s": 215.40977573394775,
+ "n_cells": 8,
+ "n_rows": 80,
+ "args": {
+  "mode": "masking",
+  "out_dir": ".",
+  "draws": 2000,
+  "r_cap": 1000000,
+  "test_r": 1000000,
+  "test_eval": 20000,
+  "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC_merged__resnet50.parquet",
+  "perm_parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC_merged__resnet50.parquet",
+  "ref_parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC_merged__resnet50.parquet",
+  "ref_arm": "resnet50",
+  "vtag": "CCRCC_merged",
+  "arm": "permuted",
+  "nl": 6,
+  "estimands": "theta3,theta2",
+  "theta2_kind": "neo_minus_stroma",
+  "designs": "cube_u1,cube_u2,mix",
+  "mix_pa": "0.1,0.01",
+  "max_genes": 0,
+  "root": "/work/users/w/e/weiyang/hest_replication",
+  "G": null,
+  "law": null,
+  "n_cand": 1000,
+  "r2": "0.0,0.2,0.4,0.7,0.9",
+  "lamstar": "0.6,1.2"
+ }
+}

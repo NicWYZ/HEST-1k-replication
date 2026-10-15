@@ -13,6 +13,8 @@ superpopulation interval s_e^2 / n_L with t_{n_L-1}) and Broska and Howes's inte
 predict-then-debias estimator and 2,000-draw cluster bootstrap, and the HT and Hajek means with the Poisson-design
 variance. Every interval is scored against both targets where both exist.
 Outputs: s2m_cells__<tag>.csv (median over genes) and s2m_genes__<tag>.csv.gz (masking), s2_sim__<tag>.csv (sim).
+With --bh-only (S2b item 3), only Broska and Howes's interval and its variants bh_t, bh_t_n2 and bh_t_fpc, written to
+s2bm_cells__/s2bm_genes__ (masking) and s2b_sim__ (sim).
 """
 import argparse
 import itertools
@@ -115,6 +117,63 @@ def kluger_draw(Z, F, pi, xi, rng, B=B_BOOT):
     return out
 
 
+def bh3_parts(Z, F, L, tiny=1e-24):
+    """bh3 split into the labelled and unlabelled clusters' terms of sigma^2 / n (theory section 2.1, expanded form):
+    T_L = sum_L (z - theta - lam (f - F))^2 / n^2 and T_U = lam^2 r^2 sum_U (f - F)^2 / n^2, so bh3's se^2 = T_L + T_U.
+    Returns theta, T_L, T_U, n (D, ncol)."""
+    Lf = L.astype(float)
+    n = Lf.sum(1); G = L.shape[1]; N = G - n; r = n / N
+    Fbar = F.mean(1)
+    zL = (Lf * Z).sum(1) / n; fL = (Lf * F).sum(1) / n; fU = ((1 - Lf) * F).sum(1) / N
+    fc = F - Fbar[:, None, :]
+    Zh = (Lf - r[:, None, :] * (1 - Lf)) * fc
+
+    def sig(th):
+        eps = Lf * (Z - th[:, None, :])
+        return (eps ** 2).sum(1) / G, (eps * Zh).sum(1) / G, (Zh ** 2).sum(1) / G
+    s11, s12, s22 = sig(zL + (fU - fL))
+    lz = s22 <= tiny * np.maximum(1.0, Fbar ** 2)
+    lam = np.where(lz, 0.0, s12 / np.where(lz, 1.0, s22))
+    th = zL + lam * (fU - fL)
+    TL = (Lf * (Z - th[:, None, :] - lam[:, None, :] * fc) ** 2).sum(1) / n ** 2
+    TU = lam ** 2 * r ** 2 * ((1 - Lf) * fc ** 2).sum(1) / n ** 2
+    return th, TL, TU, n
+
+
+def rho_bh(f, R2):
+    """theory section 2.1: ratio of what Broska and Howes's variance estimates to the design variance under D0."""
+    return (1 - (1 - f) * R2) / ((1 - f) * (1 - R2))
+
+
+def bh_variants(Zs, Fs, L, truths, G, nL):
+    """S2 memo, S2b item 3: the published interval and bh_t (labelled term x n/(n-1), t_{n-1}; beside it t_{n-2})
+    and bh_t_fpc (bh_t x (1 - n_L/G)), with the median-free per-gene variance diagnostics."""
+    th, TL, TU, n = bh3_parts(Zs, Fs, L)
+    z = stats.norm.ppf(1 - ALPHA / 2)
+    v_pub = TL + TU
+    with np.errstate(divide="ignore", invalid="ignore"):
+        v_t = TL * n / (n - 1) + TU
+    v_fpc = v_t * (1 - nL / G)
+    zc = Zs - Zs.mean(1, keepdims=True); fc = Fs - Fs.mean(1, keepdims=True)
+    with np.errstate(divide="ignore", invalid="ignore"):
+        R2d = (zc * fc).sum(1) ** 2 / ((zc ** 2).sum(1) * (fc ** 2).sum(1))
+    R2 = np.nanmean(R2d, 0)
+    out = {}
+    se = np.sqrt(np.maximum(v_pub, 0))
+    out[("D0", "BH", "bh")] = score(th - z * se, th + z * se, th, truths)
+    for nm, v, df in (("bh_t", v_t, n - 1), ("bh_t_n2", v_t, n - 2), ("bh_t_fpc", v_fpc, n - 1)):
+        lo, hi = t_lohi(th, np.where(df >= 1, v, np.nan), df)
+        out[("D0", "BH", nm)] = score(lo, hi, th, truths)
+    emp = np.nanvar(th, 0, ddof=1)
+    for key, v in ((("D0", "BH", "bh"), v_pub), (("D0", "BH", "bh_t"), v_t), (("D0", "BH", "bh_t_n2"), v_t),
+                   (("D0", "BH", "bh_t_fpc"), v_fpc)):
+        out[key]["est_var"] = np.nanmean(v, 0)
+        out[key]["est_over_emp"] = np.nanmean(v, 0) / emp
+        out[key]["R2"] = R2
+        out[key]["rho_bh"] = rho_bh(nL / G, R2)
+    return out
+
+
 def t_lohi(th, v, df):
     q = stats.t.ppf(1 - ALPHA / 2, np.where(df >= 1, df, np.nan))
     se = np.sqrt(np.maximum(v, 0))
@@ -134,9 +193,14 @@ def score(lo, hi, th, truths):
     return out
 
 
-def run_set(Zs, Fs, Lsrs, truths, seeds, nL, Gd, est_label, d0_seed_fn):
-    """Zs, Fs: (D, G, ncol) populations per draw; Lsrs (D, G, ncol) the D0 labelled masks. Returns {key: per-gene}."""
+def run_set(Zs, Fs, Lsrs, truths, seeds, nL, Gd, est_label, d0_seed_fn, bh_only=False):
+    """Zs, Fs: (D, G, ncol) populations per draw; Lsrs (D, G, ncol) the D0 labelled masks. Returns {key: per-gene}.
+    bh_only: only Broska and Howes's interval and its two small-sample variants (bh_variants), on the same draws."""
     D, G, ncol = Zs.shape
+    if bh_only:
+        keep = Lsrs.sum(1).min(1) >= 2
+        tr = {k: (v[keep] if np.ndim(v) == 2 else v) for k, v in truths.items()}
+        return bh_variants(Zs[keep], Fs[keep], Lsrs[keep], tr, G, nL)
     res = {}
     acc = {}
     for d in range(D):
@@ -216,7 +280,7 @@ def masking(a):
         seedA = f"r7ppi|S2|A|{a.vtag}|{a.arm}|{est}|nL{nL}"
         kidx = np.flatnonzero(keep)
         resA = run_set(ZA, FA, LA, {"design": theta}, seedA, nL, G, est,
-                       lambda d, rule: f"q2|{a.vtag}|nL{nL}|m0|d{int(kidx[d])}|{est}|donor|{rule}")
+                       lambda d, rule: f"q2|{a.vtag}|nL{nL}|m0|d{int(kidx[d])}|{est}|donor|{rule}", bh_only=a.bh_only)
         # set B: resampled worlds
         seedB = f"r7ppi|S2|B|{a.vtag}|{a.arm}|{est}|nL{nL}"
         wid = np.stack([np.random.default_rng(W.seed_of(f"{seedB}|world|d{d}")).integers(0, G, G) for d in range(a.draws)])
@@ -225,7 +289,7 @@ def masking(a):
         for d in range(a.draws):
             LB[d, np.random.default_rng(W.seed_of(f"{seedB}|srs|d{d}")).permutation(G)[:nL]] = True
         resB = run_set(ZB, FB, LB, {"design": ZB.mean(1), "super": theta}, seedB, nL, G, est,
-                       lambda d, rule: f"{seedB}|x|d{d}|{rule}")
+                       lambda d, rule: f"{seedB}|x|d{d}|{rule}", bh_only=a.bh_only)
         for setname, res in (("A_fixed", resA), ("B_world", resB)):
             for key, s in res.items():
                 base = dict(vtag=a.vtag, arm=a.arm, estimand=est, G=G, Gall=Gall, n_L=nL, set=setname,
@@ -234,9 +298,10 @@ def masking(a):
                 for j, g in enumerate(genes):
                     generows.append(dict(base, gene=g, **{k: float(v[j]) for k, v in s.items()}))
         print(f"{est} {time.time() - t0:.0f}s", flush=True)
-    pd.DataFrame(rows).to_csv(os.path.join(a.out_dir, f"s2m_cells__{tag}.csv"), index=False, float_format="%.10g")
-    pd.DataFrame(generows).to_csv(os.path.join(a.out_dir, f"s2m_genes__{tag}.csv.gz"), index=False, float_format="%.10g")
-    json.dump(dict(tag=tag, wall_s=time.time() - t0, args=vars(a)), open(os.path.join(a.out_dir, f"s2m_summary__{tag}.json"), "w"), indent=1)
+    px = "s2bm" if a.bh_only else "s2m"
+    pd.DataFrame(rows).to_csv(os.path.join(a.out_dir, f"{px}_cells__{tag}.csv"), index=False, float_format="%.10g")
+    pd.DataFrame(generows).to_csv(os.path.join(a.out_dir, f"{px}_genes__{tag}.csv.gz"), index=False, float_format="%.10g")
+    json.dump(dict(tag=tag, wall_s=time.time() - t0, args=vars(a)), open(os.path.join(a.out_dir, f"{px}_summary__{tag}.json"), "w"), indent=1)
 
 
 def sim(a):
@@ -255,7 +320,7 @@ def sim(a):
         L = np.ascontiguousarray(np.broadcast_to(masks[:, 0][:, :, None], (a.draws, G, npop)))
         Zs = np.broadcast_to(z, (a.draws, G, npop)); Fs = np.broadcast_to(f, (a.draws, G, npop))
         res = run_set(Zs, Fs, L, {"design": z.mean(0), "super": np.zeros(npop)}, f"r7ppi|S2sim|{tag}|R2{R2}|lam{ls}",
-                      nL, G, "sim", lambda d, rule: f"r5e4simx|G{G}|nL{nL}|d{d}|D0")
+                      nL, G, "sim", lambda d, rule: f"r5e4simx|G{G}|nL{nL}|d{d}|D0", bh_only=a.bh_only)
         for key, s in res.items():
             r = dict(G=G, n_L=nL, R2=R2, lambda_star=ls, law=lt, design=key[0], estimator=key[1], interval=key[2], n_pop=npop)
             for k, v in s.items():
@@ -264,8 +329,9 @@ def sim(a):
                     r[f"{k}_p05"] = float(np.nanquantile(v, 0.05)) if np.isfinite(v).any() else np.nan
             rows.append(r)
         print(f"{tag} R2{R2} lam{ls} {time.time() - t0:.0f}s", flush=True)
-        pd.DataFrame(rows).to_csv(os.path.join(a.out_dir, f"s2_sim__{tag}.csv"), index=False, float_format="%.10g")
-    json.dump(dict(tag=tag, wall_s=time.time() - t0, args=vars(a)), open(os.path.join(a.out_dir, f"s2_sim_summary__{tag}.json"), "w"), indent=1)
+        px = "s2b_sim" if a.bh_only else "s2_sim"
+        pd.DataFrame(rows).to_csv(os.path.join(a.out_dir, f"{px}__{tag}.csv"), index=False, float_format="%.10g")
+    json.dump(dict(tag=tag, wall_s=time.time() - t0, args=vars(a)), open(os.path.join(a.out_dir, f"{px}_summary__{tag}.json"), "w"), indent=1)
 
 
 def main():
@@ -273,16 +339,33 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--mode", choices=("masking", "sim"), required=True)
     p.add_argument("--parquet"); p.add_argument("--perm-parquet"); p.add_argument("--ref-parquet"); p.add_argument("--ref-arm")
-    p.add_argument("--vtag"); p.add_argument("--arm"); p.add_argument("--nl", type=int, required=True)
+    p.add_argument("--vtag"); p.add_argument("--arm"); p.add_argument("--nl", type=int)
     p.add_argument("--estimands", default="theta3,theta2"); p.add_argument("--theta2-kind", default="neo_minus_stroma")
     p.add_argument("--G", type=int); p.add_argument("--law")
     p.add_argument("--r2", default=",".join(map(str, R2_GRID))); p.add_argument("--lamstar", default=",".join(map(str, LAMSTAR)))
     p.add_argument("--draws", type=int, default=2000); p.add_argument("--max-genes", type=int, default=0)
     p.add_argument("--root", default=D2.ROOT); p.add_argument("--out-dir", default=".")
+    p.add_argument("--bh-only", action="store_true", help="S2b item 3: only Broska and Howes and its two variants")
+    p.add_argument("--arms", default="", help="loop over these arms (masking); parquets from --pred-dir, the permuted and "
+                   "constant arms and --perm/--ref from resnet50, as the S2 units ran")
+    p.add_argument("--pred-dir", default="")
+    p.add_argument("--nls", default="", help="loop over these n_L")
     a = p.parse_args()
     np.seterr(all="ignore")
     os.makedirs(a.out_dir, exist_ok=True)
-    masking(a) if a.mode == "masking" else sim(a)
+    import copy
+    arms = a.arms.split(",") if a.arms else [None]
+    nls = [int(v) for v in a.nls.split(",")] if a.nls else [a.nl]
+    for arm in arms:
+        for nl in nls:
+            b = copy.copy(a); b.nl = nl
+            if arm is not None:
+                b.arm = arm
+            if arm is not None and a.pred_dir:
+                pq_ = lambda m: os.path.join(a.pred_dir, f"b1_predictions__{a.vtag}__{m}.parquet")
+                b.parquet = pq_("resnet50" if arm in ("permuted", "constant") else arm)
+                b.perm_parquet = b.ref_parquet = pq_("resnet50"); b.ref_arm = "resnet50"
+            masking(b) if a.mode == "masking" else sim(b)
 
 
 if __name__ == "__main__":

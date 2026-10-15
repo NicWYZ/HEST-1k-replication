@@ -1,0 +1,49 @@
+r7ppi_ i02 delivery 14 slurm_job_id=4902482 partition=spill account=rc_htzhu_pi node=c0316.ll.unc.edu date=2026-10-14T14:45:06-04:00
+bundle_md5=898b8e460cf12cff3261c687acc4b750
+head_before=df344a76cb3dbb1e5eea89da1c1e57d3ab001cb2
+/work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/ca2c0294-947b-4f4d-ae73-af04494da4ce/r7ppi_delivery_14.bundle is okay
+The bundle contains this ref:
+4102a38c2bab93a3951823bbdca3419127cb51b8 refs/heads/round7-ppi
+The bundle requires this ref:
+df344a76cb3dbb1e5eea89da1c1e57d3ab001cb2 
+The bundle uses this hash algorithm: sha1
+verify_rc=0
+From /work/users/w/e/weiyang/.claude-science-scratch/.claude-science/jobs/ca2c0294-947b-4f4d-ae73-af04494da4ce/r7ppi_delivery_14.bundle
+ * branch              round7-ppi -> FETCH_HEAD
+fetch_rc=0
+Updating df344a76..4102a38c
+Fast-forward
+ code/scripts/round7_ppi_s4_kcenter.py              | 125 ++++++++++++++++++
+ docs/round07/tracks/ppi/round07_ppi_theory.md      |  25 ++++
+ .../ppi/S3_adaptive/s3_assigned_frame_ids.csv      |   8 ++
+ results/round7/ppi/code_deliveries.csv             |   1 +
+ .../ppi/deliveries/delivery_13_job4899823.log      | 143 +++++++++++++++++++++
+ results/round7/ppi/r7ppi_slurm_jobs.csv            |   1 +
+ 6 files changed, 303 insertions(+)
+merge_rc=0
+head_after=4102a38c2bab93a3951823bbdca3419127cb51b8
+commits_carried:
+4102a38c2bab93a3951823bbdca3419127cb51b8 round7 ppi S4: theory section 4 and the k-center script; delivery 13 recorded
+snapshot=/work/users/w/e/weiyang/hest_code/round7-ppi_snapshots/4102a38c2bab93a3951823bbdca3419127cb51b8
+snapshot_files=324
+snapshot_writable_files=0
+2de31569ffe72239062fbeb0c9a50fc5  round5_ppi_estimator.py
+e13183a4ffdddf4f01ba5136844c606d  round5_ppi_twolevel.py
+d78b654d7fd8e6a824f73dd50ee2a0c1  round5_ppi_balance.py
+059c18e1b4998b1ac9c9685ba324a872  round5_ppi_e4b_rejective.py
+122375c3acb103ed93e3e687644d7f6d  round5_ppi_common.py
+31d5b0e396d85d3c49709f216d89d4af  round7_ppi_d2.py
+93069cf054df1796ba64ce6c8d597d09  round7_ppi_i01_numbers.py
+c8ad6fd5f63296a85c7f664d871631bb  round7_ppi_merge.py
+a7ba2f2d8dfd181bf6bc89eb74e6f8a7  round7_ppi_provenance_index.py
+3f37e77c2abe22afa6eca8772282f4f0  round7_ppi_run.py
+46995769fdd92c8982531dfa96b7892c  round7_ppi_s0_anchors.py
+9e945ff59c4363a5121e16335e2d6dcb  round7_ppi_s1_masking.py
+b434987d5bc590945ec3486530bc9681  round7_ppi_s1_sim.py
+7874b9fb676ef6047d2a05c71a2071e4  round7_ppi_s1_tests.py
+678f92e364c1594e242a8f8ba8f22543  round7_ppi_s2b_numbers.py
+6ebcf580572646124b52d6661de0cf43  round7_ppi_s2b_theta2.py
+a30b7507a4c1e2d4a0efdc76a5032871  round7_ppi_s2_comparators.py
+bdad8f019054140a1ce1a13e73b9bfde  round7_ppi_s3_cube.py
+9e3a1ebca498e9fc2212a277ead14151  round7_ppi_s4_kcenter.py
+19137aac514748f8aa6b054157067e29  round7_ppi_weighting.py

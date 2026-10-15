@@ -1,0 +1,7 @@
+vtag,arm,estimand,G,Gall,n_L,design,balance,p_a,R,apx_size_nonpositive_fixed,pi_hat_vs_target_zmax,pi_hat_ratio_min_min,pi_hat_ratio_min_median,pi_target_ratio_min,pi_target_ratio_max,n_capped,share_pairs_pgh_zero,min_pair_count,inexact_share_eval,inexact_share_pi,resid_median_eval,wall_s,n_candidates,share_D2_draws,d2_share_pairs_pgh_zero,mix_share_pairs_pgh_zero,d2_pi_hat_sum_check,draws_with_lt2_valid
+INDIANA_KIDNEY,constant,theta3,25,25,6,cube_u1,"pi,own",,100000,0,3.283049217,0.4966666667,0.5303125,0.5008323989,3.613903102,0,0,1183,1,1,0.2395664926,83.27316523,,,,,,
+INDIANA_KIDNEY,constant,theta3,25,25,6,mix_D2D0,own,0.1,100000,0,,0.5,0.5703020833,,,,,,,,,107.5075212,1020000,0.4995,0.02726666667,0,2.664535259e-15,0
+INDIANA_KIDNEY,constant,theta3,25,25,6,mix_D2D0,own,0.01,100000,0,,0.5,0.5557604167,,,,,,,,,130.6361332,10380000,0.5075,0.04246666667,0,1.776356839e-15,0
+INDIANA_KIDNEY,constant,theta2,20,25,6,cube_u1,"pi,own",,100000,0,3.682607165,0.4941333333,0.53665,0.5012420079,3.333333333,23,0,1725,1,1,0.1668192891,187.0326726,,,,,,
+INDIANA_KIDNEY,constant,theta2,20,25,6,mix_D2D0,own,0.1,100000,0,,0.5,0.559875,,,,,,,,,211.016582,1020000,0.5115,0.04105263158,0,0,0
+INDIANA_KIDNEY,constant,theta2,20,25,6,mix_D2D0,own,0.01,100000,0,,0.5,0.5176666667,,,,,,,,,232.4260778,10160000,0.496,0.09515789474,0,0,0

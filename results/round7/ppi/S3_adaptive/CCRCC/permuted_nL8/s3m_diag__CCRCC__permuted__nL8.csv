@@ -1,0 +1,9 @@
+vtag,arm,estimand,G,Gall,n_L,design,balance,p_a,R,apx_size_nonpositive_fixed,pi_hat_vs_target_zmax,pi_hat_ratio_min_min,pi_hat_ratio_min_median,pi_target_ratio_min,pi_target_ratio_max,n_capped,share_pairs_pgh_zero,min_pair_count,inexact_share_eval,inexact_share_pi,resid_median_eval,wall_s,n_candidates,share_D2_draws,d2_share_pairs_pgh_zero,mix_share_pairs_pgh_zero,d2_pi_hat_sum_check,draws_with_lt2_valid
+CCRCC,permuted,theta3,24,24,8,cube_u1,"pi,own",,100000,0,3.27204598,0.49617,0.510285,0.5005638957,2.942479728,0,0,2267,1,1,0.07524735208,85.72622895,,,,,,
+CCRCC,permuted,theta3,24,24,8,cube_u2,"pi,own",,100000,0,3.008323968,0.7758,0.78402,0.7875584646,1.27196902,0,0,2916,1,1,0.1184989177,169.2117164,,,,,,
+CCRCC,permuted,theta3,24,24,8,mix_D2D0,own,0.1,100000,0,,0.800645,0.9392225,,,,,,,,,211.7927237,1020000,0.494,0,0,1.776356839e-15,0
+CCRCC,permuted,theta3,24,24,8,mix_D2D0,own,0.01,100000,0,,0.789965,0.939695,,,,,,,,,244.529664,10240000,0.5045,0,0,1.776356839e-15,0
+CCRCC,permuted,theta2,23,24,8,cube_u1,"pi,own",,100000,0,2.92881947,0.49481625,0.525895,0.5002092721,2.875,28,0,2409,1,1,0.07247828144,323.4199677,,,,,,
+CCRCC,permuted,theta2,23,24,8,cube_u2,"pi,own",,100000,0,3.270860131,0.79741,0.805330625,0.8073310625,1.269348841,0,0,1714,1,1,0.1931163022,403.5661635,,,,,,
+CCRCC,permuted,theta2,23,24,8,mix_D2D0,own,0.1,100000,0,,0.5,0.8045525,,,,,,,,,444.8948097,1020000,0.513,0.004031620553,0,0,0
+CCRCC,permuted,theta2,23,24,8,mix_D2D0,own,0.01,100000,0,,0.5,0.80792,,,,,,,,,478.3862772,10240000,0.505,0.008537549407,0,0,0
