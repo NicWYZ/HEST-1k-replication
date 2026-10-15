@@ -11,6 +11,7 @@ The advisor meeting of 12 October added a second line of work. David argued that
 | 13 Oct | fedlearn | F2 | `i01/fedlearn/round07_fedlearn_F2_report.md` | `i02/fedlearn/round07_fedlearn_F2_decisions.md` | `round7-fedlearn-F2` | #28 |
 | 14 Oct | fedlearn | F4, end of track | `i02/fedlearn/round07_fedlearn_final_report.md` | `i03/fedlearn/round07_fedlearn_final_decisions.md` | `round7-fedlearn-final` | #30 |
 | 14 Oct | ppi | S2 | `i01/ppi/round07_ppi_S2_report.md` | `i02/ppi/round07_ppi_S2_decisions.md` | `round7-ppi-S2` | #29 |
+| 14 Oct | ppi | S4 | `i02/ppi/round07_ppi_S4_report.md` | `i03/ppi/round07_ppi_S4_decisions.md` | `round7-ppi-S4` | #31 |
 
 ## Documents
 
@@ -29,6 +30,8 @@ The advisor meeting of 12 October added a second line of work. David argued that
 | `i02/fedlearn/round07_fedlearn_final_report.md` | 14 Oct | closing report of the fedlearn track (F3 and F4), with the exact federated head, the learning curve, the simulated and real federations, the cost of spot-level differential privacy and of partial gene overlap, revised verdicts and the closing page |
 | `i03/fedlearn/round07_fedlearn_final_decisions.md` | 14 Oct | decision at F4. Accepted and the track closed, six readings for the record, the reuse rule for named inputs, and the paper's direction left to Nicolas and his advisors as R7-4 |
 | `oversight/round07_fedlearn_decision_report.md` | 14 Oct | report for Nicolas on how to proceed with federated learning, with the concepts (federated learning, the one-round head, differential privacy), what the review established, the results and the decisions to make |
+| `i02/ppi/round07_ppi_S4_report.md` | 14 Oct | report at the S4 gate (S2b, S3, S4), with the $\theta_2$ recount, Broska and Howes with small-sample corrections, the cube design and the mixture of D2 and D0, and greedy k-center |
+| `i03/ppi/round07_ppi_S4_decisions.md` | 14 Oct | decision at S4. Accepted, rejective selection with `rej_t` kept as the paper's balanced design, the mixture kept as a control rather than a candidate, the corrected Broska and Howes interval recorded as a strong comparator at the smallest $n_L$, and S5 fixed as the closing report |
 | `tracks/ppi/round07_ppi_plan.md` | 13 Oct, living | the inference session's operating plan |
 | `tracks/ppi/round07_ppi_theory.md` | 13 Oct, living | the inference track's theory, with the weighted estimators under D2, why zero pair probabilities break the Sen-Yates-Grundy form, and Broska and Howes's and Kluger et al.'s intervals for whole labelled clusters |
 | `i01/ppi/round07_ppi_S2_report.md` | 14 Oct | report at the S2 gate (S0 to S2), with the anchors, weighting under rejective selection, the comparators from the literature, and the disagreement with round 5 on $\theta_2$ |
