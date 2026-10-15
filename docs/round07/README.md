@@ -12,6 +12,7 @@ The advisor meeting of 12 October added a second line of work. David argued that
 | 14 Oct | fedlearn | F4, end of track | `i02/fedlearn/round07_fedlearn_final_report.md` | `i03/fedlearn/round07_fedlearn_final_decisions.md` | `round7-fedlearn-final` | #30 |
 | 14 Oct | ppi | S2 | `i01/ppi/round07_ppi_S2_report.md` | `i02/ppi/round07_ppi_S2_decisions.md` | `round7-ppi-S2` | #29 |
 | 14 Oct | ppi | S4 | `i02/ppi/round07_ppi_S4_report.md` | `i03/ppi/round07_ppi_S4_decisions.md` | `round7-ppi-S4` | #31 |
+| 15 Oct | ppi | S5, end of track | `i03/ppi/round07_ppi_final_report.md` | `i04/ppi/round07_ppi_final_decisions.md` | `round7-ppi-final` | #32 |
 
 ## Documents
 
@@ -32,6 +33,8 @@ The advisor meeting of 12 October added a second line of work. David argued that
 | `oversight/round07_fedlearn_decision_report.md` | 14 Oct | report for Nicolas on how to proceed with federated learning, with the concepts (federated learning, the one-round head, differential privacy), what the review established, the results and the decisions to make |
 | `i02/ppi/round07_ppi_S4_report.md` | 14 Oct | report at the S4 gate (S2b, S3, S4), with the $\theta_2$ recount, Broska and Howes with small-sample corrections, the cube design and the mixture of D2 and D0, and greedy k-center |
 | `i03/ppi/round07_ppi_S4_decisions.md` | 14 Oct | decision at S4. Accepted. On matched, supported cells the cube design matches or beats `rej_t` on tissue and loses on census, the mixture is a control rather than a candidate, k-center is a negative result, and the project's correction of Broska and Howes's interval is a strong comparator at four labelled clusters. Interval i03 adds S4b, the cube design with the constant balanced to test why it loses on census, then S5 |
+| `i03/ppi/round07_ppi_final_report.md` | 15 Oct | closing report of the inference track (S4b and S5), with the cube design balanced also on the constant, every design and comparator on matched supported cells, and the closing page |
+| `i04/ppi/round07_ppi_final_decisions.md` | 15 Oct | decision at the closing gate. Accepted and the track closed, nine readings for the record, and three decisions for Nicolas (R7-5, R7-6, R7-7) |
 | `tracks/ppi/round07_ppi_plan.md` | 13 Oct, living | the inference session's operating plan |
 | `tracks/ppi/round07_ppi_theory.md` | 13 Oct, living | the inference track's theory, with the weighted estimators under D2, why zero pair probabilities break the Sen-Yates-Grundy form, and Broska and Howes's and Kluger et al.'s intervals for whole labelled clusters |
 | `i01/ppi/round07_ppi_S2_report.md` | 14 Oct | report at the S2 gate (S0 to S2), with the anchors, weighting under rejective selection, the comparators from the literature, and the disagreement with round 5 on $\theta_2$ |
@@ -46,3 +49,4 @@ The advisor meeting of 12 October added a second line of work. David argued that
 ## Carried from the fedlearn track
 
 If the federated learning paper goes ahead (R7-4), the first interval of its track runs three cheap checks from the closing report, section 8. They are the split of the privacy cost between the noise and the added penalty, the cost of partial gene overlap gene by gene against the number of centers that measure each gene, and the pseudo-center intercept loss against center size. It also adds a metric that pools test centers, or mean squared error, before any claim about intercepts or centring.
+- The S4 memo (`i03/ppi/round07_ppi_S4_decisions.md`, section 2) gave D0 classical a coverage of 0.903 on the 12 supported tissue cells at $n_L = 4$ and $p_a = 0.1$. Counting draws without an interval as misses, as that memo required of every row, it is 0.874. The 0.903 was the coverage over formed draws (`i04/ppi/round07_ppi_final_decisions.md`, section 3).
