@@ -1,0 +1,42 @@
+# Round 8 positioning note sweep exceptions. Format: value<TAB>reason (docs/WAYS_OF_WORKING.md).
+205	derived: row count of the pass-1 search_log.csv files on branch oversight-round8-positioning-search
+129	derived: row count of the pass-1 candidates.csv files on branch oversight-round8-positioning-search
+200	derived: row count of the pass-2 search_log.csv files on branch oversight-round8-positioning-search
+126	derived: row count of the pass-2b candidates.csv files on branch oversight-round8-positioning-search
+4.4	section number of a cited paper (Riano 2026), not a quantity
+3.2	section number of a cited paper (Karim 2026), not a quantity
+1.3	section number of a cited paper (OPAL), not a quantity
+4.6	proposition number in Mani et al. (arXiv:2505.20178), not a quantity
+9.2	section number in Valliant, Dever and Kreuter 2018, not a quantity
+118	external, bibliographic: volume, issue or page number of a cited paper, from the paper or its publisher record (note section 1.2 or 7)
+542	external, bibliographic: volume, issue or page number of a cited paper, from the paper or its publisher record (note section 1.2 or 7)
+1221	external, bibliographic: volume, issue or page number of a cited paper, from the paper or its publisher record (note section 1.2 or 7)
+274	external, bibliographic: volume, issue or page number of a cited paper, from the paper or its publisher record (note section 1.2 or 7)
+404	external, bibliographic: volume, issue or page number of a cited paper, from the paper or its publisher record (note section 1.2 or 7)
+668	external, bibliographic: volume, issue or page number of a cited paper, from the paper or its publisher record (note section 1.2 or 7)
+287	external, bibliographic: volume, issue or page number of a cited paper, from the paper or its publisher record (note section 1.2 or 7)
+625	external, bibliographic: volume, issue or page number of a cited paper, from the paper or its publisher record (note section 1.2 or 7)
+612	external, bibliographic: volume, issue or page number of a cited paper, from the paper or its publisher record (note section 1.2 or 7)
+487	external, bibliographic: volume, issue or page number of a cited paper, from the paper or its publisher record (note section 1.2 or 7)
+278	external, bibliographic: volume, issue or page number of a cited paper, from the paper or its publisher record (note section 1.2 or 7)
+944	external, bibliographic: volume, issue or page number of a cited paper, from the paper or its publisher record (note section 1.2 or 7)
+1109	external, bibliographic: volume, issue or page number of a cited paper, from the paper or its publisher record (note section 1.2 or 7)
+2617	external, bibliographic: volume, issue or page number of a cited paper, from the paper or its publisher record (note section 1.2 or 7)
+2.281	external: Williams (1961) Table 1 text, exact variance of T_2 in his six-pair example (note 3.2)
+-0.090	reference: results/round8/positioning/checks/williams_vs_r5_output.txt on branch oversight-round8-positioning-search, round 5 bias at n = 4, unclipped rule
++0.058	reference: same output, round 5 bias at n = 6, unclipped rule
++0.169	reference: same output, round 5 bias at n = 10, unclipped rule
+7.44	reference: same output, Williams standard deviation at n = 4, unclipped rule
++0.009	reference: same output, round 5 bias at n = 10 under round 5's rule (0.00858)
+0.547	reference: same output, Williams standard deviation at n = 6 under round 5's rule (0.54670)
+13.8	derived: sqrt((1 - 0.05)/0.05 * 10), Raudenbush (1997) Table 3 recomputed (note 3.3)
+0.48	external: Raudenbush (1997) Table 3, share of within-cluster variance explained by the covariate
+19.1	derived: 13.8 * sqrt((1 - 0.48)/(1 - 0.73)), Raudenbush (1997) Table 3 recomputed
+43.7	derived: sqrt((1 - 0.01)/0.01 * 10) * sqrt(0.52/0.27), Raudenbush (1997) Table 3 recomputed
+30,000	external: Legg and Yu (2010) p. 76, samples per simulation
+10,000	external: Chauvet (2011) section 5, simulated replicates for the pair probabilities
+5,000	external: Dirdaite and Krapavickaite (2016) abstract, number of clusters in their larger simulation
+4.2	section number of a cited paper (Dagdoug and Haziza 2026), not a quantity
+400	external: Legg and Yu (2010) p. 76, population size of the replicated population
+141	external, bibliographic: volume of Journal of Statistical Planning and Inference (Breidt and Chauvet 2011)
+3.6	cross-reference to section 3.6 of the note, not a quantity
