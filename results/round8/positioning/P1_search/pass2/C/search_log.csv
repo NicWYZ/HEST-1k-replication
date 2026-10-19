@@ -1,0 +1,58 @@
+pass,theme,query,source,date_run,hits_kept
+2,C,rejective sampling cluster sampling few primary units regression variance Mahalanobis,WebSearch (standard),2026-10-19,0
+2,C,balanced sampling clusters predictions machine learning design-based inference,WebSearch (standard),2026-10-19,1
+2,C,Royall Herson 1973 Robust estimation in finite populations I balanced samples JASA,WebSearch (standard),2026-10-19,0
+2,C,Valliant Dorfman Royall 2000 Finite Population Sampling and Inference: A Prediction Approach,WebSearch (standard),2026-10-19,1
+2,C,Li Ding Rubin 2018 Asymptotic theory of rerandomization in treatment-control experiments PNAS,WebSearch (standard),2026-10-19,1
+2,C,Morgan Rubin 2012 Rerandomization to improve covariate balance in experiments,WebSearch (standard),2026-10-19,1
+2,C,Legg Yu 2010 A comparison of sample set restriction procedures Survey Methodology,WebSearch (standard),2026-10-19,1
+2,C,Fuller 2009 Some design properties of a rejective sampling procedure Biometrika 96 933-944,WebSearch (standard),2026-10-19,1
+2,C,Deville Tille 2004 Efficient balanced sampling: the cube method Biometrika 91,WebSearch (standard),2026-10-19,1
+2,C,Deville Tille 2005 Variance approximation under balanced sampling JSPI,WebSearch (standard),2026-10-19,1
+2,C,Breidt Chauvet penalized balanced sampling Biometrika 2012,WebSearch (standard),2026-10-19,1
+2,C,Tille 2006 Sampling Algorithms Springer Series in Statistics,WebSearch (standard),2026-10-19,1
+2,C,Grafstrom Tille 2013 Doubly balanced spatial sampling with spreading and restitution of auxiliary totals,WebSearch (standard),2026-10-19,1
+2,C,Grafstrom Lundstrom Schelin 2012 Spatially balanced sampling through the pivotal method,WebSearch (standard) REFUSED: shared 200-call WebSearch budget exhausted,2026-10-19,0
+2,C,Boistard Chauvet Haziza 2017 pivotal sampling asymptotic variance estimation,WebSearch (standard) REFUSED: budget exhausted,2026-10-19,0
+2,C,Fattorini 2009 adaptive algorithm estimating inclusion probabilities Horvitz-Thompson criterion complex designs,WebSearch (standard) REFUSED: budget exhausted,2026-10-19,0
+2,C,Thompson Wu 2008 simulation-based randomized systematic PPS sampling under substitution of units,WebSearch (standard) REFUSED: budget exhausted,2026-10-19,0
+2,C,Hajek 1964 Asymptotic theory of rejective sampling with varying probabilities from a finite population,WebSearch (standard) REFUSED: budget exhausted,2026-10-19,0
+2,C,"OpenAlex works search: rejective sampling clusters (citation API, tried once as instructed)",curl api.openalex.org: HTTP 403 CONNECT denied by egress proxy; not retried,2026-10-19,0
+2,C,export.arxiv.org API id_list lookup (Imberg 2212.10024; HCP 2306.06342; GHCP 2608.15500),curl export.arxiv.org: HTTP 403 CONNECT denied by egress proxy; not retried (abs pages fetched instead),2026-10-19,0
+2,C,lookup arXiv abs 2207.02540 (Lu et al cluster rerandomization),WebFetch arxiv.org/abs,2026-10-19,1
+2,C,"lookup arXiv abs 2511.08991 (Li, Zrnic, Candes robust sampling)",WebFetch arxiv.org/abs,2026-10-19,1
+2,C,"lookup arXiv abs 2602.16933 (Kluger, Bates multiwave)",WebFetch arxiv.org/abs,2026-10-19,1
+2,C,lookup arXiv abs 2212.10024 (Imberg et al active sampling),WebFetch arxiv.org/abs/2212.10024v1,2026-10-19,1
+2,C,lookup arXiv abs 2403.16336 (Duchi et al multi-environment),WebFetch arxiv.org/abs,2026-10-19,1
+2,C,"lookup arXiv abs 2312.16160 (Dobriban, Yu SymmPI)",WebFetch arxiv.org/abs,2026-10-19,1
+2,C,"lookup arXiv abs 2608.27310 (Tibshirani, Barber, Ramdas)",WebFetch arxiv.org/abs,2026-10-19,1
+2,C,"lookup arXiv abs 2403.03208 (Zrnic, Candes active statistical inference)",WebFetch arxiv.org/abs,2026-10-19,1
+2,C,"lookup arXiv abs 2306.06342 and 2608.15500 (HCP, GHCP) incl. HCP pdf for conditions on groups",WebFetch arxiv.org abs/pdf/html,2026-10-19,2
+2,C,lookup arXiv abs 2109.09930 and 2403.01477 (Yang Qu Li; Yang Ding) incl. 2403.01477 html reference check,WebFetch arxiv.org,2026-10-19,0
+2,C,"backward citation: identifiers from surfaced hits 2607.26544, 2301.09117, 1612.04965, 2212.12595",WebFetch arxiv.org/abs,2026-10-19,2
+2,C,"backward citation: Yang-Qu refs -> arXiv 1911.03071, 1905.03337, 2002.06654",WebFetch arxiv.org/abs,2026-10-19,3
+2,C,"lookup arXiv abs 1604.00698, 1207.5625 (Li-Ding-Rubin; Morgan-Rubin)",WebFetch arxiv.org/abs,2026-10-19,2
+2,C,lookup arXiv abs 1809.07441 (Dunn Wasserman Ramdas),WebFetch arxiv.org/abs,2026-10-19,1
+2,C,lookup arXiv abs 1708.00489 (Sener Savarese core-set),WebFetch arxiv.org/abs,2026-10-19,1
+2,C,"lookup arXiv abs 2102.08898 (Fisch et al few-shot conformal). Note: first guess 2102.06202 resolved to a different paper (Private Prediction Sets), discarded",WebFetch arxiv.org/abs,2026-10-19,1
+2,C,lookup arXiv abs 2608.10356 abs + html (Shirota design-based PPI spatial),WebFetch arxiv.org abs/html,2026-10-19,1
+2,C,"publisher/library pages from search hits: statcan 12-001-X201000111249; ideas.repec Fuller 2009, DT 2004, Breidt-Chauvet 2012, Chauvet-Deville-Haziza 2011; libra.unine DT 2005; research.slu.se Grafstrom-Tille; springer Tille 2006",WebFetch,2026-10-19,6
+2,C,Project Euclid euclid.bj/1352727813 (Chauvet 2012?),"WebFetch: returned Incapsula bot-protection page, no content",2026-10-19,0
+2,C,statcan issue page 12-001-X2008001 (look for Thompson & Wu 2008),WebFetch: PROVENANCE_REQUIRED permission not granted; not retried,2026-10-19,0
+2,C,doi.org/10.1214/aoms/1177700375 (Hajek 1964),WebFetch: PROVENANCE_REQUIRED permission not granted; not retried,2026-10-19,0
+2,C,ideas.repec Fattorini 2006 Biometrika 93(2) 269-278 (URL from memory),WebFetch: PROVENANCE_REQUIRED permission not granted; not retried,2026-10-19,0
+2,C,"cran.r-project.org sampling.pdf (balancedcluster, samplecube docs)",WebFetch: PROVENANCE_REQUIRED permission not granted; not retried,2026-10-19,0
+2,C,api.semanticscholar.org citations of arXiv:2109.09930 (forward citations),WebFetch: PROVENANCE_REQUIRED permission not granted; not retried,2026-10-19,0
+2,C,arxiv.org/abs/2207.02540v3 (journal ref check),WebFetch: HTTP 429 rate limit from WebFetch proxy; not retried,2026-10-19,0
+2,C,lookup arXiv abs 1905.01021 (title surfaced in Fuller 2009 search),WebFetch arxiv.org/abs,2026-10-19,1
+2,C,"Statcan 11-536-X200900110808 (Fuller, Regression estimation for a rejective sampling procedure)",WebFetch statcan catalogue,2026-10-19,1
+2,C,Statcan Survey Methodology 2013 article 11826 section 5 (Kim & Wu; balanced designs variance),WebFetch statcan,2026-10-19,1
+2,C,Statcan Survey Methodology 2015 article 14149 section 3 (Falorsi & Righi; balanced sampling),WebFetch statcan,2026-10-19,1
+2,C,Statcan Survey Methodology 2014 article 14001 (surfaced by Fuller search; Menold ESS interviewer substitution),WebFetch statcan pdf: off topic,2026-10-19,0
+2,C,"Statcan Survey Methodology 2013 article 11883 section 4 (Brewer; purposive selection, balanced samples, Royall-Herson)",WebFetch statcan,2026-10-19,2
+2,C,Statcan references pages for 11883 and 11826,WebFetch: PROVENANCE_REQUIRED permission not granted; not retried,2026-10-19,0
+2,C,"Statcan Legg & Yu 2010 full PDF 11249-eng.pdf (method, findings, reference list)",WebFetch statcan pdf,2026-10-19,1
+2,C,"backward citation: riano 2609.04082 / Shirota / Kwon / Datta lists -> arXiv 2606.28795, 2603.19160, 2506.07949, 2501.18577",WebFetch arxiv.org/abs,2026-10-19,4
+2,C,"backward citation: grep of all supplied reference lists for rejective/cube/balanc/coreset/conformal/hierarch/Tille/Royall/purposive/cluster keywords (local files, p1b)",local grep,2026-10-19,5
+2,C,arxiv.org/pdf/2207.02540v1 reference list (Lu et al.),WebFetch: PDF text ends before references (65285 chars); no list available,2026-10-19,0
+2,C,arxiv.org/pdf/2608.15500 and html (GHCP) reference list,WebFetch: PDF empty; html gave no bibliography,2026-10-19,0

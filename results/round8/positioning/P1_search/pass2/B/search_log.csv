@@ -1,0 +1,58 @@
+pass,theme,query,source,date_run,hits_kept
+2,B,optimal subsampling size two-stage sampling regression estimator auxiliary variable optimum m,WebSearch,2026-10-19,"0 (irrelevant: rare-event subsampling, ratio estimators)"
+2,B,Raudenbush 1997 Statistical analysis and optimal design for cluster randomized trials Psychological Methods covariate,WebSearch,2026-10-19,"2 (Raudenbush NU reading, Hedberg FCSM)"
+2,B,Broska Howes arXiv 2610.09601 prediction-powered inference labelling design,WebSearch,2026-10-19,1 (Broska & Howes found as Cluster-Robust PPI)
+2,B,arxiv.org/html/2610.09601v1 and pdf (WebFetch),WebFetch,2026-10-19,"1 (Broska & Howes read, no cost model)"
+2,B,Cochran Sampling Techniques optimum m two-stage cost function sqrt(c1 sigma2^2/c2 sigma_b^2),WebSearch,2026-10-19,"3 (PracTools clusOpt2, Korean optimal allocations paper)"
+2,B,OpenAlex api works query,curl api.openalex.org,2026-10-19,"0 (blocked 403, moved on)"
+2,B,anticipated variance two-stage sampling GREG optimal allocation number of PSUs and elements per PSU model-assisted,WebSearch,2026-10-19,NOT RUN (shared WebSearch budget of 200 calls per turn exhausted)
+2,B,stratified versus cluster sampling cost comparison auxiliary information regression estimator,WebSearch,2026-10-19,NOT RUN (search budget exhausted)
+2,B,design effect regression estimator cluster sampling residual intraclass correlation optimal cluster size,WebSearch,2026-10-19,NOT RUN (search budget exhausted)
+2,B,labelling budget prediction-powered inference clusters units per cluster allocation,WebSearch,2026-10-19,NOT RUN (search budget exhausted)
+2,B,joint allocation labelling budget prediction-powered inference and conformal prediction split labels,WebSearch,2026-10-19,NOT RUN (search budget exhausted)
+2,B,Moerbeek 2006 power and money in cluster randomized trials covariate,WebSearch,2026-10-19,NOT RUN (search budget exhausted)
+2,B,"arxiv.org/abs/2602.12992 (Mozer, Pashley, Miratrix)",WebFetch,2026-10-19,1 (stratified model-assisted estimation with surrogate outcomes)
+2,B,arxiv.org/abs/2604.17267 (Ye & Yoganarasimhan),WebFetch,2026-10-19,"1 (PPI allocation across tasks, no clusters)"
+2,B,"arxiv.org/abs/2604.12497 (Ye, Lyu, Tao)",WebFetch,2026-10-19,"1 (PPI allocation across tasks, UCB, no clusters)"
+2,B,"arxiv.org/abs/2603.16041 (Chen, Guo, Li)",WebFetch,2026-10-19,"1 (power analysis for PPI, no clusters)"
+2,B,arxiv.org/abs/2505.20178 (Mani et al.),WebFetch,2026-10-19,"1 (finite-sample PPI++ analysis, no clusters)"
+2,B,arxiv.org/abs/2406.04291 (Fisch et al.),WebFetch,2026-10-19,1 (StratPPI)
+2,B,Raudenbush NU reading list PDF (WebFetch),WebFetch,2026-10-19,1 (Raudenbush 1997 full text open; eqs 9 and 24 garbled in extraction)
+2,B,PracTools clusOpt2 help page,WebFetch,2026-10-19,"1 (software for Hansen-Hurwitz-Madow optimal m, n)"
+2,B,arxiv.org/abs/2610.09601 (Broska & Howes abstract page),WebFetch,2026-10-19,"1 (date 7 Oct 2026, v1)"
+2,B,"arxiv.org/pdf/2610.09601 sections 2.6, 3.3, references",WebFetch,2026-10-19,"1 (design choices, eta_p, no cost model; reference list has no classical cluster-sampling refs)"
+2,B,arxiv.org/pdf/2602.12992 and /html/2602.12992 (Mozer et al full text),WebFetch,2026-10-19,"1 (design-based stratified difference estimator, no clusters)"
+2,B,doi.org/10.1037/1082-989X.2.2.173 (Raudenbush DOI),WebFetch,2026-10-19,"0 (blocked, permission not answered)"
+2,B,"doi.org/10.1002/sim.2297 (Moerbeek 2006 DOI, from memory)",WebFetch,2026-10-19,"0 (blocked, permission not answered; DOI unverified)"
+2,B,"doi.org/10.3102/0162373707299550 (Bloom et al 2007 DOI, from memory)",WebFetch,2026-10-19,0 (blocked)
+2,B,"doi.org/10.3102/10769986018003237 (Snijders & Bosker 1993 DOI, from memory)",WebFetch,2026-10-19,0 (blocked)
+2,B,lehmanns.ch/media/751449/1,WebFetch,2026-10-19,1 (table of contents of Särndal-Swensson-Wretman Model Assisted Survey Sampling)
+2,B,link.springer.com/10.1007/978-3-319-05320-2_11,WebFetch,2026-10-19,1 (Nangsue & Berger 2014 optimal regression estimator stratified two-stage)
+2,B,koreascience.or.kr Optimal Allocations in Two-Stage Cluster Sampling,WebFetch,2026-10-19,1 (Koh 1999)
+2,B,apps.bea.gov FCSM Hedberg 2013,WebFetch,2026-10-19,1 (Hedges & Hedberg ICC and covariate R2 paper)
+2,B,statspolicy.gov/FCSM,WebFetch,2026-10-19,0 (blocked)
+2,B,arxiv.org/pdf/2610.09601 reference list,WebFetch,2026-10-19,"1 (24 refs; leads Mozer 2603.19160, Kluger 2501.18577)"
+2,B,"arxiv.org/pdf/2603.19160 (Mozer, PPI is the difference estimator)",WebFetch,2026-10-19,1
+2,B,arxiv.org/abs/2501.18577 (Kluger et al),WebFetch,2026-10-19,1
+2,B,arxiv.org/abs/2603.11368 (Salerno et al),WebFetch,2026-10-19,1
+2,B,"arxiv.org/abs/2609.10904, 2604.07636, 2609.04082, 2608.10356, 2508.10149, 2606.08730 (GREG/model-assisted/PPI design papers from reference files in scratchpad)",WebFetch,2026-10-19,6 (all peripheral; Shirota 2608.10356 medium)
+2,B,arxiv.org/html/2608.10356v1 (Shirota full text),WebFetch,2026-10-19,"1 (stratified design variance, blocks, no cost model)"
+2,B,arxiv.org/pdf/2608.10356,WebFetch,2026-10-19,0 (empty PDF text)
+2,B,cran.r-project.org PracTools.pdf (unseen URL),WebFetch,2026-10-19,0 (blocked)
+2,B,meb.ki.se Reilly 1996 Optimal sampling strategies for two-stage studies,WebFetch,2026-10-19,1 (two-phase design under budget)
+2,B,asprs.org 1984 PERS pdf (Maxim & Harrington),WebFetch,2026-10-19,"1 (cites Cochran 1977 optimum m, Appendix B extension)"
+2,B,catalog.lib.kyushu-u.ac.jp p039.pdf,WebFetch,2026-10-19,"1 (Murakami 1950 ratio vs regression with cost, double sampling)"
+2,B,vtechworks 5b2c38f7 (Madden 1976 dissertation),WebFetch,2026-10-19,1 (prediction approach to cluster sampling with auxiliary info)
+2,B,arxiv.org/abs/2112.00832,WebFetch,2026-10-19,1 (mixed-model ANCOVA in CRTs)
+2,B,arxiv.org/abs/2303.07953 and core.ac.uk/works/141348363,WebFetch,2026-10-19,1 (optimal study designs for CRTs overview; not covariates)
+2,B,arxiv.org/abs/2411.12665 (Eyre & Madras),WebFetch,2026-10-19,1
+2,B,"arxiv.org/abs/2608.27310 (Tibshirani, Barber, Ramdas)",WebFetch,2026-10-19,1
+2,B,arxiv.org/abs/2403.03208 (Zrnic & Candes active inference),WebFetch,2026-10-19,1
+2,B,arxiv.org/pdf/2603.16041 (Chen et al power analysis) full text,WebFetch,2026-10-19,1 (sample size ~ (1-R2); cites Broska 2025 cost constraint)
+2,B,arxiv.org/pdf/2311.01453 (PPI++),WebFetch,2026-10-19,1 (no cost section; power tuning lambda)
+2,B,arxiv.org/abs/2309.16598 (cross-PPI),WebFetch,2026-10-19,1
+2,B,"arxiv.org/abs/2408.01026 (guessed ID for Broska, Howes, van Loon mixed subjects design)",WebFetch,2026-10-19,"0 (wrong paper, a PINN survey; ID guess discarded)"
+2,B,arxiv.org/abs/2506.07949 (Angelopoulos et al cost-optimal active evaluation),WebFetch,2026-10-19,1
+2,B,arxiv.org/abs/2606.03211 (Ma & Candes OPAL),WebFetch,2026-10-19,1
+2,B,"arxiv.org/abs/2502.11032 (Dharamshi, Gao, Wakefield)",WebFetch,2026-10-19,1
+2,B,"Raudenbush PDF short-quote pass (sections, p177, p179, p182)",WebFetch,2026-10-19,1 (section structure and 5 short quotes)

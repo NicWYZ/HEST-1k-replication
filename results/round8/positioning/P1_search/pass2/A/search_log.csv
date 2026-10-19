@@ -1,0 +1,87 @@
+pass,theme,query,source,date_run,hits_kept
+2,A,"Zrnic Candes ""Cross-prediction-powered inference"" PNAS 2024 arXiv 2309.16598",WebSearch standard,2026-10-19,1
+2,A,"Lu Shi Liu Ding ""Conditional cross-fitting"" machine-learning-assisted covariate adjustment randomized experiments arXiv 2508.15664",WebSearch standard,2026-10-19,2
+2,A,"Karim ""Cross-Fitted Survey-Weighted TMLE with Design-Based Variance""",WebSearch standard,2026-10-19,1
+2,A,"Wager Du Taylor Tibshirani 2016 ""High-dimensional regression adjustments in randomized experiments"" PNAS cross-estimation",WebSearch standard,2026-10-19,1
+2,A,"Wu Gagnon-Bartsch ""The LOOP estimator: adjusting for covariates in randomized experiments"" Evaluation Review 2018",WebSearch standard,2026-10-19,1
+2,A,"Aronow Middleton 2013 ""A class of unbiased estimators of the average treatment effect in randomized experiments"" Journal of Causal Inference",WebSearch standard REFUSED (turn budget of 200 searches shared by all agents was used up); 0 results,2026-10-19,0
+2,A,"Wu Sitter 2001 ""A model-calibration approach to using complete auxiliary information from survey data"" JASA",WebSearch standard REFUSED (turn budget of 200 searches shared by all agents was used up); 0 results,2026-10-19,0
+2,A,"Montanari Ranalli 2005 ""Nonparametric model calibration estimation in survey sampling"" JASA 100 1429",WebSearch standard REFUSED (turn budget of 200 searches shared by all agents was used up); 0 results,2026-10-19,0
+2,A,"McConville Toth 2019 ""Automated selection of post-strata using a model-assisted regression tree estimator"" Scandinavian Journal of Statistics",WebSearch standard REFUSED (turn budget of 200 searches shared by all agents was used up); 0 results,2026-10-19,0
+2,A,"Su Ding ""Model-assisted analyses of cluster-randomized experiments"" JRSSB 2021",WebSearch standard REFUSED (turn budget of 200 searches shared by all agents was used up); 0 results,2026-10-19,0
+2,A,"Opsomer Miller 2005 ""Selecting the amount of smoothing in nonparametric regression estimation for complex surveys"" Journal of Nonparametric Statistics",WebSearch standard REFUSED (turn budget of 200 searches shared by all agents was used up); 0 results,2026-10-19,0
+2,A,openalex works search cross-fitting finite population correction,"curl api.openalex.org BLOCKED (proxy 403), not retried",2026-10-19,0
+2,A,crossref works query.bibliographic Aronow Middleton 2013,"curl api.crossref.org BLOCKED (proxy 403), not retried",2026-10-19,0
+2,A,arXiv API query cross-fitting AND finite population,"curl export.arxiv.org/api BLOCKED (proxy 403), not retried",2026-10-19,0
+2,A,arXiv search page: cross-fitting finite population correction,WebFetch arxiv.org/search REFUSED (robots disallowed),2026-10-19,0
+2,A,Semantic Scholar search: cross-fitting finite population correction,"WebFetch semanticscholar.org REFUSED (permission not answered), not retried",2026-10-19,0
+2,A,"doi.org lookups for Cameron-Gelbach-Miller 2008, Imbens-Kolesar 2016, Pustejovsky-Tipton 2018, MacKinnon-Nielsen-Webb 2023, Abadie et al 2023, DGH 2023, McConville-Toth 2019, Aronow-Middleton 2013","WebFetch doi.org REFUSED (permission not answered, 8 of 8), not retried",2026-10-19,0
+2,A,arXiv author pages a/haziza_d_1 and a/dagdoug_m_1,"WebFetch arxiv.org/a REFUSED (HTTP 429 rate limit), not retried",2026-10-19,0
+2,A,direct fetch of arXiv 2309.16598 (abs+pdf),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2508.15664 (abs+html+pdf),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2606.30918 (abs+html),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 1607.06801 (abs+pdf),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 1708.01229 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2604.01160 (abs+html),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2406.10473 (abs+html+pdf),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2601.20819 (abs+html),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2411.19908 (abs+html),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2306.04746 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2505.04643 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 1710.02926 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2606.28795 (abs+html+pdf),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2607.05570 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2505.20178 (abs+pdf),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2605.29249 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2409.01730 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2405.18379 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2508.08948 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2512.05456 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2104.00673 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv math/0602276 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2507.09119 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2407.13659 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2609.13736 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2506.05945 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2309.02073 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2502.06067 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2606.03211 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2109.09930 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2403.03208 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2406.04291 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2506.07949 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 1801.09138 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2508.15162 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2602.12992 (abs),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2603.19160 (html reference screen),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,direct fetch of arXiv 2610.09601 (html+pdf reference screen),WebFetch arxiv.org (backward citation or seed lookup),2026-10-19,see candidates.csv / seeds.csv
+2,A,sample splitting variance finite population correction,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,cross-fitting large sampling fraction,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,cross-validation regression estimator survey variance small sample,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,split-sample regression estimator Hartley Ross Mickey Williams unbiased,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,jackknife regression estimator cluster sampling few PSUs,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,design-based variance cross-fitted estimator cluster randomized,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,prediction-powered inference few clusters,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,prediction-powered inference survey design clusters 2026,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,variance of difference of means of two disjoint random subsamples without replacement finite population,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,Rao-Blackwellised sample-split regression estimator two-phase sampling variance,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,cross-fitted generalized regression estimator cluster sampling design-based variance,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,design-based inference after selection of clusters using predictions,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,prediction-guided cluster selection design-based inference,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,small-sample t reference cluster-robust variance prediction-powered inference,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,Bell McCaffrey CR2 degrees of freedom survey few primary sampling units,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,wild cluster bootstrap few clusters finite population sampling,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,effective degrees of freedom replicate variance few PSUs survey Satterthwaite,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,model-assisted estimator estimated coefficient variance inflation small sample cluster sampling,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,design effect of regression estimator under two-stage sampling intraclass correlation predictor tracks cluster effects,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,R-squared cluster-level variance reduction model-assisted cluster sampling,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,optimal number of clusters to label prediction-powered inference,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,estimating the optimal tuning coefficient lambda finite population difference estimator variance,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,leave-one-cluster-out cross-fitting design-based,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,cross-fitting without replacement finite population central limit theorem,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,variance estimation for estimators with estimated regression coefficient in sampling without replacement fpc,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,hypergeometric sampling cross-fitting covariance between folds,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,prediction-powered inference spatial transcriptomics donors,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,histology to gene expression prediction labelled donors inference,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,cluster-level prediction-powered inference census states,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
+2,A,survey sampling machine learning predictions few strata degrees of freedom correction,NOT RUN (WebSearch budget exhausted); listed for the main session to run,2026-10-19,0
