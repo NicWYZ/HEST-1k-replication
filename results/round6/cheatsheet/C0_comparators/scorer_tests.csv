@@ -1,5 +1,0 @@
-test,value,passed,criterion,truth_source
-true_values,1.0,True,rbar == 1,/srv/r6_private/truth/S1star.parquet
-permuted_mean_of_20,0.004404066446184812,True,|mean rbar| <= 0.05,/srv/r6_private/truth/S1star.parquet
-one_constant_gene,0.0,True,gene r == 0 and flagged,/srv/r6_private/truth/S1star.parquet
-missing_spot_fails,,True,raised: missing spots: 1,/srv/r6_private/truth/S1star.parquet

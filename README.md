@@ -28,7 +28,7 @@ file for the Claude sessions that work on the project.
 | round 3 · first experiments for both original topics | complete (tag `round3-final-r2`) |
 | round 4 · data pull, then the inference and prediction-set tracks | complete (tags `round4-data-v2`, `round4-ppi-final`, `round4-conf-final`) |
 | round 5 · the inference and prediction-set tracks | complete (tags `round5-ppi-final`, `round5-conf-final`) |
-| round 6 · a side experiment, language-model prediction from histology with a size-limited cheatsheet | complete (tags `round6-cheatsheet-C1`, `round6-cheatsheet-final`), summary in [`docs/round06/oversight/round06_cheatsheet_summary.md`](docs/round06/oversight/round06_cheatsheet_summary.md) |
+| round 6 · a side experiment, language-model prediction from histology with a size-limited cheatsheet | complete (tags `round6-cheatsheet-C1`, `round6-cheatsheet-final`), moved on 19 October to the private repository `NicWYZ/textual-st-histology`, see [`docs/round06/README.md`](docs/round06/README.md) |
 | round 7 · federated learning for expression prediction, and inference after histology-guided selection of labelled clusters | complete (tags `round7-fedlearn-F2`, `round7-fedlearn-final`, `round7-ppi-S2`, `round7-ppi-S4`, `round7-ppi-final`), summary in [`docs/round07/README.md`](docs/round07/README.md) |
 
 Every gate of rounds 2 to 7 is tagged. The sections below, from the headline result to the known
