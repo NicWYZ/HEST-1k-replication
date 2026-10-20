@@ -92,3 +92,17 @@ On 9 October 2026 the documents under `docs/` were moved from a flat layout into
 | `docs/.DS_Store` | removed |
 
 The old `docs/decisions/` folder held every instruction and memo. It was split, and each of its files is listed above. Some frozen documents still say that memos are committed under `docs/decisions/`. Those sentences describe the layout at the time they were written and were left as they are.
+
+## Moved to the textual project's repository, 19 October 2026
+
+By Nicolas's decision, the textual project (David's cheatsheet line, round 6 here) moved to the private repository `NicWYZ/textual-st-histology`, which was called `NicWYZ/hest-r6-data` until then. The files were copied byte-identical from commit `33d7b1e98565110256762a28e79254aea0b9b72f` of this repository, checked by md5 for all 274 files, and then removed here. They keep their paths, so a path below names the same file in the new repository. Documents here that cite these paths were not rewritten.
+
+| Old path in this repository | Now |
+|---|---|
+| `docs/round06/` except `docs/round06/00_prep/` | same path in `NicWYZ/textual-st-histology`; `docs/round06/README.md` here is a pointer |
+| `results/round6/` | same path in `NicWYZ/textual-st-histology`; `results/round6/README.md` here is a pointer |
+| `code/scripts/round6_cheatsheet*` | same path in `NicWYZ/textual-st-histology` |
+| `.verify-exceptions-cheatsheet`, `.verify-exceptions-cheatsheet-ext` | same path in `NicWYZ/textual-st-histology` |
+| `docs/round06/00_prep/round06_round5_results_explained.md` | not moved, since it explains round 5's PPI and conformal results |
+
+The round 6 git tags stay in this repository with the history of every moved file.

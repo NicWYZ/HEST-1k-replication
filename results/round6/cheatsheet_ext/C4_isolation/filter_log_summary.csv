@@ -1,6 +1,0 @@
-verdict,request,count
-ALLOW,CONNECT api.anthropic.com:443,57
-DENY,CONNECT github.com:443,3
-DENY,CONNECT http-intake.logs.us5.datadoghq.com:443,12
-DENY,CONNECT huggingface.co:443,3
-DENY,CONNECT pypi.org:443,3

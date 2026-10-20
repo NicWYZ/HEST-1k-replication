@@ -1,5 +1,0 @@
-trial_id,role,size,version,attempt,status,result_subtype,input_tokens,output_tokens,cache_read,cache_write,cost_usd,num_turns,wall_s,bytes_written,bytes_kept,mechanical_flags,violations,served_model,claude_code_version,peak_context_tokens,images_returned,tool_calls
-eb295869,baseline,0,,1,ok,success,16,4666,65345,9644,0.183605,8,80.7,,,,,claude-opus-5-5,2.1.295,14422,1,"{""Bash"": 6, ""Read"": 1}"
-d35a522f,writer,4096,1.0,1,ok,success,56,16093,1096831,67658,1.0827141999999998,49,200.5,4096.0,4096.0,0.0,,claude-opus-5-5,2.1.295,73274,26,"{""Bash"": 19, ""Edit"": 2, ""Read"": 26, ""Write"": 1}"
-727d88f6,checker,4096,1.0,1,ok,success,6,1705,12807,6542,0.0890214,5,21.2,,,,0.0,claude-opus-5-5,2.1.295,8509,0,"{""Read"": 3, ""Write"": 1}"
-e64d3aba,predictor,4096,,1,ok,success,16,4681,101815,15130,0.235087,11,61.5,,,,,claude-opus-5-5,2.1.295,20746,4,"{""Bash"": 6, ""Read"": 4}"

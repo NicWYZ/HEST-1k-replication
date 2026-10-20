@@ -1,8 +1,0 @@
-container_id: container_01YH5Tt446ni87y9nji7Gakc
-date_utc: 2026-10-12T06:42:37+00:00
-code_commit: 4eff5f3fb91d5b6f4b857c6d8a059c861321ad86 (plus the uncommitted analysis script, committed with these outputs; its md5 is in scripts_md5.csv)
-command: python3 code/scripts/round6_cheatsheet_c3_analysis.py
-PYTHONHASHSEED: unset
-python: 3.13.16
-inputs: results/round6/cheatsheet/C2_grid/ (manifest.csv md5 2772b5a098e31db898dc8015e53985f7), results/round6/cheatsheet/C0_comparators/comparators.csv (md5 c3ef00dc094bb26a88bc0032436a0e4e), results/round6/cheatsheet/C1_pilot/
-matplotlib: 3.11.2 (installed with pip after the last trial finished, for the figure only)
