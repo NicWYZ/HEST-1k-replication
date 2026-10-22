@@ -1,0 +1,9 @@
+# Round 8 positioning track, search logs (stage P1)
+
+First pass, 19 October 2026: five themes (T1 to T5) run by subagents one model tier below the oversight chat's model at medium effort, as `docs/round08/i01/positioning/round08_positioning_scope.md` section 3 sets out. Each theme folder holds `search_log.csv` (one row per query) and `candidates.csv` (one row per kept paper, with a provisional closeness grade from the subagent). The oversight chat regrades every close paper itself in the positioning note. These files are as the subagents wrote them, not edited.
+
+The second pass (high effort, seeded with earlier checks' references and backward citations), themes A to C, is in `pass2/`. It was cut short by the per-turn search limit, so each log marks the queries that did not run, and `seeds.csv` records the seed lookups. Theme B adds `classical_quotes.md`.
+
+Pass 2b, 19 October 2026, ran the second pass's blocked queries and unfound seeds, one subagent per theme at high effort, each capped so that together they stayed under the session's limit (A 48 searches, B 45, C 45, none refused). Its files are in `pass2b/A`, `pass2b/B` and `pass2b/C`, with the same columns as above and `pass = 2b`, as the subagents wrote them. Two links in theme C's files (the Neyman 1934 rows) point to a third-party copy of the paper; the citation to use is JRSS 97(4), 558 to 625.
+
+The subagents reported where pass 2b reached the stopping rule (two rounds in a row with no new close paper). Theme A stopped at its cap with the cross-fitting lines saturated. Theme B reached the rule for the allocation and regression-with-intercept lines, and C11 was still turning up related items at the cap. Theme C reached it for C10 (queries 37 and 41) and had one round without a new close paper for cube sampling of clusters (query 42), while C7, C8 and the spatial-transcriptomics selection line were still turning up related items at the cap.
