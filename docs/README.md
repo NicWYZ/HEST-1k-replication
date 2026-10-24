@@ -4,7 +4,7 @@ This is the map of the project's documents. Since 9 October 2026 they are filed 
 
 ## Start here
 
-1. `CLAUDE.md`, the operating file. It holds the current state, the next action, Nicolas's preferences and the hard rules.
+1. `CLAUDE.md`, the brief. It says what the project is, where it stands, which questions are open and where the evidence is.
 2. The reading guide of the current round, `docs/round08/README.md`, opened on 19 October, and of the last closed round, `docs/round07/README.md`. For the PPI paper, the current account of its results is `docs/round07/oversight/round07_ppi_results_explained.md`, read with round 8's positioning note, which withdraws most of what that account calls the paper's own, and round 5's guide, `docs/round05/README.md`, holds the estimator and its derivations.
 3. `docs/progress-log.md`, what happened at each step and why the project moved, newest first.
 
@@ -20,15 +20,13 @@ For the methods themselves, derived from scratch, read `docs/reference/methods_a
 - `masterplan.md` is the round's plan. Rounds 1 to 5 have none from the time, so each has a short note written at migration that points to the documents that served as its plan.
 - Every document kept its file name when it moved, and every name is unique, so a bare file name still finds its file. `docs/moved.md` lists each old path with its new one.
 
-Each stage of work produces the same chain. The oversight chat writes an instruction or a decision memo. The execution session transcribes it into its operating plan before running anything, flags what looks wrong rather than changing it, and writes a gate report. The next memo answers that report. Reports are written once and not edited, and corrections go in the next memo or report. Tags mark the state of the repository at each gate.
+Through round 8 each stage of work produced the same chain. A coordinating chat (called the oversight chat in the record) wrote an instruction or a decision memo. The session that ran the work (an execution session) transcribed it into its operating plan before running anything, flagged what looked wrong rather than changing it, and wrote a gate report. The next memo answered that report. Reports are written once and not edited, and corrections go in the next memo or report. Tags mark the state of the repository at each gate.
 
 ## Standing documents
 
 | Document | What it is |
 |---|---|
 | `docs/progress-log.md` | what happened and why, newest first, with an entry for every memo, gate review and decision |
-| `docs/WAYS_OF_WORKING.md` | procedures, each tied to the failure it prevents, and the guardrails register |
-| `docs/EXECUTION_RULES.md` | the standing rules every execution session follows, from 13 October 2026. Track instructions and memos cite it instead of restating it |
 | `docs/moved.md` | each old path and its new path, from the move on 9 October 2026 |
 | `docs/reference/methods_and_state_of_play.md` | every method derived from scratch, every round-3 result with how and why, what has not been tried, and what the rest of HEST-1k holds (27 September) |
 | `docs/reference/concepts_explained_round4.md` | the nineteen concepts Nicolas asked about, with the regime B correction in its section 4 (28 to 29 September) |

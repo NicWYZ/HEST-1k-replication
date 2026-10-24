@@ -1,8 +1,8 @@
 # Progress log
 
-What the project found at each step, what changed because of it, and which files show it. Newest first. The oversight chat adds an entry whenever it writes a memo or an instruction, reviews a gate report, or settles a decision, in the same commit as that work. Entries are not rewritten afterwards. A factual error is fixed with a dated correction beside it.
+What the project found at each step, what changed because of it, and which files show it. Newest first. Through round 8 an entry was added for every memo, instruction, gate review and decision. Entries are not rewritten afterwards. A factual error is fixed with a dated correction beside it.
 
-`CLAUDE.md` holds the current state and the plan. `docs/README.md` explains the layout and points to each round's reading guide. Numbers here are read back from the files cited beside them.
+`CLAUDE.md` holds a brief on where the project stands. `docs/README.md` explains the layout and points to each round's reading guide. Numbers here are read back from the files cited beside them.
 
 ---
 
