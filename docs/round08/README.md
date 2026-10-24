@@ -8,7 +8,7 @@ Round 7 left the PPI paper with a narrower set of claims of its own. A first loo
 
 | Date | Track | Gate | Report | Answered by | Tag | Pull request |
 |---|---|---|---|---|---|---|
-| 19 Oct | positioning | P3 | `i01/positioning/round08_positioning_note.md` | waits on Nicolas | `round8-positioning-P3` `[proposed]` | to be opened from `oversight-round8-positioning-search` |
+| 19 Oct | positioning | P3 | `i01/positioning/round08_positioning_note.md` | pull request merged by Nicolas on 22 October; no ruling yet on the note's recommendation | `round8-positioning-P3` `[proposed]`, not created | #35, from `oversight-round8-positioning-search` |
 
 ## Documents
 

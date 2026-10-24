@@ -5,7 +5,7 @@ This is the map of the project's documents. Since 9 October 2026 they are filed 
 ## Start here
 
 1. `CLAUDE.md`, the operating file. It holds the current state, the next action, Nicolas's preferences and the hard rules.
-2. The reading guide of the current round, `docs/round08/README.md`, opened on 19 October, and of the last closed round, `docs/round07/README.md`. For the PPI paper, the current account of its results is `docs/round07/oversight/round07_ppi_results_explained.md`, and round 5's guide, `docs/round05/README.md`, holds the estimator and its derivations.
+2. The reading guide of the current round, `docs/round08/README.md`, opened on 19 October, and of the last closed round, `docs/round07/README.md`. For the PPI paper, the current account of its results is `docs/round07/oversight/round07_ppi_results_explained.md`, read with round 8's positioning note, which withdraws most of what that account calls the paper's own, and round 5's guide, `docs/round05/README.md`, holds the estimator and its derivations.
 3. `docs/progress-log.md`, what happened at each step and why the project moved, newest first.
 
 For the methods themselves, derived from scratch, read `docs/reference/methods_and_state_of_play.md` and `docs/reference/concepts_explained_round4.md`.
@@ -46,7 +46,7 @@ Each stage of work produces the same chain. The oversight chat writes an instruc
 | 5 | 7 to 9 October | `docs/round05/` | the inference track's final interval, regime B, regression form and cluster selection, and the prediction-set map above 10 calibration donors | `docs/round05/README.md` |
 | 6 | 11 to 13 October, reopened 12 October | `docs/round06/` | David's cheatsheet experiment. With a size-limited cheatsheet, Opus did not beat a pathology foundation model on unseen spots, and reached 0.8 on seen spots only by copying. Reopened for an extension on held-out CCRCC patients with rubric-bound cheatsheets, where any cheatsheet helped, size did not, and none reached the pathology model. Moved on 19 October to the private repository `NicWYZ/textual-st-histology` | `docs/round06/README.md`, a pointer |
 | 7 | 13 to 15 October | `docs/round07/` | Two tracks. Federated learning: a literature review and scoping experiments found a one-round head exact and cheap, no clear gain across real sources, and measurable costs from privacy and from centers measuring different genes. The PPI paper: repositioned against Broska and Howes, weighting under rejective selection fails, rejective selection with `rej_t` is narrowest on census and a cube design with bounded probabilities matches it on tissue, k-center fails, and a corrected Broska and Howes interval is strong at four labelled clusters | `docs/round07/README.md`, "What the round established" |
-| 8 | from 19 October, open | `docs/round08/` | the PPI paper's positioning against the survey-sampling literature and newer PPI work, then its plan and the runs it needs | `docs/round08/README.md`, once the round closes |
+| 8 | from 19 October, open | `docs/round08/` | the PPI paper's positioning against the survey-sampling literature and newer PPI work, then its plan and the runs it needs. The positioning note (gate P3, its pull request merged on 22 October) finds every formula the paper would display classical or in print, and round 5's cross-fitted estimator a known estimator missing one factor. No later track is open | `docs/round08/README.md`, once the round closes |
 
 ## Superseded and withdrawn
 

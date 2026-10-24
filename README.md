@@ -30,8 +30,9 @@ file for the Claude sessions that work on the project.
 | round 5 · the inference and prediction-set tracks | complete (tags `round5-ppi-final`, `round5-conf-final`) |
 | round 6 · a side experiment, language-model prediction from histology with a size-limited cheatsheet | complete (tags `round6-cheatsheet-C1`, `round6-cheatsheet-final`), moved on 19 October to the private repository `NicWYZ/textual-st-histology`, see [`docs/round06/README.md`](docs/round06/README.md) |
 | round 7 · federated learning for expression prediction, and inference after histology-guided selection of labelled clusters | complete (tags `round7-fedlearn-F2`, `round7-fedlearn-final`, `round7-ppi-S2`, `round7-ppi-S4`, `round7-ppi-final`), summary in [`docs/round07/README.md`](docs/round07/README.md) |
+| round 8 · the PPI paper's positioning against the survey-sampling literature and newer PPI work | open since 19 October. The positioning note ([`docs/round08/i01/positioning/round08_positioning_note.md`](docs/round08/i01/positioning/round08_positioning_note.md)) finds no technical result of the paper that is not classical or already in print, and what remains is empirical. No later track is open |
 
-Every gate of rounds 2 to 7 is tagged. The sections below, from the headline result to the known
+Every gate of rounds 2 to 7 is tagged. Round 8's one gate so far is not. The sections below, from the headline result to the known
 limitations, describe the benchmark work of rounds 1 and 2 and have not changed since the round-2
 closeout. The methods results of rounds 4 and 5 are summarised on the closing pages of
 [`docs/round04/i03/ppi/round4_ppi_final_report.md`](docs/round04/i03/ppi/round4_ppi_final_report.md),
