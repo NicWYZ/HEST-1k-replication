@@ -1,5 +1,97 @@
 [
  {
+  "slug": "STUD",
+  "frame_id": "dd10454a-a0fb-41b0-84ae-992fa04d95fc",
+  "deviations": [
+   "Query count 44 = 19 arXiv API queries + 4 Semantic Scholar calls (citation lists of Duchi, HCP twice [first HCP call returned HTTP 429, retried], GHCP) + 21 web_search; the first 8 arXiv queries used over-strict AND syntax and returned almost nothing, so effective coverage is lower than the count. Crossref and OpenAlex were NOT used (OpenAlex excluded by instruction; Crossref helper defined but never called).",
+   "Semantic Scholar forward citations: Duchi 12, HCP 23, GHCP 0 (GHCP is ~10 weeks old; the list is likely incomplete). Only titles/abstracts of the citing papers that looked relevant were checked (2609.14531, 2609.30781, 2509.21691, 2409.13990, 2606.28730 via arXiv API, 2609.14531 via web); the rest were screened by title only.",
+   "GHCP: read abstract, Sec 1.1, 2.1-2.3, App B.1-B.2, Discussion, parts of Sec 3 text; did NOT read proofs (App E, F), App C (derandomisation), App D (extra experiments) in detail. Duchi: read Sec 5-5.2 in full and the abstract/introduction; the rest of the paper (Sec 2-4, 6-7) only keyword-scanned. HCP, Fisch, Fan-Sesia, Rousseau, Min, Plassier, Nagashima, Krishnamoorthy, Papadopoulos were assessed from abstracts/snippets only, not read in full.",
+   "No literature was searched for empirical-Bayes variance moderation (limma-type) or for DESeq/scran size factors beyond one web query (library-size normalisation); statements about limma are from background knowledge and labelled as such. The 'Optimal Conformal Prediction for Small Areas' (arXiv:2204.08122) authors/year were not verified.",
+   "Absence calls ('no paper found' for a width law, pooled/EB scale, or multi-outcome group factor) are provisional: they rest on web_search plus arXiv API and S2 citation lists, not on a systematic database sweep. Full-text copies of GHCP/Duchi were kept in the workspace only and are not saved as artifacts (per the project rule). Saved: scan_STUD_queries.csv (version 5d268874-6633-4cb9-97c5-c0a0758a99e7) and scan_STUD_candidates.csv (version 969ed45b-9943-4af3-9b2f-a1cac0b2064b).",
+   "I did not run any simulation; the width-law sketch and the spot-versus-donor factor remark in what_remains_open are my reasoning, labelled as such."
+  ],
+  "verdict": "mostly_taken",
+  "verdict_reason": "Claim (i) is a special case of GHCP (arXiv:2608.15500) Appendix B.1. B.1 lets the score be |Y - mu~_j|/sigma^_j, valid 'provided that sigma^_j is constructed in every group by the same group-wise procedure using only that group's local training block'. It also allows block size m_j = tau(N_j,o) up to min{o, N_j-1}, so m_j = o is permitted, which is STUD's 'all o points go to the scale'. B.1 says the Theorem 2.1 proof is 'unchanged'. Verified in the HTML text. The scale-from-o-labelled-points-in-every-group, same-count, divide-and-multiply-by-test-factor template is Duchi et al. Sec. 5 (resizing), under a different guarantee. The 'finite for any o>=1 once K>=1/alpha-1' contrast is inherited from HCP/GHCP: GHCP's ACS experiment reports infinite mean widths for a studentized target-only split-conformal baseline at o<20, alpha=0.1. What B.1 does not cover literally: sigma^_j that also uses donor-symmetric pooled quantities (empirical-Bayes shrinkage), the choice of shrinkage as a function of o, any width law or crossover, and the multi-outcome pooled factor. No paper found with any of these (44 queries; provisional, see deviations).",
+  "ghcp_procedure": "GHCP (read Sec 1.1, 2.1-2.3, App B.1-B.2, Discussion; proofs in App E/F NOT read). Setup: K reference groups, test group with fixed o observations. Step 1: select reference groups with N_j > o. Step 2 (donation): draw J0 uniformly from the selected groups, give the test group the donor's size N_J0 (the test group is treated as having N_J0 points of which the first o are seen), drop J0 from calibration. Step 3: groups not selected (S_train) fit a global predictor mu_glob. In every calibration group and the test group, the first floor(o/2) points form a local training block; the local predictor is the block mean; mu~_j = (1-lambda) mu_glob + lambda mu_loc_j with lambda = floor(o/2)/(|S_train|+floor(o/2)). Step 4: score s_j = |Y - mu~_j|. All remaining points of each calibration group are held-out scores, weight 1/((|S_cal|+1) L_j) each, L_j = N_j - floor(o/2). The test group contributes its o - floor(o/2) observed held-out scores plus weight (N_J0 - o)/((|S_cal|+1) L_{K+1}) at +infinity. The set is {y: s_{K+1}(y) <= Q_{1-alpha}(nu_donor)}. Theorem 2.1: coverage >= 1-alpha under group exchangeability (A1), group-size ignorability (A2), within-group iid (A3). Upper bound needs no ties. So the o target labels are used twice: half to fit the local mean, the other half as calibration scores for the target group itself. App B.1 generalises to m_j = tau(N_j,o) block size, a common group-wise rule A, regularised group-specific correction g^_j, and a studentized score with sigma^_j from the group's own block; it says the proof is unchanged. The text never normalises by a scale in the main method (default score |Y - mu~_j|), and does not pool across groups to build sigma^_j. Studentisation appears only (a) as a one-paragraph remark in B.1 and (b) in the baseline 'Std-CP' (a studentized split conformal inside the target group), which gives infinite widths for o<20 at alpha=0.1. The Discussion lists 'optimal data-adaptive mergers with finite-sample validity' as open.",
+  "duchi_resizing": "Duchi-Gupta-Jiang-Sur (arXiv:2403.16336; Statistical Science 40(3), 2025), Sec. 5 and 5.1-5.2 read in full from PDF text; rest of paper skimmed only. Setting: m training environments, test environment with L_{m+1} labelled samples. Alg. 7 (resized multi-environment split conformal): split environments into D1 (fit nested sets C_tau) and D2 (calibrate); in each D2 environment randomly select |L_{m+1}| samples, compute residuals R_j = inf{tau: Y in C_tau(X)}, set the environment's resizing factor s_i = empirical (1-alpha0) quantile of those residuals (alpha0 = 0.05 used throughout); divide the remaining residuals of environment i by s_i and take the environment-level (1-alpha) quantile S_i; calibrate the (1-delta) quantile of {S_i}; test environment's factor s_{m+1} = same (1-alpha0) quantile of its own labelled residuals; output C_{s_{m+1} * q_delta}. Validity (Thm 5) holds whenever the resizing factors are exchangeable and independent of the samples used for calibration (same count in every environment, same rule). The guarantee is an (alpha,delta) PAC-type statement about the fraction of the test environment's unlabelled points covered, not marginal coverage of one new point. For HCP, resizing is only shown with an ORACLE factor (true test-environment quantile), because HCP 'is designed to construct conformal intervals for a single sample'. So Duchi already normalises by a group-specific scale estimated from o labelled points under a symmetric rule, but not (a) with HCP-style marginal coverage of a single test point with real labels, (b) with shrinkage or pooling, (c) with any width analysis.",
+  "closest_papers": [
+   {
+    "citation": "Mallick, Tchetgen Tchetgen, Dobriban, Lee (2026). Generalized Hierarchical Conformal Prediction.",
+    "url_or_doi": "https://arxiv.org/abs/2608.15500",
+    "how_read": "full text HTML: Sec 1-2, App B, Discussion; experiments partly; proofs not read",
+    "what_it_does": "HCP with o initial test-group observations via random size donation; local mean + global predictor merger; remark in B.1 allows group-wise studentization with sigma^_j from the local block.",
+    "overlap_with_claim": "Subsumes (i) as a special case (m_j=o, studentized score, same rule in all groups). Does not give pooled/EB scale, shrinkage optimisation, width law, crossover, or multi-outcome factor. Lists optimal data-adaptive mergers as open. Public code at github.com/soham-penn/hierarchical_CP."
+   },
+   {
+    "citation": "Duchi, Gupta, Jiang, Sur (2025). Predictive inference in multi-environment scenarios. Statistical Science 40(3).",
+    "url_or_doi": "https://arxiv.org/abs/2403.16336",
+    "how_read": "Sec 5 read in full (PDF text); remainder skimmed",
+    "what_it_does": "Resizing factor = (1-alpha0)-quantile of residuals of an equal-size labelled subsample per environment; normalise, calibrate, multiply by test environment's factor; (alpha,delta) guarantee.",
+    "overlap_with_claim": "Same symmetric same-count scale-estimation idea; different guarantee; HCP + resizing only with oracle factor; no shrinkage, no width law."
+   },
+   {
+    "citation": "Lee, Barber, Willett (2026). Distribution-free inference with hierarchical data. ACM J. Data Sci.",
+    "url_or_doi": "https://arxiv.org/abs/2306.06342 ; https://doi.org/10.1145/3786352",
+    "how_read": "abstract/snippets",
+    "what_it_does": "HCP: hierarchical exchangeability; o=0 limit of STUD.",
+    "overlap_with_claim": "Baseline; subsampling-once variant is the calibration device STUD uses."
+   },
+   {
+    "citation": "Fisch, Schuster, Jaakkola, Barzilay (2021). Few-shot conformal prediction with auxiliary tasks. ICML.",
+    "url_or_doi": "https://arxiv.org/abs/2102.08898",
+    "how_read": "abstract and snippets",
+    "what_it_does": "Meta-conformal over exchangeable tasks; k labelled examples in the new task; learns scores/threshold from auxiliary tasks; task-marginal and calibration-conditional validity.",
+    "overlap_with_claim": "Same structural setting (exchangeable tasks, few labels in new task). No scale studentisation from the new task's labels; no width law."
+   },
+   {
+    "citation": "Fan, Sesia (2025). Interpretable multivariate conformal prediction with fast transductive standardization.",
+    "url_or_doi": "https://arxiv.org/abs/2512.15383",
+    "how_read": "abstract/snippets",
+    "what_it_does": "Coordinatewise standardisation of multi-output residuals with scale parameters estimated from calibration data for joint coverage.",
+    "overlap_with_claim": "Multi-output standardisation only; no group structure, no new-group few-label borrowing. Relevant to the multi-outcome variant as the nearest multi-output normalisation."
+   },
+   {
+    "citation": "Rousseau et al. (2026). Scaling-score conformal prediction for multi-target regression.",
+    "url_or_doi": "https://arxiv.org/abs/2609.17091",
+    "how_read": "abstract",
+    "what_it_does": "Base vector of per-target scales defines a scaling score for joint coverage.",
+    "overlap_with_claim": "Multi-output scale only; no groups."
+   },
+   {
+    "citation": "Papadopoulos, Gammerman, Vovk (2008). Normalized nonconformity measures for regression conformal prediction. AIA.",
+    "url_or_doi": "https://dl.acm.org/doi/10.5555/1712759.1712773",
+    "how_read": "snippets",
+    "what_it_does": "Per-example difficulty-normalised scores (also Lei et al. 2018 locally weighted).",
+    "overlap_with_claim": "Studentisation of conformal scores is classical; the per-group version under hierarchical exchangeability is the new bit and is in GHCP B.1."
+   },
+   {
+    "citation": "Nagashima, Noma, Furukawa (2019). Prediction intervals for random-effects meta-analysis. Stat Methods Med Res.",
+    "url_or_doi": "https://arxiv.org/abs/1804.01054 ; https://doi.org/10.1177/0962280218773520",
+    "how_read": "snippets",
+    "what_it_does": "Parametric prediction interval for a new study; documents that the HTS interval undercovers with few studies.",
+    "overlap_with_claim": "Parametric analogue of the K-donor / heterogeneity trade-off; targets location heterogeneity, not group-scale studentisation."
+   },
+   {
+    "citation": "Krishnamoorthy & Lian (2012) and Mee/Owen line: tolerance intervals in one-way random models.",
+    "url_or_doi": "https://userweb.ucs.louisiana.edu/~kxk4695/ToL-Interval-R1.pdf",
+    "how_read": "snippets",
+    "what_it_does": "Approximate two-sided tolerance intervals for a future observation of a random group.",
+    "overlap_with_claim": "Parametric analogue; no labelled-points-of-the-new-group scale studentisation."
+   },
+   {
+    "citation": "Min et al. (2025). Personalized federated conformal prediction with localization.",
+    "url_or_doi": "https://openreview.net/pdf?id=QQUhGPST45",
+    "how_read": "snippets",
+    "what_it_does": "Target-agent marginal coverage using other agents' data, localised scores.",
+    "overlap_with_claim": "Related (borrowing across agents); no studentisation by estimated agent scale with finite-sample proof."
+   }
+  ],
+  "what_remains_open": "(1) Pooled / empirical-Bayes sigma^. GHCP B.1 says sigma^_j uses 'only that group's local training block'. A sigma^_j = f(block_j; symmetric function of all K+1 blocks) is not literally covered. My own reading is that validity extends in one line (the K+1 scores stay exchangeable because the pooled quantity is permutation-symmetric and uses only training blocks; test held-out label excluded), so a reviewer would call it a remark, not a theorem. [my reasoning, not from a paper] (2) o as small as 1-3. GHCP's block is floor(o/2): o=1 gives an empty local block (no local information), o=2,3 give block 1. STUD (all o points to the scale, test group contributes no calibration score) has no such cutoff. Whether that is better or worse than GHCP's split (half to fit, half as own calibration scores) is not studied by anyone I found; it is an empirical/theoretical comparison, not a new method. For Gaussian-like scores with one scale parameter and o=1 the studentised score has no finite-sample distribution-free justification except via the K donors, which is the point of STUD. (3) Width law, switching point against HCP and against target-only, and optimal shrinkage in o under a location-scale random-effects score model: not found in any retrieved paper. GHCP's Discussion names optimal data-adaptive mergers with finite-sample validity as open. Caveat: in a pure scale family with exact ratio structure the studentised score's law does not depend on the dispersion of group scales at all (T = |eps| * sigma_g/sigma^_g, with sigma^_g/sigma_g ~ chi_o/sqrt(o) for Gaussian), so the width law would be a Student-like quantile times K-donor quantile correction, and the crossover with HCP is set by (dispersion of log group scale) versus (1/sqrt(2o)). That derivation is short; as a stand-alone result it is a modest theorem and exposed to a quick scoop by the GHCP authors. [my reasoning] (4) Multi-outcome variant (J outcomes sharing one group factor c_g, estimated from o*J pooled values, per-outcome base scales sigma_j pooled symmetrically). Searched multi-output/multivariate/multi-task conformal, shared scale across outputs, borrowing across outcomes, factor/EB normalisation: found only output-standardisation papers without group structure (Fan-Sesia 2512.15383, Rousseau et al. 2609.17091) and nothing combining it with hierarchical/new-group calibration. Validity needs no new theory (same-rule, own-block, symmetric pooling: B.1 logic). The nearest prior art outside conformal is RNA-seq size-factor normalisation (library-size, DESeq-type median-of-ratios; documented in the OSCA book and similar), which is exactly 'estimate one multiplicative group/cell factor by pooling across genes', and empirical-Bayes variance moderation (limma, from my background knowledge, not retrieved here). So the multi-outcome factor is an application of known normalisation inside a valid conformal wrapper, not a new estimator. Two points specific to the multi-outcome claim that I could NOT verify from literature and that deserve a check before relying on them: (a) exact validity is per gene only with gene-wise calibration (K scores per gene); pooling the K*J studentised scores across genes gives coverage averaged over a uniformly random gene (or needs genes treated as exchangeable within a group), not per-gene coverage. (b) 'o=1 with large J recovers near-oracle width and approximately group-conditional coverage' is an asymptotic/model-based statement (needs group factor shared and gene residuals nearly independent given the factor). If the ST residuals carry a spot-level factor on top of the donor-level factor (the project notes say one depth/detection factor dominates), then one spot's J genes mostly estimate the spot factor, not the donor factor, and the effective sample for c_g is closer to o spots than to o*J values. Not found in the literature; flagged as a hypothesis for the lead to test on the HEST data. (5) Group-conditional coverage: no distribution-free group-conditional guarantee exists for a new group (impossible without additional structure, cf. Duchi et al. discussion of limits and Barber et al. 2021); STUD can at best make coverage approximately group-conditional under the model. Not claimed in any paper.",
+  "sharpened_claim_if_any": "If STUD is kept at all, state it as: 'a pooled, o-adaptive empirical-Bayes scale estimator for GHCP-type conformal sets (instantiating GHCP App B.1) with an explicit finite-sample-exact validity statement, a closed-form width/crossover analysis under a location-scale random-effects score model, and a data-driven choice of shrinkage that remains valid because it is a symmetric function of blocks.' The multi-outcome factor (hundreds of genes sharing one donor factor) is the more distinctive ST-specific piece; it should be framed as 'borrowing across outcomes makes the o=1..3 regime usable', with validity inherited from B.1 and the gain demonstrated on HEST-1k plus a quantified model-based width law, and with a per-gene versus gene-averaged coverage statement made explicit. Do NOT claim novelty for (i), for the studentisation itself, or for finiteness at small o.",
+  "value_assessment": "Blunt: as a methodological centre of the paper STUD is weak. The validity claim (i) is already a remark in GHCP's own appendix, and Duchi et al. already published the equal-count symmetric scale-resizing idea; anyone who knows GHCP will read STUD as 'GHCP App B.1 with a particular sigma^_j'. The finiteness-at-small-o point is already empirically made in GHCP (studentised target-only baseline is infinite for o<20). What can still carry weight is: a clean width law and crossover (modest theorem, scoop-prone because GHCP's authors flagged adjacent open problems and Penn group has public code), the o-optimal shrinkage, and above all the multi-outcome factor with real ST data, where the novelty is in the application and in the diagnostics about which factor (donor vs spot) the pooled estimate actually learns. I would treat STUD as a secondary component (a section or an extension) alongside a concrete empirical story, not as the paper's core, and I would cite GHCP B.1 and Duchi Sec. 5 prominently up front. Recommended next step before investing: write the one-page validity argument for pooled sigma^ and check, on HEST-1k donors, whether the pooled across-gene factor from o=1..3 spots is stable across donors and beats HCP and GHCP (half-split) widths; if the gain is small, drop STUD.",
+  "n_queries": 44
+ },
+ {
   "slug": "BENCH",
   "frame_id": "1eb89d6f-eafe-4f92-97cf-59442775d35a",
   "deviations": [

@@ -52,7 +52,7 @@ so the round-5 estimator has a design bias of $\{(n/G)/(1 - n/G)\}\,\text{Cov}(c
 | D4 | How this branch reaches `main` | it stays on its branch |
 
 - **Round 9 is in preparation** (`docs/round09/README.md`). The direction scan (`docs/round09/00_prep/round09_direction_scan.md`, 25 October) checked 14 candidate directions for a methodological core, each with an independent novelty-check subagent, plus four proposer subagents and an open-problem mining pass. None survived with a substantive open remainder. Its data diagnostics show that on Visium a shared depth factor carries 0.650 of between-donor variance on CCRCC, and that out of sample donor-level prediction does not beat a constant for the median gene, while composition-marker genes on lung reach a leave-one-donor-out R^2 near 0.9. Logs and results are in `results/round9/`.
-- **Next action.** Nicolas chooses among options A to D of the scan's section 4 (D1, possibly with David). The session then opens round 9 through `/project-state-keeping` around the chosen option. The last checker (HCPWIDTH) finished after Nicolas's approval and is recorded in `docs/round09/00_prep/round09_direction_scan_addendum.md` (partly open, bearing on option C).
+- **Next action.** Nicolas left the choice of direction to the session (25 October). The studentized prediction-set idea is mostly taken and buys little width (`docs/round09/00_prep/round09_stud_and_depth.md`); the session is checking the probe-then-label design (S5) that its depth-factor findings suggest. The last checker (HCPWIDTH) finished after Nicolas's approval and is recorded in `docs/round09/00_prep/round09_direction_scan_addendum.md` (partly open, bearing on option C).
 
 ## 3. Steps
 
@@ -60,7 +60,13 @@ Steps of the current work, with stable IDs, checked when done with a one-line no
 
 - [x] **S0 Branch prepared.** 24 October, cloud session. Opened `claude-science` from `main`, wrote this file, installed the state check of `/project-state-keeping`, and removed the documents that governed the earlier coordinated sessions.
 - [x] **S1 Direction scan.** 24 to 25 October, local session on Nicolas's Mac linked to Longleaf. Fourteen directions checked by independent subagents (nine mostly taken, five partly open but thin), four proposers, one open-problem miner, cluster-level diagnostics (Longleaf jobs 8eff7a70 and 486ce179) and a between-donor head test with predictions scored (P1 and P4 held, P2 and P3 refuted). Report `docs/round09/00_prep/round09_direction_scan.md`. No direction left standing.
-- [ ] **S2 Open round 9** through `/project-state-keeping` once Nicolas has chosen among options A to D of the scan's section 4.
+- [x] **S2 Direction chosen.** 25 October. Nicolas left the choice to the session. It takes option C, prediction sets for a new donor, starting from the studentized hierarchical idea below.
+- [x] **S3 Novelty check of STUD.** 26 October. Mostly taken (GHCP appendix B.1; Duchi et al. section 5; round 4's K5). Report `docs/round09/00_prep/round09_stud_and_depth.md`.
+  Original step: An independent subagent checks the claim that studentizing each donor's scores by a scale estimated from its own few labelled spots, calibrated across reference donors, gives finite-sample valid sets that interpolate between HCP and the target's own set, with a width law and freedom to choose any donor-symmetric scale estimator. Logs to `results/round9/scan/`.
+- [x] **S4 Feasibility on data.** 26 October, Longleaf job 741e07ed. Valid but at most 0.130 narrower even for an oracle; the real finding is a depth-outlier donor (INT5) that HCP covers at 0.310 and the depth factor as a strong donor-level auxiliary (median LODO R^2 0.523 on CCRCC). Same report.
+  Original step: In parallel, compare widths and coverage of HCP, the target's own set and the studentized set on CCRCC, Indiana and lung from the Longleaf per-spot files, with predictions written first. Results to `results/round9/stud/`.
+- [ ] **S5 Novelty check of PROBE** (probe-then-label two-phase design with a cross-gene depth auxiliary), dispatched 26 October; results to `results/round9/scan/`.
+- [ ] **S6 Open round 9** through `/project-state-keeping` once a direction stands.
 
 ## 4. Working preferences (Nicolas's)
 
@@ -73,6 +79,7 @@ Steps of the current work, with stable IDs, checked when done with a one-line no
 - **Literature.** Papers a session cannot retrieve go to Nicolas as one list of at most 10, each with a link through UNC Chapel Hill's library proxy (`https://login.libproxy.lib.unc.edu/login?url=https://doi.org/<DOI>`) or to a free version, and he supplies them (13 October).
 - **Decisions.** He makes the decisions at his level and wants to be told which need David or Dr. Zhu.
 - **Autonomy and novelty (24 October).** The claude-science session explores directions, derives and validates results on its own, and reports to him only at significant roadblocks or significant results. The end goal is a statistics-forward methodological paper in spatial transcriptomics. A literature check for novelty is a hard rule, run by subagents continually while the work goes on, because the model is prone to rediscovering results it has absorbed from its training data.
+- **Choice of direction (25 October).** After the direction scan he left the choice to the session. It may pursue the prediction-set topic, few-cluster inference or a fresh topic based on the data in hand, and asks him only when it needs access that is gated by his approval.
 
 ## 5. Standards of evidence
 
