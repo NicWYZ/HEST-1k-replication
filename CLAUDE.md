@@ -52,7 +52,7 @@ so the round-5 estimator has a design bias of $\{(n/G)/(1 - n/G)\}\,\text{Cov}(c
 | D4 | How this branch reaches `main` | it stays on its branch |
 
 - **Round 9 is in preparation** (`docs/round09/README.md`). The direction scan (`docs/round09/00_prep/round09_direction_scan.md`, 25 October) checked 14 candidate directions for a methodological core, each with an independent novelty-check subagent, plus four proposer subagents and an open-problem mining pass. None survived with a substantive open remainder. Its data diagnostics show that on Visium a shared depth factor carries 0.650 of between-donor variance on CCRCC, and that out of sample donor-level prediction does not beat a constant for the median gene, while composition-marker genes on lung reach a leave-one-donor-out R^2 near 0.9. Logs and results are in `results/round9/`.
-- **Next action.** Nicolas chooses among options A to D of the scan's section 4 (D1, possibly with David). The session then opens round 9 through `/project-state-keeping` around the chosen option. The novelty checker on hierarchical conformal widths (HCPWIDTH) is parked on an approval card and its verdict is not in the scan.
+- **Next action.** Nicolas chooses among options A to D of the scan's section 4 (D1, possibly with David). The session then opens round 9 through `/project-state-keeping` around the chosen option. The last checker (HCPWIDTH) finished after Nicolas's approval and is recorded in `docs/round09/00_prep/round09_direction_scan_addendum.md` (partly open, bearing on option C).
 
 ## 3. Steps
 

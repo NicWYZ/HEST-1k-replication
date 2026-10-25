@@ -387,6 +387,84 @@
   ]
  },
  {
+  "slug": "HCPWIDTH",
+  "frame_id": "02ddebfe-72d8-43e3-986c-ba9b49d0fb6a",
+  "deviations": [
+   "n_queries=50 counts 44 arXiv/web searches + 6 Semantic Scholar citation lookups (log has 51 rows incl. one direct fetch). arXiv API was rate-limited early (several early queries returned nothing/failed and are not logged, and its relevance ranking was poor), so about 17 of the searches were done with web_search rather than arXiv/Crossref.",
+   "Crossref API was not used; OpenAlex not used (per instruction). Semantic Scholar was used only for forward citations of 5 anchors (HCP, Dunn et al., Dhillon et al., Duchi et al., GHCP-0 indexed); first anchor-citation pass capped at the API default limits (100-200 rows), no snowballing beyond one hop.",
+   "'Full' reading was done only for GHCP; HCP, Dunn et al., Duchi et al., Dhillon et al., Fisch et al., Park et al., Zhang et al. (JMLR PDF, fetched after jmlr.org access was granted), Noonan and the Transported-Beta-Laws paper were read by abstract plus keyword-targeted section scans (width, efficiency, theorem statements, discussion), not line by line. The 17 'related' and 7 'background' entries were graded from abstracts or search snippets only.",
+   "Proofs and appendices of GHCP/HCP were not read in detail; the absence of a width law is established by keyword scans (width, expected size, crossover, switch, optimal) and the stated contributions/open-problems paragraphs. The Lei et al. 2018 entry was seen only via a search snippet. The verdict is therefore provisional with respect to unreachable paywalled/unindexed work and the possibility of a very recent (Sept-Oct 2026) preprint not yet indexed by the search tools."
+  ],
+  "verdict": "partly_open",
+  "verdict_reason": "No retrieved paper derives an expected-width or threshold-quantile law for hierarchical conformal sets as a function of (K, o, alpha) and a between/within decomposition, and none gives a switching point in o or an optimal combination rule. But the setting is already occupied: GHCP (Mallick, Tchetgen Tchetgen, Dobriban, Lee, arXiv 2608.15500, Aug 2026) is exactly 'K reference groups + target group with o labelled units', compares GHCP/HCP/target-only split conformal/Dunn et al. by simulation, gives coverage-slack bounds that shrink in o and finiteness thresholds (e.g. target-only split set trivial until o>=14 at alpha=0.05, N=21), and lists efficiency and optimal data-adaptive mergers as open. Dunn-Wasserman-Ramdas and HCP also name efficiency as open. The single-group ingredients exist (Dhillon et al. exact expected-size integral via the order-statistic law of the threshold; Yao-He-Gastpar non-asymptotic length bounds in n, m, alpha). Duchi-Gupta-Jiang-Sur (resizing with a few test-environment labels) and Zhang et al. JMLR 2026 (width with limited target data + sources) cover the 'borrow vs own data' idea only asymptotically/heuristically and not under hierarchical exchangeability. Open = the finite-sample width calculus itself; the risk is that it is a mechanical specialization of Dhillon's formula to HCP's weighted empirical distribution and that the GHCP group (Barber/Dobriban orbit) is next to it. Verdict is based on 44 web/arXiv queries + 6 Semantic Scholar citation lookups; provisional on papers I could not reach (see deviations).",
+  "closest_papers": [
+   {
+    "citation": "Mallick, Tchetgen Tchetgen, Dobriban, Lee. Generalized Hierarchical Conformal Prediction. arXiv:2608.15500 (2026, preprint, unpublished; 0 citations indexed by Semantic Scholar).",
+    "url_or_doi": "https://arxiv.org/abs/2608.15500",
+    "how_read": "full text (arXiv HTML, keyword-scanned incl. theorems, discussion, appendices D.1/D.4)",
+    "what_it_does": "Conformal sets for a new unit of a test group with o initial observations: donated group size restores symmetry; half of the o points used to train a within-group score (merged predictor (1-lambda)*global + lambda*group mean); restricted-donor variant; derandomized variant. Coverage upper/lower bounds with slack Delta_GHCP(o) strictly decreasing in o. Width studied only by simulation (K=20, N_j=21 or Poisson(25), o in {0,5,...,20}) and ACS PUMS; Appendix D.4 varies lambda_local empirically.",
+    "overlap_with_claim": "Same (K, o, alpha) setting, same competitors. Contains no width law, no switching point, no optimal lambda. States that optimal data-adaptive mergers and donor selection are open. This is the paper that would absorb the claim."
+   },
+   {
+    "citation": "Lee, Barber, Willett. Distribution-free inference with hierarchical data (HCP). arXiv:2306.06342 (cited as Lee et al. 2026).",
+    "url_or_doi": "https://arxiv.org/abs/2306.06342",
+    "how_read": "sections (intro, method, simulations, discussion)",
+    "what_it_does": "HCP: weighted empirical distribution of calibration scores with mass 1/(K1+1) at +inf; compared with Dunn et al. by simulation (K=20,N=2; K=100,N=5); HCP^2 for second-moment coverage. Discussion poses groups-vs-repeats design tradeoff as open.",
+    "overlap_with_claim": "HCP set whose width is to be characterised. Only empirical widths; no width theory."
+   },
+   {
+    "citation": "Dunn, Wasserman, Ramdas. Distribution-Free Prediction Sets for Two-Layer Hierarchical Models. arXiv:1809.07441 (JASA 2023).",
+    "url_or_doi": "https://arxiv.org/abs/1809.07441",
+    "how_read": "sections (methods, simulations, discussion)",
+    "what_it_does": "Pooled CDF, double conformal (quantile of quantiles), single and repeated subsampling sets for a new group; coverage/size by simulation; requirements on k and n_j for non-trivial sets; says asymptotic efficiency relative to an oracle is open.",
+    "overlap_with_claim": "The 'two-layer sets' in the claim; non-triviality thresholds only, no expected-width formula."
+   },
+   {
+    "citation": "Duchi, Gupta, Jiang, Sur. Predictive Inference in Multi-environment Scenarios. arXiv:2403.16336.",
+    "url_or_doi": "https://arxiv.org/abs/2403.16336",
+    "how_read": "sections (abstract, resizing section 5, consistency section 6, headings)",
+    "what_it_does": "Multi-environment split conformal/jackknife-minmax with (delta, alpha) coverage; resizing factors from a few labelled test-environment points to shrink sets for non-outlier environments; asymptotic consistency to oracle threshold tau*(delta,alpha); compares with HCP.",
+    "overlap_with_claim": "Closest to 'combine borrowed groups with a few target labels' (resizing = combination rule). Heuristic, asymptotic, different coverage notion; no finite-sample width law or switching point."
+   },
+   {
+    "citation": "Dhillon, Deligiannidis, Rainforth. On the Expected Size of Conformal Prediction Sets. arXiv:2306.07254 (AISTATS 2024).",
+    "url_or_doi": "https://arxiv.org/abs/2306.07254",
+    "how_read": "sections (abstract, Theorem 1, insights on n and alpha)",
+    "what_it_does": "Exact formula E|C| = integral of P(tau_alpha(R_{1:n}) >= r) * multiplicative factor dr for split conformal; binomial order-statistic law for iid scores; remarks that dependence on n needs extra assumptions.",
+    "overlap_with_claim": "Gives the method (order-statistic law of the threshold) for the target-group-only set. Not hierarchical; hierarchical extension would be a specialization."
+   },
+   {
+    "citation": "Zhang, Li, Xie, Kong, Jiang. Transfer Conformal Predictive Inference for Regression. JMLR 27 (2026) 1-68.",
+    "url_or_doi": "http://jmlr.org/papers/v27/24-1899.html",
+    "how_read": "sections (abstract, width theorem, remarks distinguishing from hierarchical conformal)",
+    "what_it_does": "Transfer conformal with few target points and large source sample; width theorem 2q + O_p(eta+rho) showing narrower sets than target-only when n0 = o(N); selection of transferable sources via KL.",
+    "overlap_with_claim": "Width comparison 'borrow vs own data' but asymptotic in N, non-exchangeable sources, no groups, no switching point in finite samples."
+   },
+   {
+    "citation": "Fisch, Schuster, Jaakkola, Barzilay. Few-shot Conformal Prediction with Auxiliary Tasks. arXiv:2102.08898 (ICML 2021).",
+    "url_or_doi": "https://arxiv.org/abs/2102.08898",
+    "how_read": "sections (abstract, intro, experiments keyword scan)",
+    "what_it_does": "Meta-learned few-shot score and quantile predictor from auxiliary tasks, calibrated with a correction factor; efficiency shown empirically.",
+    "overlap_with_claim": "Few-label target + exchangeable auxiliary tasks; no width law."
+   },
+   {
+    "citation": "Noonan. The Exceedance Design Effect: Effective Sample Size for Thresholds under Clustering. arXiv:2608.21262 (2026, preprint, unpublished).",
+    "url_or_doi": "https://arxiv.org/abs/2608.21262",
+    "how_read": "sections (abstract, law, conformal application, related work)",
+    "what_it_does": "Variance of the coverage of a pooled sample-quantile cutoff with clustered scores inflates by 1+(m-1)rho_I(p), with rho_I the ICC of exceedance indicators; level-dependent effective sample size.",
+    "overlap_with_claim": "Law for the distribution of the threshold under clustered calibration (relevant to pooling-CDF-type sets) but for coverage, not width, and not hierarchical sets or o."
+   }
+  ],
+  "what_remains_open": "Not found in any retrieved paper: (1) a closed-form or exact-computation law for E[width] (or the distribution of the threshold quantile) of HCP, GHCP, target-only split/full conformal and Dunn et al.'s pooled/double-conformal sets in terms of K, o (and N_j), alpha, with an explicit between-group/within-group decomposition of the score law (e.g. via a random-effects score model where the HCP weighted empirical distribution reduces to a mixture of group-specific score laws and the threshold is an order statistic of that mixture; the HCP mass at +inf and the target-only 1/(o+1)-type granularity enter as finiteness thresholds in K1 and o); (2) the switching point o*(K, alpha, variance ratio) at which target-only conformal beats borrowing (GHCP only shows this empirically and gives o>=14-style triviality cut-offs); (3) an optimal or risk-minimizing merger/combination rule between global and local information with finite-sample validity (GHCP lists it as a next step; D.4 is a sensitivity table; Duchi et al. resizing is heuristic); (4) a lower-bound/minimax statement for width under hierarchical exchangeability with o target labels (all efficiency theory found is single-group iid or asymptotic: Dhillon et al., Yao-He-Gastpar, Lei et al., Zhang et al.). What is NOT open: the idea that borrowing helps when o is small and hurts when o is large (empirical in GHCP, Duchi et al., Zhang et al., Cluster-CP, federated/personalized CP), the single-group expected-width machinery, and the parametric analogue (random-effects prediction intervals / HTS interval: width depends on K, tau^2, sigma^2 through a t_{K-2} factor).",
+  "sharpened_claim_if_any": "If pursued: 'Under a hierarchical random-scale score model, the threshold of GHCP/HCP/target-only/Dunn sets is an explicit order statistic of a K- and o-dependent mixture; its expected width E[W] = oracle width * (1 + c1/(K1+1) + c2/(o+1)) + terms controlled by the between-group quantile dispersion, with a crossover o*(K, alpha, rho_between) where target-only becomes narrower; and the minimax-optimal local/global merger weight is lambda* = (within-group information)/(within + between) -- with a finite-sample-valid version via GHCP's donor symmetry.' Differentiator versus the existing work is a lower bound or exact (not simulated) crossover, plus the optimal merger weight with validity; a pure width-formula for HCP would be too thin.",
+  "value_assessment": "Blunt: as a stand-alone paper this is thin for a top statistics journal (JASA/JRSSB/AoS) and marginal for NeurIPS/ICML. Reasons: (a) it analyses existing procedures rather than proposing one; (b) the technical core is Dhillon et al.'s order-statistic integral applied to the HCP weighted empirical law, plus a Gaussian random-effects calculation that collapses to classical prediction-interval algebra; (c) the result is score-distribution dependent, so a clean distribution-free law is unlikely and Gaussian/sub-Gaussian special cases will look like illustrations; (d) the closest group (GHCP: Mallick/Tchetgen Tchetgen/Dobriban/Lee; HCP: Lee/Barber/Willett) has already flagged efficiency and optimal mergers as next steps, so scoop risk within months is real, and a follow-up from them would subsume a width-only paper. The part with real publishable value is item (3)-(4): a lower bound plus an optimal merger with finite-sample validity, which would be an AISTATS/COLT-style or JRSSB-short contribution. For this project (spatial transcriptomics, clusters = donors, o=4-16 labelled clusters) the claim is better used as a supporting lemma/diagnostic (when to stop borrowing across donors) inside a larger methods paper than as the headline.",
+  "n_queries": 50,
+  "artifacts": [
+   "scan_HCPWIDTH_queries.csv",
+   "scan_HCPWIDTH_candidates.csv"
+  ]
+ },
+ {
   "slug": "JOINT",
   "frame_id": "94a0dcaf-7078-452a-bfe9-a2a9b5ec0109",
   "deviations": [
