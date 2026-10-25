@@ -1,0 +1,43 @@
+query,source,date,n_results_screened,new_close_papers
+conformal selection false discovery rate conformal p-values,arxiv,2026-10-24,8,0
+conformal selection clustered calibration data,arxiv,2026-10-24,8,0
+conformal selection hierarchical exchangeability groups,arxiv,2026-10-24,8,1
+weighted conformal selection covariate shift FDR,arxiv,2026-10-24,8,0
+conformal novelty detection FDR outliers conformal p-values,arxiv,2026-10-24,8,0
+forward citations of Lee&Ren 2501.02514,ss,2026-10-24,7,0
+"all:""conformal selection"" AND all:cluster",arxiv,2026-10-24,1,0
+"all:conformal AND all:selection AND all:""hierarchical"" AND all:exchangeability",arxiv,2026-10-24,2,0
+"all:""conformal p-values"" AND all:dependence AND all:calibration AND all:groups",arxiv,2026-10-24,0,0
+"all:conformal AND all:""multiple testing"" AND all:""multi-environment""",arxiv,2026-10-24,0,0
+"all:conformal AND all:""spatial transcriptomics""",arxiv,2026-10-24,0,0
+"all:conformal AND all:histopathology AND all:""false discovery rate""",arxiv,2026-10-24,0,0
+conformal selection distribution shift between calibration and test groups,ss,2026-10-24,8,0
+conformal selection false discovery rate hierarchical clustered data,cr,2026-10-24,6,0
+false discovery rate conformal p-values grouped calibration donors histology gene expression,cr,2026-10-24,6,0
+cluster-level exchangeability conformal prediction new cluster,cr,2026-10-24,6,0
+multiple testing cluster-correlated units false discovery rate shared random effect new cluster,cr,2026-10-24,6,0
+spatial transcriptomics uncertainty quantification gene expression prediction histology conformal,cr,2026-10-24,6,0
+conformal prediction few clusters random effects distribution-free,cr,2026-10-24,6,0
+model-assisted survey sampling classification of units two-stage sampling false discovery,cr,2026-10-24,6,0
+conformal inference noise ceiling reliability repeated measures selection,cr,2026-10-24,6,0
+conformal selection FDR clustered calibration data new cluster few clusters,web_search,2026-10-24,9,0
+conformal prediction histology to spatial transcriptomics gene expression prediction uncertainty coverage guarantee,web_search,2026-10-24,9,0
+Lee Ren Selection from Hierarchical Data with Conformal e-values follow-up group-conditional selection few groups,web_search,2026-10-24,9,0
+Finding distributions that differ with FDR control Lee Dobriban Tchetgen,web_search,2026-10-24,9,0
+Batch Predictive Inference Lee Dobriban Tchetgen conformal test batch dependence,web_search,2026-10-24,9,0
+conformal prediction patient-level exchangeability multiple samples per patient clustered medical imaging,web_search,2026-10-24,9,0
+Duchi Gupta Jiang Sur predictive inference multi-environment conformal number of environments,web_search,2026-10-24,9,1
+conformal selection calibration-conditional FDR PAC training-conditional false discovery,web_search,2026-10-24,9,0
+training-conditional FDR conformal selection concentration inequality outlier detection calibration set,web_search,2026-10-24,9,0
+conformal selection FDR single-cell OR spatial transcriptomics calibration donors,web_search,2026-10-24,9,0
+group-conditional FDR control conformal selection subgroups new group multi-source calibration sites,web_search,2026-10-24,9,0
+Mallick GHCP arXiv 2608.15500 hierarchical conformal prediction,web_search,2026-10-24,9,0
+Marandon adaptive novelty detection FDR; Gazin transductive conformal adaptive scores,web_search,2026-10-24,9,0
+conformal selection FDR beyond exchangeability dependent data,web_search,2026-10-24,9,0
+estimating PPV false discovery proportion clustered data few clusters random effects (biostat diagnostic accuracy),web_search,2026-10-24,9,0
+prediction-powered inference multiple testing FDR control ML predictions few labels e-values,web_search,2026-10-24,9,0
+federated conformal selection FDR multiple clients hospitals calibration heterogeneity,web_search,2026-10-24,9,0
+2026 conformal selection hierarchical data groups individuals FDR e-BH new group few calibration groups power,web_search,2026-10-24,9,0
+HCPclust hierarchical conformal prediction clustered data missing responses,web_search,2026-10-24,9,0
+conformal selection drug discovery scaffold clusters exchangeability violated cluster-level calibration FDR,web_search,2026-10-24,9,0
+leave-one-donor-out calibration FDR spots spatial transcriptomics marker gene local fdr empirical Bayes (genomics vocabulary),web_search,2026-10-24,9,0

@@ -1,0 +1,74 @@
+query,source,date,n_results_screened,new_close_papers
+"all:""data thinning"" AND all:Poisson",arxiv,2026-10-24,3,Neufeld thinning (background)
+"all:""count splitting""",arxiv,2026-10-24,6,NB count splitting (background)
+"all:""data fission""",arxiv,2026-10-24,12,Leiner fission (background)
+noise ceiling estimation neural encoding models explainable variance,crossref,2026-10-24,12,
+molecular cross-validation single-cell RNA-seq denoising,crossref,2026-10-24,12,Batson MCV (related)
+"all:""noise ceiling"" AND all:encoding",arxiv,2026-10-24,4,
+"all:""noise ceiling"" AND all:transcriptomics",arxiv,2026-10-24,0,
+"all:histology AND all:""gene expression"" AND all:""noise"" AND all:ceiling",arxiv,2026-10-24,0,
+"all:""spatial transcriptomics"" AND all:""measurement noise"" AND all:prediction AND all:histology",arxiv,2026-10-24,1,
+"all:""HEST"" AND all:benchmark AND all:histology AND all:expression",arxiv,2026-10-24,2,
+"all:""explainable variance"" AND all:""neural""",arxiv,2026-10-24,12,Shuffle estimator (related)
+"all:""reliability"" AND all:""noise ceiling"" AND all:""brain""",arxiv,2026-10-24,1,
+"all:""attenuation"" AND all:correlation AND all:""count data"" AND all:""Poisson""",arxiv,2026-10-24,1,
+"all:""split-half"" AND all:""Poisson"" AND all:correlation",arxiv,2026-10-24,0,
+"all:""data thinning"" AND all:""model evaluation""",arxiv,2026-10-24,1,
+"all:""thinning"" AND all:""Poisson"" AND all:""cross-validation"" AND all:""prediction""",arxiv,2026-10-24,0,
+"all:""negative binomial"" AND all:""thinning"" AND all:""overdispersion""",arxiv,2026-10-24,2,
+"all:""data thinning"" AND all:""spatial""",arxiv,2026-10-24,2,
+"all:""count splitting"" AND all:""spatial transcriptomics""",arxiv,2026-10-24,0,
+"all:""cross-validation"" AND all:""spatial transcriptomics"" AND all:""Poisson"" AND all:""evaluation""",arxiv,2026-10-24,0,
+"all:""errors-in-variables"" AND all:""correlation"" AND all:""transcriptomics""",arxiv,2026-10-24,0,
+"all:""imputation"" AND all:""evaluation"" AND all:""thinning"" AND all:""single-cell""",arxiv,2026-10-24,0,
+disattenuated correlation reliability Poisson counts,crossref,2026-10-24,12,psychometric disattenuation (background)
+Spearman correction for attenuation correlation,crossref,2026-10-24,12,
+predicting spatial gene expression from histology benchmark foundation models,crossref,2026-10-24,12,Benchmarking translational potential (related)
+Methods for computing the maximum performance of computational models of fMRI responses,crossref,2026-10-24,12,Lage-Castellanos 2019 (related)
+Pospisil Bair accounting for biases in the estimation of neuronal signal correlation,crossref,2026-10-24,12,Pospisil&Bair (close)
+data thinning model validation prediction evaluation count data held-out correlation,crossref,2026-10-24,12,
+"all:""data thinning"" AND all:""cross-validation"" AND all:""supervised""",arxiv,2026-10-24,0,
+"all:""data fission"" AND all:""prediction"" AND all:""evaluation"" AND all:""Poisson""",arxiv,2026-10-24,0,
+"all:""spatial transcriptomics"" AND all:""data thinning""",arxiv,2026-10-24,0,
+"all:""spatial transcriptomics"" AND all:""count splitting""",arxiv,2026-10-24,0,
+"all:""histology"" AND all:""gene expression"" AND all:""Poisson"" AND all:""deviance"" AND all:""evaluation""",arxiv,2026-10-24,0,
+noise ceiling histology gene expression prediction spatial transcriptomics (API error),crossref,2026-10-24,0,
+benchmark gene expression prediction histology Pearson (API error),arxiv,2026-10-24,0,
+noise ceiling fMRI encoding models Lage-Castellanos (API error),crossref,2026-10-24,0,
+noise ceiling sequence-to-expression Enformer (API error),crossref,2026-10-24,0,
+reliability-corrected correlation ST replicate (API error),crossref,2026-10-24,0,
+confidence interval disattenuated correlation bootstrap (API error),crossref,2026-10-24,0,
+cluster robust few clusters disattenuation (API error),crossref,2026-10-24,0,
+negative binomial thinning prediction evaluation (API error),crossref,2026-10-24,0,
+noise ceiling histology spatial gene expression prediction correlation attenuated by measurement noise,web_search,2026-10-24,10,Benchmarking translational potential (related)
+data thinning evaluate predictive model Poisson counts correlation latent rate unbiased,web_search,2026-10-24,9,Oliveira-Lei-Tibshirani CB (close); Kawano SAE thinning (close)
+ST prediction evaluation technical replicate ceiling Pearson sparse counts depth bias,web_search,2026-10-24,10,
+Pospisil Bair unbiased estimation fraction of variance explained noise neuroscience,web_search,2026-10-24,9,Pospisil&Bair (close)
+Poisson thinning cross-validation spike counts neural encoding noise ceiling,web_search,2026-10-24,9,
+Impact of Data Quality on Deep Learning Prediction of ST from Histology noise ceiling,web_search,2026-10-24,9,Hallinan (close)
+rethinking evaluation metrics histology to spatial gene expression Pearson misleading noise sparsity,web_search,2026-10-24,10,
+HEST-Bench evaluation foundation models upper bound technical noise Visium Poisson,web_search,2026-10-24,9,
+data thinning hold-out evaluation imputation single-cell Poisson correlation bias-corrected,web_search,2026-10-24,9,
+ST histology prediction noise ceiling OR upper bound replicate sections explainable variance,web_search,2026-10-24,9,
+disattenuated correlation scRNA-seq measurement error Poisson CS-CORE,web_search,2026-10-24,9,CS-CORE (close)
+perturbation response prediction benchmark noise ceiling technical replicate reliability,web_search,2026-10-24,9,Reliable single-cell perturbations (close)
+Oliveira Lei Tibshirani unbiased test error Poisson means coupled bootstrap,web_search,2026-10-24,10,
+Schoppe CCmax normalized correlation coefficient,web_search,2026-10-24,10,Schoppe 2016 (close)
+Hsu Borst Theunissen explainable variance,web_search,2026-10-24,9,Hsu 2004 (close)
+count splitting spatial transcriptomics evaluation held-out spots thinning benchmark,web_search,2026-10-24,9,
+split-half reliability ST Visium Spearman-Brown histology predictions,web_search,2026-10-24,10,
+expression predictability from H&E technical noise latent rate Poisson corrected foundation model benchmark,web_search,2026-10-24,10,
+Kintsugi decides gene by gene ST borrows information,web_search,2026-10-24,9,Kintsugi (related)
+Data Thinning for Poisson Factor Models,web_search,2026-10-24,9,Wang et al JASA (related)
+Inference on proportion of variance explained PCA,web_search,2026-10-24,9,Perry et al (background)
+histology-to-expression how much variance is predictable measurement reliability serial sections,web_search,2026-10-24,9,
+single count matrix split-half reliability Poisson thinning gene-level upper bound benchmark imputation,web_search,2026-10-24,9,
+Enformer Borzoi replicate correlation ceiling noise-corrected,web_search,2026-10-24,9,Enformer replicate-level accuracy (related)
+spike train thinning held-out cross-validation Bernoulli splitting Poisson,web_search,2026-10-24,9,
+forward citations: Neufeld thinning arXiv:2301.07276,semanticscholar,2026-10-24,53,screened titles; none = histology-expression ceiling
+forward citations: Leiner fission arXiv:2112.11079,semanticscholar,2026-10-24,69,screened titles; none = histology-expression ceiling
+forward citations: Batson MCV 10.1101/786269,semanticscholar,2026-10-24,29,screened titles; none = histology-expression ceiling
+forward citations: Pospisil&Bair 10.1371/journal.pcbi.1009212,semanticscholar,2026-10-24,31,screened titles; none = histology-expression ceiling
+forward citations: Kawano SAE arXiv:2604.04141,semanticscholar,2026-10-24,1,screened titles; none = histology-expression ceiling
+forward citations: Oliveira Poisson arXiv:2212.01943,semanticscholar,2026-10-24,7,screened titles; none = histology-expression ceiling
+forward citations: NB count splitting arXiv:2307.12985,semanticscholar,2026-10-24,0,"rate-limited, failed"

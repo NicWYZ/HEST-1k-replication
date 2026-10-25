@@ -1,0 +1,51 @@
+query,source,n_screened,outcome
+"all:""prediction-powered inference"" AND all:spatial",arXiv API,3,found 2608.10356 (Shirota design-based spatial PPI / conditional validity) and 2610.08715 (PPI time series across space); spatial PPI space occupied
+"all:""prediction-powered"" AND all:""spatial"" AND all:""dependence""",arXiv API,8,found 2608.10356 (Shirota design-based spatial PPI / conditional validity) and 2610.08715 (PPI time series across space); spatial PPI space occupied
+"all:""prediction-powered inference"" AND all:""change of support""",arXiv API,0,found 2608.10356 (Shirota design-based spatial PPI / conditional validity) and 2610.08715 (PPI time series across space); spatial PPI space occupied
+"all:""prediction-powered inference"" AND all:""random field""",arXiv API,0,found 2608.10356 (Shirota design-based spatial PPI / conditional validity) and 2610.08715 (PPI time series across space); spatial PPI space occupied
+"all:""prediction-powered inference"" AND all:""spatial transcriptomics""",arXiv API,0,found 2608.10356 (Shirota design-based spatial PPI / conditional validity) and 2610.08715 (PPI time series across space); spatial PPI space occupied
+prediction-powered inference change of support block aggregation point-level predictions spatial,web_search,9,"A support: nothing PPI-specific; classical change-of-support (Cressie), Gotway-Young"
+optimal bin size spatial transcriptomics Visium HD resolution statistical efficiency variogram nugget,web_search,10,A support: only 10x technical notes; no formal PPI/efficiency theory
+model-assisted survey estimation distributional auxiliary kernel mean embedding cluster sampling few clusters,web_search,9,C distribution: functional/high-dim GREG known; no KME-PPI found
+data fission count splitting spatial transcriptomics differential expression after domain detection,Crossref,6,N post-seg inference
+spatial cross-validation buffer leakage autocorrelation model evaluation,Crossref,6,F leakage
+positional error registration misalignment efficiency covariate regression spatial,Crossref,6,C2 registration
+correlation aggregation scale ecological Gehlke Biehl change of support regression,Crossref,6,A support
+model-assisted estimation functional auxiliary information cluster sampling principal components,Crossref,6,C distribution
+conformal prediction spatial transcriptomics gene expression histology uncertainty,Crossref,6,conformal
+spatial cross-fitting buffer prediction-powered inference within-slide leakage,web_search,10,F leakage: PPITSAS 2610.08715 uses buffering/chunking (time); 2608.10356 spatial dependence; Cross-PPI. Mostly taken
+prediction-powered inference batch effect technical factor RUV control genes,web_search,10,"C7 depth-factor/RUV: RUV2/4 (Gagnon-Bartsch&Speed 1211.4259), unifying 1705.08393, SVA; no PPI-specific. Taken as estimand adjustment"
+prediction-powered inference multiple outcomes factor structure simultaneous CI,web_search,10,Q1 factor simultaneous: multi-task PPI 2605.29249 (cross-task recalibration); no factor-adjusted simultaneous PPI found
+"all:""spatial transcriptomics"" AND all:""prediction-powered""",arXiv API,2,no PPI-for-ST/histology paper found beyond unrelated imputation papers
+"all:""prediction-powered"" AND (all:""kriging"" OR all:""geostatistics"" OR all:""variogram"")",arXiv API,3,no PPI+kriging/variogram paper
+"all:""prediction-powered"" AND all:""point process""",arXiv API,6,no PPI+point-process paper
+"all:""prediction-powered"" AND all:""image"" AND all:""histology""",arXiv API,4,no PPI-for-ST/histology paper found beyond unrelated imputation papers
+"all:""prediction-powered"" AND all:""resolution"" AND all:""aggregat""",arXiv API,0,no PPI+aggregation/change-of-support paper
+"all:""prediction-powered"" AND all:""covariate shift"" AND all:""cluster""",arXiv API,0,nothing
+"all:""data fission"" AND all:""spatial""",arXiv API,0,nothing found (arXiv phrase search weak)
+"all:""count splitting"" AND all:""spatial transcriptomics""",arXiv API,0,nothing found (arXiv phrase search weak)
+"all:""misclassified marks"" AND all:""point pattern""",arXiv API,0,FAILED (HTTP 429 / error) - not counted
+"all:""K-function"" AND all:""classifier"" AND all:""cell types"" AND all:""spatial""",arXiv API,0,FAILED (HTTP 429 / error) - not counted
+"all:""functional"" AND all:""model-assisted"" AND all:""survey"" AND all:""curves"" AND all:""calibration""",arXiv API,0,FAILED (HTTP 429 / error) - not counted
+"all:""control variates"" AND all:""wavelet"" AND all:""spatial"" AND all:""estimation"" AND all:""auxiliary""",arXiv API,0,nothing
+"all:""semi-supervised"" AND all:""spatial"" AND all:""random field"" AND all:""mean estimation""",arXiv API,0,nothing
+"all:""prediction-powered"" AND all:""histopathology""",arXiv API,3,no PPI-for-ST/histology paper found beyond unrelated imputation papers
+"all:""surrogate"" AND all:""gene expression"" AND all:""histology"" AND all:""valid inference""",arXiv API,0,no PPI-for-ST/histology paper found beyond unrelated imputation papers
+"all:""spatial"" AND all:""design-based"" AND all:""auxiliary"" AND all:""image"" AND all:""proxy"" AND all:""variance estimation"" AND all:""systematic""",arXiv API,0,nothing
+"all:Edgeworth AND all:""Student t"" AND all:""finite population"" AND all:skewness",arXiv API,0,nothing PPI-specific
+"all:""prediction-powered"" AND all:""skewness""",arXiv API,6,nothing PPI-specific
+"all:""prediction-powered"" AND all:""U-statistics"" AND all:""block""",arXiv API,0,nothing via arXiv phrase search
+"all:""functional data"" AND all:""survey sampling"" AND all:""model-assisted""",arXiv API,1,found 1204.6382 model-assisted bands for functional survey data (Cardot-Degras-Josserand)
+"all:""log-Gaussian Cox process"" AND all:""skewness"" AND all:""spatial average""",arXiv API,0,nothing
+"all:""prediction-powered"" AND all:""power tuning"" AND all:""heterogeneous""",arXiv API,0,"stratified PPI (2406.04291), PPI with imputed covariates & nonuniform sampling (2501.18577) - local/stratified lambda covered"
+"all:""prediction-powered"" AND all:""stratified""",arXiv API,6,"stratified PPI (2406.04291), PPI with imputed covariates & nonuniform sampling (2501.18577) - local/stratified lambda covered"
+"abs:""prediction-powered"" AND abs:""Poisson"" AND abs:""counts""",arXiv API,2,nothing
+"all:""spot swapping"" OR all:""transcript diffusion"" AND all:""spatial transcriptomics"" AND all:""deconvolution""",arXiv API,0,nothing
+"all:""Visium"" AND all:""Xenium"" AND all:""cross-platform"" AND all:""calibration"" AND all:""bias""",arXiv API,0,nothing
+"abs:""prediction-powered"" AND abs:""multi-fidelity""",arXiv API,2,nothing
+"abs:""histology"" AND abs:""gene expression"" AND abs:""confidence"" AND abs:""coverage"" AND abs:""donors""",arXiv API,0,no PPI-for-ST/histology paper found beyond unrelated imputation papers
+marked point pattern misclassified marks classifier-predicted cell types cross-K bias correction validation subset,web_search,9,"P6 marks: K/cross-K/mark-weighted K literature (2409.08809, 1306.1028, 2207.09931); no PPI or validation-subset correction for classifier marks found"
+semi-supervised mean estimation spatial random field dependent data prediction-powered GP unlabeled covariates,web_search,9,"B filter/semi-sup spatial: generic semi-supervised/PPI (2511.08303, 2604.05446, 2402.18921); no random-field-specific control-variate theory found"
+prediction-powered inference functional data curves simultaneous confidence band surrogate predictions,web_search,9,"D curve: functional bands (Degras, conformal bands) found; no PPI-for-curves; model-assisted functional survey bands exist (1204.6382)"
+skewness-corrected confidence interval few clusters difference estimator cluster sampling Edgeworth Johnson modified t,web_search,9,R reference distribution: Johnson 1978 / Hall transformed-t / Edgeworth classical; nothing PPI- or random-field-specific
+Wang Huo Peng Zou prediction-powered U-statistics block labelling spatial,web_search,9,P6 U-stat: found Zou et al. 2605.11638 Learning U-statistics with active inference; Shirota design-based spatial PPI (2608.10356); PPITSAS 2610.08715

@@ -1,0 +1,82 @@
+query,source,date,n_results_screened,new_close_papers
+"all:""prediction-powered inference"" AND all:selection",arxiv,2026-10-24,11,Shirota 2608.10356 (selection from finite library)
+"abs:""prediction-powered inference"" AND (abs:""multiple predictors"" OR abs:""multiple models"" OR abs:ensemble)",arxiv,2026-10-24,3,AM-PPI 2605.08429
+prediction-powered inference choosing among multiple machine learning predictors valid confidence interval,openalex,2026-10-24,12,MOE-PPI 2604.27892; Multi-Source PPI 2606.21232
+prediction-powered inference model selection winner's curse labeled data,openalex,2026-10-24,12,
+"abs:""prediction-powered"" AND abs:""cross-fitting"" AND abs:cluster",arxiv,2026-10-24,0,
+prediction-powered inference stacking multiple foundation models,openalex,2026-10-24,12,
+"abs:""semi-supervised"" AND abs:""multiple"" AND abs:""black-box"" AND abs:""inference"" AND abs:""predictions""",arxiv,2026-10-24,1,SADA 2509.21707
+semi-supervised inference multiple black-box predictors combination efficient estimator,openalex,2026-10-24,12,
+model-assisted survey estimation lasso GREG variable selection auxiliary variables,crossref,2026-10-24,12,
+model calibration estimator model selection survey sampling many auxiliary variables,crossref,2026-10-24,12,
+"abs:""model-assisted"" AND abs:""survey"" AND (abs:lasso OR abs:""variable selection"") AND abs:regression",arxiv,2026-10-24,2,
+McConville Breidt Lee Moisen model-assisted survey regression estimation with the lasso,crossref,2026-10-24,0,
+post-selection inference model-assisted estimator survey regression working model selection,crossref,2026-10-24,0,
+"abs:""survey"" AND abs:""model-assisted"" AND abs:""machine learning"" AND abs:""cross-fitting""",arxiv,2026-10-24,2,
+model averaging survey sampling regression estimator weights super learner,crossref,2026-10-24,0,
+"abs:""difference estimator"" AND abs:""survey sampling"" AND abs:""model selection""",arxiv,2026-10-24,0,
+"abs:""cluster sampling"" AND abs:""few clusters"" AND abs:""model-assisted""",arxiv,2026-10-24,0,
+"abs:""few clusters"" AND abs:""cluster-robust"" AND abs:""model selection"" AND abs:inference",arxiv,2026-10-24,0,
+"abs:""stacking"" AND abs:""semi-supervised"" AND abs:inference AND abs:""unlabeled""",arxiv,2026-10-24,0,
+"abs:""post-selection"" AND abs:""prediction-powered""",arxiv,2026-10-24,0,
+"abs:""selective inference"" AND abs:""prediction-powered""",arxiv,2026-10-24,1,
+"abs:""choice of predictor"" AND abs:""prediction-powered inference"" AND abs:""labeled""",arxiv,2026-10-24,0,
+"abs:""pathology foundation models"" AND abs:""spatial transcriptomics"" AND abs:""prediction-powered""",arxiv,2026-10-24,0,
+"abs:""foundation models"" AND abs:""gene expression"" AND abs:""histology"" AND abs:""confidence"" AND abs:""inference""",arxiv,2026-10-24,0,
+all:prediction-powered inference LLM judges multiple judges ensemble confidence interval,arxiv,2026-10-24,12,
+all:prediction-powered inference cluster dependence few clusters small sample coverage,arxiv,2026-10-24,12,Broska-Howes 2610.09601 (known prior art)
+all:cross-prediction-powered inference selection of predictor hyperparameter tuning labeled data,arxiv,2026-10-24,12,
+all:multiply robust estimation survey sampling multiple working models model-assisted,arxiv,2026-10-24,12,
+all:conformal prediction model selection valid coverage selecting among multiple models calibration data,arxiv,2026-10-24,12,Liang-Zhu-Barber 2408.07066; Hegazy et al 2506.20173 (conformal analogues)
+all:confidence interval after selecting the best of K estimators minimum variance estimator selection coverage,arxiv,2026-10-24,12,
+all:stacking prediction-powered inference,arxiv,2026-10-24,12,Multi-Source PPI 2606.21232 (repeat)
+all:semi-supervised inference model averaging prediction multiple imputation models efficient,arxiv,2026-10-24,12,
+all:cluster-robust inference few treated clusters wild bootstrap selection of specification,arxiv,2026-10-24,12,
+all:leave-one-cluster-out cross-validation model selection valid inference clustered data,arxiv,2026-10-24,12,
+all:two-stage cluster sampling model-assisted estimator auxiliary predictions few primary sampling units,arxiv,2026-10-24,12,
+all:histology gene expression prediction foundation models comparison uncertainty quantification inference spatial transcriptomics,arxiv,2026-10-24,12,
+all:surrogate outcomes AI predictions multiple surrogates efficient inference labeled unlabeled combine,arxiv,2026-10-24,12,
+all:ensemble of predictors semi-supervised M-estimation efficiency best predictor guarantee,arxiv,2026-10-24,12,
+all:prediction-powered ranking of large language models,arxiv,2026-10-24,12,
+all:label-free model selection unlabeled data choose best predictor then valid inference labeled subset,arxiv,2026-10-24,12,
+all:prediction-powered inference hyperparameter selection double dipping validity of confidence interval,arxiv,2026-10-24,12,
+all:optimal linear combination of estimators known variance Stein shrinkage estimator combining unbiased estimators labeled unlabeled,arxiv,2026-10-24,12,
+all:post-selection inference clustered data cluster bootstrap model selection few clusters coverage,arxiv,2026-10-24,12,
+all:small-sample prediction-powered inference t-distribution degrees of freedom coverage bootstrap,arxiv,2026-10-24,12,
+all:model-assisted estimation machine learning cross-fitting survey sampling difference estimator multiple models super learner,arxiv,2026-10-24,12,
+all:multiple prediction models design-based inference finite population mean calibration estimator which model to use,arxiv,2026-10-24,12,
+all:calibration estimator machine learning predictions as auxiliary variable model calibration survey cross-validation selection,arxiv,2026-10-24,12,
+all:prediction-powered inference multiple covariates selection high-dimensional PPI lasso variable selection,arxiv,2026-10-24,12,
+all:cluster-level cross-fitting prediction-powered inference donors patients,arxiv,2026-10-24,12,
+all:simultaneous confidence intervals over a menu of predictors max-t PPI,arxiv,2026-10-24,12,
+cites:W7159602570 (Prediction-powered Inference by Mixture ),openalex,2026-10-24,0,
+cites:W7165653351 (Multi-Source Prediction-Powered Inferenc),openalex,2026-10-24,0,
+cites:W7147676018 (Multiple-Prediction-Powered Inference),openalex,2026-10-24,0,
+cites:W7202247532 (Conditional validity of prediction-power),openalex,2026-10-24,0,
+cites:W4393853362 (Cross-Prediction-Powered Inference),openalex,2026-10-24,0,
+all:prediction-powered inference clustered data multiple predictors weights cluster-robust,arxiv,2026-10-24,12,
+all:semi-supervised inference clustered correlated data multiple prediction models combination,arxiv,2026-10-24,12,
+all:data-driven choice of predictor prediction-powered inference coverage loss selection,arxiv,2026-10-24,12,none new (MOE-PPI repeat)
+all:Frequentist model averaging confidence interval coverage clustered few groups,arxiv,2026-10-24,12,
+all:another look at inference after prediction,arxiv,2026-10-24,12,
+all:prediction-powered inference hypothesis testing multiple predictors Bonferroni data-driven selection e-values,arxiv,2026-10-24,12,
+all:stacking cluster-level cross-validation weights grouped data hierarchical,arxiv,2026-10-24,12,
+all:selective inference winner estimated variance minimum of estimators coverage correction PPI++ power tuning small sample,arxiv,2026-10-24,12,
+all:Prediction-powered inference small number of labeled clusters finite-sample guarantee,arxiv,2026-10-24,12,
+all:foundation model embeddings spatial transcriptomics label-efficient inference few slides uncertainty,arxiv,2026-10-24,12,
+prediction-powered inference multiple predictors model selection post-selection validity,web_search,2026-10-24,~8-10,AM-PPI 2605.08429; MultiPPI 2603.27414
+prediction-powered inference ensemble of multiple machine learning models combining predictions,web_search,2026-10-24,~8-10,none new
+PPI++ multiple predictors optimal combination weights arXiv,web_search,2026-10-24,~8-10,MultiPPI; AM-PPI (repeat)
+Shirota conditional validity PPI spatially dependent same-label selection fixed finite library,web_search,2026-10-24,~8-10,Shirota S3.2 read
+McConville Breidt Lee Moisen model-assisted survey regression estimation with the lasso,web_search,2026-10-24,~8-10,McConville 2017 (related)
+PPI selecting best predictor on labeled data invalidates CI sample splitting,web_search,2026-10-24,~8-10,none new
+valid confidence interval after selecting predictor PPI stability smallest interval same labeled data,web_search,2026-10-24,~8-10,Zrnic-Jordan 2011.09462 (tool)
+PPI foundation model gene expression spatial transcriptomics H&E histology donors clusters,web_search,2026-10-24,~8-10,none new
+model-assisted estimation forest inventory model selection bias design-based small clusters Mandallaz,web_search,2026-10-24,~8-10,none new (related forestry)
+Prediction-Powered Estimation: Unbiased Model-Assisted Estimation Journal of Official Statistics,web_search,2026-10-24,~8-10,Denis-Haddou PPE (related)
+Prediction-Powered Model Checking via Predictiveness Comparisons,web_search,2026-10-24,~8-10,none new (related)
+PPI selecting/choosing among candidate predictors overfitting selection bias CV grouped data,web_search,2026-10-24,~8-10,none new
+multiply robust estimation survey sampling multiple working models Chen Haziza,web_search,2026-10-24,~8-10,none new (background)
+design-based inference after model selection survey regression estimator post-selection,web_search,2026-10-24,~8-10,none new
+choosing LLM judge or proxy in PPI winner curse evaluation confidence intervals,web_search,2026-10-24,~8-10,PP-LUCB 2603.10400 (related)
+abstract/section reads of closest anchors (arXiv API id_list + arXiv HTML grep),arxiv,2026-10-24,~20 papers,

@@ -1,0 +1,44 @@
+query,source,date,n_results_screened,new_close_papers
+"all:""prediction-powered"" AND all:clusters AND all:coverage","arxiv_api (HTTP 429, 0 results)",2026-10-24,0,
+"all:""prediction-powered"" AND all:""pseudo-population""","arxiv_api (HTTP 429, 0 results)",2026-10-24,0,
+"all:""prediction-powered"" AND all:bootstrap","arxiv_api (HTTP 429, 0 results)",2026-10-24,0,
+pseudo-population bootstrap cluster sampling studentized,crossref,2026-10-24,8,Quatember book chapter (related)
+bootstrap-t generalized regression estimator finite population,crossref,2026-10-24,8,
+pseudo-population bootstrap two-stage sampling,crossref,2026-10-24,8,Mashreghi survey; Chen-Haziza-Mashreghi 2022 (related)
+bootstrap for finite population Gross median,crossref,2026-10-24,8,Mashreghi-Haziza-Leger 2016 (close)
+bootstrap finite populations Booth Butler Hall,crossref,2026-10-24,8,Booth-Butler-Hall 1994 (close)
+bootstrap rejective sampling Hajek,crossref,2026-10-24,8,Fuller-Legg-Li 2017 (related)
+bootstrap balanced sampling cube method variance,crossref,2026-10-24,8,Breidt-Chauvet 2011 (background)
+PPI bootstrap finite population studentized few clusters,web_search,2026-10-24,9,Kluger et al 2501.18577 PTD cluster bootstrap (related); Wang-Kim-Peng (close)
+prediction-powered bootstrap Zrnic confidence intervals,web_search,2026-10-24,9,Zrnic PPBoot (related)
+Mashreghi Haziza Leger survey of bootstrap pseudo-population,web_search,2026-10-24,9,
+design-based exact reference distribution few clusters randomization inference pseudo-outcomes,web_search,2026-10-24,9,Cameron-Gelbach-Miller / MacKinnon-Webb (related)
+PPI cluster-robust few clusters Broska Howes,web_search,2026-10-24,9,Broska-Howes (related)
+Chambers Dunstan estimator residuals auxiliary known all units bootstrap,web_search,2026-10-24,9,Lombardia 2003/2004 first seen (related->close)
+noninformative Bayesian finite population auxiliary Polya posterior,web_search,2026-10-24,9,Lazar-Meeden-Nelson (related)
+Gaussian prepivoting finite population causal inference Cohen Fogarty,web_search,2026-10-24,9,Cohen-Fogarty (close)
+PPI small number of labeled clusters finite-sample coverage,web_search,2026-10-24,9,
+Imbens Menzel causal bootstrap imputed potential outcomes covariates,web_search,2026-10-24,9,Imbens-Menzel (close)
+design-based PPI finite population sampling design simulation reference distribution,web_search,2026-10-24,9,"Mozer, Shirota (related)"
+rerandomization Mahalanobis rejective sampling bootstrap studentized pseudo-population,web_search,2026-10-24,9,
+Bayesian PPI posterior predictive finite population few labeled,web_search,2026-10-24,9,
+model-assisted survey bootstrap-t regression estimator small samples known auxiliary totals,web_search,2026-10-24,9,
+PPI is the Difference Estimator survey sampling roots,web_search,2026-10-24,9,
+Propensity Score Propagation design-based inference,web_search,2026-10-24,9,
+Shirota design-based PPI spatial finite-population,web_search,2026-10-24,9,
+few clusters bootstrap Edgeworth skewness cluster totals small number of PSUs,web_search,2026-10-24,9,
+two-phase sampling regression estimator bootstrap small second-phase sample,web_search,2026-10-24,9,
+double bootstrap calibration few clusters prepivoting Beran,web_search,2026-10-24,9,
+Chauvet bootstrap balanced sampling pseudo-population cube,web_search,2026-10-24,9,
+PPI small labeled sample t-distribution degrees of freedom coverage,web_search,2026-10-24,9,
+parametric bootstrap population from regression residuals studentized regression estimator few PSUs,web_search,2026-10-24,9,
+Wang Kim Peng bootstrap finite population studentized regression estimator,web_search,2026-10-24,9,Wang-Kim-Peng JRSSB (close)
+Lombardia Gonzalez-Manteiga bootstrapping Chambers-Dunstan,web_search,2026-10-24,9,Lombardia (close)
+Chambers Chandra random effect block bootstrap clustered,web_search,2026-10-24,9,Chambers-Chandra (close)
+Bayesian predictive survey inference cluster-level auxiliary all clusters,web_search,2026-10-24,9,
+Monte Carlo exact test design-based simulate sampling distribution fitted superpopulation few PSUs,web_search,2026-10-24,9,
+PPI exact finite-sample interval design-based SRSWOR permutation,web_search,2026-10-24,9,Wieczorek design-based conformal (related)
+noise ceiling few subjects bootstrap across subjects (neuroscience),web_search,2026-10-24,9,Schutt et al (background)
+conformal / PPI few clusters pseudo-outcomes second predictor synthetic labels calibrate critical value,web_search,2026-10-24,9,
+OpenAlex queries + forward citations,openalex,,0,NOT RUN: credentialed cell hung; no forward-citation search performed
+fetch_article_fulltext 10.48550/arXiv.2603.19160 (Mozer),crossref,2026-10-24,0,DOI not in Crossref; read via search excerpts

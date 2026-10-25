@@ -1,0 +1,59 @@
+query,source,date,n_results_screened,new_close_papers
+"all:""foundation models"" AND all:""spatial transcriptomics"" AND all:benchmark",arxiv,2026-10-24,8,0 (nothing relevant returned)
+"all:""statistical"" AND all:""significance"" AND all:""pathology foundation models"" AND all:benchmark",arxiv,2026-10-24,1,0 (nothing relevant returned)
+"all:""confidence intervals"" AND all:""pathology foundation models""",arxiv,2026-10-24,0,0 (nothing relevant returned)
+"all:HEST AND all:benchmark AND all:""gene expression"" AND all:histology",arxiv,2026-10-24,1,0 (nothing relevant returned)
+"all:""patient-level"" AND all:""cross-validation"" AND all:""gene expression prediction"" AND all:histology",arxiv,2026-10-24,0,0 (nothing relevant returned)
+"all:""ranking"" AND all:""foundation models"" AND all:""computational pathology"" AND all:""uncertainty""",arxiv,2026-10-24,1,0 (nothing relevant returned)
+pathology foundation models benchmark statistical significance rankings,arxiv,2026-10-24,8,0 (nothing relevant returned)
+benchmarking foundation models computational pathology confidence intervals bootstrap,arxiv,2026-10-24,8,0 (nothing relevant returned)
+HEST-Bench spatial transcriptomics encoder evaluation patient-level,arxiv,2026-10-24,8,0 (nothing relevant returned)
+THUNDER benchmark foundation models digital pathology,arxiv,2026-10-24,8,0 (nothing relevant returned)
+eva framework evaluating foundation models pathology,arxiv,2026-10-24,8,0 (nothing relevant returned)
+Patho-Bench pathology foundation models benchmark,arxiv,2026-10-24,8,0 (nothing relevant returned)
+multiple comparisons testing many foundation models few patients pathology benchmark,arxiv,2026-10-24,8,0 (nothing relevant returned)
+pathology foundation models benchmark statistical significance,crossref,2026-10-24,8,0 (nothing relevant returned)
+benchmark spatial transcriptomics prediction histology foundation models confidence intervals,crossref,2026-10-24,8,0 (nothing relevant returned)
+Cross-validation: what does it estimate and how well does it do it,crossref,2026-10-24,8,0 (nothing relevant returned)
+Inference for the generalization error,crossref,2026-10-24,8,0 (nothing relevant returned)
+Variance accounting in machine learning benchmarks,crossref,2026-10-24,8,0 (nothing relevant returned)
+Statistical uncertainty quantification aggregate performance metrics benchmarks,crossref,2026-10-24,8,0 (nothing relevant returned)
+clustered bootstrap confidence intervals comparing machine learning models patients,crossref,2026-10-24,8,0 (nothing relevant returned)
+pathology foundation model comparison statistical inference few patients confidence intervals ranking uncertainty,web_search,2026-10-24,9,Benchmarking PFM breast survival (2604.24679); PathBench (2505.20202); ELF (2508.16085); Longjohn (2501.04234)
+STP-BENCH virtual spatial transcriptomics histopathology unified benchmark,web_search,2026-10-24,9,STP-Bench (2609.05956)
+HEST-Bench encoder ranking Pearson patient-level CV statistical significance,web_search,2026-10-24,9,HEST-1k (2406.16192); Meta-encoder Nat Commun
+Longjohn statistical uncertainty aggregate performance metrics ML benchmarks,web_search,2026-10-24,10,Longjohn et al. 2501.04234 (close)
+inference on generalization error CV confidence intervals Fischer Schulz-Kumpel,web_search,2026-10-24,10,Schulz-Kumpel et al. 2409.18836; Bayle 2020 (2007.12671)
+clustered data model comparison cross-validation patient-level CI difference grouped,web_search,2026-10-24,9,patient-cluster bootstrap practice papers
+Bates Hastie Tibshirani cross-validation what does it estimate nested CV,web_search,2026-10-24,9,Bates et al. 2104.00673 (close)
+leave-one-group-out CV inference CI few groups variance estimator,web_search,2026-10-24,9,Sivula/Vehtari 2008.10296 note on LOGO (related)
+spatial transcriptomics histology benchmark noise ceiling number of patients ranking unstable,web_search,2026-10-24,9,SpaRED; Nat Commun translational benchmark
+pathology foundation model comparison mixed-effects random effects patients slides,web_search,2026-10-24,9,TITAN GLMM practice
+PFM benchmark HEST-Benchmark statistical tests differences small number of patients,web_search,2026-10-24,10,Bareja et al. Nat Commun benchmark; HERO/Histoboard
+Schutt Kriegeskorte statistical inference representational geometries crossed bootstrap,web_search,2026-10-24,8,Schutt et al. eLife 2023 / 2112.09200 (close)
+Bayesian hierarchical correlated t-test Corani Benavoli multiple data sets,web_search,2026-10-24,9,Corani et al. 1609.08905; Benavoli tutorial (close)
+Bouthillier accounting for variance ML benchmarks,web_search,2026-10-24,9,Bouthillier 2103.03098
+Miller adding error bars to evals clustered SE paired differences power analysis,web_search,2026-10-24,9,Miller 2411.00640 (close)
+Rabinowicz Rosset cross-validation for correlated data,web_search,2026-10-24,9,Rabinowicz & Rosset 1904.02438
+few clusters wild cluster bootstrap CR2 Bell McCaffrey comparing predictive accuracy Diebold-Mariano panel,web_search,2026-10-24,9,Cameron-Miller; MacKinnon-Webb
+Histoboard leaderboard pathology foundation models ranking robustness,web_search,2026-10-24,9,HERO 2609.35943 (Histoboard rank aggregation)
+rethinking evaluation histology gene expression prediction per-gene Pearson patient variability,web_search,2026-10-24,10,none new
+PFM benchmark ranking stability bootstrap over patients rank CIs,web_search,2026-10-24,10,none new close
+Wiesenfarth challengeR bootstrap ranking stability; Maier-Hein rankings,web_search,2026-10-24,9,Wiesenfarth 2021
+Varoquaux CV failure small sample large error bars; Varoquaux-Cheplygina,web_search,2026-10-24,9,Varoquaux 1706.07581; 2103.10292
+statistical power sample size comparing ML models CV number of subjects neuroimaging,web_search,2026-10-24,9,none new close
+internal-external CV random-effects meta-analysis prediction interval Debray Riley Snell,web_search,2026-10-24,9,Debray/Riley/Snell IECV (close)
+Hartung-Knapp-Sidik-Jonkman few studies coverage,web_search,2026-10-24,10,Rover-Knapp-Friede 2015
+comparing two prediction models clustered data AUC difference cluster bootstrap multicenter,web_search,2026-10-24,10,none new
+pseudoreplication spatial transcriptomics benchmarking donors histology prediction evaluation,web_search,2026-10-24,10,none new
+statistical framework evaluating histology-based gene expression prediction uncertainty across slides hierarchical bootstrap,web_search,2026-10-24,10,"SpaFactor 2609.28563 (related, hierarchical paired bootstrap)"
+HEST-Benchmark fold variance SD across patients differences within noise,web_search,2026-10-24,10,none new
+CLT cross-validation grouped data leave-one-group-out CI 2025,web_search,2026-10-24,10,Split-sample CLT 2511.04957
+paired comparison two learning algorithms CV valid test Austern Zhou,web_search,2026-10-24,9,Bayle-Janson-Mackey 2508.04409 (close/related)
+model-assisted survey sampling ML evaluation design-based test set cluster sample,web_search,2026-10-24,9,Wieczorek K-fold CV complex surveys; Dagdoug-Haziza
+number of patients needed benchmark ST histology power analysis donors rank encoders,web_search,2026-10-24,9,none new
+comparing dependent correlations Zou Steiger overlapping correlations,web_search,2026-10-24,9,Zou 2007; cocor
+Benavoli post-hoc mean-ranks; Demsar multiple tasks benchmark inference,web_search,2026-10-24,9,Benavoli 2016
+encoder rankings unstable HEST rank reversal bootstrap significance 2026,web_search,2026-10-24,9,none new
+generalizability theory variance components benchmark reliability D-study,web_search,2026-10-24,9,none new
+noise ceiling model comparison few subjects random-effects inference Brain-Score,web_search,2026-10-24,9,Schutt (again)

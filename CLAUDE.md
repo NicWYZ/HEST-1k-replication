@@ -2,7 +2,7 @@
 
 **Whose file this is.** This is the operating file of the research session that works on branch `claude-science`. That session is an independent investigator. It had no part in the work recorded here and is not asked to continue anyone's plan. It studies the project as it stands, judges it on its merits, plans its own work and carries it out. This file holds the project's current state, how the record is kept, the standards of evidence and Nicolas's preferences. The record itself is in `docs/`. The session keeps this file and `docs/` current as it works, so that a fresh session can pick the project up from the repository alone.
 
-**Last updated:** 2026-10-24 (prepared from a cloud session before the research session starts; branch `claude-science` opened from `main` at commit `0640c615`)
+**Last updated:** 2026-10-25 (the claude-science session on Nicolas's Mac, after the direction scan; round 9 in preparation)
 
 The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at UNC Chapel Hill, in Dr. Hongtu Zhu's lab and supervised by Dr. Daiwei (David) Zhang. The advisors want methods, not applied analysis, with a submittable paper by spring 2027. The paper in preparation is "Labelling budgets for prediction-powered inference with clustered data". Labels are expensive and machine-learning predictions are free. Units come in clusters, such as donors in spatial transcriptomics or states in census data, and only a few clusters, often 4 to 16 of 15 to 50, can be labelled. The questions are how to spend a labelling budget (whole clusters, or a few units in every cluster), which clusters to label, how to make valid inference with prediction-powered inference (PPI) at so few clusters, and how to build prediction sets for a new cluster. The applications are HEST-1k spatial transcriptomics (pathology foundation-model predictions of gene expression) and ACS PUMS 2018 income by state.
 
@@ -51,13 +51,16 @@ so the round-5 estimator has a design bias of $\{(n/G)/(1 - n/G)\}\,\text{Cov}(c
 | D3 | Contacting anyone outside the project (authors such as GHCP's, advisors, collaborators) | no contact |
 | D4 | How this branch reaches `main` | it stays on its branch |
 
-- **Next action.** The session plans its own work, opening round 9 through `/project-state-keeping` when it is ready.
+- **Round 9 is in preparation** (`docs/round09/README.md`). The direction scan (`docs/round09/00_prep/round09_direction_scan.md`, 25 October) checked 14 candidate directions for a methodological core, each with an independent novelty-check subagent, plus four proposer subagents and an open-problem mining pass. None survived with a substantive open remainder. Its data diagnostics show that on Visium a shared depth factor carries 0.650 of between-donor variance on CCRCC, and that out of sample donor-level prediction does not beat a constant for the median gene, while composition-marker genes on lung reach a leave-one-donor-out R^2 near 0.9. Logs and results are in `results/round9/`.
+- **Next action.** Nicolas chooses among options A to D of the scan's section 4 (D1, possibly with David). The session then opens round 9 through `/project-state-keeping` around the chosen option. The novelty checker on hierarchical conformal widths (HCPWIDTH) is parked on an approval card and its verdict is not in the scan.
 
 ## 3. Steps
 
 Steps of the current work, with stable IDs, checked when done with a one-line note (date, commit, what was done, key numbers). They move to the progress log when the round closes.
 
 - [x] **S0 Branch prepared.** 24 October, cloud session. Opened `claude-science` from `main`, wrote this file, installed the state check of `/project-state-keeping`, and removed the documents that governed the earlier coordinated sessions.
+- [x] **S1 Direction scan.** 24 to 25 October, local session on Nicolas's Mac linked to Longleaf. Fourteen directions checked by independent subagents (nine mostly taken, five partly open but thin), four proposers, one open-problem miner, cluster-level diagnostics (Longleaf jobs 8eff7a70 and 486ce179) and a between-donor head test with predictions scored (P1 and P4 held, P2 and P3 refuted). Report `docs/round09/00_prep/round09_direction_scan.md`. No direction left standing.
+- [ ] **S2 Open round 9** through `/project-state-keeping` once Nicolas has chosen among options A to D of the scan's section 4.
 
 ## 4. Working preferences (Nicolas's)
 
@@ -69,6 +72,7 @@ Steps of the current work, with stable IDs, checked when done with a one-line no
 - **Project state.** The state and context of the project live in the repository, not in any session's memory, so a fresh session can pick it up and get up to speed. The record is kept with `/project-state-keeping` (24 October). `docs/` is filed chronologically by round, interval and track, with each round's masterplan at the round level.
 - **Literature.** Papers a session cannot retrieve go to Nicolas as one list of at most 10, each with a link through UNC Chapel Hill's library proxy (`https://login.libproxy.lib.unc.edu/login?url=https://doi.org/<DOI>`) or to a free version, and he supplies them (13 October).
 - **Decisions.** He makes the decisions at his level and wants to be told which need David or Dr. Zhu.
+- **Autonomy and novelty (24 October).** The claude-science session explores directions, derives and validates results on its own, and reports to him only at significant roadblocks or significant results. The end goal is a statistics-forward methodological paper in spatial transcriptomics. A literature check for novelty is a hard rule, run by subagents continually while the work goes on, because the model is prone to rediscovering results it has absorbed from its training data.
 
 ## 5. Standards of evidence
 

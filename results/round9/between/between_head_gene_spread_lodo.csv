@@ -1,0 +1,10 @@
+task,encoder,n_genes,frac_pooled_beats_constant,frac_gain_over_0p1,p90_R2_pooled,frac_shrink_beats_pooled
+CCRCC,hoptimus0,50,0.58,0.38,0.462,0.02
+CCRCC,resnet50,50,0.46,0.28,0.376,0.0
+CCRCC,uni_v2,50,0.64,0.42,0.46,0.02
+INDIANA_KIDNEY,hoptimus0,50,0.6,0.38,0.209,0.12
+INDIANA_KIDNEY,resnet50,50,0.48,0.28,0.145,0.1
+INDIANA_KIDNEY,uni_v2,50,0.64,0.4,0.249,0.08
+LUNG_XENIUM,hoptimus0,343,0.63,0.507,0.56,0.061
+LUNG_XENIUM,resnet50,343,0.612,0.478,0.368,0.155
+LUNG_XENIUM,uni_v2,343,0.627,0.522,0.548,0.038
