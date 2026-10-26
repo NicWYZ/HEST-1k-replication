@@ -6,7 +6,9 @@ What the project found at each step, what changed because of it, and which files
 
 ---
 
-## Round 9 (in preparation, from 24 October 2026, branch `claude-science`)
+## Round 9 (from 24 October 2026; preparation on branch `claude-science`, tracks on their own branches)
+
+**26 October. Round 9 opens with two independent tracks.** Nicolas deferred the design and empirical paper built on the preparation's results (option A) and asked for two separate sessions, one on valid inference with few labelled clusters under skew (option B) and one on a fresh direction from the data in hand (option C). The claude-science session wrote the masterplan and a brief for each track, and cut branches `claude-science-fewcluster` and `claude-science-newtopic` from the commit that carries them, each with its own `CLAUDE.md` for an independent session that plans its own work and reports only to Nicolas. Files are `docs/round09/masterplan.md`, `docs/round09/i01/fewcluster/round09_fewcluster_brief.md` and `docs/round09/i01/newtopic/round09_newtopic_brief.md`.
 
 **26 October, close of the session's exploration. The probe design is mostly taken.** After Nicolas approved its network access, the PROBE checker found the design classical (two-phase sampling, Hidiroglou 2001; labels spread over every cluster, Broska and Howes; probe-then-label PPI, Kluger and Bates). No direction examined in round 9's preparation leaves a substantive open methodological core; the empirical account of donor-level information in ST stands. Recorded in `docs/round09/00_prep/round09_probe_novelty.md`.
 

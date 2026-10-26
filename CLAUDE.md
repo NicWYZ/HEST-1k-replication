@@ -2,7 +2,7 @@
 
 **Whose file this is.** This is the operating file of the research session that works on branch `claude-science`. That session is an independent investigator. It had no part in the work recorded here and is not asked to continue anyone's plan. It studies the project as it stands, judges it on its merits, plans its own work and carries it out. This file holds the project's current state, how the record is kept, the standards of evidence and Nicolas's preferences. The record itself is in `docs/`. The session keeps this file and `docs/` current as it works, so that a fresh session can pick the project up from the repository alone.
 
-**Last updated:** 2026-10-25 (the claude-science session on Nicolas's Mac, after the direction scan; round 9 in preparation)
+**Last updated:** 2026-10-26 (the claude-science session on Nicolas's Mac; round 9 opened with two tracks on their own branches)
 
 The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at UNC Chapel Hill, in Dr. Hongtu Zhu's lab and supervised by Dr. Daiwei (David) Zhang. The advisors want methods, not applied analysis, with a submittable paper by spring 2027. The paper in preparation is "Labelling budgets for prediction-powered inference with clustered data". Labels are expensive and machine-learning predictions are free. Units come in clusters, such as donors in spatial transcriptomics or states in census data, and only a few clusters, often 4 to 16 of 15 to 50, can be labelled. The questions are how to spend a labelling budget (whole clusters, or a few units in every cluster), which clusters to label, how to make valid inference with prediction-powered inference (PPI) at so few clusters, and how to build prediction sets for a new cluster. The applications are HEST-1k spatial transcriptomics (pathology foundation-model predictions of gene expression) and ACS PUMS 2018 income by state.
 
@@ -23,7 +23,7 @@ The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at U
 
 **Where commits go.** Commit to `claude-science` only. Do not commit to `main`, rebase, squash, amend or force-push. Nicolas decides later how the branch reaches `main`.
 
-## 2. Current state (24 October 2026)
+## 2. Current state (26 October 2026)
 
 - **Round 8 is open** (`docs/round08/masterplan.md`, `docs/round08/README.md`). Its one piece of work, a check of every claim of the PPI paper against the survey-sampling literature and newer PPI work, is done. Its report is the positioning note, `docs/round08/i01/positioning/round08_positioning_note.md`, the current account of what the paper can and cannot claim. Read it in full before anything else. Its search logs and a numerical check are in `results/round8/positioning/`. No other work is running, and nothing has been started since the note.
 - **Where the paper stands.** Nicolas's summary is that every result the project has produced on the PPI paper has turned out, on checking against the literature, to be someone else's. The note's verdicts are these.
@@ -46,13 +46,17 @@ so the round-5 estimator has a design bias of $\{(n/G)/(1 - n/G)\}\,\text{Cov}(c
 
 | # | Decision | Default |
 |---|---|---|
-| D1 | Which venue, and which result the paper leads with | open |
+| D1 | Which venue, and which result the paper leads with | open until a round 9 track produces a candidate; option A deferred on 26 October |
 | D2 | Whether the prediction-set half stays in the PPI paper | it stays until decided |
 | D3 | Contacting anyone outside the project (authors such as GHCP's, advisors, collaborators) | no contact |
-| D4 | How this branch reaches `main` | it stays on its branch |
+| D4 | How this branch and the round 9 track branches reach `main` | each stays on its branch |
+| D5 | Whether earlier rounds' estimands, on log1p of unnormalized counts, are redefined | keep them and state that they partly measure sequencing depth |
+| D6 | Whether round 8 is closed formally (needs a ruling on its positioning note) | it stays open |
 
-- **Round 9 is in preparation** (`docs/round09/README.md`). The direction scan (`docs/round09/00_prep/round09_direction_scan.md`, 25 October) checked 14 candidate directions for a methodological core, each with an independent novelty-check subagent, plus four proposer subagents and an open-problem mining pass. None survived with a substantive open remainder. Its data diagnostics show that on Visium a shared depth factor carries 0.650 of between-donor variance on CCRCC, and that out of sample donor-level prediction does not beat a constant for the median gene, while composition-marker genes on lung reach a leave-one-donor-out R^2 near 0.9. Logs and results are in `results/round9/`.
-- **Next action.** Nicolas left the choice of direction to the session (25 October). The studentized prediction-set idea is mostly taken and buys little width (`docs/round09/00_prep/round09_stud_and_depth.md`); the probe-then-label design works on CCRCC with a take-all stratum but is classical two-phase sampling (`docs/round09/00_prep/round09_probe_designs.md`). Its novelty check found it mostly taken (`docs/round09/00_prep/round09_probe_novelty.md`). The open choice is between a design and empirical paper built on these findings and an attack on few-cluster coverage (option B). The last checker (HCPWIDTH) finished after Nicolas's approval and is recorded in `docs/round09/00_prep/round09_direction_scan_addendum.md` (partly open, bearing on option C).
+- **Round 9 is open** (`docs/round09/masterplan.md`, `docs/round09/README.md`). Its preparation on this branch (`docs/round09/00_prep/`) checked about twenty candidate directions for a methodological core with independent subagents, and none survived with a substantive open remainder (verdicts in `results/round9/scan/scan_structured_results.json`). It found where donor-level information lies in spatial transcriptomics. A shared technical factor carries 0.650 of between-donor variance on CCRCC, histology predictions carry little donor-level information for most genes, and one technical-outlier donor breaks few-cluster intervals and hierarchical conformal coverage, which a probe of three spots per donor reveals (`round09_stud_and_depth.md`, `round09_normalization_check.md`, `round09_probe_designs.md`).
+- **The two tracks run elsewhere.** On 26 October Nicolas deferred option A (a design and empirical paper on these results) and asked for two separate, independent sessions. Track `fewcluster` (option B, valid inference with few labelled clusters under skew) works on branch `claude-science-fewcluster`, and track `newtopic` (option C, a fresh direction from the data in hand) on branch `claude-science-newtopic`. Each was cut from this branch at the commit that adds the masterplan and the briefs (`docs/round09/i01/<track>/round09_<track>_brief.md`), has its own `CLAUDE.md`, plans its own work and reports only to Nicolas. They do not report to this branch's session, and this session does not edit their branches.
+- **This branch** holds round 9's preparation and option A's material. Nothing is running here.
+- **Next action.** None on this branch until Nicolas asks. If he takes up option A, the starting point is `docs/round09/00_prep/round09_probe_designs.md`.
 
 ## 3. Steps
 
@@ -69,7 +73,7 @@ Steps of the current work, with stable IDs, checked when done with a one-line no
 - [x] **S5 Novelty check of PROBE.** 26 October, after Nicolas's network approval. Mostly taken. `docs/round09/00_prep/round09_probe_novelty.md`.
 - [x] **S5b Probe feasibility.** 26 October, Longleaf job 74cc77e6. A three-spot probe per donor narrows the CCRCC interval to 0.630 of the plain mean's width, but every regression interval under-covers (0.739 to 0.892 at nominal 0.90). `results/round9/probe/predictions_scored.md`.
 - [x] **S5c Take-all stratum from the probe.** 26 October, Longleaf job 8f4d6844. CCRCC coverage 0.825 to 0.885 at 0.779 of the width; neutral elsewhere. `docs/round09/00_prep/round09_probe_designs.md`.
-- [ ] **S6 Open round 9** through `/project-state-keeping` once a direction stands.
+- [x] **S6 Round 9 opened.** 26 October. Nicolas deferred option A and asked for two independent sessions on options B and C. Masterplan, two briefs, and branches `claude-science-fewcluster` and `claude-science-newtopic`, each with its own `CLAUDE.md`.
 
 ## 4. Working preferences (Nicolas's)
 
@@ -82,6 +86,7 @@ Steps of the current work, with stable IDs, checked when done with a one-line no
 - **Literature.** Papers a session cannot retrieve go to Nicolas as one list of at most 10, each with a link through UNC Chapel Hill's library proxy (`https://login.libproxy.lib.unc.edu/login?url=https://doi.org/<DOI>`) or to a free version, and he supplies them (13 October).
 - **Decisions.** He makes the decisions at his level and wants to be told which need David or Dr. Zhu.
 - **Autonomy and novelty (24 October).** The claude-science session explores directions, derives and validates results on its own, and reports to him only at significant roadblocks or significant results. The end goal is a statistics-forward methodological paper in spatial transcriptomics. A literature check for novelty is a hard rule, run by subagents continually while the work goes on, because the model is prone to rediscovering results it has absorbed from its training data.
+- **Two independent tracks (26 October).** He deferred option A, because it rests on results already in hand, and asked that the project be made ready for two separate sessions, one on option B and one on option C. The two sessions are independent investigators. They are not overseen by and do not report back to the claude-science session.
 - **Choice of direction (25 October).** After the direction scan he left the choice to the session. It may pursue the prediction-set topic, few-cluster inference or a fresh topic based on the data in hand, and asks him only when it needs access that is gated by his approval.
 
 ## 5. Standards of evidence
