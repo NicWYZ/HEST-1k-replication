@@ -56,3 +56,30 @@ df = pd.DataFrame(rows)
 df.to_csv(f'{OUT}/s3_frontier_exact.csv', index=False)
 print(df[df.alpha == 0.10][['G', 'n', 'k_star', 'k_star_one_block', 'kappa_star', 'Lambda_star', 'rest_bound',
                             'frac_gauss_within', 'kappa_sup', 'Lambda_sup', 'frac_gauss_within_sup', 'median_gauss_kappa']].to_string(index=False))
+
+# ---------- required number of labelled clusters for a defended bound Lambda (residual SDs)
+# smallest n such that Lambda < Lambda_sup(n, G, alpha), i.e. kappa0 = Lambda^2/(G-1) < kappa2(k*(n) - 1),
+# with the R term checked (R <= alpha) so that the possibility theorem applies.
+req = []
+for G in (15, 24, 25, 51):
+    tot_cache = {}
+    for alpha in (0.05, 0.10):
+        for Lam in (1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5):
+            kap0 = Lam ** 2 / (G - 1)
+            nreq = None
+            for n in range(2, G):
+                tot = C(G, n)
+                pi = {k: (C(G - k, n) + C(k, n)) / tot for k in range(1, G // 2 + 1)}
+                ks = next((k for k in pi if pi[k] <= alpha), None)
+                if ks is None:
+                    continue
+                rest = max((G // m) * C(m, n) + C(G % m, n) for m in range(1, (G + 1) // 2)) / tot
+                ksup = float('inf') if ks == 1 else (1 - (ks - 1) / G) / (ks - 1)  # k* = 1: every population admissible
+                if kap0 < ksup and rest <= alpha:
+                    nreq = n
+                    break
+            req.append(dict(G=G, alpha=alpha, Lambda=Lam, kappa0=kap0, n_required=nreq,
+                            frac_required=(nreq / G) if nreq else float('nan')))
+rq = pd.DataFrame(req)
+rq.to_csv(f'{OUT}/s3_required_n.csv', index=False)
+print(rq[rq.alpha == 0.10].pivot(index='Lambda', columns='G', values='n_required').to_string())
