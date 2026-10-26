@@ -25,4 +25,4 @@ Each track's session sets its own milestones and records them here on its branch
 
 ## Results
 
-`results/round9/scan/` (search logs and verdicts), `results/round9/diagnostics/` (cluster-level diagnostics, aggregates only), `results/round9/between/` (the between-donor head test), `results/round9/stud/`, `results/round9/norm/` and `results/round9/probe/` (the preparation's later runs, each with predictions written before the run and scored after). Each track writes to `results/round9/<track>/`.
+`results/round9/scan/` (search logs and verdicts), `results/round9/diagnostics/` (cluster-level diagnostics, aggregates only), `results/round9/between/` (the between-donor head test), `results/round9/stud/`, `results/round9/norm/` and `results/round9/probe/` (the preparation's later runs, each with predictions written before the run and scored after). Each track writes to `results/round9/<track>/`. Track newtopic's search logs and verdicts are in `results/round9/newtopic/` (one queries and one candidates CSV per subagent, and `newtopic_structured_results.json`).
