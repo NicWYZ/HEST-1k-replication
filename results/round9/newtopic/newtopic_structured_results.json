@@ -1,0 +1,886 @@
+[
+ {
+  "slug": "PROPOSE_FORECAST",
+  "name": "Forecast",
+  "frame_id": "3025b499-6dc6-4360-adb8-9f675f3152ce",
+  "deviations": [
+   "n_queries_total=33, equal to the row count of propose_FORECAST_queries.csv (A3, B3, C3, D8, E4, F3, G3, H3, I3). An earlier internal tally of 36 was wrong.",
+   "Every arXiv API call failed with HTTP 429 (3 attempts spaced 6 s, plus 2 early attempts); none count as screened queries. Semantic Scholar was not used and no forward-citation search was run. OpenAlex not used per instructions.",
+   "13 of the 33 queries were Crossref title searches (ideas D2, B1, E2, F2, H2, I2, G2); Crossref returns titles only with low precision, so for those ideas the 3-query minimum rests partly on weak searches and 'found_in_print' is provisional.",
+   "Papers were read mostly at abstract or search-excerpt level. Only Tipton arXiv:2610.18781 was fetched as HTML and skimmed (abstract, scope, limitations, section list; proofs not read). The two-scale realized variance PDFs (princeton.edu, uchicago.edu) were blocked by the sandbox and I did not request access; they were read as excerpts in search results. No paper was read in full, so the 'read at least the method section of every close paper' requirement was not met.",
+   "Idea I (spatial Diebold-Mariano) was added beyond the planned A-H list; the letter G in the query log is the loss-robustness idea.",
+   "One small toy simulation (150 replicates per cell, K=24, p=500, isotropic design, fixed ridge penalty) was run in the sandbox; its numbers are provisional and in the kept-C data_test field. No remote compute used, no git writes, no data files from the repo accessed (data facts taken from the plan).",
+   "Some authors in propose_FORECAST_candidates.csv are marked 'not shown in result' where the search result did not display them; two entries (Quaedvlieg, Coroneo-Iacone) carry author names from my recollection, flagged in the CSV."
+  ],
+  "lens": "FORECAST (forecast evaluation, combination, financial econometrics)",
+  "raw_ideas": [
+   {
+    "id": "A",
+    "one_line": "Nowcast-style factor completion: estimate the histology-invisible donor depth factor from a few measured genes at the new donor (Stock-Watson/Bai-Ng style), then forecast the other genes; finite-K oracle-gap theorem.",
+    "n_queries": 3,
+    "found_in_print": "partly",
+    "closest_prior": "Factor models with missing blocks/ragged edge (Banbura-Modugno ECB WP 1189; JoE 2025 general-missing inference) and matrix completion with row covariates plus latent factors with inference (JASA 2024, tandfonline 10.1080/01621459.2024.2335591). The math is taken; the ST/histology instantiation is unexplored but is an application."
+   },
+   {
+    "id": "B",
+    "one_line": "Hierarchical forecast reconciliation across spot -> slide -> donor, with a shared unforecastable top-level factor and only K donors to estimate the base-error covariance.",
+    "n_queries": 3,
+    "found_in_print": "yes",
+    "closest_prior": "MinT (Wickramasuriya-Athanasopoulos-Hyndman), shrinkage MinT for short samples, iterative trace minimisation for very short hierarchies (2409.18550), MinT = Bates-Granger combinations (2608.13886), bottom-up optimal for aggregated AR(1) (2407.02367). Reduces to bottom-up when the top forecast is uninformative."
+   },
+   {
+    "id": "C",
+    "one_line": "Detectability threshold: when can K donors reveal donor-level predictability? Exact leave-one-donor-out ridge R^2 vs a leave-one-out-mean benchmark, with in-sample vs out-of-sample power comparison, explaining the 'does not beat a constant' fact.",
+    "n_queries": 3,
+    "found_in_print": "partly",
+    "closest_prior": "Tipton arXiv:2610.18781 (Oct 2026): closed-form expected LOO R^2 for OLS and ridge with a break-even threshold vs the sample mean (assumes one outcome per unit, no clustering); Hawinkel et al. 2023; Campbell-Thompson finite-sample bias (Economics Letters 2026); Inoue-Kilian 2005 in- vs out-of-sample power. Core threshold is published; clustered/high-dim/factor-target extension is the remainder."
+   },
+   {
+    "id": "D",
+    "one_line": "Two-scale (TSRV-style) identification of the predictability ceiling from aggregation scale on Xenium, scale-free encoder efficiency eta_k(A)=R2_k(A)/R2_ceiling(A), and a donor-level inference for the 'skilful scale'.",
+    "n_queries": 8,
+    "found_in_print": "partly",
+    "closest_prior": "Components are each published: two-scale realized variance (Zhang-Mykland-Ait-Sahalia 2005), geostatistical nugget/change of support (Bellehumeur 1997; Bradley et al. 1502.01974), Spearman-Brown/generalizability theory, fractions-skill-score skilful scale (Mittermaier-Roberts 2010), multi-horizon SPA (Quaedvlieg), and the noise-ceiling item THIN already graded. No paper found combining them for histology-to-expression predictability."
+   },
+   {
+    "id": "E",
+    "one_line": "Deflated R^2: selection-adjusted out-of-sample skill for best-of encoders x hyperparameters x genes with an effective number of independent trials estimated from donor-level loss correlations.",
+    "n_queries": 4,
+    "found_in_print": "yes",
+    "closest_prior": "Deflated Sharpe ratio / PBO (Bailey-Lopez de Prado 2014), Inference on Winners (Andrews-Kitagawa-McCloskey QJE 2024), White reality check/SPA lineage. Only the application differs."
+   },
+   {
+    "id": "F",
+    "one_line": "Forecast-combination puzzle with a common irreducible noise floor and K donors: equal-weight vs estimated-weight stacking of the ten encoder heads.",
+    "n_queries": 3,
+    "found_in_print": "yes",
+    "closest_prior": "Smith-Wallis 2009; Claeskens-Magnus-Vasnev-Wang 2016; Elliott (JBES 2026) on large unforecastable components making averaging near-optimal; shrinkage of weights (Management Science 2020)."
+   },
+   {
+    "id": "G",
+    "one_line": "Loss-function / skill-function robustness (Patton-Hansen-Lunde class) when the target is a depth-multiplied count transformed by log1p, and the metric is within-donor Pearson r.",
+    "n_queries": 3,
+    "found_in_print": "yes",
+    "closest_prior": "Patton 2011 (MSE/QLIKE robust to unbiased noisy proxies), Hansen-Lunde 2006, Laurent et al. 2013, Klar et al. 2109.02432. Under unbiased independent noise, ranking by Pearson correlation is preserved because sd(y) is forecaster-free, so the claim is near-trivial."
+   },
+   {
+    "id": "H",
+    "one_line": "Panel Diebold-Mariano across genes with a donor-level shared factor: the effective cross-section is K, not the number of genes; t_{K-1}-type conditional tests.",
+    "n_queries": 3,
+    "found_in_print": "yes",
+    "closest_prior": "Qu-Timmermann-Zhu (JoE 2023) cross-sectional DM under common factors, conditional on factors; panel DM (JoF 2023); strong-dependence DM (IJF 2025); also overlaps the excluded BENCH and FCP items."
+   },
+   {
+    "id": "I",
+    "one_line": "Spatial Diebold-Mariano for per-slide encoder comparison with spatially dependent loss differentials, then meta-analysed across donors.",
+    "n_queries": 3,
+    "found_in_print": "yes",
+    "closest_prior": "Hering-Genton 2011 spatial prediction comparison test (variogram-based SE for the loss-differential field); fixed-smoothing DM for small samples (time series). Also overlaps round 3's retired donor-clustered inference."
+   }
+  ],
+  "kept": [
+   {
+    "id": "C",
+    "title": "How many donors are needed to see donor-level predictability? Detectability thresholds for leave-one-donor-out ridge R^2 against a leave-one-out-mean benchmark, and in-sample versus out-of-sample power, under a hierarchical (spots in donors) design",
+    "core_claim": "The round-9 finding that donor-level prediction does not beat a constant for the median Visium gene can mean two different things: no population signal, or signal below the detectability threshold of a K-donor LODO R^2 with a p>>K embedding. Claim: for ridge heads on donor-mean embeddings the expected LODO R^2 against the LOO-training-mean benchmark has a closed form in K, the spectrum of the donor-mean embedding covariance, the penalty and the signal alignment, with an explicit break-even population R^2 threshold that is a function of that spectrum (not just n and p), and a companion in-sample (permutation) test that can detect predictability the LODO statistic cannot.",
+    "formal_result_sketch": "Setup: donor means x_d in R^p, scalar donor-level target y_d = x_d' beta + a_d + e_d (a_d unforecastable donor shift, shared across genes), K donors, ridge with penalty lambda, LODO with training-mean benchmark. (1) Exact finite-K expression for E[R2_oos] via leave-one-out hat-matrix identities: E[R2_oos] = 1 - E[sum_d (e_d^LODO)^2]/E[sum_d (y_d - ybar_{-d})^2], where the denominator carries the factor K/(K-1) (the LOO-mean benchmark is negatively correlated with the held-out label) and the numerator depends on the leverage distribution h_dd(lambda) (Tipton's design-efficiency idea) and on the signal's projection onto the ridge-shrunk eigendirections. (2) Theorem: break-even rho*(K, spectrum, lambda) such that E[R2_oos]>0 iff rho^2 > rho*; in the proportional regime p/K -> gamma with isotropic spectrum rho* -> a deterministic function of gamma and lambda; with a decaying spectrum (as real embeddings have) rho* is governed by an effective rank. (3) Power comparison: for a permutation test on the in-sample ridge fit versus on the LODO R^2, a local-alternative analysis (Inoue-Kilian analogue, exchangeable donors rather than time series) giving an explicit power ordering. Assumed: exchangeable donors, Gaussian-or-sub-Gaussian donor means, fixed or CV-chosen lambda (the CV-chosen case is the hard part and is the risk). Not claimed: any statement across genes (the cross-gene dependence via the shared factor is the excluded FCP territory).",
+    "data_test": "Predict before running: for CCRCC (24 donors), INDIANA_KIDNEY (25) and LUNG_XENIUM (15), compute the donor-mean embedding spectrum for hoptimus0, uni_v2, resnet50, evaluate rho*(K, spectrum, lambda) and compare with the observed per-gene LODO R^2 in results/round9 (the median Visium gene should sit below rho*; lung alveolar markers CA4/AGER/SFTPC at R^2 near 0.9 far above). Then run the in-sample permutation statistic per gene and report the number of genes that are in-sample detectable but LODO-negative. Toy check done in this session (provisional, 150 replicates per cell): K=24, p=500 isotropic Gaussian embedding, ridge penalty = p, unit noise; population R^2 = 0.4 gave mean LODO R^2 = +0.012, P(LODO R^2>0) = 0.60, permutation-test power 0.127 (in-sample ridge statistic) and 0.14 (LODO statistic); at R^2 = 0 the LODO R^2 averaged -0.013 and P(>0) = 0.46. So a large population R^2 can be invisible at K=24, but this toy did not show an in-sample power advantage, so the Inoue-Kilian-type ordering in claim (3) is not supported by this run and may fail.",
+    "second_application": "ACS PUMS 2018: units are the 51 states/DC (or ~2,400 PUMAs); predict state-level mean outcomes (income, commute time) from aggregated covariate embeddings, and test whether the threshold predicts which outcomes beat the leave-one-state-out mean.",
+    "finance_transfer": "Direct: Goyal-Welch / Campbell-Thompson equity-premium predictability with a short monthly or annual sample and many predictors; the same threshold and in-sample vs OOS power logic apply to predictive regressions with few periods; also K markets or K periods in panel forecasting.",
+    "closest_prior_work": "Tipton arXiv:2610.18781 (expected LOO R^2 for OLS and ridge, break-even threshold, leverage-based design efficiency; no clustering; read: abstract, scope, limitations); Hawinkel-Waegeman-Maere 2023 (unbiased OOS R^2 and SE, iid); Economics Letters 2026 on finite-sample Campbell-Thompson R^2 bias; Inoue-Kilian 2005 (in- vs out-of-sample power, time series, fixed p); Campbell-Thompson 2008.",
+    "what_is_open": "(a) The hierarchical version: spots nested in donors with a donor-level estimand, where the threshold depends on the donor-mean embedding spectrum rather than the spot-level one. (b) The p>>K non-isotropic-spectrum case with CV-chosen penalty (Tipton fixes the penalty). (c) An exchangeable-units analogue of Inoue-Kilian power ordering for ridge/permutation tests (my toy did not show the ordering). (d) The sampling distribution of LODO R^2, which Tipton leaves open (the break-even design wins only about half the time). Nothing here is a new principle; a reviewer would call (a)-(b) an extension of Tipton 2026.",
+    "novelty_grade": "likely_taken",
+    "risks": "The core threshold is already published (Tipton, Oct 2026) and the bias of OOS R^2 against a mean benchmark is classical; the remainder is a clustered/high-dimensional extension that may read as incremental. The toy run did not support an in-sample power advantage. Tipton's paper was read only in part (abstract, scope, limitations, not the proofs). Potentially overlaps the BENCH item if framed as comparing encoders."
+   },
+   {
+    "id": "D",
+    "title": "Two-scale identification of the histology-predictability ceiling: scale-free encoder efficiency and skilful-scale inference on re-aggregated Xenium data",
+    "core_claim": "On Xenium, spots can be re-aggregated to any block size A. If unit-level noise (count noise plus cell-to-cell variability) is independent across units given a latent field mu, then Var(block mean) = S(A) + tau^2/A, so a two-scale estimator in the spirit of two-scale realized variance identifies tau^2 and S(A) without a Poisson model or thinning, giving a ceiling R2_max(A) = S(A)/(S(A)+tau^2/A) and a scale-free efficiency eta_k(A) = R2_k(A)/R2_max(A) for each encoder k. The ratio of two encoders' correlations is noise-free (the common attenuation cancels), so encoder rankings can be compared across scales, and a skilful scale A*_k = min{A: eta_k(A) >= c} gets a donor-level interval.",
+    "formal_result_sketch": "Assume (A1) y_i = mu(s_i) + eta_i with eta_i independent given mu, E[eta_i|mu]=0, Var = tau^2 (or tau^2(s_i) known up to a smooth function); (A2) predictors f_k are measurable functions of the image and independent of eta given mu; (A3) mu is second-order stationary within donor with finite range. Results sought: (i) identity r_k(A) = rho_k(A) * sqrt(Rel(A)) with Rel(A)=S(A)/(S(A)+tau^2/A) common to all k, hence r_1/r_2 = rho_1/rho_2 invariant to outcome noise; (ii) consistency and an explicit variance of the two-scale estimator of tau^2 when neighbouring units are spatially correlated in mu (the analogue of dependent-noise TSRV, with the range of mu in the role of the noise dependence); (iii) a sign-flip/t_{K-1} interval across K donors for eta_1(A)-eta_2(A) and for A*_k, valid under exchangeable donors; (iv) a design result: the scale A_opt maximising power to separate two encoders trades the noise reduction (rises with A) against the number of independent blocks (falls with A), giving a closed form under an exponential covariance for mu. Pieces (ii) and (iv) are the places where something new might exist; (i) is nearly an identity.",
+    "data_test": "LUNG_XENIUM (15 donors, 343 genes): aggregate cells into blocks of increasing size, estimate tau^2 and S(A) by the two-scale estimator, and validate against an independent Poisson-thinning ceiling computed from raw counts. Predictions written before the run: ceiling follows A/(A+c) shape, encoder efficiency eta_k(A) is flat or slowly rising in A for composition-marker genes and rises toward 1 only at coarse A for the rest, and encoder ranking by correlation ratio is stable across A. Visium tasks cannot be re-aggregated, so only a coarsening-by-neighbour check is possible there.",
+    "second_application": "ACS PUMS 2018: person-level outcomes (log wage, commute) aggregated to PUMA, then state; the replicate weights give an independent estimate of the sampling-noise variance to validate the two-scale estimate and the ceiling as a function of aggregation size.",
+    "finance_transfer": "Very direct: realized variance, microstructure noise and signature plots; two-scale and multi-scale estimators; robust-loss and proxy-based forecast comparison (Patton, Hansen-Lunde); multi-horizon forecast comparison (Quaedvlieg) with horizon replaced by aggregation scale.",
+    "closest_prior_work": "Zhang-Mykland-Ait-Sahalia 2005 and Ait-Sahalia-Mykland-Zhang 2011 (two-scale realized variance; read as search excerpts, not the full PDF, which the sandbox blocked); Bellehumeur 1997 and geostatistical change of support (nugget); Spearman-Brown/generalizability theory (reliability of aggregated units); Mittermaier-Roberts 2010 skilful spatial scale; Quaedvlieg multi-horizon SPA; the project's own THIN item (noise ceiling via thinning, graded mostly_taken).",
+    "what_is_open": "Narrow: (a) a thinning-free identification of the unpredictable-by-image floor from scale dependence with spatially dependent signal, with a stated variance; (b) the donor-level exchangeable inference for scale curves and skilful scales; (c) the power-optimal evaluation scale for separating encoders; (d) the first application to HEST-style histology-to-expression data (empirical ablations exist, no theory found). Each component has a close precedent in another field.",
+    "novelty_grade": "likely_taken",
+    "risks": "Each ingredient exists in finance, geostatistics, psychometrics or weather verification, and THIN covers the noise-ceiling application; the formal remainder (ii) and (iv) may collapse to textbook variance algebra. The assumption that unit-level noise is independent of the image-derived prediction is false if cell composition within a block drives both, and the ceiling would then be overstated. Only Xenium supports re-aggregation, so the empirical test rests on one task with 15 donors. Overlaps SpatialLens 'change of support' items in the digest."
+   }
+  ],
+  "n_queries_total": 33,
+  "artifact_filenames": [
+   "propose_FORECAST_queries.csv",
+   "propose_FORECAST_candidates.csv"
+  ]
+ },
+ {
+  "slug": "PROPOSE_REPR",
+  "name": "Repr",
+  "frame_id": "f9796ddd-44d1-4bcf-842b-3dc9310b0634",
+  "deviations": [
+   "arXiv API: 11 of 16 calls returned HTTP 429 and are logged as 'not counted' (D x2, E x3, F x2, G x2, H x2); 2 queries of A and 2 of B returned 0 results because phrase queries were too strict. 38 counted queries are web_search (31), arXiv API with results (5) and Semantic Scholar (2).",
+   "Only 5 of 42 listed papers were read beyond the abstract, and those via search snippets or partial text: Atanasov et al. 2408.04607 (PDF text of pp.1-20 grepped, model definition X=K^{1/2} Z Sigma^{1/2} confirmed), Verzelen-Gassiat, EigenPrism, Shah-Peters, Schutt et al., 2602.14486 (snippet-level). The rest are abstract/snippet-level; fetch_article_fulltext failed for the arXiv DOI (Crossref 404), so the PDF was downloaded directly.",
+   "Semantic Scholar forward-citation lists were screened by title only (12 for Atanasov, 57 for Verzelen-Gassiat); lists may be incomplete.",
+   "Some candidate rows list 'not stated in snippet' for authors, and some years as n/a, because they did not appear in the search results; none were filled from memory.",
+   "Toy simulations (p=100, Gaussian, 20-30 replications, synthetic) are provisional sanity checks, not findings. No real HEST data were touched, no remote compute used, nothing written to git; data tests for I and E are sketched only (embeddings live on Longleaf).",
+   "Memory/profile search was not run (no search_memory call); no durable memory written."
+  ],
+  "lens": "REPR: statistics of frozen foundation-model representations used as features (ridge probes, group-aware risk estimation, comparing/combining encoders)",
+  "raw_ideas": [
+   {
+    "id": "A",
+    "one_line": "Group-aware GCV / leave-donor-out risk estimator for ridge probes that is consistent for the new-donor risk (label-donor offset independent of feature structure).",
+    "n_queries": 7,
+    "found_in_print": "partly",
+    "closest_prior": "Atanasov-Zavatone-Veth-Pehlevan (arXiv 2408.04607, ICML 2025) CorrGCV; ROTI-GCV 2406.11666; Rabinowicz-Rosset JASA 2022; NICc 2405.20400. CorrGCV needs noise correlated like the data; remainder is the non-separable case."
+   },
+   {
+    "id": "B",
+    "one_line": "Minimax detection boundary and CI for between-donor explained variance from G donor-mean embeddings (two-level EigenPrism), effective rank of Sigma_B+Sigma_W/n setting the floor; explains why Visium donor-level prediction does not beat a constant at G=24.",
+    "n_queries": 8,
+    "found_in_print": "yes",
+    "closest_prior": "Verzelen-Gassiat Bernoulli 2018 (1602.08006) and Janson-Barber-Candes JRSSB 2017 (1505.02097); the group-mean model is the single-level model with n:=G and design covariance Sigma_B+Sigma_W/n, so the result is a corollary. Finance analogue: Torous-Valkanov boundaries of predictability."
+   },
+   {
+    "id": "C",
+    "one_line": "Per-donor partial centering of embeddings (feature-side offset) with an optimal shrinkage weight toward donor mean, with ridge-risk theorem.",
+    "n_queries": 3,
+    "found_in_print": "yes",
+    "closest_prior": "Multilevel within/between centering and Mundlak (classical), partial pooling as EB shrinkage; embedding batch effects documented (Komen et al. 2411.05489; de Jong et al. 2501.18055). For the project's within-donor metric a donor shift is irrelevant except through training contamination, which is the fixed-effects argument."
+   },
+   {
+    "id": "D",
+    "one_line": "Donor-aware inference for CKA/RSA similarity across ten encoders (debiasing, donor-restricted permutation tests, bootstrap over donors).",
+    "n_queries": 3,
+    "found_in_print": "partly",
+    "closest_prior": "Murphy et al. 2024 and Chun et al. 2025 (debiased CKA); Schutt et al. eLife 2023 (two-factor bootstrap over subjects/stimuli); Deconfounded Representation Similarity 2202.00095; 2602.14486 notes restricted permutations for grouped samples."
+   },
+   {
+    "id": "E",
+    "one_line": "Nested-information (encompassing) test that encoder B adds to encoder/nuclear-morphology baseline A, using ridge probes and donors as units: a Clark-West adjustment for p>>G.",
+    "n_queries": 4,
+    "found_in_print": "partly",
+    "closest_prior": "Clark-West 2007 and Clark-McCracken 2001 (low-dim nested OLS); Shah-Peters GCM 2020 (residual-product test, same algebra); Williamson et al. JASA 2023 and Lei et al. LOCO (cross-fit delta-R2). No ridge p>>n, few-unit version found."
+   },
+   {
+    "id": "F",
+    "one_line": "Variance-component ('embedding heritability') decomposition of within/between-donor/noise variance with encoder kernels and multi-kernel nested tests.",
+    "n_queries": 3,
+    "found_in_print": "yes",
+    "closest_prior": "GCTA/GREML, Haseman-Elston and REHE regression, HEDE 2406.11184, SKAT/MiRKAT/RL-SKAT multi-kernel score tests; machinery is standard genomics."
+   },
+   {
+    "id": "G",
+    "one_line": "Depth-factor loading law on log1p labels (loading ~ mu/(1+mu), gene-dependent) as the ceiling for any histology probe's between-donor R^2.",
+    "n_queries": 3,
+    "found_in_print": "yes",
+    "closest_prior": "Lun 2018 (bioRxiv 404962), Ahlmann-Eltze & Huber Nat Methods 2023, Hafemeister-Satija 2019, spoon (SRT): size-factor effect on log-scale depends on expression level; MEASURE-lens territory."
+   },
+   {
+    "id": "H",
+    "one_line": "Label-free estimation of each encoder's probe error across the ten encoders (triple collocation / factor identification) with a correction for correlated errors from a shared image.",
+    "n_queries": 3,
+    "found_in_print": "yes",
+    "closest_prior": "Triple collocation with correlated-error bias studied (rs17223751); Fu et al. ICML 2020 triplet methods; Donmez-Lebanon-Balasubramanian JMLR 2010 (regression errors without labels); agreement-on-the-line 2404.01542."
+   },
+   {
+    "id": "I",
+    "one_line": "Donor-count asymptotics for pooled ridge probes: with n_d->inf the effective sample size is G, donor-level offsets are non-separable (Sigma_B != c Sigma_W), risk has an interpolation peak at G ~ rank of donor offsets that does not shrink with n_d; plus a donor-level leave-one-donor-out risk estimator consistent in this regime.",
+    "n_queries": 4,
+    "found_in_print": "partly",
+    "closest_prior": "Atanasov et al. 2408.04607 (separable Kronecker model X=K^{1/2} Z Sigma^{1/2}, verified in text), Jin-Balasubramanian-Paul meta-learning generalized ridge 2403.19720 (new task uses own labels), ROTI-GCV; the qualitative pooled-vs-within gap is the classical fixed-effects/Mundlak argument."
+   }
+  ],
+  "kept": [
+   {
+    "id": "I",
+    "title": "Donor-count asymptotics for pooled ridge probes: effective sample size G, non-separable donor offsets, and a donor-level risk estimator",
+    "core_claim": "For frozen-embedding ridge probes trained on spots pooled over G donors with n_d->infinity spots each, the new-donor risk is governed by G (not by total spots n) and by the spectrum of the donor-offset covariance. Pooled (uncentred) second-moment matrix is Sigma_W + (1/G) sum_d mu_d mu_d^T, i.e. a fixed matrix plus a Wishart-type term with aspect ratio p/G, and the donor label offsets a_d (depth factor, invisible to histology) enter the normal equations as noise along the donor-offset directions. Claim: (i) risk has a G-driven interpolation peak near G ~ effective rank of Sigma_B that is invariant to n_d, so adding spots cannot fix it; (ii) within-donor (fixed-effects) training removes the term and its risk decays like p/(G n_d); (iii) a donor-level leave-one-donor-out shortcut is consistent for the new-donor risk in this regime even though the label-offset correlation differs from the feature-offset correlation (the case CorrGCV excludes).",
+    "formal_result_sketch": "Model: x_di = mu_d + w_di, mu_d ~ (0, Sigma_B), w ~ (0, Sigma_W); y_di = beta_d^T w_di + gamma^T mu_d + a_d + eps_di, a_d ~ (0, tau^2) independent of mu_d. Regime: n_d -> infinity, then p, G -> infinity with p/G -> gamma, Sigma_B and Sigma_W general with bounded spectra (no proportionality). Assumed: Gaussian (or Gaussian-universality) mu_d, bounded spectra, beta_d random effects with covariance Omega. Aimed theorems: T1, almost-sure limit of the new-donor within-donor excess risk of pooled ridge as a fixed-point equation obtained by free additive convolution of Sigma_W with the Marchenko-Pastur-type law of (1/G) M M^T (M = [mu_1..mu_G]); T2, the limit has a non-monotone G-profile with a peak at gamma ~ 1 (ridgeless) and a persistent floor tau^2 * tr(Sigma_B Sigma_lambda^-2 Sigma_W)/G for tuned lambda; T3, fixed-effects ridge limit p/(G n_d)-type; T4, a donor-block Woodbury leave-one-donor-out estimator (exact) and its almost-sure consistency for the T1 limit, plus a failure statement for iid GCV and for CorrGCV when noise and data correlations differ. Lower-bound corollary: between-donor detection floor from Verzelen-Gassiat applied to donor means (n:=G) is stated as a corollary, not a claim of novelty.",
+    "data_test": "No new data pull, but needs Longleaf embeddings (not run here). (1) On CCRCC (24 donors), INDIANA_KIDNEY (25), LUNG_XENIUM (15 donors, many spots each, closest to the n_d->inf regime), for hoptimus0, resnet50, uni_v2: LODO within-donor correlation of pooled-uncentred vs donor-centred ridge heads. (2) Subsample donors (G=6..max) and spots per donor (10^2..10^4 on Xenium): theory predicts no gain from more spots per donor for the pooled head once n_d is large, and a G-profile with a peak. (3) Estimate the spectrum of the between-donor covariance of donor-mean embeddings per encoder to evaluate the T1 formula and compare with realised LODO risk; compare the donor-level LODO shortcut with brute-force LODO. Predictions to be written before the run. Toy simulation done here (p=100, Gaussian, s=2, tau=2, 20-30 reps; PROVISIONAL, synthetic only): pooled-uncentred ridge excess coefficient error at oracle lambda was 0.35 (G=24), 0.56 (G=48), 0.78 (G=96, n_d=3000) versus ||beta||^2=0.5, with no improvement from n_d=300 to 3000, while within-centred ridge error fell from 0.014 to 0.0014 with n_d; this supports a G-driven, n_d-invariant failure but also shows the effect is the fixed-effects phenomenon.",
+    "second_application": "ACS PUMS 2018: groups = 51 states (or ~2,400 PUMAs), person-level outcome (log wage) with high-dimensional dummies (occupation x industry x education x age bins); new-state risk of a pooled ridge head versus state-centred head; effective sample size is the number of states for state-level components.",
+    "finance_transfer": "Panel with T periods (=G donors) and N assets per period (=n_d): ridge on many characteristics in the n_d->inf (large cross-section), small-T regime; the effective sample for common (time-series) components is T, so 'virtue of complexity'-type pooled ridge claims with T<p have a T-driven interpolation peak that more assets cannot cure; the donor-level LOO estimator is a leave-one-period-out risk shortcut. Quant relevance high (high-dimensional regression, out-of-sample risk estimation, factor structure).",
+    "closest_prior_work": "Atanasov-Zavatone-Veth-Pehlevan 2408.04607 (ICML 2025): arbitrary sample correlation but separable X=K^{1/2} Z Sigma^{1/2}, CorrGCV requires noise correlated like data (model section and appendix text read). ROTI-GCV 2406.11666. Jin-Balasubramanian-Paul 2403.19720 (new task uses its own samples, proportional in n per task). Dobriban-Wager 2018. Rabinowicz-Rosset 2022. Fixed-effects/Mundlak literature (classical). Variance-profile ridge 2403.20200 (abstract unread).",
+    "what_is_open": "As far as the searches show: (a) deterministic equivalents for ridge when the sample covariance is non-separable (donor-offset covariance Sigma_B unrelated to Sigma_W) in the n_d->inf, p/G->gamma regime; (b) new-group risk with no labels from the new group; (c) a consistent donor-level GCV-type estimator when label-offset and feature-offset correlations differ; (d) G-profile/interpolation-peak statement in the number of groups with an n-invariant floor. Not searched deeply: domain-generalisation sample-complexity papers (Blanchard et al. type rates), random-effects ridge in the econometrics 'large N small T' literature.",
+    "novelty_grade": "uncertain",
+    "risks": "(1) The qualitative content (pooled beats within only when offsets are benign; fixed effects fix it) is classical, so the contribution rests on T1/T4 being technically new, which the search cannot confirm. (2) Real G=15-25 is below p (512-1536), so the regime is p/G>1 and tuned ridge may simply shrink to zero, making effects invisible in the data; the toy shows oracle-tuned ridge collapses to ~||beta||^2, not a new phenomenon. (3) Overlap with the excluded BETWEEN idea (Mundlak) and PredictorLens' 'double descent in number of groups' query, which found only generic double descent. (4) Free-probability proofs are heavy for a spring-2027 deadline. (5) Only abstracts read for most neighbours; one PDF (Atanasov) read partially."
+   },
+   {
+    "id": "E",
+    "title": "Nested-information (encompassing) test for adding a frozen encoder to a ridge probe, with donors as units: a Clark-West adjustment for p much larger than G",
+    "core_claim": "Whether encoder B (or nuclear-morphology features, or a second foundation model) carries information about expression beyond baseline A is a nested-model out-of-sample question. The Clark-West MSPE-adjusted statistic equals an encompassing statistic: for ridge predictions y1 (A only) and y2 (A+B), e1^2 - e2^2 + (y1-y2)^2 = -2 e1 (y1-y2) (checked numerically here), a residual-times-prediction-increment product, the same algebra as the generalised covariance measure. Claim: with donors as the independent units, the donor-level mean s_d of this product supports a valid test of H0: Y independent of B given A, but only if the product-of-estimation-errors condition holds, which fails when p>G; a donor cross-fitted version restores validity, and the unadjusted delta-MSPE has a closed-form null mean given by ridge degrees-of-freedom deterministic equivalents (the high-dimensional analogue of Clark-West's handicap).",
+    "formal_result_sketch": "Setting: donors d=1..G exchangeable, ridge fits on training donors only, H0: E[y|x_A,x_B]=E[y|x_A]. Aimed results: (T1) exact identity above and null mean of delta-MSPE for ridge with p>>n under Gaussian random-effects coefficients, via deterministic equivalents (new part: B-block variance cost depends on ridge df, not on the parameter count); (T2) impossibility/counterexample showing the GCM-type rate condition (product of nuisance errors = o(G^-1/2)) fails for p>G and the naive CW t-test over-rejects or under-rejects, with the sign determined by shrinkage bias of the small model; (T3) a cross-fitted donor-level statistic with finite-G size guarantee (sign-flip / t_{G-1} under a symmetry condition on the donor-level product) and a local power expression in effective ranks. Assumed: exchangeable donors, Gaussian or sub-Gaussian embeddings, fixed ridge penalties chosen on independent donors. Proved: T1, T2 (counterexample), T3 under stated conditions.",
+    "data_test": "Part runs locally: per-spot leave-donor-out predictions and labels exist for 6 tasks x 3 encoders (hoptimus0, resnet50, uni_v2) with nuclear morphology and neoplastic fraction per spot, so forecast-encompassing tests (regress label residual of encoder A on prediction increment of encoder B, donor-level means, t_{G-1}) can be run on genes x tasks with no new data. The full nested-ridge test on embeddings (A = resnet50 or nuclear morphology versus A+uni_v2/hoptimus0) needs Longleaf. Question answered: does a foundation-model encoder add anything beyond nuclear morphology and beyond a weaker encoder, per gene, with donors as units; check size by permuting B across donors (null) and by simulation; predictions to be written before the run. Not run here.",
+    "second_application": "ACS PUMS 2018: does a high-dimensional block (detailed occupation x industry x place dummies) add predictive information beyond a small Mincer-type benchmark for log wage, with the 51 states as units.",
+    "finance_transfer": "Direct: out-of-sample tests of added predictability for return/volatility forecasting (Clark-West, Clark-McCracken, Campbell-Thompson OOS R^2) with many predictors (ridge) where the nested-test null is degenerate; months/periods as units. Skills: forecast evaluation, nested-model testing, high-dimensional regression.",
+    "closest_prior_work": "Clark-West 2007 and Clark-McCracken 2001 (low-dim nested OLS, abstracts); Shah-Peters GCM 2020 (read sections: product-of-rates condition, kernel ridge case); Williamson et al. JASA 2023 and Lei et al. LOCO (delta-R2 with sample splitting for the degenerate null); semi-knockoffs 2601.23124; Schutt et al. eLife 2023; BETWEEN/BENCH digest entries (CV-based CIs for learner differences: Bates-Hastie-Tibshirani, Bayle et al.) already graded mostly taken.",
+    "what_is_open": "No paper found that (a) generalises the Clark-West adjustment to ridge/high-dimensional nested fits, (b) uses a handful of exchangeable groups (G=15-25) as the inferential unit with a finite-G guarantee, (c) shows when the GCM rate condition breaks for p>G. The project-specific application (does an encoder add beyond nuclear morphology/another encoder, per gene) is also not found in the histology literature (not exhaustively searched).",
+    "novelty_grade": "uncertain",
+    "risks": "(1) Likely judged an application of GCM/VIM plus Clark-West; the contribution depends on T1/T2 being non-trivial. (2) With 15-25 donors power will be very low, so the data test may show 'cannot reject' everywhere, which is informative but not a headline. (3) Strong overlap with FORECAST lens, with the excluded BENCH idea (CV-based tests of learner differences) and with Williamson VIM; a reviewer may read it as 'nested model comparison with clusters'. (4) A valid finite-G guarantee for p>G without strong symmetry assumptions may be impossible (the T2 counterexample could be the whole result). (5) Only abstracts/sections read; arXiv API was rate-limited."
+   }
+  ],
+  "n_queries_total": 38,
+  "artifact_filenames": [
+   "propose_REPR_queries.csv",
+   "propose_REPR_candidates.csv"
+  ]
+ },
+ {
+  "slug": "PROPOSE_MEASURE",
+  "name": "Measure",
+  "frame_id": "042d3e11-ec00-4eb3-b76b-c7b540fffbba",
+  "deviations": [
+   "Query counts: 42 logged = 32 web_search + 4 Crossref + 6 arXiv API attempts; all 6 arXiv API calls returned HTTP 429 and gave no results, so effectively 36 queries returned results. Per-idea n_queries includes the failed arXiv attempts; every idea has >=3 returning queries (F, D, E, I exactly 3). Semantic Scholar was not used, so no forward-citation checks were done.",
+   "No full text of any paper was read. Close papers were read only as search-result excerpts or abstracts; fetch_article_fulltext failed for Buccheri-Reno-Vocalelli 2025 (no open version) and for the Moon arXiv DOI (only the arXiv abstract page was read). The 'read at least the method section of every close paper' requirement was therefore not met; how_read is 'abstract' (or 'title_only' for Holzmann-Klar and Lo-MacKinlay, seen via metadata/excerpts only). Some author lists were not in the retrieved excerpts and are marked as not retrieved.",
+   "n_screened counts are the number of result items returned by each search call (read at snippet level), approximate. About 15 Crossref metadata look-ups used to verify DOIs and authors are not logged as queries.",
+   "No project data were loaded or analysed. Data facts quoted (norm check: PC1 share 0.650 to 0.338, LODO R^2 of log-library-size 0.216; ACS_CA_PUMA R2c 0.951, ACS_STATES 0.569) were read from local repo files results/round9/norm/norm_summary.csv and results/round9/diagnostics/c0_gene_diagnostics.csv, not recomputed. All data tests in the kept ideas are plans, not results.",
+   "Two toy simulations were run as sanity checks only (Poisson-derivative identity by finite differences against exact Poisson sums; a single-seed ranking-flip example with 20000 cells). The hand-derived identified interval for idea CHI was not simulated. Treat these as provisional.",
+   "Novelty grades rest partly on suspicion that fields I did not search by name (multilevel variance components with unbalanced clusters; meteorological spatial verification such as fractions-skill/intensity-scale scores; Hansen-Lunde 2006 itself) already cover parts of the kept ideas; those papers were not retrieved and are not cited in the candidates CSV."
+  ],
+  "lens": "MEASURE",
+  "raw_ideas": [
+   {
+    "id": "A",
+    "one_line": "Ranking-consistent evaluation of count predictors when labels carry Poisson noise plus an unobserved persistent multiplicative donor factor (Patton-style robust-loss class extended with a scale-profiled loss).",
+    "n_queries": 8,
+    "found_in_print": "partly",
+    "closest_prior": "Patton 2011 (robust loss class for noisy proxies); Laurent-Rombouts-Violante 2013; Buccheri-Reno-Vocalelli 2025 (biased/persistently biased proxies); remainder = multiplicative per-donor nuisance with Poisson-deviance profiling."
+   },
+   {
+    "id": "B",
+    "one_line": "Triple-collocation style identification of noise-free skill of encoders from label plus two other encoders, with one-sided bounds when encoder errors are non-negatively correlated.",
+    "n_queries": 5,
+    "found_in_print": "partly",
+    "closest_prior": "McColl et al. 2014 (ETC); Gruber et al. 2016 (extended collocation with error cross-correlations); 3CH literature (Sjoberg-Anthes-Rieckh 2021); TC for classifiers (TGRS 2018). Poisson label noise being independent of images makes TC unnecessary anyway (THIN already graded)."
+   },
+   {
+    "id": "C",
+    "one_line": "Multi-scale 'signature plot' of prediction-label correlation under Poisson noise, with a two-scale / pre-averaging style estimator of latent-scale skill and a monotone-in-scale theorem.",
+    "n_queries": 6,
+    "found_in_print": "yes",
+    "closest_prior": "Zhang 2011 (two-scale covariance, Epps effect); Goovaerts 2006 (Poisson kriging change of support); Spearman-Brown; empirical Visium/Xenium data-quality study (PMC12439975)."
+   },
+   {
+    "id": "D",
+    "one_line": "Exact log1p loading law of a Poisson depth factor: d E[log1p Y]/d log s = m*E[log((Y+2)/(Y+1))], so PC1 loadings and between-donor ceilings are gene-specific functions of mean counts.",
+    "n_queries": 4,
+    "found_in_print": "partly",
+    "closest_prior": "Lun 2018 bioRxiv (log-transform size-factor bias, Taylor expansion); Booeshaghi et al. depth normalization; Ahlmann-Eltze & Huber 2023; Lause et al. 2021. Exact Poisson-derivative identity not found but is calculus-level."
+   },
+   {
+    "id": "E",
+    "one_line": "Nonlinear change of support: Jensen gap of log1p(sum) versus sum of log1p, and bias of learning cell-level heads from aggregated transformed labels.",
+    "n_queries": 4,
+    "found_in_print": "yes",
+    "closest_prior": "Javanmard et al. ICLR 2024 (bag vs instance loss); geostatistical change of support of transformations (lognormal conservation, discrete Gaussian model)."
+   },
+   {
+    "id": "F",
+    "one_line": "Composition-limited ceiling: variance of spot/donor expression explainable by cell-type composition as a function of spot size, as an upper bound on what histology can see.",
+    "n_queries": 3,
+    "found_in_print": "partly",
+    "closest_prior": "Farahbod & Pavlidis 2020 (composition explains much of bulk variance); STpath bioRxiv 2026 (mediation by cell-type proportions); bound itself is a conditional-expectation triviality."
+   },
+   {
+    "id": "G",
+    "one_line": "Errors-in-variables view of patch/spot misregistration and spot point-spread: matched-window optimum and attenuation law for frozen-embedding ridge probes.",
+    "n_queries": 5,
+    "found_in_print": "partly",
+    "closest_prior": "Gryparis et al. 2009 (Berkson-type error from spatial misalignment); Bishop 1995 (input noise = Tikhonov); ST patch-size ablations only empirical. Frozen-encoder window theory not found but formal content is classical."
+   },
+   {
+    "id": "H",
+    "one_line": "Ecological/MAUP bounds: what aggregate-scale correlation (Visium spot or PUMA) implies for individual-scale correlation, with sharp bounds under shape restrictions.",
+    "n_queries": 4,
+    "found_in_print": "partly",
+    "closest_prior": "Duncan-Davis 1953 / Robinson 1950 ecological bounds; Fotheringham-Wong 1991 MAUP; Moon arXiv 2403.07236 (sharp aggregate-data bounds with shape restrictions, binary outcome)."
+   },
+   {
+    "id": "I",
+    "one_line": "Support-variation identification: use the number of nuclei per Visium spot (varying support) to separate cell-scale variance and skill components from cross-cell shared components, Lo-MacKinlay variance-ratio style.",
+    "n_queries": 3,
+    "found_in_print": "partly",
+    "closest_prior": "Krige's relation / volume-variance relation; Lo-MacKinlay variance ratio; unbalanced-cluster variance components (ICC) not searched under that name. Nobody found using nuclei-count variation as the support instrument."
+   }
+  ],
+  "kept": [
+   {
+    "id": "AD",
+    "title": "Depth-equivariant evaluation of count predictors under an unobserved multiplicative donor factor: exact log1p loadings, per-gene between-donor ceilings, and a scale-profiled ranking criterion",
+    "core_claim": "If counts are Poisson(s_d * lambda) with a donor-level scale s_d that the image cannot see, then (i) on the log1p scale the depth factor loads on gene g with an exact, gene-specific weight e(s*lambda_g) that rises from 0 to 1 with the mean count, so the shared PC1, the partial removal by library-size normalisation, and the between-donor R^2 ceiling are all predictable from mean counts; (ii) the usual criteria (log1p MSE, raw Poisson deviance, donor-level R^2) rank predictors by the realised donor-depth mix, whereas the scale-profiled (conditional-on-donor-total, multinomial) deviance ranks them by the shape component only and is noise-robust in Patton's sense.",
+    "formal_result_sketch": "Setup: y_ig | lambda_ig, s_d ~ Poisson(s_d*lambda_ig) (extension: mixed Poisson with Fano factor >= 1), s_d independent of images; predictor depends on images only. Prop 1 (exact loading): with h(m)=E log1p(Poisson(m)), the Poisson derivative identity gives h'(m)=E[log((Y+2)/(Y+1))], hence dE[l]/dlog s = e(m):=m*h'(m), strictly increasing from 0 to 1. Corollaries: first-order loading of the donor-level depth factor on gene g is e(m_g); first-order between-donor R^2 ceiling is 1 - e_g^2 Var(log s)/Var_between(l_g) with delta-method remainder bound to be proved. Prop 2 (ranking): ordering of two predictors under log1p-MSE and raw Poisson deviance is a functional of the law of s_d (counterexample below); the scale-profiled loss min_a L(a*p, y) with a=sum y / sum p is invariant to s_d. Conjecture/target theorem 3: among Bregman losses, profiling gives an s_d-invariant ranking that coincides with the ranking under the latent lambda iff phi(x)=x log x up to affine terms (a Patton necessary-and-sufficient analogue with homogeneity of degree 0, QLIKE-like). Verified only numerically so far: the identity (finite-difference vs exact Poisson sums agree to 6 digits; e(m)=0.034, 0.184, 0.474, 0.799, 0.948, 0.983 at m=0.05, 0.3, 1, 3, 10, 30) and a toy ranking flip (N=20000 cells, one seed): predictor with small shape error but half-level beats a level-correct noisier predictor at s<=1 under log1p-MSE and raw deviance but loses at s>=2, while the profiled deviance prefers the first predictor at every s in {0.25,0.5,1,2,4}.",
+    "data_test": "Predictions to write before running: (P1) across the 50 genes on CCRCC and INDIANA_KIDNEY, PC1 loadings of donor-mean log1p expression correlate (>=0.8) with e(m_hat_g), m_hat_g from donor-mean raw counts; (P2) encoder ranking (hoptimus0, resnet50, uni_v2) by profiled deviance differs from ranking by log1p-MSE on at least one of the six tasks; (P3) first-order per-gene ceilings upper-bound observed leave-one-donor-out R^2 for every gene. Needs raw counts on Longleaf; consistent with the existing norm check (library-size normalisation cut PC1 share on CCRCC from 0.650 to 0.338, log-library-size LODO R^2 0.216) but not tested here.",
+    "second_application": "ACS PUMS: ACS_STATES / ACS_CA_PUMA log-income tasks already exist in the project's diagnostics; a state-level multiplicative price-level factor invisible to household covariates plays the role of s_d. Plausible, not checked.",
+    "finance_transfer": "Direct: forecast evaluation with imperfect proxies (Patton, QLIKE, Mincer-Zarnowitz, Diebold-Mariano), realised-volatility proxies with a persistent multiplicative level bias per period block (volume/session scale), homogeneity and scale-equivariance of losses.",
+    "closest_prior_work": "Patton 2011 (J Econometrics, doi 10.1016/j.jeconom.2010.03.034); Laurent, Rombouts, Violante 2013 (doi 10.1016/j.jeconom.2012.08.004); Buccheri, Reno, Vocalelli 2025 (doi 10.1016/j.jeconom.2025.106068, persistent bias in proxies, MSE case); Holzmann & Klar 2023 (title only); Lun 2018 bioRxiv 404962; Booeshaghi et al. bioRxiv 2022.05.06.490859; Ahlmann-Eltze & Huber 2023; Lause et al. 2021; Balsubramani arXiv 2606.26061 (Poisson-to-multinomial conditioning); Delong & Wuthrich arXiv 2605.12679. Read at abstract/excerpt level only.",
+    "what_is_open": "(a) The exact Poisson-derivative loading law and per-gene ceilings for log1p labels (not found in print; calculus-level but data-relevant). (b) The uniqueness characterisation of a scale-profiled Bregman criterion with a persistent multiplicative nuisance (Buccheri et al. treat biased proxies and MSE, not multiplicative nuisance plus profiling; I could not read their method section, so the overlap may be larger). (c) Inference on the level versus shape components of paired loss differences with few donors would hit the other track's topic and is excluded.",
+    "novelty_grade": "likely_taken",
+    "risks": "A reviewer can read it as Patton (2011) plus the Poisson-multinomial trick plus the known depth sensitivity of log1p; the new content is mostly the exact loading law and a possible uniqueness theorem, which may be a small paper or an appendix. Closest prior (Buccheri et al.) was not read beyond its abstract. Data test needs raw counts on Longleaf. The toy ranking flip is one seed and illustrative."
+   },
+   {
+    "id": "CHI",
+    "title": "What block-scale count data identify about cell-scale predictive skill: support-variation identification, sharp identified sets and a finance-style signature plot",
+    "core_claim": "A Visium spot pools m_j cells (nuclei counts are observed per spot) while Xenium resolves single cells. Under within-spot second-order exchangeability and Poisson-or-worse counting noise, the spot-level variance of counts and the spot-level covariance with predictions are quadratic in m (variance-ratio structure), so cell-scale variance components and cell-scale skill are point identified when m varies exogenously, and set identified (sharp interval) when it does not. The interval is c0 in [C - (m-1)*sqrt(kappa_p*kappa_lambda), C + (m-1)*sqrt(kappa_p*kappa_lambda)] intersected with the Cauchy-Schwarz box, where C is the per-cell block cross-covariance and kappa are between-cell covariances; shape restrictions (cross-covariance non-increasing in distance) shrink it. Gap in the same spirit explains why a 55-um spot cannot reveal cell-scale skill, and gives a testable scale-extrapolation law.",
+    "formal_result_sketch": "Model: cell i in spot j has latent intensity Lambda_i, prediction component P_i; within-spot compound symmetry with cell-level moments (mu, tau^2, v_p, c0) and between-cell covariances (kappa_lambda, kappa_p, c1); counts Y_j | Lambda ~ Poisson(sum Lambda_i) (or Fano >= 1). Then Var(Y|m)=m*mu + m*tau^2 + m(m-1)*kappa_lambda, Cov(P,Y|m)=m*c0 + m(m-1)*c1, Var(P|m)=m*v_p + m(m-1)*kappa_p. Theorem 1: if m is independent of (Lambda,P) within strata and takes >=3 distinct values, (c0, c1, kappa, tau^2) are identified and the Poisson-corrected cell-scale skill rho0=c0/sqrt(v_p*tau_tot^2) follows. Theorem 2 (single support m): sharp identified set as above from PSD of the 2x2 between-cell block (|c1| <= sqrt(kappa_p*kappa_lambda)); it is wide when kappa is large, which is the formal version of the ecological non-identification. Theorem 3 (shape-restricted): with a nonincreasing cross-covariance in distance and several supports (single spots, unions of neighbouring spots), sharp bounds by a linear program in the style of Moon's partial-identification programs; plus a CLT for the estimated polynomial coefficients with spatially mixing blocks. Not yet derived in full or simulated; the single-support interval was derived by hand and the PSD step is the only inequality used.",
+    "data_test": "LUNG_XENIUM (cell-level truth): coarsen pseudo-spots by pooling neighbouring ones (predictions averaged over neighbouring patch embeddings), fit the quadratic-in-m curves on supports >= 2 pseudo-spots, extrapolate to the 55-um pseudo-spot and check coverage of the identified set. Caveat: embeddings exist only at pseudo-spot level, so only coarsening is possible without new GPU embedding of sub-patches; finer-than-spot predictions are not available. Visium tasks (CCRCC, INDIANA_KIDNEY): use nuclei count per spot as support instrument, with a sensitivity parameter for non-exogenous cell density. Prediction to write before the run: the identified interval for cell-scale correlation is wide (>0.4) on Visium tasks and narrow on lung.",
+    "second_application": "ACS PUMS 2018: persons within households within PUMAs within states as nested supports; person-level skill of an income predictor versus PUMA- and state-level skill (the project's ACS_CA_PUMA R2c 0.951 versus ACS_STATES 0.569 already shows scale dependence); bounds on person-level skill from aggregates are an ecological-inference problem with a ground truth available in PUMS.",
+    "finance_transfer": "Strong: Lo-MacKinlay variance ratio, Epps effect and two-scale/pre-averaged realised covariance, optimal sampling frequency, information coefficient at asset versus portfolio aggregation; the same 'identify the fine-scale quantity from several aggregation levels under noise' problem.",
+    "closest_prior_work": "Zhang 2011 (doi 10.1016/j.jeconom.2010.03.012); Lo & MacKinlay 1988 variance ratio (seen via excerpts only); Goovaerts 2006 Poisson kriging (doi 10.1186/1476-072X-5-52); Moon arXiv 2403.07236 (partial identification from aggregate data, abstract only); Duncan-Davis/Robinson ecological bounds (chapter excerpt); Fotheringham & Wong 1991 (doi 10.1068/a231025); Krige's relation notes (Rossiter); Javanmard et al. 2024 for aggregated-response learning; multi-scale verification arXiv 2506.10868. Unchecked suspicion: multilevel/ICC with unbalanced cluster sizes and the meteorological spatial-verification literature (fractions-skill / intensity-scale scores) may already contain the scale curve.",
+    "what_is_open": "Not found in any retrieved source: (1) sharp identified set for the cross-support correlation between a prediction field and a Poisson count field, under PSD and monotone-covariance restrictions, with count noise handled exactly; (2) using nuclei-count variation across Visium spots as a support instrument with a sensitivity analysis; (3) an empirical scale-extrapolation test with cell-level ground truth on Xenium versus Visium. Each is a modest increment on variance-component algebra and partial-identification programs.",
+    "novelty_grade": "likely_taken",
+    "risks": "The algebra is variance components with unbalanced clusters plus a PSD constraint, which a statistician may call textbook; Moon's partial-identification programs and Duncan-Davis bounds cover the spirit; predictions exist only at spot level so the cell-scale predictor is not observed (only labels can be re-aggregated), which limits the data test; exogeneity of cell count is doubtful (cell density correlates with tissue type), so the point-identification theorem rests on a weak assumption; no simulation done yet; I did not search the multilevel-model or meteorological-verification vocabularies under their own names."
+   }
+  ],
+  "n_queries_total": 42,
+  "artifact_filenames": [
+   "propose_MEASURE_queries.csv",
+   "propose_MEASURE_candidates.csv"
+  ]
+ },
+ {
+  "slug": "PROPOSE_MULTI",
+  "name": "Multi",
+  "frame_id": "5a045915-360c-49c3-ba47-e72c629ecac3",
+  "deviations": [
+   "Query count: 37 completed queries (22 web_search, 14 Crossref, 1 arXiv API returning 0 results) over 10 raw ideas, 3-8 per idea. A further 8 arXiv API queries failed with HTTP 429 and are logged as such but not counted. Semantic Scholar was not used (no forward-citation search of anchor papers).",
+   "Reading depth: of 17 papers graded close, only Bing-Wegkamp (1704.02381) and Sun-Stephens (1812.07488) were downloaded, by keyword-targeted text extraction, not read in full; the other 42 candidate rows rest on abstracts or search excerpts (fetch by DOI failed for arXiv DOIs), so gradings for B, C, E-J are provisional.",
+   "Crossref bibliographic queries returned many irrelevant hits for generic phrasings (E, F, G2, H); those rows are logged with outcome \"irrelevant\".",
+   "Data checks were local and limited to gene-level CSVs in results/round9 (c0_gene_diagnostics.csv: 3 encoders x 6 HEST tasks plus CCRCC_merged; no per-spot or per-donor-per-gene values). The cross-encoder agreement numbers (Spearman 0.89-0.96, PC1 share 0.93-0.98 for r_within) come from that file for 50 genes (343 on LUNG_XENIUM). No HEST per-spot test of either kept idea was run.",
+   "The only simulation is a toy run (20 seeds, G=20, p=60, m=50, n_g=300, true rank 2) with a pooled Bunea-She-Wegkamp-style threshold rule, a donor-demeaned version and a pooled leave-donor-out CV rank; results (3, 2, 0 in 18/20) are provisional and not a proof of Prop 1.",
+   "Finance literature on fund-alpha empirical Bayes/FDR and on factor-number selection with small T (Bai-Ng, Onatski, Ahn-Horenstein) was not searched; ideas A and D could be closer to published work than graded."
+  ],
+  "lens": "MULTI: inference over many outcomes (genes) measured on the same spots and donors, excluding PPI, FCP and moderated variances",
+  "raw_ideas": [
+   {
+    "id": "A",
+    "one_line": "Predictable-rank (reduced-rank) selection from embeddings to many genes when the response carries a pervasive donor-level nuisance factor and donors are fewer than features (G<p): pooled rules over-select, pooled leave-donor-out CV under-selects, a within/between split recovers the rank.",
+    "n_queries": 8,
+    "found_in_print": "partly",
+    "closest_prior": "Bunea-She-Wegkamp 2011 (RSC); Bing-Wegkamp arXiv 1704.02381 (iid-entry errors; read assumptions, no row-dependence); She-Tran 2019 JRSSB (CV for RRR); response envelopes (immaterial part); Moon-Weidner 2015 Econometrica (N,T large); Kleibergen-Paap rk (many clusters)"
+   },
+   {
+    "id": "B",
+    "one_line": "Winner's curse and effective number of independent trials when each gene picks its best of 10 encoders (or top-k genes are reported) on the same few donors; selection optimism does not average out over genes.",
+    "n_queries": 4,
+    "found_in_print": "yes",
+    "closest_prior": "Bailey & Lopez de Prado Deflated Sharpe Ratio (2014); Zrnic & Fithian zoom correction arXiv 2411.18569 (arbitrary dependence); Rink & Brannath 2210.13206; Andrews-Kitagawa-McCloskey Inference on Winners"
+   },
+   {
+    "id": "C",
+    "one_line": "Multivariate proper scoring rule for gene-vector forecasts that is invariant to a shared multiplicative (depth) factor.",
+    "n_queries": 4,
+    "found_in_print": "yes",
+    "closest_prior": "Pic et al. arXiv 2407.00650 (transformation principle: injective transform of a strictly proper score is strictly proper, so log-ratio scoring is a corollary); Bolin & Wallin 1912.05642 (per-forecast scale invariance)"
+   },
+   {
+    "id": "D",
+    "one_line": "Empirical Bayes / NPMLE deconvolution of the distribution of true gene-wise predictive skill when estimation errors share the same donors (common shock): prior estimate does not concentrate as J grows, effective number of independent genes.",
+    "n_queries": 3,
+    "found_in_print": "partly",
+    "closest_prior": "Sun & Stephens arXiv 1812.07488 (EB with correlated noise via estimated realised noise law; read method keywords); Efron 2007/2010 correlation effects; Soloff-Guntuboyina-Sen 2025 (independent units)"
+   },
+   {
+    "id": "E",
+    "one_line": "Simultaneous lower confidence bound on the number of genes with true positive leave-donor-out skill via closed testing with donor-level sign-flip tests, including the 2^(1-G) granularity floor.",
+    "n_queries": 3,
+    "found_in_print": "yes",
+    "closest_prior": "Vesely-Finos-Goeman JRSSB 2023 (permutation/sign-flip TDP); Goeman-Hemerik-Solari AoS 2021; Andreella et al. 2012.00368; Romano-Wolf stepdown"
+   },
+   {
+    "id": "F",
+    "one_line": "Latent-ceiling (rank-1) model of the encoder x gene performance matrix: encoders as near-exchangeable instruments of a gene-level ceiling (data: PC1 share 0.93-0.98 of r_within across 3 encoders).",
+    "n_queries": 3,
+    "found_in_print": "yes",
+    "closest_prior": "Maimon et al. arXiv 2507.20208 (factor analysis of model x benchmark matrix); Ruan et al. 2405.10938; Tukey/Mandel bilinear nonadditivity (Cressie 1978)"
+   },
+   {
+    "id": "G",
+    "one_line": "Multi-output forecast combination: ten encoders combined with weights pooled across genes and shrunk toward equal weights, with donors as the effective sample for weight estimation.",
+    "n_queries": 3,
+    "found_in_print": "yes",
+    "closest_prior": "Issler & Lima 2009; arXiv 2404.11198 (pooled combination weights across variables in panels); West 1996; Blanc & Setzer 2020"
+   },
+   {
+    "id": "H",
+    "one_line": "Inflation of gene-gene correlation in predicted expression (low-rank prediction) and a debiasing identity for co-expression estimands.",
+    "n_queries": 3,
+    "found_in_print": "yes",
+    "closest_prior": "Andrews & Hemberg F1000Research 7:1740 (false gene-gene correlations from imputation); Patterns 2021 GRN imputation study"
+   },
+   {
+    "id": "I",
+    "one_line": "Exact multi-output bias of leave-one-donor-out R2/correlation for group-mean estimands under a shared donor factor (training-mean shift identity).",
+    "n_queries": 3,
+    "found_in_print": "yes",
+    "closest_prior": "Austin, Pe'er, Korem arXiv 2406.01652 / Sci Adv 2025 (distributional bias of LOO/LPO CV); Lusompa 2025 SSRN (title only)"
+   },
+   {
+    "id": "J",
+    "one_line": "Clark-West-type out-of-sample test that histology beats the training-donor constant for many genes with donors as the periods.",
+    "n_queries": 3,
+    "found_in_print": "yes",
+    "closest_prior": "Clark & West 2007; ECB WP1580 (several nested alternatives); arXiv 2008.08387; Clark & McCracken 2001"
+   }
+  ],
+  "kept": [
+   {
+    "id": "A",
+    "title": "Predictable rank under a pervasive group-level nuisance: within/between reduced-rank selection when groups are fewer than features",
+    "core_claim": "Model: y_i = B^T x_i + f_g(i) lambda + e_i for spot i in donor g, B (p x m) of rank r (the histology-predictable gene programmes), f_g lambda a rank-1 donor-level nuisance (the depth/detection factor, PC1 share 0.650 on CCRCC, 0.343 on LUNG_XENIUM), and x_i = x_i^w + mu_g with donor-level embedding shifts mu_g spanning G-1 < p directions. Claim: (i) rank rules applied to pooled data over-select by the nuisance rank, because donor-level covariate variation can reproduce any donor-level response vector; (ii) pooled leave-donor-out CV rank selection under-selects (here: returns 0) because the pooled coefficient absorbs the between-donor component and pollutes held-out-donor predictions; (iii) a two-level pair (r_within, r_between) with r_between <= G-1 is identified, r_within is consistently estimated after donor demeaning, and r_between is tested exactly by donor-level sign-flips. The number a practitioner reports as \"how many gene programmes does histology predict\" is therefore not r unless the level is stated.",
+    "formal_result_sketch": "Assumptions: iid-Gaussian (later sub-Gaussian) within-donor errors, G fixed, n_g -> infinity, p/n_g fixed or p fixed, nuisance rank k0 with eigenvalue above the Bunea-She-Wegkamp / Bing-Wegkamp threshold lambda > 2(sqrt(m)+sqrt(q))^2 sigma^2. Prop 1 (overshoot, SNR-conditional): if the donor-shift matrix M (G x p) has rank G-1 and its signal-to-noise exceeds the within-donor design noise, the pooled projection captures the group indicator span up to o_p(1) angle, so P(r_hat_pooled = r + k0) -> 1. This needs a sin-theta argument that I have only sketched; the toy run supports it but does not prove it. Prop 2 (within consistency): donor demeaning removes both mu_g and f_g lambda exactly, so the problem is iid-row RRR with n-G residual df and Bing-Wegkamp Thm 8-type consistency applies (this part is a reduction to a known theorem). Prop 3 (finite-G between test): under H0 (between-level residual donor vectors symmetric) the Pitman-type sign-flip test of the leading between canonical correlation is exact for any p, with smallest attainable p-value 2^(-(G-1)); this gives a resolution statement (G >= 8 needed for p < 0.01). Prop 4 (pooled leave-donor-out CV failure): lower bound on its excess error in terms of ||B_between||^2 and the donor-shift covariance. Props 1 and 4 are the only parts not already a corollary of existing results, and they are the thin remainder.",
+    "data_test": "Toy simulation done (20 seeds; G=20 donors, p=60, m=50 outputs, true within rank 2, rank-1 donor nuisance): pooled RSC-type rule returned 3 in 20/20 runs, donor-demeaned rule returned 2 in 20/20, pooled leave-donor-out CV returned 0 in 18/20 and 1 in 2/20. Provisional toy result, not on HEST data. Real test (not run; per-spot predictions are on Longleaf, not local): LUNG_XENIUM (15 donors, 343 genes) and CCRCC/INDIANA_KIDNEY (24/25 donors, 50 genes) with the three encoders: within-donor leave-donor-out canonical-correlation spectrum, pooled vs demeaned rank estimate, between rank <= G-1 with sign-flip p-values. Pre-registered prediction: pooled estimate exceeds the within estimate by 1 on tasks with PC1 share > 0.3; within rank on Visium tasks is small (median within-donor r 0.11-0.20).",
+    "second_application": "ACS PUMS 2018: many person-level outcomes (log wage, hours, rent, commute time...) from person covariates with state (G=51) or CA PUMA (G=265) as the group; a state-level cost-of-living factor is a pervasive group-level nuisance invisible to individual covariates, and one-hot occupation/industry codes give p > G. Prediction: pooled rank over-selects by the cost-of-living factor.",
+    "finance_transfer": "Panel with N assets, few periods T and a common shock: rank of the predictive-coefficient matrix (number of priced/predictive factors) when the common factor is not spanned by the predictors; same algebra as interactive fixed effects (Moon-Weidner) but in the small-T, p>T regime; Kleibergen-Paap rank test with few periods; cross-sectional vs time-series R2.",
+    "closest_prior_work": "Bunea-She-Wegkamp 2011 and Bing-Wegkamp (arXiv 1704.02381; read assumptions, errors iid Gaussian entries, no grouped rows); She & Tran 2019 JRSSB (CV for RRR, random-row folds); response envelopes (Kwon-Zou 2301.04625: the nuisance is the immaterial part); Moon & Weidner 2015 (interactive fixed effects, N,T -> infinity); Cragg-Donald / Kleibergen-Paap cluster-robust rank tests (asymptotic in number of clusters); MegaLMM (low-rank group-level factors, no rank selection of the predictable part); Lameiro-Schreier and Helmer et al. (CV for CCA order).",
+    "what_is_open": "Not found in the sources searched: (a) the p >= G-1 regime statement that pooled rank estimators over-select by exactly the nuisance rank (Prop 1), (b) the pooled leave-group-out CV failure mode (Prop 4), (c) an exact sign-flip test of between-level rank with explicit granularity floor. Everything else is fixed effects plus known RRR theory; a statistician reviewer will likely call Props 2-3 routine.",
+    "novelty_grade": "uncertain",
+    "risks": "Leans likely_taken: the within transformation is the fixed-effects estimator and the reduction to Bing-Wegkamp is immediate; Prop 1 needs a real SNR condition and proof that I have not written; only snippets of She-Tran, Moon-Weidner, Kleibergen-Paap were read, not full text. Panel-econometrics literature on factor-number selection with small T (Bai-Ng, Onatski, Ahn-Horenstein) and the genetics literature on reduced-rank mixed models were not searched in depth, so a closer paper may exist. A reviewer may judge the contribution as an observation rather than a theorem. Data test needs Longleaf."
+   },
+   {
+    "id": "D",
+    "title": "Empirical Bayes for gene-wise predictive skill under donor-shared estimation error: non-concentration of the estimated prior and an effective number of independent genes",
+    "core_claim": "Estimates theta_hat_g (Fisher-z of the within-donor correlation, or leave-donor-out R2) satisfy theta_hat_g = theta_g + lambda_g^T F + u_g, where F is the realised draw of a few donor- and spot-level factors shared by all genes (same test donors, same spot-level depth). Claim: the NPMLE of the prior of true skill converges, as the number of genes J grows with the number of donors G fixed, to the true prior convolved with the realised common shift lambda-bar^T F, not to the true prior. Posterior means and functionals (fraction of genes with skill above c) therefore keep an O_p(1) error that depends on G and the factor loadings, not on J; the effective number of independent genes is J/(1+(J-1) rho-bar).",
+    "formal_result_sketch": "Assume (theta_g, lambda_g) iid from a joint law, u_g independent N(0, s_g^2), F ~ N(0, Sigma_F/G) (donor-level factor with G effective df). Prop 1: conditional on F, the marginal density of theta_hat is g* convolved with N(lambda^T F, s^2) mixed over lambda; NPMLE converges (Kiefer-Wolfowitz, Soloff et al. type bounds) to that conditional mixture, so functional error converges to a nonzero constant |lambda-bar^T F| in the location and variance-inflated components as J -> infinity. Prop 2 (lower bound): any estimator not using a null atom, negative-control genes or other identification of lambda-bar^T F has minimax risk for the fraction functional bounded below by c * sd(lambda-bar^T F) / sqrt(G)-scaled quantity. Prop 3 (adjusted NPMLE): estimate F from the donor x gene residual matrix (PCA), deconvolve after removal, with an oracle inequality conditional on F. Prop 3 is the new-looking piece; Props 1-2 look like restatements of the Efron / Sun-Stephens pseudo-inflation phenomenon in different notation.",
+    "data_test": "Not run (per-donor gene-level skill estimates needed; local files hold only gene-level means: c0_gene_diagnostics.csv has r_within and R2c_mean averaged over donors). Plan on Longleaf outputs: per-donor, per-gene r_within for 50 (Visium) and 343 (Xenium) genes; bootstrap over donors (not genes) of the NPMLE fraction-above-c; compare spread with the gene-bootstrap spread to read off J_eff. Prediction: donor-bootstrap SD of the fraction of genes with r_within > 0.3 on LUNG_XENIUM is several times the gene-bootstrap SD. Local fact supporting dependence across genes: gene-wise r_within is rank-1 across encoders (PC1 share 0.93-0.98 over 6 tasks, checked from the CSV).",
+    "second_application": "ACS PUMS 2018: EB over many occupations (or industries) of wage-return coefficients estimated within states, with state-level common shocks (G=51) shared by all occupations; distribution of occupation-level returns and share above a threshold.",
+    "finance_transfer": "Empirical Bayes over many assets/funds of alpha or predictive R2 with a common market factor and short sample (distribution of true alphas, share of skilled funds); same non-concentration under a common factor with few periods. The fund-alpha FDR / EB literature in finance was not searched in this pass.",
+    "closest_prior_work": "Sun & Stephens arXiv 1812.07488 (EB for normal means with correlated noise; estimates the realised noise law, pseudo-inflation/deflation; read keyword-targeted text); Efron 2007 JASA and 2010 JASA (correlation effects, empirical null); Soloff-Guntuboyina-Sen JRSSB 2025 (NPMLE theory, independent units); Xie arXiv 2605.08551 (NP-EB confidence intervals); the round-9 FCP verdict (non-concentration under pervasive dependence for FDP) is the same phenomenon for coverage.",
+    "what_is_open": "Only the instantiation: a fixed-G (donor-count) rate for NPMLE functionals of predictive-skill estimates, with the effective-J formula and a donor-bootstrap diagnostic, and identification when there is no null atom (skill is continuous). Sun-Stephens already model the correlated noise as a shared realised law.",
+    "novelty_grade": "likely_taken",
+    "risks": "Overlaps the FCP and EB-with-correlated-noise entries already in the exclusion digest; a reviewer will see Props 1-2 as known. Identification without a null atom or negative controls is the one real difficulty and may force an assumption that makes the result trivial. No data test possible locally."
+   }
+  ],
+  "n_queries_total": 37,
+  "artifact_filenames": [
+   "propose_MULTI_queries.csv",
+   "propose_MULTI_candidates.csv"
+  ]
+ },
+ {
+  "slug": "PROPOSE_SHIFT",
+  "name": "Shift",
+  "frame_id": "ce061180-2b9d-44cf-91ab-d765f1d4984b",
+  "deviations": [
+   "Queries: 58 logged; 8 arXiv API queries returned 0 results (strict AND syntax or silent rate limit) and all 7 Semantic Scholar attempts returned HTTP 429, so those sources contributed nothing; coverage relies on 21 web searches, 16 arXiv API queries with results (most with poor relevance ranking) and 6 Crossref queries. Idea D has only 4 logged queries (3 usable), idea I (embedding-shift bound) was folded into A after 1 query.",
+   "Full text was extracted and read around key passages (sections, via grep) for only 4 papers: Jin-Egami-Rothenhausler, Garg et al., Cai-Namkoong-Yadlowsky, Londschien. All other candidates were read from abstracts or search snippets; the fetch tool failed for two arXiv DOIs so I downloaded PDFs directly. How_read in the CSV states which.",
+   "Author names not shown in search results are marked 'not captured' in the CSV; the year for the PMC4688112 paper is approximate.",
+   "HEST per-spot predictions are on Longleaf and were not accessed, so the HEST data tests are proposed, not run. The only data run is a provisional ACS PUMS pilot: 51 states, 1,239,144 persons after filtering, one linear model on 22 covariates, with the label-free variance model fitted on a 1-in-5 subsample of training rows; its numbers are provisional.",
+   "Three early arXiv debugging queries (HTTP 429) were not logged. Formal results are sketches, not proofs; only the collocation bias identity was checked numerically."
+  ],
+  "lens": "SHIFT: distribution shift between donors (groups) outside conformal prediction; label-free performance estimation, quantile-of-groups risk, invariance/anchor methods, transfer with few groups.",
+  "raw_ideas": [
+   {
+    "id": "A",
+    "one_line": "Identified vs hidden parts of a new group's risk under group-level location/scale shifts independent of X (offset, noise level): sharp label-free identified set for the X-explained part, K-group certificate for the hidden part.",
+    "n_queries": 11,
+    "found_in_print": "partly",
+    "closest_prior": "Garg et al. ATC arXiv:2201.04234 (non-identification); Cai-Namkoong-Yadlowsky DISDE arXiv:2303.02011 (X vs Y|X decomposition); Jin-Egami-Rothenhausler PNAS 2025 doi:10.1073/pnas.2427181122 (covariate shift bounds conditional shift); Debray et al. SMMR 2019 (random-effects prediction interval for performance in a new site). Each component exists; the combination for hidden additive offsets in regression was not found."
+   },
+   {
+    "id": "B",
+    "one_line": "Confidence bound for the q-quantile / worst of TRUE group risks when each group risk is measured with noise (spatially correlated spots), K small.",
+    "n_queries": 8,
+    "found_in_print": "partly",
+    "closest_prior": "Eastwood et al. EQRM arXiv:2207.09944 (quantile of risk over environments); Li-Mittal-Namkoong-Xia arXiv:2407.01316 (worst-case subpopulation UCB); Barras-Scaillet-Wermers J. Finance 2010 (true-alpha distribution from noisy estimates). Order-statistic tolerance bounds on realised group risk are conformal-type (excluded topic)."
+   },
+   {
+    "id": "C",
+    "one_line": "Calibrate the budget of hidden (Y|X) shift from K labelled source groups, via covariate-shift magnitude or leave-one-group-out, to give partial-identification bounds on new-group risk with finite-K coverage.",
+    "n_queries": 8,
+    "found_in_print": "partly",
+    "closest_prior": "Jin-Egami-Rothenhausler PNAS 2025 / arXiv:2412.08869 (covariate shift bounds conditional shift, treatment effects, random-shift model); Calibrated sensitivity models arXiv:2405.08738; JRSSA qnae012. Merged into kept idea A."
+   },
+   {
+    "id": "D",
+    "one_line": "Triple-collocation / three-view label-free evaluation of encoders on a new donor: risk DIFFERENCES identified when the invisible part of Y is common, levels not; bias under correlated encoder errors.",
+    "n_queries": 4,
+    "found_in_print": "yes",
+    "closest_prior": "McColl et al. 2014 extended triple collocation doi:10.1002/2014GL061322; Donmez-Lebanon-Balasubramanian JMLR 2010 (regression errors without labels); Steinhardt-Liang (three views); extended collocation for correlated errors (JGR doi 10.1002/2015JD024027)."
+   },
+   {
+    "id": "E",
+    "one_line": "Few-label recalibration of a multi-output predictor to a new group through a low-rank (rank-1 depth) offset, with blessing of dimensionality in the number of outputs.",
+    "n_queries": 8,
+    "found_in_print": "yes",
+    "closest_prior": "RUV2/4 and unified RUV arXiv:1705.08393 (control-gene factor); EBLUP / small-area prediction (Datta et al. 1999); intercept recalibration in clinical prediction (PMC4688112); digest entry PROBE (mostly_taken)."
+   },
+   {
+    "id": "F",
+    "one_line": "Anchor regression / invariance with donors as discrete anchors under a high-dimensional ridge probe: proportional-asymptotics risk on a new donor with additive offset shifts and the price of robustness.",
+    "n_queries": 8,
+    "found_in_print": "partly",
+    "closest_prior": "Rothenhausler et al. anchor regression arXiv:1801.06229; Londschien CVaR anchor regression arXiv:2609.27034 (Sep 2026, exact worst-case guarantee, discrete environments); meta-learning generalized ridge arXiv:2403.19720; pooling vs ensembling ridge under covariate shift arXiv:2608.01641. No proportional-asymptotics anchor paper found, but with K fixed donors the anchor penalty is a rank-K perturbation, so the remainder is thin."
+   },
+   {
+    "id": "G",
+    "one_line": "Finite-K test (t-statistic on donor-level cross-fitted calibration slopes, Ibragimov-Mueller style) that donors differ in slope beyond an additive offset, for high-dimensional probes.",
+    "n_queries": 6,
+    "found_in_print": "partly",
+    "closest_prior": "Meta-analysis of calibration slopes (Debray et al. 2019); Ibragimov-Mueller / Canay-Romano-Shaikh few-cluster tests (already in the digest under SIGN); invariance tests in high-dim regression arXiv:2312.15079; slope-heterogeneity tests in panel econometrics."
+   },
+   {
+    "id": "H",
+    "one_line": "Is cross-donor heterogeneity of the HEST-Bench metric (per-donor correlation) real or sampling noise? Random-effects variance of a ratio metric with spatial effective sample size.",
+    "n_queries": 5,
+    "found_in_print": "yes",
+    "closest_prior": "Psychometric meta-analysis of correlations (Psychological Methods 2001 doi:10.1037/1082-989x.6.2.161); BENCH verdict in the digest (mostly_taken)."
+   }
+  ],
+  "kept": [
+   {
+    "id": "A",
+    "title": "What can be certified about a new group's risk without its labels? Identified versus hidden location/scale components under group shifts that are independent of X, with a finite-K certificate for the hidden part",
+    "core_claim": "For a frozen predictor f_hat, the risk on a new donor g splits into (i) a part determined by the donor's covariate law P_g(X) and the source residual structure, which labels are not needed to estimate, and (ii) a hidden block B_g = (a_g, s_g) of group-level location (the shared depth/detection offset) and noise-scale shifts that are statistically independent of X_g and therefore invisible to any label-free diagnostic, including embedding outlyingness. The claim is that (a) the label-free-identifiable functionals can be characterised exactly (offset-invariant, scale-invariant ones: centred risk up to scale, within-group rank metrics, group ranking of encoders if B_g is shared), (b) no label-free procedure can certify the rest, with a sharp lower bound, and (c) with K labelled donors the hidden block can be certified with an explicit K-dependent width, which exposes when the Jin-Egami-Rothenhausler rule 'covariate shift bounds conditional shift' fails (direction-specific technical offsets).",
+    "formal_result_sketch": "Model: Y_gi = f(X_gi) + a_g + s_g*eps_gi, (a_g, s_g) drawn across groups independently of the X-law P_g; covariate shift P_g arbitrary with overlap. Prop 1 (identification): the density-ratio / outcome-regression functional of squared source residuals identifies R_g^X = E_{P_g}[(f - f_hat)^2] and the centred risk of f_hat up to the unidentified scale; (a_g, s_g) are not identified: for any label-free procedure the minimax error over B-laws with the same P_g(X) is at least half the range of {a^2 + s^2 sigma^2}. Prop 2 (what is identified): invariance class = functionals of (Y_g - mean Y_g) / s_g, e.g. within-group correlation and encoder rank order when B_g is common to encoders. Thm (finite-K certificate): with LOGO estimates of (a_k^2, s_k^2) from K donors (each with n_k spots, noise inflated by spatial effective n), a deconvolved upper bound on the new donor's hidden term at level 1-alpha with width explicit in K, skewness, and n_eff; two versions: distribution-free order statistic (needs K >= 1/alpha - 1) and a studentised version with t_{K-1}-type reference for K=4-24. Cor: the standardized-measure rule of Jin et al. is valid iff the hidden block is direction-neutral; a rank-1 shared offset gives a counterexample with explicit violation ratio. Assumes exchangeability of groups, independence of B_g from P_g, bounded fourth moments. Not proved here; I only checked the algebra of the decomposition and ran a pilot (below). Caution: the order-statistic certificate is a conformal/tolerance-type statement across donors, so only the decomposition and the identified-set characterisation can carry novelty, not the certificate itself.",
+    "data_test": "HEST (needs Longleaf, not run by me): for the 6 tasks x 3 encoders with leave-donor-out predictions, compute per donor (i) a label-free estimate of the X-explained centred risk and within-donor correlation (importance-weighted source residuals), (ii) the realised centred risk, offset^2 and scale. Predictions to write before the run: label-free part predicts within-donor correlation across donors (Spearman >= 0.3 on LUNG_XENIUM) but not offset^2 (|Spearman| < 0.2 everywhere); the PC1 depth factor (0.650 of between-donor variance on CCRCC) and the outlier donor (embedding outlyingness ranks 22nd of 24) fall in the hidden block; LOGO coverage of the K-donor certificate at nominal 0.9 is checked for K=4,8,16,24. Pilot I ran locally (provisional, ACS PUMS 2018, 51 states, 1,239,144 workers aged 25-64 with positive income and >=20 weekly hours, log PINCP, OLS on 22 covariates, leave-state-out): mean squared offset is only 1.8% of state MSE; Spearman(offset^2, covariate-shift Mahalanobis distance)=0.17; the across-state sd of the centred MSE is 0.052 on a mean of 0.589 and a linear label-free E[r^2|X] model reaches Spearman 0.115 with it, i.e. the state-level risk variation in this pilot is mainly noise-scale shift invisible to X, not offset. The variance model used a 1-in-5 subsample of training rows. Single linear model, not a finding.",
+    "second_application": "ACS PUMS 2018 with states (51) or CA PUMAs (265) as groups, as in the pilot. A finance-style panel with markets/regimes as groups and a market-wide offset (cross-sectional vs time-series predictability) is plausible.",
+    "finance_transfer": "Systematic versus idiosyncratic split of forecast error: a market-wide common offset that no cross-sectional signal can see, certified from K past regimes; cross-sectional information coefficient (offset-invariant) versus time-series R2 (offset-sensitive); quantile-of-regimes risk; Fama-MacBeth-type few-period inference.",
+    "closest_prior_work": "Garg et al. (ICLR 2022, arXiv:2201.04234, read sections): non-identification absent shift assumptions. Chen et al. (NeurIPS 2022, arXiv:2209.08436, abstract): identifiable class SJS. Cai-Namkoong-Yadlowsky (Oper. Res. 2025, arXiv:2303.02011, sections): X vs Y|X decomposition. Jin-Egami-Rothenhausler (PNAS 2025, sections read): covariate shift bounds conditional shift under direction-neutral random shift. Debray et al. (SMMR 2019): prediction interval for performance in a new cluster. PAPE (arXiv:2401.08348), 2606.14506 (target risk from X under covariate shift).",
+    "what_is_open": "Not found in any search: (1) an exact characterisation of the label-free-identifiable risk functionals when the shift is a group-level location/scale block independent of X, with the sharp minimax lower bound for the rest; (2) a K-group deconvolved certificate for the hidden block when each group's risk is itself noisy and spatially correlated; (3) a stated condition (direction-neutrality) under which the covariate-shift-bounds-conditional-shift rule fails, and its quantification on real technical offsets. Items (1) and (3) may be judged corollaries of ATC's impossibility result and of the Jin et al. random-shift model; (2) is the thinnest and borders on the excluded conformal-under-donor-shift topic.",
+    "novelty_grade": "uncertain",
+    "risks": "Every component is in print (impossibility, X/Y|X decomposition, meta-analytic prediction interval, covariate-shift-calibrated shift budget) and a reviewer may read the paper as a corollary; the formal result may be modest (an identification proposition plus a certificate); the K-group certificate overlaps the excluded conformal-under-donor-shift topic; HEST per-spot predictions are on Longleaf and were not touched by me, so the HEST part is untested; the ACS pilot is one linear model and provisional; I read full text of only a few papers (sections), the rest by abstract/snippet; arXiv API returned empty results for 8 strict queries and Semantic Scholar rate-limited, so coverage of the literature is incomplete."
+   },
+   {
+    "id": "D",
+    "title": "Label-free comparison of frozen encoders on a new donor: risk differences are identified when the invisible part of the outcome is common, levels are not; bias of triple collocation under shared-training-noise errors",
+    "core_claim": "Write p_k = a_k S + e_k for encoder k's prediction and Y = S + V + eps, where V is the part of expression no encoder sees. If the e_k are mutually uncorrelated and uncorrelated with V + eps, covariances among three encoders' predictions identify each encoder's error variance relative to the common signal, so the MSE differences R_k - R_j are label-free identified on a new donor while the levels (which contain Var(V + eps), including the depth/detection factor) are not. The encoders are trained by the same ridge head on the same labels and see the same image, so errors are positively correlated; the claim is a closed-form bias of the estimates under correlated errors and sign-definite bounds on the ranking.",
+    "formal_result_sketch": "Triple collocation estimate sigma_hat_1^2 = Var(p_1) - Cov(p_1,p_2) Cov(p_1,p_3) / Cov(p_2,p_3). With error covariances Delta_ij and c_ij = a_i a_j Var(S) + Delta_ij, the bias is [a_1^2 Var(S) Delta_23 - a_1 Var(S)(a_2 Delta_13 + a_3 Delta_12) - Delta_12 Delta_13] / c_23 (I checked this identity numerically on random draws, three of three agree to 1e-10). Aims: (i) conditions on the sign pattern of Delta under which the TC ranking of encoders is preserved (e.g. nearly equal pairwise Delta); (ii) a finite-K, group-level statement: with K donors the within-donor TC ranking is a K-sample comparison with t_{K-1} critical values; (iii) with ten encoders, the identification of Delta by an over-identified one-factor model plus a shared-noise factor and a test of its fit. The identity itself is routine algebra; whether (i)-(iii) are new is unclear.",
+    "data_test": "Needs Longleaf: use hoptimus0, resnet50, uni_v2 leave-donor-out predictions (the only three with predictions) on CCRCC, IDC, LYMPH_IDC, PRAD, INDIANA_KIDNEY, LUNG_XENIUM. Predictions to write before the run: TC-estimated error-variance ordering matches the realised MSE ordering of the three encoders on LUNG_XENIUM (within-donor r_within 0.52-0.63) but not on the Visium tasks (0.11-0.20), where shared training noise dominates; TC underestimates all error variances (positive Delta). Score per donor and as K-donor rank agreement.",
+    "second_application": "ACS PUMS: three predictors of log income (linear, gradient boosting, nearest-neighbour) compared on a new state without its incomes; plausible. A finance-style panel with several forecasters of an unobserved latent state.",
+    "finance_transfer": "Evaluating forecasters when the target is latent or revised (nowcasting, consensus forecasts); forecast-combination weights without realised outcomes; the correlated-error problem is the same as in forecast combination (Bates-Granger).",
+    "closest_prior_work": "McColl et al. 2014 extended triple collocation (abstract read); Donmez-Lebanon-Balasubramanian JMLR 2010 (regression errors without labels, consistency; abstract and one proposition snippet); Steinhardt-Liang three-view risk estimation; extended collocation for correlated errors (JGR doi:10.1002/2015JD024027); Jaffe et al. unsupervised ensemble with dependent classifiers arXiv:1510.05830; Baek et al. agreement-on-the-line.",
+    "what_is_open": "Only the narrow combination: label-free comparison (not level) of foundation-model encoders under a hidden outcome component common to all, with a sharp bias formula and ranking-preservation conditions under error correlation induced by a shared training set, tested on group-wise (donor) data. The bias formula is elementary and correlated-error extensions exist in geophysics, so I expect a reviewer to call this an application.",
+    "novelty_grade": "likely_taken",
+    "risks": "Found in print in three fields (geophysics, ML ensembles, psychometrics one-factor models); the formal part is thin; shared training noise may make TC uninformative on Visium (a negative result is the likely outcome); only three encoders have predictions; HEST data not touched by me; I read abstracts and snippets, not full texts, for the collocation and Donmez papers."
+   }
+  ],
+  "n_queries_total": 58,
+  "artifact_filenames": [
+   "propose_SHIFT_queries.csv",
+   "propose_SHIFT_candidates.csv"
+  ]
+ },
+ {
+  "slug": "NESTED",
+  "name": "Check Nested",
+  "frame_id": null,
+  "deviations": [
+   "arXiv API was unreliable: 4 calls returned HTTP 429/502 and 8 of the 9 successful arXiv calls returned 0 relevant results (probable query-syntax limits); arXiv coverage is therefore weak and the open call on T1 rests mostly on web_search.",
+   "Semantic Scholar forward citations: only 1 of 3 anchors returned a non-empty list (Rodriguez-Girondo, 4 hits, none relevant); Gauran 2408.03138 hit 429 twice (no result) and Escanciano-Parra returned an empty list. No forward-citation check of Escanciano-Parra or Gauran was achieved.",
+   "OpenAlex not used (per instructions). Only 4 papers were read from extracted full text (and only the relevant sections/keyword contexts, not every page): Gauran 2408.03138, Escanciano-Parra 2402.12838, Rodriguez-Girondo 1601.08197, Pitarakis 2008.08387. All others (Shah-Peters, Kim-Ramdas, universal inference, Ibragimov-Mueller, Canay et al., Dai-Shen-Pan, Williamson et al., Clark-West, ridge deterministic-equivalent papers incl. arXiv:2408.04607) were judged from abstracts/snippets returned by search, so claims about what they do not contain are provisional.",
+   "n_results_screened in the queries CSV is the approximate number of result items returned per web search (recorded by hand, ~9-10 each), not a count of papers read. Authors of two retrieved items (arXiv:2408.04607, the Springer incremental-validity paper) were not visible in snippets and are left unattributed.",
+   "No full-text copies of papers are published; downloaded PDFs stayed in /tmp. Absence of T1 in print is provisional: no Google Scholar / SSRN / journal-site full-text search was available."
+  ],
+  "verdict": "mostly_taken",
+  "verdict_reason": "Each of the three proposed results has a near neighbour in print, except the exact high-dimensional Clark-West handicap (T1). (T3) The method class is taken: cross-fitted/split statistics with studentization and dimension-agnostic validity (Kim & Ramdas, Bernoulli 2024, arXiv:2011.05068), finite-sample split-LRT validity (Wasserman-Ramdas-Balakrishnan 2020, arXiv:1912.11436), few-group t_{G-1} inference (Ibragimov & Mueller 2010), and fixed-G sign-change randomization (Canay-Romano-Shaikh 2017, as described in arXiv:2608.04839). Split/cross-fit tests for added feature sets with a nested-risk null are in Dai-Shen-Pan (arXiv:2103.04985) and the VIM framework of Williamson et al. (arXiv:2004.03683); a nested high-dimensional ridge predictive-performance test with CV is in Gauran-Ombao-Yu (arXiv:2408.03138); added predictive value of a second p>n omic block over a first via regularised regression with a permutation test is in Rodriguez-Girondo et al. (arXiv:1601.08197). (T2) The qualitative statement that standard out-of-sample inference with a high-dimensional ridge/Lasso learner is invalid when the learner lacks a fast rate (estimation risk unbounded, inference invalid), including a Clark-West loss with ridge, is in Escanciano & Parra (arXiv:2402.12838, read in text), and the GCM product-of-errors condition is Shah & Peters (Ann. Stat. 2020, arXiv:1804.07203). What I did not find is the specific statement that p>G makes the donor-level t-test of the CW statistic mis-sized with sign set by shrinkage bias of the small model; I judge it a short corollary of T1. (T1) I found no paper giving a closed-form null mean of the Clark-West statistic for ridge fits in the proportional regime via degrees-of-freedom deterministic equivalents. The ingredients are all in print (Clark-West; Dobriban-Wager; Patil-Wei-Rinaldo-Tibshirani GCV; Du-Patil-Kuchibhotla; ridge with correlated samples arXiv:2408.04607; Bellec-Zhang DoF adjustment as the conceptual analogue), so it reads as an application of deterministic-equivalent calculus to a cross-term E[e1(yhat1-yhat2)] rather than a new technique.",
+  "closest_papers": [
+   {
+    "citation": "Gauran, Ombao, Yu. Predictive Performance Test based on the Exhaustive Nested Cross-Validation for High-dimensional data. arXiv:2408.03138 (2024).",
+    "url_or_doi": "https://arxiv.org/abs/2408.03138",
+    "how_read": "PDF downloaded, full text extracted with pypdf, abstract/intro/methods/simulation passages and keyword hits (Clark, degrees of freedom, dependence, proportional) inspected; not every page read",
+    "what_it_covers": "Test and CIs for the difference in prediction error between two ridge-based model-fitting algorithms (does a feature block improve prediction) in p>n with exhaustive nested CV, bias-based uncertainty; i.i.d. observations. No Clark-West, no groups/donors, no deterministic equivalents, no finite-G theory."
+   },
+   {
+    "citation": "Escanciano & Parra. Extending the Scope of Inference About Predictive Ability to Machine Learning Methods. arXiv:2402.12838 (2024; v 2025).",
+    "url_or_doi": "https://arxiv.org/abs/2402.12838",
+    "how_read": "PDF downloaded, full text extracted; abstract, intro, ridge/MDH section (Clark-West loss with ridge in high dimension) and fast-rate discussion read via targeted passages",
+    "what_it_covers": "Zero-mean-score and fast-rate conditions needed for valid OOS inference with Lasso/ridge; otherwise estimation risk unbounded and inference invalid and sensitive to splitting; Clark-West-type test with ridge in high dimension (time series). Covers the qualitative content of T2; no proportional-regime handicap, no groups."
+   },
+   {
+    "citation": "Shah & Peters. The hardness of conditional independence testing and the generalised covariance measure. Ann. Statist. 48 (2020), arXiv:1804.07203.",
+    "url_or_doi": "https://doi.org/10.1214/19-AOS1857",
+    "how_read": "abstract and retrieved method passages only (search snippets), not the full paper",
+    "what_it_covers": "GCM statistic and its validity condition: product of MSPEs of the two regressions o_P(1/n); guarantees for kernel ridge. This is the condition T2 says fails for p>G."
+   },
+   {
+    "citation": "Kim & Ramdas. Dimension-agnostic inference using cross U-statistics. Bernoulli 30(1) (2024), arXiv:2011.05068.",
+    "url_or_doi": "https://arxiv.org/abs/2011.05068",
+    "how_read": "abstract and retrieved method passages only (search snippets)",
+    "what_it_covers": "Sample splitting + studentization yields Gaussian null valid whatever the d/n relation, by switching from in-sample to out-of-sample quality estimates. Covers the cross-fit rationale of T3 (asymptotic in n, not finite-G)."
+   },
+   {
+    "citation": "Wasserman, Ramdas, Balakrishnan. Universal inference. PNAS 117 (2020), arXiv:1912.11436.",
+    "url_or_doi": "https://doi.org/10.1073/pnas.1922664117",
+    "how_read": "abstract and retrieved passages only",
+    "what_it_covers": "Split / cross-fit LRT with finite-sample type-I control under no regularity conditions, usable for nested model classes. Prior art for a finite-sample guarantee from splitting."
+   },
+   {
+    "citation": "Ibragimov & Mueller. t-statistic based correlation and heterogeneity robust inference. J. Bus. Econ. Statist. 28(4) (2010).",
+    "url_or_doi": "https://doi.org/10.1198/jbes.2009.08046",
+    "how_read": "abstract and retrieved passages only",
+    "what_it_covers": "Group-level estimates + t_{q-1} test valid with few heterogeneous groups. Prior art for the t_{G-1} part of T3; Canay-Romano-Shaikh (2017) is the sign-change analogue (seen only through the description in arXiv:2608.04839, not read)."
+   },
+   {
+    "citation": "Dai, Shen, Pan. Significance tests of feature relevance for a black-box learner. IEEE TNNLS (2024), arXiv:2103.04985.",
+    "url_or_doi": "https://arxiv.org/abs/2103.04985",
+    "how_read": "abstract and conclusion passages only",
+    "what_it_covers": "One-split / two-split risk-invariance tests (difference in empirical loss with and without a block of features), bias-sd-ratio deflation; i.i.d. data."
+   },
+   {
+    "citation": "Rodriguez-Girondo, Salo, Burzykowski, Perola, Houwing-Duistermaat, Mertens. Sequential double cross-validation for assessment of added predictive ability in high-dimensional omic applications. arXiv:1601.08197.",
+    "url_or_doi": "https://arxiv.org/abs/1601.08197",
+    "how_read": "PDF text extracted; abstract, methods (permutation test of added value of X2 over X1, p,q>n) read via targeted passages",
+    "what_it_covers": "Nested added-value question with high-dimensional blocks and regularised regression; permutation test; i.i.d. individuals."
+   },
+   {
+    "citation": "Pitarakis. A novel approach to predictive accuracy testing in nested environments. Econometric Theory (2023), arXiv:2008.08387.",
+    "url_or_doi": "https://arxiv.org/abs/2008.08387",
+    "how_read": "PDF text extracted; grep for ridge/high-dimension returned 0 hits; section 4 on Clark-West adjustment read",
+    "what_it_covers": "Nuisance-free normal nested tests with a Clark-West-style power enhancement; low-dimensional OLS only."
+   },
+   {
+    "citation": "Clark & West (2007) J. Econometrics 138; Clark & McCracken (2001) J. Econometrics 105; Giacomini & White (2006) Econometrica; Hansen & Timmermann (2015) Econometrica",
+    "url_or_doi": "https://www.nber.org/system/files/working_papers/t0326/t0326.pdf",
+    "how_read": "abstracts and retrieved snippets only",
+    "what_it_covers": "Origin of the e1^2-e2^2+(yhat1-yhat2)^2 handicap (OLS, no shrinkage), nested encompassing, fixed-window conditional-on-sample null, OOS-Wald equivalence. Machinery for T1 outside the high-dimensional regime."
+   },
+   {
+    "citation": "Machinery for T1: Dobriban & Wager (Ann. Stat. 2018, arXiv:1507.03003); Patil-Wei-Rinaldo-Tibshirani (AISTATS 2021); Du-Patil-Kuchibhotla (ICML 2023); 'Risk and cross validation in ridge regression with correlated samples' (arXiv:2408.04607); Bellec & Zhang DoF adjustment (arXiv:1902.08885)",
+    "url_or_doi": "https://arxiv.org/abs/2408.04607",
+    "how_read": "abstracts/snippets only; none read in full",
+    "what_it_covers": "Deterministic-equivalent out-of-sample risk and degrees of freedom of ridge in the proportional regime, including correlated samples (CorrGCV) and DoF-adjusted inference. They supply the calculus T1 would use but do not treat the nested cross-term or a test."
+   }
+  ],
+  "what_remains_open": "Not found in print (provisional, see deviations): (i) a closed-form centre for the Clark-West / encompassing statistic -2*E[e1 (yhat1 - yhat2)] when both models are ridge fits and p/n is proportional, expressed through ridge degrees of freedom, including the shrinkage-bias term of the small model that makes the centre non-zero under the null; (ii) its extension to within-group-correlated samples (matrix-Gaussian / CorrGCV-type deterministic equivalents) so the centre is correct for donor-structured data; (iii) a size characterisation of the naive donor-level t-test of the uncorrected CW statistic as a function of (p/n_train, lambda, effective ranks), with the sign tied to shrinkage bias; (iv) a finite-G (15-25) validity statement for a centre-corrected, donor-cross-fitted statistic, where the symmetry condition must hold about the corrected centre and the dependence across cross-fitted folds (Bengio-Grandvalet 2004; Bates-Hastie-Tibshirani 2023) is handled explicitly; (v) local power in effective ranks. Items (iii)-(v) are plausible corollaries once (i)-(ii) exist. I found nothing on the application side that supplies a formal added-information test for histology encoders (STpath, bioRxiv 2026.03.17.711896, only reports feature-importance complementarity; HEST-style benchmarks use paired Wilcoxon on few images).",
+  "sharpened_claim_if_any": "Drop T3 as a headline (it is Ibragimov-Mueller / Canay et al. / universal inference applied to cross-fitted losses) and T2 as a separate result (Escanciano-Parra + Shah-Peters). Keep one theorem: for ridge probes with proportional p/n and within-group-correlated samples, the exact asymptotic null mean of the Clark-West statistic under leave-one-group-out fitting, in closed form through ridge degrees of freedom and the small model's shrinkage bias, and with it (a) the asymptotic size distortion of the uncorrected donor-level t-test, and (b) a corrected, group-cross-fitted statistic whose null centre is zero, with a finite-G t_{G-1}/sign-flip guarantee stated under an explicit exchangeability-of-donors condition. Position it against Escanciano-Parra (no handicap formula, time series, no groups), Gauran et al. (empirical, i.i.d.), and the correlated-sample ridge theory (arXiv:2408.04607), which is the technical prerequisite. A cleaner sharpening that is more clearly new: a negative result showing that no studentized leave-one-group-out test of the nested null is uniformly valid at G=15-25 when p>G unless the handicap is corrected, but this would still need a proof.",
+  "value_assessment": "Without T1 the claim is an assembly of known pieces and would not meet the 'formal result of its own' bar at NeurIPS/ICML/AISTATS or a top statistics journal. T1, if it holds with within-group correlation, is a genuine but thin result: a one-theorem addition (centre of an OOS statistic via deterministic equivalents), of proposition-plus-simulation size, closest in spirit to Bellec-Zhang's DoF adjustment, and the whole paper then depends on how clean the correlated-sample extension is. It could carry a short methods/theory paper at AISTATS or an econometrics/forecasting venue (J. Econometrics, JBES) if the group-dependence and finite-G part is done properly; it is unlikely to be a top-journal lead on its own. Scoop risk is moderate: the machinery is current (2024 correlated-sample ridge theory) and Escanciano-Parra is adjacent. Not recommended as the lead of the paper; reasonable as the formal core of a methods section if the applied ST/ACS results are strong.",
+  "n_queries": 46
+ },
+ {
+  "slug": "PRANK",
+  "name": "Check Prank",
+  "frame_id": null,
+  "deviations": [
+   "14 arXiv API queries returned zero results, either HTTP 429 or over-restrictive phrase syntax. They are logged with n=0; the arXiv search endpoint was therefore weak and web_search carried most of the load.",
+   "Semantic Scholar keyword search was rate-limited (429, then proxy 502) for 2 of 4 attempts; only forward-citation lookups for the two anchors (Bing-Wegkamp 2019: 29 citing papers; Bing-Ning-Xu: 5) succeeded. S2 coverage is incomplete, so forward-citation screening is partial.",
+   "Papers in the 'sections' category (BSW 2011, Bing-Wegkamp 2019, Bing-Ning-Xu 2022, She-Tran 2019, Hrachov-Piepho, Wu et al. 2025, Fortin et al., Winkler 2020, Cai et al.) were read as text extracted from arXiv PDFs by keyword scan plus reading of abstract, intro, model and theorem statements. Proofs were not read.",
+   "15 candidates were read by abstract/search snippet only, including Canay-Romano-Shaikh 2017, Shao 1993, Rabinowicz-Rosset 2022, Dias-Krzanowski 2003, Moon-Weidner 2015 and Zhang-Xia 2026 (paywalled or SSRN). The verdict depends on what those full texts contain.",
+   "The 72-query count includes 16 zero-result queries (14 arXiv, 2 S2). OpenAlex was not used, as instructed. Only arXiv, Crossref, S2 and web_search were used; no Google Scholar, MathSciNet or journal-specific search.",
+   "A few candidate fields were not shown in search results (authors/year of the multilevel-SCA and multilevel-EFA items; svaseq author). They are marked n/a or 'per memory' in the CSV. The absence of a direct hit is evidence from search, not proof of non-existence."
+  ],
+  "verdict": "mostly_taken",
+  "verdict_reason": "No single paper does the claim, but three of its four propositions reduce to published machinery. (Prop 1) Over-selection by the nuisance rank is the rank-inflation of the best-linear-predictor coefficient when an omitted dense low-rank factor is correlated with X. Bing-Ning-Xu (AoS 2022) state this in a random-design hidden-variable model: the identifiable coefficient is F = Psi + A B, a sparse part plus a dense rank-K part. If p >= G-1 and the group-indicator columns lie in span(X), then Y = X(B + C lambda') + E exactly, and the Bunea-She-Wegkamp / Bing-Wegkamp consistency theorems applied to the enlarged coefficient of rank r+1 give over-selection as a corollary. (Prop 2) Within-group rank consistency is the same theorems applied after projecting out group indicators (Frisch-Waugh). Wu-Zhang-Li-Zheng (JMVA 2025) already analyse rank-constrained estimation with group-specific intercept vectors a_i and r* = rank(B), with an oracle inequality for known groups. AMMI/GGE practice in agronomy removes environment main effects before choosing the number of multiplicative axes by CV (Dias-Krzanowski 2003). (Prop 3) Group-level sign-flip tests with few clusters, with a 2^q sign-change group and a resolution floor, are Canay-Romano-Shaikh / Cai et al. machinery; Winkler et al. (2015, 2020) give block-level sign flips and permutation tests for the number of canonical correlations. The smallest p-value 2^-(G-1) is a counting fact. (Prop 4) A lower bound on the excess error of pooled leave-one-group-out CV rank selection, in terms of the between-group coefficient and the shift covariance, was NOT found in print. CV bias under clustering (Rabinowicz-Rosset 2022), leave-one-cluster-out size selection for scalar GLMs (NICc 2025), CV inconsistency for RRR in the iid case (She-Tran 2019) and LOEO CV in G x E models (Hrachov-Piepho 2026) are all adjacent but do not state it. This absence rests on search, not proof.",
+  "closest_papers": [
+   {
+    "citation": "Bing, Ning, Xu (2022). Adaptive estimation in multivariate response regression with hidden variables. Ann. Statist. 50(2):640-672 (arXiv:2003.13844).",
+    "url_or_doi": "https://doi.org/10.1214/21-AOS2059",
+    "how_read": "arXiv PDF downloaded and text-extracted (63 pp); abstract, intro, model/identifiability and Step-1 estimation passages read; keyword-scanned for rank/hidden/dense/cluster. Proofs not read.",
+    "what_it_covers": "Y = Psi'X + B'Z + E with unobserved Z correlated with X; the best linear predictor coefficient F = Psi + A B is identifiable and equals a sparse part plus a dense rank-K part, so an omitted pervasive factor inflates the pooled coefficient's rank. Estimates K and the row space of B. Random design, no groups, no p >= G-1 absorption, not framed as a rank-selection theorem."
+   },
+   {
+    "citation": "Wu, Zhang, Li, Zheng (2025). Simultaneous heterogeneity and reduced-rank learning for multivariate response regression. J. Multivariate Anal. 105578 (arXiv:2512.06514).",
+    "url_or_doi": "https://doi.org/10.1016/j.jmva.2025.105578",
+    "how_read": "arXiv PDF text-extracted (49 pp); abstract, model, Theorem 1 oracle inequality and simulation/real-data rank reporting read. Proofs not read.",
+    "what_it_covers": "Y_i = a_i + B'x_i + e_i with subgroup intercept vectors, rank(B) = r*. Oracle rank-constrained fit with known group indicators (the within estimator) has an oracle bound; rank chosen by penalised criterion. Overlaps Prop 2. No pooled over-selection result, no CV, no between-group rank, no regime p >= G-1."
+   },
+   {
+    "citation": "Bunea, She, Wegkamp (2011). Optimal selection of reduced rank estimators of high-dimensional matrices. Ann. Statist. 39(2):1282-1309 (arXiv:1004.2995).",
+    "url_or_doi": "https://doi.org/10.1214/11-AOS876",
+    "how_read": "arXiv PDF text-extracted (32 pp); abstract and intro read; keyword-scanned for group/cluster/fixed effect/nuisance (no hits). Proofs not read.",
+    "what_it_covers": "RSC rank selection; consistent for the rank of the coefficient matrix under fixed design with iid noise. Applied to an enlarged or projected coefficient it gives Props 1-2 as corollaries."
+   },
+   {
+    "citation": "Bing, Wegkamp (2019). Adaptive estimation of the rank of the coefficient matrix in high-dimensional multivariate response regression models. Ann. Statist. 47(6):3157-3184 (arXiv:1704.02381).",
+    "url_or_doi": "https://doi.org/10.1214/18-AOS1774",
+    "how_read": "arXiv PDF text-extracted (58 pp); abstract and intro read; keyword-scanned (no cluster/fixed-effect/nuisance hits). Proofs not read.",
+    "what_it_covers": "Self-tuning rank estimator with finite-sample rank consistency; iid errors, no group structure."
+   },
+   {
+    "citation": "She, Tran (2019). On cross-validation for sparse reduced rank regression. J. R. Stat. Soc. B (arXiv:1812.11555).",
+    "url_or_doi": "https://doi.org/10.1111/rssb.12295",
+    "how_read": "arXiv PDF text-extracted (38 pp); abstract, background and Theorem 1 setup read; keyword-scanned for dependence/cluster/group (none relevant).",
+    "what_it_covers": "CV for rank and variable selection in RRR can be inconsistent when tuning is fixed across folds (iid rows); proposes structural CV. Establishes that CV rank selection has known failure modes, but not LOGO/group shift."
+   },
+   {
+    "citation": "Hrachov, Piepho, Rahman, Malik (2026). Regression approaches for modelling genotype-environment interaction and making predictions into unseen environments. Theor. Appl. Genet. (arXiv:2507.18125).",
+    "url_or_doi": "https://doi.org/10.1007/s00122-025-05103-7",
+    "how_read": "arXiv PDF text-extracted (39 pp); keyword-scanned and RRR / leave-one-environment-out CV passages read.",
+    "what_it_covers": "Reduced-rank / factor-analytic regression for environment-level effects with LOEO CV for prediction into new environments. No rank-selection theory, no over/under-selection result."
+   },
+   {
+    "citation": "Dias, Krzanowski (2003). Model selection and cross validation in additive main effect and multiplicative interaction models. Crop Sci.",
+    "url_or_doi": "https://acsess.onlinelibrary.wiley.com/doi/abs/10.2135/cropsci2003.8650",
+    "how_read": "abstract only (search snippet)",
+    "what_it_covers": "AMMI: additive environment main effects are removed first, then the number of multiplicative axes is selected by leave-one-out CV vs F-tests. Classical agronomy practice behind the 'within' rank idea; no theory of over/under-selection."
+   },
+   {
+    "citation": "Cai, Canay, Kim, Shaikh (2023). On the implementation of approximate randomization tests in linear models with a small number of clusters. J. Econometric Methods 12(1) (arXiv:2102.09058); Canay, Romano, Shaikh (2017) Econometrica 85(3).",
+    "url_or_doi": "https://doi.org/10.1515/jem-2021-0030",
+    "how_read": "Cai et al.: arXiv PDF text-extracted, algorithm section read (sign-change group cardinality 2^q). Canay et al. 2017: abstract only.",
+    "what_it_covers": "Sign-change randomization tests with a fixed small number of clusters (as few as five); the group of sign changes has 2^q elements. This is the machinery behind Prop 3 and the 2^-(G-1) floor."
+   },
+   {
+    "citation": "Winkler, Renaud, Smith, Nichols (2020). Permutation inference for canonical correlation analysis. NeuroImage (arXiv:2002.10046); Winkler et al. (2015) Multi-level block permutation.",
+    "url_or_doi": "https://arxiv.org/abs/2002.10046",
+    "how_read": "2020 paper: arXiv PDF text-extracted; abstract and restricted-exchangeability section read. 2015 paper: abstract only (PMC).",
+    "what_it_covers": "Permutation tests for the number of nonzero canonical correlations (the rank of the cross-covariance), with restricted-exchangeability blocks and block sign-flips for repeated measures. Closest prior on a rank test with block-level sign flips; not the between-group rank with G-1 bound."
+   }
+  ],
+  "what_remains_open": "(a) A non-asymptotic characterisation of the rank chosen by pooled leave-one-group-out CV (a lower bound on excess error, or better an exact selected-rank formula) in terms of the between-group coefficient, the group-shift covariance and G: not found in print. (b) A formal statement for the grouped fixed design with p >= G-1 and indicators in span(X), including the signal-strength threshold below which penalised or thresholded rules (BSW, Bing-Wegkamp) do NOT absorb the nuisance factor. This is a dose-response refinement of Prop 1 and is not in print. (c) A rank-specific exact test of r_between (rather than a mean or symmetry test) with explicit power and the 2^-(G-1) floor. Sign-flip machinery exists, but a worked-out, validity-proved rank test on group-level cross-covariance with few groups was not found. (d) No paper found that combines these in the histology to gene-programme, census or short-panel applications. Absence of the application is not evidence of novelty of the method.",
+  "sharpened_claim_if_any": "Drop 'over-selects by exactly the nuisance rank w.p. -> 1' as a headline; it is an almost-immediate corollary of BSW/BW applied to the enlarged coefficient. A defensible sharper claim is the two-estimand statement: for G groups, p >= G-1 and group-level nuisance rank k, (i) the pooled penalised rank rule recovers r + min(k, rank absorbed) with absorption governed by an explicit signal-to-penalty threshold; (ii) pooled LOGO-CV does NOT target r but the new-group-predictable rank r_LOGO(G, shift covariance), for which an exact characterisation (not only a lower bound) is given and shown to differ from r by an explicit amount; (iii) within-group demeaned rank is the only one of the three that targets r; (iv) a finite-G exact test of the between-group rank with proved validity and a power statement. Framing risk: LOGO-CV targets prediction on a new group, so 'under-selection' relative to the within-group rank is a statement about estimand mismatch, and a reviewer may say CV is doing what it was asked to do. Ask for r_LOGO as a separate estimand.",
+  "value_assessment": "At most a proposition or appendix, not a methods paper by itself at NeurIPS/ICML/AISTATS. The over-selection and within-rank results (Props 1-2) will be read as corollaries of Bunea-She-Wegkamp / Bing-Wegkamp plus Bing-Ning-Xu's identifiability of F = Psi + A B, fixed-effects projection and AMMI practice. The sign-flip test (Prop 3) is an application of Canay-Romano-Shaikh and Winkler block sign-flips, and the 2^-(G-1) floor is a counting fact. The only item that could carry a formal contribution is the LOGO-CV rank-selection characterisation (Prop 4 / its sharpened form). Even that is thin: it sits close to Rabinowicz-Rosset (CV bias under clustering), NICc (leave-one-cluster-out size selection) and the Shao-type inconsistency literature. It could be a self-contained short note or a section of a larger paper on evaluating donor-robust prediction; a top statistics journal is unlikely unless Prop 4 grows into a full theory of group-CV rank selection with matching upper and lower bounds. Verdict reflects a search that cannot see inside paywalled full texts (Econometrica, JASA, Crop Science) and does not prove absence.",
+  "n_queries": 72
+ },
+ {
+  "slug": "SCALE",
+  "name": "Check Scale",
+  "frame_id": null,
+  "deviations": [
+   "Semantic Scholar returned HTTP 429 on every call (about 8 attempts), so forward citations of the anchor papers (Zhang-Mykland-A\u00eft-Sahalia 2005, Zhang 2011, Pospisil-Bair 2021) were NOT checked; no OpenCitations substitute was tried.",
+   "Zhang-Mykland-A\u00eft-Sahalia 2005 and Patton 2011 were read only as abstracts and web-search excerpts: the Princeton and Duke PDF hosts were blocked by the sandbox and I did not request access.",
+   "Schoppe 2016, Hsu 2004, Zhang 2011, Bliese 1998, Hansen-Lunde and Lo-MacKinlay were seen only via metadata, abstracts or excerpts in citing papers (paywalled), not read in full.",
+   "Full text was read (by pypdf extraction and keyword/section reading, not line by line) only for Pospisil & Bair, Arambepola et al., the FSS derivation paper and arXiv 2403.07236; From Spots to Pixels (2503.01347) was only keyword-searched.",
+   "Many arXiv keyword queries with strict AND operators returned 0 results, and three first-round arXiv queries failed with HTTP 429; they are logged with n=0. The 60 logged queries include these and 2 failed Semantic Scholar entries, so 44 queries returned results.",
+   "Some author lists were not shown in the search snippets and are marked '(see source)' in the candidates CSV rather than filled from memory.",
+   "Per-query new_close_papers counts in the query log are my own judgement, assigned after the fact."
+  ],
+  "verdict": "mostly_taken",
+  "verdict_reason": "Every ingredient is in print under other vocabularies; I found no paper that combines them for predictive skill. (a) Identifying noise variance and signal from several aggregation scales is the two-scale / multi-scale realized-variance programme (Zhang-Mykland-Ait-Sahalia 2005, Zhang 2006, A\u00eft-Sahalia-Mykland-Zhang 2011). Its cross-moment form is two-scales realized covariance (Zhang 2011), which is the Cov(P,Y|m) analogue. The variance-ratio test (Lo-MacKinlay 1988), Allan variance in metrology, Krige's volume-variance relation and the geostatistical nugget use the same moment structure, Var(m-sum) = m*unit + m(m-1)*cross. (b) The ceiling R2_max(A)=S/(S+tau^2/A) is Spearman-Brown / ICC(k) reliability of an average. In neuroscience it is the noise ceiling CCmax and normalised correlation (Hsu et al. 2004, Schoppe et al. 2016, Pospisil & Bair 2021). In organisational psychometrics, Bliese 1998 shows group-level correlation depends on group size through ICC(2) and gives an attenuation correction. (c) Ranking of predictors being invariant to noise in the target is Patton 2011 / Hansen-Lunde 2006 and the Meddahi R2 result; the ratio of correlations being noise-invariant is the same idea as disattenuation. (d) Correlation changing with aggregation scale is the MAUP (Gehlke-Biehl 1934, Yule-Kendall 1950, Openshaw 1983). (e) Bounds on unit-level association from aggregates are ecological-inference bounds (Duncan-Davis 1953; Cho-Manski; Monotone EI 2026). LP-with-polyhedral-shape-restrictions bounds appear in Econometric Reviews / arXiv 2403.07236. (f) The smallest skilful scale is Roberts-Lean FSS 2008. (g) The power trade-off between block size and number of blocks is the cluster-randomised optimal-design / design-effect literature (Raudenbush 1997), and the noise-vs-sampling trade-off in RV (Hansen-Lunde 2006). Closest ML-adjacent hit: Arambepola et al. 2022 (arXiv 2005.03604) asks exactly 'does aggregate-level CV tell you fine-scale skill' for Poisson disaggregation regression, but only by simulation. No paper found that states point identification or sharp bounds of cell-level predictor skill c0 from multi-block-size count data.",
+  "closest_papers": [
+   {
+    "citation": "Zhang, Mykland, A\u00eft-Sahalia (2005) A Tale of Two Time Scales, JASA 100(472):1394-1411",
+    "url_or_doi": "10.1198/016214505000000169",
+    "how_read": "abstract and search-result excerpts of the Princeton PDF (it states the method 'also delivers a consistent estimator for the variance of the noise term'); full PDF blocked by the sandbox, DOI paywalled",
+    "what_it_covers": "Two-scale estimator that identifies noise variance and signal from two aggregation scales, with CLT and optimal-subsample trade-off. This is the template for comps (1),(3) and the estimator the claim says it is 'in the spirit of'."
+   },
+   {
+    "citation": "Zhang (2011) Estimating covariation: Epps effect, microstructure noise, J. Econometrics",
+    "url_or_doi": "10.1016/j.jeconom.2010.03.012",
+    "how_read": "metadata plus the description in citing arXiv 2003.13062 (two-scales cancels noise and the Epps effect for covariance); not read in full",
+    "what_it_covers": "Two-scales realized covariance. This is the cross-moment version, so identifying a cross-covariance signal (here Cov(P,Y)) separately from unit-level noise by combining scales is established in finance."
+   },
+   {
+    "citation": "Pospisil & Bair (2021) The unbiased estimation of the fraction of variance explained by a model, PLOS Comput Biol",
+    "url_or_doi": "10.1371/journal.pcbi.1009212",
+    "how_read": "full-text PDF downloaded; read the Poisson/variance-stabilising assumptions, the repeat-trial estimator and the SNR discussion by text extraction",
+    "what_it_covers": "Unbiased noise-corrected r2 with CIs and asymptotics, Poisson via sqrt transform, SNR as a quality criterion. Noise is identified from repeats (n trials), not from aggregation scales, and trials are assumed independent. Covers the ceiling / disattenuated skill idea, not scale identification."
+   },
+   {
+    "citation": "Schoppe et al. (2016) Measuring the Performance of Neural Models, Front Comput Neurosci; Hsu, Borst, Theunissen (2004) Network 15:91",
+    "url_or_doi": "10.3389/fncom.2016.00010 ; 10.1088/0954-898x_15_2_002",
+    "how_read": "excerpts only (CCmax and CCnorm formulas as quoted in arXiv 2305.11863 and 2502.12771); not read in full",
+    "what_it_covers": "Noise ceiling CCmax=(sqrt(1+NP/(N*SP)))^-1 and CCnorm=CCabs/CCmax. This is the same functional form as R2_max(A) with N=A, plus the normalisation of a predictor's skill by its ceiling (eta_k(A))."
+   },
+   {
+    "citation": "Bliese (1998) Group Size, ICC Values, and Group-Level Correlations: A Simulation, Organizational Research Methods",
+    "url_or_doi": "10.1177/109442819814001",
+    "how_read": "abstract only (paywalled)",
+    "what_it_covers": "Group-level correlation as a function of group size via ICC(2) (Spearman-Brown reliability of the mean); correction-for-attenuation formula recovers the group-level correlation. Covers the ceiling and its dependence on block size in an exchangeable-within-group model."
+   },
+   {
+    "citation": "Patton (2011) Volatility forecast comparison using imperfect volatility proxies, J. Econometrics 160(1):246-256; Hansen & Lunde (2006) Consistent ranking of volatility models, J. Econometrics",
+    "url_or_doi": "10.2139/ssrn.932890 ; 10.1016/j.jeconom.2005.01.005",
+    "how_read": "abstract and excerpts of the Duke PDF via search (PDF fetch blocked); Hansen-Lunde metadata only",
+    "what_it_covers": "Noise in the target does not change the ranking of forecasts for robust losses, and the Meddahi R2 ranking is robust to proxy noise. Covers the claim's 'ratio of two predictors' correlations is invariant to outcome noise' and the power gain from less noisy proxies. Li & Patton (2018) and the 2025 J. Econometrics biased-proxy paper cover power in the same setting."
+   },
+   {
+    "citation": "Arambepola et al. (2022) A simulation study of disaggregation regression for spatial disease mapping, Stat Med (arXiv 2005.03604)",
+    "url_or_doi": "arXiv:2005.03604",
+    "how_read": "PDF downloaded; read abstract, introduction and the aggregate-CV evaluation section by text extraction",
+    "what_it_covers": "Poisson disaggregation regression with fine-scale truth in simulation. Asks whether aggregate-level cross-validation correlation reflects fine-scale accuracy. Finds it 'moderately good' and that accuracy worsens with aggregate area size under misspecification. Same question as the claim, but purely empirical, with no identification of c0 and no noise ceiling."
+   },
+   {
+    "citation": "Duncan & Davis (1953) bounds and the ecological-inference partial-identification line: Cho & Manski; Monotone Ecological Inference (Political Analysis 2026); Partial Identification of Individual-Level Parameters Using Aggregate Data (arXiv 2403.07236, Econometric Reviews)",
+    "url_or_doi": "arXiv:2403.07236 ; https://www.cambridge.org/core/journals/political-analysis/article/monotone-ecological-inference/4090B0DA4A8B2ACF493795EDD60AF093 ; https://www.researchgate.net/publication/286225847_Cross-LevelEcological_Inference",
+    "how_read": "arXiv 2403.07236 PDF downloaded, read introduction and inference section; the others by abstract/excerpt",
+    "what_it_covers": "Sharp bounds on individual-level quantities from aggregates, including bounds on individual-level correlations (Duncan-Davis), LP formulation with polyhedral shape restrictions such as monotonicity, and conservative CIs for the identified set. Covers the method of (2) but for conditional means / proportions, not for covariance-type skill from count blocks."
+   },
+   {
+    "citation": "Roberts & Lean (2008) Fractions Skill Score, Mon Wea Rev; How to derive skill from the Fractions Skill Score (arXiv 2311.11985)",
+    "url_or_doi": "10.1175/2007mwr2123.1 ; arXiv:2311.11985",
+    "how_read": "arXiv 2311.11985 PDF downloaded and searched (no observation-noise or ceiling content); Roberts-Lean by metadata",
+    "what_it_covers": "Skill-versus-neighbourhood-scale curves with a 'useful' threshold and a smallest skilful spatial scale. Covers the concept in (4) of a smallest skilful scale; thresholds are random-forecast baselines, not a noise-ceiling-relative efficiency."
+   },
+   {
+    "citation": "Lo & MacKinlay (1988) variance-ratio test; Allan variance (NIST historical perspective); Krige's relationship (J. S. Afr. Inst. Min. Metall. 2014); Atkinson & Tate (2000); Gotway & Young (2002)",
+    "url_or_doi": "10.1093/rfs/1.1.41 ; https://tf.nist.gov/general/pdf/2834.pdf ; https://www.scielo.org.za/scielo.php?script=sci_arttext&pid=S2225-62532014000800009 ; 10.1111/0033-0124.00250 ; 10.1198/016214502760047140",
+    "how_read": "metadata and excerpts only",
+    "what_it_covers": "Variance of aggregates across window sizes identifies unit-level noise vs within-block dependence (variance ratio, Allan variance, dispersion variance, nugget, regularisation / change of support). Shows the moment structure Var(Y|m) and Cov(P,Y|m) is textbook in finance, metrology and geostatistics."
+   }
+  ],
+  "what_remains_open": "(i) Nothing found that states, for a PREDICTOR of a latent field, the joint identification of cell-level skill c0, the unit-level noise tau^2 and the ceiling from the Var/Cov moment system across block sizes, with count (Poisson / overdispersed) noise. The nearest items are Zhang 2011 (cross-moments, finance), Pospisil-Bair (noise-corrected skill from repeats) and Bliese 1998 (ICC-based attenuation in groups), which differ in model or data. (ii) Own algebra, not found in print and not verified beyond my reading: with Cov(P,Y|m)=m*c0+m(m-1)*c1 and no intercept, two distinct block sizes already give a 2x2 linear system for (c0,c1), so '>=3 sizes' only buys over-identification and a specification test. This makes result (1) a short ANOVA / variance-component-type identification, not a theorem-grade result. (iii) Result (2) is Cauchy-Schwarz on the between-unit cross-covariance (|c1| <= sqrt(kappa_p*kappa_lambda)); the 'monotone-in-distance LP tightening' has structural analogues in the ecological-inference literature (2403.07236, Monotone EI) but I found no application to covariance-type skill. (iv) Result (3), consistency and variance of a two-scale estimator under a spatially correlated latent field with count noise and block-size variation, is not found for this model; it is the part with the most real statistical content, though TSRV theory under dependent noise (A\u00eft-Sahalia-Mykland-Zhang 2011) and Zhang 2011 are templates. (v) Donor-level exchangeable-group intervals for scale curves and encoder efficiency eta_k(A), and the exogenous-block-size designs (Xenium re-aggregation, Visium nuclei count as a support instrument), are project-specific and I found no prior ST or PUMS treatment, but they are mostly application plus known clustering inference. (vi) Result (5) is the classical cluster-size versus number-of-clusters power trade-off; only its instantiation to predictor comparison under a ceiling is not found. Limits of this check: Semantic Scholar was rate-limited (HTTP 429 on every call), so forward citations of the anchors were NOT checked. arXiv keyword queries were weak. I cannot rule out a paper in econometrics / survey sampling / neuroscience methods that handles the Cov(P,Y|m) system under other notation.",
+  "sharpened_claim_if_any": "A claim most likely to survive: a theorem-level treatment of the two-block-size (or multi-size) moment system for CROSS-covariance between a predictor and a count outcome. That means (a) identification of cell-scale skill and the ceiling under Poisson / quasi-Poisson noise with unknown, block-size-varying mean intensity (the mean-weighting m*mu term makes Var depend on the mean field, which the TSRV literature does not treat), (b) a CLT and optimal block-size pair when the latent field is spatially correlated (kappa depends on m through a variogram), where Zhang-style bias-variance results are not available off the shelf, and (c) a specification test of exchangeability from over-identification across >=3 sizes, plus the formal link that the correlation ratio of two predictors equals the ratio of their cell-scale skills only when the exchangeable cross-covariance c1 is common (this identifiability caveat, if verified, is the real content of 'invariance'). Frame the paper as 'two-scale covariation estimator for noisy count fields' with the ST application, not as a new ceiling or a new aggregation effect.",
+  "value_assessment": "As stated, the claim is mostly taken: the ceiling and normalisation are noise-ceiling / Spearman-Brown / ICC(2) results, scale-dependence is MAUP, the identified set is Cauchy-Schwarz plus ecological-inference bounds, the two-scale estimator is Zhang et al. 2005 / Zhang 2011, and the smallest skilful scale is FSS. Results (1), (2) and (5) are at most propositions or appendix material. The remainder that could carry a stats-journal methods paper is result (3), a consistent, asymptotically normal two-scale estimator of cell-scale predictive covariance with count noise and a spatially dependent latent field, together with the sharper identification caveat in the sharpened claim. For NeurIPS / ICML / AISTATS it would be a thin fit unless the empirical finding (how encoder rankings and ceilings change across scales on Xenium / Visium / PUMS) is strong. Partly-open grade is arguable only for the component (3) combination; this check cannot certify it because forward citations were not checked.",
+  "n_queries": 60
+ },
+ {
+  "slug": "hidden_block_label_free_performance",
+  "name": "Check Hidden",
+  "frame_id": null,
+  "deviations": [
+   "Queries: 70 logged (22 web_search, 36 arXiv API, 8 Crossref, 4 Semantic Scholar citation-endpoint calls on anchors arXiv:2412.08869, 2306.08084, 2101.11182, 2404.18370). Many arXiv AND-queries returned 0 hits (counted); 14 arXiv calls initially failed with HTTP 429 and were retried with backoff (succeeded).",
+   "Semantic Scholar keyword-search endpoint was rate-limited (429/502) and a 14-query batch was aborted; no results from it are used. Forward citations of Garg et al. (ATC) were not pulled (very large); only 4 anchors were checked.",
+   "fetch_article_fulltext was not used; arXiv PDFs were downloaded and text-extracted with pypdf (2201.04234, 2210.01980, 2306.08084, 2404.18370, 2409.13458, 2412.08869, 2608.15783, 2610.15953, 2306.02948). Only Jin et al. Sec. 3, Steingrimsson sensitivity Sec. 2-3 and the abstract/intro of Morrison, Steingrimsson meta-analysis, Shi et al., Small Area Learning and Bansak et al. were actually read; Jeong & Rothenhausler theory sections, appendices, and the full estimator sections were not read.",
+   "Papers graded by abstract/search-excerpt only: Steingrimsson 2023 AJE, Garg (beyond Sec. 3.1), PAPE, Chen et al. SJS, Patton, Higgins et al., Giacomini et al., McColl et al., Meyer & Pebesma, arXiv:2607.18088, 2502.02710, 2601.00716, 2503.00450, 2608.15500, 2605.08551. Vergouwe et al. and Jin-Guo-Rothenhausler 2023 are citation-only (title from a reference list).",
+   "Authors were left as 'not retrieved' where they did not appear in any retrieved result. Stereology, psychometrics (reliability/attenuation) and metrology were covered by one Crossref query each at most (no close hit); triple collocation (remote sensing) by a web search only.",
+   "The 'n_results_screened' column for web searches is the number of results returned by the tool, not a count of those inspected in depth; 'new_close_papers' is a judgement count and provisional."
+  ],
+  "verdict": "mostly_taken",
+  "verdict_reason": "Each ingredient is in print in some form. (1a) Label-free estimation of the covariate-explained risk by density-ratio / outcome-regression of source residuals is the standard transportability-of-model-performance literature (Steingrimsson et al. AJE 2023; Morrison et al. 2022 doubly robust; sensitivity analysis by exponential tilt, Steingrimsson-Robertson-Dahabreh, Biometrics 2024), plus the ML statement that target accuracy is identified iff the shift assumptions pin down p_t(y|x) (Garg et al. ICLR 2022, Prop. 1). (1b) The 'rest is not identified' lower bound is the generic same-P(X) two-point / identified-set-midpoint argument (minimax decision = midpoint of identified set, Giacomini-Kitagawa-Uhlig; same-P_T(X) hard pair in arXiv:2607.18088 for classification); invariance of rankings to a common additive noise in the target is classical forecast-evaluation theory (Patton 2011). (3) A K-source-group certificate for a new group's random hidden quantity is the random-effects prediction interval (Higgins-Thompson-Spiegelhalter 2009; applied to model performance by Debray/Snell-type IPD meta-analyses) and hierarchical conformal prediction for unseen groups; nonparametric deconvolution has logarithmic minimax rates, so only parametric/moment versions can have explicit polynomial-in-K width. Not found in print: the specific (a_g, s_g) location-scale block model with the catalogue of identified vs. non-identified functionals and the exact half-range minimax bound, and any stated condition (direction-neutrality) or counterexample (rank-one shared offset) for the Jin-Egami-Rothenhausler rule. The latter is the only component with no match, but Jin et al.'s own derivation is already conditional on a random, dense, independent-perturbation model, so a neutrality condition is a refinement of an assumption they state, and a shared offset with zero covariate shift is an elementary counterexample.",
+  "closest_papers": [
+   {
+    "citation": "Jin, Egami, Rothenhausler. Beyond reweighting: On the predictive role of covariate shift in effect generalization. PNAS 122(45), 2025 (arXiv:2412.08869)",
+    "url_or_doi": "https://doi.org/10.1073/pnas.2427181122",
+    "how_read": "arXiv PDF text extracted with pypdf; read Sec. 3 (random distribution shift model, Thm 3.3 distributional CLT, 'why covariate shift often upper bounds conditional shift') and keyword-searched whole text for counterexample/violation/limitation language (none found). Appendices not read.",
+    "what_it_covers": "The rule in part (2). Justified only through a random, dense, independent-perturbation shift model and empirical evidence; no necessary/sufficient condition and no counterexample with a shared deterministic offset found."
+   },
+   {
+    "citation": "Steingrimsson, Robertson, Dahabreh. Sensitivity analysis for studies transporting prediction models. Biometrics 80(4), 2024 (arXiv:2306.08084)",
+    "url_or_doi": "https://arxiv.org/abs/2306.08084",
+    "how_read": "arXiv PDF text extracted; read abstract, intro, setup and identification (Sec. 2-3); keyword scan for sharp/bound; estimator sections not read.",
+    "what_it_covers": "Identification of target risk from source labels + target covariates under conditional transportability, and an exponential-tilt sensitivity family when it fails. Close to parts (1a)/(1b) but no location-scale block, no minimax bound, no invariant-functional catalogue."
+   },
+   {
+    "citation": "Steingrimsson, Gatsonis, Li, Dahabreh. Transporting a prediction model for use in a new target population. AJE 2023 (arXiv:2101.11182)",
+    "url_or_doi": "https://doi.org/10.1093/aje/kwac128",
+    "how_read": "abstract and introduction excerpts from search results only; PDF not read.",
+    "what_it_covers": "Identifiability of target MSE and other loss-based measures under covariate shift; 'prediction error modifiers'. Part (1a) taken."
+   },
+   {
+    "citation": "Morrison, Gatsonis, Dahabreh, Li, Steingrimsson. Robust estimation of loss-based measures of model performance under covariate shift (arXiv:2210.01980)",
+    "url_or_doi": "https://arxiv.org/abs/2210.01980",
+    "how_read": "arXiv PDF text extracted; read abstract and introduction only.",
+    "what_it_covers": "Doubly robust estimators of target-population risk using density ratio and outcome regression with only target covariates. Part (1a) taken."
+   },
+   {
+    "citation": "Garg, Balakrishnan, Lipton, Neyshabur, Sedghi (authors as on arXiv page, not shown in retrieved result). Leveraging unlabeled data to predict out-of-distribution performance. ICLR 2022 (arXiv:2201.04234)",
+    "url_or_doi": "https://arxiv.org/abs/2201.04234",
+    "how_read": "Sec. 3.1 (Prop. 1, Cor. 1) read via search excerpts of arXiv HTML/PDF; PDF text extracted but remainder not read.",
+    "what_it_covers": "General identification/impossibility statement: label-free target accuracy is possible iff shift assumptions with p_s(x,y), p_t(x) pin down p_t(y|x). Subsumes the qualitative 'which parts are identified' message of part (1)."
+   },
+   {
+    "citation": "Reluga, Salvati, Ranjbar, Tzavidis, van der Laan. Small area learning (arXiv:2610.15953)",
+    "url_or_doi": "https://arxiv.org/abs/2610.15953",
+    "how_read": "arXiv PDF text extracted; read abstract and introduction; keyword scan (no 'unlabeled', 2-3 hits for 'performance').",
+    "what_it_covers": "Same model skeleton (unrestricted covariate shift + structured area-specific conditional shift with common and area components) in survey sampling; labeled data needed in every area; targets area means, not label-free risk."
+   },
+   {
+    "citation": "Bansak, Paulson, Rothenhausler. Learning under random distributional shifts (arXiv:2306.02948)",
+    "url_or_doi": "https://arxiv.org/abs/2306.02948",
+    "how_read": "arXiv PDF text extracted; abstract, introduction, keyword scan (offset/intercept essentially absent; 'unlabeled' only in related work).",
+    "what_it_covers": "Arbitrary covariate shift + dense random shocks to Y|X; prediction strategies compared by MSE. Model-level relative of the hidden-block setting; not performance estimation."
+   },
+   {
+    "citation": "Patton. Volatility forecast comparison using imperfect volatility proxies. J. Econometrics 160(1), 2011",
+    "url_or_doi": "https://doi.org/10.2139/ssrn.932890",
+    "how_read": "abstract and introduction excerpts from search results.",
+    "what_it_covers": "Necessary and sufficient conditions on the loss for forecast rankings to be preserved under a noisy conditionally unbiased proxy; the template for 'ranking of predictors is identified when the hidden block is common'."
+   },
+   {
+    "citation": "Higgins, Thompson, Spiegelhalter. A re-evaluation of random-effects meta-analysis. JRSS A 172(1), 2009; and the performance-prediction-interval use in IPD meta-analysis of prediction models (J Clin Epidemiol 2016, authors not retrieved)",
+    "url_or_doi": "https://doi.org/10.1111/j.1467-985X.2008.00552.x",
+    "how_read": "abstract/excerpts from search results only.",
+    "what_it_covers": "Prediction interval for a new study/group from K groups with between-group variance and sampling error; the classical form of the part (3) certificate."
+   },
+   {
+    "citation": "Giacomini, Kitagawa, Uhlig. Estimation under ambiguity (IFS CWP 2024); and arXiv:2607.18088 (label complexity of class-conditional coverage; authors not retrieved)",
+    "url_or_doi": "https://ifs.org.uk/sites/default/files/output_url_files/CW2419_Estimation_Under_Ambiguity.pdf",
+    "how_read": "abstracts/excerpts from search results only.",
+    "what_it_covers": "Minimax point estimate of a set-identified parameter is the midpoint of the identified set (half-width lower bound); same-P(X) hard pair for label-free impossibility under joint shift."
+   }
+  ],
+  "what_remains_open": "(i) A stated necessary-and-sufficient or at least explicit sufficient condition ('direction-neutrality') under which the Jin et al. covariate-shift-bounds-conditional-shift rule holds for a regression residual block, with a violation-ratio formula and a shared rank-one technical offset as counterexample: nothing found, but the counterexample is elementary and the condition is close to the independence/symmetry already built into the random-shift model. (ii) The catalogue for the specific Y = f(X) + a_g + s_g*eps model: what is identified without labels (E[Y|X]-based quantities such as covariance with f, centered within-group MSE and its ranking across predictors, regression slope) versus not (uncentered MSE, within-group R^2, anything involving s^2*sigma^2), together with the exact half-range minimax bound. Specialization of known arguments; not found written down for this block. (iii) A finite-K certificate that deconvolves source-group hidden-block moments from within-group sampling noise and reports width in K and effective within-group sample size: a parametric/moment version is a routine random-effects construction; a nonparametric version is limited by logarithmic deconvolution rates. (iv) The empirical fact (technical-outlier donor invisible to embedding outlyingness yet breaking interval coverage) as a motivating case: shift detection not tracking performance is well documented generally and in pathology (arXiv:2601.00716), so only the donor-level ST instance is new.\n\nCAUTION on claim wording: within the stated model Pearson correlation of Y with f(X) is invariant to the offset a_g but NOT to the noise scale s_g (corr = sd f / sqrt(var f + s^2 sigma^2)), so it is not label-free identified; what is identified is Cov(Y, f(X)) / Var f(X) type quantities and centered loss differentials between predictors. Please check which functional is intended before stating result (1).",
+  "sharpened_claim_if_any": "A claim that would survive: for the model Y_gi = f(X_gi) + a_g + s_g*eps_gi with (a_g, s_g) independent of P_g(X), (A) the set of risk functionals identified from source labels plus target covariates is exactly those that do not depend on (a_g, s_g^2 sigma^2) after centering, which includes the centered-loss differential between any two predictors (so within-group rankings by centered MSE) but excludes absolute MSE, R^2 and correlation; (B) the minimax label-free error for absolute within-group MSE equals half the width of the identified interval, and shared-offset counterexamples show the 'covariate shift bounds conditional shift' rule can fail by an arbitrarily large ratio unless the block is direction-neutral; (C) with K labelled groups a moment-based certificate whose width scales as sqrt(1/K + 1/(K n_eff)) for the hidden-block mean and variance. Present (A)-(B) as a proposition-level theory section with the donor-outlier case as motivating evidence, not as the sole headline.",
+  "value_assessment": "As a stand-alone methods paper for NeurIPS/ICML/AISTATS or a top statistics journal the remainder is thin: part (1a) is taken, part (3) is classical random-effects prediction, and the lower bound is a standard identified-set/two-point argument. The one possibly citable novelty is the neutrality condition plus counterexample for the Jin et al. rule, which is a short proposition (or a remark in a paper whose main contribution is elsewhere). It could carry an applied-statistics section or appendix in a spatial-transcriptomics evaluation paper, and could be a short note (e.g., a PNAS/JRSS-B discussion-style comment on Jin et al.), but not by itself a methods-paper headline unless paired with a substantively new estimator or a nonparametric finite-K result with matching upper and lower bounds.",
+  "n_queries": 70
+ }
+]
