@@ -1,0 +1,81 @@
+query,source,date,n_results_screened,new_close_papers
+"all:""inference on winners""",arxiv,2026-10-26,5,2607.18545; 2410.19212
+"all:""winner"" AND all:""confidence interval"" AND all:""selected"" AND all:""conditional"" AND all:""hybrid""",arxiv,2026-10-26,0,
+"all:""locally simultaneous inference""",arxiv,2026-10-26,1,2212.09009
+"all:""confidence set"" AND all:""best"" AND all:""model"" AND all:""argmax"" AND all:""bootstrap""",arxiv,2026-10-26,0,
+"all:""reality check"" AND all:""data snooping"" AND all:""max"" AND all:""few""",arxiv,2026-10-26,0,
+"all:""multiple comparisons with the best"" AND all:""correlated""",arxiv,2026-10-26,1,
+"all:""inference for ranks"" AND all:""confidence sets""",arxiv,2026-10-26,3,
+"all:""winner's curse"" AND all:""model selection"" AND all:""benchmark""",arxiv,2026-10-26,0,
+"all:""backtest overfitting"" AND all:""deflated Sharpe""",arxiv,2026-10-26,3,
+"all:""max-t"" AND all:""high-dimensional"" AND all:""fewer groups"" AND all:""multiplier bootstrap""",arxiv,2026-10-26,0,
+"all:""winner's curse"" AND all:""leaderboard""",arxiv,2026-10-26,1,2607.18545 (dup)
+"all:""confidence set"" AND all:""best model"" AND all:""benchmark"" AND all:""ranking""",arxiv,2026-10-26,0,
+"all:""model confidence set""",arxiv,2026-10-26,6,2211.04958 (Kissel-Lei)
+"all:""superior predictive ability"" AND all:""bootstrap""",arxiv,2026-10-26,0,
+"all:""few clusters"" AND all:""max"" AND all:""simultaneous"" AND all:""multiplier""",arxiv,2026-10-26,0,
+"all:""Gaussian approximation"" AND all:""maxima"" AND all:""rank deficient"" AND all:""covariance"" AND all:""sign-flip""",arxiv,2026-10-26,0,
+"all:""selection of the best"" AND all:""number of candidates exceeds"" AND all:""number of groups""",arxiv,2026-10-26,0,
+"all:""post-selection inference"" AND all:""best performing model"" AND all:""test set"" AND all:""confidence interval""",arxiv,2026-10-26,0,
+"all:""Sharpe ratio"" AND all:""multiple testing"" AND all:""selection bias"" AND all:""strategies"" AND all:""dependence""",arxiv,2026-10-26,0,
+"all:""selection bias"" AND all:""foundation model"" AND all:""benchmark"" AND all:""few datasets"" AND all:""confidence""",arxiv,2026-10-26,0,
+"all:""argmax"" AND all:""confidence set"" AND all:""population winner""",arxiv,2026-10-26,0,
+"all:""inference on the best"" AND all:""cross-validation"" AND all:""leave-one-group-out""",arxiv,2026-10-26,0,
+winner's curse confidence interval selected best candidate,arxiv,2026-10-26,6,2411.18569; 2605.18887
+confidence set for the best model few groups high correlation,arxiv,2026-10-26,6,
+high-dimensional Gaussian comparison maximum few observations rank deficient,arxiv,2026-10-26,6,
+wild bootstrap few clusters max statistic simultaneous inference,arxiv,2026-10-26,6,
+selection of best forecasting model inference many models few time blocks,arxiv,2026-10-26,6,
+backtest overfitting probability multiple strategies selection Sharpe,arxiv,2026-10-26,6,
+confidence interval for performance of selected model after hyperparameter search,arxiv,2026-10-26,6,2011.12873 (McCloskey hybrid)
+post-selection inference benchmark evaluation best foundation model confidence,arxiv,2026-10-26,6,
+confidence sets for the argmax of means bootstrap,arxiv,2026-10-26,6,
+subset selection best population Gupta correlated normal means,arxiv,2026-10-26,6,
+inference on selected best model leave-one-group-out cross-validation donors,arxiv,2026-10-26,6,
+randomization test sign flip max statistic fixed number of groups,arxiv,2026-10-26,6,
+S2 forward citations of arXiv:2411.18569,semanticscholar,2026-10-26,9,2609.28177; 2603.03336; 2604.09779
+S2 forward citations of arXiv:2410.19212,semanticscholar,2026-10-26,0,
+S2 forward citations of arXiv:2212.09009,semanticscholar,2026-10-26,11,2609.28177 (dup)
+effective number of independent tests eigenvalues correlation matrix,arxiv,2026-10-26,6,
+confidence interval selected model performance winner's curse cross-validation estimate best model,arxiv,2026-10-26,6,
+inference on winners fixed number of groups few clusters,arxiv,2026-10-26,6,
+best arm identification confidence interval after selection of the empirical best arm,arxiv,2026-10-26,6,
+sign-flipping max statistic randomization test multiple comparisons dimension larger than sample size,arxiv,2026-10-26,6,
+Romano Wolf stepdown bootstrap many strategies reality check dependence,arxiv,2026-10-26,6,
+selective inference rank-deficient covariance degenerate Gaussian winner,arxiv,2026-10-26,6,
+confidence sets for the population winner set of best candidates,arxiv,2026-10-26,6,
+multiple comparisons with the best simultaneous confidence intervals correlated,arxiv,2026-10-26,6,2211.11957 (related)
+inference on the maximum of many means after selection leaderboard overfitting adaptive,arxiv,2026-10-26,6,
+comparing many predictors on few datasets statistical tests best method significance,arxiv,2026-10-26,6,
+Gaussian multiplier bootstrap small number of groups validity fixed number of clusters high-dimensional,arxiv,2026-10-26,0,
+id_list abstracts 5 ids,arxiv,2026-10-26,0,FAILED (HTTP 429) - not counted
+id_list abstracts 5 ids (2),arxiv,2026-10-26,5,"partial: only 1612.04535, 2408.06323, 2602.08892, 2508.14400, 2404.18678 returned"
+S2 search: Inference on Winners AKM,semanticscholar,2026-10-26,3,FAILED (HTTP 429) - not counted
+Inference on Winners Andrews Kitagawa McCloskey,crossref,2026-10-26,6,
+Hybrid confidence intervals for informative uniform asymptotic inference after model selection,crossref,2026-10-26,6,
+A test for superior predictive ability,crossref,2026-10-26,6,
+A reality check for data snooping,crossref,2026-10-26,6,
+Inference for ranks with applications to mobility across neighborhoods,crossref,2026-10-26,6,
+Using the bootstrap to quantify the authority of an empirical ranking,crossref,2026-10-26,6,
+t-statistic based correlation and heterogeneity robust inference,crossref,2026-10-26,6,
+Cross-validation with confidence,crossref,2026-10-26,6,
+Bias in error estimation when using cross-validation for model selection,crossref,2026-10-26,6,
+The Sharpe ratio selection bias multiple strategies backtest overfitting probability,crossref,2026-10-26,6,
+Stepwise multiple testing as formalized data snooping,crossref,2026-10-26,6,
+Confidence sets for ranks Xie Singh Zhang,crossref,2026-10-26,6,
+winner's curse selecting best model cluster-robust few clusters selection bias coverage,arxiv,2026-10-26,5,
+psychometrics reliability of rankings benchmark split-half rank-one common factor model comparison,arxiv,2026-10-26,5,
+remote sensing model selection best model spatial cross-validation selection bias confidence,arxiv,2026-10-26,5,
+survey sampling small area estimation selecting best model design-based selection bias,arxiv,2026-10-26,5,
+many strategies few years best strategy inference Sharpe max statistic bootstrap block,arxiv,2026-10-26,5,
+inference on the winner many candidate models few groups studentized max-t rank-deficient covariance,web_search,2026-10-26,11,FAILED (HTTP 429/timeout) - not counted
+Chiang Kato Sasaki high-dimensional Gaussian approximation clustered data multiplier bootstrap few clusters,web_search,2026-10-26,9,FAILED (HTTP 429/timeout) - not counted
+Cubic-Root Gaussian Approximation under Unrestricted Covariance,web_search,2026-10-26,9,FAILED (HTTP 429/timeout) - not counted
+randomization test few clusters Canay Santos Shaikh multiple hypotheses max statistic number of clusters fixed,web_search,2026-10-26,9,FAILED (HTTP 429/timeout) - not counted
+deflated Sharpe ratio number of independent trials correlated strategies clustering effective trials,web_search,2026-10-26,9,FAILED (HTTP 429/timeout) - not counted
+sign-flipping max-t test valid for any number of variables fixed number of subjects Hemerik Goeman Finos,web_search,2026-10-26,9,FAILED (HTTP 429/timeout) - not counted
+effective number of independent tests eigenvalues correlation matrix Nyholt Li Ji Galwey Cheverud,web_search,2026-10-26,9,FAILED (HTTP 429/timeout) - not counted
+Hansen Lunde Nason model confidence set Econometrica 2011 bootstrap,web_search,2026-10-26,9,FAILED (HTTP 429/timeout) - not counted
+multiple comparisons with the best Hsu MCB correlated estimates selection,web_search,2026-10-26,9,FAILED (HTTP 429/timeout) - not counted
+pathology foundation models benchmark ranking uncertainty statistical significance bootstrap best encoder,web_search,2026-10-26,10,FAILED (HTTP 429/timeout) - not counted
+Gaussian maximum chi-square rank covariance Scheffe Working-Hotelling rank-deficient,web_search,2026-10-26,10,FAILED (HTTP 429/timeout) - not counted

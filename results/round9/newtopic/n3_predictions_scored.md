@@ -1,0 +1,11 @@
+# Track newtopic, step N3, predictions scored
+
+*26 October 2026. Predictions are in `n3_predictions_before_run.md`, written and committed (0419976b) before the run. Longleaf job 38c99f72, script `code/scripts/round9_newtopic_n3_diagnostics.py`. Every slide's barcodes matched its h5ad, and labels agree across the three encoders' files to within 1e-6 (`n3_checks.csv`). Medians over genes and slides are in `n3_task_medians.csv` (D1, D2) and over slides in `n3_slide_medians.csv` (D3); per gene and slide in `n3_gene_slide.csv.gz`.*
+
+**D1, partly held.** Encoders agree with each other much more than with the label. The median within-slide correlation between two encoders' predictions is 0.548 on CCRCC, 0.530 on INDIANA_KIDNEY and 0.546 on PRAD, below the predicted 0.6, and 0.785 on IDC and 0.751 on LYMPH_IDC. The prediction-label correlation is below 0.3 on CCRCC (0.149), INDIANA_KIDNEY (0.126), PRAD (0.246) and LYMPH_IDC (0.237), but not on IDC (0.609). On LUNG_XENIUM the gap is 0.186, below 0.3 as predicted.
+
+**D2, mostly held.** Moran's I of the uni_v2 residual is 0.210 on CCRCC, 0.425 on IDC, 0.299 on LYMPH_IDC and 0.235 on PRAD, and only 0.084 on INDIANA_KIDNEY, where the label itself has 0.084. The prediction is smoother than the label in 0.953, 0.981, 0.885, 0.885 and 0.817 of gene-slide pairs on CCRCC, INDIANA_KIDNEY, LYMPH_IDC, PRAD and LUNG_XENIUM, and in 0.695 on IDC, just below the predicted 0.7.
+
+**D3, refuted.** The first principal component of residuals carries 0.230 (CCRCC), 0.205 (IDC), 0.136 (INDIANA_KIDNEY), 0.242 (LYMPH_IDC) and 0.340 (PRAD) of their variance, so only PRAD reaches 0.25. Its absolute correlation with panel depth is 0.466 to 0.763, below 0.8 everywhere. The labels' own first component tracks panel depth at 0.855 to 0.949. The encoders therefore capture part of the within-slide depth variation, which is plausible because cellularity is visible in H&E, while round 9's donor-level depth factor is invisible to them.
+
+**What it means.** The diagnostics refine the empirical account (predictions are a smooth field shared across encoders, weakly aligned with noisy labels, and within-slide depth is partly visible). They do not suggest a methodological question that wave 1 or the miners had not already examined.
