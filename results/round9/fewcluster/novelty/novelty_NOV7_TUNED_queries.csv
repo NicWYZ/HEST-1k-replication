@@ -1,0 +1,33 @@
+query,source,date,n_results_screened,new_close_papers
+"all:""prediction-powered inference"" AND all:""without replacement""",arXiv,2026-10-26,1,1
+"all:""prediction-powered inference"" AND all:""finite population""",arXiv,2026-10-26,2,1
+"all:""prediction-powered"" AND all:""survey sampling""",arXiv,2026-10-26,3,1
+"all:""prediction-powered"" AND all:impossibility",arXiv,2026-10-26,8,0
+"all:""design-based"" AND all:""prediction-powered""",arXiv,2026-10-26,8,1
+"all:""difference estimator"" AND all:""finite-sample"" AND all:impossibility",arXiv,2026-10-26,0,0
+"all:""regression estimator"" AND all:""finite-sample"" AND all:coverage AND all:""sampling without replacement""",arXiv,2026-10-26,0,0
+"all:""no free lunch"" AND all:""prediction-powered""",arXiv,2026-10-26,3,1
+"all:""Bahadur-Savage"" AND all:""finite population""",arXiv,2026-10-26,0,0
+"all:""Potscher"" AND all:""size"" AND all:""heteroskedasticity-robust""",arXiv,2026-10-26,3,1
+"all:""leverage"" AND all:""confidence interval"" AND all:""bounded length"" AND all:regression",arXiv,2026-10-26,0,0
+"all:""PPI++"" AND all:""power tuning"" AND all:""small sample""",arXiv,2026-10-26,1,0
+"all:""cross-fitted"" AND all:""prediction-powered"" AND all:coverage AND all:""small""",arXiv,2026-10-26,2,0
+"all:""prediction-powered inference"" AND all:""few clusters""",arXiv,2026-10-26,0,0
+"all:""prediction-powered inference"" AND all:""leverage""",arXiv,2026-10-26,6,0
+"all:""prediction-powered inference"" AND all:""unbounded"" AND all:interval",arXiv,2026-10-26,0,0
+prediction-powered inference finite population sampling without replacement coverage,SemanticScholar,2026-10-26,0,0
+regression estimator small sample coverage failure design-based leverage,SemanticScholar,2026-10-26,0,0
+impossibility finite-sample valid confidence interval population mean sampling without replacement,SemanticScholar,2026-10-26,0,0
+Lanke 1974 interval estimation population mean,SemanticScholar,2026-10-26,0,0
+jackknife leverage robust tests size distortion Hansen 2026,SemanticScholar,2026-10-26,0,0
+Interval estimation in finite populations Lanke,Crossref,2026-10-26,6,0
+Bahadur Savage problem finite population confidence interval mean,Crossref,2026-10-26,6,0
+Potscher Preinerstorfer size of heteroskedasticity robust tests high leverage,Crossref,2026-10-26,6,1
+Hansen jackknife standard errors high leverage regression 2026 arXiv,web_search,2026-10-26,9,1
+Paul Kuchibhotla arXiv 2403.06357 impossibility finite population confidence interval,web_search,2026-10-26,9,1
+regression estimator finite population confidence interval coverage cannot be guaranteed sampling without replacement impossibility theorem,web_search,2026-10-26,9,0
+Bahadur Savage finite population sampling without replacement no nontrivial confidence interval for the mean unrestricted population,web_search,2026-10-26,10,1
+Gleser Hwang 1987 nonexistence of finite-length confidence intervals Dufour 1997 impossibility theorems econometrics unbounded confidence sets,web_search,2026-10-26,9,2
+generalized regression estimator extreme g-weights leverage small sample coverage design-based confidence interval collinear sample,web_search,2026-10-26,9,1
+Lanke 1974 Interval estimation finite population sampling Lund impossibility nonparametric confidence interval unbounded,web_search,2026-10-26,10,1
+design-based inference regression estimator sampling without replacement small number of clusters finite-sample coverage impossibility high-leverage cluster,web_search,2026-10-26,9,0
