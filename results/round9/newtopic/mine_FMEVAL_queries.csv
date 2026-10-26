@@ -1,0 +1,47 @@
+problem,query,source,date,n_screened,outcome
+discovery,linear probe pathology foundation model (arXiv API),arXiv API,2026-10-26,8,Mostly benchmarks/applied papers; no statistical-theory paper
+discovery,scaling law AND confidence interval (arXiv API),arXiv API,2026-10-26,8,"Found Besiroglu replication, Schaeffer robustness, Kricheli extrapolation"
+discovery,benchmark rank uncertainty language models (arXiv API),arXiv API,2026-10-26,8,Found judge-aware ranking and prompt-ranking stability papers
+discovery,foundation model embeddings downstream inference (arXiv API),arXiv API,2026-10-26,3,Little; web search found Shimizu 2607.17378
+discovery,generated regressors embeddings (arXiv API),arXiv API,2026-10-26,2,Escanciano et al. ML-generated regressors only
+discovery,statistical inference benchmark rankings foundation models few test groups uncertainty 2026,web_search,2026-10-26,8,"Found Longjohn 2501.04234, Neuhof-Benjamini 2606.08679, Li et al 2605.29395, Zhou 2609.19599"
+discovery,linear probe evaluation reliability pathology foundation models limitations statistical,web_search,2026-10-26,10,"Applied pathology FM papers; PathoROB, frozen hematology FM shift 2608.25148"
+discovery,low-rank structure model-by-task performance matrix benchmark inference rank estimation,web_search,2026-10-26,9,"Found tensor completion 2604.05460, Benchmarks to Skills 2507.20208, Low Rank for Rank 2605.29395"
+discovery,regression with foundation model embeddings as covariates measurement error valid inference,web_search,2026-10-26,9,"Found Shimizu 2607.17378 (DML with embeddings), post-prediction inference"
+discovery,estimating scaling laws statistical inference uncertainty extrapolation few model scales,web_search,2026-10-26,9,"Found Nezhurina 2506.04598, Kricheli 2605.08541, NSL-PFN, Besiroglu"
+discovery,CKA estimator bias high dimension few samples statistical test,web_search,2026-10-26,10,"Found Murphy 2405.01012, Chun 2502.15104, Gröger 2602.14486"
+discovery,winner curse selecting best model benchmark leaderboard selection bias inference,web_search,2026-10-26,10,"Found Zrnic-Fithian, Bakshi et al, Andrews et al, SIREN"
+discovery,benchmark pathology foundation models spatial transcriptomics HEST limitations,web_search,2026-10-26,9,HEST-bench users; no statistical-evaluation paper
+discovery,Neuhof Benjamini ranking uncertainty LLM benchmarks,web_search,2026-10-26,9,Found 2607.16259 and 2606.08679 lineage
+discovery,participants vs scan time tradeoff prediction accuracy,web_search,2026-10-26,9,Found Ooi et al. Nature 2025 theory of N vs T
+discovery,theory of linear probing ridge features new groups domain shift,web_search,2026-10-26,9,Found ridge OOD / correlated-sample RMT references
+discovery,rank-one general capability factor observational scaling laws,web_search,2026-10-26,9,"Found Ruan 2405.10938, Kearns 2602.15532"
+CKA-DONOR,"abs:""centered kernel alignment"" AND abs:(cluster OR clustered OR hierarchical OR grouped OR subjects)",arXiv API,2026-10-26,7,No clustered-CKA paper; results irrelevant (layer clustering)
+CKA-DONOR,"abs:""representational similarity"" AND abs:(""random effects"" OR ""mixed-effects"" OR ""hierarchical bootstrap"" OR ""multilevel"")",arXiv API,2026-10-26,1,Irrelevant (1 hit)
+CKA-DONOR,"abs:HSIC AND abs:(""block bootstrap"" OR ""dependent data"" OR ""clustered data"" OR ""wild bootstrap"")",arXiv API,2026-10-26,4,Only auto-HSIC serial independence (time series); no clustered CKA
+CKA-DONOR,"abs:""distance covariance"" AND abs:(clustered OR panel OR multilevel OR ""dependent observations"")",arXiv API,2026-10-26,4,Irrelevant
+SPECSHARE,"all:""number of factors"" AND all:benchmark AND all:models AND all:bootstrap",arXiv API,2026-10-26,0,0 hits: phrase-AND query too restrictive; superseded by web_search queries
+SPECSHARE,"all:""cross-validation"" AND all:""number of factors"" AND all:""correlated noise""",arXiv API,2026-10-26,0,0 hits: phrase-AND query too restrictive; superseded by web_search queries
+SPECSHARE,"ti:""low-rank"" AND ti:""leaderboard""",arXiv API,2026-10-26,0,0 hits: phrase-AND query too restrictive; superseded by web_search queries
+SPECSHARE,"all:""top singular value"" AND all:""confidence interval"" AND all:""performance matrix""",arXiv API,2026-10-26,0,0 hits: phrase-AND query too restrictive; superseded by web_search queries
+TWOLEVEL,"all:""scaling law"" AND all:""random effects""",arXiv API,2026-10-26,1,Irrelevant (1 hit)
+TWOLEVEL,"all:""learning curve"" AND all:""number of subjects"" AND all:""samples per subject""",arXiv API,2026-10-26,0,0 hits: phrase-AND query too restrictive; superseded by web_search queries
+TWOLEVEL,"all:""sample size"" AND all:""scan time"" AND all:prediction AND all:theory",arXiv API,2026-10-26,0,0 hits: phrase-AND query too restrictive; superseded by web_search queries
+TWOLEVEL,"all:""scaling"" AND all:""clustered data"" AND all:""effective sample size"" AND all:""deep learning""",arXiv API,2026-10-26,0,0 hits: phrase-AND query too restrictive; superseded by web_search queries
+CKA-DONOR,centered kernel alignment clustered data between-cluster within-cluster decomposition,Semantic Scholar API,2026-10-26,0,HTTP 429 / empty result; not used
+CKA-DONOR,kernel alignment clustered observations representational similarity inference,Crossref,2026-10-26,4,Noise; no relevant record
+CKA-DONOR,CKA representational similarity clustered samples grouped permutation test batch effects dependence (web),web_search,2026-10-26,10,"Found Ding 2021, Murphy/Chun debiasing; no clustered CKA"
+CKA-DONOR,linear CKA decomposition between-group within-group similarity hierarchical data (web),web_search,2026-10-26,9,No decomposition paper; found Williams 2024 RSA=CKA equivalence
+CKA-DONOR,HSIC test independence clustered or grouped observations restricted permutation wild bootstrap (web),web_search,2026-10-26,9,Found Liu et al. NeurIPS 2021 / Sci Rep 2022 HSIC cluster test; Chwialkowski wild bootstrap; cluster-robust bootstrap literature
+CKA-DONOR,representational similarity analysis inference random effects subjects bootstrap 2-factor (web),web_search,2026-10-26,10,Found Schutt et al. eLife 2023 and RSA toolbox
+CKA-DONOR,unbiased HSIC estimator cluster-correlated samples between-subject within-subject CKA foundation model embeddings (web),web_search,2026-10-26,9,Confirmed Liu et al. covers independence test; no CKA-ratio/few-cluster calibration found
+SPECSHARE,determining number of latent factors model-by-benchmark score matrix correlated noise rank psychometrics (web),web_search,2026-10-26,9,"Found Hardy 2605.25272, Maimon 2507.20208, Kearns 2602.15532 (parallel analysis)"
+SPECSHARE,bootstrap inference eigenvalues PCA share of variance clustered observations dependent noise bias correction (web),web_search,2026-10-26,9,Found Fisher 2014 bootstrap PCA; no cluster-resampling spectral-share paper
+SPECSHARE,number of factors estimation strong cross-sectional dependence block clustered noise eigenvalue ratio (web),web_search,2026-10-26,9,"Found Ahn-Horenstein, Lin-Michailidis, Lam-Yao, Bai-Ng lineage; generic problem occupied"
+TWOLEVEL,learning curve scaling law grouped data number of groups vs samples per group error floor between-group variance (web),web_search,2026-10-26,10,No two-level scaling-law paper; Foundations of Scaling Law 2610.27789 has cluster effective-n remark
+TWOLEVEL,Chen Ooi Yeo theoretical model prediction accuracy sample size scan time kernel ridge (web),web_search,2026-10-26,9,Ooi et al. Nature 2025 occupies sample-size vs per-subject-data tradeoff in neuroimaging
+TWOLEVEL,ridge regression random matrix theory correlated samples clustered deterministic equivalent new cluster (web),web_search,2026-10-26,9,"Atanasov 2408.04607, Patil-Du-Tibshirani 2404.01233, Dabo-Bigot variance profile occupy theory"
+EMBED-DML,double machine learning clustered data few clusters cross-fitting by cluster fixed effects (web),web_search,2026-10-26,9,"Chiang 1909.03489, Clarke-Polselli 2312.08174, Fuhr-Papies, 2608.01137 (N=20) occupy clustered DML"
+WINNER-FEW,inference on winners estimated covariance few clusters cluster-robust selection winner curse (web),web_search,2026-10-26,9,"Andrews et al (known Sigma), Zrnic-Fithian, Bakshi, Wei et al 2206.11868; no cluster-level few-G treatment found"
+LOWRANK-SELECT,selecting best pretrained model new task few labeled low-rank model-task matrix collaborative filtering regret (web),web_search,2026-10-26,9,"Zhong 2504.08781, Maimon 2507.20208 sec 6.3 occupy; rejected"
+IRT-DESIGN,item response theory benchmark item selection optimal weighting efficient evaluation (web),web_search,2026-10-26,9,"tinyBenchmarks, PSN-IRT 2505.15055, Fluid Benchmarking occupy; rejected"
