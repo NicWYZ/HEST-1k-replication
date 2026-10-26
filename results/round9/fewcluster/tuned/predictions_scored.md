@@ -1,0 +1,10 @@
+# Track fewcluster, step I2-2, predictions scored
+
+*26 October 2026. Values from `i22_tuned_frontier.csv` and `i22_coverage_check.csv` beside this file (script `code/scripts/round9_fewcluster_tuned.py`). The tuned frontier values are upper bounds, since the search over $B_2$ is not exhaustive. The fixed-coefficient and tuned classes are defined on different residuals (residuals at a fixed coefficient against population least-squares residuals), so the comparison is between the two frontiers each in its own class.*
+
+- **Q1. Held.** In all 24 cells the tuned frontier found is below the fixed-coefficient frontier, at 0.37 to 0.74 of it.
+- **Q2. Held.** At $G = 24$, $n = 8$ with normal $f$ it is 0.0936, which is 0.59 of the fixed-coefficient 0.158.
+- **Q3. Refuted.** Averaged over the three kinds of $f$, the tuned frontier at $n$ is within 25% of the fixed-coefficient frontier at $n - 1$ in 3 of the 8 $(G, n)$ cells, at ratios 0.51 to 1.31. Tuning usually costs more than one labelled cluster. At $G = 24$ and $n$ of 8, 10 and 12 the ratios are 0.59, 0.71 and 0.51.
+- **Q4. Held.** At the population found for $G = 24$, $n = 8$ with normal $f$ (a two-piece population with $k = 5$ and $\kappa(\hat e) = 0.0936$), the exact coverage of the tuned interval with $c = 100$ is 0.897233 at $\varepsilon$ of $10^{-3}$, $10^{-5}$ and $10^{-7}$, equal to $1 - \pi(5)$. With $c = 3$ it is 0.883.
+
+Not anticipated. Where a single cluster carries the largest residual ($k = 1$, which is what defeats the interval at $G = 15$ with $n$ of 10 and 12), the population least-squares residual of an outcome spike at cluster $g$ has max-share $\max\{(1 - h_{gg})^2, \max_{j \ne g} h_{gj}^2\}/(1 - h_{gg})$, with $h$ the hat matrix of the regression on $(1, f)$. This equals $1 - h_{gg}$ unless some $|h_{gj}|$ exceeds $1 - h_{gg}$, which happened in 44 of 11,700 random checks (computed in the session, not saved to a file). A spike at a cluster with an extreme prediction is therefore nearly invisible to a max-share bound on the residuals. With one prediction at 4 standard deviations the tuned frontier at $G = 15$ falls to 0.394 against 0.933 for the fixed coefficient.
