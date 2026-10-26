@@ -67,6 +67,7 @@ Steps of the current work, with stable IDs, checked when done with a one-line no
   As planned, In parallel, compare widths and coverage of HCP, the target's own set and the studentized set on CCRCC, Indiana and lung from the Longleaf per-spot files, with predictions written first. Results to `results/round9/stud/`.
 - [x] **S4b Normalization check.** 26 October, Longleaf job b4d4780e. The null for donor-level estimands survives normalization. `docs/round09/00_prep/round09_normalization_check.md`.
 - [ ] **S5 Novelty check of PROBE** (probe-then-label two-phase design with a cross-gene depth auxiliary), dispatched 26 October; parked on Nicolas's approval of network access to www150.statcan.gc.ca (Survey Methodology); results to `results/round9/scan/`.
+- [x] **S5b Probe feasibility.** 26 October, Longleaf job 74cc77e6. A three-spot probe per donor narrows the CCRCC interval to 0.630 of the plain mean's width, but every regression interval under-covers (0.739 to 0.892 at nominal 0.90). `results/round9/probe/predictions_scored.md`.
 - [ ] **S6 Open round 9** through `/project-state-keeping` once a direction stands.
 
 ## 4. Working preferences (Nicolas's)
