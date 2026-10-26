@@ -9,3 +9,9 @@ Predictions.
 - R2. On CCRCC at n_L = 8 and o = 3, the median over genes of D2's coverage is at least 0.85, and above D0's.
 - R3. On LUNG_XENIUM at n_L = 8 and o = 3, D3 is narrower than both D1 and D2 (median over genes).
 - R4. D2 at o = 1 loses less than a third of its width gain over D0 compared with o = 3 on CCRCC at n_L = 8.
+
+## Second run, take-all stratum from the probe (written 26 October, before the second run's output was read)
+
+Design. After the probe (o = 3), the k donors with the largest |u_hat_g - median(u_hat)| are always labelled (k = 1, 2) and n_L - k further donors are drawn at random from the rest. Estimators T0 (take-all plus mean of the rest) and T2 (take-all plus regression on u_hat within the rest), 90% t intervals with the rest's degrees of freedom. Script `code/scripts/round9_probe_takeall.py`.
+- R5. On CCRCC at n_L = 8 and k = 1, T2's median coverage is at least 0.87 and its width ratio to D0 at most 0.70.
+- R6. On INDIANA_KIDNEY and LUNG_XENIUM at n_L = 8, k = 1 changes T0's median coverage by less than 0.03 against D0.

@@ -52,7 +52,7 @@ so the round-5 estimator has a design bias of $\{(n/G)/(1 - n/G)\}\,\text{Cov}(c
 | D4 | How this branch reaches `main` | it stays on its branch |
 
 - **Round 9 is in preparation** (`docs/round09/README.md`). The direction scan (`docs/round09/00_prep/round09_direction_scan.md`, 25 October) checked 14 candidate directions for a methodological core, each with an independent novelty-check subagent, plus four proposer subagents and an open-problem mining pass. None survived with a substantive open remainder. Its data diagnostics show that on Visium a shared depth factor carries 0.650 of between-donor variance on CCRCC, and that out of sample donor-level prediction does not beat a constant for the median gene, while composition-marker genes on lung reach a leave-one-donor-out R^2 near 0.9. Logs and results are in `results/round9/`.
-- **Next action.** Nicolas left the choice of direction to the session (25 October). The studentized prediction-set idea is mostly taken and buys little width (`docs/round09/00_prep/round09_stud_and_depth.md`); the session is checking the probe-then-label design (S5) that its depth-factor findings suggest. The last checker (HCPWIDTH) finished after Nicolas's approval and is recorded in `docs/round09/00_prep/round09_direction_scan_addendum.md` (partly open, bearing on option C).
+- **Next action.** Nicolas left the choice of direction to the session (25 October). The studentized prediction-set idea is mostly taken and buys little width (`docs/round09/00_prep/round09_stud_and_depth.md`); the probe-then-label design works on CCRCC with a take-all stratum but is classical two-phase sampling (`docs/round09/00_prep/round09_probe_designs.md`). Its novelty check waits on Nicolas's network approval. The open choice is between a design and empirical paper built on these findings and an attack on few-cluster coverage (option B). The last checker (HCPWIDTH) finished after Nicolas's approval and is recorded in `docs/round09/00_prep/round09_direction_scan_addendum.md` (partly open, bearing on option C).
 
 ## 3. Steps
 
@@ -68,6 +68,7 @@ Steps of the current work, with stable IDs, checked when done with a one-line no
 - [x] **S4b Normalization check.** 26 October, Longleaf job b4d4780e. The null for donor-level estimands survives normalization. `docs/round09/00_prep/round09_normalization_check.md`.
 - [ ] **S5 Novelty check of PROBE** (probe-then-label two-phase design with a cross-gene depth auxiliary), dispatched 26 October; parked on Nicolas's approval of network access to www150.statcan.gc.ca (Survey Methodology); results to `results/round9/scan/`.
 - [x] **S5b Probe feasibility.** 26 October, Longleaf job 74cc77e6. A three-spot probe per donor narrows the CCRCC interval to 0.630 of the plain mean's width, but every regression interval under-covers (0.739 to 0.892 at nominal 0.90). `results/round9/probe/predictions_scored.md`.
+- [x] **S5c Take-all stratum from the probe.** 26 October, Longleaf job 8f4d6844. CCRCC coverage 0.825 to 0.885 at 0.779 of the width; neutral elsewhere. `docs/round09/00_prep/round09_probe_designs.md`.
 - [ ] **S6 Open round 9** through `/project-state-keeping` once a direction stands.
 
 ## 4. Working preferences (Nicolas's)

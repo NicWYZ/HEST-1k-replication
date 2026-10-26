@@ -8,6 +8,8 @@ What the project found at each step, what changed because of it, and which files
 
 ## Round 9 (in preparation, from 24 October 2026, branch `claude-science`)
 
+**26 October, last. A take-all stratum from the probe.** Labelling with certainty the one donor the probe flags as atypical lifts CCRCC coverage from 0.825 to 0.885 at 0.779 of the width, and is neutral on Indiana and lung. The design is classical; the finding is where donor-level information lies in ST. Recorded in `docs/round09/00_prep/round09_probe_designs.md`.
+
 **26 October, later still. Probe-then-label feasibility.** With a probe of three spots in every donor and whole donors labelled at random, the regression estimator on the probe's depth factor has 0.630 of the plain mean's width on CCRCC at 8 labelled donors, and with the predictions it beats either auxiliary on lung, but every regression interval under-covers (0.739 to 0.892 at nominal 0.90). Coverage with few labelled clusters remains the binding constraint. The novelty check of the design waits on Nicolas's network approval. Files in `results/round9/probe/`.
 
 **26 October, later. The normalization check.** On library-size-normalized expression the shared donor factor's share on CCRCC falls from 0.650 to 0.338, donor means stay skewed, and the predictions still explain no between-donor variation for the median gene. Recorded in `docs/round09/00_prep/round09_normalization_check.md`.

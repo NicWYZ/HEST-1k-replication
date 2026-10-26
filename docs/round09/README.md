@@ -10,6 +10,7 @@ Round 9 has no masterplan yet. The claude-science session (branch `claude-scienc
 | `00_prep/round09_direction_scan_addendum.md` | 25 Oct | the verdict of the last checker (HCPWIDTH), partly open: no finite-sample width law, switching point or valid optimal merger for hierarchical conformal sets was found, in a setting GHCP already occupies. It bears on option C |
 | `00_prep/round09_stud_and_depth.md` | 26 Oct | steps S3 and S4: the studentized prediction-set idea is mostly taken (GHCP appendix B.1) and buys at most 0.130 of width even with an oracle scale; a depth-outlier donor breaks HCP coverage, and a donor depth auxiliary explains a median 0.523 of between-donor variance on CCRCC where predictions explain none |
 | `00_prep/round09_normalization_check.md` | 26 Oct | library-size normalization removes about half of the shared donor factor on CCRCC (0.650 to 0.338) and leaves the predictions with no between-donor information for the median gene |
+| `00_prep/round09_probe_designs.md` | 26 Oct | probe-then-label feasibility: a three-spot probe per donor narrows CCRCC intervals but regression intervals under-cover; a take-all stratum of the one probe-atypical donor lifts CCRCC coverage from 0.825 to 0.885 at 0.779 of the width. The design is classical two-phase sampling |
 
 ## Results
 
