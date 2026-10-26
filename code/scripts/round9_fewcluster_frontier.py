@@ -7,6 +7,11 @@ For each (G, n, alpha):
   rest_bound = max over m < G/2 of [floor(G/m) C(m, n) + C(G mod m, n)] / C(G, n)
                (bound on subsets inside one level set when every level set is smaller than G/2)
   Lambda_star = sqrt(kappa_star (G - 1)): the same bound in residual standard deviations
+  kappa_sup  = kappa2(k_star - 1): the supremum of admissible kappa0 (correction of 26 October, found by the
+               fresh-agent verification, results/round9/fewcluster/verify/verify_frontier_report.md). Below it a finite
+               critical value exists (fixed lambda), above it every equivariant valid interval is unbounded with
+               probability >= pi(k_star - 1) - alpha. kappa_star is where the k_star two-point population ENTERS the
+               class and is kept only because the first predictions were written with it.
 Also the fraction of iid N(0,1) populations of size G with max-share <= kappa_star (20000 draws).
 Output: results/round9/fewcluster/feasibility/s3_frontier_exact.csv
 """
@@ -43,8 +48,11 @@ for G in (15, 24, 25, 51):
                              pi_at_k_star_minus1=pi[ks - 1] if ks and ks > 1 else float('nan'),
                              rest_bound=rest, Lambda_star=math.sqrt(kst * (G - 1)),
                              frac_gauss_within=float(np.mean(kap_gauss <= kst)),
+                             kappa_sup=((1 - (ks - 1) / G) / (ks - 1)) if ks and ks > 1 else (1.0 if ks == 1 else float('nan')),
+                             Lambda_sup=math.sqrt(((1 - (ks - 1) / G) / (ks - 1)) * (G - 1)) if ks and ks > 1 else float('nan'),
+                             frac_gauss_within_sup=float(np.mean(kap_gauss < (1 - (ks - 1) / G) / (ks - 1))) if ks and ks > 1 else float('nan'),
                              median_gauss_kappa=float(np.median(kap_gauss))))
 df = pd.DataFrame(rows)
 df.to_csv(f'{OUT}/s3_frontier_exact.csv', index=False)
 print(df[df.alpha == 0.10][['G', 'n', 'k_star', 'k_star_one_block', 'kappa_star', 'Lambda_star', 'rest_bound',
-                            'frac_gauss_within', 'median_gauss_kappa']].to_string(index=False))
+                            'frac_gauss_within', 'kappa_sup', 'Lambda_sup', 'frac_gauss_within_sup', 'median_gauss_kappa']].to_string(index=False))

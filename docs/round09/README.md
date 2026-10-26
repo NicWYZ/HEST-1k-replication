@@ -22,6 +22,7 @@ Each track's session sets its own milestones and records them here on its branch
 | `i01/fewcluster/round09_fewcluster_brief.md` | 26 Oct | the brief for track fewcluster, with the direction, what is already known, the data facts, resources and rules |
 | `i01/newtopic/round09_newtopic_brief.md` | 26 Oct | the brief for track newtopic, with the direction, what not to re-propose, the lessons of the scan and an inventory of the data in hand |
 | `i01/fewcluster/round09_fewcluster_plan.md` | 26 Oct, living until S4 | track fewcluster's plan for interval 1. A finite-population Bahadur and Savage lemma (no finite-length interval is valid over all populations when $\alpha < 1 - n/G$), four candidate claims (a max-share frontier, an exactly calibrated interval, bounded residuals, what the design buys), a five-theme novelty map and feasibility computations with predictions written first |
+| `i01/fewcluster/round09_fewcluster_frontier.md` | 26 Oct | the max-share frontier. Under simple random sampling of $n$ of $G$ clusters, a location and scale equivariant interval (every PPI, $t$, sign-change and wild-bootstrap interval) can be valid in finite samples over a max-share class exactly when $\kappa_0 < \kappa_2(k^\ast - 1)$, with the two-point population extremal and simple random sampling minimax among designs. At 8 of 24 this means every residual within 1.91 standard deviations. Proved by the session and again by a fresh agent, which corrected an off-by-one. Literature position provisional |
 
 ## Results
 
