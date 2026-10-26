@@ -1,0 +1,135 @@
+{
+ "items": [
+  {
+   "statement": "LEMMA0",
+   "status": "not_found",
+   "where": "No paper states this quantitative constant. Closest: Bertanha-Moreira (2020) Thm 3 / eq (2.6)-(2.8); Dufour (1997) Thm 3.x; Gleser-Hwang (1987); Kline-Masten arXiv:2504.14127 Sec 7.1 (identification-only remark that non-sampled values can be anything).",
+   "reason": "The lemma is correct and the constant is UNCONDITIONAL; the two earlier reviewers are wrong. Proof check: for any fixed M let A={theta(z)+M/G in C(D)} (A does not depend on j). Perturbing z_j by M gives z' with theta(z')=theta+M/G and identical data on {j not in S}, so P_z(j not in S, A)=P_z'(j not in S, theta' in C(D')) >= (1-alpha)-n/G. Sum over j: sum_j 1{j not in S}=G-n in every sample, so sum_j P(j not in S, A)=(G-n)P(A) (A is the same event for every j; no conditioning on j happens). Hence P(A)>=(1-alpha-n/G)/(1-n/G). Caveat: the perturbed population z' must be an admissible population, so the lemma needs coverage over ALL z in R^G (kappa0=1 / no restriction); under coverage only on K(kappa0) it cannot be used because a spike of size M leaves K. The technique is the classical 'indistinguishable on an event' argument; I label it not_found because I found no printed statement with this constant, but it is an elementary consequence of the Gleser-Hwang/Dufour/BM principle and should not be sold as a result."
+  },
+  {
+   "statement": "LEMMA1",
+   "status": "not_found",
+   "where": "Not in any paper read. Related: Hajek (1960) and Li-Ding (2017) Thm 1 use the same max-share quantity (m_N/v_N) as a CLT condition and note m_N/v_N >= 1-1/N, but no two-point extremal bound.",
+   "reason": "True; short proof by Cauchy-Schwarz: with B constant of size G-k and deviation delta_B, complement deviations sum to -(G-k)delta_B, so sum d^2 >= (G-k)^2 delta_B^2/k; the largest complement share >= S2/(k(S2+(G-k)delta_B^2)) is increasing in S2, giving >= (1-k/G)/k with equality iff complement deviations are equal. The B-cluster share is <= k/(G(G-k)) <= kappa2(k) iff k<=G/2, which is the condition needed for equality to be the overall max-share. The inequality kappa>=kappa2(k) holds for every k in 1..G-1 (numerically checked by minimisation for G=6,8,9, all k: tight for k<=G/2, slack above); the 'equality iff' needs k<=G/2 as you bracketed."
+  },
+  {
+   "statement": "THEOREM1",
+   "status": "not_found",
+   "where": "Not stated in print in this form. Iid boundary only as a remark: Hendriks-IJzerman-Boon (2006) Sec 2 (after eq. (7)) for t-intervals; analogue for the median in Lanke (1974) as corrected in Paul-Kuchibhotla arXiv:2403.06357 Remark 1; general principle Gleser-Hwang 1987, Dufour 1997, Bertanha-Moreira 2020 Thm 3.",
+   "reason": "I verified the proof line by line and it is sound (for S in B1 take a=0,b=eps; for S in B2 take a=1,b=eps; coverage at z_eps in K (kappa(z_eps)->kappa2(k)<kappa0) forces C(S,z_S,f) to contain points near lambda*Fbar+k/(G eps) resp. lambda*Fbar-(G-k)/(G eps); limsup of events has probability >= pi(k)-alpha). Hendriks et al. contain only the one-line observation that for the symmetric +-1 Bernoulli law P(T_n=inf)=P(X1=...=Xn)=2^(1-n)>alpha when n<1-log(alpha)/log 2, so no finite t works for the t-interval; no theorem, no other procedures, no equivariance class, no finite population. It is therefore a special case of Theorem 1's G->infinity, k=G/2 boundary restricted to t-intervals, not the other way round. Lanke/Paul-Kuchibhotla give the median/shift-invariant version (threshold log2(1/alpha) proved, log2(2/alpha) conjectured). Caveat for your text: the technique (BM Thm 3) is classical; the novelty is the (E)-equivariant, finite-population, probability-graded form. Also: without (E) the same argument gives unboundedness only for z with e constant on B1 (or B2); (E) is what extends it to every z."
+  },
+  {
+   "statement": "THEOREM2",
+   "status": "not_found",
+   "where": "No printed analogue for SRSWOR. Structural analogue: Potscher-Preinerstorfer arXiv:2412.17470 Thm 2.2 (existence of a finite size-controlling critical value iff no hat-diagonal-1 row enters the restriction) and their 2018 J. Econometrics / 2025 Econometric Theory framework (invariance under the same location-scale group as (E), concentration/limit argument).",
+   "reason": "Proof re-checked and correct: T is invariant under the affine maps, so reduce to compact {ebar=0, sum e^2=1, kappa<=kappa0} (closed and excludes constants); |T|>c forces s_S->0 with |ebar_S| bounded, so limit point e* is constant on the N=floor(alpha*C(G,n))+1 pigeonholed samples, contradicting #const<=beta*C<=floor(alpha*C). PP's setting differs: Gaussian heteroskedastic regression, tests of one linear restriction, degeneracy is a probability-0/1 event so the threshold is a yes/no condition (no leverage-1 point), whereas here degeneracy has a positive sampling probability and the condition is graded (beta<=alpha)."
+  },
+  {
+   "statement": "PROP3",
+   "status": "not_found",
+   "where": "Not in any paper read.",
+   "reason": "Lower bound is the two-point population (Lemma 1). Upper bound: a level-set partition whose largest block has size m>=G/2 has kappa>=kappa2(G-m) (Lemma 1) and count <= C(m,n)+C(G-m,n)=pi(G-m)C(G,n); if all blocks have size < G/2, convexity (majorisation) gives count <= floor(G/m)C(m,n)+C(G mod m,n) with m the largest block. I verified the sandwich by exhaustive enumeration of all integer partitions of G=8,10,12 with numerically minimised kappa per partition (90 (G,n,kappa0) cases, n=2,3,4): the sandwich held in all 90 and beta equalled the lower bound max pi(k) in all 90 (the R term never bound in this range)."
+  },
+  {
+   "statement": "COR4",
+   "status": "not_found",
+   "where": "Not in any paper read.",
+   "reason": "Correct and elementary: for fixed S the number of size-k sets B2 with S in B2 is C(G-n,k-n) and with S in B2^c is C(G-n,k); dividing by C(G,k) gives C(k,n)/C(G,n) and C(G-k,n)/C(G,n), so the average over B2 of P_p(S in B1 or B2) equals pi(k) for EVERY design (identity checked numerically for G up to 29, n=2..5). Hence max over B2 >= pi(k), with equality for SRSWOR, i.e. SRSWOR is minimax-optimal for this barrier. Theorem 1's proof carries over verbatim with P_p."
+  }
+ ],
+ "what_the_finite_population_form_adds": "(1) Boundary vs iid: Hendriks et al. give only the point 2^(1-n)>alpha for t-intervals and a single law. Here: the same number arises as the limit pi(G/2)->2^(1-n) for ALL (E)-equivariant procedures (not just t-intervals), but the finite-population structure adds a graded frontier: impossibility for every kappa0>kappa2(k*) where k*=max{k<=G/2: pi(k)>alpha}, possibility for kappa0<kappa2(k*) when R<=alpha, with the exact tie kappa0=kappa2(k*) left to Thm 2 failing. (2) Vs Potscher-Preinerstorfer: their threshold is a yes/no leverage condition because Gaussian degeneracy has probability 0 or 1; the SRSWOR sampling law gives degeneracy probability pi(k) in (0,1), so the condition becomes a quantitative comparison pi(k) vs alpha, tied to a max-share class (the max-share kappa is Hajek's Lindeberg condition m_N/v_N, which governs asymptotic normality; here it governs finite-sample boundedness). (3) Corrections to the CONSEQUENCE block (computed): G=24,n=8: k*=5 (pi(5)=0.1028>0.10), so impossibility for kappa0>kappa2(5)=0.1583 and possibility for every kappa0<0.1583 (R=0.00045); kappa2(6)=0.125 is only the largest jump point of beta, not the largest admissible kappa0 (sup is 0.1583, not attained). G=51,n=8: k*=11 (pi(11)=0.1208), threshold kappa2(11)=0.0713 (pi(12)=0.0966, kappa2(12)=0.0637 is the jump point). G=51,n=4: pi(k)>0.10 for all k<=25 (pi(25)=0.1104), threshold kappa2(25)=0.0204 which is also the minimum attainable kappa for odd G=51, so every nonempty class is impossible. (4) The asymptotic sentence is misleading: with n fixed and kappa0 fixed, G->infinity forces k about 1/kappa0 (constant) and pi(k)->1, so impossibility holds for EVERY n>=2 and every fixed kappa0<1 (e.g. kappa0=0.1,n=8: pi(10)=0.42 at G=100, 0.92 at G=1000, 0.992 at G=10000). The condition 2^(1-n)>alpha is the condition for impossibility at every nonempty class including kappa0 just above its minimum 1/G; when 2^(1-n)<=alpha, possibility requires kappa0*G below a constant c*(n,alpha) solving (c/(1+c))^n+(1/(1+c))^n=alpha (c*=3.0 for n=8, alpha=0.1; 4.7 for n=12; 8.2 for n=20), i.e. kappa0 of order 1/G, consistent with Hajek's CLT regime kappa<<min(n,G-n)/G. (5) Honest assessment: Lemma 0, Lemma 1, Prop 3, Cor 4 are elementary; Thm 1's mechanism is the classical Bahadur-Savage/Gleser-Hwang/Dufour/BM argument, so the contribution is the finite-population, (E)-equivariant, probability-graded statement plus the matching possibility theorem, not the impossibility idea itself.",
+ "closest_papers": [
+  {
+   "citation": "Hendriks, IJzerman-Boon, Klaassen (2006) Student's t-statistic under unimodal densities, Austrian J. Statist. 35(2&3):131-141",
+   "url_or_doi": "https://doi.org/10.17713/ajs.v35i2&3.361",
+   "how_read": "full text, all 11 pages (downloaded from ajs.or.at after network grant)",
+   "what_it_does": "Edgeworth, tail and finite-sample analysis of t-intervals over symmetric unimodal laws; least favourable law is uniform for large nominal level.",
+   "overlap": "Only a remark after eq. (7): symmetric +-1 Bernoulli has P(T_n=inf)=2^(1-n), so for n<1-log(alpha)/log2 no bounded t-interval exists. Matches the iid G->inf boundary of Thm 1 but for t-intervals only, as a remark without proof or generality."
+  },
+  {
+   "citation": "Potscher, Preinerstorfer, A necessary and sufficient condition for size controllability of heteroskedasticity robust test statistics, arXiv:2412.17470v5 (Econometric Theory FirstView 2026)",
+   "url_or_doi": "https://arxiv.org/abs/2412.17470",
+   "how_read": "full text Sections 1-2, Remark 2.2, appendix lemmas A.1 ff; remainder keyword-scanned (no finite-population/sampling/unbounded content)",
+   "what_it_does": "Gaussian heteroskedastic regression, single restriction: finite size-controlling critical value exists iff no hat-matrix-diagonal-1 row is involved (Thm 2.2), otherwise size 1 for every C; smallest critical value and lower bound C*.",
+   "overlap": "Same invariance group as (E) and a concentration/limit-point mechanism, so Thm 1/2 are the sampling-design analogue; no finite population, no graded probability threshold, no confidence-set unboundedness."
+  },
+  {
+   "citation": "Paul, Kuchibhotla, Inference for median and a generalization of HulC, arXiv:2403.06357 (Remark 1; citing Lanke 1974, Scand. J. Statist.)",
+   "url_or_doi": "https://arxiv.org/abs/2403.06357",
+   "how_read": "Remark 1 and intro read in text; Lanke 1974 itself NOT retrieved",
+   "what_it_does": "Shift-invariant bounded CIs for a median when n>=log2(2/alpha); states Lanke's impossibility is proved only for n<log2(1/alpha) and conjectures none exists below log2(2/alpha).",
+   "overlap": "Iid analogue of the 2^(1-n) boundary for shift-invariant intervals; their open conjecture is the median analogue of what Thm 1 proves for (E)-equivariant mean procedures in the two-point limit."
+  },
+  {
+   "citation": "Bertanha, Moreira (2020) Impossible inference in econometrics, J. Econometrics 218:247-270",
+   "url_or_doi": "https://arxiv.org/abs/1612.02024",
+   "how_read": "Theorem 3 (2.6)-(2.8), Remarks 4-5 read; rest scanned",
+   "what_it_does": "If models with unbounded parameter range share a common limit law P*, valid sets must have P*[D=inf]>=1-alpha and be unbounded with positive probability nearby.",
+   "overlap": "General principle behind Lemma 0 and Thm 1 (also Gleser-Hwang 1987, Dufour 1997). Needs weak-convergence/continuity conditions; no finite population or graded constant."
+  },
+  {
+   "citation": "Dutz, Zhang, Limitations of randomization tests in finite samples, arXiv:2512.07099v3",
+   "url_or_doi": "https://arxiv.org/abs/2512.07099",
+   "how_read": "Sections 1-4 (Props 1-7) in full; appendices keyword-scanned",
+   "what_it_does": "Characterises nulls that admit randomization tests; mean-zero null admits none (iid, finite or continuous support).",
+   "overlap": "None on confidence-set boundedness or finite populations; cites Bahadur-Savage only."
+  },
+  {
+   "citation": "Chiang, Sasaki, Wang, Genuinely robust inference for clustered data, arXiv:2308.10138v8",
+   "url_or_doi": "https://arxiv.org/abs/2308.10138",
+   "how_read": "abstract, intro, Theorem 1-2 statements, keyword scan of 57 pp (not every page)",
+   "what_it_does": "Cluster-robust t is asymptotically normal iff largest-cluster score is ignorable; otherwise stable limits; proposes cluster-score bootstrap.",
+   "overlap": "Asymptotic cousin of the max-share class K(kappa0); no finite-sample impossibility, no equivariance, no finite population."
+  },
+  {
+   "citation": "Kojevnikov, Song (2023) Some impossibility results for inference with cluster dependence with large clusters, J. Econometrics 237(2):105524",
+   "url_or_doi": "https://arxiv.org/abs/2109.03971",
+   "how_read": "abstract, intro, keyword scan",
+   "what_it_does": "Asymptotic impossibility of consistent discrimination of the mean / variance estimation with one large cluster.",
+   "overlap": "Context only."
+  },
+  {
+   "citation": "Edelman, arXiv:2508.13226 and Pinelis rebuttal arXiv:2509.02410",
+   "url_or_doi": "https://arxiv.org/abs/2508.13226",
+   "how_read": "Edelman: abstract plus keyword scan (no coverage content); Pinelis: full (2 pp)",
+   "what_it_does": "Extremal tail probability of Rademacher-weighted sums; Pinelis says main result is incorrect.",
+   "overlap": "None on boundedness; relevant only to sign-change distributions."
+  },
+  {
+   "citation": "Basu, DasGupta (1995) Ann. Statist. 23:1433-1442; Gleser, Hwang (1987) Ann. Statist. 15:1351-1362; Dufour (1997) Econometrica 65:1365-1388",
+   "url_or_doi": "https://doi.org/10.1214/aos/1176324716",
+   "how_read": "abstracts and snippets only",
+   "what_it_does": "Basu-DasGupta: infimum coverage of t-interval over symmetric unimodal laws; Gleser-Hwang and Dufour: valid sets near non-identification must be unbounded.",
+   "overlap": "Technique ancestors for Lemma 0/Thm 1; Basu-DasGupta is iid coverage, not an impossibility over all procedures."
+  },
+  {
+   "citation": "Kline, Masten, Finite population identification and design-based sensitivity analysis, arXiv:2504.14127",
+   "url_or_doi": "https://arxiv.org/abs/2504.14127",
+   "how_read": "Section 7.1 passage and keyword scan",
+   "what_it_does": "Identified sets for finite-population mean from sampled units: unrestricted non-sampled values leave the mean unrestricted; bounded support gives finite identified set.",
+   "overlap": "Identification-level counterpart of Lemma 0; no coverage theorem."
+  },
+  {
+   "citation": "Hajek (1960); Li, Ding (2017) General forms of finite population CLTs, arXiv:1610.04821",
+   "url_or_doi": "https://arxiv.org/abs/1610.04821",
+   "how_read": "statement of Theorem 1 via search snippet",
+   "what_it_does": "Sample mean under SRSWOR is asymptotically normal iff (m_N/v_N)/min(n,N-n)->0; m_N/v_N>=1-1/N.",
+   "overlap": "The max-share kappa is Hajek's Lindeberg quantity (kappa*G~m_N/v_N); prior art for the class definition and the asymptotic regime, not for the finite-sample thresholds."
+  }
+ ],
+ "forward_citations_screened": "Hendriks et al. 2006: Semantic Scholar returned 2 citing papers (Gerlovina-Hubbard arXiv:2105.07406, Edgeworth expansions for generalized t-tests; Lenzi arXiv:2608.26421, Student's statistic under symmetric unimodality), titles screened, neither concerns finite populations or unbounded intervals (Lenzi not opened); web search also showed a 2024 MDPI Symmetry paper citing it (not close). The S2 index is incomplete. Potscher-Preinerstorfer 2412.17470: Semantic Scholar returned 404 for ARXIV:2412.17470 and HTTP 429 on two title searches, so S2 forward citations NOT obtained; substituted arXiv-API keyword searches (size controllability / size-controlling critical value) and web search; screened 2609.32369, 2610.16503, 2610.31106, 2105.10965 by abstract: none close. Also screened PPI/finite-population arXiv hits (2608.10356, 2609.20758, 2505.04643): none close. Treat the absence of close forward citations as provisional.",
+ "artifact_filenames": [
+  "novelty_NOV6_PRECISE_queries.csv",
+  "novelty_NOV6_PRECISE_candidates.csv"
+ ],
+ "n_queries": 32,
+ "deviations": [
+  "Semantic Scholar forward citations for Potscher-Preinerstorfer 2412.17470 not obtained (404 on arXiv id; two title searches HTTP 429); substituted arXiv-API keyword screens and web search. Forward-citation conclusion for PP is provisional.",
+  "Semantic Scholar returned only 2 citing papers for Hendriks et al. 2006 (index likely incomplete); titles screened, Lenzi 2608.26421 not opened.",
+  "Full text read only for: Hendriks et al. 2006 (11 pp), Pinelis 2509.02410, Dutz-Zhang Sections 1-4 (Props 1-7; appendices keyword-scanned), Potscher-Preinerstorfer Sections 1-2 and start of appendix (remaining ~20 pp keyword-scanned), Chiang-Sasaki-Wang (abstract/intro/Thm 1-2/keyword scan of 57 pp), Kojevnikov-Song (abstract/intro/keyword scan), Bertanha-Moreira (Thm 3, Remarks 4-5, keyword scan), Edelman (abstract + keyword scan, math content not read).",
+  "Lanke (1974), Basu-DasGupta (1995), Gleser-Hwang (1987), Dufour (1997), Hajek (1960), Romano (2004), Wang (2015) NOT read in full: abstracts/snippets or second-hand statements only (Lanke via Paul-Kuchibhotla Remark 1). Grades for them are provisional.",
+  "fetch_article_fulltext failed for arXiv DOIs; used direct arXiv PDF downloads and PyMuPDF text extraction. Requested and received network access to www.ajs.or.at for the Hendriks PDF. OpenAlex not used. Full texts kept in workspace only, not saved as artifacts.",
+  "I also ran own numerical checks (Lemma 1 by minimisation for G=6,8,9; Prop 3 by exhaustive partition enumeration for G=8,10,12, n=2,3,4; Cor 4 identity for G<=29; consequence table). Small-G only; the Prop 3 equality finding (beta = max pi) is for these cases, not proven in general. Statuses 'not_found' mean not found in the sources screened, not proof of absence."
+ ],
+ "frame_id": "d3f99b6e-d4ad-47ee-9323-1e0267261800"
+}
