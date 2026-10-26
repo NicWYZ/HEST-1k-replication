@@ -21,6 +21,7 @@ Each track's session sets its own milestones and records them here on its branch
 | `00_prep/round09_probe_novelty.md` | 26 Oct | the PROBE verdict, mostly taken (two-phase sampling; Broska and Howes; Kluger and Bates), with the session's account of every direction examined |
 | `i01/fewcluster/round09_fewcluster_brief.md` | 26 Oct | the brief for track fewcluster, with the direction, what is already known, the data facts, resources and rules |
 | `i01/newtopic/round09_newtopic_brief.md` | 26 Oct | the brief for track newtopic, with the direction, what not to re-propose, the lessons of the scan and an inventory of the data in hand |
+| `i01/newtopic/round09_newtopic_i01_plan.md` | 26 Oct, living | track newtopic's plan for interval 1, with six criteria for a direction fixed before the search, five proposer lenses, data-first diagnostics, a checker wave and predictions W1 to W3 |
 
 ## Results
 
