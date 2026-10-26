@@ -1621,5 +1621,145 @@
    "scan_WINDOW_queries.csv (version f1374799-6b40-43bf-854f-f70007a8af4c)",
    "scan_WINDOW_candidates.csv (version a50f1b72-6dce-4246-b90d-be7496c7b904)"
   ]
+ },
+ {
+  "slug": "PROBE",
+  "frame_id": "19c16dfe-74b5-4f7d-9834-0381188f2ba1",
+  "deviations": [
+   "Semantic Scholar searches were largely rate-limited (12 of 15 search queries returned HTTP 429 and gave no results; they are counted in n_queries=93 but logged as ERR); Semantic Scholar forward citations of GHCP and Broska-Howes returned 0 (too new), HCP 23, Duchi 12.",
+   "Did not call OpenAlex (per instruction).",
+   "Books/chapters not accessible: Cochran 1977, Sarndal-Swensson-Wretman 1992, Legg & Fuller 2009, Fuller 1987/1995, Hidiroglou & Sarndal 1998 were NOT read; they are cited via Hidiroglou 2001 full text and secondary snippets. Mandallaz 1999/2013, Kim & Rao 2008/2012, Ybarra & Lohr, Yang & Ding, and the cluster-robust econometrics papers were read at abstract/snippet level only.",
+   "Papers read by HTML keyword scan plus targeted passages rather than end to end: Broska & Howes (appendix variance formulas not read), Kluger & Bates, Kluger et al. 2025, Mozer, multi-task PPI, GHCP (proofs not read), Duchi et al. (only resizing section).",
+   "Stopping rule: the last two rounds (web searches on PPI fixed effects/RUV/few-cluster skewness, and a 12-query arXiv batch on conformal/federated/meta-analysis/PPI-omics/two-phase) gave no new close paper; the query count includes 18 web_search queries logged in the CSV with approximate result counts."
+  ],
+  "verdict": "mostly_taken",
+  "verdict_reason": "Every separable component of the claim has a precedent. (1) Two-phase/double sampling with a regression estimator on phase-1 auxiliaries and a design variance that includes the auxiliary's estimation error is classical (Cochran 1977 ch.12 as cited by Hidiroglou 2001; Hidiroglou & Sarndal 1998; Hidiroglou 2001 read in full; Legg & Fuller 2009; Mandallaz 2013 and Mandallaz & Ye 1999 for two-phase two-stage with optimal cost allocation; Kim & Rao 2012; Ybarra & Lohr 2008 for error-prone auxiliaries). (2) Labelling a few units in EVERY cluster instead of whole clusters is shown to be best in PPI by Broska & Howes (arXiv:2610.09601, Oct 2026, Fig. 3: RMSE smallest when labels are spread across all clusters), with a variance formula in (G, mean labelling probability, intraclass correlation of label indicators). (3) The conformal half is occupied: Duchi et al. 'resizing' estimates a per-environment scale factor from L labelled test-environment examples (taking L random units from each training environment to keep exchangeability), and GHCP uses floor(o/2) target labels for a group-mean local predictor and the rest as held-out scores. (4) Few-cluster skewness repair is covered by the econometric Edgeworth / Cornish-Fisher literature (Djogbenou-MacKinnon-Nielsen; Ura 2026, arXiv:2603.24786). (5) Pooling many genes to estimate a shared technical factor is standard in genomics (RUV with control genes, scran/sctransform size factors). No paper found combines a probe in all clusters + J-outcome pooled factor + whole-cluster labelling + PPI/GREG on cluster means, but that combination is an assembly of known pieces, and the theory (variance = GREG residual variance with the error-prone auxiliary; Cochran-type optimal split) is derivable from classical results.",
+  "ghcp_procedure": "GHCP (arXiv:2608.15500, sec 2.1): (1) keep reference groups with N_j > o; (2) donate a random reference group's size N_J0 to the test group to restore hierarchical exchangeability, remove that donor from calibration; (3) train a global predictor on unselected groups, set aside floor(o/2) target observations to form a within-group LOCATION predictor (group mean) and merge: mu~ = (1-lam) mu_glob + lam mu_loc with lam = floor(o/2)/(|S_train| + floor(o/2)); (4) the remaining o - floor(o/2) target labels are held-out scores that enter the donor-weighted calibration measure; set = {y: |y - mu~| <= Q_{1-alpha}(nu_donor)}. It corrects only the group mean (no scale correction), for one outcome, with no pooling across outcomes and no design for how many labels each group gets. A restricted-donor variant is also given. This is the 'probe repairs conformal' idea for location, single outcome.",
+  "duchi_resizing": "Duchi, Gupta, Jiang, Sur (arXiv:2403.16336, sec 5, Alg. 7 'Resized multi-environment split conformal'): given L^{m+1} labelled random examples from the test environment, compute residuals; in every training environment randomly select the SAME number |L| of samples, set that environment's resizing factor s^i = a high (1-alpha_0, default alpha_0 = 0.05) quantile of its |L| residuals, divide the environment's residuals by s^i (using only non-selected points), take the quantile across environments of the resized quantiles, and multiply by the test environment's s^{m+1}. This keeps the scores exchangeable and shrinks sets for non-outlying environments. It is a per-environment SCALE probe from few labelled test examples (single outcome, no pooling across outcomes), i.e. the conformal analogue of the depth-factor probe; the claim's conformal half is therefore largely anticipated for one outcome.",
+  "closest_papers": [
+   {
+    "citation": "Broska & Howes, Cluster-Robust Prediction-Powered Inference, arXiv:2610.09601 (Oct 2026)",
+    "url_or_doi": "https://arxiv.org/abs/2610.09601",
+    "how_read": "Read abstract, intro, sec 2.6 design choices, sec 3.3 'Choosing a labeling design', conclusion (limitations) from arXiv HTML; keyword-scanned the rest. Appendix C variance formulas not read in detail.",
+    "what_it_does": "PPI++ with closed-form cluster-robust sandwich SEs for partially labelled clusters; cluster-aware power tuning; shows RMSE is lowest when labels are spread over all clusters and nearly doubles when concentrated in whole clusters at 5% labelling; variance depends on G, mean labelling probability, intraclass correlation of labelling indicators. Future-work list names few-cluster corrections (wild cluster bootstrap) and cluster-specific parameters / fixed effects.",
+    "overlap_with_claim": "Directly occupies 'label a few units in every cluster beats whole clusters' and the variance-by-design-parameters formula. Does NOT use the probe to estimate a shared cluster factor, has one outcome, and does not give a probe-vs-whole-cluster budget split (it recommends estimating moments from pilot data). Its stated future work (few clusters, cluster fixed effects) is adjacent to the claim, so scoop risk is real."
+   },
+   {
+    "citation": "Duchi, Gupta, Jiang, Sur, Predictive inference in multi-environment scenarios, arXiv:2403.16336",
+    "url_or_doi": "https://arxiv.org/abs/2403.16336",
+    "how_read": "Read abstract and sec 5 (resizing) including Algorithm 7 from arXiv HTML.",
+    "what_it_does": "Per-environment scale factor from a few labelled test-environment examples, with matched random subsamples in training environments.",
+    "overlap_with_claim": "Conformal half: per-donor scale correction from few labels, single outcome. Pooling the probe across J outcomes is not there."
+   },
+   {
+    "citation": "Mallick, Tchetgen Tchetgen, Dobriban, Lee, Generalized Hierarchical Conformal Prediction, arXiv:2608.15500",
+    "url_or_doi": "https://arxiv.org/abs/2608.15500",
+    "how_read": "Read abstract, sec 2.1 procedure, intro; proofs not read. Semantic Scholar returned no citing papers (too new).",
+    "what_it_does": "See ghcp_procedure.",
+    "overlap_with_claim": "Conformal half for location correction and exchangeability restoration with o target labels. No scale, no multi-outcome pooling, no label-allocation design."
+   },
+   {
+    "citation": "Hidiroglou, Double Sampling, Survey Methodology 27(2) (2001) 143-154",
+    "url_or_doi": "https://www150.statcan.gc.ca/n1/pub/12-001-x/2001002/article/6091-eng.pdf",
+    "how_read": "Read full text (12 pp) via PDF after network grant; keyword scan found no cluster or measurement-error content.",
+    "what_it_does": "General theory of two-phase (nested and non-nested) estimation with auxiliaries from the first phase via calibration/GREG, with variance estimators, for arbitrary phase-1/phase-2 designs.",
+    "overlap_with_claim": "The two-phase regression estimator and its variance (including phase-1 sampling error of the auxiliary) is general enough to cover a design whose phase-1 is 'o units in every cluster' and phase-2 is 'whole clusters', treating cluster-level aux as estimated. Cochran's optimal phase split is cited here as classical."
+   },
+   {
+    "citation": "Mandallaz, Breschan, Hill, New regression estimators in forest inventories with two-phase sampling and partially exhaustive information, Can J For Res 43 (2013) 1023-1031; and Mandallaz & Ye, Forest inventory with optimal two-phase two-stage sampling schemes based on the anticipated variance, Can J For Res 29 (1999)",
+    "url_or_doi": "https://doi.org/10.1139/cjfr-2013-0181 ; https://doi.org/10.1139/x99-124",
+    "how_read": "Abstracts and search snippets only (DOIs verified in Crossref); full texts not read.",
+    "what_it_does": "Two-phase regression estimators with phase-1 estimated auxiliary means and design-based variance including regression-coefficient variance; optimal two-phase two-stage allocation minimising anticipated variance for given cost.",
+    "overlap_with_claim": "Classical precedent for cost-optimal split between a cheap phase and an expensive phase in clustered (two-stage) designs and for variance that includes auxiliary estimation error."
+   },
+   {
+    "citation": "Kluger & Bates, M-estimation under Two-Phase Multiwave Sampling with Applications to PPI, arXiv:2602.16933",
+    "url_or_doi": "https://arxiv.org/abs/2602.16933",
+    "how_read": "Abstract, table of contents, keyword scan (0 hits for 'cluster', 0 for 'measurement error'); proofs not read.",
+    "what_it_does": "Phase I: proxies for all; Phase II: gold labels in K adaptive waves with labelling rules re-estimated from earlier waves; MPD estimator, CIs, greedy optimal allocation.",
+    "overlap_with_claim": "A probe-then-label design in the unclustered PPI setting (earlier waves inform later labelling). The cluster / shared-factor structure is absent; budget split across waves is listed as open there."
+   },
+   {
+    "citation": "Kluger, Lu, Zrnic, Wang, Jordan, PPI with Imputed Covariates and Nonuniform Sampling, arXiv:2501.18577",
+    "url_or_doi": "https://arxiv.org/abs/2501.18577",
+    "how_read": "Abstract and keyword scan; Broska & Howes describe it as requiring clusters to be fully labelled or fully unlabelled and using a bootstrap.",
+    "what_it_does": "Bootstrap CIs for two-phase labelling designs with weighted, stratified or clustered complete samples.",
+    "overlap_with_claim": "Prior art for PPI under whole-cluster labelling designs; no probe, no factor."
+   },
+   {
+    "citation": "Mozer, PPI is the Difference Estimator, arXiv:2603.19160",
+    "url_or_doi": "https://arxiv.org/abs/2603.19160",
+    "how_read": "Abstract, TOC and keyword scan (no cluster hits; two-phase 2 hits).",
+    "what_it_does": "Shows PPI = Cassel-Sarndal-Wretman difference estimator and PPI++ = GREG; lists calibration, post-stratification, optimal allocation, subgroup rectifiers as survey tools PPI should use.",
+    "overlap_with_claim": "Establishes that a GREG-with-auxiliary / two-phase reading of PPI is already the accepted framing, which makes a 'design-based regression on cluster means with probe-estimated auxiliary' an application of known theory."
+   },
+   {
+    "citation": "Denis & Haddou, Prediction-Powered Estimation: Unbiased Model-Assisted Estimation, J Off Stat (2026)",
+    "url_or_doi": "https://doi.org/10.1177/0282423X261451320",
+    "how_read": "Abstract/intro via search snippets (DOI verified in Crossref).",
+    "what_it_does": "Design-based PPI-style difference estimator and GREG with pre-trained model predictions as covariate, with unbiased variance estimator for general survey designs.",
+    "overlap_with_claim": "Design-based PPI/GREG on general designs is already published; clustered two-phase variant not covered."
+   },
+   {
+    "citation": "Prediction-Powered Inference Across Many Tasks, arXiv:2605.29249",
+    "url_or_doi": "https://arxiv.org/abs/2605.29249",
+    "how_read": "Abstract and keyword scan (0 hits cluster/latent/random effect); methods not read in full.",
+    "what_it_does": "Multi-task PPI that recalibrates the proxy-label relation using labels pooled across tasks; shows affine cross-task recalibration gives no gain over power-tuned PPI.",
+    "overlap_with_claim": "Pools labels across outcomes/tasks to fix a shared proxy-label miscalibration, but not a cluster-level latent factor estimated from a probe; relevant to whether pooling across J outcomes adds anything beyond power tuning."
+   },
+   {
+    "citation": "Ybarra & Lohr, Small area estimation when auxiliary information is measured with error, Biometrika 95 (2008)",
+    "url_or_doi": "https://doi.org/10.1093/biomet/asn048",
+    "how_read": "Snippets only (DOI verified in Crossref).",
+    "what_it_does": "Area-level Fay-Herriot with an error-prone survey-estimated covariate; modified shrinkage weights.",
+    "overlap_with_claim": "Precedent for a cluster-level auxiliary that is itself a survey estimate with known error variance and its effect on prediction."
+   },
+   {
+    "citation": "Kim & Rao, Combining data from two independent surveys: a model-assisted approach, Biometrika 99 (2012) 85-100",
+    "url_or_doi": "https://doi.org/10.1093/biomet/asr063",
+    "how_read": "Abstract and snippets (DOI verified).",
+    "what_it_does": "Large survey with auxiliaries only plus small survey with y and x; projection estimator, jackknife variance.",
+    "overlap_with_claim": "Structure 'predictions/auxiliaries for all, y for a subset' with design-based inference; estimated-auxiliary variance."
+   },
+   {
+    "citation": "Yang & Ding, Two-phase rejective sampling and its asymptotic properties, JRSSB (2025)",
+    "url_or_doi": "https://doi.org/10.1093/jrsssb/qkaf002",
+    "how_read": "Abstract and snippets.",
+    "what_it_does": "Phase-1 auxiliaries, rejective phase-2 design, regression estimators, multiple outcomes.",
+    "overlap_with_claim": "Two-phase regression with many outcomes sharing phase-1 auxiliaries; unclustered."
+   },
+   {
+    "citation": "Ura et al., Refined Cluster Robust Inference, arXiv:2603.24786; MacKinnon, Cluster-Robust Inference: A Guide to Empirical Practice, arXiv:2205.03285; Djogbenou, MacKinnon, Nielsen (J Econometrics 2019)",
+    "url_or_doi": "https://arxiv.org/abs/2603.24786 ; https://arxiv.org/abs/2205.03285 ; https://www.sciencedirect.com/science/article/abs/pii/S0304407619300909",
+    "how_read": "Abstracts/snippets only.",
+    "what_it_does": "Edgeworth/Cornish-Fisher critical values using estimated skewness and kurtosis of cluster scores for few clusters; over-rejection with heavy-tailed or unbalanced clusters; factor structure is noted to mitigate.",
+    "overlap_with_claim": "The skewness-restores-few-cluster-coverage mechanism is known; only the specific mechanism 'probe-estimated depth factor removes the skewness of cluster contributions' is not found."
+   },
+   {
+    "citation": "Risso, Ngai, Speed, Dudoit, Normalization of RNA-seq data using factor analysis of control genes or samples, Nat Biotechnol (2014) [RUV]",
+    "url_or_doi": "https://doi.org/10.1038/nbt.2931",
+    "how_read": "Abstract-level (DOI verified); RUV literature via search snippets (pseudobulk RUV in NAR Genom Bioinform 2025).",
+    "what_it_does": "Estimates unwanted-variation factors from control genes pooled across genes and uses them as covariates.",
+    "overlap_with_claim": "The 'pool the probe across J outcomes to estimate a shared factor' step is standard genomics practice; its use as a design-based auxiliary in a labelling-budget problem was not found."
+   },
+   {
+    "citation": "Library size confounds biology in spatial transcriptomics data, Genome Biology (2024)",
+    "url_or_doi": "https://doi.org/10.1186/s13059-024-03241-7",
+    "how_read": "Abstract/snippets (DOI verified).",
+    "what_it_does": "Shows library size differs across tissue regions, partly biology, in ST data.",
+    "overlap_with_claim": "Caveat to calling the depth factor purely technical; relevant to the empirical premise, not to novelty of the design."
+   },
+   {
+    "citation": "Broska-Howes' neighbours in ST: STPath (npj Digit Med 2025) and TIDEST (PMC13320745)",
+    "url_or_doi": "https://www.nature.com/articles/s41746-025-02020-3 ; https://pmc.ncbi.nlm.nih.gov/articles/PMC13320745/",
+    "how_read": "Abstracts and keyword scan only.",
+    "what_it_does": "STPath uses a few measured spots as in-context prompts to improve same-slide prediction; TIDEST calibrates reconstructed expression using measured genes and adjusts latent variation for valid DE.",
+    "overlap_with_claim": "Show that 'a few measured spots/genes in the target slide calibrate the predictor' exists in ST, but neither gives finite-sample/design-based inference over donors; no shallow-sequence-all-samples design paper was found."
+   }
+  ],
+  "what_remains_open": "Thin remainder, none of it found in the literature but all of it incremental: (a) a quantitative law for the probe-estimated factor's error as a function of o and J (e.g. error variance ~ sigma_e^2/(o J) under a one-factor model with outcome loadings) and how that error enters the GREG residual variance on cluster means; this is a direct plug-in of classical errors-in-variables / two-phase algebra and would likely be considered routine by survey statisticians. (b) Optimal split of a budget between probes (o per cluster, G clusters) and n_L whole clusters in a multi-outcome setting, which is Cochran/Mandallaz-Ye-type allocation with J-dependent measurement error; the multi-outcome J-dependence is the only non-textbook ingredient. (c) The claim that the probe-adjusted cluster contributions have lower skewness and so restore few-cluster interval coverage; Broska & Howes list few-cluster correction as future work, and the econometrics literature has Edgeworth corrections, but a PPI-specific statement tied to a removable shared factor was not found. (d) A J-pooled scale/location probe in HCP/GHCP/Duchi-type conformal sets with finite-sample validity (GHCP does location with floor(o/2), Duchi does scale for one outcome); a multi-outcome pooled estimate of the donor scale that keeps exchangeability is not in either paper, but note the HCPWIDTH scoop-risk caveat for any GHCP-based width theory. (e) The empirical finding itself (one shared depth factor explains a median 0.52 of between-donor variance out of sample on HEST-1k Visium tasks, predictions ~0) is a data finding, not a method; I did not search for prior reports of the same HEST-1k numbers beyond the ST library-size literature.",
+  "sharpened_claim_if_any": "If anything is kept, narrow it to: 'for J outcomes governed by a shared cluster-level multiplicative factor that the predictor cannot see, a probe of o units per cluster pooled across J outcomes estimates the factor with error of order 1/(oJ), so a probe as small as o=1-3 suffices, and the resulting Cochran-type probe/whole-cluster budget split and the conformal scale probe are determined by J'. This keeps the J-pooling as the only claimed novelty; do not claim the two-phase estimator, the spread-labels-across-clusters result, the per-donor resizing, or the Edgeworth few-cluster mechanism.",
+  "value_assessment": "Blunt: as a methodological-core contribution it is weak. The estimator is a textbook two-phase regression/GREG estimator, the variance and allocation follow from Cochran/Hidiroglou/Mandallaz-type results, the 'label everywhere beats label whole clusters' conclusion is already in a paper posted 18 days before this check (Broska & Howes), and the conformal half is the Duchi resizing / GHCP local-mean idea for one outcome. The only non-routine element is the J-outcome pooling of the probe, which is a standard genomic move (RUV/size factors) and gives a clean 1/J scaling but little theory beyond that. It could serve as a design-and-diagnostics section or an applied ST paper (strong data motivation: shared depth factor, predictions explain nothing alone), but not as the statistical centre of a paper; scoop risk from Broska-Howes follow-ups (fixed effects / few clusters) and from GHCP extensions is high. Recommended status: fold into another direction as a secondary contribution, or pursue only as an applied ST design paper with the J-scaling result stated as a short proposition.",
+  "n_queries": 93
  }
 ]
