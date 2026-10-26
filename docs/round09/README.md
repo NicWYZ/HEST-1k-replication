@@ -21,6 +21,7 @@ Each track's session sets its own milestones and records them here on its branch
 | `00_prep/round09_probe_novelty.md` | 26 Oct | the PROBE verdict, mostly taken (two-phase sampling; Broska and Howes; Kluger and Bates), with the session's account of every direction examined |
 | `i01/fewcluster/round09_fewcluster_brief.md` | 26 Oct | the brief for track fewcluster, with the direction, what is already known, the data facts, resources and rules |
 | `i01/newtopic/round09_newtopic_brief.md` | 26 Oct | the brief for track newtopic, with the direction, what not to re-propose, the lessons of the scan and an inventory of the data in hand |
+| `i01/fewcluster/round09_fewcluster_plan.md` | 26 Oct, living until S4 | track fewcluster's plan for interval 1. A finite-population Bahadur and Savage lemma (no finite-length interval is valid over all populations when $\alpha < 1 - n/G$), four candidate claims (a max-share frontier, an exactly calibrated interval, bounded residuals, what the design buys), a five-theme novelty map and feasibility computations with predictions written first |
 
 ## Results
 
