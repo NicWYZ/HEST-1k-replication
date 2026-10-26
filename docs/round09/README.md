@@ -10,7 +10,7 @@ Each track's session sets its own milestones and records them here on its branch
 
 | Date | Track | Milestone | Report | Answered by |
 |---|---|---|---|---|
-| 26 Oct | newtopic | end of interval 1 | `i01/newtopic/round09_newtopic_i01_report.md` | Nicolas's choice among C1, C2 and C3, pending |
+| 26 Oct | newtopic | end of interval 1 | `i01/newtopic/round09_newtopic_i01_report.md` | Nicolas, 26 Oct, "breadth first", recorded in `i02/newtopic/round09_newtopic_i02_plan.md` |
 
 ## Documents
 
@@ -27,6 +27,7 @@ Each track's session sets its own milestones and records them here on its branch
 | `i01/newtopic/round09_newtopic_brief.md` | 26 Oct | the brief for track newtopic, with the direction, what not to re-propose, the lessons of the scan and an inventory of the data in hand |
 | `i01/newtopic/round09_newtopic_i01_plan.md` | 26 Oct, living | track newtopic's plan for interval 1, with six criteria for a direction fixed before the search, five proposer lenses, data-first diagnostics, a checker wave and predictions W1 to W3 |
 | `i01/newtopic/round09_newtopic_i01_report.md` | 26 Oct | track newtopic's report of interval 1. Two waves (five lens proposers with 45 raw ideas, three open-problem miners over 61 papers) and nine checkers found nothing open. BOUNDARY, LLGCLUSTER and RRRIDGE are partly open with thin theory remainders, and the N3 diagnostics added no direction. It proposes a short feasibility interval on RRRIDGE (C1) with a stop rule, against C2 and closing the track (C3) |
+| `i02/newtopic/round09_newtopic_i02_plan.md` | 26 Oct, living | track newtopic's plan for interval 2, opened by Nicolas's request for breadth-first experiments. Five feasibility tracks (RRRIDGE, BOUNDARY, SCALE, LLGCLUSTER, four fresh checkers), each with a stop rule and predictions F1 to F5 |
 
 ## Results
 
