@@ -131,7 +131,7 @@ code/scripts/             every script; results/ the outputs by round; figures/ 
 - **Git.** The repository is `NicWYZ/HEST-1k-replication` and is public. This session commits to `claude-science-fewcluster` (section 1) as `git -c user.name="NicWYZ" -c user.email="NicWYZ@users.noreply.github.com" commit`, and pushes to `origin claude-science-fewcluster` after each milestone, in a cell that declares the GitHub credential.
 - **Network.** Domains outside the sandbox allowlist need Nicolas's approval through a network-access request. OpenAlex needs the stored OpenAlex credential, which he approves once per session. Search subagents can use web search without approval.
 - **Longleaf files.** The compute target's notes give the partition, account and time limits. Downloads from the scratch root `/work/users/w/e/weiyang/.claude-science-scratch/` need no approval, and downloads from other paths raise an approval card, so jobs copy their small outputs there.
-- **Data usable locally.** The donor-level aggregates of round 9's preparation are in the repository under `results/round9/` (`diagnostics/`, `between/`, `stud/`, `norm/`, `probe/`) and need no Longleaf access. Per-spot data stay on Longleaf.
+- **Data usable locally.** The donor-level aggregates of round 9's preparation are in the repository in `results/round9/diagnostics/`, `results/round9/between/`, `results/round9/stud/`, `results/round9/norm/` and `results/round9/probe/` and need no Longleaf access. Per-spot data stay on Longleaf.
 
 **Claude environment.** What a session needs that the repository cannot hold. A new account recreates these and nothing else.
 
