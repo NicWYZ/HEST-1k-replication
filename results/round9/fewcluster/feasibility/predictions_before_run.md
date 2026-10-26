@@ -21,3 +21,9 @@ After the novelty map returned and before any code for these quantities was writ
 - **P6.** On the grid of `s3_boundary_grid.csv` the second-block term $\binom{k}{n}$ changes $k^\ast$ in no cell with $\alpha = 0.10$.
 - **P7.** The bound on configurations whose largest level set is below $G/2$ is below 0.01 in every cell with $n \ge 6$, so the gap between the impossibility and the possibility conditions is empty there for $\alpha \ge 0.01$.
 - **P8.** For $G = 24$, the fraction of populations of 24 independent standard normal values whose max-share is at most $\kappa^\ast(24, 8, 0.10)$ is below 0.2. For $G = 51$ at $n = 8$ it is below 0.05.
+
+## Addendum 2, 26 October 2026, written before the Longleaf run of step I2-4
+
+P1 to P3 above are scored as written, against $\kappa^\ast = \kappa_2(k^\ast)$, and are also reported against the corrected frontier $\kappa_2(k^\ast - 1)$ and the tuned-coefficient frontier.
+
+- **P9.** For ACS by state with the GBM predictions, the max-share of the residual of the least-squares fit of state means on state-mean predictions lies between the corrected frontier at $n = 8$ of 51 (0.071) and the raw value 0.209.
