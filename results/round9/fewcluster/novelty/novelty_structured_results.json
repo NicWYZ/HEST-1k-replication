@@ -1,0 +1,980 @@
+[
+ {
+  "slug": "NOV1_WORSTCASE",
+  "deviations": [
+   "Semantic Scholar API returned HTTP 429 on every attempt (about 8 query attempts with backoff); it was not used. No forward-citation searches of anchor papers were done. Substitutes: Crossref, arXiv API and web_search.",
+   "arXiv API returned 429 for long stretches. About 25 arXiv queries failed or were skipped; only queries that returned results are logged. Several early strict-AND queries returned 0 hits.",
+   "OpenAlex was not used, per instructions.",
+   "Of the 'close' papers, Szekely 2006, Potscher-Preinerstorfer, Waudby-Smith-Ramdas, Freidling and Shekhar-Ramdas were fetched as arXiv PDFs and the relevant theorem or section was read. Bakirov-Szekely 2006 itself, Bloznelis 1999, Bahadur-Savage 1956, Romano-Wolf 2000, Hajek 1960, Hoglund 1978, Bikelis, Efron 1969, Edelman 1990, Basu-DasGupta 1995, Romano 2004, Serfling 1974 and Bardenet-Maillard were NOT read; they were seen only as Crossref records, abstracts or search snippets, or are cited from memory (marked in the candidates file). Hoglund 1978 and Bikelis were not retrieved at all.",
+   "Claim D (certainty/take-all stratum design) was not searched; two-phase sampling references were seen only as Crossref hits (not_assessed).",
+   "About 68 queries logged: 32 Crossref, 22 arXiv, 14 web_search. All counts and verdicts are provisional because Semantic Scholar was unavailable and several papers were graded from abstracts."
+  ],
+  "verdicts": [
+   {
+    "claim": "LEMMA",
+    "verdict": "partly_open",
+    "verdict_reason": "The phenomenon is the Bahadur-Savage 1956 impossibility (any valid interval over a rich class is unbounded or has coverage 0), restated and refined in several 2020-2026 papers for iid sampling. The mechanism needed here is elementary: the sample misses an arbitrarily large unsampled unit with probability at least 1-n/G, and predictions cannot reveal it. I found no paper stating it for SRSWOR from a fixed finite population, and none with the explicit bound (1-alpha-n/G)/(1-n/G) or the 'predictions cannot help' remark. The binary/hypergeometric analogue (a Wald interval whose coverage can fall to about n/N) appears only as a search snippet attributed to Wang 2015.",
+    "closest_papers": [
+     {
+      "citation": "Bahadur & Savage (1956), Ann. Math. Statist. 27",
+      "url_or_doi": "doi:10.1214/aoms/1177728077",
+      "how_read": "Crossref record; result as quoted in Romano-Wolf and Bertanha-Moreira snippets; original not read",
+      "what_it_does": "iid: no effective (bounded) valid CI for the mean over rich nonparametric classes",
+      "overlap_with_claim": "Same mechanism, iid rather than fixed finite population"
+     },
+     {
+      "citation": "Romano & Wolf (2000), Ann. Statist. 28",
+      "url_or_doi": "doi:10.1214/aos/1015951997",
+      "how_read": "search-result text snippet only",
+      "what_it_does": "States Bahadur-Savage as a nonexistence result and builds finite-sample conservative CIs on [0,1]",
+      "overlap_with_claim": "Shows what a support bound restores; no SRSWOR version"
+     },
+     {
+      "citation": "Sub-Gaussian CIs for heavy-tailed data (2610.15799)",
+      "url_or_doi": "arXiv:2610.15799",
+      "how_read": "abstract and intro snippet",
+      "what_it_does": "Refines Bahadur-Savage with nested classes",
+      "overlap_with_claim": "iid only"
+     }
+    ]
+   },
+   {
+    "claim": "F",
+    "verdict": "partly_open",
+    "verdict_reason": "Pieces exist but not the claim. (a) Hajek (1960) proved a necessary and sufficient max-squared-deviation (Lindeberg-type) condition for the asymptotic normality of the SRSWOR mean. Li-Ding (2017) and Bloznelis (1999, Student statistic under SRSWOR) use it asymptotically. (b) Potscher-Preinerstorfer (Econometric Theory 2025/2026) prove a sharp finite-sample boundary of the same type, in the Gaussian heteroskedastic regression model: a finite size-controlling critical value exists iff no leverage equals 1, and otherwise size is 1 for every critical value. (c) Carter-Schnepel-Steigerwald's effective number of clusters and Muller's robust t-test treat concentration across few clusters asymptotically. I found no paper giving an explicit boundary kappa*(n,G,alpha) from the hypergeometric miss probability for SRSWOR finite populations, nor the 'location-scale-equivariant valid iff kappa0 <= kappa*' dichotomy.",
+    "closest_papers": [
+     {
+      "citation": "Potscher & Preinerstorfer, Necessary and sufficient condition for size controllability of heteroskedasticity robust test statistics (Econometric Theory 2026)",
+      "url_or_doi": "arXiv:2412.17470",
+      "how_read": "arXiv PDF; Theorem 2.2 read",
+      "what_it_does": "Exact finite-sample dichotomy (size controllable iff hat-diagonal < 1; else size = 1 for all critical values)",
+      "overlap_with_claim": "Same logical shape as F (concentration threshold beyond which no critical value works); different model (Gaussian regression, not SRSWOR)"
+     },
+     {
+      "citation": "Hajek (1960) / Li & Ding (2017), Hajek condition",
+      "url_or_doi": "arXiv:1610.04821",
+      "how_read": "Li-Ding abstract; Hajek necessity via secondary snippet; Hajek 1960 memory, not retrieved",
+      "what_it_does": "Necessary and sufficient max-share condition for the finite-population CLT",
+      "overlap_with_claim": "Asymptotic version of kappa -> 0"
+     },
+     {
+      "citation": "Bloznelis (1999), Ann. Probab. 27",
+      "url_or_doi": "doi:10.1214/aop/1022874830",
+      "how_read": "abstract only",
+      "what_it_does": "Berry-Esseen bound for finite-population Student statistic",
+      "overlap_with_claim": "Rate, not exact finite-sample boundary"
+     }
+    ]
+   },
+   {
+    "claim": "K",
+    "verdict": "partly_open",
+    "verdict_reason": "The method type (exact worst-case critical value over a class, attained at extreme configurations) is established for other classes. Szekely 2006 and Bakirov-Szekely give exact smallest t-type critical values over symmetric and Gaussian-scale-mixture classes with extremal sign-vertex configurations. Potscher-Preinerstorfer give the smallest valid critical value under heteroskedasticity. Romano-Wolf give finite-sample CIs over bounded support. For SRSWOR finite populations I found only asymptotic or concentration-based work (Bloznelis 1999, Li-Ding 2017, Freidling 2026, Waudby-Smith-Ramdas 2020). I found no exactly calibrated studentized difference-estimator interval over {kappa <= kappa0}. The comparators are known: Canay-Romano-Shaikh sign-change tests are exact only under symmetry (Dutz-Zhang 2025 show mean-zero admits no randomization test), and Hagemann/Ibragimov-Muller are asymptotic or Gaussian-scale-mixture. The 'worst case at few-point populations' step is not obviously inherited, because the kappa constraint is a nonconvex quadratic constraint, unlike the convex class used by Szekely. If true it is a substantive lemma, not a corollary.",
+    "closest_papers": [
+     {
+      "citation": "Szekely (2006), Student's t-test for scale mixture errors (with Bakirov & Szekely 2006)",
+      "url_or_doi": "arXiv:math/0610838",
+      "how_read": "arXiv PDF read (theorem, proof sketch, critical-value remarks)",
+      "what_it_does": "Exact optimal t-type critical values over symmetric/Gaussian-scale-mixture classes via extremal configurations",
+      "overlap_with_claim": "Method analogue (exact worst case over a class, extremal few-point configurations), iid not finite-population"
+     },
+     {
+      "citation": "Dutz & Zhang (2025/2026), Limitations of randomization tests in finite samples",
+      "url_or_doi": "arXiv:2512.07099",
+      "how_read": "arXiv PDF; summary and intro read",
+      "what_it_does": "Sign-change tests are exact only under symmetry; the mean-zero null admits no randomization test",
+      "overlap_with_claim": "Explains why CRS sign-change comparator cannot have finite-sample validity under skew"
+     },
+     {
+      "citation": "Potscher & Preinerstorfer (2026)",
+      "url_or_doi": "arXiv:2412.17470",
+      "how_read": "arXiv PDF; Theorem 2.2 read",
+      "what_it_does": "Smallest valid critical value characterized when size is controllable",
+      "overlap_with_claim": "Exact calibrated critical value in a different model"
+     },
+     {
+      "citation": "Hagemann (2025), Rev. Econ. Stat.",
+      "url_or_doi": "arXiv:1907.01049",
+      "how_read": "abstract read",
+      "what_it_does": "Level-adjusted permutation test, asymptotic size control for few heterogeneous clusters",
+      "overlap_with_claim": "Comparator, asymptotic"
+     }
+    ]
+   },
+   {
+    "claim": "B",
+    "verdict": "mostly_taken",
+    "verdict_reason": "Finite-sample valid CIs for a bounded finite-population mean under SRSWOR are in print: Serfling (1974) and Bardenet-Maillard (2015) give Hoeffding-Serfling and empirical Bernstein-Serfling bounds, and Waudby-Smith-Ramdas (2020) give Hoeffding-type and empirical-Bernstein WoR CIs and betting/PPR confidence sequences, with Corollary 3.1 a fixed-n CI. Freidling (2026, arXiv:2609.18586) gives Hoeffding and Bernstein design-based CIs with cluster-randomized extensions. Sandoval et al. (2026) give nonasymptotic treatment-effect CIs with unimprovable rates, and Shekhar-Ramdas (2026) give a width lower bound for WoR CIs in a large-deviation regime. Aronow-Lopatto (2026) give a minimax result for unbiased estimation, not interval length. What I did not find is an exact minimax interval-length statement at n <= 16 for few-cluster PPI/difference-estimator residuals. The reduction (residual range bound, so [a,b] range inflated by lambda) looks routine.",
+    "closest_papers": [
+     {
+      "citation": "Waudby-Smith & Ramdas (2020), Confidence sequences for sampling without replacement",
+      "url_or_doi": "arXiv:2006.04347",
+      "how_read": "arXiv PDF; Theorem 3.1, Corollary 3.1, Section 3.2 read",
+      "what_it_does": "Hoeffding-type and empirical-Bernstein WoR CIs/CSs for bounded finite populations",
+      "overlap_with_claim": "Direct (B)"
+     },
+     {
+      "citation": "Freidling (2026), Randomization inference with concentration inequalities",
+      "url_or_doi": "arXiv:2609.18586",
+      "how_read": "arXiv PDF; abstract/intro and cluster section skimmed",
+      "what_it_does": "Non-asymptotic Hoeffding/Bernstein CIs for design-based SATE incl. cluster experiments",
+      "overlap_with_claim": "Direct for the cluster-design version of B"
+     },
+     {
+      "citation": "Shekhar & Ramdas (2026)",
+      "url_or_doi": "arXiv:2603.14423",
+      "how_read": "arXiv PDF; abstract and lower-bound statement read",
+      "what_it_does": "Lower bound on WoR CI width plus matching CI (large-deviation regime)",
+      "overlap_with_claim": "Partial minimax-length statement, not n <= 16"
+     },
+     {
+      "citation": "Aronow & Lopatto (2026)",
+      "url_or_doi": "arXiv:2605.20572",
+      "how_read": "abstract only",
+      "what_it_does": "Minimax design-unbiased estimation with known outcome bounds",
+      "overlap_with_claim": "Minimax for estimation, not intervals"
+     }
+    ]
+   },
+   {
+    "claim": "D",
+    "verdict": "not_assessed",
+    "verdict_reason": "Outside this theme; only Crossref hits for two-phase and take-all references were seen, none examined.",
+    "closest_papers": []
+   }
+  ],
+  "what_remains_open": "(1) F: an explicit sharp boundary kappa*(n,G,alpha) for SRSWOR from the hypergeometric miss probability, with the 'location-scale-equivariant interval valid below, none above' dichotomy. No paper was found. The necessity half (a sample that misses all k atypical clusters is constant, so an equivariant interval has zero length) looks like a routine corollary of the LEMMA argument; I did not verify it, and it is my own sketch, not a literature result. The sufficiency half is K. (2) K: exact finite-sample critical values c(n,G,kappa0,alpha) for the studentized difference-estimator interval over {kappa <= kappa0}, with worst case at few-point populations. This is a substantive theorem if the extremal-population step holds. The closest methods (Szekely, Potscher-Preinerstorfer) are in other models, so the exact extremal property is the real novelty and the part most worth checking by computer first. (3) LEMMA: the explicit finite-population bound with the predictions-do-not-help remark is open, but it is a routine corollary. (4) B: an exact minimax length at n <= 16 is open, probably a routine corollary of the known bounded-range CIs. D was not assessed.",
+  "other_relevant_findings": "- Hypergeometric analogue: a search snippet (samplingbook vignette) attributes to Wang 2015 that the Wald interval for a finite-population proportion can have coverage as low as n/N, the binary version of the two-point worst-case phenomenon (not verified at source).\n- P\u00f6tscher-Preinerstorfer is the best structural precedent for F. They prove a sharp finite-sample boundary beyond which no critical value controls size, but in the Gaussian heteroskedastic model. Cite it, and expect a referee to ask how F differs.\n- PPI as survey sampling: Mozer (arXiv:2603.19160) shows PPI equals the Cassel et al. (1976) difference estimator, so design-based and sampling-theory results on difference estimators apply directly. Broska-Howes (2610.09601) and Shirota (2608.10356) are asymptotic or conditional PPI work and do not touch finite-sample worst case.\n- Cluster-heterogeneity diagnostics (Carter-Schnepel-Steigerwald effective number of clusters; the cluster-robust-inference guide arXiv:2604.02000) are the econometric language for a max-share quantity. A max-share kappa would likely be read as related to these.\n- Dutz-Zhang (2512.07099) give a clean reason the Canay-Romano-Shaikh sign-change comparator cannot be finite-sample valid for skewed residuals, which supports the K comparison.\n- The project memory lists GHCP (2608.15500), Kluger-Bates (2602.16933) and Refined Cluster Robust Inference (2603.24786). Their abstracts were fetched here: none covers worst-case finite-sample SRSWOR coverage.",
+  "artifact_filenames": [
+   "novelty_NOV1_WORSTCASE_queries.csv",
+   "novelty_NOV1_WORSTCASE_candidates.csv"
+  ],
+  "n_queries": 68,
+  "frame_id": "07e6a3b6-65a4-4e00-8fa7-f208cb3d35c9"
+ },
+ {
+  "slug": "NOV2_FINITESAMPLE",
+  "deviations": [
+   "arXiv API returned HTTP 429 repeatedly at the start; several early queries produced no results and are not logged; spacing was raised to 6+ s and later queries succeeded.",
+   "Many arXiv API queries with 3+ quoted AND-terms returned 0 hits (logged with n_results_screened=0); coverage in arXiv therefore leaned on simpler queries plus web_search.",
+   "Semantic Scholar forward-citation lists were incomplete/rate-limited: WSR 2006.04347 (58 citers), Shekhar et al. 2305.06884 (10 citers), PPI 2301.09633 (only 384 citers retrieved of thousands) -> forward-citation screening is PROVISIONAL.",
+   "Only 5 papers were read beyond abstract/snippet: Angelopoulos et al. PPI (App. B/E text), Shekhar et al. 2305.06884 (keyword scan), Shekhar-Ramdas 2603.14423 (keyword scan), Hsu-Shekhar 2607.17409 (keyword scan), Bardenet-Maillard (snippets of theorem statements). All other 'close' papers (Dufour, Bahadur-Savage, Serfling, Hoeffding 1963, Rivest 2002, Learned-Miller-Thomas etc.) were graded from abstracts/search snippets or memory and are labelled so in the candidates CSV.",
+   "Hajek 1960, Erdos-Renyi 1959, Hoeffding 1952/1963, Serfling 1974, Anderson 1969, Manski are cited from memory (how_read='memory, not retrieved'); no original PDFs opened.",
+   "OpenAlex deliberately not used (per instructions). Econometrics few-cluster literature (CRS, Ibragimov-Muller, wild bootstrap, CR2) was only touched via one web search; it belongs to other checkers' themes.",
+   "Query log has 62 rows; 'new_close_papers' column is a coarse manual tally, not an automated count."
+  ],
+  "verdicts": [
+   {
+    "claim": "LEMMA",
+    "verdict": "mostly_taken",
+    "verdict_reason": "The substance (any procedure valid over an unrestricted class must be unbounded with positive probability; a.s.-bounded intervals have zero coverage; predictions of unperturbed units cannot help) is the Bahadur-Savage (1956) / Gleser-Hwang (1987) / Dufour (1997) / Bertanha-Moreira impossibility, and auditing papers (Stark 2009 TIFS, SUITE) state the finite-population analogue informally: a single unaudited large value makes the total arbitrarily large, so an a priori bound is required. I found no paper stating the finite-population version with the explicit hypergeometric constant. The argument is a one-line mixing/perturbation argument (shift one unit, which is unsampled with probability 1-n/G). Note from my own quick derivation (not from literature): perturbing one unit j gives P_z(theta+M/G in C, j unsampled) >= 1-alpha-n/G, i.e. the quoted (1-alpha-n/G)/(1-n/G) is the CONDITIONAL probability given j unsampled; the unconditional bound is 1-alpha-n/G unless the interval is argued conditionally. Worth rechecking before claiming.",
+    "closest_papers": [
+     {
+      "citation": "Dufour (1997) Some impossibility theorems in econometrics with applications to structural and dynamic models, Econometrica 65:1365-1388",
+      "url_or_doi": "https://econpapers.repec.org/RePEc:ecm:emetrp:v:65:y:1997:i:6:p:1365-1388",
+      "how_read": "abstract + search snippets of theorem statements",
+      "what_it_does": "Any valid confidence set for an unbounded locally-almost-unidentified parameter must be unbounded with positive probability; a.s. bounded sets have zero coverage",
+      "overlap_with_claim": "Same structural result in iid/parametric models; LEMMA is the finite-population SRSWOR instance"
+     },
+     {
+      "citation": "Bahadur & Savage (1956) The nonexistence of certain statistical procedures in nonparametric problems, Ann. Math. Statist. 27:1115-1122",
+      "url_or_doi": "https://doi.org/10.1214/aoms/1177728077",
+      "how_read": "memory + secondary statements (Romano-Wolf 2000; Bertanha-Moreira; Angelopoulos-Barber-Bates Thm 11.1)",
+      "what_it_does": "No bounded valid CI for the mean over unrestricted iid models",
+      "overlap_with_claim": "iid original of the LEMMA"
+     },
+     {
+      "citation": "Stark (2009) Risk-limiting postelection audits: conservative P-values from common probability inequalities, IEEE TIFS; and Ottoboni-Stark-Lindeman-McBurnett SUITE arXiv:1809.04235",
+      "url_or_doi": "https://arxiv.org/abs/1809.04235",
+      "how_read": "search snippets only",
+      "what_it_does": "Finite-population mean inference needs an a priori upper bound on values (one large unaudited value can make total arbitrarily large)",
+      "overlap_with_claim": "Informal finite-population version of the LEMMA; no quantitative n/G constant"
+     },
+     {
+      "citation": "Bertanha & Moreira (2020) Impossible inference in econometrics, J. Econometrics / arXiv:1612.02024",
+      "url_or_doi": "https://arxiv.org/abs/1612.02024",
+      "how_read": "abstract snippets only",
+      "what_it_does": "Generalizes Bahadur-Savage/Kraft/Dufour via density of null sets in TV/LP metrics",
+      "overlap_with_claim": "General framework"
+     }
+    ]
+   },
+   {
+    "claim": "F",
+    "verdict": "partly_open",
+    "verdict_reason": "The asymptotic version of the max-share quantity is classical: Erdos-Renyi (1959) and Hajek (1960) give a necessary and sufficient condition for asymptotic normality of the SRSWOR sample mean in terms of max (a_k - mu)^2 relative to total sum of squares (quoted in arXiv:0708.1880), with Berry-Esseen bounds for studentized finite-population means (Bloznelis 1999 and others) and Li-Ding (2017) CLTs. Muller's heavy-tail t-test paper makes the same 'one term dominates' point informally. None of these gives an exact finite-sample frontier kappa*(n,G,alpha) separating populations over which a location-scale-equivariant interval can/cannot be valid, linked to the hypergeometric miss probability C(G-k,n)/C(G,n). I found no such paper in my search, but the search is bounded (arXiv, web, partial Semantic Scholar) and the econometrics few-cluster literature was only lightly screened.",
+    "closest_papers": [
+     {
+      "citation": "Hajek (1960) / Erdos & Renyi (1959), limit theorems for sampling from finite populations; quoted in arXiv:0708.1880 (Cramer-type large deviations for samples from a finite population)",
+      "url_or_doi": "https://arxiv.org/abs/0708.1880",
+      "how_read": "memory for originals; snippet of the Hajek iff-condition in 0708.1880",
+      "what_it_does": "Asymptotic normality iff omega*sigma/max|a_k-mu| -> infinity (max-share)",
+      "overlap_with_claim": "Same quantity kappa as an asymptotic criterion; no finite-sample boundary"
+     },
+     {
+      "citation": "Bloznelis (1999) A Berry-Esseen bound for finite population Student's statistic, Ann. Probab. 27(4)",
+      "url_or_doi": "https://doi.org/10.1214/aop/1022874830",
+      "how_read": "abstract only",
+      "what_it_does": "O(N^-1/2) Berry-Esseen bound for studentized SRSWOR mean under minimal conditions",
+      "overlap_with_claim": "Asymptotic/nonuniform control of studentized finite-pop mean; not exact"
+     },
+     {
+      "citation": "Li & Ding (2017) General forms of finite population CLTs with applications to causal inference, JASA / arXiv:1610.04821",
+      "url_or_doi": "https://arxiv.org/abs/1610.04821",
+      "how_read": "abstract only",
+      "what_it_does": "SRSWOR CLTs under max-deviation conditions",
+      "overlap_with_claim": "Hajek-type condition; asymptotic"
+     },
+     {
+      "citation": "Muller (2020) A More Robust t-Test",
+      "url_or_doi": "https://www.princeton.edu/~umueller/heavymean.pdf",
+      "how_read": "search snippet only",
+      "what_it_does": "Notes that t-inference fails when a few terms dominate; builds EVT-based small-sample test",
+      "overlap_with_claim": "Conceptual overlap (dominant cluster), iid/asymptotic"
+     }
+    ]
+   },
+   {
+    "claim": "K",
+    "verdict": "partly_open",
+    "verdict_reason": "No paper found that gives a studentized difference-estimator interval with an exact critical value c(n,G,kappa0,alpha) valid over all finite populations with max-share <= kappa0 under SRSWOR. The ingredients exist separately: Hoeffding (1963, Thm 4) convex-order dominance of WoR by WR sums; worst-case-at-few-atoms exact calibration in Learned-Miller & Thomas (2019, half-Bernoulli worst case for bounded means), Armstrong-Kolesar-Plagborg-Moller (2-4 support-point least favourable distributions under kurtosis constraints), Pinelis' exact t-type inequalities (2006), Efron (1969), Bakirov-Szekely (2006), and the 2025 exact extremal envelope for the t-statistic under symmetry (arXiv:2508.13226). Comparators CRS (2017) and Ibragimov-Muller (2016) are Gaussian/symmetry/asymptotic and not design-based. Scoop risk: moderate; the technique is standard so a competitor could do the finite-population version quickly. I did not read these papers' theorem sections beyond snippets.",
+    "closest_papers": [
+     {
+      "citation": "Learned-Miller & Thomas (2019) A new confidence interval for the mean of a bounded random variable, arXiv:1905.06208",
+      "url_or_doi": "https://arxiv.org/abs/1905.06208",
+      "how_read": "snippet of Sec. 5.1 only",
+      "what_it_does": "Exact finite-sample CI; validity proved by reducing to worst-case two-point (half-Bernoulli) distributions computed by enumeration at small n",
+      "overlap_with_claim": "Same proof architecture (worst case at few distinct values, computable critical value) but iid, bounded support, not studentized by max-share"
+     },
+     {
+      "citation": "Pinelis (2006) Student's t-test without symmetry conditions, arXiv:math/0606160",
+      "url_or_doi": "https://arxiv.org/abs/math/0606160",
+      "how_read": "abstract/snippet only",
+      "what_it_does": "Exact conservative t-type tests via mixtures of two-point zero-mean distributions",
+      "overlap_with_claim": "Exact-inequality tradition for t statistics; iid, no SRSWOR/finite population"
+     },
+     {
+      "citation": "Armstrong, Kolesar, Plagborg-Moller (2022) Robust empirical Bayes confidence intervals, arXiv:2004.03448",
+      "url_or_doi": "https://arxiv.org/abs/2004.03448",
+      "how_read": "snippet only (Remark B.1)",
+      "what_it_does": "Maximal non-coverage under moment constraints attained at 2-4 support points; LP-computed",
+      "overlap_with_claim": "Technique analogue"
+     },
+     {
+      "citation": "Canay, Romano, Shaikh (2017) Randomization tests under approximate symmetry, Econometrica; Ibragimov & Muller (2016) REStat",
+      "url_or_doi": "https://doi.org/10.3982/ECTA13081",
+      "how_read": "abstract-level snippets",
+      "what_it_does": "Few-cluster finite-sample/asymptotic valid tests under symmetry/Gaussianity",
+      "overlap_with_claim": "Comparators named in claim K; not design-based, not max-share"
+     }
+    ]
+   },
+   {
+    "claim": "B",
+    "verdict": "mostly_taken",
+    "verdict_reason": "In print. Angelopoulos et al. (PPI, Science 2023; arXiv:2301.09633 App. B Thm B.1 and App. E Prop. E.3) treat exactly this setting: a fixed finite population, SRSWOR of n units, predictions known for all units, rectifier = mean of residuals g(Y)-g(f(X)); their nonasymptotic interval requires only a known bound on the residual and uses the Waudby-Smith-Ramdas WoR betting CI (I read these passages in the PDF). Shekhar-Xu-Lipton-Liang-Ramdas (UAI 2023) add WoR confidence sequences with side information (control variates and prediction-driven sampling) for bounded values. Hoeffding-Serfling and (empirical) Bernstein-Serfling (Serfling 1974; Bardenet-Maillard 2015) and Waudby-Smith-Ramdas (2020, 2024) cover the underlying bounds; Stark's ALPHA/Kaplan-Markov cover audit versions; Rosenblum-van der Laan (2009) and design-based concentration CIs (arXiv:2504.14127, 2601.11744, 2609.18586) give small-sample finite-N CIs, with the observation that Hoeffding CIs are vacuous at N~10. Remaining open: an exact minimax statement on interval length at n<=16 under SRSWOR with known residual range. Shekhar-Ramdas (arXiv:2603.14423) give a width lower bound only for finite alphabets in a moderate-accuracy asymptotic regime, and Shekhar-Ramdas 2310.01547 for iid; I found no exact small-n minimax for SRSWOR. Such a result looks like a modest (computational/LP-duality, finite-alphabet) theorem rather than a deep one.",
+    "closest_papers": [
+     {
+      "citation": "Angelopoulos, Bates, Fannjiang, Jordan, Zrnic (2023) Prediction-powered inference, Science 382:669; arXiv:2301.09633",
+      "url_or_doi": "https://arxiv.org/abs/2301.09633",
+      "how_read": "read PDF text: App. B (Thm B.1), App. E (Prop. E.3-E.4)",
+      "what_it_does": "Finite-population PPI with nonasymptotic CI for bounded residuals via WSR WoR betting CI",
+      "overlap_with_claim": "Essentially claim B minus the minimax length statement"
+     },
+     {
+      "citation": "Shekhar, Xu, Lipton, Liang, Ramdas (2023) Risk-limiting financial audits via weighted sampling without replacement, UAI; arXiv:2305.06884",
+      "url_or_doi": "https://arxiv.org/abs/2305.06884",
+      "how_read": "abstract + PDF keyword scan",
+      "what_it_does": "WoR betting CS for weighted means of bounded values, side information as sampling driver or control variate, adapts to side-information quality",
+      "overlap_with_claim": "Closest finite-sample \"side information known for all units\" framework"
+     },
+     {
+      "citation": "Waudby-Smith & Ramdas (2020) Confidence sequences for sampling without replacement, NeurIPS; (2024) Estimating means of bounded random variables by betting, JRSSB",
+      "url_or_doi": "https://arxiv.org/abs/2006.04347",
+      "how_read": "abstract + snippets",
+      "what_it_does": "Hoeffding/EB-type and betting CS/CIs for WoR finite-population mean",
+      "overlap_with_claim": "Core valid-interval machinery"
+     },
+     {
+      "citation": "Bardenet & Maillard (2015) Concentration inequalities for sampling without replacement, Bernoulli 21(3); Serfling (1974)",
+      "url_or_doi": "https://doi.org/10.3150/14-BEJ605",
+      "how_read": "theorem statements via search snippets",
+      "what_it_does": "Hoeffding-Serfling, Bernstein-Serfling, empirical Bernstein-Serfling",
+      "overlap_with_claim": "Closed-form bounds named in claim"
+     },
+     {
+      "citation": "Shekhar & Ramdas (2026) Tighter confidence intervals under without replacement sampling via empirical rate functions, arXiv:2603.14423",
+      "url_or_doi": "https://arxiv.org/abs/2603.14423",
+      "how_read": "PDF keyword scan",
+      "what_it_does": "Lower bound on width of any WoR CI (finite alphabet, moderate-accuracy asymptotic regime) and matching CI",
+      "overlap_with_claim": "Nearest thing to a minimax length statement; not n<=16 exact"
+     }
+    ]
+   },
+   {
+    "claim": "D",
+    "verdict": "mostly_taken",
+    "verdict_reason": "Take-all (certainty) strata for skewed populations are classical in survey sampling: Dalenius (1952), Glasser (1962), Hidiroglou (1986), Lavallee-Hidiroglou (1988), Gunning-Horgan (2004), and Rivest (2002), who adapts the LH algorithm to a noisy/proxy stratification variable (log-linear change model or occasional large discrepancies), which is the 'cheap noisy first-phase measure' scenario; two-phase/Neyman-allocation theory covers the rest (Hedlin et al. on joint allocation and stratification). Those criteria minimize variance/sample size at a target CV, not a finite-sample validity (kappa*) criterion. If F is proved, picking the smallest take-all set that pushes remaining residual kappa below kappa* is a routine corollary of F plus stratified design, not a new theorem on its own. Read only abstracts/snippets of the survey-methodology papers.",
+    "closest_papers": [
+     {
+      "citation": "Lavallee & Hidiroglou (1988) On the stratification of skewed populations, Survey Methodology 14(1):33-43; Hidiroglou (1986)",
+      "url_or_doi": "https://www150.statcan.gc.ca/n1/pub/12-001-x/2006002/article/9550-eng.pdf",
+      "how_read": "snippets of citing papers only",
+      "what_it_does": "Optimal boundary between take-all and take-some strata minimizing sample size for a target CV",
+      "overlap_with_claim": "Take-all stratum construction for skewed populations"
+     },
+     {
+      "citation": "Rivest (2002) A generalization of the Lavallee and Hidiroglou algorithm for stratification in business surveys, Survey Methodology 28(2):191-198",
+      "url_or_doi": "https://www150.statcan.gc.ca/n1/pub/12-001-x/2002002/article/6432-eng.pdf",
+      "how_read": "abstract/intro snippet only",
+      "what_it_does": "LH algorithm when stratification variable is a noisy proxy of the study variable",
+      "overlap_with_claim": "Cheap first-phase proxy -> take-all stratum"
+     },
+     {
+      "citation": "Hedlin, Minimum variance stratification of a finite population (certainty stratum, necessary conditions)",
+      "url_or_doi": "https://www.diva-portal.org/smash/get/diva2:584834/FULLTEXT01.pdf",
+      "how_read": "snippet only",
+      "what_it_does": "Joint optimal allocation/stratification with a certainty stratum",
+      "overlap_with_claim": "Variance-optimal not validity-optimal"
+     }
+    ]
+   }
+  ],
+  "what_remains_open": "(1) F: an exact, explicit finite-sample frontier kappa*(n,G,alpha) for location-scale-equivariant intervals over {populations: max-share <= kappa0} under SRSWOR, tied to the hypergeometric miss probability; only the asymptotic Hajek/Erdos-Renyi max-share condition and Berry-Esseen-type bounds were found. This would be a substantive theorem if the sharpness (impossibility above, validity below) holds. (2) K: the exact critical value c(n,G,kappa0,alpha) for a studentized difference-estimator interval with worst case at few-atom populations, and its comparison to t, CR2 and CRS; the technique is standard (Hoeffding convex order + extremal few-point reduction), so the contribution would be a moderately substantive finite-population theorem with quick-follower risk. (3) B-minimax: exact small-n (n<=16) minimax interval length under SRSWOR with a known residual range; asymptotic/finite-alphabet lower bounds exist, an exact small-n statement does not look to be in print, but it is a routine-to-modest LP/duality computation. (4) LEMMA: the explicit quantitative n/G form is not found in print; it is a routine corollary of the classical impossibility (and see the conditional-vs-unconditional caveat). (5) D: only the validity-driven (kappa*) criterion for choosing the certainty stratum is not found; routine corollary of F.",
+  "other_relevant_findings": "Three things in the neighbourhood that the project should cite or check. (a) The original PPI paper (Angelopoulos et al. 2023, App. B/E) already has the finite-population SRSWOR formulation with nonasymptotic bounded-residual intervals, so B cannot be framed as new; Mozer (arXiv:2603.19160) and Denis-Haddou (2026, J. Official Statistics-type venue) show PPI = Cassel-Sarndal-Wretman difference estimator, and Zhang-Tam-Sanguiao-Sande-Yung-Holmberg (arXiv:2606.28795) and Riano (arXiv:2609.04082) study design-unbiased ML-assisted estimation; none gives finite-sample intervals at n<=16 or addresses skewed clusters. (b) Design-based finite-N CIs by concentration inequalities exist in causal inference (arXiv:2504.14127 shows Hoeffding CI is wider than the logical range for N~10; arXiv:2601.11744; arXiv:2609.18586; Robins-Ritov 1997; Aronow et al. 2025 Prop 3; Ding 2025), supporting the point that range-based intervals are vacuous at G=14-51, n<=16 unless the residual range is tight. (c) Exact extremal-distribution tools (Learned-Miller & Thomas 2019; Armstrong et al. 2022; arXiv:2607.05226 worst-case tail under bounded kurtosis; arXiv:2508.13226 exact t-statistic envelope) are the likeliest sources of a competing 'exact critical value' paper. Also: Hsu-Shekhar (arXiv:2607.17409) and Kilian et al. (arXiv:2505.18000, 2605.07964) are anytime-valid prediction-assisted CS papers; they assume iid or sequential querying of a fixed bounded set, not heavy-tailed unbounded clusters, so they do not touch F/K. The CRS / Ibragimov-Muller / wild-bootstrap few-cluster literature was only lightly screened here and should be covered by an econometrics-themed checker.",
+  "artifact_filenames": [
+   "novelty_NOV2_FINITESAMPLE_queries.csv",
+   "novelty_NOV2_FINITESAMPLE_candidates.csv"
+  ],
+  "n_queries": 62,
+  "frame_id": "055db37c-4224-4ffd-936d-2733020ae132"
+ },
+ {
+  "slug": "NOV3_IMPOSSIBILITY",
+  "deviations": [
+   "Semantic Scholar returned HTTP 429 on every attempt despite backoff, so there were no Semantic Scholar queries or forward-citation searches; arXiv, Crossref and web_search were used instead.",
+   "About 12 early arXiv queries with over-strict boolean syntax returned 0 results and are not logged (only queries returning results are logged); arXiv keyword search was noisy.",
+   "Hosts off the allowlist (stat.berkeley.edu for Stark 2009; biostats.bepress.com for Rosenblum-van der Laan) were not fetched and no access was requested; those two papers are graded from search excerpts only.",
+   "Read only partially in kernel (abstract/intro/theorem statements via text grep, no proofs): Bertanha-Moreira, Shekhar-Ramdas, Martinez-Taboada-Ramdas, Waudby-Smith-Ramdas, Aronow-Lopatto, Chiang-Sasaki-Wang, Lee-Kim, Mozer, Edelman.",
+   "Graded from abstracts or search excerpts only: Dufour 1997, Bloznelis 1999, Hendriks et al. 2006, Hidiroglou 1986, Rivest 2002, Wang hypergeometric CIs, Gleser-Hwang, Pfanzagl, Romano-Wolf, Mani et al. (theorems not read).",
+   "Cited from memory or Crossref metadata only (content not retrieved): Bahadur-Savage, Donoho 1988, Bardenet-Maillard content, Serfling 1974, Hajek 1960, Li-Ding content, Basu-DasGupta, Pinelis, Bakirov-Szekely, Bickel 1992; marked in candidates CSV.",
+   "Heavy-tailed mean estimation (median-of-means, Catoni) and Donoho one-sided inference got only 2-3 queries each, so those lines were not exhausted.",
+   "No PDFs were saved; only the two CSVs. 66 logged queries: 30 arXiv, 15 Crossref, 21 web_search, 0 Semantic Scholar."
+  ],
+  "verdicts": [
+   {
+    "claim": "LEMMA",
+    "verdict": "mostly_taken",
+    "verdict_reason": "The principle is classical and general: Bahadur-Savage (1956) for iid means; Gleser-Hwang (1987), Dufour (1997), Pfanzagl (1998) and Bertanha-Moreira (J. Econometrics 2020, Thm 3) prove that when the observed-data law is TV- (or Levy-Prokhorov-) close across parameter values, every valid confidence set must be unbounded with probability >= 1-alpha. In the finite-population design, the sample laws under z and z + M e_j differ in total variation by exactly P(j in S) = n/G, so the LEMMA is the quantitative (non-limiting) instance of that argument, and the 'predictions cannot help' remark is the same argument conditioning on the fixed f. Finite-population hypergeometric analogues exist for 0/1 values (a Wald-type interval's minimum coverage is at most n/N for rare-element populations), audit practice states that bounds on the values are needed unless a majority of batches is audited (Stark), and Basu's flat likelihood for unsampled units is the mechanism. I did not find a paper stating the SRSWOR mean-of-unbounded-values version with explicit n/G constant, but its proof is the one-line coupling above. NOTE a correction to the claim as worded: the argument gives P_z(theta + M/G in C) >= 1 - alpha - n/G unconditionally; the sharper (1-alpha-n/G)/(1-n/G) holds for the conditional probability given j not in S (sample misses unit j), not for the unconditional probability.",
+    "closest_papers": [
+     {
+      "citation": "Bertanha & Moreira, Impossible Inference in Econometrics, J. Econometrics 2020 (arXiv:1612.02024)",
+      "url_or_doi": "https://arxiv.org/abs/1612.02024",
+      "how_read": "read in kernel: intro, Theorems 1 and 3",
+      "what_it_does": "Type-B impossibility: if the true law P* is TV/LP-approximable by laws with every parameter value, any valid confidence set is unbounded with prob >= 1-alpha at P*.",
+      "overlap_with_claim": "LEMMA is the quantitative finite-population TV = n/G instance; the 'closure' version here would need the observation that the design-induced laws are not close in TV, so the quantitative form (1-alpha-TV) is the relevant one."
+     },
+     {
+      "citation": "Dufour, Some impossibility theorems in econometrics, Econometrica 1997",
+      "url_or_doi": "10.2307/2171740",
+      "how_read": "search excerpt of paper text",
+      "what_it_does": "Valid confidence sets must have diameter at least that of the near-unidentified parameter set with probability 1-alpha.",
+      "overlap_with_claim": "General mechanism; same coupling argument."
+     },
+     {
+      "citation": "Bahadur & Savage 1956",
+      "url_or_doi": "10.1214/aoms/1177728077",
+      "how_read": "Crossref metadata + secondary descriptions; not read",
+      "what_it_does": "Mean of all distributions with finite mean: no bounded valid CI.",
+      "overlap_with_claim": "Infinite-population ancestor."
+     },
+     {
+      "citation": "Wang, Exact optimal confidence intervals for hypergeometric parameters (JASA, attribution from memory)",
+      "url_or_doi": "https://www.researchgate.net/publication/277972108_Exact_Optimal_Confidence_Intervals_for_Hypergeometric_Parameters",
+      "how_read": "search excerpt only",
+      "what_it_does": "For binary finite populations, Wald-type intervals have minimum coverage <= n/N (rare-element populations M=1, N-1); exact optimal intervals.",
+      "overlap_with_claim": "Finite-population, bounded-value (0/1) version of the n/G coverage ceiling."
+     },
+     {
+      "citation": "Stark, risk-limiting audit p-values (preprint pvalues09)",
+      "url_or_doi": "https://www.stat.berkeley.edu/users/stark/Preprints/pvalues09.pdf",
+      "how_read": "search excerpt only (host not on allowlist)",
+      "what_it_does": "Evidence for an audit outcome without auditing a majority of batches needs an upper bound on batch values.",
+      "overlap_with_claim": "Audit-practice statement of the bounded-support requirement for finite populations."
+     }
+    ]
+   },
+   {
+    "claim": "F",
+    "verdict": "partly_open",
+    "verdict_reason": "The ingredients are published but the specific finite-sample, design-based frontier is not. (i) Max-share of squared deviations is the Hajek/Lindeberg-Erdos-Renyi condition for SRSWOR CLTs (Hajek 1960; Li-Ding 2017; Bloznelis 1999 gives Berry-Esseen for the finite-population Student statistic under minimal such conditions; Hu et al. give relative-error bounds in max|a_k - mu|). (ii) Chiang-Sasaki-Wang (2023) give an asymptotic necessary-and-sufficient condition (largest cluster's score negligible) for valid cluster-robust t inference and show it fails often; Kojevnikov-Song (2023) give impossibility for variance estimation with one large cluster. (iii) For iid data a finite-sample boundary of the claimed type exists for the t interval (Hendriks et al. 2006: no bounded t-based interval with nominal coverage when n < 1 - log(alpha)/log 2, Bernoulli worst case), and Edelman (2025) finds k-sparse equal-weight extremals for the self-normalized sum under sign symmetry. (iv) Hypergeometric miss-all-k probabilities as a coverage ceiling appear for 0/1 populations (Wang). I found no paper that states a sharp explicit kappa*(n,G,alpha) for SRSWOR with location-scale-equivariant intervals, nor the 'valid below, impossible above' dichotomy; the 'impossible above' half looks like a short argument (two-point populations with k atypical units have constant samples with probability C(G-k,n)/C(G,n), so an equivariant interval has degenerate length there), while the 'valid below' half is claim K.",
+    "closest_papers": [
+     {
+      "citation": "Chiang, Sasaki & Wang, Genuinely Robust Inference for Clustered Data (arXiv:2308.10138)",
+      "url_or_doi": "https://arxiv.org/abs/2308.10138",
+      "how_read": "read in kernel: abstract, intro, statement preceding Thm 1",
+      "what_it_does": "Asymptotic N&S condition for normality of cluster-robust t: score of the largest cluster is ignorable; otherwise non-Gaussian limits.",
+      "overlap_with_claim": "Asymptotic analogue of the max-share boundary; not finite-sample or design-based, no hypergeometric threshold."
+     },
+     {
+      "citation": "Hendriks, IJzerman-Boon & Klaassen, Student's t-statistic under unimodal densities, Austrian J. Statist. 2006",
+      "url_or_doi": "10.17713/ajs.v35i2&3.361",
+      "how_read": "search excerpts of paper text",
+      "what_it_does": "iid: Bernoulli +-1 worst case; for n < 1 - log(alpha)/log 2 no bounded t-interval with nominal coverage.",
+      "overlap_with_claim": "Finite-sample sharp threshold of the claimed type, iid and t only."
+     },
+     {
+      "citation": "Bloznelis, Berry-Esseen bound for finite-population Student's statistic, Ann. Probab. 1999",
+      "url_or_doi": "10.1214/aop/1022874830",
+      "how_read": "abstract excerpt only",
+      "what_it_does": "Optimal-rate bound under minimal Erdos-Renyi-type conditions.",
+      "overlap_with_claim": "Max-share-type conditions in asymptotics, absolute constants."
+     },
+     {
+      "citation": "Edelman, Worst-case nonparametric bounds for the Student T-statistic (arXiv:2508.13226; disputed by arXiv:2509.02410)",
+      "url_or_doi": "https://arxiv.org/abs/2508.13226",
+      "how_read": "read in kernel: abstract, theorem statement",
+      "what_it_does": "Sign-symmetric self-normalized sum: worst case at k-sparse equal weights.",
+      "overlap_with_claim": "Analogue of 'worst case at few distinct values'."
+     },
+     {
+      "citation": "Wang, hypergeometric CIs (JASA)",
+      "url_or_doi": "https://www.researchgate.net/publication/277972108_Exact_Optimal_Confidence_Intervals_for_Hypergeometric_Parameters",
+      "how_read": "search excerpt only",
+      "what_it_does": "Coverage ceiling n/N for Wald-type intervals in rare-element 0/1 populations.",
+      "overlap_with_claim": "Hypergeometric miss probability as a limit."
+     }
+    ]
+   },
+   {
+    "claim": "K",
+    "verdict": "partly_open",
+    "verdict_reason": "No paper found that computes an exact critical value for the studentized SRSWOR difference-estimator interval that guarantees coverage over every finite population with max-share kappa <= kappa0, nor compares it with t, CR2 and CRS sign-change tests. Related prior art: exact worst-case size of t/Hotelling over symmetric or scale-mixture classes by extreme-point reduction (Basu-DasGupta 1995; Pinelis 1994; Bakirov-Szekely 2006; Hendriks et al. 2006; Edelman 2025), exact few-cluster t validity under Gaussian cluster estimators (Ibragimov-Muller), CRS sign-change tests (asymptotic validity, exact only under symmetry), Edgeworth-refined few-cluster critical values (Gafarov-Ura 2026), Berry-Esseen bounds for finite-population Student (Bloznelis 1999; not exact), skewness rules of thumb (Cochran; Sugden-Smith-Jones), and exact enumeration CIs for binary finite populations (Aronow-Chang-Lopatto). The 'worst case at populations with few distinct values' step is a standard extreme-point/Choquet-type technique (the full texts of Basu-DasGupta, Pinelis and Bakirov-Szekely were not read, so a closer prior treatment of the SRSWOR/finite-population case cannot be excluded). Rest of claim looks like a substantive but technique-standard theorem plus a computation.",
+    "closest_papers": [
+     {
+      "citation": "Edelman 2025, arXiv:2508.13226",
+      "url_or_doi": "https://arxiv.org/abs/2508.13226",
+      "how_read": "read in kernel (abstract, theorem)",
+      "what_it_does": "Exact worst-case quantile of self-normalized sums at k-sparse weights (sign symmetry).",
+      "overlap_with_claim": "Same extremal structure, different sampling model and statistic."
+     },
+     {
+      "citation": "Basu & DasGupta, Ann. Statist. 1995",
+      "url_or_doi": "10.1214/aos/1176324716",
+      "how_read": "Crossref metadata + secondary excerpt",
+      "what_it_does": "Exact worst-case t coverage over nonnormal classes via extreme points.",
+      "overlap_with_claim": "Method precedent; iid."
+     },
+     {
+      "citation": "Hendriks et al. 2006",
+      "url_or_doi": "10.17713/ajs.v35i2&3.361",
+      "how_read": "search excerpts",
+      "what_it_does": "Least-favourable distributions for the t interval and finite-sample inequality.",
+      "overlap_with_claim": "iid precedent."
+     },
+     {
+      "citation": "Gafarov & Ura, Refined Cluster Robust Inference (arXiv:2603.24786)",
+      "url_or_doi": "https://arxiv.org/abs/2603.24786",
+      "how_read": "read abstract/intro in kernel",
+      "what_it_does": "Skewness-kurtosis Edgeworth critical value for few clusters.",
+      "overlap_with_claim": "Few-cluster critical value, asymptotic not exact."
+     },
+     {
+      "citation": "Ibragimov & Muller, Inference with few heterogeneous clusters, REStat 2016",
+      "url_or_doi": "https://www.princeton.edu/~umueller/BehrensFisher.pdf",
+      "how_read": "search excerpt only",
+      "what_it_does": "Exact size-controlling t critical values under Gaussian cluster estimators.",
+      "overlap_with_claim": "Comparator, requires Gaussianity."
+     }
+    ]
+   },
+   {
+    "claim": "B",
+    "verdict": "mostly_taken",
+    "verdict_reason": "Finite-sample valid CIs for the mean of a bounded finite population under SRSWOR are standard: Hoeffding-Serfling (Serfling 1974), Hoeffding-Serfling and empirical Bernstein-Serfling (Bardenet-Maillard 2015), betting/e-process CIs and CSs without replacement (Waudby-Smith-Ramdas 2020; Martinez-Taboada-Ramdas 2026 with a WoR Gaussian-bridge version), and Shekhar-Ramdas (2026) with a lower bound on the width of any valid WoR CI. Because the PPI difference estimator with fixed lambda is the sample mean of residuals e_g = z_g - lambda f_g plus a known constant, applying any of these to residuals with a known range bound gives the few-cluster PPI interval as a corollary; Mozer (2026) establishes PPI = difference estimator, and Aronow-Lopatto / Hodges-Lehmann cover minimax point estimation under bounds. The part not found: an exact minimax-length (not MSE) statement for CIs at n <= 16 and alpha = 0.05; Shekhar-Ramdas' lower bound is for the large-deviation 'moderate accuracy' regime (log(1/alpha) >> (k+1) log N) so does not cover it. That remainder looks like a routine finite computation (LP over finite alphabets) rather than a deep theorem.",
+    "closest_papers": [
+     {
+      "citation": "Shekhar & Ramdas, Tighter CIs under WoR sampling via empirical rate functions (arXiv:2603.14423)",
+      "url_or_doi": "https://arxiv.org/abs/2603.14423",
+      "how_read": "read in kernel: abstract, intro, Thm 3.4/3.9 statements",
+      "what_it_does": "Width lower bound for any level-(1-alpha) WoR CI (finite alphabet) and matching CI.",
+      "overlap_with_claim": "Minimax-style width statement but in a large-deviation regime."
+     },
+     {
+      "citation": "Waudby-Smith & Ramdas, Confidence sequences for sampling without replacement (arXiv:2006.04347)",
+      "url_or_doi": "https://arxiv.org/abs/2006.04347",
+      "how_read": "read abstract and intro in kernel",
+      "what_it_does": "Closed-form CIs/CSs for bounded finite populations under WoR.",
+      "overlap_with_claim": "Direct valid interval for bounded residuals."
+     },
+     {
+      "citation": "Martinez-Taboada & Ramdas, Gaussian-efficient betting (arXiv:2608.21694)",
+      "url_or_doi": "https://arxiv.org/abs/2608.21694",
+      "how_read": "read abstract, intro, Sec. 7 statement in kernel",
+      "what_it_does": "Tightest bounded-mean betting CI incl. WoR finite populations.",
+      "overlap_with_claim": "Same."
+     },
+     {
+      "citation": "Bardenet & Maillard, Bernoulli 2015",
+      "url_or_doi": "10.3150/14-bej605",
+      "how_read": "Crossref metadata; content from memory",
+      "what_it_does": "Hoeffding-Serfling / empirical Bernstein-Serfling.",
+      "overlap_with_claim": "Same."
+     },
+     {
+      "citation": "Aronow & Lopatto, Minimax unbiased estimation for finite populations with bounded outcomes (arXiv:2605.20572)",
+      "url_or_doi": "https://arxiv.org/abs/2605.20572",
+      "how_read": "read abstract, intro, Thms 1-3 in kernel",
+      "what_it_does": "Sharp minimax risk under known bounds, midpoint-differenced HT (a difference estimator).",
+      "overlap_with_claim": "Minimax for point estimation, not CI length."
+     }
+    ]
+   },
+   {
+    "claim": "D",
+    "verdict": "mostly_taken",
+    "verdict_reason": "Take-all (certainty) strata for skewed populations with a cheap first-phase size/proxy measure are a long-standing survey-design topic: Dalenius 1952 and Glasser 1962 cut-offs, Hidiroglou 1986 (construction of a self-representing stratum), Lavallee-Hidiroglou 1988, Rivest 2002 (model in which the survey variable departs from the stratification variable for some units), Hedlin and the R 'stratification' package, plus two-phase sampling and robust estimators for influential units (Beaumont-Haziza-Ruiz-Gazen 2013; Beaumont-Rivest 2009). What these optimize is variance/CV or sample size for a precision target, not the smallest take-all set that brings the residual kappa below a validity boundary kappa*; that criterion exists only if F/K exist, and the optimisation itself (a greedy sort-and-cut on first-phase residual magnitude) is routine once kappa* is defined.",
+    "closest_papers": [
+     {
+      "citation": "Hidiroglou, The construction of a self-representing stratum of large units in survey design, Am. Statistician 1986",
+      "url_or_doi": "10.1080/00031305.1986.10475350",
+      "how_read": "search excerpts and secondary descriptions; not read",
+      "what_it_does": "Optimal take-all cut-off for a precision target.",
+      "overlap_with_claim": "Same design lever, different criterion."
+     },
+     {
+      "citation": "Rivest, Stratification when the survey and stratification variables differ, Survey Methodology 2002",
+      "url_or_doi": "https://www150.statcan.gc.ca/n1/pub/12-001-x/2002002/article/6432-eng.pdf",
+      "how_read": "search excerpts only",
+      "what_it_does": "Modified Lavallee-Hidiroglou with models allowing large discrepancies for some units; take-all stratum size.",
+      "overlap_with_claim": "Proxy-based certainty stratum with rare atypical units."
+     },
+     {
+      "citation": "Beaumont, Haziza & Ruiz-Gazen, Biometrika 2013",
+      "url_or_doi": "https://www.tse-fr.eu/articles/unified-approach-robust-estimation-finite-population-sampling",
+      "how_read": "abstract only",
+      "what_it_does": "Conditional-bias influence and robust estimation under influential units.",
+      "overlap_with_claim": "Influential-unit handling, estimation not CI validity."
+     }
+    ]
+   }
+  ],
+  "what_remains_open": "(1) F/K: a finite-sample, design-based (SRSWOR) statement that a location-scale-equivariant interval is valid over all populations with max-share kappa <= kappa0 exactly when kappa0 is below a hypergeometric-miss threshold kappa*(n,G,alpha), with an explicit exactly-computable critical value attained at few-distinct-value populations; I found only asymptotic analogues (Hajek/Lindeberg, Chiang-Sasaki-Wang), iid analogues (Hendriks et al., Basu-DasGupta, Edelman sign-symmetric), and hypergeometric ceilings for 0/1 values (Wang). The 'impossible above kappa*' half appears routine (two-point populations / constant samples); the 'valid below with exact critical value' half is a substantive theorem plus computation, using standard extreme-point methods, and its novelty rests on my not having read Basu-DasGupta, Pinelis, Bakirov-Szekely in full. (2) B: an exact minimax confidence-interval length at n <= 16, alpha = 0.05 under SRSWOR with bounded residuals (routine computation). (3) D: a take-all rule defined by a validity boundary kappa* rather than a variance target (corollary-level once F/K exist). (4) LEMMA: only the explicit SRSWOR constant and its use with fixed predictions are unpublished in what I found; it is a routine corollary of the TV argument (and the stated constant needs the conditional-on-miss reading noted).",
+  "other_relevant_findings": "- Statement check: the argument yields P_z(theta+M/G in C) >= 1-alpha-n/G unconditionally; the (1-alpha-n/G)/(1-n/G) form is the conditional probability given the sample misses unit j. Unboundedness with positive probability then follows from limsup of the events {theta+M/G in C}.\n- No finite-population or design-based PPI paper found containing an impossibility, minimax-CI or max-share result. PPI limits found are MSE-based (Mani et al. 2025: PPI++ beats gold-standard only above a correlation threshold of order 1/sqrt(n)), efficiency-based (Lee-Kim 2026, asymptotic) or empirical few-label observations (Eyre-Madras 2025). Mozer (2026) already identifies PPI with the survey difference estimator, so the survey-sampling framing cannot be claimed as new.\n- Closest in setting but not content: Broska-Howes (2026) cluster-robust PPI++ (asymptotic; few labelled clusters left as future work); Shirota (2026) finite-population PPI conditional validity (asymptotic).\n- Heavy-tailed side: median-of-means/Catoni give CIs only with a known variance or moment bound (stated in Gasparin-Ramdas 2024 excerpt; Bhatt et al. title seen only in a reference list); this is the heavy-tail analogue of the LEMMA and would be the natural comparator for any 'known bound' variant.\n- Auxiliary point for the project's framing: Rosenblum-van der Laan (2009) already showed standard CLT-based intervals fail with few clusters when rare large values exist and offered Bernstein-type valid alternatives; the motivation (skewed, few clusters) is not new.\n- Several of the relevant papers are 2026 arXiv preprints (e.g. 2603.14423, 2608.21694, 2605.20572, 2610.09601, 2608.10356, 2606.08730); rapid recent activity in WoR finite-sample CIs and PPI suggests re-running this check before any release.",
+  "artifact_filenames": [
+   "novelty_NOV3_IMPOSSIBILITY_queries.csv",
+   "novelty_NOV3_IMPOSSIBILITY_candidates.csv"
+  ],
+  "n_queries": 66,
+  "frame_id": "762e8595-885e-4d36-adac-1ce3cf8ad37d"
+ },
+ {
+  "slug": "NOV4_FEWCLUSTERS",
+  "deviations": [
+   "Semantic Scholar API returned HTTP 429 on all 6 attempts (5 searches + 1 citation query that returned an empty list for arXiv:2610.09601, which is only ~19 days old); forward citations of Broska-Howes were therefore NOT enumerated; web_search found no citing papers either. Treat 'no forward citations found' as provisional.",
+   "arXiv API rate-limited heavily (HTTP 429 on ~15 queries even with backoff); those queries are logged with 0 results and were partly replaced by web_search. Crossref gave one initial 429 then worked.",
+   "OpenAlex not used, per instructions.",
+   "Papers graded 'close' that were read only from abstract/search-result text (theorem sections not read): Kojevnikov-Song 2023, Chiang-Sasaki-Wang 2025, Gafarov-Ura 2026, Canay-Romano-Shaikh 2017, Bardenet-Maillard 2015, Hidiroglou 1986/Lavallee-Hidiroglou 1988, Sugden-Smith-Jones 2000. Read from PDF text (grep + selected sections): Broska-Howes, Angelopoulos et al. PPI (App. B, E), Waudby-Smith-Ramdas WoR, Potscher-Preinerstorfer 2412.17470 (Thm 2.2), Pinelis math/0606160 (intro), arXiv:2609.18586 (assumptions/proof sketch).",
+   "Princeton domain (Muller 'A more robust t-test') blocked by allowlist; I did not request access (non-critical); that paper is graded from a search snippet only.",
+   "Bahadur-Savage 1956, Ibragimov-Muller 2010/2016, Canay-Santos-Shaikh 2021, Efron 1969 content are cited from secondary sources or memory (marked in how_read), not retrieved.",
+   "Authors not recorded for arXiv:2608.21694, 2609.18586, 2606.08730, 2608.10356 (only titles/abstracts retrieved).",
+   "Query count: 74 rows logged; 56 real queries returned a response (16 rate-limited returned nothing, 2 rows are fetch/read logs). 12 papers graded close. Verdicts are provisional where they rest on abstract-level reading."
+  ],
+  "verdicts": [
+   {
+    "claim": "LEMMA",
+    "verdict": "partly_open",
+    "verdict_reason": "The iid Bahadur-Savage theorem is classical (Bahadur-Savage 1956; restated in Romano-Wolf 2000, Bertanha-Moreira, Angelopoulos-Barber-Bates Thm 11.1), and the finite-population literature (PPI App. B/E, Waudby-Smith-Ramdas, Serfling/Bardenet-Maillard) always assumes a known bound, which is the practical corollary. Kojevnikov-Song prove a single-large-cluster impossibility (asymptotic, Gaussian experiment). I found NO paper stating the SRSWOR finite-population version with the explicit bound (1-alpha-n/G)/(1-n/G) and the 'f_j unchanged when z_j perturbed' remark; but the argument is an elementary hypergeometric perturbation, i.e. a routine corollary, and a referee will treat it as folklore.",
+    "closest_papers": [
+     {
+      "citation": "Romano & Wolf (2000) Finite sample nonparametric inference and large sample efficiency, Ann. Statist.",
+      "url_or_doi": "https://doi.org/10.1214/aos/1015951997",
+      "how_read": "search snippet only",
+      "what_it_does": "States Bahadur-Savage and compact-support requirement for finite-sample valid mean CIs (iid)",
+      "overlap_with_claim": "iid analogue of LEMMA"
+     },
+     {
+      "citation": "Angelopoulos, Bates, Fannjiang, Jordan, Zrnic (2023) Prediction-Powered Inference, App. B/E",
+      "url_or_doi": "https://arxiv.org/abs/2301.09633",
+      "how_read": "full text read (App. B, E)",
+      "what_it_does": "Finite-pop PPI; nonasymptotic CI only under known bound on g(Y)-g(f(X))",
+      "overlap_with_claim": "Shows bound is assumed, impossibility not stated"
+     },
+     {
+      "citation": "Kojevnikov & Song (2023) Some impossibility results for inference with cluster dependence with large clusters",
+      "url_or_doi": "https://arxiv.org/abs/2109.03971",
+      "how_read": "abstract only",
+      "what_it_does": "One large cluster => no consistent discrimination of the mean / variance not estimable (asymptotic)",
+      "overlap_with_claim": "Single-large-cluster impossibility in a different (asymptotic, Gaussian) frame"
+     }
+    ]
+   },
+   {
+    "claim": "F",
+    "verdict": "partly_open",
+    "verdict_reason": "The idea that few-cluster/robust inference is possible iff no cluster is too influential has several close precedents: Potscher-Preinerstorfer (Thm 2.2, arXiv:2412.17470) give a necessary-and-sufficient leverage condition (hat-matrix diagonal <1) for existence of a size-controlling critical value and the exact smallest critical value, in finite samples with arbitrary heteroskedasticity (Gaussian model); Chiang-Sasaki-Wang give an iff condition (largest cluster score ignorable) for asymptotic normality of cluster-robust t; Kojevnikov-Song, Hansen-Lee, Young 2019 and MacKinnon et al. describe the high-leverage failure; Cochran's rule/Sugden-Smith-Jones give a skewness-based boundary. NOT found: a graded, sharp finite-sample boundary kappa*(n,G,alpha) in the SRSWOR finite-population model driven by the hypergeometric miss probability C(G-k,n)/C(G,n), nor the statement that predictions/design move the problem only through the residual kappa. The impossibility half is a routine corollary of LEMMA; the substantive (and unchecked-by-me) part is the sharpness 'below kappa* a valid equivariant interval exists'.",
+    "closest_papers": [
+     {
+      "citation": "Potscher & Preinerstorfer (2025) A necessary and sufficient condition for size controllability of heteroskedasticity robust test statistics, Econometric Theory",
+      "url_or_doi": "https://arxiv.org/abs/2412.17470",
+      "how_read": "full text read: Thm 2.2, Remark 2.1",
+      "what_it_does": "Iff h_ii<1 for involved observations => size-controlling critical value exists, smallest one exists; otherwise size=1",
+      "overlap_with_claim": "Same logical shape (leverage boundary + exact critical value) but binary, Gaussian heteroskedastic regression, not finite-pop SRSWOR"
+     },
+     {
+      "citation": "Chiang, Sasaki, Wang (2025) Genuinely robust inference for clustered data",
+      "url_or_doi": "https://arxiv.org/abs/2308.10138",
+      "how_read": "abstract + Theorem 1 statement via search text",
+      "what_it_does": "Normal limit iff largest cluster score ignorable; stable limits otherwise",
+      "overlap_with_claim": "Max-share type iff condition, asymptotic, superpopulation"
+     },
+     {
+      "citation": "Sugden, Smith, Jones (2000) Cochran's rule for simple random sampling, JRSS-B",
+      "url_or_doi": "https://doi.org/10.1111/1467-9868.00264",
+      "how_read": "search snippets only",
+      "what_it_does": "Edgeworth-based skewness-dependent minimum n for SRSWOR studentized-mean CIs",
+      "overlap_with_claim": "Skewness-based boundary under SRSWOR, asymptotic heuristic"
+     }
+    ]
+   },
+   {
+    "claim": "K",
+    "verdict": "partly_open",
+    "verdict_reason": "Each ingredient has precedent but not the combination. (i) Worst case over a class attained at few-point laws and exactly computable critical values: Efron 1969, Eaton-Efron, Pinelis 1994 and 2006 (arXiv:math/0606160: any zero-mean law is a mixture of at-most-two-point laws; conservative t-type tests), Bakirov-Szekely 2006, Potscher-Preinerstorfer smallest size-controlling critical value, Lau-Li 2025 (max rejection probability over heterogeneity class). (ii) Few-cluster comparators: CRS sign-change (resolution limit 2^q, needs symmetry), Ibragimov-Muller, CSS wild bootstrap, Hagemann, CR2/Bell-McCaffrey, Gafarov-Ura skewness-corrected critical value. (iii) Design-based PPI: Angelopoulos et al. App. B, Denis-Haddou 2026 (unbiased design-based PPE), Broska-Howes (asymptotic, G->inf, few-cluster small-sample correction explicitly deferred). I found no paper giving a finite-sample, finite-population (SRSWOR), kappa-constrained studentized-difference interval with exactly computed c(n,G,kappa0,alpha). If correct this would be a substantive theorem (extremal-point reduction under SRSWOR with a max-share constraint is not routine), but the analogy to Pinelis/PP is strong, so novelty is mostly in the finite-population/design-based setting and PPI application. Also note the sign-change grid limit (min p = 2^{1-q}) makes CRS unable to reach 5% for n<=5.",
+    "closest_papers": [
+     {
+      "citation": "Pinelis (2006) Student's t-test without symmetry conditions",
+      "url_or_doi": "https://arxiv.org/abs/math/0606160",
+      "how_read": "abstract + intro read from PDF; theorems not read",
+      "what_it_does": "Mixture-of-two-point-laws representation; exact inequalities giving conservative location tests",
+      "overlap_with_claim": "Iid; worst-case at few-point laws; no finite population or max-share class"
+     },
+     {
+      "citation": "Potscher & Preinerstorfer (2025) 2412.17470",
+      "url_or_doi": "https://arxiv.org/abs/2412.17470",
+      "how_read": "full text read (Thm 2.2)",
+      "what_it_does": "Exact smallest size-controlling critical value over a covariance class, and its existence boundary",
+      "overlap_with_claim": "Closest structural analogue to c(n,G,kappa0,alpha) + boundary"
+     },
+     {
+      "citation": "Canay, Romano, Shaikh (2017) Randomization tests under an approximate symmetry assumption, Econometrica",
+      "url_or_doi": "https://doi.org/10.3982/ecta13081",
+      "how_read": "search snippets only",
+      "what_it_does": "Fixed-q sign-change tests; asymptotically valid under approximate symmetry",
+      "overlap_with_claim": "Named comparator; no finite-pop guarantee"
+     },
+     {
+      "citation": "Gafarov & Ura (2026) Refined Cluster Robust Inference",
+      "url_or_doi": "https://arxiv.org/abs/2603.24786",
+      "how_read": "abstract/intro read",
+      "what_it_does": "Skewness/kurtosis-based Cornish-Fisher critical values for few-cluster t",
+      "overlap_with_claim": "Skew-aware few-cluster critical value, asymptotic not exact"
+     },
+     {
+      "citation": "Broska & Howes (2026) Cluster-Robust PPI",
+      "url_or_doi": "https://arxiv.org/abs/2610.09601",
+      "how_read": "full text read (grep)",
+      "what_it_does": "Asymptotic (G->inf) cluster-robust PPI++ intervals",
+      "overlap_with_claim": "No few-cluster / finite-pop / design-based theory; small-sample CR2 deferred"
+     }
+    ]
+   },
+   {
+    "claim": "B",
+    "verdict": "mostly_taken",
+    "verdict_reason": "Finite-sample valid intervals for the mean of a bounded finite population under SRSWOR are in print: Hoeffding 1963 / Serfling 1974 / Bardenet-Maillard 2015 (Hoeffding-Serfling, Bernstein-Serfling, empirical Bernstein-Serfling), Waudby-Smith-Ramdas 2020 (betting/supermartingale CIs and CSs for WoR), the 2026 GE-betting WoR extension (arXiv:2608.21694), and Angelopoulos et al. App. B/E explicitly plug the WSR WoR interval into finite-population PPI given a known bound on the rectifier residual; arXiv:2609.18586 gives non-asymptotic design-based CIs with bounded outcomes incl. cluster designs. I found no minimax/lower-bound length statement at n<=16 (WSR WoR paper contains none by grep), but that would be a minor add-on.",
+    "closest_papers": [
+     {
+      "citation": "Angelopoulos et al. (2023) PPI App. B, E",
+      "url_or_doi": "https://arxiv.org/abs/2301.09633",
+      "how_read": "full text read",
+      "what_it_does": "Finite-pop PPI with nonasymptotic WSR WoR CI under known residual bound",
+      "overlap_with_claim": "Is claim B for PPI"
+     },
+     {
+      "citation": "Waudby-Smith & Ramdas (2020) Confidence sequences for sampling without replacement",
+      "url_or_doi": "https://arxiv.org/abs/2006.04347",
+      "how_read": "full text read (grep)",
+      "what_it_does": "Hoeffding and empirical Bernstein WoR CIs/CSs",
+      "overlap_with_claim": "Core of B"
+     },
+     {
+      "citation": "Bardenet & Maillard (2015) Concentration inequalities for sampling without replacement",
+      "url_or_doi": "https://arxiv.org/abs/1309.4029",
+      "how_read": "abstract read",
+      "what_it_does": "Hoeffding-Serfling, Bernstein-Serfling, empirical version",
+      "overlap_with_claim": "Core of B"
+     },
+     {
+      "citation": "arXiv:2609.18586 Randomization inference with concentration inequalities",
+      "url_or_doi": "https://arxiv.org/abs/2609.18586",
+      "how_read": "abstract + PDF grep",
+      "what_it_does": "Non-asymptotic Hoeffding/Bernstein CIs for design-based SATE incl. cluster designs",
+      "overlap_with_claim": "Bounded-outcome design-based version"
+     }
+    ]
+   },
+   {
+    "claim": "D",
+    "verdict": "mostly_taken",
+    "verdict_reason": "Only partly touched by my theme. Certainty (take-all) strata for skewed populations are classical survey sampling: Dalenius 1952, Glasser 1962, Hidiroglou 1986 (self-representing stratum), Lavallee-Hidiroglou 1988, with the discrepancy-between-proxy-and-study-variable extension (Rivest 2002); two-phase/double sampling is Neyman 1938; PPS with predicted size, and modern active/two-phase PPI (Zrnic-Candes 2024; Kluger-Bates 2602.16933) allocate labels using predictions. These optimise variance/CV, not a finite-sample-validity criterion. The kappa-threshold criterion for the smallest certainty stratum is not found but would be a routine corollary of F/K.",
+    "closest_papers": [
+     {
+      "citation": "Hidiroglou (1986) The construction of a self-representing stratum of large units in survey design, Am. Statistician",
+      "url_or_doi": "https://doi.org/10.1080/00031305.1986.10475350",
+      "how_read": "abstract/summaries via search only",
+      "what_it_does": "Algorithm for take-all stratum boundary for target CV",
+      "overlap_with_claim": "Certainty stratum for skewed populations"
+     },
+     {
+      "citation": "Lavallee & Hidiroglou (1988) On the stratification of skewed populations, Survey Methodology",
+      "url_or_doi": "(search snippet)",
+      "how_read": "abstract via search only",
+      "what_it_does": "Optimal take-all/take-some boundaries",
+      "overlap_with_claim": "Same"
+     },
+     {
+      "citation": "Zrnic & Candes (2024) Active statistical inference",
+      "url_or_doi": "https://arxiv.org/abs/2403.03208",
+      "how_read": "abstract read",
+      "what_it_does": "Prediction-uncertainty-proportional labelling probabilities, valid CIs",
+      "overlap_with_claim": "Prediction-guided design"
+     }
+    ]
+   }
+  ],
+  "what_remains_open": "Within my theme, what no paper covers: (1) a finite-sample, SRSWOR finite-population interval whose validity region is indexed by the max-share kappa(e) of residuals and whose critical value c(n,G,kappa0,alpha) is exact (worst case over all populations with kappa<=kappa0, attained at few-valued populations) - this is the only substantive theorem-level remainder (K/F-sharpness), and I have not verified it is true; it would be a finite-population, design-based analogue of Potscher-Preinerstorfer Thm 2.2 / Pinelis two-point extremal results. (2) The explicit hypergeometric form of the finite-population Bahadur-Savage bound (1-alpha-n/G)/(1-n/G) and the 'predictions cannot help because f_j is unchanged' remark - elementary corollary, no explicit statement found, likely regarded as folklore. (3) Any minimax length claim for bounded-residual PPI at n<=16 - not found, minor. (4) A kappa-based criterion for the certainty stratum - routine corollary once F/K are proved. Broska-Howes explicitly leave few-cluster small-sample corrections to future work, so cluster-robust PPI with few clusters is open, but their forward citations could not be enumerated.",
+  "other_relevant_findings": "(a) Potscher-Preinerstorfer arXiv:2412.17470 Thm 2.2 is the closest structural precedent (iff leverage condition + smallest size-controlling critical value, finite sample) and must be cited. (b) Kojevnikov-Song and Chiang-Sasaki-Wang: single/largest-cluster impossibility and iff-normality conditions in the econometrics few/large-cluster literature. (c) Pinelis 2006 two-point mixture representation and Efron/Eaton/Bakirov-Szekely: worst-case t over a class is at few-point laws. (d) CRS sign-change tests cannot reject at 5% with fewer than 6 clusters (minimum p-value grid), a fact that disposes of that comparator at n=4-5. (e) Denis-Haddou 2026 'Prediction-Powered Estimation' (design-based PPI for survey designs, unbiased variance) and arXiv:2608.10356 (design-based PPI for spatial finite populations) show the finite-population PPI framing is already in print; arXiv:2606.08730 documents PPI small-label undercoverage. (f) Gafarov-Ura 2603.24786 (skewness-aware few-cluster critical values) corroborates that few-cluster skew correction exists in econometrics. (g) Valliant-Rust 2010 / Stata svy docs: survey practice already notes d.f.=PSUs-strata is liberal under skewness and few PSUs.",
+  "artifact_filenames": [
+   "novelty_NOV4_FEWCLUSTERS_queries.csv",
+   "novelty_NOV4_FEWCLUSTERS_candidates.csv"
+  ],
+  "n_queries": 56,
+  "frame_id": "29fdb9cf-7cb4-43d1-a5f9-446fe2c2c786"
+ },
+ {
+  "slug": "NOV5_SURVEY",
+  "deviations": [
+   "arXiv export API returned HTTP 429 repeatedly; ~12 of ~20 arXiv queries succeeded and several strict boolean queries returned 0 hits; arXiv coverage therefore leans on web_search (which surfaces arXiv) plus direct arxiv.org/abs and /html page fetches.",
+   "Semantic Scholar was rate-limited (429): only one forward-citation list succeeded (Sugden-Smith-Jones 2000, 45 citing items, titles screened); forward citations of Waudby-Smith & Ramdas, Bloznelis, Hajek, Shekhar-Ramdas were NOT obtained.",
+   "OpenAlex not used (per rules). No Google Scholar/MathSciNet access.",
+   "Most 'close' papers were read only at abstract / search-snippet level. Read beyond abstract: Rosenblum-van der Laan 2009 (PMC full text, grepped sections), Pinelis 2006 (intro), Shekhar-Ramdas 2026 (Theorem 3.4 statement from arXiv HTML). Not read at all (cited from memory or secondary descriptions, marked in how_read): Bahadur-Savage 1956, Hajek 1960, Hoglund 1978, Dufour 1997, Johnson 1978, Hall 1992, Sugden-Smith-Jones 2000 (read via Qing-Valliant/Kott-Levine descriptions), Chambers 1986, Kokic-Bell 1994, BHRG 2013, Lavallee-Hidiroglou 1988, Hidiroglou 1986 (abstract only), Bakirov-Szekely.",
+   "Query log has 69 rows (39 API calls incl. Crossref verification lookups of classical citations, 30 web_search); this exceeds the 30-60 aim. new_close_papers is filled meaningfully only for web_search rows; Crossref lookup rows are verification of known citations and are recorded as 0.",
+   "Search was within the survey-sampling theme; econometrics (cluster-robust, CRS sign-change, Canay-Romano-Shaikh) and nonparametric-test literatures were only touched via a handful of queries, so verdicts for F and K may be revised by those theme checkers.",
+   "Authors/years for arXiv:2602.16933 and the Appendix-A3 Berry-Esseen paper (arXiv:2109.02578) were not verified; they are marked as such in the CSV."
+  ],
+  "verdicts": [
+   {
+    "claim": "LEMMA",
+    "verdict": "mostly_taken",
+    "verdict_reason": "The mechanism (two sample laws at total-variation distance n/G from each other, so any procedure valid over all populations is unbounded with positive probability) is the Bahadur-Savage 1956 argument and its TV-distance generalisations (Dufour 1997; Bertanha-Moreira). Auditing/finite-population papers state that a known bound is required for SRSWOR (Bentkus-van Zuijlen 2003; Stark/Kaplan-Wald; Romano-Wolf; Shekhar-Ramdas 2026 'any valid WoR CI' lower bound; Zhu-Duchi 2026). I did NOT find a paper that states the explicit finite-population inequality (1-alpha-n/G)/(1-n/G) or the 'predictions cannot help because f_j is unchanged' remark; both are routine corollaries of the TV argument with TV = P(j in S) = n/G.",
+    "closest_papers": [
+     {
+      "citation": "Bahadur & Savage (1956), Ann. Math. Statist. 27:1115-1122",
+      "url_or_doi": "https://doi.org/10.1214/aoms/1177728077",
+      "how_read": "memory + descriptions in Romano-Wolf 2000 and Bertanha-Moreira 2020; original not retrieved",
+      "what_it_does": "iid: no effective CI for the mean over all laws with finite moments",
+      "overlap_with_claim": "same mechanism, iid rather than SRSWOR; no n/G term"
+     },
+     {
+      "citation": "Bertanha & Moreira (2020), Impossible inference in econometrics, arXiv:1612.02024",
+      "url_or_doi": "https://arxiv.org/abs/1612.02024",
+      "how_read": "search snippet of Sec.1-2",
+      "what_it_does": "TV-distance framework: a.s. bounded CIs for the mean have error probability one",
+      "overlap_with_claim": "gives the general TV argument that the Lemma specialises"
+     },
+     {
+      "citation": "Bentkus & van Zuijlen (2003), On conservative confidence intervals, Lith. Math. J. 43:141-160",
+      "url_or_doi": "https://doi.org/10.1023/A:1024210921597",
+      "how_read": "abstract only",
+      "what_it_does": "Hoeffding-type upper bounds for bounded means from auditing; notes results hold for SRSWOR",
+      "overlap_with_claim": "finite-population statement that a bound is needed; no quantitative impossibility"
+     },
+     {
+      "citation": "Shekhar & Ramdas (2026), arXiv:2603.14423",
+      "url_or_doi": "https://arxiv.org/abs/2603.14423",
+      "how_read": "abstract + Thm 3.4 statement",
+      "what_it_does": "width lower bound for any valid WoR CI over all finite-alphabet populations",
+      "overlap_with_claim": "adjacent: validity-over-all-populations forces width; asymptotic, bounded alphabet"
+     },
+     {
+      "citation": "Dufour (1997), Econometrica 65",
+      "url_or_doi": "https://doi.org/10.2307/2171740",
+      "how_read": "Crossref record only; from memory",
+      "what_it_does": "valid confidence sets over unbounded parameter regions are unbounded with positive probability",
+      "overlap_with_claim": "general impossibility principle"
+     }
+    ]
+   },
+   {
+    "claim": "F",
+    "verdict": "partly_open",
+    "verdict_reason": "Components exist separately: (i) max-share kappa is the Hajek/Erdos-Renyi Lindeberg-type quantity (Hajek 1960; Li-Ding 2017 m_N/v_N), with finite-n Berry-Esseen bounds for the studentized SRSWOR mean (Hoglund 1978; Rao-Zhao 1994; Bloznelis 1999) and the 'effective number of clusters' of Carter-Schnepel-Steigerwald in econometrics; (ii) the hypergeometric probability C(G-k,n)/C(G,n) of missing all k units is classical (rule-of-three / exact hypergeometric CIs). None of these gives a sharp boundary kappa*(n,G,alpha) separating existence from non-existence of finite-sample-valid location-scale-equivariant intervals; those results are asymptotic or approximate and say nothing about impossibility above a threshold. In my survey-sampling search I found no paper proving such a frontier. Cochran's rule n>25*G1^2 (Sugden-Smith-Jones) is the nearest 'restriction vs n' statement but is Edgeworth-asymptotic and moment-based, not an exact validity boundary.",
+    "closest_papers": [
+     {
+      "citation": "Li & Ding (2017), General forms of finite population CLTs, JASA / arXiv:1610.04821",
+      "url_or_doi": "https://arxiv.org/abs/1610.04821",
+      "how_read": "appendix excerpt on Hajek Thm 3.1 and m_N/v_N",
+      "what_it_does": "necessary-and-sufficient and sufficient Lindeberg-type conditions for SRS CLT",
+      "overlap_with_claim": "kappa is m_N/((N-1) v_N) up to scaling; asymptotic normality only"
+     },
+     {
+      "citation": "Bloznelis (1999), Berry-Esseen bound for finite population Student's statistic, Ann. Probab. 27",
+      "url_or_doi": "https://doi.org/10.1214/aop/1022874830",
+      "how_read": "abstract page",
+      "what_it_does": "finite-n error bound for studentized SRSWOR mean under minimal (Erdos-Renyi) conditions",
+      "overlap_with_claim": "finite-sample quantification of normal approximation, not a valid interval or boundary"
+     },
+     {
+      "citation": "Sugden, Smith & Jones (2000), Cochran's rule for SRS, JRSS-B 62:787-793",
+      "url_or_doi": "https://doi.org/10.1111/1467-9868.00264",
+      "how_read": "via Qing-Valliant 2025 and Kott-Levine 2024 descriptions",
+      "what_it_does": "n>25*G1^2 (or 28+25*G1^2) via three-term Edgeworth gives >=94% coverage",
+      "overlap_with_claim": "skewness-vs-n rule of thumb; approximate, assumes excess kurtosis 0"
+     },
+     {
+      "citation": "Carter, Schnepel & Steigerwald (2017), Rev. Econ. Stat. 99:698-709",
+      "url_or_doi": "https://doi.org/10.1162/REST_a_00639",
+      "how_read": "abstract only",
+      "what_it_does": "effective number of clusters summarising influence concentration",
+      "overlap_with_claim": "kappa-like concentration index guiding size distortion; asymptotic"
+     },
+     {
+      "citation": "Mueller (2020), A more robust t-test, arXiv:2007.07065",
+      "url_or_doi": "https://arxiv.org/abs/2007.07065",
+      "how_read": "abstract only",
+      "what_it_does": "extreme-value treatment of largest/smallest cluster contributions",
+      "overlap_with_claim": "asymptotic fix for heavy tails from few influential clusters"
+     }
+    ]
+   },
+   {
+    "claim": "K",
+    "verdict": "partly_open",
+    "verdict_reason": "No survey-sampling paper gives an exactly calibrated studentized difference-estimator interval for SRSWOR populations restricted by kappa<=kappa0. Nearest technical precedents: Rosenblum-van der Laan 2009 (inflate a preliminary CI by the smallest factor guaranteeing coverage over ALL laws in a model class, worst case located numerically, iid/parametric class, no max-share restriction); Pinelis 1994/2006 and Eaton-Efron (exact conservative self-normalised-sum bounds, extremal laws are at-most-two-point mixtures, iid and symmetry/zero-mean rather than finite-population); Bakirov-Szekely/Ibragimov-Mueller (Gaussian clusters, t critical values valid under heterogeneity); Li et al. 2026 (exact worst-case tails under kurtosis with few-atom extremals, single variable). The worst-case-at-few-atoms mechanism is therefore known in spirit, but its application to the SRSWOR studentized PPI/difference statistic with an exact computable c(n,G,kappa0,alpha) was not found. Likely a real but technically moderate theorem (finite extreme-point/LP argument over hypergeometric samples).",
+    "closest_papers": [
+     {
+      "citation": "Rosenblum & van der Laan (2009), Int. J. Biostat. 5(1), PMC2827893",
+      "url_or_doi": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2827893/",
+      "how_read": "read abstract, Sec. 2 and inflation/worst-case sections from PMC text",
+      "what_it_does": "guaranteed small-sample CIs for survey/cluster means by Bernstein bounds and by worst-case inflation over a model class",
+      "overlap_with_claim": "closest 'exact calibration by worst case over a class' idea; iid, parametric class, numerical"
+     },
+     {
+      "citation": "Pinelis (2006), Student's t-test without symmetry conditions, arXiv:math/0606160",
+      "url_or_doi": "https://arxiv.org/abs/math/0606160",
+      "how_read": "abstract + intro read",
+      "what_it_does": "two-point mixture representation and exact conservative inequalities for t-type tests",
+      "overlap_with_claim": "few-point extremals for t-statistic; no finite population, no kappa"
+     },
+     {
+      "citation": "Pinelis (1994), Ann. Statist. 22:357-368",
+      "url_or_doi": "https://doi.org/10.1214/aos/1176325373",
+      "how_read": "abstract",
+      "what_it_does": "exact extremal inequalities for self-normalised sums under symmetry",
+      "overlap_with_claim": "same extremal mechanism"
+     },
+     {
+      "citation": "Ibragimov & Mueller (2016), Rev. Econ. Stat. 98:83-96 / Bakirov-Szekely (2006)",
+      "url_or_doi": "https://www.princeton.edu/~umueller/BehrensFisher.pdf",
+      "how_read": "intro snippets",
+      "what_it_does": "t critical values valid for few heterogeneous Gaussian clusters",
+      "overlap_with_claim": "competitor/benchmark for few-cluster validity"
+     },
+     {
+      "citation": "Li, Han, Jiang & Gao (2026), arXiv:2607.05226",
+      "url_or_doi": "https://arxiv.org/abs/2607.05226",
+      "how_read": "abstract",
+      "what_it_does": "exact worst-case tail probability under kurtosis bound with explicit few-atom extremal laws",
+      "overlap_with_claim": "extremal-law technology for a bounded-shape class"
+     }
+    ]
+   },
+   {
+    "claim": "B",
+    "verdict": "taken",
+    "verdict_reason": "Finite-sample-valid intervals for the mean of a bounded finite population under SRSWOR are in print in several forms: Hoeffding-Serfling (Serfling 1974), Bernstein-Serfling and empirical Bernstein-Serfling (Bardenet-Maillard 2015), Hoeffding/empirical-Bernstein CIs and CSs for WoR (Waudby-Smith-Ramdas 2020), betting-based WoR CIs (Waudby-Smith-Ramdas JRSS-B 2024; Martinez-Taboada-Ramdas 2026), and the original PPI paper's Appendix B finite-population version with bounded labels. Applying them to PPI residuals e_g=z_g-lambda*f_g with a known range is immediate. Shekhar-Ramdas 2026 give a width lower bound for any valid WoR CI (finite alphabet, asymptotic regime). Not found: an exact non-asymptotic minimax-length statement at n<=16 for the residual-range problem.",
+    "closest_papers": [
+     {
+      "citation": "Waudby-Smith & Ramdas (2024), Estimating means of bounded random variables by betting, JRSS-B 86:1-27",
+      "url_or_doi": "https://academic.oup.com/jrsssb/article/86/1/1/7043257",
+      "how_read": "abstract + Sec. 5 snippets",
+      "what_it_does": "betting CIs incl. SRSWOR from a fixed list with known bounds",
+      "overlap_with_claim": "directly B's interval class"
+     },
+     {
+      "citation": "Waudby-Smith & Ramdas (2020), Confidence sequences for sampling without replacement, NeurIPS",
+      "url_or_doi": "https://arxiv.org/abs/2006.04347",
+      "how_read": "abstract + Sec. 3 snippet",
+      "what_it_does": "Hoeffding and empirical-Bernstein WoR bounds",
+      "overlap_with_claim": "directly B"
+     },
+     {
+      "citation": "Bardenet & Maillard (2015), Bernoulli 21:1361-1385",
+      "url_or_doi": "https://arxiv.org/abs/1309.4029",
+      "how_read": "abstract + first page",
+      "what_it_does": "Bernstein-Serfling and empirical version",
+      "overlap_with_claim": "directly B"
+     },
+     {
+      "citation": "Angelopoulos et al. (2023), Prediction-Powered Inference, App. B/E",
+      "url_or_doi": "https://arxiv.org/abs/2301.09633",
+      "how_read": "snippets of App. B and E.2",
+      "what_it_does": "finite-population PPI with bounded labels",
+      "overlap_with_claim": "B's PPI-specific form"
+     },
+     {
+      "citation": "Shekhar & Ramdas (2026), arXiv:2603.14423",
+      "url_or_doi": "https://arxiv.org/abs/2603.14423",
+      "how_read": "abstract + Thm 3.4 statement",
+      "what_it_does": "lower bound on width of any valid WoR CI (asymptotic regime) + matching CI",
+      "overlap_with_claim": "closest to a 'minimax length' statement; not n<=16"
+     }
+    ]
+   },
+   {
+    "claim": "D",
+    "verdict": "mostly_taken",
+    "verdict_reason": "Putting the largest units into a certainty (take-all) stratum identified from a cheap first-phase size/auxiliary measure is standard survey practice (Dalenius 1952; Glasser 1962; Hidiroglou 1986; Lavallee-Hidiroglou 1988; Rivest 2002; Benedetti-Bee-Espa 2010), including a model where the auxiliary variable matches the target for most units and large discrepancies occur for some units (Rivest 2002) and two-phase sampling since Neyman 1938; in PPI, active/uncertainty-proportional labelling gives probability near one to uncertain units. What I did not find is the specific criterion: the smallest take-all stratum such that the remaining residual max-share falls below a finite-sample validity boundary kappa*. Existing take-all rules minimise cost for a target CV, not CI validity. If F exists, D is a routine corollary (greedy removal of largest |e_g - ebar|).",
+    "closest_papers": [
+     {
+      "citation": "Hidiroglou (1986), American Statistician 40:27-31",
+      "url_or_doi": "https://doi.org/10.1080/00031305.1986.10475350",
+      "how_read": "abstract and descriptions in later papers",
+      "what_it_does": "boundary of self-representing stratum for skewed populations minimising n for a given CV",
+      "overlap_with_claim": "take-all stratum design; different objective"
+     },
+     {
+      "citation": "Rivest (2002), Survey Methodology 28(2):191-198",
+      "url_or_doi": "https://www150.statcan.gc.ca/n1/pub/12-001-x/2002002/article/6432-eng.pdf",
+      "how_read": "abstract + Sec. 1-3 snippets",
+      "what_it_does": "stratification when the first-phase variable differs from the survey variable for some units",
+      "overlap_with_claim": "closest to 'cheap noisy first-phase + rare large discrepancies'"
+     },
+     {
+      "citation": "Zrnic & Candes (2024), Active Statistical Inference, arXiv:2403.03208",
+      "url_or_doi": "https://arxiv.org/abs/2403.03208",
+      "how_read": "abstract + snippets",
+      "what_it_does": "labelling probabilities proportional to model uncertainty",
+      "overlap_with_claim": "PPI-side design; objective is width, asymptotic validity"
+     },
+     {
+      "citation": "Benedetti, Bee & Espa (2010), J. Official Statistics 26",
+      "url_or_doi": "https://www.scb.se/contentassets/ca21efb41fee47d293bbee5bf7be7fb3/20200206/jos_cut-off_benedetti-mfl.pdf",
+      "how_read": "intro snippet",
+      "what_it_does": "take-all/take-some/cut-off designs",
+      "overlap_with_claim": "design family"
+     }
+    ]
+   }
+  ],
+  "what_remains_open": "(1) F: the sharp boundary kappa*(n,G,alpha) for existence vs non-existence of finite-sample-valid location-scale-equivariant intervals over {kappa<=kappa0} was not found anywhere in survey sampling; pieces (Hajek-Lindeberg quantity, hypergeometric miss probability, Berry-Esseen bounds) are classical, so what is new would be the exact frontier theorem, a substantive result if proved. Econometrics/nonparametric theme checkers should confirm. (2) K: an exactly calibrated studentized SRSWOR difference-estimator interval with worst case at few-valued populations and exact c(n,G,kappa0,alpha); nearest are Rosenblum-van der Laan (iid, numerical inflation) and Pinelis (iid, symmetric/zero-mean). Likely a moderately technical but genuine theorem; comparison with CR2/CRS is empirical. (3) LEMMA: only the explicit (1-alpha-n/G)/(1-n/G) form and the 'predictions cannot help' remark are unlocated; a routine corollary of TV-based Bahadur-Savage. (4) B: only an exact n<=16 minimax-length statement; routine/computational. (5) D: only the kappa*-based certainty-stratum criterion; routine corollary once F holds.",
+  "other_relevant_findings": "Survey-sampling papers with finite-sample guarantees for skewed populations under a stated restriction: (a) Rosenblum & van der Laan 2009 (bounded range -> Bernstein CIs with guaranteed coverage; plus worst-case inflation over a parametric class) is the closest in spirit, and it explicitly motivates small numbers of clusters; (b) Bentkus-van Zuijlen 2003, Serfling 1974, Bardenet-Maillard 2015, Waudby-Smith-Ramdas 2020/2024 (known range); (c) Bloznelis 1999 / Hoglund 1978 / Rao-Zhao 1994 give finite-sample Berry-Esseen bounds for the studentized mean, which are error bounds rather than valid intervals. Everything else on skewed populations is asymptotic or empirical: Cochran's rule and Sugden-Smith-Jones 2000 (Edgeworth; its forward citations on Semantic Scholar include Qing-Valliant 2025 and Kott-Levine 2024, all asymptotic), Johnson 1978 / Hall 1992 transformations (iid), saddlepoint (Robinson 1982; Empirical saddlepoint studentized mean under SRS, 2001), pseudo-population bootstrap (Booth-Butler-Hall 1994), Polya posterior / weighted Polya posterior (Meeden 1999: improved but unguaranteed coverage), outlier-robust estimation (Chambers 1986; Kokic-Bell 1994; Beaumont-Haziza-Ruiz-Gazen 2013: MSE-oriented, no CI guarantee), and Korn-Graubard / Kott degrees-of-freedom rules for few PSUs (heuristic). Setting-level overlap: Mozer 2026 (arXiv:2603.19160) shows PPI mean = Cassel-Sarndal-Wretman difference estimator, so the survey-sampling reading of the problem is already public; PPI's own Appendix B already treats SRSWOR finite populations. New 2026 arXiv items worth tracking: Shekhar-Ramdas 2603.14423 (WoR width lower bound), Martinez-Taboada-Ramdas 2608.21694 (WoR betting), Li et al. 2607.05226 (exact worst-case tails under kurtosis), Zhu-Duchi 2609.05360 (finite-sample nonnegative-mean tests).",
+  "artifact_filenames": [
+   "novelty_NOV5_SURVEY_queries.csv",
+   "novelty_NOV5_SURVEY_candidates.csv"
+  ],
+  "n_queries": 69,
+  "frame_id": "1d94a311-f875-4286-b3f6-b1b3b458a1aa"
+ }
+]

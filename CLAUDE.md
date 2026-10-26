@@ -66,8 +66,8 @@ Steps of this track, with stable IDs, checked when done with a one-line note (da
 
 - [x] **S0 Branch cut.** 26 October. Cut from `claude-science` at the commit that opened round 9 (bd4af6ba), with this file and the brief written by the claude-science session.
 - [x] **S1 Plan of interval 1.** 26 October. `docs/round09/i01/fewcluster/round09_fewcluster_plan.md`, with the impossibility lemma, claims F, K, B and D, and steps S2 to S4.
-- [ ] **S2 Novelty map.** Five independent subagents, one theme each, grading claims F, K, B and D. Logs to `results/round9/fewcluster/novelty/`.
-- [ ] **S3 Feasibility computations.** The boundary over the grid, residual max-share on the real tasks, worst-case coverage of the finite-population $t$ interval over few-valued populations. Predictions in `results/round9/fewcluster/feasibility/predictions_before_run.md`.
+- [x] **S2 Novelty map.** 26 October. Five checkers, 321 logged queries (`results/round9/fewcluster/novelty/`, verdicts in `novelty_structured_results.json`). F and K partly open in all five; B taken or mostly taken (PPI paper, appendices B and E); D mostly taken (take-all strata); the lemma is folklore (total-variation form of Bahadur and Savage). Closest precedents for F are Pötscher and Preinerstorfer (arXiv:2412.17470, Gaussian model) and Hendriks et al. (2006, iid). No forward citations were obtained (Semantic Scholar rate-limited, no OpenAlex).
+- [ ] **S3 Feasibility computations.** Local part done 26 October (`results/round9/fewcluster/feasibility/predictions_scored.md`; P4, P6 refuted, P5, P8 held, P7 partly held). HEST part (P1 to P3) waits for Longleaf, unreachable on 26 October. Theorem verification by a fresh agent and a deep precise-statement novelty check (NOV6) dispatched. The boundary over the grid, residual max-share on the real tasks, worst-case coverage of the finite-population $t$ interval over few-valued populations. Predictions in `results/round9/fewcluster/feasibility/predictions_before_run.md`.
 - [ ] **S4 Decision memo** for interval 1, reading S2 against S3.
 
 ## 4. Working preferences (Nicolas's)
