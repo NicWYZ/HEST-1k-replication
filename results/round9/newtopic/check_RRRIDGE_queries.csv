@@ -1,0 +1,65 @@
+query,source,date,n_results_screened,new_close_papers
+"all:""reduced rank regression"" AND (all:""random matrix"" OR all:""proportional asymptotics"" OR all:""deterministic equivalent"")",arXiv API,2026-10-26,2,0
+reduced-rank regression ridge proportional asymptotics high-dimensional random matrix,Semantic Scholar,2026-10-26,0,FAILED (HTTP 429)
+"all:""reduced rank"" AND all:ridge AND (all:""free probability"" OR all:""Marchenko-Pastur"" OR all:""spiked"")",arXiv API,2026-10-26,0,0
+"all:""reduced-rank regression"" AND (all:""principal angles"" OR all:""subspace recovery"") AND all:""high-dimensional""",arXiv API,2026-10-26,0,0
+"all:""low-rank"" AND all:""multi-response"" AND all:ridge AND all:""proportional""",arXiv API,2026-10-26,0,0
+"all:""canonical correlation"" AND all:""ridge"" AND (all:""random matrix"" OR all:""proportional"")",arXiv API,2026-10-26,0,0
+"all:""supervised PCA"" OR all:""projected PCA"" AND all:""latent factor"" AND all:""proxies""",arXiv API,2026-10-26,8,0
+"abs:""reduced rank regression"" AND abs:""random matrix""",arXiv API,2026-10-26,1,0
+"abs:""reduced-rank regression"" AND abs:""proportional""",arXiv API,2026-10-26,1,0
+"abs:""reduced rank"" AND abs:ridge AND abs:""high-dimensional asymptotics""",arXiv API,2026-10-26,0,0
+"abs:""multivariate regression"" AND abs:""low rank"" AND abs:""spiked""",arXiv API,2026-10-26,0,0
+"abs:""multi-output"" AND abs:ridge AND abs:""low-rank"" AND abs:""asymptotics""",arXiv API,2026-10-26,0,0
+"abs:""canonical correlation"" AND abs:""proportional asymptotics""",arXiv API,2026-10-26,0,0
+reduced rank regression random matrix theory high-dimensional asymptotic risk,arXiv API,2026-10-26,8,0
+ridge reduced rank regression proportional regime out-of-sample risk,arXiv API,2026-10-26,8,0
+low-rank multivariate regression ridge double descent subspace alignment,arXiv API,2026-10-26,8,0
+canonical correlation analysis regularized high-dimensional random matrix spiked,arXiv API,2026-10-26,8,0
+factor model estimation auxiliary covariates proxies high-dimensional random matrix principal angle,arXiv API,2026-10-26,8,0
+supervised factor model PCA versus covariates predicting response subspace phase transition,arXiv API,2026-10-26,8,0
+reduced rank regression ridge high-dimensional random matrix asymptotic prediction risk,Crossref,2026-10-26,8,0
+latent factors estimated with observed proxies covariates high dimensional supervised factor model,Crossref,2026-10-26,8,0
+three-pass regression filter latent factors proxies forecasting many predictors,Crossref,2026-10-26,8,0
+targeted predictors supervised principal components factor forecasting,Crossref,2026-10-26,8,0
+cointegration large VAR reduced rank regression Jacobi ensemble canonical correlations,Crossref,2026-10-26,8,0
+forward citations of arXiv:2212.12845 (Wan et al. Factor Zoo),Semantic Scholar,2026-10-26,6,"0 (6 citing records, none doing the claim)"
+reduced-rank ridge regression asymptotic risk random matrix theory,Semantic Scholar,2026-10-26,0,FAILED (HTTP 429)
+high-dimensional reduced rank regression proportional asymptotics spiked singular value,Semantic Scholar,2026-10-26,0,FAILED (HTTP 429)
+partial least squares high-dimensional proportional asymptotics random matrix prediction,Semantic Scholar,2026-10-26,0,FAILED (HTTP 429)
+optimal singular value shrinkage cross-covariance rectangular rotationally invariant estimator,Semantic Scholar,2026-10-26,0,FAILED (HTTP 429)
+canonical correlation analysis ridge regularization random matrix theory deterministic equivalent,Semantic Scholar,2026-10-26,0,FAILED (HTTP 429)
+multi-task linear regression low-rank coefficient ridge exact asymptotics overparameterized,Semantic Scholar,2026-10-26,0,FAILED (HTTP 429)
+reduced-rank regression ridge proportional asymptotics deterministic equivalent prediction risk p/n,web_search,2026-10-26,9,Dobriban-Wager 2018 (related)
+Mining the Factor Zoo: Estimation of Latent Factor Models with Sufficient Proxies,web_search,2026-10-26,9,Wan et al. 2024 (anchor)
+high-dimensional reduced rank regression random matrix theory singular value shrinkage multivariate response p > n,web_search,2026-10-26,9,She-Chen RRR (related); degrees-of-freedom RRR (related)
+asymptotics of reduced-rank regression ridge estimator high-dimensional proportional limit singular vectors alignment multi-response,web_search,2026-10-26,9,Bing-Wegkamp 2019 (related); Kargin 2015 surfaced via refs
+"Prediction under latent factor regression: adaptive PCR, interpolating predictors and beyond",web_search,2026-10-26,9,Bing et al. JMLR 2021 (related)
+reduced rank regression random design p/n gamma eigenvalue limit spiked Bayes-optimal low-rank multi-task ridge asymptotic,web_search,2026-10-26,9,"Kargin 2015 (CLOSE, found via refs); Mukherjee-Zhu 2011 (CLOSE)"
+Stability of Reduced-Rank Ridge Regression (Degras Chapalain Thirion),web_search,2026-10-26,9,Degras-Chapalain-Thirion 2024 (close: empirical only)
+shared low-rank representation multi-task linear regression high-dimensional asymptotics proportional ridge,web_search,2026-10-26,9,Jin et al. meta-learning ridge 2403.19720 (related)
+PLS or PCR high-dimensional proportional asymptotics spiked covariance multiple responses random matrix,web_search,2026-10-26,9,Green/Romanov PCR AoS 2025 (close); Calibrated PCR; De-floored PCR; Li-Sonthalia spiked ridgeless
+optimal singular value shrinkage cross-covariance X Y rotationally invariant estimator canonical correlations,web_search,2026-10-26,9,Benaych-Georges-Bouchaud-Potters 2023 (close for iii); Data-driven shrinkage separable covariance 2207.03466 (close for iii)
+optimal singular value shrinkage multivariate regression coefficient matrix low-rank random design proportional,web_search,2026-10-26,9,Gavish-Donoho 2017 (related); Shabalin-Nobel style shrinkage
+Lettau Pelger risk-premium PCA weak factors latent asset pricing factors,web_search,2026-10-26,9,"Lettau-Pelger 2020 (close for ii, finance analogue)"
+reduced-rank regression overparameterized proportional regime benign overfitting spiked multiple outputs 2025 2026,web_search,2026-10-26,9,"none new close (Greenberg-Avron HORRR, Rudkiewicz-Verbockhaven: not asymptotic theory)"
+Johnstone Onatski testing in high-dimensional spiked models canonical correlation regression phase transition,web_search,2026-10-26,9,Johnstone-Onatski 2020; Bykhovskaya-Gorin CCA (close); Bao-Hu-Pan-Zhou (related)
+forward citations of arXiv:1409.6779 (Kargin RRR large dims),Semantic Scholar,2026-10-26,9,0 new (9 citing records incl. Wan et al.)
+forward citations of arXiv:2405.11676 (Romanov PCR asymptotics),Semantic Scholar,2026-10-26,7,Njaradi et al. 2605.20105 (related)
+all:reduced rank regression free probability,arXiv API,2026-10-26,8,0
+all:reduced-rank ridge regression high-dimensional asymptotics,arXiv API,2026-10-26,8,0
+all:multivariate ridge regression generalized cross-validation multiple responses random matrix,arXiv API,2026-10-26,8,0
+all:Koopman reduced rank regression ridge asymptotic random matrix,arXiv API,2026-10-26,8,0
+all:low-rank coefficient matrix linear probing multi-output spiked random matrix principal angles,arXiv API,2026-10-26,8,0
+reduced rank regression proportional asymptotics random matrix theory high dimension number of predictors comparable sample size,Crossref,2026-10-26,6,0
+canonical correlation high-dimensional vectors estimation error proportional asymptotics ridge,Crossref,2026-10-26,6,0
+neural encoding model ridge regression reduced rank theory high-dimensional features voxels,Crossref,2026-10-26,6,0
+histology image embeddings predict spatial gene expression reduced rank regression,Crossref,2026-10-26,6,0
+Projected principal component analysis in factor models Fan Liao Wang,Crossref,2026-10-26,5,0
+Asset pricing with omitted factors Giglio Xiu,Crossref,2026-10-26,5,0
+The virtue of complexity in return prediction Kelly Malamud Zhou,Crossref,2026-10-26,5,0
+Optimal estimation of canonical vectors shrinkage proportional high-dimensional CCA Asendorf Nadakuditi,Crossref,2026-10-26,5,0
+redundancy analysis reduced rank regression shrinkage psychometrics high-dimensional predictors,Crossref,2026-10-26,5,0
+low-rank matrix estimation with side information covariates phase transition spiked model PCA threshold,web_search,2026-10-26,9,Miolane thesis (related; no ridge/regression design)
+instrumented principal component analysis characteristics latent factors asymptotic theory many characteristics,web_search,2026-10-26,9,"Kelly-Pruitt-Su IPCA; Fan-Liao-Wang proj PCA (related, fixed-L or sieve)"
+nuclear norm regularized multi-response regression exact high-dimensional asymptotics Gaussian design low-rank AMP CGMT,web_search,2026-10-26,9,none (no exact-asymptotics paper surfaced)

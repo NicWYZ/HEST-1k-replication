@@ -1414,5 +1414,146 @@
    }
   ],
   "n_queries": 42
+ },
+ {
+  "record": "CHECK_LLG",
+  "subagent_name": "Check Llg",
+  "frame_id": "c4be2e88-b4fb-42d5-aad3-addf115f0b8e",
+  "deviations": [
+   "Semantic Scholar was rate-limited (HTTP 429) on most calls: forward citations of the anchor returned 0 (possibly index lag) and I could not take forward citations of other anchor papers (Rabinowicz-Rosset, Atanasov et al.).",
+   "17 of 66 logged queries returned zero results or errors (mostly over-specific arXiv API boolean queries and S2 429s); 49 returned results.",
+   "Only the anchor arXiv v1 was readable; the Feb 2026 AFA version was not accessible, so any cluster/panel content added later is unchecked.",
+   "Papers read at section level: anchor, Rabinowicz-Rosset, Atanasov et al. (abstract, intro and keyword grep only), Hu-Li, EigenPrism, Cai-Guo, Hawinkel (abstract/intro/grep). Dicker, Verzelen-Gassiat, Nakagawa-Schielzeth, Lopez-Lopez, Bentler-Woodward, Mundlak, Zimmerman, de Bruin, Wadoux, Pospisil-Bair, Gu-Kelly-Xiu, Kelly-Malamud-Zhou, Dobriban-Wager, survey-aware-CV 2607.10634, Hou-Ochoa were seen by abstract, snippet or title only. Roberts et al. and Hsu/Schoppe noise-ceiling papers were not retrieved.",
+   "Stopped early at the parent's request; no systematic search of SSRN/NBER finance working papers on period-demeaned R2 lower bounds, so the finance-side absence call is provisional. OpenAlex not used, as instructed.",
+   "The reduction argument (LLG on demeaned data / group means) is my own reasoning, not verified by simulation or proof."
+  ],
+  "slug": "LLGCLUSTER",
+  "verdict": "partly_open",
+  "verdict_reason": "No paper found that extends the Chen-Kelly-Malamud LLG bound to grouped data with a group-level shift, and none that gives a cluster gap L_c or separate within/between lower confidence bounds. The anchor (arXiv:2512.12735 v1) assumes iid noise independent of (f,S) (Assumption 1), and I found no follow-up or citing paper (Semantic Scholar showed 0 citations; web search found none). However every ingredient is classical and the claim is largely a reduction. (i) That iid-based out-of-sample error estimates break under cluster random intercepts is in print: Rabinowicz & Rosset (JASA 2022, read in part) and Atanasov et al. (2408.04607, ridge risk under arbitrary sample correlation; GCV fails). (ii) Within/between R2 and marginal/conditional R2 are classical (Mundlak 1978; Nakagawa-Schielzeth 2013; Lopez-Lopez 2014 for few-study meta-regression R2). My own reasoning, not from a paper: demeaning by group reduces within-group to the iid LLG on demeaned data, and the between part is the LLG applied to G group means, so 'G governs' follows by applying the existing bound to aggregated data; only unequal group sizes (heteroskedastic noise) and the proportional-regime CLT would need new work. (iii) is the Mundlak/Chamberlain non-identification statement. Grade is partly_open because the specific LLG-cluster theorem is not in print, but it sits close to mostly_taken in value.",
+  "closest_papers": [
+   {
+    "citation": "Chen, Kelly, Malamud. Limits To (Machine) Learning. arXiv:2512.12735 (Dec 2025)",
+    "url_or_doi": "https://arxiv.org/abs/2512.12735",
+    "how_read": "Downloaded v1 PDF, text extracted; read Assumption 1, Sec 3.1-3.2 and App A.1; grepped for cluster/panel/group/dependence. Later (Feb 2026) AFA version not accessible.",
+    "what_it_covers": "LLG bound R2*>=(R2_OOS+L)/(1+L) with CLT; iid noise independent of signals; no group/cluster extension in v1."
+   },
+   {
+    "citation": "Rabinowicz & Rosset. Cross-Validation for Correlated Data. JASA 117(538):718-731 (2022)",
+    "url_or_doi": "https://arxiv.org/abs/1904.02438",
+    "how_read": "arXiv PDF text; abstract, intro, Sec 2.1-2.4 (Thm 2.1, 2.2) read; rest not read",
+    "what_it_covers": "Random-intercept clustered model; standard CV biased for prediction error unless train/test correlation matches; bias-corrected CVc. Part (i) in spirit, for MSE not R2 bounds."
+   },
+   {
+    "citation": "Atanasov, Zavatone-Veth, Pehlevan. Risk and cross validation in ridge regression with correlated samples. arXiv:2408.04607",
+    "url_or_doi": "https://arxiv.org/abs/2408.04607",
+    "how_read": "arXiv PDF; abstract + intro read, keyword grep for cluster/group/random effect/batch (no hits); theory sections not read",
+    "what_it_covers": "Exact high-dim ridge in/out-of-sample risk under arbitrary sample correlations; GCV fails; CorrGCV. Machinery for (i)/(ii) but no group-shift R2 bound, no within/between split."
+   },
+   {
+    "citation": "Hu & Li. Misspecification Analysis of High-Dimensional Random Effects Models for Estimation of SNR. arXiv:2202.06400",
+    "url_or_doi": "https://arxiv.org/abs/2202.06400",
+    "how_read": "abstract + intro + grep",
+    "what_it_covers": "CLT for SNR MLE under independent heteroscedastic noise; no sample clustering."
+   },
+   {
+    "citation": "Janson, Barber, Candes. EigenPrism. arXiv:1505.02097; Dicker 2014 arXiv:1209.0012; Cai & Guo arXiv:1806.06179",
+    "url_or_doi": "https://arxiv.org/abs/1505.02097",
+    "how_read": "EigenPrism and Cai-Guo: grep for cluster terms (none) + abstracts; Dicker: abstract via search snippet",
+    "what_it_covers": "High-dim R2/SNR CIs under iid noise: baseline showing R2 inference, not just lower bounds, exists; none handles group shifts."
+   },
+   {
+    "citation": "Nakagawa & Schielzeth (2013) Methods Ecol Evol; Lopez-Lopez et al. (2014) BJMSP 10.1111/bmsp.12002; Mundlak (1978) Econometrica 10.2307/1913646",
+    "url_or_doi": "10.1111/bmsp.12002",
+    "how_read": "search snippets / titles only",
+    "what_it_covers": "Marginal vs conditional R2, between-study R2 with few studies, correlated random effects: classical owners of the within/between and non-identification pieces."
+   }
+  ],
+  "what_remains_open": "Not found in any source searched: (a) an LLG-type data-driven lower bound on population R2 (not an estimator) under group-level shift with an explicit violation term for the iid bound; (b) a cluster gap L_c with valid lower confidence bounds for within- and between-group R2 and a sqrt(G) CLT in the regime where group size is proportional to feature dimension, including unequal group sizes (heteroskedastic noise); (c) a sharpness statement tied to the LLG bound when eta correlates with x. Caveat: searches were incomplete (see deviations), so absence is provisional. Likely reviewer response: (a) and the equal-size case of (b) are corollaries of the iid bound applied to demeaned data and to group means; (c) is Mundlak/Chamberlain.",
+  "sharpened_claim_if_any": "A claim more likely to survive: an LLG-type lower confidence bound for the new-group (between-donor plus within-donor) out-of-sample R2 of a ridge/kernel predictor with unequal group sizes and heteroskedastic, group-correlated noise, with a CLT at rate sqrt(G) uniform over the proportional regime, plus a matching necessary-and-sufficient condition under which the iid LLG remains valid (e.g. a trace condition linking the kernel and the group design). This is my own suggestion, not checked against the literature.",
+  "value_assessment": "Proposition-plus-appendix level, not a standalone NeurIPS/ICML/AISTATS methods paper, unless the unequal-size heteroskedastic CLT in the proportional regime proves technically substantial. The headline results reduce to the existing bound on demeaned or aggregated data, and the surrounding literature (Rabinowicz-Rosset, Atanasov et al., mixed-model R2, Mundlak) would be cited as having the qualitative points. The ST and census test bed with ground truth is a legitimate empirical contribution. The anchor is a Dec 2025 finance-econometrics preprint with no follow-ups yet, so the window is open, but the theory gap is thin.",
+  "n_queries": 66
+ },
+ {
+  "record": "CHECK_RRRIDGE",
+  "subagent_name": "Check Rrridge",
+  "frame_id": "cb5ea006-a38a-408e-9d3c-70ef742b36d0",
+  "deviations": [
+   "Semantic Scholar keyword search failed for all 7 attempts with HTTP 429 (a 6-query batch took about 9 min of backoff), so it contributed only 3 forward-citation lookups (Wan et al. 6 citing records, Kargin 9, Romanov PCR 7); S2 forward-citation coverage appears incomplete, so absence there is weak evidence.",
+   "OpenAlex deliberately not used, per the task.",
+   "Full text read (pypdf extraction plus keyword grep and partial reading) only for Wan et al., Kargin, Bykhovskaya-Gorin, Li-Sonthalia, Njaradi et al., Calibrated PCR, De-floored PCR. Romanov et al. PCR, Dobriban-Wager, Mukherjee-Zhu, BBP cross-covariance, 2207.03466, Lettau-Pelger, Degras et al., Gavish-Donoho, Bing et al., Bing-Wegkamp, BSW and Johnstone-Onatski were read only as abstracts or search-result snippets. Grades for those papers could change on a full read.",
+   "The logged 64 queries comprise 17 web_search, 23 arXiv API, 14 Crossref and 10 Semantic Scholar entries (7 of the S2 entries FAILED). Several arXiv queries returned zero hits because of strict boolean syntax, and arXiv relevance ranking was poor. 'n_results_screened' for web_search entries is an approximate count of results returned, not individually inspected hits. Some Crossref and arXiv results were screened by title only.",
+   "The 'new_close_papers' column in check_RRRIDGE_queries.csv was filled in after the fact by matching queries to papers found, not logged at query time. Treat it as approximate.",
+   "Not searched: Google Scholar, SSRN full text, journal-site full texts (econometrics/finance papers beyond abstracts), psychometrics/survey-sampling/geostatistics vocabularies beyond one 'redundancy analysis' Crossref query. Those field-specific searches were thin, though the claim is mainly statistical/RMT.",
+   "No subagents were used. Author lists for Romanov et al. and arXiv:2207.03466 were not returned in the retrieved snippets and are given as such in the CSV."
+  ],
+  "slug": "RRRIDGE",
+  "verdict": "partly_open",
+  "verdict_reason": "I found no paper that states limits for the ridge-regularised reduced-rank estimator B_hat(lambda, r) in the proportional regime with general covariance and p>n. That covers the risk limit and the principal-angle limit (claim i), a (gamma, spike) threshold against PCA of Y alone (ii), and a data-driven (lambda, r) rule (iii). Every ingredient is in print, though, and the composite looks like a technical extension of existing machinery, not a new method. Closest items: Kargin 2015 (arXiv:1409.6779; read in extracted full text) gives proportional asymptotics for OLS-based RRR with iid Gaussian X, N>=p and no ridge. Bykhovskaya-Gorin 2023 (read in extracted full text) give singular-vector error for unregularised CCA. Romanov et al., Annals of Statistics 2025 (abstract only) give exact risk with eigenvector overlaps for single-response PCR with general covariance. Dobriban-Wager 2018 and Hastie et al. 2022 give the per-column ridge risk. For (iii): Benaych-Georges-Bouchaud-Potters 2023 (AAP), arXiv:2207.03466 (separable-covariance data-driven shrinkers) and Gavish-Donoho 2017 supply optimal singular-value shrinkage. Lettau-Pelger 2020 supply a finance analogue of (ii), a phase-transition argument that side information detects weak factors PCA misses. Wan et al. do state the p~T non-sparse theory is open (confirmed in the conclusion of the extracted full text), and they cite Kargin. The result is provisional: Semantic Scholar keyword search failed with HTTP 429, arXiv API relevance is poor, and most candidates were read only by abstract or snippet.",
+  "closest_papers": [
+   {
+    "citation": "Kargin, V. (2015). On estimation in the reduced-rank regression with a large number of responses and predictors. arXiv:1409.6779",
+    "url_or_doi": "https://arxiv.org/abs/1409.6779",
+    "how_read": "Full PDF text extracted with pypdf; read abstract, intro, Theorem 2.1 and keyword grep (no 'ridge', no singular-vector alignment, no general covariance in the body)",
+    "what_it_covers": "Proportional (N,p,r) asymptotics of OLS RRR: Tracy-Widom edges for coefficient and fitted-response singular values, rank selection, consistent singular-value estimators. iid Gaussian X, N>=p, isotropic noise. No ridge, no p>n, no subspace alignment, no out-of-sample risk. Closest in print to claim (i)+(iii)-rank."
+   },
+   {
+    "citation": "Bykhovskaya, A. & Gorin, V. (2023). High-dimensional canonical correlation analysis. arXiv:2306.16393",
+    "url_or_doi": "https://arxiv.org/abs/2306.16393",
+    "how_read": "Full PDF text extracted; read abstract, intro, related-literature, keyword grep (regularisation only cited, not analysed)",
+    "what_it_covers": "Proportional-regime inconsistency of CCA canonical vectors with explicit error formulas for finite-rank signal, beyond Gaussian. Unregularised. Subspace-alignment analogue for claim (i)."
+   },
+   {
+    "citation": "Romanov et al. (2025). The high-dimensional asymptotics of principal component regression. Annals of Statistics 53(4); arXiv:2405.11676",
+    "url_or_doi": "https://arxiv.org/abs/2405.11676",
+    "how_read": "Abstract and citing-paper snippets only; full text not read",
+    "what_it_covers": "Exact limiting prediction/estimation risk of PCR with general covariance via multi-resolvent traces and eigenvector overlaps; spiked case studied. Single response, hard-threshold PCs. Same machinery would be needed for ridge-RRR claim (i)."
+   },
+   {
+    "citation": "Mukherjee, A. & Zhu, J. (2011). Reduced rank ridge regression and its kernel extensions. Statistical Analysis and Data Mining 4",
+    "url_or_doi": "https://dept.stat.lsa.umich.edu/~jizhu/pubs/Mukherjee-SADM11.pdf",
+    "how_read": "Abstract and search snippets only",
+    "what_it_covers": "Defines the ridge+rank estimator that the claim analyses; methodology and simulations, no proportional-regime theory."
+   },
+   {
+    "citation": "Benaych-Georges, F., Bouchaud, J.-P. & Potters, M. (2023). Optimal cleaning for singular values of cross-covariance matrices. Ann. Appl. Probab. 33(2); arXiv:1901.05543",
+    "url_or_doi": "https://arxiv.org/abs/1901.05543",
+    "how_read": "Abstract and search snippets only",
+    "what_it_covers": "Asymptotically optimal rotationally invariant singular-value shrinkage of the empirical X-Y cross-covariance with n,p,T proportional. Gives optimal-shrinkage machinery for claim (iii) in a closely related problem; not a ridge-regression predictor."
+   },
+   {
+    "citation": "arXiv:2207.03466. Data-driven optimal shrinkage of singular values under high-dimensional noise with separable covariance structure (authors not shown in retrieved snippet)",
+    "url_or_doi": "https://arxiv.org/abs/2207.03466",
+    "how_read": "Theorem excerpt from a search snippet only",
+    "what_it_covers": "Data-driven optimal shrinkers (Frobenius/operator/nuclear) for low-rank signal with separable colored noise. Applicable to the ridge-fitted response matrix, which is signal + H E with left covariance H^2 given X. Direct tool for claim (iii)."
+   },
+   {
+    "citation": "Lettau, M. & Pelger, M. (2020). Estimating latent asset-pricing factors. J. Econometrics 218(1)",
+    "url_or_doi": "https://www.nber.org/system/files/working_papers/w24618/w24618.pdf",
+    "how_read": "Abstract and search snippets only",
+    "what_it_covers": "RP-PCA: adding mean (side) information moves the BBP phase transition so factors undetectable by covariance PCA become detectable. Finance analogue of claim (ii); N,T asymptotics, no ridge, no p>n proxies, no regression design."
+   },
+   {
+    "citation": "Wan, R., Li, Y., Lu, W. & Song, R. (2024). Mining the factor zoo: estimation of latent factor models with sufficient proxies. J. Econometrics 239(2); arXiv:2212.12845",
+    "url_or_doi": "https://arxiv.org/abs/2212.12845",
+    "how_read": "Full PDF text extracted; read assumptions and conclusion, grep for sparsity/random matrix",
+    "what_it_covers": "Penalized RRR for latent factors from diverging proxies, rates under sparsity. Conclusion confirms the non-sparse p~T theory is left open. Compares to PCA by simulation only (no threshold). Anchor paper."
+   },
+   {
+    "citation": "Dobriban, E. & Wager, S. (2018). High-dimensional asymptotics of prediction: ridge regression and classification. Ann. Statist. 46(1)",
+    "url_or_doi": "https://arxiv.org/abs/1507.03003",
+    "how_read": "Abstract and search snippets only",
+    "what_it_covers": "Single-response ridge risk with general covariance and p/n->gamma in (0,inf) incl. p>n; the per-column building block for claim (i)."
+   },
+   {
+    "citation": "Degras, D., Chapalain, T. & Thirion, B. (2024). On the stability of reduced-rank ridge regression. EUSIPCO 2024",
+    "url_or_doi": "https://hal.science/hal-04713854v1/file/RRR_backUp_Euspico.pdf",
+    "how_read": "Abstract and search snippets only",
+    "what_it_covers": "Empirical study that ridge-RRR beats ridge/PLS out-of-sample when features far exceed samples (neuroimaging encoding from high-dimensional stimulus embeddings). No theory. Same estimator and the same use case as the project's histology-embedding to gene application."
+   }
+  ],
+  "what_remains_open": "Provisionally open, not found in any retrieved paper: (a) a deterministic-equivalent or free-probability limit of the out-of-sample risk of ridge+rank-r truncation (B_hat(lambda, r)) with general feature covariance, rank-r B, p/n anywhere in (0,inf) and q/n bounded; (b) the limiting principal angles between the estimated and true r-dim response/factor subspaces for that estimator. Conditional on X the fitted response matrix is signal plus H E, so the problem needs spiked-rectangular tools with colored noise plus the joint spectrum of H and X B; eigenvector-overlap machinery (Romanov et al.) and separable-noise shrinkage (2207.03466) look sufficient; (c) an explicit (gamma, spike, lambda) boundary below which ridge-RRR on proxies beats the BBP-limited PCA of Y alone; only finance (Lettau-Pelger) and unregularised CCA/James-class analogues exist; (d) a consistent GCV- or CV-type joint choice of (lambda, r) for multi-response ridge-RRR in the proportional regime; rank-selection (BSW, Bing-Wegkamp, Kargin) and single-response ridge-GCV exist separately but I did not find the joint multi-response result. Not yet checked: Semantic Scholar keyword search (all 7 attempts rate-limited), Google Scholar, forward citations of Mukherjee-Zhu, Bykhovskaya-Gorin, Lettau-Pelger.",
+  "sharpened_claim_if_any": "A claim more likely to survive: exact limits for ridge-RRR when the noise is NOT iid, specifically E has a pervasive low-rank (spiked) covariance component, such as the shared donor-level depth factor, that competes with the signal for the top singular directions. Wan et al. flag non-iid errors as a technical obstacle, Kargin and Bing-Wegkamp assume iid-type errors, and the shrinkage papers only treat separable non-spiked covariance. Within this setting, state (1) the BBP-type detection boundary in (gamma, signal, nuisance-spike) for the proxies-based estimator versus PCA of Y, (2) alignment limits for both signal and nuisance directions, and (3) an optimal shrinker. Caveat: the project's earlier PRANK/MULTI scans graded closely related nuisance-factor rank-selection ideas mostly_taken or partly_open, so that overlap must be checked first.",
+  "value_assessment": "As stated (ridge-RRR risk plus alignment plus threshold plus shrinkage under iid errors), this is a reasonable but narrow theory paper whose ingredients are all in print. I judge it a strong proposition-plus-appendix for a statistics-forward methods paper, not a stand-alone NeurIPS/ICML contribution. It could carry an AISTATS or econometrics/statistics-journal theory paper only if proofs are rigorous at general covariance with p>n and the threshold is sharp and non-obvious. A competing group (random-matrix/learning-theory) could plausibly produce it quickly with the same tools, so there is scoop risk. The application link is real: Degras et al. use the same estimator in a p>>n encoding setting without theory. The nuisance-factor (non-iid error) variant is the more defensible methods-paper core. All verdicts are provisional given the search limitations declared below.",
+  "n_queries": 64
  }
 ]

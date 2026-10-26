@@ -1,0 +1,67 @@
+query,source,date,n_results_screened,new_close_papers
+"all:""Limits to Learning"" AND all:""R^2""",arXiv,2026-10-26,3,0
+"abs:""lower bound"" AND abs:""population R^2"" AND abs:ridge",arXiv,2026-10-26,0,0
+"abs:""limits to learning gap""",arXiv,2026-10-26,1,0
+"abs:""out-of-sample R^2"" AND abs:""population R^2"" AND abs:""lower bound"" AND abs:""noise""",arXiv,2026-10-26,0,0
+"abs:""cluster"" AND abs:""out-of-sample R^2"" AND abs:""ridge"" AND abs:""random effect"" AND abs:""confidence""",arXiv,2026-10-26,0,0
+"abs:""within-group"" AND abs:""between-group"" AND abs:""R^2"" AND abs:""ridge"" AND abs:""high-dimensional""",arXiv,2026-10-26,0,0
+"abs:""ridge regression"" AND abs:""variance explained"" AND abs:""clustered"" AND abs:""central limit theorem""",arXiv,2026-10-26,0,0
+"abs:""predictability"" AND abs:""common shock"" AND abs:""R^2"" AND abs:""lower bound""",arXiv,2026-10-26,0,0
+all:population R2 lower bound out-of-sample ridge kernel finite sample noise,arXiv,2026-10-26,8,0
+all:signal-to-noise ratio high-dimensional confidence interval clustered random effects,arXiv,2026-10-26,8,2
+all:cross-validation correlated data grouped random effects prediction error,arXiv,2026-10-26,8,0
+all:out-of-sample R2 confidence interval panel return predictability time fixed effects,arXiv,2026-10-26,8,0
+all:explained variance high-dimensional regression group structure batch effect lower confidence bound,arXiv,2026-10-26,8,0
+all:noise ceiling lower bound explainable variance donors subjects population correlation,arXiv,2026-10-26,8,0
+S2 citations of arXiv:2512.12735,SemanticScholar,2026-10-26,0,0
+Limits to (Machine) Learning Chen Kelly Malamud limits-to-learning gap R^2,web_search,2026-10-26,9,1
+lower bound population R-squared from out-of-sample R-squared grouped data cluster-robust ridge CLT,web_search,2026-10-26,10,0
+out-of-sample R-squared clustered observations cross-validation grouped data iid assumption,web_search,2026-10-26,10,2
+Limits-to-Learning Gap extension panel data time fixed effects common shocks cluster 2026,web_search,2026-10-26,9,0
+out-of-sample R-squared lower bound population R-squared high-dimensional ridge,SemanticScholar,2026-10-26,0,0
+limits to learning gap predictability machine learning returns,SemanticScholar,2026-10-26,0,0
+cross-validation grouped data prediction error new clusters random effects bias,SemanticScholar,2026-10-26,8,0
+confidence interval proportion of variance explained clustered data between-group within-group R-squared,Crossref,2026-10-26,8,0
+out-of-sample R2 return predictability inference panel time effects,Crossref,2026-10-26,8,0
+signal-to-noise ratio estimation high-dimensional regression clustered dependent errors,Crossref,2026-10-26,8,0
+reliability ceiling explainable variance prediction accuracy noise ceiling correlation donors,Crossref,2026-10-26,8,0
+heritability estimation high-dimensional random effects confidence interval batch effects,web_search,2026-10-26,9,1
+marginal conditional R2 mixed models Nakagawa,web_search,2026-10-26,9,1
+A Nontrivial Upper Bound on Out-of-Sample R2 return forecasting,web_search,2026-10-26,9,1
+Rabinowicz Rosset cross-validation correlated data CVc,web_search,2026-10-26,9,1
+"ti:""cross-validation"" AND abs:""random effects"" AND abs:""new clusters""",arXiv,2026-10-26,0,0
+"abs:""ridge regression"" AND abs:""correlated samples"" AND abs:""asymptotic"" AND abs:""out-of-sample""",arXiv,2026-10-26,0,0
+"abs:""R^2"" AND abs:""meta-regression"" AND abs:""few studies""",arXiv,2026-10-26,0,0
+"abs:""generalization to new groups"" AND abs:""group effect"" AND abs:""covariates"" AND abs:""unidentifiable""",arXiv,2026-10-26,0,0
+"abs:""greatest lower bound"" AND abs:reliability",arXiv,2026-10-26,1,0
+"abs:""pseudoreplication"" AND abs:""single-cell"" AND abs:donor",arXiv,2026-10-26,1,0
+"abs:""foundation model"" AND abs:""spatial transcriptomics"" AND abs:""donor"" AND abs:""R^2""",arXiv,2026-10-26,0,0
+"abs:""batch effect"" AND abs:""variance explained"" AND abs:""ridge"" AND abs:""out-of-sample""",arXiv,2026-10-26,0,0
+all:ridge regression out-of-sample risk correlated samples random effects,arXiv,2026-10-26,8,1
+all:explained variance meta-regression few studies bias R2,arXiv,2026-10-26,8,0
+all:variance explained between-group within-group high-dimensional prediction clusters,arXiv,2026-10-26,8,1
+all:predictability lower bound R2 high-dimensional finance machine learning overfitting noise,arXiv,2026-10-26,8,0
+all:leave-one-group-out cross-validation estimand new group random effect,arXiv,2026-10-26,8,0
+all:spatial transcriptomics histology image gene expression prediction donor generalization variance,arXiv,2026-10-26,8,0
+within between overall R-squared panel data fixed effects random effects goodness of fit,Crossref,2026-10-26,6,0
+estimation of predictive power R2 mixed-effects meta-regression,Crossref,2026-10-26,6,1
+greatest lower bound to reliability coefficient,Crossref,2026-10-26,6,1
+Mundlak pooling of time series and cross section data correlated random effects,Crossref,2026-10-26,6,1
+pseudoreplication bias single-cell studies donor random effect,Crossref,2026-10-26,6,0
+variance partitioning linear mixed model gene expression donor variance explained,Crossref,2026-10-26,6,0
+model-assisted survey estimation cluster sampling coefficient of determination design effect,Crossref,2026-10-26,6,0
+volatility forecast evaluation noisy proxy R-squared lower bound,Crossref,2026-10-26,6,0
+spatial cross-validation map accuracy clustered sampling design-based validation,Crossref,2026-10-26,6,0
+interlaboratory between-laboratory random effect prediction model validation new laboratory,Crossref,2026-10-26,6,0
+Gu Kelly Xiu out-of-sample R2 pooled panel demeaning time effects,web_search,2026-10-26,10,1
+high-dimensional explained variance SNR estimation dependent errors clustered random intercept,web_search,2026-10-26,9,1
+limits to learning gap lower bound population R2 Chen Kelly Malamud,SemanticScholar,2026-10-26,0,0
+cross-validation for correlated data random effects bias corrected,SemanticScholar,2026-10-26,0,0
+noise ceiling explainable variance estimation correlation encoding model neuroscience unbiased,Crossref,2026-10-26,6,1
+generalizability theory confidence interval variance components few facets persons raters,Crossref,2026-10-26,6,0
+intraclass correlation confidence interval few clusters small number of groups,Crossref,2026-10-26,6,0
+heritability estimation population structure family clusters confounding variance components bias,Crossref,2026-10-26,6,0
+limits-to-learning gap follow-up clustered/panel extension,web_search,2026-10-26,9,0
+histology embeddings gene expression leave-one-patient-out noise ceiling ST,web_search,2026-10-26,9,0
+high-dim ridge test error random matrix grouped data hierarchical,web_search,2026-10-26,9,0
+CI out-of-sample R2 cluster bootstrap new clusters nested CV,web_search,2026-10-26,9,0
