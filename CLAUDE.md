@@ -65,7 +65,8 @@ Steps of the current work, with stable IDs, checked when done with a one-line no
   As planned, An independent subagent checks the claim that studentizing each donor's scores by a scale estimated from its own few labelled spots, calibrated across reference donors, gives finite-sample valid sets that interpolate between HCP and the target's own set, with a width law and freedom to choose any donor-symmetric scale estimator. Logs to `results/round9/scan/`.
 - [x] **S4 Feasibility on data.** 26 October, Longleaf job 741e07ed. Valid but at most 0.130 narrower even for an oracle; the real finding is a depth-outlier donor (INT5) that HCP covers at 0.310 and the depth factor as a strong donor-level auxiliary (median LODO R^2 0.523 on CCRCC). Same report.
   As planned, In parallel, compare widths and coverage of HCP, the target's own set and the studentized set on CCRCC, Indiana and lung from the Longleaf per-spot files, with predictions written first. Results to `results/round9/stud/`.
-- [ ] **S5 Novelty check of PROBE** (probe-then-label two-phase design with a cross-gene depth auxiliary), dispatched 26 October; results to `results/round9/scan/`.
+- [x] **S4b Normalization check.** 26 October, Longleaf job b4d4780e. The null for donor-level estimands survives normalization. `docs/round09/00_prep/round09_normalization_check.md`.
+- [ ] **S5 Novelty check of PROBE** (probe-then-label two-phase design with a cross-gene depth auxiliary), dispatched 26 October; parked on Nicolas's approval of network access to www150.statcan.gc.ca (Survey Methodology); results to `results/round9/scan/`.
 - [ ] **S6 Open round 9** through `/project-state-keeping` once a direction stands.
 
 ## 4. Working preferences (Nicolas's)
