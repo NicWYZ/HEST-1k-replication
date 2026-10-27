@@ -2,7 +2,7 @@
 
 **Whose file this is.** This is the operating file of the research session that works on branch `claude-science-newtopic`, round 9's track `newtopic` (option C, a fresh direction outside clustered PPI and hierarchical conformal prediction, from the data in hand). That session is an independent investigator. Its starting point is the track's brief, `docs/round09/i01/newtopic/round09_newtopic_brief.md`. It had no part in the work recorded here and is not asked to continue anyone's plan. It studies the project as it stands, judges it on its merits, plans its own work and carries it out. This file holds the project's current state, how the record is kept, the standards of evidence and Nicolas's preferences. The record itself is in `docs/`. The session keeps this file and `docs/` current as it works, so that a fresh session can pick the project up from the repository alone.
 
-**Last updated:** 2026-10-27 (by the newtopic session, interval 3 opened on F1)
+**Last updated:** 2026-10-27 (by the newtopic session, interval 3 ended, F1 a corollary)
 
 The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at UNC Chapel Hill, in Dr. Hongtu Zhu's lab and supervised by Dr. Daiwei (David) Zhang. The advisors want methods, not applied analysis, with a submittable paper by spring 2027. The paper in preparation is "Labelling budgets for prediction-powered inference with clustered data". Labels are expensive and machine-learning predictions are free. Units come in clusters, such as donors in spatial transcriptomics or states in census data, and only a few clusters, often 4 to 16 of 15 to 50, can be labelled. The questions are how to spend a labelling budget (whole clusters, or a few units in every cluster), which clusters to label, how to make valid inference with prediction-powered inference (PPI) at so few clusters, and how to build prediction sets for a new cluster. The applications are HEST-1k spatial transcriptomics (pathology foundation-model predictions of gene expression) and ACS PUMS 2018 income by state.
 
@@ -24,7 +24,7 @@ The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at U
 
 **Where commits go.** Commit to `claude-science-newtopic` only. Do not commit to `claude-science`, `claude-science-fewcluster` or any other branch. Do not commit to `main`, rebase, squash, amend or force-push. Nicolas decides later how the branch reaches `main`.
 
-## 2. Current state (26 October 2026)
+## 2. Current state (27 October 2026)
 
 - **Background. Round 8 is open** (`docs/round08/masterplan.md`, `docs/round08/README.md`). Its one piece of work, a check of every claim of the PPI paper against the survey-sampling literature and newer PPI work, is done. Its report is the positioning note, `docs/round08/i01/positioning/round08_positioning_note.md`, the current account of what the paper can and cannot claim. Read it in full before planning. Its search logs and a numerical check are in `results/round8/positioning/`. No other work is running, and nothing has been started since the note.
 - **Where the paper stands.** Nicolas's summary is that every result the project has produced on the PPI paper has turned out, on checking against the literature, to be someone else's. The note's verdicts are these.
@@ -61,7 +61,8 @@ so the round-5 estimator has a design bias of $\{(n/G)/(1 - n/G)\}\,\text{Cov}(c
 - **Interval 2 (from 26 October, evening).** Nicolas answered interval 1's report with "continue with a breadth first experimentation, exploring the various directions you see feasibility in". The plan, `docs/round09/i02/newtopic/round09_newtopic_i02_plan.md`, runs five feasibility tracks in parallel (F1 RRRIDGE, F2 BOUNDARY, F3 SCALE, F4 LLGCLUSTER, F5 four fresh checkers), each with a stop rule and predictions written before any run.
 - **Interval 2 result.** Four of five tracks stopped at lemma or proposition size. F1 survives as a short note. Ridge reduced-rank regression detects a rank-one response factor below PCA's threshold, which was not found in print and is not a direct case of the spiked separable theorem (report, section 3).
 - **Interval 3 (from 27 October).** Nicolas answered interval 2's report with "explore f1" and supplied Bao, Ding and Wang (arXiv:1809.10476) and Bao, Ding, Wang and Wang (arXiv:2008.11903). The plan is `docs/round09/i03/newtopic/round09_newtopic_i03_plan.md`, with steps G1 to G6, stop rules S1 to S3 and predictions H1 to H4.
-- **Next action.** Step G1, the corollary check, then G2.
+- **Interval 3 result.** F1 is a corollary. Conditional on the features it is a direct case of Liu, Liu, Pan, Zhang and Zhang (arXiv:2310.13939), confirmed by a fresh auditor with small technical gaps, so stop rule S1 closed the interval. The report, `docs/round09/i03/newtopic/round09_newtopic_i03_report.md`, offers O1 (close the track, the default), O2 (keep F1 as a remark) and O3 (a direction from outside the session).
+- **Next action.** Wait for Nicolas's answer to the interval 3 report. Without new input, write the track's closing report (O1).
 
 ## 3. Steps
 
@@ -82,12 +83,12 @@ Steps of this track, with stable IDs, checked when done with a one-line note (da
 - [x] **F5 Fresh checkers.** 26 October. SPILLOVER and CKADONOR mostly taken, GENREG and SNRFRONT partly open with proposition-sized remainders. None goes forward.
 - [x] **F7 Audits of the F2, F3 and F4 stops.** 27 October. All three confirmed (`audit_<TRACK>_note.md`), the SCALE audit thinly (no paper read in full).
 - [x] **F6 Interval 2 report.** 27 October, `docs/round09/i02/newtopic/round09_newtopic_i02_report.md`, with options E1, E2 and E3, reported in the session chat.
-- [ ] **G1 Corollary check** of F1 against the two supplied papers, Benaych-Georges and Nadakuditi, and Ding and Yang.
-- [ ] **G2 Derivation** of threshold and overlap in the conditional model, normalising factor and cross term included.
-- [ ] **G3 Verification** by a fresh subagent that sees only the statements.
-- [ ] **G4 Extensions** to general feature covariance, a correlated nuisance factor and higher rank.
-- [ ] **G5 Positioning** check of the sharpened statement.
-- [ ] **G6 Interval 3 report.**
+- [x] **G1 Corollary check.** 27 October. The supplied papers do not cover F1 (H1 held), but Liu et al. (arXiv:2310.13939) do conditional on the features, and Chapon et al. (arXiv:1207.0471) give the outlier equation. Their formula matches the session's within 0.023 in 12 cells. S1 triggered, and a fresh audit confirmed it (`results/round9/newtopic/i03/audit/audit_F1_corollary.md`).
+- [x] **G2 Derivation.** 27 October. Threshold within 0.0012 of interval 2's grid, overlap equal to four decimals in 48 cells, simulation within 0.037 at theta at least 1.5 times the threshold (plan, section 6).
+- [ ] **G3 Verification.** Not run, because S1 closed the interval.
+- [ ] **G4 Extensions.** Not run, because S1 closed the interval. H4 not tested.
+- [ ] **G5 Positioning.** Not run, because S1 closed the interval.
+- [x] **G6 Interval 3 report.** 27 October, `docs/round09/i03/newtopic/round09_newtopic_i03_report.md`, with options O1 to O3, reported in the session chat.
 
 ## 4. Working preferences (Nicolas's)
 

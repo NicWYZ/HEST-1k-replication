@@ -10,6 +10,7 @@ Each track's session sets its own milestones and records them here on its branch
 
 | Date | Track | Milestone | Report | Answered by |
 |---|---|---|---|---|
+| 27 Oct | newtopic | end of interval 3 | `i03/newtopic/round09_newtopic_i03_report.md` | awaiting Nicolas (options O1 to O3) |
 | 27 Oct | newtopic | end of interval 2 | `i02/newtopic/round09_newtopic_i02_report.md` | Nicolas, 27 Oct, "explore f1", recorded in `i03/newtopic/round09_newtopic_i03_plan.md` |
 | 26 Oct | newtopic | end of interval 1 | `i01/newtopic/round09_newtopic_i01_report.md` | Nicolas, 26 Oct, "breadth first", recorded in `i02/newtopic/round09_newtopic_i02_plan.md` |
 
@@ -31,7 +32,8 @@ Each track's session sets its own milestones and records them here on its branch
 | `i02/newtopic/round09_newtopic_i02_plan.md` | 26 Oct, living | track newtopic's plan for interval 2, opened by Nicolas's request for breadth-first experiments. Five feasibility tracks (RRRIDGE, BOUNDARY, SCALE, LLGCLUSTER, four fresh checkers), each with a stop rule and predictions F1 to F5 |
 | `i02/newtopic/round09_newtopic_i02_report.md` | 27 Oct | track newtopic's report of interval 2. Of five breadth-first tracks, F2 to F4 stopped at lemma or proposition size (stops confirmed by fresh auditors), F5's four checkers passed nothing, and F1 survives as a short note. Ridge reduced-rank regression detects a rank-one response factor below PCA's threshold, not found in print and not a direct case of the spiked separable theorem. Options E1 (bounded note on F1), E2 (fold into option A) and E3 (close) |
 | `i03/newtopic/round09_newtopic_i03_plan.md` | 27 Oct, living | track newtopic's plan for interval 3 on F1 (ridge reduced-rank regression), opened by Nicolas's "explore f1", with steps G1 to G6, stop rules and predictions H1 to H4 |
+| `i03/newtopic/round09_newtopic_i03_report.md` | 27 Oct | track newtopic's report of interval 3. F1 was derived and validated, then found to be a corollary of Liu, Liu, Pan, Zhang and Zhang (arXiv:2310.13939) applied conditionally on the features, confirmed by a fresh auditor with small technical gaps. Stop rule S1 closed the interval. Options O1 (close the track), O2 (keep F1 as a remark) and O3 (a direction from outside the session) |
 
 ## Results
 
-`results/round9/scan/` (search logs and verdicts), `results/round9/diagnostics/` (cluster-level diagnostics, aggregates only), `results/round9/between/` (the between-donor head test), `results/round9/stud/`, `results/round9/norm/` and `results/round9/probe/` (the preparation's later runs, each with predictions written before the run and scored after). Each track writes to `results/round9/<track>/`. Track newtopic's search logs and verdicts are in `results/round9/newtopic/` (one queries and one candidates CSV per subagent, and `newtopic_structured_results.json`).
+`results/round9/scan/` (search logs and verdicts), `results/round9/diagnostics/` (cluster-level diagnostics, aggregates only), `results/round9/between/` (the between-donor head test), `results/round9/stud/`, `results/round9/norm/` and `results/round9/probe/` (the preparation's later runs, each with predictions written before the run and scored after). Each track writes to `results/round9/<track>/`. Track newtopic's search logs and verdicts are in `results/round9/newtopic/` (one queries and one candidates CSV per subagent, and `newtopic_structured_results.json`), interval 2's in `results/round9/newtopic/i02/` and interval 3's in `results/round9/newtopic/i03/`.

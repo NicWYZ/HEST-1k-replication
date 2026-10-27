@@ -31,3 +31,29 @@ F1 studies ridge reduced-rank regression. With $X$ an $n\times p$ matrix of iid 
 - **H2.** The first-principles derivation reproduces interval 2's threshold to three decimals over its grid.
 - **H3.** The derived normalising factor agrees with interval 2's matched one to within one percent.
 - **H4.** With a decaying feature spectrum, ridge gains over PCA most when $u$ lies along the leading eigenvectors of $\Sigma$, and little when it lies along the tail.
+
+## 6. Changes and results (27 October 2026)
+
+**G1, the two supplied papers.** Bao, Ding and Wang (arXiv:1809.10476) assume white noise with independent entries, and Bao, Ding, Wang and Wang (arXiv:2008.11903) take $Q = TXX^\ast T^\ast$ with an identity middle weight and a spiked $\Sigma = I + S$. Neither covers the conditional F1 model, whose noise $HW$ has left covariance $H^2$. H1 held.
+
+**G2, the derivation.** Conditional on $X$, write $t_i = h_i^2$ for the eigenvalues of $H^2$, $\nu$ for their law over the $n$ eigen-directions of $H$, $\alpha$ for the law with weights proportional to $t_i s_i$ (the squared components of $HXu$ on those directions), and $\beta^2 = \theta m_a$ with
+
+$$
+m_a = \int \frac{s^3}{(s+\lambda)^2}\, \mu_\gamma(ds).
+$$
+
+With $\tilde m$ the root of the generalised Marchenko-Pastur equation, the session's formulas are
+
+$$
+\zeta(\tilde m) = -\frac{1}{\tilde m} + \int \frac{t\, \nu(dt)}{1 + c\, t\, \tilde m}, \qquad P(\tilde m) = -\tilde m \int \frac{\alpha(dt)}{1 + c\, t\, \tilde m},
+$$
+
+with threshold $\theta^\ast = 1/\{m_a P(\tilde m_\ast)\}$ at the critical point $\zeta'(\tilde m_\ast) = 0$, and overlap
+
+$$
+|\langle \hat v, v\rangle|^2 = \tilde m\, P(\tilde m)\, \frac{\zeta'(\tilde m)}{P'(\tilde m)} \quad \text{at the root of } \theta\, m_a\, P(\tilde m) = 1 .
+$$
+
+They reproduce PCA's threshold $\sqrt c$ and overlap when $H = I$, and Kargin's $\sqrt{\gamma c}$ for least squares. Against interval 2's threshold grid the largest difference is 0.0012, from interval 2's edge bisection, so H2 partly held. The derived overlap equals interval 2's matched-factor overlap to four decimals in 48 cells, so H3 held. A fresh simulation ($n = 1500$, 10 replicates, 32 cells) differs from the theory by at most 0.037 in the 24 cells with $\theta \ge 1.5\theta^\ast$ and 0.023 in the 16 cells with $\theta \ge 2.5\theta^\ast$. Tables in `results/round9/newtopic/i03/` (`g2_threshold_grid_vs_f1.csv`, `g2_overlap_mine_vs_f1.csv`, `g2_overlap_sim_vs_theory.csv`), code in `code/scripts/round9_newtopic_i03_corollary_check.py`.
+
+**S1, the corollary check beyond the supplied papers.** Conditional on $X$, the model $F/\sqrt q = A + \Sigma^{1/2} W$ with $\Sigma = H^2$ and $A = \sqrt{\theta/q}\, HXu\, v^\top$ is exactly the model of Liu, Liu, Pan, Zhang and Zhang (arXiv:2310.13939, v2 May 2025). They allow a general symmetric bounded $\Sigma$, a deterministic $A$ of rank $O(n^{1/3})$ and real or complex entries with a fourth moment, and their Theorems 1 and 2 give the spiked eigenvalues and both singular vectors' projections. Rotated to $H$'s eigenbasis, the model is also that of Chapon, Couillet, Hachem and Mestre (arXiv:1207.0471, Theorem 2.2, complex Gaussian), whose outlier equation with $\Lambda_\ast = \beta^2\alpha$ is the session's $\beta^2 P = 1$ term by term. Hachem, Loubaton, Mestre, Najim and Vallet (arXiv:1106.1497) assume bi-unitarily invariant noise and do not apply. Liu et al.'s Theorem 1 evaluated on realised $X$ ($n = 1500$, 3 seeds) matches the session's limiting overlap within 0.023 in 12 cells (`s1_liu2310_13939_vs_mine.csv`). The session's reading is that stop rule S1 triggers. A fresh agent audits that reading before the interval closes, and steps G3 to G5 are not run.
