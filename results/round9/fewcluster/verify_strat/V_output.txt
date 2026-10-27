@@ -1,0 +1,9 @@
+(a) H=1: k* exists & kstar>=2: 1/Cap_low == 1/Cap_up == kappa2(k*-1) in 2216 cases, mismatches 0
+    cases with no k* (pi(floor(N/2))>alpha) where Cap_up>Cap_low (odd N, R-level): 119; e.g. [(5, 2, 0.05, 0.2, 0.3), (5, 2, 0.1, 0.2, 0.3)]
+(c) pi(N/2)=0.12462 vs alpha=0.1; 2^(1-m)=0.1250; log2(2/alpha)=4.322; R_h=0.12413 (<= pi(N/2))
+    DP (res 2e-4): Cap_low >= 2112.494 (cost rounded up, conservative) ; Cap_low <= 2113.048 (cost rounded down)
+    big-stratum structure (k1, total capacity with rest filled optimally, res 5e-5 rounded up): [(1000, np.float64(2113.05)), (999, np.float64(2109.05)), (995, np.float64(2093.15)), (980, np.float64(2035.73)), (950, np.float64(1930.41))]
+    => Cap ~ 2113.05, frontier 1/Cap ~ 4.7325e-04; DP bracket [4.7325e-04, 4.7337e-04]
+    best 2-stratum config (cap, k1, k2): (np.float64(2113.0480718436343), 107, 1000)  -> 1/cap = 0.00047325000000000004
+    iid N(0,1), G=24,N=2000,m=4, equal W: kappa_st over 20 draws mean=4.108e-04 min=3.044e-04 max=6.666e-04
+    1/(G*N)=2.083e-05 (smallest possible kappa_st); single stratum 1/N=5.000e-04

@@ -1,0 +1,21 @@
+R1: 22 cells, 0 outside the bracket
+R2: two strata 12/4: kappa*_st in [0.1562, 0.1562]; unstratified 8 of 24 = 0.1583
+R3: m=2: kappa*_st in [1.598e-04, 1.600e-04], median kappa_st of normal pops 3.862e-04, inside (below lower end) 0.00
+R3: m=3: kappa*_st in [3.621e-04, 3.622e-04], median kappa_st of normal pops 3.862e-04, inside (below lower end) 0.24
+R3: m=4: kappa*_st in [4.723e-04, 4.735e-04], median kappa_st of normal pops 3.862e-04, inside (below lower end) 1.00
+R3: m=5: kappa*_st in [8.210e-04, 8.210e-04], median kappa_st of normal pops 3.862e-04, inside (below lower end) 1.00
+R3: m=6: kappa*_st in [1.065e-03, 1.066e-03], median kappa_st of normal pops 3.862e-04, inside (below lower end) 1.00
+R3: m=8: kappa*_st in [1.503e-03, 1.504e-03], median kappa_st of normal pops 3.862e-04, inside (below lower end) 1.00
+BF1: 7233 few-valued populations, 0 with P(SE=0) > alpha inside the possibility region
+design ((6, 3), (5, 2)): kappa*_st in [0.1613, 0.2206]
+design ((7, 3), (6, 3)): kappa*_st in [0.1905, 0.1905]
+design ((6, 2), (6, 2)): kappa*_st in [0.0833, 0.0833]
+design ((8, 4), (5, 3)): kappa*_st in [0.3000, 0.3750]
+design ((6, 3), (6, 3), (5, 2)): kappa*_st in [0.1613, 0.2206]
+BF2 ((6, 3), (5, 2)): ks=[1, 2] kappa_st=0.2208 (1/Cap_low=0.2206) miss at c=1e8 0.2000, P(SE=0) 0.2000, product of pi 0.2000
+BF2 ((7, 3), (6, 3)): ks=[3, 0] kappa_st=0.1905 (1/Cap_low=0.1905) miss at c=1e8 0.1429, P(SE=0) 0.1429, product of pi 0.1429
+BF2 ((6, 2), (6, 2)): ks=[3, 3] kappa_st=0.0834 (1/Cap_low=0.0833) miss at c=1e8 0.1600, P(SE=0) 0.1600, product of pi 0.1600
+BF2 ((8, 4), (5, 3)): ks=[2, 0] kappa_st=0.3750 (1/Cap_low=0.3750) miss at c=1e8 0.2143, P(SE=0) 0.2143, product of pi 0.2143
+BF2 ((6, 3), (6, 3), (5, 2)): ks=[1, 0, 2] kappa_st=0.2210 (1/Cap_low=0.2206) miss at c=1e8 0.2000, P(SE=0) 0.2000, product of pi 0.2000
+BF2 ((12, 4), (12, 4)): ks=[3, 2] kappa_st=0.1570 (1/Cap_low=0.1562) miss at c=1e8 0.1080, P(SE=0) 0.1080, product of pi 0.1080
+BF2 ((10, 3), (10, 3), (10, 3)): ks=[5, 1, 0] kappa_st=0.0902 (1/Cap_low=0.0900) miss at c=1e8 0.1167, P(SE=0) 0.1167, product of pi 0.1167
