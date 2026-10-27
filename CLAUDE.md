@@ -2,7 +2,7 @@
 
 **Whose file this is.** This is the operating file of the research session that works on branch `claude-science-newtopic`, round 9's track `newtopic` (option C, a fresh direction outside clustered PPI and hierarchical conformal prediction, from the data in hand). That session is an independent investigator. Its starting point is the track's brief, `docs/round09/i01/newtopic/round09_newtopic_brief.md`. It had no part in the work recorded here and is not asked to continue anyone's plan. It studies the project as it stands, judges it on its merits, plans its own work and carries it out. This file holds the project's current state, how the record is kept, the standards of evidence and Nicolas's preferences. The record itself is in `docs/`. The session keeps this file and `docs/` current as it works, so that a fresh session can pick the project up from the repository alone.
 
-**Last updated:** 2026-10-27 (by the newtopic session, at the end of interval 2, waiting for Nicolas's choice among E1, E2 and E3)
+**Last updated:** 2026-10-27 (by the newtopic session, interval 3 opened on F1)
 
 The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at UNC Chapel Hill, in Dr. Hongtu Zhu's lab and supervised by Dr. Daiwei (David) Zhang. The advisors want methods, not applied analysis, with a submittable paper by spring 2027. The paper in preparation is "Labelling budgets for prediction-powered inference with clustered data". Labels are expensive and machine-learning predictions are free. Units come in clusters, such as donors in spatial transcriptomics or states in census data, and only a few clusters, often 4 to 16 of 15 to 50, can be labelled. The questions are how to spend a labelling budget (whole clusters, or a few units in every cluster), which clusters to label, how to make valid inference with prediction-powered inference (PPI) at so few clusters, and how to build prediction sets for a new cluster. The applications are HEST-1k spatial transcriptomics (pathology foundation-model predictions of gene expression) and ACS PUMS 2018 income by state.
 
@@ -60,7 +60,8 @@ so the round-5 estimator has a design bias of $\{(n/G)/(1 - n/G)\}\,\text{Cov}(c
 - **The other track.** Track `fewcluster` runs at the same time on branch `claude-science-fewcluster`. The two tracks are independent. Neither reports to the other or to the claude-science session, and neither edits the other's files. Each reports to Nicolas only, in its own session chat, at significant results or roadblocks, with a one-paragraph brief and the decisions he needs to make.
 - **Interval 2 (from 26 October, evening).** Nicolas answered interval 1's report with "continue with a breadth first experimentation, exploring the various directions you see feasibility in". The plan, `docs/round09/i02/newtopic/round09_newtopic_i02_plan.md`, runs five feasibility tracks in parallel (F1 RRRIDGE, F2 BOUNDARY, F3 SCALE, F4 LLGCLUSTER, F5 four fresh checkers), each with a stop rule and predictions written before any run.
 - **Interval 2 result.** Four of five tracks stopped at lemma or proposition size. F1 survives as a short note. Ridge reduced-rank regression detects a rank-one response factor below PCA's threshold, which was not found in print and is not a direct case of the spiked separable theorem (report, section 3).
-- **Next action.** Wait for Nicolas's choice among E1 (a bounded interval on F1, starting with Bao, Ding, Wang and Wang and the Ding and Yang proofs, with a stop rule), E2 (fold into option A, decision D1, likely with David) and E3 (close the track). An interval 3 would go in a new interval folder `i03` under `docs/round09/`, track `newtopic`.
+- **Interval 3 (from 27 October).** Nicolas answered interval 2's report with "explore f1" and supplied Bao, Ding and Wang (arXiv:1809.10476) and Bao, Ding, Wang and Wang (arXiv:2008.11903). The plan is `docs/round09/i03/newtopic/round09_newtopic_i03_plan.md`, with steps G1 to G6, stop rules S1 to S3 and predictions H1 to H4.
+- **Next action.** Step G1, the corollary check, then G2.
 
 ## 3. Steps
 
@@ -81,6 +82,12 @@ Steps of this track, with stable IDs, checked when done with a one-line note (da
 - [x] **F5 Fresh checkers.** 26 October. SPILLOVER and CKADONOR mostly taken, GENREG and SNRFRONT partly open with proposition-sized remainders. None goes forward.
 - [x] **F7 Audits of the F2, F3 and F4 stops.** 27 October. All three confirmed (`audit_<TRACK>_note.md`), the SCALE audit thinly (no paper read in full).
 - [x] **F6 Interval 2 report.** 27 October, `docs/round09/i02/newtopic/round09_newtopic_i02_report.md`, with options E1, E2 and E3, reported in the session chat.
+- [ ] **G1 Corollary check** of F1 against the two supplied papers, Benaych-Georges and Nadakuditi, and Ding and Yang.
+- [ ] **G2 Derivation** of threshold and overlap in the conditional model, normalising factor and cross term included.
+- [ ] **G3 Verification** by a fresh subagent that sees only the statements.
+- [ ] **G4 Extensions** to general feature covariance, a correlated nuisance factor and higher rank.
+- [ ] **G5 Positioning** check of the sharpened statement.
+- [ ] **G6 Interval 3 report.**
 
 ## 4. Working preferences (Nicolas's)
 
@@ -94,6 +101,7 @@ Steps of this track, with stable IDs, checked when done with a one-line note (da
 - **Decisions.** He makes the decisions at his level and wants to be told which need David or Dr. Zhu.
 - **Autonomy and novelty (24 October, said to the claude-science session; it applies to every research session).** The session explores directions, derives and validates results on its own, and reports to him only at significant roadblocks or significant results. The end goal is a statistics-forward methodological paper in spatial transcriptomics. A literature check for novelty is a hard rule, run by subagents continually while the work goes on, because the model is prone to rediscovering results it has absorbed from its training data.
 - **Two independent tracks (26 October).** He deferred option A, because it rests on results already in hand, and asked that the project be made ready for two separate sessions, one on option B and one on option C. The two sessions are independent investigators. They are not overseen by and do not report back to the claude-science session. This branch is the newtopic session's.
+- **Explore F1 (27 October).** After interval 2's report he said "explore f1" and supplied two papers by Bao, Ding and co-authors.
 - **Breadth first (26 October, evening, to this session).** After interval 1's report he said "continue with a breadth first experimentation, exploring the various directions you see feasibility in".
 - **Choice of direction (25 October, to the claude-science session; for this branch narrowed on 26 October).** For this branch the choice is narrowed to option C by the 26 October split. The session may reshape its direction within that option, and tells Nicolas before dropping it. The original rule follows. After the direction scan he left the choice to the session. It may pursue the prediction-set topic, few-cluster inference or a fresh topic based on the data in hand, and asks him only when it needs access that is gated by his approval.
 
