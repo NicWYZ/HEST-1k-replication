@@ -19,3 +19,5 @@ The notes name their scripts by the subagents' file names. The scripts were move
 | `f_RRRIDGE_theory.py` | `code/scripts/round9_newtopic_i02_rrridge_theory.py` |
 | `f_SCALE_data_check.py` | `code/scripts/round9_newtopic_i02_scale_data_check.py` |
 | `f_SCALE_sim.py` | `code/scripts/round9_newtopic_i02_scale_sim.py` |
+
+The fresh agent check of F1 is `f1check_note.md` with `f1check_numeric.csv` and its search logs, and the audits of the F2 to F4 stops (step F7) are `audit_<TRACK>_note.md` and `audit_<TRACK>_candidates.csv`.

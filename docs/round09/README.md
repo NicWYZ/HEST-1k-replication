@@ -10,6 +10,7 @@ Each track's session sets its own milestones and records them here on its branch
 
 | Date | Track | Milestone | Report | Answered by |
 |---|---|---|---|---|
+| 27 Oct | newtopic | end of interval 2 | `i02/newtopic/round09_newtopic_i02_report.md` | Nicolas's choice among E1, E2 and E3, pending |
 | 26 Oct | newtopic | end of interval 1 | `i01/newtopic/round09_newtopic_i01_report.md` | Nicolas, 26 Oct, "breadth first", recorded in `i02/newtopic/round09_newtopic_i02_plan.md` |
 
 ## Documents
@@ -28,6 +29,7 @@ Each track's session sets its own milestones and records them here on its branch
 | `i01/newtopic/round09_newtopic_i01_plan.md` | 26 Oct, living | track newtopic's plan for interval 1, with six criteria for a direction fixed before the search, five proposer lenses, data-first diagnostics, a checker wave and predictions W1 to W3 |
 | `i01/newtopic/round09_newtopic_i01_report.md` | 26 Oct | track newtopic's report of interval 1. Two waves (five lens proposers with 45 raw ideas, three open-problem miners over 61 papers) and nine checkers found nothing open. BOUNDARY, LLGCLUSTER and RRRIDGE are partly open with thin theory remainders, and the N3 diagnostics added no direction. It proposes a short feasibility interval on RRRIDGE (C1) with a stop rule, against C2 and closing the track (C3) |
 | `i02/newtopic/round09_newtopic_i02_plan.md` | 26 Oct, living | track newtopic's plan for interval 2, opened by Nicolas's request for breadth-first experiments. Five feasibility tracks (RRRIDGE, BOUNDARY, SCALE, LLGCLUSTER, four fresh checkers), each with a stop rule and predictions F1 to F5 |
+| `i02/newtopic/round09_newtopic_i02_report.md` | 27 Oct | track newtopic's report of interval 2. Of five breadth-first tracks, F2 to F4 stopped at lemma or proposition size (stops confirmed by fresh auditors), F5's four checkers passed nothing, and F1 survives as a short note. Ridge reduced-rank regression detects a rank-one response factor below PCA's threshold, not found in print and not a direct case of the spiked separable theorem. Options E1 (bounded note on F1), E2 (fold into option A) and E3 (close) |
 
 ## Results
 

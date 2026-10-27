@@ -29,3 +29,7 @@ Each track is run by its own subagent, independent of the others, and none commi
 ## 4. Rules
 
 Longleaf runs go through batch jobs, never the login node, and write under `/work/users/w/e/weiyang/hest_replication/results/round9/newtopic/` with small copies in the scratch root for download. Only aggregates enter the repository. Subagents do not use OpenAlex. Each track returns a short note in plain prose, its scripts and its aggregates as artifacts, and declares what it did not do. A fresh agent checks any track that passes its stop rule before the session builds on it.
+
+## Amendments
+
+**27 October, early.** All four feasibility tracks stopped on their own judgement. A fresh agent then read the papers F1's stop rested on and overturned it (the result needs a short genuine step and is not in print as far as it found). A fresh review of the draft report pointed out that the stops of F2, F3 and F4 were untested self-judgements, and F2's subagent had itself asked for a check. The session therefore adds step F7, three fresh auditors, one per stop, each reading the papers the stop rests on in full and returning stop confirmed, overturned or unclear, before the report is committed.

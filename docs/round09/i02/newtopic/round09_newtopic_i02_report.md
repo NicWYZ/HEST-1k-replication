@@ -1,0 +1,63 @@
+# Round 9, track newtopic, the report of interval 2
+
+*26 to 27 October 2026. Written by the newtopic session. It closes steps F1 to F5 and F7 of `docs/round09/i02/newtopic/round09_newtopic_i02_plan.md`, with its amendment of 27 October. A fresh agent checked a draft against its sources before commit, and its findings are worked in. Recommendations are `[proposed]` until Nicolas decides.*
+
+## 1. What was done
+
+Nicolas asked for breadth-first experiments on every direction with some feasibility. Five tracks ran in parallel, one subagent each, with stop rules and predictions committed before any run (commit 45848edf). F1 to F4 each did a focused novelty check, a derivation in the simplest case, a simulation and, where possible, a data check with its own predictions written first. F5 sent four mined problems from interval 1 to fresh checkers. All four feasibility tracks stopped on their own judgement. A fresh agent then read the papers F1's stop rested on and overturned it, so three further fresh auditors (step F7) tested the stops of F2, F3 and F4. Every output is in `results/round9/newtopic/i02/`, one note per track (`f_<TRACK>_note.md`), the F1 check (`f1check_note.md`) and the audits (`audit_<TRACK>_note.md`), with the scripts in `code/scripts/round9_newtopic_i02_*.py` as listed in that folder's README.
+
+## 2. Outcomes
+
+| Track | Outcome | The finding |
+|---|---|---|
+| F1 RRRIDGE | stop overturned, a short note | Ridge reduced-rank regression detects a rank-one response factor below the threshold of PCA of the outcomes. Not found in print, and not a direct case of the spiked separable theorem, but the fresh agent judged the remaining step short and the result a modest note |
+| F2 BOUNDARY | stop confirmed by audit | A local-linear test at a boundary selected on thinned counts keeps nominal size at bandwidths within the smoothing scale and over-rejects beyond it. Standard bias corrections over-reject, by a known mechanism, and power at an estimated boundary is low |
+| F3 SCALE | stop confirmed by a thin audit | Under Poisson noise one scale gives the ceiling. Under extra noise, separating noise from signal needs an assumption on the latent field (a shape, or continuity with extrapolation to zero lag), the geostatistical nugget problem |
+| F4 LLGCLUSTER | stop confirmed by audit | The iid lower bound on population $R^2$ over-claims only when the features carry the donor shift. The correction is an elementary step on the anchor's own equation, of erratum or lemma size |
+| F5 checkers | none forward | SPILLOVER mostly taken. CKADONOR mostly taken, a proposition or a section of an evaluation paper. GENREG partly open, a strong applied-statistics contribution at most, not a core result for an ML venue. SNRFRONT partly open, a remark at most, since its base frontier is in arXiv:2610.27255 |
+
+Limits carried by each track, in brief. F1 simulated only $\lambda = 0.1$ itself, did not prove that a cross term vanishes, fixed the overlap's normalising factor by matching the PCA case, covers the nuisance variant only when the donor effect is independent of the features, and ran no data check. F2's derivation does not explain the sign of the bias at small bandwidths, its size rule comes from one grid, its power result from one design, and three of its five data-check predictions were refuted. F3's data check is provisional because counts and predictions were on different scales, and it derived no analytic variance and built no over-identification test. F4 did not test unequal group sizes, and ACS has no ground truth. Its auditor notes that the spread comparison used an iid twin rather than the anchor's own standard error. The SCALE audit read no paper in full. Most close papers across the tracks were read at the level of abstracts, models and main theorems, and Semantic Scholar was often rate-limited.
+
+## 3. F1 in more detail
+
+The model is $Y = XB + E$, with $n$ observations, $p$ features and $q$ outcomes, $X$ an $n\times p$ matrix of iid $N(0,1)$ entries, $B = \sqrt{\theta}\,u v^\top$ of rank one with unit vectors $u$ and $v$, $E$ with iid $N(0,1)$ entries (so $\theta$ is the signal-to-noise ratio), $p/n\to\gamma$ and $q/n\to c$. The estimator takes the ridge fitted values
+
+$$
+F = HY, \qquad H = X\,(X^\top X + n\lambda I)^{-1} X^\top ,
+$$
+
+and uses the top right singular vector $\hat v$ of $F$. Writing $W$ for the noise,
+
+$$
+F = a\,v^\top + H W, \qquad a = \sqrt{\theta}\, H X u .
+$$
+
+The F1 subagent derived an outlier condition and the limiting overlap $\lvert\langle \hat v, v\rangle\rvert^2$, with a threshold $\theta^*(\gamma, c, \lambda)$. At the best penalty on its grid and $c = 0.1$, the ratio of this threshold to the one for PCA of $Y$ was 0.58, 0.71, 0.82, 0.90 and 0.96 at $\gamma$ = 0.5, 1, 2, 4 and 10 (`f_RRRIDGE_threshold_grid.csv`). The advantage depends on the penalty. At $\gamma = 10$ the ratio is 1.002 as $\lambda \to 0$ and 1.010 at $\lambda = 100$ ($c = 0.1$), and 1.044 at $\lambda = 100$ with $c = 0.3$. Its simulation over 90 cells at $\lambda = 0.1$ (20, 12 and 4 replicates at $n$ = 500, 1000 and 2000) agreed with the formula to within 0.048, 0.012 and 0.035 on cells clearly above threshold, and to within 0.066, 0.012 and 0.066 on all cells above threshold.
+
+The fresh agent's check (`f1check_note.md`) found three things. First, no paper it found states the threshold or the overlap. Kargin (2015) gives only the OLS singular-value outlier, Bing, Ning and Xu (2022) are non-asymptotic, and Green and Romanov (2025) treat PCR risk. Second, the result is not a direct case of Ding and Yang's spiked separable theorem. Rows of $Y$ are iid $N(0, \Sigma_v)$ with $\Sigma_v = I + \theta v v^\top$, so $F = H Z \Sigma_v^{1/2}$ with $Z$ iid, which has their form only if $H$ is independent of $Z$, and here $H$ depends on $X$ while $Z$ contains the column $Xu$. By the checker's own calculation, treating $H$ as independent gives thresholds of 0.594, 0.375 and 0.331 at $\lambda = 1$, $c = 0.1$ and $\gamma$ = 0.5, 2 and 4, above PCA's 0.316, while the simulation matches F1's 0.184, 0.260 and 0.289. The dependence of the signal on $X$ through $H$ is what produces the gain. Third, the formula is numerically accurate at penalties F1 did not simulate. Over 132 cells at $\lambda$ = 0.01 and 1 ($n$ = 1500, 20 replicates), the gap between simulation and theory is at most 0.049 for $\theta \ge 1.3\,\theta^*$ and at most 0.018 for $\theta \ge 2.5\,\theta^*$ (`f1check_numeric.csv`). Ridge beats PCA of $Y$ by 0.07 to 0.20 in overlap near the threshold at $\lambda = 1$ and $\gamma$ = 0.5 and 2, and by less than 0.02 at $\lambda = 0.01$ and $\gamma \ge 2$.
+
+The new step is to condition on $X$, so that $a$ is deterministic and $HW$ has left covariance $H^2$, apply a deterministic equivalent for quadratic forms of $a$ against the resolvent of $HWW^\top H$, find the limiting weights of $a$ in the eigenbasis of $H$ from the rotational invariance of $X$, and derive the overlap's normalising factor and the vanishing of the cross term. The checker calls this short but genuine. It read Ding (2020), Ding and Yang (2021) and the others at the level of models and main theorems, not proofs, and names one suspect not yet read, the matrix-denoising theorems of Bao, Ding, Wang and Wang, which may allow a deterministic signal with a general left covariance and would then make the conditional argument a corollary. The nearest estimators in finance, instrumented and projected PCA, were searched and gave methods papers without thresholds, so any novelty is in the threshold and the overlap, not the estimator.
+
+## 4. The predictions, scored
+
+- **F1, held in the isotropic case, with the novelty half resting on a thin search.** The threshold exists, depends on $\gamma$ and $\lambda$ and lies below PCA's at the best penalty. It is not below PCA's at every penalty, since at $\gamma = 10$ the ratio exceeds one for $\lambda \to 0$ and $\lambda = 100$. The OLS outlier is in print (Kargin) and the ridge version was not found. Sources are `f_RRRIDGE_threshold_grid.csv` in `results/round9/newtopic/i02/`.
+- **F2, mostly refuted.** At bandwidths of two and three spacings the plain local-linear test held nominal size (0.055 and 0.056), though bias-corrected and local-cubic versions over-rejected there (0.133 and 0.083, and 0.143 and 0.101). At five spacings the predicted inflation appeared (0.212), but it fell rather than grew with the field's range (0.34, 0.19 and 0.11 at ranges 3, 6 and 12). Sources are `f_BOUNDARY_note.md`, `f_BOUNDARY_sim_null.csv` in `results/round9/newtopic/i02/`.
+- **F3, held weakly.** The two-scale estimator recovered the ceiling within 10 percent only with the correct latent shape (13 to 70 percent bias with a wrong one). The donor-level standard error was below half the estimate for all 20 of the most predictable lung genes, with a median ratio of 0.22, but that estimate is a plain sample covariance. Sources are `f_SCALE_note.md`, `f_SCALE_task_summary.csv` in `results/round9/newtopic/i02/`.
+- **F4, refuted as stated.** The plan predicted over-claiming of the within-donor $R^2$. That did not happen in the exchangeable design or on the real-embedding semi-synthetic, and where a small within-target over-claim appeared it was present without a shift too. A related over-claim against the total-noise target was found when the features carry the shift (+0.12 to +0.14 at a shift share of 0.6), and the bound's spread exceeded an iid twin's (1.4 to 1.7 times in the Gaussian design without a feature shift at share 0.6, and 2.2 to 2.5 times on the semi-synthetic). Sources are `f_LLGCLUSTER_note.md`, `f_LLGCLUSTER_sim_aggregate_pooled.csv`, `f_LLGCLUSTER_ccrcc_semisynth_aggregate.csv` in `results/round9/newtopic/i02/`.
+- **F5, held.** None of the four mined problems passed.
+
+## 5. What this means `[proposed]`
+
+1. Breadth-first testing confirmed interval 1's picture, now with audited stops. Across both intervals the track has examined 45 raw ideas and 17 mined problems, sent 13 candidates to fresh checkers, and run four feasibility tests on candidates among those 13. Twelve kept or mined candidates remain without an independent check (three kept in wave 1 and nine mined), all graded uncertain or likely taken by the subagents that wrote them. No methodological core of paper size was found outside clustered PPI and hierarchical conformal prediction.
+2. F1 is the one positive result. It is a formula not found in print, numerically accurate in the simulated regime, with a short derivation step that appears genuine. It says that a factor estimated through a ridge fit can be seen at a weaker signal than by PCA of the outcomes, by an explicit and penalty-dependent amount. It has a finance reading (latent factors of returns detected through many characteristics) and a data reading (gene programmes detected through histology embeddings). As it stands it is a short theory note, not the lead of a paper.
+3. The other tracks left remainders that their checkers and auditors rated lemma or proposition size and partly in print. F4 found an over-claim of the Chen, Kelly and Malamud bound under clustered noise when the features carry the clustering, with a conservative fix. F2 found that a small bandwidth keeps size at a boundary selected on a thinned copy while standard bias corrections fail. Interval 1 left an exact log1p depth-loading lemma. These could at most support sections of a larger evaluation or design paper.
+4. The options for Nicolas are these.
+   - **E1.** A bounded interval on F1. Read Bao, Ding, Wang and Wang and the Ding and Yang proofs first, with a stop rule if the conditional result is a corollary, then prove the rank-one theorem with the overlap factor and cross term derived, extend it to general feature covariance and to a nuisance factor that may depend on the features, and only then compare it with embedding spectra. The output is a short note, or a section of a larger paper.
+   - **E2.** Fold the track's results into option A, a design and evaluation paper with a theory component, which is outside this track's remit and would join the work of the claude-science branch.
+   - **E3.** Close the track with these two reports as its record.
+5. The session's recommendation is E1 only if Nicolas and David want a theory note on F1 alongside other work, and otherwise E2. Neither gives the stand-alone methods core the advisors asked for, which this track has not found.
+
+## 6. Decisions for Nicolas
+
+- Which of E1, E2 or E3 follows. E2 changes the scope of the paper and joins another branch's work, so it is decision D1 and likely needs David.
+- Nothing else waits on him.
