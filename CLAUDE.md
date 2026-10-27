@@ -2,7 +2,7 @@
 
 **Whose file this is.** This is the operating file of the research session that works on branch `claude-science-newtopic`, round 9's track `newtopic` (option C, a fresh direction outside clustered PPI and hierarchical conformal prediction, from the data in hand). That session is an independent investigator. Its starting point is the track's brief, `docs/round09/i01/newtopic/round09_newtopic_brief.md`. It had no part in the work recorded here and is not asked to continue anyone's plan. It studies the project as it stands, judges it on its merits, plans its own work and carries it out. This file holds the project's current state, how the record is kept, the standards of evidence and Nicolas's preferences. The record itself is in `docs/`. The session keeps this file and `docs/` current as it works, so that a fresh session can pick the project up from the repository alone.
 
-**Last updated:** 2026-10-26 (by the newtopic session, at the opening of interval 2, five feasibility tracks dispatched)
+**Last updated:** 2026-10-26 (by the newtopic session, interval 2, four tracks stopped, a fresh agent checking F1)
 
 The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at UNC Chapel Hill, in Dr. Hongtu Zhu's lab and supervised by Dr. Daiwei (David) Zhang. The advisors want methods, not applied analysis, with a submittable paper by spring 2027. The paper in preparation is "Labelling budgets for prediction-powered inference with clustered data". Labels are expensive and machine-learning predictions are free. Units come in clusters, such as donors in spatial transcriptomics or states in census data, and only a few clusters, often 4 to 16 of 15 to 50, can be labelled. The questions are how to spend a labelling budget (whole clusters, or a few units in every cluster), which clusters to label, how to make valid inference with prediction-powered inference (PPI) at so few clusters, and how to build prediction sets for a new cluster. The applications are HEST-1k spatial transcriptomics (pathology foundation-model predictions of gene expression) and ACS PUMS 2018 income by state.
 
@@ -59,7 +59,7 @@ so the round-5 estimator has a design bias of $\{(n/G)/(1 - n/G)\}\,\text{Cov}(c
 - **What of the above is this track's.** The PPI paper's open questions (items 1 to 4) are not this track's agenda. Items 1 to 3 belong to track `fewcluster`, and item 4 and hierarchical conformal prediction are excluded by the brief. This track is not bound to serve the PPI paper. Its aim is any statistics-forward methodological paper that uses the data in hand and survives the novelty check. The progress log's round 9 entries were written by the claude-science session, and "the session" there means that session.
 - **The other track.** Track `fewcluster` runs at the same time on branch `claude-science-fewcluster`. The two tracks are independent. Neither reports to the other or to the claude-science session, and neither edits the other's files. Each reports to Nicolas only, in its own session chat, at significant results or roadblocks, with a one-paragraph brief and the decisions he needs to make.
 - **Interval 2 (from 26 October, evening).** Nicolas answered interval 1's report with "continue with a breadth first experimentation, exploring the various directions you see feasibility in". The plan, `docs/round09/i02/newtopic/round09_newtopic_i02_plan.md`, runs five feasibility tracks in parallel (F1 RRRIDGE, F2 BOUNDARY, F3 SCALE, F4 LLGCLUSTER, F5 four fresh checkers), each with a stop rule and predictions written before any run.
-- **Next action.** Collect the five tracks of section 3, apply their stop rules, have a fresh agent check any that pass, and report to Nicolas.
+- **Next action.** Read the fresh agent's check of F1 (whether ridge reduced-rank regression's threshold is in print or an immediate corollary), then write interval 2's report and report to Nicolas.
 
 ## 3. Steps
 
@@ -73,11 +73,11 @@ Steps of this track, with stable IDs, checked when done with a one-line note (da
 - [x] **N4 Checker wave.** 26 October. NESTED, HIDDEN, PRANK, SCALE, LOADING and WINNER came back mostly taken. BOUNDARY, LLGCLUSTER and RRRIDGE came back partly open with thin theory remainders (verdicts in `results/round9/newtopic/newtopic_structured_results.json`, logs `check_<SLUG>_*.csv`).
 - [ ] **N5 First test** of a surviving candidate, with a second novelty check on the sharpened claim. Not reached in interval 1, because no candidate survived. It becomes interval 2 if Nicolas chooses C1 or C2.
 - [x] **N6 Report to Nicolas.** 26 October, `docs/round09/i01/newtopic/round09_newtopic_i01_report.md`, reported in the session chat with options C1, C2 and C3.
-- [ ] **F1 RRRIDGE feasibility.** Focused novelty check (spiked separable covariance, PRANK's ground), rank-one isotropic derivation, simulation.
-- [ ] **F2 BOUNDARY feasibility.** Focused check, size derivation at a selected boundary, simulation, Visium raw counts if it passes.
-- [ ] **F3 SCALE feasibility.** Focused check, two-scale cross-covariance estimator and its variance, simulation, lung and Visium coarsening.
-- [ ] **F4 LLGCLUSTER feasibility.** Focused check, iid bound under donor shifts in simulation, ground-truth check on HEST and ACS.
-- [ ] **F5 Fresh checkers** of four mined problems graded partly open by their miners.
+- [ ] **F1 RRRIDGE feasibility.** 26 October. Rank-one isotropic derivation and simulation (90 cells) agree away from the threshold, and ridge reduced-rank regression detects the response factor below PCA's threshold (ratio 0.58 to 0.96 for gamma 0.5 to 10). The subagent stopped because the limits follow by routine spiked-matrix steps, without a full read of the key suspects, so a fresh agent is reading them (running).
+- [x] **F2 BOUNDARY feasibility.** 26 October, stopped. Local-linear size is nominal at bandwidths within the smoothing scale (0.055 at h = 2 and 3) and 0.212 at h = 5, no standard bias correction restores it, and power at an estimated boundary is 0.11 to 0.24. The prediction was refuted. Outputs in `results/round9/newtopic/i02/`.
+- [x] **F3 SCALE feasibility.** 26 October, stopped. Under Poisson noise one scale suffices, under extra noise the ceiling needs a latent shape (the nugget problem), and the CLT follows from Lahiri's spatial results.
+- [x] **F4 LLGCLUSTER feasibility.** 26 October, stopped. The iid bound over-claims only when the features carry the donor shift (+0.12 to +0.14 at share 0.6), its standard error understates the spread 2.2 to 2.5 times at CCRCC-like shares, and the group correction is one leverage term inside Atanasov et al.'s framework.
+- [x] **F5 Fresh checkers.** 26 October. SPILLOVER and CKADONOR mostly taken, GENREG and SNRFRONT partly open with proposition-sized remainders. None goes forward.
 - [ ] **F6 Interval 2 report** to Nicolas.
 
 ## 4. Working preferences (Nicolas's)

@@ -1,0 +1,34 @@
+source,query,status,n_results
+arxiv,"all:""reduced rank regression"" AND all:ridge AND all:""high-dimensional""","FAIL no element found: line 1, column 0",0
+arxiv,"all:""reduced-rank ridge"" AND all:asymptotic","FAIL no element found: line 1, column 0",0
+arxiv,"all:""reduced rank"" AND all:""random matrix"" AND all:""singular vector""",ok,0
+arxiv,"all:""multi-output ridge"" AND all:""deterministic equivalent""",ok,0
+arxiv,"all:""ridge regression"" AND all:""multiple responses"" AND all:""proportional asymptotics""",ok,0
+arxiv,"all:""spiked"" AND all:""separable covariance"" AND all:""singular vectors""",ok,0
+arxiv,"all:""signal-plus-noise"" AND all:""general noise covariance"" AND all:""outlier singular""",ok,0
+arxiv,"all:""reduced-rank regression"" AND all:""phase transition""",ok,1
+arxiv,"all:""canonical correlation"" AND all:ridge AND all:""high-dimensional"" AND all:""phase transition""",ok,0
+arxiv,"all:""partial least squares"" AND all:""high-dimensional"" AND all:""spiked"" AND all:""overlap""","FAIL no element found: line 1, column 0",0
+arxiv,"all:""principal component regression"" AND all:""eigenvector overlap""",ok,1
+arxiv,"all:""reduced rank regression"" AND all:""hidden"" AND all:""nuisance"" AND all:factor",ok,0
+arxiv,"all:""reduced rank regression"" AND all:""group"" AND all:""random effects"" AND all:""high-dimensional""",ok,0
+arxiv,"all:""ridge"" AND all:""singular value"" AND all:""fitted values"" AND all:""spike"" AND all:""multivariate regression""",ok,0
+arxiv,"all:""regularized reduced rank regression"" AND all:""random matrix""",ok,0
+arxiv,"all:""matrix denoising"" AND all:""ridge"" AND all:""hat matrix""",ok,0
+crossref,ridge reduced-rank regression proportional asymptotics subspace alignment,ok,8
+crossref,spiked separable covariance matrices principal components,ok,8
+crossref,reduced rank regression phase transition singular vectors high dimension,ok,8
+crossref,multivariate ridge regression random matrix theory risk many responses,ok,8
+s2,reduced rank ridge regression high-dimensional asymptotics,ok,8
+s2,ridge regression low-rank coefficient matrix random matrix theory alignment,FAIL 429,0
+arxiv,reduced rank ridge regression asymptotics,FAIL,0
+arxiv,reduced rank regression random matrix singular vector high-dimensional,FAIL,0
+arxiv,ridge regression multiple responses low rank coefficient phase transition,FAIL,0
+arxiv,principal component regression eigenvector overlap,FAIL,0
+arxiv,hidden variable multivariate regression nuisance factor,FAIL,0
+arxiv,spiked separable covariance outlier singular vectors,FAIL,0
+arxiv,canonical correlation analysis high-dimensional singular vectors random matrix,ok,8
+arxiv,signal plus noise matrix general covariance outlier singular value ridge,ok,8
+web_search,ridge reduced-rank regression proportional asymptotics singular vector alignment random matrix,ok,9
+web_search,Ding Yang spiked separable covariance matrices and principal components Annals of Statistics 2021,ok,10
+web_search,reduced rank regression ridge penalty random matrix theory out-of-sample risk subspace recovery p>n multi-response 2025,ok,9
