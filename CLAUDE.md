@@ -2,7 +2,7 @@
 
 **Whose file this is.** This is the operating file of the research session that works on branch `claude-science-newtopic`, round 9's track `newtopic` (option C, a fresh direction outside clustered PPI and hierarchical conformal prediction, from the data in hand). That session is an independent investigator. Its starting point is the track's brief, `docs/round09/i01/newtopic/round09_newtopic_brief.md`. It had no part in the work recorded here and is not asked to continue anyone's plan. It studies the project as it stands, judges it on its merits, plans its own work and carries it out. This file holds the project's current state, how the record is kept, the standards of evidence and Nicolas's preferences. The record itself is in `docs/`. The session keeps this file and `docs/` current as it works, so that a fresh session can pick the project up from the repository alone.
 
-**Last updated:** 2026-10-27 (by the newtopic session, interval 3 ended, F1 a corollary)
+**Last updated:** 2026-10-27 (by the newtopic session, track closed after Nicolas chose O1)
 
 The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at UNC Chapel Hill, in Dr. Hongtu Zhu's lab and supervised by Dr. Daiwei (David) Zhang. The advisors want methods, not applied analysis, with a submittable paper by spring 2027. The paper in preparation is "Labelling budgets for prediction-powered inference with clustered data". Labels are expensive and machine-learning predictions are free. Units come in clusters, such as donors in spatial transcriptomics or states in census data, and only a few clusters, often 4 to 16 of 15 to 50, can be labelled. The questions are how to spend a labelling budget (whole clusters, or a few units in every cluster), which clusters to label, how to make valid inference with prediction-powered inference (PPI) at so few clusters, and how to build prediction sets for a new cluster. The applications are HEST-1k spatial transcriptomics (pathology foundation-model predictions of gene expression) and ACS PUMS 2018 income by state.
 
@@ -62,7 +62,8 @@ so the round-5 estimator has a design bias of $\{(n/G)/(1 - n/G)\}\,\text{Cov}(c
 - **Interval 2 result.** Four of five tracks stopped at lemma or proposition size. F1 survives as a short note. Ridge reduced-rank regression detects a rank-one response factor below PCA's threshold, which was not found in print and is not a direct case of the spiked separable theorem (report, section 3).
 - **Interval 3 (from 27 October).** Nicolas answered interval 2's report with "explore f1" and supplied Bao, Ding and Wang (arXiv:1809.10476) and Bao, Ding, Wang and Wang (arXiv:2008.11903). The plan is `docs/round09/i03/newtopic/round09_newtopic_i03_plan.md`, with steps G1 to G6, stop rules S1 to S3 and predictions H1 to H4.
 - **Interval 3 result.** F1 is a corollary. Conditional on the features it is a direct case of Liu, Liu, Pan, Zhang and Zhang (arXiv:2310.13939), confirmed by a fresh auditor with small technical gaps, so stop rule S1 closed the interval. The report, `docs/round09/i03/newtopic/round09_newtopic_i03_report.md`, offers O1 (close the track, the default), O2 (keep F1 as a remark) and O3 (a direction from outside the session).
-- **Next action.** Wait for Nicolas's answer to the interval 3 report. Without new input, write the track's closing report (O1).
+- **Track closed (27 October).** Nicolas chose O1. The closing report is `docs/round09/i04/newtopic/round09_newtopic_closing_report.md`. No work is running on this branch.
+- **Next action.** None on this track. The branch waits on Nicolas's decision D4, and round 9 closes through `/project-state-keeping` once track `fewcluster` has also closed.
 
 ## 3. Steps
 
@@ -89,6 +90,7 @@ Steps of this track, with stable IDs, checked when done with a one-line note (da
 - [ ] **G4 Extensions.** Not run, because S1 closed the interval. H4 not tested.
 - [ ] **G5 Positioning.** Not run, because S1 closed the interval.
 - [x] **G6 Interval 3 report.** 27 October, `docs/round09/i03/newtopic/round09_newtopic_i03_report.md`, with options O1 to O3, reported in the session chat.
+- [x] **C1 Closing report.** 27 October, `docs/round09/i04/newtopic/round09_newtopic_closing_report.md`, after Nicolas chose O1.
 
 ## 4. Working preferences (Nicolas's)
 
@@ -102,6 +104,7 @@ Steps of this track, with stable IDs, checked when done with a one-line note (da
 - **Decisions.** He makes the decisions at his level and wants to be told which need David or Dr. Zhu.
 - **Autonomy and novelty (24 October, said to the claude-science session; it applies to every research session).** The session explores directions, derives and validates results on its own, and reports to him only at significant roadblocks or significant results. The end goal is a statistics-forward methodological paper in spatial transcriptomics. A literature check for novelty is a hard rule, run by subagents continually while the work goes on, because the model is prone to rediscovering results it has absorbed from its training data.
 - **Two independent tracks (26 October).** He deferred option A, because it rests on results already in hand, and asked that the project be made ready for two separate sessions, one on option B and one on option C. The two sessions are independent investigators. They are not overseen by and do not report back to the claude-science session. This branch is the newtopic session's.
+- **Close the track (27 October).** After the interval 3 report he chose O1, closing track newtopic.
 - **Explore F1 (27 October).** After interval 2's report he said "explore f1" and supplied two papers by Bao, Ding and co-authors.
 - **Breadth first (26 October, evening, to this session).** After interval 1's report he said "continue with a breadth first experimentation, exploring the various directions you see feasibility in".
 - **Choice of direction (25 October, to the claude-science session; for this branch narrowed on 26 October).** For this branch the choice is narrowed to option C by the 26 October split. The session may reshape its direction within that option, and tells Nicolas before dropping it. The original rule follows. After the direction scan he left the choice to the session. It may pursue the prediction-set topic, few-cluster inference or a fresh topic based on the data in hand, and asks him only when it needs access that is gated by his approval.

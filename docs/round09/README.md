@@ -10,7 +10,9 @@ Each track's session sets its own milestones and records them here on its branch
 
 | Date | Track | Milestone | Report | Answered by |
 |---|---|---|---|---|
-| 27 Oct | newtopic | end of interval 3 | `i03/newtopic/round09_newtopic_i03_report.md` | awaiting Nicolas (options O1 to O3) |
+| 27 Oct | newtopic | track closed | `i04/newtopic/round09_newtopic_closing_report.md` | closing report, no further gate |
+| 27 Oct | newtopic | end of interval 3 | `i03/newtopic/round09_newtopic_i03_report.md` | Nicolas, 27 Oct, "O1" (close the track), recorded in `i04/newtopic/round09_newtopic_closing_report.md` |
+| `i04/newtopic/round09_newtopic_closing_report.md` | 27 Oct | track newtopic's closing report, after Nicolas chose O1. No direction with an open core was found in three intervals. It lists what the track established, the withdrawn reading of F1 as a candidate core, and a lesson for later searches |
 | 27 Oct | newtopic | end of interval 2 | `i02/newtopic/round09_newtopic_i02_report.md` | Nicolas, 27 Oct, "explore f1", recorded in `i03/newtopic/round09_newtopic_i03_plan.md` |
 | 26 Oct | newtopic | end of interval 1 | `i01/newtopic/round09_newtopic_i01_report.md` | Nicolas, 26 Oct, "breadth first", recorded in `i02/newtopic/round09_newtopic_i02_plan.md` |
 
