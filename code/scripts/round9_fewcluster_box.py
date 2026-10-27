@@ -9,7 +9,7 @@ is smaller, which is checked and reported). A population is inside when that wor
 (Lambda0, v0) = (max_h Lambda_h, max_h v_h). Regime A uses Theorem 1 on the cluster means.
 
 Modes
-  acs  <i32_acs_states.csv> <outdir>        (local; ACS aggregates by state)
+  acs_states <i32_acs_states.csv> <outdir>  (local; ACS aggregates by state)
   hest <repo_root_on_longleaf> <outdir>     (Longleaf; per-spot parquets, writes gene-level results only)
 """
 import sys, os, math, functools
@@ -84,8 +84,6 @@ def main():
     mode, src, out = sys.argv[1:4]
     os.makedirs(out, exist_ok=True)
     rows = []
-    if mode == 'acs':
-        raise SystemExit('acs mode needs per-person residuals; use acs_from_states below')
     if mode == 'acs_states':
         s = pd.read_csv(src)
         for lam, d in s.groupby('lambda'):
