@@ -1,0 +1,32 @@
+# Runs the record check on every push to main and every pull request, whatever surface
+# or account made the commit. Copy to .github/workflows/record-check.yml and set the
+# script path. On a push to main the check fails (a red mark on the commit) when the
+# state is behind: commits after CLAUDE.md last changed, a live branch CLAUDE.md does
+# not name, a missing path, or CLAUDE.md over its limit. On a pull request it only
+# reports, since a branch is expected to be ahead of main.
+#
+# Creating or changing this file needs a token with workflow permission. If a session's
+# push is rejected, add the file once from your own clone or GitHub's web editor.
+name: record check
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  record-check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Check the record
+        run: |
+          set -o pipefail
+          STRICT=""
+          if [ "${{ github.event_name }}" = "push" ]; then STRICT="--strict --no-remote"; fi
+          python3 code/scripts/record_check.py --main origin/main $STRICT | tee -a "$GITHUB_STEP_SUMMARY"
