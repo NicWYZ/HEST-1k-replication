@@ -1,0 +1,20 @@
+strata=[(6, 2), (6, 2)] alpha=0.2 Cap_low=7.200 Cap_up=7.200 sumN=12 -> frontier in [0.1389,0.1389]
+   kappa0=0.99/Cap_up=0.1375: class members tried 21983, max P(SE=0) seen=0.1867 (alpha=0.2); worst c_needed found = 10.68
+   kappa0=0.80/Cap_up=0.1111: class members tried 7175, max P(SE=0) seen=0.1867 (alpha=0.2); worst c_needed found = 3.191
+   kappa0=1.05/Cap_low=0.1458: class members tried 27259, max P(SE=0) seen=0.2667 (alpha=0.2); worst c_needed found = inf
+strata=[(7, 2), (7, 2)] alpha=0.3 Cap_low=6.417 Cap_up=6.417 sumN=14 -> frontier in [0.1558,0.1558]
+   kappa0=0.99/Cap_up=0.1543: class members tried 25385, max P(SE=0) seen=0.2245 (alpha=0.3); worst c_needed found = 9.6
+   kappa0=0.80/Cap_up=0.1247: class members tried 14164, max P(SE=0) seen=0.2245 (alpha=0.3); worst c_needed found = 2.16
+   kappa0=1.05/Cap_low=0.1636: class members tried 33038, max P(SE=0) seen=0.3061 (alpha=0.3); worst c_needed found = inf
+strata=[(8, 3), (6, 2)] alpha=0.1 Cap_low=8.667 Cap_up=8.667 sumN=14 -> frontier in [0.1154,0.1154]
+   kappa0=0.99/Cap_up=0.1142: class members tried 17269, max P(SE=0) seen=0.0952 (alpha=0.1); worst c_needed found = 12.2
+   kappa0=0.80/Cap_up=0.0923: class members tried 5780, max P(SE=0) seen=0.0667 (alpha=0.1); worst c_needed found = 3.168
+   kappa0=1.05/Cap_low=0.1212: class members tried 20520, max P(SE=0) seen=0.1429 (alpha=0.1); worst c_needed found = inf
+strata=[(5, 2), (7, 2), (6, 2)] alpha=0.3 Cap_low=6.000 Cap_up=6.000 sumN=18 -> frontier in [0.1667,0.1667]
+   kappa0=0.99/Cap_up=0.1650: class members tried 26423, max P(SE=0) seen=0.2857 (alpha=0.3); worst c_needed found = 13.62
+   kappa0=0.80/Cap_up=0.1333: class members tried 20859, max P(SE=0) seen=0.2095 (alpha=0.3); worst c_needed found = 3.594
+   kappa0=1.05/Cap_low=0.1750: class members tried 27763, max P(SE=0) seen=0.4000 (alpha=0.3); worst c_needed found = inf
+strata=[(6, 2), (6, 3)] alpha=0.15 Cap_low=7.200 Cap_up=7.200 sumN=12 -> frontier in [0.1389,0.1389]
+   kappa0=0.99/Cap_up=0.1375: class members tried 20920, max P(SE=0) seen=0.0800 (alpha=0.15); worst c_needed found = 10.81
+   kappa0=0.80/Cap_up=0.1111: class members tried 7070, max P(SE=0) seen=0.0800 (alpha=0.15); worst c_needed found = 2.828
+   kappa0=1.05/Cap_low=0.1458: class members tried 26692, max P(SE=0) seen=0.2000 (alpha=0.15); worst c_needed found = inf

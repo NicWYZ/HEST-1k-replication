@@ -1,0 +1,30 @@
+{
+ "verdict_K": "PROVISIONALLY NOT FOUND IN PRINT (novel as a combined statement). No source found that gives finite-sample, scale-free critical values or certified worst-case coverage for the Student/finite-population t interval uniformly over a class bounding max|x-mean|/SD (or max share of sum of squares), under SRSWOR or iid, with two-/few-point extremals. Nearest results, each missing the core: (a) Lehmann & Loh 1990, Chen & Loh 1990, Romano 2004: asymptotic uniform validity of the t-test over bounded-standardized-moment / uniform-integrability classes, no finite-sample critical values or extremal laws (closeness 3, same class idea, asymptotic only); (b) Pinelis 2006 (arXiv math/0606160) plus Efron 1969 / Eaton / Pinelis 1994 / Pinelis 2015 (arXiv 1204.1761): two-point mixture decomposition and sharp self-normalized tail bounds under symmetry or an asymmetry-corrected statistic, independent summands, no finite population and no max-share class (closeness 2); (c) Edelman 2025 (arXiv 2508.13226) claims k-sparse equal-weight extremals for weighted Rademacher sums but its main theorem is refuted by Pinelis (arXiv 2509.02410), and it is symmetric-only; (d) Hendriks-IJzerman-Boon-Klaassen 2006: extremal uniform parent in the symmetric unimodal iid class; (e) Bloznelis 1999, Hu-Robinson-Wang 2007, Sugden-Smith-Jones 2000: Berry-Esseen / Cramer-type / Edgeworth for finite-population Student t, asymptotic or non-sharp constants, not exact critical values. WoR betting/Serfling/Bardenet-Maillard need known bounded range. Caveats: Edelman 1990, Efron 1969, Hajek 1960, Gleser-Hwang 1987, Dufour 1997, Phan-Thomas-Ramdas, Shekhar-Ramdas, Szekely 2006 were checked only via citations/background knowledge, not read; Semantic Scholar returned 429 so no citation-graph check; arXiv keyword search was poor (many irrelevant hits); paywalled journal papers (Lehmann-Loh, Romano 2004, Chen-Loh, Hendriks et al.) were seen via abstracts only, so a finite-sample corollary hidden in their bodies cannot be excluded (Lehmann-Loh most likely place to look).",
+ "verdict_K2": "PROVISIONALLY NOT FOUND (novel as stated). No source found giving exact/certified finite-sample self-normalized bounds for stratified or cluster sums with many independent strata under a max-share or bounded-standardized-deviation class. Adjacent but different: Bakirov-Szekely 2006 and Ibragimov-Muller 2010/2016 (t-test on few heterogeneous clusters, Gaussian, conservative for small alpha), Potscher-Preinerstorfer arXiv 2412.17470 (Gaussian linear model size control), Qing-Valliant 2025 (Edgeworth minimum n per stratum, asymptotic), arXiv 2503.13986 (stratified permutational Berry-Esseen, asymptotic). Fewer sources searched for K2 than for K (about 4 targeted queries), so K2 confidence is lower.",
+ "closest_papers": [
+  "Lehmann & Loh 1990, Scand J Stat 17:177-187 (asymptotic uniform robustness of t-test under bounded standardized moments)",
+  "Chen & Loh 1990, Commun Stat Theory Methods 19:3707-3723",
+  "Romano 2004, Scand J Stat 31:567-584 (uniform behaviour of the t-test)",
+  "Pinelis 2006, Student's t-test without symmetry conditions, arXiv:math/0606160 (two-point mixture decomposition)",
+  "Pinelis 2015, supremum of tails of normalized Rademacher sums, arXiv:1204.1761 (SPL 99)",
+  "Edelman 2025 arXiv:2508.13226 and Pinelis comment arXiv:2509.02410",
+  "Hendriks, IJzerman-Boon, Klaassen 2006, Austrian J Stat 35:131-141",
+  "Bloznelis 1999, Ann Probab 27:2089-2108 (Berry-Esseen for finite-population Student t)",
+  "Sugden, Smith, Jones 2000, JRSS B 62:787-793 (Cochran's rule)",
+  "Ibragimov & Muller 2010 JBES / Bakirov & Szekely 2006 (K2-adjacent, Gaussian)"
+ ],
+ "read_in_full": [
+  "Pinelis 2006 arXiv:math/0606160 (text extracted and read through Theorem 2.3; proofs skimmed only)"
+ ],
+ "n_queries": 45,
+ "deviations": [
+  "Read in full only one paper (Pinelis arXiv math/0606160, proofs not read); all other papers assessed from abstracts, search snippets or citing text.",
+  "Semantic Scholar returned HTTP 429 on both attempts, so no citation-graph forward search was possible.",
+  "arXiv keyword searches were low-precision; relied mainly on web_search and arXiv id lookups. Crossref gave mostly irrelevant hits.",
+  "Edelman 1990, Efron 1969, Hajek 1960, Gleser-Hwang 1987, Dufour 1997, Phan-Thomas-Ramdas, Shekhar-Ramdas, Szekely 2006, Bentkus-Gotze 1996 content cited from background knowledge or citing text, not fetched; Lehmann-Loh, Romano 2004, Chen-Loh, Hendriks et al. paywalled, abstracts only.",
+  "K2 received roughly 4 targeted queries vs about 10 for K; absence verdict for K2 is weaker.",
+  "OpenAlex not used per instruction; no full texts saved as artifacts.",
+  "n_queries=45 counts arXiv (19 incl. 2 id lookups), Crossref (8), Semantic Scholar (2, failed) and web_search (15) calls as logged in queries.csv; all verdicts provisional."
+ ],
+ "frame_id": "a65aeea6-665b-4e49-b710-4c819370794d"
+}

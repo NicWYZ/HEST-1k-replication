@@ -1,0 +1,12 @@
+# Track fewcluster, step S3, predictions scored
+
+*26 October 2026. Scores for `predictions_before_run.md` and its addendum. Values are read from the CSV files beside this one. Scripts are `code/scripts/round9_fewcluster_feasibility.py` (first run) and `code/scripts/round9_fewcluster_frontier.py` (addendum run).*
+
+- **P1, P2, P3. Not tested.** They need the per-gene donor means on Longleaf, and the connection to Longleaf timed out twice on 26 October (likely the UNC VPN was off). They stay open for the next interval.
+- **P4. Refuted.** Mean log income by state has max-share 0.209, carried by DC (state code 11, 3.23 standard deviations from the mean of states), against the predicted value below 0.15. State contributions to the person-level mean have 0.411, carried by California (`s3_acs_states_kappa.csv`).
+- **P5. Held.** At $G = 24$, $n = 8$ and $\kappa_0 = \kappa^\ast = 0.125$, the worst coverage of the 90% finite-population $t$ interval over two- and three-point populations is 0.811, at counts (13, 8, 3) with the third value 0.02 (`s3_worstcase_by_kappa0.csv`).
+- **P6. Refuted.** The second-block term changes $k^\ast$ in the four cells with $n = 4$ (15, 24 and 25 clusters move from 6, 10 and 11 to 7, 11 and 12, and at 51 clusters no $k \le 25$ satisfies the condition). In every cell with $n \ge 6$ it changes nothing (`s3_frontier_exact.csv`).
+- **P7. Partly held.** The bound for populations whose level sets are all smaller than $G/2$ is below 0.01 in every cell with $n \ge 6$ except $(G, n) = (25, 6)$ at 0.0104 and $(51, 6)$ at 0.0197. It is below 0.10 in every such cell, so at $\alpha = 0.10$ the two conditions meet.
+- **P8. Held.** The fraction of populations of independent standard normal values whose max-share is within $\kappa^\ast$ at $n = 8$ is 0.022 for $G = 24$ and 0.001 for $G = 51$.
+
+Two observations that no prediction anticipated. The general search at $G = 15$, $n = 6$ found populations with lower coverage than every two- or three-point population at $\kappa_0 = 0.10$ (0.872 against 0.874, `s3_general_search_G15_n6.csv`), so the worst case of the $t$ interval over a max-share class is not always attained at few-valued populations. And over few-valued populations at $G = 24$, $n = 8$, $\kappa_0 = 0.10$, a critical value of 2.5 in place of $t_{7, 0.95} = 1.895$ already gives worst-case coverage 0.909 (computed in the session; not saved as a file, to be redone in a script before it is cited).

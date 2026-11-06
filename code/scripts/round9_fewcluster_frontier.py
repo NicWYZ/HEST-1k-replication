@@ -1,0 +1,85 @@
+"""Round 9, track fewcluster: the exact max-share frontier (theorem note round09_fewcluster_frontier.md).
+
+For each (G, n, alpha):
+  kappa2(k)  = (1 - k/G)/k                          max-share of a two-point population with groups k <= G/2 and G-k
+  pi(k)      = [C(G-k, n) + C(k, n)] / C(G, n)      share of n-subsets inside one level set of that population
+  k_star     = smallest k <= G/2 with pi(k) <= alpha  (so kappa_star = kappa2(k_star) is the largest admissible kappa0)
+  rest_bound = max over m < G/2 of [floor(G/m) C(m, n) + C(G mod m, n)] / C(G, n)
+               (bound on subsets inside one level set when every level set is smaller than G/2)
+  Lambda_star = sqrt(kappa_star (G - 1)): the same bound in residual standard deviations
+  kappa_sup  = kappa2(k_star - 1): the supremum of admissible kappa0 (correction of 26 October, found by the
+               fresh-agent verification, results/round9/fewcluster/verify/verify_frontier_report.md). Below it a finite
+               critical value exists (fixed lambda), above it every equivariant valid interval is unbounded with
+               probability >= pi(k_star - 1) - alpha. kappa_star is where the k_star two-point population ENTERS the
+               class and is kept only because the first predictions were written with it.
+Also the fraction of iid N(0,1) populations of size G with max-share <= kappa_star (20000 draws).
+Output: results/round9/fewcluster/feasibility/s3_frontier_exact.csv
+"""
+import sys, math
+import numpy as np, pandas as pd
+from scipy.special import comb
+
+OUT = sys.argv[1] if len(sys.argv) > 1 else 'results/round9/fewcluster/feasibility'
+rng = np.random.default_rng(20261026)
+
+
+def C(a, b):
+    return comb(a, b, exact=True) if 0 <= b <= a else 0
+
+
+rows = []
+for G in (15, 24, 25, 51):
+    Z = rng.standard_normal((20000, G))
+    D = Z - Z.mean(1, keepdims=True)
+    kap_gauss = (D ** 2).max(1) / (D ** 2).sum(1)
+    for n in (4, 6, 8, 10, 12, 16):
+        if n >= G:
+            continue
+        tot = C(G, n)
+        for alpha in (0.05, 0.10):
+            pi = {k: (C(G - k, n) + C(k, n)) / tot for k in range(1, G // 2 + 1)}
+            pi_one = {k: C(G - k, n) / tot for k in range(1, G // 2 + 1)}
+            ks = next((k for k in pi if pi[k] <= alpha), None)
+            ks_one = next((k for k in pi_one if pi_one[k] <= alpha), None)
+            rest = max((G // m) * C(m, n) + C(G % m, n) for m in range(1, (G + 1) // 2)) / tot
+            kst = (1 - ks / G) / ks if ks else float('nan')
+            rows.append(dict(G=G, n=n, alpha=alpha, k_star=ks, k_star_one_block=ks_one, kappa_star=kst,
+                             pi_at_k_star=pi[ks] if ks else float('nan'),
+                             pi_at_k_star_minus1=pi[ks - 1] if ks and ks > 1 else float('nan'),
+                             rest_bound=rest, Lambda_star=math.sqrt(kst * (G - 1)),
+                             frac_gauss_within=float(np.mean(kap_gauss <= kst)),
+                             kappa_sup=((1 - (ks - 1) / G) / (ks - 1)) if ks and ks > 1 else (1.0 if ks == 1 else float('nan')),
+                             Lambda_sup=math.sqrt(((1 - (ks - 1) / G) / (ks - 1)) * (G - 1)) if ks and ks > 1 else float('nan'),
+                             frac_gauss_within_sup=float(np.mean(kap_gauss < (1 - (ks - 1) / G) / (ks - 1))) if ks and ks > 1 else float('nan'),
+                             median_gauss_kappa=float(np.median(kap_gauss))))
+df = pd.DataFrame(rows)
+df.to_csv(f'{OUT}/s3_frontier_exact.csv', index=False)
+print(df[df.alpha == 0.10][['G', 'n', 'k_star', 'k_star_one_block', 'kappa_star', 'Lambda_star', 'rest_bound',
+                            'frac_gauss_within', 'kappa_sup', 'Lambda_sup', 'frac_gauss_within_sup', 'median_gauss_kappa']].to_string(index=False))
+
+# ---------- required number of labelled clusters for a defended bound Lambda (residual SDs)
+# smallest n such that Lambda < Lambda_sup(n, G, alpha), i.e. kappa0 = Lambda^2/(G-1) < kappa2(k*(n) - 1),
+# with the R term checked (R <= alpha) so that the possibility theorem applies.
+req = []
+for G in (15, 24, 25, 51):
+    tot_cache = {}
+    for alpha in (0.05, 0.10):
+        for Lam in (1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5):
+            kap0 = Lam ** 2 / (G - 1)
+            nreq = None
+            for n in range(2, G):
+                tot = C(G, n)
+                pi = {k: (C(G - k, n) + C(k, n)) / tot for k in range(1, G // 2 + 1)}
+                ks = next((k for k in pi if pi[k] <= alpha), None)
+                if ks is None:
+                    continue
+                rest = max((G // m) * C(m, n) + C(G % m, n) for m in range(1, (G + 1) // 2)) / tot
+                ksup = float('inf') if ks == 1 else (1 - (ks - 1) / G) / (ks - 1)  # k* = 1: every population admissible
+                if kap0 < ksup and rest <= alpha:
+                    nreq = n
+                    break
+            req.append(dict(G=G, alpha=alpha, Lambda=Lam, kappa0=kap0, n_required=nreq,
+                            frac_required=(nreq / G) if nreq else float('nan')))
+rq = pd.DataFrame(req)
+rq.to_csv(f'{OUT}/s3_required_n.csv', index=False)
+print(rq[rq.alpha == 0.10].pivot(index='Lambda', columns='G', values='n_required').to_string())

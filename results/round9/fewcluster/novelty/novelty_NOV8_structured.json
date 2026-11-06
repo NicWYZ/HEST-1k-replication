@@ -1,0 +1,102 @@
+{
+ "deviations": [
+  "Source 1 (Gleser-Hwang) not read: Project Euclid PDF is behind a bot challenge and no OA copy exists; I did not bypass it. Judged from the abstract plus Dufour 1997, which says its Thm 3.6/Cor 3.7 contain the GH theorem. Provisional.",
+  "Source 2 (Dufour): read the author-posted working-paper text (Sept 1996 version, 26 pp.; Sections 1-3 closely, Sections 4-5 and appendix by keyword scan); the author's Econometrica-pagination PDF is a scan without text and was not read; a CiteSeerX link redirected to web.archive.org and was not followed.",
+  "Source 3 (Lanke) not retrieved, and the supplied DOI 10.1080/03461238.1974.10408659 is Arrow's 'Optimal insurance and generalized deductibles'; Lanke is cited as Scand. J. Statist. pp. 28-32 (1974, paywalled); known only second-hand via Paul-Kuchibhotla arXiv:2403.06357 Remark 1.",
+  "Source 4 (Hansen): read the open working-paper version (Sept 2025, 59 pp.), not the typeset RES version; theorem statements read, proofs in the appendix keyword-scanned only.",
+  "Source 5 (Bakirov-Szekely) not read (Springer paywall; Math-Net.Ru 502/403, no mirror tried); read only its abstract plus the full companion paper Szekely 2006 (arXiv:math/0610838), a different paper.",
+  "Source 6 (Basu-DasGupta) not read (Project Euclid bot wall; Purdue TR 91-47 not found); read only the abstract and DasGupta's open textbook chapter restating its theorems.",
+  "Forward citations: all 932 returned records screened, but only by regex on title+abstract plus title reading (Dufour: 123 of 651 titles read; ~528 not individually inspected); abstracts read for ~25 items and full texts scanned for 3 arXiv papers.",
+  "Query counts in the CSV bundle repeated calls (6 fetches, 6 DOI lookups); web-search n_results_screened is items returned; one Semantic Scholar Lanke title search hit HTTP 429 and was not repeated.",
+  "No full texts saved as artifacts, per instructions; every verdict is provisional where a primary source was not read."
+ ],
+ "sources": [
+  {
+   "source": "1. Gleser & Hwang (1987), Ann. Statist. 15(4):1351-1362, doi:10.1214/aos/1176350597",
+   "retrieved": false,
+   "how_read": "Not retrieved in full (publisher bot wall, no OA copy). Read: abstract; Dufour (1997) working paper's statement of how GH relates to its Theorem 3.6/Cor. 3.7; two secondary descriptions (Mikusheva note, arXiv:1912.09180 summary of the GH theorem).",
+   "contains_A": "not_assessed",
+   "contains_B": "not_assessed",
+   "what_it_proves": "Per abstract and secondary descriptions: in errors-in-variables, inverse-regression and related models whose parameter is nonidentified on a subset (continuous densities, finite-dimensional parameter), no confidence set can have both positive confidence and finite expected diameter; equivalently valid sets are unbounded with positive probability.",
+   "relation_to_A_and_B": "Indirect evidence says no: the setting is parametric with continuous densities and a nonidentification limit, not SRSWOR from a known finite population, and the result is qualitative (positive probability of infinite length). It is the origin of the scaling/limiting-sequence technique behind A's impossibility half but gives no finite-population threshold, no kappa grading and no pi(k)-alpha lower bound. B is outside its scope. Provisional until the primary text is read (DOI above)."
+  },
+  {
+   "source": "2. Dufour (1997), Econometrica 65(6):1365-1387, doi:10.2307/2171740",
+   "retrieved": true,
+   "how_read": "Full text of the author-posted working-paper version (Dufour_1994 W, last version Sept 1996, 26 pp.) read: framework (assumptions A-H), Proposition 3.1/3.2, Theorem 3.3, Corollary 3.4, Lemma 3.5, Theorem 3.6, Corollary 3.7, Section 4 start; remaining sections scanned by keyword (0 hits for finite population, without replacement, sampling, equivariant, Lanke, median, sign test). Econometrica scan not text-read.",
+   "contains_A": "no",
+   "contains_B": "no",
+   "what_it_proves": "For a locally almost unidentified parameter (observationally equivalent parameter set Theta0 plus sequences theta_n -> Theta0 with weak convergence of P_theta_n), any level-(1-alpha) confidence set must have diameter >= D[Psi0] with probability >= 1-2alpha at Theta0 (Thm 3.3) and, with common support and densities, a positive probability of being unbounded under every P_theta (Thm 3.6); an a.s. bounded set has coverage zero (Cor. 3.4/3.7). Extends GH to discrete distributions and metric parameter spaces; applications to IV, AR errors, long-run multipliers, cointegration.",
+   "relation_to_A_and_B": "Not A: the theory needs an exactly nonidentified set Theta0 (identical laws) and gives qualitative bounds (probability >= 1-alpha near Theta0, positive probability elsewhere). A's statements are for a known finite population under SRSWOR with equivariance, give an explicit population-free lower bound pi(k*-1)-alpha on the unbounded probability, a sharp threshold kappa2(k*-1) in the max-share class, a matching possibility result, and design minimaxity; none appears. Dufour's technique (limit sequence argument) is the classical ancestor of A's proof, consistent with the earlier checkers' view that the method is not claimed. Not B: no least-squares-fitted coefficient, no affine-defeating-sample characterization."
+  },
+  {
+   "source": "3. Lanke (1974), 'Interval estimation of a median' (actual venue per Paul-Kuchibhotla: Scand. J. Statist., pp. 28-32; the supplied DOI points to a different paper)",
+   "retrieved": false,
+   "how_read": "Not retrieved (paywalled; supplied DOI is wrong). Read Paul & Kuchibhotla arXiv:2403.06357 Remark 1 and Theorem 1, which restate and criticise Lanke's Theorem 2.",
+   "contains_A": "not_assessed",
+   "contains_B": "not_assessed",
+   "what_it_proves": "Second-hand: Lanke's Theorem 2 claims no real-valued locally bounded lower/upper functions give confidence >1-alpha for all iid continuous symmetric samples when alpha<2^-(n-1) (n<log2(2/alpha)). Paul-Kuchibhotla say that statement is false but that Lanke's proof does show impossibility for n<log2(1/alpha).",
+   "relation_to_A_and_B": "Not A as stated (iid continuous symmetric class, infinite population, no equivariance/scale, no kappa). But the claimed threshold n<log2(2/alpha)=1+log2(1/alpha) is numerically exactly A's G->infinity limit, so the limiting corollary 'n<1+log2(1/alpha)' is not new as a threshold; it is a threshold that Lanke claimed and Paul-Kuchibhotla conjecture holds for shift-invariant intervals. A (limit) would settle that threshold in a different class (location-scale equivariant, atomic +-1 populations allowed). Not B. Primary text unread: provisional."
+  },
+  {
+   "source": "4. Hansen (2026), Rev. Econ. Stud., doi:10.1093/restud/rdag050 (working paper tcauchy.pdf)",
+   "retrieved": true,
+   "how_read": "Open working-paper PDF (Sept 2025, 59 pp.) text-extracted; read intro, Assumptions, Theorems 1-5 and discussion; keyword scan of whole text (0 hits for finite population, without replacement, affine, equivariant, Gleser; 3 'unbounded', 5 'impossib').",
+   "contains_A": "no",
+   "contains_B": "no",
+   "what_it_proves": "Linear regression with Gaussian errors, fixed regressors, arbitrary leverage/cluster sizes: conventional HC/CRVE variance estimators can be fully downward biased and their intervals have worst-case coverage 0 for any critical value (Thms 2, 4, 5); the proposed jackknife interval has coverage >= P[|Cauchy|<=c] for c>=1 (Thm 3); Bell-McCaffrey-type t approximation. States explicitly that its results are not impossibility results.",
+   "relation_to_A_and_B": "No overlap with A or B: model-based inference, not SRSWOR from a known finite population; no equivariant-interval dichotomy and no finite-critical-value threshold in a share-of-variance class. It does show the same qualitative phenomenon (extreme leverage destroys any finite multiplier for HC/CRVE) and cites P\u00f6tscher-Preinerstorfer 2025 (conditional critical values), already known to the project."
+  },
+  {
+   "source": "5. Bakirov & Szekely (2006), J. Math. Sci. 139(3):6497-6505, doi:10.1007/s10958-006-0366-5",
+   "retrieved": false,
+   "how_read": "Not retrieved (Springer paywall; Math-Net.Ru 502/403). Read the abstract (Springer and Math-Net) and, as a proxy, the full text of Szekely (2006) arXiv:math/0610838 (companion, Theorem 2.1 for symmetric errors and Theorem 3.1/Cor. 1-2 for Gaussian scale mixtures, Table 1).",
+   "contains_A": "not_assessed",
+   "contains_B": "not_assessed",
+   "what_it_proves": "Optimal (smallest) t-type critical values valid for all Gaussian scale mixtures; for alpha<=.05 two-sided it coincides with Student's t; degrees of freedom must be reduced for larger alpha. In the companion note: sup over scale mixtures of coin flips gives 1-t^S_{n-1}(a)=m/2^n with value 2^-n at a=sqrt(n) (Thm 2.1).",
+   "relation_to_A_and_B": "Not A: iid/independent errors, infinite population, a fixed t-type statistic over scale mixtures; no impossibility theorem for all equivariant intervals, no SRSWOR, no max-share class. Special-case flavour for the t-type possibility half only in the limit: by my reading of the companion's Theorem 2.1, a finite two-sided t critical value over symmetric errors exists iff alpha>=2^(1-n), i.e. n>=1+log2(1/alpha) (my inference, not stated in the paper), which matches A's limit; I confirmed numerically that A's k* exists as G->infinity iff 2^(1-n)<=alpha. Not B. BS06 itself unread: provisional."
+  },
+  {
+   "source": "6. Basu & DasGupta (1995), Ann. Statist. 23(4):1433-1442, doi:10.1214/aos/1176324716",
+   "retrieved": false,
+   "how_read": "Not retrieved (Project Euclid bot wall; Purdue TR 91-47 PDF not found). Read the abstract and DasGupta's open chapter 'Classical Nonparametrics' sec. 24.5 (Theorem 24.9 restating the paper).",
+   "contains_A": "not_assessed",
+   "contains_B": "not_assessed",
+   "what_it_proves": "iid X_i=mu+sigma Z_i with Z in symmetric unimodal densities: (a) if the t critical value is <1 the infimum t-interval coverage is 0 for all n>=2; (b) above a threshold tau_n the infimum is attained at the uniform on [-1,1]; Table of infimum coverages.",
+   "relation_to_A_and_B": "No overlap on the evidence available: iid infinite-population fixed-t-interval coverage over a shape class, not equivariant-interval impossibility, no finite population, no least-squares coefficient. Provisional because the paper itself was not read."
+  }
+ ],
+ "forward_citations": "Semantic Scholar citations endpoint (no OpenAlex), 5 s spacing with backoff. Records returned and screened: Gleser-Hwang 193; Dufour 651; Bakirov-Szekely 45; Basu-DasGupta 19; Mani et al. arXiv:2505.20178 13; Mozer arXiv:2603.19160 11. Titles of the small sets and GH87 read in full; Dufour screened by regex on title+abstract (63 hits) and by title keywords (123 of 651), so ~528 Dufour titles were not individually inspected. Abstracts read for ~25 plausibly close items; 3 arXiv full texts scanned for impossibility/unbounded/equivariant/without-replacement/leverage. Nothing in any citing set states A or B or an immediate special case. Nearest items: Kojevnikov-Song arXiv:2109.03971 (asymptotic impossibility with one large cluster), PPI-for-finite-populations papers (arXiv:2608.10356, 2609.20758, 2610.09601, 2609.04082: asymptotic or variance-based, no finite-critical-value frontier). The only substantive near-neighbours found came from the web search chain, not from forward citations: Paul-Kuchibhotla arXiv:2403.06357 and Szekely arXiv:math/0610838 (limit case of A). Two 1998 GH-citing titles ('The nonexistence of confidence sets for discontinuous functionals', 'Nonexistence of procedures with bounded performance characteristics...') and a 2000 finite-population-double-sampling title had no abstract and were judged by title only. Provisional.",
+ "new_close_papers": [
+  {
+   "citation": "Paul, M. and Kuchibhotla, A. K. (2024). Inference for Median and a Generalization of HulC. arXiv:2403.06357.",
+   "url_or_doi": "https://arxiv.org/abs/2403.06357",
+   "how_read": "Full-text PDF from arXiv: abstract, Algorithm 1, Theorem 1, Remark 1, conclusion; whole-text keyword scan.",
+   "overlap": "Limiting case of A only. Remark 1: Lanke's claimed impossibility for n<log2(2/alpha) is false in general, but Lanke's proof gives impossibility for n<log2(1/alpha); their shift-invariant interval is bounded for n>=log2(2/alpha); they conjecture no shift-invariant locally bounded interval exists for n<log2(2/alpha). A's G->infinity, kappa0->min reduction n<1+log2(1/alpha) is the same threshold, so that corollary should be framed as resolving their conjecture in a different class (location-scale equivariant), not as a new threshold. Their class is iid symmetric about theta with infinite population; no SRSWOR, no kappa grading, no least-squares coefficient. No overlap with B."
+  },
+  {
+   "citation": "Szekely, G. J. (2006). Student's t-test for scale mixture errors. IMS Lecture Notes-Monograph Series 49, 9-15 (arXiv:math/0610838).",
+   "url_or_doi": "https://doi.org/10.1214/074921706000000365",
+   "how_read": "Full text (7 pp.) read from arXiv; companion to source 5, not the same paper.",
+   "overlap": "Limiting case of A's possibility half only. Theorem 2.1 gives the exact sup over symmetric (coin-flip scale mixture) errors of the t tail; reading it at a=sqrt(n) gives value 2^-n, so a finite two-sided t critical value exists iff alpha>=2^(1-n), the same condition as A's G->infinity limit (my inference, not stated in the paper; checked numerically that k* exists as G->infinity iff 2^(1-n)<=alpha). Infinite population, independent symmetric errors, a fixed t statistic; no impossibility theorem over all equivariant intervals, no finite population, no kappa. No overlap with B."
+  },
+  {
+   "citation": "Bertanha, M. and Moreira, M. J. (2020). Impossible inference in econometrics: Theory and applications. J. Econometrics 218(2), 247-270 (arXiv:1612.02024).",
+   "url_or_doi": "https://arxiv.org/abs/1612.02024",
+   "how_read": "Full-text PDF from arXiv; introduction read, keyword scan (0 hits for finite population, without replacement, sampling, equivariant, Lanke).",
+   "overlap": "Background only: unifies the Bahadur-Savage / Gleser-Hwang / Dufour impossibility lineage (a.s. bounded confidence sets have error probability one). Qualitative, no finite-population design and no probability bound; no overlap with A's quantitative frontier or with B."
+  }
+ ],
+ "overall_verdict_A": "Not found in any source I could read, but with a caveat on the limit. (i) No retrieved text (Dufour working paper, Hansen, Paul-Kuchibhotla, Szekely, Bertanha-Moreira, the three PPI finite-population papers) contains the finite-population SRSWOR statement: the pi(k)-based threshold kappa2(k*-1), the matching possibility theorem, the lower bound pi(k*-1)-alpha on the unbounded probability under every population, or SRSWOR minimaxity. (ii) The G->infinity corollary n<1+log2(1/alpha)=log2(2/alpha) is NOT new as a number: it equals the threshold Lanke (1974) claimed (per Paul-Kuchibhotla), the threshold of their shift-invariant interval and conjecture (arXiv:2403.06357), and, by my reading of Szekely's Theorem 2.1, the condition alpha>=2^(1-n) for a finite t critical value over symmetric errors; I verified numerically that A's k* exists as G->infinity iff 2^(1-n)<=alpha. The graded finite-population form and the impossibility for every location-scale-equivariant interval remain unclaimed in what I read. (iii) Primary texts for Gleser-Hwang, Lanke, Bakirov-Szekely 2006 and Basu-DasGupta were not read, so 'not in print' is provisional for those four; the technique (limiting-sequence scaling, Gleser-Hwang/Dufour) is classical, as the earlier checkers said. Recommend citing Lanke, Paul-Kuchibhotla and Szekely for the limiting threshold.",
+ "overall_verdict_B": "Not found in any source read or in any citing set screened. Nothing contains the least-squares-fitted-coefficient frontier (defeating samples with residual exactly affine in f_S, the f-dependent kappa_dagger, or the spike max-share formula max{(1-h_gg)^2, max_j h_gj^2}/(1-h_gg)). The closest items are Hansen (leverage drives failure of HC/CRVE intervals in Gaussian fixed-X regression; Cauchy lower bound for the jackknife) and the PPI/GREG finite-population papers (asymptotic, variance-based, no finite-critical-value frontier). Hansen's leverage-and-single-treated-cluster phenomenon is a qualitative cousin of the spike calculation. Provisional for the four unread primary sources, none of which concerns regression-adjusted finite-population estimators on the evidence available.",
+ "unretrievable_for_user": [
+  "Gleser & Hwang (1987): doi:10.1214/aos/1176350597 (Project Euclid PDF behind bot challenge; no OA copy)",
+  "Lanke (1974), 'Interval estimation of a median', Scandinavian Journal of Statistics, pp. 28-32 (venue per Paul-Kuchibhotla; the supplied DOI 10.1080/03461238.1974.10408659 actually resolves to Arrow, 'Optimal insurance and generalized deductibles'; JSTOR/Wiley paywalled)",
+  "Bakirov & Szekely (2006): doi:10.1007/s10958-006-0366-5 (Springer paywall; Math-Net.Ru http://www.mathnet.ru/eng/znsl304 returned 502/403)",
+  "Basu & DasGupta (1995): doi:10.1214/aos/1176324716 (Project Euclid PDF behind bot challenge; Purdue 1991 TR-47 not found at expected URL)",
+  "Dufour (1997) typeset Econometrica version: doi:10.2307/2171740 (paywalled; the author-posted working-paper text was read instead; the author's scanned Econometrica PDF has no text layer)",
+  "Hansen (2026) typeset RES version: doi:10.1093/restud/rdag050 (paywalled; the open working-paper version was read)"
+ ],
+ "n_queries": 21,
+ "frame_id": "2532d50d-f368-47c1-9b4b-b6ee8dde75e4"
+}

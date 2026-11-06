@@ -1,0 +1,6 @@
+Lam0>=2: formula == exact beta in 360 of 360
+Lam0<2: two-point-only formula < exact beta in 57 of 360 | formula+R >= exact in 360 of 360 | formula+R == exact in 360
+examples (N,n,v0,Lam0,two-pt formula,formula+R,exact): [([7, 5, 5, 6], [2, 3, 2, 3], 0.5, 1.05, 0.0, 0.05714285714285714, 0.05714285714285714), ([7, 5, 5, 6], [2, 3, 2, 3], 0.34, 1.05, 0.0, 0.005714285714285714, 0.005714285714285714), ([5, 6, 5, 5, 8], [2, 2, 2, 2, 2], 0.34, 1.05, 0.0, 0.03428571428571429, 0.03428571428571429)]
+attaining two-point population: in box class and exact P(SE=0) (full enumeration) == formula in 100/100
+random box-class populations tested: 6997; with P(SE=0) > formula: 0
+total flagged problems 0

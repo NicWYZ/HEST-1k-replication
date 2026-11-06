@@ -1,0 +1,21 @@
+statement,test,G,n,value,expected,passed
+T0,E2 interval transform: max |C(a+cf+bz)-(a+cFbar+bC(z))| over all samples/endpoints,8,4,4.263256414560601e-14,~1e-12,True
+T0,"covered-sample mask identical for z, e_hat(z), b e_hat(z), a+cf+bz (max #disagreeing samples)",8,4,0.0,0,True
+T0,e_hat(a+cf+bz) = b e_hat(z) (max abs err),8,4,7.105427357601002e-15,~1e-13,True
+T0,E2 interval transform: max |C(a+cf+bz)-(a+cFbar+bC(z))| over all samples/endpoints,10,4,2.842170943040401e-14,~1e-12,True
+T0,"covered-sample mask identical for z, e_hat(z), b e_hat(z), a+cf+bz (max #disagreeing samples)",10,4,0.0,0,True
+T0,e_hat(a+cf+bz) = b e_hat(z) (max abs err),10,4,1.4210854715202004e-14,~1e-13,True
+T0,E2 interval transform: max |C(a+cf+bz)-(a+cFbar+bC(z))| over all samples/endpoints,10,5,3.552713678800501e-14,~1e-12,True
+T0,"covered-sample mask identical for z, e_hat(z), b e_hat(z), a+cf+bz (max #disagreeing samples)",10,5,0.0,0,True
+T0,e_hat(a+cf+bz) = b e_hat(z) (max abs err),10,5,1.4210854715202004e-14,~1e-13,True
+T0,E2 interval transform: max |C(a+cf+bz)-(a+cFbar+bC(z))| over all samples/endpoints,12,5,5.684341886080802e-14,~1e-12,True
+T0,"covered-sample mask identical for z, e_hat(z), b e_hat(z), a+cf+bz (max #disagreeing samples)",12,5,0.0,0,True
+T0,e_hat(a+cf+bz) = b e_hat(z) (max abs err),12,5,1.4210854715202004e-14,~1e-13,True
+T3a,"spike kappa(e_hat(1_g)) vs formula, max abs err over all g, 18 random f",6,,3.885780586188048e-15,~1e-14,True
+T3a,"spike kappa(e_hat(1_g)) vs formula, max abs err over all g, 18 random f",8,,7.771561172376096e-16,~1e-14,True
+T3a,"spike kappa(e_hat(1_g)) vs formula, max abs err over all g, 18 random f",10,,2.7755575615628914e-16,~1e-14,True
+T3a,"spike kappa(e_hat(1_g)) vs formula, max abs err over all g, 18 random f",12,,4.440892098500626e-16,~1e-14,True
+T3a,"spike kappa(e_hat(1_g)) vs formula, max abs err over all g, 18 random f",15,,8.881784197001252e-16,~1e-14,True
+T3a,"spike kappa(e_hat(1_g)) vs formula, max abs err over all g, 18 random f",24,,6.522560269672795e-16,~1e-14,True
+T3a,"spike kappa(e_hat(1_g)) vs formula, max abs err over all g, 18 random f",40,,4.440892098500626e-16,~1e-14,True
+T3a,sum e^2 = 1-h_gg and sum e = 0 (abs err),12,,6.938893903907228e-17,0,True
