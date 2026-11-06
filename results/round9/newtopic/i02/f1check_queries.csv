@@ -1,0 +1,18 @@
+source,query,result,status
+web_search,Green Romanov principal component regression eigenvector overlaps Annals of Statistics,found Green and Romanov AoS 2025 (arXiv 2405.11676),ok
+web_search,ridge reduced-rank regression proportional asymptotics spiked singular vector overlap fitted values,"only Mukherjee-Zhu 2011 (methods), Feldman 2021, ridge-risk papers; no match",ok
+web_search,Bing Ning Xu adaptive estimation multivariate response regression hidden variables,found AoS 2022 / arXiv 2003.13844,ok
+web_search,projected PCA instrumented PCA large-dimensional asymptotics singular vector overlap regularized,"Fan-Liao-Wang projected PCA (fixed-p, sieve); no proportional ridge overlap",ok
+web_search,reduced rank regression high-dimensional asymptotics singular vectors phase transition fitted values random matrix 2023 2024,"Landau-Mel-Ganguli, Feldman, Bunea-She-Wegkamp; none covers ridge fitted values",ok
+web_search,regularized canonical correlation analysis proportional asymptotics BBP phase transition ridge parameter,"only methods papers (Vinod ridge CCA, rCCA 2403.02979); no spiked overlap theory",ok
+web_search,Ding Yang spiked multiplicative random matrices and principal components abstract,"Ding-Ji 2023: Haar multiplicative model, not regression",ok
+web_search,Kargin On the convergence of rank-one multi-target linear regression abstract,"Semantic Scholar misattribution: paper is by Courrieu, unrelated to Kargin",ok
+download,"arxiv.org/pdf/1702.06975 (Ding 2020) full text, intro, model, Thm 2.2 area read",white-noise additive model only,ok
+download,"arxiv.org/pdf/1905.13060 (Ding-Yang 2021) full text extracted; intro, model, contributions read","Y=A^{1/2} X B^{1/2}, X iid, deterministic A,B",ok
+download,arxiv.org/pdf/1409.6779 (Kargin) full text; sec 2.1-2.2 read,"OLS only, singular values only",ok
+download,arxiv.org/pdf/2003.13844 (Bing-Ning-Xu) full text extracted; keyword scan plus Lemma on ridge fitted values,"non-asymptotic bounds, no proportional limits",ok
+download,arxiv.org/pdf/2405.11676 (Green-Romanov) full text extracted; keyword scan,"PCR risk, not singular vectors of fitted values",ok
+download,arxiv.org/pdf/1103.2221 (Benaych-Georges Nadakuditi 2012) full text extracted; hypotheses read,bi-unitarily invariant noise or independent random perturbation,ok
+semantic_scholar,citations of arXiv:1409.6779 (9 returned),no ridge RRR overlap paper,ok
+semantic_scholar,citations of arXiv:1702.06975 (56 returned),titles scanned; none on regression fitted values,ok
+semantic_scholar,citations of arXiv:2003.13844 (5 returned),only Bing et al. JASA inference paper,ok

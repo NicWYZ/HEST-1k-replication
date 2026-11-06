@@ -1,0 +1,34 @@
+query,source,n_screened,outcome
+"all:""prediction-powered"" AND all:""confidence sequence""",arxiv,2,cand1/7
+"all:""prediction-powered"" AND all:""e-value""",arxiv,2,c1 PP e-values
+"all:""finite population"" AND all:""confidence sequence"" AND all:""without replacement""",arxiv,1,c1 finite-pop CS
+"all:""anytime-valid"" AND all:""survey sampling""",arxiv,0,c1 anytime survey
+"all:""cluster sampling"" AND all:""confidence sequence""",arxiv,0,c1 cluster CS
+"all:""anytime-valid"" AND all:""cluster"" AND all:""few clusters""",arxiv,0,c1
+"all:""active"" AND all:""prediction-powered"" AND all:""cluster""",arxiv,6,c3 active cluster PPI
+"all:""best arm identification"" AND all:""surrogate"" AND all:""predictions""",arxiv,0,c8 BAI surrogate
+"all:""e-BH"" AND all:""prediction-powered""",arxiv,0,c2 eBH PPI
+betting confidence sequence finite population control variate auxiliary predictions WoR,web_search,9,WSR20 WoR betting; GE-betting WoR 2608.21694; Ryu-Wornell; no control-variate/cluster-level PPI hit
+conformal selection few calibration units label-efficient active labeling FDR,web_search,9,Conformal Labeling 2510.14581; ICML26 label-efficient CP; no cluster-level few-cal granularity paper
+anytime-valid PPI sequential labeling stopping rule confidence sequence,web_search,9,Kilian et al 2505.18000 (asymptotic CS PPI); closest
+surrogate threshold effect trial-level R2 few trials prediction interval,web_search,9,meta-analytic surrogate validation (Buyse/Burzykowski) classical prior art for cheap-assay sufficiency
+prediction-powered multiple testing FDR e-values,web_search,10,Active multiple testing w/ proxy p-values & e-values 2502.05715 (taken)
+sequential design which cluster to label next anytime-valid cluster-level active,web_search,9,Efficient sequential eval LLM 2607.17409; Active Statistical Inference 2403.03208; Broska-Howes 2610.09601
+e-BH shared factor dependence tighter e-value factor model,web_search,9,e-BH arbitrary dependence; randomized e-BH 2305.11126; FarmTest; no factor-tailored e-BH
+ranking selection top-k auxiliary predictions control variates,web_search,9,Henderson-Newton Making the Cut; Demystifying PPI 2601.20819
+prediction-powered inference sampling without replacement finite population,semanticscholar,0,http 429
+"abs:""prediction-powered"" AND abs:""stopping""",arxiv,0,http429 c-stop
+"abs:""prediction-powered"" AND abs:""without replacement""",arxiv,1,c1
+"abs:""prediction-powered"" AND abs:""ranking""",arxiv,6,c-rank
+"abs:""prediction-powered"" AND abs:""shrinkage""",arxiv,6,c-safe
+labeled data split training predictor vs rectification optimal allocation PPI,web_search,9,Fine-Tune Then Rectify 2511.19486 (optimal FT/PPI allocation); Cross-PPI (Zrnic-Candes); OPAL 2606.03211 -> cand8 taken
+conformal p-values BH minimum calibration size granularity few calibration,web_search,9,Bates et al 2104.08279; Jin-Candes JMLR; derandomized conformal e-values 2302.07294 note 1/(n+1) floor -> cand7 trivial/taken
+Statistical Optimality of PPI minimax sampling without replacement,web_search,9,"Lee & Kim 2606.08730 (PPI under SRSWOR, label reuse); Mozer 2603.19160 PPI=difference estimator; Optimal inference black-box 2608.10155"
+multiple testing finite population design-based survey FDR Neyman WoR,web_search,9,Xu-Ramdas online e-values handle WoR dependence; no survey-design FDR for census parameters found (not exhaustive)
+online experimental design irrevocable selection competitive ratio A-optimal budget valid inference HT martingale,web_search,9,online resource allocation / experiment design competitive ratio (Springer PSD cone paper); no PPI-inference link found
+anytime-valid inference clustered data few clusters e-process donors,web_search,9,Mueller few heterogeneous clusters; Cameron-Miller; no anytime-valid cluster-level PPI found
+Efficient Sequential Evaluation of LLMs WoR confidence sequence prediction-assisted querying,web_search,8,"Hsu & Shekhar 2607.17409 = finite pool, adaptive querying, predictions, CS (closest to cand1)"
+Design-based confidence sequences anytime-valid causal inference Ham Bojinov,web_search,10,Ham et al 2210.08639 design-based CS with covariate adjustment (closest design-based CS)
+abs:prediction-powered AND abs:stopping (+9 similar arXiv API queries),arxiv,0,HTTP 429 / empty response; not retrievable; replaced by web_search
+prediction-powered shrinkage / ranking / without replacement (arXiv API),arxiv,16,Li&Ignatiadis PAS 2502.14166 (EB shrinkage); Lee-Kim 2606.08730; PP ranking evaluation 2606.05308 (LLM)
+prediction-powered AND e-value; finite population confidence sequence WoR (arXiv API),arxiv,3,Prediction-Powered E-Values 2502.04294; Kilian 2505.18000; WSR20 2006.04347

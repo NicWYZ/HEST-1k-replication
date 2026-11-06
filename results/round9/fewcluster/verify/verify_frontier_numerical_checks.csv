@@ -1,0 +1,53 @@
+statement,G,n,detail,value,reference,pass_
+Lemma1,8,,min kappa over e const on G-k clusters,0.8749999999999999,0.875,
+Lemma1,8,,min kappa over e const on G-k clusters,0.3750000000000001,0.375,
+Lemma1,8,,min kappa over e const on G-k clusters,0.2083333333333335,0.2083333333333333,
+Lemma1,8,,min kappa over e const on G-k clusters,0.12500000000000006,0.125,
+Lemma1,8,,min kappa over e const on G-k clusters,0.12500000000000008,0.075,
+Lemma1,8,,min kappa over e const on G-k clusters,0.12500000000000022,0.0416666666666666,
+Lemma1,8,,min kappa over e const on G-k clusters,0.12500000000000014,0.0178571428571428,
+Lemma1,10,,min kappa over e const on G-k clusters,0.9,0.9,
+Lemma1,10,,min kappa over e const on G-k clusters,0.4,0.4,
+Lemma1,10,,min kappa over e const on G-k clusters,0.23333333333333361,0.2333333333333333,
+Lemma1,10,,min kappa over e const on G-k clusters,0.15000000000000013,0.15,
+Lemma1,10,,min kappa over e const on G-k clusters,0.10000000000000026,0.1,
+Lemma1,10,,min kappa over e const on G-k clusters,0.10000000000000028,0.0666666666666666,
+Lemma1,10,,min kappa over e const on G-k clusters,0.10000000000000012,0.0428571428571428,
+Lemma1,10,,min kappa over e const on G-k clusters,0.10000000000000019,0.0249999999999999,
+Lemma1,10,,min kappa over e const on G-k clusters,0.10000000000000021,0.0111111111111111,
+Lemma1,12,,min kappa over e const on G-k clusters,0.9166666666666666,0.9166666666666666,
+Lemma1,12,,min kappa over e const on G-k clusters,0.41666666666666663,0.4166666666666667,
+Lemma1,12,,min kappa over e const on G-k clusters,0.25000000000000006,0.25,
+Lemma1,12,,min kappa over e const on G-k clusters,0.16666666666666696,0.1666666666666666,
+Lemma1,12,,min kappa over e const on G-k clusters,0.11666666666666692,0.1166666666666666,
+Lemma1,12,,min kappa over e const on G-k clusters,0.08333333333333387,0.0833333333333333,
+Lemma1,12,,min kappa over e const on G-k clusters,0.08333333333333355,0.0595238095238095,
+Lemma1,12,,min kappa over e const on G-k clusters,0.08333333333333344,0.0416666666666666,
+Lemma1,12,,min kappa over e const on G-k clusters,0.08333333333333359,0.0277777777777777,
+Lemma1,12,,min kappa over e const on G-k clusters,0.08333333333333362,0.0166666666666666,
+Lemma1,12,,min kappa over e const on G-k clusters,0.0833333333333335,0.0075757575757575,
+Lemma1,4-13,,random violations of kappa>=kappa2(k) in 200000 draws,0,0.0,
+Lemma0,8,3,trials with unconditional P>=bound / identity holds / per-j transfer holds (of 300),300.0/300.0/300.0,300.0,
+Lemma0,8,3,average over j of P(A|j notin S) equals P(A) (SRSWOR symmetry): max abs diff,1.1102230246251565e-16,0.0,
+Cor4,6-12,2-4,max |avg_B P_p(S in B1 or B2) - pi(k)| over 200 random designs,4.440892098500626e-16,0.0,
+Cor4,10,4 and 2,pi_n(k) for n=4 vs n=2 (design mixing sizes breaks the fixed-size average),0.1667 vs 0.5333,,
+Equivariance(E),12,5,max |C(z')-transform(C(z))| for OLS-tuned PPI interval WITH intercept,1.4210854715202004e-14,0.0,
+Equivariance(E),12,5,"same, OLS WITHOUT intercept (slope = sum fz/sum f^2)",8.306212673292265,0.0,
+Theorem1,"8,10,12","3,4,4","coverage of fpc-t interval at z_eps (eps=1e-8) <= 1-pi(k) for 420 (G,n,k,u,c) configs; failures all c=1e5 & u scale 1e3 (eps*c*scale not small)",407/420,420.0,yes (failures explained)
+Theorem1,"8,10,12","3,4,4",same with c=1e5 and eps<=1e-9: coverage<=1-pi(k),120/120,120.0,yes
+Theorem1,"10,12",4,OLS-tuned (with intercept) PPI interval at z_eps: max over c=100 configs of cov - (1-pi),0.0,0.0,yes
+Prop3,6-16,2-6,"(G,n,kappa0) combos with LB<=beta<=UB (exact beta from all partitions)",932,932.0,yes
+Theorem2,8,3,"kappa0=0.1458, beta=0.1429: smallest c at which worst found coverage == 1-beta; any found coverage<1-beta for c>=that? ",c0=1.0; violations=0,0.8571428571428572,yes
+Theorem2,8,3,"kappa0=0.1875, beta=0.1429: smallest c at which worst found coverage == 1-beta; any found coverage<1-beta for c>=that? ",c0=3.0; violations=0,0.8571428571428572,yes
+Theorem2,8,3,"kappa0=0.2917, beta=0.1964: smallest c at which worst found coverage == 1-beta; any found coverage<1-beta for c>=that? ",c0=3.0; violations=0,0.8035714285714286,yes
+Theorem2,10,4,"kappa0=0.1125, beta=0.0476: smallest c at which worst found coverage == 1-beta; any found coverage<1-beta for c>=that? ",c0=2.0; violations=0,0.9523809523809524,yes
+Theorem2,10,4,"kappa0=0.1307, beta=0.0476: smallest c at which worst found coverage == 1-beta; any found coverage<1-beta for c>=that? ",c0=5.0; violations=0,0.9523809523809524,yes
+Theorem2,10,4,"kappa0=0.1432, beta=0.0476: smallest c at which worst found coverage == 1-beta; any found coverage<1-beta for c>=that? ",c0=10.0; violations=0,0.9523809523809524,yes
+Theorem2,10,4,"kappa0=0.3167, beta=0.1667: smallest c at which worst found coverage == 1-beta; any found coverage<1-beta for c>=that? ",c0=5.0; violations=0,0.8333333333333334,yes
+Theorem2,12,4,"kappa0=0.0917, beta=0.0606: smallest c at which worst found coverage == 1-beta; any found coverage<1-beta for c>=that? ",c0=2.0; violations=0,0.9393939393939394,yes
+Theorem2,12,4,"kappa0=0.1119, beta=0.0606: smallest c at which worst found coverage == 1-beta; any found coverage<1-beta for c>=that? ",c0=5.0; violations=0,0.9393939393939394,yes
+Theorem2,12,4,"kappa0=0.1458, beta=0.0808: smallest c at which worst found coverage == 1-beta; any found coverage<1-beta for c>=that? ",c0=5.0; violations=0,0.9191919191919192,yes
+Theorem2,12,4,"kappa0=0.3333, beta=0.2545: smallest c at which worst found coverage == 1-beta; any found coverage<1-beta for c>=that? ",c0=5.0; violations=0,0.7454545454545455,yes
+CONSEQUENCE,15-51,4-16,"alpha=0.10 rows of table (23): k_star, kappa_star, rest_bound all match recomputation",23,23.0,yes
+CONSEQUENCE,24,8,"kappa0=0.14 (>kappa2(6)=0.125, <kappa2(5)=0.1583): worst found coverage over K at c>=10",0.9405034324942791,0.9,>=0.90: admissible
+CONSEQUENCE,24,8,"kappa0=0.17 (>kappa2(5)): coverage at z_eps (k=5), any c",0.8972332015810277,0.9,<0.90: impossible

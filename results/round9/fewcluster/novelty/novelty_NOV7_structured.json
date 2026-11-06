@@ -1,0 +1,83 @@
+{
+ "deviations": [
+  "No attached table was available (instructed not to look for project files): I regenerated f myself (seed 7; standard normal, lognormal sigma=1, normal with max moved to mean+4sd) and did NOT recompute the 'tuned_frontier_upper' values or the 0.37-0.74 tuned/fixed ratio; claim (iii) is unverified by me.",
+  "Semantic Scholar queries (5) returned no results (rate-limit/failure, not retried successfully); counted in n_queries but contributed nothing. OpenAlex not used, as instructed.",
+  "Only 6 arXiv papers were downloaded and text-scanned (Mani et al., Potscher-Preinerstorfer, Mozer, Lee-Kim, Shirota, Chen-Bai-Zhu); I read abstracts, setups and keyword contexts (leverage, affine, impossib, finite population, without replacement, unbounded) but did not read every proof line by line. Mani et al. proofs were not read in full.",
+  "Gleser-Hwang 1987, Dufour 1997, Bahadur-Savage 1956, Lanke 1974, Hansen 2026 (RES, closed access: abstract only), Chesher 1989, Sarndal et al. 1989 and arXiv:2607.05570 were assessed from abstracts/search snippets/secondary citations only; not read in full. Absence calls rest on partial reading and are provisional.",
+  "Query log was reconstructed after a session reset from the commands I ran; per-query result counts and new_close_papers are approximate. The 32 queries = 6+10+... arXiv 16, Semantic Scholar 5, Crossref 3, web_search 8.",
+  "Numerical recheck used my own seeded f and a random search (4000 random 5-subsets x 60 angles per f), so kappa values are upper bounds on the true minimum, not exact minima."
+ ],
+ "items": [
+  {
+   "statement": "T0",
+   "status": "immediate_special_case",
+   "where": "Standard OLS affine equivariance / GREG residual form; Mozer arXiv:2603.19160 (PPI++ = GREG); Sarndal et al. (g-weight residual technique)",
+   "reason": "Invariance of the tuned interval to z -> a + c f + b z and dependence of coverage only on the population residual e_hat is elementary algebra (theta_hat - theta = ebar_S + lam_S(Fbar - fbar_S) is a function of e_hat_S, and s_r is the sample residual). I found no paper stating it as a coverage-reduction lemma, but it is not a result of substance."
+  },
+  {
+   "statement": "T1prime",
+   "status": "not_found",
+   "where": "Closest: Gleser-Hwang 1987 / Dufour 1997 (forced unboundedness with positive probability; same scale-limit logic); Potscher-Preinerstorfer arXiv:2412.17470 (leverage/design condition for size control, econometrics)",
+   "reason": "No paper found with an impossibility theorem for regression-tuned/GREG/PPI++ intervals under SRSWOR of n of G clusters, nor the characterisation 'defeating samples are those on which z* is exactly affine in f_S' with P(C unbounded) >= P(W)-alpha. The proof template (E2 equivariance + eps->0 + pigeonhole) is the Gleser-Hwang/Dufour argument transplanted to a finite sample space, so the method is not new; the application and the f-dependent frontier are. I checked the proof sketch: for S in W, z_eps data = a_S + c_S f_S + eps x_S, E2 gives C = a_S + c_S Fbar + eps C(S,x_S), coverage needs a point at distance ~|theta*-a_S-c_S Fbar|/eps from C(S,x_S); finite sample space plus limsup P(A_k) >= limsup... gives P(unbounded) >= P(W)-alpha. Sound. Numerical recheck (my own seeded f, normal, G=24, n=8): pi(5)=0.1027668, B2=5 clusters {7,10,11,12,15}, kappa(e_hat(z*))=0.0905<0.10, theta(z*)=0.2410; exact enumeration of all 735471 samples, c=100, z*+eps*u gives coverage 0.8972332 for eps=1e-3,1e-5,1e-7 = 1-pi(5)=0.8972332 exactly. Lognormal f best kappa found 0.1256 (>0.10), normal-with-outlier 0.0866."
+  },
+  {
+   "statement": "T2prime",
+   "status": "not_found",
+   "where": "Nothing close found; classical asymptotic GREG validity (Sarndal-Swensson-Wretman 1989; Lee-Kim arXiv:2606.08730 SRSWOR asymptotics) and bounded-outcome nonasymptotic PPI CIs (Angelopoulos et al. 2023 App. E) are different regimes",
+   "reason": "No finite-sample possibility theorem for tuned intervals with a finite critical constant on a max-share class K_OLS(kappa0), expressed via the largest fraction of samples on which the population residual is affine in f_S. The compactness argument is routine; I checked it: standardise e, numerator bounded because Sxx_S>0, misses at c_j->inf force s_r->0, limit point (norm 1, kappa<=kappa0, compact) is affine on a common missed set M with P(M)>alpha>=beta, contradiction. Sound."
+  },
+  {
+   "statement": "T3",
+   "status": "not_found",
+   "where": "Analogues only: Potscher-Preinerstorfer (full-leverage point blocks size control), Hansen 2026 RES (leverage-driven worst-case coverage), Chesher 1989",
+   "reason": "(a) is a hat-matrix identity; I verified numerically for all spikes and three f (max abs error <1e-10): e = (I-H)e_g, sum e = 0, sum e^2 = 1-h_gg, so kappa = max{(1-h_gg)^2, max_j h_gj^2}/(1-h_gg). (b) follows from T1' and I found it in no source. Caveat in the statement: 'h_gg >= 1-kappa0' is NOT sufficient; one also needs max_{j!=g} h_gj^2 <= kappa0 (1-h_gg). At G=24 the minimal spike kappa is 0.759 (normal), 0.559 (lognormal), 0.523 (normal+outlier; max leverage 0.477), so no spike lies in K_OLS(0.10) for these f."
+  }
+ ],
+ "what_tuning_adds_beyond_prior_art": "Nothing in the literature I could access covers regression-tuned (GREG/PPI++) intervals under SRSWOR with finite-sample coverage guarantees. The Mani et al. 'no free lunch' paper treats exact MSE of PPI++ under iid sampling, not coverage or unboundedness; Mozer shows PPI++=GREG but states no finite-sample theorem; Lee-Kim and Shirota are asymptotic. The nearest conceptual precedents are Gleser-Hwang/Dufour (valid sets must be unbounded with positive probability) and Potscher-Preinerstorfer (design leverage controls size control), in other settings. What tuning adds, and what I could not find in print: (i) the defeating-sample set is the set of samples on which z* is exactly affine in f_S (zero tuned residual variance), so the frontier depends on f through the geometry of sample lines, unlike the fixed-coefficient case; (ii) the hat-matrix max-share formula for spikes and the resulting leverage-based cheapness of attacks; (iii) the possibility/impossibility dichotomy via beta_OLS(kappa0). Novelty risk: the proof technique of T1' is the standard Gleser-Hwang/Dufour scaling argument, so claim novelty for the finite-population tuned-estimator application, not the technique. Claim (iii) numbers (0.37-0.74) were not rechecked. Conclusion is provisional because several key sources were seen only via abstracts/snippets.",
+ "closest_papers": [
+  {
+   "citation": "Mani, Xu, Lipton, Oberst (2025/ICML 2026), No Free Lunch: Non-Asymptotic Analysis of Prediction-Powered Inference",
+   "url_or_doi": "arXiv:2505.20178",
+   "how_read": "full text downloaded; abstract, intro, survey-sampling remarks, keyword scan; proofs not read",
+   "overlap": "Exact finite-sample analysis of PPI++ (= GREG) tuned slope, but MSE under iid sampling; no coverage, leverage or impossibility."
+  },
+  {
+   "citation": "Potscher & Preinerstorfer, A Necessary and Sufficient Condition for Size Controllability of Heteroskedasticity Robust Test Statistics (Econometric Theory 2026)",
+   "url_or_doi": "arXiv:2412.17470",
+   "how_read": "full text downloaded; abstract, intro, conditions read; proofs skimmed",
+   "overlap": "Analogue: iff condition on design (full-leverage basis vector) for finite-sample size control of regression-based tests; no SRSWOR, no affine-fit sample characterisation."
+  },
+  {
+   "citation": "Gleser & Hwang (1987) Ann. Statist. 15:1351-1362; Dufour (1997) Econometrica 65:1365-1387",
+   "url_or_doi": "10.1214/aos/1176350597; 10.2307/2171740",
+   "how_read": "abstracts/snippets only",
+   "overlap": "Same logical form as T1' (any valid set has positive probability of being unbounded) and same scale-limit proof idea."
+  },
+  {
+   "citation": "Hansen (2026) Jackknife Standard Errors for Clustered Regression, Rev. Econ. Stud. rdag050",
+   "url_or_doi": "10.1093/restud/rdag050",
+   "how_read": "abstract only (closed access)",
+   "overlap": "Leverage/cluster-structure driven worst-case coverage; superpopulation normal errors, not design-based SRSWOR."
+  },
+  {
+   "citation": "Mozer (2026) PPI is the Difference Estimator",
+   "url_or_doi": "arXiv:2603.19160",
+   "how_read": "full text downloaded; abstract and SRSWOR variance section read",
+   "overlap": "Establishes PPI/PPI++ = difference estimator/GREG; no finite-sample impossibility."
+  },
+  {
+   "citation": "Paul & Kuchibhotla (2024) Inference for Median and a Generalization of HulC (Remark 1 on Lanke 1974)",
+   "url_or_doi": "arXiv:2403.06357",
+   "how_read": "abstract and Remark 1 via search excerpt",
+   "overlap": "Weak analogy: sample-size threshold below which no bounded valid interval exists (median, iid symmetric)."
+  },
+  {
+   "citation": "Lee & Kim (2026) Statistical Optimality of Prediction-Powered Inference",
+   "url_or_doi": "arXiv:2606.08730",
+   "how_read": "full text downloaded; abstract and SRSWOR setup read",
+   "overlap": "PPI under SRSWOR, asymptotic only."
+  }
+ ],
+ "n_queries": 32,
+ "frame_id": "19988eaa-a40c-480a-9769-87b9bb8cde7a"
+}

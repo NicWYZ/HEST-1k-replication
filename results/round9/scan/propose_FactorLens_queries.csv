@@ -1,0 +1,29 @@
+candidate,query,source,n_screened,outcome
+A,prediction-powered inference choose linear combination of outcomes maximize variance reduction multivariate PPI,web_search,9,"MoE-PPI (2604.27892), AM-PPI (2605.08429) combine predictors not outcomes; no PPI paper choosing outcome-combination/signature found"
+A,estimand selection linear combination of genes most predictable from histology image donor-level canonical correlation few donors overfitting,web_search,9,only sparse CCA image-genomics (Nature Comms 2021); nothing on PPI/estimand design
+A,Lo MacKinlay Maximizing predictability in the stock and bond markets portfolio weights maximize predictability,web_search,10,"Lo-MacKinlay 1997 MPP = smallest generalized eigenvector; Pinelis 2311.01985, Goulet Coulombe 2306.05568 -> optimisation step is prior art (finance)"
+G,prediction-powered inference James-Stein shrinkage of tuning parameter across many outcomes multiple estimands,web_search,9,"TAKEN: PAS (2502.14166), PPI across many tasks (2605.29249), Miao et al multivariate power tuning"
+C/B,prediction-powered inference multiple hypothesis testing FDR correlated tests dependence among outcomes latent factor,web_search,10,"factor-adjusted multiple testing heavily covered: Friguet 2009, Fan-Han-Gu 2012, FarmTest, Wang et al 2017, Leek-Storey 2008"
+C,false coverage proportion exceedance confidence intervals strong dependence common factor many parameters few samples,web_search,9,"FDP exceedance (Goeman-Solari), FCR (Benjamini-Yekutieli, JRSSB 2025 improvement); no FCP-under-factor-dependence for PPI/few clusters found"
+D,Fama-MacBeth inference small number of time periods fixed T cross-sectional dependence strong factor valid t-test few periods,web_search,9,TAKEN: Ibragimov-Mueller 2010 FM fixed T; Gagliardini-Ossola-Scaillet; Latent factor analysis in short panels 2306.14004
+G2,prediction-powered inference multiple testing false discovery rate control many hypotheses shared labeled samples dependence between p-values PPI BH,web_search,9,"SynthBH (2602.16690), dBH (Fithian-Lihua 2007.10438), generic dependence FDR; no factor-aware PPI-FDR"
+G2,empirical Bayes shrinkage SURE asymptotic optimality correlated noise common factor loss does not concentrate means estimation dependent errors,web_search,9,EB with correlated noise exists (Sun-Stephens 1812.07488); not PPI-specific
+G2,compound estimation many means strongly correlated noise factor model empirical Bayes Stein shrinkage fails to concentrate fixed sample size p to infinity,web_search,9,"Sun-Stephens 1812.07488 (correlated noise EB, RUV controls); no PPI/ fixed-n_L analysis"
+G2,Stein unbiased risk estimate shrinkage dependent observations asymptotically optimal under cross-sectional dependence,web_search,9,SURE with known Sigma (2606.12324 spatial parameters); Xie-Kou-Brown; dependence handled in generic EB literature
+A,"all:""prediction-powered inference"" AND all:factor model multiple outcomes",arXiv,8,arXiv API; titles screened; only tangential hits
+A,"all:""prediction-powered inference"" AND all:""canonical correlation"" OR all:""reduced-rank""",arXiv,0,arXiv API; 0 relevant results
+A,"all:""prediction-powered"" AND abs:""linear combination"" AND abs:outcomes",arXiv,1,arXiv API; titles screened; only tangential hits
+A,"all:""maximally predictable"" AND (all:portfolio OR all:""canonical correlation"")",arXiv,2,arXiv API; titles screened; only tangential hits
+A,"all:""prediction-powered inference"" AND abs:""multivariate"" AND abs:""covariance""",arXiv,0,arXiv API; FAILED (HTTP 429)
+A,"all:""prediction-powered inference"" AND abs:""choice of estimand"" OR abs:""optimal contrast""",arXiv,0,arXiv API; FAILED (HTTP 429)
+F,"all:""prediction-powered"" AND abs:""normalization"" AND abs:""gene expression""",arXiv,0,arXiv API; FAILED (HTTP 429)
+E,"abs:""prediction-powered"" AND abs:""factor model""",arXiv,0,arXiv API; FAILED (HTTP 429)
+B,"abs:""prediction-powered"" AND abs:""negative control""",arXiv,1,arXiv API; titles screened; only tangential hits
+C,"abs:""prediction-powered"" AND (abs:""false coverage"" OR abs:""simultaneous"" ) AND abs:""dependence""",arXiv,8,arXiv API; titles screened; only tangential hits
+G,"abs:""prediction-powered"" AND abs:""shrinkage"" AND abs:""tuning parameter""",arXiv,0,arXiv API; 0 relevant results
+G2,"all:""empirical Bayes"" AND all:""correlated"" AND all:""Stein"" AND all:""factor structure""",arXiv,0,arXiv API; 0 relevant results
+G2,"all:""simultaneous estimation"" AND all:""means"" AND all:""dependent"" AND all:""unbiased risk estimate"" AND all:""correlation""",arXiv,0,arXiv API; 0 relevant results
+D,"all:""prediction-powered"" AND all:""cross-sectional""",arXiv,8,arXiv API; titles screened; only tangential hits
+GEN,"all:""prediction-powered"" AND all:""gene expression""",arXiv,10,arXiv API; titles screened; only tangential hits
+G/B,"arXiv id_list 2605.29249,2502.14166",arXiv,2,abstracts read: multi-task PPI treats tasks independently; cross-task affine recalibration gives no asymptotic gain beyond power-tuned PPI; PAS = EB shrinkage across independent tasks
+prior scans,repo results/round9/scan/*_candidates.csv (earlier sessions),local,0,"skimmed titles to avoid duplicating prior verdicts (MULTI, MOD, GENESET, PROXY, JOINT)"

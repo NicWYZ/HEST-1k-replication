@@ -1,0 +1,75 @@
+query,source,date,n_results_screened,new_close_papers
+"all:""Bahadur-Savage"" AND all:""finite population""",arxiv,2026-10-26,0,0
+"all:""inference with a single treated cluster""",arxiv,2026-10-26,2,1
+"all:""few clusters"" AND all:""randomization inference""",arxiv,2026-10-26,0,0
+"all:""prediction-powered inference"" AND all:cluster",arxiv,2026-10-26,4,1
+"all:""cluster-robust"" AND all:""prediction-powered""","arxiv (HTTP 429, no results)",2026-10-26,0,0
+"all:""finite population"" AND all:""few clusters"" AND all:""design-based""","arxiv (HTTP 429, no results)",2026-10-26,0,0
+"all:""wild cluster bootstrap"" AND all:""few clusters""","arxiv (HTTP 429, no results)",2026-10-26,0,0
+"all:""cluster randomized"" AND all:""constrained randomization"" AND all:""few clusters""","arxiv (HTTP 429, no results)",2026-10-26,0,0
+"all:""sign-change"" AND all:""few clusters""","arxiv (HTTP 429, no results)",2026-10-26,0,0
+"all:""t-statistic"" AND all:""few clusters"" AND all:""heterogeneity""","arxiv (HTTP 429, no results)",2026-10-26,0,0
+citations of arXiv:2610.09601,ss_cites,2026-10-26,0,0
+"all:""cluster-robust"" AND all:""prediction-powered""",arxiv,2026-10-26,2,0
+"all:""few clusters"" AND all:""design-based""",arxiv,2026-10-26,2,0
+"all:""wild cluster bootstrap"" AND all:""few clusters""",arxiv,2026-10-26,0,0
+"all:""constrained randomization"" AND all:""cluster randomized""",arxiv,2026-10-26,3,0
+"all:""sign-change"" AND all:""few clusters""",arxiv,2026-10-26,0,0
+"all:""finite population"" AND all:""few clusters""",arxiv,2026-10-26,1,0
+"all:""permutation test"" AND all:""few clusters"" AND all:Hagemann",arxiv,2026-10-26,0,0
+"all:""leverage"" AND all:""few clusters"" AND all:""wild bootstrap""",arxiv,2026-10-26,0,0
+t-test finite-sample validity few clusters worst-case distribution,"ss (HTTP 429, no results)",2026-10-26,0,0
+finite population Student t statistic exact coverage worst case maximum share,"ss (HTTP 429, no results)",2026-10-26,0,0
+design-based inference few clusters randomization finite population mean,"ss (HTTP 429, no results)",2026-10-26,0,0
+prediction-powered inference finite population sampling without replacement,"ss (HTTP 429, no results)",2026-10-26,0,0
+impossibility confidence interval finite population mean sampling without replacement,"ss (HTTP 429, no results)",2026-10-26,0,0
+Permutation inference with a finite number of heterogeneous clusters,cr,2026-10-26,8,0
+Randomization tests under an approximate symmetry assumption,cr,2026-10-26,8,0
+Inference with few heterogeneous clusters,cr,2026-10-26,8,0
+t-statistic based correlation and heterogeneity robust inference,cr,2026-10-26,8,0
+Student's t-test for Gaussian scale mixtures,cr,2026-10-26,8,0
+Hotelling T2 under a symmetry condition extremal probabilistic problems,cr,2026-10-26,8,0
+Student's t-test under symmetry conditions,cr,2026-10-26,8,0
+Finite sample nonparametric inference and large sample efficiency,cr,2026-10-26,8,0
+design-based inference few clusters finite population cluster randomized trial,cr,2026-10-26,8,0
+covariate-constrained randomization few clusters permutation test cluster randomized trial,cr,2026-10-26,8,0
+Siddique Li O'Brien constrained randomization cluster randomized few clusters,cr,2026-10-26,8,0
+wild cluster bootstrap unbalanced clusters few clusters leverage,cr,2026-10-26,8,0
+Bell McCaffrey bias reduced linearization few clusters degrees of freedom,cr,2026-10-26,8,0
+Young channeling Fisher randomization tests leverage influential observations,cr,2026-10-26,8,0
+finite population central limit theorem Lindeberg condition maximum squared deviation sampling without replacement,cr,2026-10-26,8,0
+cluster robust inference few treated clusters Ferman Pinto,cr,2026-10-26,8,0
+"all:""Student"" AND all:""t-test"" AND all:""finite population"" AND all:""sampling without replacement""","arxiv (HTTP 429, no results)",2026-10-26,0,0
+"all:""sampling without replacement"" AND all:""confidence interval"" AND all:""non-asymptotic"" AND all:""studentized""","arxiv (HTTP 429, no results)",2026-10-26,0,0
+"all:""prediction-powered"" AND all:""finite population"" AND all:""sampling without replacement""","arxiv (HTTP 429, no results)",2026-10-26,0,0
+"all:""design-based"" AND all:""prediction-powered inference"" AND all:""survey""","arxiv (HTTP 429, no results)",2026-10-26,0,0
+"all:""conformal"" AND all:""finite population"" AND all:""survey sampling""","arxiv (HTTP 429, no results)",2026-10-26,0,0
+"all:""empirical Bernstein"" AND all:""without replacement""",arxiv,2026-10-26,2,1
+Bahadur-Savage impossibility finite population mean sampling without replacement,web_search,2026-10-26,9,1
+no valid CI finite population mean without bounded values,web_search,2026-10-26,9,0
+finite population Bahadur Savage analogue survey rare large unit,web_search,2026-10-26,9,0
+Hagemann inference with a single treated cluster,web_search,2026-10-26,9,0
+t-test exact validity max share self-normalized sum,web_search,2026-10-26,9,0
+Pinelis Student t worst case few-point,web_search,2026-10-26,9,1
+Preinerstorfer Potscher valid heteroskedasticity robust testing leverage,web_search,2026-10-26,9,1
+Sugden Smith Jones Cochran's rule,web_search,2026-10-26,9,1
+few clusters skewness correction cluster-robust arXiv 2026,web_search,2026-10-26,9,1
+Hidiroglou self-representing stratum take-all,web_search,2026-10-26,9,1
+MacKinnon When can we trust cluster-robust inference,web_search,2026-10-26,9,0
+Chiang Sasaki Wang genuinely robust clustered data,web_search,2026-10-26,9,1
+"all:Bahadur AND all:""without replacement"" AND all:""confidence interval""",arxiv,2026-10-26,0,0
+"all:""finite population"" AND all:""unbounded"" AND all:""confidence interval"" AND all:impossibility",arxiv,2026-10-26,0,0
+"all:""few clusters"" AND all:""finite-sample"" AND all:""valid"" AND all:""heterogeneity""",arxiv,2026-10-26,1,0
+"all:""sampling without replacement"" AND all:""studentized"" AND all:""exact""",arxiv,2026-10-26,0,0
+Kojevnikov Song impossibility cluster dependence large cluster,web_search,2026-10-26,9,1
+CRS approximate symmetry sign change minimum clusters,web_search,2026-10-26,9,0
+nonparametric CI finite population unbounded impossibility,web_search,2026-10-26,9,0
+exact critical value t sampling without replacement worst case,web_search,2026-10-26,9,0
+Abadie Athey Imbens Wooldridge clustering design-based,web_search,2026-10-26,9,0
+survey few PSUs degrees of freedom,web_search,2026-10-26,9,0
+PPI design-based survey small labeled units skewed,web_search,2026-10-26,9,1
+Bardenet Maillard Hoeffding-Serfling finite population CI,web_search,2026-10-26,9,1
+active statistical inference sampling certainty units,web_search,2026-10-26,9,0
+design-based randomization inference CRT few clusters Su Ding,web_search,2026-10-26,9,0
+arXiv abs fetch 2610.09601 / 2511.05710 / math/0606160 / 2602.16933 / 2609.18586 / 2608.21694 / 2606.08730,arxiv_fetch,2026-10-26,9,0
+"full-text read: 2610.09601, 2301.09633, 2006.04347, 2412.17470, math/0606160, 2609.18586 (grep)",arxiv_fetch,2026-10-26,9,0

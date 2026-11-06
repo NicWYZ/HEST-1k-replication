@@ -1,0 +1,56 @@
+query,source,date,n_results_screened,new_close_papers
+"all:""conformal prediction"" AND all:calibration AND all:""labeling budget""",arXiv API,2026-10-24,2,
+"abs:calibration AND abs:conformal AND abs:""label budget""",arXiv API,2026-10-24,2,
+"abs:conformal AND abs:""prediction-powered inference"" AND abs:calibration",arXiv API,2026-10-24,3,Csillag et al 2510.16166 (related); Farzaneh 2509.04112 (related)
+"abs:""conformal prediction"" AND abs:""how many calibration"" AND abs:labels",arXiv API,2026-10-24,0,
+"abs:""calibration set size"" AND abs:conformal AND abs:""annotation cost""",arXiv API,2026-10-24,0,
+"abs:""prediction-powered"" AND abs:""prediction sets""",arXiv API,2026-10-24,10,Chen & Li 2609.33482 (close/related); Einbinder 2412.11174 (related)
+"abs:active AND abs:conformal AND abs:""calibration labels"" AND abs:query",arXiv API,2026-10-24,0,
+all:Csillag AND all:conformal,arXiv API,2026-10-24,5,
+"abs:""split labeling budget"" AND abs:conformal",arXiv API,2026-10-24,0,
+conformal prediction costly label queries stopping rule calibration set size,arXiv API,2026-10-24,8,
+conformal prediction trade-off calibration set size prediction set size optimal allocation labels,arXiv API,2026-10-24,8,
+prediction-powered inference and conformal prediction share labeled data budget allocation,arXiv API,2026-10-24,8,
+prediction-powered inference labeling budget allocation optimal number of labeled samples cost,arXiv API,2026-10-24,8,OPAL 2606.03211 (related)
+cost-optimal sample allocation prediction-powered inference labeled unlabeled,arXiv API,2026-10-24,8,
+hierarchical conformal prediction calibration clusters number of calibration groups,arXiv API,2026-10-24,8,
+conformal prediction clustered data new cluster coverage calibration groups few labeled,arXiv API,2026-10-24,8,
+conformal prediction few-shot labeled target domain calibration labels budget,arXiv API,2026-10-24,8,
+active learning conformal prediction label acquisition calibration efficiency,arXiv API,2026-10-24,8,
+estimation and prediction trade-off design of experiments labeling budget confidence interval prediction interval,arXiv API,2026-10-24,8,
+Ilyas ICML 2026 conformal prediction calibration label cost,web_search,2026-10-24,10,"Ilyas et al Provably Label-Efficient CP (close, calibration-cost half)"
+allocate labeled data between prediction-powered inference and conformal calibration shared labeling budget,web_search,2026-10-24,9,PPCI 2603.05575 (related)
+conformal prediction multiple calibration sources hierarchical groups number of labeled calibration groups versus samples per group,web_search,2026-10-24,10,GHCP 2608.15500 (close)
+Broska Howes cluster-robust prediction-powered inference arXiv 2610.09601,web_search,2026-10-24,10,Broska & Howes (close; cost model flagged as future work)
+prediction-powered inference and prediction intervals jointly labeled data trade-off CI width vs prediction set width,web_search,2026-10-24,10,
+optimal sample allocation estimation and prediction compound optimal design Pareto sampling design,web_search,2026-10-24,10,
+conformal prediction calibration data requirement how many labeled; estimation of population parameter and predictive coverage same labels,web_search,2026-10-24,9,
+Mallick Generalized Hierarchical Conformal Prediction 2608.15500 few initial observations test group,web_search,2026-10-24,9,(GHCP read: abstract+sections)
+Lee Barber Willett conformal prediction for hierarchical data coverage bound K groups,web_search,2026-10-24,9,HCP 2306.06342 (close)
+small area estimation optimal sample allocation between areas and within areas compromise national and domain estimates,web_search,2026-10-24,9,Longford 2006 / Molefe-Clark (close in survey-sampling vocabulary)
+Longford sample size calculation for small-area estimation compromise allocation inferential priorities,web_search,2026-10-24,9,
+active calibration conformal prediction choose which examples to label sampling design label budget,web_search,2026-10-24,9,Yu et al 2610.10829 partial verification (related)
+random-effects meta-analysis prediction interval new study vs confidence interval number of studies vs sample size design,web_search,2026-10-24,9,
+Duchi predictive inference across multiple environments batch coverage,web_search,2026-10-24,9,Duchi et al 2403.16336 (related)
+same labeled calibration set for PPI and conformal prediction sets simultaneously valid inference and UQ,web_search,2026-10-24,9,
+Dunn Wasserman Ramdas distribution-free prediction sets two-layer hierarchical,web_search,2026-10-24,9,Dunn et al (related)
+conformal prediction spatial transcriptomics gene expression histology prediction sets donors,web_search,2026-10-24,9,"TISSUE (related; spot-level CP, no clusters/allocation)"
+conformal prediction survey sampling design-based prediction intervals two-stage cluster sampling,web_search,2026-10-24,8,Wieczorek 2303.01422 (related)
+how to split labeled data between training predictor and calibration/rectifier PPI optimal split fraction,web_search,2026-10-24,9,Optimal data splitting split CP 2606.31600 (related)
+few labels in new target group conformal vs many labeled source groups allocation hierarchical calibration cost tradeoff,web_search,2026-10-24,9,
+Pareto frontier CI width and prediction set size labeling budget allocation joint design conformal,web_search,2026-10-24,9,
+prediction-powered inference spatial transcriptomics histology predicted expression valid inference,web_search,2026-10-24,9,
+optimal design multilevel model cost constraint number of clusters cluster size estimation of mean vs prediction of new cluster,web_search,2026-10-24,9,
+Semantic Scholar forward citations of Csillag 2510.16166,Semantic Scholar API,2026-10-24,4,none close
+Semantic Scholar forward citations of GHCP 2608.15500,Semantic Scholar API,2026-10-24,0,
+Semantic Scholar forward citations of Broska-Howes 2610.09601,Semantic Scholar API,2026-10-24,0,
+Prediction-Powered Inference in Hybrid Measurement Regimes survey,web_search,2026-10-24,9,
+few-shot conformal prediction auxiliary tasks meta-learning calibration new task,web_search,2026-10-24,9,Fisch et al 2021 (related)
+generalizability theory D-study optimal number of raters occasions relative vs absolute decisions cost,web_search,2026-10-24,9,"G-theory D-study (related, psychometrics)"
+cost-optimal active model evaluation labeling budget allocation across sources,web_search,2026-10-24,9,
+PPI clusters prediction interval new cluster superpopulation vs finite population labelled clusters allocation both inference and prediction,web_search,2026-10-24,9,
+conformal prediction calibration labeling cost optimal calibration size,Crossref API,2026-10-24,8,
+prediction-powered inference labeling budget allocation (b1 batch; Crossref call failed on 2 of 3),Crossref API,2026-10-24,0,API returned non-JSON
+arXiv API quoted-field queries batch b1 (4 queries),arXiv API,2026-10-24,0,all returned empty body
+arXiv API quoted-field queries batch b2 (8 queries),arXiv API,2026-10-24,0,all returned empty body
+OpenAlex searches and forward-citation queries,OpenAlex API,2026-10-24,0,"NOT RUN: credential approval never granted, cells blocked"

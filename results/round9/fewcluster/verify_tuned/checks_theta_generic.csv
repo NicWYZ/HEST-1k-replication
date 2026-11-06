@@ -1,0 +1,7 @@
+statement,test,G,n,f_kind,result,expected,flats_checked,passed
+T1prime/T2prime,for every flat with >=1 affine sample: is theta_hat_S identically 0 on the flat for some affine S? (count of such flats),8,4,normal,0,0,1037,True
+T1prime/T2prime,for every flat with >=1 affine sample: is theta_hat_S identically 0 on the flat for some affine S? (count of such flats),8,4,lognormal,0,0,1037,True
+T1prime/T2prime,for every flat with >=1 affine sample: is theta_hat_S identically 0 on the flat for some affine S? (count of such flats),8,4,normal_outlier,0,0,1037,True
+T1prime/T2prime,for every flat with >=1 affine sample: is theta_hat_S identically 0 on the flat for some affine S? (count of such flats),10,5,normal,0,0,5173,True
+T1prime/T2prime,for every flat with >=1 affine sample: is theta_hat_S identically 0 on the flat for some affine S? (count of such flats),10,5,lognormal,0,0,5173,True
+T1prime/T2prime,for every flat with >=1 affine sample: is theta_hat_S identically 0 on the flat for some affine S? (count of such flats),10,5,normal_outlier,0,0,5173,True

@@ -1,0 +1,134 @@
+query,source,date,n_results_screened,new_close_papers
+"all:""prediction-powered inference"" AND (all:""training"" OR all:""optimal predictor"" OR all:""variance"")",arxiv,2026-10-24,8,TC-PPI 2609.34156; Lee&Kim 2606.08730; MoE-PPI 2604.27892
+prediction-powered inference train predictor to minimize variance of estimator,s2,2026-10-24,0,HTTP 429 - no results (keyless S2 rate-limited)
+"all:""prediction-powered"" AND all:""fine-tuning"" AND all:""inference""",arxiv,2026-10-24,8,
+decision-focused learning prediction-powered inference power-aware training,s2,2026-10-24,0,HTTP 429 - no results (keyless S2 rate-limited)
+"all:""prediction-powered inference"" AND all:""cluster""",arxiv,2026-10-24,4,
+cluster-level labels prediction-powered inference between-cluster within-cluster,s2,2026-10-24,0,HTTP 429 - no results (keyless S2 rate-limited)
+"all:""prediction-powered inference"" AND all:""hierarchical""",arxiv,2026-10-24,1,
+"all:""prediction-powered inference"" AND all:""optimal"" AND all:""predictor"" AND all:""learn""",arxiv,2026-10-24,1,
+"all:""prediction-powered"" AND all:""variance"" AND all:""loss"" AND all:""train""",arxiv,2026-10-24,4,
+"all:""semi-supervised"" AND all:""efficient"" AND all:""prediction"" AND all:""surrogate"" AND all:""cluster""",arxiv,2026-10-24,0,
+"all:""distribution regression"" AND all:""mean embedding"" AND all:""aggregate""",arxiv,2026-10-24,0,
+"all:""learning from aggregate"" AND all:""regression"" AND all:""bag-level""",arxiv,2026-10-24,1,Javanmard et al 2401.11081
+"all:""Mundlak"" AND all:""machine learning"" AND all:""cluster""",arxiv,2026-10-24,0,
+"all:""between-cluster"" AND all:""within-cluster"" AND all:""prediction"" AND all:""proxy"" AND all:""estimator""",arxiv,2026-10-24,0,
+"all:""model-assisted"" AND all:""cluster sampling"" AND all:""machine learning""",arxiv,2026-10-24,0,
+"all:""regression adjustment"" AND all:""cluster-randomized"" AND all:""machine learning"" AND all:""cluster-level""",arxiv,2026-10-24,0,
+prediction-powered inference training predictor variance,arxiv,2026-10-24,8,Prediction-Powered Conditional Inference 2603.05575 (related)
+prediction powered inference optimal prediction function efficient influence,arxiv,2026-10-24,8,
+distribution regression kernel mean embedding bags,arxiv,2026-10-24,8,
+Mundlak within between effects high-dimensional embeddings cluster,arxiv,2026-10-24,8,Arkhangelsky&Imbens 1807.02099
+model-assisted estimation cluster sampling machine learning predictions,arxiv,2026-10-24,8,
+regression adjustment cluster randomized trials cluster-level covariates machine learning,arxiv,2026-10-24,8,
+between-cluster regression coefficient differs from within-cluster ecological bias machine learning,arxiv,2026-10-24,8,
+semi-supervised mean estimation clustered data unlabeled clusters,arxiv,2026-10-24,8,
+prediction-powered inference mean of cluster means donor,arxiv,2026-10-24,8,
+transfer learning ridge shrink toward source coefficient high-dimensional regression,arxiv,2026-10-24,8,
+"all:""prediction-powered inference"" AND all:""fine-tun""",arxiv,2026-10-24,0,
+"all:""prediction-powered inference"" AND all:""surrogate"" AND all:""cluster""",arxiv,2026-10-24,0,
+"all:""prediction-powered inference"" AND all:""spatial transcriptomics""",arxiv,2026-10-24,0,
+"all:""prediction-powered inference"" AND all:""pathology""",arxiv,2026-10-24,0,
+"all:""prediction-powered inference"" AND all:""gene expression""",arxiv,2026-10-24,1,Generation-powered inference 2608.14542 (related)
+"all:""Mundlak"" AND all:""prediction""",arxiv,2026-10-24,1,Fuhr&Papies 2409.01266
+"all:""between-group"" AND all:""within-group"" AND all:""regression"" AND all:""neural""",arxiv,2026-10-24,1,
+"all:""distribution regression"" AND all:""two-stage sampled""",arxiv,2026-10-24,8,Szabo et al 1411.2066
+"all:""learning from label proportions"" AND all:""regression"" AND all:""aggregate""",arxiv,2026-10-24,2,
+"all:""multiple instance regression"" AND all:""bag""",arxiv,2026-10-24,5,Uriot 1904.10583; Agarwal et al 2411.19045
+"all:""pseudobulk"" AND all:""histology"" AND all:""prediction""",arxiv,2026-10-24,0,
+"all:""ecological inference"" AND all:""aggregate"" AND all:""regression"" AND all:""machine learning""",arxiv,2026-10-24,2,
+"all:""recalibrated prediction-powered inference""",arxiv,2026-10-24,2,
+"all:""prediction-powered inference"" AND all:""multi-task"" OR all:""many tasks""",arxiv,2026-10-24,2,GRE-PPI 2605.29249
+"all:""prediction-powered inference"" AND all:""domain"" AND all:""shrink""",arxiv,2026-10-24,0,
+"all:""prediction-powered inference"" AND all:""random effects""",arxiv,2026-10-24,1,Wilkins-Reeves 2605.06484 (related)
+"all:""prediction-powered inference"" AND all:""multilevel""",arxiv,2026-10-24,0,
+"all:""prediction-powered inference"" AND all:""group"" AND all:""heterogeneity""",arxiv,2026-10-24,0,
+"all:""prediction-powered inference"" AND all:""panel"" OR all:""longitudinal""",arxiv,2026-10-24,0,
+"all:""semi-supervised"" AND all:""clustered data"" AND all:""efficient"" AND all:""inference""",arxiv,2026-10-24,0,
+"all:""surrogate"" AND all:""cluster-randomized"" AND all:""machine learning"" AND all:""prediction""",arxiv,2026-10-24,0,
+"all:""covariate adjustment"" AND all:""cluster-randomized"" AND all:""cluster-level summaries"" AND all:""individual-level""",arxiv,2026-10-24,0,
+"all:""model-assisted"" AND all:""two-stage"" AND all:""cluster sampling"" AND all:""regression estimator""",arxiv,2026-10-24,0,
+"all:""ecological fallacy"" AND all:""deep learning"" OR all:""neural network"" AND all:""aggregate level""",arxiv,2026-10-24,0,
+Between and within-cluster covariate effects in the analysis of clustered data,crossref,2026-10-24,8,
+Explaining fixed effects: random effects modelling of time-series cross-sectional and panel data,crossref,2026-10-24,8,
+small area estimation unit-level nested error regression area means covariates contextual effect,crossref,2026-10-24,8,
+model-assisted estimation cluster sampling cluster level auxiliary information regression estimator,crossref,2026-10-24,8,
+semi-supervised inference clustered data surrogate machine learning predictions cluster-level estimand,crossref,2026-10-24,8,
+learning from aggregated responses regression bag-level labels histopathology gene expression bulk,crossref,2026-10-24,8,
+prediction-powered inference cluster,crossref,2026-10-24,8,
+ecological regression aggregate data bias individual-level model group means neural,crossref,2026-10-24,8,
+training machine learning model for downstream statistical inference variance reduction labeled unlabeled,arxiv,2026-10-24,6,
+learning the predictor for prediction-powered inference minimize asymptotic variance empirical risk,arxiv,2026-10-24,6,
+prediction-powered inference fine-tuned on labeled data cross-fitting efficiency,arxiv,2026-10-24,6,
+optimal surrogate imputation function semi-supervised mean estimation cluster dependent data,arxiv,2026-10-24,6,
+prediction-powered inference dependent data spatial autocorrelation,arxiv,2026-10-24,6,
+prediction-powered inference time series or network dependence,arxiv,2026-10-24,6,
+prediction-powered inference few labeled clusters small number of clusters,arxiv,2026-10-24,6,
+prediction-powered inference hierarchical group structure mixed model,arxiv,2026-10-24,6,
+Mundlak device group means machine learning embeddings random effects prediction,arxiv,2026-10-24,6,
+within-group and between-group regression coefficients pooled regression bias group-level confounding embeddings,arxiv,2026-10-24,6,
+histology foundation model predict gene expression donor-level pseudobulk statistical inference,arxiv,2026-10-24,6,
+spatial transcriptomics prediction-powered inference,arxiv,2026-10-24,6,
+Mundlak On the pooling of time series and cross section data,crossref,2026-10-24,5,
+Fay Herriot estimates of income for small places area-level model,crossref,2026-10-24,5,
+Battese Harter Fuller error-components model prediction county crop areas,crossref,2026-10-24,5,
+Wooldridge correlated random effects Mundlak unbalanced panels,crossref,2026-10-24,5,
+forward citations of Ji-Lei-Zrnic 2501.09731,s2,2026-10-24,0,HTTP 429 - no results (keyless S2 rate-limited)
+"all:""Predicting with Proxies"" AND all:""transfer learning""",arxiv,2026-10-24,1,
+"all:""prediction-powered"" AND all:""aggregate""",arxiv,2026-10-24,6,Multi-source PPI 2606.21232 (related)
+"all:""prediction-powered"" AND all:""subject-level""",arxiv,2026-10-24,1,
+"all:""prediction-powered"" AND all:""embedding"" AND all:""ridge""",arxiv,2026-10-24,1,
+"all:""prediction-powered"" AND all:""high-dimensional"" AND all:""covariates""",arxiv,2026-10-24,6,DEAL 2606.15602 (related)
+"all:""prediction-powered"" AND all:""regularized"" AND all:""predictor""",arxiv,2026-10-24,6,
+"all:""prediction-powered"" AND all:""hospital"" OR all:""site"" AND all:""heterogeneity""",arxiv,2026-10-24,6,
+"all:""prediction-powered"" AND all:""external validity"" OR all:""distribution shift"" AND all:""clusters""",arxiv,2026-10-24,4,
+"all:""prediction-powered"" AND all:""unsupervised"" AND all:""unlabeled"" AND all:""clusters"" AND all:""geometry""",arxiv,2026-10-24,0,
+"all:""prediction-powered"" AND all:""transductive""",arxiv,2026-10-24,3,
+"all:""prediction-powered"" AND all:""kernel""",arxiv,2026-10-24,6,
+"all:""prediction-powered"" AND all:""stratified"" AND all:""inference""",arxiv,2026-10-24,5,
+"all:""semi-supervised"" AND all:""mean estimation"" AND all:""cluster"" AND all:""labeled clusters""",arxiv,2026-10-24,0,
+"all:""bulk RNA"" AND all:""whole slide"" AND all:""multiple instance"" AND all:""gene expression""",arxiv,2026-10-24,0,
+"all:""HE2RNA"" OR all:""SEQUOIA"" AND all:""bulk"" AND all:""histology""",arxiv,2026-10-24,1,
+"all:""mixed effects"" AND all:""neural network"" AND all:""cluster"" AND all:""random effects"" AND all:""deep learning""",arxiv,2026-10-24,3,
+"all:""group means"" AND all:""features"" AND all:""deep learning"" AND all:""panel"" AND all:""Mundlak""",arxiv,2026-10-24,0,
+"all:""contextual effect"" AND all:""between"" AND all:""within"" AND all:""cluster mean centering""",arxiv,2026-10-24,0,
+"all:""cluster-level"" AND all:""regression"" AND all:""ridge"" AND all:""few clusters"" AND all:""high-dimensional"" AND all:""between""",arxiv,2026-10-24,0,
+"all:""unit-level"" AND all:""cluster-level"" AND all:""model"" AND all:""survey"" AND all:""estimator"" AND all:""machine learning""",arxiv,2026-10-24,0,
+"all:""model-assisted"" AND all:""survey"" AND all:""neural network"" OR all:""machine learning"" AND all:""cluster""",arxiv,2026-10-24,0,
+"all:""difference estimator"" AND all:""prediction"" AND all:""cluster"" AND all:""survey"" AND all:""machine learning""",arxiv,2026-10-24,1,
+"all:""semiparametric efficient"" AND all:""clustered"" AND all:""missing outcome"" AND all:""cluster-level""",arxiv,2026-10-24,0,
+"all:""efficient influence function"" AND all:""cluster"" AND all:""surrogate"" AND all:""labelled clusters""",arxiv,2026-10-24,0,
+"all:""train"" AND all:""predictor"" AND all:""minimize"" AND all:""variance of the estimator"" AND all:""control variate""",arxiv,2026-10-24,0,
+semi-supervised ridge regression unlabeled data covariance shrinkage penalty generalization,arxiv,2026-10-24,6,
+semi-supervised linear regression high-dimensional unlabeled data efficient adaptive,arxiv,2026-10-24,6,Chakrabortty&Cai 1701.04889 (related)
+oracle inequality ridge regression cluster means few clusters between-cluster,arxiv,2026-10-24,6,
+regression estimator population mean few primary sampling units auxiliary cluster means survey,arxiv,2026-10-24,6,
+estimating mean of cluster means with auxiliary predictions small number of labelled groups,arxiv,2026-10-24,6,
+learning from group-level labels regression embeddings mean pooling aggregated supervision theory,arxiv,2026-10-24,6,
+prediction-powered inference estimator variance depends on predictor only through cluster means,arxiv,2026-10-24,6,
+cluster-level versus individual-level covariate adjustment efficiency individual-level predictions aggregated machine learning cluster randomized,arxiv,2026-10-24,6,
+decision-focused learning statistical inference train predictor for downstream estimator variance,arxiv,2026-10-24,6,
+prediction-powered inference fine-tuning loss optimal predictor learned minimize variance rectifier,arxiv,2026-10-24,6,
+Simpson's paradox within-subject between-subject prediction models machine learning group-level individual-level,arxiv,2026-10-24,6,
+pseudoreplication single-cell donor-level pseudobulk pooled cell-level analysis bias,arxiv,2026-10-24,6,
+between-subject versus within-subject predictive models neuroimaging individual differences prediction,arxiv,2026-10-24,6,
+histology to gene expression prediction pooled across patients patient-level effects batch donor generalization benchmark,arxiv,2026-10-24,6,
+HEST-1k benchmark pathology foundation models gene expression ridge regression,arxiv,2026-10-24,6,
+hierarchical stacking cluster-level regression embeddings group mean features ridge between within decomposition,arxiv,2026-10-24,6,
+Szabo Sriperumbudur Poczos Gretton learning theory for distribution regression,crossref,2026-10-24,3,
+Zimmerman practical solution to pseudoreplication bias in single-cell studies,crossref,2026-10-24,3,
+"all:""prediction-powered"" AND all:""gradient"" AND all:""semi-supervised"" AND all:""training""",arxiv,2026-10-24,2,Shoham et al 2510.22586 (related)
+"all:""prediction-powered"" AND all:""joint"" AND all:""training"" AND all:""predictor"" AND all:""estimator""",arxiv,2026-10-24,2,
+"all:""labeled clusters"" AND all:""prediction""",arxiv,2026-10-24,6,
+"all:""cluster-level"" AND all:""surrogate"" AND all:""cost-effective"" AND all:""prediction"" AND all:""gene expression""",arxiv,2026-10-24,0,
+prediction-powered inference clustered data between-cluster within-cluster predictor training,web_search,2026-10-24,9,Broska&Howes 2610.09601
+hybrid GREG cluster sampling model-assisted estimator unit-level cluster-level auxiliary 2025,web_search,2026-10-24,9,Konrad&Burgard hybrid GREG
+Cluster-Robust Prediction-Powered Inference Broska Howes arXiv 2610.09601,web_search,2026-10-24,10,
+PPI recalibration cluster-level aggregated covariates group means predictor trained to minimize PPI variance,web_search,2026-10-24,9,TC-PPI 2609.34156; GRE-PPI 2605.29249
+Su Ding model-assisted analyses of cluster-randomized experiments cluster-total regression adjustment,web_search,2026-10-24,10,Su&Ding 2104.04647
+Middleton Aronow unbiased estimation ATE cluster-randomized experiments covariate adjustment,web_search,2026-10-24,10,Middleton&Aronow (background)
+PPI within-cluster between-cluster predictions trained pooled data variance floor cluster means,web_search,2026-10-24,9,
+semi-supervised efficient estimation clustered data cluster-level aggregate predictor PPI hierarchical donor patient,web_search,2026-10-24,9,
+PPI cluster-level predictor retrained on cluster means labelled clusters optimal linear combination embedding features,web_search,2026-10-24,9,
+van der Laan recalibration PPI isotonic targeted learning surrogate 2026,web_search,2026-10-24,9,Calibeating PPI 2604.21260
+"S2 /paper/arXiv:2501.09731/citations (forward citations, 2 attempts)",s2,2026-10-24,0,HTTP 429 - not obtained

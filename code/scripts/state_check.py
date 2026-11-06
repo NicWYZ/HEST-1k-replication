@@ -2,7 +2,13 @@
 """Check that CLAUDE.md and the chronological docs/ tree are current, complete and tidy.
 
 Read only. Run from the repository root at the start of every planning session, before
-each documentation commit, and as part of every round close. Accepted hits go in
+each documentation commit, and as part of every round close.
+
+Rounds may be named by numbers (round05) or by capital letters (roundA, roundB). Numbered
+rounds sort before lettered ones, and lettered rounds sort by length and then alphabetically,
+so a project that switched to letters keeps its numbered rounds first. Only numbered rounds
+must be zero-padded. (Version 1.1 of the skill; version 1.0 accepted numbered rounds only.)
+Accepted hits go in
 .state-check-ignore, one substring per line. Python 3.8+, standard library only. Exit
 status is 0 unless --strict is given and something was flagged.
 """
@@ -11,10 +17,18 @@ from collections import defaultdict
 from pathlib import Path, PurePosixPath as P
 
 EXT = (".md", ".py", ".csv", ".json", ".txt", ".sh", ".pptx", ".pdf", ".R", ".yaml", ".toml")
-ROUND = re.compile(r"^round(\d+)$")
+ROUND = re.compile(r"^round(\d+|[A-Z]+)$")
 INTERVAL = re.compile(r"^i\d{2,}$")
 ROUND_ROOT_DIRS = ("00_prep", "oversight", "tracks")
-PREFIX = re.compile(r"^round0*(\d+)_")
+PREFIX = re.compile(r"^round(\d+|[A-Z]+)_")
+
+
+def round_key(token):
+    """Sort key of a round id: numbered rounds first, then lettered rounds."""
+    return (0, int(token), "") if token.isdigit() else (1, len(token), token)
+
+
+ZERO = (0, 0, "")
 
 
 def git(*args):
@@ -111,21 +125,21 @@ def main():
                 stray.add(r[0])
                 flags.append(f"folder {docs}/{r[0]}/ is neither a round folder nor a standing folder")
             continue
-        rounds.setdefault(r[0], int(m.group(1)))
-        if len(r) == 2 and int(m.group(1)) > 0 and r[1] not in ("README.md", "masterplan.md"):
+        rounds.setdefault(r[0], round_key(m.group(1)))
+        if len(r) == 2 and round_key(m.group(1)) != ZERO and r[1] not in ("README.md", "masterplan.md"):
             flags.append(f"loose file at the top of {docs}/{r[0]}/: {r[1]}")
-        if int(m.group(1)) > 0 and len(r) >= 3:
+        if round_key(m.group(1)) != ZERO and len(r) >= 3:
             if not (INTERVAL.match(r[1]) or r[1] in ROUND_ROOT_DIRS) and (r[0], r[1]) not in stray:
                 stray.add((r[0], r[1]))
                 flags.append(f"{docs}/{r[0]}/{r[1]}/ is not 00_prep/, iNN/, oversight/ or tracks/")
             elif (INTERVAL.match(r[1]) or r[1] == "tracks") and len(r) == 3:
                 flags.append(f"file directly in {docs}/{r[0]}/{r[1]}/ without a track folder: {r[2]}")
             pm = PREFIX.match(r[-1])
-            if pm and p.suffix == ".md" and r[1] != "00_prep" and int(pm.group(1)) != int(m.group(1)):
+            if pm and p.suffix == ".md" and r[1] != "00_prep" and round_key(pm.group(1)) != round_key(m.group(1)):
                 flags.append(f"{p} carries a round prefix that differs from its folder")
     for name, num in sorted(rounds.items(), key=lambda kv: kv[1]):
-        if not re.match(r"^round\d{2,}$", name):
-            flags.append(f"{docs}/{name}/ should be zero-padded (round{num:02d}) so rounds sort in order")
+        if num[0] == 0 and not re.match(r"^round\d{2,}$", name):
+            flags.append(f"{docs}/{name}/ should be zero-padded (round{num[1]:02d}) so rounds sort in order")
         if not Path(docs / name / "README.md").is_file():
             flags.append(f"{docs}/{name}/README.md is missing")
         started = any(INTERVAL.match(d.name) for d in Path(docs / name).iterdir() if d.is_dir())
@@ -153,7 +167,7 @@ def main():
         elif top and str(P(*r)) not in top and p.name not in top:
             flags.append(f"{p} has no row in {docs}/README.md")
     for name, num in rounds.items():
-        if 0 < num and (num != current or name == a.closing) and a.summary_heading not in read(docs / name / "README.md"):
+        if num != ZERO and (num != current or name == a.closing) and a.summary_heading not in read(docs / name / "README.md"):
             flags.append(f"{docs}/{name}/README.md has no '{a.summary_heading}' section, and the round is closed or being closed")
 
     # 5. Basenames are unique, so a file opened alone says where it belongs.
@@ -198,7 +212,7 @@ def main():
            and rounds.get(rel(p).parts[0]) == current]
     for f in dict.fromkeys(core + cur):
         for i, line in enumerate(read(f).splitlines(), 1):
-            if "\u2014" in line:
+            if "—" in line:
                 flags.append(f"{f}:{i} em-dash")
     for f in core:
         for i, line in prose_lines(read(f)):

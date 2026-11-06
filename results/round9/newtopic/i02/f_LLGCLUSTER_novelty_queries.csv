@@ -1,0 +1,20 @@
+source,query,n_results,note
+web_search,Limits to (Machine) Learning Chen Kelly Malamud LLG,9.0,"anchor v1, SSRN, AFA Feb 2026 (read)"
+web_search,LLG lower bound R2 clustered data group effects extension,9.0,nothing relevant
+web_search,Rabinowicz Rosset CV correlated data JASA,9.0,"suspect confirmed, CVc, bias formula for correlated noise"
+web_search,lower bound population R2 from OOS R2 ridge trace gap leave-group-out,9.0,nothing on target; OOS R2 inference papers (Hawinkel)
+web_search,Kelly Malamud Chen limits to learning Feb 2026 AFA,9.0,found Feb 18 2026 version at afajof.org
+web_search,SNR estimation high-dim linear model grouped random effects HEDE EigenPrism,10.0,"EigenPrism, HEDE, Hu-Li heteroskedastic noise, multivariate SNR; no group structure"
+web_search,Atanasov ridge correlated samples CorrGCV,10.0,ICML 2025; arbitrary sample correlations; rotational-invariance trace result
+web_search,Nakagawa Schielzeth marginal conditional R2 out-of-sample new group,9.0,in-sample variance-component R2; no high-dim lower bound
+web_search,citing LLG paper panel/clustered extension 2026,9.0,no citing paper extending to groups found
+web_search,heritability SNR high-dim random effects group batch confounding proportional,9.0,nothing on group-level nuisance + LLG
+web_search,leave-one-group-out CV ridge high-dim RMT out-of-sample R2 new groups,9.0,Patil et al GCV iid only
+arxiv_api,"all:""limits-to-learning gap""",1.0,2512.12735v1:Limits To (Machine) Learning
+arxiv_api,"abs:""out-of-sample"" AND abs:""lower bound"" AND abs:""R^2"" AND abs:ridge AND abs:clustered",0.0,
+arxiv_api,"abs:""leave-one-group-out"" AND abs:ridge AND abs:high-dimensional",0.0,
+arxiv_api,"abs:""random effect"" AND abs:""signal-to-noise"" AND abs:""clustered"" AND abs:""high-dimensional""",0.0,
+semantic_scholar,limits to learning gap lower bound R2 clustered,,None
+semantic_scholar,ridge regression out-of-sample R2 group random effects lower bound population,,None
+crossref,limits-to-learning gap lower bound population R-squared,6.0,"[('Lower bound on the mean squared error in oversampled quantization of periodic signals', '10.1109/isit.1994.394821'), ('Table 14: Summary of the optimality gap between the best heuristic lower bound\n                      <i>A</i>\n                      and the upper bound\n                      <"
+crossref,out-of-sample R squared clustered data high-dimensional ridge lower bound,6.0,"[('moose: Mean Squared Out-of-Sample Error Projection', '10.32614/cran.package.moose'), ('VISUALIZATION OF HIGH DIMENSIONAL DATA IN LOW DIMENSIONAL SPACE VIA CLUSTERED MANIFOLD MAPPING', '10.23860/thesis-2500'), ('Using Out-of-Sample Mean Squared Prediction Errors to Test the Martingale Difference',"

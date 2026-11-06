@@ -1,0 +1,18 @@
+{
+ "verdicts": {
+  "1_reduction": "proved",
+  "2_lemma1_generalized": "proved",
+  "2_lemma2_band": "proved",
+  "3_thmQ_majorant_validity": "proved_with_changes (a1>=0 is superfluous; the two ray conditions suffice)",
+  "3_thmQ_moments_p4_linear_no_p3_bounds": "proved",
+  "3_thmQ_certified_cells": "proved (exact rational; use exact kappa0 = fraction x frontier, table kappa0 values are rounded)",
+  "4_thmS": "proved (derivation + exact 3-stratum enumeration; reported plateau and certified-c numbers reproduced; certificates are double precision only)",
+  "5_cL_spot_checks": "proved"
+ },
+ "exact_numbers": "Frontiers (alpha=1/10): (24,8) k*=6 kappa2(5)=19/120; (24,12) k*=4 7/24; (51,16) k*=6 46/255; (51,8) k*=12 40/561. Exact kappa0: 19/300=0.063333 (24,8,0.4); 7/96=0.072917 (24,12,0.25); 23/510=0.045098 (51,16,0.25); 16/561=0.028521 (51,8,0.4). Exact-rational bounds at reported c with own (a1,a2): (24,8) c=3.775 -> 0.0999844430 (a1=69046177/1e8,a2=-31803679/1e7); (24,12) c=2.892 -> 0.0999461188 (a1=16166747/25000000,a2=-106875037/50000000); (51,16) c=3.234 -> 0.0999805349 (a1=32030439/5e7,a2=-331723817/1e8); (51,8) c=4.403 -> 0.0999916513 (a1=121013737/1e8,a2=-135565417/2e7). All <=1/10, feasibility exact. Own minimal c: 3.7744, 2.8912, 3.2335, 4.4025 (reported values tight to 3 decimals). Moments (p1=0,p2=1): EA2=n(G-n)/(G(G-1)); EQ=n/G; EA4=n(G-n)[(G^2-6Gn+G+6n^2)p4+3Gn-3G-3n^2+3]/(G(G-1)(G-2)(G-3)); EA2Q=-n(G-n)[(2n-G)p4-n+1]/(G(G-1)(G-2)); EQ2=n[(G-n)p4+n-1]/(G(G-1)); general power-sum formula equals exact enumeration (err 0). Theorem S: E L^2 formula == enumeration (0.9219461826116027, exact Fraction equality); plateaus 0.28698/0.16701/0.25988/0.14829 (report 0.287/0.167/0.2599/0.1483); certified c 3.029->0.099968 (min 3.0281), 3.222->0.099988, 2.57->0.099925. c_L by full enumeration: (24,8) 2-pt 9x(-5),15x(3): 2.44949=sqrt6 (cov 0.97851 at, 0.89977 below); (24,8) 3-valued at 0.4 frontier: 2.08629 (report 2.086; jitter range 2.08574-2.08705, cov 0.9222/0.8914); (24,12) 3-valued 1.91331 (report 1.914; cov 0.90047/0.89999, rounding-sensitive); (24,12) 2-pt 2.09762 (report 2.098). Artifact: verify_crit_report.md (version 776b846a-8d03-4aa4-abaa-e0692dc46acd).",
+ "changes": "Minor only: (i) drop a1>=0 from Theorem Q conditions (not needed); (ii) state exact kappa0 (fractions of the frontier) rather than the rounded 4-digit values; (iii) Theorem S certificates are double-precision optima with margin 3e-5..1e-4, not exact-rational; (iv) the report's 0.0999999 bounds differ from mine (0.09998-0.09999) only through different (a1,a2); (v) the 2-pt population (kappa=0.0694) is outside the 0.4-frontier class, so the 3-valued one is the right witness there; (24,12) 3-valued c_L 1.9133 vs reported 1.914 reflects rounded inputs. The Q certificate is valid but loose: true P(miss) of random class members at c_U is ~0.01 vs bound 0.1.",
+ "deviations": [
+  "none"
+ ],
+ "frame_id": "4dd56bb2-4d7c-4b76-8c9b-24b1e67dda7d"
+}

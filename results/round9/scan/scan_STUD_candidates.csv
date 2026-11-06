@@ -1,0 +1,16 @@
+paper,id_or_url,how_read,what_it_does,relation
+"Mallick, Tchetgen Tchetgen, Dobriban, Lee 2026 GHCP",arXiv:2608.15500,"read in full (Sec 1-2, App B, Discussion; proofs not read)","closest: Appendix B.1 allows studentized score |Y-mu~_j|/sigma^_j built group-wise from local block, validity unchanged; local block size tau(N_j,o)<=min(o,N_j-1)",core of (i)
+"Duchi, Gupta, Jiang, Sur 2025 Statistical Science 40(3)",arXiv:2403.16336,read Sec 5 (resizing) in full from PDF text,"resizing: equal-size random labelled subsample per environment, scale factor = empirical (1-alpha0) quantile of residuals, residuals divided by factor, test env factor multiplies quantile; (alpha,delta) guarantee; HCP-resizing only oracle",template of STUD
+"Lee, Barber, Willett 2026 HCP (ACM J Data Sci)",arXiv:2306.06342 / doi:10.1145/3786352,abstract/snippets,o=0 baseline; subsampling once per group,baseline of STUD
+Fisch et al 2021 few-shot conformal with auxiliary tasks,arXiv:2102.08898,abstract and snippets,"task-exchangeable meta-conformal, k examples in new task, learns scores/threshold from auxiliary tasks",related; no studentized group scale
+"Park, Simeone et al 2022 meta-XB",arXiv:2210.03067,snippets,meta-learned CV-conformal few-shot,related
+"Fan, Sesia 2025 transductive standardization",arXiv:2512.15383,abstract/snippets,coordinatewise standardization across outputs estimated from calibration data; no groups,multi-output only
+Rousseau et al 2026 scaling-score multi-target,arXiv:2609.17091,abstract,per-target base vector scaling for joint coverage; no groups,multi-output only
+"Hore, Chatterjee, Choudhury 2026 MS-RLCP",arXiv:2609.14531,abstract,multi-source localization under covariate shift; no group scale,distant
+Liu 2026 TW-HCP (Zenodo only),doi:10.5281/zenodo.21536599,abstract only,HCP under informative cluster size; no target labels,distant
+"Papadopoulos, Gammerman, Vovk 2008 normalized nonconformity",dl.acm.org/doi/10.5555/1712759.1712773,snippets,scale normalization of scores by estimated difficulty; known,"background (per-example, not per-group)"
+Min et al 2025 personalized federated conformal with localization,openreview QQUhGPST45,snippets,"target-agent marginal coverage using other agents, no scale studentization",related
+Plassier et al 2024 efficient CP under data heterogeneity,proceedings.mlr.press/v238/plassier24a,snippets,weighted CP across agents,related
+"Nagashima, Noma, Furukawa 2019 PIs random-effects meta-analysis",arXiv:1804.01054,snippets,parametric analogue for new-study PI; HTS PI poor for few studies,parametric analogue
+Krishnamoorthy & Lian 2012 tolerance intervals one-way random model,userweb.ucs.louisiana.edu/~kxk4695/ToL-Interval-R1.pdf,snippets,parametric TI for future observation from random group,parametric analogue
+Optimal Conformal Prediction for Small Areas (authors/year not verified),arXiv:2204.08122,snippet only,"Bayes-optimal conformal for small areas, parametric hierarchical",small-area analogue; authorship not verified

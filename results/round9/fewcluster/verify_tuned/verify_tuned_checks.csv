@@ -1,0 +1,186 @@
+statement,test,G,n,f_kind,result,expected,passed
+T0,E2 interval transform: max |C(a+cf+bz)-(a+cFbar+bC(z))| over all samples/endpoints,8.0,4.0,mixed,4.263256414560601e-14,~1e-12,True
+T0,"covered-sample mask identical for z, e_hat(z), b e_hat(z), a+cf+bz (max #disagreeing samples)",8.0,4.0,mixed,0.0,0,True
+T0,e_hat(a+cf+bz) = b e_hat(z) (max abs err),8.0,4.0,mixed,7.105427357601002e-15,~1e-13,True
+T0,E2 interval transform: max |C(a+cf+bz)-(a+cFbar+bC(z))| over all samples/endpoints,10.0,4.0,mixed,2.8421709430404014e-14,~1e-12,True
+T0,"covered-sample mask identical for z, e_hat(z), b e_hat(z), a+cf+bz (max #disagreeing samples)",10.0,4.0,mixed,0.0,0,True
+T0,e_hat(a+cf+bz) = b e_hat(z) (max abs err),10.0,4.0,mixed,1.4210854715202004e-14,~1e-13,True
+T0,E2 interval transform: max |C(a+cf+bz)-(a+cFbar+bC(z))| over all samples/endpoints,10.0,5.0,mixed,3.5527136788005016e-14,~1e-12,True
+T0,"covered-sample mask identical for z, e_hat(z), b e_hat(z), a+cf+bz (max #disagreeing samples)",10.0,5.0,mixed,0.0,0,True
+T0,e_hat(a+cf+bz) = b e_hat(z) (max abs err),10.0,5.0,mixed,1.4210854715202004e-14,~1e-13,True
+T0,E2 interval transform: max |C(a+cf+bz)-(a+cFbar+bC(z))| over all samples/endpoints,12.0,5.0,mixed,5.684341886080804e-14,~1e-12,True
+T0,"covered-sample mask identical for z, e_hat(z), b e_hat(z), a+cf+bz (max #disagreeing samples)",12.0,5.0,mixed,0.0,0,True
+T0,e_hat(a+cf+bz) = b e_hat(z) (max abs err),12.0,5.0,mixed,1.4210854715202004e-14,~1e-13,True
+T3a,"spike kappa(e_hat(1_g)) vs formula, max abs err over all g, 18 random f",6.0,,mixed,3.885780586188048e-15,~1e-14,True
+T3a,"spike kappa(e_hat(1_g)) vs formula, max abs err over all g, 18 random f",8.0,,mixed,7.771561172376098e-16,~1e-14,True
+T3a,"spike kappa(e_hat(1_g)) vs formula, max abs err over all g, 18 random f",10.0,,mixed,2.775557561562891e-16,~1e-14,True
+T3a,"spike kappa(e_hat(1_g)) vs formula, max abs err over all g, 18 random f",12.0,,mixed,4.440892098500626e-16,~1e-14,True
+T3a,"spike kappa(e_hat(1_g)) vs formula, max abs err over all g, 18 random f",15.0,,mixed,8.881784197001252e-16,~1e-14,True
+T3a,"spike kappa(e_hat(1_g)) vs formula, max abs err over all g, 18 random f",24.0,,mixed,6.522560269672797e-16,~1e-14,True
+T3a,"spike kappa(e_hat(1_g)) vs formula, max abs err over all g, 18 random f",40.0,,mixed,4.440892098500626e-16,~1e-14,True
+T3a,sum e^2 = 1-h_gg and sum e = 0 (abs err),12.0,,mixed,6.938893903907227e-17,0,True
+T1prime,"two-piece z*, k=3, alpha=0.05: coverage(z*+1e-6 x, c=100)=1-P(W), P(W)=pi(k), kappa0=0.2049>kappa(z*)=0.1952",8.0,4.0,normal,0.9285714285714286,0.9285714285714286,True
+T1prime,"two-piece z*, k=3, alpha=0.05: coverage(z*+1e-6 x, c=100)=1-P(W), P(W)=pi(k), kappa0=0.1739>kappa(z*)=0.1656",8.0,4.0,lognormal,0.9285714285714286,0.9285714285714286,True
+T1prime,"two-piece z*, k=5, alpha=0.05: coverage(z*+1e-6 x, c=100)=1-P(W), P(W)=pi(k), kappa0=0.1859>kappa(z*)=0.1770",8.0,4.0,normal_outlier,0.9285714285714286,0.9285714285714286,True
+T1prime,"two-piece z*, k=4, alpha=0.05: coverage(z*+1e-6 x, c=100)=1-P(W), P(W)=pi(k), kappa0=0.1472>kappa(z*)=0.1402",10.0,4.0,normal,0.923809523809524,0.923809523809524,True
+T1prime,"two-piece z*, k=6, alpha=0.05: coverage(z*+1e-6 x, c=100)=1-P(W), P(W)=pi(k), kappa0=0.1455>kappa(z*)=0.1386",10.0,4.0,lognormal,0.923809523809524,0.923809523809524,True
+T1prime,"two-piece z*, k=4, alpha=0.05: coverage(z*+1e-6 x, c=100)=1-P(W), P(W)=pi(k), kappa0=0.1437>kappa(z*)=0.1368",10.0,4.0,normal_outlier,0.923809523809524,0.923809523809524,True
+T1prime,"two-piece z*, k=3, alpha=0.05: coverage(z*+1e-6 x, c=100)=1-P(W), P(W)=pi(k), kappa0=0.1700>kappa(z*)=0.1619",10.0,5.0,normal,0.9166666666666666,0.9166666666666666,True
+T1prime,"two-piece z*, k=3, alpha=0.05: coverage(z*+1e-6 x, c=100)=1-P(W), P(W)=pi(k), kappa0=0.1807>kappa(z*)=0.1721",10.0,5.0,lognormal,0.9166666666666666,0.9166666666666666,True
+T1prime,"two-piece z*, k=3, alpha=0.05: coverage(z*+1e-6 x, c=100)=1-P(W), P(W)=pi(k), kappa0=0.1658>kappa(z*)=0.1579",10.0,5.0,normal_outlier,0.9166666666666666,0.9166666666666666,True
+T1prime,"two-piece z*, k=4, alpha=0.05: coverage(z*+1e-6 x, c=100)=1-P(W), P(W)=pi(k), kappa0=0.1330>kappa(z*)=0.1267",12.0,5.0,normal,0.9292929292929292,0.9292929292929292,True
+T1prime,"two-piece z*, k=4, alpha=0.05: coverage(z*+1e-6 x, c=100)=1-P(W), P(W)=pi(k), kappa0=0.1316>kappa(z*)=0.1253",12.0,5.0,lognormal,0.9292929292929292,0.9292929292929292,True
+T1prime,"two-piece z*, k=8, alpha=0.05: coverage(z*+1e-6 x, c=100)=1-P(W), P(W)=pi(k), kappa0=0.1350>kappa(z*)=0.1286",12.0,5.0,normal_outlier,0.9292929292929292,0.9292929292929292,True
+T1prime,"two-piece z*, k=9, alpha=0.1: coverage(z*+1e-6 x, c=100)=1-P(W), P(W)=pi(k), kappa0=0.1600>kappa(z*)=0.1523",12.0,5.0,normal,0.8409090909090909,0.8409090909090909,True
+T1prime,"two-piece z*, k=9, alpha=0.1: coverage(z*+1e-6 x, c=100)=1-P(W), P(W)=pi(k), kappa0=0.1825>kappa(z*)=0.1738",12.0,5.0,lognormal,0.8409090909090909,0.8409090909090909,True
+T1prime,"two-piece z*, k=9, alpha=0.1: coverage(z*+1e-6 x, c=100)=1-P(W), P(W)=pi(k), kappa0=0.1620>kappa(z*)=0.1542",12.0,5.0,normal_outlier,0.8409090909090909,0.8409090909090909,True
+T1prime,"strictness: z*=min-kappa element of a count-5 flat, kappa0=kappa(z*) exactly; fraction of random directions x with kappa(e_hat(z*+eps x))<=kappa0",8.0,4.0,normal,0.0,<1 (z_eps leaves K at kappa0=kappa(z*)),True
+T2prime,"above frontier: kappa0=0.1293, beta*NS=2, alpha*NS=0; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,normal,0.9714285714285714,1.0,True
+T2prime,"above frontier: kappa0=0.1294, beta*NS=2, alpha*NS=1; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,normal,0.9714285714285714,0.9857142857142858,True
+T2prime,"below frontier: kappa0=0.1749, beta*NS=2, alpha*NS=2; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,normal,0.9714285714285714,0.9714285714285714,True
+T2prime,"above frontier: kappa0=0.1858, beta*NS=5, alpha*NS=4; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,normal,0.9285714285714286,0.9428571428571428,True
+T2prime,"below frontier: kappa0=0.2005, beta*NS=5, alpha*NS=5; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,normal,0.9285714285714286,0.9285714285714286,True
+T2prime,"above frontier: kappa0=0.2129, beta*NS=6, alpha*NS=5; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,normal,0.9142857142857144,0.9285714285714286,True
+T2prime,"below frontier: kappa0=0.2263, beta*NS=6, alpha*NS=6; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,normal,0.9142857142857144,0.9142857142857144,True
+T2prime,"above frontier: kappa0=0.2403, beta*NS=15, alpha*NS=14; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,normal,0.7857142857142857,0.8,True
+T2prime,"below frontier: kappa0=0.5284, beta*NS=15, alpha*NS=15; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,normal,0.7857142857142857,0.7857142857142857,True
+T2prime,"above frontier: kappa0=0.5611, beta*NS=35, alpha*NS=34; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,normal,0.5,0.5142857142857142,True
+T2prime,"above frontier: kappa0=0.1405, beta*NS=2, alpha*NS=0; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,lognormal,0.9714285714285714,1.0,True
+T2prime,"below frontier: kappa0=0.1358, beta*NS=0, alpha*NS=0; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,lognormal,1.0,1.0,True
+T2prime,"above frontier: kappa0=0.1441, beta*NS=2, alpha*NS=1; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,lognormal,0.9714285714285714,0.9857142857142858,True
+T2prime,"below frontier: kappa0=0.1641, beta*NS=2, alpha*NS=2; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,lognormal,0.9714285714285714,0.9714285714285714,True
+T2prime,"above frontier: kappa0=0.1743, beta*NS=5, alpha*NS=4; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,lognormal,0.9285714285714286,0.9428571428571428,True
+T2prime,"below frontier: kappa0=0.2059, beta*NS=5, alpha*NS=5; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,lognormal,0.9285714285714286,0.9285714285714286,True
+T2prime,"above frontier: kappa0=0.2186, beta*NS=15, alpha*NS=5; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,lognormal,0.7857142857142857,0.9285714285714286,True
+T2prime,"below frontier: kappa0=0.2059, beta*NS=5, alpha*NS=5; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,lognormal,0.9285714285714286,0.9285714285714286,True
+T2prime,"above frontier: kappa0=0.2186, beta*NS=15, alpha*NS=14; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,lognormal,0.7857142857142857,0.8,True
+T2prime,"below frontier: kappa0=0.3215, beta*NS=15, alpha*NS=15; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,lognormal,0.7857142857142857,0.7857142857142857,True
+T2prime,"above frontier: kappa0=0.3414, beta*NS=35, alpha*NS=34; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,lognormal,0.5,0.5142857142857142,True
+T2prime,"above frontier: kappa0=0.1347, beta*NS=1, alpha*NS=0; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,normal_outlier,0.9857142857142858,1.0,True
+T2prime,"below frontier: kappa0=0.1311, beta*NS=1, alpha*NS=1; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,normal_outlier,0.9857142857142858,0.9857142857142858,True
+T2prime,"above frontier: kappa0=0.1392, beta*NS=2, alpha*NS=1; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,normal_outlier,0.9714285714285714,0.9857142857142858,True
+T2prime,"below frontier: kappa0=0.1579, beta*NS=2, alpha*NS=2; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,normal_outlier,0.9714285714285714,0.9714285714285714,True
+T2prime,"above frontier: kappa0=0.1677, beta*NS=5, alpha*NS=4; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,normal_outlier,0.9285714285714286,0.9428571428571428,True
+T2prime,"below frontier: kappa0=0.1799, beta*NS=5, alpha*NS=5; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,normal_outlier,0.9285714285714286,0.9285714285714286,True
+T2prime,"above frontier: kappa0=0.1910, beta*NS=6, alpha*NS=5; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,normal_outlier,0.9142857142857144,0.9285714285714286,True
+T2prime,"below frontier: kappa0=0.1889, beta*NS=6, alpha*NS=6; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,normal_outlier,0.9142857142857144,0.9142857142857144,True
+T2prime,"above frontier: kappa0=0.2006, beta*NS=15, alpha*NS=14; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,normal_outlier,0.7857142857142857,0.8,True
+T2prime,"below frontier: kappa0=0.3735, beta*NS=15, alpha*NS=15; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,normal_outlier,0.7857142857142857,0.7857142857142857,True
+T2prime,"above frontier: kappa0=0.3966, beta*NS=35, alpha*NS=34; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",8.0,4.0,normal_outlier,0.5,0.5142857142857142,True
+T2prime,"above frontier: kappa0=0.1033, beta*NS=2, alpha*NS=0; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,normal,0.992063492063492,1.0,True
+T2prime,"above frontier: kappa0=0.1035, beta*NS=2, alpha*NS=1; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,normal,0.992063492063492,0.996031746031746,True
+T2prime,"below frontier: kappa0=0.1334, beta*NS=2, alpha*NS=2; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,normal,0.992063492063492,0.992063492063492,True
+T2prime,"above frontier: kappa0=0.1417, beta*NS=6, alpha*NS=5; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,normal,0.9761904761904762,0.98015873015873,True
+T2prime,"below frontier: kappa0=0.1633, beta*NS=6, alpha*NS=6; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,normal,0.9761904761904762,0.9761904761904762,True
+T2prime,"above frontier: kappa0=0.1734, beta*NS=21, alpha*NS=6; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,normal,0.9166666666666666,0.9761904761904762,True
+T2prime,"below frontier: kappa0=0.1633, beta*NS=6, alpha*NS=6; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,normal,0.9761904761904762,0.9761904761904762,True
+T2prime,"above frontier: kappa0=0.1734, beta*NS=21, alpha*NS=20; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,normal,0.9166666666666666,0.9206349206349208,True
+T2prime,"below frontier: kappa0=0.2213, beta*NS=21, alpha*NS=21; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,normal,0.9166666666666666,0.9166666666666666,True
+T2prime,"above frontier: kappa0=0.2350, beta*NS=56, alpha*NS=55; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,normal,0.7777777777777778,0.7817460317460317,True
+T2prime,"below frontier: kappa0=0.6175, beta*NS=56, alpha*NS=56; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,normal,0.7777777777777778,0.7777777777777778,True
+T2prime,"above frontier: kappa0=0.6557, beta*NS=126, alpha*NS=125; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,normal,0.5,0.503968253968254,True
+T2prime,"above frontier: kappa0=0.1104, beta*NS=2, alpha*NS=0; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,lognormal,0.992063492063492,1.0,True
+T2prime,"above frontier: kappa0=0.1120, beta*NS=2, alpha*NS=1; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,lognormal,0.992063492063492,0.996031746031746,True
+T2prime,"below frontier: kappa0=0.1189, beta*NS=2, alpha*NS=2; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,lognormal,0.992063492063492,0.992063492063492,True
+T2prime,"above frontier: kappa0=0.1262, beta*NS=6, alpha*NS=5; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,lognormal,0.9761904761904762,0.98015873015873,True
+T2prime,"below frontier: kappa0=0.1519, beta*NS=6, alpha*NS=6; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,lognormal,0.9761904761904762,0.9761904761904762,True
+T2prime,"above frontier: kappa0=0.1613, beta*NS=7, alpha*NS=6; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,lognormal,0.9722222222222222,0.9761904761904762,True
+T2prime,"below frontier: kappa0=0.1738, beta*NS=7, alpha*NS=7; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,lognormal,0.9722222222222222,0.9722222222222222,True
+T2prime,"above frontier: kappa0=0.1845, beta*NS=21, alpha*NS=20; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,lognormal,0.9166666666666666,0.9206349206349208,True
+T2prime,"below frontier: kappa0=0.2776, beta*NS=21, alpha*NS=21; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,lognormal,0.9166666666666666,0.9166666666666666,True
+T2prime,"above frontier: kappa0=0.2948, beta*NS=56, alpha*NS=55; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,lognormal,0.7777777777777778,0.7817460317460317,True
+T2prime,"below frontier: kappa0=0.4788, beta*NS=56, alpha*NS=56; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,lognormal,0.7777777777777778,0.7777777777777778,True
+T2prime,"above frontier: kappa0=0.5084, beta*NS=126, alpha*NS=125; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,lognormal,0.5,0.503968253968254,True
+T2prime,"above frontier: kappa0=0.1031, beta*NS=2, alpha*NS=0; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,normal_outlier,0.992063492063492,1.0,True
+T2prime,"above frontier: kappa0=0.1032, beta*NS=2, alpha*NS=1; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,normal_outlier,0.992063492063492,0.996031746031746,True
+T2prime,"below frontier: kappa0=0.1139, beta*NS=2, alpha*NS=2; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,normal_outlier,0.992063492063492,0.992063492063492,True
+T2prime,"above frontier: kappa0=0.1210, beta*NS=6, alpha*NS=5; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,normal_outlier,0.9761904761904762,0.98015873015873,True
+T2prime,"below frontier: kappa0=0.1312, beta*NS=6, alpha*NS=6; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,normal_outlier,0.9761904761904762,0.9761904761904762,True
+T2prime,"above frontier: kappa0=0.1393, beta*NS=21, alpha*NS=6; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,normal_outlier,0.9166666666666666,0.9761904761904762,True
+T2prime,"below frontier: kappa0=0.1312, beta*NS=6, alpha*NS=6; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,normal_outlier,0.9761904761904762,0.9761904761904762,True
+T2prime,"above frontier: kappa0=0.1393, beta*NS=21, alpha*NS=20; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,normal_outlier,0.9166666666666666,0.9206349206349208,True
+T2prime,"below frontier: kappa0=0.1735, beta*NS=21, alpha*NS=21; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,normal_outlier,0.9166666666666666,0.9166666666666666,True
+T2prime,"above frontier: kappa0=0.1842, beta*NS=56, alpha*NS=55; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,normal_outlier,0.7777777777777778,0.7817460317460317,True
+T2prime,"below frontier: kappa0=0.3328, beta*NS=56, alpha*NS=56; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,normal_outlier,0.7777777777777778,0.7777777777777778,True
+T2prime,"above frontier: kappa0=0.3533, beta*NS=126, alpha*NS=125; min coverage found at c=1e8 vs 1-alpha (full flat lattice, exact kappa_min)",10.0,5.0,normal_outlier,0.5,0.503968253968254,True
+T2prime,"below frontier: kappa0=0.1017, beta*NS=0, alpha*NS=0; min coverage found at c=1e8 vs 1-alpha (flat lattice below single-line flats (>=)",12.0,5.0,normal,0.9974747474747476,1.0,False (known: G=12 flat list incomplete - two-line flats with <=6 clusters/line omitted - so beta was underestimated)
+T2prime,"above frontier: kappa0=0.1080, beta*NS=21, alpha*NS=20; min coverage found at c=1e8 vs 1-alpha (flat lattice below single-line flats (>=)",12.0,5.0,normal,0.9734848484848484,0.9747474747474748,True
+T2prime,"below frontier: kappa0=0.1074, beta*NS=21, alpha*NS=21; min coverage found at c=1e8 vs 1-alpha (flat lattice below single-line flats (>=)",12.0,5.0,normal,0.9734848484848484,0.9734848484848484,True
+T2prime,"above frontier: kappa0=0.1140, beta*NS=22, alpha*NS=21; min coverage found at c=1e8 vs 1-alpha (flat lattice below single-line flats (>=)",12.0,5.0,normal,0.9722222222222222,0.9734848484848484,True
+T2prime,"below frontier: kappa0=0.1149, beta*NS=22, alpha*NS=22; min coverage found at c=1e8 vs 1-alpha (flat lattice below single-line flats (>=)",12.0,5.0,normal,0.9722222222222222,0.9722222222222222,True
+T2prime,"above frontier: kappa0=0.1221, beta*NS=56, alpha*NS=26; min coverage found at c=1e8 vs 1-alpha (flat lattice below single-line flats (>=)",12.0,5.0,normal,0.9292929292929292,0.9671717171717172,True
+T2prime,"below frontier: kappa0=0.1149, beta*NS=22, alpha*NS=22; min coverage found at c=1e8 vs 1-alpha (flat lattice below single-line flats (>=)",12.0,5.0,normal,0.9722222222222222,0.9722222222222222,True
+T2prime,"above frontier: kappa0=0.1221, beta*NS=56, alpha*NS=55; min coverage found at c=1e8 vs 1-alpha (flat lattice below single-line flats (>=)",12.0,5.0,normal,0.9292929292929292,0.9305555555555556,True
+T2prime,"below frontier: kappa0=0.1382, beta*NS=56, alpha*NS=56; min coverage found at c=1e8 vs 1-alpha (flat lattice below single-line flats (>=)",12.0,5.0,normal,0.9292929292929292,0.9292929292929292,True
+T2prime,"above frontier: kappa0=0.1468, beta*NS=126, alpha*NS=56; min coverage found at c=1e8 vs 1-alpha (flat lattice below single-line flats (>=)",12.0,5.0,normal,0.8409090909090909,0.9292929292929292,True
+T2prime,"below frontier: kappa0=0.1386, beta*NS=56, alpha*NS=56; min coverage found at c=1e8 vs 1-alpha (flat lattice below single-line flats (>=)",12.0,5.0,normal,0.9292929292929292,0.9292929292929292,True
+T2prime,"above frontier: kappa0=0.1471, beta*NS=126, alpha*NS=125; min coverage found at c=1e8 vs 1-alpha (flat lattice below single-line flats (>=)",12.0,5.0,normal,0.8409090909090909,0.8421717171717171,True
+T2prime,"below frontier: kappa0=0.2503, beta*NS=126, alpha*NS=126; min coverage found at c=1e8 vs 1-alpha (flat lattice below single-line flats (>=)",12.0,5.0,normal,0.8409090909090909,0.8409090909090909,True
+T2prime,"above frontier: kappa0=0.2658, beta*NS=252, alpha*NS=251; min coverage found at c=1e8 vs 1-alpha (flat lattice below single-line flats (>=)",12.0,5.0,normal,0.6818181818181818,0.6830808080808081,True
+T2prime,"below frontier: kappa0=0.6533, beta*NS=252, alpha*NS=252; min coverage found at c=1e8 vs 1-alpha (flat lattice below single-line flats (>=)",12.0,5.0,normal,0.6818181818181818,0.6818181818181819,True
+T2prime,"above frontier: kappa0=0.6938, beta*NS=462, alpha*NS=461; min coverage found at c=1e8 vs 1-alpha (flat lattice below single-line flats (>=)",12.0,5.0,normal,0.4166666666666667,0.4179292929292929,True
+T3b,"outlier scan sd=2.0: h_gg=0.31250, kappa_spike=0.6875, 1-h_gg=0.68750, max attained at g=True",12.0,,normal+outlier,0.6875,0.6875,True
+T3b,"outlier scan sd=4.0: h_gg=0.60714, kappa_spike=0.3929, 1-h_gg=0.39286, max attained at g=True",12.0,,normal+outlier,0.3928571428571428,0.3928571428571429,True
+T3b,"outlier scan sd=8.0: h_gg=0.85526, kappa_spike=0.2907, 1-h_gg=0.14474, max attained at g=False",12.0,,normal+outlier,0.2906914837090964,0.1447368421052633,True
+T3b,"outlier scan sd=16.0: h_gg=0.95896, kappa_spike=0.3089, 1-h_gg=0.04104, max attained at g=False",12.0,,normal+outlier,0.3089267885956406,0.041044776119403,True
+T3b,"outlier scan sd=32.0: h_gg=0.98938, kappa_spike=0.3092, 1-h_gg=0.01062, max attained at g=False",12.0,,normal+outlier,0.3091569316982495,0.0106177606177605,True
+T3b,"outlier scan sd=64.0: h_gg=0.99732, kappa_spike=0.3083, 1-h_gg=0.00268, max attained at g=False",12.0,,normal+outlier,0.3082850711858625,0.0026777020447906,True
+T3b,"outlier scan sd=128.0: h_gg=0.99933, kappa_spike=0.3116, 1-h_gg=0.00067, max attained at g=False",12.0,,normal+outlier,0.3115851881084176,0.0006708953403269,True
+T3b,"outlier scan sd=512.0: h_gg=0.99996, kappa_spike=0.3138, 1-h_gg=0.00004, max attained at g=False",12.0,,normal+outlier,0.3137751813901386,4.195974915699452e-05,True
+T3b,"outlier scan sd=2.0: h_gg=0.17857, kappa_spike=0.8214, 1-h_gg=0.82143, max attained at g=True",24.0,,normal+outlier,0.8214285714285714,0.8214285714285714,True
+T3b,"outlier scan sd=4.0: h_gg=0.42500, kappa_spike=0.5750, 1-h_gg=0.57500, max attained at g=True",24.0,,normal+outlier,0.575,0.575,True
+T3b,"outlier scan sd=8.0: h_gg=0.73864, kappa_spike=0.2614, 1-h_gg=0.26136, max attained at g=True",24.0,,normal+outlier,0.2613636363636361,0.2613636363636362,True
+T3b,"outlier scan sd=16.0: h_gg=0.91786, kappa_spike=0.2145, 1-h_gg=0.08214, max attained at g=False",24.0,,normal+outlier,0.2145022107188436,0.082142857142857,True
+T3b,"outlier scan sd=32.0: h_gg=0.97805, kappa_spike=0.2354, 1-h_gg=0.02195, max attained at g=False",24.0,,normal+outlier,0.2354482823321447,0.0219465648854961,True
+T3b,"outlier scan sd=64.0: h_gg=0.99442, kappa_spike=0.2428, 1-h_gg=0.00558, max attained at g=False",24.0,,normal+outlier,0.2427534665235253,0.0055825242718446,True
+T3b,"outlier scan sd=128.0: h_gg=0.99860, kappa_spike=0.2454, 1-h_gg=0.00140, max attained at g=False",24.0,,normal+outlier,0.2454289205370216,0.0014017552413456,True
+T3b,"outlier scan sd=512.0: h_gg=0.99991, kappa_spike=0.2470, 1-h_gg=0.00009, max attained at g=False",24.0,,normal+outlier,0.2469787460429453,8.773000518746965e-05,True
+T3b,identity sum_{j!=g}h_gj^2=h_gg(1-h_gg) [max abs err]; 'max attained at g' implies h_gg<=1-1/G (violations / cases where attained),,,,,nan,True
+T3b,"spike z*=1_g (g=argmin spike kappa) tuned coverage at z*+eps x, c=100 vs 1-n/G",10.0,4.0,normal,0.4,0.4,True
+T3b,"spike z*=1_g (g=argmin spike kappa) tuned coverage at z*+eps x, c=100 vs 1-n/G",10.0,4.0,normal_outlier,0.4,0.4,True
+T3b,"spike z*=1_g (g=argmin spike kappa) tuned coverage at z*+eps x, c=100 vs 1-n/G",12.0,5.0,normal,0.4166666666666667,0.4166666666666667,True
+T3b,"spike z*=1_g (g=argmin spike kappa) tuned coverage at z*+eps x, c=100 vs 1-n/G",12.0,5.0,normal_outlier,0.4166666666666667,0.4166666666666667,True
+NUMBERS,"table row: k*, fixed=1/(k*-1)-1/G, n-1 variant, pi(k_found)>alpha, |B2|=k_found, k_found=k*-1, tuned<fixed",15.0,6.0,normal,0.1565704117769489,0.2666666666666666,True
+NUMBERS,"table row: k*, fixed=1/(k*-1)-1/G, n-1 variant, pi(k_found)>alpha, |B2|=k_found, k_found=k*-1, tuned<fixed",15.0,8.0,normal,0.2281581678539653,0.4333333333333333,True
+NUMBERS,"table row: k*, fixed=1/(k*-1)-1/G, n-1 variant, pi(k_found)>alpha, |B2|=k_found, k_found=k*-1, tuned<fixed",15.0,10.0,normal,0.6411828312658161,0.9333333333333332,True
+NUMBERS,"table row: k*, fixed=1/(k*-1)-1/G, n-1 variant, pi(k_found)>alpha, |B2|=k_found, k_found=k*-1, tuned<fixed",15.0,12.0,normal,0.6411828312658161,0.9333333333333332,True
+NUMBERS,"table row: k*, fixed=1/(k*-1)-1/G, n-1 variant, pi(k_found)>alpha, |B2|=k_found, k_found=k*-1, tuned<fixed",15.0,6.0,lognormal,0.1702638273271774,0.2666666666666666,True
+NUMBERS,"table row: k*, fixed=1/(k*-1)-1/G, n-1 variant, pi(k_found)>alpha, |B2|=k_found, k_found=k*-1, tuned<fixed",15.0,8.0,lognormal,0.2285165026922641,0.4333333333333333,True
+NUMBERS,"table row: k*, fixed=1/(k*-1)-1/G, n-1 variant, pi(k_found)>alpha, |B2|=k_found, k_found=k*-1, tuned<fixed",15.0,10.0,lognormal,0.6715289041955083,0.9333333333333332,True
+NUMBERS,"table row: k*, fixed=1/(k*-1)-1/G, n-1 variant, pi(k_found)>alpha, |B2|=k_found, k_found=k*-1, tuned<fixed",15.0,12.0,lognormal,0.6715289041955083,0.9333333333333332,True
+NUMBERS,"table row: k*, fixed=1/(k*-1)-1/G, n-1 variant, pi(k_found)>alpha, |B2|=k_found, k_found=k*-1, tuned<fixed",15.0,6.0,normal_outlier,0.1450955751058259,0.2666666666666666,True
+NUMBERS,"table row: k*, fixed=1/(k*-1)-1/G, n-1 variant, pi(k_found)>alpha, |B2|=k_found, k_found=k*-1, tuned<fixed",15.0,8.0,normal_outlier,0.1608238947339321,0.4333333333333333,True
+NUMBERS,"table row: k*, fixed=1/(k*-1)-1/G, n-1 variant, pi(k_found)>alpha, |B2|=k_found, k_found=k*-1, tuned<fixed",15.0,10.0,normal_outlier,0.3937823705382733,0.9333333333333332,True
+NUMBERS,"table row: k*, fixed=1/(k*-1)-1/G, n-1 variant, pi(k_found)>alpha, |B2|=k_found, k_found=k*-1, tuned<fixed",15.0,12.0,normal_outlier,0.3937823705382733,0.9333333333333332,True
+NUMBERS,"table row: k*, fixed=1/(k*-1)-1/G, n-1 variant, pi(k_found)>alpha, |B2|=k_found, k_found=k*-1, tuned<fixed",24.0,6.0,normal,0.0921234839428059,0.125,True
+NUMBERS,"table row: k*, fixed=1/(k*-1)-1/G, n-1 variant, pi(k_found)>alpha, |B2|=k_found, k_found=k*-1, tuned<fixed",24.0,8.0,normal,0.0935891825980758,0.1583333333333333,True
+NUMBERS,"table row: k*, fixed=1/(k*-1)-1/G, n-1 variant, pi(k_found)>alpha, |B2|=k_found, k_found=k*-1, tuned<fixed",24.0,10.0,normal,0.1778024614367116,0.2916666666666667,True
+NUMBERS,"table row: k*, fixed=1/(k*-1)-1/G, n-1 variant, pi(k_found)>alpha, |B2|=k_found, k_found=k*-1, tuned<fixed",24.0,12.0,normal,0.1778024614367116,0.2916666666666667,True
+NUMBERS,"table row: k*, fixed=1/(k*-1)-1/G, n-1 variant, pi(k_found)>alpha, |B2|=k_found, k_found=k*-1, tuned<fixed",24.0,6.0,lognormal,0.0776907717155127,0.125,True
+NUMBERS,"table row: k*, fixed=1/(k*-1)-1/G, n-1 variant, pi(k_found)>alpha, |B2|=k_found, k_found=k*-1, tuned<fixed",24.0,8.0,lognormal,0.0845005381473631,0.1583333333333333,True
+NUMBERS,"table row: k*, fixed=1/(k*-1)-1/G, n-1 variant, pi(k_found)>alpha, |B2|=k_found, k_found=k*-1, tuned<fixed",24.0,10.0,lognormal,0.1217525966571166,0.2916666666666667,True
+NUMBERS,"table row: k*, fixed=1/(k*-1)-1/G, n-1 variant, pi(k_found)>alpha, |B2|=k_found, k_found=k*-1, tuned<fixed",24.0,12.0,lognormal,0.1217525966571166,0.2916666666666667,True
+NUMBERS,"table row: k*, fixed=1/(k*-1)-1/G, n-1 variant, pi(k_found)>alpha, |B2|=k_found, k_found=k*-1, tuned<fixed",24.0,6.0,normal_outlier,0.0900280696595428,0.125,True
+NUMBERS,"table row: k*, fixed=1/(k*-1)-1/G, n-1 variant, pi(k_found)>alpha, |B2|=k_found, k_found=k*-1, tuned<fixed",24.0,8.0,normal_outlier,0.100053416692527,0.1583333333333333,True
+NUMBERS,"table row: k*, fixed=1/(k*-1)-1/G, n-1 variant, pi(k_found)>alpha, |B2|=k_found, k_found=k*-1, tuned<fixed",24.0,10.0,normal_outlier,0.146172868030759,0.2916666666666667,True
+NUMBERS,"table row: k*, fixed=1/(k*-1)-1/G, n-1 variant, pi(k_found)>alpha, |B2|=k_found, k_found=k*-1, tuned<fixed",24.0,12.0,normal_outlier,0.146172868030759,0.2916666666666667,True
+NUMBERS,"G=24,n=8 exact enumeration of 735471 samples, two-piece k=5 (seed 100, kappa(z*)=0.0826<0.10), u#0.0, eps=1, c=100",24.0,8.0,normal,1.0,0.897233,n/a (eps not small)
+NUMBERS,"G=24,n=8 exact enumeration of 735471 samples, two-piece k=5 (seed 100, kappa(z*)=0.0826<0.10), u#0.0, eps=0.1, c=100",24.0,8.0,normal,1.0,0.897233,n/a (eps not small)
+NUMBERS,"G=24,n=8 exact enumeration of 735471 samples, two-piece k=5 (seed 100, kappa(z*)=0.0826<0.10), u#0.0, eps=0.01, c=100",24.0,8.0,normal,0.8972332015810277,0.897233,n/a (eps not small)
+NUMBERS,"G=24,n=8 exact enumeration of 735471 samples, two-piece k=5 (seed 100, kappa(z*)=0.0826<0.10), u#0.0, eps=0.001, c=100",24.0,8.0,normal,0.8972332015810277,0.897233,True
+NUMBERS,"G=24,n=8 exact enumeration of 735471 samples, two-piece k=5 (seed 100, kappa(z*)=0.0826<0.10), u#0.0, eps=0.0001, c=100",24.0,8.0,normal,0.8972332015810277,0.897233,True
+NUMBERS,"G=24,n=8 exact enumeration of 735471 samples, two-piece k=5 (seed 100, kappa(z*)=0.0826<0.10), u#0.0, eps=1e-05, c=100",24.0,8.0,normal,0.8972332015810277,0.897233,True
+NUMBERS,"G=24,n=8 exact enumeration of 735471 samples, two-piece k=5 (seed 100, kappa(z*)=0.0826<0.10), u#0.0, eps=1e-06, c=100",24.0,8.0,normal,0.8972332015810277,0.897233,True
+NUMBERS,"G=24,n=8 exact enumeration of 735471 samples, two-piece k=5 (seed 100, kappa(z*)=0.0826<0.10), u#1.0, eps=1, c=100",24.0,8.0,normal,1.0,0.897233,n/a (eps not small)
+NUMBERS,"G=24,n=8 exact enumeration of 735471 samples, two-piece k=5 (seed 100, kappa(z*)=0.0826<0.10), u#1.0, eps=0.1, c=100",24.0,8.0,normal,1.0,0.897233,n/a (eps not small)
+NUMBERS,"G=24,n=8 exact enumeration of 735471 samples, two-piece k=5 (seed 100, kappa(z*)=0.0826<0.10), u#1.0, eps=0.01, c=100",24.0,8.0,normal,0.938488397231162,0.897233,n/a (eps not small)
+NUMBERS,"G=24,n=8 exact enumeration of 735471 samples, two-piece k=5 (seed 100, kappa(z*)=0.0826<0.10), u#1.0, eps=0.001, c=100",24.0,8.0,normal,0.8972332015810277,0.897233,True
+NUMBERS,"G=24,n=8 exact enumeration of 735471 samples, two-piece k=5 (seed 100, kappa(z*)=0.0826<0.10), u#1.0, eps=0.0001, c=100",24.0,8.0,normal,0.8972332015810277,0.897233,True
+NUMBERS,"G=24,n=8 exact enumeration of 735471 samples, two-piece k=5 (seed 100, kappa(z*)=0.0826<0.10), u#1.0, eps=1e-05, c=100",24.0,8.0,normal,0.8972332015810277,0.897233,True
+NUMBERS,"G=24,n=8 exact enumeration of 735471 samples, two-piece k=5 (seed 100, kappa(z*)=0.0826<0.10), u#1.0, eps=1e-06, c=100",24.0,8.0,normal,0.8972332015810277,0.897233,True
+T1prime/T2prime,for every flat with >=1 affine sample: is theta_hat_S identically 0 on the flat for some affine S? (count of such flats),8.0,4.0,normal,0.0,0,True
+T1prime/T2prime,for every flat with >=1 affine sample: is theta_hat_S identically 0 on the flat for some affine S? (count of such flats),8.0,4.0,lognormal,0.0,0,True
+T1prime/T2prime,for every flat with >=1 affine sample: is theta_hat_S identically 0 on the flat for some affine S? (count of such flats),8.0,4.0,normal_outlier,0.0,0,True
+T1prime/T2prime,for every flat with >=1 affine sample: is theta_hat_S identically 0 on the flat for some affine S? (count of such flats),10.0,5.0,normal,0.0,0,True
+T1prime/T2prime,for every flat with >=1 affine sample: is theta_hat_S identically 0 on the flat for some affine S? (count of such flats),10.0,5.0,lognormal,0.0,0,True
+T1prime/T2prime,for every flat with >=1 affine sample: is theta_hat_S identically 0 on the flat for some affine S? (count of such flats),10.0,5.0,normal_outlier,0.0,0,True
