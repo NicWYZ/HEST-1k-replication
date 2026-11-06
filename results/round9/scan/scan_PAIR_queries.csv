@@ -1,0 +1,87 @@
+query,source,date,n_results_screened,new_close_papers
+"all:""prediction-powered inference"" AND all:""U-statistic""",arxiv,2026-10-24,1,Xu-Witten-Shojaie 2502.17741 (related)
+"all:""prediction-powered"" AND all:pairwise",arxiv,2026-10-24,8,
+"all:""semi-supervised"" AND all:""U-statistics""",arxiv,2026-10-24,4,Kim et al. Semi-Supervised U-statistics 2402.18921 (close)
+"all:""prediction-powered inference"" AND all:spatial",arxiv,2026-10-24,3,Shirota 2608.10356 (close); Rizvi et al. 2610.08715 (related)
+"all:""prediction-powered inference"" AND all:network",arxiv,2026-10-24,4,
+prediction-powered inference U-statistics,crossref,2026-10-24,8,
+estimating Moran's I from a sample of spatial units design-based,crossref,2026-10-24,8,
+sampling design for variogram estimation spatial,crossref,2026-10-24,8,
+"[FAILED: HTTP 429 rate limit, no results] all:""semi-supervised"" AND all:""U-statistic"" AND all:inference",arxiv,2026-10-24,0,
+"[FAILED: HTTP 429 rate limit, no results] all:""prediction-powered"" AND all:""Kendall"" OR all:""Spearman"" AND all:prediction-powered",arxiv,2026-10-24,0,
+"[FAILED: HTTP 429 rate limit, no results] all:""Moran"" AND all:""spatial transcriptomics""",arxiv,2026-10-24,0,
+"[FAILED: HTTP 429 rate limit, no results] all:""Moran's I"" AND all:sampling AND all:variance",arxiv,2026-10-24,0,
+"[FAILED: HTTP 429 rate limit, no results] all:""spatial autocorrelation"" AND all:""spatial transcriptomics"" AND all:""histology""",arxiv,2026-10-24,0,
+"[FAILED: HTTP 429 rate limit, no results] all:""spatially variable genes"" AND all:""histology images"" AND all:predicted",arxiv,2026-10-24,0,
+"[FAILED: HTTP 429 rate limit, no results] all:""subgraph sampling"" AND all:""edge"" AND all:estimation AND all:network",arxiv,2026-10-24,0,
+"[FAILED: HTTP 429 rate limit, no results] all:""induced subgraph sampling"" AND all:estimation",arxiv,2026-10-24,0,
+"[FAILED: HTTP 429 rate limit, no results] all:""U-statistic"" AND all:""dependent"" AND all:""block sampling""",arxiv,2026-10-24,0,
+"[FAILED: HTTP 429 rate limit, no results] all:""ligand-receptor"" AND all:""spatial"" AND all:""histology"" AND all:predict",arxiv,2026-10-24,0,
+"[FAILED: HTTP 429 rate limit, no results] all:""cell-cell communication"" AND all:""inference"" AND all:""spatial"" AND all:""uncertainty"" AND all:""imputation""",arxiv,2026-10-24,0,
+"[FAILED: HTTP 429 rate limit, no results] all:variogram AND all:""sampling design"" AND all:estimation AND all:""optimal""",arxiv,2026-10-24,0,
+network sampling edge totals Horvitz-Thompson induced subgraph estimation,crossref,2026-10-24,8,
+"[FAILED: non-JSON/rate-limited response, no results] estimation of spatial autocorrelation Moran I from sampled locations sampling design",crossref,2026-10-24,0,
+two-phase sampling spatial autocorrelation coefficient estimation survey,crossref,2026-10-24,8,
+"[FAILED: non-JSON/rate-limited response, no results] U-statistics for random fields spatial dependence central limit theorem",crossref,2026-10-24,0,
+semi-supervised U-statistics unlabeled data efficiency,crossref,2026-10-24,8,
+"[FAILED: non-JSON/rate-limited response, no results] model-assisted estimation network statistics auxiliary prediction difference estimator",crossref,2026-10-24,0,
+"[FAILED: non-JSON/rate-limited response, no results] cluster sampling of contiguous blocks versus random points spatial autocorrelation estimator precision",crossref,2026-10-24,0,
+"[FAILED: non-JSON/rate-limited response, no results] spatially variable genes spatial transcriptomics statistical test Moran I SPARK SpatialDE",crossref,2026-10-24,0,
+"[FAILED: non-JSON/rate-limited response, no results] cell-cell communication spatial transcriptomics neighbor ligand receptor statistical inference permutation null",crossref,2026-10-24,0,
+"[FAILED: non-JSON/rate-limited response, no results] missing data Moran I spatial weights matrix subsample",crossref,2026-10-24,0,
+estimating network density clustering coefficient from egocentric or snowball sample design-based,crossref,2026-10-24,8,
+"[FAILED: non-JSON/rate-limited response, no results] prediction-powered inference",crossref,2026-10-24,0,
+"all:""U-statistics"" AND all:""prediction-powered""",arxiv,2026-10-24,2,
+"all:""Moran"" AND all:""prediction-powered""",arxiv,2026-10-24,4,
+"all:""spatial transcriptomics"" AND all:""predicted"" AND all:""valid inference""",arxiv,2026-10-24,0,
+"all:""Horvitz-Thompson"" AND all:""Moran""",arxiv,2026-10-24,0,
+"all:""graph signal"" AND all:""sampling"" AND all:""Dirichlet energy"" AND all:""estimation""",arxiv,2026-10-24,2,Ajorlou et al. 2512.17084 (close)
+"all:""network"" AND all:""prediction-powered inference""",arxiv,2026-10-24,4,
+"all:""Moran's I"" AND all:""design-based"" AND all:sampling",arxiv,2026-10-24,0,
+"all:""spatial autocorrelation"" AND all:""finite population"" AND all:""sample""",arxiv,2026-10-24,0,
+"all:""model-assisted"" AND all:""network"" AND all:""edges"" AND all:""sampling""",arxiv,2026-10-24,1,
+"all:""U-statistic"" AND all:""finite population"" AND all:""survey""",arxiv,2026-10-24,1,Dharamshi et al. 2502.11032 (related)
+"all:""semi-supervised"" AND all:""network"" AND all:""edge"" AND all:inference AND all:""unlabeled""",arxiv,2026-10-24,2,
+"all:""spatial transcriptomics"" AND all:""Moran"" AND all:""inference"" AND all:""sampling""",arxiv,2026-10-24,0,
+"all:""spatially variable genes"" AND all:""histology"" AND all:""prediction""",arxiv,2026-10-24,1,
+"all:""cell-cell"" AND all:""colocalization"" AND all:""spatial"" AND all:""statistical"" AND all:""test""",arxiv,2026-10-24,0,
+"all:""subsampling"" AND all:""spatial"" AND all:""U-statistics"" AND all:""random field""",arxiv,2026-10-24,0,
+"all:""active learning"" AND all:""spatial"" AND all:""Moran""",arxiv,2026-10-24,1,Zhu et al. 2609.27208 (related)
+"all:""ligand-receptor"" AND all:""H&E"" AND all:""predict""",arxiv,2026-10-24,0,
+"all:""prediction-powered"" AND all:""genomics"" AND all:""spatial""",arxiv,2026-10-24,3,
+"[FAILED: HTTP 429 rate limit, no results] prediction-powered inference U-statistic pairwise",semanticscholar,2026-10-24,0,
+"[FAILED: HTTP 429 rate limit, no results] prediction-powered inference network graph edges sampled nodes",semanticscholar,2026-10-24,0,
+"[FAILED: HTTP 429 rate limit, no results] prediction-powered inference Moran spatial autocorrelation",semanticscholar,2026-10-24,0,
+"[FAILED: HTTP 429 rate limit, no results] model-assisted estimation network statistics subgraph sampling auxiliary predictions",semanticscholar,2026-10-24,0,
+"[FAILED: HTTP 429 rate limit, no results] Horvitz-Thompson Moran I sampled spatial units",semanticscholar,2026-10-24,0,
+"[FAILED: HTTP 429 rate limit, no results] semi-supervised inference dependent data U-statistics spatial block",semanticscholar,2026-10-24,0,
+"[FAILED: HTTP 429 rate limit, no results] spatial transcriptomics inference predicted expression histology rectifier gold-standard subset",semanticscholar,2026-10-24,0,
+"[FAILED: HTTP 429 rate limit, no results] design-based inference spatial transcriptomics sampled spots",semanticscholar,2026-10-24,0,
+"[FAILED: HTTP 429 rate limit, no results] block sampling versus random sampling pairs spatial autocorrelation estimation variance",semanticscholar,2026-10-24,0,
+"[FAILED: HTTP 429 rate limit, no results] inference with predicted data network dependence dyadic",semanticscholar,2026-10-24,0,
+prediction-powered inference spatial transcriptomics histology predicted gene expression,web_search,2026-10-24,9,
+prediction-powered inference U-statistics pairwise rectifier,web_search,2026-10-24,9,Wang et al. 2605.11638 surfaced (close)
+Learning U-Statistics with Active Inference,web_search,2026-10-24,9,"Wang et al. 2605.11638 (close, read)"
+prediction-powered inference spatial autocorrelation correlated data Moran's I rectifier,web_search,2026-10-24,9,
+sampling a network or spatial lattice: estimating Moran's I or edge-based statistic from sampled nodes induced subgraph bias variance,web_search,2026-10-24,10,Ajorlou et al. 2512.17084; Klusowski & Wu 1802.07773 (related)
+Dirichlet Meets Horvitz and Thompson: Estimating Homophily in Large Networks via Sampling,web_search,2026-10-24,10,"Ajorlou et al. 2512.17084 (close, read)"
+spatially variable gene detection Moran's I using gene expression predicted from H&E histology foundation model super-resolution bias,web_search,2026-10-24,9,
+prediction-powered inference dependent data spatial dependence labeled block sampling variance estimator confidence interval spatial PPI,web_search,2026-10-24,9,Shirota 2608.10356; Broska & Howes 2610.09601
+design-based estimation finite population U-statistics complex sampling designs second-order inclusion probabilities variance Gini Kendall pairwise,web_search,2026-10-24,9,
+prediction-powered inference for network data dyadic edges link prediction labeled subgraph confidence interval,web_search,2026-10-24,9,
+spatial transcriptomics experimental design sparse sampling of spots or regions of interest imputation of unmeasured spots statistical guarantees,web_search,2026-10-24,10,
+Salerno McCormick Leek inference with predicted data spatial dependence incomplete reference labels,web_search,2026-10-24,10,"Salerno et al. 2603.11368 (close, read)"
+dyadic cluster-robust variance pairwise statistics sampled nodes U-statistic network-dependent Hoeffding decomposition inference,web_search,2026-10-24,9,Hounyo et al. 2605.28349 (related)
+optimal spatial sampling design variogram estimation clustered pairs of points at short lags Muller Zimmerman Lark,web_search,2026-10-24,9,Lark 2002; Zimmerman 2006 (related)
+prediction-powered inference correlation coefficient Kendall tau Spearman AUC Wilcoxon U-statistic labeled unlabeled machine learning predictions,web_search,2026-10-24,9,
+Horvitz-Thompson U-statistics survey sampling Poisson design Clemencon Bertail incomplete U-statistics pairs inclusion probabilities,web_search,2026-10-24,10,Davy-Clemencon-Laclau 2606.02345 (related)
+estimating pair correlation function K function from sampled windows fields of view stereology design-based edge correction pairs within window,web_search,2026-10-24,10,
+post-prediction inference spatial transcriptomics predicted gene expression from histology downstream hypothesis test valid inference bias correction labeled subset,web_search,2026-10-24,9,TIDEST (related)
+Moran's I statistic computed on a random subsample of lattice sites bias neighbours lost thinning spatial weights subsampling estimator unbiased inclusion probability correction,web_search,2026-10-24,10,"Ying thesis (related, unpublished)"
+forward citations of Wang-ActiveU 2605.11638,semanticscholar_citations,2026-10-24,0,no indexed citers yet
+forward citations of Kim SSU 2402.18921,semanticscholar_citations,2026-10-24,8,citers screened: 8; none pairwise-spatial
+forward citations of Ajorlou 2512.17084,semanticscholar_citations,2026-10-24,0,no indexed citers
+forward citations of Salerno 2603.11368,semanticscholar_citations,2026-10-24,0,no indexed citers
+forward citations of Shirota 2608.10356,semanticscholar_citations,2026-10-24,1,"1 citer (2609.04082, two-phase model-assisted; irrelevant)"
+forward citations of Klusowski-Wu 1802.07773,semanticscholar_citations,2026-10-24,26,citers screened: 26; related graph-sampling motif theory
+forward citations of Xu-Witten-Shojaie 2502.17741,semanticscholar_citations,2026-10-24,0,no indexed citers

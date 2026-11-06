@@ -1,0 +1,45 @@
+n,source,query,note
+1,arxiv,"all:""hierarchical conformal"" AND all:""scale""",0 results
+2,arxiv,"all:studentized AND all:""hierarchical conformal prediction""",0 results
+3,arxiv,"all:""hierarchical conformal prediction"" AND all:""labeled observations"" AND all:""new group""",0 results
+4,arxiv,"all:""conformal prediction"" AND all:""new group"" AND all:""few labeled""",0 results
+5,arxiv,"all:""conformal"" AND all:""group-specific scale"" AND all:""unseen group""",0 results
+6,arxiv,"all:""conformal prediction"" AND all:""normalized nonconformity"" AND all:""cluster"" AND all:""random effects""",0 results
+7,arxiv,"all:""few-shot"" AND all:""conformal prediction"" AND all:""new task""",0 results
+8,arxiv,"all:""conformal"" AND all:""meta-learning"" AND all:""calibration"" AND all:""few""",1 results
+9,arxiv,hierarchical conformal prediction new group labeled observations,8 results
+10,arxiv,conformal prediction hierarchical exchangeability studentized score group scale,8 results
+11,arxiv,conformal prediction unseen group few labeled samples target group calibration,8 results
+12,arxiv,few-shot conformal prediction new domain small labeled calibration,8 results
+13,arxiv,conformal prediction multi-environment resizing test environment labels,8 results
+14,arxiv,conformal prediction clustered data new cluster random effects prediction interval,8 results
+15,arxiv,locally weighted conformal prediction normalized residual scale estimate,8 results
+16,arxiv,conformal prediction group-conditional coverage Mondrian few samples per group,8 results
+17,arxiv,federated conformal prediction personalized client few local samples,8 results
+18,arxiv,conformal prediction empirical Bayes shrinkage variance,8 results
+19,semanticscholar,citations of HCP (arXiv:2306.06342),0 citing
+20,semanticscholar,citations of Duchi (arXiv:2403.16336),12 citing
+21,semanticscholar,citations of GHCP (arXiv:2608.15500),0 citing
+22,semanticscholar,citations of HCP (arXiv:2306.06342),23 citing
+23,arxiv,"id_list 2609.30781,2509.21691,2409.13990,2610.13249",abstract check of HCP-citing papers
+24,web_search,Multi-source conformal prediction leveraging heterogeneity via localization 2609.14531,
+25,web_search,Generalized Hierarchical Conformal Prediction GHCP citing studentized scale new group few observations,
+26,web_search,multi-output conformal prediction shared scale across outputs group-level scale factor new group calibration,
+27,web_search,conformal prediction gene expression prediction from histology spatial transcriptomics prediction intervals donors,
+28,web_search,conformal prediction new batch single-cell few labeled cells calibration batch-specific scale,
+29,web_search,prediction interval new study random-effects meta-analysis Higgins Thompson Spiegelhalter few studies,
+30,web_search,tolerance interval one-way random effects model new group future observation Mee Owen Krishnamoorthy,
+31,web_search,Empirical Bayes Conformal Prediction for Vision and Language Models 2605.23189,
+32,web_search,conformal prediction new patient subject-specific few calibration samples personalized hierarchical exchangeability,
+33,web_search,conformal prediction domain shift few labeled target samples rescale calibration scores scale adaptation,
+34,web_search,Distribution-free inference with hierarchical data Lee Barber Willett citing papers hierarchical conformal extension 2026,
+35,web_search,Target-indexed hierarchical conformal prediction under informative cluster size,
+36,web_search,personalized federated conformal prediction new client few labeled samples local calibration Plassier Humbert,
+37,web_search,normalized nonconformity measure Papadopoulos 2008 difficulty estimator conformal studentized,
+38,web_search,conformal prediction multiple outputs shared group-level factor gene expression normalization library size scale across genes,
+39,web_search,test-time adaptation conformal prediction few labeled test samples finite-sample valid target domain source tasks,
+40,web_search,Few-Shot Conformal Prediction with Auxiliary Tasks Fisch Schuster Jaakkola Barzilay,
+41,web_search,conformal prediction linear mixed effects model new cluster prediction interval heteroscedastic group variance,
+42,web_search,conformal prediction subject-level heteroscedasticity scale estimated from each subject's own samples new subject,
+43,web_search,meta-learning conformal prediction regression tasks per-task scale factor exchangeable tasks few support examples,
+44,web_search,conformal prediction random effects shared across outputs multi-task regression group-specific variance borrowing across outcomes,

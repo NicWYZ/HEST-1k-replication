@@ -1,0 +1,95 @@
+tool,query,status,n_results
+arxiv,"all:""two-phase"" AND all:""prediction-powered inference""",ok,1
+arxiv,"all:""prediction-powered inference"" AND all:cluster",ok,4
+arxiv,"all:""prediction-powered"" AND all:""survey sampling""",ok,3
+arxiv,"all:""model-assisted"" AND all:""prediction-powered""",ok,3
+arxiv,"all:""double sampling"" AND all:""machine learning predictions""",ok,0
+arxiv,"all:""active inference"" AND all:""cluster""",ok,6
+arxiv,"all:""spatial transcriptomics"" AND all:""experimental design"" AND all:donors",ok,0
+s2,two-phase sampling prediction-powered inference clusters,ERR,0
+s2,prediction-powered inference few clusters labelled,ERR,0
+s2,Broska Howes prediction-powered inference clustered,ok,6
+arxiv,"all:""two-phase sampling"" AND all:""measurement error"" AND all:auxiliary",ok,1
+arxiv,"all:""two-phase"" AND all:""cluster sampling"" AND all:regression estimator",ok,1
+arxiv,"all:""multiwave"" AND all:""two-phase"" AND all:sampling",ok,3
+arxiv,"all:""prediction-powered"" AND all:""multiple outcomes""",ok,1
+arxiv,"all:""prediction-powered"" AND all:""stratified"" AND all:sampling",ok,5
+arxiv,"all:""active"" AND all:""prediction-powered inference"" AND all:""budget""",ok,1
+arxiv,"all:""sequencing depth"" AND all:""size factor"" AND all:""pseudobulk"" AND all:""between-sample""",ok,0
+arxiv,"all:""spatial transcriptomics"" AND all:""sample size"" AND all:""power"" AND all:""biological replicates""",ok,0
+arxiv,"all:""regression estimator"" AND all:""estimated auxiliary"" AND all:""first phase""",ok,0
+arxiv,"all:""conformal"" AND all:""new group"" AND all:""few labeled"" AND all:""group-level""",ok,0
+arxiv,"all:""hierarchical conformal"" AND all:""calibration"" AND all:""target group""",ok,0
+arxiv,"all:""pilot sample"" AND all:""cluster"" AND all:""prediction-powered""",ok,0
+crossref,regression estimator auxiliary variable estimated from first phase sample two-phase sampling,ok,6
+crossref,two-phase sampling for stratification cluster sampling regression estimator variance,ok,6
+crossref,two-phase two-stage sampling forest inventory model-assisted estimator auxiliary information,ok,6
+crossref,estimation in the presence of measurement error in auxiliary variables survey regression estimator,ok,6
+crossref,survey regression estimation with errors in auxiliary variables,ok,6
+crossref,ratio estimation measure of size estimated from a preliminary sample,ok,6
+crossref,double sampling regression estimator cluster sampling pilot sample all clusters,ok,6
+crossref,spatial transcriptomics study design number of biological replicates donors power analysis,ok,6
+crossref,shallow sequencing all samples then deep sequencing subset design genomics cost-efficient,ok,6
+crossref,sequencing depth as covariate between-sample differential expression normalization factors pseudobulk,ok,6
+crossref,size factors estimation spatial transcriptomics sequencing depth confounding between samples,ok,6
+crossref,multivariate regression estimator many outcomes survey calibration multiple outcomes shared auxiliary,ok,6
+s2cites,arXiv:2608.15500,ok,0
+s2cites,arXiv:2306.06342,ok,0
+s2cites,arXiv:2403.16336,ok,0
+s2cites,arXiv:2610.09601,ok,0
+arxiv,prediction-powered inference auxiliary covariates side information regression adjustment,ok,6
+arxiv,prediction-powered inference hierarchical multilevel clusters labeled sampling design,ok,6
+arxiv,prediction-powered inference sampling proportional to predicted size probability proportional to size,ok,6
+arxiv,few clusters inference skewness cluster-robust coverage wild bootstrap Satterthwaite,ok,6
+arxiv,model-assisted estimation cluster sampling few primary sampling units coverage,ok,6
+arxiv,predicting gene expression from histology sequencing depth batch confounder cross-donor,ok,6
+arxiv,shared latent factor estimated by pooling many outcomes first-phase sample regression estimator,ok,6
+arxiv,conformal prediction few labeled samples from test group estimate scale test group,ok,6
+arxiv,conformal prediction domain adaptation labeled target samples few-shot calibration scale,ok,6
+arxiv,prediction-powered inference multiple outcomes vector many responses shared structure,ok,6
+arxiv,active inference cluster sampling budget allocate labels across clusters,ok,6
+arxiv,prediction-powered inference two-stage sampling cluster first-stage second-stage,ok,6
+arxiv,spatial transcriptomics experimental design replicates number of samples versus spots power,ok,6
+s2,prediction-powered inference clustered data partially labeled clusters,ERR,0
+s2,two-phase sampling cluster sampling measurement error auxiliary regression estimator,ERR,0
+s2,prediction interval new study random-effects meta-analysis few observations from new study,ERR,0
+s2,personalized conformal prediction federated new client few labeled samples,ERR,0
+s2,conformal prediction new task few-shot meta-learning calibration target task labels,ok,6
+s2,conformal prediction covariate shift domain adaptation labeled target samples scale recalibration,ERR,0
+s2,prediction-powered inference distribution shift multiple sites site-level calibration,ERR,0
+s2,sampling clusters with estimated measure of size first phase probability proportional to estimated size,ERR,0
+s2,regression calibration estimated auxiliary information model-assisted estimator survey variance estimated covariate means,ok,6
+s2,spatial transcriptomics sample size donors pseudobulk differential expression power design,ERR,0
+s2,sctransform OR scran size factor normalization covariate between-sample inference prediction,ERR,0
+s2,surrogate variable analysis control genes unwanted variation estimation pooling many genes,ERR,0
+arxiv,conformal prediction clustered data new cluster few labeled observations group-level offset estimation,ok,5
+arxiv,federated conformal prediction new client personalization few local labeled samples,ok,5
+arxiv,conformal prediction meta-analysis random effects prediction interval new study distribution-free,ok,5
+arxiv,prediction-powered inference high-dimensional outcomes gene expression multiple testing,ok,5
+arxiv,prediction-powered inference differential expression omics predicted expression labeled samples,ok,5
+arxiv,two-phase sampling design cluster-level regression estimator estimated cluster covariate measurement error variance inflation,ok,5
+arxiv,pseudobulk gene expression prediction from histology donor-level variance sequencing depth,ok,5
+arxiv,in-context prompting few spots slide-specific calibration histology gene expression prediction test slide labeled spots,ok,5
+arxiv,sampling design which samples to sequence budget spatial transcriptomics machine learning prediction active selection,ok,5
+arxiv,prediction-powered inference random effects cluster-level auxiliary covariate,ok,5
+arxiv,semi-supervised inference clustered data cluster-level covariates few labeled clusters,ok,5
+arxiv,regression estimator two-phase estimated auxiliary variable variance increase first phase sample size cost optimal allocation,ok,5
+web_search,Mandallaz two-phase two-stage cluster sampling regression estimator auxiliary variable measured on first phase variance,ok,~10
+web_search,Fuller measurement error auxiliary variables regression estimator survey two-phase Legg Fuller,ok,~10
+web_search,spatial transcriptomics sequencing depth between-sample technical factor confounds sample-level comparison pseudobulk size factor,ok,~10
+web_search,Kim Rao combining data from two independent surveys model-assisted approach estimated auxiliary regression estimator,ok,~10
+web_search,two-phase sampling cluster level auxiliary variable measured on subsample of every cluster first phase whole clusters second phase regression estimator design variance,ok,~10
+web_search,prediction-powered inference stratified OR two-phase labeled sampling design cheap preliminary labels multi-fidelity active statistical inference,ok,~10
+web_search,hybrid experimental design spatial transcriptomics sequence few spots from every sample predict rest from histology foundation model statistical inference,ok,~10
+web_search,prediction-powered inference spatial transcriptomics histology predicted gene expression confidence intervals donors,ok,~10
+web_search,conformal prediction spatial transcriptomics gene expression histology uncertainty donor,ok,~10
+web_search,Prediction-Powered Estimation Unbiased Model-Assisted Estimation Journal of Official Statistics,ok,~10
+web_search,prediction-powered inference clustered data intra-cluster correlation labeled clusters unlabeled clusters design effect,ok,~10
+web_search,conformal prediction group-level random effect few observations new group estimate group offset hierarchical exchangeability local mean calibration,ok,~10
+web_search,Ybarra Lohr small area estimation auxiliary information measured with error Fay-Herriot,ok,~10
+web_search,Mandallaz Ye two-phase two-stage forest inventory regression estimator design-based variance,ok,~10
+web_search,Hidiroglou 2001 double sampling optimal allocation two-phase regression estimator first phase cost,ok,~10
+web_search,prediction-powered inference cluster-specific prediction bias group fixed effects calibration few labels per group,ok,~10
+web_search,pseudobulk spatial transcriptomics RUV negative control genes unwanted variation sample-level sequencing depth factor,ok,~10
+web_search,few clusters cluster-robust inference skewness of cluster contributions coverage Edgeworth,ok,~10
+fetch,Hidiroglou 2001 full text via statcan (access granted),ok,1

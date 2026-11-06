@@ -1,0 +1,37 @@
+query,source,n_screened,candidate,outcome
+PPI choosing predictor model selection winner's curse labeled data reused,web_search,9,C selection,"MEC (calibration-weighted cross-fit PPI), cross-PPI; no few-donor selection-optimism result found"
+training predictor to minimize variance of PPI estimator estimand-aware loss,web_search,9,A head loss,"MoE-PPI (2604.27892), Calibeating PPI (2604.21260), Statistical Optimality of PPI (2606.08730): iid optimum E[.|X]; taken for iid, nothing for clustered heads"
+PPI model trained on labeled data split fraction optimal allocation,web_search,9,B split vs crossfit,"Cross-PPI shows cross-fit beats splitting; Power analysis for PPI (2603.16041), OPAL: B dropped as taken"
+model-assisted estimation cluster sampling mixed model working model GREG,web_search,9,A cluster-level head,"Hybrid GREG for cluster sampling (Konrad et al.), Su-Ding 2021 cluster-total regression: unit vs cluster-level working models are classical"
+PPI clustered data predictor trained on labeled clusters leave-cluster-out cross-fitting few clusters,web_search,9,E crossfit few clusters,"Broska-Howes cluster-robust PPI++ (2610.09601), NICc leave-cluster-out; no trained-head few-cluster PPI theory found"
+kernel ridge regression learning curves clustered grouped samples random effect,web_search,9,D/K learning curve,"KRR functional data (2607.23666), Bordelon spectrum learning curves; no PPI-interface result"
+double machine learning few clusters cross-fitting t critical values,web_search,9,E crossfit few clusters,"Cameron-Miller, Gafarov-Ura 2603.24786 (Cornish-Fisher critical values, ~10 clusters), multiway DML; no cross-fit PPI result"
+PPI multiple outcomes shared latent factor reduced-rank predictor,web_search,9,F factor head,"MultiPPI (2603.27414), PPI across many tasks (2605.29249); generic RRR. Factor-pooled donor head not found"
+cross-validation standard error underestimates nested CV few groups,web_search,9,E,"Bates-Hastie-Tibshirani NCV, Varoquaux: CV SEs too small; not applied to PPI rectifier in retrieved results"
+Transfer Calibrated PPI arXiv 2609.34156,web_search,8,A,TC-PPI: cross-fit calibration of a source predictor; high-dim MSE bounds; iid; not clustered
+Conditional validity of PPI spatially dependent finite populations,web_search,9,C/B,"Shirota 2608.10356: conditional validity, same-label selection from finite library with common influence vector; closest for conditional-on-X view"
+double descent number of groups ridge random effects clustered interpolation,web_search,9,D,Generic double descent; nothing group-count specific
+PPI spatial transcriptomics histology foundation model predicted expression donors,web_search,9,all,No PPI-for-ST paper retrieved; ST literature is prediction-accuracy only
+Efron-Stein jackknife conservative cross-fitted estimator LOO CV CI,web_search,10,E,"V-fold jackknife t_{V-1} (2607.22493), Efron-Stein; jackknife for cross-fit PPI with few donors not retrieved"
+ridge separate penalties within-group between-group Mundlak high-dim,web_search,9,A/G,"Adaptive group-regularized ridge (feature groups, not within/between); nothing for within/between ridge heads"
+Edgeworth expansion PPI coverage error skewness small sample rectifier,web_search,9,H coverage-aware,No Edgeworth/skewness analysis of PPI retrieved
+PPI heavy-tailed skewed residuals finite-sample coverage few labeled,web_search,9,H,Nothing PPI-specific; conformal tail results only
+PPI selecting among candidate predictors same labeled data best of K,web_search,10,C,"MoE-PPI best-expert guarantee (asymptotic), Filtered PPI; no few-label selection optimism theorem retrieved"
+high-dim ridge mixed-effects random intercept groups proportional asymptotics,web_search,9,D,"Atanasov et al. 2408.04607 ridge with correlated samples (GCV fails), meta-learning generalized ridge 2403.19720: learning-theory side taken"
+semi-supervised ridge unlabeled covariance improves risk high-dim few labels,web_search,9,G label-free geometry,"Azriel et al., Zhang-Bradic, semi-supervised linear regression 2311.17685: unlabeled covariance use is known"
+learning curve extrapolation deterministic equivalent kernel eigenvalues unlabeled spectrum,web_search,10,K,"Bordelon-Canatar-Pehlevan 2002.02561, 2510.14878 learning curves from data statistics: taken on KRR side"
+Mozer PPI difference estimator survey sampling equivalence,web_search,10,background,"Mozer 2603.19160: PPI = difference estimator, PPI++ = GREG"
+Mundlak correlated random effects ML within-between cluster-mean embeddings new clusters,web_search,9,A/G,Econometrics Mundlak/Bell-Jones; 2605.24587 clustered high-dim LASSO with cluster-mean adjustment; no PPI head
+inference-optimal tuning parameter coverage error vs MSE cross-fit Edgeworth few clusters,web_search,10,H,"Calonico-Cattaneo-Farrell coverage-error-optimal bandwidth (precedent for the philosophy, other estimator); Gafarov-Ura refined CR inference"
+"arXiv abs:""prediction-powered inference"" AND abs:""selection""",arXiv API,8,C,"Filtered PPI, Shirota 2608.10356, algorithm selection via PPI"
+"arXiv abs:""prediction-powered"" AND abs:""fine-tuning""",arXiv API,8,A,TC-PPI 2609.34156; nothing clustered
+"arXiv abs:""prediction-powered"" AND abs:""optimal predictor""",arXiv API,1,A,irrelevant
+"arXiv abs:""prediction-powered"" AND abs:""sample splitting"" AND abs:""labeled""",arXiv API,1,B,"No Free Lunch 2505.20178 (non-asymptotic PPI++, no-split bias and optimistic variance)"
+"arXiv all:""prediction-powered inference"" AND all:""model selection""",arXiv API,0,C,no hits
+arXiv all:PPI AND training AND variance AND predictor,arXiv API,3,A,"TC-PPI, MoE-PPI"
+"arXiv all:""prediction-powered inference"" AND all:""high-dimensional""",arXiv API,3,D,"TC-PPI, bias-aware external-model-assisted high-dim regression 2606.15602 (title only)"
+arXiv abs:PPI AND abs:ridge,arXiv API,0,D,FAILED (rate limit / empty response)
+arXiv abs:PPI AND abs:cross-fitting,arXiv API,0,E,FAILED (rate limit)
+arXiv abs:PPI AND abs:proportional,arXiv API,0,D,FAILED (rate limit)
+arXiv abs:PPI AND abs:clustered,arXiv API,0,E,FAILED (rate limit)
+arXiv id_list 6 PPI papers (abstract read),arXiv API,0,misc,FAILED HTTP 429; abstracts obtained via web_search instead

@@ -1,0 +1,17 @@
+# Round 9 preparation, probe-then-label designs
+
+*26 October 2026. The claude-science session. Follows `round09_stud_and_depth.md` and `round09_normalization_check.md`. Recommendations are `[proposed]`.*
+
+## 1. The design
+
+A probe labels o random spots in every donor. Because a spot measures every gene at once, the probe's average over genes and spots, u_hat_g, estimates each donor's shared technical factor, which histology does not see (`round09_stud_and_depth.md`, sections 3 and 4). Whole donors are then labelled, either by simple random selection or after putting the probe-atypical donors in a take-all stratum, and the design-target mean of each gene is estimated with u_hat and, optionally, the donor-mean prediction as donor-level auxiliaries. Its novelty check (PROBE) is parked on Nicolas's approval of network access, and the design is expected to be classical two-phase sampling, so this document reports feasibility only. Predictions were written before both runs and scored after them (`results/round9/probe/predictions_before_run.md`, `results/round9/probe/predictions_scored.md`). Scripts are `code/scripts/round9_probe_feasibility.py` (Longleaf job 74cc77e6) and `code/scripts/round9_probe_takeall.py` (job 8f4d6844), uni_v2, 400 draws per cell, 90% intervals.
+
+## 2. Results
+
+**Regression on the probe factor narrows, and under-covers.** With simple random selection of 8 donors and o = 3, the regression estimator on u_hat has 0.630 of the plain mean's width on CCRCC, and on LUNG_XENIUM the estimator with u_hat and the prediction (0.839) is narrower than either alone (0.910 for the prediction, 0.966 for u_hat). Every regression interval under-covers, at 0.739 to 0.892 over all cells, and so does the plain mean on the Visium tasks (`results/round9/probe/probe_medians.csv`).
+
+**A take-all stratum of one probe-atypical donor repairs coverage on CCRCC.** Labelling with certainty the donor whose u_hat is furthest from the median, and drawing the other 7 at random, gives median coverage 0.885 against 0.825 for simple random selection, at 0.779 of its width, and lifts the 10th-percentile gene from 0.675 to 0.827. Adding the regression on u_hat within the rest narrows further (0.666) but covers 0.848. On INDIANA_KIDNEY and LUNG_XENIUM, where no such donor exists, the take-all stratum changes coverage by -0.010 (`results/round9/probe/takeall_medians.csv`).
+
+## 3. What this means `[proposed]`
+
+The methods are classical, two-phase sampling for stratification with a take-all stratum, and regression estimation with an auxiliary measured in a first phase. What the work adds is an account of where the information about donors is in spatial transcriptomics. Between-donor variation is dominated by a technical factor that histology cannot see and a few labelled spots can, the donor that breaks few-cluster intervals and hierarchical conformal coverage is an outlier of that factor, and histology predictions help at the donor level only once the factor is controlled. That supports a design and empirical paper (option A of the direction scan, extended), whose recommendation is to probe every donor with a few spots before choosing which donors to profile in full. It does not supply the new methodological core the advisors asked for. Coverage with few labelled clusters remains the binding problem, and it is the one remainder that several novelty checkers called substantive (option B).
