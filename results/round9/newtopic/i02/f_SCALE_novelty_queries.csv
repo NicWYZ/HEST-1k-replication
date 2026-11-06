@@ -1,0 +1,14 @@
+source,query,n_results,note
+web_search,two-scales realized covariance Zhang 2011 microstructure noise asynchronous,9,"Zhang 2011 / Mykland-Zhang-Chen algebra of two scales: finance, additive noise on a price process, time-ordered; no predictor, no counts"
+web_search,noise-corrected correlation predicted vs observed spatial transcriptomics Poisson counting noise ceiling upper bound Pearson,10,"RSA/fMRI noise ceilings, Spearman-Brown form rho_max=sqrt(2/(1+1/rho)); ST papers report raw Pearson; PMC12439975 adds Poisson noise but no ceiling estimator"
+web_search,variogram nugget block aggregation Poisson count data change of support variance of block sums estimating nugget from block sizes,9,"Camana-Deutsch / CCG report 123: nugget from variance of composites at several scales (geostatistics, continuous grades), shape and range jointly fitted"
+web_search,Pospisil Bair unbiased estimation fraction of variance explained noisy neuronal responses Poisson variability correction,9,"Pospisil-Bair 2021: needs repeats or known noise variance after variance-stabilising transform; no spatial dependence, no aggregation scale"
+web_search,Lahiri central limit theorem spatial block sums nonuniformly mixing random fields sample covariance variance estimation spatial subsampling,9,"Lahiri 2003 CLT, Nordman-Lahiri 2004 optimal subsample size, Biscio-Waagepetersen: spatial CLT and subsampling variance estimation for mixing fields"
+arxiv,"all:""noise ceiling"" AND all:""Poisson""",0,0 results
+arxiv,"all:""explainable variance"" AND all:""spike counts""",0,0 results
+arxiv,"all:""two-scale"" AND all:""predictive"" AND all:""aggregation""",0,"HTTP error body, no result"
+arxiv,"all:""change of support"" AND all:""correlation"" AND all:""prediction""",0,"HTTP error body, no result"
+arxiv,"all:""signal variance"" AND all:""Poisson"" AND all:""overdispersion"" AND all:""spatial"" AND all:""block""",0,"HTTP error body, no result"
+crossref,unbiased estimator variance explained noise ceiling count data aggregation spatial block size,6,"shuffle estimator for explainable variance (CRAN), Pospisil-Bair; nothing spatial"
+crossref,unbiased fraction of variance explained noisy responses neural,6,"Pospisil-Bair 2021 PLoS CB, r2 between two noisy sets (2021)"
+crossref,spatial transcriptomics histology prediction noise ceiling reliability Poisson,6,"method-independent recoverability ceiling for transcript-to-cell assignment (2026 preprint, different object: segmentation); reviews of ST prediction"

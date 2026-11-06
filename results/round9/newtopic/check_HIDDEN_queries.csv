@@ -1,0 +1,71 @@
+query,source,date,n_results_screened,new_close_papers
+Jin Egami Rothenhäusler size of covariate shift bounds conditional shift PNAS,web_search,2026-10-26,9,1
+Jeong Rothenhäusler out-of-distribution prediction random distribution shift reweighting conditional shift,web_search,2026-10-26,10,2
+Estimating Model Performance Under Covariate Shift Without Labels probabilistic adaptive performance estimation,web_search,2026-10-26,9,1
+impossibility of predicting OOD accuracy without labels theoretical limits unsupervised accuracy estimation,web_search,2026-10-26,9,1
+transporting prediction model performance to target population covariate data only MSE unmeasured differences sensitivity,web_search,2026-10-26,9,3
+external validation clinical prediction model heterogeneity case-mix vs coefficients prediction interval performance new setting,web_search,2026-10-26,9,2
+Patton volatility forecast comparison imperfect volatility proxies robust loss ranking preserved,web_search,2026-10-26,9,1
+conformal prediction new cluster unseen group random intercept hierarchical coverage,web_search,2026-10-26,10,1
+domain generalization random intercept shift unseen domain mixed effects covariate shift,web_search,2026-10-26,9,0
+confidence interval risk new unseen domain from K source domains variance across domains random effects,web_search,2026-10-26,9,0
+partial identification bounds target domain risk unlabeled target minimax worst-case,web_search,2026-10-26,10,2
+single-cell spatial transcriptomics expression prediction from histology donor batch effect evaluation,web_search,2026-10-26,9,1
+estimating accuracy unlabeled target calibration-in-the-large site effect unidentifiable prediction error modifiers,web_search,2026-10-26,8,0
+unsupervised performance estimation regression models distribution shift without labels MSE,web_search,2026-10-26,9,2
+triple collocation error variance without ground truth affine calibration offset scale correlation,web_search,2026-10-26,9,1
+area of applicability dissimilarity index spatial prediction performance new area without reference data,web_search,2026-10-26,9,1
+shift detection does not indicate performance degradation harmless shift unlabeled,web_search,2026-10-26,9,1
+Higgins Thompson Spiegelhalter random-effects meta-analysis prediction interval new study,web_search,2026-10-26,9,1
+when does covariate shift bound conditional shift conditions beyond random dense shift limitations,web_search,2026-10-26,9,0
+identifiable performance metrics under outcome location/scale shift without target labels ranking of predictors,web_search,2026-10-26,8,1
+empirical Bayes deconvolution site-level effects heterogeneity prediction new site few sites,web_search,2026-10-26,8,1
+minimax risk partially identified parameter midpoint identified set half-width,web_search,2026-10-26,9,1
+"all:""label-free"" AND all:""performance estimation"" AND all:""covariate shift""",arxiv,2026-10-26,0,0
+"all:""unsupervised accuracy estimation"" AND all:""distribution shift""",arxiv,2026-10-26,6,0
+"all:""performance estimation"" AND all:""without labels"" AND all:""covariate shift""",arxiv,2026-10-26,1,0
+"all:""label-free"" AND all:""model evaluation"" AND all:""distribution shift""",arxiv,2026-10-26,1,0
+"all:""unidentifiable"" AND all:""model performance"" AND all:""unlabeled"" AND all:""conditional shift""",arxiv,2026-10-26,0,0
+"all:""performance estimation"" AND all:""label shift"" AND all:""concept shift"" AND all:impossib*",arxiv,2026-10-26,0,0
+"all:""random effects"" AND all:""domain generalization"" AND all:""group-level"" AND all:""intercept shift""",arxiv,2026-10-26,0,0
+"all:""unknown"" AND all:""group-level offset"" AND all:""covariate shift"" AND all:""prediction""",arxiv,2026-10-26,0,0
+"all:""conformal prediction"" AND all:""new group"" AND all:""mixed model"" AND all:""coverage""",arxiv,2026-10-26,0,0
+"all:""unlabeled"" AND all:""ranking"" AND all:""models"" AND all:""invariant"" AND all:""offset""",arxiv,2026-10-26,0,0
+"all:""model selection"" AND all:""target domain"" AND all:""without labels"" AND all:""ranking"" AND all:""identifiab*""",arxiv,2026-10-26,0,0
+"all:""batch effect"" AND all:""prediction"" AND all:""gene expression"" AND all:""histology"" AND all:""donor""",arxiv,2026-10-26,1,0
+"all:""outlier"" AND all:""embedding"" AND all:""donor"" AND all:""prediction interval"" AND all:coverage",arxiv,2026-10-26,0,0
+"all:""conformal"" AND all:""spatial transcriptomics""",arxiv,2026-10-26,0,0
+"all:""generalization"" AND all:""unseen sites"" AND all:""variance components"" AND all:""estimate"" AND all:""risk""",arxiv,2026-10-26,0,0
+"all:""minimax"" AND all:""lower bound"" AND all:""unlabeled target"" AND all:""risk estimation""",arxiv,2026-10-26,0,0
+"abs:""unlabeled target"" AND abs:""mean squared error"" AND abs:""covariate shift"" AND abs:""identif""",arxiv,2026-10-26,0,0
+"abs:""performance"" AND abs:""without labels"" AND abs:""site effect""",arxiv,2026-10-26,0,0
+"abs:""random distribution shift"" AND abs:""prediction""",arxiv,2026-10-26,6,3
+"abs:""conditional shift"" AND abs:""covariate shift"" AND abs:""predict"" AND abs:""strength""",arxiv,2026-10-26,2,1
+"abs:""ranking"" AND abs:""models"" AND abs:""unlabeled"" AND abs:""distribution shift"" AND abs:""identifiab""",arxiv,2026-10-26,0,0
+"abs:""model performance"" AND abs:""new site"" AND abs:""random effect""",arxiv,2026-10-26,0,0
+"abs:""transportability"" AND abs:""performance"" AND abs:""unmeasured"" AND abs:""bounds"" AND abs:""prediction model""",arxiv,2026-10-26,0,0
+"abs:""within-group"" AND abs:""correlation"" AND abs:""batch effect"" AND abs:""prediction""",arxiv,2026-10-26,0,0
+"abs:""unlabeled"" AND abs:""prediction interval"" AND abs:""coverage"" AND abs:""unseen"" AND abs:""cluster"" AND abs:""random effects""",arxiv,2026-10-26,0,0
+"abs:""deconvolution"" AND abs:""between-site"" AND abs:""performance"" AND abs:""prediction model""",arxiv,2026-10-26,0,0
+"ti:""unlabeled"" AND abs:""model performance"" AND abs:""covariate shift""",arxiv,2026-10-26,0,0
+"abs:""estimate"" AND abs:""performance"" AND abs:""unlabeled"" AND abs:""hospital""",arxiv,2026-10-26,3,1
+"abs:""label-free"" AND abs:""risk"" AND abs:""covariate shift"" AND abs:""unidentifiable""",arxiv,2026-10-26,0,0
+"ti:""small area learning""",arxiv,2026-10-26,1,1
+"abs:""random effect"" AND abs:""covariate shift"" AND abs:""prediction"" AND abs:""hierarchical""",arxiv,2026-10-26,0,0
+"abs:""unsupervised"" AND abs:""model selection"" AND abs:""target"" AND abs:""offset""",arxiv,2026-10-26,0,0
+"abs:""external validation"" AND abs:""unlabeled"" AND abs:""performance"" AND abs:""estimate""",arxiv,2026-10-26,0,0
+"abs:""group shift"" AND abs:""unlabeled"" AND abs:""performance"" AND abs:""estimate"" AND abs:""worst-group""",arxiv,2026-10-26,0,0
+"abs:""outlier"" AND abs:""donor"" AND abs:""spatial transcriptomics""",arxiv,2026-10-26,0,0
+"abs:""conformal"" AND abs:""random effects"" AND abs:""coverage""",arxiv,2026-10-26,0,0
+estimating model performance in target population covariate data only unmeasured shift sensitivity,crossref,2026-10-26,6,0
+forecast evaluation noisy proxy target ranking preserved loss functions,crossref,2026-10-26,6,0
+validation of predictive performance new cluster random effects prediction interval performance heterogeneity,crossref,2026-10-26,6,0
+prediction error modifiers case-mix transport performance prediction model,crossref,2026-10-26,6,0
+model-assisted estimation survey sampling area random effect prediction new area out-of-sample,crossref,2026-10-26,6,0
+evaluating predictions against noisy reference measurement error correction attenuation reliability correlation,crossref,2026-10-26,6,0
+unsupervised performance estimation without ground truth multiple measurement systems error variance,crossref,2026-10-26,6,0
+batch effects donor-level confounding evaluation of predictive models single-cell expression,crossref,2026-10-26,6,0
+citations of arXiv:2412.08869 (Jin et al.),semantic_scholar_api,2026-10-26,8,0
+citations of arXiv:2306.08084 (sensitivity analysis transporting prediction models),semantic_scholar_api,2026-10-26,4,0
+citations of arXiv:2101.11182 (Transporting a prediction model),semantic_scholar_api,2026-10-26,31,2
+citations of arXiv:2404.18370 (Jeong & Rothenhausler),semantic_scholar_api,2026-10-26,9,2

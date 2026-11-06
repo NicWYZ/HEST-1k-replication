@@ -6,7 +6,15 @@ Round 9's preparation (24 to 26 October, `00_prep/`) looked for a methodological
 
 ## Gates
 
-Each track's session sets its own milestones and records them here on its branch. None yet.
+Each track's session sets its own milestones and records them here on its branch.
+
+| Date | Track | Milestone | Report | Answered by |
+|---|---|---|---|---|
+| 27 Oct | newtopic | track closed | `i04/newtopic/round09_newtopic_closing_report.md` | closing report, no further gate |
+| 27 Oct | newtopic | end of interval 3 | `i03/newtopic/round09_newtopic_i03_report.md` | Nicolas, 27 Oct, "O1" (close the track), recorded in `i04/newtopic/round09_newtopic_closing_report.md` |
+| `i04/newtopic/round09_newtopic_closing_report.md` | 27 Oct | track newtopic's closing report, after Nicolas chose O1. No direction with an open core was found in three intervals. It lists what the track established, the withdrawn reading of F1 as a candidate core, and a lesson for later searches |
+| 27 Oct | newtopic | end of interval 2 | `i02/newtopic/round09_newtopic_i02_report.md` | Nicolas, 27 Oct, "explore f1", recorded in `i03/newtopic/round09_newtopic_i03_plan.md` |
+| 26 Oct | newtopic | end of interval 1 | `i01/newtopic/round09_newtopic_i01_report.md` | Nicolas, 26 Oct, "breadth first", recorded in `i02/newtopic/round09_newtopic_i02_plan.md` |
 
 ## Documents
 
@@ -36,7 +44,13 @@ Each track's session sets its own milestones and records them here on its branch
 | `i03/fewcluster/round09_fewcluster_i03_corrections.md` | 27 Oct | corrections to the interval 3 record after an automated review. Pötscher and Preinerstorfer's Theorem 5.1 gives sufficient conditions, not an equivalence. The band certificate exists at 12 of 24 near the frontier (c = 196.1). A wrong DOI and two bookkeeping slips in checker files, and a script usage line. No theorem, verdict or headline number changes |
 | `i03/fewcluster/round09_fewcluster_nov12.md` | 27 Oct | NOV12 on the critical-value certificate. The certificate as applied is not found in print, but its method is the classical moment-duality technique (Pinelis). Critical values over other classes, under symmetry, are in print (Eaton, Efron, Dufour and Hallin). The band lemma is known (Jonsson 2011, Lemma 3.3). Lists nine paywalled sources for Nicolas |
 | `i04/fewcluster/round09_fewcluster_closing_report.md` | 27 Oct | closes track fewcluster at Nicolas's request. Three theorems proved twice and not found in print (fixed, tuned and stratified frontiers), the regime comparison on ACS and HEST, a partial answer on critical values, Williams' estimator, the median side result and a first paper draft. Lists corrections, the decisions carried forward (D1, D2, V, S, X) and the open technical items |
+| `i01/newtopic/round09_newtopic_i01_plan.md` | 26 Oct, living | track newtopic's plan for interval 1, with six criteria for a direction fixed before the search, five proposer lenses, data-first diagnostics, a checker wave and predictions W1 to W3 |
+| `i01/newtopic/round09_newtopic_i01_report.md` | 26 Oct | track newtopic's report of interval 1. Two waves (five lens proposers with 45 raw ideas, three open-problem miners over 61 papers) and nine checkers found nothing open. BOUNDARY, LLGCLUSTER and RRRIDGE are partly open with thin theory remainders, and the N3 diagnostics added no direction. It proposes a short feasibility interval on RRRIDGE (C1) with a stop rule, against C2 and closing the track (C3) |
+| `i02/newtopic/round09_newtopic_i02_plan.md` | 26 Oct, living | track newtopic's plan for interval 2, opened by Nicolas's request for breadth-first experiments. Five feasibility tracks (RRRIDGE, BOUNDARY, SCALE, LLGCLUSTER, four fresh checkers), each with a stop rule and predictions F1 to F5 |
+| `i02/newtopic/round09_newtopic_i02_report.md` | 27 Oct | track newtopic's report of interval 2. Of five breadth-first tracks, F2 to F4 stopped at lemma or proposition size (stops confirmed by fresh auditors), F5's four checkers passed nothing, and F1 survives as a short note. Ridge reduced-rank regression detects a rank-one response factor below PCA's threshold, not found in print and not a direct case of the spiked separable theorem. Options E1 (bounded note on F1), E2 (fold into option A) and E3 (close) |
+| `i03/newtopic/round09_newtopic_i03_plan.md` | 27 Oct, living | track newtopic's plan for interval 3 on F1 (ridge reduced-rank regression), opened by Nicolas's "explore f1", with steps G1 to G6, stop rules and predictions H1 to H4 |
+| `i03/newtopic/round09_newtopic_i03_report.md` | 27 Oct | track newtopic's report of interval 3. F1 was derived and validated, then found to be a corollary of Liu, Liu, Pan, Zhang and Zhang (arXiv:2310.13939) applied conditionally on the features, confirmed by a fresh auditor with small technical gaps. Stop rule S1 closed the interval. Options O1 (close the track), O2 (keep F1 as a remark) and O3 (a direction from outside the session) |
 
 ## Results
 
-`results/round9/scan/` (search logs and verdicts), `results/round9/diagnostics/` (cluster-level diagnostics, aggregates only), `results/round9/between/` (the between-donor head test), `results/round9/stud/`, `results/round9/norm/` and `results/round9/probe/` (the preparation's later runs, each with predictions written before the run and scored after). Each track writes to `results/round9/<track>/`.
+`results/round9/scan/` (search logs and verdicts), `results/round9/diagnostics/` (cluster-level diagnostics, aggregates only), `results/round9/between/` (the between-donor head test), `results/round9/stud/`, `results/round9/norm/` and `results/round9/probe/` (the preparation's later runs, each with predictions written before the run and scored after). Each track writes to `results/round9/<track>/`. Track newtopic's search logs and verdicts are in `results/round9/newtopic/` (one queries and one candidates CSV per subagent, and `newtopic_structured_results.json`), interval 2's in `results/round9/newtopic/i02/` and interval 3's in `results/round9/newtopic/i03/`.
