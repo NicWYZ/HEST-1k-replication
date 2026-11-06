@@ -1,22 +1,31 @@
-# Round 9, two independent tracks on few-cluster inference and a fresh direction (from 26 October 2026)
+# Round 9, two independent tracks on few-cluster inference and a fresh direction (24 October to 6 November 2026, closed)
 
 Round 9's preparation (24 to 26 October, `00_prep/`) looked for a methodological core and found none that survived the literature check, along with an empirical account of where donor-level information lies in spatial transcriptomics. On 26 October Nicolas deferred the design and empirical paper (option A) and opened two tracks, each run by its own independent session on its own branch. The plan is `masterplan.md`.
 
-**Tracks.** `fewcluster` (option B, valid inference with few labelled clusters under skew) on branch `claude-science-fewcluster`, and `newtopic` (option C, a fresh direction from the data in hand) on branch `claude-science-newtopic`. **Starts from** branch `claude-science` at the commit that adds `masterplan.md`. Each track keeps its own documents in its folders, and this guide lists them on its own branch.
+**Tracks.** `fewcluster` (option B, valid inference with few labelled clusters under skew) on branch `claude-science-fewcluster`, and `newtopic` (option C, a fresh direction from the data in hand) on branch `claude-science-newtopic`. **Started from** branch `claude-science` at the commit that adds `masterplan.md` (bd4af6ba). The preparation was done on `claude-science` by an unsupervised Claude Science session on Nicolas's Mac with Longleaf, and each track by its own Claude Science session in its own clone. None of the three was overseen by the oversight chat, and none reported to it.
+
+**How the round reached `main`.** The three branches were never merged during the round. On 6 November, after both tracks had closed, Nicolas asked the oversight chat to close the round and see how the branches fit into `main` (decision D4). The oversight chat merged all three into branch `round9-close` with merge commits, `claude-science` first, then `claude-science-fewcluster`, then `claude-science-newtopic`, and added this guide's closing sections, the progress-log entries and the state in `CLAUDE.md`. The branches themselves stay on GitHub unchanged. Two choices were made in the merge. The shared files (`CLAUDE.md`, `docs/progress-log.md`, this guide) differed between the branches, so each branch's entries were kept and `main`'s oversight `CLAUDE.md` was kept and brought up to date, with the branches' own `CLAUDE.md` files left on their branches as the record of how those sessions ran. The branches had also removed `docs/EXECUTION_RULES.md` and `docs/WAYS_OF_WORKING.md`, which governed the earlier coordinated sessions. Both are kept on `main` until Nicolas decides their fate in the revamp of the project's workflow he announced on 6 November.
 
 ## Gates
 
-Each track's session sets its own milestones and records them here on its branch.
+The tracks set their own milestones and recorded them on their branches. Neither had gates in the earlier sense, with an oversight memo answering a report, and Nicolas answered each report directly in the session's chat.
 
 | Date | Track | Milestone | Report | Answered by |
 |---|---|---|---|---|
+| 6 Nov | both | round closed, branches merged | this guide's closing sections, `docs/progress-log.md` entry of 6 November | Nicolas merges the pull request of branch `round9-close` |
+| 27 Oct, committed 6 Nov | fewcluster | track closed | `i04/fewcluster/round09_fewcluster_closing_report.md` | closing report at Nicolas's request, decisions D1, D2, V, S and X carried forward unanswered |
+| 27 Oct | fewcluster | position note and paper outline for D1 | `i02/fewcluster/round09_fewcluster_position.md`, `i02/fewcluster/round09_fewcluster_paper_outline.md` | Nicolas, 27 Oct, asked to build towards the outline, defer prediction sets and run a novelty check with every result, which opened interval 3 (progress log, 27 October afternoon). D1 itself was not answered |
+| 26 Oct | fewcluster | end of interval 1 | `i01/fewcluster/round09_fewcluster_decision.md` | the session's own decision memo, taking the frontier forward |
 | 27 Oct | newtopic | track closed | `i04/newtopic/round09_newtopic_closing_report.md` | closing report, no further gate |
 | 27 Oct | newtopic | end of interval 3 | `i03/newtopic/round09_newtopic_i03_report.md` | Nicolas, 27 Oct, "O1" (close the track), recorded in `i04/newtopic/round09_newtopic_closing_report.md` |
-| `i04/newtopic/round09_newtopic_closing_report.md` | 27 Oct | track newtopic's closing report, after Nicolas chose O1. No direction with an open core was found in three intervals. It lists what the track established, the withdrawn reading of F1 as a candidate core, and a lesson for later searches |
 | 27 Oct | newtopic | end of interval 2 | `i02/newtopic/round09_newtopic_i02_report.md` | Nicolas, 27 Oct, "explore f1", recorded in `i03/newtopic/round09_newtopic_i03_plan.md` |
 | 26 Oct | newtopic | end of interval 1 | `i01/newtopic/round09_newtopic_i01_report.md` | Nicolas, 26 Oct, "breadth first", recorded in `i02/newtopic/round09_newtopic_i02_plan.md` |
+| 26 Oct | preparation | round opened with two tracks | `masterplan.md` | Nicolas, 26 Oct, deferred option A and asked for two independent sessions |
+| 25 Oct | preparation | direction scan | `00_prep/round09_direction_scan.md` | Nicolas, 25 Oct, left the choice of direction to the session |
 
 ## Documents
+
+The preparation and the briefs come first, then each track's documents in the order they were written.
 
 | Document | Date | Role |
 |---|---|---|
@@ -50,7 +59,68 @@ Each track's session sets its own milestones and records them here on its branch
 | `i02/newtopic/round09_newtopic_i02_report.md` | 27 Oct | track newtopic's report of interval 2. Of five breadth-first tracks, F2 to F4 stopped at lemma or proposition size (stops confirmed by fresh auditors), F5's four checkers passed nothing, and F1 survives as a short note. Ridge reduced-rank regression detects a rank-one response factor below PCA's threshold, not found in print and not a direct case of the spiked separable theorem. Options E1 (bounded note on F1), E2 (fold into option A) and E3 (close) |
 | `i03/newtopic/round09_newtopic_i03_plan.md` | 27 Oct, living | track newtopic's plan for interval 3 on F1 (ridge reduced-rank regression), opened by Nicolas's "explore f1", with steps G1 to G6, stop rules and predictions H1 to H4 |
 | `i03/newtopic/round09_newtopic_i03_report.md` | 27 Oct | track newtopic's report of interval 3. F1 was derived and validated, then found to be a corollary of Liu, Liu, Pan, Zhang and Zhang (arXiv:2310.13939) applied conditionally on the features, confirmed by a fresh auditor with small technical gaps. Stop rule S1 closed the interval. Options O1 (close the track), O2 (keep F1 as a remark) and O3 (a direction from outside the session) |
+| `i04/newtopic/round09_newtopic_closing_report.md` | 27 Oct | track newtopic's closing report, after Nicolas chose O1. No direction with an open core was found in three intervals. It lists what the track established, the withdrawn reading of F1 as a candidate core, and a lesson for later searches |
 
 ## Results
 
 `results/round9/scan/` (search logs and verdicts), `results/round9/diagnostics/` (cluster-level diagnostics, aggregates only), `results/round9/between/` (the between-donor head test), `results/round9/stud/`, `results/round9/norm/` and `results/round9/probe/` (the preparation's later runs, each with predictions written before the run and scored after). Each track writes to `results/round9/<track>/`. Track newtopic's search logs and verdicts are in `results/round9/newtopic/` (one queries and one candidates CSV per subagent, and `newtopic_structured_results.json`), interval 2's in `results/round9/newtopic/i02/` and interval 3's in `results/round9/newtopic/i03/`.
+
+## What the round established
+
+**The preparation (branch `claude-science`, `00_prep/`).**
+
+- About twenty candidate directions for a methodological core were each sent to an independent checker. None survived with a substantive open remainder (`00_prep/round09_direction_scan.md`, its addendum, `00_prep/round09_stud_and_depth.md`, `00_prep/round09_probe_novelty.md`, verdicts in `results/round9/scan/scan_structured_results.json`).
+- On the Visium tasks a shared technical factor carries 0.650 of between-donor variance on CCRCC, and the histology predictions carry little donor-level information for most genes. Library-size normalization halves the factor's share on CCRCC (0.650 to 0.338) and leaves the predictions with no between-donor information for the median gene (`00_prep/round09_normalization_check.md`).
+- One technical-outlier donor on CCRCC (INT5) breaks few-cluster intervals and hierarchical conformal coverage, and a probe of three spots per donor reveals it. Labelling it with certainty lifts CCRCC coverage from 0.825 to 0.885 at 0.779 of the width. The design is classical two-phase sampling (`00_prep/round09_probe_designs.md`).
+
+**Track fewcluster (`i04/fewcluster/round09_fewcluster_closing_report.md`, section 2).** Every statement is for intervals that are location and scale equivariant, at $\alpha = 0.10$, over a class bounded by residual max-share, the largest share of one cluster in the residual sum of squares.
+
+- Theorem 1, the fixed-coefficient frontier. A valid finite interval exists below $\kappa_2(k^\ast - 1)$, and above it every valid interval is unbounded with positive probability under every population. The frontier is 0.158 at 8 of 24 clusters and 0.071 at 8 of 51 (`i01/fewcluster/round09_fewcluster_frontier.md`).
+- Theorem 2, the frontier with a coefficient tuned on the sample, about half the fixed one, with an exact algorithm that matched an independent computation in 15 of 15 cases (`i02/fewcluster/round09_fewcluster_tuned.md`).
+- Theorem 3, the stratified frontier, which covers take-all clusters and regime B. Under the box class with predictions, regime B needs 5 persons per state on ACS and a median of 6 to 8 spots per donor on HEST, where regime A needs 11 of 51 states and 8 to 17 donors (`i03/fewcluster/round09_fewcluster_stratified.md`).
+- The real tasks lie beyond both frontiers for practically every gene at the design sizes used, which explains the under-coverage seen since round 5. The median residual max-share is 0.533 on CCRCC, 0.336 on INDIANA_KIDNEY and 0.312 on LUNG_XENIUM.
+- Certified critical values below the frontier exist only up to about half of it (3.78 at 8 of 24), and none for the box class at the real settings (`i03/fewcluster/round09_fewcluster_critical_value.md`).
+- Williams' (1961) estimator and the fold-wise form are exactly unbiased and equally good. Round 5's variance grows with the level of the predictions, widening its interval by 1.09 to 1.53 times on HEST and 9 to 20 times on ACS (`i03/fewcluster/round09_fewcluster_williams.md`). This was run 6.4.1 of round 8's positioning note.
+- A side result proves Paul and Kuchibhotla's conjecture (arXiv:2403.06357) on intervals for the median (`i02/fewcluster/round09_fewcluster_sources_and_median.md`).
+- A paper outline and a first draft without prediction sets (`i02/fewcluster/round09_fewcluster_paper_outline.md`, `tracks/fewcluster/paper_draft_v0.md`).
+- Thirteen novelty checkers did not find Theorems 1 to 3 in their finite-population graded form, the regime comparison, the median result or the certificate's application in print. The proof technique, the unrestricted impossibility, the iid limit and the certificate's method are known and cited. Every "not found" verdict is provisional, because several classical sources were read only from abstracts.
+
+**Track newtopic (`i04/newtopic/round09_newtopic_closing_report.md`, section 2).**
+
+- No statistics-forward direction outside clustered PPI and hierarchical conformal prediction with an open core was found in three intervals. Of 45 raw ideas, the proposers themselves found 24 fully and 21 partly in print, and the three thin remainders (BOUNDARY, LLGCLUSTER, RRRIDGE) stopped at lemma or proposition size or turned out to be a corollary.
+- Ridge reduced-rank regression detects a rank-one response factor below the threshold of PCA of the outcomes, but conditional on the features this is a corollary of Liu, Liu, Pan, Zhang and Zhang (arXiv:2310.13939).
+- On the data, pathology encoders agree with each other far more than with the labels, their predictions are smoother than the labels, and the HEST Xenium files on Longleaf are pseudo-spots (`results/round9/newtopic/n3_predictions_scored.md`).
+
+## Corrections and withdrawn readings
+
+- **To earlier rounds.** Round 5's estimator should be replaced by Williams' or the fold-wise form, as round 8's note recommended (`i03/fewcluster/round09_fewcluster_williams.md`). Round 5's variance pools residuals fitted with different coefficients and depends on the level of the predictions. Whether the tuned intervals reported in rounds 5 to 7 carry this inflation depends on how each task coded the level of the predictions, and it has not been checked (fewcluster closing report, section 3, item 7).
+- **Inside track fewcluster** (closing report, section 3). The fixed frontier is $\kappa_2(k^\ast - 1)$, not $\kappa_2(k^\ast)$, so the `kappa_star` column of `results/round9/fewcluster/feasibility/s3_frontier_exact.csv` and predictions P5 and P8 use the earlier definition. A spike at a high-leverage cluster is cheaper in max-share down to a floor of about 0.21 to 0.25 at 24 clusters, not invisible. Claim B is in print and claim D mostly so. Of the 13 predictions of interval 3, 7 held, 5 were refuted and 1 was not tested, not six refuted as the session's chat report said. Pötscher and Preinerstorfer's Theorem 5.1 gives sufficient conditions, not an equivalence. Further slips are in `i03/fewcluster/round09_fewcluster_i03_corrections.md`.
+- **Inside track newtopic** (closing report, section 3). Interval 2's reading of F1 as a candidate core, not a direct case of a known theorem, is withdrawn.
+- **Dates.** The fewcluster closing report and its progress-log entry are dated 27 October, but the commit that adds them was made and pushed on 6 November. The direction scan's section 4 letters the options differently from the masterplan (there, C is the prediction-set half), and the tracks follow the masterplan.
+
+## Carried forward
+
+**Decisions for Nicolas,** with the default until he decides. They are consolidated with the earlier open questions in `CLAUDE.md`, section 2.
+
+| # | Decision | Default |
+|---|---|---|
+| D1 | Whether the three frontiers become the PPI paper's theory section, with regime A against regime B as its main design result (the fewcluster track's candidate, and so round 9's answer to the masterplan's D1) | open, likely with David and Dr. Zhu |
+| D2 | Whether prediction sets stay in the PPI paper (R8-1) | the draft defers them to separate work |
+| D3 | Contacting anyone outside the project, including Paul and Kuchibhotla about the median result | no contact |
+| D5 | Whether earlier rounds' estimands, on log1p of unnormalized counts, are redefined | keep them and state that they partly measure sequencing depth |
+| D6 | Whether round 8 is closed formally. Round 9 carried out its recommendation in effect (run 6.4.1 and a literature check of directions for a core) | it stays open |
+| V | Whether bounding each cluster's share of the design variance is defensible for the applications | regime B's numbers are stated under it, beside the unbounded column |
+| S | Obtaining nine paywalled sources, with library links in `i03/fewcluster/round09_fewcluster_nov12.md` | verdicts stay provisional |
+| X | Deleting about 28 paper full texts that fewcluster checkers saved to the Claude Science project's private artifact store, against instructions. None is in this repository | kept |
+
+D4, how the branches reach `main`, was settled by this close.
+
+**Open technical items** from track fewcluster (closing report, section 4). A sharp, computable critical value in the classes real tasks satisfy. A tuned-coefficient version of Theorem 3. The exact tuned frontier for ACS. Whether rounds 5 to 7's tuned intervals carry the variance inflation. A variance estimator for Williams' form that is exact under sampling without replacement. Draft v1, folding in the corrections and NOV12's credits.
+
+**A lesson for later searches** from track newtopic (closing report, section 4). Candidates that a first search found open fell to a deeper second search, often to papers outside the field first searched. A later search should start from a problem someone has met in practice, run the deep search before any derivation, and include signal-processing and econometrics venues.
+
+**Option A** (a design and empirical paper on the preparation's results) stays deferred. Its starting point is `00_prep/round09_probe_designs.md`.
+
+## Read first next round
+
+The fewcluster paper draft (`tracks/fewcluster/paper_draft_v0.md`), then Theorem 3 (`i03/fewcluster/round09_fewcluster_stratified.md`) and the position note (`i02/fewcluster/round09_fewcluster_position.md`), then the critical-value note with NOV12's verdicts and the interval 3 corrections before any claim from them goes into a draft. For the newtopic track, its closing report and `results/round9/newtopic/i03/audit/audit_F1_corollary.md`.
