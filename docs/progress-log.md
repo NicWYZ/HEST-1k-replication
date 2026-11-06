@@ -6,6 +6,12 @@ What the project found at each step, what changed because of it, and which files
 
 ---
 
+## After the migration
+
+**6 November, later. Nicolas answered the migration list.** R7-4 is closed: he confirmed that founding `NicWYZ/ST-Fed-Learn` answered whether the federated learning recommendation becomes its own paper. Tags are skipped, so `round5-final` and the gates of rounds 8 and 9 stay untagged by his decision. The 28 remote branches merged into main are left in place. A cloud session cannot delete them, because the proxy refuses write access to the branch-deletion path of the GitHub API (HTTP 403, tried on `round6-cheatsheet`), and Nicolas will not delete them by hand as it takes too many clicks. They are all ancestors of main, so nothing is lost. The count was 27 in the migration entry above and is 28 now because the migration's own branch was added. The new direction for round 10 is still to come.
+
+---
+
 ## The record moves to project-record
 
 **6 November, last. The record migrates to the `project-record` skill.** At Nicolas's request, following his revamp note, the oversight chat migrated the record from the `project-state-keeping` layout to the skill's round layout. `CLAUDE.md` was rewritten under 200 lines around a `state` block that `code/scripts/record_check.py` reads, with the open questions as `waiting` lines. Environment and account details, the Longleaf scheduler notes, the HEST patient-label quirk and the notes on several sessions sharing a repository moved to `docs/environment.md`. Writing, math, number-precision and slide preferences left the record, since they live in Nicolas's account memory. `docs/EXECUTION_RULES.md` now describes briefs, gates reviewed by Nicolas inside the session, a plan that opens with a `state` block, and one pull request at a track's final gate. `docs/WAYS_OF_WORKING.md` lost its guardrails register and gained the oversight chat's audit procedure. `code/scripts/state_check.py` and `.state-check-ignore` were deleted, `record_check.py` and its workflow were added, and the project instructions are in `docs/project_instructions.md` for Nicolas to paste. No branch was live, so nothing a running session owns was touched. The finished items of `CLAUDE.md` moved here unchanged.

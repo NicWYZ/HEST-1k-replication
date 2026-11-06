@@ -5,7 +5,7 @@
 The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at UNC, in Dr. Hongtu Zhu's lab and supervised by Dr. Daiwei (David) Zhang. The advisors want methods, not applied analysis, with a submittable paper by spring 2027. The paper in preparation is "Labelling budgets for prediction-powered inference with clustered data", methodology and theory first, applied to HEST-1k spatial transcriptomics and ACS PUMS 2018 income (`docs/round04/00_prep/round4_originality_check.md`). Two lines that started here now have their own repositories, the federated learning paper proposed by Dr. Zhu on 12 October (`NicWYZ/ST-Fed-Learn` since 26 October, after `docs/round07/00_prep/round07_advisor_directions.md`) and David's textual knowledge base (`NicWYZ/textual-st-histology` since 19 October).
 
 ```state
-updated: 2026-11-06 (oversight chat, cloud session, Nicolas's account; record migrated to project-record, pull request #37 merged)
+updated: 2026-11-06 (oversight chat, cloud session, Nicolas's account; Nicolas answered the migration list: R7-4 closed, tags and branch deletion decided)
 unit: round10
 status: waiting
 next: Nicolas gives the new direction, then round 10 opens through /project-record with a literature survey first, starting from a problem met in practice (newtopic's lesson in docs/round09/README.md).
@@ -22,8 +22,6 @@ waiting: R7-5 | since 2026-10-14 | positioning against Broska and Howes's small-
 waiting: R7-7 | since 2026-10-15 | which balanced design the paper recommends (docs/round07/i04/ppi/round07_ppi_final_decisions.md section 4); default [proposed] rej_t where its support and one balance variable allow, the S4b cube design as the alternative (Nicolas, with David)
 waiting: O5 | since 2026-10-13 | the paper's positioning (docs/round07/oversight/round07_ppi_positioning.md section 5 and round 8's note); default claim nothing marked prior art, classical or implied, nor the few-cluster regime in general (the banner of 15 October); round 9's theorems are candidates (Nicolas, with David)
 waiting: O3 | since 2026-10-13 | how the PPI paper and the lab's manuscript refer to each other; default neither refers to the other (Nicolas, with David and Dr. Zhu)
-waiting: tags | since 2026-10-09 | whether to tag round5-final (Q4) and the untagged gates of rounds 8 and 9; a cloud session cannot push tags; round6-close exists (Nicolas)
-waiting: branches | since 2026-11-06 | whether to delete the 27 remote branches, all merged into main (Nicolas)
 waiting: carried | since 2026-10-09 | when to schedule the carried tasks: delete the full texts round 9 saved to the Claude Science artifact store (decided 6 November), fix verify_numeric_claims.py for comma-grouped integers in CSV text cells (R7.6), the paper's writing plan (from the closing pages of rounds 4, 5, 7 and 9, the estimator definition and round 8's note, after Q3, R8-1 and the Williams decision), the next advisor presentation (see docs/round05/00_prep/deck2/), and housekeeping from rounds 3 to 5 (the D4 probe rerun, ten unresolved claims in two pre-round-3 documents, the r5c_leak_summary.csv reading in docs/round05/00_prep/round5_oversight_handoff.md section 12) (Nicolas)
 ```
 
