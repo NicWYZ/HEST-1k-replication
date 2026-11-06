@@ -5,7 +5,7 @@
 The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at UNC, in Dr. Hongtu Zhu's lab and supervised by Dr. Daiwei (David) Zhang. The advisors want methods, not applied analysis, with a submittable paper by spring 2027. The paper in preparation is "Labelling budgets for prediction-powered inference with clustered data", methodology and theory first, applied to HEST-1k spatial transcriptomics and ACS PUMS 2018 income (`docs/round04/00_prep/round4_originality_check.md`). Two lines that started here now have their own repositories, the federated learning paper proposed by Dr. Zhu on 12 October (`NicWYZ/ST-Fed-Learn` since 26 October, after `docs/round07/00_prep/round07_advisor_directions.md`) and David's textual knowledge base (`NicWYZ/textual-st-histology` since 19 October).
 
 ```state
-updated: 2026-11-06 (oversight chat, cloud session, Nicolas's account; record migrated to project-record)
+updated: 2026-11-06 (oversight chat, cloud session, Nicolas's account; record migrated to project-record, pull request #37 merged)
 unit: round10
 status: waiting
 next: Nicolas gives the new direction, then round 10 opens through /project-record with a literature survey first, starting from a problem met in practice (newtopic's lesson in docs/round09/README.md).
