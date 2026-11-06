@@ -11,29 +11,10 @@ data", applied to HEST-1k spatial transcriptomics and ACS PUMS 2018 income.
 This repository holds results, code and documentation. [`docs/README.md`](docs/README.md) is the
 guide to every document, round by round, and [`docs/progress-log.md`](docs/progress-log.md) says
 what was found at each step and why the project moved. [`CLAUDE.md`](CLAUDE.md) is the operating
-file for the Claude sessions that work on the project.
+file for the Claude sessions that work on the project, and its state block says where the project
+stands.
 
-## Status
-
-| stage | state |
-|---|---|
-| 0 · access and environment | complete |
-| 1 · benchmark data inventory | complete (one documented criterion revision) |
-| 2 · faithful runs, four heads | complete — 35 (head, encoder) pairs × 10 tasks |
-| 3 · verification vs paper and leaderboard | complete |
-| 4 · instrumentation and diagnostics | complete |
-| 5 · STFlow stronger baseline | setup complete; training not yet run (CUDA-only, GPU queue) |
-| round 2 · replication extensions (splits, probes, θ₁, variance) | complete |
-| round 2 closeout (freeze, numeric-claim sweep, IDC-attribution note) | complete |
-| round 3 · first experiments for both original topics | complete (tag `round3-final-r2`) |
-| round 4 · data pull, then the inference and prediction-set tracks | complete (tags `round4-data-v2`, `round4-ppi-final`, `round4-conf-final`) |
-| round 5 · the inference and prediction-set tracks | complete (tags `round5-ppi-final`, `round5-conf-final`) |
-| round 6 · a side experiment, language-model prediction from histology with a size-limited cheatsheet | complete (tags `round6-cheatsheet-C1`, `round6-cheatsheet-final`), moved on 19 October to the private repository `NicWYZ/textual-st-histology`, see [`docs/round06/README.md`](docs/round06/README.md) |
-| round 7 · federated learning for expression prediction, and inference after histology-guided selection of labelled clusters | complete (tags `round7-fedlearn-F2`, `round7-fedlearn-final`, `round7-ppi-S2`, `round7-ppi-S4`, `round7-ppi-final`), summary in [`docs/round07/README.md`](docs/round07/README.md) |
-| round 8 · the PPI paper's positioning against the survey-sampling literature and newer PPI work | complete (19 October to 6 November, closed after round 9, not tagged). The positioning note ([`docs/round08/i01/positioning/round08_positioning_note.md`](docs/round08/i01/positioning/round08_positioning_note.md)) finds no technical result of the paper that is not classical or already in print, and what remains is empirical. Round 9 carried out its recommendation in effect |
-| round 9 · a search for a methodological core, then two independent tracks on few-cluster inference and on a fresh direction | complete (24 October to 6 November, not tagged; `round9-close` is proposed). Three frontier theorems for finite-sample valid inference with few labelled clusters, a regime comparison under them, a recommendation of Williams' estimator in place of round 5's and a first paper draft, in [`docs/round09/README.md`](docs/round09/README.md) |
-
-Every gate of rounds 2 to 7 is tagged. Round 8's one gate and round 9's milestones are not. The sections below, from the headline result to the known
+The sections below, from the headline result to the known
 limitations, describe the benchmark work of rounds 1 and 2 and have not changed since the round-2
 closeout. The methods results of rounds 4 and 5 are summarised on the closing pages of
 [`docs/round04/i03/ppi/round4_ppi_final_report.md`](docs/round04/i03/ppi/round4_ppi_final_report.md),
