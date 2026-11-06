@@ -74,3 +74,5 @@ Written on 19 October before any of the four papers was read beyond its abstract
 The positioning track's P3 review is done and its decisions recorded, and every track opened by amendment has its closing memo written and merged. Then the close check of the `project-state-keeping` skill runs.
 
 ## Amendments
+
+**6 November 2026. The round closes.** Nicolas closed round 8 after round 9's close, with no later track opened. The note's recommendation was carried out in effect by round 9 (`docs/round08/README.md`, "Carried forward"). The masterplan is frozen from here.

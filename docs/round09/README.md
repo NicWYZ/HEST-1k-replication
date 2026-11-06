@@ -101,18 +101,18 @@ The preparation and the briefs come first, then each track's documents in the or
 
 ## Carried forward
 
-**Decisions for Nicolas,** with the default until he decides. They are consolidated with the earlier open questions in `CLAUDE.md`, section 2.
+**Decisions for Nicolas,** with the default until he decides, and the four he settled on 6 November after the close (D3, D6, S and X). They are consolidated with the earlier open questions in `CLAUDE.md`, section 2.
 
 | # | Decision | Default |
 |---|---|---|
 | D1 | Whether the three frontiers become the PPI paper's theory section, with regime A against regime B as its main design result (the fewcluster track's candidate for the masterplan's D1, which stays open) | open, likely with David and Dr. Zhu |
 | D2 | Whether prediction sets stay in the PPI paper (R8-1) | the draft defers them to separate work |
-| D3 | Contacting anyone outside the project, including Paul and Kuchibhotla about the median result | no contact |
+| D3 | Contacting anyone outside the project, including Paul and Kuchibhotla about the median result | decided 6 November, no contact |
 | D5 | Whether earlier rounds' estimands, on log1p of unnormalized counts, are redefined | keep them and state that they partly measure sequencing depth |
-| D6 | Whether round 8 is closed formally. Round 9 carried out its recommendation in effect (run 6.4.1 and a literature check of directions for a core) | it stays open |
+| D6 | Whether round 8 is closed formally. Round 9 carried out its recommendation in effect (run 6.4.1 and a literature check of directions for a core) | decided 6 November, closed (`docs/round08/README.md`) |
 | V | Whether bounding each cluster's share of the design variance is defensible for the applications | regime B's numbers are stated under it, beside the unbounded column |
-| S | Obtaining nine paywalled sources, with library links in `i03/fewcluster/round09_fewcluster_nov12.md` | verdicts stay provisional |
-| X | Deleting about 28 paper full texts that fewcluster checkers saved to the Claude Science project's private artifact store in interval 3 against instructions, beside the files NOV8 saved there in interval 2. None is in this repository | kept |
+| S | Obtaining nine paywalled sources, with library links in `i03/fewcluster/round09_fewcluster_nov12.md` | decided 6 November, no new paper reads for now, so the verdicts stay provisional |
+| X | Deleting about 28 paper full texts that fewcluster checkers saved to the Claude Science project's private artifact store in interval 3 against instructions, beside the files NOV8 saved there in interval 2. None is in this repository | decided 6 November, a future Claude Science session deletes them (`CLAUDE.md`, section 5) |
 
 D4, how the branches reach `main`, was settled by this close.
 
