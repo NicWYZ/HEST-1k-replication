@@ -12,7 +12,7 @@ The tracks set their own milestones and recorded them on their branches. Neither
 
 | Date | Track | Milestone | Report | Answered by |
 |---|---|---|---|---|
-| 6 Nov | both | round closed, branches merged | this guide's closing sections, `docs/progress-log.md` entry of 6 November | Nicolas merges the pull request of branch `round9-close` |
+| 6 Nov | both | round closed, branches merged | this guide's closing sections, `docs/progress-log.md` entry of 6 November | Nicolas merged pull request #36 (branch `round9-close`) on 6 November |
 | 27 Oct, committed 6 Nov | fewcluster | track closed | `i04/fewcluster/round09_fewcluster_closing_report.md` | closing report at Nicolas's request, decisions D1, D2, V, D3, S and X carried forward unanswered |
 | 27 Oct | fewcluster | supplied papers read (NOV9) | `i02/fewcluster/round09_fewcluster_sources_and_median.md` | Nicolas supplied the four papers the check read |
 | 27 Oct | fewcluster | position note and paper outline for D1 | `i02/fewcluster/round09_fewcluster_position.md`, `i02/fewcluster/round09_fewcluster_paper_outline.md` (the outline written at Nicolas's request) | Nicolas, 27 Oct, asked to build towards the outline, defer prediction sets and run a novelty check with every result, which opened interval 3 (progress log, 27 October afternoon). D1 itself was not answered |
