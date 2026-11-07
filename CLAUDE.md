@@ -9,7 +9,7 @@ updated: 2026-11-07 (oversight chat, cloud session linked to the Mac, Nicolas's 
 unit: round10
 status: running
 next: track ledger, stages L0 to L3 of docs/round10/i01/ledger/round10_ledger_brief.md, gate L3 at Nicolas's review in the oversight chat; then the final-runs brief goes to a Claude Science session on Longleaf.
-live: ledger | oversight chat; branch round10-ledger for its logs only | docs/round10/masterplan.md | L1 rows written and pushed (results/round10/ledger/ on branch round10-ledger, commit b8bf9286, with the R7.6 checker fix); L2 reads next, open sources through the Mac's built-in browser or WebFetch, gated ones through Nicolas
+branch round10-ledger: running | docs/round10/i01/ledger/round10_ledger_brief.md | the ledger's logs and rows only, the track itself runs in the oversight chat; L1 rows pushed (results/round10/ledger/ on the branch, commit b8bf9286, with the R7.6 checker fix); L2 reads next, open sources through the Mac's built-in browser or WebFetch, gated ones through Nicolas; one pull request at L3
 waiting: Q3/D1 | since 2026-10-09 | venue and lead result; Nicolas said on 6 November the venue depends on what the paper ends up with; default open (Nicolas, after F4)
 waiting: R8-1/D2 | since 2026-10-19 | whether prediction sets (HCP, GHCP, within_full) stay in the paper; Nicolas said on 6 November only if it makes sense; the ledger recommends at L3 (masterplan question P); default the fewcluster draft defers them (Nicolas)
 waiting: Williams | since 2026-10-27 | whether round 5's estimator is replaced by Williams' or the fold-wise form; Nicolas said on 6 November the ledger decides after reading the sources (masterplan question E); default round 5's estimator as defined (the ledger)
