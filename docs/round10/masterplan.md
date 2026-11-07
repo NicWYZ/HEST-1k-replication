@@ -30,7 +30,7 @@ The tracks run in order. `final-runs` does not start until L3 is accepted, and `
 
 ## Schedule
 
-`ledger` about one week from 6 November. `final-runs` about three weeks after L3. `paper` after F4. Draft v1 by January 2027.
+The tracks run in order, `ledger`, then `final-runs`, then `paper`. No durations are given (amendment of 7 November).
 
 ## Open questions
 
@@ -41,6 +41,7 @@ The tracks run in order. `final-runs` does not start until L3 is accepted, and `
 | D5 | Normalization of the estimands | keep $\log(1 + y)$ of unnormalized counts and say it partly measures depth | Nicolas, with David when he chooses; if unanswered at F2 the default applies and the gate does not block |
 | Q1 | Whether regime B can be bought on a spatial platform, and the cost model | no cost claim for spatial platforms | Nicolas, with David when he chooses; the default applies at F3 if unanswered |
 | V | Whether the variance-share bound is defensible | regime B stated under it beside the unbounded column | Nicolas, with David when he chooses; the default applies at F3 if unanswered |
+| DATA | Whether round 10's tasks extend beyond CCRCC, INDIANA_KIDNEY, LUNG_XENIUM and ACS to the federated project's corpus on Longleaf (every human HEST-1k sample, embeddings from five encoders, 108 centers; `NicWYZ/ST-Fed-Learn`, `docs/round01/tracks/data/data_card.md`), which would give the institution axis the proposal's Topic A asked for and donor-richer tasks; raised by Nicolas on 7 November | the four tasks in hand | Nicolas, before L0 closes |
 | Q3 | Venue and lead result | open | Nicolas, once the paper's content is known, which the oversight chat reads as after F4 |
 | R7-7, R7-5, O5, O3 | Design recommended, positioning, the lab's manuscript | their state-block defaults | Nicolas, at the writing plan or after |
 
@@ -58,4 +59,4 @@ F4's pull request merged and track `paper`'s draft v1 checked, or Nicolas's deci
 
 ## Amendments
 
-None yet.
+- 7 November. Nicolas asked that no time estimates be given for intervals, since the project runs much faster than such estimates; the schedule section and the ledger brief no longer carry them. He also asked, before round 10 starts, whether the project has reached a stopping point, whether the original questions are answered adequately, and whether all available data have been used, pointing to the federated project's pull of nearly all usable HEST data. The oversight chat's answer is in `docs/round10/00_prep/round10_stopping_point.md`, and the data question is open question DATA above. The ledger does not start L0 until DATA is answered.

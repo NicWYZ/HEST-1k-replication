@@ -35,4 +35,4 @@ L3. Nicolas reviews the ledger, the two decisions, the writing plan and the fina
 
 ## Not this track's decision
 
-D5, Q1 and V, which Nicolas settles with David when he chooses. R7-6, P, R7-7, R7-5, O5 and O3, on which the ledger recommends. The paper's framing and venue. Which theorems of round 9 the paper keeps. Any claim of novelty. Any contact outside the project. Any download of data. Changes to earlier rounds' files. Details of the lab's unpublished manuscript never enter the repository (hard rule 8).
+D5, Q1 and V, which Nicolas settles with David when he chooses. R7-6, P, R7-7, R7-5, O5 and O3, on which the ledger recommends. The paper's framing and venue. Which theorems of round 9 the paper keeps. Any claim of novelty. Any contact outside the project. Any download of data, and whether the tasks extend to the federated project's corpus (masterplan question DATA, Nicolas's). Changes to earlier rounds' files. Details of the lab's unpublished manuscript never enter the repository (hard rule 8).

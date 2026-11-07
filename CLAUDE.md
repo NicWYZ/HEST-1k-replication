@@ -9,8 +9,8 @@ updated: 2026-11-06 (oversight chat, cloud session, Nicolas's account; round 10 
 unit: round10
 status: running
 next: track ledger, stages L0 to L3 of docs/round10/i01/ledger/round10_ledger_brief.md, gate L3 at Nicolas's review in the oversight chat; then the final-runs brief goes to a Claude Science session on Longleaf.
-live: ledger | oversight chat; branch round10-ledger for its logs only | docs/round10/masterplan.md | brief checked by a fresh agent; L0 scope next
-waiting: instructions | since 2026-11-06 | paste the texts of docs/project_instructions.md into the claude.ai project and the Claude Science project (Nicolas)
+live: ledger | oversight chat; branch round10-ledger for its logs only | docs/round10/masterplan.md | brief checked; L0 waits on question DATA
+waiting: DATA | since 2026-11-07 | whether round 10's tasks extend to the federated project's corpus of every human HEST-1k sample (docs/round10/masterplan.md, open questions; docs/round10/00_prep/round10_stopping_point.md); default the four tasks in hand (Nicolas)
 waiting: Q3/D1 | since 2026-10-09 | venue and lead result; Nicolas said on 6 November the venue depends on what the paper ends up with; default open (Nicolas, after F4)
 waiting: R8-1/D2 | since 2026-10-19 | whether prediction sets (HCP, GHCP, within_full) stay in the paper; Nicolas said on 6 November only if it makes sense; the ledger recommends at L3 (masterplan question P); default the fewcluster draft defers them (Nicolas)
 waiting: Williams | since 2026-10-27 | whether round 5's estimator is replaced by Williams' or the fold-wise form; Nicolas said on 6 November the ledger decides after reading the sources (masterplan question E); default round 5's estimator as defined (the ledger)
