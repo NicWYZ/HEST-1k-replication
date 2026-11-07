@@ -19,6 +19,7 @@ Round 10 opened on 6 November after Nicolas reframed the objective (`00_prep/rou
 | `masterplan.md` | 6 Nov, living | the round's plan, tracks, open questions E, P, D5, Q1, V and Q3, predictions P10.1 to P10.3 |
 | `00_prep/round10_stopping_point.md` | 7 Nov | whether the project is at a stopping point, what the original questions have and have not been answered with, the data used and available, and the federated corpus's use |
 | `i01/ledger/round10_ledger_brief.md` | 6 Nov | the brief for track `ledger` |
+| `i01/ledger/round10_ledger_L0_scope.md` | 7 Nov | L0 of the ledger: the paper's sections, the results each rests on, what the ledger decides at L3, and the data the round uses after DATA was decided |
 
 ## Read first
 

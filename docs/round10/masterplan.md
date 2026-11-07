@@ -38,12 +38,13 @@ The tracks run in order, `ledger`, then `final-runs`, then `paper`. No durations
 |---|---|---|---|
 | E | The estimator for the final runs (Williams with two groups, the fold-wise form, or round 5's) | round 5's as defined | the ledger, after reading Williams, Mickey if retrievable, Sanguiao Sande and Zhang, and the fold-wise papers (Lu et al. 2025, An et al. 2026); recorded at L3. R7-6, the coefficient rule, stays Nicolas's, with the ledger's recommendation |
 | P | Whether prediction sets stay in the paper (R8-1) | the fewcluster draft defers them | Nicolas at L3, on the ledger's recommendation |
-| D5 | Normalization of the estimands | keep $\log(1 + y)$ of unnormalized counts and say it partly measures depth | Nicolas, with David when he chooses; if unanswered at F2 the default applies and the gate does not block |
-| Q1 | Whether regime B can be bought on a spatial platform, and the cost model | no cost claim for spatial platforms | Nicolas, with David when he chooses; the default applies at F3 if unanswered |
-| V | Whether the variance-share bound is defensible | regime B stated under it beside the unbounded column | Nicolas, with David when he chooses; the default applies at F3 if unanswered |
-| DATA | Whether round 10's tasks extend beyond CCRCC, INDIANA_KIDNEY, LUNG_XENIUM and ACS to the federated project's corpus on Longleaf (every human HEST-1k sample, embeddings from five encoders, 108 centers; `NicWYZ/ST-Fed-Learn`, `docs/round01/tracks/data/data_card.md`), which would give the institution axis the proposal's Topic A asked for and donor-richer tasks; raised by Nicolas on 7 November | the four tasks in hand | Nicolas, before L0 closes |
+| D5 | Normalization of the estimands | both scales run and the effect quantified | decided 7 November: settled by testing; the final runs carry both scales and report the difference (F2) |
+| Q1 | Whether regime B can be bought on a spatial platform, and the cost model | no cost claim for spatial platforms | deferred 7 November to the next advisor deck, time not set |
+| V | Whether the variance-share bound is defensible | regime B stated under it beside the unbounded column | decided 7 November: settled by the literature and by testing, not by one person's knowledge; the ledger searches (L3), the final runs test (F3) |
+| DATA | Whether round 10's tasks extend to the federated project's corpus on Longleaf | decided 7 November: use as much of the existing data as possible, read only, no new download; the L0 scope names the tasks | decided (Nicolas) |
 | Q3 | Venue and lead result | open | Nicolas, once the paper's content is known, which the oversight chat reads as after F4 |
-| R7-7, R7-5, O5, O3 | Design recommended, positioning, the lab's manuscript | their state-block defaults | Nicolas, at the writing plan or after |
+| R7-7, R7-5, O5 | Design recommended, positioning | their state-block defaults | Nicolas, when the time comes |
+| O3 | The paper and the lab's manuscript | neither refers to the other | decided 7 November (Nicolas) |
 
 ## Predictions
 
@@ -59,4 +60,5 @@ F4's pull request merged and track `paper`'s draft v1 checked, or Nicolas's deci
 
 ## Amendments
 
+- 7 November, later. Nicolas answered: DATA, use as much of the existing data as possible; D5 by testing with the effect quantified; Q1 deferred to the next deck; V by the literature and testing; O3 neither refers to the other; the carried housekeeping to be decided by the oversight chat with good judgement (its decisions are in `CLAUDE.md`'s carried line); everything else revisited when the time comes. The ledger's L0 scope then started.
 - 7 November. Nicolas asked that no time estimates be given for intervals, since the project runs much faster than such estimates; the schedule section and the ledger brief no longer carry them. He also asked, before round 10 starts, whether the project has reached a stopping point, whether the original questions are answered adequately, and whether all available data have been used, pointing to the federated project's pull of nearly all usable HEST data. The oversight chat's answer is in `docs/round10/00_prep/round10_stopping_point.md`, and the data question is open question DATA above. The ledger does not start L0 until DATA is answered.
