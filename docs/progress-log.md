@@ -8,6 +8,21 @@ What the project found at each step, what changed because of it, and which files
 
 ## Round 10 (from 6 November 2026)
 
+**8 November, after midnight. Execution sessions hand off through their track plan; the two missing sources identified.** Nicolas added to the revamp that execution sessions hand off through their track plan.
+- **The state block.** A track's plan on its branch opens with a state block in the shape of `CLAUDE.md`'s, with `unit` set to the track. It records the step in hand, what the last run produced and where, the cluster jobs running with their IDs, the next action and anything waiting on him.
+- **How sessions use it.** A new session reads `docs/EXECUTION_RULES.md` and that block first, then only what the block points to. It updates the block in the commit that does the work. Before it stops or starts a long job, it updates the block, commits and pushes the track branch, which is now the one push allowed between gates.
+- **Where the rule is recorded.**
+  - `docs/EXECUTION_RULES.md`, sections 1 and 5, revision of 8 November.
+  - `docs/project_instructions.md`, where the execution project's text is replaced by his template with the repository filled in. Nicolas pastes it into the Claude Science project.
+  - `docs/WAYS_OF_WORKING.md`, "Documents": every future brief names the plan path and says the plan opens with a state block.
+  - The round 10 masterplan's amendments, for the final-runs brief.
+  - The git route in `CLAUDE.md`.
+- **The oversight text.** In `docs/project_instructions.md` it was brought into line with what is pasted in the claude.ai project.
+- **The two missing sources.** Through the Mac's built-in browser, which reaches arXiv and JSTOR:
+  - Williams (1961) is JSTOR 2527992, DOI 10.2307/2527992.
+  - Mickey's correction is "Corrigenda: Some Finite Population Unbiased Ratio and Regression Estimators", JASA 55(292), p. 755, December 1960, JSTOR 2281602, DOI 10.2307/2281602.
+- **What stays open.** Nicolas's look at the `[proposed]` variance estimator for Williams' form stays a to-do. L2 part 2 reads the open sources through the built-in browser.
+
 **8 November. Ledger L2, part 1: the gated sources read** (branch `round10-ledger`, commit `45f9329d`, `results/round10/ledger/round10_ledger_L2_reads_part1.md`). The oversight chat read Mickey (1959) itself, since question E is the ledger's decision, and four Opus subagents read Cochran (1977), Särndal, Swensson and Wretman (1992), Bickel and Freedman, Krewski and Rao, Bahadur and Savage, Gleser and Hwang, Fuller, Shao and Wang, Broska and Howes, Kluger et al. and Chen et al. from the PDFs Nicolas supplied, six of them through OCR, with every formula checked against the page image and the main claims spot-checked by the oversight chat. The full notes are in the claude.ai project docs (`claude/round10_L2_notes_*.md`). What changes for L3:
 - **Question E.** Williams' $k = 2$ estimator, which rounds 8 and 9 proposed, is Mickey's (1959) $t_{n/2}$ averaged over the two orders of the halves. Mickey's section 4 gives an exactly unbiased variance estimator for averages of his estimators (4.2, 4.4). Applied to the two orders of the halves, it gives an exactly unbiased variance estimator for Williams' form at any $n/G$, the piece rounds 8 and 9 recorded as missing. That application is the oversight chat's reading, `[proposed]`, checked by exact enumeration on two toy populations (`results/round10/ledger/checks/`). The estimator can be negative, in up to a third of toy samples at $n = 4$.
 - **Prediction P10.2.** The first half held.

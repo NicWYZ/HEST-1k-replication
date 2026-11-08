@@ -12,6 +12,8 @@ No result is called new without a documented literature check, which covers the 
 
 ## Documents
 
+**A brief names its track's plan path and says the plan opens with a state block** (Nicolas, 8 November 2026). Execution sessions hand off through their track plan (`docs/EXECUTION_RULES.md`, section 1). The plan opens with a `state` block in the shape of `CLAUDE.md`'s, with `unit` set to the track, recording the step in hand, what the last run produced and where, the cluster jobs running with their IDs, the next action and anything waiting on Nicolas. So every brief the oversight chat writes gives the plan's path on the track branch, under `docs/roundNN/tracks/<track>/`, and says that the plan opens with that block. A session with no plan writes it first, and a later session resumes from the block alone.
+
 **Relabelling a claim means sweeping for it, not editing where you remember it.** When a term is
 renamed or a number withdrawn, edit the passages you know about, then sweep every affected file
 case-insensitively for the old term and every number being withdrawn, and read each hit. In round 2
