@@ -45,8 +45,9 @@ def main():
     vcols = [k for k in ('sample_id', 'task', 'donor_id', 'donor_label_status') if k in v.columns]
     v = v[vcols].rename(columns={'task': 'r5b_task', 'donor_id': 'r5b_donor_id', 'donor_label_status': 'r5b_status'})
     a = a.merge(v, on='sample_id', how='left')
-    a = a.merge(c[['center_id', 'title', 'pmids', 'gse', 'dois', 'urls', 'n_donors']].rename(
-        columns={'title': 'center_title', 'n_donors': 'center_n_donors'}), on='center_id', how='left')
+    a = a.merge(c[['center_id', 'n_donors']].rename(columns={'n_donors': 'center_n_donors'}), on='center_id', how='left')
+    a = a.merge(s[['sample_id', 'dataset_title', 'download_page']].rename(
+        columns={'dataset_title': 'corpus_dataset_title', 'download_page': 'corpus_download_page'}), on='sample_id', how='left')
     a = a.sort_values(['organ', 'platform', 'center_id', 'sample_id'])
     a.to_csv(os.path.join(out, 'f1_audit_inputs.csv'), index=False)
     st = []
@@ -56,11 +57,12 @@ def main():
                        hest_patient_values=x.hest_patient.nunique(), hest_patient_missing=int(x.hest_patient.isna().sum()),
                        hest_subseries_values=x.hest_subseries.nunique(),
                        record_audited=int(x.record_audited_donor_id.notna().sum()), r5b_audited=int(x.r5b_donor_id.notna().sum()),
-                       title=x.center_title.iloc[0], gse=x.gse.iloc[0], pmids=x.pmids.iloc[0], dois=x.dois.iloc[0],
+                       title=';'.join(sorted(set(x.corpus_dataset_title.dropna().astype(str))))[:300],
+                       download_page=';'.join(sorted(set(x.corpus_download_page.dropna().astype(str))))[:300],
                        study_link=';'.join(sorted(set(x.hest_study_link.dropna())))[:300]))
     st = pd.DataFrame(st)
     st.to_csv(os.path.join(out, 'f1_audit_studies.csv'), index=False)
-    print(st.drop(columns=['title', 'study_link']).to_string())
+    print(st.drop(columns=['title', 'study_link', 'download_page']).to_string())
     print('samples', len(a), 'studies', len(st))
 
 
