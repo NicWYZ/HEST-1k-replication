@@ -12,6 +12,8 @@ No result is called new without a documented literature check, which covers the 
 
 ## Documents
 
+**A session is started by naming its track, with no kickoff text** (Nicolas, 8 November 2026). The Claude Science and Claude Code projects' instructions (`docs/project_instructions.md`) already tell a session to fetch the repository, check out its track's branch, read `docs/EXECUTION_RULES.md`, and write or resume its plan from the brief. So Nicolas names the track, for example "Your track is `final-runs` of round 10", and anything else the session needs goes in the brief. Round 10's kickoff file for `final-runs` repeated the instructions and the brief and was removed.
+
 **A brief names its track's plan path and says the plan opens with a state block** (Nicolas, 8 November 2026). Execution sessions hand off through their track plan (`docs/EXECUTION_RULES.md`, section 1). The plan opens with a `state` block in the shape of `CLAUDE.md`'s, with `unit` set to the track, recording the step in hand, what the last run produced and where, the cluster jobs running with their IDs, the next action and anything waiting on Nicolas. So every brief the oversight chat writes gives the plan's path on the track branch, under `docs/roundNN/tracks/<track>/`, and says that the plan opens with that block. A session with no plan writes it first, and a later session resumes from the block alone.
 
 **Relabelling a claim means sweeping for it, not editing where you remember it.** When a term is

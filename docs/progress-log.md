@@ -8,6 +8,11 @@ What the project found at each step, what changed because of it, and which files
 
 ## Round 10 (from 6 November 2026)
 
+**8 November, night. Track final-runs started; kickoff text dropped.**
+- **The start.** Nicolas started the final-runs session in Claude Science.
+- **The kickoff file.** He said the kickoff text was largely redundant with the Claude Science project's instructions and the project-record skill. Those instructions already tell a session to fetch the repository, check out its branch, read `docs/EXECUTION_RULES.md` and write its plan from the brief, and the round layout passes nothing but the brief.
+- **What changed.** `docs/round10/i01/final-runs/round10_final_runs_kickoff.md` is removed, the brief and the round README no longer cite it, and `docs/WAYS_OF_WORKING.md`, "Documents", now says a session is started by naming its track. Everything the kickoff said was already in the brief or the instructions, so the running session loses nothing.
+
 **8 November, evening, later. The ledger merged and the hand-off to final-runs prepared** (pull request #38, merge commit `5d7bf3d7`; `docs/round10/i01/final-runs/round10_final_runs_kickoff.md`).
 - **The merge.** Nicolas merged #38, which brings the ledger's evidence, the checks, the R7.6 checker fix and the round's exceptions to `main`. Track `ledger` is closed. Its gate L3 was answered the same evening.
 - **The checks.** Every repository path the brief names exists on `main`, apart from the session's own outputs, the Longleaf files and the corpus data card in `NicWYZ/ST-Fed-Learn`. The brief passes the numeric-claim sweep.
