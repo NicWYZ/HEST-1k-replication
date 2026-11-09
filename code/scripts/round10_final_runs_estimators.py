@@ -20,6 +20,8 @@ Entries.
                                          each with and without the finite-population factors (fpc=False drops them).
   fold_r9(z, f, A, B, U, ua, lA, lB)     round 9's fold-wise form FOLD (unlabelled clusters split between folds), for
                                          the anchor only.
+  regime_b_formC(T, sel, seed, coef)  form C for regime B with the coefficient fixed at 1, cross-fitted, or 0,
+                                         on round 5's two-level code (round5_ppi_twolevel.py).
   bh_parts / bh_variants(z, f, L)        Broska and Howes's interval (bh) and the small-sample variants bh_t and
                                          bh_t_fpc of round 7 (code/scripts/round7_ppi_s2_comparators.py, bh3_parts and
                                          bh_variants), with the correction credited to Bell and McCaffrey (2002) and
@@ -168,3 +170,43 @@ def interval(est, v, df, alpha=ALPHA):
     ok = np.isfinite(v) & (v >= 0) & np.isfinite(q)
     half = np.where(ok, q * np.sqrt(np.where(ok, v, 0.0)), np.nan)
     return est - half, est + half, ok
+
+
+# ---------------------------------------------------------------------------------------------------------------
+# Regime B, form C (round 5's estimator definition, section "Regime B"; code/scripts/round5_ppi_twolevel.py)
+# ---------------------------------------------------------------------------------------------------------------
+_TL_FIXED = None
+
+
+def _tl_fixed():
+    """round5_ppi_twolevel.estimate, unchanged except one inserted line: for estimator 'C_fix1' the within-cluster
+    coefficient is set to 1 in every cluster after the coefficient block (ppi is False for 'fix1', so the block first
+    sets it to 0). Everything else, zhat_g, V_g, the regime B variance sum_g V_g / G^2 and the degrees of freedom
+    (sum_g (m_g - 2) for theta3, sum_{g,h} (m_hg - 1) over partially labelled strata for theta2), is round 5's code."""
+    global _TL_FIXED
+    if _TL_FIXED is None:
+        import inspect, textwrap
+        import round5_ppi_twolevel as TL
+        src = textwrap.dedent(inspect.getsource(TL.estimate))
+        anchor = "    # ---- within stage: zhat_g and V_g\n"
+        assert src.count(anchor) == 1
+        src = src.replace(anchor, "    if kindc == 'fix1':\n        lamw = np.ones((G, ng))\n" + anchor)
+        ns = dict(vars(TL)); exec(compile(src, 'round5_twolevel_estimate_fix1', 'exec'), ns)
+        _TL_FIXED = ns['estimate']
+    return _TL_FIXED
+
+
+def regime_b_formC(T, sel, seed, coef='fixed1'):
+    """Form C in regime B (every valid cluster labelled, m_g units in cluster g). T from round5_ppi_twolevel.prepare.
+    coef: 'fixed1' (the paper's coefficient of 1), 'crossfit' (round 5's C_ppi: the within coefficient fitted on the
+    other half of the clusters' labelled units, clipped to [0, 1]) or 'classical' (coefficient 0).
+    Returns round 5's dict (theta, var, df, zhat, V, lam_w, ...)."""
+    import round5_ppi_twolevel as TL
+    Lmask = np.asarray(T['valid'], bool).copy()
+    if coef == 'crossfit':
+        return TL.estimate(T, Lmask, sel, 'C_ppi', seed, regime_b=True)
+    if coef == 'classical':
+        return TL.estimate(T, Lmask, sel, 'C_classical', seed, regime_b=True)
+    if coef == 'fixed1':
+        return _tl_fixed()(T, Lmask, sel, 'C_fix1', seed, regime_b=True)
+    raise ValueError(coef)
