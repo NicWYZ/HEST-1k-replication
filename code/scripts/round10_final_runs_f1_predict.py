@@ -51,6 +51,7 @@ def main():
     ap.add_argument('donor_map'); ap.add_argument('out'); ap.add_argument('--max-folds', type=int, default=0)
     ap.add_argument('--samples', default='', help='comma-separated sample ids to keep (the anchor subset)')
     ap.add_argument('--map-task', default='', help='keep only rows of the donor map whose task column equals this')
+    ap.add_argument('--genes-from-parquet', default='', help='use the genes of this file (columns y__<symbol>), mapped to Ensembl ids through the first sample')
     ap.add_argument('--tag', default='', help='name used in the output files instead of the task name')
     a = ap.parse_args(); os.makedirs(a.out, exist_ok=True)
     T = json.load(open(a.task)); genes = [str(g) for g in T['genes_top50']]
@@ -58,6 +59,17 @@ def main():
         ks = set(a.samples.split(',')); T['samples'] = [s for s in T['samples'] if s['sample_id'] in ks]
         assert len(T['samples']) == len(ks), 'unknown sample ids in --samples'
     name = a.tag or T['name']
+    gene_symbols = None
+    if a.genes_from_parquet:
+        syms = [n[3:] for n in pq.read_schema(a.genes_from_parquet).names if n.startswith('y__')]
+        A0 = ad.read_h5ad(T['samples'][0]['expr_path'], backed='r')
+        cands = [('var_names', pd.Index(A0.var_names.astype(str)))]
+        cands += [(k, pd.Index(A0.var[k].astype(str))) for k in A0.var.columns if A0.var[k].dtype == object or str(A0.var[k].dtype) == 'category']
+        best = max(cands, key=lambda kv: kv[1].isin(syms).sum())
+        ens = pd.Index(A0.var['ensembl_id'].astype(str))
+        m = {s_: ens[best[1].get_loc(s_)] for s_ in syms if s_ in best[1] and best[1].get_loc(s_) is not None and isinstance(best[1].get_loc(s_), (int, np.integer))}
+        print(f'genes from {a.genes_from_parquet}: {len(syms)} symbols, {len(m)} mapped through var column {best[0]}', flush=True)
+        gene_symbols = [s_ for s_ in syms if s_ in m]; genes = [m[s_] for s_ in gene_symbols]
     dmf = pd.read_csv(a.donor_map, dtype=str)
     if a.map_task:
         dmf = dmf[dmf['task'] == a.map_task]
@@ -93,7 +105,7 @@ def main():
     summ = dict(task=name, samples_filter=a.samples, encoder=a.encoder, design=a.design, spots=int(len(unit)), spots_predicted=int(done.sum()),
                 samples=len(parts), donors=len(set(don)), centers=len(set(cen)), folds=len(units),
                 alpha=float(alpha), n_genes=len(genes), seconds_per_fold=float(np.mean(secs)),
-                pearson={k: {g: pearson(targets[k][done, j], F[k][done, j]) for j, g in enumerate(genes)} for k in targets})
+                gene_symbols=gene_symbols, pearson={k: {g: pearson(targets[k][done, j], F[k][done, j]) for j, g in enumerate(genes)} for k in targets})
     for k in targets:
         summ[f'median_pearson_{k}'] = float(np.nanmedian(list(summ['pearson'][k].values())))
     tag = f"{name}__{a.encoder}__{a.design}"
