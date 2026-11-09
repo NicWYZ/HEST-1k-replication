@@ -1,0 +1,103 @@
+date,query,engine,hits,kept,note
+2026-11-07,https://arxiv.org/abs/2406.16192 (HEST-1k abstract),WebFetch arXiv,1,1,abstract page; no protocol details
+2026-11-07,https://arxiv.org/html/2406.16192 (HEST-1k full text),WebFetch arXiv HTML,1,1,"full text read for sections 3.1, 3.2, 3.4, 4, 5.1, 5.2, 8 and checklist; S1 D2 D3 and S2 D5 D6 D7 D14"
+2026-11-07,Murphy 1988 skill scores based on the mean square error and their relationships to the correlation coefficient Monthly Weather Review,WebSearch,10,1,D2 R2 ladder decomposition; kept climpred documentation as secondary source
+2026-11-07,https://climpred.readthedocs.io/.../_msess_murphy.html,WebFetch,1,1,secondary page quoting Murphy's decomposition and the citation
+2026-11-07,journals.ametsoc.org Murphy 1988 article page,WebFetch,0,0,publisher fetch failed; Murphy 1988 not opened
+2026-11-07,Roberts 2017 Ecography cross-validation strategies for data with temporal spatial hierarchical or phylogenetic structure,WebSearch,10,1,D3 grouped and block cross-validation
+2026-11-07,https://pred.uni-regensburg.de/id/eprint/1455/,WebFetch,1,1,Roberts et al. abstract and bibliographic details
+2026-11-07,Howard 2021 Nature Communications impact of site-specific digital histology signatures preserved site cross-validation,WebSearch,10,1,D3 D7 site leakage in histology
+2026-11-07,https://pmc.ncbi.nlm.nih.gov/articles/PMC8292530,WebFetch PMC,1,1,"Howard et al. full text read (abstract, methods on preserved-site CV, results)"
+2026-11-07,Moulton 1990 an illustration of a pitfall in estimating the effects of aggregate variables on micro units,WebSearch,10,1,D9 Moulton factor (econometrics)
+2026-11-07,https://ideas.repec.org/a/tpr/restat/v72y1990i2p334-38.html,WebFetch,1,1,Moulton abstract only; JSTOR full text not reachable
+2026-11-07,Zimmerman Espeland Langefeld 2021 practical solution pseudoreplication bias single-cell studies,WebSearch,10,1,D9 S1 donor as unit in single-cell genomics
+2026-11-07,https://doaj.org/article/4ea0a83617e1448592a554d93a96ffb4,WebFetch,1,1,Zimmerman et al. abstract only
+2026-11-07,Squair 2021 confronting false discoveries in single-cell differential expression pseudobulk,WebSearch,10,1,D9 S1 and D5 pseudobulk convention
+2026-11-07,https://pmc.ncbi.nlm.nih.gov/articles/PMC8479118,WebFetch PMC,0,0,captcha page; nothing read
+2026-11-07,https://infoscience.epfl.ch/record/289583/files/s41467-021-25960-2.pdf,WebFetch,1,1,Squair et al. full text read (Results sections and Methods)
+2026-11-07,Bhuva 2024 Genome Biology library size confounds biology in spatial transcriptomics data,WebSearch,10,1,D5 D10 D11 normalization convention in ST
+2026-11-07,https://doaj.org/article/b13da81ba36848aea93f840263cbb1cf,WebFetch,1,1,Bhuva et al. abstract
+2026-11-07,https://genomebiology.biomedcentral.com/articles/10.1186/s13059-024-03241-7,WebFetch,1,1,Bhuva et al. full text (Results and discussion)
+2026-11-07,Hicks Townes Teng Irizarry 2018 Biostatistics missing data technical variability single-cell detection rate principal component,WebSearch,10,1,D10 first PC tracks a technical factor
+2026-11-07,https://www.biorxiv.org/content/10.1101/025528v3.full-text,WebFetch bioRxiv,1,1,Hicks et al. preprint full text
+2026-11-07,Ahlmann-Eltze Huber 2023 Nature Methods comparison of transformations for single-cell RNA-seq data shifted logarithm,WebSearch,10,1,D5 D11 transformation convention
+2026-11-07,https://www.huber.embl.de/pub/pdf/Ahlmann-Eltze-NatMeth-2023.pdf,WebFetch,1,1,Ahlmann-Eltze and Huber full text (author PDF)
+2026-11-07,SpaNorm spatially-aware normalization spatial transcriptomics Salim Genome Biology 2025,WebSearch,10,1,D5 D11 spatial normalization
+2026-11-07,https://publications.wehi.edu.au/Publications/21264,WebFetch,1,1,SpaNorm abstract and bibliographic details
+2026-11-07,benchmarking spatial gene expression prediction from histology Nature Communications 2025 normalization log1p library size,WebSearch,10,3,"D5 conventions in histology-to-expression; kept Chan et al. 2025, SpaRED, Gindra et al."
+2026-11-07,He 2020 Nature Biomedical Engineering integrating spatial gene expression and breast tumour morphology ST-Net normalization,WebSearch,10,1,D5 ST-Net convention
+2026-11-07,https://www.biorxiv.org/content/10.1101/2023.12.12.571251.full.pdf,WebFetch bioRxiv,1,1,"Chan et al. full text (datasets and preprocessing, evaluation metrics, methods)"
+2026-11-07,https://github.com/bryanhe/ST-Net,WebFetch,1,0,README does not state the normalization; ST-Net paper not opened
+2026-11-07,https://arxiv.org/abs/2505.02980v1,WebFetch arXiv,1,1,SpaRED abstract
+2026-11-07,Salas 2025 Nature Methods optimizing Xenium In Situ data utility quality assessment best-practice normalization,WebSearch,10,1,D5 Xenium conventions
+2026-11-07,https://www.biorxiv.org/content/10.1101/2023.02.13.528102.full.pdf,WebFetch bioRxiv,1,1,Salas et al. preprint full text in part (online methods and best practices)
+2026-11-07,Kömen 2024 do histopathological foundation models eliminate batch effects comparative study arXiv,WebSearch,10,1,D7 D14 site signatures in encoders
+2026-11-07,https://arxiv.org/abs/2411.05489v1,WebFetch arXiv,1,1,Kömen et al. abstract
+2026-11-07,https://arxiv.org/abs/2012.07421,WebFetch arXiv,1,1,WILDS abstract; multi-hospital split practice
+2026-11-07,Atta Clifton Fan 2024 Genome Biology gene count normalization single-cell imaging-based spatially resolved transcriptomics,WebSearch,10,1,D5 D11 normalization for targeted panels (Xenium)
+2026-11-07,https://genomebiology.biomedcentral.com/counter/pdf/10.1186/s13059-024-03303-w.pdf,WebFetch,0,0,redirect to Springer; then site blocked
+2026-11-07,https://doaj.org/article/01f2c02da4014bcb949aa202a018ac3e,WebFetch,1,1,Atta et al. abstract
+2026-11-07,Crowell 2020 muscat subpopulation-specific state transitions multi-sample pseudobulk Nature Communications,WebSearch,10,1,D5 pseudobulk convention
+2026-11-07,https://pubmed.ncbi.nlm.nih.gov/33257685/,WebFetch,0,0,empty page
+2026-11-07,https://doaj.org/article/ca630df4491c4fa29d160b6e84f04cc4,WebFetch,1,1,Crowell et al. abstract
+2026-11-07,muscat Bioconductor vignette 3.18,WebFetch,1,1,aggregation rule (sum of raw counts per cluster and sample) and citation
+2026-11-07,https://cameron.econ.ucdavis.edu/research/Cameron_Miller_JHR_2015_February.pdf,WebFetch,1,1,"Cameron and Miller full text in part (II.B.1, II.C, II.F, IV.B, VI.A, VI.B); VI.C not reached in two passes"
+2026-11-07,A Practitioner's Guide to Cluster-Robust Inference Journal of Human Resources 50 2 317,WebSearch,10,1,bibliographic check
+2026-11-07,https://econpapers.repec.org/RePEc:uwp:jhriss:v:50:y:2015:i:2:p:317-372,WebFetch,1,1,"volume, issue, pages; no DOI on page"
+2026-11-07,https://arxiv.org/abs/2306.06342,WebFetch arXiv,1,1,Lee Barber Willett abstract
+2026-11-07,https://arxiv.org/pdf/2306.06342,WebFetch arXiv,1,1,"Lee Barber Willett full text in part (section 1, section 2.2 eq. 6 and Theorem 1, section 2.3.2)"
+2026-11-07,https://arxiv.org/abs/1809.07441,WebFetch arXiv,1,1,Dunn Wasserman Ramdas abstract
+2026-11-07,https://arxiv.org/abs/2207.07048,WebFetch arXiv,1,1,Kapoor and Narayanan abstract
+2026-11-07,Liang Zeger 1986 longitudinal data analysis using generalized linear models Biometrika,WebSearch,10,1,B1 sandwich variance origin
+2026-11-07,https://www.biostat.jhsph.edu/~jleek/teaching/2011/754/reading/liangandzeger.pdf,WebFetch,1,1,"Liang and Zeger full text scan (section 2, Theorem 1)"
+2026-11-07,Bester Conley Hansen 2011 inference with dependent data using cluster covariance estimators t distribution,WebSearch,10,1,B1 t(G-1) reference with fixed G
+2026-11-07,https://econpapers.repec.org/RePEc:eee:econom:v:165:y:2011:i:2:p:137-151,WebFetch,1,1,Bester et al. abstract and DOI
+2026-11-07,Cameron Gelbach Miller 2008 bootstrap-based improvements for inference with clustered errors,WebSearch,10,1,B1 cluster bootstrap with few clusters
+2026-11-07,https://econpapers.repec.org/RePEc:tpr:restat:v:90:y:2008:i:3:p:414-427,WebFetch,1,1,Cameron Gelbach Miller abstract and DOI
+2026-11-07,Kish 1965 Survey Sampling design effect deff 1 + (m-1) roh,WebSearch,10,1,D9 survey sampling design effect; kept Kalton Brick Le chapter
+2026-11-07,https://unstats.un.org/Unsd/hhsurveys/pdf/Chapter_6.pdf,WebFetch,1,1,"Kalton, Brick and Le chapter 6 full text in part (section B.2, para 27, eq. 18; para 5)"
+2026-11-07,https://arxiv.org/abs/1604.04173,WebFetch arXiv,1,1,Lei et al. split conformal abstract
+2026-11-07,Campbell Thompson 2008 predicting excess stock returns out of sample historical average out-of-sample R2,WebSearch,10,1,D12 out-of-sample R2 against a constant (finance)
+2026-11-07,https://econpapers.repec.org/RePEc:oup:rfinst:v:21:y:2008:i:4:p:1509-1531,WebFetch,1,1,Campbell and Thompson abstract and DOI
+2026-11-07,Snijders Bosker 1994 modeled variance in two-level models Sociological Methods and Research,WebSearch,10,1,D12 level-two R2
+2026-11-07,https://ideas.repec.org/a/sae/somere/v22y1994i3p342-363.html,WebFetch,1,1,Snijders and Bosker abstract and DOI
+2026-11-07,Banerjee Frees 1997 influence diagnostics linear longitudinal models JASA subject deletion,WebSearch,10,0,D13 cluster deletion diagnostics; nothing opened
+2026-11-07,Chambers 1986 outlier robust finite population estimation JASA representative outliers,WebSearch,10,1,D13 survey sampling notion of a representative outlier
+2026-11-07,robsurvey vignette basic estimators,WebFetch,1,1,secondary page with Chambers definition and full reference
+2026-11-07,Christensen Pearson Johnson 1992 case-deletion diagnostics for mixed models Technometrics,WebSearch,10,1,D13 cluster deletion diagnostics
+2026-11-07,https://scilit.com/publications/2ce85edeaeeff0520f802e4681d7abf0,WebFetch,1,1,Christensen et al. truncated abstract and DOI
+2026-11-07,https://arxiv.org/abs/2406.06393,WebFetch arXiv,1,1,STimage-1K4M abstract; no donor or normalization metadata
+2026-11-07,histology gene expression prediction leave-one-patient-out generalization across cohorts batch effect benchmark 2025 arXiv,WebSearch,10,2,kept Gindra et al. and CHRep
+2026-11-07,https://arxiv.org/html/2508.01490v2,WebFetch arXiv HTML,1,1,"Gindra et al. full text in part (sections 3.1, 3.3, 3.4.2, 4.2, 4.3)"
+2026-11-07,https://arxiv.org/abs/2604.21573,WebFetch arXiv,1,1,CHRep abstract; over-smoothed predictions under leave-one-slide-out
+2026-11-07,Moran 1950 notes on continuous stochastic phenomena Biometrika,WebSearch,10,1,D14 Moran's I
+2026-11-07,https://academic.oup.com/biomet/article-abstract/37/1-2/17/194868,WebFetch,1,1,metadata and DOI only; PDF paywalled
+2026-11-07,pathology foundation models agree with each other predictions spatial gene expression histology over-smoothed shrinkage,WebSearch,10,1,kept Akram and Dip workshop paper
+2026-11-07,https://neurips.cc/virtual/2026/177227,WebFetch,1,1,Akram and Dip abstract (patient-held-out evaluation)
+2026-11-07,spatial transcriptomics histology expression prediction random spot split versus patient split inflation leakage adjacent spots,WebSearch,10,1,D3 direct neighbour; kept Dip and Zhang workshop paper
+2026-11-07,https://neurips.cc/virtual/2026/177178,WebFetch,1,1,Dip and Zhang abstract (leakage-stratified evaluation)
+2026-11-07,https://openreview.net/forum?id=vRuKRH2BFK,WebFetch,0,0,browser check; full text not reached
+2026-11-07,HEST-1k metadata errors patient labels audit sample provenance spatial transcriptomics dataset quality,WebSearch,10,1,D6 metadata audit practice; kept Toker et al.
+2026-11-07,https://www.biorxiv.org/content/10.1101/064626.full.pdf,WebFetch bioRxiv,1,1,Toker et al. preprint full text in part (sex-label misannotation)
+2026-11-07,https://pmc.ncbi.nlm.nih.gov/articles/PMC5034794,WebFetch PMC,0,0,captcha page
+2026-11-07,Hafemeister Satija 2019 normalization variance stabilization regularized negative binomial regression sequencing depth principal components,WebSearch,10,2,D10 D11; kept DOAJ record and Seurat vignette
+2026-11-07,https://doaj.org/article/6bb8ef5e3bc44c6e84eabcff715b74c3,WebFetch,1,1,Hafemeister and Satija abstract
+2026-11-07,https://satijalab.org/seurat/archive/v4.3/sctransform_vignette,WebFetch,1,1,depth remains after log-normalization (vignette)
+2026-11-07,Anders Huber 2010 differential expression analysis for sequence count data size factors median of ratios,WebSearch,10,1,D11 D12 size factors
+2026-11-07,https://www.stat.purdue.edu/~doerge/BIOINFORM.D/SPRING12/AndersHuber_GenomeBiology2010.pdf,WebFetch,1,1,Anders and Huber full text ('Fitting')
+2026-11-07,conformal prediction uncertainty quantification histology-predicted gene expression spatial transcriptomics prediction intervals,WebSearch,10,1,S1 neighbour; kept TISSUE
+2026-11-07,prediction-powered inference spatial transcriptomics predicted gene expression downstream inference valid confidence intervals,WebSearch,10,1,S1 neighbour; TISSUE again
+2026-11-07,https://www.biorxiv.org/content/10.1101/2023.04.25.538326.full.pdf,WebFetch bioRxiv,1,1,TISSUE preprint full text (methods and results sections)
+2026-11-07,Kish Frankel 1974 inference from complex samples JRSSB,WebSearch,10,1,B1 survey sampling lineage
+2026-11-07,https://academic.oup.com/jrsssb/article/36/1/22/7027268,WebFetch,1,0,reached the discussion of the paper only; main paper not opened
+2026-11-07,https://www.biorxiv.org/content/10.1101/2026.01.15.699786v1,WebFetch bioRxiv,0,0,CSDE preprint fetch failed
+2026-11-07,Wang McCormick Leek 2020 PNAS methods for correcting inference based on outcomes predicted by machine learning,WebSearch,10,1,S1 predictions used as if measured
+2026-11-07,https://www.biorxiv.org/content/10.1101/2020.01.21.914002.full.pdf,WebFetch bioRxiv,1,1,Wang et al. preprint full text (significance statement and introduction)
+2026-11-07,TIDEST Testa Lei Roeder 2026 bioRxiv differential expression testing imputed spatial transcriptomics,WebSearch,10,1,S1 neighbour
+2026-11-07,https://sciety.org/articles/activity/10.64898/2026.06.19.733432,WebFetch,1,1,TIDEST abstract
+2026-11-07,Lun 2018 overcoming systematic errors caused by log-transformation of normalized single-cell RNA sequencing data,WebSearch,10,2,D5 mean of log versus normalization; kept Lun and Booeshaghi et al.
+2026-11-07,https://www.biorxiv.org/content/10.1101/404962.full.pdf,WebFetch bioRxiv,1,1,Lun preprint full text
+2026-11-07,https://www.biorxiv.org/content/10.1101/2022.05.06.490859.full.pdf,WebFetch bioRxiv,1,1,Booeshaghi et al. preprint full text
+2026-11-07,Risso Ngai Speed Dudoit 2014 normalization of RNA-seq data using factor analysis of control genes or samples RUV,WebSearch,10,1,D10 E7 unwanted-variation factor
+2026-11-07,https://escholarship.org/content/qt4qq3g2hh/qt4qq3g2hh.pdf,WebFetch,1,1,Risso et al. full text (author manuscript)
+2026-11-07,https://arxiv.org/abs/2108.04884,WebFetch arXiv,1,1,folktables abstract (ACS task source)

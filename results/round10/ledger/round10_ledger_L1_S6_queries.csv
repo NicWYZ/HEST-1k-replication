@@ -1,0 +1,40 @@
+date,query,engine,hits,kept,note
+2026-11-07,arxiv.org/abs/2505.20178 (direct fetch),WebFetch,0,0,S6-1; blocked (URL not yet in conversation); reached after search
+2026-11-07,arxiv.org/abs/2501.18577 (direct fetch),WebFetch,0,0,S6-8; blocked; reached after search
+2026-11-07,arxiv.org/abs/2610.09601 (direct fetch),WebFetch,0,0,S6-7; blocked; arXiv page never reached
+2026-11-07,"Mani Xu Lipton Oberst ""No Free Lunch"" non-asymptotic analysis prediction-powered inference arXiv 2505.20178",WebSearch standard,10,2,S6-1; arXiv abstract and v1 PDF opened; PMLR v306 landing page opened
+2026-11-07,"Kluger Lu Zrnic Wang Bates prediction-powered inference imputed covariates nonuniform sampling arXiv 2501.18577",WebSearch standard,10,2,S6-8; v3 HTML and PDF opened (appendix B.1 not returned)
+2026-11-07,"Broska Howes ""Cluster-Robust Prediction-Powered Inference"" arXiv",WebSearch standard,10,1,S6-7; returned MacKinnon Nielsen Webb guide arXiv:2205.03285 (kept for S6-2); B&H not in results
+2026-11-07,"""2610.09601""",WebSearch standard,10,0,S6-7; no hit for the paper
+2026-11-07,Cameron Gelbach Miller 2008 bootstrap-based improvements for inference with clustered errors pdf,WebSearch standard,10,1,S6-2; NBER t0344 PDF opened
+2026-11-07,"Cameron Miller ""A Practitioner's Guide to Cluster-Robust Inference"" pdf few clusters",WebSearch standard,10,1,S6-2; eScholarship PDF opened (excerpt stopped in VI.B)
+2026-11-07,Broska Howes cluster-robust standard errors prediction-powered inference PPI++ clustered data 2026,WebSearch standard,10,2,S6-7; deeplearn.org mirror (abstract) and GLIDE package validation page (background)
+2026-11-07,"Abadie Athey Imbens Wooldridge ""When should you adjust standard errors for clustering"" design-based finite population arXiv",WebSearch standard,10,1,S6-3 and S6-6; arXiv:1710.02926 PDF opened
+2026-11-07,Bell McCaffrey 2002 bias reduction in standard errors for linear regression with multi-stage samples Survey Methodology pdf,WebSearch standard,10,1,S6-7; Statistics Canada PDF opened
+2026-11-07,Imbens Kolesár robust standard errors in small samples some practical advice degrees of freedom clusters,WebSearch standard,10,1,S6-7; Princeton draft PDF opened
+2026-11-07,"MacKinnon Nielsen Webb ""Cluster-robust inference: A guide to empirical practice"" Journal of Econometrics 2023 volume",WebSearch standard,10,1,S6-2; RePEc record opened for the citation
+2026-11-07,MacKinnon Webb wild bootstrap inference for wildly different cluster sizes Journal of Applied Econometrics,WebSearch standard,10,1,S6-2; Queen's WP 1314 opened
+2026-11-07,Ibragimov Müller t-statistic based correlation and heterogeneity robust inference few clusters,WebSearch standard,10,1,S6-7; LMU-hosted copy opened; venue not confirmed
+2026-11-07,cluster sampling unequal cluster sizes unbiased estimator of mean per element versus ratio estimator variance depends on variation in cluster totals Cochran chapter 9,WebSearch standard,10,1,S6-5; OSU course notes opened as pointer only; no textbook copy
+2026-11-07,difference estimator versus generalized regression estimator intercept term model-assisted survey sampling auxiliary variable without intercept bias variance,WebSearch standard,10,0,S6-4; An et al. 2609.10904 surfaced (round 8 already read it); nothing new kept
+2026-11-07,prediction-powered inference simulation negative control random predictor permuted predictions spurious efficiency gain,WebSearch standard,10,2,S6-4 and S6-9; Song et al. 2601.20819 and Gronsbell et al. 2411.19908 opened; no PPI paper uses a constant or permuted control for clusters
+2026-11-07,Morris White Crowther 2019 using simulation studies to evaluate statistical methods ADEMP reporting coverage Monte Carlo standard error,WebSearch standard,10,1,S6-9; arXiv PDF opened (PMC copy gave captcha)
+2026-11-07,Pawel Kook Reeve pitfalls and potentials in simulation studies questionable research practices comparative simulation studies,WebSearch standard,10,1,S6-9; arXiv abstract opened
+2026-11-07,"Boulesteix publication of negative results methodological research statistics ""negative results"" methods that fail",WebSearch standard,10,3,S6-9; Boulesteix et al. 2015 (PMC) and 2020 (Significance) opened; Karl et al. ICML 2024 found
+2026-11-07,"""Position: Embracing Negative Results in Machine Learning"" Karl authors 2024 ICML",WebSearch standard,10,1,S6-9; PMLR page opened
+2026-11-07,Boulesteix Lauer Eugster plea for neutral comparison studies in computational sciences PLoS ONE 2013,WebSearch standard,10,1,S6-9; LMU copy opened
+2026-11-07,tutorial guidelines prediction-based inference inference with predicted outcomes reporting recommendations practitioners checklist 2025,WebSearch standard,10,2,S6-9; Salerno et al. 2512.05456 (abstract via mirrors); Song et al. again
+2026-11-07,PPI++ efficient prediction-powered inference Angelopoulos Duchi Zrnic power tuning lambda estimated same data asymptotic,WebSearch standard,10,1,S6-1; HTML v2 opened; section 6 body not returned
+2026-11-07,separate regression estimator combined regression estimator stratified sampling small strata bias Cochran lecture notes,WebSearch standard,10,0,S6-4; only course notes without the bias result; textbook unread
+2026-11-07,Eyre Madras prediction-powered inference few labels worse than classical arXiv 2411.12665,WebSearch standard,10,1,S6-1; HTML v2 opened
+2026-11-07,Rubin-Bleuer Schiopu Kratina 2005 two-phase framework joint model and design-based inference Annals of Statistics superpopulation finite population,WebSearch standard,10,1,S6-6; arXiv abstract opened
+2026-11-07,"Abadie Athey Imbens Wooldridge ""Sampling-based versus design-based uncertainty in regression analysis"" Econometrica 2020",WebSearch standard,10,1,S6-3 and S6-6; RePEc record (abstract) opened
+2026-11-07,"Hesterberg ""What teachers should know about the bootstrap"" percentile interval narrowness bias small samples arXiv 1411.5279",WebSearch standard,10,1,S6-2; arXiv PDF opened
+2026-11-07,Mashreghi Haziza Léger 2016 survey of bootstrap methods in finite population sampling Statistics Surveys,WebSearch standard,10,0,S6-2; Project Euclid blocked by bot check; not opened
+2026-11-07,Kahan Li Copas Harhay estimands cluster randomized trials individual-average versus cluster-average treatment effect informative cluster size,WebSearch standard,10,1,S6-5; Blette et al. 2510.01127 opened; Kahan et al. 2023 not opened
+2026-11-07,Seaman Pavlou Copas review methods informative cluster size cluster-weighted estimand,WebSearch standard,10,1,S6-5; UCL Discovery PDF opened
+2026-11-07,prediction-powered inference few clusters small-sample correction t distribution cluster-robust coverage,WebSearch extended,9,2,S6-7 gap check; ResearchGate copy of Broska and Howes opened (sections 2 to 4); Gafarov and Ura 2603.24786 opened; no PPI paper with a small-sample correction
+2026-11-07,prediction-powered inference finite population cluster sampling design-based variance without replacement few primary sampling units,WebSearch standard,10,0,S6-7 gap check; no design-based few-cluster PPI interval found beyond those the record holds
+2026-11-07,power tuning same sample prediction-powered inference undercoverage cross-fitting clustered data labelled clusters,WebSearch standard,10,1,S6-7 gap check and S6-1; Chen Guo Li 2603.16041 opened (i.i.d. only); no clustered same-sample tuning study
+2026-11-07,Siepe Bartoš Pawel simulation studies methodological research standardized template planning preregistration reporting,WebSearch standard,10,0,S6-9; found but not opened
+2026-11-07,arxiv.org/pdf/1601.01981 (from search result),WebFetch,1,1,S6-7; Pustejovsky and Tipton abstract and recommendations

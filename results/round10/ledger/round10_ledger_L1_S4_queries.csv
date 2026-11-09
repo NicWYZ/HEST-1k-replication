@@ -1,0 +1,56 @@
+date,query,engine,hits,kept,note
+2026-11-07,https://arxiv.org/abs/2603.19160 (Mozer PPI is the difference estimator),WebFetch arXiv abstract,1,1,abstract and two quoted sentences; B2
+2026-11-07,https://arxiv.org/abs/2003.11423 (Sanguiao Sande and Zhang),WebFetch arXiv abstract,1,1,abstract; B9 and E
+2026-11-07,https://arxiv.org/pdf/2003.11423v1,WebFetch arXiv PDF,1,1,full text sections 1 to 5; estimators eq 1 2 4 9 11 12; variance Proposition 2.2 and eq 13; jackknife eq 7
+2026-11-07,https://arxiv.org/abs/2508.15664 (Lu Shi Liu Ding),WebFetch arXiv abstract,1,1,abstract; B5 B9 E
+2026-11-07,https://arxiv.org/html/2508.15664v1,WebFetch arXiv HTML,1,1,sections 1 to 5.1; page truncated at 45412 characters inside 5.1
+2026-11-07,https://arxiv.org/html/2508.15664v1 offset 36000,WebFetch arXiv HTML,1,0,still truncated before the variance formula
+2026-11-07,https://arxiv.org/pdf/2508.15664v1,WebFetch arXiv PDF,1,1,section 5.1 variance V_cf and Theorem 4 asymptotically conservative; simulations N >= 316
+2026-11-07,https://arxiv.org/abs/2609.10904 (An Dagdoug Haziza Tille),WebFetch arXiv abstract,1,1,abstract; E
+2026-11-07,https://arxiv.org/html/2609.10904v1,WebFetch arXiv HTML,1,1,sections 1 to 8; eq 8 to 10; Proposition 2; variance sections 4.2 and 5.2; appendices not returned
+2026-11-07,"Williams 1961 ""Generating unbiased ratio and regression estimators"" Biometrics",WebSearch standard,10,2,CUNY Academic Works record and SciSpace scan kept
+2026-11-07,"Mickey 1959 ""Some finite population unbiased ratio and regression estimators"" pdf",WebSearch standard,10,3,RAND P-1348 page; Worthley 1967 report (core.ac.uk); Mussa 1999 JOS
+2026-11-07,https://academicworks.cuny.edu/hc_pubs/52,WebFetch,1,1,record of Williams 1961 with PDF link
+2026-11-07,https://academicworks.cuny.edu/cgi/viewcontent.cgi?article=1066&context=hc_pubs,WebFetch and curl,1,0,blocked (client error; proxy 403)
+2026-11-07,https://www.rand.org/pubs/papers/P1348.html,WebFetch,1,1,Mickey abstract: nonnegative unbiased variance estimators for a subclass; no PDF
+2026-11-07,rand.org P1348.pdf Mickey unbiased ratio regression estimators,WebSearch standard,10,1,no PDF of P-1348 found; core.ac.uk Worthley report
+2026-11-07,https://scispace.com/pdf/generating-unbiased-ratio-and-regression-estimators-45t3bqd0av.pdf,WebFetch,1,1,Williams 1961 full text from garbled OCR; eq 2 13; section 3 and 5 and 6
+2026-11-07,https://core.ac.uk/download/33363059.pdf,WebFetch,1,1,Worthley 1967 M.S. report; secondary account of Mickey and Williams; Hartley-Ross and Robson variance
+2026-11-07,https://www.scb.se/.../mussa 1999 JOS ratio estimator pdf,WebFetch,1,0,Mussa 1999; no variance estimators for Mickey or Hartley-Ross
+2026-11-07,https://arxiv.org/abs/2604.07636 (Kwon Yang Kim SREG),WebFetch arXiv abstract,1,1,abstract; consistent variance; not exactly unbiased
+2026-11-07,https://arxiv.org/abs/2610.09601 (Broska and Howes),WebFetch arXiv abstract,1,1,abstract; B4 B12
+2026-11-07,https://arxiv.org/html/2610.09601v1,WebFetch arXiv HTML,1,1,sections 1 to 2.3 only; divisor G; normal reference; no small-sample correction in part read
+2026-11-07,https://arxiv.org/abs/2501.18577 (Kluger et al.),WebFetch arXiv abstract,1,1,abstract; cluster bootstrap under nonuniform sampling; B12
+2026-11-07,https://arxiv.org/abs/2505.20178 (Mani et al.),WebFetch arXiv abstract,1,1,abstract; threshold 1/sqrt(n-2)
+2026-11-07,https://arxiv.org/html/2505.20178v2,WebFetch arXiv HTML,1,1,sections 3 and 4; Proposition 4.1 4.4 4.6; Theorem 4.1; R7-6
+2026-11-07,"Bell McCaffrey 2002 ""Bias reduction in standard errors for linear regression with multi-stage samples"" Survey Methodology pdf",WebSearch standard,10,1,Statistics Canada PDF
+2026-11-07,https://www150.statcan.gc.ca/n1/en/pub/12-001-x/2002002/article/9058-eng.pdf,WebFetch,1,1,full text; BRL; Satterthwaite df; no fpc; B12
+2026-11-07,"Cameron Miller ""A Practitioner's Guide to Cluster-Robust Inference"" Journal of Human Resources 2015 pdf few clusters G-1 t distribution",WebSearch standard,10,1,eScholarship copy
+2026-11-07,https://escholarship.org/content/qt1jq5d0pq/qt1jq5d0pq.pdf,WebFetch,1,1,full text to section VI.B (truncated); T(G-1) and G/(G-1); B3 B12
+2026-11-07,Middleton Aronow unbiased estimation average treatment effect cluster-randomized experiments difference estimator fixed coefficient,WebSearch standard,10,1,author PDF kept; R7-6
+2026-11-07,https://joelmidd.github.io/papers/MiddletonAronow_Cluster Randomized.pdf,WebFetch,1,1,full text; fixed k keeps unbiasedness; estimated k biased (Appendix B); R7-6
+2026-11-07,https://arxiv.org/abs/2411.12665 (Eyre and Madras),WebFetch arXiv abstract,1,1,abstract; PPI++ worse than classical with few labels; R7-6
+2026-11-07,https://arxiv.org/abs/2311.01453 (PPI++),WebFetch arXiv abstract,1,1,abstract; B2
+2026-11-07,covariate adjustment cluster randomized trial small number of clusters cluster-level analysis degrees of freedom covariate cost Raudenbush,WebSearch standard,10,2,Moerbeek and van Schie 2016; Deke 2016; R7-6
+2026-11-07,regression estimator preassigned coefficient versus estimated coefficient small samples bias variance survey sampling Cochran difference estimator,WebSearch standard,10,0,no source on fixed versus estimated coefficient at few clusters beyond textbooks
+2026-11-07,https://link.springer.com/doi/10.1186/s12874-016-0182-7,WebFetch,1,1,Moerbeek and van Schie 2016; adjusted df n2-3; R7-6
+2026-11-07,https://mathematica.org/publications/design-and-analysis-considerations-for-cluster-randomized-controlled-trials-that-have-a-small-number,WebFetch,1,1,Deke 2016 abstract; df cost of covariates with <= 10 clusters; R7-6
+2026-11-07,https://arxiv.org/abs/2502.11032 (Dharamshi Gao Wakefield),WebFetch arXiv abstract,1,1,abstract; exact variance via U-statistics; no sample splitting mentioned; E
+2026-11-07,https://arxiv.org/abs/2606.28795 (Zhang Tam Sanguiao-Sande Yung Holmberg),WebFetch arXiv abstract,1,1,abstract only; E
+2026-11-07,"Aronow Middleton ""A class of unbiased estimators of the average treatment effect in randomized experiments"" regression adjustment unbiased",WebSearch standard,10,3,Aronow-Middleton 2013 PDF; LOORA arXiv:2511.03236; LOOP arXiv:1708.01229
+2026-11-07,Wu Gagnon-Bartsch LOOP estimator leave-one-out potential outcomes exactly unbiased variance estimator,WebSearch standard,10,1,LOOP abstract page
+2026-11-07,https://joelmidd.github.io/papers/AronowMiddleton_A class of unbiased estimators.pdf,WebFetch,1,1,full text; cites Williams 1961; variance not guaranteed conservative for generalised estimator; E and R7-6
+2026-11-07,https://arxiv.org/abs/1708.01229 (LOOP),WebFetch arXiv abstract,1,1,abstract; unbiased under Neyman-Rubin
+2026-11-07,https://arxiv.org/html/2511.03236v1 (LOORA),WebFetch arXiv HTML,1,1,summary; exactly unbiased; exact variance expressions; HC0 intervals; E
+2026-11-07,"Rao ""Mickey's unbiased ratio estimator"" precision variance Biometrika",WebSearch standard,10,0,no relevant open source on Mickey's variance
+2026-11-07,Robson 1957 multivariate polykays unbiased ratio-type estimation exact variance Hartley-Ross finite population,WebSearch standard,10,0,Robson 1957 not opened; ratio estimators only
+2026-11-07,https://arxiv.org/abs/2301.09633 (PPI),WebFetch arXiv abstract,1,1,abstract; B2
+2026-11-07,"Breidt Opsomer 2017 ""Model-assisted survey estimation with modern prediction techniques"" Statistical Science",WebSearch standard,10,1,Project Euclid PDF
+2026-11-07,https://projecteuclid.org/.../10.1214/16-STS589.pdf,WebFetch,1,0,blocked by bot protection
+2026-11-07,https://arxiv.org/abs/2104.04647 (Su and Ding),WebFetch arXiv abstract,1,1,abstract; cluster-level regression adjustment in experiments; many clusters
+2026-11-07,"Johnson 1978 ""Modified t tests and confidence intervals for asymmetrical populations"" JASA",WebSearch standard,10,1,Boik 2008 AISM as secondary
+2026-11-07,https://www.ism.ac.jp/editsec/aism/pdf/060_1_0061.pdf,WebFetch,1,1,Boik 2008; secondary account of Johnson 1978; B8
+2026-11-07,Shao Wang 2014 Statistica Sinica separate combined regression estimators stratified sampling many small strata,WebSearch standard,10,1,journal page
+2026-11-07,https://www3.stat.sinica.edu.tw/sstest/j24n1/j24n120/j24n120.html,WebFetch,1,1,Shao and Wang 2014 abstract; full text behind password; B6
+2026-11-07,repository grep for Mickey Middleton Aronow LOOP Abadie Eyre Deke Su and Ding Kwon Riano Mani Bell and McCaffrey Cameron and Miller Kluger Mozer Sanguiao Johnson (1978) Breidt and Opsomer Cassel,grep over docs/ and results/,19,19,where the record already cites each source; Deke and Johnson (1978) absent
+2026-11-07,prediction-powered inference negative control constant predictor placebo predictor check difference estimator invariance,WebSearch standard,10,0,no named method for a constant-predictor control; hits are PPI causal inference and Mozer

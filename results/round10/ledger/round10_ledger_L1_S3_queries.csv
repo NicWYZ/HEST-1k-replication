@@ -1,0 +1,40 @@
+date,query,engine,hits,kept,note
+2026-11-07,arxiv.org/abs/2608.15500 (GHCP abstract page),WebFetch,1,1,"v1 only, 16 Aug 2026; baselines named in abstract are HCP and standard conformal within the test group"
+2026-11-07,arxiv.org/html/2608.15500v1 (GHCP full text; two passes),WebFetch,1,1,"sections 1 to 4 and appendices A to D.2 returned, text cut off in D.3; no full conformal baseline; Std-CP is a half/half split with a studentized score"
+2026-11-07,arxiv.org/abs/2306.06342 (Lee Barber Willett),WebFetch,1,1,"v4 2 Aug 2025; abstract only"
+2026-11-07,arxiv.org/html/2306.06342v4 (Lee Barber Willett full text),WebFetch,1,1,"only the table of contents and section 1.1 returned; setup is two-level only"
+2026-11-07,arxiv.org/abs/1809.07441 (Dunn Wasserman Ramdas),WebFetch,1,1,abstract only
+2026-11-07,arxiv.org/abs/1904.06019 (Tibshirani Barber Candes Ramdas),WebFetch,1,1,abstract only
+2026-11-07,arxiv.org/abs/2608.27310 (Tibshirani Barber Ramdas),WebFetch,1,1,"abstract only; v2 dated 23 Sep 2026"
+2026-11-07,arxiv.org/abs/2403.16336 (Duchi Gupta Jiang Sur),WebFetch,1,1,abstract only
+2026-11-07,arxiv.org/abs/2312.16160 (Dobriban Yu SymmPI),WebFetch,1,1,abstract only; GHCP says it covers prediction within a partially observed branch
+2026-11-07,arxiv.org/abs/1905.03222 (Romano Patterson Candes CQR),WebFetch,1,1,abstract only
+2026-11-07,arxiv.org/abs/1604.04173 (Lei G'Sell Rinaldo Tibshirani Wasserman),WebFetch,1,1,abstract only
+2026-11-07,link.springer.com/book/10.1007/b106715 (Vovk Gammerman Shafer 2005),WebFetch,1,1,landing page only; no chapter text
+2026-11-07,arxiv.org/abs/2202.13415 (Barber Candes Ramdas Tibshirani),WebFetch,1,1,abstract only; bound form not shown
+2026-11-07,arxiv.org/abs/2411.11824 (Angelopoulos Barber Bates),WebFetch,1,1,abstract only; v5 6 Mar 2026
+2026-11-07,curl https://arxiv.org/abs/2608.15500,curl,0,0,proxy refused CONNECT to arxiv.org with 403; PDFs could not be downloaded for text extraction
+2026-11-07,conformal prediction multi-site leave-one-site-out calibration new hospital coverage hierarchical institutions,WebSearch,10,1,"kept 2601.01223 (abstract opened); ICML 2026 missingness-aware cross-hospital paper not opened"
+2026-11-07,Bersson Hoff optimal conformal prediction for small areas,WebSearch,10,1,"survey sampling side; 2204.08122 abstract opened"
+2026-11-07,"""hierarchical conformal"" multilevel nested ""three-level"" OR ""multi-level"" exchangeability prediction sets arXiv 2025 2026",WebSearch,10,0,"2508.13288 is a class-label hierarchy, 2502.05565 is multi-scale classification; no three-level grouped-data method found"
+2026-11-07,conformal prediction three-level hierarchical data nested groups site patient observation exchangeability,WebSearch,10,0,"returned only the two-level papers (Lee Barber Willett; Dunn Wasserman Ramdas) and 2601.01223"
+2026-11-07,federated conformal prediction heterogeneous clients new client coverage partial exchangeability,WebSearch,10,1,"kept 2305.17564 (abstract); 2410.14010 opened and set aside (graph learning)"
+2026-11-07,group-weighted conformal prediction Bhattacharyya Barber arXiv,WebSearch,10,1,2401.17452 abstract opened
+2026-11-07,conformal prediction computational pathology multi-center new site coverage drop calibration on held-out sites,WebSearch,10,2,"kept 2606.20115 and 2405.09331 (abstracts); neither gives coverage for a new site with few sites"
+2026-11-07,prediction interval for a new cluster random effects model out-of-sample group mixed model coverage few clusters,WebSearch,10,0,"survey/biostatistics side; parametric only, nothing distribution-free for a new cluster"
+2026-11-07,econometrics prediction interval new cross-sectional unit panel data heterogeneity few groups distribution-free,WebSearch,10,0,econometrics side; Bayesian panel forecasting only
+2026-11-07,model-based prediction interval two-stage cluster sampling finite population new unit survey sampling superpopulation,WebSearch,10,0,survey sampling side; prediction-theory two-stage estimators of totals; no prediction set for a new unit
+2026-11-07,Chatterjee Lahiri Li 2008 parametric bootstrap approximation distribution EBLUP prediction intervals linear mixed models Annals of Statistics,WebSearch,10,1,"0806.2931 abstract opened; DOI 10.1214/07-AOS512"
+2026-11-07,small area estimation prediction interval coverage number of areas small m empirical Bayes interval Yoshimori Lahiri,WebSearch,10,0,"survey side; empirical Bayes intervals for area means, not opened, not about a new area"
+2026-11-07,conformal prediction few labeled target samples test group small calibration set full conformal transductive within group,WebSearch,10,1,"kept 2505.13432 SPI (abstract); GHCP itself returned first; 2605.01452 not opened"
+2026-11-07,transfer learning conformal prediction few target labels borrow source calibration scores finite-sample coverage target domain,WebSearch,10,0,2609.10737 opened and set aside (no target labels; no groups)
+2026-11-07,weighted conformal prediction covariate shift effective sample size limited overlap failure estimated likelihood ratio coverage,WebSearch,10,0,none opened; nothing on donor-level separability
+2026-11-07,conformal prediction spatial transcriptomics gene expression prediction from histology uncertainty coverage,WebSearch,10,1,"TISSUE (Nature Methods 2024) found; no histology-to-expression conformal paper with a donor-level guarantee in the hits"
+2026-11-07,prediction-powered inference and conformal prediction same labelled budget calibration labels split between inference and prediction sets,WebSearch,10,1,"question P; kept 2510.16166 (abstract); no paper splitting one budget"
+2026-11-07,Ilyas Ko Tang Wu Zhang ICML 2026 conformal calibration labels cost set width stopping rule,WebSearch,10,1,question P; ICML 2026 poster page opened
+2026-11-07,"""prediction intervals"" and ""confidence intervals"" predicted outcomes machine learning surrogate both tasks one framework conformal prediction-powered inference unified",WebSearch,10,0,question P; Csillag again; NeurIPS 2026 PPI across many tasks not opened
+2026-11-07,Testa Lei Roeder bioRxiv 2026 imputed spatial expression differential expression calibrated testing,WebSearch,10,0,question P; TIDEST not found; TISSUE returned
+2026-11-07,TISSUE uncertainty calibrated prediction single-cell spatial transcriptomics conformal Nature Methods 2024 Sun Zou,WebSearch,10,1,"question P; Nature and PMC pages blocked (client error, reCAPTCHA); full text read from the Brunet lab PDF"
+2026-11-07,arxiv.org/abs/2510.16166 (Csillag et al.),WebFetch,1,1,abstract only
+2026-11-07,icml.cc/virtual/2026/poster/65796 (Ilyas et al.),WebFetch,1,1,poster abstract only
+2026-11-07,web.stanford.edu/group/brunet/Sun et al 2024.pdf (TISSUE),WebFetch,1,1,"full text through a summarising fetch, first 100000 of 109313 characters"

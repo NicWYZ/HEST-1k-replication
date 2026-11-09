@@ -328,6 +328,18 @@ def _numeric_cols(df):
     return out
 
 
+# Numbers inside free-text CSV cells (note, summary and detail columns). The
+# comma-grouped branch comes first so that "22,288" is one value and not 22 and 288.
+# Before round 10 that branch was missing, and comma-grouped counts quoted from
+# reading-note cells had to be declared as exceptions (round 7, F2 report, item 8).
+TEXT_CELL_NUM = re.compile(
+    r"[+\-\u2212]?\d{1,3}(?:,\d{3})+(?!\d)|[+\-\u2212]?\d*\.?\d+(?:[eE][+\-]?\d+)?")
+
+
+def _text_cell_float(tok: str) -> float:
+    return float(_norm_minus(tok).replace(",", ""))
+
+
 def _small_file_values(df, fv):
     """Full-precision path for a table small enough to hold: every statistic."""
     import pandas as pd
@@ -385,9 +397,9 @@ def _small_file_values(df, fv):
             # the whole file would be reported unreadable.
             if not isinstance(cell, str):
                 continue
-            for mm in re.finditer(r"[+\-\u2212]?\d*\.?\d+(?:[eE][+\-]?\d+)?", cell):
+            for mm in TEXT_CELL_NUM.finditer(cell):
                 try:
-                    fv.tagged.append((f"text:{col}", float(_norm_minus(mm.group()))))
+                    fv.tagged.append((f"text:{col}", _text_cell_float(mm.group())))
                 except ValueError:
                     pass
     for v in getattr(df.index, "to_numpy", lambda: [])():
@@ -438,9 +450,9 @@ def _chunked_file_values(path, sep, fv):
                 if cell in text_seen or len(text_seen) > 200_000:
                     continue
                 text_seen.add(cell)
-                for mm in re.finditer(r"[+\-\u2212]?\d*\.?\d+(?:[eE][+\-]?\d+)?", cell):
+                for mm in TEXT_CELL_NUM.finditer(cell):
                     try:
-                        fv.tagged.append((f"text:{col}", float(_norm_minus(mm.group()))))
+                        fv.tagged.append((f"text:{col}", _text_cell_float(mm.group())))
                     except ValueError:
                         pass
     for col, a in acc.items():
