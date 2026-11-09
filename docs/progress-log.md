@@ -8,6 +8,13 @@ What the project found at each step, what changed because of it, and which files
 
 ## Round 10 (from 6 November 2026)
 
+**8 November, evening, later. The ledger merged and the hand-off to final-runs prepared** (pull request #38, merge commit `5d7bf3d7`; `docs/round10/i01/final-runs/round10_final_runs_kickoff.md`).
+- **The merge.** Nicolas merged #38, which brings the ledger's evidence, the checks, the R7.6 checker fix and the round's exceptions to `main`. Track `ledger` is closed. Its gate L3 was answered the same evening.
+- **The checks.** Every repository path the brief names exists on `main`, apart from the session's own outputs, the Longleaf files and the corpus data card in `NicWYZ/ST-Fed-Learn`. The brief passes the numeric-claim sweep.
+- **The branch.** The oversight chat created branch `round10-final-runs` from `main` at the hand-off commit. The Claude Science project's instructions tell a session to check out its track's branch, and the session still creates its own clone, as Nicolas decided.
+- **The kickoff.** The brief now names the kickoff file, and the state block names the new branch as waiting.
+- **Next.** Nicolas starts the Claude Science session with the kickoff text.
+
 **8 November, evening. L3 answered, the ledger's pull request opened, the brief revised** (`docs/round10/i02/ledger/round10_ledger_L3_answers.md`; pull request #38).
 - **The repository.** It was attached to the oversight chat with push access on Nicolas's request. The L3 commits `888a15a2` and `103d3193` were already on GitHub when the session checked. The ledger's pull request #38 was opened for branch `round10-ledger`.
 - **Nicolas's answers,** given through question cards.
