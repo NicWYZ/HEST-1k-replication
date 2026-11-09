@@ -1,19 +1,19 @@
 # Round 10, track `final-runs`, the brief
 
-*8 November 2026. Written by the oversight chat as track `ledger`'s stage L3 output, under `../../masterplan.md`. A fresh agent checked it before the L3 gate, and its findings were worked in. The track starts only after Nicolas accepts L3 (his answer is recorded in `docs/round10/i02/ledger/`). The brief is living on `main` while the track runs. The oversight chat revises it in place, and Nicolas tells the session to check for updates.*
+*8 November 2026. Written by the oversight chat as track `ledger`'s stage L3 output, under `../../masterplan.md`. A fresh agent checked it before the L3 gate, and its findings were worked in. Nicolas answered L3 on 8 November (`docs/round10/i02/ledger/round10_ledger_L3_answers.md`), and this brief was revised the same evening to carry his answers. The track starts only after the ledger's pull request (#38) is merged, since F1's acceptance test reads a file it brings to `main`. The brief is living on `main` while the track runs. The oversight chat revises it in place, and Nicolas tells the session to check for updates.*
 
 ## 1. Where it runs, and where the plan is
 
 - **Session.** One Claude Science session on Longleaf, on Nicolas's seat on David's team account. The rules are `docs/EXECUTION_RULES.md` at the commit the track starts from.
 - **Branch.** `round10-final-runs`, created from `main` at the commit that carries Nicolas's L3 answer.
-- **Clone.** `/work/users/w/e/weiyang/hest_code/round10-final-runs/`, a clone of `NicWYZ/HEST-1k-replication` with GitHub access over SSH, which Nicolas's Longleaf account already has (`docs/environment.md`, clones and trees). If it does not exist when the session starts, the session asks Nicolas to create it, or creates it if he says so.
+- **Clone.** The session creates its own clone as its first step (Nicolas, 8 November), at `/work/users/w/e/weiyang/hest_code/round10-final-runs/`, cloning `NicWYZ/HEST-1k-replication` over SSH, which Nicolas's Longleaf account already has (`docs/environment.md`, clones and trees). It then creates branch `round10-final-runs` there. If the path already exists, it stops and asks Nicolas rather than reuse or remove it.
 - **The plan.** `docs/round10/tracks/final-runs/round10_final_runs_plan.md` on the branch. It opens with a `state` block in the shape of `CLAUDE.md`'s, with `unit: final-runs`, recording the step in hand, what the last run produced and where, the Slurm jobs running with their IDs, the next action and anything waiting on Nicolas (`docs/EXECUTION_RULES.md`, section 1). The first session writes the plan before any job. A later session reads `docs/EXECUTION_RULES.md` and the block first, then only what the block points to.
 - **A departure from `docs/EXECUTION_RULES.md`, section 5.** The session works in its own Longleaf clone, so commits are made there and pushed over SSH, with no git bundle. Every job still runs from a read-only snapshot of the committed `code/` directory in its own output directory, and each snapshot is a row of `code_deliveries.csv`. The rest of section 5 applies.
 - **Housekeeping at the start** (scheduled on 7 November at Nicolas's request, `CLAUDE.md`, carried line). Delete the full texts of papers that round 9's sessions saved to the Claude Science artifact store, list what was deleted in the plan, and keep no copy.
 
 ## 2. Goal
 
-One clean set of analyses, with the methods the ledger cites, from which the paper's numbers are quoted. The methods and their sources are `docs/round10/i01/ledger/round10_ledger.md`. The estimator and the recommendations are `docs/round10/i01/ledger/round10_ledger_decisions.md`, read together with Nicolas's L3 answer in `docs/round10/i02/ledger/`, which wins where they differ. No method outside the ledger enters the results without the literature-first step of section 7.
+One clean set of analyses, with the methods the ledger cites, from which the paper's numbers are quoted. The methods and their sources are `docs/round10/i01/ledger/round10_ledger.md`. The estimator and the recommendations are `docs/round10/i01/ledger/round10_ledger_decisions.md`, read together with Nicolas's L3 answer in `docs/round10/i02/ledger/`, which wins where they differ. No method outside the ledger enters the results without the literature-first step of section 7. The paper's primary estimator is the difference estimator with the coefficient fixed at 1 (R7-6, decided at L3), and the two-fold cross-fitted form of question E is reported beside it from 6 labelled clusters.
 
 ## 3. Data
 
@@ -72,7 +72,7 @@ One clean set of analyses, with the methods the ledger cites, from which the pap
 7. **The scale difference (D5).** The difference in coverage and width between the two scales, per HEST and corpus task, with the shared factor's share on each.
 8. **Superpopulation interval.** On the four tasks, as a stated limit (ledger, S6-6).
 
-**F3. Prediction sets and designs.** Gate F3. The prediction-set parts run only if Nicolas keeps prediction sets at L3 (question P). Otherwise P10.3 and FR8 are scored as not tested.
+**F3. Prediction sets and designs.** Gate F3. Nicolas kept prediction sets at L3 (question P), so the prediction-set parts run and P10.3 and FR8 are scored.
 1. **The prediction-set map** over calibration donors $K$ and labelled target spots $o$ on the final prediction files:
    - HCP, GHCP (the paper's rule and the released one), `within`, `within_full`, and the cross-gene studentized set;
    - INT5 reported per donor;
@@ -85,6 +85,11 @@ One clean set of analyses, with the methods the ledger cites, from which the pap
    - The allocation formula recomputed from the final components.
    - `rej_t` and the cube design matched against simple random selection.
    - The probe and take-all design. Its variance either uses the two-phase variance for a stratum chosen in phase one, or the report states that it conditions on the first phase.
+4. **E8, the joint design** (Nicolas, 8 November, deferred to this analysis). One budget of labelled spots per donor serves both the regime B estimator and a prediction set for that donor.
+   - **Literature first.** Before any analysis, search for any method that splits one labelling budget between design-based inference and prediction sets, across survey sampling, conformal prediction and PPI, with subagents, and log the queries (section 7). The starting points are round 8's note, section 3.10, round 9's direction scan, row JOINT, and the ledger's E8 row (`round10_ledger_L1_S5.md`, S5.12).
+   - **The analysis.** Rerun round 4's joint table (`code/scripts/round4_ppi_q5_joint.py`) on the final prediction files. That means the regime B width ratio at $m$ labelled spots per donor beside GHCP and `within_full` at $o = m$, for every $K$ the task allows at $lpha = 0.1$, with the cheapest-valid-set rule, on the four tasks and kidney Visium.
+   - **The report.** What the joint design buys over labelling for each purpose separately, with Monte Carlo standard errors, so that Nicolas can decide E8 at F3.
+5. **V, decided by Nicolas after this stage** (8 November, "further analysis first, then decide based on empirical evidence"). The report sets the two columns of item 3 side by side with each task's largest share and $G^\ast$, and makes no recommendation of its own beyond what the evidence shows.
 
 **F4. Final report and pull request.** Gate F4.
 - The report follows `docs/EXECUTION_RULES.md`, section 7, and scores every prediction of section 5.
@@ -112,7 +117,7 @@ Scored at the gate named, as held, partly held, refuted or not tested. P10.1 and
 - **FR5** (F2). On CCRCC at 8 labelled donors, the fixed-coefficient interval's median coverage is at least 0.02 higher on $\log(1 + 10^4 y/n)$ than on $\log(1 + y)$.
 - **FR6** (F2). On the corpus kidney Visium task, the median gene's residual max-share at 16 labelled donors lies beyond round 9's Theorem 1 frontier at that $G$. There, the fixed-coefficient interval's median coverage at 16 labelled donors is below 0.88.
 - **FR7** (F3). In regime B with the coefficient fixed at 1, median coverage is within 0.03 of nominal at every $m \ge 6$ on every HEST task and on ACS by state. The unbounded column needs more units per cluster than the bounded column on every task.
-- **FR8** (F3, if P stays). On kidney Visium at $\alpha = 0.2$, donor-level HCP pooled across centers covers the held-out center's spots below 0.75 at the median gene. HCP over centers covers at least 0.8 there.
+- **FR8** (F3). On kidney Visium at $\alpha = 0.2$, donor-level HCP pooled across centers covers the held-out center's spots below 0.75 at the median gene. HCP over centers covers at least 0.8 there.
 
 ## 6. Standards
 
@@ -136,7 +141,7 @@ Search the literature first, with subagents, across survey sampling, econometric
 ## 9. Not this track's decision
 
 - Which scale the paper calls primary (D5), after F2.
-- V, P, R7-6, R7-7, R7-5, O5, Q1 and Q3.
+- V and E8, which Nicolas decides after F3; Q1 and Q3. P, R7-6, R7-7, R7-5 and O5 were decided at L3 and are not reopened by the session.
 - Which of round 9's theorems the paper keeps.
 - Any claim of novelty.
 - Any contact outside the project.

@@ -8,6 +8,18 @@ What the project found at each step, what changed because of it, and which files
 
 ## Round 10 (from 6 November 2026)
 
+**8 November, evening. L3 answered, the ledger's pull request opened, the brief revised** (`docs/round10/i02/ledger/round10_ledger_L3_answers.md`; pull request #38).
+- **The repository.** It was attached to the oversight chat with push access on Nicolas's request. The L3 commits `888a15a2` and `103d3193` were already on GitHub when the session checked. The ledger's pull request #38 was opened for branch `round10-ledger`.
+- **Nicolas's answers,** given through question cards.
+  - E is accepted as written, and he checked the variance identity, so its `[proposed]` label is lifted.
+  - R7-6 is a fixed coefficient of 1, so that estimator is the paper's primary one.
+  - S3 is kept. E8 is deferred "to after further analysis", which runs in the final runs at F3 with a literature search first.
+  - V waits for F3's evidence ("further analysis first, then decide based on empirical evidence").
+  - R7-7, R7-5 and O5 are accepted as recommended, and the cloud enumeration check is confirmed.
+- **The hand-off.** "The claude science sessions create their own clones. prepare everything on the repo after all ledger content is merged." The final-runs brief is revised in place: the session makes its own clone, the track starts after #38 is merged, F3 gains the E8 step, V is Nicolas's after F3, and P10.3 and FR8 are scored.
+- **The record.** The state block, the round README's gate row, the masterplan's amendments and `docs/environment.md` are brought up to date.
+- **Next.** Nicolas merges #38, then the oversight chat prepares the hand-off.
+
 **8 November, afternoon. Ledger L3 reported: the ledger, the decision on E, the recommendations, the writing plan and the final-runs brief** (`docs/round10/i01/ledger/round10_ledger.md`, `round10_ledger_decisions.md`, `docs/round10/tracks/ledger/round10_writing_plan.md`, `docs/round10/i01/final-runs/round10_final_runs_brief.md`; branch `round10-ledger`, `results/round10/ledger/round10_ledger_L3_reads.md` and `checks/l3_split_variance_check.py`).
 - **The four supplied papers.** Nicolas's four PDFs reached `~/hest-1k/ppi_conf_papers/` after the morning's check. Four Opus subagents read them in full: Zhang, Sanguiao-Sande and Lee (2025, JOS), Breidt and Opsomer (2017), Bloznelis (1999), and Mashreghi, Haziza and Léger (2016). Their notes are in the claude.ai project docs (`claude/round10_L3_notes_*.md`). No other unread source bears on a decision, and the rest are on the writing plan's list of reads before citing.
 - **Question E, decided.** The final runs use the two-fold cross-fitted difference estimator in Mickey's form, which is Williams' form for even $n$ and covers odd $n$ with unequal folds. Its primary interval uses round 9's within-fold variance. The exactly unbiased variance estimator and a nonnegative upper version are reported beside it, under a switch rule written before the runs. Round 5's estimator is retired except for the anchors.

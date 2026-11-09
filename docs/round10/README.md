@@ -8,7 +8,7 @@ Round 10 opened on 6 November after Nicolas reframed the objective (`00_prep/rou
 
 | Date | Track | Gate | Report | Answered by |
 |---|---|---|---|---|
-| 8 Nov (reported) | ledger | L3 | `i01/ledger/round10_ledger.md`, `i01/ledger/round10_ledger_decisions.md`, `tracks/ledger/round10_writing_plan.md`, `i01/final-runs/round10_final_runs_brief.md` | waiting on Nicolas |
+| 8 Nov | ledger | L3 | `i01/ledger/round10_ledger.md`, `i01/ledger/round10_ledger_decisions.md`, `tracks/ledger/round10_writing_plan.md`, `i01/final-runs/round10_final_runs_brief.md` | Nicolas, 8 Nov (`i02/ledger/round10_ledger_L3_answers.md`) |
 
 ## Documents
 
@@ -23,6 +23,7 @@ Round 10 opened on 6 November after Nicolas reframed the objective (`00_prep/rou
 | `i01/ledger/round10_ledger.md` | 8 Nov | L3, the methods ledger: for every result of the paper outline, the existing method, its sources with read levels, the code, what the final runs redo and what the paper needs before citing |
 | `i01/ledger/round10_ledger_decisions.md` | 8 Nov | L3, question E decided (the two-fold cross-fitted form in Mickey's form, with its variances and a switch rule), the recommendations on R7-6, P, V, R7-7, R7-5 and O5, P10.2 scored |
 | `tracks/ledger/round10_writing_plan.md` | 8 Nov | L3, the plan for draft v1, section by section, with the reads still needed before citing |
+| `i02/ledger/round10_ledger_L3_answers.md` | 8 Nov | Nicolas's answers at L3: E accepted, the identity lifted, R7-6 a fixed coefficient of 1, S3 kept with E8 analysed at F3, V decided after F3, R7-7, R7-5 and O5 accepted, sessions make their own clones |
 | `i01/final-runs/round10_final_runs_brief.md` | 8 Nov, living | L3, the brief for track `final-runs`, gates F1 to F4, predictions FR1 to FR8 with P10.1 and P10.3 |
 
 The ledger's evidence (the L1 rows and query logs, the L2 and L3 reads, the enumeration checks) is on branch `round10-ledger` under `results/round10/ledger/`, through the track's pull request.
