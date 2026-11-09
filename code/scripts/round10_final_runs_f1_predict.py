@@ -52,6 +52,7 @@ def main():
     ap.add_argument('--samples', default='', help='comma-separated sample ids to keep (the anchor subset)')
     ap.add_argument('--map-task', default='', help='keep only rows of the donor map whose task column equals this')
     ap.add_argument('--genes-from-parquet', default='', help='use the genes of this file (columns y__<symbol>), mapped to Ensembl ids through the first sample')
+    ap.add_argument('--only-mapped', action='store_true', help='keep only the task samples present in the donor map (the audited set)')
     ap.add_argument('--chunk', default='', help='i/k: run only the i-th of k contiguous slices of the sorted held-out units (0-based)')
     ap.add_argument('--tag', default='', help='name used in the output files instead of the task name')
     a = ap.parse_args(); os.makedirs(a.out, exist_ok=True)
@@ -75,6 +76,8 @@ def main():
     if a.map_task:
         dmf = dmf[dmf['task'] == a.map_task]
     dm = dmf.drop_duplicates('sample_id').set_index('sample_id')['donor_id']
+    if a.only_mapped:
+        T['samples'] = [s for s in T['samples'] if s['sample_id'] in dm.index]
     miss = [s['sample_id'] for s in T['samples'] if s['sample_id'] not in dm.index]
     assert not miss, f'samples without an audited donor label: {miss}'
     parts = []
