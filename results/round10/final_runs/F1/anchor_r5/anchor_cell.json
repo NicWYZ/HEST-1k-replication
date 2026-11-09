@@ -1,0 +1,30 @@
+{
+ "cell": {
+  "vtag": "CCRCC",
+  "arm": "uni_v2",
+  "estimand": "theta3",
+  "G": 24,
+  "n_L": 8,
+  "design": "D0",
+  "rule": "c_crossfit_design",
+  "interval": "textbook_t|fpc|lin|xf",
+  "n_sub": 2000
+ },
+ "coverage_median": {
+  "file": 0.85775,
+  "rerun": 0.85775,
+  "abs_diff": 0.0,
+  "exact": true,
+  "binomial_mcse": 0.0078107277989954305
+ },
+ "width_median": {
+  "file": 0.113623215193696,
+  "rerun": 0.113623215193696,
+  "abs_diff": 0.0,
+  "exact": true
+ },
+ "scripts_all_match": true,
+ "n_scripts": 11,
+ "tables_compared": 5,
+ "tables_identical": 2
+}

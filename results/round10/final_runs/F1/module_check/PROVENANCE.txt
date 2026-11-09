@@ -1,0 +1,39 @@
+platform: Longleaf
+slurm_job_id: 8600129
+slurm_job_partition: spill
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 8192
+node: c151613
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F1
+unit: module_check
+frame_id: fc04d488-f9cc-4e63-99fc-f3a50dbc17ed
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: aa3bf47b9d9bd035318175f2d8ac1007b51890cd
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/aa3bf47b9d9bd035318175f2d8ac1007b51890cd
+command: code/scripts/round10_final_runs_f1_module_check.py /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/module_check/inputs/l3_split_variance_check_output.txt /work/users/w/e/weiyang/hest_replication/results/round9/claude_science/C0_cluster_summaries/c0_cluster_summaries.csv.gz /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/module_check/inputs/i34_williams_summary_hest.csv /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/module_check
+config: {"commit":"aa3bf47b9d9bd035318175f2d8ac1007b51890cd","stage":"F1","unit":"module_check"}
+config_sha256: 259cfd37b85d0d2d0ab3d897d975794579c3d538d9795ad645a3da60ea95af15
+start: 2026-11-08T22:05:37-05:00
+end: 2026-11-08T22:06:14-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  67643cbafae85dc599993c8302ceb41f  code/scripts/round10_final_runs_f1_module_check.py
+  a0f881c7adfd09351f39eb365c66b496  code/scripts/round10_final_runs_estimators.py
+  d3955b1abbe42df122b590a7f0a09c46  code/scripts/round9_fewcluster_williams.py
+  a30b7507a4c1e2d4a0efdc76a5032871  code/scripts/round7_ppi_s2_comparators.py
+  d78b654d7fd8e6a824f73dd50ee2a0c1  code/scripts/round5_ppi_balance.py
+  2de31569ffe72239062fbeb0c9a50fc5  code/scripts/round5_ppi_estimator.py
+  31d5b0e396d85d3c49709f216d89d4af  code/scripts/round7_ppi_d2.py
+  19137aac514748f8aa6b054157067e29  code/scripts/round7_ppi_weighting.py
+  b6e9ecc52ac5539682487d8e7c1451c6  code/scripts/round5_ppi_e2_regimeB.py
+  d79e69aa65800b9d24de556e019a0c64  code/scripts/round4_ppi_estimator.py
+inputs (md5, path):
+  be27468b9b52a90e9c3ac6e95057ee15  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/module_check/inputs/l3_split_variance_check_output.txt
+  0d48aa6c9168bd9d1a0ac717b740dcb8  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/module_check/inputs/i34_williams_summary_hest.csv
+  908900529aaf42736a9b547ec3b07475  /work/users/w/e/weiyang/hest_replication/results/round9/claude_science/C0_cluster_summaries/c0_cluster_summaries.csv.gz

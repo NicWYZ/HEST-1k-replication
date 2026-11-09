@@ -1,0 +1,5 @@
+anchor,cell,quantity,file,rerun,abs_diff,exact,binomial_mcse,scripts_all_match,tables_identical,tables_compared
+r5,"{""G"": 24, ""arm"": ""uni_v2"", ""design"": ""D0"", ""estimand"": ""theta3"", ""interval"": ""textbook_t|fpc|lin|xf"", ""n_L"": 8, ""n_sub"": 2000, ""rule"": ""c_crossfit_design"", ""vtag"": ""CCRCC""}",coverage_median,0.85775,0.85775,0.0,True,0.0078107277989954305,True,2,5
+r5,"{""G"": 24, ""arm"": ""uni_v2"", ""design"": ""D0"", ""estimand"": ""theta3"", ""interval"": ""textbook_t|fpc|lin|xf"", ""n_L"": 8, ""n_sub"": 2000, ""rule"": ""c_crossfit_design"", ""vtag"": ""CCRCC""}",width_median,0.113623215193696,0.113623215193696,0.0,True,,True,2,5
+r7,"{""arm"": ""package"", ""design"": ""D2_rej_t"", ""estimand"": ""theta3"", ""n_L"": 8, ""p_a"": 0.01, ""vtag"": ""ACS_STATES""}",coverage,0.879,0.879,0.0,True,0.007292427579345577,True,4,4
+r7,"{""arm"": ""package"", ""design"": ""D2_rej_t"", ""estimand"": ""theta3"", ""n_L"": 8, ""p_a"": 0.01, ""vtag"": ""ACS_STATES""}",wr_D0cl,0.5512905601,0.5512905600863858,1.3614220861768445e-11,True,,True,4,4

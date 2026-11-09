@@ -1,0 +1,29 @@
+platform: Longleaf
+slurm_job_id: 8626865
+slurm_job_partition: spill
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 16384
+node: c151404
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F1
+unit: diag_corpus_CCRCC
+frame_id: fc04d488-f9cc-4e63-99fc-f3a50dbc17ed
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 25563e2f10ea7be251c7b9716d0246412d0b6a9d
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/25563e2f10ea7be251c7b9716d0246412d0b6a9d
+command: round10_final_runs_f1_donor_diag.py /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict_anchor_CCRCC_uni_v2_r3genes/pred__CCRCC_anchor_r3genes__uni_v2__donor.parquet corpus_CCRCC_uni_v2 /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/diag_corpus_CCRCC --task /work/users/w/e/weiyang/st_fed_learn/data/tasks/kidney__Visium.json --encoder uni_v2
+config: {"commit":"25563e2f10ea7be251c7b9716d0246412d0b6a9d","stage":"F1","unit":"diag_corpus_CCRCC"}
+config_sha256: dcdff718f3be63bc7e6946f71dea632f3f467a5effe7acf88dd9baa0299e1ba4
+start: 2026-11-09T03:32:53-05:00
+end: 2026-11-09T03:33:03-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  bd1396e22455d0081c08d8f19984610e  code/scripts/round10_final_runs_f1_donor_diag.py
+inputs (md5, path):
+  534a176107c8e382963bdb108eb3d803  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict_anchor_CCRCC_uni_v2_r3genes/pred__CCRCC_anchor_r3genes__uni_v2__donor.parquet
+  ab7f574a88906062dcb48f7fe8c5accd  /work/users/w/e/weiyang/st_fed_learn/data/tasks/kidney__Visium.json

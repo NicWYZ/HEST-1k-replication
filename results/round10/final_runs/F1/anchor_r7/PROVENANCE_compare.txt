@@ -1,0 +1,28 @@
+platform: Longleaf
+slurm_job_id: 8610827
+slurm_job_partition: spill
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 8192
+node: c151603
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F1.2
+unit: anchor_r7_compare_v2
+frame_id: fc04d488-f9cc-4e63-99fc-f3a50dbc17ed
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 3dd5d6dd1d982dc330dee68f71e3596c51219f45
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/3dd5d6dd1d982dc330dee68f71e3596c51219f45
+command: round10_final_runs_f1_anchor_compare.py r7 /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round7/ppi/S1_weighting/ACS_STATES/package_nL8 /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/anchor_r7/rerun /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/ba3129e41d6557f29c56b7a020d73ef9d4c7edbd /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/anchor_r7/inputs/s5_matched_cells.csv /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/anchor_r7/compare_v2 /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/61a60229f96ef8c54ec5d255da85dddac6b5be94
+config: {"commit":"3dd5d6dd1d982dc330dee68f71e3596c51219f45","stage":"F1.2","unit":"anchor_r7_compare_v2"}
+config_sha256: 9ab741ae201d1b083ed842b316b6717f44c1cc9104105c1c5d9c0f6e860aa543
+start: 2026-11-09T00:35:43-05:00
+end: 2026-11-09T00:35:44-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  ef5a70c1957d86c5faf24b461077a026  code/scripts/round10_final_runs_f1_anchor_compare.py
+inputs (md5, path):
+  fe68b7cdb2f2aeaa8883e04810fd8e80  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/anchor_r7/inputs/s5_matched_cells.csv

@@ -1,0 +1,47 @@
+organ,platform,samples,centers,donors,donors_status,lic_none,lic_internal,lic_other,spots,patches,file,n_int,n_top50,task_samples,task_centers,pass_donor10,named_in_L0
+kidney,Visium,62,6,50,source:62,8,24,30,121206,119980,kidney__Visium.json,17351.0,50.0,62.0,6.0,True,True
+breast,Spatial Transcriptomics,108,2,32,source:108,4,0,104,45306,45243,,,,,,True,False
+lung,Xenium,24,4,22,source:24,20,0,4,86408,55104,lung__Xenium.json,52.0,50.0,24.0,4.0,True,True
+brain,Visium,42,9,19,source:42,31,0,11,141175,140536,brain__Visium.json,262.0,50.0,42.0,9.0,True,True
+bowel,Visium,73,10,16,source:73,0,0,73,210189,205642,bowel__Visium.json,1065.0,50.0,73.0,10.0,True,True
+breast,Xenium,21,5,11,source:21,3,0,18,189675,152994,breast__Xenium.json,90.0,50.0,21.0,5.0,True,True
+breast,Visium,10,9,10,source:8;unknown:2,1,0,9,38328,38199,breast__Visium.json,973.0,50.0,10.0,9.0,True,True
+prostate,Visium,35,6,7,source:35,0,5,30,108217,107731,prostate__Visium.json,17922.0,50.0,35.0,6.0,False,False
+bladder,Visium,6,2,6,source:6,4,0,2,6217,6132,,,,,,False,False
+lung,Visium,37,5,5,source:37,0,0,37,69643,64728,lung__Visium.json,17263.0,50.0,37.0,5.0,False,False
+bowel,Xenium,6,3,5,source:6,0,0,6,29201,23521,bowel__Xenium.json,83.0,50.0,6.0,3.0,False,False
+bowel,Visium HD,5,2,5,source:5,0,0,5,10977,10297,,,,,,False,False
+lymph node,Visium,5,2,5,source:5,4,0,1,23999,22616,,,,,,False,False
+liver,Visium,14,3,4,source:14,6,0,8,64152,37168,liver__Visium.json,32732.0,50.0,14.0,3.0,False,False
+skin,Spatial Transcriptomics,12,1,4,source:12,12,0,0,8671,8265,,,,,,False,False
+lymphoid,Xenium,5,3,4,source:5,0,0,5,35223,18925,lymphoid__Xenium.json,217.0,50.0,5.0,3.0,False,False
+skin,Xenium,5,4,4,source:5,0,0,5,22971,13256,skin__Xenium.json,47.0,47.0,5.0,4.0,False,False
+breast,Visium HD,3,3,3,source:3,0,0,3,7209,7055,breast__Visium_HD.json,18012.0,50.0,3.0,3.0,False,False
+lymphoid,Visium HD,3,3,3,source:3,0,0,3,6990,6510,lymphoid__Visium_HD.json,17981.0,50.0,3.0,3.0,False,False
+pancreas,Xenium,3,3,3,source:3,0,0,3,9793,7501,pancreas__Xenium.json,98.0,50.0,3.0,3.0,False,False
+skin,Visium,63,2,2,source:63,0,0,63,63178,62394,,,,,,False,True
+heart,Visium,42,2,2,source:42,0,0,42,105104,103344,,,,,,False,True
+uterus,Visium,17,2,2,source:17,17,0,0,21434,20254,,,,,,False,False
+eye,Visium,6,2,2,source:6,1,0,5,8302,8100,,,,,,False,False
+cervix,Visium,5,2,2,source:5,0,0,5,7764,6927,,,,,,False,False
+lung,Visium HD,5,2,2,source:5,0,0,5,9980,9425,,,,,,False,False
+lung,Xenium 5k,4,2,2,source:4,0,0,4,60250,42772,,,,,,False,False
+ovary,Visium HD 3',3,2,2,source:3,0,0,3,6189,5741,,,,,,False,False
+ovary,Visium,2,2,2,source:2,0,0,2,8129,8067,,,,,,False,False
+ovary,Xenium 5k,2,2,2,source:2,0,0,2,28679,25113,,,,,,False,False
+prostate,Spatial Transcriptomics,24,1,1,source:24,0,0,24,3986,3973,,,,,,False,False
+heart,Spatial Transcriptomics,19,1,1,source:19,0,0,19,3111,3007,,,,,,False,False
+pancreas,Visium,4,1,1,source:4,4,0,0,13001,12990,,,,,,False,False
+kidney,Xenium,2,1,1,source:2,0,0,2,4468,3092,,,,,,False,False
+liver,Xenium,2,1,1,source:2,0,0,2,13204,8357,,,,,,False,False
+ovary,Visium HD,2,1,1,source:2,0,0,2,4138,3834,,,,,,False,False
+bone,Xenium,1,1,1,source:1,0,0,1,9682,5341,,,,,,False,False
+brain,Xenium,1,1,1,source:1,0,0,1,10641,8841,,,,,,False,False
+cervix,Xenium 5k,1,1,1,source:1,0,0,1,10924,10102,,,,,,False,False
+heart,Xenium,1,1,1,source:1,0,0,1,2263,1486,,,,,,False,False
+kidney,Visium HD,1,1,1,source:1,0,0,1,2684,2665,,,,,,False,False
+ovary,Xenium,1,1,1,source:1,0,0,1,3743,2767,,,,,,False,False
+pancreas,Visium HD,1,1,1,source:1,0,0,1,1848,1754,,,,,,False,False
+pancreas,Visium HD 3',1,1,1,source:1,0,0,1,2164,2057,,,,,,False,False
+prostate,Visium HD,1,1,1,source:1,0,0,1,2385,2249,,,,,,False,False
+prostate,Xenium,1,1,1,source:1,0,0,1,4427,3707,,,,,,False,False

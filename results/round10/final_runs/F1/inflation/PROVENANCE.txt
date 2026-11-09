@@ -1,0 +1,34 @@
+platform: Longleaf
+slurm_job_id: 8601800
+slurm_job_partition: spill
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 16384
+node: c151408
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F1.3
+unit: inflation
+frame_id: fc04d488-f9cc-4e63-99fc-f3a50dbc17ed
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 1f77f7a24c06b5f2bfdc2d37261ae36b0649bd0a
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/1f77f7a24c06b5f2bfdc2d37261ae36b0649bd0a
+command: round10_final_runs_f1_inflation.py acs|hest <input> <r9 summary> /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/inflation --r5-scripts /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/1f77f7a24c06b5f2bfdc2d37261ae36b0649bd0a/code/scripts
+config: {"commit":"1f77f7a24c06b5f2bfdc2d37261ae36b0649bd0a","draws":20000,"seed":20261027,"stage":"F1.3","unit":"inflation"}
+config_sha256: 05bab91eee8dcd53a9c053e16a22b157533662daf872957503df226aaadc2848
+start: 2026-11-08T22:45:37-05:00
+end: 2026-11-08T22:46:52-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  950228e177d8b3a4be8afc7203b3827b  code/scripts/round10_final_runs_f1_inflation.py
+  d3955b1abbe42df122b590a7f0a09c46  code/scripts/round9_fewcluster_williams.py
+  2de31569ffe72239062fbeb0c9a50fc5  code/scripts/round5_ppi_estimator.py
+  d79e69aa65800b9d24de556e019a0c64  code/scripts/round4_ppi_estimator.py
+inputs (md5, path):
+  fc561a7f80be6617b3463c1dc19040c8  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/inflation/inputs/i32_acs_states.csv
+  48458b7f01583694e1155f04a4164a11  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/inflation/inputs/i34_williams_summary_acs.csv
+  0d48aa6c9168bd9d1a0ac717b740dcb8  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/inflation/inputs/i34_williams_summary_hest.csv
+  908900529aaf42736a9b547ec3b07475  /work/users/w/e/weiyang/hest_replication/results/round9/claude_science/C0_cluster_summaries/c0_cluster_summaries.csv.gz
