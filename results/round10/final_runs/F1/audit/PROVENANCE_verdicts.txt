@@ -1,0 +1,33 @@
+platform: Longleaf
+slurm_job_id: 8672706
+slurm_job_partition: spill
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 8192
+node: c151416
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F1
+unit: audit_verdicts
+frame_id: fc04d488-f9cc-4e63-99fc-f3a50dbc17ed
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 3f99228ef9ede63650531774b4c0c34a8c7cd549
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/3f99228ef9ede63650531774b4c0c34a8c7cd549
+command: round10_final_runs_f1_audit_merge.py /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/audit_verdicts/inputs /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/audit_verdicts/inputs/f1_audit_lead_decisions.csv /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/audit_inputs_v2/f1_audit_inputs.csv /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/audit_verdicts
+config: {"commit":"3f99228ef9ede63650531774b4c0c34a8c7cd549","stage":"F1","unit":"audit_verdicts"}
+config_sha256: 30ddb1170df1c9584746fc751adde5d048f91de498d6e01ceb9d07515d64e3fe
+start: 2026-11-09T15:02:00-05:00
+end: 2026-11-09T15:02:08-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  a6fa3b75da693dc0de54b544600b1351  code/scripts/round10_final_runs_f1_audit_merge.py
+inputs (md5, path):
+  8730a9dc364f2e45ae0ee404d4725f13  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/audit_verdicts/inputs/breast_donor_evidence.csv
+  87eb446b1d31ef150177d5e3cfdbb912  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/audit_verdicts/inputs/brain_donor_evidence.csv
+  f2bf529ae20956fab7f5d435d012993f  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/audit_verdicts/inputs/kidney_lung_donor_evidence.csv
+  21dcf23990bec5616ac49e2416bb75e8  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/audit_verdicts/inputs/bowel_donor_evidence.csv
+  324c2cc0917b1d5728b2b0df00ed8884  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/audit_verdicts/inputs/f1_audit_lead_decisions.csv
+  8084d292bb5f4df99b1c5a61ebff3565  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/audit_inputs_v2/f1_audit_inputs.csv
