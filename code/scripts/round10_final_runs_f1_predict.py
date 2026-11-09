@@ -52,6 +52,7 @@ def main():
     ap.add_argument('--samples', default='', help='comma-separated sample ids to keep (the anchor subset)')
     ap.add_argument('--map-task', default='', help='keep only rows of the donor map whose task column equals this')
     ap.add_argument('--genes-from-parquet', default='', help='use the genes of this file (columns y__<symbol>), mapped to Ensembl ids through the first sample')
+    ap.add_argument('--chunk', default='', help='i/k: run only the i-th of k contiguous slices of the sorted held-out units (0-based)')
     ap.add_argument('--tag', default='', help='name used in the output files instead of the task name')
     a = ap.parse_args(); os.makedirs(a.out, exist_ok=True)
     T = json.load(open(a.task)); genes = [str(g) for g in T['genes_top50']]
@@ -89,6 +90,11 @@ def main():
     units = sorted(set(unit))
     if a.max_folds:
         units = units[:a.max_folds]
+    part = ''
+    if a.chunk:
+        i, k = (int(x) for x in a.chunk.split('/'))
+        units = [list(x) for x in np.array_split(np.array(units, dtype=object), k)][i]
+        part = f'__part{i}of{k}'
     F = {k: np.full_like(v, np.nan) for k, v in targets.items()}
     fold = np.full(len(unit), '', dtype=object); secs = []
     for u in units:
@@ -102,13 +108,13 @@ def main():
         fold[te] = str(u); secs.append(time.time() - t0)
         print(f'fold {u}: train {tr.sum()} test {te.sum()} {secs[-1]:.1f}s', flush=True)
     done = fold != ''
-    summ = dict(task=name, samples_filter=a.samples, encoder=a.encoder, design=a.design, spots=int(len(unit)), spots_predicted=int(done.sum()),
+    summ = dict(task=name, samples_filter=a.samples, chunk=a.chunk, units=[str(u) for u in units], encoder=a.encoder, design=a.design, spots=int(len(unit)), spots_predicted=int(done.sum()),
                 samples=len(parts), donors=len(set(don)), centers=len(set(cen)), folds=len(units),
                 alpha=float(alpha), n_genes=len(genes), seconds_per_fold=float(np.mean(secs)),
                 gene_symbols=gene_symbols, pearson={k: {g: pearson(targets[k][done, j], F[k][done, j]) for j, g in enumerate(genes)} for k in targets})
     for k in targets:
         summ[f'median_pearson_{k}'] = float(np.nanmedian(list(summ['pearson'][k].values())))
-    tag = f"{name}__{a.encoder}__{a.design}"
+    tag = f"{name}__{a.encoder}__{a.design}{part}"
     json.dump(summ, open(os.path.join(a.out, f'pred_summary__{tag}.json'), 'w'), indent=1)
     fields = [pa.field(n, pa.string()) for n in ('sample_id', 'barcode', 'donor_id', 'center_id', 'fold')]
     fields += [pa.field('lib_size', pa.float64()), pa.field('n_detected', pa.int64())]
