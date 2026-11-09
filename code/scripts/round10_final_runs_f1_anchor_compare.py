@@ -45,7 +45,18 @@ def compare_tables(orig, new):
         g = os.path.join(new, b)
         if not os.path.exists(g):
             rows.append(dict(file=b, present=False)); continue
-        a = pd.read_csv(f, low_memory=False); c = pd.read_csv(g, low_memory=False)
+        try:
+            a = pd.read_csv(f, low_memory=False)
+        except pd.errors.EmptyDataError:
+            a = None
+        try:
+            c = pd.read_csv(g, low_memory=False)
+        except pd.errors.EmptyDataError:
+            c = None
+        if a is None or c is None:
+            rows.append(dict(file=b, present=True, empty_orig=a is None, empty_new=c is None,
+                             identical=bool(a is None and c is None)))
+            continue
         r = dict(file=b, present=True, rows_orig=len(a), rows_new=len(c), same_columns=list(a.columns) == list(c.columns))
         if r['same_columns'] and len(a) == len(c):
             num = [k for k in a.columns if pd.api.types.is_numeric_dtype(a[k]) and pd.api.types.is_numeric_dtype(c[k])]
