@@ -10,6 +10,16 @@ Reads <base>/F1/... on Longleaf and writes small tables to <outdir> (copied into
   f1_fr1_all_n.csv       the same ratios at every n;
   f1_pred_anchor.csv     the prediction-file anchor: per gene, round 3's spot-level Pearson on CCRCC (log1p) against this
                          track's, on the genes both carry, with the median difference (prediction: at most 0.01).
+  f1_predictions.csv     F1.4c, one row per corpus task, encoder and design (F1/predict/*/pred_summary__*.json): spots,
+                         spots predicted, samples, donors, centers, folds, the held-out center groups, and per scale the
+                         median, 10% and 90% quantiles over genes of the spot-level Pearson; check columns say whether
+                         every spot is predicted and whether the folds equal the donors or the center groups;
+  f1_d12.csv             D12 per task, encoder and scale (F1/diag_corpus_tasks/d12_lodo_r2__*.csv): median, 10% and 90%
+                         quantiles over genes of R2_loo_const, R2_full_mean and R2_rawpred_loo_const, with the number of
+                         donors G, and a check that the medians equal the script's own medians file;
+  f1_d13_kidney.csv      D13 and INT5 on kidney Visium, every donor, for the three encoders;
+  f1_task_list.csv       the proposed corpus tasks: the audited counts of f1_audit_task_counts.csv (read from
+                         F1/audit_verdicts/) joined to the spots of the uni_v2 donor-design file.
 Every section is skipped, and says so, when its inputs are absent.
 Usage: round10_final_runs_f1_aggregate.py <base> <outdir> [--r3-ccrcc <b1_predictions__CCRCC__uni_v2.parquet>]
 """
@@ -95,6 +105,53 @@ def main():
                            f'difference of medians {x.pearson_r10.median() - x.pearson_r3.median():.4f}, median per-gene difference {x["diff"].median():.4f}')
     else:
         log.append('prediction anchor absent or round 3 file not given')
+    q = lambda v, x: float(np.nanquantile(np.asarray(v, dtype=float), x)) if len(v) else float('nan')
+    P = []
+    for fn in sorted(glob.glob(os.path.join(F1, 'predict', '*', 'pred_summary__*.json'))):
+        j = json.load(open(fn)); cg = j.get('center_groups')
+        r = dict(task=j['task'], encoder=j['encoder'], design=j['design'], unit_dir=os.path.basename(os.path.dirname(fn)),
+                 spots=j['spots'], spots_predicted=j['spots_predicted'], samples=j['samples'], donors=j['donors'],
+                 centers=j['centers'], folds=j['folds'], center_groups=';'.join(cg) if cg else '', n_genes=j['n_genes'],
+                 seconds_per_fold=j['seconds_per_fold'])
+        for sc, d in j['pearson'].items():
+            v = [x for x in d.values() if x == x]
+            r[f'pearson_{sc}_median'] = float(np.median(v)); r[f'pearson_{sc}_q10'] = q(v, .1); r[f'pearson_{sc}_q90'] = q(v, .9)
+        r['check_all_spots'] = j['spots'] == j['spots_predicted']
+        r['check_folds'] = j['folds'] == (j['donors'] if j['design'] == 'donor' else (len(cg) if cg else j['centers']))
+        P.append(r)
+    if P:
+        P = pd.DataFrame(P).sort_values(['task', 'encoder', 'design']); P.to_csv(os.path.join(a.out, 'f1_predictions.csv'), index=False)
+        log.append(f'predictions: {len(P)} files, all spots predicted in {int(P.check_all_spots.sum())}, folds as expected in {int(P.check_folds.sum())}')
+    else:
+        log.append('prediction files absent')
+    DG = os.path.join(F1, 'diag_corpus_tasks'); R = []
+    for fn in sorted(glob.glob(os.path.join(DG, 'd12_lodo_r2__*.csv'))):
+        d = pd.read_csv(fn); name = d['name'].iloc[0]
+        med = pd.read_csv(os.path.join(DG, f'd12_lodo_r2_medians__{name}.csv')).set_index('scale')
+        for sc, x in d.groupby('scale'):
+            r = dict(name=name, scale=sc, G=int(x['G'].iloc[0]), genes=len(x))
+            for k in ('R2_loo_const', 'R2_full_mean', 'R2_rawpred_loo_const'):
+                r[f'{k}_median'] = float(x[k].median()); r[f'{k}_q10'] = q(x[k], .1); r[f'{k}_q90'] = q(x[k], .9)
+            r['check_medians_file'] = bool(np.isclose(r['R2_loo_const_median'], med.loc[sc, 'R2_loo_const'], rtol=0, atol=1e-12))
+            R.append(r)
+    if R:
+        R = pd.DataFrame(R); R.to_csv(os.path.join(a.out, 'f1_d12.csv'), index=False)
+        log.append(f'D12: {R.name.nunique()} files, {len(R)} rows, medians file agrees in {int(R.check_medians_file.sum())}')
+    else:
+        log.append('D12 files absent')
+    K = [pd.read_csv(fn) for fn in sorted(glob.glob(os.path.join(DG, 'd13_donor_diagnostics__kidney__Visium__*.csv')))]
+    if K:
+        K = pd.concat(K, ignore_index=True); K.to_csv(os.path.join(a.out, 'f1_d13_kidney.csv'), index=False)
+        i5 = K[K.donor_id.str.endswith(':INT5')]
+        for _, x in i5.iterrows():
+            log.append(f"INT5 in {x['name']}: rank avg_y {int(x.rank_avg_y)}, resid_scale {int(x.rank_resid_scale)}, pred_out {int(x.rank_pred_out)}, "
+                       f"lib_median {int(x.rank_lib_median)} (z {x.z_lib_median:.3f}), detected_median {int(x.rank_detected_median)} of {K[K['name'] == x['name']].shape[0]}")
+    tc = os.path.join(F1, 'audit_verdicts', 'f1_audit_task_counts.csv')
+    if os.path.exists(tc) and len(P):
+        t = pd.read_csv(tc); t['task'] = t.organ + '__' + t.platform.str.replace(' ', '_')
+        u = P[(P.encoder == 'uni_v2') & (P.design == 'donor')][['task', 'spots']]
+        t = t.merge(u, on='task', how='left'); t.to_csv(os.path.join(a.out, 'f1_task_list.csv'), index=False)
+        log.append(f'task list: {int(t.pass_donor10.sum())} of {len(t)} groups pass 10 donors, {int(t.spots.notna().sum())} have prediction files')
     open(os.path.join(a.out, 'f1_aggregate_log.txt'), 'w').write('\n'.join(log) + '\n')
     print('\n'.join(log))
 
