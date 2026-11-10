@@ -1,0 +1,30 @@
+{
+ "cells": 1210,
+ "cells_below": 0,
+ "min_median": 0.9936853257420757,
+ "cell_of_min": {
+  "task": "ACS_STATES",
+  "encoder": "pkg",
+  "scale": "log_income",
+  "estimand": "theta3",
+  "n": "8"
+ },
+ "cells_within_2se": 0,
+ "primary_scales_cells": 988,
+ "primary_scales_cells_below": 0,
+ "verdict_all": "V_w stays primary",
+ "verdict_primary_scales": "V_w stays primary",
+ "tasks": [
+  "ACS_STATES",
+  "CCRCC",
+  "CCRCC_merged",
+  "INDIANA_KIDNEY",
+  "LUNG_XENIUM",
+  "bowel__Visium",
+  "brain__Visium",
+  "breast__Spatial_Transcriptomics",
+  "breast__Xenium",
+  "kidney__Visium",
+  "lung__Xenium"
+ ]
+}
