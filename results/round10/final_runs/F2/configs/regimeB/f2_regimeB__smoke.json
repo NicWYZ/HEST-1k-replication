@@ -1,0 +1,67 @@
+{
+ "stage": "F2.4",
+ "unit": "regimeB__smoke",
+ "R": 50,
+ "m_grid": [
+  10
+ ],
+ "anchor": {
+  "vtag": "CCRCC",
+  "arm": "uni_v2",
+  "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+  "estimands": [
+   "theta3",
+   "theta2"
+  ],
+  "m_list": [
+   3,
+   4,
+   6,
+   8,
+   10,
+   15,
+   20
+  ],
+  "draws": 200,
+  "ref_csv": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round5/ppi/E3_twolevel/e3_regimeB_small_m.csv",
+  "named": {
+   "m": 10,
+   "estimator": "C_ppi",
+   "estimand": "theta3"
+  }
+ },
+ "populations": [
+  {
+   "task": "CCRCC",
+   "vtag": "CCRCC",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "log1p",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+   "estimands": [
+    "theta3",
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet"
+  },
+  {
+   "task": "kidney__Visium",
+   "vtag": "kidney__Visium",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "log1p",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/kidney__Visium__uni_v2/pred__kidney__Visium__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/kidney__Visium/morphology__kidney__Visium.parquet",
+   "y_prefix": "y_log1p__",
+   "f_prefix": "f_log1p__",
+   "estimands": [
+    "theta3",
+    "theta2"
+   ],
+   "R_note": "smoke",
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__kidney__Visium.parquet"
+  }
+ ]
+}
