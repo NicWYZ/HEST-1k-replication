@@ -1,14 +1,14 @@
 # Round 10, track `final-runs`, the plan
 
 ```state
-updated: 2026-11-10, 14:50 UTC (Claude Science session on the Windows execution PC, David's team account, reaching Longleaf through compute target ssh:longleaf; frame 862fd1a1-1068-44b1-a365-9bc7cae686fe, the second session of the track, which stopped after recording Nicolas's F1 reply; a new session resumes from this block)
+updated: 2026-11-10, 15:05 UTC (Claude Science session on the Windows execution PC, David's team account, reaching Longleaf through compute target ssh:longleaf; frame 862fd1a1-1068-44b1-a365-9bc7cae686fe, the second session of the track, which stopped after recording Nicolas's F1 reply; a new session resumes from this block)
 unit: final-runs
 status: gate F1 answered; interval i03 not started
-step: before F2. Nicolas's F1 reply is recorded in docs/round10/i03/final-runs/round10_final_runs_F1_decisions.md (task list and exclusions confirmed; morphology options (b) and (c) both; breast Xenium center design explained, choice open)
+step: before F2. Nicolas's F1 reply is recorded in docs/round10/i03/final-runs/round10_final_runs_F1_decisions.md (task list and exclusions confirmed; morphology options (b) and (c) both; breast Xenium center design grouped, S0253 with S0254)
 last run: none since the gate. Gate F1 at tag round10-final-runs-F1 (commit cbc2bb3a); aggregates in results/round10/final_runs/F1/aggregate/, prediction files in F1/predict/ on Longleaf
 jobs: none running
-next: (1) ask Nicolas for item 3 of the decision file (breast Xenium grouped center design or donor design only) if not yet recorded there; (2) write F2's methods into section 5 of this plan; (3) plan option (b), round 3's nuclear instrumentation on the corpus patches, and option (c), which starts with the literature-first search of brief section 7 (sub-agents, logged queries, reported to Nicolas before any construction); no job before these are written
-waiting: Nicolas, item 3 of the F1 decision file
+next: (1) write F2's methods into section 5 of this plan; (2) plan option (b), round 3's nuclear instrumentation on the corpus patches, and option (c), which starts with the literature-first search of brief section 7 (sub-agents, logged queries, reported to Nicolas before any construction); no job before these are written
+waiting: nothing; a new session starts the interval
 ```
 
 *Written on 9 November 2026 by the first session of track `final-runs`. The brief is `docs/round10/i01/final-runs/round10_final_runs_brief.md` on `main` (read at 133384d1). It is read with `docs/EXECUTION_RULES.md` at that commit, `docs/round10/masterplan.md`, the ledger's decisions `docs/round10/i01/ledger/round10_ledger_decisions.md` and Nicolas's L3 answers `docs/round10/i02/ledger/round10_ledger_L3_answers.md`, which win where they differ. This plan does not copy the brief. It records how the session does each step, the checks it runs, and dated notes as the work goes.*
@@ -113,7 +113,7 @@ A second reference exists for two of the three tasks. Round 7's S5 table `result
 
 In the reference rows at `p_a` 0.01, four designs lie within 0.01 of one another in `wr_D0cl` (D2_rej_t, bh, cube_S3 and cube_S4b, from 0.883 to 0.891), so their order is not resolved by round 7's own Monte Carlo error. The F3 score therefore reports two readings. The strict reading compares the full rank order. The resolved reading treats designs whose `wr_D0cl` differ by less than 0.01 in the reference as tied, and asks whether any pair that is resolved in the reference swaps. The prediction is scored on the resolved reading, and the strict one is reported beside it.
 
-- 2026-11-10. **Gate F1 answered** (`docs/round10/i03/final-runs/round10_final_runs_F1_decisions.md`). The six corpus tasks and the audit's exclusions are confirmed. For the morphology covariate Nicolas chose options (b) and (c) both, so the corpus tasks carry $\theta_1$ only until one delivers. Item 3 (breast Xenium's center design) was explained in the session and his choice is open. Nicolas: this session does bookkeeping only, and new work starts with a new session.
+- 2026-11-10. **Gate F1 answered** (`docs/round10/i03/final-runs/round10_final_runs_F1_decisions.md`). The six corpus tasks and the audit's exclusions are confirmed. For the morphology covariate Nicolas chose options (b) and (c) both, so the corpus tasks carry $\theta_1$ only until one delivers. Item 3 (breast Xenium's center design) was explained in the session, and Nicolas chose the grouped design (S0253 with S0254 held out together). Nicolas: this session does bookkeeping only, and new work starts with a new session.
 
 ## 5. Stages F2 to F4 (outline)
 

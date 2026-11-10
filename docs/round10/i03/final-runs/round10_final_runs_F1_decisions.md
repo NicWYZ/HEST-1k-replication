@@ -12,7 +12,7 @@
 
 ## 3. Breast Xenium's center design
 
-**Nicolas asked for an explanation.** It was given in the session on 10 November and is summarised here. His choice is open.
+**Grouped** (Nicolas, 10 November, after the explanation given in the session and summarised here). Breast Xenium's center design holds out S0253 and S0254 together, and the files in `F1/predict/breast__Xenium__<encoder>__center_grouped/` are the center-design files of record.
 
 In the corpus a breast Xenium "center" is a study: S0178, S0228, S0253, S0254 and S0255. Studies S0253 and S0254 hold sections of the same two donors (donor map `F1/audit_verdicts/donor_map__breast__Xenium.csv` on Longleaf, samples TENX94 to TENX97). Holding out S0253 alone would leave those donors' S0254 sections in the training set. The fold would then not be donor-disjoint, and its predictions would score the head on donors it had seen. The prediction script refuses such a fold, which is why the first runs stopped (Slurm `8687463`, `8687469`, `8687541`). Their donor designs completed and passed.
 
@@ -23,4 +23,4 @@ There are two choices.
 
 ## 4. How the work goes on
 
-Nicolas, 10 November: this session does bookkeeping only, and any new work starts with a new session. The next session reads this file with the plan's state block. It writes F2's methods into the plan's section 5, and the plans for options (b) and (c) of item 2, before any job. It also asks Nicolas for his choice on item 3 if this file has not recorded it by then.
+Nicolas, 10 November: this session does bookkeeping only, and any new work starts with a new session. The next session reads this file with the plan's state block. It writes F2's methods into the plan's section 5, and the plans for options (b) and (c) of item 2, before any job. Item 3 is decided (grouped).
