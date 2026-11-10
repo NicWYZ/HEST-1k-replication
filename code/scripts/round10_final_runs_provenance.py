@@ -22,6 +22,7 @@ def main():
         ap.add_argument(a)
     ap.add_argument('--command', required=True); ap.add_argument('--config', default='{}')
     ap.add_argument('--scripts', nargs='*', default=[]); ap.add_argument('--inputs', nargs='*', default=[])
+    ap.add_argument('--frame', default='fc04d488-f9cc-4e63-99fc-f3a50dbc17ed')
     a = ap.parse_args()
     cfg = json.dumps(json.loads(a.config), sort_keys=True, separators=(',', ':'))
     import numpy, pandas, scipy
@@ -41,7 +42,7 @@ def main():
         f'node: {socket.getfqdn()}',
         'track: final-runs (round 10)', 'job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)',
         f'stage: {a.stage}', f'unit: {a.unit}',
-        'frame_id: fc04d488-f9cc-4e63-99fc-f3a50dbc17ed',
+        f'frame_id: {a.frame}',
         f"PYTHONHASHSEED: {env('PYTHONHASHSEED', '')}",
         f'host: {platform.platform()}',
         f'python: {platform.python_version()} at {sys.executable}',
