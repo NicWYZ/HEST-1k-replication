@@ -1,30 +1,29 @@
 platform: Longleaf
-slurm_job_id: 8626528
+slurm_job_id: 8761194
 slurm_job_partition: spill
 slurm_job_account: rc_htzhu_pi
 slurm_cpus_on_node: 2
-slurm_mem_per_node: 8192
-node: c151603
+slurm_mem_per_node: 16384
+node: c0924
 track: final-runs (round 10)
 job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
 stage: F1
-unit: aggregate_v1
+unit: aggregate_v2
 frame_id: fc04d488-f9cc-4e63-99fc-f3a50dbc17ed
 PYTHONHASHSEED: 0
 host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
 python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
 versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
-snapshot_commit: 797a0659746124644b2f70df0e73107bf5a875a8
-snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/797a0659746124644b2f70df0e73107bf5a875a8
-command: round10_final_runs_f1_aggregate.py /work/users/w/e/weiyang/hest_replication/results/round10/final_runs /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/aggregate_v1 --r3-ccrcc /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet
-config: {"commit":"797a0659746124644b2f70df0e73107bf5a875a8","stage":"F1","unit":"aggregate_v1"}
-config_sha256: 5362e0e02b1ca482306bb373ecf6d0f00d1d155db06d845b828bd4c1b6453a8f
-start: 2026-11-09T03:27:18-05:00
-end: 2026-11-09T03:27:22-05:00
+snapshot_commit: fd11092096b0abbbc8de401f70dbb153eb0c3541
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/fd11092096b0abbbc8de401f70dbb153eb0c3541
+command: round10_final_runs_f1_aggregate.py /work/users/w/e/weiyang/hest_replication/results/round10/final_runs /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/aggregate_v2 --r3-ccrcc /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet
+config: {"commit":"fd11092096b0abbbc8de401f70dbb153eb0c3541","stage":"F1","unit":"aggregate_v2"}
+config_sha256: 4c207f73540ecff529241b341eabc83f74ae1d20a25c4544443933fc7f3c5883
+start: 2026-11-10T03:07:18-05:00
+end: 2026-11-10T03:07:25-05:00
 status: COMPLETED
 scripts_executed (md5, path relative to snapshot):
-  82ef31e3c65173372e0ac428ed85a5ac  code/scripts/round10_final_runs_f1_aggregate.py
+  44b80ada973f54699d7b22e414958045  code/scripts/round10_final_runs_f1_aggregate.py
 inputs (md5, path):
   0cc62c5e600cc3811168b71ca7e2c1ab  /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet
-  73e981041c3c9fab1c948097ee587626  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/inflation/i34_williams_summary_hest.csv
-  322e4939cca36f201c450e3a15397ed7  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/inflation/i34_williams_summary_acs.csv
+  57087dbdbca0fe2b2cbfa9111401d337  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/audit_verdicts/f1_audit_task_counts.csv

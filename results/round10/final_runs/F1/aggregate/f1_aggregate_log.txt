@@ -1,2 +1,8 @@
 FR1 holds on 4 of 4 tasks
 predict_anchor_CCRCC_uni_v2_r3genes: 50 genes, median Pearson r3 0.2932 r10 0.2895, difference of medians -0.0037, median per-gene difference -0.0019
+predictions: 30 files, all spots predicted in 30, folds as expected in 30
+D12: 18 files, 36 rows, medians file agrees in 36
+INT5 in kidney__Visium__hoptimus0: rank avg_y 1, resid_scale 2, pred_out 6, lib_median 1 (z 5.559), detected_median 1 of 51
+INT5 in kidney__Visium__resnet50: rank avg_y 1, resid_scale 2, pred_out 5, lib_median 1 (z 5.559), detected_median 1 of 51
+INT5 in kidney__Visium__uni_v2: rank avg_y 1, resid_scale 1, pred_out 11, lib_median 1 (z 5.559), detected_median 1 of 51
+task list: 6 of 7 groups pass 10 donors, 6 have prediction files
