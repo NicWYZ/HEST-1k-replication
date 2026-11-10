@@ -1,14 +1,14 @@
 # Round 10, track `final-runs`, the plan
 
 ```state
-updated: 2026-11-10, 08:40 UTC (Claude Science session on the Windows execution PC, David's team account, reaching Longleaf through compute target ssh:longleaf; frame 862fd1a1-1068-44b1-a365-9bc7cae686fe, the second session of the track). Gate F1 reached.
+updated: 2026-11-10, 14:50 UTC (Claude Science session on the Windows execution PC, David's team account, reaching Longleaf through compute target ssh:longleaf; frame 862fd1a1-1068-44b1-a365-9bc7cae686fe, the second session of the track, which stopped after recording Nicolas's F1 reply; a new session resumes from this block)
 unit: final-runs
-status: waiting at gate F1
-step: gate F1. F1.1 to F1.4 done; report docs/round10/i02/final-runs/round10_final_runs_F1_report.md, tag round10-final-runs-F1
-last run: provenance index v2 (F1_gate/provenance_index_v2/ on Longleaf) and the numeric-claim check of the F1 report; aggregates in results/round10/final_runs/F1/aggregate/ (v2, Slurm 8761194), prediction files in F1/predict/<task>__<encoder>[__center_grouped]/, diagnostics in F1/diag_corpus_tasks/
+status: gate F1 answered; interval i03 not started
+step: before F2. Nicolas's F1 reply is recorded in docs/round10/i03/final-runs/round10_final_runs_F1_decisions.md (task list and exclusions confirmed; morphology options (b) and (c) both; breast Xenium center design explained, choice open)
+last run: none since the gate. Gate F1 at tag round10-final-runs-F1 (commit cbc2bb3a); aggregates in results/round10/final_runs/F1/aggregate/, prediction files in F1/predict/ on Longleaf
 jobs: none running
-next: wait for Nicolas's reply to the F1 report; write it into docs/round10/i03/final-runs/ as the decision file; then write F2's methods into section 5 of this plan before any F2 job
-waiting: Nicolas, on the F1 report section 7 (task list and exclusions, morphology covariate option, breast Xenium center design)
+next: (1) ask Nicolas for item 3 of the decision file (breast Xenium grouped center design or donor design only) if not yet recorded there; (2) write F2's methods into section 5 of this plan; (3) plan option (b), round 3's nuclear instrumentation on the corpus patches, and option (c), which starts with the literature-first search of brief section 7 (sub-agents, logged queries, reported to Nicolas before any construction); no job before these are written
+waiting: Nicolas, item 3 of the F1 decision file
 ```
 
 *Written on 9 November 2026 by the first session of track `final-runs`. The brief is `docs/round10/i01/final-runs/round10_final_runs_brief.md` on `main` (read at 133384d1). It is read with `docs/EXECUTION_RULES.md` at that commit, `docs/round10/masterplan.md`, the ledger's decisions `docs/round10/i01/ledger/round10_ledger_decisions.md` and Nicolas's L3 answers `docs/round10/i02/ledger/round10_ledger_L3_answers.md`, which win where they differ. This plan does not copy the brief. It records how the session does each step, the checks it runs, and dated notes as the work goes.*
@@ -112,6 +112,8 @@ A second reference exists for two of the three tasks. Round 7's S5 table `result
 **Part 2, the ordering of designs by median width.** The reference is `results/round7/ppi/S5_numbers/run1/s5_matched.csv`, the rows with `domain` tissue and `n_L` 8, one block of nine designs at `p_a` 0.01 and one at 0.1, each over `n_cells` 18. The 18 cells are listed in `s5_matched_cells.csv` (CCRCC, CCRCC_merged and INDIANA_KIDNEY, by `uni_v2`, `hoptimus0` and `resnet50`, by $\theta_2$ and $\theta_3$, at `n_L` 8 and each `p_a`), and round 10's arm is run on the same 18 cells. The quantity is `wr_D0cl`, the median over cells of the median over genes of each design's width divided by D0 classical's `textbook_t|fpc|lin` width. The nine designs and their interval labels, as round 7 named them, are D0_classical (`textbook_t|fpc|lin`), D0_tuned (`textbook_t|fpc|lin|xf`), D2_rej_t (`rej_t`), D2_H_sim (Hájek with simulated inclusion probabilities), cube_S3, cube_S4b and mixture (Hájek with the Sen-Yates-Grundy form), bh and bh_t (both under D0).
 
 In the reference rows at `p_a` 0.01, four designs lie within 0.01 of one another in `wr_D0cl` (D2_rej_t, bh, cube_S3 and cube_S4b, from 0.883 to 0.891), so their order is not resolved by round 7's own Monte Carlo error. The F3 score therefore reports two readings. The strict reading compares the full rank order. The resolved reading treats designs whose `wr_D0cl` differ by less than 0.01 in the reference as tied, and asks whether any pair that is resolved in the reference swaps. The prediction is scored on the resolved reading, and the strict one is reported beside it.
+
+- 2026-11-10. **Gate F1 answered** (`docs/round10/i03/final-runs/round10_final_runs_F1_decisions.md`). The six corpus tasks and the audit's exclusions are confirmed. For the morphology covariate Nicolas chose options (b) and (c) both, so the corpus tasks carry $\theta_1$ only until one delivers. Item 3 (breast Xenium's center design) was explained in the session and his choice is open. Nicolas: this session does bookkeeping only, and new work starts with a new session.
 
 ## 5. Stages F2 to F4 (outline)
 
