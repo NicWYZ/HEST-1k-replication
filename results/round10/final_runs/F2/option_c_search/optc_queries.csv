@@ -1,0 +1,108 @@
+agent,date,source,query,n_looked,note
+Pathology,2026-11-10,web search,Ruifrok Johnston colour deconvolution haematoxylin eosin 2001 Analytical and Quantitative Cytology,10,found PubMed/S2/ResearchGate landing pages
+Pathology,2026-11-10,web search,hematoxylin optical density nuclear density proxy agreement segmentation cellularity,9,no direct H-OD vs DL-count agreement study; found OD staining-precision papers
+Pathology,2026-11-10,web search,tumor cellularity estimation H&E automated pathologist agreement breast neoadjuvant,10,"Peikari 2017, Akbar 2019, BreastPathQ papers"
+Pathology,2026-11-10,web search,Macenko method normalizing histology slides quantitative analysis 2009 ISBI,9,ACM/S2 landing pages
+Pathology,2026-11-10,web search,Vahadane structure-preserving color normalization sparse stain separation IEEE TMI 2016,10,PubMed/FAU landing pages
+Pathology,2026-11-10,web search,comparison classical watershed thresholding nuclei segmentation versus deep learning H&E nuclei count correlation benchmark,10,mostly fluorescence/mIF benchmarks; no H&E count-correlation study
+Pathology,2026-11-10,web search,Kumar 2017 dataset technique generalized nuclear segmentation computational pathology CellProfiler Fiji baseline AJI,10,"Kumar 2017, MoNuSeg 2020; secondary table of AJI values"
+Pathology,2026-11-10,web search,squidpy segment watershed hematoxylin channel Visium nuclei count per spot image features,10,"Squidpy paper and docs, VistoSeg"
+Pathology,2026-11-10,web search,HEST-1k dataset spatial transcriptomics histology CellViT nuclei segmentation Jaume 2024,10,arXiv/NeurIPS/GitHub
+Pathology,2026-11-10,web search,hematoxylin-positive area fraction correlates with nuclei count cell density color deconvolution validation,9,nothing on H&E nuclear count validation; IHC-focused
+Pathology,2026-11-10,web search,VistoSeg Visium nuclei segmentation H&E k-means count per spot Tippani,9,VistoSeg preprint and docs
+Pathology,2026-11-10,web search,pathology foundation model embeddings linear probe nuclear morphology features interpretability cell count regression,9,"Le et al. 2024 (PLUTO), arXiv 2608.00105, STpath"
+Pathology,2026-11-10,web search,"""Interpretability analysis on a pathology foundation model reveals biologically relevant embeddings across modalities"" authors",9,dblp/mlanthology author list
+Pathology,2026-11-10,web search,pathology foundation models encode medical center signature embeddings robustness de Jong 2025,9,"de Jong 2025, Komen 2026"
+Pathology,2026-11-10,web search,SpaGCN histology image RGB mean pixel intensity third dimension spatial domains Hu 2021 Nature Methods,10,SpaGCN
+Pathology,2026-11-10,web search,QuPath watershed cell detection versus StarDist H&E nuclei count agreement comparison,10,forum posts (not used); LymphoML HoVer-Net vs StarDist; kidney FM agreement
+Pathology,2026-11-10,web search,HistomicsTK nuclei detection hematoxylin channel Gutman 2017 Cancer Research digital slide archive,10,"tool papers only, no agreement statistics"
+Pathology,2026-11-10,web search,Smits 2014 estimation of tumor cell percentage pathologists not accurate Modern Pathology,10,Smits 2014
+Pathology,2026-11-10,web search,HEST-1k huggingface cellvit_seg xenium_seg nucleus segmentation files documentation,10,HEST tutorial; HEST v2 text on Xenium DAPI segmentation
+Pathology,2026-11-10,web search,Xenium nucleus segmentation DAPI neural network nucleus_boundaries 10x Genomics algorithm,9,10x documentation pages
+Pathology,2026-11-10,web search,image-derived nuclei count per Visium spot compared to deconvolution estimated cell number correlation H&E,9,"Redeconve, SegDecon, STQ pipeline"
+Pathology,2026-11-10,web search,color deconvolution threshold nuclei counting H&E compared deep learning counts Pearson correlation patches,9,Dunn et al. 2026 multi-site study found; no H-channel vs DL comparison
+Pathology,2026-11-10,web search,tumor purity estimation H&E digital image analysis correlation genomic purity ABSOLUTE TCGA,10,"MIL tumour purity (Patterns), Aran 2015"
+Pathology,2026-11-10,web search,Haralick GLCM texture features hematoxylin channel cellularity correlation histology patch,10,nothing measuring texture vs cellularity agreement
+Pathology,2026-11-10,web search,"""The impact of stain variation and colour normalisation on tissue stain intensity and automated nuclear counting: a multi-site study""",9,PubMed record with authors
+Pathology,2026-11-10,web search,HoVer-Net simultaneous segmentation classification nuclei multi-tissue Graham 2019 Medical Image Analysis,10,landing pages
+Pathology,2026-11-10,web search,CellViT vision transformers precise cell segmentation classification Horst 2024 Medical Image Analysis PanNuke,9,landing pages
+Pathology,2026-11-10,web search,probing pathology foundation model embeddings for nuclei count nuclear area regression linear probe UNI Virchow cell density,0,NOT EXECUTED: issued in parallel with another tool call; reissued next
+Pathology,2026-11-10,fetch_article_fulltext (Crossref/OA),doi 10.48550/arXiv.2407.10785,0,not found (Crossref 404); read via arXiv HTML excerpt in web search instead
+Pathology,2026-11-10,web search,probing pathology foundation model embeddings nuclei count nuclear area linear probe UNI cell density,9,"LEMON, Virchow probing, Le 2024 html"
+Pathology,2026-11-10,web search,principal components of pathology foundation model patch embeddings correlate stain intensity hematoxylin cellularity interpretation,9,"EXAONEPath WSI-specific collapse, STpath, SAE paper"
+Pathology,2026-11-10,web search,Visium spot hematoxylin intensity nuclear density image feature covariate gene expression association morphology spatial transcriptomics,10,no paper using label-free H-channel features as covariate in a DE/regression estimand
+Survey,2026-11-10,web search,Breidt Opsomer endogenous post-stratification classifying with a sample-fitted model,10,"Found Breidt-Opsomer 2008 (AoS), Dahlke et al. 2013, Breidt-Opsomer 2017 review mention."
+Survey,2026-11-10,web search,Binder 1983 On the variances of asymptotically normal estimators from complex surveys International Statistical Review,10,"Only citations/secondary descriptions; DOI 10.2307/1402588 (JSTOR, paywalled)."
+Survey,2026-11-10,fetch_article_fulltext (Unpaywall/S2/PMC/Crossref),doi:10.1214/16-STS589,1,Abstract only; no OA PDF returned.
+Survey,2026-11-10,fetch_article_fulltext (Unpaywall),doi:10.1126/science.adi6000,1,Full text (arXiv 2301.09633 version).
+Survey,2026-11-10,web search,prediction-powered inference clustered data cluster sampling arXiv,9,"Found Cluster-Robust PPI++ (2610.09601), Kluger et al. (2501.18577), Mozer (2603.19160)."
+Survey,2026-11-10,fetch_article_fulltext (Crossref),doi:10.48550/arXiv.2603.19160,1,"Crossref 404; then downloaded arXiv PDFs 2603.19160, 2610.09601, 2501.18577 directly from arxiv.org."
+Survey,2026-11-10,web search,Zrnic Candès cross-prediction-powered inference PNAS 2024,10,"Abstract-level pages (PubMed 38568975, ADS, Stanford profile)."
+Survey,2026-11-10,web search,Fisch Stratified prediction-powered inference hybrid evaluation language models arXiv 2406.04291,9,Then downloaded arXiv 2406.04291 full text.
+Survey,2026-11-10,web search,domain estimation misclassification of domain membership survey sampling estimator bias,9,"Found Lohr 2011 (multiple frames, sec. 6), Mecatti 2007, Andersen et al. 2402.11029 (downloaded)."
+Survey,2026-11-10,web search,Särndal Swensson Wretman Model Assisted Survey Sampling chapter 10 estimation for domains Springer,9,Table of contents only (d-nb.info); book not accessible.
+Survey,2026-11-10,web search,"Fuller 1995 ""Estimation in the presence of measurement error"" International Statistical Review survey",10,Only citations; DOI 10.2307/1403606 (JSTOR).
+Survey,2026-11-10,Crossref REST API,"works/{10.2307/1402588, 10.2307/1403606, 10.2307/1403631, 10.1214/009053607000000703, 10.5705/ss.2011.272, 10.1214/16-STS589}",6,Metadata check; abstracts only for the two Breidt-Opsomer items.
+Survey,2026-11-10,fetch_article_fulltext,doi:10.1214/16-STS605,1,Abstract only (Lumley & Scott 2017).
+Survey,2026-11-10,direct download,projecteuclid.org PDFs for STS589 and STS605; arxiv.org/pdf/0803.2100,3,"projecteuclid.org blocked by sandbox allowlist (access not requested, judged non-critical); arXiv 0803.2100 full text obtained."
+Survey,2026-11-10,direct download,"www150.statcan.gc.ca PDFs: Lohr 2011 (12-001-x/2011002/11608), Mecatti 2007 (12-001-x/2007002/10492)",2,Blocked by allowlist; access not requested (non-critical). Only search excerpts used.
+Survey,2026-11-10,web search,survey estimation subpopulation means when domain classification variable measured with error design-based bias Kuha Skinner,9,Nothing on misclassified domain defining variables; only Lumley domain vignette and generic domain-estimation pages.
+Survey,2026-11-10,web search,"Chambers misclassification domain estimation survey ""misclassified"" domain totals correction estimator journal",9,Found Sang et al. JOS three-phase misclassification paper (excerpt) and Mecatti 2007 again; no Chambers or Ballin paper on misclassified domains surfaced.
+Survey,2026-11-10,web search,Egami design-based supervised learning imperfect surrogates downstream inference NeurIPS 2023 known sampling probabilities,9,Then downloaded arXiv 2306.04746 full text.
+Survey,2026-11-10,web search,Estevao Särndal design-consistent domain estimators borrowing strength GREG domain-specific auxiliary Journal of Official Statistics,10,Excerpts only; scb.se PDF blocked by allowlist (access not requested).
+Survey,2026-11-10,web search,regression on remotely sensed predicted covariate parameter recovery estimand differs from true covariate Proctor Carleton Sum,9,Proctor et al. NBER w30861 abstract pages.
+Survey,2026-11-10,direct download,arxiv.org/pdf/2311.01453 (PPI++); arxiv.org/abs/2606.08289; arxiv.org/abs/1108.2356,3,PPI++ full text; abstract-page metadata for the other two.
+Survey,2026-11-10,web search,Lohr Sampling: Design and Analysis domain estimation ratio estimator regression with complex survey data chapter census parameter,10,Tables of contents and reviews only.
+Survey,2026-11-10,web search,Skinner measurement error explanatory variable regression complex survey finite population parameter reliability ratio design-based,9,"Census-parameter descriptions (Skinner LSE manuscript, Rao 2011); no survey-specific derived-regressor result found."
+Econometrics,2026-11-10,web search,Pagan 1984 econometric issues in the analysis of regressions with generated regressors,0,issued in parallel with another tool call; not executed by the harness; topics re-covered via OpenAlex
+Econometrics,2026-11-10,web search,Battaglia Christensen Hansen Sacher inference for regression with variables generated from unstructured data,0,issued in parallel with another tool call; not executed by the harness; topics re-covered via OpenAlex
+Econometrics,2026-11-10,web search,Fong Tyler machine learning predictions as regression covariates Political Analysis,0,issued in parallel with another tool call; not executed by the harness; topics re-covered via OpenAlex
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",generated regressors econometric issues,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",estimation and inference in two-step econometric models,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",machine learning predictions as regression covariates,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",inference for regression with variables generated from unstructured data,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",design-based supervised learning imperfect surrogates downstream inference,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",prediction-powered inference imputed covariates,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",parameter recovery using remotely sensed variables,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",large language models applied econometric framework,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",recent advances in the measurement error literature,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",machine learning prediction errors causal inference measurement error generated variables,8,titles/DOIs screened; nothing relevant
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",nonparametric regression with nonparametrically generated covariates,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",misclassified binary regressor identification,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",Allon machine learning generated variables measurement error econometric,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",Zrnic Candes prediction-powered inference covariates missing,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",large language model annotations predicted variables downstream analyses general framework,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",methods for correcting inference based on outcomes predicted by machine learning,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",t-statistic based correlation and heterogeneity robust inference few clusters,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",randomization tests under an approximate symmetry assumption few clusters,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",cluster-robust inference guide to empirical practice,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",sampling-based versus design-based uncertainty in regression analysis,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",models as approximations conspiracy of nonlinearity random regressors,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",remotely incorrect nonclassical measurement error satellite data deforestation,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",testing causal theories with learned proxies,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",bounding mean regressions when a binary regressor is mismeasured,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",mismeasured and unobserved variables handbook of econometrics,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",post-prediction inference predicted covariates regression bias correction,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",two-step estimation generated regressor cluster bootstrap few clusters,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",measurement error in covariates derived from images deep learning regression bias,8,titles/DOIs screened; nothing relevant
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",Allon Chen Jiang Zhang machine learning measurement error,8,titles/DOIs screened; nothing relevant
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",Ibragimov Muller t-statistic based correlation heterogeneity robust inference,8,titles/DOIs screened; nothing relevant
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",Wooldridge proxy variable solution omitted variables,8,titles/DOIs screened; nothing relevant
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",Hu Schennach instrumental variable treatment of nonclassical measurement error,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",deep learning derived covariate measurement error correction validation sample regression calibration,8,titles/DOIs screened; nothing relevant
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",projection parameter misspecified working model target estimand assumption-lean,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",using machine learning generated regressors standard errors attenuation bias text classifier,8,titles/DOIs screened; nothing relevant
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",satellite imagery predictions downstream regression bias correction,8,titles/DOIs screened; nothing relevant
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",using large language model annotations for the social sciences predicted variables downstream analyses,8,titles/DOIs screened; nothing relevant
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",machine learning and prediction errors in causal inference,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",Schennach mismeasured and unobserved variables,8,titles/DOIs screened; nothing relevant
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",program evaluation with remotely sensed outcomes,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",measurement error generated regressor few clusters inference,8,titles/DOIs screened
+Econometrics,2026-11-10,"OpenAlex (works search, top 8 by relevance)",estimated covariate misclassification group difference in means bias deep learning segmentation,8,titles/DOIs screened; nothing relevant
+Econometrics,2026-11-10,OpenAlex (work lookup by id/DOI),abstract lookup for 32 selected works incl. doi:10.1198/jbes.2009.08046,32,"abstracts read; Pagan, Proctor, Bollinger, Alix-Garcia records carry no abstract"
+Econometrics,2026-11-10,OpenAlex (work lookup by id/DOI),"abstract lookup: W4381955035, W4404570464, W4402701375, doi:10.3982/ECTA13081, doi:10.1016/j.jeconom.2011.01.007, W3135124381",6,Allon and Bester-Conley-Hansen records have no abstract
+Econometrics,2026-11-10,fetch_article_fulltext,"DOIs 10.48550/arXiv.2402.15585, 10.48550/arXiv.2501.18577, 10.48550/arXiv.2306.04746 (not in Crossref), 10.1017/pan.2020.38 (closed), 10.2307/2648877 (closed), 10.3386/w30861 (retrieved), 10.3386/w33344 (retrieved)",7,
+Econometrics,2026-11-10,arXiv (direct PDF),"2402.15585, 2501.18577, 2306.04746, 1706.01778, 2604.10770, 2608.02909, 2303.02820, 2301.09633, 2501.09731",9,"full texts searched by keyword (cluster, estimand, projection, latent, finite-sample, validation, interpret)"
+Econometrics,2026-11-10,web search,"Allon Chen Jiang Zhang ""Machine Learning and Prediction Errors in Causal Inference""",9,SSRN abstract page read; also surfaced Christensen-Compiani arXiv 2601.05374
+Econometrics,2026-11-10,web search,generated regressor two-step estimator inference with few clusters wild bootstrap first-stage estimation uncertainty,10,no paper combining ML-generated covariates with few-cluster inference; surfaced Wang-Zhang (few-cluster IV) and Cattaneo-Jansson-Ma
+Econometrics,2026-11-10,arXiv API (id_list),"2601.05374, 1807.10100, 2108.13707",3,abstracts read
