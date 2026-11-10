@@ -1,0 +1,46 @@
+{
+ "stage": "F2.1",
+ "unit": "regimeA__LUNG_XENIUM__resnet50__norm_r9pair",
+ "cluster_values": [
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__LUNG_XENIUM.parquet"
+ ],
+ "select": {
+  "task": [
+   "LUNG_XENIUM"
+  ],
+  "encoder": [
+   "resnet50"
+  ],
+  "scale": [
+   "norm_r9pair"
+  ]
+ },
+ "n_grid": [
+  4,
+  6,
+  8,
+  10,
+  12,
+  16
+ ],
+ "extra_n": {
+  "kidney__Visium": [
+   20,
+   25
+  ]
+ },
+ "R": 20000,
+ "R_boot": 2000,
+ "B": 999,
+ "boot_select": {
+  "encoder": [
+   "uni_v2",
+   "pkg"
+  ],
+  "estimand": [
+   "theta3",
+   "theta2",
+   "mu"
+  ]
+ }
+}
