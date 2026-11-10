@@ -1,0 +1,33 @@
+{
+ "stage": "F2.1-limits",
+ "unit": "limits__ACS_STATES__theta3_v1b",
+ "cluster_values": [
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1b_acs/cluster_values__ACS_STATES.parquet"
+ ],
+ "select": {
+  "task": [
+   "ACS_STATES"
+  ],
+  "estimand": [
+   "theta3"
+  ]
+ },
+ "n_grid": [
+  4,
+  6,
+  8,
+  10,
+  12,
+  16
+ ],
+ "extra_n": {
+  "kidney__Visium": [
+   20,
+   25
+  ]
+ },
+ "R_lim": 2000,
+ "B_kluger": 2000,
+ "chunk": 100,
+ "regimeA_config": "results/round10/final_runs/F2/configs/regimeA/f2_regimeA__ACS_STATES__theta3_v1b.json"
+}
