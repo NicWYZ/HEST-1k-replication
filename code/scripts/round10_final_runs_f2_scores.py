@@ -55,7 +55,7 @@ for est in ["theta3", "mu"]:
 E = pd.read_csv(e4b)
 for t in HEST:
     ref = E[(E.vtag == t) & (E.arm == "uni_v2") & (E.estimand == "theta3") & (E.n_L == 8) & (E.design == "D0") & (E.rule == "c_crossfit_design") &
-            (E.interval == "textbook_t|fpc|lin|xf") & (E.n_sub == 2000)]
+            (E.interval == "textbook_t|fpc|lin|xf") & (E.n_sub == 2000) & (E.balance.astype(str) == "none")]
     r5 = float(ref.coverage_median.iloc[0]) if len(ref) == 1 else np.nan
     a = get(t, "xf2_r5", "V_w", 8)
     add("P10.1", f"xf2_r5 with V_w at n=8 is 0.02 to 0.05 below round 5's coverage_median, {t}", 0.02 <= (r5 - a) <= 0.05, task=t, coverage_r10=a, coverage_r5=r5, drop=r5 - a, ref_rows=len(ref))
