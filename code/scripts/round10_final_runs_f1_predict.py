@@ -55,6 +55,7 @@ def main():
     ap.add_argument('--only-mapped', action='store_true', help='keep only the task samples present in the donor map (the audited set)')
     ap.add_argument('--chunk', default='', help='i/k: run only the i-th of k contiguous slices of the sorted held-out units (0-based)')
     ap.add_argument('--tag', default='', help='name used in the output files instead of the task name')
+    ap.add_argument('--group-centers-by-donor', action='store_true', help='center design: hold out together the centers that share a donor (connected components), so every fold stays donor-disjoint')
     a = ap.parse_args(); os.makedirs(a.out, exist_ok=True)
     T = json.load(open(a.task)); genes = [str(g) for g in T['genes_top50']]
     if a.samples:
@@ -90,6 +91,24 @@ def main():
     don = np.concatenate([[p[2]] * len(p[5]) for p in parts]); bc = np.concatenate([p[5] for p in parts])
     targets = {'log1p': np.log1p(Y), 'lognorm': np.log1p(1e4 * Y / np.maximum(lib, 1)[:, None])}
     unit = don if a.design == 'donor' else cen
+    center_groups = None
+    if a.design == 'center' and a.group_centers_by_donor:
+        par = {c_: c_ for c_ in sorted(set(cen))}
+        def find(x):
+            while par[x] != x:
+                par[x] = par[par[x]]; x = par[x]
+            return x
+        for d_ in sorted(set(don)):
+            cd = sorted(set(cen[don == d_]))
+            for c_ in cd[1:]:
+                par[find(c_)] = find(cd[0])
+        comp = {}
+        for c_ in sorted(par):
+            comp.setdefault(find(c_), []).append(c_)
+        lab = {c_: '+'.join(comp[find(c_)]) for c_ in par}
+        unit = np.array([lab[c_] for c_ in cen], dtype=object)
+        center_groups = sorted(set(lab.values()))
+        print(f'centers grouped by shared donors: {center_groups}', flush=True)
     units = sorted(set(unit))
     if a.max_folds:
         units = units[:a.max_folds]
@@ -115,6 +134,7 @@ def main():
                 samples=len(parts), donors=len(set(don)), centers=len(set(cen)), folds=len(units),
                 alpha=float(alpha), n_genes=len(genes), seconds_per_fold=float(np.mean(secs)),
                 gene_symbols=gene_symbols, pearson={k: {g: pearson(targets[k][done, j], F[k][done, j]) for j, g in enumerate(genes)} for k in targets})
+    summ['center_groups'] = center_groups
     for k in targets:
         summ[f'median_pearson_{k}'] = float(np.nanmedian(list(summ['pearson'][k].values())))
     tag = f"{name}__{a.encoder}__{a.design}{part}"
