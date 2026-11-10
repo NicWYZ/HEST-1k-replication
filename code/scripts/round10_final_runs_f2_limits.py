@@ -18,7 +18,8 @@ and rng.random((R_lim, G)) is the first R_lim rows of rng.random((R, G))), this 
     shared it by the genes of a draw.
 
 usage: round10_final_runs_f2_limits.py <config.json> <out_dir>
-config: cluster_values, select, n_grid, extra_n (as regime A), R_lim, B_kluger, chunk, label; optional max_pops, check_draws
+config: cluster_values, select, n_grid, extra_n (as regime A), R_lim, B_kluger, chunk, label; optional max_pops, part ([k, K]: the populations whose index
+        in the sorted groupby is k modulo K), check_draws
         (regenerate the regime A draws at R and assert the first R_lim agree) and anchor_r5 (see run_anchor).
 Writes limits_summary.json first, then limits_cells.parquet (regime A's schema) and limits_diag.parquet.
 """
@@ -175,7 +176,10 @@ def main():
     R, B, chunk = int(cfg["R_lim"]), int(cfg.get("B_kluger", S2.B_BOOT)), int(cfg.get("chunk", 100))
     rows, drows, n_pop, n_skip, t0 = [], [], 0, [], time.time()
     chk_max, draw_check = {}, None
-    for key, g in cv.groupby(KEYS, sort=True):
+    part = cfg.get("part")
+    for ip, (key, g) in enumerate(cv.groupby(KEYS, sort=True)):
+        if part and ip % int(part[1]) != int(part[0]):
+            continue
         g = g.sort_values("donor"); z = g.z.to_numpy(float); f = g.f.to_numpy(float); G = len(z)
         tagk = "|".join(key)
         if not (np.isfinite(z).all() and np.isfinite(f).all()):

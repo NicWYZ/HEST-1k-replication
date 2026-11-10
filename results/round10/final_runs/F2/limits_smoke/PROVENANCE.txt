@@ -1,0 +1,38 @@
+platform: Longleaf
+slurm_job_id: 8803183
+slurm_job_partition: spill
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 8192
+node: c0316
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F2
+unit: limits__smoke
+frame_id: e57d4a98-8078-4281-8c49-84c1df952f94
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 60600559ab7cc374aaa1239baf5192c5c25962d5
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/60600559ab7cc374aaa1239baf5192c5c25962d5
+command: round10_final_runs_f2_limits.py /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/smoke/f2_limits__smoke.json /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/smoke
+config: {"commit":"60600559ab7cc374aaa1239baf5192c5c25962d5","stage":"F2","unit":"limits__smoke"}
+config_sha256: f9542b41fc2d3134f2297a55e1bc47b79731ef399718ada09e53bf7dea71469b
+start: 2026-11-10T15:13:09-05:00
+end: 2026-11-10T15:13:58-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  7cdd315ac18b4f5cbf52835df2fd6d89  code/scripts/round10_final_runs_f2_limits.py
+  774f14de3ed57d6eb110dec4128cec1c  code/scripts/round10_final_runs_f2_regimeA.py
+  9580a38223ad46f5e141626572254fea  code/scripts/round10_final_runs_estimators.py
+  d79e69aa65800b9d24de556e019a0c64  code/scripts/round4_ppi_estimator.py
+  2de31569ffe72239062fbeb0c9a50fc5  code/scripts/round5_ppi_estimator.py
+  d78b654d7fd8e6a824f73dd50ee2a0c1  code/scripts/round5_ppi_balance.py
+  a30b7507a4c1e2d4a0efdc76a5032871  code/scripts/round7_ppi_s2_comparators.py
+inputs (md5, path):
+  b0c54051549ee4e63fd1fb6d1392297a  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/smoke/f2_limits__smoke.json
+  0bcdae6cf30c6c282e9ac9881fac92b4  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet
+  0cc62c5e600cc3811168b71ca7e2c1ab  /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet
+  228972e745a16ad91b5a368600e6acda  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/9185bc6be157ee9c62d8d1067e5ad9e14f53984e/code/scripts/round5_ppi_e4b_rejective.py
+  6b4ec382084ecc1479b63e18ca3f3d8c  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round5/ppi/E4b_rejective/e4b_grid.csv

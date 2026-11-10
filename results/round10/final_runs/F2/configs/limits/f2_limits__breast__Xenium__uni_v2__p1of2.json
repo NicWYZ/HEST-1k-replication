@@ -1,0 +1,37 @@
+{
+ "stage": "F2.1-limits",
+ "unit": "limits__breast__Xenium__uni_v2__p1of2",
+ "cluster_values": [
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Xenium.parquet"
+ ],
+ "select": {
+  "task": [
+   "breast__Xenium"
+  ],
+  "encoder": [
+   "uni_v2"
+  ]
+ },
+ "n_grid": [
+  4,
+  6,
+  8,
+  10,
+  12,
+  16
+ ],
+ "extra_n": {
+  "kidney__Visium": [
+   20,
+   25
+  ]
+ },
+ "R_lim": 2000,
+ "B_kluger": 2000,
+ "chunk": 100,
+ "part": [
+  1,
+  2
+ ],
+ "regimeA_config": "results/round10/final_runs/F2/configs/regimeA/f2_regimeA__breast__Xenium__uni_v2.json"
+}
