@@ -1,0 +1,13 @@
+task,encoder,scale,G,G_valid,m,estimand,population,target,interval,n_draws,n_genes,emp_var_median,est_var_over_emp_var_median,coverage_median,coverage_mean,coverage_min,width_ratio_median,emp_var_ratio_median,lambda_median,lambda_frac_zero,lambda_se_median,lambda_raw_mean_median,lambda_raw_mean_se_median,estimator
+CCRCC,uni_v2,log1p,24,24,10,theta3,donor,design,regB_t,50,50,0.00392973887464864,1.0934092671552342,0.92,0.9096000000000001,0.8,,,1.0,0.0,,,,C_fix1
+CCRCC,uni_v2,log1p,24,24,10,theta3,donor,design,regB_t,50,50,0.003969372672202749,1.071207457579343,0.9,0.9056000000000001,0.8,,,0.5,0.018,,,,C_ppi
+CCRCC,uni_v2,log1p,24,24,10,theta3,donor,design,regB_t,50,50,0.004292538533622734,0.9728444016606279,0.9,0.8924,0.8,,,0.0,1.0,,,,C_classical
+CCRCC,uni_v2,log1p,24,23,10,theta2,donor,design,regB_t,50,50,0.003998280963165587,0.9901931806217803,0.91,0.9036,0.84,,,1.0,0.0,,,,C_fix1
+CCRCC,uni_v2,log1p,24,23,10,theta2,donor,design,regB_t,50,50,0.003923480375535755,1.0044709449484739,0.9,0.9052,0.82,,,0.47209285203926044,0.052,,,,C_ppi
+CCRCC,uni_v2,log1p,24,23,10,theta2,donor,design,regB_t,50,50,0.0040033596732604315,0.998606447562129,0.9,0.9024000000000001,0.82,,,0.0,1.0,,,,C_classical
+kidney__Visium,uni_v2,log1p,51,51,10,theta3,donor,design,regB_t,50,50,0.0670732130688085,0.9499272806558609,0.9,0.902,0.82,,,1.0,0.0,,,,C_fix1
+kidney__Visium,uni_v2,log1p,51,51,10,theta3,donor,design,regB_t,50,50,0.06037115362840513,1.0112986034513622,0.9,0.9012,0.82,,,0.5446615934718106,0.0828,,,,C_ppi
+kidney__Visium,uni_v2,log1p,51,51,10,theta3,donor,design,regB_t,50,50,0.05480046816413614,1.1376213316262602,0.91,0.9128000000000001,0.82,,,0.0,1.0,,,,C_classical
+kidney__Visium,uni_v2,log1p,51,45,10,theta2,donor,design,regB_t,50,50,0.004153241474271407,0.9196649845922416,0.88,0.882,0.78,,,1.0,0.0,,,,C_fix1
+kidney__Visium,uni_v2,log1p,51,45,10,theta2,donor,design,regB_t,50,50,0.00407929069687752,0.8726875260893756,0.86,0.8636,0.72,,,0.48810263250084196,0.004,,,,C_ppi
+kidney__Visium,uni_v2,log1p,51,45,10,theta2,donor,design,regB_t,50,50,0.004518903925862905,0.8181052723558603,0.86,0.8592,0.76,,,0.0,1.0,,,,C_classical
