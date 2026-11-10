@@ -57,5 +57,5 @@ ST=COMPLETED; [ $RC -eq 0 ] || ST=FAILED_rc${RC1}_${RC2}_${RC3}
 CMD="round10_final_runs_f2_refit_norm.py refit $TASK $ENC as_is|norm $REL/<mode> $EXTRA; compare"
 $PY $SNAP/code/scripts/round10_final_runs_provenance.py "$OUT" F2 refit_norm__$UNIT $COMMIT $SNAP "$START" $ST --frame $FRAME --command "$CMD" --config '{"stage":"F2","unit":"refit_norm__'$UNIT'","commit":"'$COMMIT'"}' --scripts code/scripts/round10_final_runs_f2_refit_norm.py code/scripts/round3_b1_ppi.py code/scripts/round3_a0_harness.py code/scripts/round4_ppi_q2_indiana_predict_driver.py code/scripts/round4_ppi_q2_lung_predict_driver.py code/scripts/round4_ppi_data.py --inputs $COMMITTED $CV $( [ -f "$EXTRA" ] && echo $EXTRA )
 cd "$OUT"; for g in PROVENANCE.txt _provenance.json stdout.log *.json; do [ -e "$g" ] && cp "$g" "$HJ"/; done; for g in as_is/stdout.log norm/stdout.log as_is/refit_info__as_is.json norm/refit_info__norm.json; do [ -e "$g" ] && cp "$g" "$HJ"/$(echo $g | tr '/' '_'); done; true
-tail -30 stdout.log; tail -5 as_is/stdout.log norm/stdout.log
+tail -n 30 stdout.log || true; tail -n 5 as_is/stdout.log || true; tail -n 5 norm/stdout.log || true
 exit $RC
