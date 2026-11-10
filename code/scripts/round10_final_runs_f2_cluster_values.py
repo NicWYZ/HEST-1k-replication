@@ -7,7 +7,10 @@ and the same functional f_g computed from the held-out predictions:
   theta2  mean over neoplastic-dominant spots (frac_neoplastic > 0.7) minus mean over stromal-dominant (< 0.3), joined
           spots, donors with both groups only;
   theta1  within-donor correlation of area_mean with the outcome, joined spots.
-Morphology estimands are formed only where the file carries m_std, area_mean and frac_neoplastic.
+Morphology estimands are formed only where the file carries m_std, area_mean and frac_neoplastic, or where the
+population names a morph_path (the corpus): then the spot features are joined on (sample_id, barcode), joined spots
+are those with at least one nucleus, and m_std is area_mean standardised over the joined spots (ddof 0), as
+round3_b1_ppi.py does.
 
 usage: round10_final_runs_f2_cluster_values.py <config.json> <out_dir>
 Writes f2_cluster_values_summary.json first, then cluster_values__<task>.parquet, and the anchor tables
@@ -84,6 +87,15 @@ def main():
         task, enc, path = pop["task"], pop["encoder"], pop["path"]
         df = pd.read_parquet(path)
         donor = df[pop.get("donor_col", "donor_id")].astype(str).to_numpy()
+        if pop.get("morph_path"):
+            mp = pd.read_parquet(pop["morph_path"], columns=["sample_id", "barcode", "n_nuclei", "area_mean", "frac_neoplastic"])
+            df = df.merge(mp, on=["sample_id", "barcode"], how="left", validate="one_to_one")
+            ar, nf = df["area_mean"].to_numpy(float), df["frac_neoplastic"].to_numpy(float)
+            jn = np.isfinite(ar) & np.isfinite(nf) & (df["n_nuclei"].fillna(0).to_numpy() > 0)
+            mu_a, sd_a = float(ar[jn].mean()), float(ar[jn].std(ddof=0))
+            df["m_std"] = (ar - mu_a) / sd_a
+            df["joined"] = jn
+            pop["_morph_info"] = dict(join_rate=float(jn.mean()), mu_area=mu_a, sd_area=sd_a)
         has_m = all(c in df.columns for c in ("m_std", "area_mean", "frac_neoplastic", "joined"))
         morph = None
         if has_m and pop.get("morphology", True):
@@ -96,7 +108,8 @@ def main():
             Y = df[[ypre + g for g in genes]].to_numpy(np.float64)
             F = df[[fpre + g for g in genes]].to_numpy(np.float64)
             info = dict(task=task, encoder=enc, scale=sc["name"], path=path, n_spots=len(df), n_genes=len(genes),
-                        n_donors=len(set(donor.tolist())), morphology=morph is not None)
+                        n_donors=len(set(donor.tolist())), morphology=morph is not None,
+                        morph_info=pop.get("_morph_info"))
             if sc.get("normalise_from_log1p"):
                 lib, td = lib_sizes(cfg["repo_root"], pop["lib_task"], df["sample_id"].astype(str).to_numpy(),
                                     df["barcode"].astype(str).to_numpy())
@@ -157,6 +170,19 @@ def main():
                              max_rel_f=float((np.abs(m.f - m.mean_f) / np.abs(m.mean_f).clip(1e-12)).max()),
                              n_spots_equal=bool((m.n_spots == m.n_spots_c2).all())))
         pd.DataFrame(rows).to_csv(os.path.join(out, "f2_anchor_c2.csv"), index=False); anchors["c2"] = rows
+    if cfg.get("compare_mu_with"):
+        rows = []
+        for task, recs in tables.items():
+            p = cfg["compare_mu_with"].get(task)
+            if not p:
+                continue
+            d = pd.DataFrame(recs, columns=SCHEMA.names); d = d[d.estimand == "mu"]
+            o = pd.read_parquet(p); o = o[o.estimand == "mu"]
+            m = d.merge(o, on=["encoder", "scale", "gene", "donor"], suffixes=("", "_v1"))
+            rows.append(dict(task=task, n_ours=len(d), n_v1=len(o), n_matched=len(m),
+                             max_abs_z=float((m.z - m.z_v1).abs().max()), max_abs_f=float((m.f - m.f_v1).abs().max()),
+                             n_spots_equal=bool((m.n_spots == m.n_spots_v1).all())))
+        pd.DataFrame(rows).to_csv(os.path.join(out, "f2_anchor_mu_v1.csv"), index=False); anchors["mu_v1"] = rows
     summ["anchors"] = anchors; summ["finished"] = time.strftime("%Y-%m-%dT%H:%M:%S")
     json.dump(summ, open(os.path.join(out, "f2_cluster_values_summary.json"), "w"), indent=1)
     print(json.dumps(anchors, indent=1))
