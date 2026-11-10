@@ -36,7 +36,7 @@ def donor_values(Y, F, donor, morph):
         out.append(("mu", d, n, n, 0, Yd.mean(0), Fd.mean(0)))
         if morph is None:
             continue
-        j = morph["joined"][ix]
+        j = morph["joined"][ix] if "joined_m" not in morph else morph["joined_m"][ix]
         Yj, Fj = Yd[j], Fd[j]
         nj = int(j.sum())
         m = morph["m_std"][ix][j]
@@ -44,6 +44,8 @@ def donor_values(Y, F, donor, morph):
         den = float(mc @ mc) if nj else 0.0
         if nj >= 2 and den > 0:
             out.append(("theta3", d, n, nj, 0, (mc @ Yj) / den, (mc @ Fj) / den))
+        if "joined_m" in morph:
+            j = morph["joined"][ix]; Yj, Fj = Yd[j], Fd[j]; nj = int(j.sum())
         neo = morph["frac_neoplastic"][ix][j]
         a, b = neo > NEO_HI, neo < STR_LO
         if a.sum() >= 1 and b.sum() >= 1:
@@ -102,6 +104,9 @@ def main():
             morph = {c: df[c].to_numpy(float) for c in ("m_std", "area_mean", "frac_neoplastic")}
             morph["joined"] = df["joined"].to_numpy(bool) & np.isfinite(morph["m_std"]) & \
                 np.isfinite(morph["area_mean"]) & np.isfinite(morph["frac_neoplastic"])
+            if pop.get("theta3_needs_m_only"):
+                # ACS carries m_std (its covariate) but no area or group share: theta3 needs m_std alone
+                morph["joined_m"] = df["joined"].to_numpy(bool) & np.isfinite(morph["m_std"])
         for sc in pop["scales"]:
             ypre, fpre = sc["y_prefix"], sc["f_prefix"]
             genes = [c[len(ypre):] for c in df.columns if c.startswith(ypre)]
