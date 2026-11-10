@@ -26,7 +26,7 @@ def main():
             commit = m.group(1) if m else ''
             anc = bool(commit) and git(clone, 'merge-base', '--is-ancestor', commit, ref).returncode == 0
             sec = txt.split('scripts_executed', 1)[1] if 'scripts_executed' in txt else ''
-            sec = sec.split('inputs', 1)[0]
+            sec = re.split(r'^inputs', sec, maxsplit=1, flags=re.M)[0]
             scripts = re.findall(r'^\s+([0-9a-f]{32})\s+(code/\S+)', sec, re.M)
             if not scripts:
                 scripts = [('', '')]
