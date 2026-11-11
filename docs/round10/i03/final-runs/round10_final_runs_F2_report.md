@@ -45,7 +45,7 @@ The units, in order (scripts with md5 as recorded in each unit's `PROVENANCE.txt
 
 **Completeness.** Regime A has 55 of 55 units completed and 1,722 cells. The limits aggregation found 94 of 94 units, 1,452 cells matching regime A's cells without `norm_refit` one for one, no duplicate rows, and the identities rule `none` = `classical` (7.1e-15) and `a_b1` = `b_cluster` (0) (`aggregate_limits/f2_limits_checks.json`). Regime B has 31 of 31 units, 147,603 rows and its cluster means equal this track's within 1.8e-10 relative (`aggregate_regimeB/f2_regimeB_checks.json`).
 
-**Provenance.** The index `results/round10/final_runs/F1/provenance_index.csv` was rerun over F1 and F2 before the gate push (section 7, item 13 gives the result).
+**Provenance.** The index `results/round10/final_runs/F2/provenance_index.csv` covers the 283 `PROVENANCE*.txt` files under `F1/` and `F2/` of the bulk directory, written by `round10_final_runs_provenance_index.py` with stages F1 and F2 (its printed counts in `results/round10/final_runs/F2/provenance_index_stdout.txt`). Of these, 259 record a snapshot commit, and every one is an ancestor of the gate commit. All 1162 recorded script md5s equal the md5 of the script at that commit. The other 24 are the `PROVENANCE__predict__*` files that round 3's and round 4's prediction code writes inside each refit unit's `as_is/` and `norm/` directories. They record no snapshot commit and no script md5, and the unit's own `PROVENANCE.txt` above them carries both.
 
 ## 4. Variables that differ between the arms of each comparison
 
@@ -179,7 +179,7 @@ My reading of it is this. On the first question, the sub-agent found the label-f
 10. **The harness and `sacct` states of some completed jobs read failed.** The first 21 regime A units (the job template's copy loop under `bash -e`) and the refit units of CCRCC `uni_v2` (Slurm `8823488`) and LUNG_XENIUM `uni_v2` (`8823487`), both submitted before the template's `tail` line was fixed. The plan's note named only the second. In every case `PROVENANCE.txt` reads `COMPLETED` and the outputs are complete.
 11. **$R^2_c$ in F2.6** is the squared correlation of donor values with donor predictions, as round 9's `R2c_mean` defines it and as the diagnostics anchor reproduces. Plan section 5.6 named D12's leave-one-donor-out $R^2$ from F1, which is a different quantity. The report uses $R^2_c$ throughout F2.6.
 12. **Queue waits over four hours** (`report_tables/f2_ledger_new_rows.csv`). The 15 `norm_refit` regime A units waited 4.0 to 6.0 hours, cluster values v3 4.3 hours, the limits and regime B aggregation 4.5 hours and aggregation v3 with diagnostics v2 6.4 hours, all on `spill` on the night of 10 November. The record of the fourth session does not show the four-hour notice of rules section 4. All finished before this session began, so the notice is recorded here as an escalation.
-13. **The provenance index for F2** (`results/round10/final_runs/F1/provenance_index.csv`, rerun at this gate) is reported in the gate message with its counts, and any mismatch it finds is listed there.
+13. **The provenance index now covers F2.** `round10_final_runs_provenance_index.py` walked only `F1/`. It gained an optional stage argument, whose default keeps the F1 index as it was, and the F2 index is written to `results/round10/final_runs/F2/provenance_index.csv`. It found no mismatch (section 3).
 14. **Bookkeeping left by the fourth session.** The plan's F2 checkboxes were not ticked, and regime A v3, aggregation v3 and diagnostics v2 had no dated note. Both are fixed in this commit.
 15. **The option (c) sub-agent `Pathology`** ran 27 read-only web searches before its frame-id message arrived, against its brief. No job, git or data was touched (plan section 6).
 16. **The F1 report's sentence that the corpus tasks carry $\theta_1$ without a covariate was wrong**, since $\theta_1$ needs nuclear area. Nicolas decided that the corpus tasks carry $\mu$, with $\theta_1$ to $\theta_3$ where option (b) delivers, and it delivered on all six (plan sections 5.0 and 5b).
@@ -187,7 +187,7 @@ My reading of it is this. On the first question, the sub-agent found the label-f
 ## 8. What was not checked
 
 - The bootstrap arms under `hoptimus0` and `resnet50`, which the plan left out for cost.
-- The limits arms on `norm_refit`, which they were not run on (1,452 of regime A's 1,722 cells).
+- The limits arms on `norm_refit`, which they were not run on, so they cover 1,452 of regime A's 1,722 cells (`aggregate_limits/f2_limits_checks.json`, `report_tables/r04_controls_and_anchor.json`).
 - Regime B on the normalised scale of the HEST tasks, and $\theta_1$ in regime B, which its form does not cover.
 - The LUNG_XENIUM comparison on round 9's 42-gene subset, which is flagged in the cluster values but not tabulated here.
 - The cells of section 6.6 where coverage rises with $\kappa(e)$, one by one.

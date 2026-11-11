@@ -3,3 +3,12 @@
 11.5	derived: hours from submit 2026-11-09T15:09:10 to start 2026-11-10T02:40:55 (local time) of Slurm 8687463, results/round10/final_runs/job_ledger.csv
 5.6	derived: hours between submit of Slurm 8687547 (2026-11-09T15:09:43) and of Slurm 8738506 (2026-11-09T20:47:48), results/round10/final_runs/job_ledger.csv
 239	observed: sprio PRIORITY of the pending F1.4c jobs on 2026-11-09 at 21:14 UTC, a live scheduler reading with no file
+# Exceptions for docs/round10/i03/final-runs/round10_final_runs_F2_report.md, derived from the files named
+54.7	derived: 3283 s elapsed (00:54:43) of the longest norm_refit regime A unit, divided by 60, results/round10/final_runs/job_ledger.csv
+22.8	derived: 1367 s elapsed (00:22:47) of Slurm 8823488, divided by 60, results/round10/final_runs/job_ledger.csv
+0.001	derived: classical minus fix1 coverage on lung Xenium, 0.8914 - 0.8904, results/round10/final_runs/F2/report_tables/r01_regimeA_uni_v2_primary.csv
+0.057	derived: r4_none minus r4_a_b1 median coverage at n=4, 0.897125 - 0.84, results/round10/final_runs/F2/report_tables/r07_limits_ranges.csv
+0.016	derived: smallest xf2 minus fix1 width ratio, CCRCC_merged mu, 1.012 - 0.9964, results/round10/final_runs/F2/report_tables/r10_buy_uni_v2_primary_n8.csv
+0.112	derived: largest xf2 minus fix1 width ratio, lung Xenium theta3, 0.7756 - 0.6637, results/round10/final_runs/F2/report_tables/r10_buy_uni_v2_primary_n8.csv
+4.3	derived: hours from submit to start of Slurm 8825178 (cluster values v3), results/round10/final_runs/job_ledger.csv
+4.5	derived: hours from submit to start of Slurm 8824760 (limits and regime B aggregation), results/round10/final_runs/job_ledger.csv
