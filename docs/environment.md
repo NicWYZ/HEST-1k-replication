@@ -28,6 +28,7 @@ Where the project's machines, clones, accounts and data are, and the quirks of e
 - The claude.ai project "Spatial Transcriptomics" and the Claude Science project, each with the instructions in `docs/project_instructions.md`.
 - The skill `project-record`, and the skill `longleaf-provenance` for execution sessions.
 - Access to Longleaf under ONYEN `weiyang`, and GitHub push access to `NicWYZ/HEST-1k-replication`.
+- The claude.ai project's 24 docs, which Nicolas re-adds to the new project from `~/hest-1k/claude_project_docs/` on his Mac. That folder is outside every clone, because some of the docs hold details of unpublished manuscripts (hard rule 8). It was filled on 10 and 11 November: 21 docs were typed out again by the oversight chat from what the Projects tool showed, so they are not checked byte for byte, and Nicolas copied the other 3 by hand.
 
 ## Longleaf scheduler notes (account `rc_htzhu_pi`)
 
