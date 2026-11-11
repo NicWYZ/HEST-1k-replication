@@ -1,0 +1,31 @@
+{
+ "log": [
+  "regime A summary: 46083 rows, 1722 cells",
+  "wrote r01_regimeA_uni_v2_primary.csv: 252 rows",
+  "wrote r02_regimeA_grid_ranges.csv: 406 rows",
+  "wrote r03_regimeA_bootstrap.csv: 437 rows",
+  "wrote r03b_bootstrap_ranges.csv: 24 rows",
+  "controls {\"cells\": 1722, \"max_abs_cov_const_minus_classical\": 0.0, \"max_rel_width_const_minus_classical\": 1.3753569832406318e-14, \"perm_fix1_cov_min\": 0.858225, \"perm_fix1_cov_median\": 0.9001625, \"perm_fix1_cov_max\": 0.940125, \"perm_fix1_share_cells_narrower_than_classical\": 0.0023228803716608595, \"perm_fix1_min_width_ratio_to_classical\": 0.9814625790934431, \"perm_xf2_cov_min\": 0.834075, \"perm_xf2_cov_median\": 0.894075, \"regimeA_units\": 55, \"regimeA_units_completed\": 55, \"max_const_identity_dev_over_units\": 1.0658141036401503e-14, \"anchor_r9\": {\"rows\": 34, \"expected\": 34, \"max_d_pops\": 0.0, \"max_d_cov\": 1.1102230246251565e-16, \"max_d_width\": 2.220446049250313e-16, \"max_d_rmse\": 8.326672684688674e-17}}",
+  "wrote r05_switch_by_task.csv: 11 rows",
+  "wrote r05b_frac_V_neg_by_n.csv: 7 rows",
+  "wrote r06_fix1_cost_n8.csv: 98 rows",
+  "fix1 cost: max |share by median width - share by mean| over all rows = 0.36",
+  "wrote r07_limits_ranges.csv: 80 rows",
+  "wrote r07b_limits_width_ratio_by_n.csv: 8 rows",
+  "wrote r07c_limits_four_tasks_theta3.csv: 11 rows",
+  "wrote r07d_limits_lambda_by_n.csv: 40 rows",
+  "wrote r08_regimeB_ranges.csv: 9 rows",
+  "wrote r08b_regimeB_ev_by_task.csv: 66 rows",
+  "wrote r08c_regimeB_uni_v2_primary.csv: 166 rows",
+  "wrote r08d_regimeB_fr7_preview.csv: 11 rows",
+  "wrote r09_shortfall_uni_v2_primary_n8.csv: 22 rows",
+  "wrote r09b_shortfall_correlations.csv: 2 rows",
+  "wrote r10_buy_uni_v2_primary_n8.csv: 22 rows",
+  "wrote r10b_d9_by_task.csv: 60 rows",
+  "wrote r11_scale_diff_uni_v2_n8.csv: 56 rows",
+  "wrote r11b_scale_diff_ranges.csv: 9 rows",
+  "wrote r11c_pc1_share.csv: 72 rows",
+  "wrote r12_superpop_four_tasks.csv: 46 rows",
+  "wrote r13_p10_1.csv: 3 rows"
+ ]
+}

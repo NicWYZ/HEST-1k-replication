@@ -1,9 +1,9 @@
 """Round 10, track final-runs: the provenance index checked before each gate push (rules, section 5).
 
-Walks every PROVENANCE*.txt under <base>/F1 (and deeper), reads the snapshot commit and the md5 of every script
+Walks every PROVENANCE*.txt under <base>/<stage> for each stage (default F1), reads the snapshot commit and the md5 of every script
 recorded as executed, and checks in the code clone that the commit is an ancestor of <ref> and that each recorded md5
 equals the md5 of that path at that commit. Writes provenance_index.csv (one row per directory and script) and prints
-the counts. Usage: round10_final_runs_provenance_index.py <base> <clone> <ref> <out.csv>
+the counts. Usage: round10_final_runs_provenance_index.py <base> <clone> <ref> <out.csv> [<stages, comma-separated, default F1>]
 """
 import csv, hashlib, os, re, subprocess, sys
 
@@ -14,8 +14,9 @@ def git(clone, *args):
 
 def main():
     base, clone, ref, out = sys.argv[1:5]
+    stages = sys.argv[5].split(',') if len(sys.argv) > 5 else ['F1']
     rows = []
-    for root, _, files in os.walk(os.path.join(base, 'F1')):
+    for root, _, files in (w for s_ in stages for w in os.walk(os.path.join(base, s_))):
         for fn in sorted(files):
             if not (fn.startswith('PROVENANCE') and fn.endswith('.txt')):
                 continue
