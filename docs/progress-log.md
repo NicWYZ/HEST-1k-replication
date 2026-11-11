@@ -8,6 +8,8 @@ What the project found at each step, what changed because of it, and which files
 
 ## Round 10 (from 6 November 2026)
 
+**10 November, later. Part of the memory filing withdrawn.** Nicolas said the writing rules are not project-specific, that the reuse of Mac clones across rounds no longer applies, and that he will sign in to the new account on his Mac, so everything on the Mac carries over. The writing rules are removed from `CLAUDE.md`, the clone-reuse sentence and the list of claude.ai project docs to copy are removed from `docs/environment.md`, and the entry below stands as history.
+
 **10 November, night. The project's memory filed in the record before the move to another account.**
 - **Why.** Nicolas said the project is moving to another account, and asked that the project's claude.ai memory be compared with the repository and anything belonging in the record be filed.
 - **What was compared.** The six memory files of the project: its preferences, advisor presentations, the federated paper, compute, the Mac clones and the textual study.
