@@ -46,6 +46,9 @@ for est in ["theta3", "mu"]:
 for est in ["theta3", "mu"]:
     a = get("CCRCC", "fix1", "fpc", 8, est, "uni_v2", "norm_r9pair"); b = get("CCRCC", "fix1", "fpc", 8, est, "uni_v2", "log1p")
     add("FR5", f"CCRCC fix1 coverage at n=8 higher by >= 0.02 on the normalised scale (round 9 pairing), {est}", (a - b) >= 0.02, estimand=est, cov_norm=a, cov_log1p=b, diff=a - b)
+    a2 = get("CCRCC", "fix1", "fpc", 8, est, "uni_v2", "norm_refit")
+    if np.isfinite(a2):
+        add("FR5", f"CCRCC fix1 coverage at n=8 higher by >= 0.02 on the normalised scale (head refitted on the normalised outcome), {est}", (a2 - b) >= 0.02, estimand=est, cov_norm=a2, cov_log1p=b, diff=a2 - b)
 # FR6, coverage clause only (the frontier clause needs F2.5)
 for est in ["theta3", "mu"]:
     for scale in ["log1p", "lognorm"]:

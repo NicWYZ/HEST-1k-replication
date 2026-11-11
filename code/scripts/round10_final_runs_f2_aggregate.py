@@ -42,7 +42,7 @@ sw["approx_mcse"] = sw.median_ev_over_var * np.sqrt(2.0 / (sw.R - 1))
 sw["below_095"] = sw.median_ev_over_var < 0.95
 sw["within_2se_of_095"] = (sw.median_ev_over_var - 0.95).abs() < 2 * sw.approx_mcse
 sw.to_csv(os.path.join(out, "f2_switch_rule.csv"), index=False)
-prim = sw[sw.scale.isin(["log1p", "lognorm", "log_income"])]
+prim = sw[sw.scale.isin(["log1p", "lognorm", "log_income", "norm_refit"])]
 dec = dict(cells=len(sw), cells_below=int(sw.below_095.sum()), min_median=float(sw.median_ev_over_var.min()),
            cell_of_min=sw.loc[sw.median_ev_over_var.idxmin(), K].astype(str).to_dict(),
            cells_within_2se=int(sw.within_2se_of_095.sum()),

@@ -1,0 +1,623 @@
+{
+ "stage": "F2.5-F2.8",
+ "unit": "diagnostics_v2",
+ "cluster_values": [
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC_merged.parquet",
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__INDIANA_KIDNEY.parquet",
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__LUNG_XENIUM.parquet",
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1b_acs/cluster_values__ACS_STATES.parquet",
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__kidney__Visium.parquet",
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__brain__Visium.parquet",
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Xenium.parquet",
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__lung__Xenium.parquet",
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC.parquet",
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__INDIANA_KIDNEY.parquet",
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__LUNG_XENIUM.parquet"
+ ],
+ "regimeA_root": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeA",
+ "round9_kappa_script": "round9_fewcluster_hest_kappa.py",
+ "r9_i24": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round9/fewcluster/hest/i24_gene_kappa.csv",
+ "r9_c0_gene": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round9/diagnostics/c0_gene_diagnostics.csv",
+ "r9_c0_factor": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round9/diagnostics/c0_shared_donor_factor.csv",
+ "r9_norm_summary": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round9/norm/norm_summary.csv",
+ "spot_files": [
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  },
+  {
+   "task": "CCRCC",
+   "encoder": "hoptimus0",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__hoptimus0.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  },
+  {
+   "task": "CCRCC",
+   "encoder": "resnet50",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__resnet50.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  },
+  {
+   "task": "CCRCC_merged",
+   "encoder": "uni_v2",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC_merged__uni_v2.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  },
+  {
+   "task": "CCRCC_merged",
+   "encoder": "hoptimus0",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC_merged__hoptimus0.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  },
+  {
+   "task": "CCRCC_merged",
+   "encoder": "resnet50",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  },
+  {
+   "task": "INDIANA_KIDNEY",
+   "encoder": "uni_v2",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions_INDIANA_KIDNEY/b1_predictions__INDIANA_KIDNEY__uni_v2.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  },
+  {
+   "task": "INDIANA_KIDNEY",
+   "encoder": "hoptimus0",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions_INDIANA_KIDNEY/b1_predictions__INDIANA_KIDNEY__hoptimus0.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  },
+  {
+   "task": "INDIANA_KIDNEY",
+   "encoder": "resnet50",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions_INDIANA_KIDNEY/b1_predictions__INDIANA_KIDNEY__resnet50.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  },
+  {
+   "task": "LUNG_XENIUM",
+   "encoder": "uni_v2",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__uni_v2.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  },
+  {
+   "task": "LUNG_XENIUM",
+   "encoder": "hoptimus0",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__hoptimus0.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  },
+  {
+   "task": "LUNG_XENIUM",
+   "encoder": "resnet50",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__resnet50.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  },
+  {
+   "task": "kidney__Visium",
+   "encoder": "uni_v2",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/kidney__Visium__uni_v2/pred__kidney__Visium__uni_v2__donor.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y_log1p__",
+     "f_prefix": "f_log1p__"
+    },
+    {
+     "name": "lognorm",
+     "y_prefix": "y_lognorm__",
+     "f_prefix": "f_lognorm__"
+    }
+   ]
+  },
+  {
+   "task": "kidney__Visium",
+   "encoder": "hoptimus0",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/kidney__Visium__hoptimus0/pred__kidney__Visium__hoptimus0__donor.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y_log1p__",
+     "f_prefix": "f_log1p__"
+    },
+    {
+     "name": "lognorm",
+     "y_prefix": "y_lognorm__",
+     "f_prefix": "f_lognorm__"
+    }
+   ]
+  },
+  {
+   "task": "kidney__Visium",
+   "encoder": "resnet50",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/kidney__Visium__resnet50/pred__kidney__Visium__resnet50__donor.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y_log1p__",
+     "f_prefix": "f_log1p__"
+    },
+    {
+     "name": "lognorm",
+     "y_prefix": "y_lognorm__",
+     "f_prefix": "f_lognorm__"
+    }
+   ]
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y_log1p__",
+     "f_prefix": "f_log1p__"
+    },
+    {
+     "name": "lognorm",
+     "y_prefix": "y_lognorm__",
+     "f_prefix": "f_lognorm__"
+    }
+   ]
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "encoder": "hoptimus0",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__hoptimus0/pred__breast__Spatial_Transcriptomics__hoptimus0__donor.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y_log1p__",
+     "f_prefix": "f_log1p__"
+    },
+    {
+     "name": "lognorm",
+     "y_prefix": "y_lognorm__",
+     "f_prefix": "f_lognorm__"
+    }
+   ]
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "encoder": "resnet50",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__resnet50/pred__breast__Spatial_Transcriptomics__resnet50__donor.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y_log1p__",
+     "f_prefix": "f_log1p__"
+    },
+    {
+     "name": "lognorm",
+     "y_prefix": "y_lognorm__",
+     "f_prefix": "f_lognorm__"
+    }
+   ]
+  },
+  {
+   "task": "bowel__Visium",
+   "encoder": "uni_v2",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__uni_v2/pred__bowel__Visium__uni_v2__donor.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y_log1p__",
+     "f_prefix": "f_log1p__"
+    },
+    {
+     "name": "lognorm",
+     "y_prefix": "y_lognorm__",
+     "f_prefix": "f_lognorm__"
+    }
+   ]
+  },
+  {
+   "task": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y_log1p__",
+     "f_prefix": "f_log1p__"
+    },
+    {
+     "name": "lognorm",
+     "y_prefix": "y_lognorm__",
+     "f_prefix": "f_lognorm__"
+    }
+   ]
+  },
+  {
+   "task": "bowel__Visium",
+   "encoder": "resnet50",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__resnet50/pred__bowel__Visium__resnet50__donor.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y_log1p__",
+     "f_prefix": "f_log1p__"
+    },
+    {
+     "name": "lognorm",
+     "y_prefix": "y_lognorm__",
+     "f_prefix": "f_lognorm__"
+    }
+   ]
+  },
+  {
+   "task": "brain__Visium",
+   "encoder": "uni_v2",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__uni_v2/pred__brain__Visium__uni_v2__donor.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y_log1p__",
+     "f_prefix": "f_log1p__"
+    },
+    {
+     "name": "lognorm",
+     "y_prefix": "y_lognorm__",
+     "f_prefix": "f_lognorm__"
+    }
+   ]
+  },
+  {
+   "task": "brain__Visium",
+   "encoder": "hoptimus0",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__hoptimus0/pred__brain__Visium__hoptimus0__donor.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y_log1p__",
+     "f_prefix": "f_log1p__"
+    },
+    {
+     "name": "lognorm",
+     "y_prefix": "y_lognorm__",
+     "f_prefix": "f_lognorm__"
+    }
+   ]
+  },
+  {
+   "task": "brain__Visium",
+   "encoder": "resnet50",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__resnet50/pred__brain__Visium__resnet50__donor.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y_log1p__",
+     "f_prefix": "f_log1p__"
+    },
+    {
+     "name": "lognorm",
+     "y_prefix": "y_lognorm__",
+     "f_prefix": "f_lognorm__"
+    }
+   ]
+  },
+  {
+   "task": "breast__Xenium",
+   "encoder": "uni_v2",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Xenium__uni_v2/pred__breast__Xenium__uni_v2__donor.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y_log1p__",
+     "f_prefix": "f_log1p__"
+    },
+    {
+     "name": "lognorm",
+     "y_prefix": "y_lognorm__",
+     "f_prefix": "f_lognorm__"
+    }
+   ]
+  },
+  {
+   "task": "breast__Xenium",
+   "encoder": "hoptimus0",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Xenium__hoptimus0/pred__breast__Xenium__hoptimus0__donor.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y_log1p__",
+     "f_prefix": "f_log1p__"
+    },
+    {
+     "name": "lognorm",
+     "y_prefix": "y_lognorm__",
+     "f_prefix": "f_lognorm__"
+    }
+   ]
+  },
+  {
+   "task": "breast__Xenium",
+   "encoder": "resnet50",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Xenium__resnet50/pred__breast__Xenium__resnet50__donor.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y_log1p__",
+     "f_prefix": "f_log1p__"
+    },
+    {
+     "name": "lognorm",
+     "y_prefix": "y_lognorm__",
+     "f_prefix": "f_lognorm__"
+    }
+   ]
+  },
+  {
+   "task": "lung__Xenium",
+   "encoder": "uni_v2",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/lung__Xenium__uni_v2/pred__lung__Xenium__uni_v2__donor.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y_log1p__",
+     "f_prefix": "f_log1p__"
+    },
+    {
+     "name": "lognorm",
+     "y_prefix": "y_lognorm__",
+     "f_prefix": "f_lognorm__"
+    }
+   ]
+  },
+  {
+   "task": "lung__Xenium",
+   "encoder": "hoptimus0",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/lung__Xenium__hoptimus0/pred__lung__Xenium__hoptimus0__donor.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y_log1p__",
+     "f_prefix": "f_log1p__"
+    },
+    {
+     "name": "lognorm",
+     "y_prefix": "y_lognorm__",
+     "f_prefix": "f_lognorm__"
+    }
+   ]
+  },
+  {
+   "task": "lung__Xenium",
+   "encoder": "resnet50",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/lung__Xenium__resnet50/pred__lung__Xenium__resnet50__donor.parquet",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y_log1p__",
+     "f_prefix": "f_log1p__"
+    },
+    {
+     "name": "lognorm",
+     "y_prefix": "y_lognorm__",
+     "f_prefix": "f_lognorm__"
+    }
+   ]
+  },
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC__uni_v2/norm/b1_predictions__CCRCC__uni_v2.parquet",
+   "scales": [
+    {
+     "name": "norm_refit",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  },
+  {
+   "task": "CCRCC",
+   "encoder": "hoptimus0",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC__hoptimus0/norm/b1_predictions__CCRCC__hoptimus0.parquet",
+   "scales": [
+    {
+     "name": "norm_refit",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  },
+  {
+   "task": "CCRCC",
+   "encoder": "resnet50",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC__resnet50/norm/b1_predictions__CCRCC__resnet50.parquet",
+   "scales": [
+    {
+     "name": "norm_refit",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  },
+  {
+   "task": "CCRCC_merged",
+   "encoder": "uni_v2",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__uni_v2/norm/b1_predictions__CCRCC_merged__uni_v2.parquet",
+   "scales": [
+    {
+     "name": "norm_refit",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  },
+  {
+   "task": "CCRCC_merged",
+   "encoder": "hoptimus0",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__hoptimus0/norm/b1_predictions__CCRCC_merged__hoptimus0.parquet",
+   "scales": [
+    {
+     "name": "norm_refit",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  },
+  {
+   "task": "CCRCC_merged",
+   "encoder": "resnet50",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "scales": [
+    {
+     "name": "norm_refit",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  },
+  {
+   "task": "INDIANA_KIDNEY",
+   "encoder": "uni_v2",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/INDIANA_KIDNEY__uni_v2/norm/b1_predictions__INDIANA_KIDNEY__uni_v2.parquet",
+   "scales": [
+    {
+     "name": "norm_refit",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  },
+  {
+   "task": "INDIANA_KIDNEY",
+   "encoder": "hoptimus0",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/INDIANA_KIDNEY__hoptimus0/norm/b1_predictions__INDIANA_KIDNEY__hoptimus0.parquet",
+   "scales": [
+    {
+     "name": "norm_refit",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  },
+  {
+   "task": "INDIANA_KIDNEY",
+   "encoder": "resnet50",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/INDIANA_KIDNEY__resnet50/norm/b1_predictions__INDIANA_KIDNEY__resnet50.parquet",
+   "scales": [
+    {
+     "name": "norm_refit",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  },
+  {
+   "task": "LUNG_XENIUM",
+   "encoder": "uni_v2",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/LUNG_XENIUM__uni_v2/norm/b1_predictions__LUNG_XENIUM__uni_v2.parquet",
+   "scales": [
+    {
+     "name": "norm_refit",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  },
+  {
+   "task": "LUNG_XENIUM",
+   "encoder": "hoptimus0",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/LUNG_XENIUM__hoptimus0/norm/b1_predictions__LUNG_XENIUM__hoptimus0.parquet",
+   "scales": [
+    {
+     "name": "norm_refit",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  },
+  {
+   "task": "LUNG_XENIUM",
+   "encoder": "resnet50",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/LUNG_XENIUM__resnet50/norm/b1_predictions__LUNG_XENIUM__resnet50.parquet",
+   "scales": [
+    {
+     "name": "norm_refit",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  }
+ ]
+}
