@@ -8,6 +8,17 @@ What the project found at each step, what changed because of it, and which files
 
 ## Round 10 (from 6 November 2026)
 
+**10 November, night. The project's memory filed in the record before the move to another account.**
+- **Why.** Nicolas said the project is moving to another account, and asked that the project's claude.ai memory be compared with the repository and anything belonging in the record be filed.
+- **What was compared.** The six memory files of the project: its preferences, advisor presentations, the federated paper, compute, the Mac clones and the textual study.
+- **Already in the record.** Most of it was, under `CLAUDE.md`'s hard and working rules, `docs/EXECUTION_RULES.md`, `docs/WAYS_OF_WORKING.md` and `docs/environment.md`. The federated paper's origin is in `docs/round07/00_prep/round07_advisor_directions.md`, and the textual study's move to its own repository is in `CLAUDE.md` and `docs/environment.md`. The rest of both lines belongs to `NicWYZ/ST-Fed-Learn` and `NicWYZ/textual-st-histology`.
+- **Filed now.**
+  - `CLAUDE.md`, working rules: thoroughness first (19 October), no time estimates (7 November), and Nicolas's writing rules, which until now lived only in his old account's preferences.
+  - `docs/WAYS_OF_WORKING.md`: briefs and masterplans stay living on `main` and are revised in place (11 October), and the advisor decks have no background slides and stay lean (4 and 19 October).
+  - `docs/environment.md`: his Claude accounts before the move, the reuse of clones across rounds on the Mac (24 October), the final-runs sessions' Windows execution PC, and a fuller list of what a new account must recreate. That list includes the 24 claude.ai project docs, which hold what hard rule 8 keeps out of the repository and must be copied by hand.
+- **The state block.** It now carries track `final-runs` as running in stage F2, after gate F1 (tag `round10-final-runs-F1`, answered on 10 November). The round README gains the F1 gate row.
+- **Left out.** Memory lines that describe workflows the record has since replaced (`project-state-keeping`, memos, per-gate pull requests) are left as history in this log, not filed as rules.
+
 **8 November, night. Track final-runs started; kickoff text dropped.**
 - **The start.** Nicolas started the final-runs session in Claude Science.
 - **The kickoff file.** He said the kickoff text was largely redundant with the Claude Science project's instructions and the project-record skill. Those instructions already tell a session to fetch the repository, check out its branch, read `docs/EXECUTION_RULES.md` and write its plan from the brief, and the round layout passes nothing but the brief.
