@@ -1,5 +1,5 @@
 prediction,clause,holds,cells,min_median,task,estimand,median_frac_V_neg,rmse_fix1,rmse_classical,share,cov_norm,cov_log1p,diff,scale,coverage,coverage_r10,coverage_r5,drop,ref_rows
-FR2,median E(V_w)/Var >= 0.95 in every cell n>=6,True,1210.0,0.993685,,,,,,,,,,,,,,,
+FR2,median E(V_w)/Var >= 0.95 in every cell n>=6,True,1432.0,0.993685,,,,,,,,,,,,,,,
 FR2,"V < 0 in >= 0.05 of draws at n=6, CCRCC, theta3",True,,,CCRCC,theta3,0.197425,,,,,,,,,,,,
 FR2,"V < 0 in >= 0.05 of draws at n=6, CCRCC, mu",True,,,CCRCC,mu,0.18005,,,,,,,,,,,,
 FR2,"V < 0 in >= 0.05 of draws at n=6, INDIANA_KIDNEY, theta3",True,,,INDIANA_KIDNEY,theta3,0.20835,,,,,,,,,,,,
@@ -21,7 +21,9 @@ FR4,"share of genes with fix1 wider than classical at n=8, INDIANA_KIDNEY, mu",T
 FR4,"share of genes with fix1 wider than classical at n=8, LUNG_XENIUM, mu",False,,,LUNG_XENIUM,mu,,,,0.300292,,,,,,,,,
 FR4,"ACS fix1 narrower than classical at n=8, mu",True,,,ACS_STATES,mu,,,,0.0,,,,,,,,,
 FR5,"CCRCC fix1 coverage at n=8 higher by >= 0.02 on the normalised scale (round 9 pairing), theta3",False,,,,theta3,,,,,0.895125,0.896525,-0.0014,,,,,,
+FR5,"CCRCC fix1 coverage at n=8 higher by >= 0.02 on the normalised scale (head refitted on the normalised outcome), theta3",False,,,,theta3,,,,,0.895975,0.896525,-0.00055,,,,,,
 FR5,"CCRCC fix1 coverage at n=8 higher by >= 0.02 on the normalised scale (round 9 pairing), mu",True,,,,mu,,,,,0.894075,0.857825,0.03625,,,,,,
+FR5,"CCRCC fix1 coverage at n=8 higher by >= 0.02 on the normalised scale (head refitted on the normalised outcome), mu",True,,,,mu,,,,,0.884525,0.857825,0.0267,,,,,,
 FR6,"kidney Visium fix1 median coverage at n=16 below 0.88, theta3, log1p (frontier clause not yet run)",False,,,,theta3,,,,,,,,log1p,0.892425,,,,
 FR6,"kidney Visium fix1 median coverage at n=16 below 0.88, theta3, lognorm (frontier clause not yet run)",False,,,,theta3,,,,,,,,lognorm,0.89375,,,,
 FR6,"kidney Visium fix1 median coverage at n=16 below 0.88, mu, log1p (frontier clause not yet run)",False,,,,mu,,,,,,,,log1p,0.899325,,,,
