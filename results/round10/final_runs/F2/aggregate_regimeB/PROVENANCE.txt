@@ -1,0 +1,29 @@
+platform: Longleaf
+slurm_job_id: 8824760
+slurm_job_partition: spill
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 24000
+node: c0805
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F2
+unit: aggregate_lb_v1
+frame_id: e57d4a98-8078-4281-8c49-84c1df952f94
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 6b7e0f662c3edde4ed239d54760150d54f1d5091
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/6b7e0f662c3edde4ed239d54760150d54f1d5091
+command: round10_final_runs_f2_limits_aggregate.py F2/limits F2/aggregate_v2 configs/limits limits; round10_final_runs_f2_regimeB_aggregate.py F2/regimeB configs/regimeB regimeB
+config: {"commit":"6b7e0f662c3edde4ed239d54760150d54f1d5091","stage":"F2","unit":"aggregate_lb_v1"}
+config_sha256: d7b3d53a6f260a5f23aed7a9a362da7d6253f17e1c561682301d7737a34e809d
+start: 2026-11-10T23:30:03-05:00
+end: 2026-11-10T23:30:39-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  7acdb64ccea02fb704a5e571dd5d62bb  code/scripts/round10_final_runs_f2_limits_aggregate.py
+  a80a68637dea25ce6c385a98cf47c365  code/scripts/round10_final_runs_f2_regimeB_aggregate.py
+inputs (md5, path):
+  519eb8ba71cc8664296e52fd95a0dbbb  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/aggregate_v2/f2_regimeA_summary.csv
