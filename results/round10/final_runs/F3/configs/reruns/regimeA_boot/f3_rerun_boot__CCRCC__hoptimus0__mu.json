@@ -1,0 +1,49 @@
+{
+ "stage": "F3-reruns-boot",
+ "unit": "rerun_boot__CCRCC__hoptimus0__mu",
+ "cluster_values": [
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet"
+ ],
+ "select": {
+  "task": [
+   "CCRCC"
+  ],
+  "encoder": [
+   "hoptimus0"
+  ],
+  "estimand": [
+   "mu"
+  ]
+ },
+ "n_grid": [
+  4,
+  6,
+  8,
+  10,
+  12,
+  16
+ ],
+ "extra_n": {
+  "kidney__Visium": [
+   20,
+   25
+  ]
+ },
+ "R": 20000,
+ "R_boot": 2000,
+ "B": 999,
+ "boot_select": {
+  "encoder": [
+   "uni_v2",
+   "pkg",
+   "hoptimus0",
+   "resnet50"
+  ],
+  "estimand": [
+   "theta3",
+   "theta2",
+   "mu"
+  ]
+ },
+ "f2_regimeA_config": "results/round10/final_runs/F2/configs/regimeA/f2_regimeA__CCRCC__hoptimus0.json"
+}
