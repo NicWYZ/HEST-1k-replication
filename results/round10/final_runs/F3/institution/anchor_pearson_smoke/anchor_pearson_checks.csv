@@ -1,0 +1,4 @@
+check,n_genes,reference,reproduced,abs_diff,tol,passed,primary
+median_pearson_log1p,50.0,0.1231185212706665,0.12311852127066651,1.3877787807814457e-17,1e-09,True,True
+median_pearson_lognorm,50.0,0.088752387174247,0.08875238717424705,5.551115123125783e-17,1e-09,True,False
+spots,,114137.0,114137.0,0.0,0.0,True,False

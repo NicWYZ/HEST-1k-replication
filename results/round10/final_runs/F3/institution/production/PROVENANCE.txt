@@ -1,0 +1,43 @@
+platform: Longleaf
+slurm_job_id: 8970515
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 16384
+node: c0808
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F3
+unit: production
+frame_id: b9c04725-eaea-4b47-8586-4ff29636ba08
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 3fa951ed5cb6b9ddadf47a95a083b313d19b45be
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/3fa951ed5cb6b9ddadf47a95a083b313d19b45be
+command: round10_final_runs_f3_institution.py run --config /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/institution/production.json --out /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/institution/production
+config: {"commit":"3fa951ed5cb6b9ddadf47a95a083b313d19b45be","config":"results/round10/final_runs/F3/configs/institution/production.json","stage":"F3","unit":"production"}
+config_sha256: 446a266e153133c479baa4061baf946028a017b377009e7751b4e669d4440c99
+start: 2026-11-12T08:31:09-05:00
+end: 2026-11-12T08:38:03-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  6cea55ed3f72fc7b1877df0257ce5851  code/scripts/round10_final_runs_f3_institution.py
+  2d8418677cf8290eec89a14c315b92cd  code/scripts/round4_conf_c3.py
+  76fda34ee622e299bbaa806e5c8da98a  code/scripts/round4_conf_sim.py
+  1936e4350d2dfc5816b0fd45e343e810  code/scripts/round4_conf_io.py
+inputs (md5, path):
+  2eb91837093ddff4db11328824373faf  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/institution/production.json
+  ffa2c6f93ef72c14e69ae9760439744c  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/kidney__Visium__hoptimus0/pred__kidney__Visium__hoptimus0__center.parquet
+  f820b0903ba5f6117c7d8de828fe1983  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/kidney__Visium__uni_v2/pred__kidney__Visium__uni_v2__center.parquet
+  ee94b5cc48413111e2f06dd685113a67  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/kidney__Visium__resnet50/pred__kidney__Visium__resnet50__center.parquet
+  6261e94a13a6cf476e4d5d209de7d430  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__hoptimus0/pred__brain__Visium__hoptimus0__center.parquet
+  7b6ac703a4d4fadc510169488f9a87cd  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__uni_v2/pred__brain__Visium__uni_v2__center.parquet
+  8487b50b7440983fd891cef2a361e17f  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__resnet50/pred__brain__Visium__resnet50__center.parquet
+  b3d667385b16acb28fed24131a9b59f3  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__center.parquet
+  62f3b3cd175ed0bd51143f03acb45dfe  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__uni_v2/pred__bowel__Visium__uni_v2__center.parquet
+  c2b03bf554582bc0c91b1a222cada58a  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__resnet50/pred__bowel__Visium__resnet50__center.parquet
+  53b497bd24d5b87ade6ebc70407e2a9b  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Xenium__hoptimus0__center_grouped/pred__breast__Xenium__hoptimus0__center.parquet
+  464876bb7f3fd8bf3337773f89c3b272  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Xenium__uni_v2__center_grouped/pred__breast__Xenium__uni_v2__center.parquet
+  2bce8ab44bb22d591987791c68da8624  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Xenium__resnet50__center_grouped/pred__breast__Xenium__resnet50__center.parquet

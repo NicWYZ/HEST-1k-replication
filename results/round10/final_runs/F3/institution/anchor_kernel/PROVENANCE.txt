@@ -1,0 +1,35 @@
+platform: Longleaf
+slurm_job_id: 8939284
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 4
+slurm_mem_per_node: 24576
+node: c0921
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F3
+unit: anchor_kernel
+frame_id: b9c04725-eaea-4b47-8586-4ff29636ba08
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 3fa951ed5cb6b9ddadf47a95a083b313d19b45be
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/3fa951ed5cb6b9ddadf47a95a083b313d19b45be
+command: round10_final_runs_f3_institution.py anchor_kernel --w3-by-fold /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round5/conformal/W3_real/merged/w3_by_fold.csv --out /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/institution/anchor_kernel
+config: {"K":10,"alpha":0.1,"commit":"3fa951ed5cb6b9ddadf47a95a083b313d19b45be","encoder":"uni_v2","fold":"INT1","stage":"F3","task":"CCRCC:24","unit":"anchor_kernel"}
+config_sha256: b0ae36e25ffceb841b51ebce08a699ee525cb2eadf1959c97934ff2556bcc25c
+start: 2026-11-12T08:20:12-05:00
+end: 2026-11-12T08:21:27-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  6cea55ed3f72fc7b1877df0257ce5851  code/scripts/round10_final_runs_f3_institution.py
+  2d8418677cf8290eec89a14c315b92cd  code/scripts/round4_conf_c3.py
+  76fda34ee622e299bbaa806e5c8da98a  code/scripts/round4_conf_sim.py
+  1936e4350d2dfc5816b0fd45e343e810  code/scripts/round4_conf_io.py
+  0ad7ae8efe554c1f285e5f384a9fb7f5  code/scripts/round3_a0_harness.py
+  56bf3621ae53efe41140c439164b5534  code/scripts/round3_a4b_hcp.py
+inputs (md5, path):
+  b48a2de81104de9fff8ddfa1bfadabdd  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round5/conformal/W3_real/merged/w3_by_fold.csv
+  fa87eb05137bb8c95e5329e19268a4ab  /work/users/w/e/weiyang/hest_replication/results/round3/task_defs/CCRCC.json
+  4900dec9ae6fcf2ec1ea81702f492804  /work/users/w/e/weiyang/hest_replication/results/round3/D3_audit/donor_audit_r3.csv

@@ -1,0 +1,33 @@
+platform: Longleaf
+slurm_job_id: 8939289
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 12288
+node: c0832
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F3
+unit: anchor_pearson_smoke
+frame_id: b9c04725-eaea-4b47-8586-4ff29636ba08
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 3fa951ed5cb6b9ddadf47a95a083b313d19b45be
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/3fa951ed5cb6b9ddadf47a95a083b313d19b45be
+command: round10_final_runs_f3_institution.py anchor_pearson --pred /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/kidney__Visium__uni_v2/pred__kidney__Visium__uni_v2__center.parquet --f1-predictions /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F1/aggregate/f1_predictions.csv --task kidney__Visium --encoder uni_v2 --out /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/institution/anchor_pearson_smoke ; round10_final_runs_f3_institution.py run --config /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/institution/smoke_kidney_uni_v2.json --out /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/institution/anchor_pearson_smoke/smoke
+config: {"commit":"3fa951ed5cb6b9ddadf47a95a083b313d19b45be","smoke_config":"results/round10/final_runs/F3/configs/institution/smoke_kidney_uni_v2.json","stage":"F3","unit":"anchor_pearson_smoke"}
+config_sha256: 517f2e3c830dc78350d6cb652e98d5108b1705a2bac8e19456242e117bd6c82a
+start: 2026-11-12T08:19:10-05:00
+end: 2026-11-12T08:19:49-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  6cea55ed3f72fc7b1877df0257ce5851  code/scripts/round10_final_runs_f3_institution.py
+  2d8418677cf8290eec89a14c315b92cd  code/scripts/round4_conf_c3.py
+  76fda34ee622e299bbaa806e5c8da98a  code/scripts/round4_conf_sim.py
+  1936e4350d2dfc5816b0fd45e343e810  code/scripts/round4_conf_io.py
+inputs (md5, path):
+  f820b0903ba5f6117c7d8de828fe1983  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/kidney__Visium__uni_v2/pred__kidney__Visium__uni_v2__center.parquet
+  b2c6d4a02f82f226634abaf78897447c  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F1/aggregate/f1_predictions.csv
+  ac6eef42952553e8399c79f95bb80520  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/institution/smoke_kidney_uni_v2.json
