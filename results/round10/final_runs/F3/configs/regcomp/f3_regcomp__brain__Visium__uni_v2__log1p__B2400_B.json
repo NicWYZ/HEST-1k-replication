@@ -1,0 +1,54 @@
+{
+ "stage": "F3",
+ "unit": "regcomp__brain__Visium__uni_v2__log1p__B2400_B",
+ "R": 2000,
+ "populations": [
+  {
+   "task": "brain__Visium",
+   "vtag": "brain__Visium",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "log1p",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__uni_v2/pred__brain__Visium__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/brain__Visium/morphology__brain__Visium.parquet",
+   "y_prefix": "y_log1p__",
+   "f_prefix": "f_log1p__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3",
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__brain__Visium.parquet"
+  },
+  {
+   "task": "brain__Visium",
+   "vtag": "brain__Visium",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "log1p",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__uni_v2/pred__brain__Visium__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/brain__Visium/morphology__brain__Visium.parquet",
+   "y_prefix": "y_log1p__",
+   "f_prefix": "f_log1p__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__brain__Visium.parquet",
+   "theta2_kind": "mean"
+  }
+ ],
+ "estimands_reported": [
+  "theta3",
+  "theta2",
+  "mu"
+ ],
+ "budgets": [
+  2400
+ ],
+ "regimes": [
+  "B"
+ ]
+}

@@ -1,0 +1,619 @@
+{
+ "config": {
+  "stage": "F3",
+  "unit": "regcomp_smoke",
+  "R": 2000,
+  "anchor": {
+   "draws": 200,
+   "ref_csv": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round5/ppi/E3_twolevel/CCRCC/uni_v2__regcomp/e3_regcomp__CCRCC__uni_v2.csv",
+   "populations": [
+    {
+     "task": "CCRCC",
+     "vtag": "CCRCC",
+     "encoder": "uni_v2",
+     "arm": "uni_v2",
+     "scale": "log1p",
+     "source": "r5",
+     "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+     "estimands": [
+      "theta3",
+      "theta2"
+     ],
+     "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet"
+    }
+   ],
+   "named": [
+    {
+     "regime": "B",
+     "budget": 2240.0,
+     "cost": "cd_cs_10_vs_A_nL8_B2400",
+     "n_L": 24,
+     "m": "prop",
+     "estimand": "theta3",
+     "interval": "regB_t",
+     "estimator": "C_ppi"
+    },
+    {
+     "regime": "A",
+     "budget": 2400.0,
+     "cost": "unit",
+     "n_L": 8,
+     "m": "300",
+     "estimand": "theta3",
+     "interval": "textbook_t|fpc|lin|xf",
+     "estimator": "C_ppi"
+    }
+   ],
+   "regimes": [
+    "A",
+    "B"
+   ],
+   "budgets": [
+    2400
+   ],
+   "costs": [
+    "unit",
+    10
+   ],
+   "n_L": [
+    8
+   ]
+  },
+  "regimes": [
+   "A",
+   "B"
+  ],
+  "budgets": [
+   2400
+  ],
+  "costs": [
+   10
+  ],
+  "n_L": [
+   8
+  ],
+  "populations": [
+   {
+    "task": "CCRCC",
+    "vtag": "CCRCC",
+    "encoder": "uni_v2",
+    "arm": "uni_v2",
+    "scale": "log1p",
+    "source": "r5",
+    "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+    "estimands": [
+     "theta3"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet"
+   },
+   {
+    "task": "CCRCC",
+    "vtag": "CCRCC",
+    "encoder": "uni_v2",
+    "arm": "uni_v2",
+    "scale": "log1p",
+    "source": "r5",
+    "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+    "estimands": [
+     "theta2"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+    "theta2_kind": "mean",
+    "R": 200
+   },
+   {
+    "task": "LUNG_XENIUM",
+    "vtag": "LUNG_XENIUM",
+    "encoder": "uni_v2",
+    "arm": "uni_v2",
+    "scale": "norm_refit",
+    "source": "r5",
+    "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/LUNG_XENIUM__uni_v2/norm/b1_predictions__LUNG_XENIUM__uni_v2.parquet",
+    "estimands": [
+     "theta3",
+     "theta2"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__LUNG_XENIUM.parquet",
+    "R": 200
+   },
+   {
+    "task": "kidney__Visium",
+    "vtag": "kidney__Visium",
+    "encoder": "uni_v2",
+    "arm": "uni_v2",
+    "scale": "log1p",
+    "source": "corpus",
+    "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/kidney__Visium__uni_v2/pred__kidney__Visium__uni_v2__donor.parquet",
+    "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/kidney__Visium/morphology__kidney__Visium.parquet",
+    "y_prefix": "y_log1p__",
+    "f_prefix": "f_log1p__",
+    "donor_col": "donor_id",
+    "estimands": [
+     "theta3"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__kidney__Visium.parquet",
+    "R": 200
+   },
+   {
+    "task": "ACS_STATES",
+    "vtag": "ACS_STATES",
+    "encoder": "pkg",
+    "arm": "package",
+    "scale": "log_income",
+    "source": "r5",
+    "theta2_kind": "mean",
+    "parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_STATES.parquet",
+    "estimands": [
+     "theta3",
+     "theta2"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1b_acs/cluster_values__ACS_STATES.parquet",
+    "R": 200
+   }
+  ],
+  "fix1_census_check": [
+   {
+    "task": "CCRCC",
+    "vtag": "CCRCC",
+    "encoder": "uni_v2",
+    "arm": "uni_v2",
+    "scale": "log1p",
+    "source": "r5",
+    "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+    "estimands": [
+     "theta3",
+     "theta2"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet"
+   },
+   {
+    "task": "CCRCC",
+    "vtag": "CCRCC",
+    "encoder": "uni_v2",
+    "arm": "uni_v2",
+    "scale": "log1p",
+    "source": "r5",
+    "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+    "estimands": [
+     "theta2"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+    "theta2_kind": "mean"
+   },
+   {
+    "task": "kidney__Visium",
+    "vtag": "kidney__Visium",
+    "encoder": "uni_v2",
+    "arm": "uni_v2",
+    "scale": "lognorm",
+    "source": "corpus",
+    "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/kidney__Visium__uni_v2/pred__kidney__Visium__uni_v2__donor.parquet",
+    "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/kidney__Visium/morphology__kidney__Visium.parquet",
+    "y_prefix": "y_lognorm__",
+    "f_prefix": "f_lognorm__",
+    "donor_col": "donor_id",
+    "estimands": [
+     "theta3",
+     "theta2"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__kidney__Visium.parquet"
+   },
+   {
+    "task": "ACS_STATES",
+    "vtag": "ACS_STATES",
+    "encoder": "pkg",
+    "arm": "package",
+    "scale": "log_income",
+    "source": "r5",
+    "theta2_kind": "mean",
+    "parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_STATES.parquet",
+    "estimands": [
+     "theta3",
+     "theta2"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1b_acs/cluster_values__ACS_STATES.parquet"
+   }
+  ]
+ },
+ "started": "2026-11-12T08:31:23",
+ "populations": [
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 24,
+   "n_units": 67673,
+   "n_genes": 50,
+   "n_cells": 2,
+   "load_seconds": 0.6,
+   "cells": [
+    {
+     "estimand": "theta3",
+     "tag": "regcomp|A|B2400|unit|nL8|m300",
+     "seconds": 42.6
+    },
+    {
+     "estimand": "theta3",
+     "tag": "regcomp|B|B2240.0|cd_cs_10_vs_A_nL8_B2400|nL24|mprop",
+     "seconds": 35.7
+    }
+   ],
+   "cv_check": {
+    "theta3": {
+     "n_valid_regimeB": 24,
+     "n_donors_cv": 24,
+     "n_common": 24,
+     "n_genes": 50,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 2.0161163194518277e-13,
+     "max_abs": 1.9984014443252818e-15
+    }
+   },
+   "seconds": 79.0
+  },
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 24,
+   "n_units": 67673,
+   "n_genes": 50,
+   "n_cells": 2,
+   "load_seconds": 0.5,
+   "cells": [
+    {
+     "estimand": "mu",
+     "tag": "regcomp|A|B2400|unit|nL8|m300",
+     "seconds": 3.2
+    },
+    {
+     "estimand": "mu",
+     "tag": "regcomp|B|B2240.0|cd_cs_10_vs_A_nL8_B2400|nL24|mprop",
+     "seconds": 2.4
+    }
+   ],
+   "cv_check": {
+    "mu": {
+     "n_valid_regimeB": 24,
+     "n_donors_cv": 24,
+     "n_common": 24,
+     "n_genes": 50,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 0.19211193898031662,
+     "max_abs": 0.1332702393296752
+    }
+   },
+   "seconds": 6.2
+  },
+  {
+   "task": "LUNG_XENIUM",
+   "encoder": "uni_v2",
+   "scale": "norm_refit",
+   "G": 15,
+   "n_units": 18973,
+   "n_genes": 343,
+   "n_cells": 2,
+   "load_seconds": 1.2,
+   "cells": [
+    {
+     "estimand": "theta3",
+     "tag": "regcomp|A|B2400|unit|nL8|m300",
+     "seconds": 23.7
+    },
+    {
+     "estimand": "theta3",
+     "tag": "regcomp|B|B2330.0|cd_cs_10_vs_A_nL8_B2400|nL15|mprop",
+     "seconds": 21.2
+    },
+    {
+     "estimand": "theta2",
+     "tag": "regcomp|A|B2400|unit|nL8|m300",
+     "seconds": 10.1
+    },
+    {
+     "estimand": "theta2",
+     "tag": "regcomp|B|B2330.0|cd_cs_10_vs_A_nL8_B2400|nL15|mprop",
+     "seconds": 9.5
+    }
+   ],
+   "cv_check": {
+    "theta3": {
+     "n_valid_regimeB": 15,
+     "n_donors_cv": 15,
+     "n_common": 15,
+     "n_genes": 343,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 2.419920621168229e-12,
+     "max_abs": 3.6637359812630166e-15
+    },
+    "theta2": {
+     "n_valid_regimeB": 9,
+     "n_donors_cv": 9,
+     "n_common": 9,
+     "n_genes": 343,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 1.645243495479962e-12,
+     "max_abs": 1.0547118733938987e-14
+    }
+   },
+   "seconds": 65.8
+  },
+  {
+   "task": "kidney__Visium",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 51,
+   "n_units": 107668,
+   "n_genes": 50,
+   "n_cells": 2,
+   "load_seconds": 1.5,
+   "cells": [
+    {
+     "estimand": "theta3",
+     "tag": "regcomp|A|B2400|unit|nL8|m300",
+     "seconds": 4.5
+    },
+    {
+     "estimand": "theta3",
+     "tag": "regcomp|B|B1970.0|cd_cs_10_vs_A_nL8_B2400|nL51|mprop",
+     "seconds": 3.8
+    }
+   ],
+   "cv_check": {
+    "theta3": {
+     "n_valid_regimeB": 51,
+     "n_donors_cv": 51,
+     "n_common": 51,
+     "n_genes": 50,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 1.2037102018899638e-12,
+     "max_abs": 1.1546319456101628e-14
+    }
+   },
+   "seconds": 9.9
+  },
+  {
+   "task": "ACS_STATES",
+   "encoder": "pkg",
+   "scale": "log_income",
+   "G": 51,
+   "n_units": 1659616,
+   "n_genes": 1,
+   "n_cells": 2,
+   "load_seconds": 1.8,
+   "cells": [
+    {
+     "estimand": "theta3",
+     "tag": "regcomp|A|B2400|unit|nL8|m300",
+     "seconds": 1.4
+    },
+    {
+     "estimand": "theta3",
+     "tag": "regcomp|B|B1970.0|cd_cs_10_vs_A_nL8_B2400|nL51|mprop",
+     "seconds": 1.2
+    },
+    {
+     "estimand": "mu",
+     "tag": "regcomp|A|B2400|unit|nL8|m300",
+     "seconds": 1.4
+    },
+    {
+     "estimand": "mu",
+     "tag": "regcomp|B|B1970.0|cd_cs_10_vs_A_nL8_B2400|nL51|mprop",
+     "seconds": 1.1
+    }
+   ],
+   "cv_check": {
+    "theta3": {
+     "n_valid_regimeB": 51,
+     "n_donors_cv": 51,
+     "n_common": 51,
+     "n_genes": 1,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 2.9175447380292066e-14,
+     "max_abs": 1.3156142841808105e-14
+    },
+    "mu": {
+     "n_valid_regimeB": 51,
+     "n_donors_cv": 51,
+     "n_common": 51,
+     "n_genes": 1,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 2.394909195109668e-13,
+     "max_abs": 2.509992214072554e-12
+    }
+   },
+   "seconds": 7.0
+  }
+ ],
+ "anchor_populations": [
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 24,
+   "n_units": 67673,
+   "n_genes": 50,
+   "n_cells": 3,
+   "load_seconds": 0.8,
+   "cells": [
+    {
+     "estimand": "theta3",
+     "tag": "regcomp|A|B2400|unit|nL8|m300",
+     "seconds": 4.4
+    },
+    {
+     "estimand": "theta3",
+     "tag": "regcomp|B|B2400|unit|nL24|mprop",
+     "seconds": 3.7
+    },
+    {
+     "estimand": "theta3",
+     "tag": "regcomp|B|B2240.0|cd_cs_10_vs_A_nL8_B2400|nL24|mprop",
+     "seconds": 3.7
+    },
+    {
+     "estimand": "theta2",
+     "tag": "regcomp|A|B2400|unit|nL8|m300",
+     "seconds": 3.2
+    },
+    {
+     "estimand": "theta2",
+     "tag": "regcomp|B|B2400|unit|nL24|mprop",
+     "seconds": 2.9
+    },
+    {
+     "estimand": "theta2",
+     "tag": "regcomp|B|B2240.0|cd_cs_10_vs_A_nL8_B2400|nL24|mprop",
+     "seconds": 2.9
+    }
+   ],
+   "cv_check": {
+    "theta3": {
+     "n_valid_regimeB": 24,
+     "n_donors_cv": 24,
+     "n_common": 24,
+     "n_genes": 50,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 2.0161163194518277e-13,
+     "max_abs": 1.9984014443252818e-15
+    },
+    "theta2": {
+     "n_valid_regimeB": 23,
+     "n_donors_cv": 23,
+     "n_common": 23,
+     "n_genes": 50,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 1.6887808447466798e-12,
+     "max_abs": 2.864375403532904e-14
+    }
+   },
+   "seconds": 21.7
+  }
+ ],
+ "anchor": {
+  "rows": 16,
+  "rows_matched": 16,
+  "seconds": 21.8,
+  "max_d_n_genes": 0.0,
+  "max_d_emp_var_median": 9.215718466126788e-17,
+  "max_d_est_var_over_emp_var_median": 2.220446049250313e-16,
+  "max_d_coverage_median": 0.0,
+  "max_d_coverage_mean": 1.1102230246251565e-16,
+  "max_d_coverage_min": 0.0,
+  "max_d_lambda_median": 5.551115123125783e-17,
+  "max_d_lambda_frac_zero": 0.0,
+  "max_d_m_median": 0.0,
+  "named": [
+   {
+    "regime": "B",
+    "budget": 2240.0,
+    "cost": "cd_cs_10_vs_A_nL8_B2400",
+    "n_L": 24,
+    "m": "prop",
+    "estimand": "theta3",
+    "interval": "regB_t",
+    "estimator": "C_ppi",
+    "emp_var_median": 0.0005179918654981099,
+    "coverage_median": 0.9,
+    "est_var_over_emp_var_median": 0.9951539563920146,
+    "emp_var_median_r5": 0.0005179918654981,
+    "coverage_median_r5": 0.9,
+    "est_var_over_emp_var_median_r5": 0.9951539563920146
+   },
+   {
+    "regime": "A",
+    "budget": 2400.0,
+    "cost": "unit",
+    "n_L": 8,
+    "m": "300",
+    "estimand": "theta3",
+    "interval": "textbook_t|fpc|lin|xf",
+    "estimator": "C_ppi",
+    "emp_var_median": 0.0015819583782623156,
+    "coverage_median": 0.8825000000000001,
+    "est_var_over_emp_var_median": 0.9548431367224566,
+    "emp_var_median_r5": 0.0015819583782623,
+    "coverage_median_r5": 0.8825000000000001,
+    "est_var_over_emp_var_median_r5": 0.9548431367224566
+   }
+  ]
+ },
+ "fix1_census_check": [
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "estimand": "theta3",
+   "max_abs_theta": 2.498001805406602e-16,
+   "max_abs_ebar": 2.4424906541753444e-15,
+   "max_abs_V": 0.0
+  },
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "estimand": "theta2",
+   "max_abs_theta": 2.1649348980190553e-15,
+   "max_abs_ebar": 1.6653345369377348e-14,
+   "max_abs_V": 0.0
+  },
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "estimand": "mu",
+   "max_abs_theta": 1.1102230246251565e-16,
+   "max_abs_ebar": 2.220446049250313e-16,
+   "max_abs_V": 0.0,
+   "max_abs_ebar_vs_spots": 2.220446049250313e-16
+  },
+  {
+   "task": "kidney__Visium",
+   "encoder": "uni_v2",
+   "scale": "lognorm",
+   "estimand": "theta3",
+   "max_abs_theta": 1.5432100042289676e-14,
+   "max_abs_ebar": 7.849276784099857e-14,
+   "max_abs_V": 0.0
+  },
+  {
+   "task": "kidney__Visium",
+   "encoder": "uni_v2",
+   "scale": "lognorm",
+   "estimand": "theta2",
+   "max_abs_theta": 4.773959005888173e-15,
+   "max_abs_ebar": 1.2712053631958042e-14,
+   "max_abs_V": 0.0
+  },
+  {
+   "task": "ACS_STATES",
+   "encoder": "pkg",
+   "scale": "log_income",
+   "estimand": "theta3",
+   "max_abs_theta": 3.774758283725532e-15,
+   "max_abs_ebar": 2.0816681711721685e-14,
+   "max_abs_V": 0.0
+  },
+  {
+   "task": "ACS_STATES",
+   "encoder": "pkg",
+   "scale": "log_income",
+   "estimand": "mu",
+   "max_abs_theta": 7.283063041541027e-14,
+   "max_abs_ebar": 6.270539643082884e-13,
+   "max_abs_V": 0.0,
+   "max_abs_ebar_vs_spots": 8.257283745649602e-16
+  }
+ ],
+ "finished": "2026-11-12T08:34:37"
+}

@@ -1,0 +1,42 @@
+{
+ "stage": "F3",
+ "unit": "regB_e8__LUNG_XENIUM__resnet50__log1p__c1",
+ "R": 2000,
+ "forms": [
+  "C_fix1",
+  "C_ppi",
+  "C_classical"
+ ],
+ "widths_forms": [
+  "C_fix1",
+  "C_classical"
+ ],
+ "wr_boot": 200,
+ "m_grid": [
+  17,
+  20,
+  25,
+  30,
+  50,
+  100
+ ],
+ "f2_summary": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F2/aggregate_regimeB/f2_regimeB_summary.csv",
+ "populations": [
+  {
+   "task": "LUNG_XENIUM",
+   "vtag": "LUNG_XENIUM",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "log1p",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__resnet50.parquet",
+   "estimands": [
+    "theta3",
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__LUNG_XENIUM.parquet",
+   "f2_genes": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/LUNG_XENIUM__resnet50/regimeB_genes.parquet"
+  }
+ ],
+ "_cells": 12
+}

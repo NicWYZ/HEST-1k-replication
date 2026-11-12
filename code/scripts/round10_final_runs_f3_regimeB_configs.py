@@ -16,7 +16,9 @@ Items and units (one Slurm job per unit; every unit writes to $BASE/F3/regimeB/<
   regcomp    5d.3 (i): round10_final_runs_f3_regcomp.py run, every task as in box, theta3, theta2 and mu (two
              populations of the same file, the second with round 5's theta2 kind 'mean'), R = 2000.
 Splitting: --chunk <item>:<task>=<k> splits that task's m grid (e8, box) into k contiguous chunks (box rows only in
-chunk 0); --split-regcomp population|budget|budget_regime sets regcomp's unit; --mem/--time <item>=<v> and
+chunk 0); --split-regcomp population|budget|budget_regime sets regcomp's unit, and --regcomp-fine <tasks> splits those
+tasks' units further, by estimand and into two cell groups per (budget, regime) (regime A n_L {4, 6} and {8, 12}; regime
+B costs {unit, 10} and {100, 1000}); --mem/--time <item>=<v> and
 --mem-task/--time-task <item>:<task>=<v> set each job's #SBATCH values. Job scripts are templates with
 COMMIT=__CODE_COMMIT__, substituted at submission.
 usage: round10_final_runs_f3_regimeB_configs.py <out_root> [options]   (writes <out_root>/results/round10/...)
@@ -164,8 +166,9 @@ def main():
     ap.add_argument("--mem", action="append", default=[]); ap.add_argument("--time", action="append", default=[])
     ap.add_argument("--mem-task", action="append", default=[]); ap.add_argument("--time-task", action="append", default=[])
     ap.add_argument("--cpus", type=int, default=2)
+    ap.add_argument("--regcomp-fine", default="", help="comma-separated tasks split by estimand and cell group")
     a = ap.parse_args()
-    items = a.items.split(","); CH = kv(a.chunk); MEM = kv(a.mem); TIM = kv(a.time); MT = kv(a.mem_task); TT = kv(a.time_task)
+    items = a.items.split(","); CH = kv(a.chunk); FINE = set(x for x in a.regcomp_fine.split(",") if x); MEM = kv(a.mem); TIM = kv(a.time); MT = kv(a.mem_task); TT = kv(a.time_task)
     rel_cfg = "results/round10/final_runs/F3/configs"; rel_js = "results/round10/final_runs/job_scripts"
     for sub in ("regimeB", "regcomp", "box"):
         os.makedirs(os.path.join(a.out_root, rel_cfg, sub), exist_ok=True)
@@ -230,15 +233,25 @@ def main():
                 pops = [mk(("theta3", "theta2"))]
             else:
                 pops = [mk(("theta3", "theta2")), mk(("theta2",), kind="mean")]
-            if a.split_regcomp == "population":
-                parts = [("all", {})]
+            if t in FINE:
+                # one estimand per unit and the cells of a (budget, regime) in two groups
+                epops = [("theta3", [mk(("theta3",))]), ("theta2", [mk(("theta2",))]), ("mu", [mk(("theta2",), kind="mean")])]
+                parts = []
+                for b in (2400, 4800, 9600):
+                    for r, groups in (("A", (("nL4-6", dict(n_L=[4, 6])), ("nL8-12", dict(n_L=[8, 12])))),
+                                      ("B", (("unit-c10", dict(costs=["unit", 10])), ("c100-c1000", dict(costs=[100, 1000]))))):
+                        for gn, gf in groups:
+                            for en, ep in epops:
+                                parts.append((f"B{b}_{r}_{gn}_{en}", dict(budgets=[b], regimes=[r], **gf), ep))
+            elif a.split_regcomp == "population":
+                parts = [("all", {}, pops)]
             elif a.split_regcomp == "budget":
-                parts = [(f"B{b}", dict(budgets=[b])) for b in (2400, 4800, 9600)]
+                parts = [(f"B{b}", dict(budgets=[b]), pops) for b in (2400, 4800, 9600)]
             else:
-                parts = [(f"B{b}_{r}", dict(budgets=[b], regimes=[r])) for b in (2400, 4800, 9600) for r in ("A", "B")]
-            for pn, flt in parts:
+                parts = [(f"B{b}_{r}", dict(budgets=[b], regimes=[r]), pops) for b in (2400, 4800, 9600) for r in ("A", "B")]
+            for pn, flt, pp in parts:
                 u = f"{t}__{e}__{sc}__{pn}"
-                cfg = dict(stage="F3", unit=f"regcomp__{u}", R=2000, populations=pops, estimands_reported=list(ests), **flt)
+                cfg = dict(stage="F3", unit=f"regcomp__{u}", R=2000, populations=pp, estimands_reported=list(ests), **flt)
                 emit("regcomp", "regcomp", "regcomp", u, cfg, lambda n: [f"round10_final_runs_f3_regcomp.py run $OUT/{n} $OUT"],
                      RC_S, f"F3 5d.3 (i), regime A against regime B cost-matched, {u}", t)
     ip = os.path.join(a.out_root, rel_cfg, "regimeB", "f3_production_index.json")

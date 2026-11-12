@@ -1,0 +1,133 @@
+{
+ "config": {
+  "stage": "F3",
+  "unit": "box_anchor_smoke/anchor",
+  "required_m_csv": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round9/fewcluster/strat/i32_required_m_B.csv",
+  "acs_states_csv": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round9/fewcluster/strat/i32_acs_states.csv",
+  "acs_box_csv": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round9/fewcluster/strat/i32_acs_box.csv",
+  "hest_box_genes_csv": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round9/fewcluster/strat/i32_hest_box_genes.csv",
+  "hest_box_summary_csv": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round9/fewcluster/strat/i32_hest_box_summary.csv",
+  "hest_parquets": {
+   "CCRCC": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+   "INDIANA_KIDNEY": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions_INDIANA_KIDNEY/b1_predictions__INDIANA_KIDNEY__uni_v2.parquet",
+   "LUNG_XENIUM": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__uni_v2.parquet"
+  }
+ },
+ "started": "2026-11-12T08:20:30",
+ "stylised": {
+  "rows": 84,
+  "rows_equal": 84,
+  "seconds": 0.8,
+  "v0_1_N2000": [
+   11,
+   22,
+   38,
+   58,
+   81,
+   143,
+   217
+  ],
+  "v0_1_N20000": [
+   11,
+   22,
+   38,
+   59,
+   84,
+   148,
+   229
+  ]
+ },
+ "acs": [
+  {
+   "task": "ACS_STATES",
+   "lambda": 0.0,
+   "G": 51,
+   "Lambda0": 5.15864969264012,
+   "kappa_A": 0.20910570580857762,
+   "n_min_A": 19,
+   "m_min_B_bounded_r9grid": 2,
+   "m_min_B_twopoint_bounded_r9grid": 2,
+   "m_min_B_bounded": 2,
+   "m_min_B_twopoint_bounded": 2,
+   "m_min_B_unbounded": 75,
+   "m_min_B_twopoint_unbounded": 75,
+   "v0_m5": 0.024706633113343573,
+   "s_m5": 41,
+   "worst_m5": 0.0005175787003809716,
+   "m_min_B": 2,
+   "m_min_B_twopoint": 2,
+   "v0_m5_r9": 0.0247066331133435,
+   "s_m5_r9": 41,
+   "worst_m5_r9": 0.0005175787002905,
+   "kappa_A_r9": 0.2091057058085776,
+   "n_min_A_r9": 19
+  },
+  {
+   "task": "ACS_STATES",
+   "lambda": 1.0,
+   "G": 51,
+   "Lambda0": 8.929978495775948,
+   "kappa_A": 0.09383067495029383,
+   "n_min_A": 11,
+   "m_min_B_bounded_r9grid": 5,
+   "m_min_B_twopoint_bounded_r9grid": 5,
+   "m_min_B_bounded": 5,
+   "m_min_B_twopoint_bounded": 5,
+   "m_min_B_unbounded": 200,
+   "m_min_B_twopoint_unbounded": 200,
+   "v0_m5": 0.025097641877542622,
+   "s_m5": 40,
+   "worst_m5": 0.08240237029323472,
+   "m_min_B": 5,
+   "m_min_B_twopoint": 5,
+   "v0_m5_r9": 0.0250976418775426,
+   "s_m5_r9": 40,
+   "worst_m5_r9": 0.0824023702965322,
+   "kappa_A_r9": 0.0938306749502938,
+   "n_min_A_r9": 11
+  }
+ ],
+ "acs_seconds": 3.0,
+ "hest": {
+  "rows": 886,
+  "rows_ref": 886,
+  "rows_matched": 886,
+  "max_abs": {
+   "G": 0.0,
+   "N_median": 0.0,
+   "Lambda0": 1.7763568394002505e-15,
+   "Lambda_h_median": 8.881784197001252e-16,
+   "kappa_A": 8.326672684688674e-17,
+   "n_min_A": 0.0,
+   "frontier_A_mid": 5.551115123125783e-17,
+   "worst_m5": 1.1102230246251565e-16,
+   "v0_m5": 9.71445146547012e-17,
+   "s_m5": 0.0,
+   "worst_m10": 9.996344030316351e-17,
+   "v0_m10": 9.71445146547012e-17,
+   "s_m10": 0.0,
+   "worst_m20": 9.996344030316351e-17,
+   "v0_m20": 9.71445146547012e-17,
+   "s_m20": 0.0,
+   "m_min_B": 0.0,
+   "m_min_B_twopoint": 0.0
+  },
+  "named": {
+   "m_min_B": 6.0,
+   "m_min_B_r9": 6.0,
+   "worst_m10": 0.016611782023137286,
+   "worst_m10_r9": 0.0166117820231372
+  },
+  "box_worst_v0_none_vs_r9_max_abs": 0.0,
+  "seconds": 47.8
+ },
+ "hest_summary_max_d": {
+  "d_n_genes": 0.0,
+  "d_Lambda0_median": 0.0,
+  "d_m_min_B_median": 0.0,
+  "d_frac_B_le10": 0.0,
+  "d_frac_B_none": 3.165870343657673e-17,
+  "d_n_min_A_median": 0.0
+ },
+ "finished": "2026-11-12T08:21:21"
+}

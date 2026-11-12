@@ -1,0 +1,35 @@
+{
+ "stage": "F3",
+ "unit": "regcomp__LUNG_XENIUM__hoptimus0__log1p__B4800_A_nL4-6_theta3",
+ "R": 2000,
+ "populations": [
+  {
+   "task": "LUNG_XENIUM",
+   "vtag": "LUNG_XENIUM",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "log1p",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__hoptimus0.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__LUNG_XENIUM.parquet"
+  }
+ ],
+ "estimands_reported": [
+  "theta3",
+  "theta2",
+  "mu"
+ ],
+ "budgets": [
+  4800
+ ],
+ "regimes": [
+  "A"
+ ],
+ "n_L": [
+  4,
+  6
+ ]
+}

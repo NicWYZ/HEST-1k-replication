@@ -1,0 +1,54 @@
+{
+ "stage": "F3",
+ "unit": "regcomp__bowel__Visium__resnet50__log1p__B9600_A",
+ "R": 2000,
+ "populations": [
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "log1p",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__resnet50/pred__bowel__Visium__resnet50__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_log1p__",
+   "f_prefix": "f_log1p__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3",
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet"
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "log1p",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__resnet50/pred__bowel__Visium__resnet50__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_log1p__",
+   "f_prefix": "f_log1p__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "theta2_kind": "mean"
+  }
+ ],
+ "estimands_reported": [
+  "theta3",
+  "theta2",
+  "mu"
+ ],
+ "budgets": [
+  9600
+ ],
+ "regimes": [
+  "A"
+ ]
+}

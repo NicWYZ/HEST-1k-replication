@@ -1,0 +1,46 @@
+{
+ "stage": "F3",
+ "unit": "regcomp__INDIANA_KIDNEY__hoptimus0__log1p__B9600_A",
+ "R": 2000,
+ "populations": [
+  {
+   "task": "INDIANA_KIDNEY",
+   "vtag": "INDIANA_KIDNEY",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "log1p",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions_INDIANA_KIDNEY/b1_predictions__INDIANA_KIDNEY__hoptimus0.parquet",
+   "estimands": [
+    "theta3",
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__INDIANA_KIDNEY.parquet"
+  },
+  {
+   "task": "INDIANA_KIDNEY",
+   "vtag": "INDIANA_KIDNEY",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "log1p",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions_INDIANA_KIDNEY/b1_predictions__INDIANA_KIDNEY__hoptimus0.parquet",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__INDIANA_KIDNEY.parquet",
+   "theta2_kind": "mean"
+  }
+ ],
+ "estimands_reported": [
+  "theta3",
+  "theta2",
+  "mu"
+ ],
+ "budgets": [
+  9600
+ ],
+ "regimes": [
+  "A"
+ ]
+}

@@ -1,0 +1,220 @@
+{
+ "config": {
+  "stage": "F3",
+  "unit": "regB_e8_smoke",
+  "R": 2000,
+  "forms": [
+   "C_fix1",
+   "C_ppi",
+   "C_classical"
+  ],
+  "widths_forms": [
+   "C_fix1",
+   "C_classical"
+  ],
+  "wr_boot": 200,
+  "m_grid": [
+   3,
+   10
+  ],
+  "f2_summary": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F2/aggregate_regimeB/f2_regimeB_summary.csv",
+  "populations": [
+   {
+    "task": "CCRCC",
+    "vtag": "CCRCC",
+    "encoder": "uni_v2",
+    "arm": "uni_v2",
+    "scale": "log1p",
+    "source": "r5",
+    "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+    "estimands": [
+     "theta3",
+     "theta2"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+    "f2_genes": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/CCRCC__uni_v2/regimeB_genes.parquet"
+   },
+   {
+    "task": "LUNG_XENIUM",
+    "vtag": "LUNG_XENIUM",
+    "encoder": "uni_v2",
+    "arm": "uni_v2",
+    "scale": "norm_refit",
+    "source": "r5",
+    "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/LUNG_XENIUM__uni_v2/norm/b1_predictions__LUNG_XENIUM__uni_v2.parquet",
+    "estimands": [
+     "theta3"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__LUNG_XENIUM.parquet",
+    "m_grid": [
+     100
+    ]
+   },
+   {
+    "task": "kidney__Visium",
+    "vtag": "kidney__Visium",
+    "encoder": "uni_v2",
+    "arm": "uni_v2",
+    "scale": "lognorm",
+    "source": "corpus",
+    "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/kidney__Visium__uni_v2/pred__kidney__Visium__uni_v2__donor.parquet",
+    "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/kidney__Visium/morphology__kidney__Visium.parquet",
+    "y_prefix": "y_lognorm__",
+    "f_prefix": "f_lognorm__",
+    "donor_col": "donor_id",
+    "estimands": [
+     "theta3"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__kidney__Visium.parquet",
+    "m_grid": [
+     10
+    ],
+    "f2_genes": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/kidney__Visium__uni_v2/regimeB_genes.parquet"
+   }
+  ]
+ },
+ "started": "2026-11-12T08:31:20",
+ "populations": [
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 24,
+   "n_units": 67673,
+   "n_genes": 50,
+   "load_seconds": 0.7,
+   "cells": [
+    {
+     "estimand": "theta3",
+     "m": 3,
+     "seconds": 17.5,
+     "sim_seconds": 13.5,
+     "boot_seconds": 3.2
+    },
+    {
+     "estimand": "theta3",
+     "m": 10,
+     "seconds": 18.7,
+     "sim_seconds": 14.8,
+     "boot_seconds": 3.2
+    },
+    {
+     "estimand": "theta2",
+     "m": 10,
+     "seconds": 22.0,
+     "sim_seconds": 18.0,
+     "boot_seconds": 3.3
+    }
+   ],
+   "cv_check": {
+    "theta3": {
+     "n_valid_regimeB": 24,
+     "n_donors_cv": 24,
+     "n_common": 24,
+     "n_genes": 50,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 2.0161163194518277e-13,
+     "max_abs": 1.9984014443252818e-15
+    },
+    "theta2": {
+     "n_valid_regimeB": 23,
+     "n_donors_cv": 23,
+     "n_common": 23,
+     "n_genes": 50,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 1.6887808447466798e-12,
+     "max_abs": 2.864375403532904e-14
+    }
+   },
+   "seconds": 59.0
+  },
+  {
+   "task": "LUNG_XENIUM",
+   "encoder": "uni_v2",
+   "scale": "norm_refit",
+   "G": 15,
+   "n_units": 18973,
+   "n_genes": 343,
+   "load_seconds": 1.3,
+   "cells": [
+    {
+     "estimand": "theta3",
+     "m": 100,
+     "seconds": 160.8,
+     "sim_seconds": 133.0,
+     "boot_seconds": 23.3
+    }
+   ],
+   "cv_check": {
+    "theta3": {
+     "n_valid_regimeB": 15,
+     "n_donors_cv": 15,
+     "n_common": 15,
+     "n_genes": 343,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 2.419920621168229e-12,
+     "max_abs": 3.6637359812630166e-15
+    }
+   },
+   "seconds": 162.1
+  },
+  {
+   "task": "kidney__Visium",
+   "encoder": "uni_v2",
+   "scale": "lognorm",
+   "G": 51,
+   "n_units": 107668,
+   "n_genes": 50,
+   "load_seconds": 1.5,
+   "cells": [
+    {
+     "estimand": "theta3",
+     "m": 10,
+     "seconds": 24.3,
+     "sim_seconds": 20.4,
+     "boot_seconds": 3.2
+    }
+   ],
+   "cv_check": {
+    "theta3": {
+     "n_valid_regimeB": 51,
+     "n_donors_cv": 51,
+     "n_common": 51,
+     "n_genes": 50,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 4.309642562533548e-13,
+     "max_abs": 1.3627987627273797e-14
+    }
+   },
+   "seconds": 25.9
+  }
+ ],
+ "f2_check": {
+  "rows_matched": 600,
+  "max_abs_all": 0.0
+ },
+ "f2_check_summary": {
+  "cells_matched": 12,
+  "max_d_genes": 0.0,
+  "max_d_median_coverage": 0.0,
+  "max_d_q10_coverage": 0.0,
+  "max_d_q90_coverage": 0.0,
+  "max_d_median_width": 5.551115123125783e-17,
+  "max_d_median_ev_over_var": 1.1102230246251565e-16
+ },
+ "wr": {
+  "rows": 10,
+  "median_boot_se": 0.0011941011178184689
+ },
+ "finished": "2026-11-12T08:35:27",
+ "widths_files": {
+  "regimeB_widths__CCRCC__uni_v2__log1p.parquet": 12000,
+  "regimeB_widths__LUNG_XENIUM__uni_v2__norm_refit.parquet": 4000,
+  "regimeB_widths__kidney__Visium__uni_v2__lognorm.parquet": 4000
+ },
+ "widths_seconds": 0.3
+}

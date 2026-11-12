@@ -1,0 +1,52 @@
+{
+ "stage": "F3",
+ "unit": "regB_e8__kidney__Visium__uni_v2__log1p",
+ "R": 2000,
+ "forms": [
+  "C_fix1",
+  "C_ppi",
+  "C_classical"
+ ],
+ "widths_forms": [
+  "C_fix1",
+  "C_classical"
+ ],
+ "wr_boot": 200,
+ "m_grid": [
+  3,
+  5,
+  9,
+  10,
+  12,
+  15,
+  17,
+  20,
+  25,
+  30,
+  50,
+  100
+ ],
+ "f2_summary": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F2/aggregate_regimeB/f2_regimeB_summary.csv",
+ "populations": [
+  {
+   "task": "kidney__Visium",
+   "vtag": "kidney__Visium",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "log1p",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/kidney__Visium__uni_v2/pred__kidney__Visium__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/kidney__Visium/morphology__kidney__Visium.parquet",
+   "y_prefix": "y_log1p__",
+   "f_prefix": "f_log1p__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3",
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__kidney__Visium.parquet",
+   "f2_genes": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/kidney__Visium__uni_v2/regimeB_genes.parquet"
+  }
+ ],
+ "_cells": 24
+}
