@@ -1,0 +1,809 @@
+{
+ "stage": "F3",
+ "unit": "regcomp__pk_breast__Spatial_Transcriptomics__uni_v2__lognorm__p00",
+ "R": 2000,
+ "populations": [
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "vtag": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     2400
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "A_B2400_nL4",
+   "expected_s": 46.9
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "vtag": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     2400
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "A_B2400_nL6",
+   "expected_s": 46.9
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "vtag": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     2400
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "A_B2400_nL8",
+   "expected_s": 46.9
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "vtag": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     2400
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "A_B2400_nL12",
+   "expected_s": 46.9
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "vtag": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     "unit"
+    ]
+   },
+   "cell_label": "B_B2400_unit",
+   "expected_s": 39.3
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "vtag": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "B_B2400_c10_nL4",
+   "expected_s": 34.0
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "vtag": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "B_B2400_c10_nL6",
+   "expected_s": 34.3
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "vtag": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "B_B2400_c10_nL8",
+   "expected_s": 34.7
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "vtag": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "B_B2400_c10_nL12",
+   "expected_s": 35.5
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "vtag": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "B_B2400_c100_nL4",
+   "expected_s": 0.0
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "vtag": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "B_B2400_c100_nL6",
+   "expected_s": 0.0
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "vtag": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "B_B2400_c100_nL8",
+   "expected_s": 0.0
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "vtag": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "B_B2400_c100_nL12",
+   "expected_s": 4.8
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "vtag": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     1000
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "B_B2400_c1000_nL4",
+   "expected_s": 0.0
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "vtag": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     1000
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "B_B2400_c1000_nL6",
+   "expected_s": 0.0
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "vtag": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     1000
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "B_B2400_c1000_nL8",
+   "expected_s": 0.0
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "vtag": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     1000
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "B_B2400_c1000_nL12",
+   "expected_s": 0.0
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "vtag": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     4800
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "A_B4800_nL4",
+   "expected_s": 105.4
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "vtag": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     4800
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "A_B4800_nL6",
+   "expected_s": 105.4
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "vtag": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     4800
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "A_B4800_nL8",
+   "expected_s": 105.4
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "vtag": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     4800
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "A_B4800_nL12",
+   "expected_s": 105.4
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "vtag": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     4800
+    ],
+    "costs": [
+     "unit"
+    ]
+   },
+   "cell_label": "B_B4800_unit",
+   "expected_s": 88.4
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "vtag": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     4800
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "B_B4800_c10_nL4",
+   "expected_s": 82.4
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "vtag": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     4800
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "B_B4800_c10_nL6",
+   "expected_s": 82.8
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "vtag": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     4800
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "B_B4800_c10_nL8",
+   "expected_s": 83.2
+  }
+ ],
+ "estimands_reported": [
+  "theta3",
+  "theta2",
+  "mu"
+ ],
+ "expected_s": 1128.5,
+ "_cells": 25
+}

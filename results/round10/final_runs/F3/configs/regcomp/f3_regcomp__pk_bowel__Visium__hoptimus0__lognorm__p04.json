@@ -1,0 +1,920 @@
+{
+ "stage": "F3",
+ "unit": "regcomp__pk_bowel__Visium__hoptimus0__lognorm__p04",
+ "R": 2000,
+ "populations": [
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "B_B2400_c10_nL8",
+   "expected_s": 28.0
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "B_B2400_c10_nL12",
+   "expected_s": 28.6
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "B_B2400_c100_nL4",
+   "expected_s": 10.6
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "B_B2400_c100_nL6",
+   "expected_s": 13.1
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "B_B2400_c100_nL8",
+   "expected_s": 15.7
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "B_B2400_c100_nL12",
+   "expected_s": 21.0
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     1000
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "B_B2400_c1000_nL4",
+   "expected_s": 0.0
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     1000
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "B_B2400_c1000_nL6",
+   "expected_s": 0.0
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     1000
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "B_B2400_c1000_nL8",
+   "expected_s": 0.0
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     1000
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "B_B2400_c1000_nL12",
+   "expected_s": 0.0
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     4800
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "A_B4800_nL4",
+   "expected_s": 79.1
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     4800
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "A_B4800_nL6",
+   "expected_s": 79.1
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     4800
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "A_B4800_nL8",
+   "expected_s": 79.1
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     4800
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "A_B4800_nL12",
+   "expected_s": 79.1
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     4800
+    ],
+    "costs": [
+     "unit"
+    ]
+   },
+   "cell_label": "B_B4800_unit",
+   "expected_s": 66.3
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     4800
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "B_B4800_c10_nL4",
+   "expected_s": 64.0
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     4800
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "B_B4800_c10_nL6",
+   "expected_s": 64.3
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     4800
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "B_B4800_c10_nL8",
+   "expected_s": 64.7
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     4800
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "B_B4800_c10_nL12",
+   "expected_s": 65.3
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     4800
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "B_B4800_c100_nL4",
+   "expected_s": 44.3
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     4800
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "B_B4800_c100_nL6",
+   "expected_s": 47.3
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     4800
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "B_B4800_c100_nL8",
+   "expected_s": 50.4
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     4800
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "B_B4800_c100_nL12",
+   "expected_s": 56.7
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     4800
+    ],
+    "costs": [
+     1000
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "B_B4800_c1000_nL4",
+   "expected_s": 0.0
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     4800
+    ],
+    "costs": [
+     1000
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "B_B4800_c1000_nL6",
+   "expected_s": 0.0
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     4800
+    ],
+    "costs": [
+     1000
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "B_B4800_c1000_nL8",
+   "expected_s": 0.0
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     4800
+    ],
+    "costs": [
+     1000
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "B_B4800_c1000_nL12",
+   "expected_s": 0.0
+  },
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     9600
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "A_B9600_nL4",
+   "expected_s": 177.9
+  }
+ ],
+ "estimands_reported": [
+  "theta3",
+  "theta2",
+  "mu"
+ ],
+ "expected_s": 1134.5,
+ "_cells": 28
+}

@@ -15,6 +15,8 @@ Items and units (one Slurm job per unit; every unit writes to $BASE/F3/regimeB/<
              (HEST four tasks on both scales, ACS, the six corpus tasks on both scales), three encoders.
   regcomp    5d.3 (i): round10_final_runs_f3_regcomp.py run, every task as in box, theta3, theta2 and mu (two
              populations of the same file, the second with round 5's theta2 kind 'mean'), R = 2000.
+  regcomp_packed  the same cells packed by a cost model into units of about --regcomp-target-s expected seconds, each
+             unit a list of single-estimand populations with a one-cell filter (index item 'regcomp', units regcomp__pk_*).
 Splitting: --chunk <item>:<task>=<k> splits that task's m grid (e8, box) into k contiguous chunks (box rows only in
 chunk 0); --split-regcomp population|budget|budget_regime sets regcomp's unit, and --regcomp-fine <tasks> splits those
 tasks' units further, by estimand and into two cell groups per (budget, regime) (regime A n_L {4, 6} and {8, 12}; regime
@@ -109,6 +111,44 @@ def chunks(grid, k):
     return [grid[b[i]:b[i + 1]] for i in range(k) if b[i + 1] > b[i]]
 
 
+# regcomp cost model (5d.3 (i)), from the F3 smoke and the two B9600 calibration units: seconds per cell at R = 2000
+# for CCRCC theta3 at B = 2400 (regime A 42.6, regime B 35.7), scaled by (budget of the cell / 2400) ** 1.17 (regime B
+# cells took 181 s at B = 9600) and by a task and estimand factor relative to CCRCC theta3.
+G_ALL = {"CCRCC": 24, "CCRCC_merged": 23, "INDIANA_KIDNEY": 25, "LUNG_XENIUM": 15, "ACS_STATES": 51, "kidney__Visium": 51,
+         "breast__Spatial_Transcriptomics": 32, "bowel__Visium": 18, "brain__Visium": 18, "breast__Xenium": 17, "lung__Xenium": 17}
+BASE_S = {"A": 42.6, "B": 35.7}
+
+
+def est_factor(task, est):
+    if task == "LUNG_XENIUM":
+        return {"theta3": 5.8, "theta2": 2.4, "mu": 2.4}[est]
+    if task == "ACS_STATES":
+        return 0.35
+    f = {"theta3": 1.0, "theta2": 0.75, "mu": 0.7}[est]
+    if task in CORPUS:
+        f *= 1.1 * (1.5 if task.endswith("Xenium") else 1.0)
+    return f
+
+
+def regcomp_cells(task):
+    """Every candidate cell of round 5's part_cells (cells that do not exist for this G cost 0 and select nothing)."""
+    G = G_ALL[task]; out = []
+    for B in (2400, 4800, 9600):
+        for nL in (4, 6, 8, 12):
+            out.append((dict(regimes=["A"], budgets=[B], n_L=[nL]), "A", B if nL <= G - 2 else 0, f"A_B{B}_nL{nL}"))
+        out.append((dict(regimes=["B"], budgets=[B], costs=["unit"]), "B", B, f"B_B{B}_unit"))
+        for c in (10, 100, 1000):
+            for nL in (4, 6, 8, 12):
+                Bp = nL * (c + B / nL) - c * G
+                out.append((dict(regimes=["B"], budgets=[B], costs=[c], n_L=[nL]), "B", Bp if (nL <= G - 2 and Bp > 0) else 0,
+                            f"B_B{B}_c{c}_nL{nL}"))
+    return out
+
+
+def cell_seconds(task, est, regime, bcell):
+    return 0.0 if bcell <= 0 else BASE_S[regime] * (bcell / 2400.0) ** 1.17 * est_factor(task, est)
+
+
 def job_script(unit, note, cfgpaths, steps, scripts, mem="16G", tmin=60, cpus=2, extra_inputs=()):
     L = ["#SBATCH --partition=general", "#SBATCH --account=rc_htzhu_pi", f"#SBATCH --cpus-per-task={cpus}",
          f"#SBATCH --mem={mem}", f"#SBATCH --time={tmin}", "set -u", f"UNIT={unit}", f"CLONE={CLN}", f"BASE={BASE}",
@@ -167,6 +207,7 @@ def main():
     ap.add_argument("--mem-task", action="append", default=[]); ap.add_argument("--time-task", action="append", default=[])
     ap.add_argument("--cpus", type=int, default=2)
     ap.add_argument("--regcomp-fine", default="", help="comma-separated tasks split by estimand and cell group")
+    ap.add_argument("--regcomp-target-s", type=float, default=1200.0, help="expected seconds per packed regcomp unit")
     a = ap.parse_args()
     items = a.items.split(","); CH = kv(a.chunk); FINE = set(x for x in a.regcomp_fine.split(",") if x); MEM = kv(a.mem); TIM = kv(a.time); MT = kv(a.mem_task); TT = kv(a.time_task)
     rel_cfg = "results/round10/final_runs/F3/configs"; rel_js = "results/round10/final_runs/job_scripts"
@@ -254,6 +295,36 @@ def main():
                 cfg = dict(stage="F3", unit=f"regcomp__{u}", R=2000, populations=pp, estimands_reported=list(ests), **flt)
                 emit("regcomp", "regcomp", "regcomp", u, cfg, lambda n: [f"round10_final_runs_f3_regcomp.py run $OUT/{n} $OUT"],
                      RC_S, f"F3 5d.3 (i), regime A against regime B cost-matched, {u}", t)
+    if "regcomp_packed" in items:
+        # regcomp units packed by the cost model: each unit is a list of (single-estimand population, one-cell filter)
+        # entries, filled in order up to --regcomp-target-s expected seconds; unit names regcomp__pk_<task>__<enc>__<scale>__p<k>
+        for t, e, sc, mk in all_pops():
+            ests = ("theta3", "mu") if t == "ACS_STATES" else ("theta3", "theta2", "mu")
+            items_ = []
+            for en in ests:
+                for flt, reg, bcell, lab in regcomp_cells(t):
+                    items_.append((en, flt, lab, cell_seconds(t, en, reg, bcell)))
+            packs, cur, cs = [], [], 0.0
+            for it in items_:
+                if cur and cs + it[3] > a.regcomp_target_s:
+                    packs.append((cur, cs)); cur, cs = [], 0.0
+                cur.append(it); cs += it[3]
+            if cur:
+                packs.append((cur, cs))
+            for k, (pk, cs) in enumerate(packs):
+                pops = []
+                for en, flt, lab, sec in pk:
+                    p = mk(("theta3",)) if en == "theta3" else (mk(("theta2",)) if (en == "theta2" or t == "ACS_STATES") else mk(("theta2",), kind="mean"))
+                    p["cells"] = dict(flt); p["cell_label"] = lab; p["expected_s"] = round(sec, 1)
+                    pops.append(p)
+                u = f"pk_{t}__{e}__{sc}__p{k:02d}"
+                cfg = dict(stage="F3", unit=f"regcomp__{u}", R=2000, populations=pops, estimands_reported=list(ests),
+                           expected_s=round(cs, 1), _cells=len(pops))
+                tmin = int(min(90, max(30, -(-3 * cs // 60) + 5)))
+                TT[f"regcomp:{u}"] = str(tmin)
+                emit("regcomp", "regcomp", "regcomp", u, cfg, lambda n: [f"round10_final_runs_f3_regcomp.py run $OUT/{n} $OUT"],
+                     RC_S, f"F3 5d.3 (i), regime A against regime B cost-matched, packed unit {u}", u)
+                index[-1]["task"] = t; index[-1]["expected_s"] = round(cs, 1)
     ip = os.path.join(a.out_root, rel_cfg, "regimeB", "f3_production_index.json")
     json.dump(dict(items=items, args=vars(a), units=index), open(ip, "w", newline="\n"), indent=1)
     print(len(index), "units;", {it: sum(1 for x in index if x["item"] == it) for it in items})
