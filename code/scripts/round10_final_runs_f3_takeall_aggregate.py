@@ -1,7 +1,7 @@
 """Round 10, track final-runs, F3.3 (v): aggregate the take-all units and compare with round 9 (plan 5d.3 (v)).
 
 usage: round10_final_runs_f3_takeall_aggregate.py <designs_dir> <out_dir> <r9_takeall_medians_csv>
-Writes f3_takeall_units.csv, f3_takeall_vs_r9.csv (round 9's tasks, uni_v2, log1p, mu, gene scope all, every k and
+Reads every takeall_<unit> directory whose PROVENANCE.txt reads COMPLETED (smoke, anchor and aggregate excluded).\nWrites f3_takeall_units.csv, f3_takeall_vs_r9.csv (round 9's tasks, uni_v2, log1p, mu, gene scope all, every k and
 n_L: round 9's T0 and D0 medians beside round 10's T0, T0_fix1, D0 and D0_fix1) and f3_takeall_cells.csv.
 """
 import glob, json, os, sys
@@ -19,8 +19,11 @@ def unit_status(d):
 def main(bd, out, r9):
     os.makedirs(out, exist_ok=True)
     units, parts = [], []
-    for u in ("takeall_hest", "takeall_corpus"):
-        d = os.path.join(bd, u); st, sid = unit_status(d)
+    for d in sorted(glob.glob(os.path.join(bd, "takeall_*"))):
+        u = os.path.basename(d)
+        if u in ("takeall_smoke", "takeall_aggregate") or u.startswith("takeall_anchor"):
+            continue
+        st, sid = unit_status(d)
         f = os.path.join(d, "takeall_cells.csv"); n = 0
         if st == "COMPLETED" and os.path.exists(f):
             x = pd.read_csv(f); n = len(x); parts.append(x)

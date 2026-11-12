@@ -1,0 +1,31 @@
+{
+ "stage": "F3.3v",
+ "unit": "takeall__acs_theta3",
+ "R": 2000,
+ "o": 3,
+ "k_grid": [
+  1,
+  2
+ ],
+ "nl_grid": [
+  6,
+  8,
+  12
+ ],
+ "cluster_values": [
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1b_acs/cluster_values__ACS_STATES.parquet"
+ ],
+ "populations": [
+  {
+   "task": "ACS_STATES",
+   "encoder": "pkg",
+   "scale": "log_income",
+   "spots_path": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_STATES.parquet",
+   "y_prefix": "y__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ]
+  }
+ ]
+}
