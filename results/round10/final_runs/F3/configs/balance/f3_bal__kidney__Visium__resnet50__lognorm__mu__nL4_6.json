@@ -1,0 +1,32 @@
+{
+ "stage": "F3.3iv",
+ "unit": "bal__kidney__Visium__resnet50__lognorm__mu__nL4_6",
+ "draws": 2000,
+ "pool": 500,
+ "batch": 1000,
+ "designs": [
+  "D0",
+  "D2",
+  "D2lim",
+  "cube"
+ ],
+ "root": "/work/users/w/e/weiyang/hest_replication",
+ "cluster_values": [
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__kidney__Visium.parquet"
+ ],
+ "populations": [
+  {
+   "task": "kidney__Visium",
+   "vtag": "kidney__Visium",
+   "encoder": "resnet50",
+   "scale": "lognorm",
+   "estimands": [
+    "mu"
+   ],
+   "nl_grid": [
+    4,
+    6
+   ]
+  }
+ ]
+}

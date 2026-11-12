@@ -1,0 +1,32 @@
+platform: Longleaf
+slurm_job_id: 8940134
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 1
+slurm_mem_per_node: 16384
+node: c0921
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F3
+unit: takeall_smoke
+frame_id: 7bae80ef-cb3f-4725-8012-f680940d6c59
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 33ab75c5726d71a40787498b291dcb5abfe36e2f
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/33ab75c5726d71a40787498b291dcb5abfe36e2f
+command: round10_final_runs_f3_takeall.py run /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/takeall_smoke/f3_takeall__smoke.json /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/takeall_smoke
+config: {"commit":"33ab75c5726d71a40787498b291dcb5abfe36e2f","stage":"F3","unit":"takeall_smoke"}
+config_sha256: 2a5324ed0c7ed41d41aebf0df16f6ede205a7ebd4af9a1545884c9557c84e1a0
+start: 2026-11-12T08:20:12-05:00
+end: 2026-11-12T08:20:56-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  7ec4351f8457b4557f9106a6724704d4  code/scripts/round10_final_runs_f3_takeall.py
+inputs (md5, path):
+  28b756983cc8090541fc311f16ca9311  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/takeall_smoke/f3_takeall__smoke.json
+  4a01ead5d905f4bbc52c90647b6d9741  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/kidney__Visium__uni_v2/pred__kidney__Visium__uni_v2__donor.parquet
+  0bcdae6cf30c6c282e9ac9881fac92b4  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet
+  7b797e698b009f242021afaa241e9a35  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__kidney__Visium.parquet
+  0cc62c5e600cc3811168b71ca7e2c1ab  /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet

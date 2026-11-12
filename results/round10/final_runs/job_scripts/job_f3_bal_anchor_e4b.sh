@@ -54,5 +54,5 @@ CMDS="${CMD1} ; ${CMD2}"
 ST=COMPLETED; [ $RC -eq 0 ] || ST=FAILED_rc$RC
 $PY $SNAP/code/scripts/round10_final_runs_provenance.py "$OUT" F3 $UNIT $COMMIT $SNAP "$START" $ST --frame $FRAME --command "$CMDS" --config '{"stage":"F3","unit":"'$UNIT'","commit":"'$COMMIT'"}' --scripts code/scripts/round3_b1_ppi.py code/scripts/round4_ppi_estimator.py code/scripts/round4_ppi_q2_masking.py code/scripts/round4_ppi_q3_regimes.py code/scripts/round5_ppi_balance.py code/scripts/round5_ppi_common.py code/scripts/round5_ppi_e2_regimeB.py code/scripts/round5_ppi_e4_selection.py code/scripts/round5_ppi_estimator.py code/scripts/round5_ppi_e4b_rejective.py code/scripts/round10_final_runs_f3_balance_anchor.py --inputs /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__resnet50.parquet /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q5_joint/q5_mean_embeddings__CCRCC__uni_v2.parquet $OUT/ref_e4b_rej_width_ratios.csv /work/users/w/e/weiyang/hest_replication/results/round5/ppi/E4b_rejective/CCRCC/uni_v2/theta3_nL8/e4b_rejective_genes__CCRCC__uni_v2.csv.gz
 cd "$OUT"; for g in PROVENANCE.txt _provenance.json stdout*.log *.json *.csv; do [ -e "$g" ] && cp "$g" "$HJ"/; done; true
-tail -40 stdout*.log
+tail -n 40 stdout*.log
 exit $RC

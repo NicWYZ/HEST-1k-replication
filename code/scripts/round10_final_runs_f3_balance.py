@@ -123,8 +123,8 @@ def d2_accept(C, X, pool, pas, chunk_d=100, chunk_c=50):
     """X (G, ncol, k). Returns {p_a: (D, ncol) accepted candidate index}, thresholds {p_a: (ncol,)} and the number of
     further candidate batches scanned. Columns are processed in chunks of chunk_c."""
     D = len(C.rngs); ncol = X.shape[1]
-    acc = {pa: np.full((D, ncol), -1, np.int64) for pa in pas}
-    thr = {pa: np.full(ncol, np.nan) for pa in pas}
+    acc = {p_: np.full((D, ncol), -1, np.int64) for p_ in pas}
+    thr = {p_: np.full(ncol, np.nan) for p_ in pas}
     n_ext = 0
     for c0 in range(0, ncol, chunk_c):
         cs = slice(c0, min(ncol, c0 + chunk_c)); Xc = X[:, cs, :]
@@ -135,30 +135,30 @@ def d2_accept(C, X, pool, pas, chunk_d=100, chunk_c=50):
                 parts.append(BAL.mahalanobis_pool(mk, Xc))
         P = np.concatenate(parts, 0); del parts
         P = np.where(np.isfinite(P), P, np.nan)
-        for pa in pas:
-            thr[pa][cs] = np.nanquantile(P, pa, axis=0)
+        for p_ in pas:
+            thr[p_][cs] = np.nanquantile(P, p_, axis=0)
         del P
         for d0 in range(0, D, chunk_d):
             nd = min(chunk_d, D - d0)
             mk = masks(C.first[d0:d0 + nd].reshape(-1, C.n), C.G)
             with np.errstate(invalid="ignore", divide="ignore"):
                 dist = BAL.mahalanobis_pool(mk, Xc).reshape(nd, C.batch, -1)
-            for pa in pas:
-                ok = dist <= thr[pa][cs][None, None, :]
-                acc[pa][d0:d0 + nd, cs] = np.where(ok.any(1), ok.argmax(1), -1)
-        for pa in pas:
-            sub = acc[pa][:, cs]
+            for p_ in pas:
+                ok = dist <= thr[p_][cs][None, None, :]
+                acc[p_][d0:d0 + nd, cs] = np.where(ok.any(1), ok.argmax(1), -1)
+        for p_ in pas:
+            sub = acc[p_][:, cs]
             for d in np.flatnonzero((sub < 0).any(1)):
                 b = 1
-                while (acc[pa][d, cs] < 0).any():
+                while (acc[p_][d, cs] < 0).any():
                     mk = masks(C.batch_of(d, b), C.G)
                     with np.errstate(invalid="ignore", divide="ignore"):
                         dist = BAL.mahalanobis_pool(mk, Xc)
-                    ok = dist <= thr[pa][cs][None, :]
-                    cur = acc[pa][d, cs]
+                    ok = dist <= thr[p_][cs][None, :]
+                    cur = acc[p_][d, cs]
                     hit = ok.any(0) & (cur < 0)
                     cur[hit] = b * C.batch + ok[:, hit].argmax(0)
-                    acc[pa][d, cs] = cur
+                    acc[p_][d, cs] = cur
                     b += 1; n_ext += 1
                     if b * C.batch > 2_000_000:
                         raise RuntimeError(f"no accepted candidate after 2,000,000 candidates, draw {d}")
@@ -272,24 +272,24 @@ def main():
                     bals["own_pcE1"] = ("D2lim", np.concatenate([f[:, :, None], np.broadcast_to(emb[:, None, :1], (G, ng, 1))], 2))
                     bals["pcE2"] = ("D2lim", emb[:, None, :])
                 for b, (dname, X) in bals.items():
-                    pas = [pa for pa in PAS if pa * math.comb(G, n) >= 1000]
-                    for pa in PAS:
-                        info["support"][f"{b}|{pa}"] = pa * math.comb(G, n)
+                    pas = [p_ for p_ in PAS if p_ * math.comb(G, n) >= 1000]
+                    for p_ in PAS:
+                        info["support"][f"{b}|{p_}"] = p_ * math.comb(G, n)
                     if not pas:
                         summ["skipped"].append(dict(keys, n_L=n, design=dname, balance=b, reason="support < 1000 at both p_a"))
                         continue
                     acc, thr, n_ext = d2_accept(C, X, POOL, pas)
                     info[f"ext_batches|{b}"] = n_ext
-                    for pa in pas:
-                        a = acc[pa] if acc[pa].shape[1] == ng else np.broadcast_to(acc[pa], (D, ng))
-                        info[f"cand_mean|{b}|{pa}"] = float(a.mean() + 1)
+                    for p_ in pas:
+                        a = acc[p_] if acc[p_].shape[1] == ng else np.broadcast_to(acc[p_], (D, ng))
+                        info[f"cand_mean|{b}|{p_}"] = float(a.mean() + 1)
                         idx = labelled_idx(C, a)
-                        res = run_srs_like(z, f, idx, G, X, pa)
-                        info[f"acc2|{b}|{pa}"] = float(np.nanmax(np.abs(res[("classical", "rej_t")][0] - res[("classical", "srs_t")][0])))
-                        add(rows, keys, genes, G, n, dname, b, pa, res, theta)
-                    for pa in PAS:
-                        if pa not in pas:
-                            summ["skipped"].append(dict(keys, n_L=n, design=dname, balance=b, p_a=pa, reason="support < 1000"))
+                        res = run_srs_like(z, f, idx, G, X, p_)
+                        info[f"acc2|{b}|{p_}"] = float(np.nanmax(np.abs(res[("classical", "rej_t")][0] - res[("classical", "srs_t")][0])))
+                        add(rows, keys, genes, G, n, dname, b, p_, res, theta)
+                    for p_ in PAS:
+                        if p_ not in pas:
+                            summ["skipped"].append(dict(keys, n_L=n, design=dname, balance=b, p_a=p_, reason="support < 1000"))
                 info["seconds_srs_d2"] = round(time.time() - t0, 1)
                 if "cube" in designs:
                     tc = time.time()

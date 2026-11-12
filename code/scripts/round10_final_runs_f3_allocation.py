@@ -7,7 +7,7 @@ Modes
   run <config.json> <out_dir>
       For each population (task, encoder, scale) of the config, loaded as F2's regime B driver loads it
       (round10_final_runs_f2_regimeB.load, then round5_ppi_e3_twolevel.build), per estimand: theta3, theta2 (round 3's
-      neoplastic and stromal groups) and mu (round 5's 'mean' kind, the same loaded units):
+      neoplastic and stromal groups) and mu (round 5's 'mean' kind over every spot of the donor, as F2's cluster values define mu):
         A            the between-donor variance of the cluster values zbar over the valid donors (ddof 1), as round 5
         B0, B1       round 5's form C within-donor variances of the unit contributions (per-donor variance, ddof 1,
                      averaged over the valid donors, with round 5's ((M - 1)/M)^2 factor for theta3), of y (B0) and of
@@ -29,6 +29,7 @@ import numpy as np, pandas as pd, pyarrow as pa, pyarrow.parquet as pq
 import round4_ppi_q2_masking as Q2
 import round5_ppi_e3_twolevel as E3
 import round10_final_runs_f2_regimeB as RB
+import round5_ppi_twolevel as TL
 
 COSTS = (10.0, 100.0, 1000.0)
 R9_TASKS = ("LUNG_XENIUM",)
@@ -83,6 +84,23 @@ def fixed_components(T):
     return A, B0, B1, omc
 
 
+def all_spot_data(pop):
+    """Every spot of the population's file (no morphology join), the scale's outcome and prediction columns, in the
+    gene order of the file; the input of mu as round10_final_runs_f2_cluster_values.donor_values forms it."""
+    if pop["source"] == "corpus":
+        path, yp, fp = pop["path"], pop["y_prefix"], pop["f_prefix"]
+    else:
+        path, yp, fp = pop["parquet"], "y__", "f__"
+    dcol = pop.get("donor_col", "donor_id")
+    names = pq.read_schema(path).names
+    genes = [c[len(yp):] for c in names if c.startswith(yp)]
+    df = pd.read_parquet(path, columns=[dcol] + [yp + g for g in genes] + [fp + g for g in genes])
+    did = df[dcol].astype(str).to_numpy(object)
+    donors = np.array(sorted(set(did.tolist())), dtype=object)
+    return dict(genes=genes, Y=df[[yp + g for g in genes]].to_numpy(np.float64), P=df[[fp + g for g in genes]].to_numpy(np.float64),
+                donors=donors, didx=np.searchsorted(donors, did))
+
+
 def regimeA_rho(paths):
     parts = []
     for p in paths:
@@ -135,14 +153,26 @@ def run(cfg_path, out):
             json.dump(summ, open(sp, "w"), indent=1, default=str); continue
         info.update(G=len(data["donors"]), n_units=int(len(data["didx"])), n_genes=len(data["genes"]), estimands={})
         genes = list(data["genes"])
-        kinds = [("neo_minus_stroma", ("theta3", "theta2"))] if pop.get("theta2_kind", "neo_minus_stroma") != "mean" else []
-        kinds.append(("mean", ("theta3", "theta2") if pop.get("theta2_kind") == "mean" else ("theta2",)))
+        neo = pop.get("theta2_kind", "neo_minus_stroma") != "mean"
+        kinds = [("neo_minus_stroma", ("theta3", "theta2"))] if neo else [("mean_kind", ("theta3",))]
+        kinds.append(("mu_allspots", ("theta2",)))
         for kind, ests in kinds:
-            Q2.THETA2_KIND = kind
-            Tset = E3.build(data, pop["vtag"], pop.get("arm", pop["encoder"]))
+            if kind == "mu_allspots":
+                # mu as F2's cluster values define it: the donor mean over all of the donor's spots
+                data_k = all_spot_data(pop)
+                G_ = len(data_k["donors"])
+                Tset = {"theta2": TL.prepare(data_k["Y"], data_k["P"], np.ones(len(data_k["didx"])), data_k["didx"], G_,
+                                             "mean", None, np.ones(G_, bool))}
+                info["n_units_mu"] = int(len(data_k["didx"]))
+            else:
+                Q2.THETA2_KIND = "mean" if kind == "mean_kind" else kind
+                data_k = data
+                Tset = E3.build(data, pop["vtag"], pop.get("arm", pop["encoder"]))
             r5dir = os.path.join(out, "r5_components", f"{pop['task']}__{pop['encoder']}__{pop['scale']}__{kind}")
             os.makedirs(r5dir, exist_ok=True)
-            E3.components_part(data, Tset, pop["vtag"], pop.get("arm", pop["encoder"]), r5dir)
+            E3.components_part(data_k, Tset, pop["vtag"], pop.get("arm", pop["encoder"]), r5dir)
+            if list(data_k["genes"]) != genes:
+                raise SystemExit(f"gene order differs between the joined and all-spot loads of {pop['task']}")
             r5c = pd.read_csv(os.path.join(r5dir, f"e3_components__{pop['vtag']}__{pop.get('arm', pop['encoder'])}.csv"))
             for est in ests:
                 if est not in Tset:
@@ -160,9 +190,10 @@ def run(cfg_path, out):
                 dA = float(np.nanmax(np.abs(rc["A"].to_numpy(float) - A)))
                 dB = float(np.nanmax(np.abs(rc["B_classical"].to_numpy(float) - B0)))
                 keys = dict(task=pop["task"], encoder=pop["encoder"], scale=pop["scale"], estimand=lab)
-                cvi = RB.check_cluster_values(T, data, pop["cluster_values"], keys, lab) if pop.get("cluster_values") else {}
+                cvp = pop.get("cluster_values_mu", pop.get("cluster_values")) if lab == "mu" else pop.get("cluster_values")
+                cvi = RB.check_cluster_values(T, data_k, cvp, keys, lab) if cvp else {}
                 info["estimands"][lab] = dict(G_valid=G, d_A_vs_components_part=dA, d_B0_vs_components_part=dB, cv_check=cvi)
-                if ref is not None and T["kind"] != "mean":
+                if ref is not None and T["kind"] != "mean" and pop["scale"] in ("log1p", "log_income"):
                     rr = ref[(ref.vtag == pop["vtag"]) & (ref.arm == pop.get("arm", pop["encoder"])) & (ref.estimand == est)
                              & (ref.form == "C")].set_index("gene").reindex(genes)
                     if rr["A"].notna().any():

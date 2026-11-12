@@ -51,5 +51,5 @@ CMDS="${CMD1}"
 ST=COMPLETED; [ $RC -eq 0 ] || ST=FAILED_rc$RC
 $PY $SNAP/code/scripts/round10_final_runs_provenance.py "$OUT" F3 $UNIT $COMMIT $SNAP "$START" $ST --frame $FRAME --command "$CMDS" --config '{"stage":"F3","unit":"'$UNIT'","commit":"'$COMMIT'"}' --scripts code/scripts/round10_final_runs_f3_balance.py code/scripts/round5_ppi_balance.py code/scripts/round5_ppi_e4_selection.py code/scripts/round7_ppi_s4b_cube3.py code/scripts/round7_ppi_s3_cube.py code/scripts/round7_ppi_weighting.py code/scripts/round4_ppi_estimator.py code/scripts/round5_ppi_estimator.py code/scripts/round5_ppi_common.py code/scripts/round5_ppi_e2_regimeB.py code/scripts/round4_ppi_q2_masking.py code/scripts/round3_b1_ppi.py code/scripts/round4_ppi_q3_regimes.py --inputs $OUT/$CFG $INPUTS
 cd "$OUT"; for g in PROVENANCE.txt _provenance.json stdout*.log *.json *.csv; do [ -e "$g" ] && cp "$g" "$HJ"/; done; true
-tail -40 stdout*.log
+tail -n 40 stdout*.log
 exit $RC

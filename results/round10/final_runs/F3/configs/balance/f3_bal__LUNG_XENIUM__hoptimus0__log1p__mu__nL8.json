@@ -1,0 +1,31 @@
+{
+ "stage": "F3.3iv",
+ "unit": "bal__LUNG_XENIUM__hoptimus0__log1p__mu__nL8",
+ "draws": 2000,
+ "pool": 500,
+ "batch": 1000,
+ "designs": [
+  "D0",
+  "D2",
+  "D2lim",
+  "cube"
+ ],
+ "root": "/work/users/w/e/weiyang/hest_replication",
+ "cluster_values": [
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__LUNG_XENIUM.parquet"
+ ],
+ "populations": [
+  {
+   "task": "LUNG_XENIUM",
+   "vtag": "LUNG_XENIUM",
+   "encoder": "hoptimus0",
+   "scale": "log1p",
+   "estimands": [
+    "mu"
+   ],
+   "nl_grid": [
+    8
+   ]
+  }
+ ]
+}

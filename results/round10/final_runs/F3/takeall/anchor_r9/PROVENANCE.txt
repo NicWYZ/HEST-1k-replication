@@ -1,0 +1,33 @@
+platform: Longleaf
+slurm_job_id: 8940098
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 1
+slurm_mem_per_node: 8192
+node: c0814
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F3
+unit: takeall_anchor_r9
+frame_id: 7bae80ef-cb3f-4725-8012-f680940d6c59
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 33ab75c5726d71a40787498b291dcb5abfe36e2f
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/33ab75c5726d71a40787498b291dcb5abfe36e2f
+command: round9_probe_takeall.py /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet CCRCC /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/takeall_anchor_r9/rerun_uni_v2 ; round10_final_runs_f3_takeall.py anchor_check /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/takeall_anchor_r9/rerun_uni_v2/takeall_by_gene__CCRCC.csv.gz /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/takeall_anchor_r9/ref_takeall_by_gene.csv.gz /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/takeall_anchor_r9/ref_takeall_medians.csv CCRCC /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/takeall_anchor_r9/anchor_takeall_uni_v2.json ; round9_probe_takeall.py /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__hoptimus0.parquet CCRCC /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/takeall_anchor_r9/rerun_hoptimus0 ; round10_final_runs_f3_takeall.py anchor_check /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/takeall_anchor_r9/rerun_hoptimus0/takeall_by_gene__CCRCC.csv.gz /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/takeall_anchor_r9/ref_takeall_by_gene.csv.gz /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/takeall_anchor_r9/ref_takeall_medians.csv CCRCC /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/takeall_anchor_r9/anchor_takeall_hoptimus0.json ; round9_probe_takeall.py /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__resnet50.parquet CCRCC /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/takeall_anchor_r9/rerun_resnet50 ; round10_final_runs_f3_takeall.py anchor_check /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/takeall_anchor_r9/rerun_resnet50/takeall_by_gene__CCRCC.csv.gz /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/takeall_anchor_r9/ref_takeall_by_gene.csv.gz /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/takeall_anchor_r9/ref_takeall_medians.csv CCRCC /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/takeall_anchor_r9/anchor_takeall_resnet50.json
+config: {"commit":"33ab75c5726d71a40787498b291dcb5abfe36e2f","stage":"F3","unit":"takeall_anchor_r9"}
+config_sha256: 6b033860af2736bfb47c0b066662630b0bbe2cb834cbca44281c26717a83f6ee
+start: 2026-11-12T08:20:12-05:00
+end: 2026-11-12T08:21:03-05:00
+status: FAILED_rc1
+scripts_executed (md5, path relative to snapshot):
+  c73df735db7c292d298d44f6c6f3d089  code/scripts/round9_probe_takeall.py
+  7ec4351f8457b4557f9106a6724704d4  code/scripts/round10_final_runs_f3_takeall.py
+inputs (md5, path):
+  0cc62c5e600cc3811168b71ca7e2c1ab  /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet
+  8aaf05663cafb35b0c2ee4cbf5ff87b7  /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__hoptimus0.parquet
+  59ac3c2fe8e1818b7b1d0a1e9c141652  /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__resnet50.parquet
+  86b3ef6d9e55b14759dfa14968e1b565  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/takeall_anchor_r9/ref_takeall_by_gene.csv.gz
+  adefec680779cb089fc6ed23769a58e1  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/takeall_anchor_r9/ref_takeall_medians.csv

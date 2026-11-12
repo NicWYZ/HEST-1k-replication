@@ -1,0 +1,34 @@
+{
+ "stage": "F3.3iv",
+ "unit": "bal__lung__Xenium__resnet50__lognorm__theta3",
+ "draws": 2000,
+ "pool": 500,
+ "batch": 1000,
+ "designs": [
+  "D0",
+  "D2",
+  "D2lim",
+  "cube"
+ ],
+ "root": "/work/users/w/e/weiyang/hest_replication",
+ "cluster_values": [
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__lung__Xenium.parquet"
+ ],
+ "populations": [
+  {
+   "task": "lung__Xenium",
+   "vtag": "lung__Xenium",
+   "encoder": "resnet50",
+   "scale": "lognorm",
+   "estimands": [
+    "theta3"
+   ],
+   "nl_grid": [
+    4,
+    6,
+    8,
+    12
+   ]
+  }
+ ]
+}

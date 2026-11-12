@@ -76,5 +76,5 @@ CMDS="${CMD1} ; ${CMD2} ; ${CMD3} ; ${CMD4} ; ${CMD5} ; ${CMD6}"
 ST=COMPLETED; [ $RC -eq 0 ] || ST=FAILED_rc$RC
 $PY $SNAP/code/scripts/round10_final_runs_provenance.py "$OUT" F3 $UNIT $COMMIT $SNAP "$START" $ST --frame $FRAME --command "$CMDS" --config '{"stage":"F3","unit":"'$UNIT'","commit":"'$COMMIT'"}' --scripts code/scripts/round9_probe_takeall.py code/scripts/round10_final_runs_f3_takeall.py --inputs /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__hoptimus0.parquet /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__resnet50.parquet $OUT/ref_takeall_by_gene.csv.gz $OUT/ref_takeall_medians.csv
 cd "$OUT"; for g in PROVENANCE.txt _provenance.json stdout*.log *.json *.csv; do [ -e "$g" ] && cp "$g" "$HJ"/; done; true
-tail -40 stdout*.log
+tail -n 40 stdout*.log
 exit $RC
