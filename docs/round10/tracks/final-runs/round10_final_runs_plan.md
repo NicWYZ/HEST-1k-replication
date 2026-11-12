@@ -1,12 +1,12 @@
 # Round 10, track `final-runs`, the plan
 
 ```state
-updated: 2026-11-11 (Claude Science session on the Windows execution PC, David's team account, reaching Longleaf through compute target ssh:longleaf; frame 7744bd42-579b-40da-aa6c-80d67b9dbbdc, the sixth session of the track)
+updated: 2026-11-12 (Claude Science session on the Windows execution PC, David's team account, reaching Longleaf through compute target ssh:longleaf; frame 7744bd42-579b-40da-aa6c-80d67b9dbbdc, the sixth session of the track)
 unit: final-runs
-status: interval i04, stage F3. Methods written (plan section 5d) with the plan for the seven open points of the F2 decision file (section 5d.6). Nicolas answered two method forks at plan time (section 6, 11 November). E8's literature search is done and logged (`results/round10/final_runs/F3/e8_search/`). No F3 code yet. No job is running or pending
-step: F3, step 1 of section 5d.8 (anchor smoke jobs), not started
-last run: none in F3. The last job of the track is F2's gate checks v2 on 7c8de1aa (`F2_gate/gate_checks_v2/` on Longleaf)
-next: write the F3 scripts (`code/scripts/round10_final_runs_f3_*`) and run one anchor smoke job per item in the order of section 5d.8, then the re-aggregations of open points 1, 6 and 7. The source inventories in `results/round10/final_runs/F3/inventory/` give each item's scripts, parameter lines and anchor rows. The F3 report goes to `docs/round10/i04/final-runs/round10_final_runs_F3_report.md`
+status: interval i04, stage F3, wave 1 of section 5d.8 running (anchor and smoke jobs, plus the re-aggregations of open points 1, 6 and 7 and production under one hour in total). Methods in plan section 5d (cfeb3740). Six implementation sub-agents of this session hold the work: Map `73454d7a-85a3-4de7-9ee7-a74d0d999889` (5d.1, 5d.4 item 3), Institution `b9c04725-eaea-4b47-8586-4ff29636ba08` (5d.2), Regime B `2c7941c3-ecf2-4306-a6d1-ae6170b4cbe8` (5d.3 i and ii, 5d.4 item 2, 5d.6 item 5), Designs `7bae80ef-cb3f-4725-8012-f680940d6c59` (5d.3 iii to v), Reruns `242aa416-6800-44ec-92d9-2550dbcf6db8` (5d.6 items 1, 3, 4, 6, 7), Toy `b13c1923-c0ad-48db-9911-4cd5ebb8c8ec` (5d.6 item 2). Their code is committed in 3fa951ed (Institution), 00914203 (Toy), 8abe80f2 (Regime B), 33ab75c5 (Designs), bab1ca17 (Map) and 6b5b0702 (Reruns), and their jobs run from those commits' snapshots
+step: F3 wave 1. Each sub-agent runs its anchors and smoke jobs and returns; production beyond one hour waits for the lead's review of the anchors
+last run: wave 1 jobs submitted by the sub-agents from 12 November; their Slurm ids are in each output directory's PROVENANCE.txt under `results/round10/final_runs/F3/` on Longleaf and go into `job_ledger.csv` at the next lead commit
+next: collect the six sub-agents' wave 1 returns, check each anchor against its source, record the corrections listed for section 6 (the allocation formula of 5d.3 iii is $m^\ast = \sqrt{B_0 c/A}$, as round 5's code computes it, and the plan's line is miswritten), then resume each sub-agent for production. If this session has ended, a new session reads the wave 1 outputs under `BASE/F3/` and the sub-agents' committed job scripts, and resubmits from them
 waiting: nothing on Nicolas
 ```
 
