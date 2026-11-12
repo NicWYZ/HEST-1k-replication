@@ -4,7 +4,7 @@
 #SBATCH --mem=4G
 #SBATCH --time=90
 set -u
-UNIT=boot_smoke
+UNIT=boot_smoke_v2
 CLONE=/work/users/w/e/weiyang/hest_code/round10-final-runs
 BASE=/work/users/w/e/weiyang/hest_replication/results/round10/final_runs
 COMMIT=__CODE_COMMIT__
@@ -43,7 +43,7 @@ mkdir -p f2cfg
 mkdir -p f2cfg/results/round10/final_runs/F2/configs && cp -r "$CLONE/results/round10/final_runs/F2/configs/regimeA" f2cfg/results/round10/final_runs/F2/configs/
 RCD=f2cfg/results/round10/final_runs/F2/configs/regimeA
 CMD="round10_final_runs_f3_reruns_boot_configs.py $RCD configs_whole whole; round10_final_runs_f3_reruns_boot_configs.py $RCD configs_parts parts 120; round10_final_runs_f2_regimeA.py configs_whole/f3_rerun_boot__$SU.json run; round10_final_runs_f3_reruns_boot_check.py run/regimeA_cells.parquet $BASE/F2/regimeA/$SU/regimeA_cells.parquet check $BASE/F2/regimeA/CCRCC__uni_v2__norm_refit/regimeA_cells.parquet"
-(find f2cfg root committed -name '*.json' 2>/dev/null | sort | xargs md5sum) > input_configs_md5.txt
+(find . -path ./run -prune -o -name '*.json' -print 2>/dev/null | sort | xargs -r md5sum) > input_configs_md5.txt || true
 set +e
 $PY -u $SNAP/code/scripts/round10_final_runs_f3_reruns_boot_configs.py $RCD configs_whole whole > stdout.log 2>&1
 RC=$?

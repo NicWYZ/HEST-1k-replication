@@ -1,0 +1,117 @@
+{
+ "script": "round10_final_runs_f3_reruns_limits_g1.py",
+ "clone": "/work/users/w/e/weiyang/hest_code/round10-final-runs",
+ "inputs_md5": {
+  "f2_limits_summary.csv": "a2fce0b1a8937a2f4b4799c42f7ef222",
+  "f2_limits_vs_regimeA.csv": "31e664bb63740038a2071d2619a2f98d",
+  "f2_limits_diag.csv": "a09a4cc7a08ce35be0861cc34aa3e379"
+ },
+ "cells": 1452,
+ "cells_G_minus_n_eq_1": 54,
+ "anchor": {
+  "r07_limits_ranges": {
+   "ref_md5": "f0a4acb8f7e62ba1922f8e85fe3234d9",
+   "ours_md5": "f0a4acb8f7e62ba1922f8e85fe3234d9",
+   "bytes_identical": true,
+   "shape_ref": [
+    80,
+    7
+   ],
+   "shape_ours": [
+    80,
+    7
+   ],
+   "same_columns": true,
+   "non_numeric_equal": true,
+   "nan_pattern_equal": true,
+   "max_abs_diff": 0.0
+  },
+  "r07b_limits_width_ratio_by_n": {
+   "ref_md5": "d46e34cc177a7ace362968ff01787382",
+   "ours_md5": "d46e34cc177a7ace362968ff01787382",
+   "bytes_identical": true,
+   "shape_ref": [
+    8,
+    12
+   ],
+   "shape_ours": [
+    8,
+    12
+   ],
+   "same_columns": true,
+   "non_numeric_equal": true,
+   "nan_pattern_equal": true,
+   "max_abs_diff": 0.0
+  },
+  "r07c_limits_four_tasks_theta3": {
+   "ref_md5": "4e33dc62f5152316795496eaffa83be0",
+   "ours_md5": "4e33dc62f5152316795496eaffa83be0",
+   "bytes_identical": true,
+   "shape_ref": [
+    11,
+    31
+   ],
+   "shape_ours": [
+    11,
+    31
+   ],
+   "same_columns": true,
+   "non_numeric_equal": true,
+   "nan_pattern_equal": true,
+   "max_abs_diff": 0.0
+  },
+  "r07d_limits_lambda_by_n": {
+   "ref_md5": "cbc9ce040942e8fca050f79cf423695f",
+   "ours_md5": "cbc9ce040942e8fca050f79cf423695f",
+   "bytes_identical": true,
+   "shape_ref": [
+    40,
+    6
+   ],
+   "shape_ours": [
+    40,
+    6
+   ],
+   "same_columns": true,
+   "non_numeric_equal": true,
+   "nan_pattern_equal": true,
+   "max_abs_diff": 0.0
+  },
+  "named_rows": {
+   "r07_kluger_n16": [
+    212.0,
+    0.22725,
+    0.95425,
+    0.98875,
+    0.0
+   ],
+   "r07_kluger_n16_expected": [
+    212,
+    0.22725,
+    0.95425,
+    0.98875,
+    0.0
+   ],
+   "r07b_n4": [
+    242,
+    0.5763047452681511
+   ],
+   "r07b_n4_expected": [
+    242,
+    0.5763047452681511
+   ]
+  },
+  "pass": true
+ },
+ "rows_dropped": {
+  "summary": 540,
+  "vs_regimeA": 54,
+  "diag": 270
+ },
+ "r07_rows_changed": 30,
+ "r07c_rows": {
+  "all": 11,
+  "noG1": 11
+ },
+ "finished": true
+}

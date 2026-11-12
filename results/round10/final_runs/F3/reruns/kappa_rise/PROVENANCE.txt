@@ -1,0 +1,31 @@
+platform: Longleaf
+slurm_job_id: 8940569
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 8192
+node: c0922
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F3
+unit: reruns__kappa_rise
+frame_id: 242aa416-6800-44ec-92d9-2550dbcf6db8
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 6b5b07021b1380f5e213e4a335dc0a2611549e8e
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/6b5b07021b1380f5e213e4a335dc0a2611549e8e
+command: round10_final_runs_f3_reruns_kappa_rise.py /work/users/w/e/weiyang/hest_code/round10-final-runs /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/diagnostics/diagnostics_v2/f2_gene_diag.parquet /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/reruns/kappa_rise 10000
+config: {"commit":"6b5b07021b1380f5e213e4a335dc0a2611549e8e","stage":"F3","track_dir":"reruns","unit":"kappa_rise"}
+config_sha256: d1b0bda8c1eed6cd835a911a809554d2adf0c783a02bc7003063596e1c4f083d
+start: 2026-11-12T08:20:12-05:00
+end: 2026-11-12T08:20:48-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  bdfb6485f11ac3ab972ca2cf684ea5c5  code/scripts/round10_final_runs_f3_reruns_kappa_rise.py
+inputs (md5, path):
+  8a25595dad9f828c1793bc31886f5ae5  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/diagnostics/diagnostics_v2/f2_gene_diag.parquet
+  9d62c0c764236d98286a65681e919573  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F2/diagnostics/f2_shortfall.csv
+  32241511ed1f3708dd6ab67def2a28dc  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F2/report_tables/r09b_shortfall_correlations.csv
+  24b2ba4ea2d4f4e513f6c67856818372  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F2/aggregate/f2_regimeA_summary.csv.gz

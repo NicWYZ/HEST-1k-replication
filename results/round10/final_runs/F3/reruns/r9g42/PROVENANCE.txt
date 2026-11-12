@@ -1,0 +1,130 @@
+platform: Longleaf
+slurm_job_id: 8940570
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 16384
+node: c0922
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F3
+unit: reruns__r9g42
+frame_id: 242aa416-6800-44ec-92d9-2550dbcf6db8
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 6b5b07021b1380f5e213e4a335dc0a2611549e8e
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/6b5b07021b1380f5e213e4a335dc0a2611549e8e
+command: round10_final_runs_f3_reruns_r9g42.py /work/users/w/e/weiyang/hest_code/round10-final-runs /work/users/w/e/weiyang/hest_replication/results/round10/final_runs /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/6b5b07021b1380f5e213e4a335dc0a2611549e8e/code/scripts /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/reruns/r9g42
+config: {"commit":"6b5b07021b1380f5e213e4a335dc0a2611549e8e","stage":"F3","track_dir":"reruns","unit":"r9g42"}
+config_sha256: 7f5ec3cc0d4d8923759eb03e6b31b910f9f069c1f8ba000fc0e214be1fa3d965
+start: 2026-11-12T08:20:12-05:00
+end: 2026-11-12T08:22:06-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  0ffcc9f5f2849f230b68f14b5ceb5c7f  code/scripts/round10_final_runs_f3_reruns_r9g42.py
+  33ded614e47a8410bafb203d3528c51e  code/scripts/round10_final_runs_f2_aggregate.py
+  7acdb64ccea02fb704a5e571dd5d62bb  code/scripts/round10_final_runs_f2_limits_aggregate.py
+  a80a68637dea25ce6c385a98cf47c365  code/scripts/round10_final_runs_f2_regimeB_aggregate.py
+  f0c32b1017ca8832f3e4b4c9b1807d15  code/scripts/round10_final_runs_f2_diagnostics.py
+  8ea0be3f99cb3e640e29ecdcbfe54ffe  code/scripts/round9_fewcluster_hest_kappa.py
+  1b23b360fb05d825c13eae29b0a8fa26  code/scripts/round9_c0_diagnostics.py
+  7299bd9e1cf75f660924fa4c98095b98  code/scripts/round10_final_runs_f2_scores.py
+inputs (md5, path):
+  3d879b116f6e61a9953bbb6ba114bb6f  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F2/configs/f2_diagnostics_v2.json
+  1f80d314c0840e09ca4350fbe3b606b0  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F2/aggregate/f2_units.csv
+  7cc0d46e962de45179b37764ccadd7ef  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F2/aggregate/f2_scores.csv
+  6b4ec382084ecc1479b63e18ca3f3d8c  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round5/ppi/E4b_rejective/e4b_grid.csv
+  487d83034911b8da764e53c631410ba5  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__LUNG_XENIUM.parquet
+  356c228eb0fef580baa76d1484ccb193  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__LUNG_XENIUM.parquet
+  b4e8ee68f8bd513246d680ec9708d34a  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__hoptimus0__log1p__p0of5/limits_cells.parquet
+  5c8dd7bb9437494eebce8d3e423ba6bb  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__hoptimus0__log1p__p0of5/limits_diag.parquet
+  e9c3a2b3ec7dcf5ac03f248cce5fb40d  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__hoptimus0__log1p__p1of5/limits_cells.parquet
+  9ff672ac9b167defd56f846644589819  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__hoptimus0__log1p__p1of5/limits_diag.parquet
+  d2fc31ea4790c06c155e5ff5ae5ae198  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__hoptimus0__log1p__p2of5/limits_cells.parquet
+  dce1d726b8b30509a3fa5f59808270b1  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__hoptimus0__log1p__p2of5/limits_diag.parquet
+  da11fc83cdb1b6a9065f17625ce4521f  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__hoptimus0__log1p__p3of5/limits_cells.parquet
+  b4484c16a7b1753e6d9609bd8fa46411  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__hoptimus0__log1p__p3of5/limits_diag.parquet
+  a99524c6110df50eac45f07769d1a1cc  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__hoptimus0__log1p__p4of5/limits_cells.parquet
+  75c98140873a79218513ada80671b9d2  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__hoptimus0__log1p__p4of5/limits_diag.parquet
+  2df7018e1d8f08f4f05372ed9b65a458  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__hoptimus0__norm_r9pair__p0of5/limits_cells.parquet
+  12c1cb7c1ac37eebdcec48cbc88320a3  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__hoptimus0__norm_r9pair__p0of5/limits_diag.parquet
+  3148ce95d1079cd94189da32896977a2  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__hoptimus0__norm_r9pair__p1of5/limits_cells.parquet
+  40d37dd9b5e0a29c4cf7e46b3c421870  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__hoptimus0__norm_r9pair__p1of5/limits_diag.parquet
+  59da799f346dc90cf312412b417b5759  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__hoptimus0__norm_r9pair__p2of5/limits_cells.parquet
+  089822c6159e77726d695bd1b44b267f  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__hoptimus0__norm_r9pair__p2of5/limits_diag.parquet
+  fb09386bc41dbe54c6ea6f4e2d666960  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__hoptimus0__norm_r9pair__p3of5/limits_cells.parquet
+  cc5038584c15251f1bd032b386c050bb  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__hoptimus0__norm_r9pair__p3of5/limits_diag.parquet
+  8bf730f25e3a9b96fc3e774fe96c72a8  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__hoptimus0__norm_r9pair__p4of5/limits_cells.parquet
+  2525de14fd2ff186b4ea3a7682ac0435  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__hoptimus0__norm_r9pair__p4of5/limits_diag.parquet
+  45cdfe84dbf6b64cb04f52a09a6af2c1  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__resnet50__log1p__p0of5/limits_cells.parquet
+  84da09e9baadf3c07fd35e6fadfc81c7  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__resnet50__log1p__p0of5/limits_diag.parquet
+  865e4c85e7f9ebc63f4758c9f4a9b350  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__resnet50__log1p__p1of5/limits_cells.parquet
+  bd16e87a39155dd2a24e36c7c7253b0f  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__resnet50__log1p__p1of5/limits_diag.parquet
+  06b83502b5d1fd1e8f661e1c721a67f5  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__resnet50__log1p__p2of5/limits_cells.parquet
+  e042036d6603606b357178f86f4b5abb  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__resnet50__log1p__p2of5/limits_diag.parquet
+  eece9d6d3f3c245f8cdf7ed9385860e3  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__resnet50__log1p__p3of5/limits_cells.parquet
+  f039feef42a37440058366caaa8787ec  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__resnet50__log1p__p3of5/limits_diag.parquet
+  b783d15af099f068214980bf623e90c3  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__resnet50__log1p__p4of5/limits_cells.parquet
+  b65dea1d2467a1b21d0f5f9e653c3a36  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__resnet50__log1p__p4of5/limits_diag.parquet
+  eb0a0c419d5f6591b0fe6585982c1101  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__resnet50__norm_r9pair__p0of5/limits_cells.parquet
+  9ac692b59a1fe3e39599847fcbf72d97  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__resnet50__norm_r9pair__p0of5/limits_diag.parquet
+  e4d11db69572704ae88320e827949f9a  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__resnet50__norm_r9pair__p1of5/limits_cells.parquet
+  d02f5387a21975c7bff5f2b4d67c7085  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__resnet50__norm_r9pair__p1of5/limits_diag.parquet
+  7f540a3d6fd946f76a8bf04fb9b1bdf5  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__resnet50__norm_r9pair__p2of5/limits_cells.parquet
+  127c73770fd51a6fd8b2b4939dee8b0c  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__resnet50__norm_r9pair__p2of5/limits_diag.parquet
+  326b092f2f1ff5e0144fec8315d647e4  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__resnet50__norm_r9pair__p3of5/limits_cells.parquet
+  88595242d07e63e9910691290792676b  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__resnet50__norm_r9pair__p3of5/limits_diag.parquet
+  259733c3fd6bb418b03b51de27f3cd59  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__resnet50__norm_r9pair__p4of5/limits_cells.parquet
+  0fb5fb99847c7bcbd93e94d48b599c29  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__resnet50__norm_r9pair__p4of5/limits_diag.parquet
+  561d73f550d54fdc59b16835e59cfac0  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__mu__log1p__p0of2/limits_cells.parquet
+  50dc9dabc035754bc91eb93ad670304b  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__mu__log1p__p0of2/limits_diag.parquet
+  d70a0a8a82b3b2d45f99d22ca548aaa5  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__mu__log1p__p1of2/limits_cells.parquet
+  31aa2160332172b7b530dfdfc59afe3b  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__mu__log1p__p1of2/limits_diag.parquet
+  5ef9e693aa00609ffb2b4812f1d2b9fa  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__mu__norm_r9pair__p0of2/limits_cells.parquet
+  4dcc0cd18cc85ec3f5423301df70e580  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__mu__norm_r9pair__p0of2/limits_diag.parquet
+  a2ddadb05410ba9b3a7049280cc8df1d  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__mu__norm_r9pair__p1of2/limits_cells.parquet
+  f2087ec16475928588b83194689b5dd5  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__mu__norm_r9pair__p1of2/limits_diag.parquet
+  6c6ce66609fb7d21a5657e7bad48ef68  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__theta1__p0of3/limits_cells.parquet
+  c4caffe8d7855bf7618f72075bbb90f5  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__theta1__p0of3/limits_diag.parquet
+  c56dcde68e1fbdc76f01e7187acbb3cd  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__theta1__p1of3/limits_cells.parquet
+  1eb03ed7f27f6fff5034f4f0e1795772  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__theta1__p1of3/limits_diag.parquet
+  ac274516423bdcd7b4f19ddc303d52b3  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__theta1__p2of3/limits_cells.parquet
+  da55718111487c75b88c9e2cbac055b7  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__theta1__p2of3/limits_diag.parquet
+  b8e64854f456c0fd858c9a99428e8404  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__theta2__log1p__p0of2/limits_cells.parquet
+  282610a835f14cd1159f35fb7bfa3601  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__theta2__log1p__p0of2/limits_diag.parquet
+  7b631bdf6f5ce96880a7d2f422b338cf  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__theta2__log1p__p1of2/limits_cells.parquet
+  98ee602740c71c5b2c299a614b37f78c  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__theta2__log1p__p1of2/limits_diag.parquet
+  1d9d62f5e1b7786123cabce7fdaa1a55  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__theta2__norm_r9pair__p0of2/limits_cells.parquet
+  0e427b5bf6fa9c13b2feaf71201da9b0  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__theta2__norm_r9pair__p0of2/limits_diag.parquet
+  e19e29e79c9f5773b8a3eaf4c0d187a6  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__theta2__norm_r9pair__p1of2/limits_cells.parquet
+  155765f649bc6df258fcf24f7cf7dbd2  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__theta2__norm_r9pair__p1of2/limits_diag.parquet
+  fda0be253592fad66fc804c30b1a4007  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__theta3__log1p__p0of2/limits_cells.parquet
+  9e6a54334c606a3ad55b5392ecfb6a9b  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__theta3__log1p__p0of2/limits_diag.parquet
+  9fca5a4e551c1dd5e1d111b7454e9663  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__theta3__log1p__p1of2/limits_cells.parquet
+  9a868fc36f1198721077429a798253a6  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__theta3__log1p__p1of2/limits_diag.parquet
+  656c3cae129ceb5f91539416397c7f4b  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__theta3__norm_r9pair__p0of2/limits_cells.parquet
+  c61428dc0a5e872c4f11bd96595d2d8a  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__theta3__norm_r9pair__p0of2/limits_diag.parquet
+  0108a928061768ba8f566eec88f813d8  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__theta3__norm_r9pair__p1of2/limits_cells.parquet
+  5bf8896512b2bb4c718949981648f226  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/limits/LUNG_XENIUM__uni_v2__theta3__norm_r9pair__p1of2/limits_diag.parquet
+  e89eeccb1811fb87776a8afba4a75aa8  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeA/LUNG_XENIUM__hoptimus0__log1p/regimeA_cells.parquet
+  41a77cb5efebeaaa3fe7ea4873390a37  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeA/LUNG_XENIUM__hoptimus0__norm_r9pair/regimeA_cells.parquet
+  8eb244e3c8a6741249509872b3046d6f  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeA/LUNG_XENIUM__hoptimus0__norm_refit/regimeA_cells.parquet
+  c91cbb3d4ce4a8423098ee3c91b3ab51  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeA/LUNG_XENIUM__resnet50__log1p/regimeA_cells.parquet
+  e38890b84950758991fb3ae905d8ddd1  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeA/LUNG_XENIUM__resnet50__norm_r9pair/regimeA_cells.parquet
+  b16b7125577e60d48fa504ab4706cb80  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeA/LUNG_XENIUM__resnet50__norm_refit/regimeA_cells.parquet
+  d8824a5cf3e10989439a428447fc9cd0  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeA/LUNG_XENIUM__uni_v2__mu__log1p/regimeA_cells.parquet
+  c6a455818271592a94f8d4ebd13b2405  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeA/LUNG_XENIUM__uni_v2__mu__norm_r9pair/regimeA_cells.parquet
+  1352478bfba8fe82afe52f084a8ab0f0  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeA/LUNG_XENIUM__uni_v2__mu__norm_refit/regimeA_cells.parquet
+  0fd61b2c4ae369d3f8248d4e49abaef0  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeA/LUNG_XENIUM__uni_v2__theta1__norm_refit/regimeA_cells.parquet
+  11b006f85ed75eeb6afd6409652610ec  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeA/LUNG_XENIUM__uni_v2__theta1/regimeA_cells.parquet
+  ee7c684033f4aed1cd9d6ee8fcfe05fa  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeA/LUNG_XENIUM__uni_v2__theta2__log1p/regimeA_cells.parquet
+  aa7ff9aa1d1a6e41e4a9a876324f62cc  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeA/LUNG_XENIUM__uni_v2__theta2__norm_r9pair/regimeA_cells.parquet
+  d2a2351ba1bb3fef66eb2ccc81c4ce8e  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeA/LUNG_XENIUM__uni_v2__theta2__norm_refit/regimeA_cells.parquet
+  1d227ebea3c411a790af1a81f32329b7  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeA/LUNG_XENIUM__uni_v2__theta3__log1p/regimeA_cells.parquet
+  fd73c32fe92eb619d918b2cf23e0bd89  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeA/LUNG_XENIUM__uni_v2__theta3__norm_r9pair/regimeA_cells.parquet
+  7b031485b04c725105a7cb4682a9602e  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeA/LUNG_XENIUM__uni_v2__theta3__norm_refit/regimeA_cells.parquet
+  8da33c78084c628da3a3c2d8d59e07a1  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/LUNG_XENIUM__hoptimus0/regimeB_genes.parquet
+  5f065de01ea2883d2decfb7b7ed4e5f4  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/LUNG_XENIUM__resnet50/regimeB_genes.parquet
+  3567bcc596dd7bb9051407053d637d0b  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/LUNG_XENIUM__uni_v2/regimeB_genes.parquet
