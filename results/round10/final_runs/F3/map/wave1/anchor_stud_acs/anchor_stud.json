@@ -1,0 +1,16 @@
+{
+ "anchor": "5d.1 item 5: round9_stud_feasibility.py unchanged, CCRCC, PYTHONHASHSEED=0",
+ "reference": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round9/stud/stud_summary.csv row CCRCC, o 3, xgene",
+ "reference_coverage": 0.9155536062995282,
+ "reproduced_coverage": 0.9163761645290155,
+ "mcse": 0.0015336890469904274,
+ "z": 0.5363265983423466,
+ "exact": false,
+ "criterion": "|reproduced - reference| <= 2 Monte Carlo standard errors (rep-level SE over 40 reps); exact agreement not expected (the script seeds from hash(task))",
+ "all_rows_max_abs_z": 2.7394885270308835,
+ "all_rows_n": 30,
+ "all_rows_share_within_2se": 0.7666666666666667,
+ "int5_xgene_o3_ref": 0.9591031276415892,
+ "int5_xgene_o3_new": 0.9698381234150464,
+ "passed": true
+}

@@ -596,11 +596,10 @@ def run_scores(a):
             F_C = A4S.nb_cdf(cnt_C[:, gnb], mu_C, a_g)
 
             def nb_iv(q, idx, mu_E=mu_E, a_g=a_g):
-                sh = mu_E[idx].shape
-                qq = np.minimum(q, 0.5)
-                lo = np.log1p(A4S.nb_ppf(np.array(np.broadcast_to(0.5 - qq, sh)), mu_E[idx], a_g))
-                hi = np.log1p(A4S.nb_ppf(np.array(np.broadcast_to(np.minimum(0.5 + qq, 1.0), sh)), mu_E[idx], a_g))
-                hi = np.where(np.broadcast_to(q, sh) >= 0.5, np.inf, hi)
+                # round 3's interval_for: nb_ppf takes q per gene (n_gene,); q <= 0 gives 0, q >= 1 gives +inf
+                qv = np.asarray(q, dtype=np.float64).ravel()
+                lo = np.log1p(A4S.nb_ppf(0.5 - qv, mu_E[idx], a_g))
+                hi = np.log1p(A4S.nb_ppf(0.5 + qv, mu_E[idx], a_g))
                 return lo, hi
             mach["nb_conformal"] = dict(gi=gnb, S_C=np.abs(F_C - 0.5),
                                         S_E=lambda idx, mu_E=mu_E, a_g=a_g, gnb=gnb: np.abs(

@@ -1,0 +1,96 @@
+{
+ "anchor": "5d.1 item 1: round5_conf_w3.py --part 1 unchanged, CCRCC:24, uni_v2",
+ "folds": [
+  "INT1",
+  "INT5"
+ ],
+ "reference": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round5/conformal/W3_real/merged/w3_by_fold.csv",
+ "n_ref_rows": 276,
+ "n_matched": 276,
+ "criterion": "every reference row matched and max abs difference <= 1e-09 in coverage, width_mean, width_median and n_T_donors",
+ "maxabs_coverage": 1.1102230246251565e-16,
+ "maxabs_width_mean": 3.813291904464222e-09,
+ "maxabs_width_median": 7.947282831821667e-10,
+ "maxabs_n_T_donors": 0.0,
+ "maxabs_n_draws": 0.0,
+ "named_rows": [
+  {
+   "method": "hcp",
+   "o": 0,
+   "fold": "INT1",
+   "alpha": 0.1,
+   "coverage_ref": 0.994458794587946,
+   "coverage_new": 0.994458794587946,
+   "width_median_ref": 3.820950865248102,
+   "width_median_new": 3.8209508652481
+  },
+  {
+   "method": "within_full",
+   "o": 9,
+   "fold": "INT1",
+   "alpha": 0.1,
+   "coverage_ref": 0.9027435658914728,
+   "coverage_new": 0.9027435658914729,
+   "width_median_ref": 1.80008989381594,
+   "width_median_new": 1.8000898938159398
+  },
+  {
+   "method": "within_full",
+   "o": 9,
+   "fold": "INT5",
+   "alpha": 0.1,
+   "coverage_ref": 0.9069416595865192,
+   "coverage_new": 0.9069416595865193,
+   "width_median_ref": 2.6364063529149493,
+   "width_median_new": 2.636406352917157
+  },
+  {
+   "method": "hcp",
+   "o": 0,
+   "fold": "INT5",
+   "alpha": 0.1,
+   "coverage_ref": 0.4998875772906127,
+   "coverage_new": 0.4998875772906127,
+   "width_median_ref": 3.4080032471026875,
+   "width_median_new": 3.4080032471026875
+  },
+  {
+   "method": "within_plain",
+   "o": 9,
+   "fold": "INT1",
+   "alpha": 0.1,
+   "coverage_ref": 0.9116837209302326,
+   "coverage_new": 0.9116837209302326,
+   "width_median_ref": 1.9207671179015449,
+   "width_median_new": 1.920767117877883
+  },
+  {
+   "method": "ghcp",
+   "o": 9,
+   "fold": "INT5",
+   "alpha": 0.1,
+   "coverage_ref": 0.90501246105919,
+   "coverage_new": 0.90501246105919,
+   "width_median_ref": 4.670760361582052,
+   "width_median_new": 4.670760361582053
+  }
+ ],
+ "w3_checks_all_passed": true,
+ "passed": false,
+ "driver_vs_w3_rows": 138,
+ "driver_vs_w3_methods": [
+  "ghcp",
+  "ghcp_noad",
+  "hcp",
+  "one_per",
+  "pooled",
+  "recentred",
+  "within",
+  "within_full",
+  "within_plain"
+ ],
+ "driver_vs_w3_maxabs_coverage": 2.220446049250313e-16,
+ "driver_vs_w3_maxabs_width_mean": 1.7763568394002505e-15,
+ "driver_vs_w3_maxabs_width_median": 8.881784197001252e-16,
+ "driver_passed": true
+}

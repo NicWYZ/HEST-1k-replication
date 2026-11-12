@@ -1,0 +1,41 @@
+platform: Longleaf
+slurm_job_id: 8940431
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 4
+slurm_mem_per_node: 40960
+node: c0922
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F3
+unit: map/anchor_scores_smoke
+frame_id: 73454d7a-85a3-4de7-9ee7-a74d0d999889
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: bab1ca175898c603a15b04972db98798ff5169d6
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/bab1ca175898c603a15b04972db98798ff5169d6
+command: round3_a4_scores.py (CCRCC, three designs, abs scaled scaled_clip) and round10_final_runs_f3_map.py scores smoke (see logs)
+config: {"commit":"bab1ca175898c603a15b04972db98798ff5169d6","stage":"F3","track_dir":"map","unit":"anchor_scores_smoke"}
+config_sha256: bf0227aff5679184171e1a469f0ef50bef102f78be107e9aaa9417d438f5f7a3
+start: 2026-11-12T08:20:12-05:00
+end: 2026-11-12T08:46:46-05:00
+status: FAILED_rc1
+scripts_executed (md5, path relative to snapshot):
+  4895adbbca397648d705db39601a80b9  code/scripts/round10_final_runs_f3_map.py
+  3cb730edfdd6ede2e25000cb42e98655  code/scripts/round10_final_runs_f3_map_anchor.py
+  616ce3eba9382c7d363eb9c85ad536de  code/scripts/round10_final_runs_f3_map_aggregate.py
+  2d8418677cf8290eec89a14c315b92cd  code/scripts/round4_conf_c3.py
+  737a452b090da9609c798cc482f6896d  code/scripts/round5_conf_w3.py
+  1936e4350d2dfc5816b0fd45e343e810  code/scripts/round4_conf_io.py
+  76fda34ee622e299bbaa806e5c8da98a  code/scripts/round4_conf_sim.py
+  f18747b8a837e4e3b504edaf10999351  code/scripts/round5_conf_io.py
+  0ad7ae8efe554c1f285e5f384a9fb7f5  code/scripts/round3_a0_harness.py
+  56bf3621ae53efe41140c439164b5534  code/scripts/round3_a4b_hcp.py
+  b74f2dda031bc972c1c44c1d7b3a04da  code/scripts/round3_d4_sets.py
+  6f7a1973fbe10b3e215172d32ff6fbaf  code/scripts/round10_final_runs_f2_refit_norm.py
+  541bca01159e06d971419391415c734c  code/scripts/round3_a4_scores.py
+inputs (md5, path):
+  fa87eb05137bb8c95e5329e19268a4ab  /work/users/w/e/weiyang/hest_replication/results/round3/task_defs/CCRCC.json
+  f2f1372a6826ac0e4dd21864d0d1fb55  /work/users/w/e/weiyang/hest_replication/results/round3/A4_scores/a4_scores_by_task__uni_v2__mainCCRCC.csv

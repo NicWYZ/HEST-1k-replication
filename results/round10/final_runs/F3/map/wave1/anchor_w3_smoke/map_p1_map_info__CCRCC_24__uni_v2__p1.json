@@ -1,0 +1,66 @@
+{
+ "task": "CCRCC:24",
+ "encoder": "uni_v2",
+ "part": 1,
+ "folds": [
+  "INT1"
+ ],
+ "cal_draws": [
+  0,
+  1,
+  2
+ ],
+ "plan": [
+  {
+   "K": 10,
+   "o_grid": [
+    0,
+    3,
+    5,
+    9,
+    10,
+    12,
+    15,
+    17,
+    20,
+    25,
+    50,
+    100
+   ]
+  }
+ ],
+ "rows": 27756,
+ "specs": 3,
+ "wall_seconds": 1684.7,
+ "frac_integer": 1.0,
+ "final_files": {
+  "log1p": {
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+   "md5": "0cc62c5e600cc3811168b71ca7e2c1ab",
+   "n_genes": 50
+  },
+  "norm": {
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC__uni_v2/norm/b1_predictions__CCRCC__uni_v2.parquet",
+   "md5": "b6d712743353d99d6820d334ea044edc",
+   "n_genes": 50
+  }
+ },
+ "methods": [
+  "pooled",
+  "hcp",
+  "one_per",
+  "ghcp",
+  "ghcp_noad",
+  "ghcp_r05",
+  "ghcp_r05_noad",
+  "ghcp_r05code",
+  "within",
+  "within_plain",
+  "recentred",
+  "within_full",
+  "xgene",
+  "within_final",
+  "within_plain_final",
+  "within_full_final"
+ ]
+}
