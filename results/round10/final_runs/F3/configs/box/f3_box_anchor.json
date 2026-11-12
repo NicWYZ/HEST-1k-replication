@@ -1,0 +1,14 @@
+{
+ "stage": "F3",
+ "unit": "box_anchor_smoke/anchor",
+ "required_m_csv": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round9/fewcluster/strat/i32_required_m_B.csv",
+ "acs_states_csv": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round9/fewcluster/strat/i32_acs_states.csv",
+ "acs_box_csv": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round9/fewcluster/strat/i32_acs_box.csv",
+ "hest_box_genes_csv": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round9/fewcluster/strat/i32_hest_box_genes.csv",
+ "hest_box_summary_csv": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round9/fewcluster/strat/i32_hest_box_summary.csv",
+ "hest_parquets": {
+  "CCRCC": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+  "INDIANA_KIDNEY": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions_INDIANA_KIDNEY/b1_predictions__INDIANA_KIDNEY__uni_v2.parquet",
+  "LUNG_XENIUM": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__uni_v2.parquet"
+ }
+}
