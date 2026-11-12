@@ -1,0 +1,79 @@
+{
+ "config": {
+  "stage": "F3",
+  "item": "plan 5d.6 open point 2, real-donor heterogeneity",
+  "unit": "het_smoke",
+  "configs": [
+   "f2_regimeB__breast__Xenium__uni_v2.json"
+  ],
+  "configs_root": "inputs",
+  "regimeB_dir": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB",
+  "toy": true
+ },
+ "started": "2026-11-12T08:20:45",
+ "populations": [
+  {
+   "unit": "regimeB__breast__Xenium__uni_v2",
+   "task": "breast__Xenium",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 17,
+   "n_units": 148293,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 17,
+    "n_donors_cv": 17,
+    "n_common": 17,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 6.125530417543759e-13,
+    "max_abs": 1.6209256159527285e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 17,
+    "n_units_f2": 148293,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 17,
+   "seconds": 5.3
+  },
+  {
+   "unit": "regimeB__breast__Xenium__uni_v2",
+   "task": "breast__Xenium",
+   "encoder": "uni_v2",
+   "scale": "lognorm",
+   "G": 17,
+   "n_units": 148293,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 17,
+    "n_donors_cv": 17,
+    "n_common": 17,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 6.590683825488601e-13,
+    "max_abs": 1.1657341758564144e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 17,
+    "n_units_f2": 148293,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 17,
+   "seconds": 4.7
+  }
+ ],
+ "rows": 89,
+ "populations_n": 2,
+ "cv_max_rel": 6.590683825488601e-13,
+ "cv_all_matched": true,
+ "f2_summary_all_match": true,
+ "finished": "2026-11-12T08:20:55",
+ "passed": true
+}

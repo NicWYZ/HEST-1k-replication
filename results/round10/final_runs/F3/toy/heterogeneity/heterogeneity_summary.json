@@ -1,0 +1,1425 @@
+{
+ "config": {
+  "stage": "F3",
+  "item": "plan 5d.6 open point 2, real-donor heterogeneity",
+  "unit": "heterogeneity",
+  "configs": [
+   "f2_regimeB__ACS_STATES__pkg.json",
+   "f2_regimeB__bowel__Visium__hoptimus0.json",
+   "f2_regimeB__bowel__Visium__resnet50.json",
+   "f2_regimeB__bowel__Visium__uni_v2.json",
+   "f2_regimeB__brain__Visium__hoptimus0.json",
+   "f2_regimeB__brain__Visium__resnet50.json",
+   "f2_regimeB__brain__Visium__uni_v2.json",
+   "f2_regimeB__breast__Spatial_Transcriptomics__hoptimus0.json",
+   "f2_regimeB__breast__Spatial_Transcriptomics__resnet50.json",
+   "f2_regimeB__breast__Spatial_Transcriptomics__uni_v2.json",
+   "f2_regimeB__breast__Xenium__hoptimus0.json",
+   "f2_regimeB__breast__Xenium__resnet50.json",
+   "f2_regimeB__breast__Xenium__uni_v2.json",
+   "f2_regimeB__CCRCC__hoptimus0.json",
+   "f2_regimeB__CCRCC_merged__hoptimus0.json",
+   "f2_regimeB__CCRCC_merged__resnet50.json",
+   "f2_regimeB__CCRCC_merged__uni_v2.json",
+   "f2_regimeB__CCRCC__resnet50.json",
+   "f2_regimeB__CCRCC__uni_v2.json",
+   "f2_regimeB__INDIANA_KIDNEY__hoptimus0.json",
+   "f2_regimeB__INDIANA_KIDNEY__resnet50.json",
+   "f2_regimeB__INDIANA_KIDNEY__uni_v2.json",
+   "f2_regimeB__kidney__Visium__hoptimus0.json",
+   "f2_regimeB__kidney__Visium__resnet50.json",
+   "f2_regimeB__kidney__Visium__uni_v2.json",
+   "f2_regimeB__lung__Xenium__hoptimus0.json",
+   "f2_regimeB__LUNG_XENIUM__hoptimus0.json",
+   "f2_regimeB__lung__Xenium__resnet50.json",
+   "f2_regimeB__LUNG_XENIUM__resnet50.json",
+   "f2_regimeB__lung__Xenium__uni_v2.json",
+   "f2_regimeB__LUNG_XENIUM__uni_v2.json"
+  ],
+  "configs_root": "inputs",
+  "regimeB_dir": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB",
+  "toy": true
+ },
+ "started": "2026-11-12T08:31:23",
+ "populations": [
+  {
+   "unit": "regimeB__ACS_STATES__pkg",
+   "task": "ACS_STATES",
+   "encoder": "pkg",
+   "scale": "log_income",
+   "G": 51,
+   "n_units": 1659616,
+   "n_genes": 1,
+   "cv_check": {
+    "n_valid_regimeB": 51,
+    "n_donors_cv": 51,
+    "n_common": 51,
+    "n_genes": 1,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 2.9175447380292066e-14,
+    "max_abs": 1.3156142841808105e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 51,
+    "n_units_f2": 1659616,
+    "n_genes_f2": 1,
+    "match": true
+   },
+   "G_valid": 51,
+   "seconds": 3.0
+  },
+  {
+   "unit": "regimeB__bowel__Visium__hoptimus0",
+   "task": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "scale": "log1p",
+   "G": 18,
+   "n_units": 90667,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 18,
+    "n_donors_cv": 18,
+    "n_common": 18,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 1.6406422157367626e-13,
+    "max_abs": 2.930988785010413e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 18,
+    "n_units_f2": 90667,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 18,
+   "seconds": 3.2
+  },
+  {
+   "unit": "regimeB__bowel__Visium__hoptimus0",
+   "task": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "scale": "lognorm",
+   "G": 18,
+   "n_units": 90667,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 18,
+    "n_donors_cv": 18,
+    "n_common": 18,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 5.165158331035523e-13,
+    "max_abs": 1.4876988529977098e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 18,
+    "n_units_f2": 90667,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 18,
+   "seconds": 3.0
+  },
+  {
+   "unit": "regimeB__bowel__Visium__resnet50",
+   "task": "bowel__Visium",
+   "encoder": "resnet50",
+   "scale": "log1p",
+   "G": 18,
+   "n_units": 90667,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 18,
+    "n_donors_cv": 18,
+    "n_common": 18,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 1.5630784521973045e-13,
+    "max_abs": 2.930988785010413e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 18,
+    "n_units_f2": 90667,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 18,
+   "seconds": 3.1
+  },
+  {
+   "unit": "regimeB__bowel__Visium__resnet50",
+   "task": "bowel__Visium",
+   "encoder": "resnet50",
+   "scale": "lognorm",
+   "G": 18,
+   "n_units": 90667,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 18,
+    "n_donors_cv": 18,
+    "n_common": 18,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 5.193078105797908e-13,
+    "max_abs": 1.4876988529977098e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 18,
+    "n_units_f2": 90667,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 18,
+   "seconds": 3.0
+  },
+  {
+   "unit": "regimeB__bowel__Visium__uni_v2",
+   "task": "bowel__Visium",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 18,
+   "n_units": 90667,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 18,
+    "n_donors_cv": 18,
+    "n_common": 18,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 1.5630784521973045e-13,
+    "max_abs": 2.930988785010413e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 18,
+    "n_units_f2": 90667,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 18,
+   "seconds": 3.1
+  },
+  {
+   "unit": "regimeB__bowel__Visium__uni_v2",
+   "task": "bowel__Visium",
+   "encoder": "uni_v2",
+   "scale": "lognorm",
+   "G": 18,
+   "n_units": 90667,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 18,
+    "n_donors_cv": 18,
+    "n_common": 18,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 5.193078105797908e-13,
+    "max_abs": 1.4876988529977098e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 18,
+    "n_units_f2": 90667,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 18,
+   "seconds": 3.1
+  },
+  {
+   "unit": "regimeB__brain__Visium__hoptimus0",
+   "task": "brain__Visium",
+   "encoder": "hoptimus0",
+   "scale": "log1p",
+   "G": 18,
+   "n_units": 117043,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 18,
+    "n_donors_cv": 18,
+    "n_common": 18,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 2.21192173297727e-12,
+    "max_abs": 3.907985046680551e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 18,
+    "n_units_f2": 117043,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 18,
+   "seconds": 4.1
+  },
+  {
+   "unit": "regimeB__brain__Visium__hoptimus0",
+   "task": "brain__Visium",
+   "encoder": "hoptimus0",
+   "scale": "lognorm",
+   "G": 18,
+   "n_units": 117043,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 18,
+    "n_donors_cv": 18,
+    "n_common": 18,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 9.383736264597533e-13,
+    "max_abs": 4.04121180963557e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 18,
+    "n_units_f2": 117043,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 18,
+   "seconds": 3.9
+  },
+  {
+   "unit": "regimeB__brain__Visium__resnet50",
+   "task": "brain__Visium",
+   "encoder": "resnet50",
+   "scale": "log1p",
+   "G": 18,
+   "n_units": 117043,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 18,
+    "n_donors_cv": 18,
+    "n_common": 18,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 2.21192173297727e-12,
+    "max_abs": 3.907985046680551e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 18,
+    "n_units_f2": 117043,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 18,
+   "seconds": 4.0
+  },
+  {
+   "unit": "regimeB__brain__Visium__resnet50",
+   "task": "brain__Visium",
+   "encoder": "resnet50",
+   "scale": "lognorm",
+   "G": 18,
+   "n_units": 117043,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 18,
+    "n_donors_cv": 18,
+    "n_common": 18,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 9.383736264597533e-13,
+    "max_abs": 4.04121180963557e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 18,
+    "n_units_f2": 117043,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 18,
+   "seconds": 3.9
+  },
+  {
+   "unit": "regimeB__brain__Visium__uni_v2",
+   "task": "brain__Visium",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 18,
+   "n_units": 117043,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 18,
+    "n_donors_cv": 18,
+    "n_common": 18,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 2.21192173297727e-12,
+    "max_abs": 3.907985046680551e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 18,
+    "n_units_f2": 117043,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 18,
+   "seconds": 4.0
+  },
+  {
+   "unit": "regimeB__brain__Visium__uni_v2",
+   "task": "brain__Visium",
+   "encoder": "uni_v2",
+   "scale": "lognorm",
+   "G": 18,
+   "n_units": 117043,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 18,
+    "n_donors_cv": 18,
+    "n_common": 18,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 9.383736264597533e-13,
+    "max_abs": 4.04121180963557e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 18,
+    "n_units_f2": 117043,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 18,
+   "seconds": 3.9
+  },
+  {
+   "unit": "regimeB__breast__Spatial_Transcriptomics__hoptimus0",
+   "task": "breast__Spatial_Transcriptomics",
+   "encoder": "hoptimus0",
+   "scale": "log1p",
+   "G": 32,
+   "n_units": 44909,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 32,
+    "n_donors_cv": 32,
+    "n_common": 32,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 1.8576333000678742e-11,
+    "max_abs": 2.6645352591003757e-15
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 32,
+    "n_units_f2": 44909,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 32,
+   "seconds": 1.6
+  },
+  {
+   "unit": "regimeB__breast__Spatial_Transcriptomics__hoptimus0",
+   "task": "breast__Spatial_Transcriptomics",
+   "encoder": "hoptimus0",
+   "scale": "lognorm",
+   "G": 32,
+   "n_units": 44909,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 32,
+    "n_donors_cv": 32,
+    "n_common": 32,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 1.8091408397489947e-10,
+    "max_abs": 2.3592239273284576e-15
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 32,
+    "n_units_f2": 44909,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 32,
+   "seconds": 1.5
+  },
+  {
+   "unit": "regimeB__breast__Spatial_Transcriptomics__resnet50",
+   "task": "breast__Spatial_Transcriptomics",
+   "encoder": "resnet50",
+   "scale": "log1p",
+   "G": 32,
+   "n_units": 44909,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 32,
+    "n_donors_cv": 32,
+    "n_common": 32,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 1.8576333000678742e-11,
+    "max_abs": 2.6645352591003757e-15
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 32,
+    "n_units_f2": 44909,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 32,
+   "seconds": 1.6
+  },
+  {
+   "unit": "regimeB__breast__Spatial_Transcriptomics__resnet50",
+   "task": "breast__Spatial_Transcriptomics",
+   "encoder": "resnet50",
+   "scale": "lognorm",
+   "G": 32,
+   "n_units": 44909,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 32,
+    "n_donors_cv": 32,
+    "n_common": 32,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 1.8091408397489947e-10,
+    "max_abs": 2.3592239273284576e-15
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 32,
+    "n_units_f2": 44909,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 32,
+   "seconds": 1.5
+  },
+  {
+   "unit": "regimeB__breast__Spatial_Transcriptomics__uni_v2",
+   "task": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 32,
+   "n_units": 44909,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 32,
+    "n_donors_cv": 32,
+    "n_common": 32,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 1.8576333000678742e-11,
+    "max_abs": 2.6645352591003757e-15
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 32,
+    "n_units_f2": 44909,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 32,
+   "seconds": 1.6
+  },
+  {
+   "unit": "regimeB__breast__Spatial_Transcriptomics__uni_v2",
+   "task": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "scale": "lognorm",
+   "G": 32,
+   "n_units": 44909,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 32,
+    "n_donors_cv": 32,
+    "n_common": 32,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 1.8091408397489947e-10,
+    "max_abs": 2.3592239273284576e-15
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 32,
+    "n_units_f2": 44909,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 32,
+   "seconds": 1.5
+  },
+  {
+   "unit": "regimeB__breast__Xenium__hoptimus0",
+   "task": "breast__Xenium",
+   "encoder": "hoptimus0",
+   "scale": "log1p",
+   "G": 17,
+   "n_units": 148293,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 17,
+    "n_donors_cv": 17,
+    "n_common": 17,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 6.125530417543759e-13,
+    "max_abs": 1.6209256159527285e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 17,
+    "n_units_f2": 148293,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 17,
+   "seconds": 5.5
+  },
+  {
+   "unit": "regimeB__breast__Xenium__hoptimus0",
+   "task": "breast__Xenium",
+   "encoder": "hoptimus0",
+   "scale": "lognorm",
+   "G": 17,
+   "n_units": 148293,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 17,
+    "n_donors_cv": 17,
+    "n_common": 17,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 6.590683825488601e-13,
+    "max_abs": 1.1657341758564144e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 17,
+    "n_units_f2": 148293,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 17,
+   "seconds": 5.1
+  },
+  {
+   "unit": "regimeB__breast__Xenium__resnet50",
+   "task": "breast__Xenium",
+   "encoder": "resnet50",
+   "scale": "log1p",
+   "G": 17,
+   "n_units": 148293,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 17,
+    "n_donors_cv": 17,
+    "n_common": 17,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 6.435248247644966e-13,
+    "max_abs": 1.6209256159527285e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 17,
+    "n_units_f2": 148293,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 17,
+   "seconds": 5.4
+  },
+  {
+   "unit": "regimeB__breast__Xenium__resnet50",
+   "task": "breast__Xenium",
+   "encoder": "resnet50",
+   "scale": "lognorm",
+   "G": 17,
+   "n_units": 148293,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 17,
+    "n_donors_cv": 17,
+    "n_common": 17,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 6.617481274971013e-13,
+    "max_abs": 1.1657341758564144e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 17,
+    "n_units_f2": 148293,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 17,
+   "seconds": 5.0
+  },
+  {
+   "unit": "regimeB__breast__Xenium__uni_v2",
+   "task": "breast__Xenium",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 17,
+   "n_units": 148293,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 17,
+    "n_donors_cv": 17,
+    "n_common": 17,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 6.125530417543759e-13,
+    "max_abs": 1.6209256159527285e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 17,
+    "n_units_f2": 148293,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 17,
+   "seconds": 5.2
+  },
+  {
+   "unit": "regimeB__breast__Xenium__uni_v2",
+   "task": "breast__Xenium",
+   "encoder": "uni_v2",
+   "scale": "lognorm",
+   "G": 17,
+   "n_units": 148293,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 17,
+    "n_donors_cv": 17,
+    "n_common": 17,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 6.590683825488601e-13,
+    "max_abs": 1.1657341758564144e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 17,
+    "n_units_f2": 148293,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 17,
+   "seconds": 5.1
+  },
+  {
+   "unit": "regimeB__CCRCC__hoptimus0",
+   "task": "CCRCC",
+   "encoder": "hoptimus0",
+   "scale": "log1p",
+   "G": 24,
+   "n_units": 67673,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 24,
+    "n_donors_cv": 24,
+    "n_common": 24,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 2.0161163194518277e-13,
+    "max_abs": 1.9984014443252818e-15
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 24,
+    "n_units_f2": 67673,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 24,
+   "seconds": 2.1
+  },
+  {
+   "unit": "regimeB__CCRCC_merged__hoptimus0",
+   "task": "CCRCC_merged",
+   "encoder": "hoptimus0",
+   "scale": "log1p",
+   "G": 23,
+   "n_units": 67673,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 23,
+    "n_donors_cv": 23,
+    "n_common": 23,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 2.0161163194518277e-13,
+    "max_abs": 1.9984014443252818e-15
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 23,
+    "n_units_f2": 67673,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 23,
+   "seconds": 2.1
+  },
+  {
+   "unit": "regimeB__CCRCC_merged__resnet50",
+   "task": "CCRCC_merged",
+   "encoder": "resnet50",
+   "scale": "log1p",
+   "G": 23,
+   "n_units": 67673,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 23,
+    "n_donors_cv": 23,
+    "n_common": 23,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 2.0161163194518277e-13,
+    "max_abs": 1.9984014443252818e-15
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 23,
+    "n_units_f2": 67673,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 23,
+   "seconds": 2.1
+  },
+  {
+   "unit": "regimeB__CCRCC_merged__uni_v2",
+   "task": "CCRCC_merged",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 23,
+   "n_units": 67673,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 23,
+    "n_donors_cv": 23,
+    "n_common": 23,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 2.0161163194518277e-13,
+    "max_abs": 1.9984014443252818e-15
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 23,
+    "n_units_f2": 67673,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 23,
+   "seconds": 2.1
+  },
+  {
+   "unit": "regimeB__CCRCC__resnet50",
+   "task": "CCRCC",
+   "encoder": "resnet50",
+   "scale": "log1p",
+   "G": 24,
+   "n_units": 67673,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 24,
+    "n_donors_cv": 24,
+    "n_common": 24,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 2.0161163194518277e-13,
+    "max_abs": 1.9984014443252818e-15
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 24,
+    "n_units_f2": 67673,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 24,
+   "seconds": 2.1
+  },
+  {
+   "unit": "regimeB__CCRCC__uni_v2",
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 24,
+   "n_units": 67673,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 24,
+    "n_donors_cv": 24,
+    "n_common": 24,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 2.0161163194518277e-13,
+    "max_abs": 1.9984014443252818e-15
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 24,
+    "n_units_f2": 67673,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 24,
+   "seconds": 2.1
+  },
+  {
+   "unit": "regimeB__INDIANA_KIDNEY__hoptimus0",
+   "task": "INDIANA_KIDNEY",
+   "encoder": "hoptimus0",
+   "scale": "log1p",
+   "G": 25,
+   "n_units": 31400,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 25,
+    "n_donors_cv": 25,
+    "n_common": 25,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 3.841427905206052e-12,
+    "max_abs": 4.440892098500626e-16
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 25,
+    "n_units_f2": 31400,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 25,
+   "seconds": 1.0
+  },
+  {
+   "unit": "regimeB__INDIANA_KIDNEY__resnet50",
+   "task": "INDIANA_KIDNEY",
+   "encoder": "resnet50",
+   "scale": "log1p",
+   "G": 25,
+   "n_units": 31400,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 25,
+    "n_donors_cv": 25,
+    "n_common": 25,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 3.841427905206052e-12,
+    "max_abs": 4.440892098500626e-16
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 25,
+    "n_units_f2": 31400,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 25,
+   "seconds": 1.0
+  },
+  {
+   "unit": "regimeB__INDIANA_KIDNEY__uni_v2",
+   "task": "INDIANA_KIDNEY",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 25,
+   "n_units": 31400,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 25,
+    "n_donors_cv": 25,
+    "n_common": 25,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 3.841427905206052e-12,
+    "max_abs": 4.440892098500626e-16
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 25,
+    "n_units_f2": 31400,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 25,
+   "seconds": 1.0
+  },
+  {
+   "unit": "regimeB__kidney__Visium__hoptimus0",
+   "task": "kidney__Visium",
+   "encoder": "hoptimus0",
+   "scale": "log1p",
+   "G": 51,
+   "n_units": 107668,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 51,
+    "n_donors_cv": 51,
+    "n_common": 51,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 1.2037102018899638e-12,
+    "max_abs": 1.1546319456101628e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 51,
+    "n_units_f2": 107668,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 51,
+   "seconds": 4.0
+  },
+  {
+   "unit": "regimeB__kidney__Visium__hoptimus0",
+   "task": "kidney__Visium",
+   "encoder": "hoptimus0",
+   "scale": "lognorm",
+   "G": 51,
+   "n_units": 107668,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 51,
+    "n_donors_cv": 51,
+    "n_common": 51,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 4.309642562533548e-13,
+    "max_abs": 1.3627987627273797e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 51,
+    "n_units_f2": 107668,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 51,
+   "seconds": 3.8
+  },
+  {
+   "unit": "regimeB__kidney__Visium__resnet50",
+   "task": "kidney__Visium",
+   "encoder": "resnet50",
+   "scale": "log1p",
+   "G": 51,
+   "n_units": 107668,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 51,
+    "n_donors_cv": 51,
+    "n_common": 51,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 1.3072785285269657e-12,
+    "max_abs": 1.199040866595169e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 51,
+    "n_units_f2": 107668,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 51,
+   "seconds": 4.1
+  },
+  {
+   "unit": "regimeB__kidney__Visium__resnet50",
+   "task": "kidney__Visium",
+   "encoder": "resnet50",
+   "scale": "lognorm",
+   "G": 51,
+   "n_units": 107668,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 51,
+    "n_donors_cv": 51,
+    "n_common": 51,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 6.252825782051598e-13,
+    "max_abs": 1.3627987627273797e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 51,
+    "n_units_f2": 107668,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 51,
+   "seconds": 3.8
+  },
+  {
+   "unit": "regimeB__kidney__Visium__uni_v2",
+   "task": "kidney__Visium",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 51,
+   "n_units": 107668,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 51,
+    "n_donors_cv": 51,
+    "n_common": 51,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 1.2037102018899638e-12,
+    "max_abs": 1.1546319456101628e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 51,
+    "n_units_f2": 107668,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 51,
+   "seconds": 4.0
+  },
+  {
+   "unit": "regimeB__kidney__Visium__uni_v2",
+   "task": "kidney__Visium",
+   "encoder": "uni_v2",
+   "scale": "lognorm",
+   "G": 51,
+   "n_units": 107668,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 51,
+    "n_donors_cv": 51,
+    "n_common": 51,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 4.309642562533548e-13,
+    "max_abs": 1.3627987627273797e-14
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 51,
+    "n_units_f2": 107668,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 51,
+   "seconds": 3.9
+  },
+  {
+   "unit": "regimeB__lung__Xenium__hoptimus0",
+   "task": "lung__Xenium",
+   "encoder": "hoptimus0",
+   "scale": "log1p",
+   "G": 17,
+   "n_units": 23845,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 17,
+    "n_donors_cv": 17,
+    "n_common": 17,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 4.152289304297612e-13,
+    "max_abs": 3.774758283725532e-15
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 17,
+    "n_units_f2": 23845,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 17,
+   "seconds": 0.9
+  },
+  {
+   "unit": "regimeB__lung__Xenium__hoptimus0",
+   "task": "lung__Xenium",
+   "encoder": "hoptimus0",
+   "scale": "lognorm",
+   "G": 17,
+   "n_units": 23845,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 17,
+    "n_donors_cv": 17,
+    "n_common": 17,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 5.712287201891432e-13,
+    "max_abs": 2.858824288409778e-15
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 17,
+    "n_units_f2": 23845,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 17,
+   "seconds": 0.8
+  },
+  {
+   "unit": "regimeB__LUNG_XENIUM__hoptimus0",
+   "task": "LUNG_XENIUM",
+   "encoder": "hoptimus0",
+   "scale": "log1p",
+   "G": 15,
+   "n_units": 18973,
+   "n_genes": 343,
+   "cv_check": {
+    "n_valid_regimeB": 15,
+    "n_donors_cv": 15,
+    "n_common": 15,
+    "n_genes": 343,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 6.61688476164211e-12,
+    "max_abs": 2.886579864025407e-15
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 15,
+    "n_units_f2": 18973,
+    "n_genes_f2": 343,
+    "match": true
+   },
+   "G_valid": 15,
+   "seconds": 4.1
+  },
+  {
+   "unit": "regimeB__lung__Xenium__resnet50",
+   "task": "lung__Xenium",
+   "encoder": "resnet50",
+   "scale": "log1p",
+   "G": 17,
+   "n_units": 23845,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 17,
+    "n_donors_cv": 17,
+    "n_common": 17,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 4.152289304297612e-13,
+    "max_abs": 3.774758283725532e-15
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 17,
+    "n_units_f2": 23845,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 17,
+   "seconds": 0.9
+  },
+  {
+   "unit": "regimeB__lung__Xenium__resnet50",
+   "task": "lung__Xenium",
+   "encoder": "resnet50",
+   "scale": "lognorm",
+   "G": 17,
+   "n_units": 23845,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 17,
+    "n_donors_cv": 17,
+    "n_common": 17,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 5.712287201891432e-13,
+    "max_abs": 2.858824288409778e-15
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 17,
+    "n_units_f2": 23845,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 17,
+   "seconds": 0.8
+  },
+  {
+   "unit": "regimeB__LUNG_XENIUM__resnet50",
+   "task": "LUNG_XENIUM",
+   "encoder": "resnet50",
+   "scale": "log1p",
+   "G": 15,
+   "n_units": 18973,
+   "n_genes": 343,
+   "cv_check": {
+    "n_valid_regimeB": 15,
+    "n_donors_cv": 15,
+    "n_common": 15,
+    "n_genes": 343,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 6.61688476164211e-12,
+    "max_abs": 2.6645352591003757e-15
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 15,
+    "n_units_f2": 18973,
+    "n_genes_f2": 343,
+    "match": true
+   },
+   "G_valid": 15,
+   "seconds": 4.1
+  },
+  {
+   "unit": "regimeB__lung__Xenium__uni_v2",
+   "task": "lung__Xenium",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 17,
+   "n_units": 23845,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 17,
+    "n_donors_cv": 17,
+    "n_common": 17,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 4.152289304297612e-13,
+    "max_abs": 3.774758283725532e-15
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 17,
+    "n_units_f2": 23845,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 17,
+   "seconds": 0.9
+  },
+  {
+   "unit": "regimeB__lung__Xenium__uni_v2",
+   "task": "lung__Xenium",
+   "encoder": "uni_v2",
+   "scale": "lognorm",
+   "G": 17,
+   "n_units": 23845,
+   "n_genes": 50,
+   "cv_check": {
+    "n_valid_regimeB": 17,
+    "n_donors_cv": 17,
+    "n_common": 17,
+    "n_genes": 50,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 5.712287201891432e-13,
+    "max_abs": 2.858824288409778e-15
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 17,
+    "n_units_f2": 23845,
+    "n_genes_f2": 50,
+    "match": true
+   },
+   "G_valid": 17,
+   "seconds": 0.8
+  },
+  {
+   "unit": "regimeB__LUNG_XENIUM__uni_v2",
+   "task": "LUNG_XENIUM",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 15,
+   "n_units": 18973,
+   "n_genes": 343,
+   "cv_check": {
+    "n_valid_regimeB": 15,
+    "n_donors_cv": 15,
+    "n_common": 15,
+    "n_genes": 343,
+    "only_regimeB": [],
+    "only_cv": [],
+    "max_rel": 6.61688476164211e-12,
+    "max_abs": 2.886579864025407e-15
+   },
+   "f2_summary": {
+    "found": true,
+    "G_f2": 15,
+    "n_units_f2": 18973,
+    "n_genes_f2": 343,
+    "match": true
+   },
+   "G_valid": 15,
+   "seconds": 4.0
+  }
+ ],
+ "rows": 1285,
+ "populations_n": 49,
+ "cv_max_rel": 1.8091408397489947e-10,
+ "cv_all_matched": true,
+ "f2_summary_all_match": true,
+ "finished": "2026-11-12T08:33:46",
+ "passed": true
+}

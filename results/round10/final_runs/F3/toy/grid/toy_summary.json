@@ -1,0 +1,28 @@
+{
+ "config": {
+  "stage": "F3",
+  "item": "plan 5d.6 open point 2, the extended toy",
+  "unit": "toy_grid",
+  "workers": 4,
+  "anchor_V_ratio": 0.7626189557829646,
+  "grid_note": "M0 in (10,20,50,200,1000), m in (4,5,6,10,20) with m<M0 and m/M0<=0.6, Gs in (1,8), kinds theta3 and mean, coefs fixed1 and classical; fixed in round10_final_runs_f3_toy.py"
+ },
+ "started": "2026-11-12T08:31:19",
+ "cells": 88,
+ "seconds": 236.6,
+ "rows": 176,
+ "first_row": {
+  "kind": "theta3",
+  "M0": 10,
+  "Gs": 1,
+  "m": 4,
+  "coef": "fixed1",
+  "V_ratio": 0.7626189557829646,
+  "V_ratio_repr": "0.7626189557829646"
+ },
+ "first_row_exact": true,
+ "mean_enum_max_abs_dev": 1.5765166949677223e-14,
+ "mean_mc_max_abs_z": 3.9957639871737696,
+ "finished": "2026-11-12T08:35:16",
+ "passed": true
+}

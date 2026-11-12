@@ -1,0 +1,73 @@
+{
+ "started": "2026-11-12T08:20:35",
+ "ref_csv": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/anchor_smoke/inputs/f1_formC_check.csv",
+ "a_f1_rerun": {
+  "rows": 21,
+  "identical": true,
+  "seconds": 1.9
+ },
+ "b_population_law_identical": true,
+ "c_rows_vs_f1": {
+  "rows": 12,
+  "max_abs_d_V_ratio": 0.0,
+  "max_abs_d_bias": 2.465190328815662e-32,
+  "n_subsets_equal": true,
+  "first_row_V_ratio": 0.7626189557829646,
+  "first_row_V_ratio_repr": "0.7626189557829646",
+  "first_row_exact": true
+ },
+ "d_stack_vs_direct": {
+  "draws_checked": 160,
+  "max_abs_diff": 0.0,
+  "passed": true
+ },
+ "e_exact_vs_mc": [
+  {
+   "coef": "fixed1",
+   "exact": 0.8712248261338633,
+   "mc": 0.8708570984335222,
+   "mcse": 0.0023741702863858904,
+   "z": -0.1548868261260572,
+   "seconds_exact": 0.13,
+   "seconds_mc": 4.08
+  },
+  {
+   "coef": "classical",
+   "exact": 0.8913537070397086,
+   "mc": 0.8921094317732067,
+   "mcse": 0.0026808990991886825,
+   "z": 0.2818922702934838,
+   "seconds_exact": 0.13,
+   "seconds_mc": 4.08
+  }
+ ],
+ "f_timings": [
+  {
+   "cell": "theta3|8|1000|20",
+   "method": "mc",
+   "seconds": 33.4,
+   "V_ratio_fixed1": 0.9972948286484484
+  },
+  {
+   "cell": "theta3|8|50|4",
+   "method": "enumerate",
+   "seconds": 3.59,
+   "V_ratio_fixed1": 0.9550484212313312
+  },
+  {
+   "cell": "theta3|1|20|10",
+   "method": "enumerate",
+   "seconds": 0.93,
+   "V_ratio_fixed1": 0.8903781947964783
+  },
+  {
+   "cell": "theta3|1|1000|20",
+   "method": "mc",
+   "seconds": 4.83,
+   "V_ratio_fixed1": 0.9976975919214435
+  }
+ ],
+ "grid_cells": 88,
+ "passed": true,
+ "finished": "2026-11-12T08:21:24"
+}
