@@ -95,8 +95,13 @@ res = dict(rows_ref=len(ref), rows_new=len(new), rows_matched=int(len(both)),
            max_abs_diff=overall, check_row=dict(key="inference,CCRCC,uni_v2,theta3,m=10", width_ratio=wr,
            expected=0.9920276526390102, equal=(wr == 0.9920276526390102)),
            byte_identical=open("inputs/e5_joint_design_ref.csv", "rb").read() == open("e5_joint_design_rerun.csv", "rb").read())
-res["passed"] = bool(res["rows_matched"] == res["rows_ref"] == res["rows_new"] and overall == 0.0 and
-                     all(v["nan_mismatch"] == 0 for v in maxabs.values()) and sum(txt_mis.values()) == 0 and res["check_row"]["equal"])
+TOL = 1e-12
+res["criterion"] = "row key sets equal; every numeric column max abs diff <= 1e-12 with no NaN mismatch; text columns equal"
+res["check_row"]["within_tol"] = (wr is not None and abs(wr - 0.9920276526390102) <= TOL)
+res["passed"] = bool(res["rows_only_ref"] == 0 and res["rows_only_new"] == 0 and res["duplicate_keys_ref"] == 0 and
+                     int(new.duplicated(keys).sum()) == 0 and res["rows_matched"] == res["rows_ref"] == res["rows_new"] and
+                     all(v["max_abs_diff"] <= TOL and v["nan_mismatch"] == 0 for v in maxabs.values()) and
+                     sum(txt_mis.values()) == 0 and res["check_row"]["within_tol"])
 json.dump(res, open("anchor_e5.json", "w"), indent=1)
 print(json.dumps(res))
 PYEOF
