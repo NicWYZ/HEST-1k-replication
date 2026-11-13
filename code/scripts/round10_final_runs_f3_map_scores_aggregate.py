@@ -8,7 +8,8 @@ files are passed). Writes
   scores_by_task.csv      per (task, encoder, method, score, alpha, o, K): folds, coverage and widths, where the
                           median width is the median over target donors (folds) of the fold's width_median averaged
                           over draws, as P10.3 defines it; nb_model carries conformal_guarantee False;
-  scores_margins.csv      for every score against abs in the same (task, method, o): the difference and ratio of
+  scores_margins.csv      for every score against abs in the same (task, method, o): the finite fractions of both
+                          (widths are medians over finite sets only), the difference and ratio of
                           median widths with a bootstrap standard error (item 8: (cal_draw, label_draw) pairs
                           resampled within each fold, the same resample for both scores, B = 1000);
   scores_checks.json      fold means recomputed here against each shard's scores_by_fold file, duplicate rows,
@@ -57,6 +58,7 @@ def margins(d):
         if "abs" not in scores:
             continue
         piv = g.pivot_table(index=["fold", "cal_draw", "label_draw"], columns="score", values="width_median")
+        fin = g.groupby("score")["finite"].mean()  # widths are medians over finite spot-gene sets only
         for sc in scores:
             if sc == "abs":
                 continue
@@ -74,6 +76,7 @@ def margins(d):
                 dif[b], rat[b] = Bm - A, Bm / A
             rows.append(dict(task=task, encoder=enc, method=method, alpha=alpha, o=o, K=K, score=sc, vs="abs",
                              n_folds=len(folds), n_pairs_min=min(len(x) for x in folds),
+                             finite_abs=float(fin["abs"]), finite_score=float(fin[sc]),
                              width_median_abs=a0, width_median_score=b0, diff=b0 - a0, diff_se=dif.std(ddof=1),
                              ratio=b0 / a0, ratio_se=rat.std(ddof=1), B=B))
     return pd.DataFrame(rows)
