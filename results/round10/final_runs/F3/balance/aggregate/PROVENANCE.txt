@@ -1,0 +1,28 @@
+platform: Longleaf
+slurm_job_id: 9084740
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 1
+slurm_mem_per_node: 32768
+node: c151412
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F3
+unit: bal_aggregate_v2
+frame_id: 94567b60-2b83-40c4-9eae-d4e4529eba93
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: bb2abf5059259af21b4a325d88199646a32f1e94
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/bb2abf5059259af21b4a325d88199646a32f1e94
+command: round10_final_runs_f3_balance_aggregate.py /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/bal_aggregate_v2 /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/bal_aggregate_v2/ref_s5_matched.csv
+config: {"commit":"bb2abf5059259af21b4a325d88199646a32f1e94","stage":"F3","unit":"bal_aggregate_v2"}
+config_sha256: 3954f26a8687c18a18a1c05f21550ae207bec7c770b3d477672bcac4e04f7417
+start: 2026-11-13T07:06:43-05:00
+end: 2026-11-13T07:06:59-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  52aad82de991804805d7c7de869ef2bc  code/scripts/round10_final_runs_f3_balance_aggregate.py
+inputs (md5, path):
+  9209f13fcf1e2ebeaf91e2d2416a4e30  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/bal_aggregate_v2/ref_s5_matched.csv
