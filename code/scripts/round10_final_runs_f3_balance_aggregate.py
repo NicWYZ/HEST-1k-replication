@@ -49,7 +49,8 @@ def label(c, table):
 
 
 def matched(c, table, pa):
-    L = label(c, table)
+    # the SRS baselines are needed in every matched cell, so they are labelled whatever the table
+    L = label(c, {**{k: DESIGNS[k] for k in ("D0_classical", "D0_fix1")}, **table})
     srs = L[L.dname.isin(["D0_classical", "D0_fix1"])]
     d2 = L[~L.dname.isin(["D0_classical", "D0_fix1"])]
     d2 = d2[d2.p_a.isna() | np.isclose(d2.p_a.fillna(-1), pa)]

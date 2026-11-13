@@ -4,7 +4,7 @@
 #SBATCH --mem=32G
 #SBATCH --time=30
 set -u
-UNIT=bal_aggregate_v2
+UNIT=bal_aggregate_v3
 CLONE=/work/users/w/e/weiyang/hest_code/round10-final-runs
 BASE=/work/users/w/e/weiyang/hest_replication/results/round10/final_runs
 COMMIT=__CODE_COMMIT__
