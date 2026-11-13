@@ -90,14 +90,22 @@ def main(bd, out, s5):
     units, parts = [], []
     for d in sorted(glob.glob(os.path.join(bd, "bal_*"))):
         u = os.path.basename(d)
-        if u in ("bal_smoke", "bal_aggregate") or u.startswith("bal_anchor"):
+        if u == "bal_smoke" or u.startswith(("bal_anchor", "bal_aggregate")):
             continue
         st, sid = unit_status(d)
         f = os.path.join(d, "balance_cells.csv")
         n = 0
         if st == "COMPLETED" and os.path.exists(f):
-            x = pd.read_csv(f); n = len(x); parts.append(x.assign(unit=u))
-        units.append(dict(unit=u, status=st, slurm_job_id=sid, rows=n))
+            # A unit whose cells are all skipped by design (n_L > G - 2) writes an empty balance_cells.csv.
+            try:
+                x = pd.read_csv(f)
+            except pd.errors.EmptyDataError:
+                x = None
+            if x is not None and len(x):
+                n = len(x); parts.append(x.assign(unit=u))
+        js = os.path.join(d, "balance_summary.json")
+        n_skip = len(json.load(open(js)).get("skipped", [])) if os.path.exists(js) else None
+        units.append(dict(unit=u, status=st, slurm_job_id=sid, rows=n, cells_skipped=n_skip))
     pd.DataFrame(units).to_csv(os.path.join(out, "f3_balance_units.csv"), index=False)
     c = pd.concat(parts, ignore_index=True)
     rows, lim = [], []
