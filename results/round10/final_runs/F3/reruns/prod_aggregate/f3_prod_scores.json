@@ -1,0 +1,135 @@
+{
+ "item3_parts": {
+  "parts": 126,
+  "completed": 126,
+  "check_pass": 126,
+  "boot_rows": 196062,
+  "analytic_rows": 2303496
+ },
+ "item3_analytic_vs_F2": {
+  "rows": 29640,
+  "rows_f2": 29640,
+  "unmatched": 0,
+  "max_abs_diff": 0.0,
+  "nan_pattern_equal": true,
+  "cells": 1140,
+  "tasks": [
+   "CCRCC",
+   "CCRCC_merged",
+   "INDIANA_KIDNEY",
+   "LUNG_XENIUM",
+   "bowel__Visium",
+   "brain__Visium",
+   "breast__Spatial_Transcriptomics",
+   "breast__Xenium",
+   "kidney__Visium",
+   "lung__Xenium"
+  ]
+ },
+ "item3_prediction": {
+  "text": "each bootstrap arm's median coverage in a (task, scale, estimand, n_L) cell is within 0.02 of uni_v2's in at least 0.8 of cells",
+  "cells_without_uni_v2": 0,
+  "by_arm": [
+   {
+    "arm": "boot_pairs_pct",
+    "cells": 850,
+    "share_within_002": 0.9976470588235294,
+    "median_d": 0.000500000000000056,
+    "max_abs_d": 0.023249999999999993
+   },
+   {
+    "arm": "boot_raowu_t",
+    "cells": 850,
+    "share_within_002": 0.9588235294117647,
+    "median_d": 0.0007500000000000284,
+    "max_abs_d": 0.03374999999999995
+   },
+   {
+    "arm": "boot_wild_webb_t",
+    "cells": 850,
+    "share_within_002": 0.9976470588235294,
+    "median_d": 0.00024999999999997247,
+    "max_abs_d": 0.025499999999999967
+   }
+  ],
+  "verdict": "held"
+ },
+ "item4_checks": {
+  "units": 27,
+  "completed": 27,
+  "controls_max": {
+   "xf_minus_lin_none": 0.0,
+   "xf_minus_lin_a_b1": 0.0,
+   "xf_minus_lin_b_cluster": 0.0,
+   "none_vs_classical": 2.6645352591003757e-15,
+   "a_b1_vs_b_cluster": 0.0
+  },
+  "duplicate_rows": 0,
+  "norm_refit_cells_regimeA": 270,
+  "norm_refit_cells_limits": 270,
+  "cells_unmatched": 0,
+  "cells_gene_count_differs": 0,
+  "scales_in_limits": [
+   "norm_refit"
+  ]
+ },
+ "item4_prediction": {
+  "text": "on norm_refit, the ranking of the limits arms by median coverage at n = 4 and n = 8 is the one F2 found on the other scales, with Kluger's cluster bootstrap lowest at n = 4",
+  "primary": "F2_all_other_scales",
+  "scores": {
+   "F2_all_other_scales": {
+    "n4": {
+     "ranking_identical": true,
+     "kendall_tau": 1.0,
+     "kluger_lowest_norm_refit": true,
+     "kluger_lowest_ref": true,
+     "arms": 10
+    },
+    "n8": {
+     "ranking_identical": false,
+     "kendall_tau": 0.9047619047619047,
+     "kluger_lowest_norm_refit": false,
+     "kluger_lowest_ref": false,
+     "arms": 10
+    },
+    "verdict": "partly held"
+   },
+   "F2_HEST_tasks_other_scales": {
+    "n4": {
+     "ranking_identical": true,
+     "kendall_tau": 1.0,
+     "kluger_lowest_norm_refit": true,
+     "kluger_lowest_ref": true,
+     "arms": 10
+    },
+    "n8": {
+     "ranking_identical": false,
+     "kendall_tau": 0.9047619047619047,
+     "kluger_lowest_norm_refit": false,
+     "kluger_lowest_ref": false,
+     "arms": 10
+    },
+    "verdict": "partly held"
+   },
+   "F2_all_other_scales_noG1": {
+    "n4": {
+     "ranking_identical": true,
+     "kendall_tau": 1.0,
+     "kluger_lowest_norm_refit": true,
+     "kluger_lowest_ref": true,
+     "arms": 10
+    },
+    "n8": {
+     "ranking_identical": false,
+     "kendall_tau": 0.9047619047619047,
+     "kluger_lowest_norm_refit": false,
+     "kluger_lowest_ref": false,
+     "arms": 10
+    },
+    "verdict": "partly held"
+   }
+  },
+  "verdict": "partly held"
+ },
+ "finished": true
+}
