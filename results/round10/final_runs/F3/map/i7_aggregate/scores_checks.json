@@ -1,0 +1,998 @@
+{
+ "n_files": 162,
+ "n_rows": 77760,
+ "duplicate_rows": 0,
+ "folds_per_task": {
+  "CCRCC": 24,
+  "INDIANA_KIDNEY": 25,
+  "LUNG_XENIUM": 15
+ },
+ "scores": [
+  "abs",
+  "cqr",
+  "nb",
+  "nb_conformal",
+  "scaled_clip"
+ ],
+ "methods": [
+  "hcp",
+  "nb_model",
+  "within_plain"
+ ],
+ "by_fold_check_passed": true,
+ "by_fold_check_max_abs_diff": 1.7763568394002505e-15,
+ "by_fold_check": [
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_000/s0/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_000/s1/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 2.220446049250313e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_000/s2/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 8.881784197001252e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_000/s3/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_001/s0/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_001/s1/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_001/s2/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_001/s3/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 2.220446049250313e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_002/s0/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_002/s1/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_002/s2/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_002/s3/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_003/s0/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_003/s1/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 8.881784197001252e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_003/s2/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 8.881784197001252e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_003/s3/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_004/s0/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_004/s1/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_004/s2/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 8.881784197001252e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_004/s3/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_005/s0/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_005/s1/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 8.881784197001252e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_005/s2/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 8.881784197001252e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_005/s3/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_006/s0/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_006/s1/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 6.661338147750939e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_006/s2/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_006/s3/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_007/s0/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_007/s1/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_007/s2/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_007/s3/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_008/s0/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 6.661338147750939e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_008/s1/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_008/s2/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_008/s3/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_009/s0/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_009/s1/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_009/s2/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_009/s3/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_010/s0/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 3.3306690738754696e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_010/s1/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_010/s2/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_010/s3/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_011/s0/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_011/s1/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 3.3306690738754696e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_011/s2/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_011/s3/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_012/s0/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 2.220446049250313e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_012/s1/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_012/s2/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_012/s3/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_013/s0/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_013/s1/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_013/s2/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_013/s3/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 2.220446049250313e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_014/s0/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 3.3306690738754696e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_014/s1/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 3.3306690738754696e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_014/s2/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 2.220446049250313e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_014/s3/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 2.220446049250313e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_015/s0/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_015/s1/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_015/s2/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 6.661338147750939e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_015/s3/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_016/s0/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_016/s1/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_016/s2/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_016/s3/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_017/s0/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_017/s1/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_017/s2/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 6.661338147750939e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_ccrcc_017/s3/scores_full__CCRCC_24__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_000/s0/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_000/s1/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_000/s2/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_000/s3/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_001/s0/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_001/s1/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_001/s2/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 6.661338147750939e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_001/s3/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_002/s0/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_002/s1/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_002/s2/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 6.661338147750939e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_002/s3/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_003/s0/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_003/s1/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_003/s2/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_003/s3/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 2.220446049250313e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_004/s0/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 2.220446049250313e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_004/s1/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 2.220446049250313e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_004/s2/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 2.220446049250313e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_004/s3/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 2.220446049250313e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_005/s0/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 2.220446049250313e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_005/s1/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_005/s2/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 8.881784197001252e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_005/s3/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_006/s0/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_006/s1/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_006/s2/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 3.3306690738754696e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_006/s3/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_007/s0/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_007/s1/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 8.881784197001252e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_007/s2/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_007/s3/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 2.220446049250313e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_008/s0/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 2.220446049250313e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_008/s1/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_008/s2/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_008/s3/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_009/s0/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 6.661338147750939e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_009/s1/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_009/s2/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_009/s3/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_010/s0/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_010/s1/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_010/s2/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 8.881784197001252e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_010/s3/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_011/s0/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_011/s1/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_011/s2/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_011/s3/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_012/s0/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_012/s1/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_012/s2/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_012/s3/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 2.220446049250313e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_013/s0/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_013/s1/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_013/s2/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 2.220446049250313e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_013/s3/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 2.220446049250313e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_014/s0/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 2.220446049250313e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_014/s1/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_014/s2/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 2.220446049250313e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_014/s3/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_015/s0/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_015/s1/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_015/s2/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_015/s3/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_016/s0/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_016/s1/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 3.3306690738754696e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_016/s2/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 2.220446049250313e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_016/s3/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 2.220446049250313e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_017/s0/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_017/s1/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_017/s2/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_017/s3/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_018/s0/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_018/s1/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_indiana_018/s2/scores_full__INDIANA_KIDNEY__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 6.661338147750939e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_lung_merge_000/s0/scores_full__LUNG_XENIUM__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_lung_merge_000/s1/scores_full__LUNG_XENIUM__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 8.881784197001252e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_lung_merge_000/s2/scores_full__LUNG_XENIUM__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 8.881784197001252e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_lung_merge_000/s3/scores_full__LUNG_XENIUM__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_lung_merge_001/s0/scores_full__LUNG_XENIUM__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_lung_merge_001/s1/scores_full__LUNG_XENIUM__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_lung_merge_001/s2/scores_full__LUNG_XENIUM__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 8.881784197001252e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_lung_merge_001/s3/scores_full__LUNG_XENIUM__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 8.881784197001252e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_lung_merge_002/s0/scores_full__LUNG_XENIUM__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_lung_merge_002/s1/scores_full__LUNG_XENIUM__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 8.881784197001252e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_lung_merge_002/s2/scores_full__LUNG_XENIUM__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_lung_merge_002/s3/scores_full__LUNG_XENIUM__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_lung_merge_003/s0/scores_full__LUNG_XENIUM__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 4.440892098500626e-16
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_lung_merge_003/s1/scores_full__LUNG_XENIUM__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 1.7763568394002505e-15
+  },
+  {
+   "file": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/i7_lung_merge_003/s2/scores_full__LUNG_XENIUM__uni_v2.csv.gz",
+   "rows_driver": 25,
+   "rows_matched": 25,
+   "max_abs_diff": 8.881784197001252e-16
+  }
+ ]
+}
