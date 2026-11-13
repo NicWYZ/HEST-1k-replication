@@ -1,0 +1,34 @@
+platform: Longleaf
+slurm_job_id: 9039656
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 8
+slurm_mem_per_node: 49152
+node: c0938
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F3
+unit: map/item7_check
+frame_id: 73454d7a-85a3-4de7-9ee7-a74d0d999889
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 0ff3345c33612cf846cac6f425f7ae7c7324bb67
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/0ff3345c33612cf846cac6f425f7ae7c7324bb67
+command: pre-commit check of the CQR gene-range option: snapshot 0ff3345c33612cf846cac6f425f7ae7c7324bb67 with round10_final_runs_f3_map.py overlaid from /work/users/w/e/weiyang/.claude-science-scratch/tmp/f3_map/item7/round10_final_runs_f3_map.py (md5 78842275d4e1dcadebd0ce1237e51dd8, see check_driver.txt); round3_a4_scores A4 anchor; scores default vs smoke_scores2; CCRCC:24 INT1 cal 0 unsharded vs 3 gene-range parts merged; LUNG 43-gene part timed
+config: {"commit":"0ff3345c33612cf846cac6f425f7ae7c7324bb67","driver_md5":"78842275d4e1dcadebd0ce1237e51dd8","stage":"F3","track_dir":"map","unit":"item7_check"}
+config_sha256: 3b83c7725d8a15674fef3c53d76be2d5c05890bb97687509bb3b0fa8bf5104eb
+start: 2026-11-13T01:29:48-05:00
+end: 2026-11-13T02:02:52-05:00
+status: FAILED_rc1
+scripts_executed (md5, path relative to snapshot):
+  3cb730edfdd6ede2e25000cb42e98655  code/scripts/round10_final_runs_f3_map_anchor.py
+  541bca01159e06d971419391415c734c  code/scripts/round3_a4_scores.py
+  2d8418677cf8290eec89a14c315b92cd  code/scripts/round4_conf_c3.py
+  737a452b090da9609c798cc482f6896d  code/scripts/round5_conf_w3.py
+  0ad7ae8efe554c1f285e5f384a9fb7f5  code/scripts/round3_a0_harness.py
+inputs (md5, path):
+  fa87eb05137bb8c95e5329e19268a4ab  /work/users/w/e/weiyang/hest_replication/results/round3/task_defs/CCRCC.json
+  f2f1372a6826ac0e4dd21864d0d1fb55  /work/users/w/e/weiyang/hest_replication/results/round3/A4_scores/a4_scores_by_task__uni_v2__mainCCRCC.csv
+  78842275d4e1dcadebd0ce1237e51dd8  /work/users/w/e/weiyang/.claude-science-scratch/tmp/f3_map/item7/round10_final_runs_f3_map.py

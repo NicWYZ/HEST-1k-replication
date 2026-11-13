@@ -47,6 +47,8 @@ usage:
                                    [--no-final] [--max-specs n] --out DIR
   round10_final_runs_f3_map.py scores --task KEY --encoder uni_v2 [--folds a,b] [--cal-draws 0,1,2]
                                    [--cqr-genes n] [--skip cqr,nb] --out DIR
+      CQR sharded by gene range (LUNG): run [--cqr-gene-range a:b] per range (writes cqr_part__*.npz only), then
+      the same command with [--cqr-from DIR1,DIR2,...] to build every score and row from the parts.
   round10_final_runs_f3_map.py acs --pred PARQUET --out DIR [--draws 0-19] [--workers 4]
   round10_final_runs_f3_map.py checkfit --task KEY --encoder E --fold F --out DIR   (smoke: fit_ext equals C3's fit)
 """
@@ -526,6 +528,30 @@ def run_checkfit(a):
 
 
 # ================================================================== item 7: the adaptive scores in the map design
+def cqr_part_name(tag, fit, gr):
+    return f"cqr_part__{tag}__{str(fit.fold).replace(':', '_')}__cal{fit.cal_draw}__g{gr[0]}_{gr[1]}.npz"
+
+
+def load_cqr_parts(dirs, tag, fit, G):
+    """Concatenate one spec's CQR gene-range parts; they must cover gene indices 0..G-1 once each, in order."""
+    import glob
+    pat = f"cqr_part__{tag}__{str(fit.fold).replace(':', '_')}__cal{fit.cal_draw}__g*_*.npz"
+    files = sorted({f for d in dirs for f in glob.glob(os.path.join(d, pat))})
+    parts = []
+    for f in files:
+        z = np.load(f)
+        parts.append({k: z[k] for k in z.files})
+    parts.sort(key=lambda p: (int(p["gi"][0]) if len(p["gi"]) else G))
+    parts = [p for p in parts if len(p["gi"])]
+    gq = np.concatenate([p["gi"] for p in parts]) if parts else np.zeros(0, int)
+    if not np.array_equal(gq, np.arange(G)):
+        raise SystemExit(f"CQR parts for {fit.fold} cal{fit.cal_draw} cover {len(gq)} gene indices, "
+                         f"not 0..{G - 1} once each ({len(files)} files)")
+    cat = lambda k: np.concatenate([p[k] for p in parts], axis=1)
+    return (gq, cat("qlo_C"), cat("qhi_C"), cat("qlo_E"), cat("qhi_E"), int(sum(int(p["n_fail"]) for p in parts)),
+            int(sum(int(p["n_sub"]) for p in parts)), float(sum(float(p["seconds"]) for p in parts)))
+
+
 def run_scores(a):
     import round3_a4_scores as A4S
     os.makedirs(a.out, exist_ok=True)
@@ -535,6 +561,17 @@ def run_scores(a):
     folds = a.folds.split(",") if a.folds else T.fold_names()
     cal_draws = [int(x) for x in a.cal_draws.split(",")]
     skip = set(a.skip.split(",")) if a.skip else set()
+    tag = f"{a.task.replace(':', '_')}__{a.encoder}"
+    # Gene-range sharding of CQR (optional; both flags default to None, which leaves every step below as before).
+    # --cqr-gene-range a:b fits CQR for gene indices a..b-1 only and saves the per-gene quantile predictions;
+    # --cqr-from DIRS reads those parts back and runs every score and row exactly as an unsharded run.
+    # fit_cqr fits gene by gene and its subsample seed is keyed by gene index, so the parts equal the full fit.
+    gr = tuple(int(x) for x in a.cqr_gene_range.split(":")) if a.cqr_gene_range else None
+    parts_from = a.cqr_from.split(",") if a.cqr_from else None
+    if gr is not None and (parts_from or a.cqr_genes or "cqr" in skip):
+        raise SystemExit("--cqr-gene-range excludes --cqr-from, --cqr-genes and --skip cqr")
+    if parts_from and a.cqr_genes:
+        raise SystemExit("--cqr-from excludes --cqr-genes")
     alpha = 0.1
     rows, timing = [], []
     cqr_args = types.SimpleNamespace(cqr_budget_s=0, cqr_subsample=2500, cqr_presubsample=True, cqr_timebox_s=1e18)
@@ -554,6 +591,25 @@ def run_scores(a):
         w = np.array([1.0 / ((K + 1) * sizes[g]) for g in lab])
         sl_all = fit.slides
         t_fit = time.time() - t1
+        if gr is not None:                                            # CQR gene-range shard only
+            gq = np.arange(min(gr[0], G), min(gr[1], G))
+            st = dict(cqr_seconds=0.0, cqr_fallback=False, base={})
+            key = f"{T.task_key}|f3map|scores|{fit.fold}|cal{fit.cal_draw}"
+            tq = time.time()
+            mods, crow = A4S.fit_cqr(A, Y_T, gq, st, key, cqr_args)
+            qlo_C, qhi_C = A4S.cqr_predict(mods, A_C, gq)
+            qlo_E, qhi_E = A4S.cqr_predict(mods, A_E, gq)
+            t_cqr = time.time() - tq
+            np.savez(os.path.join(a.out, cqr_part_name(tag, fit, gr)), gi=gq, qlo_C=qlo_C, qhi_C=qhi_C,
+                     qlo_E=qlo_E, qhi_E=qhi_E, n_fail=int(sum(1 for r in crow if r.get("failure"))),
+                     n_sub=int(sum(1 for r in crow if r.get("subsample_fallback"))), seconds=t_cqr)
+            timing.append(dict(task=a.task, encoder=a.encoder, fold=fit.fold, cal_draw=fit.cal_draw,
+                               n_T=int(ex["Tm"].sum()), n_C=fit.n_C, n_E=fit.n_E, n_genes=G,
+                               gene_range=f"{gr[0]}:{gr[1]}", cqr_genes=int(len(gq)), s_fit=round(t_fit, 2),
+                               s_cqr=round(t_cqr, 2), s_cqr_per_gene=round(t_cqr / max(1, len(gq)), 3),
+                               s_total=round(time.time() - t1, 2)))
+            log(f"[f3map scores] cqr part {a.task} {fit.fold} cal{fit.cal_draw} g{gr[0]}:{gr[1]} {timing[-1]}")
+            continue
         mach = {}
         mach["abs"] = dict(gi=np.arange(G), S_C=np.abs(fit.R_C),
                            S_E=lambda idx: np.abs(fit.R_E[idx]),
@@ -568,7 +624,14 @@ def run_scores(a):
                                    iv=lambda q, idx: (P_E[idx] - q * u_E[idx], P_E[idx] + q * u_E[idx]))
         t_sig = time.time() - t1 - t_fit
         t_cqr = 0.0
-        if "cqr" not in skip:
+        if "cqr" not in skip and parts_from:
+            gq, qlo_C, qhi_C, qlo_E, qhi_E, n_fail, n_sub, t_cqr = load_cqr_parts(parts_from, tag, fit, G)
+            mach["cqr"] = dict(gi=gq, S_C=np.maximum(qlo_C - Y_C[:, gq], Y_C[:, gq] - qhi_C),
+                               S_E=lambda idx, qlo_E=qlo_E, qhi_E=qhi_E, gq=gq: np.maximum(
+                                   qlo_E[idx] - Y_E[idx][:, gq], Y_E[idx][:, gq] - qhi_E[idx]),
+                               iv=lambda q, idx, qlo_E=qlo_E, qhi_E=qhi_E: (qlo_E[idx] - q, qhi_E[idx] + q),
+                               n_fail=n_fail, n_sub=n_sub)
+        elif "cqr" not in skip:
             gq = np.arange(G) if not a.cqr_genes else np.arange(min(a.cqr_genes, G))
             st = dict(cqr_seconds=0.0, cqr_fallback=False, base={})
             key = f"{T.task_key}|f3map|scores|{fit.fold}|cal{fit.cal_draw}"
@@ -649,7 +712,11 @@ def run_scores(a):
                            s_nb=round(t_nb, 2), nb_guard_fail=mach.get("nb_conformal", {}).get("n_guard_fail"),
                            s_total=round(time.time() - t1, 2)))
         log(f"[f3map scores] {a.task} {fit.fold} cal{fit.cal_draw} total {time.time() - t0:.0f}s {timing[-1]}")
-    tag = f"{a.task.replace(':', '_')}__{a.encoder}"
+    if gr is not None:
+        pd.DataFrame(timing).to_csv(os.path.join(a.out, f"scores_cqrpart_timing__{tag}__g{gr[0]}_{gr[1]}.csv"),
+                                    index=False)
+        log(f"[f3map scores] cqr parts done, {len(timing)} specs, {time.time() - t0:.0f}s")
+        return
     pd.DataFrame(timing).to_csv(os.path.join(a.out, f"scores_timing__{tag}.csv"), index=False)
     d = pd.DataFrame(rows)
     keys = ["task", "encoder", "score", "method", "alpha", "o", "K", "fold", "n_T_donors", "n_genes"]
@@ -783,6 +850,8 @@ def main(argv=None):
     s.add_argument("--cal-draws", default="0,1,2")
     s.add_argument("--cqr-genes", type=int, default=0)
     s.add_argument("--skip", default="")
+    s.add_argument("--cqr-gene-range", default=None)
+    s.add_argument("--cqr-from", default=None)
     s.add_argument("--out", required=True)
     c = sub.add_parser("acs")
     c.add_argument("--pred", required=True)
