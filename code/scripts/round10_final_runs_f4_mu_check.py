@@ -13,7 +13,8 @@ Modes
                                  regcomp and box units formed it, and mu - mu_J per gene, with the between-donor SD of
                                  the all-spot donor means. Anchor: on CCRCC uni_v2 log1p, max |zbar - z| equals F3's
                                  regcomp_mu_check value 0.1332702393296752 exactly.
-  regcomp <config.json> <out>    part 3: round10_final_runs_f3_regcomp's run on all spots (F2.load and E3.build replaced
+  regcomp <config.json> <out>    part 3: round10_final_runs_f3_regcomp's run on all spots, over the config's mean-kind
+                                 populations only (a pack may also hold theta2 populations; config_used.json records it), (F2.load and E3.build replaced
                                  for the mean kind by load_all and build_mean, the same TL.prepare call E3.build makes
                                  for the mean kind). Anchor: every T built has zbar equal to the all-spot cluster values
                                  within 1e-10 relative (mu_allspot_anchor.json).
@@ -96,8 +97,8 @@ def main_means(cdir, out):
         df, yp, fp, dcol, as_str = pop_frame(pop)
         genes = [c[len(yp):] for c in df.columns if c.startswith(yp)]
         dd = df[dcol].astype(str)
-        Yd = df[[yp + g for g in genes]]
-        Fd = df[[fp + g for g in genes]]
+        Yd = df[[yp + g for g in genes]].astype(np.float64)
+        Fd = df[[fp + g for g in genes]].astype(np.float64)
         nonfinite = int((~np.isfinite(Yd.to_numpy(float))).sum() + (~np.isfinite(Fd.to_numpy(float))).sum())
         Ay = Yd.groupby(dd).mean(); Af = Fd.groupby(dd).mean()
         Ay.columns = genes; Af.columns = genes
@@ -175,6 +176,10 @@ def anchor_check(cfg, out):
 
 def main_part3(mode, cfgp, out):
     cfg = json.load(open(cfgp))
+    n_in = len(cfg["populations"])
+    cfg["populations"] = [p for p in cfg["populations"] if p.get("theta2_kind") == "mean"]
+    cfg["_f4_note"] = f"mean-kind populations kept: {len(cfg['populations'])} of {n_in}, from {cfgp}"
+    json.dump(cfg, open(os.path.join(out, "config_used.json"), "w"), indent=1)
     patch()
     np.seterr(all="ignore")
     if mode == "regcomp":
