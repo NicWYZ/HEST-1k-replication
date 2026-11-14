@@ -43,7 +43,7 @@ cd "$OUT"
 export PYTHONHASHSEED=0 PYTHONPATH=$SNAP/code/scripts OMP_NUM_THREADS=2
 $PY -u $SNAP/code/scripts/round10_final_runs_f4_mu_check.py $MODE $ARG "$OUT" > stdout.log 2>&1; RC=$?
 ST=COMPLETED; [ $RC -eq 0 ] || ST=FAILED_rc$RC
-$PY $SNAP/code/scripts/round10_final_runs_provenance.py "$OUT" F4 "mu_check/$UNIT" $COMMIT $SNAP "$START" $ST --frame $FRAME --command "round10_final_runs_f4_mu_check.py $MODE $ARG $OUT" --config '{"stage":"F4","unit":"'$UNIT'","mode":"'$MODE'","commit":"'$COMMIT'"}' --scripts code/scripts/round10_final_runs_f4_mu_check.py code/scripts/round10_final_runs_f2_regimeB.py code/scripts/round10_final_runs_f3_regcomp.py code/scripts/round10_final_runs_f3_box.py code/scripts/round10_final_runs_f3_regimeB.py --inputs $ARG
+$PY $SNAP/code/scripts/round10_final_runs_provenance.py "$OUT" F4 "mu_check/$UNIT" $COMMIT $SNAP "$START" $ST --frame $FRAME --command "round10_final_runs_f4_mu_check.py $MODE $ARG $OUT" --config '{"stage":"F4","unit":"'$UNIT'","mode":"'$MODE'","commit":"'$COMMIT'"}' --scripts code/scripts/round10_final_runs_f4_mu_check.py code/scripts/round10_final_runs_f2_regimeB.py code/scripts/round10_final_runs_f3_regcomp.py code/scripts/round10_final_runs_f3_box.py code/scripts/round10_final_runs_f3_regimeB.py --inputs $( [ -d "$ARG" ] && ls "$ARG"/f3_box__*.json || echo "$ARG" )
 for g in PROVENANCE.txt _provenance.json stdout.log *.json *.csv; do [ -e "$g" ] && cp "$g" "$HJ"/; done; true
 tail -30 stdout.log
 exit 0
