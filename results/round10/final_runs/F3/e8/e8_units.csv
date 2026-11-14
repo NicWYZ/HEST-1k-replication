@@ -1,0 +1,5 @@
+unit,commit,harness_id,slurm_id,submit_time,partition_moves,overlay_md5,final_state
+anchor_e5,3c1de5251a8d44cc60db9de07ba488d5934352e7,67b48263-38fb-4fec-a9d7-f117c302f9a5,9104185,2026-11-13T13:00:02-05:00,"spill->general ~13:05; back on spill, spill->general ~13:45",,"FAILED_rc6 (PROVENANCE; 354/354 rows matched, max abs diff 4.44e-16 in pset_width vs exact-0 criterion; escalated)"
+e8_overlay_check,3c1de5251a8d44cc60db9de07ba488d5934352e7,58d28cac-3ce6-4777-8b09-d8a7cda68d88,9105069,2026-11-13T13:08:57-05:00,"submitted on hov, later spill; spill->general ~13:45",1927815b0f66644af95127f95847695c,"COMPLETED (PROVENANCE, 14:17-14:20 EST)"
+e8_joint,9450861b9621fca89733848ad1b69b3d5ddf315b,d549f502-f1d8-486e-a8c0-267ffdb9d590,9120588,2026-11-13T14:26:57-05:00 (sacct),"submitted on hov, ran there",none,"COMPLETED (PROVENANCE, 15:30-15:34 EST; outputs byte-identical to e8_overlay_check)"
+anchor_e5_v2,07016c8cce0e36d99cc446752be56fd752e8ccd6,cbdf9d97-1f9e-4b09-a035-872938864bea,9121186,2026-11-13T14:28:57-05:00 (sacct),spill->general on submission,,"COMPLETED (PROVENANCE; passed, max abs diff 4.44e-16 <= 1e-12)"
