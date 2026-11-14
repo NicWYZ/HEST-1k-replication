@@ -3,10 +3,10 @@
 ```state
 updated: 2026-11-14 (Claude Science session on the Windows execution PC, David's team account, reaching Longleaf through compute target ssh:longleaf; frame bdb361de-6630-44e8-b0f8-8bd63dae9ad3, the eighth session of the track)
 unit: final-runs
-status: interval i05. Gate F3 answered on 14 November ("Gate F3 accepted. For any open decisions, go with your recommendation."), recorded in docs/round10/i05/final-runs/round10_final_runs_F3_decisions.md. The mu question, V and E8 are decided on the session's recommendations (decision file section 2). The F3 report's reading of the regcomp mu rows is corrected there (both regimes estimate mu over joined spots, mu_J). No job of the track is running
-step: F4 planning. F4's methods and the plan for the five open points of the decision file's section 4 are written into this plan (section 5e) before any job
+status: interval i05, stage F4. Gate F3 answered on 14 November and recorded in docs/round10/i05/final-runs/round10_final_runs_F3_decisions.md (mu as mu_J with a one-population check, V unbounded primary, E8 kept as a measured result). F4's methods are written in plan section 5e, before any F4 code or job. No job of the track is running
+step: F4, task 5e.1 (the mu check), code not yet written
 last run: F3_gate/gate_v2 (gate checks of F3); nothing has run since
-next: write plan section 5e (the mu check with thresholds named before the run, open points 2 to 5, the final report with its numbers-to-files table, the pull request); then submit the mu check
+next: write code/scripts/round10_final_runs_f4_mu_check.py (parts 1 and 2) and its job template, commit, submit one job; then 5e.4 (read the E8 join)
 waiting: nothing
 ```
 
@@ -400,6 +400,69 @@ Each runs on committed code from the committed F2 inputs, and is scored in the F
 - [ ] Open points 2, 3 and 4.
 - [ ] Aggregation, report, numeric-claim sweep, provenance index, gate push.
 
+## 5e. Stage F4, the open points of gate F3, the final report and the pull request: methods
+
+*Written on 14 November 2026 by the eighth session of the track (frame `bdb361de-6630-44e8-b0f8-8bd63dae9ad3`), after gate F3 was answered and before any F4 code or job. It follows the brief's F4 item, the F3 decision file `docs/round10/i05/final-runs/round10_final_runs_F3_decisions.md` (sections 2 and 4) and the writing plan `docs/round10/tracks/ledger/round10_writing_plan.md`, which names the results the paper quotes by the identifiers of `docs/round10/00_prep/round10_findings_survey.md`, section 2. The report goes to `docs/round10/i05/final-runs/round10_final_runs_report.md` with the tag `round10-final-runs-F4`, and one pull request goes into `main`.*
+
+### 5e.0 What F4 runs on
+
+F4 reads the committed outputs of F1 to F3 and the decision files. New computation is limited to the $\mu$ check (5e.1), whatever the E8 reading needs (5e.4), and the two readings of 5e.2 and 5e.3. Each runs as a Slurm job from a snapshot of a committed `code/` directory, as in section 3, with `run_timeout_s` 86000 on every submission and a wall of at most 90 minutes where the work allows. Every F4 script that summarises reads only committed files or the bulk outputs named in its config, and re-estimates nothing it does not say it re-estimates.
+
+### 5e.1 Open point 1, the $\mu$ check
+
+Script `code/scripts/round10_final_runs_f4_mu_check.py`, in three parts.
+
+1. **All-spot donor means.** For every HEST and corpus population with a $\mu$ row in F2's cluster values (`F2/cluster_values_v1/`, `F2/cluster_values_v2_corpus/`, and v3 for `norm_refit`), the job reads the prediction file with pandas, takes each donor's mean of $y$ and of $f$ over all its spots, and compares them with the committed $\mu$ rows. The criterion is a largest relative difference of at most 1e-10. This closes the item the F3 report's section 8 left unchecked.
+2. **$\mu - \mu_J$.** In the same job, for the same populations, $\mu_J$ is formed as the regcomp and box units formed it, through `F2.load` and `round5_ppi_e3_twolevel.build` with the mean kind. Its anchor is `regimeB/regcomp_mu_check/mu_check.json` on CCRCC `uni_v2` $\log(1 + y)$, where the difference must be 0. The job tabulates for each population and gene $\mu$, $\mu_J$, their difference, that difference over the between-donor standard deviation of the all-spot donor means, and the share of spots kept. Each population is summarised by the median and the largest of the standardised difference.
+3. **One population on all spots.** An all-spot loader for the mean kind returns the dictionary `F2.load` returns, built from every spot with finite $y$ and $f$. Its anchor is that $T$'s `theta_full` equals the all-spot $\mu$ of part 1 within 1e-12. With it the job reruns, on CCRCC `uni_v2` $\log(1 + y)$, the regcomp $\mu$ cells of that population with F3's configs, seeds and $R$, and the box $\mu$ unit with its $m$ grid and $R$. The rows are compared cell by cell with the committed $\mu_J$ rows.
+
+**Thresholds, named before the run.** In every matched cell, at the median over genes, the coverage differs by at most 0.01, which is about 1.5 Monte Carlo standard errors of one gene's coverage at $R$ = 2,000. The width ratio of regime B to regime A differs by at most 0.02 relative. The required $m$ in each box column differs by at most one step of the $m$ grid. If all three hold, the $\mu_J$ rows stand under their label. If any fails, every regime B $\mu$ unit on the HEST and corpus tasks (regcomp and box) is rerun on all spots in F4, and the report uses those rows.
+
+### 5e.2 Open point 2, regime B wider on ACS by state
+
+Before any reading, the variables that differ are listed. Between the arms of an ACS comparison they are the design, the number of labelled clusters, the units per cluster and the variance estimator. Between ACS and the HEST tasks they are the number of clusters (51 states against at most 24 donors), the cluster sizes, the cost-matched $n_L$ and $m$, the estimands formed ($\mu$ and $\theta_3$ only), the predictor's cluster-level accuracy and the within and between split of the residual variance.
+
+The mechanism to test is the cost model. At the cost-matched budget $B' = n_L(c + B/n_L) - cG$, regime B pays the per-cluster cost $c$ for all $G$ clusters, so with $G = 51$ it is left with few units per state. What would contradict this is regime B being wider on ACS at the unit cost too, or its cost-matched `m_median` on ACS not being smaller than on the HEST tasks. The reading uses `aggregate/t10_regcomp_comparisons.csv` and the regcomp cell tables, by a committed script in one job.
+
+### 5e.3 Open point 3, FR8's lowest center
+
+S0006 covers 0.655 under donor-level HCP pooled across kidney Visium centers, with four donors. The reading takes from `institution/production/` the per-donor coverage inside S0006, the center's residual scale against the pooled calibration quantile (its median absolute center-out residual over the other centers'), and the center-held-out prediction accuracy on its donors. The mechanism to test is center shift, meaning the center-out heads predict S0006 worse, so its residuals exceed the pooled quantile. What would contradict this is S0006's residual scale being no larger than the other centers'.
+
+### 5e.4 Open point 4, E8 at $m = 15$
+
+The session reads how `round10_final_runs_f3_e8_joint.py` selects the overall narrowest set and the set needing no further labels, to find why at $m = 15$ alone some rows need extra labels and four rows report a no-extra set narrower than the overall minimum. If the cause is a fault in the join, it is fixed in a new commit, tested on an overlay, and the join is rerun. Every row at another $m$ must then be unchanged. If the cause is the grids themselves (for example $m = 15$ lying on one method's $o$ grid and not another's), the report states it and the rows stand with a note.
+
+### 5e.5 Open point 5 and the F4 aggregate
+
+`code/scripts/round10_final_runs_f4_aggregate.py` writes `results/round10/final_runs/F4/aggregate/`. It contains the regcomp $\mu$ rows under the label `mu_J` (or the all-spot rows if 5e.1 fails), the tables of 5e.1 to 5e.4, and the manifest with the md5 of every input.
+
+### 5e.6 The final report and the numbers table
+
+The report follows `docs/EXECUTION_RULES.md`, section 7, and scores every prediction of the brief's section 5 and of this plan, F1 to F4, in one table. Its results follow the writing plan's sections S2 to S6. It states regime B as the F3 decision file's section 2.2 sets out, labels $\mu_J$ wherever it applies, and presents both scales, since D5 is not decided.
+
+The numbers table is `results/round10/final_runs/F4/paper_numbers.csv`, written by `code/scripts/round10_final_runs_f4_paper_numbers.py` from committed files only. It has one row per number the writing plan's sections quote, keyed by the findings survey's identifiers (A1 to A10, B1 to B14, E1 to E8, S6-1 to S6-8) and by V and the institution axis. Its columns are `result_id`, `paper_section`, `quantity`, `value`, `file`, `selector` (the row and column the value is read from), `stage` and `commit`. Where the writing plan quotes an earlier round's file (A1 to A3, A7, A8, E4 and E6), the row cites that file, and the final-runs value sits beside it where the final runs reproduce it. Each value is read by the script, never typed. The report cites the table by path and quotes only its headline rows.
+
+### 5e.7 Gate checks and the pull request
+
+The job-ledger rows for F4 are appended with `round10_final_runs_ledger_rows.py`. The provenance index runs over F1 to F4, and the numeric-claim sweep runs over the final report and the F3 decision file, in one gate job. The session then commits and pushes, and opens one pull request from `round10-final-runs` into `main`. It confirms on GitHub that the pull request exists, writes its number into the report in a new commit, tags that commit `round10-final-runs-F4`, pushes the branch and tag, reports to Nicolas in the session, and stops.
+
+### 5e.8 Predictions scored at F4, written before any F4 run
+
+- **F4-1.** The all-spot donor means equal the committed $\mu$ rows within 1e-10 on every population (5e.1, part 1).
+- **F4-2.** On CCRCC `uni_v2` $\log(1 + y)$ the three thresholds of 5e.1 hold, so the $\mu_J$ rows stand.
+- **F4-3.** On ACS by state, regime B is wider than regime A only in cost-matched cells ($c \ge 10$), not at the unit cost, and its cost-matched `m_median` is smaller than on every HEST task.
+- **F4-4.** S0006's median absolute center-out residual is larger than that of every other kidney Visium center.
+- **F4-5.** E8's $m = 15$ rows come from how the join selects sets, not from the sets themselves, and every row at another $m$ is unchanged after any fix.
+
+### 5e.9 F4 tasks
+
+- [ ] 5e.1 parts 1 and 2 (one job), then part 3's all-spot loader with its anchor on a smoke test, then the CCRCC reruns.
+- [ ] 5e.4, reading the E8 join, then a fix and rerun only if a fault is found.
+- [ ] 5e.2 and 5e.3 (one script, one job).
+- [ ] 5e.5, the F4 aggregate.
+- [ ] 5e.6, the numbers table, then the report.
+- [ ] 5e.7, gate checks, pull request, tag, report to Nicolas.
+
 ## 6. Escalations and open items
 
 - 2026-11-09. Housekeeping deletion not possible from this seat (section 2). The paper texts this track's sub-agents saved were deleted (section 4, F1.4b).
@@ -435,3 +498,4 @@ Each runs on committed code from the committed F2 inputs, and is scored in the F
 
 - 2026-11-09. Clone created by a 2-CPU Slurm job on `general` (`git clone --reference-if-able` the round 7 clone `--dissociate`, then checkout), branch `round10-final-runs` at 133384d1, equal to `origin/main` at that time.
 - 2026-11-11. Plan section 5d (F3 methods and the open points of gate F2) written by the sixth session, before any F3 code or job, after the two forks of section 6 were answered.
+- 2026-11-14. Plan section 5e (F4 methods, the five open points of gate F3, the final report, the numbers table and the pull request) written by the eighth session, before any F4 code or job.
