@@ -1,0 +1,43 @@
+{
+ "stage": "F4",
+ "unit": "compare_v1",
+ "regcomp_new": [
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F4/mu_check/regcomp_p05_allspot",
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F4/mu_check/regcomp_p06_allspot",
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F4/mu_check/regcomp_p07_allspot"
+ ],
+ "regcomp_old": [
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/regimeB/regcomp__pk_CCRCC__uni_v2__log1p__p05",
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/regimeB/regcomp__pk_CCRCC__uni_v2__log1p__p06",
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/regimeB/regcomp__pk_CCRCC__uni_v2__log1p__p07"
+ ],
+ "box_new": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F4/mu_check/box_CCRCC_uni_v2_log1p_allspot",
+ "box_old": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/regimeB/box__CCRCC__uni_v2__log1p",
+ "m_grid_box": [
+  2,
+  3,
+  4,
+  5,
+  6,
+  8,
+  10,
+  12,
+  15,
+  20,
+  25,
+  30,
+  40,
+  50,
+  75,
+  100,
+  150,
+  200,
+  300,
+  500,
+  750,
+  1000,
+  1500,
+  2000
+ ],
+ "_note": "m_grid_box is round10_final_runs_f3_box.M_GRID_EXT (round 9's M_GRID plus 150 to 2000); thresholds of plan 5e.1"
+}
