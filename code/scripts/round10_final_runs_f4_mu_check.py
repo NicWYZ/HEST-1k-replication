@@ -192,13 +192,16 @@ def main_part3(mode, cfgp, out):
 
 
 def _ratio_table(g):
-    """Median over genes of regime B's C_fix1 median width over regime A's, paired on (budget, cost, n_L)."""
+    """Median over genes of regime B's C_fix1 median width over regime A's, for the cost-matched regime B cells. Each
+    such cell names its regime A partner in its cost label, cd_cs_<c>_vs_A_nL<n_L of A>_B<budget of A>."""
     a = g[(g.regime == "A") & (g.form == "C_fix1") & (g.interval == "twostage_t|fpc")]
-    b = g[(g.regime == "B") & (g.form == "C_fix1") & (g.interval == "regB_t")]
-    k = ["budget", "cost", "n_L", "gene"]
-    m = a[k + ["median_width"]].merge(b[k + ["median_width"]], on=k, suffixes=("_A", "_B"))
+    a = a[["budget", "n_L", "gene", "median_width"]].rename(columns={"budget": "budget_A", "n_L": "n_L_A"})
+    b = g[(g.regime == "B") & (g.form == "C_fix1") & (g.interval == "regB_t") & g.cost.astype(str).str.startswith("cd_cs_")].copy()
+    x = b.cost.astype(str).str.extract(r"cd_cs_(?P<c>[0-9.]+)_vs_A_nL(?P<nLA>[0-9]+)_B(?P<BA>[0-9.]+)")
+    b["c"] = x["c"].astype(float); b["n_L_A"] = x["nLA"].astype(int); b["budget_A"] = x["BA"].astype(float)
+    m = b[["c", "n_L_A", "budget_A", "gene", "median_width"]].merge(a, on=["budget_A", "n_L_A", "gene"], suffixes=("_B", "_A"))
     m["r"] = m.median_width_B / m.median_width_A
-    return m.groupby(["budget", "cost", "n_L"]).r.median().rename("wr_BA").reset_index()
+    return m.groupby(["budget_A", "n_L_A", "c"]).r.median().rename("wr_BA").reset_index()
 
 
 def main_compare(cfgp, out):
@@ -216,7 +219,7 @@ def main_compare(cfgp, out):
     mc["d_cov"] = mc.coverage_median_all - mc.coverage_median_J
     gn, go = genes(cfg["regcomp_new"], "regcomp_genes.parquet"), genes(cfg["regcomp_old"], "regcomp_genes.parquet")
     go = go[go.estimand == "mu"]; gn = gn[gn.estimand == "mu"]
-    wr = _ratio_table(gn).merge(_ratio_table(go), on=["budget", "cost", "n_L"], suffixes=("_all", "_J"))
+    wr = _ratio_table(gn).merge(_ratio_table(go), on=["budget_A", "n_L_A", "c"], suffixes=("_all", "_J"))
     wr["rel"] = wr.wr_BA_all / wr.wr_BA_J - 1.0
     bn, bo = pd.read_csv(os.path.join(cfg["box_new"], "box_coverage_cells.csv")), pd.read_csv(os.path.join(cfg["box_old"], "box_coverage_cells.csv"))
     bc = bn.merge(bo, on=["m", "interval", "estimator", "estimand"], suffixes=("_all", "_J"))
