@@ -1,4 +1,4 @@
-"""Round 10, track final-runs, F4 (plan 5e.2 and 5e.3): two readings of committed F3 outputs. Nothing here is estimated anew.
+"""Round 10, track final-runs, F4 (plan 5e.2 and 5e.3): three readings of committed F3 outputs. Nothing here is estimated anew.
 
 Modes
   s0006 <institution_config.json> <out>   for every kidney__Visium cell of F3's institution config (F1's center-design
@@ -12,6 +12,9 @@ Modes
         task, budget and n_L of A, the median over genes of regime B's per-gene mean width over regime A's at the same
         budget. F4-3 holds when on ACS_STATES regime B is narrower in at least half of the unit-cost pairs and the median
         cost-matched m_median_B on ACS_STATES is below every HEST task's.
+  alloc <regcomp_config_dir> <out>   F4-3b, written after F4-3 was refuted and before this run: regime B allocates m_g in
+        proportion to M_g while the target weights clusters equally, which inflates its variance by about mean(Mbar / M_g)
+        relative to equal allocation; F4-3b holds when that factor on ACS_STATES exceeds every HEST task's.
 Writes a summary JSON first, then the tables.
 """
 import json, os, sys
@@ -94,10 +97,39 @@ def main_acs(idxp, root, t10p, out):
     print(json.dumps(summ, indent=1))
 
 
+def main_alloc(cdir, out):
+    """F4-3b: the allocation factor of regime B's size-proportional allocation under the equally weighted target,
+    mean over clusters of Mbar / M_g (M_g the units regime B samples from, through F2.load), per HEST task and ACS."""
+    import glob
+    import round10_final_runs_f2_regimeB as F2
+    rows = []
+    for task, enc, sc in [("CCRCC", "uni_v2", "log1p"), ("CCRCC_merged", "uni_v2", "log1p"), ("INDIANA_KIDNEY", "uni_v2", "log1p"),
+                          ("LUNG_XENIUM", "uni_v2", "log1p"), ("ACS_STATES", "pkg", "log_income")]:
+        pop = None
+        for p in sorted(glob.glob(os.path.join(cdir, f"f3_regcomp__pk_{task}__{enc}__{sc}__p*.json"))):
+            for q in json.load(open(p))["populations"]:
+                if "theta3" in q.get("estimands", []):
+                    pop = q; break
+            if pop:
+                break
+        data = F2.load(pop)
+        M = np.array([len(b) for b in data["by_donor"]], float)
+        rows.append(dict(task=task, encoder=enc, scale=sc, G=len(M), M_min=M.min(), M_median=float(np.median(M)), M_max=M.max(),
+                         cv_M=float(M.std(ddof=0) / M.mean()), alloc_factor=float(np.mean(M.mean() / M))))
+    D = pd.DataFrame(rows)
+    acs = float(D.loc[D.task == "ACS_STATES", "alloc_factor"].iloc[0]); hest = D.loc[D.task != "ACS_STATES", "alloc_factor"]
+    summ = dict(prediction="F4-3b", holds=bool(acs > hest.max()), acs=acs, hest_max=float(hest.max()))
+    json.dump(summ, open(os.path.join(out, "f4_alloc_summary.json"), "w"), indent=1)
+    D.to_csv(os.path.join(out, "f4_alloc_by_task.csv"), index=False)
+    print(json.dumps(summ, indent=1))
+
+
 def main():
     mode = sys.argv[1]; out = sys.argv[-1]; os.makedirs(out, exist_ok=True)
     if mode == "s0006":
         main_s0006(sys.argv[2], out)
+    elif mode == "alloc":
+        main_alloc(sys.argv[2], out)
     elif mode == "acs":
         main_acs(sys.argv[2], sys.argv[3], sys.argv[4], out)
     else:
