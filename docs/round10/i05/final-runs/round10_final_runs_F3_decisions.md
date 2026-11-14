@@ -51,7 +51,7 @@ Each can be resolved by further analysis. F4 plans them beside the final report'
 
 1. **The $\mu$ check** of section 2.1, with its thresholds written before the run.
 2. **Regime B is wider than regime A on ACS by state** [8], in 9 of 12 comparisons with median ratio 1.159, the reverse of the HEST tasks. Explain it, listing first every variable that differs between the arms there.
-3. **FR8's lowest center**, S0006 at coverage 0.655 with four donors (report section 6.3 and section 8). Examine it beyond its table.
+3. **FR8's lowest center**, S0006 at coverage 0.655 (report section 6.3 and section 8). The report's section 8 calls it a four-donor center, but S0006 is the largest kidney Visium center, with 24 donors and 73813 spots, calibrated on the other four centers' 27 donors (`aggregate/t08_institution_by_center.csv`). The four is the number of calibration centers. Examine it beyond its table.
 4. **E8 at $m = 15$.** It is the only $m$ from 9 upward where the overall narrowest set needs extra labels in some rows (share up to 0.5). In four rows (CCRCC `resnet50` `norm_refit` and kidney Visium `hoptimus0` `lognorm`, each under $\theta_2$ and $\theta_3$), the set needing no further labels is narrower than the reported overall narrowest set, and kidney Visium `lognorm` shows negative median differences (`aggregate/t31_e8_on_grid_by_m.csv`). Find out how the overall set is selected there before quoting it.
 5. **The regcomp $\mu$ rows** that the F3 aggregate excludes are brought back into F4's tables under the label $\mu_J$, after the check of item 1.
 

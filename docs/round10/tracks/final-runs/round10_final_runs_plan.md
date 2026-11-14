@@ -426,7 +426,7 @@ The mechanism to test is the cost model. At the cost-matched budget $B' = n_L(c 
 
 ### 5e.3 Open point 3, FR8's lowest center
 
-S0006 covers 0.655 under donor-level HCP pooled across kidney Visium centers, with four donors. The reading takes from `institution/production/` the per-donor coverage inside S0006, the center's residual scale against the pooled calibration quantile (its median absolute center-out residual over the other centers'), and the center-held-out prediction accuracy on its donors. The mechanism to test is center shift, meaning the center-out heads predict S0006 worse, so its residuals exceed the pooled quantile. What would contradict this is S0006's residual scale being no larger than the other centers'.
+S0006 covers 0.655 under donor-level HCP pooled across kidney Visium centers. It is the largest center, with 24 donors and 73813 spots, and is calibrated on the other four centers' 27 donors (`results/round10/final_runs/F3/aggregate/t08_institution_by_center.csv`), so the F3 report's "four-donor" reads the number of calibration centers as donors. The reading takes from `institution/production/` the per-donor coverage inside S0006, the center's residual scale against the pooled calibration quantile (its median absolute center-out residual over the other centers'), and the center-held-out prediction accuracy on its donors. The mechanism to test is center shift, meaning the center-out heads predict S0006 worse, so its residuals exceed the pooled quantile. What would contradict this is S0006's residual scale being no larger than the other centers'.
 
 ### 5e.4 Open point 4, E8 at $m = 15$
 
