@@ -1,0 +1,32 @@
+platform: Longleaf
+slurm_job_id: 9184267
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 24576
+node: c0940
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F4
+unit: readings/readings_alloc_v1
+frame_id: 3f5eb01e-aa12-4f67-84ac-45c28e10831d
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: daa8781d2b136984a4b0ed24ac46c9343c7ab0bf
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/daa8781d2b136984a4b0ed24ac46c9343c7ab0bf
+command: round10_final_runs_f4_readings.py alloc /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/regcomp
+config: {"commit":"daa8781d2b136984a4b0ed24ac46c9343c7ab0bf","stage":"F4","unit":"readings_alloc_v1"}
+config_sha256: 7fa347971a263dd128ba1bab76f9e10454b75975211d4967d23ebd212e542011
+start: 2026-11-14T16:28:22-05:00
+end: 2026-11-14T16:28:47-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  495d270849ca771a90a64cbf8672e027  code/scripts/round10_final_runs_f4_readings.py
+inputs (md5, path):
+  41d1bd18269d81fa86b6f9ed39b37477  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/regcomp/f3_regcomp__pk_CCRCC__uni_v2__log1p__p00.json
+  84577ca61693c0627fc189f75bddb3f1  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/regcomp/f3_regcomp__pk_CCRCC_merged__uni_v2__log1p__p00.json
+  1095f3629cf95733af52209afd5eaefe  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/regcomp/f3_regcomp__pk_INDIANA_KIDNEY__uni_v2__log1p__p00.json
+  bec0d8f0868f50137b81ed73606e5215  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/regcomp/f3_regcomp__pk_LUNG_XENIUM__uni_v2__log1p__p00.json
+  a29a61b66042aa37f55334feb82be746  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/regcomp/f3_regcomp__pk_ACS_STATES__pkg__log_income__p00.json
