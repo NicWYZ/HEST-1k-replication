@@ -3,11 +3,11 @@
 ```state
 updated: 2026-11-14 (Claude Science session on the Windows execution PC, David's team account, reaching Longleaf through compute target ssh:longleaf; frame bdb361de-6630-44e8-b0f8-8bd63dae9ad3, the eighth session of the track)
 unit: final-runs
-status: interval i05, stage F4. Gate F3 answered on 14 November and recorded in docs/round10/i05/final-runs/round10_final_runs_F3_decisions.md (mu as mu_J with a one-population check, V unbounded primary, E8 kept as a measured result). F4's methods are written in plan section 5e, before any F4 code or job. No job of the track is running
-step: F4, task 5e.1 (the mu check), code not yet written
-last run: F3_gate/gate_v2 (gate checks of F3); nothing has run since
-next: write code/scripts/round10_final_runs_f4_mu_check.py (parts 1 and 2) and its job template, commit, submit one job; then 5e.4 (read the E8 join)
-waiting: nothing
+status: interval i05, stage F4 (plan 5e). Gate F3 answered and recorded (docs/round10/i05/final-runs/round10_final_runs_F3_decisions.md; open point 3 corrected in 4fd4f8f5, S0006 has 24 donors). 5e.1 parts 1 and 2 done (unit F4/mu_check/means_v1, Slurm 9154351, commit 1da199cb): the anchor reproduces F3's 0.1332702393296752 exactly; on the corpus tasks the all-spot donor means equal the committed cluster values within 2.5e-13 relative; on the HEST tasks within about 1e-7 only, because the check averages the float32 prediction columns in float32 (part 3's float64 loader equals the committed values exactly on CCRCC uni_v2 log1p); |mu - mu_J| is at most 0.19 between-donor SD (breast Xenium log1p). Part 3 reruns on all spots COMPLETED with exact anchors: box_CCRCC_uni_v2_log1p_allspot (Slurm 9154634), regcomp_p06_allspot (9154632), regcomp_p07_allspot (9154633). 5e.4 read from the committed tables: the m = 15 rows are GHCP chosen by round 5's mean-width rule at K 18 to 40 in map part 2, no fault in the join. No job of the track is running
+step: F4 5e.1 part 3. Pack p05 (mixes theta2 and mu populations) needs a mean-kind filter in round10_final_runs_f4_mu_check.py, and part 1 needs a float64 cast; that script edit was held by the seat's safety check and waits for Nicolas's approval
+last run: the four F4/mu_check units above (Slurm 9154351, 9154632 to 9154634), all moved from spill to general
+next: after approval, commit the edit (filter in main_part3, float64 cast in main_means), run means_v2 and regcomp_p05_allspot, then the compare mode over p05 to p07 and the box unit; then 5e.2 and 5e.3 (one script, one job)
+waiting: Nicolas's approval of the held script edit (session 8)
 ```
 
 *Written on 9 November 2026 by the first session of track `final-runs`. The brief is `docs/round10/i01/final-runs/round10_final_runs_brief.md` on `main` (read at 133384d1). It is read with `docs/EXECUTION_RULES.md` at that commit, `docs/round10/masterplan.md`, the ledger's decisions `docs/round10/i01/ledger/round10_ledger_decisions.md` and Nicolas's L3 answers `docs/round10/i02/ledger/round10_ledger_L3_answers.md`, which win where they differ. This plan does not copy the brief. It records how the session does each step, the checks it runs, and dated notes as the work goes.*
