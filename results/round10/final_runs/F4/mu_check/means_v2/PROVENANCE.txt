@@ -1,0 +1,92 @@
+platform: Longleaf
+slurm_job_id: 9173533
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 16384
+node: c151611
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F4
+unit: mu_check/means_v2
+frame_id: bdb361de-6630-44e8-b0f8-8bd63dae9ad3
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 727de29a53c4e2cb6814d194b451b5a7334d47b8
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/727de29a53c4e2cb6814d194b451b5a7334d47b8
+command: round10_final_runs_f4_mu_check.py means /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F4/mu_check/means_v2
+config: {"commit":"727de29a53c4e2cb6814d194b451b5a7334d47b8","mode":"means","stage":"F4","unit":"means_v2"}
+config_sha256: 8b25cc231b2790f921af0d5247f096fea59d23f3362d81d7bf6046b2b98a6efe
+start: 2026-11-14T10:39:43-05:00
+end: 2026-11-14T10:40:35-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  b9efa279c11efeb2a86f328c79485982  code/scripts/round10_final_runs_f4_mu_check.py
+  05f9c7a1a24a4bff1041ff5094dae011  code/scripts/round10_final_runs_f2_regimeB.py
+  4002c7b27f203e035f0bd0355d4d60f0  code/scripts/round10_final_runs_f3_regcomp.py
+  fe324e010fa69f027a2145392be113e3  code/scripts/round10_final_runs_f3_box.py
+  c59cb313dda820e72baf916778f53801  code/scripts/round10_final_runs_f3_regimeB.py
+inputs (md5, path):
+  f46e9396a129da6e5836afcd406c2f61  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__ACS_STATES__pkg__log_income.json
+  4dc04044f2553a5036d97bcbd2bd2aa8  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__bowel__Visium__hoptimus0__log1p.json
+  9f4d14ffa5df57c0ade5ba82a82e29c5  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__bowel__Visium__hoptimus0__lognorm.json
+  b50cfd974f45289b2e486d848e956880  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__bowel__Visium__resnet50__log1p.json
+  ce9729c3e0e475acc647fc965ef27399  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__bowel__Visium__resnet50__lognorm.json
+  deccd3389565f97ba7b571a4e6d19ebd  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__bowel__Visium__uni_v2__log1p.json
+  cfb57fd2e0327551b3e64fe03021cd45  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__bowel__Visium__uni_v2__lognorm.json
+  556f373d49b6fe7e33ddc29006e12d97  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__brain__Visium__hoptimus0__log1p.json
+  de39810d8e08cada8a87813206e51a1c  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__brain__Visium__hoptimus0__lognorm.json
+  f15fd15fb90214084ca43590951a202f  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__brain__Visium__resnet50__log1p.json
+  e546c91a85e9e5ab1c33b863f4807481  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__brain__Visium__resnet50__lognorm.json
+  d8d5d626e1bd6aa530c886877c110bc2  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__brain__Visium__uni_v2__log1p.json
+  998a89f7c25272202bdd849f641461dd  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__brain__Visium__uni_v2__lognorm.json
+  a52bfb2dd2b834bd77739f07682dc0d5  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__breast__Spatial_Transcriptomics__hoptimus0__log1p.json
+  324aed35866991e0c1d1dccdf85ae800  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__breast__Spatial_Transcriptomics__hoptimus0__lognorm.json
+  13281993870d05c597ce91fd5ae28145  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__breast__Spatial_Transcriptomics__resnet50__log1p.json
+  82d620e88dcd3168d67627710dedd2bd  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__breast__Spatial_Transcriptomics__resnet50__lognorm.json
+  9d48726fdd31341c2d97746fa906e266  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__breast__Spatial_Transcriptomics__uni_v2__log1p.json
+  42960c9a7d7fb16bdf6d06c0e6f2e0f9  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__breast__Spatial_Transcriptomics__uni_v2__lognorm.json
+  d81aab61154f2c9c7bd0a95fceae77ae  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__breast__Xenium__hoptimus0__log1p.json
+  ac01ba82b485c2d38fbca23d0dfa579f  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__breast__Xenium__hoptimus0__lognorm.json
+  a3f8ce4c1ff8e341283cfd7aa78033c9  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__breast__Xenium__resnet50__log1p.json
+  0c5128a35d6136d3faf2efcf939cae8e  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__breast__Xenium__resnet50__lognorm.json
+  945ae0d43bc38c36ab11cfd1be8f9f73  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__breast__Xenium__uni_v2__log1p.json
+  d7a06cd1228d9da991b15bd20bbfc622  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__breast__Xenium__uni_v2__lognorm.json
+  56241641647b7e1c125dd61d730445b8  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__CCRCC__hoptimus0__log1p.json
+  42fd1bb9ec1987aa1c4b48e9104235d2  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__CCRCC__hoptimus0__norm_refit.json
+  e4ddbd50b1c4e1a6d48e02c7eb1cf61b  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__CCRCC_merged__hoptimus0__log1p.json
+  4fe260be511c0903039e7e285c4adebb  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__CCRCC_merged__hoptimus0__norm_refit.json
+  303b8c4b1d628f616589b8f601116909  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__CCRCC_merged__resnet50__log1p.json
+  911bbe65cee3b7e6574c3d4269d8a5c4  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__CCRCC_merged__resnet50__norm_refit.json
+  17eee2bb80ca4e38351cb0d6b21c7376  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__CCRCC_merged__uni_v2__log1p.json
+  1a8234eedf3e71633e8652196e36812d  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__CCRCC_merged__uni_v2__norm_refit.json
+  68e972c6e6eca79e6a82b29523718a0b  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__CCRCC__resnet50__log1p.json
+  33f80fbad40d510381b58dd2ffb00cb5  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__CCRCC__resnet50__norm_refit.json
+  9ae86f9df7da7acf93edd5643f56661a  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__CCRCC__uni_v2__log1p.json
+  8fb1e352bf1fe91938ba1784b857bdde  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__CCRCC__uni_v2__norm_refit.json
+  f00bd8699228403fcba1558a1fd61964  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__INDIANA_KIDNEY__hoptimus0__log1p.json
+  c48970017011868fe7aa95d4ddf74cb1  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__INDIANA_KIDNEY__hoptimus0__norm_refit.json
+  5f303200124ca646c5648d311e8fe781  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__INDIANA_KIDNEY__resnet50__log1p.json
+  80a3d49dc59f5c0dda2fbf33e3491a2e  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__INDIANA_KIDNEY__resnet50__norm_refit.json
+  b5c82e46356717f96afe404da452999e  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__INDIANA_KIDNEY__uni_v2__log1p.json
+  43f92b4f8629ef59ca7a832fe5b9c37f  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__INDIANA_KIDNEY__uni_v2__norm_refit.json
+  9a3d2cb7eb3c23f4d3737d0dcd02f3a9  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__kidney__Visium__hoptimus0__log1p.json
+  6a50da16774c4086980374ff70d1837c  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__kidney__Visium__hoptimus0__lognorm.json
+  eeea58713ea43d249e2799dcb5613d56  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__kidney__Visium__resnet50__log1p.json
+  48dcb89508a3c42a3373bdaf79b222a0  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__kidney__Visium__resnet50__lognorm.json
+  0ef596291e3e7699ab63bd826f09fb0f  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__kidney__Visium__uni_v2__log1p.json
+  ca451b317e77e4bf2a9bea57c77aadac  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__kidney__Visium__uni_v2__lognorm.json
+  f9ad7bf34d35cb877f72920b33c02be3  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__lung__Xenium__hoptimus0__log1p.json
+  ddfdd79ad09e4d95f416e1c6b6209c75  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__LUNG_XENIUM__hoptimus0__log1p.json
+  63fa3d4a3d00aaccf68c57264e48ab69  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__lung__Xenium__hoptimus0__lognorm.json
+  169800bffa9d4806cddc47f0e559dd80  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__LUNG_XENIUM__hoptimus0__norm_refit.json
+  3f9f57a597bbd747d60ecffc47e475f6  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__lung__Xenium__resnet50__log1p.json
+  00c29c01e73f3579c61445c12ff5c932  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__LUNG_XENIUM__resnet50__log1p.json
+  864faadb713f50a116da9f4383e1442f  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__lung__Xenium__resnet50__lognorm.json
+  c2442629834c58f1a1cb52b913a5c4c8  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__LUNG_XENIUM__resnet50__norm_refit.json
+  408b7d130df0251cb3ea0cdc8c4f2946  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__lung__Xenium__uni_v2__log1p.json
+  9eff765df7465b45b856b83a124e2d47  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__LUNG_XENIUM__uni_v2__log1p.json
+  0735ec9ec8db0c2666b8f845e9b5e4cb  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__lung__Xenium__uni_v2__lognorm.json
+  b980a8552509bbc4300ecbca264369b4  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box/f3_box__LUNG_XENIUM__uni_v2__norm_refit.json

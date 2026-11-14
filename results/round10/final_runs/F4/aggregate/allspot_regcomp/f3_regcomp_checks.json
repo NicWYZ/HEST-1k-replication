@@ -1,0 +1,58 @@
+{
+ "units_expected": 270,
+ "units_completed": 270,
+ "units_not_completed": [],
+ "cv_max_rel": 0.0,
+ "rows": 694674,
+ "duplicate_rows": 0,
+ "r10f3a": {
+  "primary": {
+   "n": 0,
+   "B_narrower": 0,
+   "share": null,
+   "median_ratio": null
+  },
+  "verdict": "refuted",
+  "rule": "fix1 pair, theta3, cost ratio 10, HEST tasks with CCRCC_merged and ACS by state, log(1 + y) and log income; one comparison per (task, encoder, n_L, budget); narrower when the median over genes of the mean-width ratio < 1",
+  "beside": {
+   "norm_refit_fix1_theta3": {
+    "n": 0,
+    "B_narrower": 0,
+    "share": null,
+    "median_ratio": null
+   },
+   "fix1_theta2": {
+    "n": 0,
+    "B_narrower": 0,
+    "share": null,
+    "median_ratio": null
+   },
+   "fix1_mu": {
+    "n": 288,
+    "B_narrower": 288,
+    "share": 1.0,
+    "median_ratio": 0.0914188233261986
+   },
+   "ppi_theta3_log1p": {
+    "n": 0,
+    "B_narrower": 0,
+    "share": null,
+    "median_ratio": null
+   },
+   "classical_theta3_log1p": {
+    "n": 0,
+    "B_narrower": 0,
+    "share": null,
+    "median_ratio": null
+   },
+   "fix1_all_tasks_all_c": {
+    "n": 1458,
+    "B_narrower": 1458,
+    "share": 1.0,
+    "median_ratio": 0.09844593660399094
+   },
+   "round5_E3_4": "C_ppi: B narrower in 210 of 232 comparisons, median ratio 0.430 (results/round5/ppi/E3_twolevel/e3_prediction_scores.csv)"
+  }
+ },
+ "by_task_fix1_theta3_c10": {}
+}

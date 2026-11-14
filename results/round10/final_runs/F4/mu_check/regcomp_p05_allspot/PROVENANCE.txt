@@ -1,0 +1,32 @@
+platform: Longleaf
+slurm_job_id: 9173536
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 8192
+node: c151611
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F4
+unit: mu_check/regcomp_p05_allspot
+frame_id: bdb361de-6630-44e8-b0f8-8bd63dae9ad3
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 727de29a53c4e2cb6814d194b451b5a7334d47b8
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/727de29a53c4e2cb6814d194b451b5a7334d47b8
+command: round10_final_runs_f4_mu_check.py regcomp /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/regcomp/f3_regcomp__pk_CCRCC__uni_v2__log1p__p05.json /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F4/mu_check/regcomp_p05_allspot
+config: {"commit":"727de29a53c4e2cb6814d194b451b5a7334d47b8","mode":"regcomp","stage":"F4","unit":"regcomp_p05_allspot"}
+config_sha256: 77e19b771cb8152268a7eb13feeb040dc36fe7c85707483b1581575a06e8030b
+start: 2026-11-14T10:39:43-05:00
+end: 2026-11-14T10:45:53-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  b9efa279c11efeb2a86f328c79485982  code/scripts/round10_final_runs_f4_mu_check.py
+  05f9c7a1a24a4bff1041ff5094dae011  code/scripts/round10_final_runs_f2_regimeB.py
+  4002c7b27f203e035f0bd0355d4d60f0  code/scripts/round10_final_runs_f3_regcomp.py
+  fe324e010fa69f027a2145392be113e3  code/scripts/round10_final_runs_f3_box.py
+  c59cb313dda820e72baf916778f53801  code/scripts/round10_final_runs_f3_regimeB.py
+inputs (md5, path):
+  678c02952de0fe1d36445ae380168877  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/regcomp/f3_regcomp__pk_CCRCC__uni_v2__log1p__p05.json

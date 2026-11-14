@@ -1,0 +1,38 @@
+{
+ "units_expected": 60,
+ "units_completed": 60,
+ "units_not_completed": [],
+ "box_rows": 9516,
+ "coverage_rows": 90402,
+ "coverage_duplicates": 0,
+ "genes_with_regimeA_kappa": 9504,
+ "fr7": {
+  "clause1": {
+   "cells": 30,
+   "within": 30,
+   "max_abs_dev": 0.020500000000000074,
+   "cov_range": [
+    0.8795,
+    0.9115
+   ],
+   "verdict": "held",
+   "beside": {
+    "CCRCC_merged": {
+     "cells": 6,
+     "within": 6
+    },
+    "f3_mu": {
+     "cells": 64,
+     "within": 64,
+     "max_abs_dev": 0.003250000000000086
+    }
+   }
+  },
+  "clause2": {
+   "tasks": 10,
+   "strictly_larger": 10,
+   "verdict": "held"
+  },
+  "verdict": "held"
+ }
+}
