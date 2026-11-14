@@ -1,0 +1,42 @@
+{
+ "population": {
+  "task": "CCRCC",
+  "encoder": "uni_v2",
+  "scale": "log1p",
+  "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+  "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+  "theta2_kind": "mean"
+ },
+ "data_keys": [
+  "P",
+  "Y",
+  "by_donor",
+  "didx",
+  "donors",
+  "genes",
+  "m",
+  "neo"
+ ],
+ "Tset_keys": {
+  "theta3": "theta3",
+  "theta2": "mean"
+ },
+ "n_spots_loaded": 67673,
+ "zbar_vs_loaded_donor_mean_max_abs": 0.0,
+ "zbar_vs_cluster_values_max_abs": 0.1332702393296752,
+ "zbar_vs_cluster_values_max_rel": 0.19211193898031662,
+ "raw_columns_sample": [
+  "sample_id",
+  "barcode",
+  "donor_id",
+  "donor_id_audit",
+  "fold",
+  "joined",
+  "area_mean",
+  "m_std",
+  "frac_neoplastic"
+ ],
+ "raw_rows": 74220,
+ "donor_col": "donor_id",
+ "y_prefix": null
+}
