@@ -1,0 +1,11 @@
+prediction,clause,holds__all,cells__all,min_median__all,task__all,estimand__all,median_frac_V_neg__all,rmse_fix1__all,rmse_classical__all,share__all,cov_norm__all,cov_log1p__all,diff__all,scale__all,coverage__all,coverage_r10__all,coverage_r5__all,drop__all,ref_rows__all,holds__r9g42,cells__r9g42,min_median__r9g42,task__r9g42,estimand__r9g42,median_frac_V_neg__r9g42,rmse_fix1__r9g42,rmse_classical__r9g42,share__r9g42,cov_norm__r9g42,cov_log1p__r9g42,diff__r9g42,scale__r9g42,coverage__r9g42,coverage_r10__r9g42,coverage_r5__r9g42,drop__r9g42,ref_rows__r9g42
+FR2,median E(V_w)/Var >= 0.95 in every cell n>=6,True,1432.0,0.993685,,,,,,,,,,,,,,,,True,1432.0,0.993685,,,,,,,,,,,,,,,
+FR2,"V < 0 in >= 0.05 of draws at n=6, CCRCC, theta3",True,,,CCRCC,theta3,0.197425,,,,,,,,,,,,,True,,,CCRCC,theta3,0.197425,,,,,,,,,,,,
+FR2,"V < 0 in >= 0.05 of draws at n=6, CCRCC, mu",True,,,CCRCC,mu,0.18005,,,,,,,,,,,,,True,,,CCRCC,mu,0.18005,,,,,,,,,,,,
+FR2,"V < 0 in >= 0.05 of draws at n=6, INDIANA_KIDNEY, theta3",True,,,INDIANA_KIDNEY,theta3,0.20835,,,,,,,,,,,,,True,,,INDIANA_KIDNEY,theta3,0.20835,,,,,,,,,,,,
+FR2,"V < 0 in >= 0.05 of draws at n=6, INDIANA_KIDNEY, mu",True,,,INDIANA_KIDNEY,mu,0.193525,,,,,,,,,,,,,True,,,INDIANA_KIDNEY,mu,0.193525,,,,,,,,,,,,
+FR3,"fix1 median RMSE below classical at n=4, LUNG_XENIUM, theta3",True,,,LUNG_XENIUM,theta3,,0.050292,0.095163,,,,,,,,,,,True,,,LUNG_XENIUM,theta3,,0.043874,0.082869,,,,,,,,,,
+FR3,"fix1 median RMSE below classical at n=4, LUNG_XENIUM, mu",True,,,LUNG_XENIUM,mu,,0.147591,0.173236,,,,,,,,,,,True,,,LUNG_XENIUM,mu,,0.134354,0.161767,,,,,,,,,,
+FR4,"share of genes with fix1 wider than classical at n=8, LUNG_XENIUM, theta3",True,,,LUNG_XENIUM,theta3,,,,0.043732,,,,,,,,,,True,,,LUNG_XENIUM,theta3,,,,0.071429,,,,,,,,,
+FR4,"share of genes with fix1 wider than classical at n=8, LUNG_XENIUM, mu",False,,,LUNG_XENIUM,mu,,,,0.300292,,,,,,,,,,False,,,LUNG_XENIUM,mu,,,,0.333333,,,,,,,,,
+P10.1,"xf2_r5 with V_w at n=8 is 0.02 to 0.05 below round 5's coverage_median, LUNG_XENIUM",False,,,LUNG_XENIUM,,,,,,,,,,,0.87515,0.8675,-0.00765,1.0,False,,,LUNG_XENIUM,,,,,,,,,,,0.88615,0.8675,-0.01865,1.0

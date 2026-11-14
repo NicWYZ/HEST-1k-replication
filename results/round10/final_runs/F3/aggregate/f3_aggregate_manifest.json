@@ -1,0 +1,215 @@
+{
+ "script": "round10_final_runs_f3_aggregate.py",
+ "F3_results_dir": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/aggregate_job/f3_aggregate/committed/results/round10/final_runs/F3",
+ "mu_note": "regcomp rows with estimand mu on any task other than ACS_STATES carry mu_estimand_mismatch = True and are excluded from every regcomp summary; basis results/round10/final_runs/F3/regimeB/aggregate_v1/regcomp/f3_regcomp_checks.json (cv_max_rel) and the lead check unit regimeB/regcomp_mu_check",
+ "outputs": {
+  "f3_predictions.csv": {
+   "rows": 20
+  },
+  "t01_map_p103.csv": {
+   "rows": 22
+  },
+  "t02_map_by_task_p103_methods_alpha01.csv": {
+   "rows": 2094
+  },
+  "t03_map_methods_summary.csv": {
+   "rows": 1716
+  },
+  "t04_map_acs_o_sweep_summary.csv": {
+   "rows": 750
+  },
+  "t05_item7_scores_by_task.csv": {
+   "rows": 75
+  },
+  "t06_item7_scores_margins.csv": {
+   "rows": 45
+  },
+  "t07_institution_summary.csv": {
+   "rows": 108
+  },
+  "t08_institution_by_center.csv": {
+   "rows": 708
+  },
+  "t09_institution_fr8.csv": {
+   "rows": 2
+  },
+  "t10_regcomp_comparisons.csv": {
+   "rows": 13242
+  },
+  "t11_regcomp_r10f3a_primary.csv": {
+   "rows": 156
+  },
+  "t12_regcomp_summary_by_task.csv": {
+   "rows": 312
+  },
+  "t12b_regcomp_summary_by_task_encoder.csv": {
+   "rows": 366
+  },
+  "t13_regcomp_summary_by_design_hest_acs.csv": {
+   "rows": 456
+  },
+  "t14_regcomp_beside_mu_excluded.csv": {
+   "rows": 6
+  },
+  "t15_box_task_summary_bounded_unbounded.csv": {
+   "rows": 134
+  },
+  "t16_box_coverage_by_m_long.csv": {
+   "rows": 1159
+  },
+  "t16b_V_side_by_side.csv": {
+   "rows": 134
+  },
+  "t17_box_fr7_clause1.csv": {
+   "rows": 116
+  },
+  "t18_box_fr7_clause2.csv": {
+   "rows": 11
+  },
+  "t19_allocation_rows.csv": {
+   "rows": 1164
+  },
+  "t20_allocation_vs_r5.csv": {
+   "rows": 67
+  },
+  "t21_allocation_summary_over_encoders.csv": {
+   "rows": 396
+  },
+  "t22_balance_matched.csv": {
+   "rows": 304
+  },
+  "t23_balance_limits.csv": {
+   "rows": 84
+  },
+  "t24_balance_p101_part2.csv": {
+   "rows": 4
+  },
+  "t25_balance_cells_summary.csv": {
+   "rows": 1296
+  },
+  "t25b_balance_by_task.csv": {
+   "rows": 1960
+  },
+  "t26_takeall_cells.csv": {
+   "rows": 3216
+  },
+  "t27_takeall_summary.csv": {
+   "rows": 288
+  },
+  "t28_takeall_vs_r9.csv": {
+   "rows": 18
+  },
+  "t29_e8_joint_on_grid.csv": {
+   "rows": 1320
+  },
+  "t30_e8_row_counts.csv": {
+   "rows": 51
+  },
+  "t31_e8_on_grid_by_m.csv": {
+   "rows": 528
+  },
+  "t32_e8_regB_f2check.csv": {
+   "rows": 19
+  },
+  "t33_e8_regB_width_ratio.csv": {
+   "rows": 1152
+  },
+  "t34_op1_limits_ranges_all_vs_noG1.csv": {
+   "rows": 80
+  },
+  "t35_op1_width_ratio_by_n_all_vs_noG1.csv": {
+   "rows": 8
+  },
+  "t36_op1_dropped_cells.csv": {
+   "rows": 54
+  },
+  "t37_op2_toy_grid.csv": {
+   "rows": 176
+  },
+  "t38_op2_heterogeneity_by_population.csv": {
+   "rows": 59
+  },
+  "t39_op3_boot_score_table.csv": {
+   "rows": 39
+  },
+  "t40_op4_limits_norm_refit_ranking.csv": {
+   "rows": 60
+  },
+  "t41_op5_regB_norm_refit_score.csv": {
+   "rows": 144
+  },
+  "t42_op5_regB_norm_refit_summary.csv": {
+   "rows": 540
+  },
+  "t43_op6_r9g42_scores_side_by_side.csv": {
+   "rows": 10
+  },
+  "t44_op7_kappa_rise_counts.csv": {
+   "rows": 79
+  },
+  "t45_op7_kappa_rise_by_G1.csv": {
+   "rows": 15
+  },
+  "t46_op7_genuine_rise_cells.csv": {
+   "rows": 26
+  },
+  "f3_aggregate_manifest.json": {
+   "rows": null
+  }
+ },
+ "inputs": {
+  "results/round10/final_runs/F3/allocation/aggregate/f3_allocation_rows.csv": "76864f9e7cc66bb4652c3d060fa9bf1a",
+  "results/round10/final_runs/F3/allocation/aggregate/f3_allocation_vs_r5.csv": "2d1e94ca34030e365851e8454bae5744",
+  "results/round10/final_runs/F3/balance/aggregate/f3_balance_cells.csv": "cda6be44c36550052cbb699f098c2790",
+  "results/round10/final_runs/F3/balance/aggregate/f3_balance_limits.csv": "6a903edc5ee313d785ffd7e14c8a9bb8",
+  "results/round10/final_runs/F3/balance/aggregate/f3_balance_matched.csv": "ee2191ca0685d50158364ba2ebe9fc78",
+  "results/round10/final_runs/F3/balance/aggregate/f3_p101_part2.csv": "5968c7862f2b0bb9ae09e657f2a940ba",
+  "results/round10/final_runs/F3/e8/e8_checks.json": "f60da1e37c97fcf13df3d15c23afb479",
+  "results/round10/final_runs/F3/e8/e8_joint.csv": "954d06e9baf76686bee1310aaa61945f",
+  "results/round10/final_runs/F3/institution/production/inst_by_center.csv": "6593559422d16b342555e69303971c94",
+  "results/round10/final_runs/F3/institution/production/inst_fr8.csv": "31fb6e3930a66fb783d88cf56e469825",
+  "results/round10/final_runs/F3/institution/production/inst_summary.csv": "3983e9bf3dc9df081fc883c9f6cd2634",
+  "results/round10/final_runs/F3/map/acs_prod/acs_o_sweep.csv": "832857f6b1b925e1ba1e2aaae5745841",
+  "results/round10/final_runs/F3/map/i7_aggregate/scores_by_task.csv": "d00975675dff53516070150cb09fafa0",
+  "results/round10/final_runs/F3/map/i7_aggregate/scores_checks.json": "adf0e8fd0f01175419d742b90a72e880",
+  "results/round10/final_runs/F3/map/i7_aggregate/scores_margins.csv": "27b10bb9b9ac46b3179b51bbc115a2c2",
+  "results/round10/final_runs/F3/map/map_aggregate/map_by_task.csv": "4ce0ec7f5e77154e3122b95dbd399128",
+  "results/round10/final_runs/F3/map/map_aggregate/map_p103.csv": "bb252aa865c6ab7e0305a60983f70b65",
+  "results/round10/final_runs/F3/map/map_aggregate/map_p103_overall.json": "95cb3faedb30f0eeca03356c54876d9f",
+  "results/round10/final_runs/F3/regimeB/aggregate_v1/box/f3_box_checks.json": "52589de84d4e2ada1a43463c56176048",
+  "results/round10/final_runs/F3/regimeB/aggregate_v1/box/f3_box_coverage_summary.csv": "f4b3247e433b7e033ccb7ebb75b0a4eb",
+  "results/round10/final_runs/F3/regimeB/aggregate_v1/box/f3_box_task_summary.csv": "6b77aec4d5d0cfdb3026f21e521ab421",
+  "results/round10/final_runs/F3/regimeB/aggregate_v1/box/f3_fr7_clause1.csv": "4195d750c1fa6e2a517f0a81122f3f42",
+  "results/round10/final_runs/F3/regimeB/aggregate_v1/box/f3_fr7_clause2.csv": "f1e0bbe96365ac310c8612c25b8f2035",
+  "results/round10/final_runs/F3/regimeB/aggregate_v1/regcomp/f3_regcomp_checks.json": "ec2e6bcb95f20af5fe12cf3f142d1844",
+  "results/round10/final_runs/F3/regimeB/aggregate_v1/regcomp/f3_regcomp_comparisons.csv": "594703c98d23cdeba61a80ff062bec6d",
+  "results/round10/final_runs/F3/regimeB/aggregate_v1/regcomp/f3_regcomp_r10f3a.csv": "0e607eb1e950090609fbc2e983741137",
+  "results/round10/final_runs/F3/regimeB/aggregate_v1/regimeB/f3_e8_f2check.csv": "815542362ca5e67c578df55365a6eba6",
+  "results/round10/final_runs/F3/regimeB/aggregate_v1/regimeB/f3_e8_wr.csv": "461eb6fd504654bf4752e0b196e633b0",
+  "results/round10/final_runs/F3/regimeB/aggregate_v1/regimeB/f3_op5_score.csv": "6f9d4061307d7b7346ab428201bea22f",
+  "results/round10/final_runs/F3/regimeB/aggregate_v1/regimeB/f3_regB_checks.json": "5e3c5e6a76cbc34b70ffcf6019d13bb2",
+  "results/round10/final_runs/F3/regimeB/aggregate_v1/regimeB/f3_regB_norm_summary.csv": "71afa2d541da2baf4a005e770194af61",
+  "results/round10/final_runs/F3/reruns/kappa_rise/f3_kappa_rise_by_G1.csv": "c85057e02d4252a6e9b344576bc2fd42",
+  "results/round10/final_runs/F3/reruns/kappa_rise/f3_kappa_rise_cells.csv": "2998cb112eda76d119bb1725956e8f7c",
+  "results/round10/final_runs/F3/reruns/kappa_rise/f3_kappa_rise_counts.csv": "92f1cf3942c38c72185ef2f2e011192e",
+  "results/round10/final_runs/F3/reruns/kappa_rise/f3_kappa_rise_summary.json": "c533017fb5541ff1672f27c4e8105ebc",
+  "results/round10/final_runs/F3/reruns/limits_g1/f3_limits_g1_compare_r07.csv": "050399405e43685e3e42243122fc9dfe",
+  "results/round10/final_runs/F3/reruns/limits_g1/f3_limits_g1_compare_r07b.csv": "712b61dbba70ecde87166ee7c27235b4",
+  "results/round10/final_runs/F3/reruns/limits_g1/f3_limits_g1_dropped_cells.csv": "99eb06e231a4e032e75b2c5c013f9215",
+  "results/round10/final_runs/F3/reruns/limits_g1/f3_limits_g1_summary.json": "50f4a0c84c2faa24dea6df30d70b3741",
+  "results/round10/final_runs/F3/reruns/prod_aggregate/f3_boot_score_table.csv": "f70a44333b84a436bca05a32bee18f97",
+  "results/round10/final_runs/F3/reruns/prod_aggregate/f3_boot_vs_uni_v2.csv": "f37802e8630967fb8841622df3cf4fad",
+  "results/round10/final_runs/F3/reruns/prod_aggregate/f3_limits_norm_refit_ranking.csv": "8bc1018618272316ac06159b3684831e",
+  "results/round10/final_runs/F3/reruns/prod_aggregate/f3_prod_scores.json": "6816e5cd32b0e847ddeb35068dccb3c2",
+  "results/round10/final_runs/F3/reruns/r9g42/f3_r9g42_scores_side_by_side.csv": "3670d742f6910b5cf0d25a02efff77dc",
+  "results/round10/final_runs/F3/reruns/r9g42/f3_r9g42_summary.json": "1d983a7929dfb905a4665e1e416b8d11",
+  "results/round10/final_runs/F3/takeall/aggregate/f3_takeall_cells.csv": "fcfc889bd916dee30cefe051270dc9e8",
+  "results/round10/final_runs/F3/takeall/aggregate/f3_takeall_vs_r9.csv": "def1d03ea4751bf0ab55f8877b950564",
+  "results/round10/final_runs/F3/toy/grid/f3_toy_grid.csv": "51b3056cec924002a0206091d937a819",
+  "results/round10/final_runs/F3/toy/grid/toy_summary.json": "4e182b4401f8daa1007db6bfdb36780e",
+  "results/round10/final_runs/F3/toy/heterogeneity/f3_heterogeneity_by_population.csv": "61202cb47d4320d5bf48ed7bc7c3c0d8"
+ },
+ "predictions": 20,
+ "disagreements": 0,
+ "section_errors": []
+}
