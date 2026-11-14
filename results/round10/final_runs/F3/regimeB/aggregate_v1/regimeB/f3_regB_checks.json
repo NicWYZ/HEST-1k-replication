@@ -1,0 +1,59 @@
+{
+ "units_expected": 43,
+ "units_completed": 43,
+ "units_not_completed": [],
+ "cv_max_rel": 2.4988818525693967e-11,
+ "cv_donors_all_matched": true,
+ "f2_rows_matched": 44013,
+ "f2_max_abs": 0.0,
+ "regB_norm_rows": 66555,
+ "regB_norm_duplicates": 0,
+ "op5": {
+  "cells": 108,
+  "cells_ok_ev": 108,
+  "cells_ok_cov": 108,
+  "cells_ok_both": 108,
+  "ev_range": [
+   0.985246204711251,
+   1.0113383891434453
+  ],
+  "cov_range": [
+   0.894,
+   0.9025
+  ],
+  "by_task": {
+   "CCRCC": {
+    "cells": 36,
+    "ok_ev": 36,
+    "ok_cov": 36,
+    "ok_both": 36
+   },
+   "CCRCC_merged": {
+    "cells": 36,
+    "ok_ev": 36,
+    "ok_cov": 36,
+    "ok_both": 36
+   },
+   "INDIANA_KIDNEY": {
+    "cells": 36,
+    "ok_ev": 36,
+    "ok_cov": 36,
+    "ok_both": 36
+   },
+   "LUNG_XENIUM": {
+    "cells": 36,
+    "ok_ev": 36,
+    "ok_cov": 36,
+    "ok_both": 36
+   }
+  },
+  "verdict": "held",
+  "rule": "every HEST task (CCRCC, INDIANA_KIDNEY, LUNG_XENIUM; CCRCC_merged beside), encoder, estimand (theta3, theta2) and m >= 6 on norm_refit: 0.93 <= median E(V)/Var <= 1.05 and |median coverage - 0.90| <= 0.03"
+ },
+ "e8_rows": 204174,
+ "e8_duplicates": 0,
+ "e8_wr_rows": 1152,
+ "e8_wr_median_boot_se": 0.0007925445338654,
+ "e8_f2check_rows_matched": 44013,
+ "e8_f2check_max_abs_all": 0.0
+}
