@@ -1,4 +1,4 @@
-> **Active instruction document for the round-4 conformal track, dated 30 September 2026.** This copy includes section 5's working-copies paragraph, which the session received separately as a note and transcribed as section 2 of `docs/round04/tracks/conformal/round4_conf_plan.md` on its branch.
+*30 September 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round04/README.md.*
 
 # Round 4, the conformal track: sharper valid prediction sets for a new donor
 

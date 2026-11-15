@@ -1,3 +1,5 @@
+*1 to 2 October 2026. Reviewed as tagged at round4-ppi-final. What stands now: docs/round04/README.md.*
+
 # Round 4 PPI track, the theory for Q2 and Q3
 
 Written before the Q2 and Q3 experiments run, as the instruction (`docs/round04/i01/ppi/round4_ppi_track.md`,

@@ -1,3 +1,5 @@
+*30 September 2026. Reviewed as tagged at round4-ppi-Q1. What stands now: docs/round04/README.md.*
+
 # Round 4, the PPI track: inference and design with the donor as the unit
 
 30 September 2026, revised after the data-pull report. Prepared by the oversight chat for a fresh Claude Science session. This document is self-contained. The track starts from tag `round4-data-v2` on `NicWYZ/HEST-1k-replication`, on its own branch `round4-ppi`, and runs concurrently with a second session on branch `round4-conformal`, which has its own document. Section 5 says how the two coexist. The P8 addendum that produced it is reported in `docs/round04/i02/data/round4_data_P8_report.md`. Read this document fully, then transcribe section 6 into `docs/round04/tracks/ppi/round4_ppi_plan.md` before running anything.

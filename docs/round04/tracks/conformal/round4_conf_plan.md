@@ -1,3 +1,5 @@
+*30 September to 2 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round04/README.md. Corrected since the tag.*
+
 # Round 4, the conformal track: operating plan
 
 Instruction: `round4_conformal_track.md` (oversight chat, 30 September 2026, revised after the data-pull
@@ -9,13 +11,7 @@ updated each time a decision memo hands work back, and never after a gate withou
 
 ## 1. Stages and gates
 
-| stage | length | gate | status |
-|---|---|---|---|
-| C0 setup | half a day, capped at one day | none, reported with C2 | in progress |
-| C1 simulation testbed and known methods | three days | none, reported with C2 | not started |
-| C2 candidates, lower-bound scoping, go or no-go | four days | **REPORT AND WAIT** | not started |
-| C3 real data, the $(K, o)$ map | four days | none | **blocked until the C2 decision memo is handed back and transcribed here** |
-| C4 closing report | two days | **REPORT AND WAIT, end of track** | blocked behind C3 |
+closed
 
 The gate rule, verbatim from the instruction:
 

@@ -1,3 +1,5 @@
+*28 September 2026. Reviewed as tagged at round4-data. What stands now: docs/round04/README.md.*
+
 # Round 4, stage P: the data pull, report
 
 Instruction: `docs/round04/i01/data/round4_data_pull.md`, transcribed in `docs/round04/tracks/data/round4_data_plan.md`, with the

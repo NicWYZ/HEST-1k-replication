@@ -1,4 +1,4 @@
-> **Closed record, dated 24 September 2026.** The oversight chat's assessment after round 3, written for Nicolas and David and held in the Biostat Research project until it was committed here on 30 September. Its recommendation was refined by `round4_originality_check.md` four days later.
+*24 September 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round04/README.md.*
 
 # After round 3: what we know, and the direction for the first paper
 

@@ -1,3 +1,5 @@
+*30 September to 3 October 2026. Reviewed as tagged at commit 8cca44f. What stands now: docs/round04/README.md.*
+
 # Round 4, the PPI track, operating plan
 
 Transcribed on 30 September 2026 from `docs/round04/i01/ppi/round4_ppi_track.md` (the oversight chat's

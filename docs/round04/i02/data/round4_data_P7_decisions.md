@@ -1,3 +1,5 @@
+*30 September 2026. Reviewed as tagged at round4-data-v2. What stands now: docs/round04/README.md.*
+
 # Round 4 data pull, acceptance of the P7 report and the decisions it asked for
 
 30 September 2026. Written by the oversight chat after reading `docs/round04/i01/data/round4_data_report.md` at tag `round4-data` (HEAD `2905525`) and checking its numbers against the files it names. Nicolas hands this to the session that will run the short addendum in section 3. The two track documents have been revised to match; they start from the tag this addendum produces.

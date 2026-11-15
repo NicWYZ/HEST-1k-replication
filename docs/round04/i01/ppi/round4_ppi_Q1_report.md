@@ -1,3 +1,5 @@
+*1 October 2026. Reviewed as tagged at round4-ppi-Q1. What stands now: docs/round04/README.md.*
+
 # Round 4, the PPI track, Q1 report (covering Q0 and Q1)
 
 Instruction: `docs/round04/i01/ppi/round4_ppi_track.md`, with addendum 1

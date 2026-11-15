@@ -1,4 +1,4 @@
-> **Closed record, dated 28 September 2026.** The oversight chat's literature check before the round-4 tracks started, committed here on 30 September. It reframed the paper and led to the revision of both track documents.
+*28 September 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round04/README.md.*
 
 # Originality check, and the revised paper plan
 

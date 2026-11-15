@@ -1,95 +1,103 @@
-# Round 4, data pull and the two method tracks (28 September to 3 October 2026)
+# Round 4, the data pull and two method tracks (28 September to 3 October 2026)
 
-The round followed the literature check that reframed the paper as "Labelling budgets for prediction-powered inference with clustered data". A data pull built the tasks first, and then an inference track and a prediction-set track ran side by side on those tasks.
+Round 4 followed the literature check that read prediction-powered inference (PPI) as the survey-sampling difference estimator and found the labelled-test-group conformal setting taken by GHCP (`00_prep/round4_originality_check.md`). The paper was then framed as "Labelling budgets for prediction-powered inference with clustered data". A data pull built the tasks, and an inference track (ppi) and a prediction-set track (conformal) then ran side by side on them. Gate tags are `round4-data`, `round4-data-v2`, `round4-ppi-Q1`, `round4-ppi-Q3`, `round4-ppi-final`, `round4-conf-C2` and `round4-conf-final`; the ppi track's closing unit Q5a has no tag and was reviewed at commit `8cca44f`. The full record before this summary was written is at `record-full-2026-11`.
 
-**Tracks.** data (no branch, stages P0 to P8), ppi (`round4-ppi`, stages Q0 to Q5 and the closing unit Q5a), conformal (`round4-conformal`, stages C0 to C4). **Started from** `main` for the data track, and from tag `round4-data-v2` for the ppi and conformal tracks.
+`docs/round10/00_prep/round10_findings_survey.md` lists what rounds 1 to 9 established by question. Its rows A4, A7, A8, B2, B4, B5, B7, B8 and E1 rest partly on this round, and its section 3.1 lists the round 4 results later found classical or in print.
 
-## Gates
+## What the round established, as it now stands
 
-| Date | Track | Gate | Report | Answered by | Tag | Pull request |
-|---|---|---|---|---|---|---|
-| 28 Sep | data | P1 stop | stop note under `results/round4/data/P1_selection`, not in this folder | `i01/data/round4_data_P1_decision.md` | none | none |
-| 28 Sep | data | P7 | `i01/data/round4_data_report.md` | `i02/data/round4_data_P7_decisions.md` | `round4-data` | none |
-| 30 Sep | data | P8 | `i02/data/round4_data_P8_report.md` | none, the data track had no closing memo | `round4-data-v2` | none |
-| 1 Oct | ppi | Q1 | `i01/ppi/round4_ppi_Q1_report.md` | `i02/ppi/round4_ppi_Q1_decisions.md` | `round4-ppi-Q1` | #2 |
-| 2 Oct | conformal | C2 | `i01/conformal/round4_conf_C2_report.md` | `i02/conformal/round4_conformal_C2_decisions.md` | `round4-conf-C2` | #3 |
-| 2 Oct | ppi | Q3 | `i02/ppi/round4_ppi_Q3_report.md` | `i03/ppi/round4_ppi_Q3_decisions.md` | `round4-ppi-Q3` | #4 |
-| 2 Oct | conformal | C4 | `i02/conformal/round4_conf_final_report.md` | `i03/conformal/round4_conformal_C4_decisions.md` | `round4-conf-final` | #5 |
-| 2 Oct | ppi | Q5 | `i03/ppi/round4_ppi_final_report.md` | `i04/ppi/round4_ppi_Q5_decisions.md` | `round4-ppi-final` | #8 |
-| 3 Oct | ppi | Q5a | `i03/ppi/round4_ppi_final_report.md`, section 10 | `i05/ppi/round4_ppi_Q5a_closing.md` | none | #8 |
+### Data
 
-Pull request #7 (`round4-conformal`, 2 October) only added ignore rules for large C3 tables and is not a gate.
+- **The lung Xenium task** has 20 samples and 15 donor units, with 15 donor folds and 45 rows in the $K = 10$ design, whose pool of 14 leaves 4 training donors (`results/round4/data/P5_task/p5_validation.csv`). `NCBI865` is a member after dropping its one patch barcode without an expression row, `051x019`, keeping 2,142 of 2,143 patches (`results/round4/data/P8_addendum/p8_subset_after_drop.csv`). Disease is not fixed across the donors, and four samples are 5 mm cores rather than 3 mm (`i02/data/round4_data_P8_report.md`).
+- **HEST's lung labels were wrong.** HEST gives set L 21 donor keys (`results/round4/data/P1_selection/selection_summary.json`), the source records give 15 donor units, and the round 4 audit file has 211 rows (`results/round4/data/P4_audit/donor_audit_r4.csv`; `i01/data/round4_data_report.md`, sections 5 and 7).
+- **Training-only gene lists** were built at 50, 200 and 500 genes for every Visium task (`results/round4/data/P6_genes/`). On CCRCC's donor folds they barely move the top 50 (42.71 of 50 shared with the shipped list on average), so round 2's "about half" was a property of its patient splits (`i01/data/round4_data_report.md`, section 5).
+- **Round 3's D4 probe box was twice too wide**, so round 3's statement that morphology removes 31% to 34% of the above-chance probe signal is withdrawn. The probe code was corrected and not rerun (`i02/data/round4_data_P7_decisions.md`, item 3). The rerun was later closed without action (`CLAUDE.md`, carried line), so the statement stays withdrawn.
+- Set V (39 Visium samples, 18.98 GB) was downloaded but neither embedded nor audited (`selection_summary.json`; `docs/round04/round04_methods_note.md`, section 2).
 
-## Documents
+### Inference (the ppi track)
 
-| Document | Date | Role |
+The final report is `i03/ppi/round4_ppi_final_report.md`, whose closing page and section 10 give the state at the end of the track. The estimator is defined once in `tracks/ppi/round4_ppi_estimator_definition.md` and the theory in `tracks/ppi/round4_ppi_theory.md`.
+
+- **The estimator.** For the design target (the fixed set of donors), the textbook difference estimator with the finite-population factor, a $t_{n_L - 1}$ reference, $\lambda$ cross-fitted over halves of the labelled donors by the GREG objective (`c_crossfit_design`, $\lambda = 0$ below 6 labelled donors), and the linearised variance term $(\lambda_g - c_U)\bar F$. For the superpopulation target, the complement form with CR2. No bootstrap and no pre-test. In simulation the textbook form with the finite-population factor covers 0.893 at 12 of 24 labelled donors, while the complement form without it covers 0.9768, which is the over-coverage round 3 saw (`results/round4/ppi/Q1_estimator/q1_report_numbers.csv`; `i01/ppi/round4_ppi_Q1_report.md`, section 5). Caveats: the final tuning rule and the linearised variance were checked only on real-data masking draws in this round, and the simulation coverage was computed before the linearised term was added. Round 5 found that the tuned interval still loses coverage when most clusters are labelled, because the cross-fitting term escapes the finite-population factor, and added that term (`docs/round05/README.md`). Round 10's final runs give the round 4 rule with the linearised term a median coverage of 0.897, 0.887 and 0.890 at 4, 8 and 16 labelled donors, against 0.840 at 4 for same-sample tuning (`results/round10/final_runs/F4/paper_numbers.csv`, keys `B5.r4_c_crossfit_design.*` and `B5.r4_a_b1.n4`).
+- **The linearised variance.** Without the term, the ACS states $\theta_2$ donor-weighted design interval had estimated over empirical variance 204.380 to 1068.599, and with it 0.890 to 1.042 (`results/round4/ppi/Q5a/q5a_design_variance_before_after.csv`; final report section 10.1). On the HEST tasks the fix moves coverage little; the corrected interval covers 0.840 to 0.883 on CCRCC $\theta_3$ at $n_L \ge 6$ (same file). Round 9 found that a variance without the term grows with the level of the predictions; round 10 confirmed that with the term round 5's interval is within 0.982 to 1.004 of the width of Williams' exactly unbiased form at 8 labelled clusters (`results/round10/final_runs/F1/aggregate/f1_fr1.csv`), so the level dependence was that of the variance before Q5a.
+- **What predictions buy with whole donors labelled (regime A).** Design-target variance ratios against the classical estimator for $\theta_3$, donor-weighted: 0.93 to 1.09 at $n_L \ge 8$ on the Visium tasks for every encoder except `uni_v2` on CCRCC and CCRCC merged (0.81 to 0.90); 0.41 to 0.55 on lung Xenium at $n_L = 6$ to 12, with the permuted predictor at 1.03 to 1.05; 0.34 to 0.45 on ACS states and 0.17 to 0.23 on ACS PUMAs (`results/round4/ppi/Q4a_recompute/q4a_table61.csv`). Caveat: these ranges are for $\theta_3$, and the $\theta_2$ rows of the same file show smaller gains on the same tasks (`round04_methods_note.md`, section 4). Round 10 reran regime A with a fixed coefficient on more tasks (survey row B7; `paper_numbers.csv`, keys `B7.*`).
+- **The gain tracks the cluster-level $R^2$.** Across CCRCC genes the width ratio's Spearman correlation with the cluster-level $R^2$ of the within-donor contrast is $-0.858$ to $-0.903$, against $-0.358$ to $-0.508$ with the unit-level Pearson correlation, on the corrected interval (`results/round4/ppi/Q4_tables/q4_gene_axis_summary.csv`). The limiting ratio $1 - R^2_{\text{cluster}}$ is classical (survey row B4 and section 3.1). On Indiana 10, 7 and 19 genes have a corrected cluster-level $R^2$ of 1.0 and are flagged (final report section 10.4).
+- **The cost of tuning.** With $\lambda$ cross-fitted from half the labelled donors, the theorem check reproduces the predicted tuning cost $[\text{Var}(\hat\lambda) + (\bar\lambda - \lambda^\star)^2]\text{Var}(p_g)/\sigma_u^2$ to within 0.0426 in all 24 cells, and within 0.03 in 21 of 24 (`results/round4/ppi/Q4_tables/q4_prediction_scores.csv`). The break-even rule $n_L > 4 + 2/R^2_{\text{cluster}}$ is the structural statement and does not predict real-data cells one by one, with sign agreement in 23 of 36 cells (same file). Both are in print for units (Mani et al.; survey section 3.1).
+- **The spot-weighted PPI rows are not gains.** A permuted predictor reaches 0.285 to 0.397 of the classical variance on CCRCC $\theta_3$ spot-weighted (`results/round4/ppi/Q5a/q5a_spot_weighted_permuted.csv`), because what it removes is the between-donor variance of the design-weight sums. Every such row is marked `nuisance` in `q4_main_table.csv` and `q4a_table61.csv` (final report section 10.2).
+- **Labelling a few spots in every donor (regime B) against whole donors (regime A).** Under $c_d/c_s = 10$, regime B was narrower in 216 of 232 cells, and at 1000, where only lung can afford it, in 11 of 16 (`results/round4/ppi/Q4_tables/q4_report_numbers.csv`, superpopulation, `c_crossfit`). Regime B's design-based coverage is 0.885 to 0.905 in all 72 HEST cells with $m \ge 25$ (`results/round4/ppi/Q3_regimes/q3_prediction_scores.csv`; `i02/ppi/round4_ppi_Q3_report.md`, section 5). Regime B's variance ratio tracks the within-cluster $R^2$ (Spearman 0.926), as the design-target theory says (theory section 4.1). Caveats from later rounds: round 4's classical comparator in regime B had no cluster intercept, so a constant predictor appeared to help, and most of the encoders' regime B gain on the Visium tasks was that level term (round 5, `docs/round05/i03/ppi/round5_ppi_final_report.md`, section 9, which lists every round 4 number it changes; survey row B6). Round 4's condition for regime B to win on the between-cluster term (theory section 4.3) leaves out the unlabelled clusters' term and should not be stated (`docs/round07/README.md`). Round 10 has regime B narrower in 141 of 156 cost-matched comparisons with a fixed coefficient (`paper_numbers.csv`, key `E1.r10f3a.narrow`; survey row E1).
+
+### Prediction sets (the conformal track)
+
+The final report is `i02/conformal/round4_conf_final_report.md`, with the C2 report `i01/conformal/round4_conf_C2_report.md` for the simulation testbed and the candidates.
+
+- **GHCP's released code reproduces its paper** at 254 of 254 simulation values (`results/round4/conformal/C1_testbed/ghcp_repro_longleaf/compare/c1_ghcp_reproduction.csv`) and 53 of 53 ACS values (`results/round4/conformal/C3_real/frag_ACS_o/acs_ghcp_reproduction.csv`). The released pool is one group larger than the paper's equation (8), and the published tables were produced under the code's rule (C2 report, section 6.5).
+- **No candidate for the case with no labelled test spots met the fixed criterion**; all 11 candidate rows read "does not go forward" (`results/round4/conformal/C2_candidates/c2_criterion.csv`).
+- **HCP is the valid method with no labelled spots of the new donor**, and its price falls with $K$. On CCRCC its width is 1.9465 times the pooled quantile's at $K = 10$ and 1.3604 at $K = 20$ (`results/round4/conformal/C3_real/c3_report_numbers.csv`). Round 10's final runs reproduce HCP's coverage at $K = 10$ on CCRCC, 0.9694 against round 3's 0.9692 (`paper_numbers.csv`, keys `F3.A4.CCRCC` and `A4.hcp`).
+- **For $K + 1 < 1/\alpha$ every valid method has infinite expected width**, and a method that is finite almost surely has a coverage floor of 0.951, 0.923, 0.910, 0.903 and 0.901 at $K = 4$ to 8 (`results/round4/conformal/C2_candidates/lower_bound/c2_lb_beta_star.csv`; `i01/conformal/round4_conf_lower_bound.md`). Caveat: the first half is in print (Tibshirani, Barber and Ramdas); the floor and the bound for randomised methods rest on the round 4 proofs and are own and provisional (survey row A8; `docs/round05/i02/conformal/round5_conf_final_report.md`, section 11).
+- **The map over $K$ and labelled spots $o$ at $K = 10$.** GHCP over-covers (minimum 0.9941 on CCRCC) and is 1.2312 to 1.4888 times HCP's width at $o \le 10$; `within_plain`, a plain within-donor split, is finite from $o = 10$ and covers 0.90 to 0.92 on every task (`c3_report_numbers.csv`, `results/round4/conformal/C3_real/c3_o_sweep_by_task.csv`). Caveat: the conformal final report's closing page puts the point below which labelled spots buy nothing at about 25 spots, and the C4 decision memo at about ten, because of `within_plain` (`tracks/conformal/round4_conf_plan.md`, section 13.2). Round 5 superseded both: the full conformal set inside the target donor is narrowest from 9 labelled spots (`docs/round05/i02/conformal/round5_conf_final_report.md`, section 11; survey row A6).
+- **The joint design.** The joint table supports "the prediction set only from about ten spots" but does not test "the confidence interval from the first spot" on HEST, where regime B starts at 6 spots per donor (`results/round4/ppi/Q5_joint/q5_joint_design.csv`; final report closing page). Whether the joint design stays in the paper is open (E8 in `CLAUDE.md`).
+
+### Literature
+
+PPI is the survey-sampling difference estimator and PPI++ the generalised regression estimator (Mozer, arXiv:2603.19160), so "cluster-robust PPI" is not a new estimator, and GHCP (arXiv:2608.15500) occupies the setting with labelled spots of the test group (`00_prep/round4_originality_check.md`). Later rounds found the gain theorem's endpoint, the tuning-cost structure, the break-even rule, the first half of the lower bound and the regime comparison classical or in print (survey section 3.1).
+
+## Expectations and their scores
+
+No masterplan was written for this round. The expectations of record are the predictions written before the runs: the data pull's in `i01/data/round4_data_pull.md` section 7, the ppi track's in `tracks/ppi/round4_ppi_plan.md` section 4, and the conformal track's in `tracks/conformal/round4_conf_plan.md` sections 6, 10 and 12. The decision memos accepted every score as the track scored it, except as noted.
+
+**Data pull** (scored in `i01/data/round4_data_report.md`, section 5): 1, set L has 21 donor keys, one pixel size and one laboratory, refuted (15 donor units, four pixel sizes, two laboratories); 2, set V is 150 to 250 samples, refuted (39, because the 113 samples already on disk were not subtracted); 3, the morphology builder reproduces round 3's to $10^{-6}$, held; 4, training-only selection changes about half the top 50 everywhere, refuted in three of four claims; 5, a lung source record contradicts a HEST field, held.
+
+**Inference track** (scored in the Q1, Q3 and final reports; the final report's section 5 has the table).
+
+| prediction | in short | score |
 |---|---|---|
-| `masterplan.md` | 9 Oct (at migration) | the round's plan note, pointing to the documents that served as its plan |
-| `00_prep/round3_directions.md` | 24 Sep | the first change of direction, written after round 3 and committed on 30 Sep |
-| `00_prep/round4_originality_check.md` | 28 Sep | the second change of direction, with PPI read as the survey-sampling difference estimator and GHCP as occupying the labelled-test-group setting |
-| `i01/conformal/round4_conformal_track.md` | 30 Sep | instruction for the conformal track |
-| `i01/conformal/round4_conformal_addendum1.md` | 30 Sep | answers to the five flagged points, the GHCP pool rule and the ACS source |
-| `i01/conformal/round4_conf_lower_bound.md` | 30 Sep to 1 Oct | scoping of the lower bound with no test-group observations, each step marked derived, conjectured or failed |
-| `i01/conformal/round4_conf_candidate_definitions.md` | 1 Oct | the four candidate methods as written before they ran |
-| `i01/conformal/round4_conf_C2_report.md` | 1 to 2 Oct | report at the C2 gate (testbed, GHCP reproduction, candidates, go or no-go) |
-| `i01/data/round4_data_pull.md` | 28 Sep | instruction for the data pull, stages P0 to P7 |
-| `i01/data/round4_data_P1_decision.md` | 28 Sep | decision on the P1 stop, to proceed as selected |
-| `i01/data/round4_data_report.md` | 28 Sep | report at P7, with nineteen escalations |
-| `i01/ppi/round4_ppi_track.md` | 30 Sep | instruction for the ppi track |
-| `i01/ppi/round4_ppi_addendum1.md` | 30 Sep | answers to the eight flagged points, the textbook form for the design target and the ACS source |
-| `i01/ppi/round4_ppi_Q1_report.md` | 1 Oct | report at the Q1 gate |
-| `i02/conformal/round4_conformal_C2_decisions.md` | 2 Oct | decision at C2, no candidate goes forward and `within_plain` is added |
-| `i02/conformal/round4_conf_final_report.md` | 2 Oct | end-of-track report on the real-data map, with a closing page that summarises the track |
-| `i02/data/round4_data_P7_decisions.md` | 30 Sep | acceptance of P7, a decision on each escalation, and the P8 addendum |
-| `i02/data/round4_data_P8_report.md` | 30 Sep | report on P8, which ends the data track at tag `round4-data-v2` |
-| `i02/ppi/round4_ppi_Q1_decisions.md` | 1 Oct | decision at Q1 |
-| `i02/ppi/round4_ppi_Q3_report.md` | 2 Oct | report at the Q3 gate (Q2, Q3, the Q1 supplement and the theorem check) |
-| `i03/conformal/round4_conformal_C4_decisions.md` | 2 Oct | acceptance and close of the conformal track |
-| `i03/ppi/round4_ppi_Q3_decisions.md` | 2 Oct | decision at Q3, with the corrected tuning rule and the tuning-cost result |
-| `i03/ppi/round4_ppi_addendum2.md` | 2 Oct | where the conformal outputs are and how Q5 builds the joint design table |
-| `i03/ppi/round4_ppi_final_report.md` | 2 to 3 Oct | end-of-track report for Q1 to Q5, with Q5a as section 10 and a closing page that summarises the track |
-| `i04/ppi/round4_ppi_Q5_decisions.md` | 2 Oct | decision at Q5, acceptance subject to the closing unit Q5a |
-| `i05/ppi/round4_ppi_Q5a_closing.md` | 3 Oct | acceptance of Q5a and close of the ppi track, a record that was not handed to the session |
-| `oversight/round4_oversight_handoff.md` | 30 Sep | oversight handoff covering rounds 1 to 4, the path to the current directions, and what was running then to round 4 |
-| `tracks/conformal/round4_conf_plan.md` | 30 Sep onward | living plan of the conformal track, which transcribes the addendum and both memos |
-| `tracks/data/round4_data_plan.md` | 28 Sep onward | living plan of the data track, with the P1 decision and the P7 decisions and P8 |
-| `tracks/ppi/round4_ppi_plan.md` | 30 Sep onward | living plan of the ppi track, which transcribes every addendum and memo |
-| `tracks/ppi/round4_ppi_estimator_definition.md` | 1 to 3 Oct | the estimator defined once, finalised at Q3 and given the linearised design-target variance on 3 Oct |
-| `tracks/ppi/round4_ppi_theory.md` | 1 Oct onward | the gain theorem, the allocation result and the two labelling regimes, derived |
+| Q1.1 | CR1 with $t$ covers 0.87 to 0.91 at $G_L \ge 6$; CR2 fixes $G_L = 4$ | partly held; CR2 tested later in Q1b.3 |
+| Q1.2 | percentile bootstrap under-covers; bootstrap-$t$ within 0.03 | partly held |
+| Q1.3 | the over-coverage is the missing finite-population factor | coverage held; width cost 3.2%, just over 3% |
+| Q1.4 | Welch-Satterthwaite matters only at $G_U \le 10$ | refuted, dropped |
+| Q1.5 | PPI below 0.9 of classical only at $r \ge 0.5$, $\rho \le 0.3$ | refuted, as the plan expected |
+| Q1.6 | the permuted predictor's $\lambda$ is near 0 under the new rules | rule (a) held, rules (b) and (c) refuted (Q1 report) |
+| Q1b.1 to Q1b.4 | the pre-test rules; unequal sizes and CR2; wild bootstrap | held in part; refuted; held except one margin; refuted |
+| Q2.1 | the ratio at $m$ = all is within 0.1 of $1 - R^2_{\text{cluster}}$ | refuted (4 of 20 pairs) |
+| Q2.2 to Q2.7 | flat variance in $m$; $m^\star$ ordering; $m^\star$ range; variance tracking; recalibration; theorem check | refuted; refuted; held on 3 of 5 tasks; refuted as stated; refuted; refuted |
+| Q3.1 | regime B at least 20% narrower everywhere, reversing at $c_d/c_s \ge 1000$ | refuted at Q3; reversal clause refuted at Q5 |
+| Q3.2 | regime B design coverage 0.88 to 0.92 at $m \ge 25$ | held for the design half on HEST |
+| Q3.3 | the crossover cost ratio predicted within a factor of two | partly held, 6 of 20 pairs at the Q5 gate, 10 of 20 after Q5a's reruns |
+| Q3.4 | regime A tracks cluster-level $R^2$, regime B within-cluster | held for regime B, refuted for regime A |
+| Q4a.1 | $\lambda$ no longer falls with $n_L$ under the new rule | partly held, 19 of 32 criteria |
+| Q4.1 | the gene-axis gain tracks cluster-level $R^2$; under a third of genes gain | partly held, 7 of 12 criteria, rescored on the corrected interval |
+| Q4.2 | no HEST task has a crossed second grouping | held for HEST |
+| Q4.3 | the tuning cost within 0.03 in every cell | refuted as stated (21 of 24; all within 0.0426, `results/round4/ppi/Q4_tables/q4_prediction_scores.csv`) |
+| Q4.4 | break-even sign agreement in 18 of 22 cells | refuted (23 of 36) |
 
-Two reference documents written in this period live in `docs/reference/`. They are `docs/reference/methods_and_state_of_play.md` (27 Sep) and `docs/reference/concepts_explained_round4.md` (28 to 29 Sep).
+**Prediction-set track** (scored in the C2 report section 5 and the final report section 5): C1.1 held for coverage, with prices lower than predicted; C1.2 not held; C1.3 spread ratio not held, narrowing held; C1.4 coverage held, price and comparator not held; C1.5 not held; C2.1 held, in the strong form that K1 recovers none; C2.2 and C2.3 not held; C2.4 first half held, K5 as the score not supported; C2.5 exceeded on the impossibility side, held on the improvability side; C2.6 coverage and price held, criterion (b) holding at share 0 rather than 0.1; C3.1 held; C3.2 as first written not tested (its premise was refuted in C1), C3.2 revised held; C3.3 not tested; C3.4 held, provisional (6 genes); C3.5 Indiana and the ACS reproduction held, the lung and ACS ordering not held; C3.6 held on Indiana only.
 
-## What the round established
-- The data track ended with a lung task of 20 samples and 15 donors, after `NCBI865` was reinstated by dropping its one patch barcode without an expression row (`i02/data/round4_data_P8_report.md`).
-- The gain theorem holds. With $\lambda$ cross-fitted from half the labelled donors, the theorem check reproduces the predicted tuning cost to within 0.0426 in all 24 cells, and the break-even rule is $n_L > 4 + 2/R^2_{\text{cluster}}$ (closing page of `i03/ppi/round4_ppi_final_report.md`).
-- The donor-weighted gain on the Visium tasks is small, with design-target ratios of 0.93 to 1.09 at $n_L \ge 8$ for every encoder except `uni_v2` on CCRCC and CCRCC merged. On lung Xenium the gain is 0.41 to 0.55 at $n_L = 6$ to 12 (closing page of `i03/ppi/round4_ppi_final_report.md`).
-- Under the cost ratio $c_d/c_s = 10$, labelling a few spots on every donor gives a narrower interval than labelling whole donors in 216 of 232 cells (closing page of `i03/ppi/round4_ppi_final_report.md`).
-- Every spot-weighted PPI row is driven by a nuisance effect, since a permuted predictor reaches 0.285 to 0.397 of the classical variance on CCRCC $\theta_3$ (closing page of `i03/ppi/round4_ppi_final_report.md` and `i05/ppi/round4_ppi_Q5a_closing.md`).
-- GHCP was reproduced at 254 of 254 simulation values and 53 of 53 ACS values, and no candidate method for the case with no labelled test spots met the fixed criterion (`i02/conformal/round4_conformal_C2_decisions.md` and `i03/conformal/round4_conformal_C4_decisions.md`).
-- On HEST at $K = 10$, GHCP is 1.23 to 1.49 times HCP's width at $o \le 10$, and `within_plain` covers 0.90 to 0.92 from $o = 10$ on every task (`i03/conformal/round4_conformal_C4_decisions.md`).
-- For $K + 1 < 1/\alpha$ every valid method has infinite expected width, and the released GHCP code uses a pool one group larger than the paper's equation (8) (closing page of `i02/conformal/round4_conf_final_report.md`).
+## What was tried and did not work
 
-## Corrections and withdrawn readings
-- The round-3 statement that morphology removes 31% to 34% of the above-chance probe signal was quarantined, because the D4 probe used the full extent where half the extent was meant (`i02/data/round4_data_P7_decisions.md`, item 3).
-- Addendum 1 had said the tuning rules were unchanged for the textbook form, which was an error. The Q3 memo tunes $\lambda$ on the labelled donors alone and drops the pre-test rule (d) (`i03/ppi/round4_ppi_Q3_decisions.md`, sections 1 and 2).
-- The Q5 memo leaned toward the diagnostic column being wrong for the ACS states $\theta_2$ rows. The Q5a closing memo shows the interval was wrong, because the variance left out the term $(\lambda_g - c_U)\bar F$ (`i05/ppi/round4_ppi_Q5a_closing.md`, section 2).
-- The Q5 memo's allocation sentence was wrong and the report was right, so the theory document's statement with the `uni_v2` exception stands (`i04/ppi/round4_ppi_Q5_decisions.md`, section 4, item 7).
-- The conformal final report's closing page says fewer than about 25 labelled spots buy nothing for the prediction set. The C4 memo, which adds `within_plain`, puts the figure at about ten (`i02/conformal/round4_conf_final_report.md` and `i03/conformal/round4_conformal_C4_decisions.md`, section 2).
-- The closing page's Visium and lung ranges are for $\theta_3$, and $\theta_2$ shows smaller gains on the same tasks (`i05/ppi/round4_ppi_Q5a_closing.md`, section 3).
-- A candidate rule in the lower-bound scoping was invalid as first stated, and the repaired rule does not dominate HCP (`i01/conformal/round4_conf_lower_bound.md`, and `docs/round05/00_prep/round5_oversight_handoff.md` section 13).
-- The regime B correction in section 4 of `docs/reference/concepts_explained_round4.md` changed the PPI track's Q3.
+- Recalibrating each donor's offset from its mean embedding: the leave-one-donor-out $R^2$ of the offsets is $-0.111$ on CCRCC and $-0.089$ on Indiana, and a donor offset cannot move the donor-weighted estimands at all (`q3_prediction_scores.csv`, Q2.6). Closed.
+- Pre-testing $\lambda$ (rules d1 and d2): the pre-test selects a biased $\lambda$, and on CCRCC `uni_v2` at $n_L = 16$ rule d2's variance ratio is 1.17 against 1.03 for rule c (`tracks/ppi/round4_ppi_estimator_definition.md`, "Choice of $\lambda$").
+- Tuning $\lambda$ for the design target with the complement form's objective, which drove the design-target ratios toward 1 as $n_L$ grew (`round04_methods_note.md`, section 3).
+- Bootstraps: the percentile bootstrap covers 0.760 at $n_L = 4$, BCa is no better, and the wild cluster bootstrap-$t$ with Mammen weights covers less than CR1 at every $G_L$ (estimator definition, "Not chosen, and why"). The Welch-Satterthwaite combination narrows the interval and under-covers.
+- Spot-weighted PPI rows, which a permuted predictor reproduces (above).
+- Candidates K1 (smoothed HCP), K4 (a group-level quantile model), K5 (a scaled score) and K6 (the switch rule) for prediction sets with no labelled test spots; none met the criterion, and the switch rule as first stated is invalid (`i01/conformal/round4_conf_lower_bound.md`, section 8.3). GHCP's forms with $\eta = 0.5$ are infinite at every $o$ at $K = 10$ (conformal final report, section 6).
+- The dead ends recorded at the start of the round (institution shift, feature reweighting, the scaled score, the small-$K$ explanation, within-slide conformal as an own method, "cluster-robust PPI" as new) are in `round04_methods_note.md`, section 1.
 
-## Carried forward
-- Round 5 starts from `results/round4/ppi/Q5_joint/q5_cluster_table.csv` for active cluster selection, and from Q5 and C3 for the paper's joint design section (`i05/ppi/round4_ppi_Q5a_closing.md`, section 5).
-- A regression-form spot-weighted estimand, under which donor-level weight sums cancel, is a round-5 candidate (`i05/ppi/round4_ppi_Q5a_closing.md`, section 5).
-- One of the six candidates the handoff lists for round 5 is checking whether the final design-target rule and variance hold in simulation, since they were validated only on masking draws. The first it lists is active cluster selection (`docs/round05/00_prep/round5_oversight_handoff.md`, section 13).
-- Whether HCP can be beaten when $K + 1 \ge 1/\alpha$ stays open (`i03/conformal/round4_conformal_C4_decisions.md`, section 5, and `i01/conformal/round4_conf_lower_bound.md`).
-- Whether the GHCP authors are told about the pool rule and the tie convention is for Nicolas with David and Dr. Zhu (`i03/conformal/round4_conformal_C4_decisions.md`, section 5).
-- The D4 probe rerun and the ten unresolved claims in two documents that predate round 3 are round-5 housekeeping (`i02/data/round4_data_P7_decisions.md`, items 3 and 19).
+## What was presented outside the project
 
-## Read first next round
-- `docs/round04/i03/ppi/round4_ppi_final_report.md`, the closing page and section 10 for the state of the inference track.
-- `docs/round04/i02/conformal/round4_conf_final_report.md`, the closing page for the prediction-set map.
-- `docs/round04/i05/ppi/round4_ppi_Q5a_closing.md`, the closing decisions and what leaves the track.
-- `docs/round04/i03/conformal/round4_conformal_C4_decisions.md`, the readings for the paper and the open decisions.
-- `docs/round04/tracks/ppi/round4_ppi_estimator_definition.md`, the final estimator with the linearised variance.
+The second advisor meeting (7 October) stopped at slide 8, so the advisors saw the project up to the pivot and the originality check, and not this round's results (`docs/round05/i01/ppi/round5_ppi_track.md`, section 2.1). What they saw has changed since. The framing they were shown, a methods-first paper on labelling budgets, was replaced on 6 November by the aim of answering the proposal's two questions with existing methods where they exist (`docs/round10/00_prep/round10_reframing.md`), and the regime comparison they were told the paper would lead with is classical or in print (survey section 3.1). Whether the GHCP authors are told about the pool rule and the tie convention was left to Nicolas with David and Dr. Zhu; no contact has been made (hard rule 7 in `CLAUDE.md`).
+
+## Open threads
+
+- Whether the joint design (one budget of labelled spots per donor serving the interval and the prediction set) stays in the paper: decision E8 in `CLAUDE.md`.
+- Whether regime B can be bought on a spatial platform, and at what cost: decision Q1 in `CLAUDE.md`.
+- Whether HCP can be beaten in expected width when $K + 1 \ge 1/\alpha$ stays open after round 5 (`docs/round05/i02/conformal/round5_conf_final_report.md`, section 11).
+- The interval under-covers on the real tasks with few donors (CCRCC $\theta_3$ above); later rounds explain it by skewed donor contributions and a finite-sample frontier (survey rows B8 and B13).
+
+## Documents kept
+
+- `00_prep/round3_directions.md`, the assessment after round 3 that set the round's direction; round 10's reframing cites its section 5 for the applied paper it recommended.
+- `00_prep/round4_originality_check.md`, the literature check behind the round (hard rule 5).
+- `round04_methods_note.md`, passages moved word for word from removed documents: the dead ends, why set V was not widened, the reading that changed the tuning rule, and the estimand of the closing page's ranges.
+- `i01/data/round4_data_pull.md`, the data pull's instruction with its predictions; `tracks/data/round4_data_plan.md`, its plan with the P1 and P7 decisions transcribed; `i01/data/round4_data_report.md` and `i02/data/round4_data_P8_report.md`, its reports; `i02/data/round4_data_P7_decisions.md`, the P7 decisions that five scripts cite by item.
+- `i01/ppi/round4_ppi_track.md`, the inference track's instruction, which defines the methods and the lung task; `tracks/ppi/round4_ppi_plan.md`, its plan with every decision memo transcribed and the predictions as written; `tracks/ppi/round4_ppi_estimator_definition.md` and `tracks/ppi/round4_ppi_theory.md`; `i01/ppi/round4_ppi_Q1_report.md`, `i02/ppi/round4_ppi_Q3_report.md` and `i03/ppi/round4_ppi_final_report.md`, its reports.
+- `i01/conformal/round4_conformal_track.md`, the prediction-set track's instruction, which defines the methods; `tracks/conformal/round4_conf_plan.md`, its plan with every decision memo transcribed; `i01/conformal/round4_conf_lower_bound.md`, the lower-bound scoping; `i01/conformal/round4_conf_C2_report.md` and `i02/conformal/round4_conf_final_report.md`, its reports. The candidate definitions as written before the runs are in `results/round4/conformal/C2_candidates/frag_<K>/candidate_definition_<K>.md`.

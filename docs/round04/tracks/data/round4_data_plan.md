@@ -1,3 +1,5 @@
+*28 to 30 September 2026. Reviewed as tagged at round4-data-v2. What stands now: docs/round04/README.md.*
+
 # Round 4, stage P, operating plan (the data pull)
 
 Transcribed on 28 September 2026 from `docs/round04/i01/data/round4_data_pull.md` (the oversight chat's

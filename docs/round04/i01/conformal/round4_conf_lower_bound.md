@@ -1,3 +1,5 @@
+*30 September to 1 October 2026. Reviewed as tagged at round4-conf-C2. What stands now: docs/round04/README.md.*
+
 # Round 4, conformal track: the lower-bound scoping at $o = 0$
 
 Stage C2, lead's parallel item (`docs/round04/tracks/conformal/round4_conf_plan.md` section 4, C2). Started 30 September
