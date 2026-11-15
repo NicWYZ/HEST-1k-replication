@@ -135,7 +135,7 @@ Fan out by candidate, three units.
 4. No $o = 0$ candidate meets all three parts of the criterion; GHCP at $o \ge 5$ is the method that goes to real data, with K5 as its score.
 5. The lower-bound scoping produces a conjecture with a partial argument, not a theorem, inside its three days.
 
-**Outputs.** `results/round4/conformal/C2_candidates/c2_grid.csv`, `c2_criterion.csv` (one row per candidate and $o$ with (a), (b), (c) and the verdict), `c2_report_numbers.csv`, `fig_c2_candidates.png`, `docs/round04/i01/conformal/round4_conf_candidate_definitions.md` and `docs/round04/i01/conformal/round4_conf_lower_bound.md`. Report C1 and C2 together, predictions against outcomes, the criterion table, and stop.
+**Outputs.** `results/round4/conformal/C2_candidates/c2_grid.csv`, `c2_criterion.csv` (one row per candidate and $o$ with (a), (b), (c) and the verdict), `c2_report_numbers.csv`, `fig_c2_candidates.png`, `results/round4/conformal/C2_candidates/` (formerly `round4_conf_candidate_definitions.md`, at tag `record-full-2026-11`) and `docs/round04/i01/conformal/round4_conf_lower_bound.md`. Report C1 and C2 together, predictions against outcomes, the criterion table, and stop.
 
 ### C3. Real data, the $(K, o)$ map (four days; no gate)
 
@@ -295,7 +295,7 @@ fallback to be used straight away, the REST call is not made.
 
 ## 10. Addendum 1, 30 September 2026 (oversight chat, interval 1)
 
-Handed over by Nicolas as `round4_conformal_addendum1.md`. Transcribed before any of it is acted
+Handed over by Nicolas as `round4_conformal_addendum1.md` (at tag `record-full-2026-11`). Transcribed before any of it is acted
 on. It does not move the C2 gate, and nothing in it starts C3. The gate rule it restates is the one
 in section 1 of this plan, unchanged.
 
@@ -397,14 +397,14 @@ in section 1 of this plan, unchanged.
 
 ## 12. The C2 decision memo, 2 October 2026 (oversight chat), verbatim
 
-Handed over by Nicolas as `round4_conformal_C2_decisions.md` (it will be on `main` beside the
+Handed over by Nicolas as `round4_conformal_C2_decisions.md` (at tag `record-full-2026-11`) (it will be on `main` beside the
 instruction document and is not added to this branch). Transcribed before anything in it runs.
 Headings are renumbered under this section; the text is unchanged. Interval 2 starts when this
 transcription is committed and pull request #3 is merged. Section 12.6 allows local work only for a
 task Nicolas names in chat; section 11 item 7 is his later, general permission. I read item 7 as
 governing until he withdraws it, and flag the difference to him with this transcription.
 
-2 October 2026. Written by the oversight chat after reading `docs/round04/i01/conformal/round4_conf_C2_report.md` at tag `round4-conf-C2` (`fe36f6b`, pull request #3), `docs/round04/i01/conformal/round4_conf_lower_bound.md` and `docs/round04/i01/conformal/round4_conf_candidate_definitions.md`, and checking the report's numbers against the files it names. Nicolas hands this to the conformal session in full. Transcribe it into `docs/round04/tracks/conformal/round4_conf_plan.md` as section 12 before anything in it runs. Interval 2 (C3 and C4, ending at the C4 gate) starts when the transcription is committed and Nicolas has merged pull request #3.
+2 October 2026. Written by the oversight chat after reading `docs/round04/i01/conformal/round4_conf_C2_report.md` at tag `round4-conf-C2` (`fe36f6b`, pull request #3), `docs/round04/i01/conformal/round4_conf_lower_bound.md` and `results/round4/conformal/C2_candidates/` (formerly `round4_conf_candidate_definitions.md`, at tag `record-full-2026-11`), and checking the report's numbers against the files it names. Nicolas hands this to the conformal session in full. Transcribe it into `docs/round04/tracks/conformal/round4_conf_plan.md` as section 12 before anything in it runs. Interval 2 (C3 and C4, ending at the C4 gate) starts when the transcription is committed and Nicolas has merged pull request #3.
 
 **The gate rule, in the wording Nicolas approved.** Report-and-wait means that no stage after the gated stage starts until the oversight chat has reviewed the report and replied. Not the dependent stages only, and not the expensive ones only. Every stage. Nothing after the gate is set up, staged or piloted. Inside an interval there are no interim reports and no interim stop conditions; anything that would have halted work is handled under the decision boundaries, recorded in an "Escalations" section of the next report, and work continues. This track's gates are C2 (the go or no-go) and C4. Contact with anyone outside the project is never the session's decision.
 
@@ -464,7 +464,7 @@ Every C3 and C4 job runs on Longleaf through Slurm, under `rc_tengfei_pi` as rec
 ### 12.7 Procedural points
 
 1. **The pull request.** Pull request #3 is open at `fe36f6b`. Nicolas merges it with a merge commit after handing over this memo. The C4 pull request follows plan section 9.
-2. **The instruction document** is on `main` as `docs/round04/i01/conformal/round4_conformal_track.md`; this memo will be beside it as `round4_conformal_C2_decisions.md`. Neither is added to the branch.
+2. **The instruction document** is on `main` as `docs/round04/i01/conformal/round4_conformal_track.md`; this memo will be beside it as `round4_conformal_C2_decisions.md` (at tag `record-full-2026-11`). Neither is added to the branch.
 3. **Writing.** `docs/round04/i01/conformal/round4_conf_lower_bound.md` and the C2 report render; keep display equations with each `$$` on its own line in the C4 report and the C3 outputs' documentation.
 4. **Sub-agent frame ids.** Each brief states the sub-agent's own frame id, and the lead checks the stamp on each hand-back before merge.
 
@@ -474,7 +474,7 @@ Besides the instruction's C3 and C4 content, the C4 report scores C3.1, revised 
 
 ## 13. The C4 decision memo, 2 October 2026 (oversight chat), verbatim
 
-Handed over by Nicolas as `round4_conformal_C4_decisions.md`. Headings are renumbered under this
+Handed over by Nicolas as `round4_conformal_C4_decisions.md` (at tag `record-full-2026-11`). Headings are renumbered under this
 section; the text is unchanged. It closes the track. Per section 13.3 nothing further is done:
 this transcription is committed on the local branch only, and pull request #5 is not touched.
 

@@ -171,7 +171,7 @@ Fan out by candidate, three units.
 4. No $o = 0$ candidate meets all three parts of the criterion; GHCP at $o \ge 5$ is the method that goes to real data, with K5 as its score.
 5. The lower-bound scoping produces a conjecture with a partial argument, not a theorem, inside its three days.
 
-**Outputs.** `results/round4/conformal/C2_candidates/c2_grid.csv`, `c2_criterion.csv` (one row per candidate and $o$ with (a), (b), (c) and the verdict), `c2_report_numbers.csv`, `fig_c2_candidates.png`, `docs/round04/i01/conformal/round4_conf_candidate_definitions.md` and `docs/round04/i01/conformal/round4_conf_lower_bound.md`. Report C1 and C2 together, predictions against outcomes, the criterion table, and stop.
+**Outputs.** `results/round4/conformal/C2_candidates/c2_grid.csv`, `c2_criterion.csv` (one row per candidate and $o$ with (a), (b), (c) and the verdict), `c2_report_numbers.csv`, `fig_c2_candidates.png`, `results/round4/conformal/C2_candidates/` (formerly `round4_conf_candidate_definitions.md`, at tag `record-full-2026-11`) and `docs/round04/i01/conformal/round4_conf_lower_bound.md`. Report C1 and C2 together, predictions against outcomes, the criterion table, and stop.
 
 ### C3. Real data, the $(K, o)$ map (four days; no gate)
 

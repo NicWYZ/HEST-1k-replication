@@ -4,7 +4,7 @@
 
 ## 1. Nicolas's answers at gate L3 (8 November)
 
-From `i02/ledger/round10_ledger_L3_answers.md`, section 1, items 1 to 8. They describe the estimator, the coefficient and the scope that `i01/final-runs/round10_final_runs_brief.md`, `tracks/final-runs/round10_final_runs_plan.md` and every final-runs report use, and they win where they differ from `i01/ledger/round10_ledger_decisions.md`. Items 4 and 5 were later settled at gate F3 (section 4 below and `README.md`).
+From `round10_ledger_L3_answers.md` (at tag `record-full-2026-11`), section 1, items 1 to 8. They describe the estimator, the coefficient and the scope that `i01/final-runs/round10_final_runs_brief.md`, `tracks/final-runs/round10_final_runs_plan.md` and every final-runs report use, and they win where they differ from `i01/ledger/round10_ledger_decisions.md`. Items 4 and 5 were later settled at gate F3 (section 4 below and `README.md`).
 
 1. **E, the estimator.** Accepted as written. The final runs use the two-fold cross-fitted difference estimator in Mickey's form, with round 9's within-fold variance primary for that form, the exactly unbiased variance and $\max(\hat V, \hat V_w)$ beside it, and the switch rule of decisions section 1.1.
 2. **The variance identity** (decisions section 1.2, item 3). Nicolas chose "I've checked it, lift it". The `[proposed]` label is lifted. The paper may show the exactly unbiased estimator in an appendix, with the identity behind it, credited to Mickey's (4.4).
@@ -20,7 +20,7 @@ From `i02/ledger/round10_ledger_L3_answers.md`, section 1, items 1 to 8. They de
 
 ## 2. The F1 reply: corpus tasks, morphology covariate and breast Xenium's center design (10 November)
 
-From `i03/final-runs/round10_final_runs_F1_decisions.md`, sections 1 to 3, describing the data of `i02/final-runs/round10_final_runs_F1_report.md` and every later stage. Option (c) was closed at F2 (section 3, item 15 below), and option (b) delivered the covariates on all six corpus tasks, so they carry $\mu$ and $\theta_1$ to $\theta_3$.
+From `round10_final_runs_F1_decisions.md` (at tag `record-full-2026-11`), sections 1 to 3, describing the data of `i02/final-runs/round10_final_runs_F1_report.md` and every later stage. Option (c) was closed at F2 (section 3, item 15 below), and option (b) delivered the covariates on all six corpus tasks, so they carry $\mu$ and $\theta_1$ to $\theta_3$.
 
 **Confirmed.** The corpus tasks are kidney Visium, breast ST, bowel Visium, brain Visium, breast Xenium and lung Xenium, with the counts of the report's section 3. Breast Visium is dropped. The audit's exclusions stand as listed in the report's section 7, item 2. These are the pooled-donor sections, the sections with a second donor's tissue, the kidney organoids, the unresolved RRST brain sections, the duplicate measurements and the unverifiable samples. The 89 samples kept on naming evidence stay in. Both flags are kept as the report states them. INT4 and INT24 stay as two donors (the 24-donor set primary, the merged set the sensitivity row), and NCBI599 and NCBI714 are not merged.
 
@@ -32,7 +32,7 @@ In the corpus a breast Xenium "center" is a study: S0178, S0228, S0253, S0254 an
 
 ## 3. Settled deviations at gate F2 (11 November)
 
-From `i04/final-runs/round10_final_runs_F2_decisions.md`, section 2. They fix how the F2 report (`i03/final-runs/round10_final_runs_F2_report.md`) and the later stages read and score its outputs, and they stood for the rest of round 10. Item numbers in brackets are those of the F2 report's section 7.
+From `round10_final_runs_F2_decisions.md` (at tag `record-full-2026-11`), section 2. They fix how the F2 report (`i03/final-runs/round10_final_runs_F2_report.md`) and the later stages read and score its outputs, and they stood for the rest of round 10. Item numbers in brackets are those of the F2 report's section 7.
 
 1. **FR6's frontier clause** [1] is scored on $\kappa$ of the fixed-coefficient residual $z - f$ against `kappa_sup`, from `diagnostics/f2_fr6.csv`, with `kappa_star_v1` reported beside it. FR6 is refuted under every reading.
 2. **The fixed coefficient's cost** [2] is the share of genes where `fix1`'s median width exceeds `classical`'s. Plan section 5.3's claim that the median-width and mean-width readings agree was wrong. FR4 is scored on the median width, which the plan named, and the mean-width reading is reported beside it wherever the share is quoted.
@@ -52,4 +52,4 @@ From `i04/final-runs/round10_final_runs_F2_decisions.md`, section 2. They fix ho
 
 ## 4. Gates F3 and F4
 
-The F3 decisions are kept whole in `i05/final-runs/round10_final_runs_F3_decisions.md`. Nicolas's reply at F4, recorded in `i06/final-runs/round10_final_runs_F4_decisions.md` on 15 November, was "Gate approved, close the track, leave any open items in the report." The final report's proposal of a further tag on the citation-fix commit was not taken up, so the gate tag stays on `fad48334` and the branch head carries the fix.
+The F3 decisions are kept whole in `i05/final-runs/round10_final_runs_F3_decisions.md`. Nicolas's reply at F4, recorded in `docs/round10/README.md` (formerly `round10_final_runs_F4_decisions.md`, at tag `record-full-2026-11`) on 15 November, was "Gate approved, close the track, leave any open items in the report." The final report's proposal of a further tag on the citation-fix commit was not taken up, so the gate tag stays on `fad48334` and the branch head carries the fix.

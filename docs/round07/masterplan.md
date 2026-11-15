@@ -33,7 +33,7 @@ Papers the session cannot retrieve go to Nicolas as one list of at most 10 durin
 
 **ppi,** not opened now. Nicolas decided on 13 October that the positioning comes first. The oversight chat reads Broska and Howes and "Balanced Active Inference" (Chen, Zhou, Peng and Wang, NeurIPS 2025) in full and writes a positioning note in `oversight/`. If Nicolas then accepts the reframed question (open question O2), the oversight chat writes the PPI instruction into `i01/ppi/`, the track's own first interval, as an amendment to this masterplan, with stages for the Horvitz-Thompson and Hájek weighting under rejective selection balanced on embedding components, a randomised counterpart of an adaptive selection policy, and the coverage of a deterministic rule. Its compute would be Longleaf, as in round 5.
 
-**conformal.** No work is planned. Its readings stand (`docs/round05/i03/conformal/round5_conformal_W5_decisions.md`, section 3), and nothing in the overlap check touches it.
+**conformal.** No work is planned. Its readings stand (`docs/round05/tracks/conformal/round5_conf_plan.md` (formerly `round5_conformal_W5_decisions.md`, at tag `record-full-2026-11`), section 3), and nothing in the overlap check touches it.
 
 ## Schedule
 

@@ -1,6 +1,6 @@
 # Round 9, methods note
 
-*Written when the record was reduced, November 2026. It holds, word for word, the parts of the two track briefs of round 9 that no kept document states. The briefs are at tag `record-full-2026-11` (`docs/round09/i01/fewcluster/round09_fewcluster_brief.md`, `docs/round09/i01/newtopic/round09_newtopic_brief.md`). What stands now: `docs/round09/README.md`.*
+*Written when the record was reduced, November 2026. It holds, word for word, the parts of the two track briefs of round 9 that no kept document states. The briefs are at tag `record-full-2026-11` (`round09_fewcluster_brief.md` (at tag `record-full-2026-11`), `round09_newtopic_brief.md` (at tag `record-full-2026-11`)). What stands now: `docs/round09/README.md`.*
 
 ## 1. Prior art given to track fewcluster
 

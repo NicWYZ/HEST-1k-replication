@@ -2,7 +2,7 @@
 
 # Round 5 PPI track, the E4 gate report (stages E3a, E3 and E4)
 
-9 October 2026. Written by the execution session for the oversight chat, under `docs/round05/i01/ppi/round5_ppi_track.md` and the E2 decision memo `docs/round05/i02/ppi/round5_ppi_E2_decisions.md`, as transcribed in `docs/round05/tracks/ppi/round5_ppi_plan.md` section 7. Every number below is read from the file named beside it. Paths are relative to the repository root unless they start with `/work`. Shorthand used throughout is `E3a/` for `results/round5/ppi/E3a_crossfit/`, `E3/` for `results/round5/ppi/E3_twolevel/` and `E4/` for `results/round5/ppi/E4_selection/`.
+9 October 2026. Written by the execution session for the oversight chat, under `docs/round05/round05_methods_note.md` (formerly `round5_ppi_track.md`, at tag `record-full-2026-11`) and the E2 decision memo `docs/round05/i02/ppi/round5_ppi_E2_decisions.md`, as transcribed in `docs/round05/tracks/ppi/round5_ppi_plan.md` section 7. Every number below is read from the file named beside it. Paths are relative to the repository root unless they start with `/work`. Shorthand used throughout is `E3a/` for `results/round5/ppi/E3a_crossfit/`, `E3/` for `results/round5/ppi/E3_twolevel/` and `E4/` for `results/round5/ppi/E4_selection/`.
 
 ## 1. Stage and status
 

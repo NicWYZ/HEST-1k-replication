@@ -344,7 +344,7 @@ training pool across donors; READ's $+0.0901$ is the only same-specimen replicat
 records the D2 layout difference and, from this report, the layout anchor's outcome (section 6.5).
 Known limitations 14 to 18 are added. `docs/round02/i05/exec/hest_bench_issue_draft.md` has its IDC item struck with a
 dated note and stays unsent. `docs/WAYS_OF_WORKING.md` gains the three notes of plan section 13.4 item
-5. `docs/round02/i03/exec/r5_idc_provenance.md` gains a one-line banner and is otherwise unedited.
+5. `docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`) gains a one-line banner and is otherwise unedited.
 
 The two reading items settled less than hoped. The Immunity paper (Meylan et al. 2022, doi
 10.1016/j.immuni.2022.02.001) is not reachable by any open route tried, so no patient table was read.

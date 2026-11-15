@@ -16,7 +16,7 @@ halted work, per the memo's § 0.
 | stage | status | what it produced |
 |---|---|---|
 | R4, probes v2 | **complete**, after two defect reruns | `r4_probes_v2.csv`, `r4_probe1_confusion.csv`, `fig_r4_probes.png` |
-| R5, IDC provenance | **complete** | `r5_idc_provenance.md`, `r5_idc_panels_observed.csv`, `r5_idc_panel_pairs.csv` |
+| R5, IDC provenance | **complete** | `docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`), `r5_idc_panels_observed.csv`, `r5_idc_panel_pairs.csv` |
 | R3 defect fix (authorised by memo § 0) | see § 6 | `donor_out__*.csv` |
 
 R6, R7 and R8 have not been started, set up, staged or piloted.
@@ -171,7 +171,7 @@ much of the signature morphology composition accounts for.
 ## 4. R5 — IDC provenance
 
 Reading task, run as a parallel track. Full write-up with every citation:
-`r5_idc_provenance.md`. Observed panel data, computed from the four samples' own gene lists:
+`docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`). Observed panel data, computed from the four samples' own gene lists:
 `r5_idc_panels_observed.csv` and `r5_idc_panel_pairs.csv`.
 
 ### 4.1 TENX95 and TENX99 are one donor, not two patients
@@ -385,7 +385,7 @@ benchmark issue of the same kind as COAD's labels, and it is the one I would rai
 authors first, because unlike COAD it comes with a measured cost. HEST's metadata gives the two
 samples distinct patient labels; 10x's own dataset page states `donorCount: 1` and describes them
 as 5 µm sections of one resected tumour mass. The measured consequence is +0.0651 within-slide
-Pearson, 54% of IDC's reported patient gap (§ 6.1). Evidence: `r5_idc_provenance.md` § 1–2,
+Pearson, 54% of IDC's reported patient gap (§ 6.1). Evidence: `docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`) § 1–2,
 `r5_idc_replicate_leak.csv`, and the page's own metadata, which I re-verified in the fetched copy.
 
 Note what this does **not** affect: the IDC *task* remains a valid prediction task, and the shipped

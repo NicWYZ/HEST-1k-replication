@@ -84,7 +84,7 @@ No masterplan was written for this round. The expectations of record are the pre
 
 ## What was presented outside the project
 
-The second advisor meeting (7 October) stopped at slide 8, so the advisors saw the project up to the pivot and the originality check, and not this round's results (`docs/round05/i01/ppi/round5_ppi_track.md`, section 2.1). What they saw has changed since. The framing they were shown, a methods-first paper on labelling budgets, was replaced on 6 November by the aim of answering the proposal's two questions with existing methods where they exist (`docs/round10/00_prep/round10_reframing.md`), and the regime comparison they were told the paper would lead with is classical or in print (survey section 3.1). Whether the GHCP authors are told about the pool rule and the tie convention was left to Nicolas with David and Dr. Zhu; no contact has been made (hard rule 7 in `CLAUDE.md`).
+The second advisor meeting (7 October) stopped at slide 8, so the advisors saw the project up to the pivot and the originality check, and not this round's results (`docs/round05/round05_methods_note.md` (formerly `round5_ppi_track.md`, at tag `record-full-2026-11`), section 2.1). What they saw has changed since. The framing they were shown, a methods-first paper on labelling budgets, was replaced on 6 November by the aim of answering the proposal's two questions with existing methods where they exist (`docs/round10/00_prep/round10_reframing.md`), and the regime comparison they were told the paper would lead with is classical or in print (survey section 3.1). Whether the GHCP authors are told about the pool rule and the tie convention was left to Nicolas with David and Dr. Zhu; no contact has been made (hard rule 7 in `CLAUDE.md`).
 
 ## Open threads
 

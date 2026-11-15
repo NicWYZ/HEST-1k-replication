@@ -5,7 +5,7 @@
 # Round 3 operating plan
 
 Transcribed from the round-3 execution handoff (22 September 2026), which starts the round from tag
-`round2-docs-clean`, commit `4da6b86`. Its companion, `round3_oversight_handoff.md`, is context
+`round2-docs-clean`, commit `4da6b86`. Its companion, `round3_oversight_handoff.md` (at tag `record-full-2026-11`), is context
 rather than instruction; it was committed by Nicolas in `80f1ae5` together with the six round-2
 decision memos, and its action items that bear on execution are transcribed here too, in § 1.1
 and § 10. An earlier revision of this section said the oversight handoff had not been supplied,
@@ -186,12 +186,12 @@ document and into the session's operating plan. Only then does the interval begi
 2. The round-2 decision memos (`round2_R3_decisions.md`, `round2_R5_decisions.md`,
    `round2_closeout_decisions.md`, `deck_figures_and_repo_update.md`,
    `post_deck_repo_instructions.md`, and the round-3 handoff itself as
-   `round3_execution_handoff.md`) go under `docs/decisions/`. Nicolas is placing and committing
+   `round3_execution_handoff.md` (at tag `record-full-2026-11`)) go under `docs/decisions/`. Nicolas is placing and committing
    these himself, so S0 does not wait on them; once present, each is bannered as a closed record and
    swept with the `historical` class. `round2_R1_decisions.md` was not saved, is listed in
    `docs/README.md` as not in the repository, and is not reconstructed.
 3. Update `docs/README.md`. It omits five documents that are present, and it lists
-   `r5_idc_provenance.md` as absent when the file is in the directory.
+   `docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`) as absent when the file is in the directory.
 4. Check the README headline table shows H-Optimus-1's `raw_ridge` average now that
    `results/summary/results_encoder.csv` carries it.
 5. Create `results/round3/` and the `round3_` script convention, and commit this document.
@@ -765,7 +765,7 @@ than acted on beyond what is noted.
 
 ## 12. Interval 2, transcribed from the A1 decision memo
 
-Transcribed from `docs/round03/i02/exec/round3_A1_decisions.md` (22 September 2026) before anything in it
+Transcribed from `round3_A1_decisions.md` (at tag `record-full-2026-11`) (22 September 2026) before anything in it
 was run, as the memo and Nicolas's standing rule both require. Where this section and §§ 3 to 8
 above differ, this section governs, because it is the later instruction. §§ 3 to 8 are left as
 transcribed at the start of the round, since they are the record of what the handoff said.
@@ -856,7 +856,7 @@ B1 and B2 position against both by name.
 
 1. Fix the sweep command printed in `docs/WAYS_OF_WORKING.md` to the one
    `code/scripts/sweep_table.py` runs. Fifteen minutes.
-2. `docs/round02/i03/exec/r5_idc_provenance.md`: two hours of triage, then stop. Fix what that allows, banner the
+2. `docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`): two hours of triage, then stop. Fix what that allows, banner the
    document as a closed record of a reading task, sweep it under the `historical` class, and put the
    per-document sweep table for the whole docs tree into the A3 report.
 3. README known limitations gain two lines: the derived-claim formula in `round2_R3_stage_report.md`
@@ -1024,7 +1024,7 @@ Per Nicolas's standing rule, parallel work goes to sub-agents. The cut, and why 
 
 | track | stages | writes |
 |---|---|---|
-| Housekeeping | H0 items 1 to 4 | `docs/WAYS_OF_WORKING.md`, `docs/round02/i03/exec/r5_idc_provenance.md`, `README.md`, the per-document sweep table |
+| Housekeeping | H0 items 1 to 4 | `docs/WAYS_OF_WORKING.md`, `docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`), `README.md`, the per-document sweep table |
 | Anatomy | the parts of A2 answerable from A1's committed outputs: A2a's slide, session, resolution, calibration-sharing, gene, `donor_label_status`, $K$, `random` `abs`-against-`scaled` and PRAD-by-fold strata; A2d's paired within-PRAD comparison; A2e; the R7 per-gene join | `a2_by_stratum__anatomy.csv`, `a2_prad_donor_sharing__paired.csv`, `a2_width_by_encoder.csv`, `a2_pergene_join.csv` |
 | Mechanisms | H0 item 5, then the parts of A2 that need a harness rerun: A2a's predicted-value decile and neoplastic-fraction strata; A2b; A2c; A2d's new arm; A2f; both A2 figures. Then A3 | the harness, `a2_by_stratum__spot.csv`, `a2_prad_donor_sharing__arm.csv`, and every other A2 and A3 output |
 | Expansion | the set-member additions, D1, then D2 with its anchor check | `expansion_set_members.csv`, `hest_ext/`, `embeddings_ext/` |
@@ -1105,7 +1105,7 @@ instruction; those sections are left as they were, as the record of what earlier
    rows; then the 76 rows of `donor_lab_audit_ext.csv` appended. `donor_audit.csv` stays frozen, its
    provenance saying it is superseded. Every round-3 table carrying an IDC `audited` row keeps the row,
    tagged `superseded_label_set`; no further stage runs IDC `audited`.
-   `docs/round02/i03/exec/r5_idc_provenance.md` stays frozen, gains a one-line banner pointing to D3 and the memo, and
+   `docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`) stays frozen, gains a one-line banner pointing to D3 and the memo, and
    its line 47 is not edited. README consequences are H1's (§ 13.4): property 1 withdrawn; the 96%
    `TENX95`/`TENX99` partner confusion re-read as two donors from one laboratory, instrument, panel and
    pixel size three weeks apart, the session signature of finding 3 in a second task; R5c's
@@ -1280,7 +1280,7 @@ fans out once it exists.
 | track | stages | writes |
 |---|---|---|
 | lead, before fan-out | § 13.4 item 1's audit file; this transcription | `results/round3/D3_audit/donor_audit_r3.csv`, `docs/round03/tracks/exec/round3_execution_plan.md` |
-| Housekeeping | H1 items 1 (the `superseded_label_set` tags), 2 to 5 | the tag column on committed round-3 tables, `README.md`, `docs/round02/i05/exec/hest_bench_issue_draft.md`, `docs/WAYS_OF_WORKING.md`, the banner on `docs/round02/i03/exec/r5_idc_provenance.md`, and only the status, citation and notes columns of `donor_audit_r3.csv`, never `donor_id` |
+| Housekeeping | H1 items 1 (the `superseded_label_set` tags), 2 to 5 | the tag column on committed round-3 tables, `README.md`, `docs/round02/i05/exec/hest_bench_issue_draft.md`, `docs/WAYS_OF_WORKING.md`, the banner on `docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`), and only the status, citation and notes columns of `donor_audit_r3.csv`, never `donor_id` |
 | Scores | A4a | `code/scripts/round3_a4_scores.py`, `results/round3/A4_scores/` except `a4b_*` |
 | HCP | A4b | `code/scripts/round3_a4b_hcp.py`, `results/round3/A4_scores/a4b_*` |
 | Inference | B1, then B2 | `code/scripts/round3_b1_ppi.py`, `code/scripts/round3_b2_semisynthetic.py`, `results/round3/B1_ppi/`, `results/round3/B2_semisynthetic/` |

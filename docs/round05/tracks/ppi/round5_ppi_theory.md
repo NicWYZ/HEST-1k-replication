@@ -2,7 +2,7 @@
 
 # Round 5 PPI track, the theory
 
-Written before the experiments it supports, as `docs/round05/i01/ppi/round5_ppi_track.md` asks (E2, "Derivation first"; transcribed in `docs/round05/tracks/ppi/round5_ppi_plan.md`). Section 1 is written before any E2 job. Section 2 is written at E3, after the E2 gate memo. None of the results below is new. They are finite-population moments of a weighted unit-level variable, in the notation of the brief.
+Written before the experiments it supports, as `docs/round05/round05_methods_note.md` (formerly `round5_ppi_track.md`, at tag `record-full-2026-11`) asks (E2, "Derivation first"; transcribed in `docs/round05/tracks/ppi/round5_ppi_plan.md`). Section 1 is written before any E2 job. Section 2 is written at E3, after the E2 gate memo. None of the results below is new. They are finite-population moments of a weighted unit-level variable, in the notation of the brief.
 
 ## 1. The level term in regime B
 

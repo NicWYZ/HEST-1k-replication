@@ -33,7 +33,7 @@ Both were missing when the plan was written and are now in place. Nicolas grante
 
 Only these. Branch `round7-ppi`. Scripts `code/scripts/round7_ppi_*.py`. Results `results/round7/ppi/<STAGE>/` with `<STAGE>` one of `S0_anchors`, `S1_weighting`, `S2_comparators`, `S3_adaptive`, `S4_kcenter`. Track-level files `results/round7/ppi/r7ppi_slurm_jobs.csv`, `results/round7/ppi/code_deliveries.csv`, `results/round7/ppi/provenance_index.csv`. The exceptions file `.verify-exceptions-round7-ppi`. The documents of section 5 of the track document, at the names it gives. Decision memos Nicolas hands me, committed unchanged at the paths they name.
 
-I do not edit `README.md`, `CLAUDE.md`, `docs/README.md`, `docs/progress-log.md`, `docs/WAYS_OF_WORKING.md`, any earlier round's files, or anything of the federated learning track. I run no git command in any other clone under `~/hest-1k`. On Longleaf I read the project tree only with `git --no-optional-locks` and never check out, fetch or pull there.
+I do not edit `README.md`, `CLAUDE.md`, `docs/README.md`, `progress-log.md` (at tag `record-full-2026-11`), `docs/WAYS_OF_WORKING.md`, any earlier round's files, or anything of the federated learning track. I run no git command in any other clone under `~/hest-1k`. On Longleaf I read the project tree only with `git --no-optional-locks` and never check out, fetch or pull there.
 
 ## 3. S0 step by step
 

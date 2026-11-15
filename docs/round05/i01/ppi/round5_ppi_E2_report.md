@@ -2,7 +2,7 @@
 
 # Round 5 PPI track, the E2 gate report (stages E0, E1 and E2)
 
-8 October 2026. Written by the execution session for the oversight chat, under `docs/round05/i01/ppi/round5_ppi_track.md` as transcribed in `docs/round05/tracks/ppi/round5_ppi_plan.md`. Every number below is read from the file named beside it. Paths are relative to the repository root unless they start with `/work`.
+8 October 2026. Written by the execution session for the oversight chat, under `docs/round05/round05_methods_note.md` (formerly `round5_ppi_track.md`, at tag `record-full-2026-11`) as transcribed in `docs/round05/tracks/ppi/round5_ppi_plan.md`. Every number below is read from the file named beside it. Paths are relative to the repository root unless they start with `/work`.
 
 ## 1. Stage and status
 

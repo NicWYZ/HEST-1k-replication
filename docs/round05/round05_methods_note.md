@@ -4,7 +4,7 @@ This note holds, word for word, the parts of round 5's working papers that kept 
 
 ## 1. The inference track's methods, stated once
 
-From `docs/round05/i01/ppi/round5_ppi_track.md`, section 2.3, the instruction of 7 October 2026. It describes the estimators, targets, regimes, masking and controls that `docs/round05/tracks/ppi/round5_ppi_plan.md` (sections 2 to 5), the E2, E4 and final reports, `docs/round05/tracks/ppi/round5_ppi_theory.md` and the `code/scripts/round5_ppi_*.py` scripts use. The paper's estimator after the round is `docs/round05/tracks/ppi/round5_ppi_estimator_definition.md`.
+From `round5_ppi_track.md` (at tag `record-full-2026-11`), section 2.3, the instruction of 7 October 2026. It describes the estimators, targets, regimes, masking and controls that `docs/round05/tracks/ppi/round5_ppi_plan.md` (sections 2 to 5), the E2, E4 and final reports, `docs/round05/tracks/ppi/round5_ppi_theory.md` and the `code/scripts/round5_ppi_*.py` scripts use. The paper's estimator after the round is `docs/round05/tracks/ppi/round5_ppi_estimator_definition.md`.
 
 **Notation.** Cluster $g = 1, \dots, G$ has $M_g$ units, and $N = \sum_g M_g$. Unit $i$ of cluster $g$ has outcome $y_{gi}$ and prediction $\hat y_{gi}$. Every estimand is the mean of a per-unit scalar $z_{gi} = w_{gi}\,y_{gi}$ with label-free weights $w_{gi}$ computed from all units, and its prediction counterpart is $f_{gi} = w_{gi}\,\hat y_{gi}$. For the mean, $w = 1$. For the within-cluster slope $\theta_3$ on a covariate $x$, $w_{gi} = (x_{gi} - \bar x_g)/v_g$ with $\bar x_g$ and $v_g$ the cluster's own mean and variance of $x$. For the group difference $\theta_2$, $w_{gi} = 1/\pi_{g,\text{neo}}$ on neoplastic-dominant spots and $-1/\pi_{g,\text{str}}$ on stromal-dominant spots. On the tissue tasks $x$ is standardised mean nuclear area. On ACS, $\theta_3$ is the slope of log income on standardised age and $\theta_2$ is the mean of log income. Cluster means are $\bar z_g$ and $\bar f_g$, and cluster totals are $Z_g$ and $F_g$.
 
@@ -40,7 +40,7 @@ The tasks, from section 3 of the same instruction.
 
 ## 2. The level term, the reading that stage E2 tested
 
-From `docs/round05/i01/ppi/round5_ppi_track.md`, section 2.4. It is the oversight's reading of the round-4 files that E2 tested (`docs/round05/i01/ppi/round5_ppi_E2_report.md`, section 6.4). It held for the slope $\theta_3$ and not for the group difference $\theta_2$ (summary, finding 2).
+From `round5_ppi_track.md` (at tag `record-full-2026-11`), section 2.4. It is the oversight's reading of the round-4 files that E2 tested (`docs/round05/i01/ppi/round5_ppi_E2_report.md`, section 6.4). It held for the slope $\theta_3$ and not for the group difference $\theta_2$ (summary, finding 2).
 
 This is a reading of the round-4 files, not an established result. E2 tests it before E3 builds on it.
 
@@ -63,7 +63,7 @@ If the reading holds, three round-4 statements change. Regime B's width against 
 
 ## 3. The prediction-set track's methods, stated once
 
-From `docs/round05/i01/conformal/round5_conformal_track.md`, section 2.3, the instruction of 7 October 2026. It defines the methods (`hcp`, `ghcp`, `ghcp_noad`, `within_plain`, `within`, `within_full`), the price of validity and "narrowest valid method" used by `docs/round05/tracks/conformal/round5_conf_plan.md`, the W2 and closing reports, and `code/scripts/round5_conf_w2_census.py` and `code/scripts/round5_conf_w2_wrapper.py`, whose docstrings cite this section. The plan's section 4 items 1, 5 and 10 correct or confirm parts of it (the released Std-CP is reported as `released_stdcp`, and the working on `within_full` checks out).
+From `round5_conformal_track.md` (at tag `record-full-2026-11`), section 2.3, the instruction of 7 October 2026. It defines the methods (`hcp`, `ghcp`, `ghcp_noad`, `within_plain`, `within`, `within_full`), the price of validity and "narrowest valid method" used by `docs/round05/tracks/conformal/round5_conf_plan.md`, the W2 and closing reports, and `code/scripts/round5_conf_w2_census.py` and `code/scripts/round5_conf_w2_wrapper.py`, whose docstrings cite this section. The plan's section 4 items 1, 5 and 10 correct or confirm parts of it (the released Std-CP is reported as `released_stdcp`, and the working on `within_full` checks out).
 
 **Split conformal.** Scores $s_1, \dots, s_n$ on a calibration set. The set for a new unit is $\{y : s(y) \le \hat q\}$ with $\hat q$ the $\lceil (n + 1)(1 - \alpha) \rceil$-th smallest calibration score. If the $n + 1$ scores are exchangeable and distinct, coverage is exactly $\lceil (n + 1)(1 - \alpha) \rceil / (n + 1)$ on average, which is at least $1 - \alpha$. A finite $\hat q$ exists only if $n \ge (1 - \alpha)/\alpha$, which is $n \ge 9$ at 90%. The score here is the absolute residual $|y - \hat y|$.
 
@@ -119,7 +119,7 @@ Rejective selection uses only label-free quantities, so each cluster's inclusion
 
 ## 6. Dead ends recorded at the start of the round
 
-From `docs/round05/00_prep/round5_oversight_handoff.md`, section 14, written on 4 October 2026 at the close of round 4. "The previous handoff" is `docs/round04/oversight/round4_oversight_handoff.md`, and "section 13" is the handoff's list of what to pursue, which round 5's prediction-set track took up as stage W4 (summary, findings 10 and 11).
+From `round5_oversight_handoff.md` (at tag `record-full-2026-11`), section 14, written on 4 October 2026 at the close of round 4. "The previous handoff" is `docs/round04/round04_methods_note.md` (formerly `round4_oversight_handoff.md`, at tag `record-full-2026-11`), and "section 13" is the handoff's list of what to pursue, which round 5's prediction-set track took up as stage W4 (summary, findings 10 and 11).
 
 The previous handoff's section 12 stands. Round 4 added these.
 

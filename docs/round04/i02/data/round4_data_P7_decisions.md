@@ -28,7 +28,7 @@ Predictions scored as the report scores them. Prediction 2 was mine and was wron
 15. **Job names.** Accepted. The track documents now say that jobs are identified by Slurm id and that the intended prefix is recorded in `PROVENANCE.txt` rather than in `--job-name`.
 16. **Frame id in the P3 provenance.** Accepted. The track documents now tell sub-agents to call `stamp_dir()` from their own process so the frame id is theirs.
 17. Noted. 18. Noted; both tracks may use `rc_tengfei_pi`.
-19. **The ten unresolved claims** in `docs/round02/tracks/deck/deck_speaker_scripts.md` and `docs/round00/first_year_ST_project_proposal.md` predate round 3 and stay as they are. They are a round-5 housekeeping item, and the numeric-claim gate for the tracks runs over the README and the tracks' own documents, as their instructions say.
+19. **The ten unresolved claims** in `docs/round02/README.md` (formerly `deck_speaker_scripts.md`, at tag `record-full-2026-11`) and `docs/round00/first_year_ST_project_proposal.md` predate round 3 and stay as they are. They are a round-5 housekeeping item, and the numeric-claim gate for the tracks runs over the README and the tracks' own documents, as their instructions say.
 
 Proposed edits 1, 2 and 4 are applied in the addendum. Edit 3 (the v2 extension schema) is applied. Edit 5 (making `morphology_features.py` importable) is deferred; nothing in round 4 calls it. The `docs/README.md` index entries are applied, and this memo is added to them.
 

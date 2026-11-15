@@ -23,7 +23,7 @@ The two tracks run in parallel in separate sessions, on separate branches and wo
 | `fewcluster` | B. Valid inference with few labelled clusters under skewed cluster contributions, with predictions free for every cluster | `claude-science-fewcluster` | `i01/fewcluster/round09_fewcluster_brief.md` (at tag `record-full-2026-11`; parts in `round09_methods_note.md`) | `docs/round09/tracks/fewcluster/`, `docs/round09/iKK/fewcluster/`, `results/round9/fewcluster/`, `code/scripts/round9_fewcluster_*` |
 | `newtopic` | C. A fresh direction outside clustered PPI and hierarchical conformal prediction, from the data in hand | `claude-science-newtopic` | `i01/newtopic/round09_newtopic_brief.md` (at tag `record-full-2026-11`; parts in `round09_methods_note.md`) | `docs/round09/tracks/newtopic/`, `docs/round09/iKK/newtopic/`, `results/round9/newtopic/`, `code/scripts/round9_newtopic_*` |
 
-Each session also keeps `docs/round09/README.md`, `docs/progress-log.md` and `docs/README.md` current on its own branch. Those shared files will differ between the branches, and Nicolas decides how the branches are merged (D4).
+Each session also keeps `docs/round09/README.md`, `progress-log.md` (at tag `record-full-2026-11`) and `docs/README.md` current on its own branch. Those shared files will differ between the branches, and Nicolas decides how the branches are merged (D4).
 
 **Option A** is deferred. Its material is `round09_probe_designs.md` and the files it cites, on every branch.
 

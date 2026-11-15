@@ -2,7 +2,7 @@
 
 # Round 4, the PPI track, final report (covering Q1 to Q5)
 
-The instruction is `docs/round04/i01/ppi/round4_ppi_track.md`, with addendum 1, the Q1 decision memo, the Q3 decision memo (`docs/round04/i03/ppi/round4_ppi_Q3_decisions.md`) and addendum 2 (`docs/round04/i03/ppi/round4_ppi_addendum2.md`), all transcribed in `docs/round04/tracks/ppi/round4_ppi_plan.md` (sections 1 to 14). The format is the instruction's section 8, as in the Q1 and Q3 reports. The branch is `round4-ppi`, and the report is dated 2 October 2026.
+The instruction is `docs/round04/i01/ppi/round4_ppi_track.md`, with addendum 1, the Q1 decision memo, the Q3 decision memo (`docs/round04/tracks/ppi/round4_ppi_plan.md` (formerly `round4_ppi_Q3_decisions.md`, at tag `record-full-2026-11`)) and addendum 2 (`docs/round04/tracks/ppi/round4_ppi_plan.md` (formerly `round4_ppi_addendum2.md`, at tag `record-full-2026-11`)), all transcribed in `docs/round04/tracks/ppi/round4_ppi_plan.md` (sections 1 to 14). The format is the instruction's section 8, as in the Q1 and Q3 reports. The branch is `round4-ppi`, and the report is dated 2 October 2026.
 
 ## 1. Stage and status
 

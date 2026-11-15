@@ -2,7 +2,7 @@
 
 # Round 5, prediction-set track: closing report at W5 (W3, W4 and W5, with W1 and W2 carried from the W2 gate)
 
-Written by the lead at the end of interval 2, under `docs/round05/i01/conformal/round5_conformal_track.md` sections 6 to 8 and the W2 decisions memo (`docs/round05/i02/conformal/round5_conformal_W2_decisions.md`, transcribed as plan section 6). W1 and W2 were reported at the W2 gate (`docs/round05/i01/conformal/round5_conf_W2_report.md`, tag `round5-conf-W2`, pull request #16, merged). Their results are not repeated here beyond the predictions table and the closing page.
+Written by the lead at the end of interval 2, under `docs/round05/round05_methods_note.md` (formerly `round5_conformal_track.md`, at tag `record-full-2026-11`) sections 6 to 8 and the W2 decisions memo (`docs/round05/tracks/conformal/round5_conf_plan.md` (formerly `round5_conformal_W2_decisions.md`, at tag `record-full-2026-11`), transcribed as plan section 6). W1 and W2 were reported at the W2 gate (`docs/round05/i01/conformal/round5_conf_W2_report.md`, tag `round5-conf-W2`, pull request #16, merged). Their results are not repeated here beyond the predictions table and the closing page.
 
 ## 1. Stage and status
 
@@ -171,7 +171,7 @@ Values that are not data (peak memory converted from kilobytes, sums of row coun
 
 ## 11. Statements of round 4 that this round changes
 
-From the closing page of `docs/round04/i02/conformal/round4_conf_final_report.md` and from `docs/round04/i03/conformal/round4_conformal_C4_decisions.md`.
+From the closing page of `docs/round04/i02/conformal/round4_conf_final_report.md` and from `docs/round04/tracks/conformal/round4_conf_plan.md` (formerly `round4_conformal_C4_decisions.md`, at tag `record-full-2026-11`).
 
 | Round-4 statement | Old value | New value (file) |
 |---|---|---|

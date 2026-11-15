@@ -12,7 +12,7 @@ Stage D3 read HEST's five release tables and the vendor's per-run file metadata 
 `donorCount: 1` and "Replicate 1 / Replicate 2" language belongs to the *entire sample area*
 dataset, whose two regions HEST ingests as TENX98 and TENX99; TENX95 is a section of a separate
 block from a different provider, and round 2's reading traces to one row of
-`docs/round02/i03/exec/r5_idc_provenance.md` that assigned TENX95 the entire-sample-area Replicate 2, which is
+`docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`) that assigned TENX95 the entire-sample-area Replicate 2, which is
 TENX98's row (`results/round3/D3_audit/d3_notes.md` section 2). The benchmark's four IDC samples
 are four distinct donors, its patient folds separate them, and there is no leak to report. The A3
 decision memo (`docs/round03/i03/exec/round3_A3_decisions.md` section 2.1, transcribed as
@@ -92,7 +92,7 @@ replicate accounts for **54%** of what the patient split scores as generalisatio
 
 Source: `results/round2/R5c_leak/r5_idc_replicate_leak.csv` (aggregated from
 `results/round2/R3_splits/replicate_leak_v2__hoptimus0.csv`, `replicate_leak_v2__resnet50.csv`,
-`replicate_leak_v2__uni_v2.csv`); provenance in `docs/round02/i03/exec/r5_idc_provenance.md`.
+`replicate_leak_v2__uni_v2.csv`); provenance in `docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`).
 
 The IDC task itself remains a valid prediction task and the shipped 50 target genes are unaffected.
 What is affected is reading IDC's patient-split score as cross-patient generalisation.

@@ -2,7 +2,7 @@
 
 # Instructions: closing the gate the closeout report left open
 
-21 September 2026. For the execution session on `NicWYZ/HEST-1k-replication`, following `docs/round02/i01/deck/closeout_gate_report.md` at `6acbef2`. None of this touches the presentation, which has been built against the repository as it stands. There is no deadline on this beyond "before round 3 starts." One report at the end.
+21 September 2026. For the execution session on `NicWYZ/HEST-1k-replication`, following `docs/round02/README.md` (formerly `closeout_gate_report.md`, at tag `record-full-2026-11`) at `6acbef2`. None of this touches the presentation, which has been built against the repository as it stands. There is no deadline on this beyond "before round 3 starts." One report at the end.
 
 The gate report was right to stop rather than guess at 437 entries. What follows is the triage policy it asked for, so the work can proceed without inventing reasons.
 
@@ -14,11 +14,11 @@ Every document in `docs/` gets one of three treatments, decided by what the docu
 
 **Historical records** (`round1_final_stage_report.md`, `HEST_replication_review.md`, `HEST_replication_handoff.md`, `round2_execution_plan.md`, and all four decision memos once supplied). These are not edited. Each gets a one-line banner at the top stating the date, that it is a closed record, and that numbers in it may have been superseded by later stages; and an exceptions file that marks every unresolved claim as `historical`. The sweep then passes at zero unresolved for them by construction, and the banner is what tells a reader why. The point is that a record is not made false by later work, and the repository should say so once rather than per number.
 
-**External-source documents** (`r5_idc_provenance.md`). Claims whose source is a DOI, accession, vendor page or issue thread get an exceptions entry naming the external source. Anything left after that is a real gap and is fixed.
+**External-source documents** (`docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`)). Claims whose source is a DOI, accession, vendor page or issue thread get an exceptions entry naming the external source. Anything left after that is a real gap and is fixed.
 
 **Maintained documents** (README, `deck_master_outline.md`, `WAYS_OF_WORKING.md`, `hest_bench_issue_draft.md`, and every round-2 stage report including the closeout). These must reach zero unresolved by fixing, not by exception, with two allowed exception classes: `derived` (a difference, ratio, share or dispersion computed from cited cells; the exceptions entry gives the formula and the cells) and `cost` (a wall time, queue time, file count or byte count with no result file behind it, allowed only in `WAYS_OF_WORKING.md` and the stage reports' process sections). If the sweep cannot read a cited file because it exceeds the 200 MB cap, that is the sweep's limitation, not the document's, and it is fixed in the sweep (§ 2), not by exception.
 
-The order of work is the two largest maintained documents first, since they carry the most numbers the deck rests on indirectly: `round2_R3_stage_report.md` (99) and `round2_R5_stage_report.md` (90). Then `round2_R8_stage_report.md` (11), `round2_closeout_report.md` (2), `hest_bench_issue_draft.md` (21), `WAYS_OF_WORKING.md` (20). Then the historical set with its banners. Then `r5_idc_provenance.md`.
+The order of work is the two largest maintained documents first, since they carry the most numbers the deck rests on indirectly: `round2_R3_stage_report.md` (99) and `round2_R5_stage_report.md` (90). Then `round2_R8_stage_report.md` (11), `round2_closeout_report.md` (2), `hest_bench_issue_draft.md` (21), `WAYS_OF_WORKING.md` (20). Then the historical set with its banners. Then `docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`).
 
 For every claim triaged, the exceptions file records the claim text, the class, and the reason. A claim that turns out to be wrong is corrected in the document with a one-line changelog entry at the bottom of that document, not silently.
 
