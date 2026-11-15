@@ -1,3 +1,5 @@
+*7 to 9 October 2026. Reviewed as tagged at `round5-conf-final`. What stands now: docs/round05/README.md.*
+
 # Round 5, prediction-set track: the two theory questions (W4)
 
 Written by the lead as W4 runs beside W1 to W3 (`docs/round05/tracks/conformal/round5_conf_plan.md` section 2, W4). Each step is marked derived, conjectured or failed. `docs/round04/i01/conformal/round4_conf_lower_bound.md` is the record of round 4 and is not edited. Part A is capped at one and a half days and part B at three and a half. This document is a working record until the W2 gate.

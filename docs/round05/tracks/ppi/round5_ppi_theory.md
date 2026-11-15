@@ -1,3 +1,5 @@
+*7 to 9 October 2026. Reviewed as tagged at `round5-ppi-final`. What stands now: docs/round05/README.md.*
+
 # Round 5 PPI track, the theory
 
 Written before the experiments it supports, as `docs/round05/i01/ppi/round5_ppi_track.md` asks (E2, "Derivation first"; transcribed in `docs/round05/tracks/ppi/round5_ppi_plan.md`). Section 1 is written before any E2 job. Section 2 is written at E3, after the E2 gate memo. None of the results below is new. They are finite-population moments of a weighted unit-level variable, in the notation of the brief.

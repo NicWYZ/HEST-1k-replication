@@ -1,3 +1,5 @@
+*9 October 2026. Reviewed as tagged at `bf9b869`. What stands now: docs/round05/README.md. Corrected since the tag.*
+
 # Round 5 PPI track, the E4 gate report (stages E3a, E3 and E4)
 
 9 October 2026. Written by the execution session for the oversight chat, under `docs/round05/i01/ppi/round5_ppi_track.md` and the E2 decision memo `docs/round05/i02/ppi/round5_ppi_E2_decisions.md`, as transcribed in `docs/round05/tracks/ppi/round5_ppi_plan.md` section 7. Every number below is read from the file named beside it. Paths are relative to the repository root unless they start with `/work`. Shorthand used throughout is `E3a/` for `results/round5/ppi/E3a_crossfit/`, `E3/` for `results/round5/ppi/E3_twolevel/` and `E4/` for `results/round5/ppi/E4_selection/`.
@@ -124,7 +126,7 @@ E3.7 holds on the kidney tasks, where the regime B over regime A width ratio is 
 
 ### 6.3 E3, the stratified draw for $\theta_2$
 
-Under the stratified draw the regime B coverage of $\theta_2$ (form C, median over genes, design target) is 0.885 to 0.913 at $m \ge 6$ in 192 of 192 cells and 0.890 to 0.905 at $m = 4$ in 24 of 24, on every tissue task and arm (`E3/e3_prediction_scores.csv`). Under E2's simple random draw the median over cells was 0.73 at $m = 2$ rising to 0.84 at $m = 100$ (`E3/fig_e3_summary.png` panel a, from `results/round5/ppi/E2_regimeB/e2_regimeB_grid.csv`). The table `E3/e3_superseded_round4_numbers.csv` sets every round-4 regime A and regime B $\theta_2$ row with $m <$ all (round 4, design target, `c_crossfit`) beside the E3 value under `C_ppi`, `C_classical` and `P_ppi`, 7,200 rows with none unmatched. In regime B the round-4 median coverage over those rows was 0.875 with minimum 0.545, and E3's is 0.900 with minimum 0.500. The E3 minimum is census by area at one budget and was not investigated.
+Under the stratified draw the regime B coverage of $\theta_2$ (form C, median over genes, design target) is 0.885 to 0.913 at $m \ge 6$ in 192 of 192 cells and 0.890 to 0.905 at $m = 4$ in 24 of 24, on every tissue task and arm (`E3/e3_prediction_scores.csv`). Under E2's simple random draw the median over cells was 0.73 at $m = 2$ rising to 0.84 at $m = 100$ (`E3/fig_e3_summary.png` panel a, from `results/round5/ppi/E2_regimeB/e2_regimeB_grid.csv`). The table `E3/e3_superseded_round4_numbers.csv` sets every round-4 regime A and regime B $\theta_2$ row with $m <$ all (round 4, design target, `c_crossfit`) beside the E3 value under `C_ppi`, `C_classical` and `P_ppi`, 7,200 rows with none unmatched. In regime B the round-4 median coverage over those rows was 0.875 with minimum 0.545, and E3's is 0.900 with minimum 0.500. The E3 minimum is census by state with `package`, at the budget where $m$ is 1 and round 4 covered 0.545, which is below the smallest number of labelled units either form needs, so it says nothing about the method (`docs/round05/i03/ppi/round5_ppi_final_report.md`, section 6.3 item 2).
 
 ### 6.4 E4, which clusters to label
 

@@ -1,3 +1,5 @@
+*7 to 9 October 2026. Reviewed as tagged at `record-full-2026-11`. What stands now: docs/round05/README.md.*
+
 # Round 5 PPI track, the operating plan
 
 This is the session's transcription of `docs/round05/i01/ppi/round5_ppi_track.md` (md5 `65976a7f8e3b18e0bab5ebd459fd467f`), written before any job runs, as section 6 item E0.1 of that brief requires. The brief governs where this plan and the brief differ, except where a numbered extension in section 6 below records a decision Nicolas made in chat.

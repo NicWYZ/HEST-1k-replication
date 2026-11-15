@@ -1,3 +1,5 @@
+*7 to 9 October 2026. Reviewed as tagged at `record-full-2026-11`. What stands now: docs/round05/README.md. Corrected since the tag.*
+
 # Round 5, the prediction-set track: operating plan
 
 Branch `round5-conformal`. Written 7 October 2026 by the execution session. The instruction document is `docs/round05/i01/conformal/round5_conformal_track.md` on `main`, md5 `970bc28669e0c6354980b51d2030f27e`, which is identical to the copy Nicolas handed over. This plan transcribes its sections 6 and 7 unchanged as sections 2 and 3 below. Section 4 lists what in the instruction looks wrong or unclear. Section 5 records extensions Nicolas asks for in chat. Nothing in the instruction is changed here.
@@ -199,7 +201,7 @@ Nicolas merges pull request #16. Nothing is pushed to `round5-conformal` until t
 **6.3 Readings for the paper** (memo section 3; used in the W5 closing page).
 
 1. *The map in simulation.* At 90%, normal tails and share 0.3 or more, the narrowest method is HCP at $o = 0$, GHCP at 3 to 5 labelled units from about 14 calibration clusters, and `within_full` from $o = 9$. The exception at $o = 17$ is discreteness, stated in one sentence.
-2. *GHCP's own designs.* From 9 labelled units `within_full` is 3 to 4 times narrower than GHCP at every number of groups. Below 9, GHCP is the narrowest method finite in every replicate from 20 groups. On the census, GHCP is narrowest at every $o \ge 2$ with 30 or 50 PUMAs, and `within_full` is narrower at $o = 9$ and 10 with 20. GHCP's guarantee held throughout.
+2. *GHCP's own designs.* From 9 labelled units `within_full` is 2 to 4 times narrower than GHCP at every number of groups where GHCP is finite (section 7.4 item 4). Below 9, GHCP is the narrowest method finite in every replicate from 20 groups. On the census, GHCP is narrowest at every $o \ge 2$ with 30 or 50 PUMAs, and `within_full` is narrower at $o = 9$ and 10 with 20. GHCP's guarantee held throughout.
 3. *The number of groups.* The released code calibrates HCP on half of the reference groups. So every GHCP-design row states, per method, how many groups it calibrates on and how many it uses to fit its score.
 
 **6.4 Code delivery and provenance** (memo section 4, shared with the inference track; it replaces any earlier practice).
@@ -251,12 +253,7 @@ The oversight chat's memo of 9 October 2026 is committed unchanged as `docs/roun
 - Check 3's coverage is exact. Its mean width differs by at most $1.08 \times 10^{-8}$ and its median width by at most $1.4 \times 10^{-7}$, only where one run used an E5-2680 v4 or E5-2643 v3 node (`results/round5/conformal/W3_real/merged/w3_p3p2_by_cpu.csv`).
 - The code-delivery rules worked. There were four deliveries with one snapshot each, no script ran from the clone, and the lead made both cancellations after checking the queue. The provenance index traces every record.
 
-**7.3 Four corrections, recorded here and in the memo only.** The report, `.verify-exceptions-round5-conformal` and the result files stay as committed.
-
-1. The rows matched in W3 check 1 number 1,694,142, the sum of the six rows of `W3_real/merged/w3_reproduction.csv`, not 1,693,662 as the report and the exceptions file give. The failing matches are four, two in part 1 and two in part 2, from the same two round-4 rows.
-2. The provenance index covers 87 Slurm jobs and the local runs. The 88 distinct values of `slurm_job_id` in `provenance_index.csv` include `none`, which marks local runs.
-3. The closing page says the simulation's map holds on every task at $K = 10$. On Indiana at $o$ from 9 to 15 the plain split is narrower than `within_full`, by at most 2% (W3.2, margin down to $-0.0192$ in `W3_real/w3_report_numbers.csv`).
-4. The W2 memo's "3 to 4 times narrower" for `within_full` against GHCP from 9 labelled units is, wherever the released GHCP is finite, 2.0 to 4.1 times over $o$ from 9 to 20 and every number of groups, and 2.6 to 4.1 times at 20 groups (`W2_ghcp_settings/w2_sim_designs.csv`). The ratio is largest at $o = 9$ and smallest at $o = 17$ to 20. With 10 groups GHCP is infinite in every replicate at $o$ from 9 to 12, and with 12 groups at $o = 9$.
+**7.3 Four corrections.** The memo's four corrections are made in place: the matched row count (1,694,142), the number of Slurm jobs in the provenance index (87, with the local runs) and the closing page's statement on Indiana in `docs/round05/i02/conformal/round5_conf_final_report.md`, and the GHCP ratio in section 6.3 item 2 above. The ratio is 2.0 to 4.1 times over $o$ from 9 to 20 and every number of groups wherever the released GHCP is finite, and 2.6 to 4.1 times at 20 groups (`W2_ghcp_settings/w2_sim_designs.csv`). It is largest at $o = 9$ and smallest at $o = 17$ to 20. With 10 groups GHCP is infinite in every replicate at $o$ from 9 to 12, and with 12 groups at $o = 9$. `.verify-exceptions-round5-conformal` and the result files stay as committed.
 
 **7.4 Readings for the paper's prediction-set section** (memo section 3).
 
