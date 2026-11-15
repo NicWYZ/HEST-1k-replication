@@ -1,5 +1,5 @@
 platform: Longleaf
-slurm_job_id: 9227174
+slurm_job_id: 9227641
 slurm_job_partition: general
 slurm_job_account: rc_htzhu_pi
 slurm_cpus_on_node: 2
@@ -8,20 +8,20 @@ node: c0936
 track: final-runs (round 10)
 job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
 stage: F4
-unit: paper_numbers/paper_numbers_v1
+unit: paper_numbers/paper_numbers_v2
 frame_id: 3f5eb01e-aa12-4f67-84ac-45c28e10831d
 PYTHONHASHSEED: 0
 host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
 python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
 versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
-snapshot_commit: 759aef7b1ddd6b0b30ba966c3ed18c76ebcb2243
-snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/759aef7b1ddd6b0b30ba966c3ed18c76ebcb2243
-command: round10_final_runs_f4_paper_numbers.py /work/users/w/e/weiyang/hest_code/round10-final-runs /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F4/paper_numbers/paper_numbers_v1/paper_numbers.csv
-config: {"commit":"759aef7b1ddd6b0b30ba966c3ed18c76ebcb2243","stage":"F4","unit":"paper_numbers_v1"}
-config_sha256: 69ba591f4a68cdefad12e36d6a6b1a0f5a5d778a84891cc070a95e9a0f30d034
-start: 2026-11-15T03:41:28-05:00
-end: 2026-11-15T03:41:48-05:00
+snapshot_commit: e3635e23edfd6e9c99c18907b50ed17733477b57
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/e3635e23edfd6e9c99c18907b50ed17733477b57
+command: round10_final_runs_f4_paper_numbers.py /work/users/w/e/weiyang/hest_code/round10-final-runs /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F4/paper_numbers/paper_numbers_v2/paper_numbers.csv
+config: {"commit":"e3635e23edfd6e9c99c18907b50ed17733477b57","stage":"F4","unit":"paper_numbers_v2"}
+config_sha256: 6b456904df8695b68b737530cbdf18d72e676b580a15d64cc6e1a211cc763c1a
+start: 2026-11-15T03:52:22-05:00
+end: 2026-11-15T03:52:38-05:00
 status: COMPLETED
 scripts_executed (md5, path relative to snapshot):
-  2433e4b7244dea17e7c01b25efef6a51  code/scripts/round10_final_runs_f4_paper_numbers.py
+  1f7d45c0addaa811bc469cd8c56ab7d1  code/scripts/round10_final_runs_f4_paper_numbers.py
 inputs (md5, path):
