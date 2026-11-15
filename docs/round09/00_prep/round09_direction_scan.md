@@ -1,3 +1,5 @@
+*24 and 25 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round09/README.md.*
+
 # Round 9 preparation, the direction scan
 
 *24 and 25 October 2026. Written by the claude-science session on Nicolas's Mac, linked to Longleaf. Step S1 of CLAUDE.md section 3. Recommendations are `[proposed]` until Nicolas decides.*

@@ -1,3 +1,5 @@
+*27 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round09/README.md. Corrected since the tag.*
+
 # Round 9, track fewcluster, critical values below the frontier (step I3-3), and the novelty checks of interval 3
 
 *27 October 2026. Written by the fewcluster session. Section 1 reports a dedicated research agent's work on claim K (`results/round9/fewcluster/crit/crit_value_report.md` and the scripts and tables beside it) and a fresh agent's check of it (`results/round9/fewcluster/verify_crit/verify_crit_report.md`). Section 2 records the novelty checks that returned after the Theorem 3 note was committed, which section 7 of that note left open. Recommendations are `[proposed]`.*
@@ -43,7 +45,7 @@ The lower bounds are the critical values needed by explicit populations, found b
 
 **NOV10b (Theorem 3 and claim K).** A second checker read in full text Kojevnikov and Song (2023), Müller's "A More Robust t-Test", Hagemann (2023), Pötscher and Preinerstorfer (2023), Ibragimov and Müller (2010, 2016) and Canay, Romano and Shaikh (2017), and Székely (arXiv:math/0610838) in place of Bakirov and Székely (`results/round9/fewcluster/novelty/novelty_NOV10b_structured.json`, `novelty_NOV10b_fulltext_verdicts.csv`). None contains the stratified frontier, the pooling result, the regime comparison or claim K.
 
-1. The nearest structural analogue of Theorem 3 is Pötscher and Preinerstorfer's Theorem 5.1 and Theorem A.5. A size-controlling critical value exists if and only if no extreme-leverage configuration exists, over Gaussian covariance classes that include clustered ones.
+1. The nearest structural analogue of Theorem 3 is Pötscher and Preinerstorfer's Theorem 5.1 and Theorem A.5. A size-controlling critical value exists when no extreme-leverage configuration exists, over Gaussian covariance classes that include clustered ones. The theorem as displayed gives sufficient conditions, which their discussion says are necessary only in some cases.
 2. The nearest to the pooling result are baselines for it. Hagemann's Theorem 2.1 gives exact size $2^{-\min(q_1, q_2)}$ for symmetric heterogeneous variables, and Canay, Romano and Shaikh's sign-change group needs $2^q$ large. Both count clusters under symmetry.
 3. Kojevnikov and Song show asymptotically that one large cluster makes the mean impossible to learn and that two suffice. That result is asymptotic and set in dependency-graph models.
 4. Nearest to claim K is Székely's certified $t$ critical values over symmetric scale mixtures. That class is not a bound on the largest standardized deviation and does not involve a finite population.

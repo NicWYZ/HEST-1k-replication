@@ -1,3 +1,5 @@
+*27 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round09/README.md.*
+
 # Round 9, track newtopic, the plan for interval 3
 
 *27 October 2026. Written by the newtopic session before any work of the interval. Living while interval 3 runs. Changes are appended at the end with their date, and the text above them is not rewritten.*

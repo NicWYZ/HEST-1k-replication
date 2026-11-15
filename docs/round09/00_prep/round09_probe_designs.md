@@ -1,3 +1,5 @@
+*26 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round09/README.md.*
+
 # Round 9 preparation, probe-then-label designs
 
 *26 October 2026. The claude-science session. Follows `round09_stud_and_depth.md` and `round09_normalization_check.md`. Recommendations are `[proposed]`.*

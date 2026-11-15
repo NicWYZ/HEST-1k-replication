@@ -1,3 +1,5 @@
+*27 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round09/README.md. Corrected since the tag.*
+
 # Round 9, track newtopic, the closing report
 
 *27 October 2026. Written by the newtopic session after Nicolas chose O1 ("O1") in answer to the interval 3 report. Frozen once committed. It closes track `newtopic` (option C) of round 9.*
@@ -17,8 +19,7 @@ The track looked for a statistics-forward methods direction outside clustered PP
 
 ## 3. Corrections and withdrawn readings
 
-- Interval 2's report called F1 "not found in print and not a direct case of the spiked separable theorem". The second half stands for Ding and Yang's theorem, but interval 3 found that F1 is a direct case of Liu et al. once one conditions on the features. The reading that F1 is a candidate core is withdrawn (interval 3 report, section 3).
-- In interval 2, F1's subagent first stopped the track and a fresh checker overturned the stop. Interval 3 restored a stop on other grounds. The stop rules themselves worked as written.
+The withdrawn reading this section recorded is settled in the round's summary, `docs/round09/README.md`, which says what stands.
 
 ## 4. Carried forward
 

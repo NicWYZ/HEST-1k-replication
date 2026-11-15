@@ -1,3 +1,5 @@
+*26 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round09/README.md.*
+
 # Round 9, track fewcluster, interval 1 decision memo (step S4)
 
 *26 October 2026. Written by the fewcluster session at the end of interval 1. It reads the novelty map (S2) against the computations and the frontier note (S3), says which claim the track takes forward, and fixes interval 2. One check is still open. The precise-statement novelty check NOV6 is waiting on Nicolas's approval of its network access, and its verdict will go in a later document. Recommendations are `[proposed]`.*

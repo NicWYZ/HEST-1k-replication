@@ -1,3 +1,5 @@
+*27 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round09/README.md.*
+
 # Round 9, track fewcluster, the frontier for stratified designs (Theorem 3)
 
 *27 October 2026. Written by the fewcluster session for steps I3-1 and I3-2. These are the first of the three pieces of work the paper outline (`docs/round09/i02/fewcluster/round09_fewcluster_paper_outline.md`) lists before drafting. The statements were proved by the session and again by a fresh agent from the statements alone, with exact enumeration at small sizes (`results/round9/fewcluster/verify_strat/verify_strat_report.md`). The verifier's corrections are folded in below and listed in section 6. Predictions were written before each run (`results/round9/fewcluster/strat/predictions_before_run.md`) and are scored in `predictions_scored.md` beside it. The literature position (section 7) is provisional. Recommendations are `[proposed]`.*

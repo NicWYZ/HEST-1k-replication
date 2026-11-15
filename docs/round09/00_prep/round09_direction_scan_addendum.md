@@ -1,3 +1,5 @@
+*25 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round09/README.md.*
+
 # Round 9 preparation, addendum to the direction scan
 
 *25 October 2026. The claude-science session. It adds the one verdict that was pending when `round09_direction_scan.md` was committed. That document is not edited.*

@@ -1,3 +1,5 @@
+*27 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round09/README.md.*
+
 # Round 9, track fewcluster. The supplied papers, and a side result on the median
 
 27 October 2026. Written by the fewcluster session after the position note (`round09_fewcluster_position.md`). It records two things. The first is what the four papers Nicolas supplied in `refs/` contain, read in full by a fresh checker (NOV9). The second is a side result that came out of comparing Theorem 1 with Lanke (1974). It proves, in its natural reading, the conjecture stated in Paul and Kuchibhotla (arXiv:2403.06357, Remark 1), checked by a second fresh agent. Neither changes the position note's proposal for D1.

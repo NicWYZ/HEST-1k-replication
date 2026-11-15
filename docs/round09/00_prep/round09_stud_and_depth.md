@@ -1,3 +1,5 @@
+*26 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round09/README.md. Corrected since the tag.*
+
 # Round 9 preparation, studentized prediction sets and the donor depth factor
 
 *26 October 2026. The claude-science session, on Nicolas's Mac and Longleaf. Steps S3 and S4 of CLAUDE.md section 3. Recommendations are `[proposed]`.*
@@ -14,7 +16,7 @@ An independent checker (`results/round9/scan/scan_STUD_queries.csv`, `results/ro
 
 All methods kept average coverage (Q1 held). Width gains are small because there is little to gain. At o = 3, an oracle that knows each target donor's true per-gene scale is only 0.130 narrower than HCP on CCRCC, 0.064 on INDIANA_KIDNEY and 0.067 on LUNG_XENIUM (`results/round9/stud/stud_summary.csv`). The cross-gene set was not narrower than HCP at o = 2 (Q2 refuted), and the per-gene set was wider at o = 5 (Q3 held).
 
-The run showed something else. HCP's coverage for one target donor of CCRCC, INT5, is 0.310 at o = 3, while every other donor is near or above nominal, and the cross-gene studentized set raises it to 0.878 at about the same average width (`results/round9/stud/stud_per_donor_coverage.csv`; Q4 held). INT5 is the donor with the largest average expression of the 24 (z = 3.98) and the largest residual scale, and it is not atypical in label-free terms. Its prediction outlyingness ranks 15th and its embedding outlyingness 22nd (`results/round9/stud/atypical_donor_diagnostics.csv`, computed in the session from the same C0 and C1 aggregates). The donor that breaks hierarchical conformal coverage is a technical outlier that histology cannot see and that any labelled spot reveals.
+The run showed something else. HCP's coverage for one target donor of CCRCC, INT5, is 0.310 at o = 3, while every other donor is near or above nominal, and the cross-gene studentized set raises it to 0.959 at about the same average width; 0.878 is that set's lowest coverage of any donor, at INT10 (`results/round9/stud/stud_per_donor_coverage.csv`; Q4 held). INT5 is the donor with the largest average expression of the 24 (z = 3.98) and the largest residual scale, and it is not atypical in label-free terms. Its prediction outlyingness ranks 15th and its embedding outlyingness 22nd (`results/round9/stud/atypical_donor_diagnostics.csv`, computed in the session from the same C0 and C1 aggregates). The donor that breaks hierarchical conformal coverage is a technical outlier that histology cannot see and that any labelled spot reveals.
 
 ## 4. The depth factor as an auxiliary
 

@@ -1,3 +1,5 @@
+*27 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round09/README.md.*
+
 # Round 9, track fewcluster, Williams' estimator against round 5's (step I3-4)
 
 *27 October 2026. Written by the fewcluster session. This is run 6.4.1 of the round 8 positioning note (`docs/round08/i01/positioning/round08_positioning_note.md`, section 3.2), the third piece of work the paper outline lists before drafting. Predictions were written before the run and scored after it (`results/round9/fewcluster/williams/predictions_before_run.md`, `predictions_scored.md`). Script `code/scripts/round9_fewcluster_williams.py`; outputs in `results/round9/fewcluster/williams/`. Recommendations are `[proposed]`.*
