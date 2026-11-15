@@ -14,3 +14,5 @@
 4.5	derived: hours from submit to start of Slurm 8824760 (limits and regime B aggregation), results/round10/final_runs/job_ledger.csv
 # Exceptions for docs/round10/i04/final-runs/round10_final_runs_F3_report.md
 0.0105	derived: round 7 wr_D0cl of D2_rej_t minus cube_S4b at p_a 0.1, 0.8932602882 - 0.8827274207, balance/aggregate/f3_p101_part2.csv
+1526	derived: number of data rows of results/round7/ppi/S1_weighting/_merged/s1_masking_diag.csv (pandas len), F4 report section 7 item 5
+500	derived: largest m of the box grid, column cov_m500 of results/round10/final_runs/F3/aggregate/t16b_V_side_by_side.csv and largest m in t16_box_coverage_by_m_long.csv (F3 decision file section 2.2)
