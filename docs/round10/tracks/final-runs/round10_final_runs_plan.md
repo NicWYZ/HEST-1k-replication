@@ -1,13 +1,9 @@
+*9 to 15 November 2026. Reviewed as tagged at round10-final-runs-F4. What stands now: docs/round10/README.md. Corrected since the tag.*
+
 # Round 10, track `final-runs`, the plan
 
 ```state
-updated: 2026-11-15 (Claude Science session on the Windows execution PC, David's team account, reaching Longleaf through compute target ssh:longleaf; frame 3f5eb01e-aa12-4f67-84ac-45c28e10831d, the ninth session of the track)
-unit: final-runs
-status: CLOSED. Gate F4 approved by Nicolas on 15 November 2026 ("Gate approved, close the track, leave any open items in the report"); decision file docs/round10/i06/final-runs/round10_final_runs_F4_decisions.md. Final report docs/round10/i05/final-runs/round10_final_runs_report.md, numbers table results/round10/final_runs/F4/paper_numbers.csv, tag round10-final-runs-F4 on fad48334, pull request NicWYZ/HEST-1k-replication#39 open into main. No job of the track is running
-step: none; the track is closed
-last run: F4_gate/gate_v1 (Slurm 9227979)
-next: none for this track. Open items stay in the final report, sections 7 and 8
-waiting: Nicolas's merge of pull request #39
+closed
 ```
 
 *Written on 9 November 2026 by the first session of track `final-runs`. The brief is `docs/round10/i01/final-runs/round10_final_runs_brief.md` on `main` (read at 133384d1). It is read with `docs/EXECUTION_RULES.md` at that commit, `docs/round10/masterplan.md`, the ledger's decisions `docs/round10/i01/ledger/round10_ledger_decisions.md` and Nicolas's L3 answers `docs/round10/i02/ledger/round10_ledger_L3_answers.md`, which win where they differ. This plan does not copy the brief. It records how the session does each step, the checks it runs, and dated notes as the work goes.*
@@ -156,7 +152,7 @@ Script `code/scripts/round10_final_runs_f2_regimeA.py`, importing `round10_final
 ### 5.3 F2.2 and F2.3, the switch rule and the fixed coefficient's cost
 
 - **The switch rule is evaluated first**, from the `xf2` rows alone, before any other F2 table is read. For every cell with $n_L \ge 6$ (task, encoder, scale, estimand) the aggregation computes the median over genes of $E(\hat V_w)/\text{Var}(\hat\theta)$ and the fraction of draws with $\hat V < 0$. If the median is below 0.95 in any cell, the primary variance of the cross-fitted form becomes $\max(\hat V, \hat V_w)$ on every task, and the report says so. The ratio's Monte Carlo error is taken from a bootstrap over draws, and a cell whose median lies within two standard errors of 0.95 is listed as such. The rule decides as written, and the listing is given only as information.
-- **The cost of the fixed coefficient.** Per task, encoder and scale, at every $n_L$, the share of genes where `fix1`'s median width exceeds `classical`'s. Since both widths scale with the same factor, this is the share of genes where $E(s_{z - f}) > E(s_z)$ over draws, and the aggregation checks the two readings agree.
+- **The cost of the fixed coefficient.** Per task, encoder and scale, at every $n_L$, the share of genes where `fix1`'s median width exceeds `classical`'s. Since both widths scale with the same factor, this is the share of genes where $E(s_{z - f}) > E(s_z)$ over draws, and the aggregation checks the two readings agree. (The two readings did not agree, since the median and the mean of $s_{z - f}$ over draws are different functionals; FR4 is scored on the median width, with the mean-width reading beside it, F2 report section 7, item 2.)
 
 ### 5.4 F2.4, regime B
 
@@ -168,7 +164,7 @@ Per gene, at each task's $G$ and $n_L$, from the cluster values. The skewness of
 
 ### 5.6 F2.6, what predictions buy
 
-Per gene, the ratio of `fix1`'s and `xf2`'s median width to `classical`'s, against the cluster-level $R^2$ (D12, from `F1/aggregate/f1_d12.csv` for the corpus tasks and recomputed by the F1 diagnostics script for the HEST tasks) and the spot-level Pearson of `f1_predictions.csv`. And on the corpus tasks, the ratio of the donor-clustered to the i.i.d. standard error of the spot mean (D9), per gene, encoder and scale, computed from the spot-level files with the donor as the cluster.
+Per gene, the ratio of `fix1`'s and `xf2`'s median width to `classical`'s, against the cluster-level $R^2$ (D12, from `F1/aggregate/f1_d12.csv` for the corpus tasks and recomputed by the F1 diagnostics script for the HEST tasks) (F2 used round 9's $R^2_c$, the squared correlation of donor values with donor predictions, in place of D12; F2 report section 7, item 11) and the spot-level Pearson of `f1_predictions.csv`. And on the corpus tasks, the ratio of the donor-clustered to the i.i.d. standard error of the spot mean (D9), per gene, encoder and scale, computed from the spot-level files with the donor as the cluster.
 
 ### 5.7 F2.7 and F2.8, the scale difference and the superpopulation interval
 

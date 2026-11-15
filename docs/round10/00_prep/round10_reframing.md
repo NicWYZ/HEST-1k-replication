@@ -1,3 +1,5 @@
+*6 November 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round10/README.md.*
+
 # The reframing of 6 November 2026, and a proposal for round 10
 
 *6 November 2026. Written by the oversight chat. Section 1 quotes what Nicolas said, under the record's rule that a decision or preference he states goes into the repository in the same session, dated and in his terms. Everything from section 2 on is the oversight chat's reading and proposal, `[proposed]` until he decides, including the description of the paper as an applied statistics paper. The findings this builds on are in `round10_findings_survey.md`. A fresh agent checked this document before it was committed and its findings were worked in.*

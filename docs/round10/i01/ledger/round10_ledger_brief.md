@@ -1,3 +1,5 @@
+*6 November 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round10/README.md.*
+
 # Round 10, track `ledger`, brief
 
 *6 November 2026. Written by the oversight chat for itself and its subagents, under `masterplan.md`. A fresh agent checked this brief before the work started and its findings were worked in.*

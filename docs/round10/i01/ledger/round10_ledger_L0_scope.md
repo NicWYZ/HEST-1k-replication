@@ -1,3 +1,5 @@
+*7 November 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round10/README.md.*
+
 # Round 10, track `ledger`, L0 scope
 
 *7 November 2026. Written by the oversight chat under `round10_ledger_brief.md`, after Nicolas's answers of 7 November (DATA, D5, V, O3; `masterplan.md`, amendments). It fixes the paper's sections, the results each rests on, where the open questions bite, and the data the round uses. L1 subagents write the ledger rows from it, one per section.*

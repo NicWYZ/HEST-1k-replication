@@ -1,3 +1,5 @@
+*8 November 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round10/README.md.*
+
 # Round 10, track `final-runs`, the brief
 
 *8 November 2026. Written by the oversight chat as track `ledger`'s stage L3 output, under `../../masterplan.md`. A fresh agent checked it before the L3 gate, and its findings were worked in. Nicolas answered L3 on 8 November (`docs/round10/i02/ledger/round10_ledger_L3_answers.md`), and this brief was revised the same evening to carry his answers. The ledger's pull request (#38) was merged on 8 November, so the file F1's acceptance test reads is on `main`, and the track can start. Nicolas starts the session by naming the track, and the Claude Science project's instructions (`docs/project_instructions.md`) do the rest. The brief is living on `main` while the track runs. The oversight chat revises it in place, and Nicolas tells the session to check for updates.*

@@ -1,3 +1,5 @@
+*6 November 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round10/README.md.*
+
 # Round 10, masterplan
 
 *Written on 6 November 2026 by the oversight chat through the `project-record` skill, after Nicolas's reframing and his answers of the same day. Living while the round runs. Amendments are appended at the end with their date, and the text above them is not rewritten. It is frozen at the round's close.*

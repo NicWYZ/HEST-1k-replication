@@ -1,3 +1,5 @@
+*8 November 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round10/README.md.*
+
 # Round 10, the methods ledger
 
 *8 November 2026. Written by the oversight chat under `round10_ledger_brief.md`, stage L3. It consolidates the L1 rows, the L2 and L3 readings and the decisions, so that the paper can be written and the final runs briefed without a further search. The evidence for every row is on branch `round10-ledger` under `results/round10/ledger/`: the L1 rows by section (`round10_ledger_L1_S1S2.md`, `_S3.md`, `_S4.md`, `_S5.md`, `_S6.md`) with their query logs, and the readings (`round10_ledger_L2_reads_part1.md`, `round10_ledger_L2_reads_part2.md`, `round10_ledger_L3_reads.md`). Full reading notes are in the claude.ai project docs (`claude/round10_L2_notes_*.md`, `claude/round10_L3_notes_*.md`). The decisions are in `round10_ledger_decisions.md`. Result ids are those of `../../00_prep/round10_findings_survey.md`, section 2.*

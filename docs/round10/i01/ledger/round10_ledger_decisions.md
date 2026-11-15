@@ -1,3 +1,5 @@
+*8 November 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round10/README.md.*
+
 # Round 10, track `ledger`, L3 decisions and recommendations
 
 *8 November 2026. Written by the oversight chat under `round10_ledger_brief.md`, stage L3. Question E is the ledger's to decide (`../../masterplan.md`, open questions). R7-6, P, R7-7, R7-5 and O5 are Nicolas's, and this document recommends on them. V and D5 were decided on 7 November to be settled by the literature and by testing, and this document gives the literature's answer and what the final runs test. The readings behind it are on branch `round10-ledger`: `results/round10/ledger/round10_ledger_L2_reads_part1.md`, `round10_ledger_L2_reads_part2.md` and `round10_ledger_L3_reads.md`, with the full notes in the claude.ai project docs. Labels follow the record, so `[proposed]` marks the oversight chat's reading or recommendation, not yet seen by Nicolas.*
