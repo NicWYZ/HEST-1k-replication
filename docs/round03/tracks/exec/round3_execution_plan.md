@@ -1,7 +1,6 @@
-> **Live operating plan for round 3, opened 2026-09-22.** This is the execution session's own
-> transcription of `docs/round03/i01/exec/round3_execution_handoff.md`, written before anything was run.
-> It is updated when a new instruction or decision document arrives and at no other time. It is
-> not a stage report and carries no results.
+*22 to 24 September 2026. Reviewed as tagged at round3-final-r2. What stands now: docs/round03/README.md. Corrected since the tag.*
+
+**State.** closed
 
 # Round 3 operating plan
 
@@ -1299,7 +1298,7 @@ git command, including read-only queries; the local clone is the only committer.
    (`results/round3/A1_coverage/a1_calibration_units__resnet50__main.csv`), so they train on 17, and
    the fall is 17 to 13. With `INT4` and `INT24` merged it is 22 in the pool, 10 calibration and 12
    training; the memo fixes $K = 10$ and does not state this case, so it runs at $K = 10$.
-2. **The round-3 audit file duplicates 28 samples, and the two rows disagree on all 28.** The 76
+2. **The round-3 audit file duplicates 28 samples, and the two rows disagree on all 28** (26 once the memo's own IDC correction is applied, since `TENX95` and `TENX99` then agree across origins; final report section 7 item 1). The 76
    expansion rows include the 24 CCRCC and 4 IDC benchmark samples. On CCRCC, round 2's rows say
    `verified` and D3's say `unverifiable`; the memo carries round 2's rows unchanged, while its § 3.4
    accepts D3's reading. On IDC, the memo corrects `TENX95` and `TENX99`, but `NCBI783` and `NCBI785`

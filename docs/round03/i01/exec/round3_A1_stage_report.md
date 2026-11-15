@@ -1,3 +1,5 @@
+*22 September 2026. Reviewed as tagged at round3-A1. What stands now: docs/round03/README.md.*
+
 # Round 3, A1 stage report
 
 22 September 2026. Covers interval 1: S0, A0, A1 and D0. Written against

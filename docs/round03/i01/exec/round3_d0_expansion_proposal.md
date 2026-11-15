@@ -1,3 +1,5 @@
+*22 September 2026. Reviewed as tagged at round3-A1. What stands now: docs/round03/README.md.*
+
 # D0 expansion proposal
 
 Round 3, stage D0. Prepared for Nicolas Weiyang Zhang. Nothing has been downloaded and nothing in the repository has been modified by this memo.
