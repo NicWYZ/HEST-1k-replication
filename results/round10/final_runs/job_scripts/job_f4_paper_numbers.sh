@@ -5,7 +5,7 @@
 #SBATCH --time=30
 set -u
 # F4 numbers table (plan 5e.6). __CODE_COMMIT__ is substituted at submission.
-UNIT=paper_numbers_v1
+UNIT=__UNIT__
 CLONE=/work/users/w/e/weiyang/hest_code/round10-final-runs
 BASE=/work/users/w/e/weiyang/hest_replication/results/round10/final_runs
 COMMIT=__CODE_COMMIT__

@@ -217,11 +217,10 @@ row("F4-3.pairs", "E1", "S5", "ACS by state, unit-cost pairs", ACSJ, "json: unit
 AL = "results/round10/final_runs/F4/readings/readings_alloc_v1/f4_alloc_by_task.csv"
 for t in HEST4 + ["CCRCC_merged", "ACS_STATES"]:
     row(f"F4-3b.{t}", "E1", "S5", f"{t}, allocation factor mean(Mbar/M_g) of regime B (F4-3b)", AL, f"task={t} -> alloc_factor", "F4")
-T16B = F3A + "t16b_V_side_by_side.csv"
+BOXM = F4A + "f4_box_task_summary_merged.csv"
 for t in ["CCRCC", "ACS_STATES"]:
     for col in ["median_m_bounded", "median_m_unbounded", "median_coverage_at_bounded", "median_coverage_at_unbounded"]:
-        row(f"V.{t}.{col}", "V/E1", "S5", f"{t} {enc(t)} {sc(t)}, lambda 0, {col} (F3, mu_J on HEST)", T16B, f"task={t}&encoder={enc(t)}&scale={sc(t)}&lambda=0 -> {col}", "F3")
-BOXM = F4A + "f4_box_task_summary_merged.csv"
+        row(f"V.{t}.{col}", "V/E1", "S5", f"{t} {enc(t)} {sc(t)}, mu, lambda 0, {col} (HEST mu from all spots)", BOXM, f"task={t}&encoder={enc(t)}&scale={sc(t)}&lambda=0 -> {col}", "F4")
 row("V.F4.cov_min_b", "V", "S5", "smallest median coverage at the bounded m, all rows, mu from all spots", BOXM, "min:  -> median_coverage_at_bounded", "F4")
 row("V.F4.cov_max_b", "V", "S5", "largest median coverage at the bounded m", BOXM, "max:  -> median_coverage_at_bounded", "F4")
 row("V.F4.cov_min_u", "V", "S5", "smallest median coverage at the unbounded m", BOXM, "min:  -> median_coverage_at_unbounded", "F4")
