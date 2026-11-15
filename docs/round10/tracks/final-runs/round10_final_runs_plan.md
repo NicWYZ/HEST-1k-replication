@@ -3,11 +3,11 @@
 ```state
 updated: 2026-11-15 (Claude Science session on the Windows execution PC, David's team account, reaching Longleaf through compute target ssh:longleaf; frame 3f5eb01e-aa12-4f67-84ac-45c28e10831d, the ninth session of the track)
 unit: final-runs
-status: interval i05, stage F4, gate F4 reported. Final report docs/round10/i05/final-runs/round10_final_runs_report.md, numbers table results/round10/final_runs/F4/paper_numbers.csv (paper_numbers_v2, 443 rows), provenance index over F1 to F4 in results/round10/final_runs/F4/provenance_index.csv (gate_v1, Slurm 9227979). Pull request NicWYZ/HEST-1k-replication#39 open into main, tag round10-final-runs-F4 on this commit. No job of the track is running
+status: interval i05, stage F4, gate F4 reported. Final report docs/round10/i05/final-runs/round10_final_runs_report.md, numbers table results/round10/final_runs/F4/paper_numbers.csv (paper_numbers_v2, 443 rows), provenance index over F1 to F4 in results/round10/final_runs/F4/provenance_index.csv (gate_v1, Slurm 9227979). Pull request NicWYZ/HEST-1k-replication#39 open into main, tag round10-final-runs-F4 on fad48334, one commit before a citation fix (report section 7, item 7). No job of the track is running
 step: F4 done; the track waits at its final gate
 last run: F4_gate/gate_v1 (Slurm 9227979); before it paper_numbers_v2 (Slurm 9227641) and F4_ledger/ledger_v1 (Slurm 9227399)
 next: Nicolas reviews the report and pull request #39. After his reply, a session writes the decision file and does bookkeeping only; the session never merges
-waiting: Nicolas: review of gate F4 and the merge of pull request #39
+waiting: Nicolas: review of gate F4, the merge of pull request #39, and whether the citation-fix commit gets its own tag
 ```
 
 *Written on 9 November 2026 by the first session of track `final-runs`. The brief is `docs/round10/i01/final-runs/round10_final_runs_brief.md` on `main` (read at 133384d1). It is read with `docs/EXECUTION_RULES.md` at that commit, `docs/round10/masterplan.md`, the ledger's decisions `docs/round10/i01/ledger/round10_ledger_decisions.md` and Nicolas's L3 answers `docs/round10/i02/ledger/round10_ledger_L3_answers.md`, which win where they differ. This plan does not copy the brief. It records how the session does each step, the checks it runs, and dated notes as the work goes.*
