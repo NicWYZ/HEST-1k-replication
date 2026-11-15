@@ -1,0 +1,30 @@
+platform: Longleaf
+slurm_job_id: 8890931
+slurm_job_partition: spill
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 1
+slurm_mem_per_node: 6144
+node: c151401
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F2
+unit: gate_checks_v2
+frame_id: 10b1be42-01a3-406b-b386-7580e28b98ad
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 7c8de1aa047cf277cc2056cfa86b684fa0eb92bd
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/7c8de1aa047cf277cc2056cfa86b684fa0eb92bd
+command: round10_final_runs_provenance_index.py /work/users/w/e/weiyang/hest_replication/results/round10/final_runs /work/users/w/e/weiyang/hest_code/round10-final-runs 7c8de1aa047cf277cc2056cfa86b684fa0eb92bd /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2_gate/gate_checks_v2/provenance_index.csv F1,F2; verify_numeric_claims.py docs/round10/i03/final-runs/round10_final_runs_F2_report.md --search-dir . --search-dir results/round10/final_runs/F2 --exceptions .verify-exceptions-round10-final-runs --tsv /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2_gate/gate_checks_v2/verify_F2.tsv
+config: {"commit":"7c8de1aa047cf277cc2056cfa86b684fa0eb92bd","stage":"F2","unit":"gate_checks_v2"}
+config_sha256: 2cc6225bc61c1467742071ca916c3bc927823033312d8b207ce7b537114525e8
+start: 2026-11-11T10:16:06-05:00
+end: 2026-11-11T10:16:50-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  a0da51f319b7f8282976b59c1f7991c2  code/scripts/round10_final_runs_provenance_index.py
+  10c7ea21abee5fd44b583df0affc320e  code/scripts/verify_numeric_claims.py
+inputs (md5, path):
+  d948a831d543c0e01f7c525312ca66ed  /work/users/w/e/weiyang/hest_code/round10-final-runs/docs/round10/i03/final-runs/round10_final_runs_F2_report.md
+  2d6d5fb300155a3f2a21a70c796f7dd0  /work/users/w/e/weiyang/hest_code/round10-final-runs/.verify-exceptions-round10-final-runs

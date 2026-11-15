@@ -1,0 +1,221 @@
+{
+ "config": {
+  "stage": "F3",
+  "unit": "box__CCRCC__uni_v2__log1p",
+  "R": 2000,
+  "forms": [
+   "C_fix1"
+  ],
+  "m_grid": [
+   3,
+   4,
+   5,
+   6,
+   8,
+   10,
+   12,
+   15,
+   20,
+   25,
+   30,
+   40,
+   50,
+   75,
+   100,
+   150,
+   200,
+   300,
+   500
+  ],
+  "box": true,
+  "populations": [
+   {
+    "task": "CCRCC",
+    "vtag": "CCRCC",
+    "encoder": "uni_v2",
+    "arm": "uni_v2",
+    "scale": "log1p",
+    "source": "r5",
+    "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+    "estimands": [
+     "theta2"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+    "theta2_kind": "mean"
+   }
+  ],
+  "_cells": 19
+ },
+ "started": "2026-11-14T04:07:23",
+ "populations": [
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 24,
+   "n_units": 74220,
+   "n_genes": 50,
+   "box_seconds": 2.0,
+   "coverage": {
+    "task": "CCRCC",
+    "encoder": "uni_v2",
+    "scale": "log1p",
+    "G": 24,
+    "n_units": 74220,
+    "n_genes": 50,
+    "load_seconds": 0.1,
+    "cells": [
+     {
+      "estimand": "mu",
+      "m": 3,
+      "seconds": 2.2,
+      "sim_seconds": 2.1,
+      "boot_seconds": 0.0
+     },
+     {
+      "estimand": "mu",
+      "m": 4,
+      "seconds": 2.3,
+      "sim_seconds": 2.1,
+      "boot_seconds": 0.0
+     },
+     {
+      "estimand": "mu",
+      "m": 5,
+      "seconds": 2.3,
+      "sim_seconds": 2.2,
+      "boot_seconds": 0.0
+     },
+     {
+      "estimand": "mu",
+      "m": 6,
+      "seconds": 2.7,
+      "sim_seconds": 2.6,
+      "boot_seconds": 0.0
+     },
+     {
+      "estimand": "mu",
+      "m": 8,
+      "seconds": 2.6,
+      "sim_seconds": 2.5,
+      "boot_seconds": 0.0
+     },
+     {
+      "estimand": "mu",
+      "m": 10,
+      "seconds": 2.5,
+      "sim_seconds": 2.4,
+      "boot_seconds": 0.0
+     },
+     {
+      "estimand": "mu",
+      "m": 12,
+      "seconds": 2.5,
+      "sim_seconds": 2.4,
+      "boot_seconds": 0.0
+     },
+     {
+      "estimand": "mu",
+      "m": 15,
+      "seconds": 2.6,
+      "sim_seconds": 2.5,
+      "boot_seconds": 0.0
+     },
+     {
+      "estimand": "mu",
+      "m": 20,
+      "seconds": 2.8,
+      "sim_seconds": 2.7,
+      "boot_seconds": 0.0
+     },
+     {
+      "estimand": "mu",
+      "m": 25,
+      "seconds": 2.9,
+      "sim_seconds": 2.8,
+      "boot_seconds": 0.0
+     },
+     {
+      "estimand": "mu",
+      "m": 30,
+      "seconds": 3.2,
+      "sim_seconds": 3.2,
+      "boot_seconds": 0.0
+     },
+     {
+      "estimand": "mu",
+      "m": 40,
+      "seconds": 3.6,
+      "sim_seconds": 3.5,
+      "boot_seconds": 0.0
+     },
+     {
+      "estimand": "mu",
+      "m": 50,
+      "seconds": 4.7,
+      "sim_seconds": 4.6,
+      "boot_seconds": 0.0
+     },
+     {
+      "estimand": "mu",
+      "m": 75,
+      "seconds": 4.6,
+      "sim_seconds": 4.5,
+      "boot_seconds": 0.0
+     },
+     {
+      "estimand": "mu",
+      "m": 100,
+      "seconds": 5.5,
+      "sim_seconds": 5.4,
+      "boot_seconds": 0.0
+     },
+     {
+      "estimand": "mu",
+      "m": 150,
+      "seconds": 7.2,
+      "sim_seconds": 7.1,
+      "boot_seconds": 0.0
+     },
+     {
+      "estimand": "mu",
+      "m": 200,
+      "seconds": 8.8,
+      "sim_seconds": 8.7,
+      "boot_seconds": 0.0
+     },
+     {
+      "estimand": "mu",
+      "m": 300,
+      "seconds": 12.1,
+      "sim_seconds": 12.0,
+      "boot_seconds": 0.0
+     },
+     {
+      "estimand": "mu",
+      "m": 500,
+      "seconds": 17.2,
+      "sim_seconds": 17.1,
+      "boot_seconds": 0.0
+     }
+    ],
+    "cv_check": {
+     "mu": {
+      "n_valid_regimeB": 24,
+      "n_donors_cv": 24,
+      "n_common": 24,
+      "n_genes": 50,
+      "only_regimeB": [],
+      "only_cv": [],
+      "max_rel": 0.0,
+      "max_abs": 0.0
+     }
+    },
+    "seconds": 92.4
+   }
+  }
+ ],
+ "box_rows": 100,
+ "coverage_rows": 950,
+ "finished": "2026-11-14T04:08:58"
+}

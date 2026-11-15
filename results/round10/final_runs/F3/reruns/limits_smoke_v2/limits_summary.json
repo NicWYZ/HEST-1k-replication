@@ -1,0 +1,59 @@
+{
+ "config": {
+  "stage": "F2.1-limits",
+  "unit": "limits__CCRCC__uni_v2__norm_refit",
+  "cluster_values": [
+   "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC.parquet"
+  ],
+  "select": {
+   "task": [
+    "CCRCC"
+   ],
+   "encoder": [
+    "uni_v2"
+   ],
+   "scale": [
+    "norm_refit"
+   ]
+  },
+  "n_grid": [
+   4,
+   6,
+   8,
+   10,
+   12,
+   16
+  ],
+  "extra_n": {
+   "kidney__Visium": [
+    20,
+    25
+   ]
+  },
+  "R_lim": 2000,
+  "B_kluger": 2000,
+  "chunk": 100,
+  "part": null,
+  "regimeA_config": "results/round10/final_runs/F2/configs/regimeA/f2_regimeA__CCRCC__uni_v2__norm_refit.json"
+ },
+ "started": "2026-11-12T08:31:29",
+ "n_populations": 200,
+ "n_skipped": 0,
+ "skipped": [],
+ "n_rows": 12000,
+ "checks_max": {
+  "xf_minus_lin_none": 0.0,
+  "xf_minus_lin_a_b1": 0.0,
+  "xf_minus_lin_b_cluster": 0.0,
+  "none_vs_classical": 6.661338147750939e-16,
+  "a_b1_vs_b_cluster": 0.0
+ },
+ "check_tol": 1.0048105755109302e-09,
+ "checks_failed": {},
+ "draw_check": null,
+ "R_lim": 2000,
+ "B_kluger": 2000,
+ "chunk": 100,
+ "seconds": 1643.4,
+ "finished": "2026-11-12T08:58:53"
+}

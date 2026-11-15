@@ -1,0 +1,32 @@
+platform: Longleaf
+slurm_job_id: 8940092
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 1
+slurm_mem_per_node: 4096
+node: c0809
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F3
+unit: alloc_anchor_r5
+frame_id: 7bae80ef-cb3f-4725-8012-f680940d6c59
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 33ab75c5726d71a40787498b291dcb5abfe36e2f
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/33ab75c5726d71a40787498b291dcb5abfe36e2f
+command: round5_ppi_e5_allocation.py ; round10_final_runs_f3_allocation.py anchor_check /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/alloc_anchor_r5/results/round5/ppi/E5_joint/e5_allocation.csv /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/alloc_anchor_r5/ref_e5_allocation.csv /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/alloc_anchor_r5/anchor_alloc.json
+config: {"commit":"33ab75c5726d71a40787498b291dcb5abfe36e2f","stage":"F3","unit":"alloc_anchor_r5"}
+config_sha256: ca333ad217d58fac641e2d0556854c24950be8018ba8938b2e8591c115120e48
+start: 2026-11-12T08:20:12-05:00
+end: 2026-11-12T08:20:37-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  3e45804f0eff3dc71a5eaf322e3adbc6  code/scripts/round5_ppi_e5_allocation.py
+  30f6f4585ace08d12133c322da5abed1  code/scripts/round10_final_runs_f3_allocation.py
+inputs (md5, path):
+  6592b3443792f7eabd27a950017717fe  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/alloc_anchor_r5/results/round5/ppi/E3_twolevel/e3_components.csv
+  ad1e79207ea93763295724881e13934d  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/alloc_anchor_r5/results/round5/ppi/E3_twolevel/e3_masking_grid.csv
+  e86daf2fc86090e264a4d6d997803e8e  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/alloc_anchor_r5/results/round5/ppi/E3_twolevel/e3_components_fitted.csv
+  802b4abd4c56b86c056d85cac57b89e7  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/alloc_anchor_r5/ref_e5_allocation.csv

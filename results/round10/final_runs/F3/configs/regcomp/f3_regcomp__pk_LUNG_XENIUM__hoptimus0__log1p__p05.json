@@ -1,0 +1,72 @@
+{
+ "stage": "F3",
+ "unit": "regcomp__pk_LUNG_XENIUM__hoptimus0__log1p__p05",
+ "R": 2000,
+ "populations": [
+  {
+   "task": "LUNG_XENIUM",
+   "vtag": "LUNG_XENIUM",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "log1p",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__hoptimus0.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__LUNG_XENIUM.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     4800
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "B_B4800_c10_nL4",
+   "expected_s": 453.4
+  },
+  {
+   "task": "LUNG_XENIUM",
+   "vtag": "LUNG_XENIUM",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "log1p",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__hoptimus0.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__LUNG_XENIUM.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     4800
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "B_B4800_c10_nL6",
+   "expected_s": 455.7
+  }
+ ],
+ "estimands_reported": [
+  "theta3",
+  "theta2",
+  "mu"
+ ],
+ "expected_s": 909.1,
+ "_cells": 2
+}

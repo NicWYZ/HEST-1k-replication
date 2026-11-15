@@ -1,0 +1,40 @@
+{
+ "stage": "F4",
+ "out": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F4/aggregate/f4_aggregate_v1",
+ "units": 330,
+ "completed": 330,
+ "anchors_passed": 330,
+ "duplicates": 0,
+ "regcomp_aggregate_rc": 0,
+ "box_aggregate_rc": 0,
+ "regcomp_comparisons": {
+  "f3_rows_kept": 8868,
+  "f4_rows": 4374,
+  "rows": 13242
+ },
+ "box_task_summary": {
+  "f3_rows_kept": 2,
+  "f4_rows": 132,
+  "rows": 134
+ },
+ "e8_m15": {
+  "rows": 54,
+  "overall_methods": {
+   "ghcp": 54
+  },
+  "noextra_methods": {
+   "within_full": 42,
+   "within_plain": 12
+  },
+  "K": [
+   18,
+   20,
+   30,
+   40
+  ],
+  "parts": [
+   2
+  ]
+ },
+ "finished": true
+}

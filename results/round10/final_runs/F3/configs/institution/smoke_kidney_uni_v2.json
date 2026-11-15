@@ -1,0 +1,21 @@
+{
+ "stage": "F3",
+ "item": "F3.2 smoke, one production cell timed",
+ "scales": [
+  "log1p",
+  "lognorm"
+ ],
+ "arms": [
+  "hcp_center",
+  "hcp_donor"
+ ],
+ "levels_rule": "alpha in {0.2,0.25} where 1/units <= alpha, plus 1/units",
+ "score_fr8": false,
+ "cells": [
+  {
+   "task": "kidney__Visium",
+   "encoder": "uni_v2",
+   "pred": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/kidney__Visium__uni_v2/pred__kidney__Visium__uni_v2__center.parquet"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "stage": "F2.1-limits",
+ "unit": "limits__kidney__Visium__hoptimus0__p0of3",
+ "cluster_values": [
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__kidney__Visium.parquet"
+ ],
+ "select": {
+  "task": [
+   "kidney__Visium"
+  ],
+  "encoder": [
+   "hoptimus0"
+  ]
+ },
+ "n_grid": [
+  4,
+  6,
+  8,
+  10,
+  12,
+  16
+ ],
+ "extra_n": {
+  "kidney__Visium": [
+   20,
+   25
+  ]
+ },
+ "R_lim": 2000,
+ "B_kluger": 2000,
+ "chunk": 100,
+ "part": [
+  0,
+  3
+ ],
+ "regimeA_config": "results/round10/final_runs/F2/configs/regimeA/f2_regimeA__kidney__Visium__hoptimus0.json"
+}

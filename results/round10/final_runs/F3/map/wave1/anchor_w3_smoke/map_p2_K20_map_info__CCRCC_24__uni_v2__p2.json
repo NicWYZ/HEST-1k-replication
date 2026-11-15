@@ -1,0 +1,73 @@
+{
+ "task": "CCRCC:24",
+ "encoder": "uni_v2",
+ "part": 2,
+ "folds": [
+  "INT1",
+  "INT10",
+  "INT11",
+  "INT12",
+  "INT13",
+  "INT14",
+  "INT15",
+  "INT16",
+  "INT17",
+  "INT18",
+  "INT19",
+  "INT2",
+  "INT20",
+  "INT21",
+  "INT22",
+  "INT23",
+  "INT24",
+  "INT3",
+  "INT4",
+  "INT5",
+  "INT6",
+  "INT7",
+  "INT8",
+  "INT9"
+ ],
+ "cal_draws": [
+  0,
+  1,
+  2
+ ],
+ "plan": [
+  {
+   "K": 20,
+   "o_grid": [
+    0,
+    5,
+    10,
+    15,
+    17,
+    25,
+    50
+   ]
+  }
+ ],
+ "rows": 4572,
+ "specs": 1,
+ "wall_seconds": 860.7,
+ "frac_integer": 1.0,
+ "final_files": {},
+ "methods": [
+  "pooled",
+  "hcp",
+  "one_per",
+  "ghcp",
+  "ghcp_noad",
+  "ghcp_r05",
+  "ghcp_r05_noad",
+  "ghcp_r05code",
+  "within",
+  "within_plain",
+  "recentred",
+  "within_full",
+  "xgene",
+  "within_final",
+  "within_plain_final",
+  "within_full_final"
+ ]
+}

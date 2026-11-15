@@ -1,0 +1,49 @@
+{
+ "stage": "F3",
+ "unit": "regB_e8__ACS_STATES__pkg__log_income",
+ "R": 2000,
+ "forms": [
+  "C_fix1",
+  "C_ppi",
+  "C_classical"
+ ],
+ "widths_forms": [
+  "C_fix1",
+  "C_classical"
+ ],
+ "wr_boot": 200,
+ "m_grid": [
+  3,
+  5,
+  9,
+  10,
+  12,
+  15,
+  17,
+  20,
+  25,
+  30,
+  50,
+  100
+ ],
+ "f2_summary": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F2/aggregate_regimeB/f2_regimeB_summary.csv",
+ "populations": [
+  {
+   "task": "ACS_STATES",
+   "vtag": "ACS_STATES",
+   "encoder": "pkg",
+   "arm": "package",
+   "scale": "log_income",
+   "source": "r5",
+   "theta2_kind": "mean",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_STATES.parquet",
+   "estimands": [
+    "theta3",
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1b_acs/cluster_values__ACS_STATES.parquet",
+   "f2_genes": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/ACS_STATES__pkg/regimeB_genes.parquet"
+  }
+ ],
+ "_cells": 24
+}

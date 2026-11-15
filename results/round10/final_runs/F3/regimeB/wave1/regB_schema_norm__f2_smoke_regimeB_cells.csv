@@ -1,0 +1,10 @@
+task,encoder,scale,G,G_valid,m,estimand,population,target,interval,n_draws,n_genes,emp_var_median,est_var_over_emp_var_median,coverage_median,coverage_mean,coverage_min,width_ratio_median,emp_var_ratio_median,lambda_median,lambda_frac_zero,lambda_se_median,lambda_raw_mean_median,lambda_raw_mean_se_median,estimator
+CCRCC,uni_v2,norm_refit,24,24,10,theta3,donor,design,regB_t,2000,50,0.0058790781449646855,0.9959280569399327,0.9025,0.9011699999999999,0.8845,,,1.0,0.0,,,,C_fix1
+CCRCC,uni_v2,norm_refit,24,24,10,theta3,donor,design,regB_t,2000,50,0.005704358823454005,1.004191582114304,0.9025,0.9014399999999999,0.8875,,,0.5,0.09108,,,,C_ppi
+CCRCC,uni_v2,norm_refit,24,24,10,theta3,donor,design,regB_t,2000,50,0.005616011491735295,1.0031697128506654,0.902,0.90167,0.8875,,,0.0,1.0,,,,C_classical
+CCRCC,uni_v2,norm_refit,24,23,10,theta2,donor,design,regB_t,2000,50,0.0049096099264178345,1.0108327199488742,0.89975,0.8998999999999999,0.883,,,1.0,0.0,,,,C_fix1
+CCRCC,uni_v2,norm_refit,24,23,10,theta2,donor,design,regB_t,2000,50,0.004782964694884452,1.005294697321638,0.9005000000000001,0.89985,0.8785,,,0.3331447584022348,0.22706,,,,C_ppi
+CCRCC,uni_v2,norm_refit,24,23,10,theta2,donor,design,regB_t,2000,50,0.004791029798113967,1.0043584851185545,0.8999999999999999,0.8994000000000001,0.88,,,0.0,1.0,,,,C_classical
+LUNG_XENIUM,uni_v2,norm_refit,15,15,10,theta3,donor,design,regB_t,2000,343,0.010317351980530201,0.9894933986233048,0.895,0.8935626822157433,0.801,,,1.0,0.0,,,,C_fix1
+LUNG_XENIUM,uni_v2,norm_refit,15,15,10,theta3,donor,design,regB_t,2000,343,0.010938649584028447,0.9874341907800286,0.893,0.8904810495626824,0.7895,,,0.8389437239354963,0.09480758017492712,,,,C_ppi
+LUNG_XENIUM,uni_v2,norm_refit,15,15,10,theta3,donor,design,regB_t,2000,343,0.014335727441638253,0.9847386375388456,0.8915,0.8870743440233236,0.799,,,0.0,1.0,,,,C_classical

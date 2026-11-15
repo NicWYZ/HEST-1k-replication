@@ -1,0 +1,20 @@
+{
+ "anchor": "5d.1 item 7: round3_a4_scores.py unchanged (designs random,patient,donor; scores abs, scaled, scaled_clip), CCRCC, uni_v2, donor design",
+ "reference": "/work/users/w/e/weiyang/hest_replication/results/round3/A4_scores/a4_scores_by_task__uni_v2__mainCCRCC.csv",
+ "n_matched": 42,
+ "scores": [
+  "abs",
+  "scaled",
+  "scaled_clip"
+ ],
+ "criterion": "max abs difference <= 1e-09 over ['coverage', 'coverage_sd', 'width_mean', 'width_median', 'n_folds', 'n_cells'] on every matched row",
+ "maxabs_coverage": 0.0,
+ "maxabs_coverage_sd": 0.0,
+ "maxabs_width_mean": 7.105427357601002e-15,
+ "maxabs_width_median": 1.3766765505351941e-14,
+ "maxabs_n_folds": 0.0,
+ "maxabs_n_cells": 0.0,
+ "scaled_clip_coverage_ref": 0.873313516136088,
+ "scaled_clip_coverage_new": 0.873313516136088,
+ "passed": true
+}

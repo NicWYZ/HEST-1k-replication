@@ -1,0 +1,43 @@
+{
+ "groups": 46,
+ "groups_pass_donor10": 7,
+ "kidney_visium": {
+  "samples": 62,
+  "centers": 6,
+  "donors": 50
+ },
+ "hest_tasks": {
+  "CCRCC": {
+   "samples": 24,
+   "in_corpus": 24,
+   "hest_donors": 24,
+   "partitions_agree": true
+  },
+  "CCRCC_merged": {
+   "samples": 24,
+   "in_corpus": 24,
+   "hest_donors": 23,
+   "partitions_agree": false
+  },
+  "INDIANA_KIDNEY": {
+   "samples": 26,
+   "in_corpus": 26,
+   "hest_donors": 25,
+   "partitions_agree": false
+  },
+  "LUNG_XENIUM": {
+   "samples": 20,
+   "in_corpus": 20,
+   "hest_donors": 15,
+   "partitions_agree": false
+  }
+ },
+ "kidney_visium_samples_in_hest_tasks": 50,
+ "kidney_visium_donors_in_hest_tasks": 47,
+ "lung_xenium": {
+  "samples": 24,
+  "centers": 4,
+  "donors": 22,
+  "samples_in_LUNG_XENIUM": 20
+ }
+}

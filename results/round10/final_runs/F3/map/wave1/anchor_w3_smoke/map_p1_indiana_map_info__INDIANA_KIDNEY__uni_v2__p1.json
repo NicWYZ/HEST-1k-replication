@@ -1,0 +1,90 @@
+{
+ "task": "INDIANA_KIDNEY",
+ "encoder": "uni_v2",
+ "part": 1,
+ "folds": [
+  "kidVis_atlas_21-015",
+  "kidVis_atlas_21-019",
+  "kidVis_atlas_27-10066",
+  "kidVis_atlas_28-12265",
+  "kidVis_atlas_29-10012",
+  "kidVis_atlas_29-10013",
+  "kidVis_atlas_29-10280",
+  "kidVis_atlas_29-10282",
+  "kidVis_atlas_29-10404",
+  "kidVis_atlas_30-10125",
+  "kidVis_atlas_30-10631",
+  "kidVis_atlas_30-10929",
+  "kidVis_atlas_31-10042",
+  "kidVis_atlas_31-10221",
+  "kidVis_atlas_32-10003",
+  "kidVis_atlas_32-10074",
+  "kidVis_atlas_33-10331",
+  "kidVis_atlas_IU-13437",
+  "kidVis_atlas_IU-F52",
+  "kidVis_atlas_IU-F59",
+  "kidVis_atlas_IU-M32",
+  "kidVis_atlas_IU-M61",
+  "kidVis_papilla_20-0034",
+  "kidVis_papilla_KRP428",
+  "kidVis_papilla_M50"
+ ],
+ "cal_draws": [
+  0,
+  1,
+  2
+ ],
+ "plan": [
+  {
+   "K": 10,
+   "o_grid": [
+    0,
+    3,
+    5,
+    9,
+    10,
+    12,
+    15,
+    17,
+    20,
+    25,
+    50,
+    100
+   ]
+  }
+ ],
+ "rows": 13652,
+ "specs": 1,
+ "wall_seconds": 179.2,
+ "frac_integer": 1.0,
+ "final_files": {
+  "log1p": {
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions_INDIANA_KIDNEY/b1_predictions__INDIANA_KIDNEY__uni_v2.parquet",
+   "md5": "7a3322218de7cd846fe912ece20f633c",
+   "n_genes": 50
+  },
+  "norm": {
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/INDIANA_KIDNEY__uni_v2/norm/b1_predictions__INDIANA_KIDNEY__uni_v2.parquet",
+   "md5": "21073297b76f6d15f27454b109cd32c9",
+   "n_genes": 50
+  }
+ },
+ "methods": [
+  "pooled",
+  "hcp",
+  "one_per",
+  "ghcp",
+  "ghcp_noad",
+  "ghcp_r05",
+  "ghcp_r05_noad",
+  "ghcp_r05code",
+  "within",
+  "within_plain",
+  "recentred",
+  "within_full",
+  "xgene",
+  "within_final",
+  "within_plain_final",
+  "within_full_final"
+ ]
+}

@@ -1,0 +1,28 @@
+platform: Longleaf
+slurm_job_id: 9149619
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 16384
+node: c0813
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F3
+unit: aggregate_job/f3_aggregate
+frame_id: 2b764a2a-b65e-44dd-a6fc-d51f9f0964af
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 0d4946b8e75b200fee317f3342f6b7f0d4ea310b
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/0d4946b8e75b200fee317f3342f6b7f0d4ea310b
+command: round10_final_runs_f3_aggregate.py /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/aggregate_job/f3_aggregate/committed/results/round10/final_runs/F3 /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/aggregate_job/f3_aggregate/aggregate (IN = git archive 0d4946b8e75b200fee317f3342f6b7f0d4ea310b results/round10/final_runs/F3)
+config: {"commit":"0d4946b8e75b200fee317f3342f6b7f0d4ea310b","stage":"F3","track_dir":"aggregate_job","unit":"f3_aggregate"}
+config_sha256: 504923855f5c16ce5995d67a2635a8c0bc7251eb0f08996e74a0eca42720162d
+start: 2026-11-13T23:19:38-05:00
+end: 2026-11-13T23:20:09-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  70aeef3103ebe1a988ff831fa62318fe  code/scripts/round10_final_runs_f3_aggregate.py
+inputs (md5, path):
+  d704b9417306f51e78dab0b8d327ca1c  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/aggregate_job/f3_aggregate/committed_md5.txt

@@ -1,0 +1,30 @@
+platform: Longleaf
+slurm_job_id: 8869064
+slurm_job_partition: spill
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 12288
+node: c130503
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F2
+unit: report_tables_v1
+frame_id: 10b1be42-01a3-406b-b386-7580e28b98ad
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 10d00554d7d32b6af28fd81d6fe15adecab78110
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/10d00554d7d32b6af28fd81d6fe15adecab78110
+command: round10_final_runs_f2_report_tables.py /work/users/w/e/weiyang/hest_code/round10-final-runs /work/users/w/e/weiyang/hest_replication/results/round10/final_runs /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/report_tables/report_tables_v1; round10_final_runs_ledger_rows.py /work/users/w/e/weiyang/hest_code/round10-final-runs /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2 F2 /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/report_tables/report_tables_v1/f2_ledger_new_rows.csv
+config: {"commit":"10d00554d7d32b6af28fd81d6fe15adecab78110","stage":"F2","unit":"report_tables_v1"}
+config_sha256: 895a9476573c847f2247d6f2f69efa6678e7ba86c62e8b689cf4c055c70b2969
+start: 2026-11-11T03:54:48-05:00
+end: 2026-11-11T03:55:02-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  76aeb73c38ac9b1d2d54dcdec1eb04b2  code/scripts/round10_final_runs_f2_report_tables.py
+  1623ac00e248c3afa655d8a81b57f494  code/scripts/round10_final_runs_ledger_rows.py
+inputs (md5, path):
+  8962b3854cf1b6d911a979fc7e4be1e5  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/job_ledger.csv
+  fe68b7cdb2f2aeaa8883e04810fd8e80  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round7/ppi/S5_numbers/run1/s5_matched_cells.csv

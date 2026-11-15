@@ -1,0 +1,54 @@
+{
+ "stage": "F3",
+ "unit": "regcomp__breast__Xenium__uni_v2__log1p__B9600_A",
+ "R": 2000,
+ "populations": [
+  {
+   "task": "breast__Xenium",
+   "vtag": "breast__Xenium",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "log1p",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Xenium__uni_v2/pred__breast__Xenium__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Xenium/morphology__breast__Xenium.parquet",
+   "y_prefix": "y_log1p__",
+   "f_prefix": "f_log1p__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3",
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Xenium.parquet"
+  },
+  {
+   "task": "breast__Xenium",
+   "vtag": "breast__Xenium",
+   "encoder": "uni_v2",
+   "arm": "uni_v2",
+   "scale": "log1p",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Xenium__uni_v2/pred__breast__Xenium__uni_v2__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Xenium/morphology__breast__Xenium.parquet",
+   "y_prefix": "y_log1p__",
+   "f_prefix": "f_log1p__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Xenium.parquet",
+   "theta2_kind": "mean"
+  }
+ ],
+ "estimands_reported": [
+  "theta3",
+  "theta2",
+  "mu"
+ ],
+ "budgets": [
+  9600
+ ],
+ "regimes": [
+  "A"
+ ]
+}

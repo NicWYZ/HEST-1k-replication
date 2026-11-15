@@ -1,0 +1,28 @@
+platform: Longleaf
+slurm_job_id: 9086594
+slurm_job_partition: general_big
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 4
+slurm_mem_per_node: 131072
+node: c151411
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F3
+unit: map/map_aggregate
+frame_id: 09de02c2-2098-4389-8ef9-287a670134b1
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: cfa6989718a0ee78c79323454f452b855631d9eb
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/cfa6989718a0ee78c79323454f452b855631d9eb
+command: round10_final_runs_f3_map_aggregate.py /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/map_aggregate/aggregate <the map_full__*.csv.gz of BASE/F3/map/p1_*, p2_*, p2s_* listed in inputs.txt>
+config: {"commit":"cfa6989718a0ee78c79323454f452b855631d9eb","stage":"F3","track_dir":"map","unit":"map_aggregate"}
+config_sha256: fecdcaeeaf57660162c681c88c02c4105a9645020f99ac7e637b06c0daec09fa
+start: 2026-11-13T07:53:48-05:00
+end: 2026-11-13T07:58:32-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  616ce3eba9382c7d363eb9c85ad536de  code/scripts/round10_final_runs_f3_map_aggregate.py
+inputs (md5, path):
+  7530f39d9158cdd65acb25a4e4a8910e  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/map_aggregate/inputs.txt

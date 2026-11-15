@@ -1,0 +1,12 @@
+task,cells,cov_min,cov_max,max_abs_dev,cell_of_max_dev
+CCRCC,36,0.896,0.90325,0.0040000000000000036,hoptimus0|log1p|theta2|20
+CCRCC_merged,36,0.89575,0.90325,0.004249999999999976,hoptimus0|log1p|theta2|20
+INDIANA_KIDNEY,36,0.897,0.903,0.0030000000000000027,resnet50|log1p|theta3|10
+LUNG_XENIUM,36,0.8945,0.9015,0.00550000000000006,resnet50|log1p|theta3|20
+ACS_STATES,12,0.8795,0.9115,0.020500000000000074,pkg|log_income|mu|8
+kidney__Visium,72,0.8907499999999999,0.90475,0.009250000000000091,uni_v2|log1p|theta3|6
+breast__Spatial_Transcriptomics,72,0.89125,0.9035,0.008750000000000036,uni_v2|log1p|theta3|20
+bowel__Visium,72,0.89325,0.905,0.006750000000000034,uni_v2|log1p|theta3|8
+brain__Visium,72,0.894,0.903,0.006000000000000005,resnet50|log1p|theta3|8
+breast__Xenium,72,0.89525,0.9025,0.004750000000000032,hoptimus0|log1p|theta3|6
+lung__Xenium,72,0.894,0.90225,0.006000000000000005,hoptimus0|lognorm|theta3|6

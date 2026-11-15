@@ -1,0 +1,60 @@
+{
+ "script": "round10_final_runs_f3_reruns_kappa_rise.py",
+ "n_perm": 10000,
+ "criterion": "two-sided permutation p < 0.05 and fitted rise over the IQR of kappa_e >= 0.01",
+ "gene_rows": 132906,
+ "cells": 1722,
+ "anchor": {
+  "cells_committed": 1722,
+  "cells_recomputed": 1722,
+  "cells_unmatched": 0,
+  "nan_pattern_equal": true,
+  "max_abs_diff": 0.0,
+  "r09b": [
+   {
+    "group": "HEST_ACS",
+    "cells": 822,
+    "cells_ref": 822,
+    "median": -0.5564520043933703,
+    "median_ref": -0.5564520043933703,
+    "share_negative": 0.8138686131386861,
+    "share_negative_ref": 0.8138686131386861,
+    "count": 810,
+    "count_ref": 810
+   },
+   {
+    "group": "corpus",
+    "cells": 900,
+    "cells_ref": 900,
+    "median": -0.40290053587475383,
+    "median_ref": -0.40290053587475383,
+    "share_negative": 0.7533333333333333,
+    "share_negative_ref": 0.7533333333333333,
+    "count": 900,
+    "count_ref": 900
+   }
+  ],
+  "pass": true
+ },
+ "cells_not_negative_or_undefined": 375,
+ "cells_undefined": 12,
+ "R_values": [
+  20000
+ ],
+ "max_rho_rank_vs_committed": 1.1102230246251565e-16,
+ "classification": {
+  "not_significant": 263,
+  "significant_rise_below_0.01": 74,
+  "genuine_rise": 26,
+  "undefined": 12
+ },
+ "prediction": {
+  "text": "fewer than 0.1 of the 1,722 cells show a genuine rise",
+  "genuine": 26,
+  "cells": 1722,
+  "share": 0.015098722415795587,
+  "verdict": "held"
+ },
+ "genes_rows_written": 1300,
+ "finished": true
+}

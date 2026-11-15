@@ -1,0 +1,28 @@
+{
+ "cell": {
+  "vtag": "ACS_STATES",
+  "arm": "package",
+  "estimand": "theta3",
+  "n_L": 8,
+  "design": "D2_rej_t",
+  "p_a": 0.01
+ },
+ "coverage": {
+  "file": 0.879,
+  "rerun": 0.879,
+  "abs_diff": 0.0,
+  "exact_at_10g": true,
+  "n_draws": 2000,
+  "binomial_mcse": 0.007292427579345577
+ },
+ "wr_D0cl": {
+  "file": 0.5512905601,
+  "rerun": 0.5512905600863858,
+  "abs_diff": 1.3614220861768445e-11,
+  "exact_at_10g": true
+ },
+ "scripts_all_match": true,
+ "n_scripts": 13,
+ "tables_compared": 4,
+ "tables_identical": 4
+}

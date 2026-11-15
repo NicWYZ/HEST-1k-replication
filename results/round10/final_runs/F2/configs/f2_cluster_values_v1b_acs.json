@@ -1,0 +1,24 @@
+{
+ "stage": "F2.0",
+ "unit": "cluster_values_v1b_acs",
+ "repo_root": "/work/users/w/e/weiyang/hest_replication",
+ "populations": [
+  {
+   "task": "ACS_STATES",
+   "encoder": "pkg",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_STATES.parquet",
+   "theta3_needs_m_only": true,
+   "scales": [
+    {
+     "name": "log_income",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  }
+ ],
+ "c0": "/work/users/w/e/weiyang/hest_replication/results/round9/claude_science/C0_cluster_summaries/c0_cluster_summaries.csv.gz",
+ "c0_scale": {
+  "ACS_STATES": "log_income"
+ }
+}

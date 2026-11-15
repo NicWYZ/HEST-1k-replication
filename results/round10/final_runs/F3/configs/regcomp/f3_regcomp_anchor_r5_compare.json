@@ -1,0 +1,33 @@
+{
+ "stage": "F3",
+ "unit": "regcomp_anchor_r5",
+ "vtag": "CCRCC",
+ "arm": "uni_v2",
+ "new_csv": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/regimeB/regcomp_anchor_r5/e3_regcomp__CCRCC__uni_v2.csv",
+ "ref_csv": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round5/ppi/E3_twolevel/CCRCC/uni_v2__regcomp/e3_regcomp__CCRCC__uni_v2.csv",
+ "ref_merged": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round5/ppi/E3_twolevel/e3_regime_comparison.csv",
+ "new_genes": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/regimeB/regcomp_anchor_r5/e3_regcomp_genes__CCRCC__uni_v2.csv.gz",
+ "ref_genes": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round5/ppi/E3_twolevel/CCRCC/uni_v2__regcomp/e3_regcomp_genes__CCRCC__uni_v2.csv.gz",
+ "named": [
+  {
+   "regime": "B",
+   "budget": 2240.0,
+   "cost": "cd_cs_10_vs_A_nL8_B2400",
+   "n_L": 24,
+   "m": "prop",
+   "estimand": "theta3",
+   "interval": "regB_t",
+   "estimator": "C_ppi"
+  },
+  {
+   "regime": "A",
+   "budget": 2400.0,
+   "cost": "unit",
+   "n_L": 8,
+   "m": "300",
+   "estimand": "theta3",
+   "interval": "textbook_t|fpc|lin|xf",
+   "estimator": "C_ppi"
+  }
+ ]
+}

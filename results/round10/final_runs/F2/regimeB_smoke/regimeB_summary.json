@@ -1,0 +1,179 @@
+{
+ "config": {
+  "stage": "F2.4",
+  "unit": "regimeB__smoke",
+  "R": 50,
+  "m_grid": [
+   10
+  ],
+  "anchor": {
+   "vtag": "CCRCC",
+   "arm": "uni_v2",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+   "estimands": [
+    "theta3",
+    "theta2"
+   ],
+   "m_list": [
+    3,
+    4,
+    6,
+    8,
+    10,
+    15,
+    20
+   ],
+   "draws": 200,
+   "ref_csv": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round5/ppi/E3_twolevel/e3_regimeB_small_m.csv",
+   "named": {
+    "m": 10,
+    "estimator": "C_ppi",
+    "estimand": "theta3"
+   }
+  },
+  "populations": [
+   {
+    "task": "CCRCC",
+    "vtag": "CCRCC",
+    "encoder": "uni_v2",
+    "arm": "uni_v2",
+    "scale": "log1p",
+    "source": "r5",
+    "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+    "estimands": [
+     "theta3",
+     "theta2"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet"
+   },
+   {
+    "task": "kidney__Visium",
+    "vtag": "kidney__Visium",
+    "encoder": "uni_v2",
+    "arm": "uni_v2",
+    "scale": "log1p",
+    "source": "corpus",
+    "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/kidney__Visium__uni_v2/pred__kidney__Visium__uni_v2__donor.parquet",
+    "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/kidney__Visium/morphology__kidney__Visium.parquet",
+    "y_prefix": "y_log1p__",
+    "f_prefix": "f_log1p__",
+    "estimands": [
+     "theta3",
+     "theta2"
+    ],
+    "R_note": "smoke",
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__kidney__Visium.parquet"
+   }
+  ]
+ },
+ "started": "2026-11-10T18:06:00",
+ "populations": [
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 24,
+   "n_units": 67673,
+   "n_genes": 50,
+   "cells": [
+    {
+     "estimand": "theta3",
+     "m": 10,
+     "seconds": 0.7
+    },
+    {
+     "estimand": "theta2",
+     "m": 10,
+     "seconds": 0.7
+    }
+   ],
+   "cv_check": {
+    "theta3": {
+     "n_valid_regimeB": 24,
+     "n_donors_cv": 24,
+     "n_common": 24,
+     "n_genes": 50,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 2.0161163194518277e-13,
+     "max_abs": 1.9984014443252818e-15
+    },
+    "theta2": {
+     "n_valid_regimeB": 23,
+     "n_donors_cv": 23,
+     "n_common": 23,
+     "n_genes": 50,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 1.6887808447466798e-12,
+     "max_abs": 2.864375403532904e-14
+    }
+   },
+   "seconds": 2.1
+  },
+  {
+   "task": "kidney__Visium",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 51,
+   "n_units": 107668,
+   "n_genes": 50,
+   "cells": [
+    {
+     "estimand": "theta3",
+     "m": 10,
+     "seconds": 0.7
+    },
+    {
+     "estimand": "theta2",
+     "m": 10,
+     "seconds": 0.9
+    }
+   ],
+   "cv_check": {
+    "theta3": {
+     "n_valid_regimeB": 51,
+     "n_donors_cv": 51,
+     "n_common": 51,
+     "n_genes": 50,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 1.2037102018899638e-12,
+     "max_abs": 1.1546319456101628e-14
+    },
+    "theta2": {
+     "n_valid_regimeB": 45,
+     "n_donors_cv": 45,
+     "n_common": 45,
+     "n_genes": 50,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 1.1194345681835878e-11,
+     "max_abs": 8.459899447643693e-14
+    }
+   },
+   "seconds": 4.0
+  }
+ ],
+ "anchor": {
+  "rows": 26,
+  "rows_matched": 26,
+  "named": {
+   "m": 10,
+   "estimator": "C_ppi",
+   "estimand": "theta3",
+   "coverage_median": 0.9075,
+   "coverage_median_r5": 0.9075,
+   "ev_ratio": 1.0294782019269202,
+   "ev_ratio_r5": 1.0294782019269202
+  },
+  "max_d_n_genes": 0.0,
+  "max_d_emp_var_median": 9.974659986866641e-17,
+  "max_d_est_var_over_emp_var_median": 2.220446049250313e-16,
+  "max_d_coverage_median": 1.1102230246251565e-16,
+  "max_d_coverage_mean": 1.1102230246251565e-16,
+  "max_d_coverage_min": 0.0,
+  "seconds": 22.4
+ },
+ "finished": "2026-11-10T18:06:29"
+}

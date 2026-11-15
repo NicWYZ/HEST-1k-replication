@@ -1,0 +1,149 @@
+{
+ "config": {
+  "stage": "F3.3iv",
+  "unit": "bal__smoke",
+  "draws": 2000,
+  "pool": 500,
+  "batch": 1000,
+  "designs": [
+   "D0",
+   "D2",
+   "D2lim",
+   "cube"
+  ],
+  "root": "/work/users/w/e/weiyang/hest_replication",
+  "cluster_values": [
+   "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+   "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__LUNG_XENIUM.parquet"
+  ],
+  "populations": [
+   {
+    "task": "CCRCC",
+    "vtag": "CCRCC",
+    "encoder": "uni_v2",
+    "scale": "log1p",
+    "estimands": [
+     "theta3"
+    ],
+    "nl_grid": [
+     8
+    ]
+   },
+   {
+    "task": "LUNG_XENIUM",
+    "vtag": "LUNG_XENIUM",
+    "encoder": "uni_v2",
+    "scale": "log1p",
+    "estimands": [
+     "theta3"
+    ],
+    "nl_grid": [
+     8
+    ]
+   }
+  ]
+ },
+ "started": "2026-11-12T08:20:45",
+ "cells": [
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "estimand": "theta3",
+   "G": 24,
+   "n_genes": 50,
+   "n_genes_dropped": 0,
+   "n_L": 8,
+   "support": {
+    "own|0.1": 73547.1,
+    "own|0.01": 7354.71,
+    "own_pcE1|0.1": 73547.1,
+    "own_pcE1|0.01": 7354.71,
+    "pcE2|0.1": 73547.1,
+    "pcE2|0.01": 7354.71
+   },
+   "ext_batches|own": 7,
+   "cand_mean|own|0.1": 10.02569,
+   "acc2|own|0.1": 1.1102230246251565e-16,
+   "cand_mean|own|0.01": 99.89318,
+   "acc2|own|0.01": 1.1102230246251565e-16,
+   "ext_batches|own_pcE1": 2,
+   "cand_mean|own_pcE1|0.1": 10.16015,
+   "acc2|own_pcE1|0.1": 1.1102230246251565e-16,
+   "cand_mean|own_pcE1|0.01": 99.62581,
+   "acc2|own_pcE1|0.01": 1.1102230246251565e-16,
+   "ext_batches|pcE2": 0,
+   "cand_mean|pcE2|0.1": 9.555,
+   "acc2|pcE2|0.1": 1.1102230246251565e-16,
+   "cand_mean|pcE2|0.01": 102.111,
+   "acc2|pcE2|0.01": 1.1102230246251565e-16,
+   "seconds_srs_d2": 43.0,
+   "cube_R": 100000,
+   "cube_resid_f_max": 0.3240380268059189,
+   "cube_resid_N_max": 0.1779543287435057,
+   "cube_rank_median": 3.0,
+   "seconds_cube": 569.0,
+   "seconds": 611.9
+  },
+  {
+   "task": "LUNG_XENIUM",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "estimand": "theta3",
+   "G": 15,
+   "n_genes": 343,
+   "n_genes_dropped": 0,
+   "n_L": 8,
+   "support": {
+    "own|0.1": 643.5,
+    "own|0.01": 64.35,
+    "own_pcE1|0.1": 643.5,
+    "own_pcE1|0.01": 64.35,
+    "pcE2|0.1": 643.5,
+    "pcE2|0.01": 64.35
+   },
+   "seconds_srs_d2": 2.8,
+   "cube_R": 100000,
+   "cube_resid_f_max": 0.314955114148694,
+   "cube_resid_N_max": 0.16658112157868166,
+   "cube_rank_median": 3.0,
+   "seconds_cube": 2187.3,
+   "seconds": 2190.1
+  }
+ ],
+ "skipped": [
+  {
+   "task": "LUNG_XENIUM",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "estimand": "theta3",
+   "n_L": 8,
+   "design": "D2",
+   "balance": "own",
+   "reason": "support < 1000 at both p_a"
+  },
+  {
+   "task": "LUNG_XENIUM",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "estimand": "theta3",
+   "n_L": 8,
+   "design": "D2lim",
+   "balance": "own_pcE1",
+   "reason": "support < 1000 at both p_a"
+  },
+  {
+   "task": "LUNG_XENIUM",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "estimand": "theta3",
+   "n_L": 8,
+   "design": "D2lim",
+   "balance": "pcE2",
+   "reason": "support < 1000 at both p_a"
+  }
+ ],
+ "finished": "2026-11-12T09:07:28",
+ "n_gene_rows": 5130,
+ "n_cell_rows": 54
+}

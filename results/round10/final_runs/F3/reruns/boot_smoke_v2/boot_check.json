@@ -1,0 +1,41 @@
+{
+ "new_rows": 33900,
+ "new_analytic_rows": 31200,
+ "new_boot_rows": 2700,
+ "f2_rows_same_populations": 31200,
+ "f2_boot_rows": 0,
+ "same_row_count": true,
+ "keys_equal": true,
+ "columns_compared": [
+  "G",
+  "R",
+  "theta",
+  "bias",
+  "mcse_bias",
+  "sd",
+  "rmse",
+  "coverage",
+  "coverage_se",
+  "coverage_formed",
+  "frac_no_interval",
+  "mean_width",
+  "median_width",
+  "ev_over_var",
+  "frac_v_neg"
+ ],
+ "cells_differing": 0,
+ "max_abs_diff": 0.0,
+ "analytic_identical": true,
+ "boot_cells": 900,
+ "boot_cells_expected": 900,
+ "boot_arms": [
+  "boot_pairs_pct",
+  "boot_raowu_t",
+  "boot_wild_webb_t"
+ ],
+ "boot_rows_expected": 2700,
+ "boot_complete": true,
+ "pass": true,
+ "preview_cells": 54,
+ "preview_share_within_002": 1.0
+}

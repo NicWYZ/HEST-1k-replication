@@ -1,0 +1,24 @@
+{
+ "reference_file": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round5/conformal/W3_real/merged/w3_by_fold.csv",
+ "reference_row": {
+  "part": 1,
+  "task": "CCRCC",
+  "label_set": "shipped",
+  "encoder": "uni_v2",
+  "method": "hcp",
+  "score": "abs",
+  "alpha": 0.1,
+  "o": 0,
+  "K": 10,
+  "fold": "INT1",
+  "n_T_donors": 13,
+  "coverage": 0.994458794587946,
+  "width_mean": 3.879793179522344,
+  "width_median": 3.820950865248102,
+  "n_test": 1084.0,
+  "finite_frac": 1.0,
+  "n_draws": 3
+ },
+ "passed": true,
+ "wall_seconds": 65
+}

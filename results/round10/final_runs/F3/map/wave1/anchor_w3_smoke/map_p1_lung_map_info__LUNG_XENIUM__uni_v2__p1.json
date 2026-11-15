@@ -1,0 +1,80 @@
+{
+ "task": "LUNG_XENIUM",
+ "encoder": "uni_v2",
+ "part": 1,
+ "folds": [
+  "lungXen_THD0008",
+  "lungXen_THD0011",
+  "lungXen_TILD117",
+  "lungXen_TILD175",
+  "lungXen_VUHD069",
+  "lungXen_VUHD116",
+  "lungXen_VUILD102",
+  "lungXen_VUILD105",
+  "lungXen_VUILD106",
+  "lungXen_VUILD107",
+  "lungXen_VUILD110",
+  "lungXen_VUILD115",
+  "lungXen_VUILD78",
+  "lungXen_VUILD91",
+  "lungXen_VUILD96"
+ ],
+ "cal_draws": [
+  0,
+  1,
+  2
+ ],
+ "plan": [
+  {
+   "K": 10,
+   "o_grid": [
+    0,
+    3,
+    5,
+    9,
+    10,
+    12,
+    15,
+    17,
+    20,
+    25,
+    50,
+    100
+   ]
+  }
+ ],
+ "rows": 11012,
+ "specs": 1,
+ "wall_seconds": 1519.1,
+ "frac_integer": 1.0,
+ "final_files": {
+  "log1p": {
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__uni_v2.parquet",
+   "md5": "6aa0dbc8e957a236d09d112649db0352",
+   "n_genes": 343
+  },
+  "norm": {
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/LUNG_XENIUM__uni_v2/norm/b1_predictions__LUNG_XENIUM__uni_v2.parquet",
+   "md5": "d8c020ee1ea8944b7fc285b82ecc509f",
+   "n_genes": 343
+  }
+ },
+ "methods": [
+  "pooled",
+  "hcp",
+  "one_per",
+  "ghcp",
+  "ghcp_noad",
+  "ghcp_r05",
+  "ghcp_r05_noad",
+  "ghcp_r05code",
+  "within",
+  "within_plain",
+  "recentred",
+  "within_full",
+  "xgene",
+  "within_final",
+  "within_plain_final",
+  "within_full_final"
+ ]
+}

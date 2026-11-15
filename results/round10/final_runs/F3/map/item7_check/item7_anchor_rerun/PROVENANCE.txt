@@ -1,0 +1,29 @@
+platform: Longleaf
+slurm_job_id: 9060384
+slurm_job_partition: spill
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 1
+slurm_mem_per_node: 4096
+node: c151405
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F3
+unit: map/item7_anchor_rerun
+frame_id: b66915a6-d96c-42d1-b0b7-edb7f5bf423f
+PYTHONHASHSEED: 
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 0ff3345c33612cf846cac6f425f7ae7c7324bb67
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/0ff3345c33612cf846cac6f425f7ae7c7324bb67
+command: round10_final_runs_f3_map_anchor.py a4 on item7_check's a4_scores_by_task (written under ROOT/work/... because of the absolute --out-dir) against round 3's mainCCRCC table
+config: {"commit":"0ff3345c33612cf846cac6f425f7ae7c7324bb67","stage":"F3","track_dir":"map","unit":"item7_anchor_rerun"}
+config_sha256: 13773a997bdd6942b48fa3ac5e4bef19a2a8a55d5b7bcc11c5c27a675c66aed4
+start: 2026-11-13T02:25:35-05:00
+end: 2026-11-13T02:25:40-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  3cb730edfdd6ede2e25000cb42e98655  code/scripts/round10_final_runs_f3_map_anchor.py
+inputs (md5, path):
+  1e7953217065abd7272c5b910b799572  /work/users/w/e/weiyang/hest_replication/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/map/item7_check/a4/a4_scores_by_task__uni_v2__f3anchor.csv
+  f2f1372a6826ac0e4dd21864d0d1fb55  /work/users/w/e/weiyang/hest_replication/results/round3/A4_scores/a4_scores_by_task__uni_v2__mainCCRCC.csv

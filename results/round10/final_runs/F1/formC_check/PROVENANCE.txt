@@ -1,0 +1,31 @@
+platform: Longleaf
+slurm_job_id: 8627085
+slurm_job_partition: spill
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 8192
+node: c130602
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F1
+unit: formC_check
+frame_id: fc04d488-f9cc-4e63-99fc-f3a50dbc17ed
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 55d534e32064046d75593a971f09adad6694df4c
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/55d534e32064046d75593a971f09adad6694df4c
+command: round10_final_runs_f1_formC_check.py /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/formC_check
+config: {"commit":"55d534e32064046d75593a971f09adad6694df4c","stage":"F1","unit":"formC_check"}
+config_sha256: a2518dada9ffd2730ea30bafff7f6c7dc0f8d7da1826f849fcf39060f212687a
+start: 2026-11-09T03:38:18-05:00
+end: 2026-11-09T03:38:32-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  051b3cab79139031505b12d77fd76f96  code/scripts/round10_final_runs_f1_formC_check.py
+  9580a38223ad46f5e141626572254fea  code/scripts/round10_final_runs_estimators.py
+  e13183a4ffdddf4f01ba5136844c606d  code/scripts/round5_ppi_twolevel.py
+  2de31569ffe72239062fbeb0c9a50fc5  code/scripts/round5_ppi_estimator.py
+  d79e69aa65800b9d24de556e019a0c64  code/scripts/round4_ppi_estimator.py
+inputs (md5, path):

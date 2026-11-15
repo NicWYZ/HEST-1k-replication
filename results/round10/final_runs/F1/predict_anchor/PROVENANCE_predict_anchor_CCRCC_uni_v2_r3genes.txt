@@ -1,0 +1,31 @@
+platform: Longleaf
+slurm_job_id: 8626103
+slurm_job_partition: spill
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 4
+slurm_mem_per_node: 32768
+node: c151613
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F1
+unit: predict_anchor_CCRCC_uni_v2_r3genes
+frame_id: fc04d488-f9cc-4e63-99fc-f3a50dbc17ed
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: b298e15ddee85d5804b4bacf5faa24645ff5609f
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/b298e15ddee85d5804b4bacf5faa24645ff5609f
+command: round10_final_runs_f1_predict.py /work/users/w/e/weiyang/st_fed_learn/data/tasks/kidney__Visium.json uni_v2 donor /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/data_registry/f1_data_hest_match.csv /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict_anchor_CCRCC_uni_v2_r3genes --map-task CCRCC --samples INT1,INT2,INT3,INT4,INT5,INT6,INT7,INT8,INT9,INT10,INT11,INT12,INT13,INT14,INT15,INT16,INT17,INT18,INT19,INT20,INT21,INT22,INT23,INT24 --tag CCRCC_anchor_r3genes --genes-from-parquet /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet
+config: {"commit":"b298e15ddee85d5804b4bacf5faa24645ff5609f","stage":"F1","unit":"predict_anchor_CCRCC_uni_v2_r3genes"}
+config_sha256: 76c44ae6ae7f17e8df8f080cc4fae52076799c2bde12022bfeaf942b9d3c5a2f
+start: 2026-11-09T03:20:29-05:00
+end: 2026-11-09T03:25:32-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  eaced8f89ee1e92688dfca1218f8c8b2  code/scripts/round10_final_runs_f1_predict.py
+  0ad7ae8efe554c1f285e5f384a9fb7f5  code/scripts/round3_a0_harness.py
+inputs (md5, path):
+  ab7f574a88906062dcb48f7fe8c5accd  /work/users/w/e/weiyang/st_fed_learn/data/tasks/kidney__Visium.json
+  9456f5c9f226e618648e654c6aab277b  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/data_registry/f1_data_hest_match.csv
+  0cc62c5e600cc3811168b71ca7e2c1ab  /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet

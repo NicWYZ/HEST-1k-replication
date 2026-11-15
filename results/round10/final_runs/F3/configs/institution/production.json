@@ -1,0 +1,76 @@
+{
+ "stage": "F3",
+ "item": "F3.2 institution axis (plan 5d.2)",
+ "scales": [
+  "log1p",
+  "lognorm"
+ ],
+ "arms": [
+  "hcp_center",
+  "hcp_donor"
+ ],
+ "levels_rule": "alpha in {0.2,0.25} where 1/units <= alpha, plus 1/units",
+ "score_fr8": true,
+ "cells": [
+  {
+   "task": "kidney__Visium",
+   "encoder": "hoptimus0",
+   "pred": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/kidney__Visium__hoptimus0/pred__kidney__Visium__hoptimus0__center.parquet"
+  },
+  {
+   "task": "kidney__Visium",
+   "encoder": "uni_v2",
+   "pred": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/kidney__Visium__uni_v2/pred__kidney__Visium__uni_v2__center.parquet"
+  },
+  {
+   "task": "kidney__Visium",
+   "encoder": "resnet50",
+   "pred": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/kidney__Visium__resnet50/pred__kidney__Visium__resnet50__center.parquet"
+  },
+  {
+   "task": "brain__Visium",
+   "encoder": "hoptimus0",
+   "pred": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__hoptimus0/pred__brain__Visium__hoptimus0__center.parquet"
+  },
+  {
+   "task": "brain__Visium",
+   "encoder": "uni_v2",
+   "pred": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__uni_v2/pred__brain__Visium__uni_v2__center.parquet"
+  },
+  {
+   "task": "brain__Visium",
+   "encoder": "resnet50",
+   "pred": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__resnet50/pred__brain__Visium__resnet50__center.parquet"
+  },
+  {
+   "task": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "pred": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__center.parquet"
+  },
+  {
+   "task": "bowel__Visium",
+   "encoder": "uni_v2",
+   "pred": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__uni_v2/pred__bowel__Visium__uni_v2__center.parquet"
+  },
+  {
+   "task": "bowel__Visium",
+   "encoder": "resnet50",
+   "pred": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__resnet50/pred__bowel__Visium__resnet50__center.parquet"
+  },
+  {
+   "task": "breast__Xenium",
+   "encoder": "hoptimus0",
+   "pred": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Xenium__hoptimus0__center_grouped/pred__breast__Xenium__hoptimus0__center.parquet"
+  },
+  {
+   "task": "breast__Xenium",
+   "encoder": "uni_v2",
+   "pred": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Xenium__uni_v2__center_grouped/pred__breast__Xenium__uni_v2__center.parquet"
+  },
+  {
+   "task": "breast__Xenium",
+   "encoder": "resnet50",
+   "pred": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Xenium__resnet50__center_grouped/pred__breast__Xenium__resnet50__center.parquet"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+platform: Longleaf
+slurm_job_id: 8625445
+slurm_job_partition: spill
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 8192
+node: c0413
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F1
+unit: audit_inputs_v2
+frame_id: fc04d488-f9cc-4e63-99fc-f3a50dbc17ed
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 5d4ad923e07846faed461796b29e7ae87c4f4761
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/5d4ad923e07846faed461796b29e7ae87c4f4761
+command: round10_final_runs_f1_audit_inputs.py /work/users/w/e/weiyang/st_fed_learn/data /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/data_registry/f1_data_groups.csv /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/data_registry/f1_data_hest_match.csv /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/audit_inputs_v2/inputs/donor_verdicts.csv /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/audit_inputs_v2
+config: {"commit":"5d4ad923e07846faed461796b29e7ae87c4f4761","stage":"F1","unit":"audit_inputs_v2"}
+config_sha256: e6724fc83cc4b851f0d2910c248044f5dbdb021242ff4244978f2545a99486a6
+start: 2026-11-09T03:11:57-05:00
+end: 2026-11-09T03:12:05-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  40863e0bd91acdcd19122c2629ff5aaf  code/scripts/round10_final_runs_f1_audit_inputs.py
+inputs (md5, path):
+  a77b748e95267cc54544e45f873bc419  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/audit_inputs_v2/inputs/donor_verdicts.csv
+  e4ad23b1351b2d45a68da701a6be43da  /work/users/w/e/weiyang/st_fed_learn/data/registry/samples.parquet
+  fc54bf1e6da2efe3f8939d1f0a5f6754  /work/users/w/e/weiyang/st_fed_learn/data/registry/centers.parquet
+  bc2f6f3e89aa7fbb2d240eab4f6fe81b  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/data_registry/f1_data_groups.csv
+  9456f5c9f226e618648e654c6aab277b  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/data_registry/f1_data_hest_match.csv

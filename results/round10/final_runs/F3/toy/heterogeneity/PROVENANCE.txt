@@ -1,0 +1,149 @@
+platform: Longleaf
+slurm_job_id: 8970528
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 1
+slurm_mem_per_node: 8192
+node: c0811
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F3
+unit: toy__heterogeneity
+frame_id: b13c1923-c0ad-48db-9911-4cd5ebb8c8ec
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 009142032cab289845a7cd3cd1d113f174ddefff
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/009142032cab289845a7cd3cd1d113f174ddefff
+command: round10_final_runs_f3_heterogeneity.py /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f3_heterogeneity.json /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity
+config: {"commit":"009142032cab289845a7cd3cd1d113f174ddefff","stage":"F3","track_dir":"toy","unit":"heterogeneity"}
+config_sha256: 87a33f52c2d42868b3d1c9c465cade766ab8ae00b95bb698add275bf217078d4
+start: 2026-11-12T08:31:09-05:00
+end: 2026-11-12T08:33:49-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  a0f8151f428df5b44c30e9be88f3c4a1  code/scripts/round10_final_runs_f3_heterogeneity.py
+  004c68a669a751f2f5a9f83ca3b7d2f2  code/scripts/round10_final_runs_f3_toy.py
+  051b3cab79139031505b12d77fd76f96  code/scripts/round10_final_runs_f1_formC_check.py
+  9580a38223ad46f5e141626572254fea  code/scripts/round10_final_runs_estimators.py
+  e13183a4ffdddf4f01ba5136844c606d  code/scripts/round5_ppi_twolevel.py
+  d79e69aa65800b9d24de556e019a0c64  code/scripts/round4_ppi_estimator.py
+  2de31569ffe72239062fbeb0c9a50fc5  code/scripts/round5_ppi_estimator.py
+  05f9c7a1a24a4bff1041ff5094dae011  code/scripts/round10_final_runs_f2_regimeB.py
+  80e52bfe1b2cf9e48c82f3828689d78f  code/scripts/round5_ppi_e3_twolevel.py
+  b6e9ecc52ac5539682487d8e7c1451c6  code/scripts/round5_ppi_e2_regimeB.py
+  15f51917a5fb79702ba239e520e7ff86  code/scripts/round4_ppi_q2_masking.py
+  544721f07cb3d74dc5b92456d61fe450  code/scripts/round3_b1_ppi.py
+inputs (md5, path):
+  ab79b90dfc29becd3cc62a9a32e082c6  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__ACS_STATES__pkg.json
+  aa6feeb2ab64b47e8a9f22f82d5eb475  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__bowel__Visium__hoptimus0.json
+  72b007bcd8bb2f47a35e72447be9baf7  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__bowel__Visium__resnet50.json
+  336267990cf3b6acf090cf08f049406f  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__bowel__Visium__uni_v2.json
+  bc1524b2986052907da25c9eaeb55a59  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__brain__Visium__hoptimus0.json
+  90f89e3b5d7cae17a56cbabc52376db7  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__brain__Visium__resnet50.json
+  807732fe273b7bc73fb6e82c0fb3ef46  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__brain__Visium__uni_v2.json
+  482f1ce4bf9c74198ae09dda2c86ce45  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__breast__Spatial_Transcriptomics__hoptimus0.json
+  567d1dd1b19fb420ffc0b243685dbef6  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__breast__Spatial_Transcriptomics__resnet50.json
+  3f48673d035cda21c6bc1a5faffb275d  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__breast__Spatial_Transcriptomics__uni_v2.json
+  bdd6a56b21ca32971047b763720dfb41  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__breast__Xenium__hoptimus0.json
+  465ed8b2080a8e209d6977c8065cde68  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__breast__Xenium__resnet50.json
+  c94a7c77d116c885bf3d49674a86622d  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__breast__Xenium__uni_v2.json
+  11456a1334ca668e2c95e6957366bdf4  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__CCRCC__hoptimus0.json
+  c50a5adce896313a4603fc1660d694ae  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__CCRCC_merged__hoptimus0.json
+  e95eb1b1285c9ee736ec617178b6589b  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__CCRCC_merged__resnet50.json
+  aee8ab8c7c3572f5d3911da851c71beb  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__CCRCC_merged__uni_v2.json
+  4b9eed65d787e9f83f47015cb21d55fa  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__CCRCC__resnet50.json
+  466737ac26d131945d13040e99209ba6  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__CCRCC__uni_v2.json
+  3fb16200ac4dfee84e35fab773928439  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__INDIANA_KIDNEY__hoptimus0.json
+  c03ae464a745867b92e8aa2bff310625  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__INDIANA_KIDNEY__resnet50.json
+  0e046c4f9ede5a00d8966c7280f5403f  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__INDIANA_KIDNEY__uni_v2.json
+  8c9fe87f83fbb48d4f98a89ebdacc397  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__kidney__Visium__hoptimus0.json
+  d43eb95e9c1a865c7dae155ae5c5a665  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__kidney__Visium__resnet50.json
+  803107494f4014b675caab7b7ae0aa25  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__kidney__Visium__uni_v2.json
+  aaeb182ca49fafe8aced09facdabc41d  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__lung__Xenium__hoptimus0.json
+  d61945fb5d2f5d7ea235b1f7bd741f33  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__LUNG_XENIUM__hoptimus0.json
+  0cd4d78a356fb40c5dc4059c6da17b62  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__lung__Xenium__resnet50.json
+  7709ebb1edc5ad6a425f021b2c1631c3  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__LUNG_XENIUM__resnet50.json
+  8fd7efa48b6a0f2e8c75e0b3d87b2c7e  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__lung__Xenium__uni_v2.json
+  8ea408c9b6ff221d28e801bece7f30f9  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f2_regimeB__LUNG_XENIUM__uni_v2.json
+  bc040f883d8e85c9f00cd5a78d3fae35  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/heterogeneity/inputs/f3_heterogeneity.json
+  759dd36dea94f961ead9ef1accfce987  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__hoptimus0/pred__bowel__Visium__hoptimus0__donor.parquet
+  e6d1bae03b82536ca83f1c19f6b5f97b  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__resnet50/pred__bowel__Visium__resnet50__donor.parquet
+  52a5bc536a9738145275f70ca789cd89  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__uni_v2/pred__bowel__Visium__uni_v2__donor.parquet
+  c882c558d8ac63388577816776586367  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__hoptimus0/pred__brain__Visium__hoptimus0__donor.parquet
+  1a5751e6964bad2b868a6f4bfa06f0de  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__resnet50/pred__brain__Visium__resnet50__donor.parquet
+  361e9fbc01d5a18b1ab8ba832cb026b5  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__uni_v2/pred__brain__Visium__uni_v2__donor.parquet
+  d51437bb0ae9b7bbf716717c061766de  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__hoptimus0/pred__breast__Spatial_Transcriptomics__hoptimus0__donor.parquet
+  dab482f10160093df0fa34c9b27bccdd  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__resnet50/pred__breast__Spatial_Transcriptomics__resnet50__donor.parquet
+  3efce548176779d20704865732ba9e66  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Spatial_Transcriptomics__uni_v2/pred__breast__Spatial_Transcriptomics__uni_v2__donor.parquet
+  eca7d0123772d0e9a354074e45f0329e  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Xenium__hoptimus0/pred__breast__Xenium__hoptimus0__donor.parquet
+  3bec9f4cc4ce4030268fa72425e87968  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Xenium__resnet50/pred__breast__Xenium__resnet50__donor.parquet
+  e2a7762d44a5bb72efcadb02cacc81dd  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/breast__Xenium__uni_v2/pred__breast__Xenium__uni_v2__donor.parquet
+  a892ad4acfd4053767dcc8e68b48772f  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/kidney__Visium__hoptimus0/pred__kidney__Visium__hoptimus0__donor.parquet
+  dab17f6933eb7f90b401950701405940  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/kidney__Visium__resnet50/pred__kidney__Visium__resnet50__donor.parquet
+  4a01ead5d905f4bbc52c90647b6d9741  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/kidney__Visium__uni_v2/pred__kidney__Visium__uni_v2__donor.parquet
+  ddcf7e0e808e3882de10bcd061702bdc  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/lung__Xenium__hoptimus0/pred__lung__Xenium__hoptimus0__donor.parquet
+  69a1420c792aa573bbbe4c2abdf18553  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/lung__Xenium__resnet50/pred__lung__Xenium__resnet50__donor.parquet
+  c33385a99ab2ad0514421b5a4cf7e6bb  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/lung__Xenium__uni_v2/pred__lung__Xenium__uni_v2__donor.parquet
+  0bcdae6cf30c6c282e9ac9881fac92b4  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet
+  71df38e395ca7cd6f0f295527d760bc2  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC_merged.parquet
+  09db3554bab83a6ef4131160868f40bc  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__INDIANA_KIDNEY.parquet
+  487d83034911b8da764e53c631410ba5  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__LUNG_XENIUM.parquet
+  db1302d95f660271b84706a99b45a63d  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1b_acs/cluster_values__ACS_STATES.parquet
+  ab059165e2b7069d2e83076ed4b8ee5b  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet
+  4438a44c6a00fcc154738e2063a08dbb  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__brain__Visium.parquet
+  093c8f656a233a69186a25946df74890  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Spatial_Transcriptomics.parquet
+  2997f51f8920b815303ab197e809a81e  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__breast__Xenium.parquet
+  7b797e698b009f242021afaa241e9a35  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__kidney__Visium.parquet
+  8f1073cedb91c6623033ac68ccdc5232  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__lung__Xenium.parquet
+  3190cd8351b8ae175a19aad250c8407b  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet
+  c017240e34a742d446d41c0b745d844c  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/brain__Visium/morphology__brain__Visium.parquet
+  ceed19083472b692e4fecf902791d063  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Spatial_Transcriptomics/morphology__breast__Spatial_Transcriptomics.parquet
+  804d081f1aa7d69b470aafe826bc9493  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/breast__Xenium/morphology__breast__Xenium.parquet
+  3b3efa18441fe0d7502c44e8bc258072  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/kidney__Visium/morphology__kidney__Visium.parquet
+  64c190994f34bc005a750651b199c676  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/lung__Xenium/morphology__lung__Xenium.parquet
+  5ed6c4596256852976412a63d6d387b4  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/ACS_STATES__pkg/regimeB_summary.json
+  a666f649a80cf412f15c16d92d9f0beb  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/CCRCC__hoptimus0/regimeB_summary.json
+  15dc2084a6972845c0f2aee23ec20cfe  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/CCRCC__resnet50/regimeB_summary.json
+  a406b968e1e15976131fed8a8cda274a  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/CCRCC__uni_v2/regimeB_summary.json
+  1184d9c0200051be35063b5278a858f8  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/CCRCC_merged__hoptimus0/regimeB_summary.json
+  23c8d137e59014f0120c41738e791fe6  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/CCRCC_merged__resnet50/regimeB_summary.json
+  0ed1f434ae34fd6a5327c6d643390210  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/CCRCC_merged__uni_v2/regimeB_summary.json
+  a7919c532a3dec3f55f150156a1a3979  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/INDIANA_KIDNEY__hoptimus0/regimeB_summary.json
+  ffd05cfff7518c13a0854f8dfb3bb4eb  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/INDIANA_KIDNEY__resnet50/regimeB_summary.json
+  4e838d21558f74d5435cf7d023064695  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/INDIANA_KIDNEY__uni_v2/regimeB_summary.json
+  e4988d762b14a9c7a7f7c86885c8b7fc  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/LUNG_XENIUM__hoptimus0/regimeB_summary.json
+  923217878fcd77faac7d955c5ec61789  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/LUNG_XENIUM__resnet50/regimeB_summary.json
+  ae81d47d30783be38c0096c08ed0badf  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/LUNG_XENIUM__uni_v2/regimeB_summary.json
+  11c78b7ac6475f1effc2ae7fee12fc33  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/bowel__Visium__hoptimus0/regimeB_summary.json
+  b87048e84fbf10c3626b715584cab39f  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/bowel__Visium__resnet50/regimeB_summary.json
+  47bc94d91b1ef6dd7cbf7d8b7f84feed  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/bowel__Visium__uni_v2/regimeB_summary.json
+  9f338d4a1564878c5858ce149d086327  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/brain__Visium__hoptimus0/regimeB_summary.json
+  76a372d4541bbc5ff117f3759af6cb52  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/brain__Visium__resnet50/regimeB_summary.json
+  d62e843a2c4bcf83a28592fef6f9e325  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/brain__Visium__uni_v2/regimeB_summary.json
+  a0ae93e33ef08e95ed61fb055aa26315  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/breast__Spatial_Transcriptomics__hoptimus0/regimeB_summary.json
+  c57c72dd77ad062b7d5f27179e2321e2  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/breast__Spatial_Transcriptomics__resnet50/regimeB_summary.json
+  40c39626a55a9abfaac2c66c0ebe6442  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/breast__Spatial_Transcriptomics__uni_v2/regimeB_summary.json
+  15d89c77f42c0c799e6d0159802dc9b3  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/breast__Xenium__hoptimus0/regimeB_summary.json
+  e33c4757da9c012dbf035d3187d96f6d  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/breast__Xenium__resnet50/regimeB_summary.json
+  984eed9d596cbb249627591b9fced101  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/breast__Xenium__uni_v2/regimeB_summary.json
+  5212f900abe7d6781a9de158698d66df  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/kidney__Visium__hoptimus0/regimeB_summary.json
+  b0ffce7192905af8bcd9022f47265a5f  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/kidney__Visium__resnet50/regimeB_summary.json
+  eba7e3fdb28f77e708767190e61acbe7  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/kidney__Visium__uni_v2/regimeB_summary.json
+  1d4b0160566e5a3a89b08ca03a81612f  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/lung__Xenium__hoptimus0/regimeB_summary.json
+  af5539cbfc75fddc0462a820e215d5c8  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/lung__Xenium__resnet50/regimeB_summary.json
+  8312cea21aece8717f84a0ccb3cd917c  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeB/lung__Xenium__uni_v2/regimeB_summary.json
+  8aaf05663cafb35b0c2ee4cbf5ff87b7  /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__hoptimus0.parquet
+  59ac3c2fe8e1818b7b1d0a1e9c141652  /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__resnet50.parquet
+  0cc62c5e600cc3811168b71ca7e2c1ab  /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet
+  70c5396113c56bff3c432e2c290092ad  /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC_merged__hoptimus0.parquet
+  bb99b9c832bab3c0bbf127fae73882df  /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC_merged__resnet50.parquet
+  7db7809ab38c6c09660f89169ed5e4b0  /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC_merged__uni_v2.parquet
+  e18604e1e915ff51f2668719e397ab7a  /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_STATES.parquet
+  160b62889856e3eea69b977ae513acdb  /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__hoptimus0.parquet
+  080e4ec1dd84e01a62bb9b376e7ede4b  /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__resnet50.parquet
+  6aa0dbc8e957a236d09d112649db0352  /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__uni_v2.parquet
+  b6a56e963872511ad177c7c1082d07b7  /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions_INDIANA_KIDNEY/b1_predictions__INDIANA_KIDNEY__hoptimus0.parquet
+  224dd3b2946cfe125e7409561c68a4a4  /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions_INDIANA_KIDNEY/b1_predictions__INDIANA_KIDNEY__resnet50.parquet
+  7a3322218de7cd846fe912ece20f633c  /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions_INDIANA_KIDNEY/b1_predictions__INDIANA_KIDNEY__uni_v2.parquet

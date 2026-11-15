@@ -1,0 +1,79 @@
+{
+ "rows_new": 1600,
+ "rows_ref": 1600,
+ "rows_both": 1600,
+ "columns": {
+  "p_a": {
+   "max_abs": 0.0,
+   "max_rel": 0.0,
+   "nan_mismatch": 0
+  },
+  "coverage": {
+   "max_abs": 0.0,
+   "max_rel": 0.0,
+   "nan_mismatch": 0
+  },
+  "width": {
+   "max_abs": 0.0,
+   "max_rel": 0.0,
+   "nan_mismatch": 0
+  },
+  "emp_var": {
+   "max_abs": 0.0,
+   "max_rel": 0.0,
+   "nan_mismatch": 0
+  },
+  "est_var": {
+   "max_abs": 0.0,
+   "max_rel": 0.0,
+   "nan_mismatch": 0
+  },
+  "bias": {
+   "max_abs": 0.0,
+   "max_rel": 0.0,
+   "nan_mismatch": 0
+  },
+  "bias_z": {
+   "max_abs": 0.0,
+   "max_rel": 0.0,
+   "nan_mismatch": 0
+  },
+  "share_formed": {
+   "max_abs": 0.0,
+   "max_rel": 0.0,
+   "nan_mismatch": 0
+  },
+  "share_neg": {
+   "max_abs": 0.0,
+   "max_rel": 0.0,
+   "nan_mismatch": 0
+  },
+  "n_draws": {
+   "max_abs": 0.0,
+   "max_rel": 0.0,
+   "nan_mismatch": 0
+  },
+  "coverage_all": {
+   "max_abs": 0.0,
+   "max_rel": 0.0,
+   "nan_mismatch": 0
+  }
+ },
+ "exact": true,
+ "cells_estimator_variance": 32,
+ "named_H_sim_res": {
+  "theta2": {
+   "coverage_median": 0.8885000000000001,
+   "coverage_median_ref": 0.8885000000000001,
+   "width_median": 0.30621058354999997,
+   "width_median_ref": 0.30621058354999997
+  },
+  "theta3": {
+   "coverage_median": 0.8732500000000001,
+   "coverage_median_ref": 0.8732500000000001,
+   "width_median": 0.1019615418,
+   "width_median_ref": 0.1019615418
+  }
+ },
+ "pass": true
+}

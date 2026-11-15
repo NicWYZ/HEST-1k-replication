@@ -1,0 +1,217 @@
+{
+ "stage": "F3",
+ "unit": "regcomp__pk_CCRCC__resnet50__log1p__p02",
+ "R": 2000,
+ "populations": [
+  {
+   "task": "CCRCC",
+   "vtag": "CCRCC",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "log1p",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     9600
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "B_B9600_c10_nL4",
+   "expected_s": 176.4
+  },
+  {
+   "task": "CCRCC",
+   "vtag": "CCRCC",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "log1p",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     9600
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "B_B9600_c10_nL6",
+   "expected_s": 176.8
+  },
+  {
+   "task": "CCRCC",
+   "vtag": "CCRCC",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "log1p",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     9600
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "B_B9600_c10_nL8",
+   "expected_s": 177.2
+  },
+  {
+   "task": "CCRCC",
+   "vtag": "CCRCC",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "log1p",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     9600
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "B_B9600_c10_nL12",
+   "expected_s": 178.1
+  },
+  {
+   "task": "CCRCC",
+   "vtag": "CCRCC",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "log1p",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     9600
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "B_B9600_c100_nL4",
+   "expected_s": 137.5
+  },
+  {
+   "task": "CCRCC",
+   "vtag": "CCRCC",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "log1p",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     9600
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "B_B9600_c100_nL6",
+   "expected_s": 141.8
+  },
+  {
+   "task": "CCRCC",
+   "vtag": "CCRCC",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "log1p",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     9600
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "B_B9600_c100_nL8",
+   "expected_s": 146.0
+  }
+ ],
+ "estimands_reported": [
+  "theta3",
+  "theta2",
+  "mu"
+ ],
+ "expected_s": 1133.8,
+ "_cells": 7
+}

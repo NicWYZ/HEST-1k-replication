@@ -1,0 +1,47 @@
+{
+ "stage": "F3",
+ "unit": "regB_e8__INDIANA_KIDNEY__resnet50__norm_refit",
+ "R": 2000,
+ "forms": [
+  "C_fix1",
+  "C_ppi",
+  "C_classical"
+ ],
+ "widths_forms": [
+  "C_fix1",
+  "C_classical"
+ ],
+ "wr_boot": 200,
+ "m_grid": [
+  3,
+  5,
+  9,
+  10,
+  12,
+  15,
+  17,
+  20,
+  25,
+  30,
+  50,
+  100
+ ],
+ "f2_summary": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F2/aggregate_regimeB/f2_regimeB_summary.csv",
+ "populations": [
+  {
+   "task": "INDIANA_KIDNEY",
+   "vtag": "INDIANA_KIDNEY",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/INDIANA_KIDNEY__resnet50/norm/b1_predictions__INDIANA_KIDNEY__resnet50.parquet",
+   "estimands": [
+    "theta3",
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__INDIANA_KIDNEY.parquet"
+  }
+ ],
+ "_cells": 24
+}

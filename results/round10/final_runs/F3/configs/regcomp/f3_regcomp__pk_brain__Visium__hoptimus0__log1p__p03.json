@@ -1,0 +1,527 @@
+{
+ "stage": "F3",
+ "unit": "regcomp__pk_brain__Visium__hoptimus0__log1p__p03",
+ "R": 2000,
+ "populations": [
+  {
+   "task": "brain__Visium",
+   "vtag": "brain__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "log1p",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__hoptimus0/pred__brain__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/brain__Visium/morphology__brain__Visium.parquet",
+   "y_prefix": "y_log1p__",
+   "f_prefix": "f_log1p__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__brain__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     9600
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "B_B9600_c10_nL12",
+   "expected_s": 197.4
+  },
+  {
+   "task": "brain__Visium",
+   "vtag": "brain__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "log1p",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__hoptimus0/pred__brain__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/brain__Visium/morphology__brain__Visium.parquet",
+   "y_prefix": "y_log1p__",
+   "f_prefix": "f_log1p__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__brain__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     9600
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "B_B9600_c100_nL4",
+   "expected_s": 165.3
+  },
+  {
+   "task": "brain__Visium",
+   "vtag": "brain__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "log1p",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__hoptimus0/pred__brain__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/brain__Visium/morphology__brain__Visium.parquet",
+   "y_prefix": "y_log1p__",
+   "f_prefix": "f_log1p__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__brain__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     9600
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "B_B9600_c100_nL6",
+   "expected_s": 170.1
+  },
+  {
+   "task": "brain__Visium",
+   "vtag": "brain__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "log1p",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__hoptimus0/pred__brain__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/brain__Visium/morphology__brain__Visium.parquet",
+   "y_prefix": "y_log1p__",
+   "f_prefix": "f_log1p__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__brain__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     9600
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "B_B9600_c100_nL8",
+   "expected_s": 174.8
+  },
+  {
+   "task": "brain__Visium",
+   "vtag": "brain__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "log1p",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__hoptimus0/pred__brain__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/brain__Visium/morphology__brain__Visium.parquet",
+   "y_prefix": "y_log1p__",
+   "f_prefix": "f_log1p__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__brain__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     9600
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "B_B9600_c100_nL12",
+   "expected_s": 184.4
+  },
+  {
+   "task": "brain__Visium",
+   "vtag": "brain__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "log1p",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__hoptimus0/pred__brain__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/brain__Visium/morphology__brain__Visium.parquet",
+   "y_prefix": "y_log1p__",
+   "f_prefix": "f_log1p__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__brain__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     9600
+    ],
+    "costs": [
+     1000
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "B_B9600_c1000_nL4",
+   "expected_s": 0.0
+  },
+  {
+   "task": "brain__Visium",
+   "vtag": "brain__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "log1p",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__hoptimus0/pred__brain__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/brain__Visium/morphology__brain__Visium.parquet",
+   "y_prefix": "y_log1p__",
+   "f_prefix": "f_log1p__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__brain__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     9600
+    ],
+    "costs": [
+     1000
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "B_B9600_c1000_nL6",
+   "expected_s": 0.0
+  },
+  {
+   "task": "brain__Visium",
+   "vtag": "brain__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "log1p",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__hoptimus0/pred__brain__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/brain__Visium/morphology__brain__Visium.parquet",
+   "y_prefix": "y_log1p__",
+   "f_prefix": "f_log1p__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__brain__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     9600
+    ],
+    "costs": [
+     1000
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "B_B9600_c1000_nL8",
+   "expected_s": 0.0
+  },
+  {
+   "task": "brain__Visium",
+   "vtag": "brain__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "log1p",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__hoptimus0/pred__brain__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/brain__Visium/morphology__brain__Visium.parquet",
+   "y_prefix": "y_log1p__",
+   "f_prefix": "f_log1p__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__brain__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     9600
+    ],
+    "costs": [
+     1000
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "B_B9600_c1000_nL12",
+   "expected_s": 63.1
+  },
+  {
+   "task": "brain__Visium",
+   "vtag": "brain__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "log1p",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__hoptimus0/pred__brain__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/brain__Visium/morphology__brain__Visium.parquet",
+   "y_prefix": "y_log1p__",
+   "f_prefix": "f_log1p__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__brain__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     2400
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "A_B2400_nL4",
+   "expected_s": 35.1
+  },
+  {
+   "task": "brain__Visium",
+   "vtag": "brain__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "log1p",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__hoptimus0/pred__brain__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/brain__Visium/morphology__brain__Visium.parquet",
+   "y_prefix": "y_log1p__",
+   "f_prefix": "f_log1p__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__brain__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     2400
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "A_B2400_nL6",
+   "expected_s": 35.1
+  },
+  {
+   "task": "brain__Visium",
+   "vtag": "brain__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "log1p",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__hoptimus0/pred__brain__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/brain__Visium/morphology__brain__Visium.parquet",
+   "y_prefix": "y_log1p__",
+   "f_prefix": "f_log1p__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__brain__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     2400
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "A_B2400_nL8",
+   "expected_s": 35.1
+  },
+  {
+   "task": "brain__Visium",
+   "vtag": "brain__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "log1p",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__hoptimus0/pred__brain__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/brain__Visium/morphology__brain__Visium.parquet",
+   "y_prefix": "y_log1p__",
+   "f_prefix": "f_log1p__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__brain__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     2400
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "A_B2400_nL12",
+   "expected_s": 35.1
+  },
+  {
+   "task": "brain__Visium",
+   "vtag": "brain__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "log1p",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__hoptimus0/pred__brain__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/brain__Visium/morphology__brain__Visium.parquet",
+   "y_prefix": "y_log1p__",
+   "f_prefix": "f_log1p__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__brain__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     "unit"
+    ]
+   },
+   "cell_label": "B_B2400_unit",
+   "expected_s": 29.5
+  },
+  {
+   "task": "brain__Visium",
+   "vtag": "brain__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "log1p",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__hoptimus0/pred__brain__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/brain__Visium/morphology__brain__Visium.parquet",
+   "y_prefix": "y_log1p__",
+   "f_prefix": "f_log1p__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__brain__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "B_B2400_c10_nL4",
+   "expected_s": 27.5
+  },
+  {
+   "task": "brain__Visium",
+   "vtag": "brain__Visium",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "log1p",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/brain__Visium__hoptimus0/pred__brain__Visium__hoptimus0__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/brain__Visium/morphology__brain__Visium.parquet",
+   "y_prefix": "y_log1p__",
+   "f_prefix": "f_log1p__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__brain__Visium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "B_B2400_c10_nL6",
+   "expected_s": 27.7
+  }
+ ],
+ "estimands_reported": [
+  "theta3",
+  "theta2",
+  "mu"
+ ],
+ "expected_s": 1180.3,
+ "_cells": 16
+}

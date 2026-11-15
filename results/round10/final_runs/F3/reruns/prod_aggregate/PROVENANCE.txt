@@ -1,0 +1,33 @@
+platform: Longleaf
+slurm_job_id: 9066838
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 16384
+node: c151407
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F3
+unit: reruns__prod_aggregate
+frame_id: 61745042-3d61-455c-9390-0b8d5dab30ac
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: eb1cbb818a6d97151c40052837e78504478b2487
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/eb1cbb818a6d97151c40052837e78504478b2487
+command: round10_final_runs_f2_aggregate.py /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/reruns/boot /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/reruns/prod_aggregate/aggregate_boot; round10_final_runs_f2_limits_aggregate.py /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/reruns/limits /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F2/aggregate /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/reruns/limits /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/reruns/prod_aggregate/aggregate_limits_norm_refit; round10_final_runs_f3_reruns_prod_scores.py /work/users/w/e/weiyang/hest_code/round10-final-runs /work/users/w/e/weiyang/hest_replication/results/round10/final_runs /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/reruns/prod_aggregate; round10_final_runs_ledger_rows.py /work/users/w/e/weiyang/hest_code/round10-final-runs /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/reruns F3 /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/reruns/prod_aggregate/f3_reruns_ledger_new_rows.csv
+config: {"commit":"eb1cbb818a6d97151c40052837e78504478b2487","stage":"F3","track_dir":"reruns","unit":"prod_aggregate"}
+config_sha256: 70f62c843fd61dbe9e752fcca9514408d42544f6cfc0ede316550843e939bc8a
+start: 2026-11-13T03:18:27-05:00
+end: 2026-11-13T03:19:00-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  33ded614e47a8410bafb203d3528c51e  code/scripts/round10_final_runs_f2_aggregate.py
+  7acdb64ccea02fb704a5e571dd5d62bb  code/scripts/round10_final_runs_f2_limits_aggregate.py
+  6bd8e5f92c3a712e5dfc231676ec94b7  code/scripts/round10_final_runs_f3_reruns_prod_scores.py
+  1623ac00e248c3afa655d8a81b57f494  code/scripts/round10_final_runs_ledger_rows.py
+inputs (md5, path):
+  24b2ba4ea2d4f4e513f6c67856818372  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F2/aggregate/f2_regimeA_summary.csv.gz
+  a2fce0b1a8937a2f4b4799c42f7ef222  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F2/aggregate_limits/f2_limits_summary.csv
+  3f881e3ffea1c0ca636dd8ef2b02d19a  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/job_ledger.csv

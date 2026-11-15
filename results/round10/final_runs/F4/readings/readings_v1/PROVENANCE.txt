@@ -1,0 +1,30 @@
+platform: Longleaf
+slurm_job_id: 9174829
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 24576
+node: c151406
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F4
+unit: readings/readings_v1
+frame_id: bdb361de-6630-44e8-b0f8-8bd63dae9ad3
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 0484ad3c7988d77d0c6b8522d84961697097f82a
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/0484ad3c7988d77d0c6b8522d84961697097f82a
+command: round10_final_runs_f4_readings.py s0006 /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/institution/production.json; acs /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/regimeB/f3_production_index.json /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/regimeB /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/aggregate/t10_regcomp_comparisons.csv
+config: {"commit":"0484ad3c7988d77d0c6b8522d84961697097f82a","stage":"F4","unit":"readings_v1"}
+config_sha256: f4d8639e658dcf076db4b35b7f6d65aa8a3a37a0ed5570ad5f860916e17ed67e
+start: 2026-11-14T11:14:37-05:00
+end: 2026-11-14T11:14:59-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  9d3ad6a6d46cd4432ed105597df7e7ab  code/scripts/round10_final_runs_f4_readings.py
+inputs (md5, path):
+  2eb91837093ddff4db11328824373faf  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/institution/production.json
+  fe15d38fe570182650da482c69676902  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/regimeB/f3_production_index.json
+  4fc74231a71e43d18ff470cf4c0cc56e  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/aggregate/t10_regcomp_comparisons.csv

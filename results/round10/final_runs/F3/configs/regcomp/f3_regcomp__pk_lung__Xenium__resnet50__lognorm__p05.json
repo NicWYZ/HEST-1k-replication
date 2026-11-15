@@ -1,0 +1,395 @@
+{
+ "stage": "F3",
+ "unit": "regcomp__pk_lung__Xenium__resnet50__lognorm__p05",
+ "R": 2000,
+ "populations": [
+  {
+   "task": "lung__Xenium",
+   "vtag": "lung__Xenium",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/lung__Xenium__resnet50/pred__lung__Xenium__resnet50__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/lung__Xenium/morphology__lung__Xenium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__lung__Xenium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     9600
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "B_B9600_c100_nL6",
+   "expected_s": 258.7
+  },
+  {
+   "task": "lung__Xenium",
+   "vtag": "lung__Xenium",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/lung__Xenium__resnet50/pred__lung__Xenium__resnet50__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/lung__Xenium/morphology__lung__Xenium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__lung__Xenium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     9600
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "B_B9600_c100_nL8",
+   "expected_s": 265.8
+  },
+  {
+   "task": "lung__Xenium",
+   "vtag": "lung__Xenium",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/lung__Xenium__resnet50/pred__lung__Xenium__resnet50__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/lung__Xenium/morphology__lung__Xenium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__lung__Xenium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     9600
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "B_B9600_c100_nL12",
+   "expected_s": 280.1
+  },
+  {
+   "task": "lung__Xenium",
+   "vtag": "lung__Xenium",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/lung__Xenium__resnet50/pred__lung__Xenium__resnet50__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/lung__Xenium/morphology__lung__Xenium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__lung__Xenium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     9600
+    ],
+    "costs": [
+     1000
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "B_B9600_c1000_nL4",
+   "expected_s": 0.0
+  },
+  {
+   "task": "lung__Xenium",
+   "vtag": "lung__Xenium",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/lung__Xenium__resnet50/pred__lung__Xenium__resnet50__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/lung__Xenium/morphology__lung__Xenium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__lung__Xenium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     9600
+    ],
+    "costs": [
+     1000
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "B_B9600_c1000_nL6",
+   "expected_s": 0.0
+  },
+  {
+   "task": "lung__Xenium",
+   "vtag": "lung__Xenium",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/lung__Xenium__resnet50/pred__lung__Xenium__resnet50__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/lung__Xenium/morphology__lung__Xenium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__lung__Xenium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     9600
+    ],
+    "costs": [
+     1000
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "B_B9600_c1000_nL8",
+   "expected_s": 11.6
+  },
+  {
+   "task": "lung__Xenium",
+   "vtag": "lung__Xenium",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/lung__Xenium__resnet50/pred__lung__Xenium__resnet50__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/lung__Xenium/morphology__lung__Xenium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__lung__Xenium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     9600
+    ],
+    "costs": [
+     1000
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "B_B9600_c1000_nL12",
+   "expected_s": 126.1
+  },
+  {
+   "task": "lung__Xenium",
+   "vtag": "lung__Xenium",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/lung__Xenium__resnet50/pred__lung__Xenium__resnet50__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/lung__Xenium/morphology__lung__Xenium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__lung__Xenium.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     2400
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "A_B2400_nL4",
+   "expected_s": 52.7
+  },
+  {
+   "task": "lung__Xenium",
+   "vtag": "lung__Xenium",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/lung__Xenium__resnet50/pred__lung__Xenium__resnet50__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/lung__Xenium/morphology__lung__Xenium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__lung__Xenium.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     2400
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "A_B2400_nL6",
+   "expected_s": 52.7
+  },
+  {
+   "task": "lung__Xenium",
+   "vtag": "lung__Xenium",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/lung__Xenium__resnet50/pred__lung__Xenium__resnet50__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/lung__Xenium/morphology__lung__Xenium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__lung__Xenium.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     2400
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "A_B2400_nL8",
+   "expected_s": 52.7
+  },
+  {
+   "task": "lung__Xenium",
+   "vtag": "lung__Xenium",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/lung__Xenium__resnet50/pred__lung__Xenium__resnet50__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/lung__Xenium/morphology__lung__Xenium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__lung__Xenium.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     2400
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "A_B2400_nL12",
+   "expected_s": 52.7
+  },
+  {
+   "task": "lung__Xenium",
+   "vtag": "lung__Xenium",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/lung__Xenium__resnet50/pred__lung__Xenium__resnet50__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/lung__Xenium/morphology__lung__Xenium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__lung__Xenium.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     "unit"
+    ]
+   },
+   "cell_label": "B_B2400_unit",
+   "expected_s": 44.2
+  }
+ ],
+ "estimands_reported": [
+  "theta3",
+  "theta2",
+  "mu"
+ ],
+ "expected_s": 1197.4,
+ "_cells": 12
+}

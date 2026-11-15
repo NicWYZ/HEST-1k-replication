@@ -1,0 +1,32 @@
+{
+ "stage": "F3",
+ "unit": "regB_norm__CCRCC__hoptimus0",
+ "R": 2000,
+ "m_grid": [
+  3,
+  4,
+  6,
+  8,
+  10,
+  15,
+  20,
+  30
+ ],
+ "populations": [
+  {
+   "task": "CCRCC",
+   "vtag": "CCRCC",
+   "encoder": "hoptimus0",
+   "arm": "hoptimus0",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC__hoptimus0/norm/b1_predictions__CCRCC__hoptimus0.parquet",
+   "estimands": [
+    "theta3",
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC.parquet"
+  }
+ ],
+ "_cells": 15
+}

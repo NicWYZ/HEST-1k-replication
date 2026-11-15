@@ -1,0 +1,42 @@
+platform: Longleaf
+slurm_job_id: 8940070
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 8192
+node: c0909
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F3
+unit: regcomp_anchor_r5
+frame_id: 2c7941c3-ecf2-4306-a6d1-ae6170b4cbe8
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 8abe80f2a37e8ece95bdf10b49499e594c9dd26c
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/8abe80f2a37e8ece95bdf10b49499e594c9dd26c
+command: round5_ppi_e3_twolevel.py --parquet /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet --vtag CCRCC --arm uni_v2 --parts regcomp --draws 200 --out-dir /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/regimeB/regcomp_anchor_r5 ; round10_final_runs_f3_regcomp.py compare_r5 /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/regimeB/regcomp_anchor_r5/f3_regcomp_anchor_r5_compare.json /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/regimeB/regcomp_anchor_r5
+config: {"commit":"8abe80f2a37e8ece95bdf10b49499e594c9dd26c","stage":"F3","unit":"regcomp_anchor_r5"}
+config_sha256: 5385e6291694610a15678c9a53d4111ba0efb0d5acc4d5385d865c903dd56e0c
+start: 2026-11-12T08:20:12-05:00
+end: 2026-11-12T09:08:17-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  9580a38223ad46f5e141626572254fea  code/scripts/round10_final_runs_estimators.py
+  05f9c7a1a24a4bff1041ff5094dae011  code/scripts/round10_final_runs_f2_regimeB.py
+  4002c7b27f203e035f0bd0355d4d60f0  code/scripts/round10_final_runs_f3_regcomp.py
+  544721f07cb3d74dc5b92456d61fe450  code/scripts/round3_b1_ppi.py
+  d79e69aa65800b9d24de556e019a0c64  code/scripts/round4_ppi_estimator.py
+  15f51917a5fb79702ba239e520e7ff86  code/scripts/round4_ppi_q2_masking.py
+  6097231bc238c0a23387ce76029acefd  code/scripts/round4_ppi_q3_regimes.py
+  b6e9ecc52ac5539682487d8e7c1451c6  code/scripts/round5_ppi_e2_regimeB.py
+  80e52bfe1b2cf9e48c82f3828689d78f  code/scripts/round5_ppi_e3_twolevel.py
+  2de31569ffe72239062fbeb0c9a50fc5  code/scripts/round5_ppi_estimator.py
+  e13183a4ffdddf4f01ba5136844c606d  code/scripts/round5_ppi_twolevel.py
+inputs (md5, path):
+  2c7abad907850aa038e59eadeebde700  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/regimeB/regcomp_anchor_r5/f3_regcomp_anchor_r5_compare.json
+  9d8157fa3e3e7bd528f4cac341ba2566  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round5/ppi/E3_twolevel/CCRCC/uni_v2__regcomp/e3_regcomp__CCRCC__uni_v2.csv
+  3711bd8a3a69238e0222c0360300cf29  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round5/ppi/E3_twolevel/CCRCC/uni_v2__regcomp/e3_regcomp_genes__CCRCC__uni_v2.csv.gz
+  e08e687816855f9e5ededdb038b67e22  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round5/ppi/E3_twolevel/e3_regime_comparison.csv
+  0cc62c5e600cc3811168b71ca7e2c1ab  /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet

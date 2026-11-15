@@ -1,0 +1,81 @@
+{
+ "ratios": {
+  "rows_new": 10,
+  "rows_ref": 10,
+  "rows_both": 10,
+  "columns": {
+   "wr_D0cl": {
+    "max_abs": 0.00031440487831835284,
+    "max_rel": 0.00032713581916624644,
+    "nan_mismatch": 0
+   },
+   "wr_D0tuned": {
+    "max_abs": 0.0001958382402375003,
+    "max_rel": 0.00022977000837962137,
+    "nan_mismatch": 0
+   },
+   "var_ratio": {
+    "max_abs": 7.004776447772088e-05,
+    "max_rel": 7.003981363660394e-05,
+    "nan_mismatch": 0
+   },
+   "coverage": {
+    "max_abs": 0.0,
+    "max_rel": 0.0,
+    "nan_mismatch": 0
+   },
+   "coverage_D0cl": {
+    "max_abs": 0.0,
+    "max_rel": 0.0,
+    "nan_mismatch": 0
+   },
+   "n_genes": {
+    "max_abs": 0.0,
+    "max_rel": 0.0,
+    "nan_mismatch": 0
+   }
+  },
+  "exact": false
+ },
+ "named": {
+  "vtag": "CCRCC",
+  "arm": "uni_v2",
+  "estimand": "theta3",
+  "n_L": 8,
+  "balance": "own",
+  "p_a": 0.01,
+  "wr_D0cl": 0.7262961344734262,
+  "wr_D0cl_ref": 0.7262961344734262,
+  "coverage": 0.83175,
+  "coverage_ref": 0.83175
+ },
+ "genes": {
+  "rows_new": 3200,
+  "rows_ref": 3200,
+  "rows_both": 3200,
+  "columns": {
+   "emp_var": {
+    "max_abs": 9.795343629400051e-06,
+    "max_rel": 0.004093617631462461,
+    "nan_mismatch": 0
+   },
+   "est_var": {
+    "max_abs": 7.647920066999967e-06,
+    "max_rel": 0.003930285492117099,
+    "nan_mismatch": 0
+   },
+   "coverage": {
+    "max_abs": 0.0015000000000000568,
+    "max_rel": 0.00215362526920324,
+    "nan_mismatch": 0
+   },
+   "width": {
+    "max_abs": 0.0002625300474836112,
+    "max_rel": 0.0022367602553334605,
+    "nan_mismatch": 0
+   }
+  },
+  "exact": false
+ },
+ "pass": true
+}

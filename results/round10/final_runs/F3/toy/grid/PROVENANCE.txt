@@ -1,0 +1,33 @@
+platform: Longleaf
+slurm_job_id: 8970516
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 4
+slurm_mem_per_node: 8192
+node: c0905
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F3
+unit: toy__grid
+frame_id: b13c1923-c0ad-48db-9911-4cd5ebb8c8ec
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 009142032cab289845a7cd3cd1d113f174ddefff
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/009142032cab289845a7cd3cd1d113f174ddefff
+command: round10_final_runs_f3_toy.py grid /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/grid/inputs/f3_toy_grid.json /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/grid
+config: {"commit":"009142032cab289845a7cd3cd1d113f174ddefff","stage":"F3","track_dir":"toy","unit":"grid"}
+config_sha256: 51d9227e9bcdbe152210c6b37863aa39b383860074d46f1e4652c27c3f83ca84
+start: 2026-11-12T08:31:09-05:00
+end: 2026-11-12T08:35:17-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  004c68a669a751f2f5a9f83ca3b7d2f2  code/scripts/round10_final_runs_f3_toy.py
+  051b3cab79139031505b12d77fd76f96  code/scripts/round10_final_runs_f1_formC_check.py
+  9580a38223ad46f5e141626572254fea  code/scripts/round10_final_runs_estimators.py
+  e13183a4ffdddf4f01ba5136844c606d  code/scripts/round5_ppi_twolevel.py
+  d79e69aa65800b9d24de556e019a0c64  code/scripts/round4_ppi_estimator.py
+  2de31569ffe72239062fbeb0c9a50fc5  code/scripts/round5_ppi_estimator.py
+inputs (md5, path):
+  e1ce691d3fa6c6c5738f1a30d306fc63  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/toy/grid/inputs/f3_toy_grid.json

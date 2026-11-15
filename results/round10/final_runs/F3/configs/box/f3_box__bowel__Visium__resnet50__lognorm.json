@@ -1,0 +1,51 @@
+{
+ "stage": "F3",
+ "unit": "box__bowel__Visium__resnet50__lognorm",
+ "R": 2000,
+ "forms": [
+  "C_fix1"
+ ],
+ "m_grid": [
+  3,
+  4,
+  5,
+  6,
+  8,
+  10,
+  12,
+  15,
+  20,
+  25,
+  30,
+  40,
+  50,
+  75,
+  100,
+  150,
+  200,
+  300,
+  500
+ ],
+ "box": true,
+ "populations": [
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "lognorm",
+   "source": "corpus",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/bowel__Visium__resnet50/pred__bowel__Visium__resnet50__donor.parquet",
+   "morph_path": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/bowel__Visium/morphology__bowel__Visium.parquet",
+   "y_prefix": "y_lognorm__",
+   "f_prefix": "f_lognorm__",
+   "donor_col": "donor_id",
+   "estimands": [
+    "theta2"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet",
+   "theta2_kind": "mean"
+  }
+ ],
+ "_cells": 19
+}

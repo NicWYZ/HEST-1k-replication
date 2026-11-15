@@ -1,0 +1,435 @@
+{
+ "started": "2026-11-14T10:39:57",
+ "config_dir": "/work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/F3/configs/box",
+ "crit_rel": 1e-10,
+ "populations": [
+  {
+   "task": "CCRCC",
+   "encoder": "hoptimus0",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.02849998859768394
+  },
+  {
+   "task": "CCRCC",
+   "encoder": "hoptimus0",
+   "scale": "norm_refit",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.03288534177023878
+  },
+  {
+   "task": "CCRCC",
+   "encoder": "resnet50",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.02849998859768394
+  },
+  {
+   "task": "CCRCC",
+   "encoder": "resnet50",
+   "scale": "norm_refit",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.03288534177023878
+  },
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.02849998859768394
+  },
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "norm_refit",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.03288534177023878
+  },
+  {
+   "task": "CCRCC_merged",
+   "encoder": "hoptimus0",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.029619875223123517
+  },
+  {
+   "task": "CCRCC_merged",
+   "encoder": "hoptimus0",
+   "scale": "norm_refit",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.033938920900670154
+  },
+  {
+   "task": "CCRCC_merged",
+   "encoder": "resnet50",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.029619875223123517
+  },
+  {
+   "task": "CCRCC_merged",
+   "encoder": "resnet50",
+   "scale": "norm_refit",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.033938920900670154
+  },
+  {
+   "task": "CCRCC_merged",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.029619875223123517
+  },
+  {
+   "task": "CCRCC_merged",
+   "encoder": "uni_v2",
+   "scale": "norm_refit",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.033938920900670154
+  },
+  {
+   "task": "INDIANA_KIDNEY",
+   "encoder": "hoptimus0",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.0031541119655141684
+  },
+  {
+   "task": "INDIANA_KIDNEY",
+   "encoder": "hoptimus0",
+   "scale": "norm_refit",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.0031580424598410977
+  },
+  {
+   "task": "INDIANA_KIDNEY",
+   "encoder": "resnet50",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.0031541119655141684
+  },
+  {
+   "task": "INDIANA_KIDNEY",
+   "encoder": "resnet50",
+   "scale": "norm_refit",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.0031580424598410977
+  },
+  {
+   "task": "INDIANA_KIDNEY",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.0031541119655141684
+  },
+  {
+   "task": "INDIANA_KIDNEY",
+   "encoder": "uni_v2",
+   "scale": "norm_refit",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.0031580424598410977
+  },
+  {
+   "task": "LUNG_XENIUM",
+   "encoder": "hoptimus0",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.03898667191954221
+  },
+  {
+   "task": "LUNG_XENIUM",
+   "encoder": "hoptimus0",
+   "scale": "norm_refit",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.049672105697421066
+  },
+  {
+   "task": "LUNG_XENIUM",
+   "encoder": "resnet50",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.03898667215820978
+  },
+  {
+   "task": "LUNG_XENIUM",
+   "encoder": "resnet50",
+   "scale": "norm_refit",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.049672105697421066
+  },
+  {
+   "task": "LUNG_XENIUM",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.03898667191954221
+  },
+  {
+   "task": "LUNG_XENIUM",
+   "encoder": "uni_v2",
+   "scale": "norm_refit",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.04967210569661645
+  },
+  {
+   "task": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.019831086403509456
+  },
+  {
+   "task": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "scale": "lognorm",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.021247686334262657
+  },
+  {
+   "task": "bowel__Visium",
+   "encoder": "resnet50",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.019831086403509147
+  },
+  {
+   "task": "bowel__Visium",
+   "encoder": "resnet50",
+   "scale": "lognorm",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.021247686334262657
+  },
+  {
+   "task": "bowel__Visium",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.019831086403509147
+  },
+  {
+   "task": "bowel__Visium",
+   "encoder": "uni_v2",
+   "scale": "lognorm",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.021247686334262657
+  },
+  {
+   "task": "brain__Visium",
+   "encoder": "hoptimus0",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.010299160601034781
+  },
+  {
+   "task": "brain__Visium",
+   "encoder": "hoptimus0",
+   "scale": "lognorm",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.01577578696335924
+  },
+  {
+   "task": "brain__Visium",
+   "encoder": "resnet50",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.010299160601034781
+  },
+  {
+   "task": "brain__Visium",
+   "encoder": "resnet50",
+   "scale": "lognorm",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.01577578696335924
+  },
+  {
+   "task": "brain__Visium",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.010299160601034781
+  },
+  {
+   "task": "brain__Visium",
+   "encoder": "uni_v2",
+   "scale": "lognorm",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.01577578696335924
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "encoder": "hoptimus0",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.010481716763923246
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "encoder": "hoptimus0",
+   "scale": "lognorm",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.00911019194448208
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "encoder": "resnet50",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.010481716763923246
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "encoder": "resnet50",
+   "scale": "lognorm",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.00911019194448208
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.010481716763923246
+  },
+  {
+   "task": "breast__Spatial_Transcriptomics",
+   "encoder": "uni_v2",
+   "scale": "lognorm",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.00911019194448208
+  },
+  {
+   "task": "breast__Xenium",
+   "encoder": "hoptimus0",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.19308527249562923
+  },
+  {
+   "task": "breast__Xenium",
+   "encoder": "hoptimus0",
+   "scale": "lognorm",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.11537418377396988
+  },
+  {
+   "task": "breast__Xenium",
+   "encoder": "resnet50",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.19308527249562923
+  },
+  {
+   "task": "breast__Xenium",
+   "encoder": "resnet50",
+   "scale": "lognorm",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.11537418377396985
+  },
+  {
+   "task": "breast__Xenium",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.19308527249562923
+  },
+  {
+   "task": "breast__Xenium",
+   "encoder": "uni_v2",
+   "scale": "lognorm",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.11537418377396988
+  },
+  {
+   "task": "kidney__Visium",
+   "encoder": "hoptimus0",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.009632052759549077
+  },
+  {
+   "task": "kidney__Visium",
+   "encoder": "hoptimus0",
+   "scale": "lognorm",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.008183932247738515
+  },
+  {
+   "task": "kidney__Visium",
+   "encoder": "resnet50",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.009632052759549075
+  },
+  {
+   "task": "kidney__Visium",
+   "encoder": "resnet50",
+   "scale": "lognorm",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.008183932247738515
+  },
+  {
+   "task": "kidney__Visium",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.009632052759549077
+  },
+  {
+   "task": "kidney__Visium",
+   "encoder": "uni_v2",
+   "scale": "lognorm",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.008183932247738515
+  },
+  {
+   "task": "lung__Xenium",
+   "encoder": "hoptimus0",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.02608251032885358
+  },
+  {
+   "task": "lung__Xenium",
+   "encoder": "hoptimus0",
+   "scale": "lognorm",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.025571911913679978
+  },
+  {
+   "task": "lung__Xenium",
+   "encoder": "resnet50",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.02608251032885358
+  },
+  {
+   "task": "lung__Xenium",
+   "encoder": "resnet50",
+   "scale": "lognorm",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.025571911913679978
+  },
+  {
+   "task": "lung__Xenium",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.02608251032885358
+  },
+  {
+   "task": "lung__Xenium",
+   "encoder": "uni_v2",
+   "scale": "lognorm",
+   "allspot_pass": true,
+   "abs_std_diff_max": 0.025571911913679978
+  }
+ ],
+ "anchor": {
+  "value": 0.1332702393296752,
+  "reference": 0.1332702393296752,
+  "passed": true
+ },
+ "n_populations": 60,
+ "all_allspot_pass": true,
+ "finished": "2026-11-14T10:40:34"
+}

@@ -1,0 +1,28 @@
+platform: Longleaf
+slurm_job_id: 9227399
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 1
+slurm_mem_per_node: 8192
+node: c0936
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F4
+unit: F4_ledger/ledger_v1
+frame_id: 3f5eb01e-aa12-4f67-84ac-45c28e10831d
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 396665332f9badad87827683963869faf6ba03d0
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/396665332f9badad87827683963869faf6ba03d0
+command: round10_final_runs_ledger_rows.py /work/users/w/e/weiyang/hest_code/round10-final-runs /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F4 F4 /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F4_ledger/ledger_v1/f4_ledger_new_rows.csv
+config: {"commit":"396665332f9badad87827683963869faf6ba03d0","stage":"F4","unit":"ledger_v1"}
+config_sha256: 19fa633713e573e8429e052b1f57234b5da88d92177d062f63811e9d90c3294b
+start: 2026-11-15T03:48:17-05:00
+end: 2026-11-15T03:48:26-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  1623ac00e248c3afa655d8a81b57f494  code/scripts/round10_final_runs_ledger_rows.py
+inputs (md5, path):
+  d3f72e7db50481523521942f65f701da  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round10/final_runs/job_ledger.csv

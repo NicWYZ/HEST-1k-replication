@@ -1,0 +1,28 @@
+sample_id,decision,target,reason
+NCBI563,excluded_pooled,,capture area holds specimens of two donors (F59 and F63; GEO description and paper Supp. Table 2)
+NCBI564,excluded_pooled,,capture area holds specimens of three donors (KRP446 KRP462 KRP475)
+NCBI565,excluded_mixed,,capture area also carries tissue of KRP478; the authors used only KRP429 spots and whether HEST did is unknown
+NCBI566,excluded_mixed,,capture area also carries tissue of KRP440; the authors used only KRP449 spots and whether HEST did is unknown
+NCBI885,excluded_pooled,,TMA section pooling cores of 17 individuals with no per-core identifiers
+NCBI886,excluded_pooled,,serial TMA section of the same block as NCBI885 (17 individuals)
+MEND48,excluded_not_donor,,kidney organoid derived from a stem-cell line; not donor tissue
+MEND49,excluded_not_donor,,kidney organoid derived from a stem-cell line; not donor tissue
+MEND54,excluded_not_donor,,kidney organoid derived from a stem-cell line; not donor tissue
+NCBI538,excluded_not_donor,,kidney organoid; same capture area as MEND54 published twice
+NCBI539,excluded_not_donor,,kidney organoid; same capture area as MEND48 published twice
+NCBI540,excluded_not_donor,,kidney organoid; same capture area as MEND49 published twice
+STI_Human_Breast_10X_06232020_Visium_Block_A_Section_1,duplicate_data,TENX13,STimage-1K4M copy of 10x Block A Section 1 (naming evidence)
+STI_Human_Breast_10X_06232020_Visium_Block_A_Section_2,duplicate_data,TENX14,STimage-1K4M copy of 10x Block A Section 2 (naming evidence)
+TENX23,duplicate_data,TENX24,targeted-panel enrichment of the same Visium library T1T2-A6 as the whole-transcriptome TENX24
+TENX56,duplicate_data,TENX27,targeted neuroscience panel on the same slide area and library as the whole-transcriptome TENX27
+TENX30,duplicate_data,TENX31,targeted pan-cancer enrichment of the same library T1T2-E4 as the whole-transcriptome TENX31
+TENX28,duplicate_data,TENX29,targeted gene-signature library made from the parent whole-transcriptome library of TENX29 (naming evidence)
+MEND63,excluded_unresolved,,RRST brain section; the study has two donors but which section belongs to which was not resolved
+MEND64,excluded_unresolved,,as MEND63
+MEND65,excluded_unresolved,,as MEND63
+MEND66,excluded_unresolved,,as MEND63
+MEND67,excluded_unresolved,,as MEND63
+MEND68,excluded_unresolved,,as MEND63
+INT4,flag_kept,INT24,shares tumour code c_2 with INT24 and no source resolves it; kept as separate donors in the primary set as the brief's 24-donor CCRCC; the 23-donor merged set is the sensitivity row
+INT24,flag_kept,INT4,as INT4
+NCBI599,flag_kept,NCBI714,possibly the same donor as S0175 IU-F59 (matching sex and age label and source only); kept separate

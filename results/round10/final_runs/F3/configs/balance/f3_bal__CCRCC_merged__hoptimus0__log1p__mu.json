@@ -1,0 +1,34 @@
+{
+ "stage": "F3.3iv",
+ "unit": "bal__CCRCC_merged__hoptimus0__log1p__mu",
+ "draws": 2000,
+ "pool": 500,
+ "batch": 1000,
+ "designs": [
+  "D0",
+  "D2",
+  "D2lim",
+  "cube"
+ ],
+ "root": "/work/users/w/e/weiyang/hest_replication",
+ "cluster_values": [
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC_merged.parquet"
+ ],
+ "populations": [
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "hoptimus0",
+   "scale": "log1p",
+   "estimands": [
+    "mu"
+   ],
+   "nl_grid": [
+    4,
+    6,
+    8,
+    12
+   ]
+  }
+ ]
+}

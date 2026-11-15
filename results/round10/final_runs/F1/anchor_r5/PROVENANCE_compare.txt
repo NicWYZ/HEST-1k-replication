@@ -1,0 +1,28 @@
+platform: Longleaf
+slurm_job_id: 8610827
+slurm_job_partition: spill
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 8192
+node: c151603
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F1.2
+unit: anchor_r5_compare_v2
+frame_id: fc04d488-f9cc-4e63-99fc-f3a50dbc17ed
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 3dd5d6dd1d982dc330dee68f71e3596c51219f45
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/3dd5d6dd1d982dc330dee68f71e3596c51219f45
+command: round10_final_runs_f1_anchor_compare.py r5 /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round5/ppi/E4b_rejective/CCRCC/uni_v2/theta3_nL8 /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/anchor_r5/rerun /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/9185bc6be157ee9c62d8d1067e5ad9e14f53984e /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/anchor_r5/inputs/e4b_grid.csv /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/anchor_r5/compare_v2 
+config: {"commit":"3dd5d6dd1d982dc330dee68f71e3596c51219f45","stage":"F1.2","unit":"anchor_r5_compare_v2"}
+config_sha256: 767aebd568f902b44b1ac82472b77941a167c671979c4d961c31df1a89a16640
+start: 2026-11-09T00:35:39-05:00
+end: 2026-11-09T00:35:43-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  ef5a70c1957d86c5faf24b461077a026  code/scripts/round10_final_runs_f1_anchor_compare.py
+inputs (md5, path):
+  6b4ec382084ecc1479b63e18ca3f3d8c  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/anchor_r5/inputs/e4b_grid.csv

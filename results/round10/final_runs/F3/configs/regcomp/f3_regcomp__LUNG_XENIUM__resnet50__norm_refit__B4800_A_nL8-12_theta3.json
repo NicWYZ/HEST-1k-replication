@@ -1,0 +1,35 @@
+{
+ "stage": "F3",
+ "unit": "regcomp__LUNG_XENIUM__resnet50__norm_refit__B4800_A_nL8-12_theta3",
+ "R": 2000,
+ "populations": [
+  {
+   "task": "LUNG_XENIUM",
+   "vtag": "LUNG_XENIUM",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/LUNG_XENIUM__resnet50/norm/b1_predictions__LUNG_XENIUM__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__LUNG_XENIUM.parquet"
+  }
+ ],
+ "estimands_reported": [
+  "theta3",
+  "theta2",
+  "mu"
+ ],
+ "budgets": [
+  4800
+ ],
+ "regimes": [
+  "A"
+ ],
+ "n_L": [
+  8,
+  12
+ ]
+}

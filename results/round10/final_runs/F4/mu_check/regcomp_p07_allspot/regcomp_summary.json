@@ -1,0 +1,716 @@
+{
+ "config": {
+  "stage": "F3",
+  "unit": "regcomp__pk_CCRCC__uni_v2__log1p__p07",
+  "R": 2000,
+  "populations": [
+   {
+    "task": "CCRCC",
+    "vtag": "CCRCC",
+    "encoder": "uni_v2",
+    "arm": "uni_v2",
+    "scale": "log1p",
+    "source": "r5",
+    "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+    "estimands": [
+     "theta2"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+    "theta2_kind": "mean",
+    "cells": {
+     "regimes": [
+      "B"
+     ],
+     "budgets": [
+      9600
+     ],
+     "costs": [
+      10
+     ],
+     "n_L": [
+      4
+     ]
+    },
+    "cell_label": "B_B9600_c10_nL4",
+    "expected_s": 123.4
+   },
+   {
+    "task": "CCRCC",
+    "vtag": "CCRCC",
+    "encoder": "uni_v2",
+    "arm": "uni_v2",
+    "scale": "log1p",
+    "source": "r5",
+    "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+    "estimands": [
+     "theta2"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+    "theta2_kind": "mean",
+    "cells": {
+     "regimes": [
+      "B"
+     ],
+     "budgets": [
+      9600
+     ],
+     "costs": [
+      10
+     ],
+     "n_L": [
+      6
+     ]
+    },
+    "cell_label": "B_B9600_c10_nL6",
+    "expected_s": 123.8
+   },
+   {
+    "task": "CCRCC",
+    "vtag": "CCRCC",
+    "encoder": "uni_v2",
+    "arm": "uni_v2",
+    "scale": "log1p",
+    "source": "r5",
+    "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+    "estimands": [
+     "theta2"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+    "theta2_kind": "mean",
+    "cells": {
+     "regimes": [
+      "B"
+     ],
+     "budgets": [
+      9600
+     ],
+     "costs": [
+      10
+     ],
+     "n_L": [
+      8
+     ]
+    },
+    "cell_label": "B_B9600_c10_nL8",
+    "expected_s": 124.1
+   },
+   {
+    "task": "CCRCC",
+    "vtag": "CCRCC",
+    "encoder": "uni_v2",
+    "arm": "uni_v2",
+    "scale": "log1p",
+    "source": "r5",
+    "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+    "estimands": [
+     "theta2"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+    "theta2_kind": "mean",
+    "cells": {
+     "regimes": [
+      "B"
+     ],
+     "budgets": [
+      9600
+     ],
+     "costs": [
+      10
+     ],
+     "n_L": [
+      12
+     ]
+    },
+    "cell_label": "B_B9600_c10_nL12",
+    "expected_s": 124.7
+   },
+   {
+    "task": "CCRCC",
+    "vtag": "CCRCC",
+    "encoder": "uni_v2",
+    "arm": "uni_v2",
+    "scale": "log1p",
+    "source": "r5",
+    "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+    "estimands": [
+     "theta2"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+    "theta2_kind": "mean",
+    "cells": {
+     "regimes": [
+      "B"
+     ],
+     "budgets": [
+      9600
+     ],
+     "costs": [
+      100
+     ],
+     "n_L": [
+      4
+     ]
+    },
+    "cell_label": "B_B9600_c100_nL4",
+    "expected_s": 96.3
+   },
+   {
+    "task": "CCRCC",
+    "vtag": "CCRCC",
+    "encoder": "uni_v2",
+    "arm": "uni_v2",
+    "scale": "log1p",
+    "source": "r5",
+    "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+    "estimands": [
+     "theta2"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+    "theta2_kind": "mean",
+    "cells": {
+     "regimes": [
+      "B"
+     ],
+     "budgets": [
+      9600
+     ],
+     "costs": [
+      100
+     ],
+     "n_L": [
+      6
+     ]
+    },
+    "cell_label": "B_B9600_c100_nL6",
+    "expected_s": 99.2
+   },
+   {
+    "task": "CCRCC",
+    "vtag": "CCRCC",
+    "encoder": "uni_v2",
+    "arm": "uni_v2",
+    "scale": "log1p",
+    "source": "r5",
+    "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+    "estimands": [
+     "theta2"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+    "theta2_kind": "mean",
+    "cells": {
+     "regimes": [
+      "B"
+     ],
+     "budgets": [
+      9600
+     ],
+     "costs": [
+      100
+     ],
+     "n_L": [
+      8
+     ]
+    },
+    "cell_label": "B_B9600_c100_nL8",
+    "expected_s": 102.2
+   },
+   {
+    "task": "CCRCC",
+    "vtag": "CCRCC",
+    "encoder": "uni_v2",
+    "arm": "uni_v2",
+    "scale": "log1p",
+    "source": "r5",
+    "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+    "estimands": [
+     "theta2"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+    "theta2_kind": "mean",
+    "cells": {
+     "regimes": [
+      "B"
+     ],
+     "budgets": [
+      9600
+     ],
+     "costs": [
+      100
+     ],
+     "n_L": [
+      12
+     ]
+    },
+    "cell_label": "B_B9600_c100_nL12",
+    "expected_s": 108.2
+   },
+   {
+    "task": "CCRCC",
+    "vtag": "CCRCC",
+    "encoder": "uni_v2",
+    "arm": "uni_v2",
+    "scale": "log1p",
+    "source": "r5",
+    "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+    "estimands": [
+     "theta2"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+    "theta2_kind": "mean",
+    "cells": {
+     "regimes": [
+      "B"
+     ],
+     "budgets": [
+      9600
+     ],
+     "costs": [
+      1000
+     ],
+     "n_L": [
+      4
+     ]
+    },
+    "cell_label": "B_B9600_c1000_nL4",
+    "expected_s": 0.0
+   },
+   {
+    "task": "CCRCC",
+    "vtag": "CCRCC",
+    "encoder": "uni_v2",
+    "arm": "uni_v2",
+    "scale": "log1p",
+    "source": "r5",
+    "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+    "estimands": [
+     "theta2"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+    "theta2_kind": "mean",
+    "cells": {
+     "regimes": [
+      "B"
+     ],
+     "budgets": [
+      9600
+     ],
+     "costs": [
+      1000
+     ],
+     "n_L": [
+      6
+     ]
+    },
+    "cell_label": "B_B9600_c1000_nL6",
+    "expected_s": 0.0
+   },
+   {
+    "task": "CCRCC",
+    "vtag": "CCRCC",
+    "encoder": "uni_v2",
+    "arm": "uni_v2",
+    "scale": "log1p",
+    "source": "r5",
+    "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+    "estimands": [
+     "theta2"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+    "theta2_kind": "mean",
+    "cells": {
+     "regimes": [
+      "B"
+     ],
+     "budgets": [
+      9600
+     ],
+     "costs": [
+      1000
+     ],
+     "n_L": [
+      8
+     ]
+    },
+    "cell_label": "B_B9600_c1000_nL8",
+    "expected_s": 0.0
+   },
+   {
+    "task": "CCRCC",
+    "vtag": "CCRCC",
+    "encoder": "uni_v2",
+    "arm": "uni_v2",
+    "scale": "log1p",
+    "source": "r5",
+    "parquet": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+    "estimands": [
+     "theta2"
+    ],
+    "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet",
+    "theta2_kind": "mean",
+    "cells": {
+     "regimes": [
+      "B"
+     ],
+     "budgets": [
+      9600
+     ],
+     "costs": [
+      1000
+     ],
+     "n_L": [
+      12
+     ]
+    },
+    "cell_label": "B_B9600_c1000_nL12",
+    "expected_s": 0.0
+   }
+  ],
+  "estimands_reported": [
+   "theta3",
+   "theta2",
+   "mu"
+  ],
+  "expected_s": 901.9,
+  "_cells": 12
+ },
+ "started": "2026-11-14T04:07:24",
+ "populations": [
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 24,
+   "n_units": 74220,
+   "n_genes": 50,
+   "n_cells": 1,
+   "load_seconds": 0.3,
+   "cells": [
+    {
+     "estimand": "mu",
+     "tag": "regcomp|B|B9400.0|cd_cs_10_vs_A_nL4_B9600|nL24|mprop",
+     "seconds": 50.9
+    }
+   ],
+   "cv_check": {
+    "mu": {
+     "n_valid_regimeB": 24,
+     "n_donors_cv": 24,
+     "n_common": 24,
+     "n_genes": 50,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 0.0,
+     "max_abs": 0.0
+    }
+   },
+   "seconds": 51.2
+  },
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 24,
+   "n_units": 74220,
+   "n_genes": 50,
+   "n_cells": 1,
+   "load_seconds": 0.2,
+   "cells": [
+    {
+     "estimand": "mu",
+     "tag": "regcomp|B|B9420.0|cd_cs_10_vs_A_nL6_B9600|nL24|mprop",
+     "seconds": 51.0
+    }
+   ],
+   "cv_check": {
+    "mu": {
+     "n_valid_regimeB": 24,
+     "n_donors_cv": 24,
+     "n_common": 24,
+     "n_genes": 50,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 0.0,
+     "max_abs": 0.0
+    }
+   },
+   "seconds": 51.2
+  },
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 24,
+   "n_units": 74220,
+   "n_genes": 50,
+   "n_cells": 1,
+   "load_seconds": 0.2,
+   "cells": [
+    {
+     "estimand": "mu",
+     "tag": "regcomp|B|B9440.0|cd_cs_10_vs_A_nL8_B9600|nL24|mprop",
+     "seconds": 50.5
+    }
+   ],
+   "cv_check": {
+    "mu": {
+     "n_valid_regimeB": 24,
+     "n_donors_cv": 24,
+     "n_common": 24,
+     "n_genes": 50,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 0.0,
+     "max_abs": 0.0
+    }
+   },
+   "seconds": 50.7
+  },
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 24,
+   "n_units": 74220,
+   "n_genes": 50,
+   "n_cells": 1,
+   "load_seconds": 0.2,
+   "cells": [
+    {
+     "estimand": "mu",
+     "tag": "regcomp|B|B9480.0|cd_cs_10_vs_A_nL12_B9600|nL24|mprop",
+     "seconds": 52.5
+    }
+   ],
+   "cv_check": {
+    "mu": {
+     "n_valid_regimeB": 24,
+     "n_donors_cv": 24,
+     "n_common": 24,
+     "n_genes": 50,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 0.0,
+     "max_abs": 0.0
+    }
+   },
+   "seconds": 52.7
+  },
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 24,
+   "n_units": 74220,
+   "n_genes": 50,
+   "n_cells": 1,
+   "load_seconds": 0.2,
+   "cells": [
+    {
+     "estimand": "mu",
+     "tag": "regcomp|B|B7600.0|cd_cs_100_vs_A_nL4_B9600|nL24|mprop",
+     "seconds": 45.9
+    }
+   ],
+   "cv_check": {
+    "mu": {
+     "n_valid_regimeB": 24,
+     "n_donors_cv": 24,
+     "n_common": 24,
+     "n_genes": 50,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 0.0,
+     "max_abs": 0.0
+    }
+   },
+   "seconds": 46.1
+  },
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 24,
+   "n_units": 74220,
+   "n_genes": 50,
+   "n_cells": 1,
+   "load_seconds": 0.2,
+   "cells": [
+    {
+     "estimand": "mu",
+     "tag": "regcomp|B|B7800.0|cd_cs_100_vs_A_nL6_B9600|nL24|mprop",
+     "seconds": 46.8
+    }
+   ],
+   "cv_check": {
+    "mu": {
+     "n_valid_regimeB": 24,
+     "n_donors_cv": 24,
+     "n_common": 24,
+     "n_genes": 50,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 0.0,
+     "max_abs": 0.0
+    }
+   },
+   "seconds": 46.9
+  },
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 24,
+   "n_units": 74220,
+   "n_genes": 50,
+   "n_cells": 1,
+   "load_seconds": 0.2,
+   "cells": [
+    {
+     "estimand": "mu",
+     "tag": "regcomp|B|B8000.0|cd_cs_100_vs_A_nL8_B9600|nL24|mprop",
+     "seconds": 44.4
+    }
+   ],
+   "cv_check": {
+    "mu": {
+     "n_valid_regimeB": 24,
+     "n_donors_cv": 24,
+     "n_common": 24,
+     "n_genes": 50,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 0.0,
+     "max_abs": 0.0
+    }
+   },
+   "seconds": 44.6
+  },
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 24,
+   "n_units": 74220,
+   "n_genes": 50,
+   "n_cells": 1,
+   "load_seconds": 0.2,
+   "cells": [
+    {
+     "estimand": "mu",
+     "tag": "regcomp|B|B8400.0|cd_cs_100_vs_A_nL12_B9600|nL24|mprop",
+     "seconds": 46.5
+    }
+   ],
+   "cv_check": {
+    "mu": {
+     "n_valid_regimeB": 24,
+     "n_donors_cv": 24,
+     "n_common": 24,
+     "n_genes": 50,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 0.0,
+     "max_abs": 0.0
+    }
+   },
+   "seconds": 46.6
+  },
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 24,
+   "n_units": 74220,
+   "n_genes": 50,
+   "n_cells": 0,
+   "load_seconds": 0.2,
+   "cells": [],
+   "cv_check": {
+    "mu": {
+     "n_valid_regimeB": 24,
+     "n_donors_cv": 24,
+     "n_common": 24,
+     "n_genes": 50,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 0.0,
+     "max_abs": 0.0
+    }
+   },
+   "seconds": 0.2
+  },
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 24,
+   "n_units": 74220,
+   "n_genes": 50,
+   "n_cells": 0,
+   "load_seconds": 0.1,
+   "cells": [],
+   "cv_check": {
+    "mu": {
+     "n_valid_regimeB": 24,
+     "n_donors_cv": 24,
+     "n_common": 24,
+     "n_genes": 50,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 0.0,
+     "max_abs": 0.0
+    }
+   },
+   "seconds": 0.2
+  },
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 24,
+   "n_units": 74220,
+   "n_genes": 50,
+   "n_cells": 0,
+   "load_seconds": 0.1,
+   "cells": [],
+   "cv_check": {
+    "mu": {
+     "n_valid_regimeB": 24,
+     "n_donors_cv": 24,
+     "n_common": 24,
+     "n_genes": 50,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 0.0,
+     "max_abs": 0.0
+    }
+   },
+   "seconds": 0.2
+  },
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "G": 24,
+   "n_units": 74220,
+   "n_genes": 50,
+   "n_cells": 0,
+   "load_seconds": 0.1,
+   "cells": [],
+   "cv_check": {
+    "mu": {
+     "n_valid_regimeB": 24,
+     "n_donors_cv": 24,
+     "n_common": 24,
+     "n_genes": 50,
+     "only_regimeB": [],
+     "only_cv": [],
+     "max_rel": 0.0,
+     "max_abs": 0.0
+    }
+   },
+   "seconds": 0.2
+  }
+ ],
+ "finished": "2026-11-14T04:13:55"
+}

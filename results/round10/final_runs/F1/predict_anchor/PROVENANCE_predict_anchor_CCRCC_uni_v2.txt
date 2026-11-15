@@ -1,0 +1,30 @@
+platform: Longleaf
+slurm_job_id: 8625447
+slurm_job_partition: spill
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 4
+slurm_mem_per_node: 32768
+node: c151406
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F1
+unit: predict_anchor_CCRCC_uni_v2
+frame_id: fc04d488-f9cc-4e63-99fc-f3a50dbc17ed
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 5d4ad923e07846faed461796b29e7ae87c4f4761
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/5d4ad923e07846faed461796b29e7ae87c4f4761
+command: round10_final_runs_f1_predict.py /work/users/w/e/weiyang/st_fed_learn/data/tasks/kidney__Visium.json uni_v2 donor /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/data_registry/f1_data_hest_match.csv /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict_anchor_CCRCC_uni_v2 --map-task CCRCC --samples INT1,INT2,INT3,INT4,INT5,INT6,INT7,INT8,INT9,INT10,INT11,INT12,INT13,INT14,INT15,INT16,INT17,INT18,INT19,INT20,INT21,INT22,INT23,INT24 --tag CCRCC_anchor
+config: {"commit":"5d4ad923e07846faed461796b29e7ae87c4f4761","stage":"F1","unit":"predict_anchor_CCRCC_uni_v2"}
+config_sha256: 987781573cd1e33d281a84504f273d38ff11f5626a0bc5f306cb026d0dd1ed46
+start: 2026-11-09T03:11:56-05:00
+end: 2026-11-09T03:27:50-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  1548e4cecac5105c78e9a3c05efcb2da  code/scripts/round10_final_runs_f1_predict.py
+  0ad7ae8efe554c1f285e5f384a9fb7f5  code/scripts/round3_a0_harness.py
+inputs (md5, path):
+  ab7f574a88906062dcb48f7fe8c5accd  /work/users/w/e/weiyang/st_fed_learn/data/tasks/kidney__Visium.json
+  9456f5c9f226e618648e654c6aab277b  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/data_registry/f1_data_hest_match.csv

@@ -1,0 +1,34 @@
+{
+ "stage": "F3.3iv",
+ "unit": "bal__bowel__Visium__hoptimus0__log1p__theta2",
+ "draws": 2000,
+ "pool": 500,
+ "batch": 1000,
+ "designs": [
+  "D0",
+  "D2",
+  "D2lim",
+  "cube"
+ ],
+ "root": "/work/users/w/e/weiyang/hest_replication",
+ "cluster_values": [
+  "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__bowel__Visium.parquet"
+ ],
+ "populations": [
+  {
+   "task": "bowel__Visium",
+   "vtag": "bowel__Visium",
+   "encoder": "hoptimus0",
+   "scale": "log1p",
+   "estimands": [
+    "theta2"
+   ],
+   "nl_grid": [
+    4,
+    6,
+    8,
+    12
+   ]
+  }
+ ]
+}

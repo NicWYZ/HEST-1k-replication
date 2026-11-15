@@ -1,0 +1,57 @@
+platform: Longleaf
+slurm_job_id: 8940077
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 2
+slurm_mem_per_node: 16384
+node: c0808
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F3
+unit: box_anchor_smoke
+frame_id: 2c7941c3-ecf2-4306-a6d1-ae6170b4cbe8
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 8abe80f2a37e8ece95bdf10b49499e594c9dd26c
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/8abe80f2a37e8ece95bdf10b49499e594c9dd26c
+command: round10_final_runs_f3_box.py anchor /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/regimeB/box_anchor_smoke/f3_box_anchor.json /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/regimeB/box_anchor_smoke/anchor ; round10_final_runs_f3_box.py run /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/regimeB/box_anchor_smoke/f3_box_smoke.json /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/regimeB/box_anchor_smoke/smoke
+config: {"commit":"8abe80f2a37e8ece95bdf10b49499e594c9dd26c","stage":"F3","unit":"box_anchor_smoke"}
+config_sha256: b91f55e58369c28b1c1696a77e6d4aea9031f1a6d483e93afc607a01b92fb0e2
+start: 2026-11-12T08:20:12-05:00
+end: 2026-11-12T08:24:29-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  9580a38223ad46f5e141626572254fea  code/scripts/round10_final_runs_estimators.py
+  05f9c7a1a24a4bff1041ff5094dae011  code/scripts/round10_final_runs_f2_regimeB.py
+  fe324e010fa69f027a2145392be113e3  code/scripts/round10_final_runs_f3_box.py
+  c59cb313dda820e72baf916778f53801  code/scripts/round10_final_runs_f3_regimeB.py
+  544721f07cb3d74dc5b92456d61fe450  code/scripts/round3_b1_ppi.py
+  d79e69aa65800b9d24de556e019a0c64  code/scripts/round4_ppi_estimator.py
+  15f51917a5fb79702ba239e520e7ff86  code/scripts/round4_ppi_q2_masking.py
+  6097231bc238c0a23387ce76029acefd  code/scripts/round4_ppi_q3_regimes.py
+  b6e9ecc52ac5539682487d8e7c1451c6  code/scripts/round5_ppi_e2_regimeB.py
+  80e52bfe1b2cf9e48c82f3828689d78f  code/scripts/round5_ppi_e3_twolevel.py
+  2de31569ffe72239062fbeb0c9a50fc5  code/scripts/round5_ppi_estimator.py
+  e13183a4ffdddf4f01ba5136844c606d  code/scripts/round5_ppi_twolevel.py
+  eba7216fac3d8e938850e124705a9b99  code/scripts/round9_fewcluster_box.py
+  cfa00dcfe63dd18c7bbe522b53c94d75  code/scripts/round9_fewcluster_strat_frontier.py
+inputs (md5, path):
+  51abc18d214cb6b88d324cac7e775041  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/regimeB/box_anchor_smoke/f3_box_anchor.json
+  4f55897ac46a4ee0b0997bc1a7a374ed  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/regimeB/box_anchor_smoke/f3_box_smoke.json
+  51e8b800b1fe5c29b760a221195de718  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round9/fewcluster/strat/i32_acs_box.csv
+  fc561a7f80be6617b3463c1dc19040c8  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round9/fewcluster/strat/i32_acs_states.csv
+  be645dc258d4dff761c5e4d66b0748f8  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round9/fewcluster/strat/i32_hest_box_genes.csv
+  3d9cc7ca166f0c4cc638a835b0d3d216  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round9/fewcluster/strat/i32_hest_box_summary.csv
+  6fdea85a7512ac4278be7583b7c6d8a7  /work/users/w/e/weiyang/hest_code/round10-final-runs/results/round9/fewcluster/strat/i32_required_m_B.csv
+  4a01ead5d905f4bbc52c90647b6d9741  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/kidney__Visium__uni_v2/pred__kidney__Visium__uni_v2__donor.parquet
+  0bcdae6cf30c6c282e9ac9881fac92b4  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet
+  487d83034911b8da764e53c631410ba5  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__LUNG_XENIUM.parquet
+  db1302d95f660271b84706a99b45a63d  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1b_acs/cluster_values__ACS_STATES.parquet
+  7b797e698b009f242021afaa241e9a35  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v2_corpus/cluster_values__kidney__Visium.parquet
+  3b3efa18441fe0d7502c44e8bc258072  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/morphology/kidney__Visium/morphology__kidney__Visium.parquet
+  0cc62c5e600cc3811168b71ca7e2c1ab  /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet
+  e18604e1e915ff51f2668719e397ab7a  /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/ACS_STATES.parquet
+  6aa0dbc8e957a236d09d112649db0352  /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__uni_v2.parquet
+  7a3322218de7cd846fe912ece20f633c  /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions_INDIANA_KIDNEY/b1_predictions__INDIANA_KIDNEY__uni_v2.parquet

@@ -1,0 +1,767 @@
+{
+ "stage": "F3",
+ "unit": "regcomp__pk_CCRCC_merged__resnet50__norm_refit__p00",
+ "R": 2000,
+ "populations": [
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     2400
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "A_B2400_nL4",
+   "expected_s": 42.6
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     2400
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "A_B2400_nL6",
+   "expected_s": 42.6
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     2400
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "A_B2400_nL8",
+   "expected_s": 42.6
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     2400
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "A_B2400_nL12",
+   "expected_s": 42.6
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     "unit"
+    ]
+   },
+   "cell_label": "B_B2400_unit",
+   "expected_s": 35.7
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "B_B2400_c10_nL4",
+   "expected_s": 32.4
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "B_B2400_c10_nL6",
+   "expected_s": 32.8
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "B_B2400_c10_nL8",
+   "expected_s": 33.1
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "B_B2400_c10_nL12",
+   "expected_s": 33.8
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "B_B2400_c100_nL4",
+   "expected_s": 5.7
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "B_B2400_c100_nL6",
+   "expected_s": 8.4
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "B_B2400_c100_nL8",
+   "expected_s": 11.3
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "B_B2400_c100_nL12",
+   "expected_s": 17.4
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     1000
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "B_B2400_c1000_nL4",
+   "expected_s": 0.0
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     1000
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "B_B2400_c1000_nL6",
+   "expected_s": 0.0
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     1000
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "B_B2400_c1000_nL8",
+   "expected_s": 0.0
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     2400
+    ],
+    "costs": [
+     1000
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "B_B2400_c1000_nL12",
+   "expected_s": 0.0
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     4800
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "A_B4800_nL4",
+   "expected_s": 95.9
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     4800
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "A_B4800_nL6",
+   "expected_s": 95.9
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     4800
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "A_B4800_nL8",
+   "expected_s": 95.9
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "A"
+    ],
+    "budgets": [
+     4800
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "A_B4800_nL12",
+   "expected_s": 95.9
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     4800
+    ],
+    "costs": [
+     "unit"
+    ]
+   },
+   "cell_label": "B_B4800_unit",
+   "expected_s": 80.3
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     4800
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "B_B4800_c10_nL4",
+   "expected_s": 76.6
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     4800
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     6
+    ]
+   },
+   "cell_label": "B_B4800_c10_nL6",
+   "expected_s": 77.0
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     4800
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     8
+    ]
+   },
+   "cell_label": "B_B4800_c10_nL8",
+   "expected_s": 77.4
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     4800
+    ],
+    "costs": [
+     10
+    ],
+    "n_L": [
+     12
+    ]
+   },
+   "cell_label": "B_B4800_c10_nL12",
+   "expected_s": 78.2
+  },
+  {
+   "task": "CCRCC_merged",
+   "vtag": "CCRCC_merged",
+   "encoder": "resnet50",
+   "arm": "resnet50",
+   "scale": "norm_refit",
+   "source": "r5",
+   "parquet": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/refit_norm/CCRCC_merged__resnet50/norm/b1_predictions__CCRCC_merged__resnet50.parquet",
+   "estimands": [
+    "theta3"
+   ],
+   "cluster_values": "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__CCRCC_merged.parquet",
+   "cells": {
+    "regimes": [
+     "B"
+    ],
+    "budgets": [
+     4800
+    ],
+    "costs": [
+     100
+    ],
+    "n_L": [
+     4
+    ]
+   },
+   "cell_label": "B_B4800_c100_nL4",
+   "expected_s": 44.5
+  }
+ ],
+ "estimands_reported": [
+  "theta3",
+  "theta2",
+  "mu"
+ ],
+ "expected_s": 1198.6,
+ "_cells": 27
+}

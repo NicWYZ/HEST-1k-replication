@@ -1,0 +1,42 @@
+platform: Longleaf
+slurm_job_id: 8940432
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 4
+slurm_mem_per_node: 40960
+node: c0922
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F3
+unit: map/smoke_kidney
+frame_id: 73454d7a-85a3-4de7-9ee7-a74d0d999889
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: bab1ca175898c603a15b04972db98798ff5169d6
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/bab1ca175898c603a15b04972db98798ff5169d6
+command: round10_final_runs_f3_map.py checkfit and map smoke on kidney__Visium uni_v2 (see logs)
+config: {"commit":"bab1ca175898c603a15b04972db98798ff5169d6","stage":"F3","track_dir":"map","unit":"smoke_kidney"}
+config_sha256: 2b759673c43c9d7f265ce9eeb537844f251b04df9081d7a60cb0c925dd2f5b14
+start: 2026-11-12T08:20:12-05:00
+end: 2026-11-12T08:34:57-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  4895adbbca397648d705db39601a80b9  code/scripts/round10_final_runs_f3_map.py
+  3cb730edfdd6ede2e25000cb42e98655  code/scripts/round10_final_runs_f3_map_anchor.py
+  616ce3eba9382c7d363eb9c85ad536de  code/scripts/round10_final_runs_f3_map_aggregate.py
+  2d8418677cf8290eec89a14c315b92cd  code/scripts/round4_conf_c3.py
+  737a452b090da9609c798cc482f6896d  code/scripts/round5_conf_w3.py
+  1936e4350d2dfc5816b0fd45e343e810  code/scripts/round4_conf_io.py
+  76fda34ee622e299bbaa806e5c8da98a  code/scripts/round4_conf_sim.py
+  f18747b8a837e4e3b504edaf10999351  code/scripts/round5_conf_io.py
+  0ad7ae8efe554c1f285e5f384a9fb7f5  code/scripts/round3_a0_harness.py
+  56bf3621ae53efe41140c439164b5534  code/scripts/round3_a4b_hcp.py
+  b74f2dda031bc972c1c44c1d7b3a04da  code/scripts/round3_d4_sets.py
+  6f7a1973fbe10b3e215172d32ff6fbaf  code/scripts/round10_final_runs_f2_refit_norm.py
+  cf0b96c4235282b5f2171922f88c1d12  code/scripts/round10_final_runs_f1_predict.py
+inputs (md5, path):
+  ab7f574a88906062dcb48f7fe8c5accd  /work/users/w/e/weiyang/st_fed_learn/data/tasks/kidney__Visium.json
+  e0440e216fcfbc0289b25d1802f9bb68  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/audit_verdicts/donor_map__kidney__Visium.csv
+  4a01ead5d905f4bbc52c90647b6d9741  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/predict/kidney__Visium__uni_v2/pred__kidney__Visium__uni_v2__donor.parquet

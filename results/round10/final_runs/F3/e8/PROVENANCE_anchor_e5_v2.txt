@@ -1,0 +1,29 @@
+platform: Longleaf
+slurm_job_id: 9121186
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 1
+slurm_mem_per_node: 8192
+node: c151412
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F3
+unit: e8/anchor_e5_v2
+frame_id: 4ca471b7-8d08-41d9-a9df-67fff51f4222
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 07016c8cce0e36d99cc446752be56fd752e8ccd6
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/07016c8cce0e36d99cc446752be56fd752e8ccd6
+command: round5_ppi_e5_joint.py --w3-commit 69baff381a6f7b7abb8a72649d726efdd21b287d, unchanged from snapshot 07016c8cce0e36d99cc446752be56fd752e8ccd6, in work/ with E3_twolevel linked from the clone and a git shim serving the W3 map copy (md5 4ee7bbf2801f54c0ac1fbb7c309eeba9); compared with e5_joint_design.csv (md5 ed3ccea64b935a3d1a8fbf6aa4962805) into anchor_e5.json
+config: {"commit":"07016c8cce0e36d99cc446752be56fd752e8ccd6","stage":"F3","track_dir":"e8","unit":"anchor_e5_v2","w3_commit":"69baff381a6f7b7abb8a72649d726efdd21b287d"}
+config_sha256: 7c1412a31bc2984ad32272339894b1ca0e4d3631524dc4910f62760b39757c53
+start: 2026-11-13T15:26:27-05:00
+end: 2026-11-13T15:26:42-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  e83d1085c2bc9977cb9924f5e355b99a  code/scripts/round5_ppi_e5_joint.py
+inputs (md5, path):
+  4ee7bbf2801f54c0ac1fbb7c309eeba9  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/e8/anchor_e5_v2/inputs/w3_map_by_task.csv
+  ed3ccea64b935a3d1a8fbf6aa4962805  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/e8/anchor_e5_v2/inputs/e5_joint_design_ref.csv

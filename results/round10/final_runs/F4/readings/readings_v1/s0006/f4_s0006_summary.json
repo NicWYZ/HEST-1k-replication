@@ -1,0 +1,48 @@
+{
+ "prediction": "F4-4",
+ "holds": false,
+ "cells": [
+  {
+   "encoder": "hoptimus0",
+   "scale": "log1p",
+   "s0006": 1.0666846385512287,
+   "others_max": 0.6804147476478761,
+   "holds": true
+  },
+  {
+   "encoder": "hoptimus0",
+   "scale": "lognorm",
+   "s0006": 1.0162093511380101,
+   "others_max": 0.956691182834398,
+   "holds": true
+  },
+  {
+   "encoder": "resnet50",
+   "scale": "log1p",
+   "s0006": 1.3026240273029859,
+   "others_max": 0.7959142422552529,
+   "holds": true
+  },
+  {
+   "encoder": "resnet50",
+   "scale": "lognorm",
+   "s0006": 1.1829107930731437,
+   "others_max": 0.8936865192005641,
+   "holds": true
+  },
+  {
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "s0006": 0.9753324557957268,
+   "others_max": 0.7217784886700596,
+   "holds": true
+  },
+  {
+   "encoder": "uni_v2",
+   "scale": "lognorm",
+   "s0006": 0.8834143876438527,
+   "others_max": 0.9711495779470167,
+   "holds": false
+  }
+ ]
+}

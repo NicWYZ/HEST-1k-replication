@@ -1,0 +1,1029 @@
+{
+ "script": "round10_final_runs_f3_reruns_r9g42.py",
+ "gene_filter": "zlib.crc32(gene.encode()) % 7 == 0",
+ "started": "2026-11-12T08:20:33",
+ "units": {
+  "regimeA": [
+   "LUNG_XENIUM__hoptimus0__log1p",
+   "LUNG_XENIUM__hoptimus0__norm_r9pair",
+   "LUNG_XENIUM__hoptimus0__norm_refit",
+   "LUNG_XENIUM__resnet50__log1p",
+   "LUNG_XENIUM__resnet50__norm_r9pair",
+   "LUNG_XENIUM__resnet50__norm_refit",
+   "LUNG_XENIUM__uni_v2__mu__log1p",
+   "LUNG_XENIUM__uni_v2__mu__norm_r9pair",
+   "LUNG_XENIUM__uni_v2__mu__norm_refit",
+   "LUNG_XENIUM__uni_v2__theta1",
+   "LUNG_XENIUM__uni_v2__theta1__norm_refit",
+   "LUNG_XENIUM__uni_v2__theta2__log1p",
+   "LUNG_XENIUM__uni_v2__theta2__norm_r9pair",
+   "LUNG_XENIUM__uni_v2__theta2__norm_refit",
+   "LUNG_XENIUM__uni_v2__theta3__log1p",
+   "LUNG_XENIUM__uni_v2__theta3__norm_r9pair",
+   "LUNG_XENIUM__uni_v2__theta3__norm_refit"
+  ],
+  "limits": 35,
+  "regimeB": [
+   "f2_regimeB__LUNG_XENIUM__hoptimus0.json",
+   "f2_regimeB__LUNG_XENIUM__resnet50.json",
+   "f2_regimeB__LUNG_XENIUM__uni_v2.json"
+  ],
+  "cluster_values": [
+   "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__LUNG_XENIUM.parquet",
+   "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v3_refit/cluster_values__LUNG_XENIUM.parquet"
+  ],
+  "spot_files": 6
+ },
+ "runs_all": [
+  {
+   "script": "round10_final_runs_f2_aggregate.py",
+   "rc": 0,
+   "seconds": 7.9
+  },
+  {
+   "script": "round10_final_runs_f2_limits_aggregate.py",
+   "rc": 0,
+   "seconds": 4.2
+  },
+  {
+   "script": "round10_final_runs_f2_regimeB_aggregate.py",
+   "rc": 0,
+   "seconds": 1.3
+  },
+  {
+   "script": "round10_final_runs_f2_diagnostics.py",
+   "rc": 0,
+   "seconds": 47.8
+  },
+  {
+   "script": "round10_final_runs_f2_scores.py",
+   "rc": 0,
+   "seconds": 1.8
+  }
+ ],
+ "runs_r9g42": [
+  {
+   "script": "round10_final_runs_f2_aggregate.py",
+   "rc": 0,
+   "seconds": 5.4
+  },
+  {
+   "script": "round10_final_runs_f2_limits_aggregate.py",
+   "rc": 0,
+   "seconds": 2.5
+  },
+  {
+   "script": "round10_final_runs_f2_regimeB_aggregate.py",
+   "rc": 0,
+   "seconds": 1.2
+  },
+  {
+   "script": "round10_final_runs_f2_diagnostics.py",
+   "rc": 0,
+   "seconds": 12.2
+  },
+  {
+   "script": "round10_final_runs_f2_scores.py",
+   "rc": 0,
+   "seconds": 1.7
+  }
+ ],
+ "genes_kept": {
+  "regimeA/LUNG_XENIUM__hoptimus0__log1p": {
+   "rows": 160524,
+   "rows_kept": 19656,
+   "genes": 42
+  },
+  "regimeA/LUNG_XENIUM__hoptimus0__norm_r9pair": {
+   "rows": 160524,
+   "rows_kept": 19656,
+   "genes": 42
+  },
+  "regimeA/LUNG_XENIUM__hoptimus0__norm_refit": {
+   "rows": 160524,
+   "rows_kept": 19656,
+   "genes": 42
+  },
+  "regimeA/LUNG_XENIUM__resnet50__log1p": {
+   "rows": 160524,
+   "rows_kept": 19656,
+   "genes": 42
+  },
+  "regimeA/LUNG_XENIUM__resnet50__norm_r9pair": {
+   "rows": 160524,
+   "rows_kept": 19656,
+   "genes": 42
+  },
+  "regimeA/LUNG_XENIUM__resnet50__norm_refit": {
+   "rows": 160524,
+   "rows_kept": 19656,
+   "genes": 42
+  },
+  "regimeA/LUNG_XENIUM__uni_v2__mu__log1p": {
+   "rows": 49735,
+   "rows_kept": 6090,
+   "genes": 42
+  },
+  "regimeA/LUNG_XENIUM__uni_v2__mu__norm_r9pair": {
+   "rows": 49735,
+   "rows_kept": 6090,
+   "genes": 42
+  },
+  "regimeA/LUNG_XENIUM__uni_v2__mu__norm_refit": {
+   "rows": 49735,
+   "rows_kept": 6090,
+   "genes": 42
+  },
+  "regimeA/LUNG_XENIUM__uni_v2__theta1": {
+   "rows": 89180,
+   "rows_kept": 10920,
+   "genes": 42
+  },
+  "regimeA/LUNG_XENIUM__uni_v2__theta1__norm_refit": {
+   "rows": 44590,
+   "rows_kept": 5460,
+   "genes": 42
+  },
+  "regimeA/LUNG_XENIUM__uni_v2__theta2__log1p": {
+   "rows": 29841,
+   "rows_kept": 3654,
+   "genes": 42
+  },
+  "regimeA/LUNG_XENIUM__uni_v2__theta2__norm_r9pair": {
+   "rows": 29841,
+   "rows_kept": 3654,
+   "genes": 42
+  },
+  "regimeA/LUNG_XENIUM__uni_v2__theta2__norm_refit": {
+   "rows": 29841,
+   "rows_kept": 3654,
+   "genes": 42
+  },
+  "regimeA/LUNG_XENIUM__uni_v2__theta3__log1p": {
+   "rows": 49735,
+   "rows_kept": 6090,
+   "genes": 42
+  },
+  "regimeA/LUNG_XENIUM__uni_v2__theta3__norm_r9pair": {
+   "rows": 49735,
+   "rows_kept": 6090,
+   "genes": 42
+  },
+  "regimeA/LUNG_XENIUM__uni_v2__theta3__norm_refit": {
+   "rows": 49735,
+   "rows_kept": 6090,
+   "genes": 42
+  },
+  "limits/LUNG_XENIUM__hoptimus0__log1p__p0of5/limits_cells.parquet": {
+   "rows": 12390,
+   "rows_kept": 1350,
+   "genes": 31
+  },
+  "limits/LUNG_XENIUM__hoptimus0__log1p__p0of5/limits_diag.parquet": {
+   "rows": 6195,
+   "rows_kept": 675,
+   "genes": 31
+  },
+  "limits/LUNG_XENIUM__hoptimus0__log1p__p1of5/limits_cells.parquet": {
+   "rows": 12370,
+   "rows_kept": 1380,
+   "genes": 32
+  },
+  "limits/LUNG_XENIUM__hoptimus0__log1p__p1of5/limits_diag.parquet": {
+   "rows": 6185,
+   "rows_kept": 690,
+   "genes": 32
+  },
+  "limits/LUNG_XENIUM__hoptimus0__log1p__p2of5/limits_cells.parquet": {
+   "rows": 12320,
+   "rows_kept": 1430,
+   "genes": 31
+  },
+  "limits/LUNG_XENIUM__hoptimus0__log1p__p2of5/limits_diag.parquet": {
+   "rows": 6160,
+   "rows_kept": 715,
+   "genes": 31
+  },
+  "limits/LUNG_XENIUM__hoptimus0__log1p__p3of5/limits_cells.parquet": {
+   "rows": 12320,
+   "rows_kept": 1720,
+   "genes": 36
+  },
+  "limits/LUNG_XENIUM__hoptimus0__log1p__p3of5/limits_diag.parquet": {
+   "rows": 6160,
+   "rows_kept": 860,
+   "genes": 36
+  },
+  "limits/LUNG_XENIUM__hoptimus0__log1p__p4of5/limits_cells.parquet": {
+   "rows": 12340,
+   "rows_kept": 1680,
+   "genes": 38
+  },
+  "limits/LUNG_XENIUM__hoptimus0__log1p__p4of5/limits_diag.parquet": {
+   "rows": 6170,
+   "rows_kept": 840,
+   "genes": 38
+  },
+  "limits/LUNG_XENIUM__hoptimus0__norm_r9pair__p0of5/limits_cells.parquet": {
+   "rows": 12390,
+   "rows_kept": 1350,
+   "genes": 31
+  },
+  "limits/LUNG_XENIUM__hoptimus0__norm_r9pair__p0of5/limits_diag.parquet": {
+   "rows": 6195,
+   "rows_kept": 675,
+   "genes": 31
+  },
+  "limits/LUNG_XENIUM__hoptimus0__norm_r9pair__p1of5/limits_cells.parquet": {
+   "rows": 12370,
+   "rows_kept": 1380,
+   "genes": 32
+  },
+  "limits/LUNG_XENIUM__hoptimus0__norm_r9pair__p1of5/limits_diag.parquet": {
+   "rows": 6185,
+   "rows_kept": 690,
+   "genes": 32
+  },
+  "limits/LUNG_XENIUM__hoptimus0__norm_r9pair__p2of5/limits_cells.parquet": {
+   "rows": 12320,
+   "rows_kept": 1430,
+   "genes": 31
+  },
+  "limits/LUNG_XENIUM__hoptimus0__norm_r9pair__p2of5/limits_diag.parquet": {
+   "rows": 6160,
+   "rows_kept": 715,
+   "genes": 31
+  },
+  "limits/LUNG_XENIUM__hoptimus0__norm_r9pair__p3of5/limits_cells.parquet": {
+   "rows": 12320,
+   "rows_kept": 1720,
+   "genes": 36
+  },
+  "limits/LUNG_XENIUM__hoptimus0__norm_r9pair__p3of5/limits_diag.parquet": {
+   "rows": 6160,
+   "rows_kept": 860,
+   "genes": 36
+  },
+  "limits/LUNG_XENIUM__hoptimus0__norm_r9pair__p4of5/limits_cells.parquet": {
+   "rows": 12340,
+   "rows_kept": 1680,
+   "genes": 38
+  },
+  "limits/LUNG_XENIUM__hoptimus0__norm_r9pair__p4of5/limits_diag.parquet": {
+   "rows": 6170,
+   "rows_kept": 840,
+   "genes": 38
+  },
+  "limits/LUNG_XENIUM__resnet50__log1p__p0of5/limits_cells.parquet": {
+   "rows": 12390,
+   "rows_kept": 1350,
+   "genes": 31
+  },
+  "limits/LUNG_XENIUM__resnet50__log1p__p0of5/limits_diag.parquet": {
+   "rows": 6195,
+   "rows_kept": 675,
+   "genes": 31
+  },
+  "limits/LUNG_XENIUM__resnet50__log1p__p1of5/limits_cells.parquet": {
+   "rows": 12370,
+   "rows_kept": 1380,
+   "genes": 32
+  },
+  "limits/LUNG_XENIUM__resnet50__log1p__p1of5/limits_diag.parquet": {
+   "rows": 6185,
+   "rows_kept": 690,
+   "genes": 32
+  },
+  "limits/LUNG_XENIUM__resnet50__log1p__p2of5/limits_cells.parquet": {
+   "rows": 12320,
+   "rows_kept": 1430,
+   "genes": 31
+  },
+  "limits/LUNG_XENIUM__resnet50__log1p__p2of5/limits_diag.parquet": {
+   "rows": 6160,
+   "rows_kept": 715,
+   "genes": 31
+  },
+  "limits/LUNG_XENIUM__resnet50__log1p__p3of5/limits_cells.parquet": {
+   "rows": 12320,
+   "rows_kept": 1720,
+   "genes": 36
+  },
+  "limits/LUNG_XENIUM__resnet50__log1p__p3of5/limits_diag.parquet": {
+   "rows": 6160,
+   "rows_kept": 860,
+   "genes": 36
+  },
+  "limits/LUNG_XENIUM__resnet50__log1p__p4of5/limits_cells.parquet": {
+   "rows": 12340,
+   "rows_kept": 1680,
+   "genes": 38
+  },
+  "limits/LUNG_XENIUM__resnet50__log1p__p4of5/limits_diag.parquet": {
+   "rows": 6170,
+   "rows_kept": 840,
+   "genes": 38
+  },
+  "limits/LUNG_XENIUM__resnet50__norm_r9pair__p0of5/limits_cells.parquet": {
+   "rows": 12390,
+   "rows_kept": 1350,
+   "genes": 31
+  },
+  "limits/LUNG_XENIUM__resnet50__norm_r9pair__p0of5/limits_diag.parquet": {
+   "rows": 6195,
+   "rows_kept": 675,
+   "genes": 31
+  },
+  "limits/LUNG_XENIUM__resnet50__norm_r9pair__p1of5/limits_cells.parquet": {
+   "rows": 12370,
+   "rows_kept": 1380,
+   "genes": 32
+  },
+  "limits/LUNG_XENIUM__resnet50__norm_r9pair__p1of5/limits_diag.parquet": {
+   "rows": 6185,
+   "rows_kept": 690,
+   "genes": 32
+  },
+  "limits/LUNG_XENIUM__resnet50__norm_r9pair__p2of5/limits_cells.parquet": {
+   "rows": 12320,
+   "rows_kept": 1430,
+   "genes": 31
+  },
+  "limits/LUNG_XENIUM__resnet50__norm_r9pair__p2of5/limits_diag.parquet": {
+   "rows": 6160,
+   "rows_kept": 715,
+   "genes": 31
+  },
+  "limits/LUNG_XENIUM__resnet50__norm_r9pair__p3of5/limits_cells.parquet": {
+   "rows": 12320,
+   "rows_kept": 1720,
+   "genes": 36
+  },
+  "limits/LUNG_XENIUM__resnet50__norm_r9pair__p3of5/limits_diag.parquet": {
+   "rows": 6160,
+   "rows_kept": 860,
+   "genes": 36
+  },
+  "limits/LUNG_XENIUM__resnet50__norm_r9pair__p4of5/limits_cells.parquet": {
+   "rows": 12340,
+   "rows_kept": 1680,
+   "genes": 38
+  },
+  "limits/LUNG_XENIUM__resnet50__norm_r9pair__p4of5/limits_diag.parquet": {
+   "rows": 6170,
+   "rows_kept": 840,
+   "genes": 38
+  },
+  "limits/LUNG_XENIUM__uni_v2__mu__log1p__p0of2/limits_cells.parquet": {
+   "rows": 8600,
+   "rows_kept": 800,
+   "genes": 16
+  },
+  "limits/LUNG_XENIUM__uni_v2__mu__log1p__p0of2/limits_diag.parquet": {
+   "rows": 4300,
+   "rows_kept": 400,
+   "genes": 16
+  },
+  "limits/LUNG_XENIUM__uni_v2__mu__log1p__p1of2/limits_cells.parquet": {
+   "rows": 8550,
+   "rows_kept": 1300,
+   "genes": 26
+  },
+  "limits/LUNG_XENIUM__uni_v2__mu__log1p__p1of2/limits_diag.parquet": {
+   "rows": 4275,
+   "rows_kept": 650,
+   "genes": 26
+  },
+  "limits/LUNG_XENIUM__uni_v2__mu__norm_r9pair__p0of2/limits_cells.parquet": {
+   "rows": 8600,
+   "rows_kept": 800,
+   "genes": 16
+  },
+  "limits/LUNG_XENIUM__uni_v2__mu__norm_r9pair__p0of2/limits_diag.parquet": {
+   "rows": 4300,
+   "rows_kept": 400,
+   "genes": 16
+  },
+  "limits/LUNG_XENIUM__uni_v2__mu__norm_r9pair__p1of2/limits_cells.parquet": {
+   "rows": 8550,
+   "rows_kept": 1300,
+   "genes": 26
+  },
+  "limits/LUNG_XENIUM__uni_v2__mu__norm_r9pair__p1of2/limits_diag.parquet": {
+   "rows": 4275,
+   "rows_kept": 650,
+   "genes": 26
+  },
+  "limits/LUNG_XENIUM__uni_v2__theta1__p0of3/limits_cells.parquet": {
+   "rows": 11450,
+   "rows_kept": 1350,
+   "genes": 27
+  },
+  "limits/LUNG_XENIUM__uni_v2__theta1__p0of3/limits_diag.parquet": {
+   "rows": 5725,
+   "rows_kept": 675,
+   "genes": 27
+  },
+  "limits/LUNG_XENIUM__uni_v2__theta1__p1of3/limits_cells.parquet": {
+   "rows": 11450,
+   "rows_kept": 1350,
+   "genes": 27
+  },
+  "limits/LUNG_XENIUM__uni_v2__theta1__p1of3/limits_diag.parquet": {
+   "rows": 5725,
+   "rows_kept": 675,
+   "genes": 27
+  },
+  "limits/LUNG_XENIUM__uni_v2__theta1__p2of3/limits_cells.parquet": {
+   "rows": 11400,
+   "rows_kept": 1500,
+   "genes": 30
+  },
+  "limits/LUNG_XENIUM__uni_v2__theta1__p2of3/limits_diag.parquet": {
+   "rows": 5700,
+   "rows_kept": 750,
+   "genes": 30
+  },
+  "limits/LUNG_XENIUM__uni_v2__theta2__log1p__p0of2/limits_cells.parquet": {
+   "rows": 5160,
+   "rows_kept": 480,
+   "genes": 16
+  },
+  "limits/LUNG_XENIUM__uni_v2__theta2__log1p__p0of2/limits_diag.parquet": {
+   "rows": 2580,
+   "rows_kept": 240,
+   "genes": 16
+  },
+  "limits/LUNG_XENIUM__uni_v2__theta2__log1p__p1of2/limits_cells.parquet": {
+   "rows": 5130,
+   "rows_kept": 780,
+   "genes": 26
+  },
+  "limits/LUNG_XENIUM__uni_v2__theta2__log1p__p1of2/limits_diag.parquet": {
+   "rows": 2565,
+   "rows_kept": 390,
+   "genes": 26
+  },
+  "limits/LUNG_XENIUM__uni_v2__theta2__norm_r9pair__p0of2/limits_cells.parquet": {
+   "rows": 5160,
+   "rows_kept": 480,
+   "genes": 16
+  },
+  "limits/LUNG_XENIUM__uni_v2__theta2__norm_r9pair__p0of2/limits_diag.parquet": {
+   "rows": 2580,
+   "rows_kept": 240,
+   "genes": 16
+  },
+  "limits/LUNG_XENIUM__uni_v2__theta2__norm_r9pair__p1of2/limits_cells.parquet": {
+   "rows": 5130,
+   "rows_kept": 780,
+   "genes": 26
+  },
+  "limits/LUNG_XENIUM__uni_v2__theta2__norm_r9pair__p1of2/limits_diag.parquet": {
+   "rows": 2565,
+   "rows_kept": 390,
+   "genes": 26
+  },
+  "limits/LUNG_XENIUM__uni_v2__theta3__log1p__p0of2/limits_cells.parquet": {
+   "rows": 8600,
+   "rows_kept": 800,
+   "genes": 16
+  },
+  "limits/LUNG_XENIUM__uni_v2__theta3__log1p__p0of2/limits_diag.parquet": {
+   "rows": 4300,
+   "rows_kept": 400,
+   "genes": 16
+  },
+  "limits/LUNG_XENIUM__uni_v2__theta3__log1p__p1of2/limits_cells.parquet": {
+   "rows": 8550,
+   "rows_kept": 1300,
+   "genes": 26
+  },
+  "limits/LUNG_XENIUM__uni_v2__theta3__log1p__p1of2/limits_diag.parquet": {
+   "rows": 4275,
+   "rows_kept": 650,
+   "genes": 26
+  },
+  "limits/LUNG_XENIUM__uni_v2__theta3__norm_r9pair__p0of2/limits_cells.parquet": {
+   "rows": 8600,
+   "rows_kept": 800,
+   "genes": 16
+  },
+  "limits/LUNG_XENIUM__uni_v2__theta3__norm_r9pair__p0of2/limits_diag.parquet": {
+   "rows": 4300,
+   "rows_kept": 400,
+   "genes": 16
+  },
+  "limits/LUNG_XENIUM__uni_v2__theta3__norm_r9pair__p1of2/limits_cells.parquet": {
+   "rows": 8550,
+   "rows_kept": 1300,
+   "genes": 26
+  },
+  "limits/LUNG_XENIUM__uni_v2__theta3__norm_r9pair__p1of2/limits_diag.parquet": {
+   "rows": 4275,
+   "rows_kept": 650,
+   "genes": 26
+  },
+  "regimeB/LUNG_XENIUM__hoptimus0": {
+   "rows": 15435,
+   "rows_kept": 1890,
+   "genes": 42
+  },
+  "regimeB/LUNG_XENIUM__resnet50": {
+   "rows": 15435,
+   "rows_kept": 1890,
+   "genes": 42
+  },
+  "regimeB/LUNG_XENIUM__uni_v2": {
+   "rows": 15435,
+   "rows_kept": 1890,
+   "genes": 42
+  },
+  "cluster_values/cluster_values_v1": {
+   "rows": 111132,
+   "rows_kept": 13608,
+   "genes": 42,
+   "gene_list": [
+    "AKR1C2",
+    "ANKRD28",
+    "ATP2A3",
+    "BMP4",
+    "CALCA",
+    "CCL2",
+    "CCL22",
+    "CCNA1",
+    "CD1A",
+    "CD28",
+    "CD52",
+    "CD79A",
+    "CXCL13",
+    "DDIT3",
+    "ELN",
+    "FCGR3A",
+    "FKBP11",
+    "GCLM",
+    "HMOX1",
+    "HYOU1",
+    "IFIT1",
+    "IGLL1",
+    "IL11",
+    "KLRB1",
+    "KLRC1",
+    "KLRG1",
+    "KRT15",
+    "KRT8",
+    "LMAN1",
+    "LPAR1",
+    "MCEMP1",
+    "MRC1",
+    "NFKB1",
+    "NUTF2",
+    "PDCD1",
+    "PDGFRB",
+    "S100A12",
+    "SFRP2",
+    "SLC7A11",
+    "SPRY2",
+    "TNFRSF17",
+    "VPREB3"
+   ]
+  },
+  "cluster_values/cluster_values_v3_refit": {
+   "rows": 55566,
+   "rows_kept": 6804,
+   "genes": 42,
+   "gene_list": [
+    "AKR1C2",
+    "ANKRD28",
+    "ATP2A3",
+    "BMP4",
+    "CALCA",
+    "CCL2",
+    "CCL22",
+    "CCNA1",
+    "CD1A",
+    "CD28",
+    "CD52",
+    "CD79A",
+    "CXCL13",
+    "DDIT3",
+    "ELN",
+    "FCGR3A",
+    "FKBP11",
+    "GCLM",
+    "HMOX1",
+    "HYOU1",
+    "IFIT1",
+    "IGLL1",
+    "IL11",
+    "KLRB1",
+    "KLRC1",
+    "KLRG1",
+    "KRT15",
+    "KRT8",
+    "LMAN1",
+    "LPAR1",
+    "MCEMP1",
+    "MRC1",
+    "NFKB1",
+    "NUTF2",
+    "PDCD1",
+    "PDGFRB",
+    "S100A12",
+    "SFRP2",
+    "SLC7A11",
+    "SPRY2",
+    "TNFRSF17",
+    "VPREB3"
+   ]
+  }
+ },
+ "subset_genes": {
+  "count": [
+   42,
+   42
+  ],
+  "same_in_all_cluster_value_files": true,
+  "genes": [
+   "AKR1C2",
+   "ANKRD28",
+   "ATP2A3",
+   "BMP4",
+   "CALCA",
+   "CCL2",
+   "CCL22",
+   "CCNA1",
+   "CD1A",
+   "CD28",
+   "CD52",
+   "CD79A",
+   "CXCL13",
+   "DDIT3",
+   "ELN",
+   "FCGR3A",
+   "FKBP11",
+   "GCLM",
+   "HMOX1",
+   "HYOU1",
+   "IFIT1",
+   "IGLL1",
+   "IL11",
+   "KLRB1",
+   "KLRC1",
+   "KLRG1",
+   "KRT15",
+   "KRT8",
+   "LMAN1",
+   "LPAR1",
+   "MCEMP1",
+   "MRC1",
+   "NFKB1",
+   "NUTF2",
+   "PDCD1",
+   "PDGFRB",
+   "S100A12",
+   "SFRP2",
+   "SLC7A11",
+   "SPRY2",
+   "TNFRSF17",
+   "VPREB3"
+  ]
+ },
+ "anchor_scope_all": {
+  "f2_regimeA_summary.csv": {
+   "rows_ref": 4329,
+   "rows_ours": 4329,
+   "keys": [
+    "task",
+    "encoder",
+    "scale",
+    "estimand",
+    "n",
+    "arm",
+    "variance"
+   ],
+   "extra_cols_ref": [],
+   "extra_cols_ours": [],
+   "extra_ref_all_nan": true,
+   "non_numeric_equal": true,
+   "nan_pattern_equal": true,
+   "max_abs_diff": 0.0,
+   "inf_equal": true,
+   "equal": true
+  },
+  "f2_switch_rule.csv": {
+   "rows_ref": 126,
+   "rows_ours": 126,
+   "keys": [
+    "task",
+    "encoder",
+    "scale",
+    "estimand",
+    "n"
+   ],
+   "extra_cols_ref": [],
+   "extra_cols_ours": [],
+   "extra_ref_all_nan": true,
+   "non_numeric_equal": true,
+   "nan_pattern_equal": true,
+   "max_abs_diff": 0.0,
+   "inf_equal": true,
+   "equal": true
+  },
+  "f2_fix1_cost.csv": {
+   "rows_ref": 162,
+   "rows_ours": 162,
+   "keys": [
+    "task",
+    "encoder",
+    "scale",
+    "estimand",
+    "n"
+   ],
+   "extra_cols_ref": [],
+   "extra_cols_ours": [],
+   "extra_ref_all_nan": true,
+   "non_numeric_equal": true,
+   "nan_pattern_equal": true,
+   "max_abs_diff": 0.0,
+   "inf_equal": true,
+   "equal": true
+  },
+  "f2_limits_summary.csv": {
+   "rows_ref": 1080,
+   "rows_ours": 1080,
+   "keys": [
+    "task",
+    "encoder",
+    "scale",
+    "estimand",
+    "n",
+    "arm",
+    "variance"
+   ],
+   "extra_cols_ref": [],
+   "extra_cols_ours": [],
+   "extra_ref_all_nan": true,
+   "non_numeric_equal": true,
+   "nan_pattern_equal": true,
+   "max_abs_diff": 0.0,
+   "inf_equal": true,
+   "equal": true
+  },
+  "f2_limits_vs_regimeA.csv": {
+   "rows_ref": 108,
+   "rows_ours": 108,
+   "keys": [
+    "task",
+    "encoder",
+    "scale",
+    "estimand",
+    "n"
+   ],
+   "extra_cols_ref": [],
+   "extra_cols_ours": [],
+   "extra_ref_all_nan": true,
+   "non_numeric_equal": true,
+   "nan_pattern_equal": true,
+   "max_abs_diff": 0.0,
+   "inf_equal": true,
+   "equal": true
+  },
+  "f2_limits_diag.csv": {
+   "rows_ref": 540,
+   "rows_ours": 540,
+   "keys": [
+    "task",
+    "encoder",
+    "scale",
+    "estimand",
+    "n",
+    "arm"
+   ],
+   "extra_cols_ref": [],
+   "extra_cols_ours": [],
+   "extra_ref_all_nan": true,
+   "non_numeric_equal": true,
+   "nan_pattern_equal": true,
+   "max_abs_diff": 0.0,
+   "inf_equal": true,
+   "equal": true
+  },
+  "f2_regimeB_summary.csv": {
+   "rows_ref": 135,
+   "rows_ours": 135,
+   "keys": [
+    "task",
+    "encoder",
+    "scale",
+    "estimand",
+    "m",
+    "form"
+   ],
+   "extra_cols_ref": [],
+   "extra_cols_ours": [],
+   "extra_ref_all_nan": true,
+   "non_numeric_equal": true,
+   "nan_pattern_equal": true,
+   "max_abs_diff": 0.0,
+   "inf_equal": true,
+   "equal": true
+  },
+  "f2_regimeB_fix1_vs_ppi.csv": {
+   "rows_ref": 45,
+   "rows_ours": 45,
+   "keys": [
+    "task",
+    "encoder",
+    "scale",
+    "estimand",
+    "m"
+   ],
+   "extra_cols_ref": [],
+   "extra_cols_ours": [],
+   "extra_ref_all_nan": true,
+   "non_numeric_equal": true,
+   "nan_pattern_equal": true,
+   "max_abs_diff": 0.0,
+   "inf_equal": true,
+   "equal": true
+  },
+  "f2_shortfall.csv": {
+   "rows_ref": 162,
+   "rows_ours": 162,
+   "keys": [
+    "task",
+    "encoder",
+    "scale",
+    "estimand",
+    "n"
+   ],
+   "extra_cols_ref": [],
+   "extra_cols_ours": [],
+   "extra_ref_all_nan": true,
+   "non_numeric_equal": true,
+   "nan_pattern_equal": true,
+   "max_abs_diff": 4.6629367034256575e-15,
+   "inf_equal": true,
+   "equal": false
+  },
+  "f2_buy.csv": {
+   "rows_ref": 162,
+   "rows_ours": 162,
+   "keys": [
+    "task",
+    "encoder",
+    "scale",
+    "estimand",
+    "n"
+   ],
+   "extra_cols_ref": [],
+   "extra_cols_ours": [],
+   "extra_ref_all_nan": true,
+   "non_numeric_equal": true,
+   "nan_pattern_equal": true,
+   "max_abs_diff": 5.551115123125783e-16,
+   "inf_equal": true,
+   "equal": false
+  },
+  "f2_superpop.csv": {
+   "rows_ref": 162,
+   "rows_ours": 162,
+   "keys": [
+    "task",
+    "encoder",
+    "scale",
+    "estimand",
+    "n"
+   ],
+   "extra_cols_ref": [],
+   "extra_cols_ours": [],
+   "extra_ref_all_nan": true,
+   "non_numeric_equal": true,
+   "nan_pattern_equal": true,
+   "max_abs_diff": 0.0,
+   "inf_equal": true,
+   "equal": true
+  },
+  "f2_scale_diff.csv": {
+   "rows_ref": 324,
+   "rows_ours": 324,
+   "keys": [
+    "task",
+    "encoder",
+    "estimand",
+    "n",
+    "arm",
+    "other_scale"
+   ],
+   "extra_cols_ref": [
+    "pc1_share__lognorm"
+   ],
+   "extra_cols_ours": [],
+   "extra_ref_all_nan": true,
+   "non_numeric_equal": true,
+   "nan_pattern_equal": true,
+   "max_abs_diff": 3.3306690738754696e-16,
+   "inf_equal": true,
+   "equal": false
+  },
+  "f2_pc1_share.csv": {
+   "rows_ref": 9,
+   "rows_ours": 9,
+   "keys": [
+    "task",
+    "encoder",
+    "scale"
+   ],
+   "extra_cols_ref": [],
+   "extra_cols_ours": [],
+   "extra_ref_all_nan": true,
+   "non_numeric_equal": true,
+   "nan_pattern_equal": true,
+   "max_abs_diff": 9.43689570931383e-16,
+   "inf_equal": true,
+   "equal": false
+  },
+  "f2_d9.csv": {
+   "rows_ref": 2058,
+   "rows_ours": 2058,
+   "keys": [
+    "task",
+    "encoder",
+    "scale",
+    "gene"
+   ],
+   "extra_cols_ref": [],
+   "extra_cols_ours": [],
+   "extra_ref_all_nan": true,
+   "non_numeric_equal": true,
+   "nan_pattern_equal": true,
+   "max_abs_diff": 1.2212453270876722e-15,
+   "inf_equal": true,
+   "equal": false
+  },
+  "f2_anchor_r9_kappa.csv": {
+   "rows_ref": 343,
+   "rows_ours": 343,
+   "keys": [
+    "task",
+    "encoder",
+    "scale",
+    "estimand",
+    "gene"
+   ],
+   "extra_cols_ref": [],
+   "extra_cols_ours": [],
+   "extra_ref_all_nan": true,
+   "non_numeric_equal": true,
+   "nan_pattern_equal": true,
+   "max_abs_diff": 2.4424906541753444e-15,
+   "inf_equal": true,
+   "equal": false
+  },
+  "f2_anchor_r9_c0.csv": {
+   "rows_ref": 1029,
+   "rows_ours": 1029,
+   "keys": [
+    "task",
+    "encoder",
+    "scale",
+    "estimand",
+    "gene"
+   ],
+   "extra_cols_ref": [],
+   "extra_cols_ours": [],
+   "extra_ref_all_nan": true,
+   "non_numeric_equal": true,
+   "nan_pattern_equal": true,
+   "max_abs_diff": 3.25434124093249e-15,
+   "inf_equal": true,
+   "equal": false
+  },
+  "f2_anchor_r9_pc1.csv": {
+   "rows_ref": 4,
+   "rows_ours": 4,
+   "keys": [
+    "task",
+    "encoder",
+    "scale",
+    "ref"
+   ],
+   "extra_cols_ref": [],
+   "extra_cols_ours": [],
+   "extra_ref_all_nan": true,
+   "non_numeric_equal": true,
+   "nan_pattern_equal": true,
+   "max_abs_diff": 9.43689570931383e-16,
+   "inf_equal": true,
+   "equal": false
+  },
+  "f2_scores.csv": {
+   "equal": true,
+   "rows_ref": 32,
+   "rows_ours": 32
+  }
+ },
+ "anchor_pass": false,
+ "finished": "2026-11-12T08:22:05"
+}

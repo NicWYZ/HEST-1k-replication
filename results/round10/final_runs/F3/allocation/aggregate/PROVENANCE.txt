@@ -1,0 +1,28 @@
+platform: Longleaf
+slurm_job_id: 8974984
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 1
+slurm_mem_per_node: 16384
+node: c0919
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F3
+unit: alloc_aggregate
+frame_id: 7bae80ef-cb3f-4725-8012-f680940d6c59
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: a5641c23f05daff899733f3bda4fa66dce57a98a
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/a5641c23f05daff899733f3bda4fa66dce57a98a
+command: round10_final_runs_f3_allocation_aggregate.py /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/alloc_aggregate /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/alloc_aggregate/ref_e5_allocation.csv
+config: {"commit":"a5641c23f05daff899733f3bda4fa66dce57a98a","stage":"F3","unit":"alloc_aggregate"}
+config_sha256: 1a2722fc1bfcddf1d5358454fa12ff87721ed3700593f20d0eea91926dc17055
+start: 2026-11-12T10:18:35-05:00
+end: 2026-11-12T10:18:43-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  7b1d8ac81f3d4f8c91f8009e9dc6bb49  code/scripts/round10_final_runs_f3_allocation_aggregate.py
+inputs (md5, path):
+  802b4abd4c56b86c056d85cac57b89e7  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/designs/alloc_aggregate/ref_e5_allocation.csv
