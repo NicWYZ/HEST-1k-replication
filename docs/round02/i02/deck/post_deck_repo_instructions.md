@@ -1,4 +1,4 @@
-> **Closed record, dated 21 September 2026.** Instruction memo closing the gate left open by `docs/round02/i01/deck/closeout_gate_report.md`, supplied by Nicolas and committed in round 3's S0. Closed; the work it directed is complete.
+*21 September 2026. Reviewed as tagged at `record-full-2026-11`. What stands now: `docs/round02/README.md`.*
 
 # Instructions: closing the gate the closeout report left open
 

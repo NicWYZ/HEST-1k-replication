@@ -1,3 +1,5 @@
+*19 September 2026, item 1 struck 23 September 2026. Reviewed as tagged at `round2-final`. What stands now: `docs/round02/README.md`.*
+
 # Draft issue for the HEST-1k authors — NOT SENT
 
 **Status: draft only.** This document is written and committed so that the decision to send it can

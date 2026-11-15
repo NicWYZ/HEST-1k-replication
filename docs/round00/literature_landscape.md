@@ -1,3 +1,5 @@
+*Undated, supplied 21 September 2026. Reviewed as tagged at `round2-docs-clean`. What stands now: `docs/round00/README.md`.*
+
 # Spatial Transcriptomics & Spatial Omics: A 2026 Methodology Landscape and Ranked Dissertation Shortlist
 
 ## TL;DR

@@ -1,3 +1,5 @@
+*17 September 2026. Reviewed as tagged at `round2-final`. What stands now: `docs/round02/README.md`. Corrected since the tag.*
+
 # Round 2, stages R0 and R1 — stage report
 
 *17 September 2026. Execution session for `NicWYZ/HEST-1k-replication`. Reporting format follows
@@ -171,8 +173,7 @@ mean is **1.265e-05**, which is **106× float32 epsilon** (1.1921e-07) — and t
 single-precision accumulation predicts. At the median fold size of 14,972 training spots,
 random-walk accumulation gives √n·ε = **1.459e-05** and worst-case accumulation gives n·ε =
 1.785e-03; the observed median is **0.87× the random-walk estimate**, i.e. a quantitative match to
-√n growth rather than an order-of-magnitude hand-wave. The worst cell sits at 3095× epsilon
-(corrected; see Changelog), which is the tail the largest-mean genes in the largest folds
+√n growth rather than an order-of-magnitude hand-wave. The worst cell sits at 3095× epsilon, which is the tail the largest-mean genes in the largest folds
 produce.
 
 Under the exact solver the median cell does satisfy A1: median abs ΔPearson is **5.96e-07**, below
@@ -607,43 +608,3 @@ Adding the other slide at the *same* resolution helps by 0.05–0.10; adding the
 *different* resolution helps by almost nothing. The mean of the four, 0.0419, is the number round 1
 reported as institution shift. My recomputation reproduces the review's figures for all ten
 per-task terms and all four gaps exactly, which is what licensed the relabelling.
-
-## Changelog
-
-- **21 September 2026.** This report was assessed by the numeric-claim sweep for the first
-  time (its earlier run had been OOM-killed at 64 GB during the closeout and never
-  measured it). The sweep found `228` of `275` claims unresolved. Almost all of § 3.2's
-  acceptance table, § 3.4's head-intercept table and § 3.5's A5 check were flagged for one
-  structural reason: the "Source:" lines cited a templated path
-  (`acceptance__<encoder>.csv`-style) that could not parse as a real file at all, so those
-  three blocks were checked only against `results/summary/deck_numbers.csv` (the sweep's
-  always-consulted file) and never against the real per-encoder result files. Fixed by
-  replacing each templated citation with the eleven real file names, explicitly. This
-  brought the count from `228` to `121`.
-- **21 September 2026.** Corrected an arithmetic error in § 3.3: "the worst cell sits at
-  `3022`× epsilon" should read **3095×**. The worst A3 cell (virchow2, IDC, fold 2, gene
-  AQP3) is `3.6895e-04`, and `3.6895e-04` / `1.1920929e-07` (float32 epsilon) =
-  `3095.0` exactly, not `3022`. This does not change the surrounding conclusion (the
-  largest-mean genes in the largest folds still produce the tail of the
-  accumulation-error distribution); it is a digit-level correction, not a conclusion
-  change.
-- **21 September 2026.** Triaged the remaining unresolved values (`121` rows, `102`
-  distinct values, after the citation fix above). `6` distinct values (§ 3.2's
-  A1, A2 and A2b entries) needed no declaration at all -- they resolve as plain literal
-  matches now that the citation fix names the real files. `72` distinct values -- the
-  appendix's per-task split-decomposition table and per-slide IDC gaps, several pooled
-  means and single-cell lookups in § 3.3, § 3.4, § 3.5 and § 3.6, and one arithmetic
-  identity -- are genuinely derived quantities computed from cited cells; each now has a `derived:`
-  entry in `.verify-derived` that the sweep evaluates rather than a declared exception.
-  `15` more (fold-median counts and percentages, a Spearman correlation, a two-level
-  standard deviation, an oracle-arm figure, cross-head per-row minimum/median/percentile
-  quantities, a cross-format spot-count comparison) are computable by hand but not
-  expressible in the derived-formula grammar (no distinct-group count, no rank
-  correlation, no inequality filter, no two-level aggregate); each is a
-  `derived: inexpressible` declared exception with the hand-verified value recorded in
-  the reason. `6` values from the ad-hoc synthetic float32/float64 debugging experiment
-  (§ 3.3 point 3) were never checkpointed to a file and are declared `diagnostic:`. `3`
-  scheduler-priority figures (§ 5.4) are declared `cost:`. (`6+72+15+6+3=102`, matching
-  the count of distinct values.) See `.verify-exceptions` and `.verify-derived` for
-  every entry and its reason. Sweep result after this pass: `275` claims, `275`
-  verified, `0` unresolved, `0` uncited.

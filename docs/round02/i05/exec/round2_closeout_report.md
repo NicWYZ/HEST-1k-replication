@@ -1,3 +1,5 @@
+*19 September 2026. Reviewed as tagged at `round2-final`. What stands now: `docs/round02/README.md`.*
+
 # Round 2 closeout report
 
 19 September 2026. Against the closeout memo of the same date. Repository frozen at `3161a61`,

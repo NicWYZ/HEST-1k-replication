@@ -1,3 +1,5 @@
+*18 September 2026. Reviewed as tagged at `round2-final`. What stands now: `docs/round02/README.md`. Corrected since the tag.*
+
 # Round 2 stage report: R0, R1, R1b, R2, R3
 
 Prepared 18 September 2026 for the oversight chat. Covers every round-2 stage completed since the
@@ -86,7 +88,7 @@ The float32 families are retained as the round-1-comparable record and are **not
 thresholds, for the reason R1 established (a float32 accumulation floor, median relative error
 1.265e-05 — about 106× float32 epsilon (the exact multiple is 106.12×) and 0.87× the $\sqrt n
 \epsilon$ prediction; a measured value from that stage's diagnostics, not checkpointed to a
-results file — see Changelog). Their worst values
+results file). Their worst values
 (literal worst-encoder cells, found in `acceptance__conch_v1.csv`, `acceptance__conch_v15.csv`,
 `acceptance__virchow2.csv`, `acceptance__uni_v1.csv` and `acceptance__resnet50.csv`):
 
@@ -330,8 +332,7 @@ Three encoders (`hoptimus0`, `uni_v2`, `resnet50`) × 10 tasks × 29 folds × fi
 buffered arm, a three-point grid sweep and leave-one-slide-out on the three tasks verified to have
 a patient contributing more than one slide. 6,138 rows in `r3_split_v4.csv` (the union of the three
 per-encoder `split_v4__hoptimus0.csv`, `split_v4__resnet50.csv` and `split_v4__uni_v2.csv` files,
-2,046 rows each; `r3_split_v4.csv` existed only as a session artifact and had not been committed to
-the repository — restored to `results/round2/R3_splits/`, see Changelog). The step-level summary
+2,046 rows each; `r3_split_v4.csv` is in `results/round2/R3_splits/`). The step-level summary
 tables in this section draw on `results/round2/R3_splits/r3_decomposition_terms.csv` and
 `results/round2/R3_splits/r3_per_task_terms.csv`.
 
@@ -430,9 +431,8 @@ round 1 or this report's first draft suggested.
 ### 6.5 The buffer makes the adjacency term well defined
 
 `r3_buffer_grid_sweep.csv` (the pooled summary; per-encoder detail in `buffer_diagnostics__hoptimus0.csv`,
-`buffer_diagnostics__resnet50.csv`, `buffer_diagnostics__uni_v2.csv` — `r3_buffer_grid_sweep.csv`
-existed only as a session artifact and had not been committed to the repository; restored to
-`results/round2/R3_splits/`, see Changelog). The buffer does what it claims: the median nearest-training-spot
+`buffer_diagnostics__resnet50.csv`, `buffer_diagnostics__uni_v2.csv`, all in
+`results/round2/R3_splits/`). The buffer does what it claims: the median nearest-training-spot
 distance rises **1.50×** at grid 4, **1.73×** at grid 6 and **2.07×** at grid 10, the ratio growing
 with grid fineness as it should, since finer blocks have proportionally more edge. (Absolute
 distances are in each sample's own pixel coordinates and are not comparable across tasks of
@@ -671,35 +671,3 @@ patient-identity +0.1357 — and the COAD result the review nominated as one of 
 demonstrations has to be withdrawn, because that task's patient labels do not separate patients.
 PRAD at 2.1× is the honest version, and it is the only task whose novel-slide term is resolved from
 zero at all.
-
----
-
-## Changelog
-
-- Fixed a transposed-digit error in § 3.2's float32 worst-cell paragraph: the worst cell's own value
-  was `0.217627`, corrected to **0.217672** (`faithful_check__conch_v1.csv`); the paragraph's mean
-  and maximum, which were computed with the wrong value, corrected from `7.05e-05`/`3.728e-04` to
-  **6.84e-05**/**3.28e-04**; and "`conch_v1` and `conch_v15` supply all three worst cells" corrected
-  to name the actual third-worst encoder, **`virchow2`**, not a second `conch_v15` cell.
-- Fixed § 4.5 and § 7.2's "`27.2` of 50" (mean genes shared between the shipped and fold-selected
-  gene lists) to **25.2 of 50** — `r2_leakage_summary.csv`'s mean `shared` is 25.15834, also
-  recorded independently in `results/summary/deck_numbers.csv`; `27.2` was never the stored value.
-- Fixed § 6.2's `blocked_buffered − patient` step to **+0.1018** (was `+0.1017`) — the exact
-  arithmetic from `r3_decomposition_terms.csv`'s stored (4-decimal) `mean` column gives 0.1018; the
-  prior figure was one part in the last decimal off, apparently from an intermediate computed before
-  that column's own rounding.
-- § 6's `r3_split_v4.csv` and § 6.5's `r3_buffer_grid_sweep.csv` existed only as session artifacts —
-  never committed to the repository, so the checker (which only reads the git tree) reported them
-  as uncited even though the citations themselves were correct. Restored both to
-  `results/round2/R3_splits/` (byte-identical to the artifact versions); no other files or citations
-  needed to change. Also fixed § 9's brace-expansion citation
-  `pergene__{hoptimus0,resnet50,uni_v2}.parquet`, which the checker's path pattern cannot expand, by
-  enumerating the three filenames explicitly. No result changes; only the file placement and the one
-  brace-expansion citation.
-- Softened § 3.1's "`106×` float32 epsilon" to "about `106×` ... (the exact multiple is `106.12×`)" —
-  the stated multiple was a rounded characterisation, not an exact identity, and was previously
-  worded as though it were one.
-- Added missing citations throughout (§§ 3.1, 3.2, 4.1, 4.2, 6, 8) naming the specific per-encoder
-  result files a claim's value is the literal worst/pooled/task-filtered figure from, where the
-  original text relied on a wildcard or brace pattern the verification tooling cannot expand into a
-  citation, or named no file at all for a value restated from an earlier section.

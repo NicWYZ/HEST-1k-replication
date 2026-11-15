@@ -1,3 +1,5 @@
+*September 2026. Reviewed as tagged at `record-full-2026-11`. What stands now: `docs/round00/README.md`.*
+
 # First-Year Spatial Transcriptomics Project: Framing, Two Topics, and HEST-1k Replication Plan
 
 Prepared September 2026. Exploratory first-year scope; not a dissertation commitment.

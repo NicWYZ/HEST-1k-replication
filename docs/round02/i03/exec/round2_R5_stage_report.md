@@ -1,3 +1,5 @@
+*18 September 2026. Reviewed as tagged at `round2-final`. What stands now: `docs/round02/README.md`. Corrected since the tag.*
+
 # Round 2 stage report: R4 and R5
 
 Prepared 18 September 2026 for the oversight chat. This is the single report for the interval that
@@ -467,38 +469,3 @@ between-patient estimate. On the evidence of § 6.1, IDC needs the same treatmen
 reason — its labels split one donor rather than merging several — so its between-patient component
 would be estimated across 3 donors, not 4 samples, and its within-patient component becomes
 estimable for the first time using the TENX pair.
-
----
-
-## Changelog
-
-- **§3.4 table, PAAD row:** blocked accuracy corrected from `0.990` to **0.989**. The reported
-  figure is the mean of the three encoders' `acc_blocked` for the PAAD row of
-  `probe3_composition_adjusted` in `r4_probes_v2.csv` (0.998084, 0.998084, 0.972191 → mean
-  0.989453), which rounds to 0.989, not `0.990`. Does not change the row's verdict ("composition
-  explains most"), which rests on the 21.2% drop figure, unaffected.
-- **§6 result table, pooled shipped-`patient` column:** corrected the fourth decimal place (see
-  the table row itself for the new value). The pooled figure is the mean of the three encoders'
-  patient_recheck means computed at full precision, which rounds down at the fourth decimal; the
-  previous figure came from rounding each encoder's mean to four decimals first and then averaging
-  those roundings, a rounding-order artefact rather than a different quantity. Does not change the
-  difference row beside it, which is computed independently and rounds the same either way.
-- **§5 table and §6 prose:** the IDC `donor_out` training-set size, previously given as a vague
-  rounded approximation for the two single-sample folds, is now stated as the exact range
-  **31,526–32,531** (`results/round2/R3_splits/donor_out__hoptimus0.csv`, n_train for the
-  `donor_NCBI785` and `donor_NCBI783` folds respectively). Same quantity, stated precisely instead
-  of rounded.
-- **Citation completeness:** subsections §3.1–§3.5, §4.2–§4.4, §5 and the reproduction-check/result
-  paragraphs of §6 previously relied on a file named only in the parent section's opening paragraph
-  or in a sibling subsection; the numeric-claims checker pools citations per `##`/`###` subsection
-  and does not inherit across that boundary, so these subsections' own numbers were technically
-  uncited. Added the specific file citation to each (`r4_probes_v2.csv`,
-  `results/tailored/integrity/sample_metadata.csv`, `results/round2/R5b_audit/r5_idc_panels_observed.csv`,
-  `results/round2/R5b_audit/r5_idc_panel_pairs.csv`, `results/round2/R3_splits/donor_out__*.csv`,
-  `results/round2/R3_splits/replicate_leak_v2__hoptimus0.csv`). No values changed.
-- **Formatting to avoid false numeric-claim matches, no content change:** wrapped the Janesick et
-  al. DOI in backticks so its digit run is not parsed as a claim; spelled out the sample-id list in
-  §8 item 3 in full (`NCBI` prefix on all three ids, not just the first) instead of eliding the
-  repeated prefix; and prefixed the four escalation item numbers with a section marker, matching
-  this document's own convention for every other in-document section reference, so they are not
-  misread as measurements.

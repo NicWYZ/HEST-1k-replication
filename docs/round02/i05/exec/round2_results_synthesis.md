@@ -1,3 +1,5 @@
+*19 September 2026. Reviewed as tagged at `round2-docs-clean`. What stands now: `docs/round02/README.md`. Corrected since the tag.*
+
 # What the HEST-1k replication found, and where Topics A and B stand
 
 19 September 2026, final version. Synthesis of every result outside the faithful replication stage, from rounds 1 and 2 of `NicWYZ/HEST-1k-replication`, ranked by significance. Written for the Monday progress presentation and as the record of where the project stands before Topic A begins.
@@ -131,21 +133,3 @@ Topic B follows, using Topic A's predictor and the replicate-leak design as its 
 Present Monday with the ranked list above and the $R^2$ ladder as the opening figure. Ask for two decisions: what to do with the benchmark findings, and whether to pull full HEST-1k breast and brain for an institution axis. Then open round 3 as Topic A's first experiment.
 
 Round 2 is closed. The one item left open is the IDC same-donor attribution, which needs a single page that 10x has been rate-limiting; it affects one label in the authors' draft and no measurement, and the draft carries a blocking note until it is settled.
-
-## Changelog
-
-- 22 September 2026: added four inline file citations that the numeric-claim verifier
-  flagged as missing (the document previously carried no per-claim citations at all,
-  relying only on the repository-wide `results/summary/deck_numbers.csv` reference table).
-  No values were changed. Citations added: `docs/round02/i01/exec/round2_R0_R1_stage_report.md` for the
-  round-1 pilot COAD blocked-minus-patient figure in result 1; `results/round2/R3_splits/r3_per_task_terms.csv`
-  for COAD's round-2 novel-slide and patient-identity terms in result 1;
-  `results/round2/R1b_heads/r1b_ladder_pooled.csv` for the +0.185 slide-level-shift figure in
-  result 4; and `results/round2/R2_fold_hvg/r2_panel_heterogeneity.csv` plus
-  `results/round2/R2_fold_hvg/r2_rank_supplement.csv` for the gene-panel-size figures in result 6.
-  Four further claims (the abandoned first-attempt replicate-leak design's 80% figure, the
-  withdrawn first-version 0.31 leakage gap, the 0.76 gene-set/gap correlation, and the 0.29
-  median Xenium zero-fraction) were triaged into `.verify-exceptions` as diagnostic, historical,
-  and derived (not expressible in the checker's formula language) respectively; the +0.009
-  mean-Pearson-change figure was added to `.verify-derived` as a formula over the four reported
-  encoders' `fold_hvg__*.csv` files.
