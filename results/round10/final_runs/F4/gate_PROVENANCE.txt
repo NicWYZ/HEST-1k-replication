@@ -1,0 +1,31 @@
+platform: Longleaf
+slurm_job_id: 9227979
+slurm_job_partition: general
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 1
+slurm_mem_per_node: 8192
+node: c0315
+track: final-runs (round 10)
+job_prefix: claude-science-<uuid8> (set by the submission route; jobs identified by Slurm id)
+stage: F4
+unit: gate_v1
+frame_id: 3f5eb01e-aa12-4f67-84ac-45c28e10831d
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1
+snapshot_commit: 4a5cb8a7cee85e4d52c67b390d421456bc97f046
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/_snapshots/4a5cb8a7cee85e4d52c67b390d421456bc97f046
+command: round10_final_runs_provenance_index.py /work/users/w/e/weiyang/hest_replication/results/round10/final_runs /work/users/w/e/weiyang/hest_code/round10-final-runs 4a5cb8a7cee85e4d52c67b390d421456bc97f046 /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F4_gate/gate_v1/provenance_index.csv F1,F2,F3,F4; verify_numeric_claims.py docs/round10/i05/final-runs/round10_final_runs_report.md docs/round10/i05/final-runs/round10_final_runs_F3_decisions.md --search-dir . --search-dir results/round10/final_runs/F4 --search-dir results/round10/final_runs/F4/aggregate --search-dir results/round10/final_runs/F3 --exceptions .verify-exceptions-round10-final-runs --tsv /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F4_gate/gate_v1/verify_F4.tsv
+config: {"commit":"4a5cb8a7cee85e4d52c67b390d421456bc97f046","stage":"F4","unit":"gate_v1"}
+config_sha256: d52237f6e127bd795a49f8ff060d76fb0bfbeae1a2ee2a418f2f1efdbcbbe476
+start: 2026-11-15T04:03:13-05:00
+end: 2026-11-15T04:09:44-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  a0da51f319b7f8282976b59c1f7991c2  code/scripts/round10_final_runs_provenance_index.py
+  10c7ea21abee5fd44b583df0affc320e  code/scripts/verify_numeric_claims.py
+inputs (md5, path):
+  3ecabd6877bc815df89055c19f3b1c13  /work/users/w/e/weiyang/hest_code/round10-final-runs/docs/round10/i05/final-runs/round10_final_runs_report.md
+  573f21cef9cccd801f8ceeb2a0cf3afe  /work/users/w/e/weiyang/hest_code/round10-final-runs/docs/round10/i05/final-runs/round10_final_runs_F3_decisions.md
+  ca8c15681c3b5c2a4e4ab2723075bf1c  /work/users/w/e/weiyang/hest_code/round10-final-runs/.verify-exceptions-round10-final-runs
