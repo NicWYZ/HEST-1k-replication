@@ -3,11 +3,11 @@
 ```state
 updated: 2026-11-15 (Claude Science session on the Windows execution PC, David's team account, reaching Longleaf through compute target ssh:longleaf; frame 3f5eb01e-aa12-4f67-84ac-45c28e10831d, the ninth session of the track)
 unit: final-runs
-status: interval i05, stage F4 (plan 5e). 5e.1 done: F4-1 holds (means_v2, 60 of 60 populations within 2.4e-13); F4-2 refuted (compare_v2: coverage 0.012 in 5 of 141 cells, width ratio up to 3.7% relative), so by the plan's rule all 330 regime B mu units of the HEST and corpus tasks were rerun on all spots (F4/mu_check/allspot__*, every unit COMPLETED with an exact anchor). F4 aggregate committed in results/round10/final_runs/F4/aggregate/ (unit f4_aggregate_v1, Slurm 9177176, commit 5d5cb1f5): on all-spot mu regime B is narrower in 1458 of 1458 cost-matched fix1 comparisons; FR7 still holds; V's picture is unchanged (required m moves about one grid step in 21 of 132 bounded and 16 of 132 unbounded rows; coverage 0.8865 to 0.90425; largest |Spearman(coverage, G*_B)| 0.38, which corrects the decision file's "close to zero"). 5e.3: F4-4 holds in 5 of 6 cells (fails on uni_v2 lognorm), refuted as written. 5e.2: F4-3 refuted (regime B wider on ACS at unit cost, 9 of 12 pairs). 5e.4: E8 m = 15 is GHCP by mean width at K 18 to 40 in part 2 (54 rows), no fault. The held edit of session 8 (mode alloc, prediction F4-3b in plan 5e.8) was redone at daa8781d. F4-3b holds (readings_alloc_v1, Slurm 9184267, commit daa8781d): mean(Mbar/M_g) is 2.656 on ACS by state against at most 1.706 on the HEST tasks (INDIANA_KIDNEY), G per task matching F2's regime B summary. No job of the track is running. Nicolas approved keeping F4-3b on 15 November (session 9 had redone the held edit before asking)
-step: F4, 5e.7. The final report docs/round10/i05/final-runs/round10_final_runs_report.md is committed here (numbers table of record paper_numbers_v2, Slurm 9227641; F4 ledger rows appended)
-last run: paper_numbers_v2 (Slurm 9227641) and F4_ledger/ledger_v1 (Slurm 9227399)
-next: the gate job (job_scripts/job_f4_gate_checks_template.sh, provenance index over F1 to F4 into results/round10/final_runs/F4/provenance_index.csv, numeric-claim sweep over the report and the F3 decision file), then the pull request, its number into the report in a new commit, tag round10-final-runs-F4, push, report to Nicolas
-waiting: nothing
+status: interval i05, stage F4, gate F4 reported. Final report docs/round10/i05/final-runs/round10_final_runs_report.md, numbers table results/round10/final_runs/F4/paper_numbers.csv (paper_numbers_v2, 443 rows), provenance index over F1 to F4 in results/round10/final_runs/F4/provenance_index.csv (gate_v1, Slurm 9227979). Pull request NicWYZ/HEST-1k-replication#39 open into main, tag round10-final-runs-F4 on this commit. No job of the track is running
+step: F4 done; the track waits at its final gate
+last run: F4_gate/gate_v1 (Slurm 9227979); before it paper_numbers_v2 (Slurm 9227641) and F4_ledger/ledger_v1 (Slurm 9227399)
+next: Nicolas reviews the report and pull request #39. After his reply, a session writes the decision file and does bookkeeping only; the session never merges
+waiting: Nicolas: review of gate F4 and the merge of pull request #39
 ```
 
 *Written on 9 November 2026 by the first session of track `final-runs`. The brief is `docs/round10/i01/final-runs/round10_final_runs_brief.md` on `main` (read at 133384d1). It is read with `docs/EXECUTION_RULES.md` at that commit, `docs/round10/masterplan.md`, the ledger's decisions `docs/round10/i01/ledger/round10_ledger_decisions.md` and Nicolas's L3 answers `docs/round10/i02/ledger/round10_ledger_L3_answers.md`, which win where they differ. This plan does not copy the brief. It records how the session does each step, the checks it runs, and dated notes as the work goes.*
@@ -461,8 +461,8 @@ The job-ledger rows for F4 are appended with `round10_final_runs_ledger_rows.py`
 - [x] 5e.4, reading the E8 join, then a fix and rerun only if a fault is found.
 - [x] 5e.2 and 5e.3 (one script, one job). 2026-11-14 readings_v1; F4-3 refuted, F4-3b added and run as readings_alloc_v1 (Slurm 9184267), holds. Session 9 redid session 8's held edit before asking; Nicolas approved keeping it on 15 November.
 - [x] 5e.5, the F4 aggregate.
-- [ ] 5e.6, the numbers table, then the report.
-- [ ] 5e.7, gate checks, pull request, tag, report to Nicolas.
+- [x] 5e.6, the numbers table, then the report. 2026-11-15, paper_numbers_v2 (Slurm 9227641), report committed.
+- [x] 5e.7, gate checks, pull request, tag, report to Nicolas. 2026-11-15, gate_v1 (Slurm 9227979), pull request #39, tag round10-final-runs-F4.
 
 ## 6. Escalations and open items
 
