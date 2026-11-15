@@ -1,6 +1,6 @@
-# Round 7 inference track, the theory
+*14 to 15 October 2026. Reviewed as tagged at round7-ppi-final. What stands now: docs/round07/README.md.*
 
-*Frozen at the close of round 7, 15 October 2026.*
+# Round 7 inference track, the theory
 
 Living document of the round 7 inference track (`docs/round07/i01/ppi/round07_ppi_track.md`, plan `docs/round07/tracks/ppi/round07_ppi_plan.md`). Notation is the estimator definition's (`docs/round05/tracks/ppi/round5_ppi_estimator_definition.md`). Section 1 is written for S1 before any S1 run. Section 2.1, Broska and Howes's interval, is written before S1's runs as well, because S1 applies that interval under D2. Section 2.2, Kluger et al.'s design, follows in S2. Where a step of algebra is skipped, the text says so.
 

@@ -1,6 +1,6 @@
-# Round 8, masterplan
+*19 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round08/README.md.*
 
-*Living while the round runs. The oversight chat revises it by appending dated amendments at the end, and the text above them is not rewritten. It is frozen at the round's close.*
+# Round 8, masterplan
 
 Written on 19 October 2026 by the oversight chat, through the `project-state-keeping` skill, after Nicolas chose the round's direction in chat the same day. The scope of the one track opened now is `i01/positioning/round08_positioning_scope.md`. A fresh agent checked this masterplan and the scope before the first commit, and its findings are worked in.
 

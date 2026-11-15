@@ -1,3 +1,5 @@
+*14 October 2026. Reviewed as tagged at round7-ppi-S4. What stands now: docs/round07/README.md.*
+
 # Round 7, the inference track, decisions at the S2 gate
 
 14 October 2026. Written by the oversight chat for the execution session of the inference track, after reviewing the S2 report (`docs/round07/i01/ppi/round07_ppi_S2_report.md`, pull request #29, tag `round7-ppi-S2`). This memo opens interval i02. Commit it unchanged at this path on your branch as the first commit of i02. Nicolas merges pull request #29 before your next push.

@@ -1,3 +1,5 @@
+*19 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round08/README.md.*
+
 # Round 8, the positioning track, the positioning note (gate P3)
 
 *19 October 2026. Revised after the second pass was completed, then checked the same day by an independent agent at the oversight chat's tier, which redid the algebra and enumeration of section 3.2 with its own script and checked every quotation against the sources. It reported 47 findings (5 errors, 10 weak, 32 minor), and all are addressed here. Recommendations are `[proposed]` until Nicolas decides.*
@@ -299,14 +301,7 @@ Scored as the masterplan's "How they are scored" paragraph fixed them.
 
 ## 5. Corrections to the record
 
-Frozen documents are not edited, so these are recorded here and go into round 8's reading guide.
-
-1. Round 5's `rej_t` is the cluster-level, plug-in form of Yang, Qu and Li's Corollary A5 with a $t$ reference (section 3.1). Round 7's positioning note (section 5, row "Label-free balanced selection") and explainer (Part C) call the principle classical and the few-cluster comparison the paper's own. The interval itself is prior art, and Yang, Qu and Li and Yang and Ding should be cited beside Fuller and Morgan and Rubin.
-2. Round 7's explainer (Part B) and positioning note (section 5) call the allocation result the paper's own. Its fixed-coefficient form is classical (section 3.3).
-3. Round 7's explainer (Part C) lists the design-target regime comparison, costs and the level term as the paper's own. Their substance is classical, pending the textbook check (section 3.5).
-4. Round 7's simulated inclusion probabilities, its finding about zero pair probabilities, and its comparison of rejective and cube selection have antecedents that it did not cite, Fattorini (2006), Aronow and Samii (2013) and Legg and Yu (2010).
-5. For even $n_L$, round 5's cross-fitted estimator (`docs/round05/tracks/ppi/round5_ppi_estimator_definition.md`) is Williams' (1961) unbiased split-sample regression estimator with two groups, without the factor $1 - n/G$ on its covariance correction (section 3.2). For $n_L < G$ it therefore has a design bias of $\{(n/G)/(1 - n/G)\}\,\text{Cov}(c', \bar f_L)$, which round 5's theory had called zero up to finite-population terms under normality, and the part of the estimator that escapes the finite-population factor, which round 7 counted among the paper's own results, is that omission. Under round 5's clipped coefficient the bias was small in the toy check. Round 5's theory, its E3a unit and round 7's positioning note did not cite Mickey (1959) or Williams (1961), though Kwon et al. cite both.
-6. The masterplan of round 8 first presented Shirota's paper as new. It was found in round 3 and checked from its abstract in the deck-2 check (corrected before the first commit, recorded in the progress log).
+The items this section listed are placed in `docs/round08/README.md` and `docs/round07/README.md`, which say what stands. The findings behind them are in section 3.
 
 ## 6. What this means
 

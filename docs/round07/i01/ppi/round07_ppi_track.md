@@ -1,6 +1,6 @@
-# Round 7, the inference track on choosing the labelled clusters, instruction
+*13 October 2026. Reviewed as tagged at round7-ppi-final. What stands now: docs/round07/README.md. Corrected since the tag.*
 
-*Frozen at the close of round 7, 15 October 2026.*
+# Round 7, the inference track on choosing the labelled clusters, instruction
 
 13 October 2026. Prepared by the oversight chat for a fresh Claude Science session. This document is self-contained. The track starts from `main` of `NicWYZ/HEST-1k-replication` at the commit that carries the first version of this document, on its own branch `round7-ppi`. Record that commit's hash in your plan. Read this document fully, then transcribe section 7 into `docs/round07/tracks/ppi/round07_ppi_plan.md` before running anything.
 
@@ -105,7 +105,7 @@ $$
 
 capped at 1 with the excess redistributed, and the sample is drawn by the cube method (Deville and Tillé, Biometrika 2004). Its flight phase keeps $\sum_{g \in L} x_g/\pi_g = \sum_g x_g$ exactly for the balance variables $x_g$, which include $\pi_g$ itself so that the sample size is fixed, and its landing phase meets the balance only approximately. Because the realised design can differ from the targets, the $\pi_g$ and $\pi_{gh}$ used for estimation are simulated from the implemented sampler, as for D2. The PDF is `~/hest-1k/ppi_conf_papers/balanced_active_inference.pdf`. Their variance estimators are in a supplement that the project does not have, so derive the one you use.
 
-**Greedy k-center.** Choose the first cluster uniformly at random, then repeatedly add the cluster farthest, in the space of the first 10 principal components of the clusters' mean embeddings, from its nearest labelled cluster, until $n_L$ clusters are chosen. The random first cluster makes this a design with at most $G$ distinct samples, each start having probability $1/G$. So every $\pi_g \ge 1/G > 0$ and $\hat\theta_{\mathrm{HT}}$ is exactly design-unbiased, but most $\pi_{gh}$ are zero, so no design-based variance estimate exists. Everything about this design, coverage included, is computed exactly by enumerating the $G$ starts. Without the random start the rule is deterministic and every $\pi_g$ is 0 or 1.
+**Greedy k-center.** Choose the first cluster uniformly at random, then repeatedly add the cluster farthest, in the space of the first 10 principal components of the clusters' mean embeddings, from its nearest labelled cluster, until $n_L$ clusters are chosen. The random first cluster makes this a design with at most $G$ distinct samples, each start having probability $1/G$. So every $\pi_g \ge 1/G > 0$ and $\hat\theta_{\mathrm{HT}}$ is exactly design-unbiased, but many $\pi_{gh}$ are zero (a median share of 0.732 of pairs at $n_L = 4$, 0.557 at 6 and 0.431 at 8, `results/round7/ppi/S4_kcenter/_merged_r2/s4_report_numbers.csv`), so no design-based variance estimate exists. Everything about this design, coverage included, is computed exactly by enumerating the $G$ starts. Without the random start the rule is deterministic and every $\pi_g$ is 0 or 1.
 
 ---
 

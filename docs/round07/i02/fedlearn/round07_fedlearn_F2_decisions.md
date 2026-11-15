@@ -1,3 +1,5 @@
+*13 October 2026. Reviewed as tagged at round7-fedlearn-final. What stands now: docs/round07/README.md.*
+
 # Round 7, the federated learning track, decisions at the F2 gate
 
 13 October 2026. Written by the oversight chat for the execution session of the federated learning track, after reviewing the F2 report (`docs/round07/i01/fedlearn/round07_fedlearn_F2_report.md`, pull request #28, tag `round7-fedlearn-F2`). This memo opens interval i02. Commit it unchanged at this path on your branch.

@@ -1,3 +1,5 @@
+*19 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round08/README.md.*
+
 # Round 8, the positioning track, scope and search protocol
 
 19 October 2026. Written by the oversight chat as stage P0 of the positioning track (`docs/round08/masterplan.md`). This is an oversight track, so the document is the oversight chat's own plan rather than an instruction to an execution session. A fresh agent checked it before the first commit, and its findings are worked in. It is frozen once committed, and anything that changes it afterwards is recorded in the positioning note.

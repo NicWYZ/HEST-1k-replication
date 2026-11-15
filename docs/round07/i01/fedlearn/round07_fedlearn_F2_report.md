@@ -1,3 +1,5 @@
+*13 October 2026. Reviewed as tagged at round7-fedlearn-F2. What stands now: docs/round07/README.md.*
+
 # Round 7, the federated learning track, F2 gate report
 
 13 October 2026. Execution session of the federated learning track, for the oversight chat. Branch `round7-fedlearn` from the starting commit `3c328ccc4d68b44d0795cfb9c91ff332c3b399d3`. The instruction is `docs/round07/i01/fedlearn/round07_fedlearn_track.md` and the operating plan is `docs/round07/tracks/fedlearn/round07_fedlearn_plan.md`. The literature review is `docs/round07/tracks/fedlearn/round07_fedlearn_literature_review.md`.

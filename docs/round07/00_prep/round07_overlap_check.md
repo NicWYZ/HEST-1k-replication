@@ -1,3 +1,5 @@
+*13 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round07/README.md.*
+
 # Overlap check before round 7, a lab manuscript on slide selection and three newer PPI papers
 
 13 October 2026. Written by the oversight chat for Nicolas, before round 7's PPI and conformal work builds on round 5. Nicolas asked whether a group member's manuscript overlaps the paper "Labelling budgets for prediction-powered inference with clustered data" closely enough to change its direction.

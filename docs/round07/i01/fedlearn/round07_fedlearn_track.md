@@ -1,6 +1,6 @@
-# Round 7, the federated learning track, instruction
+*13 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round07/README.md.*
 
-*Frozen at the close of round 7, 15 October 2026.*
+# Round 7, the federated learning track, instruction
 
 13 October 2026. Prepared by the oversight chat for a fresh Claude Science session. This document is self-contained. The track starts from `main` of `NicWYZ/HEST-1k-replication` at the commit that carries the first version of this document, on its own branch `round7-fedlearn`. Record that commit's hash in your plan. Read this document fully, then transcribe section 7 into `docs/round07/tracks/fedlearn/round07_fedlearn_plan.md` before running anything.
 

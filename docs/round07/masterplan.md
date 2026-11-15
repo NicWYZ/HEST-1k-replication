@@ -1,8 +1,6 @@
+*13 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round07/README.md.*
+
 # Round 7, masterplan
-
-*Frozen at the close of round 7, 15 October 2026.*
-
-*Living while the round runs. The oversight chat revises it by appending dated amendments at the end, and the text above them is not rewritten. It is frozen at the round's close.*
 
 Written on 13 October 2026 by the oversight chat, after Nicolas confirmed the skeleton in chat the same day. The full instruction to the execution session of the one track opened now is `i01/fedlearn/round07_fedlearn_track.md`.
 

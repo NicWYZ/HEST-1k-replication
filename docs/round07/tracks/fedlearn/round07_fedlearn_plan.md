@@ -1,18 +1,12 @@
-# Round 7, the federated learning track, operating plan
+*13 to 14 October 2026. Reviewed as tagged at round7-fedlearn-final. What stands now: docs/round07/README.md.*
 
-*Frozen at the close of round 7, 15 October 2026. Every pull request of the track has merged, whatever the current-state block below says.*
+# Round 7, the federated learning track, operating plan
 
 Living document of the execution session. Started 13 October 2026. The instruction is `docs/round07/i01/fedlearn/round07_fedlearn_track.md` on `main`.
 
 ## Current state
 
-- **Stage.** F4 handed over on 14 October 2026. The closing report is `docs/round07/i02/fedlearn/round07_fedlearn_final_report.md`. The track ends at this gate, and nothing further runs until the oversight chat replies.
-- **Branch.** `round7-fedlearn`, tag `round7-fedlearn-final`, pull request #30 into `main`, pushed once with the tag. Never merged by the session.
-- **Longleaf.** Code clone `/work/users/w/e/weiyang/hest_code/round7-fedlearn` at `30dffb3d740c4ad147ab7b84b3878e974105a853` (delivery 4, row 4 of `results/round7/fedlearn/code_deliveries.csv`). The project tree stays on `main` at `round4-data-v2`.
-- **Job ledger.** `results/round7/fedlearn/r7fl_slurm_jobs.csv`. No job of this track is queued or running.
-- **Papers.** Requested papers 1, 2 and 4 arrived and were read. Papers 3 and 5 could not be obtained. Reader 4's five papers are read and folded into the evidence table and the review.
-- **Standing rules.** `docs/EXECUTION_RULES.md` was read in full on 14 October at `main` commit `a7008bb1`. It gathers rules this plan already follows. Slurm time limits are set at about three times the expected runtime, and every sub-agent brief carries the sub-agent's frame id and the stamping sentence of its section 6.
-- **Next action.** None. Wait for the oversight chat's reply to the F4 report.
+closed
 
 ## Extensions
 

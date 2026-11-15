@@ -1,3 +1,5 @@
+*14 October 2026. Reviewed as tagged at round7-fedlearn-final. What stands now: docs/round07/README.md.*
+
 # Round 7, the federated learning track, closing report (F4)
 
 Execution session `8a6be84e-6b5d-4289-aaaf-100d3c5b6c05`, branch `round7-fedlearn`, 14 October 2026. This report closes interval i02 and the track. It follows section 10 of the instruction (`docs/round07/i01/fedlearn/round07_fedlearn_track.md`), the F2 decision memo (`docs/round07/i02/fedlearn/round07_fedlearn_F2_decisions.md`) and the plan's amendments A1 to A11 (`docs/round07/tracks/fedlearn/round07_fedlearn_plan.md`). Results directories below are under `results/round7/fedlearn/`.

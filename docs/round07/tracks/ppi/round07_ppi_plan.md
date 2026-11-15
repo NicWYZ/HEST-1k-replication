@@ -1,27 +1,12 @@
-# Round 7, the inference track, operating plan
+*14 to 15 October 2026. Reviewed as tagged at round7-ppi-final. What stands now: docs/round07/README.md.*
 
-*Frozen at the close of round 7, 15 October 2026. Every pull request of the track has merged, whatever the current-state block below says.*
+# Round 7, the inference track, operating plan
 
 Living document. Written 14 October 2026 by the execution session and approved by Nicolas the same day, from `docs/round07/i01/ppi/round07_ppi_track.md` at the starting commit. Section 9 is section 7 of the track document transcribed unchanged. Sections 1 to 8 say how I will carry it out. Nothing in this plan changes the track document. Where the two differ, the track document holds and the difference is a mistake in this plan.
 
 ## 0. Current state
 
-| field | value |
-|---|---|
-| stage | Interval i03 complete. S4b and S5 done on 15 October, the final report is written, and the track ends at the closing gate (tag `round7-ppi-final`) |
-| starting commit | `c2af4630fe601c255c927d2a3f5a76b19a53d9f2` (13 October 2026, "Docs: open round 7's inference track after O2 was accepted") |
-| `origin/main` when read | `febfc9a8` (15 October 2026, merge of pull request #31, the S4 gate), with the S4 memo at `cebb34d6`. `docs/EXECUTION_RULES.md` and the track document have no revision since the S2 memo |
-| standing rules | `docs/EXECUTION_RULES.md` at its revision of 14 October, read in full, adopted from the S2 memo on |
-| track document revisions transcribed | the two lines dated 13 October 2026 (first version, and the revision before handover) |
-| branch | `round7-ppi` from `c2af4630`, with nothing merged into it |
-| Longleaf code clone | `/work/users/w/e/weiyang/hest_code/round7-ppi/`, made by Slurm job 4816458 |
-| last delivered commit | `61a60229f96ef8c54ec5d255da85dddac6b5be94` (delivery 19, Slurm job 4951929) |
-| open pull request | the closing pull request from `round7-ppi`, opened after the commit tagged `round7-ppi-final`; its number is in the chat handover (#29 and #31 merged) |
-| plan extensions | none |
-| escalations recorded for the next report | none; the final report's section 7 holds i03's |
-| next action | none. The track is closed |
-
-A restarted session resumes from this block, the job ledger `results/round7/ppi/r7ppi_slurm_jobs.csv` and `results/round7/ppi/code_deliveries.csv`.
+closed
 
 ## 1. Starting point and preconditions
 

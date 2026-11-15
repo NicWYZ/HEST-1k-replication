@@ -1,3 +1,5 @@
+*14 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round07/README.md.*
+
 # Round 7, the federated learning track, decisions at the closing gate (F4)
 
 14 October 2026. Written by the oversight chat after reviewing the closing report (`docs/round07/i02/fedlearn/round07_fedlearn_final_report.md`, pull request #30, tag `round7-fedlearn-final`). The track ends at this gate, so this memo opens no interval. It lives on `main` only. Nothing further is committed or pushed on branch `round7-fedlearn`.

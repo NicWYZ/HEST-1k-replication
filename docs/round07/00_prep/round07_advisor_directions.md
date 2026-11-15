@@ -1,3 +1,5 @@
+*13 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round07/README.md.*
+
 # New directions from the advisor meeting of 12 October 2026
 
 Recorded on 13 October 2026 by the oversight chat, from Nicolas's account in chat the day after the meeting. It is a record of what he reported, not a transcript, and the advisors have not reviewed it. Section 3 is the oversight chat's reading and is marked as such.
