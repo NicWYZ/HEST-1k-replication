@@ -528,11 +528,11 @@ the corrected command.
 | `docs/README.md` | 6 | 6 | 0 | 0 | 0 | 0 |
 | `docs/WAYS_OF_WORKING.md` | 38 | 38 | 0 | 0 | 0 | 0 |
 | `docs/round02/README.md` (formerly `closeout_gate_report.md`, at tag `record-full-2026-11`) | 41 | 41 | 0 | 0 | 0 | 0 |
-| `docs/round02/tracks/deck/deck_master_outline.md` | 162 | 162 | 0 | 0 | 0 | 0 |
+| `docs/round02/README.md` (formerly `deck_master_outline.md`, at tag `record-full-2026-11`) | 162 | 162 | 0 | 0 | 0 | 0 |
 | `docs/round02/README.md` (formerly `deck_speaker_scripts.md`, at tag `record-full-2026-11`) | 98 | 93 | 5 | 0 | 0 | 0 |
 | `docs/round02/README.md` (formerly `docs_clean_report.md`, at tag `record-full-2026-11`) | 62 | 62 | 0 | 0 | 0 | 0 |
 | `docs/round00/first_year_ST_project_proposal.md` | 21 | 16 | 5 | 0 | 0 | 0 |
-| `docs/round02/i05/exec/hest_bench_issue_draft.md` | 56 | 56 | 0 | 0 | 0 | 0 |
+| `docs/round02/README.md` (formerly `hest_bench_issue_draft.md`, at tag `record-full-2026-11`) | 56 | 56 | 0 | 0 | 0 | 0 |
 | `docs/round00/literature_landscape.md` | 20 | 20 | 0 | 0 | 0 | 0 |
 | `docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`) | 60 | 60 | 0 | 0 | 0 | 0 |
 | `docs/round01/i01/exec/round1_final_stage_report.md` | 169 | 169 | 0 | 0 | 0 | 0 |
@@ -567,7 +567,7 @@ AnnData's 6,138 rows (`results/round3/H0_housekeeping/tenx111_spot_count.md`).
    `docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`) and round 2's merge of `TENX95` with `TENX99` contradicted by HEST's
    own metadata in all five releases. `donor_audit.csv` is frozen per section 12.7. Until decided,
    everything built on IDC `audited` groups two donors as one: A1's and A2's IDC `audited` rows, round
-   2's R5c figure of +0.0652, and `docs/round02/i05/exec/hest_bench_issue_draft.md`. A2b's largest per-task deficit,
+   2's R5c figure of +0.0652, and `docs/round02/README.md` (formerly `hest_bench_issue_draft.md`, at tag `record-full-2026-11`). A2b's largest per-task deficit,
    0.283, is on IDC `audited`. Decision needed: supersede `donor_audit.csv` with a round-3 audit file,
    or not.
 2. **CCRCC's donor labels are unsourced.** Round 2 records them `verified` against a GEO series

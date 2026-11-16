@@ -16,4 +16,4 @@ The round's record, scripts and results are in the private repository `NicWYZ/te
 
 ## Presented outside the project
 
-The advisor meeting of 12 October discussed round 6, and the textual line continued in its own repository after it. What the advisors said is recorded in `docs/round07/00_prep/round07_advisor_directions.md`.
+The advisor meeting of 12 October discussed round 6, and the textual line continued in its own repository after it. What the advisors said is recorded in `docs/round07/README.md` (formerly `round07_advisor_directions.md`, at tag `record-full-2026-11`).

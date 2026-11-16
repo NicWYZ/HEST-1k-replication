@@ -52,7 +52,7 @@ These are not preferences. Breaking one invalidates the work.
 
 - **Aims.** Minimal biology by design. Expression is a signal to predict, calibrate and use for inference. His career goal is quantitative research in finance, so directions are judged by how well their skills transfer. He prefers ML venues (NeurIPS, ICML, AISTATS) or top statistics journals, wants the paper's scope broad and useful beyond spatial transcriptomics, and decides the venue once the paper's content is known.
 - **Literature first.** Whenever the work meets a problem, the literature is searched first for the existing method or theory to apply, and the project devises its own only where that search finds a genuine gap, which Nicolas agrees to before a derivation starts. New method and theory arise from problems met in practice and are never the main goal.
-- **Data.** Use as much of the existing data as possible, including the federated project's corpus on Longleaf, read only.
+- **Data.** Use as much of the existing data as possible, including the federated project's corpus on Longleaf, read only. Longleaf storage is not a constraint.
 - **Autonomy.** A research session explores, derives and validates on its own, and reports to Nicolas only at significant results or roadblocks, which are where its plan puts its gates.
 - **Literature reviews.** A detailed review is done by a research session with subagents, and the oversight session sets its scope. Papers a session cannot retrieve go to Nicolas as one list of at most 10, each linked through UNC's library proxy (`https://login.libproxy.lib.unc.edu/login?url=https://doi.org/<DOI>`) or to a free version, and he supplies them in `~/hest-1k/ppi_conf_papers/`.
 - **Thoroughness** always comes first, over speed.

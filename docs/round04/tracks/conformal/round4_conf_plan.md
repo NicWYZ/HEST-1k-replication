@@ -2,7 +2,7 @@
 
 # Round 4, the conformal track: operating plan
 
-Instruction: `round4_conformal_track.md` (oversight chat, 30 September 2026, revised after the data-pull
+Instruction: `docs/round04/round04_methods_note.md` (formerly `round4_conformal_track.md`, at tag `record-full-2026-11`) (oversight chat, 30 September 2026, revised after the data-pull
 report), sha256 `18c19e7364176988e5c56840b8c1021f62f747a28bf172cedeb5358f4157fda2`, handed over by Nicolas. The instruction file itself is not committed on this
 branch, because `docs/decisions/` is not one of this track's areas; the proposal to add it there is in
 the C2 report. Branch `round4-conformal` from tag `round4-data-v2` (`9d7277d`). This file is the
@@ -345,7 +345,7 @@ in section 1 of this plan, unchanged.
    confirmed from the released loader, and a mismatch is an escalation.
 7. **Procedure.** Opening the gate pull request through the GitHub REST API (section 9) is accepted;
    the route used is recorded in the report. The full instruction document is on `main` at
-   `docs/round04/i01/conformal/round4_conformal_track.md`; it is not added to this branch.
+   `docs/round04/round04_methods_note.md` (formerly `round4_conformal_track.md`, at tag `record-full-2026-11`); it is not added to this branch.
 
 ## 11. Instructions from Nicolas during interval 1 (1 October 2026)
 
@@ -464,7 +464,7 @@ Every C3 and C4 job runs on Longleaf through Slurm, under `rc_tengfei_pi` as rec
 ### 12.7 Procedural points
 
 1. **The pull request.** Pull request #3 is open at `fe36f6b`. Nicolas merges it with a merge commit after handing over this memo. The C4 pull request follows plan section 9.
-2. **The instruction document** is on `main` as `docs/round04/i01/conformal/round4_conformal_track.md`; this memo will be beside it as `round4_conformal_C2_decisions.md` (at tag `record-full-2026-11`). Neither is added to the branch.
+2. **The instruction document** is on `main` as `docs/round04/round04_methods_note.md` (formerly `round4_conformal_track.md`, at tag `record-full-2026-11`); this memo will be beside it as `round4_conformal_C2_decisions.md` (at tag `record-full-2026-11`). Neither is added to the branch.
 3. **Writing.** `docs/round04/i01/conformal/round4_conf_lower_bound.md` and the C2 report render; keep display equations with each `$$` on its own line in the C4 report and the C3 outputs' documentation.
 4. **Sub-agent frame ids.** Each brief states the sub-agent's own frame id, and the lead checks the stamp on each hand-back before merge.
 

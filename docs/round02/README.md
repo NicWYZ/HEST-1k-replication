@@ -71,7 +71,7 @@ The deck asked the advisors two things, what to do with the benchmark findings a
 
 ## Open threads
 
-- **The benchmark findings.** Whether they become an issue to the HEST authors, a note or a section of a paper is Nicolas's decision with David; contact with anyone outside the project is his alone, and on 6 November he decided there is none for now. The draft `i05/exec/hest_bench_issue_draft.md` has its IDC item struck and is unsent.
+- **The benchmark findings.** Whether they become an issue to the HEST authors, a note or a section of a paper is Nicolas's decision with David; contact with anyone outside the project is his alone, and on 6 November he decided there is none for now. The draft `hest_bench_issue_draft.md` (at tag `record-full-2026-11`) has its IDC item struck and is unsent.
 - **Questions for the HEST authors, unresolved:** NCBI785's add-on panel has 33 real genes in the panel-designer file and 41 in HEST's files; why NCBI784 is excluded from the IDC task; Table A4's four Janesick samples against three in GEO; no H&E scan provenance for any IDC sample (R5 report, section 8).
 - **Not checked:** donor identity for the nine unverifiable samples; bootstrap intervals on the variance components; diagnostics for the nested ANOVA; whether the session result holds beyond PRAD patient 2 (R8 report, section 10).
 - **Produced and not reported:** `results/round2/R6_theta/nuclear_area_by_resolution.csv`, `area_resolution_correlation.csv` and `variance_components.csv` have no report that reads them.
@@ -92,7 +92,7 @@ The deck asked the advisors two things, what to do with the benchmark findings a
 | `i05/exec/round2_closeout_decisions.md` | the closeout rulings and the specification of the numeric-claim sweep |
 | `i05/exec/round2_closeout_report.md` | the freeze at `round2-final` and the first sweep |
 | `i05/exec/round2_results_synthesis.md` | every result of rounds 1 and 2 ranked, with how each was obtained |
-| `i05/exec/hest_bench_issue_draft.md` | the unsent draft issue to the HEST authors, kept while its fate is undecided |
+| `hest_bench_issue_draft.md` (at tag `record-full-2026-11`) | the unsent draft issue to the HEST authors, kept while its fate is undecided |
 | `i01/deck/deck_figures_and_repo_update.md` | the specification of the seven deck figures, `deck_numbers.csv` and the repository refresh, which the figure scripts cite |
 | `i02/deck/post_deck_repo_instructions.md` | the triage policy for the numeric-claim gate and the donor-audit regeneration, which ten scripts cite |
 | `round02_methods_note.md` | the numeric-claim checker's exception classes |

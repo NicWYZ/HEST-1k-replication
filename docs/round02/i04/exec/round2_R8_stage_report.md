@@ -25,7 +25,7 @@ Numbers come from files, with the path. Dispersion accompanies every mean.
 | R8 raw heads | see § 8 | `results/faithful/raw_{ridge,xgb}__hoptimus1::*` |
 | 2.6 rank supplement | complete, third pass | `results/round2/R2_fold_hvg/rank_supplement__hoptimus0.csv` |
 | 2.7 IDC confusion | complete | `results/round2/R5c_leak/r5d_idc_partner_confusion.csv` |
-| 1.1 authors' draft | written, **not sent** | `docs/round02/i05/exec/hest_bench_issue_draft.md` |
+| 1.1 authors' draft | written, **not sent** | `docs/round02/README.md` (formerly `hest_bench_issue_draft.md`, at tag `record-full-2026-11`) |
 
 ---
 
@@ -282,7 +282,7 @@ set-overlap figure of 27.2/50 matches R2's independently computed 27.2 exactly.
 
 **IDC confusion (2.7).** Reported in § 2.1.
 
-**Documents.** `docs/round02/i05/exec/hest_bench_issue_draft.md` written and **not sent**, with the IDC attribution
+**Documents.** `docs/round02/README.md` (formerly `hest_bench_issue_draft.md`, at tag `record-full-2026-11`) written and **not sent**, with the IDC attribution
 flagged as blocking. README updated: scan resolution reframed as a proxy for scan session, key
 findings carrying the replicate leak in place of the withdrawn institution scalar, finding 5
 rewritten from an open question to the answer R4 supplies.

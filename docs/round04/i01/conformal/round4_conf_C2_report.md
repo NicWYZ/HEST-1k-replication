@@ -4,7 +4,7 @@
 
 Branch `round4-conformal`, tag `round4-conf-C2`. Written 1 to 2 October 2026. Plan
 `docs/round04/tracks/conformal/round4_conf_plan.md`, sections 1 to 11; the instruction is
-`docs/round04/i01/conformal/round4_conformal_track.md` on `main`; addendum 1 is plan section 10.
+`docs/round04/round04_methods_note.md` (formerly `round4_conformal_track.md`, at tag `record-full-2026-11`) on `main`; addendum 1 is plan section 10.
 
 ## 1. Stage and status
 

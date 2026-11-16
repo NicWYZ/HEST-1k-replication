@@ -678,7 +678,7 @@ since nothing downstream is interpretable.
 
 **Escalated to Nicolas.** The D0 proposal, meaning which sets and how much storage, before any
 download; any download beyond the approved sets, including whole-slide images; anything that would
-be sent to the HEST authors, so `docs/round02/i05/exec/hest_bench_issue_draft.md` stays unsent; anything touching the
+be sent to the HEST authors, so `docs/round02/README.md` (formerly `hest_bench_issue_draft.md`, at tag `record-full-2026-11`) stays unsent; anything touching the
 scientific framing of the two topics; and STFlow, which stays deferred.
 
 ---
@@ -1112,7 +1112,7 @@ instruction; those sections are left as they were, as the record of what earlier
    $+0.0652$ kept as a measurement and renamed as the value of a same-laboratory, same-instrument
    slide in the training pool across donors, with IDC's `leak_realised_in_shipped_split` set to
    `False`; READ's $+0.0901$ remaining the only same-specimen replicate figure.
-   `docs/round02/i05/exec/hest_bench_issue_draft.md` has its IDC item struck and stays unsent. The deck's `issue1`
+   `docs/round02/README.md` (formerly `hest_bench_issue_draft.md`, at tag `record-full-2026-11`) has its IDC item struck and stays unsent. The deck's `issue1`
    slide is on Nicolas's running list, not this session's.
 2. **The D2 layout finding is a property of the public data; no re-embedding.** The 28 anchor
    samples are already embedded from HEST-1k patches, so the expansion is internally consistent. Whether
@@ -1159,7 +1159,7 @@ Recorded here; it adds no action beyond what the stage sections below carry.
 2. README: property 1 withdrawn and rewritten per § 13.2 item 1; property 11 added; known limitations
    updated for the D2 layout, the subset relation, the CCRCC labels and the determinism note; the
    `raw_ridge` sentence and everything else untouched.
-3. `docs/round02/i05/exec/hest_bench_issue_draft.md`: IDC item struck with a dated note; stays unsent.
+3. `docs/round02/README.md` (formerly `hest_bench_issue_draft.md`, at tag `record-full-2026-11`): IDC item struck with a dated note; stays unsent.
 4. Two reading items, one hour each: the Immunity paper's patient table for CCRCC's donor count and
    any per-sample donor mapping, and `INT5`'s source record. Recorded in `donor_audit_r3.csv`.
 5. `docs/WAYS_OF_WORKING.md` gains three notes: (i) with fairshare near 0.007 jobs start through
@@ -1280,7 +1280,7 @@ fans out once it exists.
 | track | stages | writes |
 |---|---|---|
 | lead, before fan-out | § 13.4 item 1's audit file; this transcription | `results/round3/D3_audit/donor_audit_r3.csv`, `docs/round03/tracks/exec/round3_execution_plan.md` |
-| Housekeeping | H1 items 1 (the `superseded_label_set` tags), 2 to 5 | the tag column on committed round-3 tables, `README.md`, `docs/round02/i05/exec/hest_bench_issue_draft.md`, `docs/WAYS_OF_WORKING.md`, the banner on `docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`), and only the status, citation and notes columns of `donor_audit_r3.csv`, never `donor_id` |
+| Housekeeping | H1 items 1 (the `superseded_label_set` tags), 2 to 5 | the tag column on committed round-3 tables, `README.md`, `docs/round02/README.md` (formerly `hest_bench_issue_draft.md`, at tag `record-full-2026-11`), `docs/WAYS_OF_WORKING.md`, the banner on `docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`), and only the status, citation and notes columns of `donor_audit_r3.csv`, never `donor_id` |
 | Scores | A4a | `code/scripts/round3_a4_scores.py`, `results/round3/A4_scores/` except `a4b_*` |
 | HCP | A4b | `code/scripts/round3_a4b_hcp.py`, `results/round3/A4_scores/a4b_*` |
 | Inference | B1, then B2 | `code/scripts/round3_b1_ppi.py`, `code/scripts/round3_b2_semisynthetic.py`, `results/round3/B1_ppi/`, `results/round3/B2_semisynthetic/` |

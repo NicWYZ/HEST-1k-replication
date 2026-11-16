@@ -15,7 +15,7 @@ People, the cluster, the data, and what the project needs that the repository ca
 | Longleaf SSH access as `weiyang` | execution tracks |
 | The `project-record` skill for the oversight session and the `longleaf-provenance` skill for execution sessions | keeping the record, opening and closing rounds, stamping outputs on Longleaf |
 | Supplied papers in Nicolas's folder `~/hest-1k/ppi_conf_papers/` (and `fedlearn_papers/` for round 7), never committed | literature reads |
-| The private folder for full checks on unpublished manuscripts, `~/hest-1k/claude_project_docs/` on Nicolas's machine, outside every clone `[proposed]` | hard rule 8 |
+| The private folder for full checks on unpublished manuscripts, `~/hest-1k/claude_project_docs/` on Nicolas's machine, outside every clone | hard rule 8 |
 
 The full checks of round 7's overlap check and round 8's working notes are in that private folder, as are the other private documents the oversight session wrote.
 

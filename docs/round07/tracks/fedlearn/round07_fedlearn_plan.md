@@ -343,7 +343,7 @@ Four stages and a closing stage. Gates at F2 and F4. Transcribe this section int
 
 **Entry gate for interval i01.** This document is on `main`, Nicolas has made the clone and the papers folder of section 12, and the session can reach Longleaf and at least one literature source.
 
-1. Read this document, `docs/WAYS_OF_WORKING.md`, section 4 of `docs/round05/i02/ppi/round5_ppi_E2_decisions.md`, `docs/round07/00_prep/round07_advisor_directions.md`, `docs/round06/README.md` and sections 21 to 24 of `docs/reference/methods_and_state_of_play.md`.
+1. Read this document, `docs/WAYS_OF_WORKING.md`, section 4 of `docs/round05/i02/ppi/round5_ppi_E2_decisions.md`, `docs/round07/README.md` (formerly `round07_advisor_directions.md`, at tag `record-full-2026-11`), `docs/round06/README.md` and sections 21 to 24 of `docs/reference/methods_and_state_of_play.md`.
 2. Set up the clone and the branch (section 5), and transcribe section 7 into the plan with the starting commit's hash.
 3. Check which literature sources you can reach and record the result in the plan. At least a general web search, PubMed, arXiv, bioRxiv and medRxiv, PubMed Central, and the proceedings pages of NeurIPS, ICML, ICLR, AISTATS, MICCAI, MIDL and AAAI. Record for each whether you can open landing pages and whether you can fetch full texts.
 4. Write the search protocol into the plan. For each theme, the sources, the date range (2016 to the present for federated learning, earlier where a statistical foundation needs it), at least five query strings, the inclusion and exclusion criteria, and which papers count as core (those an answer to a question would rest on).
