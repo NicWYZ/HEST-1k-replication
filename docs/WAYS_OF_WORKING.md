@@ -1,134 +1,60 @@
 # Ways of working
 
-Procedures that earned their place by catching something, kept for the oversight chat and for any session that hands over a document. Execution sessions follow `docs/EXECUTION_RULES.md`, which states the evidence rules briefly. On 6 November 2026, when the record moved to the project-record skill, this file was cut to what is still in use. The Longleaf notes and data quirks moved to `docs/environment.md`, the guardrails register and the procedures of the per-gate memo workflow were removed, and the longer lessons stay in the repository's history and in the round documents that recorded them.
+Procedures that earned their place by catching something, each with the failure it prevents. They are for the oversight session and for any session that hands over a document. Execution sessions follow `docs/EXECUTION_RULES.md`, which states the evidence rules briefly. The record itself follows the `project-record` skill, round layout.
 
-## Audits by the oversight chat
+## Who checks what
 
-Each number has one owner, the session that produced it, which recomputes it once with its own code before handing over. The oversight chat audits a sample of each final report's numbers against the files at a round's close, reads the grid behind any headline it repeats, and has a fresh agent at its own tier, which did not see the drafting, check each brief before handover and the record at each close. In rounds 7 and 8 fresh-agent checks of gate memos and of round 8's scope caught a wrong conclusion, an unmatched comparison and a paper wrongly presented as new, each before handover (`docs/progress-log.md`, 14 and 19 October).
+Each number has one owner, the session that produced it, which has it recomputed once, independently of the code that produced it, before handing over. The oversight session reads the grid behind any headline it repeats, and settles in the round's summary any two reports that disagree. A fresh agent at the oversight session's own tier, which did not see the drafting, checks each brief before handover and the record at each close. Such checks once caught a wrong conclusion, an unmatched comparison and a paper wrongly presented as new, each before handover.
 
 ## Literature and novelty
 
-No result is called new without a documented literature check, which covers the survey-sampling and econometric literature as well as machine learning. Run it with independent subagents whose only task is to find the paper that already did it, continually while the work goes on, since the model tends to rediscover results it absorbed in training. Before calling a paper new to the project, search the repository for its arXiv number. Round 9's lesson is to start a search from a problem someone has met in practice and to run the deep search before any derivation, because candidates that a first search found open repeatedly fell to a deeper second search in another field (`docs/round09/README.md`, "Carried forward"). A citation carries an identifier that was opened and its read level (full text, abstract or secondary).
+No result is called new without a documented literature check, which covers the survey-sampling and econometric literature as well as machine learning. Run it with independent subagents whose only task is to find the paper that already did it, continually while the work goes on, since the model tends to rediscover results it absorbed in training. Before calling a paper new to the project, search the repository for its arXiv number. Start a search from a problem met in practice and run the deep search before any derivation, because candidates that a first search found open repeatedly fell to a deeper second search in another field (`docs/round09/README.md`). Extend an earlier logged search from its date rather than repeat it. A citation carries an identifier that was opened and its read level (full text, abstract or secondary).
 
 ## Documents
 
-**Briefs and masterplans stay living on `main` while a track runs** (Nicolas, 11 October 2026). The oversight chat revises them in place and pushes, and Nicolas tells the execution session to check for updates rather than pasting new instructions into it.
+**Briefs and masterplans stay living on `main` while a track runs.** The oversight session revises them in place and pushes, and the session that continues the track is told to check for updates.
 
-**A session is started by naming its track, with no kickoff text** (Nicolas, 8 November 2026). The Claude Science and Claude Code projects' instructions (`docs/project_instructions.md`) already tell a session to fetch the repository, check out its track's branch, read `docs/EXECUTION_RULES.md`, and write or resume its plan from the brief. So Nicolas names the track, for example "Your track is `final-runs` of round 10", and anything else the session needs goes in the brief. Round 10's kickoff file for `final-runs` repeated the instructions and the brief and was removed.
+**A brief names its track's folder and plan path.** A new round is filed by track, `docs/round<NN>/<track>/`, which holds the track's brief, plan, gate reports and notes, with file names carrying the full prefix. Every brief gives the plan's path there and says that the plan opens with a state block (`docs/EXECUTION_RULES.md`, section 1). Gate replies are written into the plan, not into a separate decision file.
 
-**A brief names its track's plan path and says the plan opens with a state block** (Nicolas, 8 November 2026). Execution sessions hand off through their track plan (`docs/EXECUTION_RULES.md`, section 1). The plan opens with a `state` block in the shape of `CLAUDE.md`'s, with `unit` set to the track, recording the step in hand, what the last run produced and where, the cluster jobs running with their IDs, the next action and anything waiting on Nicolas. So every brief the oversight chat writes gives the plan's path on the track branch, under `docs/roundNN/tracks/<track>/`, and says that the plan opens with that block. A session with no plan writes it first, and a later session resumes from the block alone.
-
-**Relabelling a claim means sweeping for it, not editing where you remember it.** When a term is
-renamed or a number withdrawn, edit the passages you know about, then sweep every affected file
-case-insensitively for the old term and every number being withdrawn, and read each hit. In round 2
-stage R0 the targeted edits were correct and still left three stale statements behind — a standing
-answer to a research question, a "what was not checked" item, and a figure caption — each of which
-asserted the opposite of the same document's new text. The sweep found all three. One-line version:
+**Relabelling a claim means sweeping for it, not editing where you remember it.** When a term is renamed or a number withdrawn, edit the passages you know about, then sweep every affected file case-insensitively for the old term and every number being withdrawn, and read each hit. In round 2 the targeted edits were correct and still left three stale statements behind, each asserting the opposite of the same document's new text, and the sweep found all three.
 
 ```bash
 grep -rniE 'confound-free|within-patient|0\.0419|institution' README.md docs/
 ```
 
-**A stage report is written once and then frozen.** Round 1 produced one comprehensive report at
-the end because it had no report-and-wait gates; that document is a record of what round 1
-concluded and is not edited afterwards, not even to add a pointer, because annotating a record is a
-smaller version of rewriting it. Corrections live in the current round's report and in the README.
-A consequence to state rather than hide: a frozen report still contains the claims later rounds
-withdrew, so the current round's report says which ones and where.
+**Numbers in a report are re-derived from files and checked against the text mechanically.** Build a claim-to-computed-value map and assert every entry, rather than spot-checking. Assert that no comparison value is a literal copied from the text, since an audit once compared a hard-coded constant against itself and could not have failed.
 
-**Numbers in a report are re-derived from files and checked against the text mechanically.** Build
-a claim-to-computed-value map and assert every entry, rather than spot-checking. Round 2's R0/R1
-report passed 40 of 40 claims this way — and the first pass of that same audit contained an entry
-that compared a hard-coded constant against itself, so it could not have failed. Assert that no
-comparison value is a literal copied from the text.
-
-**Read the whole grid before writing a headline from one corner of it.** Round 4's PPI Q3 report
-led with "the donor-weighted estimator loses to the classical one on every HEST task". The table
-behind it was taken at the largest number of labelled donors under one of the two targets, which
-was the one corner where the loss was general. Across the rest of the grid the same estimator
-gained on two of the three tasks. The numbers in the table were right and the sentence over them was
-too wide. Before a summary sentence goes into a report, tabulate the quantity over every axis the
-experiment varied and check that the sentence holds in each cell it claims.
+**Read the whole grid before writing a headline from one corner of it.** A round 4 report led with "the donor-weighted estimator loses to the classical one on every HEST task", from the one corner of the grid where the loss was general. Across the rest of the grid the same estimator gained on two of the three tasks. Before a summary sentence goes into a report, tabulate the quantity over every axis the experiment varied and check that the sentence holds in each cell it claims.
 
 ## Quoting a number
 
-**Read it back from the artifact, every time.** Two corrections in this round were the same
-failure: a number typed from memory into prose that the saved table did not contain. The second was
-in a message *correcting the first*. A number in a report, a message or a commit is quoted from the
-file it came from, in the same cell that reads the file — never from recollection of what the
-computation printed, and never carried across a table rebuild. When a table is recomputed on more
-data, every number already written from it is stale until re-read: R3's total sd stayed at the
-two-encoder value after the third encoder landed.
+**Read it back from the file, every time.** A number in a report, a message or a commit is quoted from the file it came from, never from recollection of what the computation printed, and never carried across a table rebuild. Twice in round 2 a number typed from memory into prose was not in the saved table, and the second time it was in a message correcting the first. When a table is recomputed on more data, every number already written from it is stale until re-read.
 
 ## Required before any document is handed over
 
-**Run the numeric-claim sweep and fix what it flags.** This is a required step, not advisory.
-The gate is two invocations over one document set. `code/scripts/sweep_table.py` ran the same
-two invocations over the flat layout of round 2 and is kept as that round's record, so use the
-commands below, which follow the layout by round of 9 October 2026. Run from the repository root:
+**Run the numeric-claim sweep and fix what it flags.** Run from the repository root:
 
 ```
-DOCS=$(git ls-files 'docs/*.md' 'docs/**/*.md' | grep -v -e deck_master_outline -e docs/moved.md)
+DOCS=$(git ls-files 'docs/*.md' 'docs/**/*.md')
 python code/scripts/verify_numeric_claims.py README.md $DOCS \
     --search-dir . --exceptions .verify-exceptions --derived .verify-derived \
     --always results/summary/deck_numbers.csv
-
-python code/scripts/verify_numeric_claims.py docs/round02/tracks/deck/deck_master_outline.md \
-    --search-dir . --exceptions docs/round02/tracks/deck/.verify-exceptions-deck --derived .verify-derived \
-    --always results/summary/deck_numbers.csv
 ```
 
-Each invocation exits non-zero if any claim is unresolved, so either can gate a handover.
+It exits non-zero if any claim is unresolved, so it can gate a handover. `--derived .verify-derived` supplies the formulas for claims that are a computation over cited files rather than a stored cell, and without it every one of them reads as unresolved. `--always results/summary/deck_numbers.csv` adds round 2's number table to the cited set of every scope. A track runs it over its own documents with its own exceptions file.
 
-**Why it is in this shape, since a shorter command does not reproduce the gate.**
-`--derived .verify-derived` supplies the formulas for claims that are a computation over cited
-files rather than a stored cell, and without it every one of them is read as unresolved.
-`--always results/summary/deck_numbers.csv` adds the deck's number table to the cited set of every
-scope, which is how the deck documents and the proposal quote it without repeating the citation in
-each paragraph. `docs/round02/tracks/deck/deck_master_outline.md` goes in its own invocation because it keeps its own
-exceptions file, `docs/round02/tracks/deck/.verify-exceptions-deck`; measured against the repository-root exceptions
-file it reports unresolved claims that it does not have. An earlier revision of this section printed
-the command without the last two flags, and run as printed it reported more unresolved claims than
-the gate does, on documents that pass it. The escalation that found this is in
-`docs/round03/i01/exec/round3_A1_stage_report.md`, under discrepancies, open questions and escalations.
+**Why.** The most recurrent defect of round 2 was a number typed from memory into a sentence whose citation was accurate: the named file was right and the value beside it was not in it. Re-reading your own prose does not catch this, because the sentence looks right.
 
-**Why.** The most recurrent defect of round 2 was a number typed from memory into a sentence
-whose *citation was accurate* — the named file was the right file, the value beside it was not in
-it. Review caught it twice: the COAD decomposition terms in the authors' draft (0.2938 and a
-0.026–0.163 range, both carried from round 1's superseded v3 decomposition), and two gene-set
-predictability values in an escalation message. Both read as checked, because the citation had
-been. Nothing else in the process catches this; re-reading your own prose does not, because the
-sentence looks right.
+**What it does.** For each claim scope (a paragraph, list item or table row) it pools the file paths cited anywhere in the enclosing subsection, extracts the numeric claims, loads each cited file, and reports any value it cannot find. A claim is satisfied by a literal value, a whole-column aggregate (mean, median, min, max, sum, std), or a group-wise aggregate over a low-cardinality key. Comparison is at the document's own precision, so 0.376 matches a stored 0.37610.
 
-**What it does.** For each claim scope — a paragraph, list item or table row — it pools the file
-paths cited anywhere in the enclosing subsection, extracts the numeric claims, loads each cited
-file, and reports any value it cannot find. A claim is satisfied by a literal value, a whole-column
-aggregate (mean, median, min, max, sum, std), or a group-wise aggregate over a low-cardinality key
-— because "mean over the three encoders for probe X" is a legitimate quotation that appears nowhere
-in the file as a cell. Comparison is at the document's own precision, so 0.376 matches a stored
-0.37610.
+**What it does not do.** It cannot tell you the cited file is the right file for the claim, and a value can be present in it and still be the wrong quantity. It cannot verify a ratio of two files' values, a scheduler fact, or a figure from a source outside the repository.
 
-**What it does NOT do, and this is the more dangerous half.** It cannot tell you the cited file is
-the *right* file for the claim. A value can be present in the cited file and still be the wrong
-quantity. The second review finding of round 2 turned on exactly that, and no script settles it.
-It also cannot verify a ratio of two files' values, a scheduler fact, or a figure from a source
-outside the repository.
-
-**`.verify-exceptions`** carries those, one `value<TAB>reason` per line. A value belongs there only
-if it is genuinely underivable from a cited file — a ratio, an accounting fact, a withdrawn figure
-quoted *as* erroneous, a round-1 result whose source file was not carried forward. It is not a
-place to silence a number you have not checked. Every number in a handover document is then either
-present in a cited file or has a written reason why not, which is the property worth having.
-
-**Read the `uncited` count, not just the failures.** A claim in a section that cites nothing is not
-verified — it is unchecked. At the round-2 freeze the three documents carried 286 verified claims,
-0 unresolved, and 102 uncited; the uncited ones are concentrated in summary prose and are the
-honest remaining gap, not a clean bill.
+**Exceptions files** carry those, one `value<TAB>reason` per line. A value belongs there only if it is genuinely underivable from a cited file (a ratio, an accounting fact, a withdrawn figure quoted as erroneous). It is not a place to silence a number you have not checked. Read the `uncited` count as well as the failures, since a claim in a section that cites nothing is unchecked, not verified.
 
 ## When the checker is wrong
 
 A false failure of the numeric-claim sweep is a defect in the checker, and it is fixed in the checker, never silenced with a declared exception. Report a limitation rather than working around it, and give every fix a test that the intended case now passes and that a planted genuine error is still caught. Five such defects once accounted for most of 688 unresolved claims, and each was found by a triage pass that refused to paper a claim over with an exception.
 
-## Deck conventions
+## Decks
 
-Speaker notes cover only what is on the slide. For advisor decks, no workflow or round language, formulas on the slide when theory is discussed, and every slide says why the step was taken (by 4 October). The speaker notes matter. They address every figure and every bullet point on the slide, read naturally as spoken prose, and on slides with results or heavy method end with an "in short" statement. Every slide is as legible as possible, with big labels, figures, text and formulas and little margin (19 October). The advisors know spatial transcriptomics, conformal prediction and PPI, so a deck has no background slides on them and supplies instead the context and motivation of the project's own steps (4 October, `docs/round05/00_prep/deck2/deck2_outline.md`). An advisor deck is meant to open discussion, so slides and notes stay lean, with the design and the message ahead of numerical results (19 October).
+The advisors know spatial transcriptomics, conformal prediction and PPI, so a deck has no background slides on them and supplies instead the context and motivation of the project's own steps. An advisor deck is meant to open discussion, so slides and notes stay lean, with the design and the message ahead of numerical results. No workflow or round language, formulas on the slide when theory is discussed, and every slide says why the step was taken. Every slide is as legible as possible, with big labels, figures, text and formulas and little margin. Speaker notes cover every figure and bullet on the slide, read naturally as spoken prose, and end with an "in short" statement on slides with results or heavy method. A figure is drawn from committed results files, and the file it comes from is recorded beside it. A deck is a deliverable, not part of the record, and the round's summary records what was presented and anything in it that later work changed.

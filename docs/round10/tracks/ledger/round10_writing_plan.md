@@ -1,3 +1,5 @@
+*8 November 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round10/README.md.*
+
 # Round 10, the writing plan for draft v1
 
 *8 November 2026. Written by the oversight chat as track `ledger`'s stage L3 output, for track `paper`, which drafts v1 after F4's pull request is merged (`../../masterplan.md`). It turns the applied outline of `../../00_prep/round10_findings_survey.md`, section 4.2, into a plan section by section. For each section it gives what the section says, the results it quotes and the final-runs stage they come from, the methods and their citations as the ledger records them (`../../i01/ledger/round10_ledger.md`), and what may and may not be claimed. Where Nicolas's L3 answer (`docs/round10/i02/ledger/`) differs, his answer wins.*

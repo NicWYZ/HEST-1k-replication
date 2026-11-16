@@ -1,26 +1,10 @@
-> **Closed record, dated 2026-09-16 (revision 2).** This report is not maintained; numbers in it may have been superseded by round 2 and later work.
+*16 September 2026, revision 2. Reviewed as tagged at `round2-final`. What stands now: `docs/round01/README.md`. Corrected since the tag.*
 
 # HEST-1k replication and instrumentation — final stage report
 
 *Revision 2, generated 2026-09-16 from the saved result tables.*
 
 **Repository:** `NicWYZ/HEST-1k-replication`, branch `main`.
-
-**What changed since revision 1.** Three things, all material to an audit:
-
-1. **`hoptimus1` completed** as the twelfth encoder on the primary head and is the new top
-   performer. It also reproduces the leaderboard *exactly*, which strengthens the fidelity result.
-2. **The repository was reorganised**, so every path in revision 1 is stale. Experiment
-   directories, the four head names, and the diagnostics layout all changed. This revision's links
-   are against the current tree, and every link was checked to resolve against it
-   (46 unique file paths and 12 directory paths).
-3. **D6 was opened and closed within this revision.** Three analysis tables carried head names made
-   stale by the rename and omitted `hoptimus1`. They are now derived by script rather than
-   hand-maintained, which also raised the per-task leaderboard comparison from 99 cells to
-   **108**.
-
-Two consequences for numbers quoted in revision 1: the between-encoder spread is **0.0977**, not
-0.0898 (it was an 11-encoder figure), so the leakage-to-spread ratio is **1.61×**, not 1.75×.
 
 ---
 
@@ -227,10 +211,11 @@ random repeats, 1,077 rows. [`results/tailored/splits/split_decomposition.csv`](
 test set*, so the same model scores higher on a more heterogeneous test set. Measured against how
 many patients the test set spans: **exactly 0.0000** inflation for the single-patient
 arms, **+0.1920** for the nine-patient random arms. All numbers below therefore use
-**within-patient** Pearson, with the pooled value retained so the artefact is measured rather than
+**within-slide** Pearson (computed per slide; on PRAD, COAD and READ, where a patient has more than
+one slide, it is not the per-patient value), with the pooled value retained so the artefact is measured rather than
 assumed.
 
-| mechanism | contrast | within-patient Pearson | vs encoder spread |
+| mechanism | contrast | within-slide Pearson | vs encoder spread |
 |---|---|---|---|
 | spatial adjacency | random − blocked | **0.0335** | 0.34× |
 | slide-level signature | blocked − patient | **0.1241** | 1.27× |
@@ -524,13 +509,10 @@ unaffected — the decomposition was run on three encoders, none of them `hoptim
 
 Revision 1 of this report initially quoted **0.3143** as the leakage gap. That figure
 was inflated by **0.1568** of pooled-Pearson aggregation artefact — 50% of it — and
-was retracted. The corrected figure is the within-patient
+was retracted. The corrected figure is the within-slide
 **0.1575** reported in § 3.4.
 
 The artefact's size is measured rather than asserted: pooled-minus-within inflation is exactly
 0.0000 for the single-patient arms and +0.1920 for the nine-patient random
 arms, scaling with test-set heterogeneity exactly as the mechanism predicts. Holding the metric
 fixed across designs is also what made the decomposition into named mechanisms possible at all.
-
-Separately, the encoder-spread denominator was **0.0977** once `hoptimus1` landed, not
-the 11-encoder 0.0898 quoted in revision 1, so the ratio in § 3.4 is 1.61×, not 1.75×.

@@ -1,3 +1,5 @@
+*27 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round09/README.md.*
+
 # Round 9, track fewcluster. How the paper could be built `[proposed]`
 
 27 October 2026. Written by the fewcluster session at Nicolas's request ("based on everything done so far since the very beginning, how would we construct a paper"). It draws on the round 7 closing decisions (`docs/round07/i04/ppi/round07_ppi_final_decisions.md`), the round 8 positioning note (`docs/round08/i01/positioning/round08_positioning_note.md`) and this track's notes (`round09_fewcluster_position.md`, `round09_fewcluster_sources_and_median.md`). Every part of it is a proposal for Nicolas, and D1 and R8-1 are his.

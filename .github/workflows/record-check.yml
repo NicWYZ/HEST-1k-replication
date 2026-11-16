@@ -1,8 +1,8 @@
-# Runs the record check on every push to main and every pull request, whatever surface
-# or account made the commit. Copy to .github/workflows/record-check.yml and set the
+# Runs the record check on every push to main and every pull request, whoever made the
+# commit. Copy to .github/workflows/record-check.yml and set the
 # script path. On a push to main the check fails (a red mark on the commit) when the
 # state is behind: commits after CLAUDE.md last changed, a live branch CLAUDE.md does
-# not name, a missing path, or CLAUDE.md over its limit. On a pull request it only
+# not name, a missing path, or CLAUDE.md over its line or word limit. On a pull request it only
 # reports, since a branch is expected to be ahead of main.
 #
 # Creating or changing this file needs a token with workflow permission. If a session's

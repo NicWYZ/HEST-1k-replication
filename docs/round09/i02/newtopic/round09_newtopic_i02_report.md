@@ -1,3 +1,5 @@
+*26 to 27 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round09/README.md.*
+
 # Round 9, track newtopic, the report of interval 2
 
 *26 to 27 October 2026. Written by the newtopic session. It closes steps F1 to F5 and F7 of `docs/round09/i02/newtopic/round09_newtopic_i02_plan.md`, with its amendment of 27 October. A fresh agent checked a draft against its sources before commit, and its findings are worked in. Recommendations are `[proposed]` until Nicolas decides.*

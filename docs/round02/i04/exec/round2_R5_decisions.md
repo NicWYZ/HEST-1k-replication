@@ -1,4 +1,4 @@
-> **Closed record, dated 19 September 2026.** Round-2 decision memo, supplied by Nicolas and committed in round 3's S0. Not maintained; numbers in it may have been superseded by later execution and results.
+*19 September 2026. Reviewed as tagged at `record-full-2026-11`. What stands now: `docs/round02/README.md`.*
 
 # Round 2: decisions on the R5 report and directives to the end of the round
 
@@ -20,7 +20,7 @@ There are no interim reports and no interim stop-and-report conditions. Anything
 
 **Not the session's decision, and not the oversight chat's.** Contacting the benchmark's authors is an action taken on behalf of the lab, and it is Nicolas's call with David. What the session does is prepare the material so that the decision can be made on a finished draft rather than a summary.
 
-Write `docs/round02/i05/exec/hest_bench_issue_draft.md` in the form of a GitHub issue, since HEST's README names issues as the preferred channel. It covers, in this order, the IDC same-donor pair with the 10x page's own `donorCount: 1` and replicate language quoted and the measured +0.0651 cost; the COAD patient field; READ's same-specimen pairs; the within-task gene-panel heterogeneity with the R2 and R5 tables; and, as questions rather than claims, the NCBI784 exclusion, the Table A4 count of four versus three, and the absence of any H&E scan provenance. Every number cites the repository file it comes from. The draft is committed and not sent.
+Write `hest_bench_issue_draft.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`) in the form of a GitHub issue, since HEST's README names issues as the preferred channel. It covers, in this order, the IDC same-donor pair with the 10x page's own `donorCount: 1` and replicate language quoted and the measured +0.0651 cost; the COAD patient field; READ's same-specimen pairs; the within-task gene-panel heterogeneity with the R2 and R5 tables; and, as questions rather than claims, the NCBI784 exclusion, the Table A4 count of four versus three, and the absence of any H&E scan provenance. Every number cites the repository file it comes from. The draft is committed and not sent.
 
 ### 1.2 The provenance audit before R6 (report § 10 item 2)
 

@@ -1,3 +1,5 @@
+*27 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round09/README.md.*
+
 # Round 9, track newtopic, the report of interval 3
 
 *27 October 2026. Written by the newtopic session. Frozen once committed. It answers the interval 3 plan, `docs/round09/i03/newtopic/round09_newtopic_i03_plan.md`, whose section 6 holds the results in more detail.*

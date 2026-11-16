@@ -9,8 +9,8 @@ data", applied to HEST-1k spatial transcriptomics and ACS PUMS 2018 income.
 **Contains no gated data** — see [What is not here](#what-is-not-here).
 
 This repository holds results, code and documentation. [`docs/README.md`](docs/README.md) is the
-guide to every document, round by round, and [`docs/progress-log.md`](docs/progress-log.md) says
-what was found at each step and why the project moved. [`CLAUDE.md`](CLAUDE.md) is the operating
+guide to every document, round by round, and each round's `README.md` under `docs/` says
+what the round found and what stands now. [`CLAUDE.md`](CLAUDE.md) is the operating
 file for the Claude sessions that work on the project, and its state block says where the project
 stands.
 

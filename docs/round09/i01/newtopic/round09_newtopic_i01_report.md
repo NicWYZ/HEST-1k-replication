@@ -1,3 +1,5 @@
+*26 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round09/README.md.*
+
 # Round 9, track newtopic, the report of interval 1
 
 *26 October 2026. Written by the newtopic session on Nicolas's Mac, linked to Longleaf. It closes steps N2, N2b, N3, N4 and N6 of the plan (`round09_newtopic_i01_plan.md`, with its amendment of 26 October). Step N5, a first test of a surviving candidate, was not reached. A fresh agent checked this report against its sources before it was committed, and its findings are worked in. Recommendations are `[proposed]` until Nicolas decides.*

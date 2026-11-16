@@ -1,3 +1,5 @@
+*30 September 2026. Reviewed as tagged at round4-data-v2. What stands now: docs/round04/README.md.*
+
 # Round 4 data pull, acceptance of the P7 report and the decisions it asked for
 
 30 September 2026. Written by the oversight chat after reading `docs/round04/i01/data/round4_data_report.md` at tag `round4-data` (HEAD `2905525`) and checking its numbers against the files it names. Nicolas hands this to the session that will run the short addendum in section 3. The two track documents have been revised to match; they start from the tag this addendum produces.
@@ -26,7 +28,7 @@ Predictions scored as the report scores them. Prediction 2 was mine and was wron
 15. **Job names.** Accepted. The track documents now say that jobs are identified by Slurm id and that the intended prefix is recorded in `PROVENANCE.txt` rather than in `--job-name`.
 16. **Frame id in the P3 provenance.** Accepted. The track documents now tell sub-agents to call `stamp_dir()` from their own process so the frame id is theirs.
 17. Noted. 18. Noted; both tracks may use `rc_tengfei_pi`.
-19. **The ten unresolved claims** in `docs/round02/tracks/deck/deck_speaker_scripts.md` and `docs/round00/first_year_ST_project_proposal.md` predate round 3 and stay as they are. They are a round-5 housekeeping item, and the numeric-claim gate for the tracks runs over the README and the tracks' own documents, as their instructions say.
+19. **The ten unresolved claims** in `deck_speaker_scripts.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`) and `docs/round00/first_year_ST_project_proposal.md` predate round 3 and stay as they are. They are a round-5 housekeeping item, and the numeric-claim gate for the tracks runs over the README and the tracks' own documents, as their instructions say.
 
 Proposed edits 1, 2 and 4 are applied in the addendum. Edit 3 (the v2 extension schema) is applied. Edit 5 (making `morphology_features.py` importable) is deferred; nothing in round 4 calls it. The `docs/README.md` index entries are applied, and this memo is added to them.
 

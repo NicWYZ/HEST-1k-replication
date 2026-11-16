@@ -1,3 +1,5 @@
+*26 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round09/README.md.*
+
 # Round 9, track fewcluster, novelty verdict on the tuned-coefficient frontier
 
 *26 October 2026. Written by the fewcluster session after the novelty check NOV7 returned. It records the verdict that `round09_fewcluster_tuned.md` left pending, and is not an edit of that note. The logs are in `results/round9/fewcluster/novelty/` (`novelty_NOV7_TUNED_queries.csv`, `novelty_NOV7_TUNED_candidates.csv`, `novelty_NOV7_structured.json`, 32 queries).*

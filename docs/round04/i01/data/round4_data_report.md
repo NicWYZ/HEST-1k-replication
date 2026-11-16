@@ -1,7 +1,9 @@
+*28 September 2026. Reviewed as tagged at round4-data. What stands now: docs/round04/README.md.*
+
 # Round 4, stage P: the data pull, report
 
 Instruction: `docs/round04/i01/data/round4_data_pull.md`, transcribed in `docs/round04/tracks/data/round4_data_plan.md`, with the
-oversight chat's P1 decision (`docs/round04/i01/data/round4_data_P1_decision.md`) recorded as the plan's
+oversight chat's P1 decision (`round4_data_P1_decision.md` (at tag `record-full-2026-11`; its content now in `docs/round04/tracks/data/round4_data_plan.md`)) recorded as the plan's
 section 8. Format: the instruction's section 8. Date: 28 September 2026.
 
 ## 1. Stage and status
@@ -301,7 +303,7 @@ lung. Source: `results/round4/data/P3_morphology/morphology_ext_pooled.csv`.
     over README and every document, on the synced Longleaf working copy at `a6d5d44` (job `2812030`).
     - Every claim in this report and in `docs/round04/tracks/data/round4_data_plan.md` resolves.
     - The deck outline invocation resolves every claim.
-    - The main invocation leaves 10 claims unresolved: 5 in `docs/round02/tracks/deck/deck_speaker_scripts.md` and 5 in
+    - The main invocation leaves 10 claims unresolved: 5 in `deck_speaker_scripts.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`) and 5 in
       `docs/round00/first_year_ST_project_proposal.md`.
 
     Both documents entered at `80f1ae5`, which precedes the round-3 tag. Stage P changed no file
@@ -331,7 +333,7 @@ lung. Source: `results/round4/data/P3_morphology/morphology_ext_pooled.csv`.
 - `docs/round04/tracks/data/round4_data_plan.md`: round 4 stage P, the transcription of the data-pull instruction and the
   P1 decision.
 - `docs/round04/i01/data/round4_data_report.md`: round 4 stage P, the data-pull report and gate (tag `round4-data`).
-- `docs/round04/i01/data/round4_data_pull.md` and `docs/round04/i01/data/round4_data_P1_decision.md`: the
+- `docs/round04/i01/data/round4_data_pull.md` and `round4_data_P1_decision.md` (at tag `record-full-2026-11`; its content now in `docs/round04/tracks/data/round4_data_plan.md`): the
   instruction and the oversight chat's P1 decision.
 
 ## 8. What was not checked

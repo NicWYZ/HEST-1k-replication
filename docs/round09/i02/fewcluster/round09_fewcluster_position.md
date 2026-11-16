@@ -1,3 +1,5 @@
+*27 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round09/README.md.*
+
 # Round 9, track fewcluster, position note (step I2-5)
 
 *27 October 2026, early morning. Written by the fewcluster session for Nicolas's decision D1, after the last novelty pass (NOV8) and the exact computations of I2-6. It gathers what the track has established, what of it is new on the evidence, and what it would contribute to the PPI paper. It replaces nothing. The theorem notes stay the record of the statements and proofs. Recommendations are `[proposed]`.*

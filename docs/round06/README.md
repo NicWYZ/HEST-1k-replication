@@ -1,15 +1,19 @@
-# Round 6, moved to the textual project's repository
+# Round 6, the cheatsheet experiment (11 to 13 October 2026), moved to `NicWYZ/textual-st-histology`
 
-Round 6 was David's cheatsheet experiment (11 to 13 October 2026) and its extension on held-out CCRCC patients. A writer agent saw labelled spots and wrote a text cheatsheet of limited size, and a separate predictor agent used only that cheatsheet to predict expression.
+Round 6 was David's cheatsheet experiment and its extension on held-out CCRCC patients. A writer agent saw labelled spots and wrote a text cheatsheet of limited size, and a separate predictor agent (Opus 5.5, one trial per cell, medium effort after the pilot) used only that cheatsheet to predict 50 genes from H&E patches.
 
 ## What the round established
 
-With a size-limited cheatsheet, Opus did not beat a pathology foundation model on unseen spots, and it reached 0.8 on seen spots only by copying. In the extension on held-out CCRCC patients, any rubric-bound cheatsheet helped, size did not, and none reached the pathology model. The full account is in the new repository's `docs/round06/README.md`.
+- On the slide the writer had seen, the mean within-slide Pearson reached 0.8 only at the largest size, 0.903 at 262,144 bytes, and only by copying, since that cheatsheet listed every spot with its 50 gene values (`docs/round06/i03/cheatsheet/round06_cheatsheet_final_decisions.md`, section 2 item 1).
+- On unseen spots no cheatsheet, and no session holding the labels, beat the `uni_v2` benchmark head fitted on the same spots: 0.621 against 0.757 on an unseen region and 0.672 against 0.683 on a second patient, the latter within one trial's noise (same file, item 2).
+- In the extension on three held-out CCRCC patients, zero-shot prediction scored $-0.009$, every one of nine rubric-bound cheatsheets from 256 to 65,536 bytes beat it at 0.041 to 0.158, accuracy did not rise with size (rank correlation $-0.017$), and none reached the `uni_v2` head at 0.184 (`docs/round06/i06/cheatsheet/round06_cheatsheet_C7_decisions.md`, section 2 items 1 to 3).
 
-## Where the record is now
+These hold for one model, one trial per cell, and writers that learned from a few patients. The round did not test David's proposal of a database written over many training pairs. The paths above are in the new repository.
 
-On 19 October 2026, by Nicolas's decision, the round's record, scripts and results moved to the private repository `NicWYZ/textual-st-histology`, which now holds the whole textual project. That repository was called `NicWYZ/hest-r6-data` before the move. The files there keep the paths they had here, so `docs/round06/README.md` in that repository is the round's reading guide, and every path written in this repository's documents under `docs/round06/`, `results/round6/` or `code/scripts/round6_cheatsheet*` resolves there. The copy was made from commit `33d7b1e98565110256762a28e79254aea0b9b72f` of this repository and checked by md5 for all 274 files. `docs/moved.md` lists what moved.
+## Where the work is
 
-The round's git tags (`round6-cheatsheet-C1`, `round6-cheatsheet-C5`, `round6-cheatsheet-C7`, `round6-cheatsheet-final` and `round6-close`) stay in this repository, together with the history of every moved file.
+The round's record, scripts and results are in the private repository `NicWYZ/textual-st-histology`, which holds the whole textual project, at the paths they had here. Its `docs/round06/README.md` is the round's summary, and every path under `docs/round06/`, `results/round6/` or `code/scripts/round6_cheatsheet*` in this repository's documents resolves there. The copy was made from commit `33d7b1e98565110256762a28e79254aea0b9b72f` of this repository and checked by md5 for all 274 files. The round's tags (`round6-cheatsheet-C1`, `round6-cheatsheet-C5`, `round6-cheatsheet-C7`, `round6-cheatsheet-final`, `round6-close`) and the history of every moved file stay in this repository.
 
-The round 5 explainer `00_prep/round06_round5_results_explained.md` stays in this folder, since it belongs to the PPI and conformal work and was only written during round 6.
+## Presented outside the project
+
+The advisor meeting of 12 October discussed round 6, and the textual line continued in its own repository after it. What the advisors said is recorded in `round07_advisor_directions.md` (at tag `record-full-2026-11`; summarised in `docs/round07/README.md`).

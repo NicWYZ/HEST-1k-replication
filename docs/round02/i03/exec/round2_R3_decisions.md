@@ -1,4 +1,4 @@
-> **Closed record, dated 18 September 2026.** Round-2 decision memo, supplied by Nicolas and committed in round 3's S0. Not maintained; numbers in it may have been superseded by later execution and results.
+*18 September 2026. Reviewed as tagged at `record-full-2026-11`. What stands now: `docs/round02/README.md`.*
 
 # Round 2: decisions on the R3 report and directives for R4 through R7
 

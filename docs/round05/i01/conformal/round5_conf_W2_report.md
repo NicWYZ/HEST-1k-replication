@@ -1,6 +1,8 @@
+*8 October 2026. Reviewed as tagged at `round5-conf-W2`. What stands now: docs/round05/README.md.*
+
 # Round 5, prediction-set track: gate report at W2 (W0, W1, W2, and the state of W4)
 
-Branch `round5-conformal`, from `main` at `d82c3f3`. Plan `docs/round05/tracks/conformal/round5_conf_plan.md`, which transcribes sections 6 and 7 of `docs/round05/i01/conformal/round5_conformal_track.md`. The plan's section 4 lists eleven points in the instruction or the run that look wrong or unclear, and its section 5 records Nicolas's instructions and the two local-compute extensions. This is the report-and-wait gate. Nothing after W2 has been set up, staged or piloted. Pull request: #16 (https://github.com/NicWYZ/HEST-1k-replication/pull/16), the only pull request for this gate. Tag: `round5-conf-W2`.
+Branch `round5-conformal`, from `main` at `d82c3f3`. Plan `docs/round05/tracks/conformal/round5_conf_plan.md`, which transcribes sections 6 and 7 of `round5_conformal_track.md` (at tag `record-full-2026-11`; its content now in `docs/round05/round05_methods_note.md`). The plan's section 4 lists eleven points in the instruction or the run that look wrong or unclear, and its section 5 records Nicolas's instructions and the two local-compute extensions. This is the report-and-wait gate. Nothing after W2 has been set up, staged or piloted. Pull request: #16 (https://github.com/NicWYZ/HEST-1k-replication/pull/16), the only pull request for this gate. Tag: `round5-conf-W2`.
 
 ## 1. Stage and status
 

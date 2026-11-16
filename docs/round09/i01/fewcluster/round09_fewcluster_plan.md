@@ -1,3 +1,5 @@
+*26 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round09/README.md.*
+
 # Round 9, track fewcluster, interval 1 plan
 
 *26 October 2026. Written by the fewcluster session at the start of its work, after reading the brief, the round 9 masterplan, the round 8 positioning note in full, the direction scan, the probe documents and the SIGN, PROXY and SENS verdicts. Living until the interval's first decision memo, then frozen. Recommendations are `[proposed]`.*

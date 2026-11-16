@@ -1,3 +1,5 @@
+*26 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round09/README.md.*
+
 # Round 9 preparation, the normalization check
 
 *26 October 2026. The claude-science session. It follows `round09_stud_and_depth.md`, which is not edited.*

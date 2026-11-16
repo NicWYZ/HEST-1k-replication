@@ -1,8 +1,6 @@
+*13 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round07/README.md.*
+
 # Round 7, masterplan
-
-*Frozen at the close of round 7, 15 October 2026.*
-
-*Living while the round runs. The oversight chat revises it by appending dated amendments at the end, and the text above them is not rewritten. It is frozen at the round's close.*
 
 Written on 13 October 2026 by the oversight chat, after Nicolas confirmed the skeleton in chat the same day. The full instruction to the execution session of the one track opened now is `i01/fedlearn/round07_fedlearn_track.md`.
 
@@ -12,7 +10,7 @@ Round 6 closed on 13 October with David's cheatsheet experiment and its extensio
 
 Two things changed before the round opened.
 
-**A new line of work from the advisor meeting of 12 October** (`00_prep/round07_advisor_directions.md`). David argued that predicting expression from foundation-model embeddings of H&E has reached a bottleneck in accuracy, and proposed a textual knowledge base written by agents over many training pairs. Dr. Zhu objected that text loses information, and proposed federated learning, gathering training information as summary statistics from centers around the world. Nicolas's assignment for the week is a literature review of the viability of federated learning for this problem, toward a methods paper that proposes a federated method and argues for the direction. It is preliminary and a proof of concept. It is a second paper, alongside the PPI paper.
+**A new line of work from the advisor meeting of 12 October** (`round07_advisor_directions.md` (at tag `record-full-2026-11`; summarised in `docs/round07/README.md`)). David argued that predicting expression from foundation-model embeddings of H&E has reached a bottleneck in accuracy, and proposed a textual knowledge base written by agents over many training pairs. Dr. Zhu objected that text loses information, and proposed federated learning, gathering training information as summary statistics from centers around the world. Nicolas's assignment for the week is a literature review of the viability of federated learning for this problem, toward a methods paper that proposes a federated method and argues for the direction. It is preliminary and a proof of concept. It is a second paper, alongside the PPI paper.
 
 **An overlap check of the PPI paper** (`00_prep/round07_overlap_check.md`). Nicolas asked whether a group member's unpublished manuscript on choosing which slides receive a spatial transcriptomics assay changes the paper's direction. It does not, since it makes no inferential claim. In writing the check, the oversight chat noted that a cohort chosen by a deterministic or outcome-dependent selection rule cannot be analysed with design-based PPI, which is what round 5's open question addresses. The check also found public work that changes what the paper can claim as new, above all Broska and Howes, "Cluster-Robust Prediction-Powered Inference" (arXiv:2610.09601, 7 October 2026), which gives large-sample cluster-robust PPI++ with partly labelled clusters. The details of the manuscript are kept out of this public repository by Nicolas's decision.
 
@@ -35,7 +33,7 @@ Papers the session cannot retrieve go to Nicolas as one list of at most 10 durin
 
 **ppi,** not opened now. Nicolas decided on 13 October that the positioning comes first. The oversight chat reads Broska and Howes and "Balanced Active Inference" (Chen, Zhou, Peng and Wang, NeurIPS 2025) in full and writes a positioning note in `oversight/`. If Nicolas then accepts the reframed question (open question O2), the oversight chat writes the PPI instruction into `i01/ppi/`, the track's own first interval, as an amendment to this masterplan, with stages for the Horvitz-Thompson and Hájek weighting under rejective selection balanced on embedding components, a randomised counterpart of an adaptive selection policy, and the coverage of a deterministic rule. Its compute would be Longleaf, as in round 5.
 
-**conformal.** No work is planned. Its readings stand (`docs/round05/i03/conformal/round5_conformal_W5_decisions.md`, section 3), and nothing in the overlap check touches it.
+**conformal.** No work is planned. Its readings stand (`round5_conformal_W5_decisions.md`, section 3 (at tag `record-full-2026-11`)), and nothing in the overlap check touches it.
 
 ## Schedule
 

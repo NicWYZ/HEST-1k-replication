@@ -1,4 +1,4 @@
-> **Closed record, dated 2026-09-16.** This review is not maintained; numbers in it may have been superseded by round 2 and later work.
+*16 September 2026. Reviewed as tagged at `round2-final`. What stands now: `docs/round02/README.md`. Corrected since the tag.*
 
 # Review of the HEST-1k replication and instrumentation
 
@@ -46,7 +46,7 @@ Approve OD1, OD3, OD4.
 
 Valid and important. The script computes both metrics side by side, and the measured inflation (zero for single-patient test sets, +0.19 for nine-patient ones) is the empirical version of the variance decomposition we derived. Keep.
 
-One correction to the label. `score()` in `split_decomposition.py` computes the correlation per *sample* (`samp` is the slide ID from the filename), averages over genes, then over slides. That is within-slide Pearson, not within-patient. For tasks where each patient contributes one slide the two coincide. For PRAD (2 patients, 23 slides), COAD (one patient with 3 slides plus a fourth of unknown patient), READ and LYMPH_IDC (2 slides per patient), they do not, and the "patient" design's within-slide number is not the benchmark's number for those tasks. Within-slide is the better-behaved metric, so keep it; just call it what it is throughout the report and note that it differs from Table 1 on multi-slide tasks.
+One correction to the label. `score()` in `split_decomposition.py` computes the correlation per *sample* (`samp` is the slide ID from the filename), averages over genes, then over slides. That is within-slide Pearson, not within-patient. For tasks where each patient contributes one slide the two coincide. For PRAD (2 patients, 23 slides), COAD (one patient with 3 slides plus a fourth of unknown patient), and READ (2 slides per patient), they do not, and the "patient" design's within-slide number is not the benchmark's number for those tasks. Within-slide is the better-behaved metric, so keep it; just call it what it is throughout the report and note that it differs from Table 1 on multi-slide tasks.
 
 ### 5.2 The split decomposition
 
@@ -69,7 +69,7 @@ Three things the labels overstate.
 | READ | 0.051 | 0.120 | 0.171 |
 | SKCM | 0.030 | 0.144 | 0.174 |
 
-The pooled 0.124 is a mean over tasks that differ in what the term contains. Report it per task, and add a leave-one-slide-out-within-patient arm for PRAD, COAD, READ and LYMPH_IDC so the slide and patient components can be separated where they differ.
+The pooled 0.124 is a mean over tasks that differ in what the term contains. Report it per task, and add a leave-one-slide-out-within-patient arm for PRAD, COAD and READ so the slide and patient components can be separated where they differ.
 
 **The adjacency term is a lower bound.** The blocked design holds out whole grid cells but imposes no buffer, so test spots on a block edge still have training neighbours one pitch away. The nearest-training-spot distance widened by a median 2.8× (verified in `spatial_block_probe.csv`), which is a real change, but adjacency is only partially broken. A buffered block design would give a cleaner number. This is a refinement, not a flaw.
 
@@ -165,7 +165,7 @@ Ordered by how much they change conclusions. All run on cached embeddings; none 
 
 1. **Refit the head with an intercept** and confirm Pearson unchanged and $R^2$ positive. Blocks Topic A.
 2. **Add `pixel_size_um_estimated` to the joined metadata** and re-run every probe and shift table stratified by it or with it as a covariate.
-3. **Split decomposition:** report per-task terms with fold dispersion; add a leave-one-slide-out-within-patient arm for PRAD, COAD, READ, LYMPH_IDC; add a buffered block variant and two more grid sizes; relabel the metric as within-slide.
+3. **Split decomposition:** report per-task terms with fold dispersion; add a leave-one-slide-out-within-patient arm for PRAD, COAD, READ; add a buffered block variant and two more grid sizes; relabel the metric as within-slide.
 4. **Relabel the IDC contrast** as "novel slide, same generating lab, different scan resolution," report the four per-slide gaps, and remove 0.0419 from the headline table.
 5. **Probes:** move technology and cohort-source probes to an appendix; report the IDC probe as inconclusive; add the PRAD patient 2 within-patient slide probe.
 6. **README:** remove "Private," update 99 to 108 cells, and add the resolution table from 5.3 to the known-limitations section.

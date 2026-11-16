@@ -1,4 +1,4 @@
-> **Closed record, dated 2026-09-16.** This plan is not maintained; numbers in it may have been superseded by later execution and results.
+*16 September 2026. Reviewed as tagged at `round2-final`. What stands now: `docs/round02/README.md`. Corrected since the tag.*
 
 # Round 2 execution plan: from replication to project motivation
 
@@ -111,7 +111,7 @@ Run for `hoptimus0`, `uni_v2`, `virchow`, `resnet50`.
 
 `blocked_buffered`: after choosing test blocks as in v3, remove from training every spot within a buffer distance of any test spot on the same slide. Buffer = 2.5 spot pitches, where pitch is read per sample from `spot_pitch_px` in `fig3e_gate.csv` or recomputed from coordinates (Visium: 100 µm; Xenium pseudo-spots: 55 µm, no gap). Record the buffered training size. To keep `n_train` matched to the other arms, subsample the *other* arms' training sets down to the buffered size in a separate matched comparison, and report both.
 
-`slide_out`: only for tasks where some patient has more than one slide (PRAD, COAD, READ, LYMPH_IDC). For each slide $s$ of patient $p$: test on $s$; train on every other slide, including the other slides of $p$. This is "slide unseen, patient seen." Match `n_train` to the patient design by subsampling.
+`slide_out`: only for tasks where some patient has more than one slide (PRAD, COAD, READ; LYMPH_IDC's four samples are four patients). For each slide $s$ of patient $p$: test on $s$; train on every other slide, including the other slides of $p$. This is "slide unseen, patient seen." Match `n_train` to the patient design by subsampling.
 
 **Grid sweep.** Run `blocked` and `blocked_buffered` at grid sizes 4, 6 and 10. Report the adjacency term at each.
 

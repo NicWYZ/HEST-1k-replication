@@ -1,3 +1,5 @@
+*19 September 2026. Reviewed as tagged at `round2-final`. What stands now: `docs/round02/README.md`. Corrected since the tag.*
+
 # Round 2, stages R5b to R8: stage report
 
 Prepared 19 September 2026 for the oversight chat. Covers R5b (donor provenance audit), R5c
@@ -23,7 +25,7 @@ Numbers come from files, with the path. Dispersion accompanies every mean.
 | R8 raw heads | see § 8 | `results/faithful/raw_{ridge,xgb}__hoptimus1::*` |
 | 2.6 rank supplement | complete, third pass | `results/round2/R2_fold_hvg/rank_supplement__hoptimus0.csv` |
 | 2.7 IDC confusion | complete | `results/round2/R5c_leak/r5d_idc_partner_confusion.csv` |
-| 1.1 authors' draft | written, **not sent** | `docs/round02/i05/exec/hest_bench_issue_draft.md` |
+| 1.1 authors' draft | written, **not sent** | `hest_bench_issue_draft.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`) |
 
 ---
 
@@ -78,7 +80,7 @@ Evidence now on both sides, none of it decisive:
 - **For**: of the TENX slides' classification errors (`results/round2/R5c_leak/r5d_idc_partner_confusion.csv`),
   **123 of 128 (96.1%)** land on the partner TENX slide against 33.3%
   expected if spread over the other three (binomial p = 7.3e-52 against chance 1/3; a binomial-test
-  p-value, not a stored cell — see Changelog), in all three
+  p-value, not a stored cell), in all three
   encoders — though slide identity is decodable at 0.987–0.997
   (`results/round2/R5c_leak/r5d_slide_confusion_summary.csv`, `balanced_acc` for IDC)
   so this reads only the 0.49% of spots that are
@@ -280,7 +282,7 @@ set-overlap figure of 27.2/50 matches R2's independently computed 27.2 exactly.
 
 **IDC confusion (2.7).** Reported in § 2.1.
 
-**Documents.** `docs/round02/i05/exec/hest_bench_issue_draft.md` written and **not sent**, with the IDC attribution
+**Documents.** `hest_bench_issue_draft.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`) written and **not sent**, with the IDC attribution
 flagged as blocking. README updated: scan resolution reframed as a proxy for scan session, key
 findings carrying the replicate leak in place of the withdrawn institution scalar, finding 5
 rewritten from an open question to the answer R4 supplies.
@@ -413,16 +415,3 @@ Per the memo these are recorded rather than halting work. None was acted on outs
 5. **For Topic A**, R7's within-task result (§ 5) says between-donor biological variance does not
    explain which genes a patient split costs most — so a donor-level random effect alone will not
    absorb the penalty, and the replicate result points at what does.
-
----
-
-## Changelog
-
-- § 8 now states explicitly that H-optimus-1's "rank 7 of 12" on `raw_ridge` is on the **all-10-task**
-  convention (`r8_raw_head_leaderboard.csv`); on the paper's own nine-task convention (HCC excluded,
-  `avg_paper9` in `results/summary/results_encoder.csv`) it is rank 6 of 12 instead. Both conventions
-  are recorded side by side in `results/round2/R8_raw_heads/r8_task_set_convention.csv`. No ranking or
-  score changed — only the convention is now named, per the parent's explicit guidance for this doc.
-- Added citations in § 2.1 to `r5d_idc_partner_confusion.csv` (the 33.3%-chance-share figure) and
-  `r5d_slide_confusion_summary.csv` (the 0.987–0.997 decodability range), which the text discussed
-  without naming.

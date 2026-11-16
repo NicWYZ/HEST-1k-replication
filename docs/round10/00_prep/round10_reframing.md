@@ -1,3 +1,5 @@
+*6 November 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round10/README.md.*
+
 # The reframing of 6 November 2026, and a proposal for round 10
 
 *6 November 2026. Written by the oversight chat. Section 1 quotes what Nicolas said, under the record's rule that a decision or preference he states goes into the repository in the same session, dated and in his terms. Everything from section 2 on is the oversight chat's reading and proposal, `[proposed]` until he decides, including the description of the paper as an applied statistics paper. The findings this builds on are in `round10_findings_survey.md`. A fresh agent checked this document before it was committed and its findings were worked in.*
@@ -16,7 +18,7 @@ The oversight chat reads this as four standing points and one instruction. The a
 
 **Standing lines of `CLAUDE.md` that the reframing touches.** Five lines bear on it, and each is handled as follows.
 
-- The opening paragraph's record that the advisors want methods, not applied analysis. That is a fact about the advisors which Nicolas cannot supersede alone, so it stands until he confirms the reframing with them (decision 1). `docs/project_instructions.md`, and the project instructions pasted from it into the two Claude projects, carry the same line and are updated after decision 1.
+- The opening paragraph's record that the advisors want methods, not applied analysis. That is a fact about the advisors which Nicolas cannot supersede alone, so it stands until he confirms the reframing with them (decision 1). `project_instructions.md` (at tag `record-full-2026-11`), and the project instructions pasted from it into the two Claude projects, carry the same line and are updated after decision 1.
 - The working rule of 24 October that the end goal is a statistics-forward methodological paper. Marked superseded by this document, pending decision 1.
 - The "Aims" working rule that Nicolas prefers ML venues or top statistics journals. Decision 2 asks him whether an applied statistics journal is now the target, and the line stands until then.
 - The "Autonomy and novelty" rule that a research session explores, derives and validates on its own. Section 6 proposes a gate before any derivation, which narrows that rule, and the narrowing is part of decision 11.

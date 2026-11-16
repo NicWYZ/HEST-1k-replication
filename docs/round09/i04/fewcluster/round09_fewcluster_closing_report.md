@@ -1,3 +1,5 @@
+*27 October 2026, committed 6 November 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round09/README.md. Corrected since the tag.*
+
 # Round 9, track fewcluster, the closing report
 
 *27 October 2026. Written by the fewcluster session at Nicolas's request ("record the track's state in the repo and close this track now"). Frozen once committed. It closes track `fewcluster` (option B, valid inference with few labelled clusters) of round 9. The round itself closes through `/project-state-keeping` once both tracks have closed and Nicolas has decided how the branches are merged (masterplan, D4).*
@@ -23,13 +25,7 @@ All statements are for intervals that move with the data (location and scale equ
 
 ## 3. Corrections and withdrawn readings
 
-1. The fixed frontier is $\kappa_2(k^\ast - 1)$, not $\kappa_2(k^\ast)$ (interval 1 verifier).
-2. A spike at a high-leverage cluster is cheaper in max-share down to a floor of about 0.21 to 0.25 at 24 clusters, not invisible (`i02/fewcluster/round09_fewcluster_tuned.md`, section 4).
-3. Claim B (a bounded-residual interval) is in print in the PPI paper's appendices, claim D (what the design buys) mostly so, and Lemma 0 is folklore (`i01/fewcluster/round09_fewcluster_decision.md`).
-4. A single pooled cap on every unit's share is the wrong class when strata differ in size, which refuted R4 and led to the box class. That class was defined after R4 failed, and HEST tested it.
-5. Of the 13 predictions written in interval 3, 7 held, 5 were refuted (R3, R4, R5b, W3, W6) and 1 was not tested (R5, superseded by R5b). The session's chat report of 27 October said six were refuted, which was wrong.
-6. Pötscher and Preinerstorfer's Theorem 5.1 gives sufficient conditions, not an equivalence. A loose band certificate exists at 12 of 24 near the frontier ($c = 196.1$). Further slips in checker files are listed in `i03/fewcluster/round09_fewcluster_i03_corrections.md`.
-7. Round 5's variance defect may affect the tuned intervals reported in rounds 5 to 7. That depends on how each task coded the level of the predictions, and it is not checked.
+The corrections this section listed are settled in the documents they concern and in the round's summary, `docs/round09/README.md`, which says what stands.
 
 ## 4. Carried forward
 
@@ -55,4 +51,4 @@ All statements are for intervals that move with the data (location and scale equ
 
 ## 5. Read first next round
 
-The paper draft (`docs/round09/tracks/fewcluster/paper_draft_v0.md`), then Theorem 3 (`i03/fewcluster/round09_fewcluster_stratified.md`), then the interval 2 position note (`i02/fewcluster/round09_fewcluster_position.md`). Then read the critical-value note with NOV12's verdicts and the interval 3 corrections, before any claim from them is written into a draft.
+The paper draft (`docs/round09/tracks/fewcluster/paper_draft_v0.md`), then Theorem 3 (`i03/fewcluster/round09_fewcluster_stratified.md`), then the interval 2 position note (`i02/fewcluster/round09_fewcluster_position.md`). Then read the critical-value note with NOV12's verdicts, and the round's summary for the interval 3 corrections, before any claim from them is written into a draft.

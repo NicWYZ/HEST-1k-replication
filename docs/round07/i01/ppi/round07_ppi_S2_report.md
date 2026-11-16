@@ -1,3 +1,5 @@
+*14 October 2026. Reviewed as tagged at round7-ppi-S2. What stands now: docs/round07/README.md.*
+
 # Round 7, the inference track, the S2 report (S0 to S2)
 
 Written 14 October 2026 by the execution session at the gate of interval i01, in the format of section 9 of `docs/round07/i01/ppi/round07_ppi_track.md`. Every number below is read from the file named in its paragraph or table row. Numbers pooled over cells are rows of `results/round7/ppi/_i01_numbers_r3/s1_report_numbers.csv` or `results/round7/ppi/_i01_numbers_r3/s2_report_numbers.csv`, recomputed from the merged tables by `code/scripts/round7_ppi_i01_numbers.py` on Longleaf. Its operational definitions of predictions S1.1 to S2.4 are in that script's comments and are repeated in section 5.

@@ -1,3 +1,5 @@
+*28 September 2026. Reviewed as tagged at round4-data. What stands now: docs/round04/README.md.*
+
 # Round 4, stage P: the data pull
 
 28 September 2026. Prepared by the oversight chat for a fresh Claude Science session. This document is self-contained. It is the first thing that happens in round 4, it runs alone, and the two round-4 tracks (the PPI track and the conformal track, each with its own instruction document) start only after its report has been accepted and the repository tagged `round4-data`. Read this document fully, then transcribe section 6 into `docs/round04/tracks/data/round4_data_plan.md` before running anything.

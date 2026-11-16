@@ -1,6 +1,6 @@
-# Round 7, the federated learning track, instruction
+*13 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round07/README.md.*
 
-*Frozen at the close of round 7, 15 October 2026.*
+# Round 7, the federated learning track, instruction
 
 13 October 2026. Prepared by the oversight chat for a fresh Claude Science session. This document is self-contained. The track starts from `main` of `NicWYZ/HEST-1k-replication` at the commit that carries the first version of this document, on its own branch `round7-fedlearn`. Record that commit's hash in your plan. Read this document fully, then transcribe section 7 into `docs/round07/tracks/fedlearn/round07_fedlearn_plan.md` before running anything.
 
@@ -32,7 +32,7 @@ This track's gates are F2 and F4. Inside an interval you message Nicolas for thr
 
 ### 2.1 Where it comes from
 
-At the advisor meeting of 12 October (`docs/round07/00_prep/round07_advisor_directions.md`), David explained that the current way of predicting expression from H&E, in which a pathology foundation model turns image patches into embeddings and a prediction head is fitted on them, has reached a bottleneck in accuracy. He proposed that writer agents record relationships between histology and expression over many training pairs, building a textual knowledge base that predictor agents draw on, as a scaled-up version of round 6's cheatsheets. Dr. Zhu objected that text loses information, and proposed federated learning instead, gathering training information as summary statistics at scale from centers around the world, so that models improve without collecting more explicit training data such as HEST-1k.
+At the advisor meeting of 12 October (`round07_advisor_directions.md` (at tag `record-full-2026-11`; summarised in `docs/round07/README.md`)), David explained that the current way of predicting expression from H&E, in which a pathology foundation model turns image patches into embeddings and a prediction head is fitted on them, has reached a bottleneck in accuracy. He proposed that writer agents record relationships between histology and expression over many training pairs, building a textual knowledge base that predictor agents draw on, as a scaled-up version of round 6's cheatsheets. Dr. Zhu objected that text loses information, and proposed federated learning instead, gathering training information as summary statistics at scale from centers around the world, so that models improve without collecting more explicit training data such as HEST-1k.
 
 Nicolas's assignment is a literature review of the viability of federated learning for this problem. The end goal is a methods paper that proposes a federated method and argues for adopting it and for further research in this direction. The paper is meant to be preliminary and a proof of concept, not a technically complex methodology paper. This track is its first round, a literature review with quick validation and scoping experiments. It is separate from the project's PPI paper and uses none of its tracks' areas.
 
@@ -103,7 +103,7 @@ From the oversight chat's memory, marked `[verify]`. FedAvg (McMahan et al., AIS
 | round 4's embeddings and tasks | `results/round4/data/P2_embeddings/`, `results/round4/data/P5_task/` | the lung task and its embeddings for `uni_v2`, `hoptimus0` and `resnet50` |
 | round 3's extra embeddings | `results/round3/D2_embeddings/`, `results/round3/D4_expansion/` | embeddings for two sets beyond the benchmark, `institution_breast_xenium` (breast Xenium from several institutions, with different gene panels) and `kidney_visium_cell`, for the same three encoders |
 | round 1's heads | `results/faithful/`, `results/tailored/` | the replicated HEST-bench heads, the anchor for any refit |
-| round 4's prediction tables, Longleaf only | the parquets listed in `docs/round05/i01/ppi/round5_ppi_track.md`, section 3 | per spot outcome, prediction and donor for `CCRCC`, `INDIANA_KIDNEY` and `LUNG_XENIUM` |
+| round 4's prediction tables, Longleaf only | the parquets listed in `round5_ppi_track.md`, section 3 (at tag `record-full-2026-11`) | per spot outcome, prediction and donor for `CCRCC`, `INDIANA_KIDNEY` and `LUNG_XENIUM` |
 | what the archive holds | `docs/reference/methods_and_state_of_play.md`, sections 21 to 24 | what has been used and what the rest of HEST-1k holds |
 
 Where the embeddings of the `CCRCC` and `INDIANA_KIDNEY` tasks live on Longleaf is not recorded in this document. The inventory of F2 establishes which assets are on disk, for which samples and encoders. Do not assume any of them from this table.
@@ -140,7 +140,7 @@ Where the embeddings of the `CCRCC` and `INDIANA_KIDNEY` tasks live on Longleaf 
 **For git and files.**
 - Write commit messages through a file. Sub-agents run no git command. The lead is the only committer and checks every hand-back against its sources before commit. Each file has one writer, and parallel work writes fragments that a merge step joins, reporting any collisions.
 - Before every commit, list the staged files and confirm that none is a paper's text, a PDF or a figure taken from a paper.
-- Do not edit `README.md`, `CLAUDE.md`, `docs/README.md`, `docs/progress-log.md`, `docs/WAYS_OF_WORKING.md`, any earlier round's files, or anything outside the areas of section 5. Proposed edits go in the report.
+- Do not edit `README.md`, `CLAUDE.md`, `docs/README.md`, `progress-log.md` (at tag `record-full-2026-11`), `docs/WAYS_OF_WORKING.md`, any earlier round's files, or anything outside the areas of section 5. Proposed edits go in the report.
 - Run `code/scripts/verify_numeric_claims.py` over your documents before every handover, with your exceptions in `.verify-exceptions-round7-fedlearn`.
 - After opening a pull request, confirm on GitHub that it exists and put its number in the report.
 
@@ -197,7 +197,7 @@ Four stages and a closing stage. Gates at F2 and F4. Transcribe this section int
 
 **Entry gate for interval i01.** This document is on `main`, Nicolas has made the clone and the papers folder of section 12, and the session can reach Longleaf and at least one literature source.
 
-1. Read this document, `docs/WAYS_OF_WORKING.md`, section 4 of `docs/round05/i02/ppi/round5_ppi_E2_decisions.md`, `docs/round07/00_prep/round07_advisor_directions.md`, `docs/round06/README.md` and sections 21 to 24 of `docs/reference/methods_and_state_of_play.md`.
+1. Read this document, `docs/WAYS_OF_WORKING.md`, section 4 of `docs/round05/i02/ppi/round5_ppi_E2_decisions.md`, `round07_advisor_directions.md` (at tag `record-full-2026-11`; summarised in `docs/round07/README.md`), `docs/round06/README.md` and sections 21 to 24 of `docs/reference/methods_and_state_of_play.md`.
 2. Set up the clone and the branch (section 5), and transcribe section 7 into the plan with the starting commit's hash.
 3. Check which literature sources you can reach and record the result in the plan. At least a general web search, PubMed, arXiv, bioRxiv and medRxiv, PubMed Central, and the proceedings pages of NeurIPS, ICML, ICLR, AISTATS, MICCAI, MIDL and AAAI. Record for each whether you can open landing pages and whether you can fetch full texts.
 4. Write the search protocol into the plan. For each theme, the sources, the date range (2016 to the present for federated learning, earlier where a statistical foundation needs it), at least five query strings, the inclusion and exclusion criteria, and which papers count as core (those an answer to a question would rest on).

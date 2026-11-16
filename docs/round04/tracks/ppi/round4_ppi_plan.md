@@ -1,3 +1,5 @@
+*30 September to 3 October 2026. Reviewed as tagged at commit 8cca44f. What stands now: docs/round04/README.md.*
+
 # Round 4, the PPI track, operating plan
 
 Transcribed on 30 September 2026 from `docs/round04/i01/ppi/round4_ppi_track.md` (the oversight chat's
@@ -565,7 +567,7 @@ Two facts recorded against this note.
 
 ## 11. Addendum 1 (30 September 2026), transcribed before any of it is acted on
 
-Source `docs/round04/i01/ppi/round4_ppi_addendum1.md`, the oversight chat's answer to section 8, handed
+Source `round4_ppi_addendum1.md` (at tag `record-full-2026-11`), the oversight chat's answer to section 8, handed
 over by Nicolas. It does not move the Q1 gate and nothing in it starts Q2. Where this section and
 the source differ, the source governs.
 
@@ -734,7 +736,7 @@ until Nicolas says stop.
 
 ## 13. The Q1 decision memo (1 October 2026), transcribed before any of it is acted on
 
-Source `docs/round04/i02/ppi/round4_ppi_Q1_decisions.md` (md5 `b7dafd175f42d55a21c5387437cd0dd3`),
+Source `round4_ppi_Q1_decisions.md` (at tag `record-full-2026-11`) (md5 `b7dafd175f42d55a21c5387437cd0dd3`),
 written by the oversight chat and handed over by Nicolas. Interval 2 (Q2 and Q3, ending at the Q3
 gate) starts when this transcription is committed. Where this section and the source differ, the
 source governs.
@@ -863,7 +865,7 @@ spot-weighted interval. Report and wait.
 
 ## 14. The Q3 decision memo (2 October 2026), transcribed before any of it is acted on
 
-Source `docs/round04/i03/ppi/round4_ppi_Q3_decisions.md` (md5 `0970097bbcd51635d7ae7d1a3a244eb2`),
+Source `round4_ppi_Q3_decisions.md` (at tag `record-full-2026-11`) (md5 `0970097bbcd51635d7ae7d1a3a244eb2`),
 written by the oversight chat and handed over by Nicolas. Interval 3 (Q4a, Q4 and Q5, ending at the
 Q5 gate) starts when this transcription is committed and Nicolas has merged the Q3 pull request.
 He merged pull request #4 as `763e684` before this transcription. Where this section and the source
@@ -978,7 +980,7 @@ table, and the closing page "What the PPI track established". Report and wait.
 
 ### 14.9 Addendum 2 (2 October 2026), the conformal track's outputs for Q5, transcribed before Q5 reads them
 
-Source `docs/round04/i03/ppi/round4_ppi_addendum2.md` (md5 `7df21bbb7c814cb033a651025c9ff47d`), written by the oversight chat and
+Source `round4_ppi_addendum2.md` (at tag `record-full-2026-11`) (md5 `7df21bbb7c814cb033a651025c9ff47d`), written by the oversight chat and
 handed over by Nicolas. It asks to be transcribed as section 14.1; that number already holds the Q3
 memo's gate rule and acceptance, so it is recorded here as 14.9 and no other number moves. It changes
 nothing in Q4 or in the Q3 memo, and the gate rule is unchanged. Where this section and the source
@@ -1005,7 +1007,7 @@ differ, the source governs.
 
 ## 15. The Q5 decision memo (2 October 2026), transcribed before any of it is acted on
 
-Source `docs/round04/i04/ppi/round4_ppi_Q5_decisions.md` (md5 `fdb8e6921120863839887e6179fb6e0e`), written by the oversight chat after reading the final report at tag `round4-ppi-final` and handed over by Nicolas. It accepts the track subject to one closing unit, Q5a, capped at one day. After Q5a the session pushes to `round4-ppi`, pull request #8 picks up the commits, and the track is closed. Where this section and the source differ, the source governs. The memo's sections are copied below as 15.1 to 15.5, and 15.0 and 15.6 to 15.7 are the session's records.
+Source `round4_ppi_Q5_decisions.md` (at tag `record-full-2026-11`) (md5 `fdb8e6921120863839887e6179fb6e0e`), written by the oversight chat after reading the final report at tag `round4-ppi-final` and handed over by Nicolas. It accepts the track subject to one closing unit, Q5a, capped at one day. After Q5a the session pushes to `round4-ppi`, pull request #8 picks up the commits, and the track is closed. Where this section and the source differ, the source governs. The memo's sections are copied below as 15.1 to 15.5, and 15.0 and 15.6 to 15.7 are the session's records.
 
 ### 15.0 Gate rule (memo preamble)
 

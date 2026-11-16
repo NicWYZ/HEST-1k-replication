@@ -1,10 +1,12 @@
+*26 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round09/README.md. Corrected since the tag.*
+
 # Round 9, track newtopic, the plan for interval 1
 
 *26 October 2026. Written by the newtopic session at the start of its work, on Nicolas's Mac. Living while interval 1 runs. Changes are appended at the end with their date, and the text above them is not rewritten.*
 
 ## 1. What interval 1 is for
 
-The track looks for a fresh direction for a statistics-forward methods paper, outside clustered prediction-powered inference (PPI) and hierarchical conformal prediction, built on the data the project already has (the brief, `docs/round09/i01/newtopic/round09_newtopic_brief.md`). Interval 1 ends in one of two ways. Either a candidate direction survives independent novelty checkers and a first test on the data, and the session reports it to Nicolas with the decisions he needs to make, or no candidate survives, and the session reports that as a roadblock with what it tried.
+The track looks for a fresh direction for a statistics-forward methods paper, outside clustered prediction-powered inference (PPI) and hierarchical conformal prediction, built on the data the project already has (the brief, `docs/round09/i01/newtopic/round09_newtopic_brief.md` at tag `record-full-2026-11`, whose data inventory is in `docs/round09/round09_methods_note.md`). Interval 1 ends in one of two ways. Either a candidate direction survives independent novelty checkers and a first test on the data, and the session reports it to Nicolas with the decisions he needs to make, or no candidate survives, and the session reports that as a roadblock with what it tried.
 
 A note on lettering. The direction scan's section 4 (`docs/round09/00_prep/round09_direction_scan.md`) calls the prediction-set half "option C" and a new brainstorm "option D". The masterplan, the brief and this branch's `CLAUDE.md`, all written after Nicolas's decision of 26 October, call this track's direction "option C" and define it as a fresh direction outside clustered PPI and hierarchical conformal prediction. This track follows the brief's definition.
 

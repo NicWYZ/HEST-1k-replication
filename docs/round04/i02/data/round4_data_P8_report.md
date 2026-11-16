@@ -1,3 +1,5 @@
+*30 September 2026. Reviewed as tagged at round4-data-v2. What stands now: docs/round04/README.md.*
+
 # Round 4, stage P8: the addendum, report
 
 Instruction: `docs/round04/i02/data/round4_data_P7_decisions.md` section 3, transcribed with its decisions

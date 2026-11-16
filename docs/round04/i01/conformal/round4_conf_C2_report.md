@@ -1,8 +1,10 @@
+*1 to 2 October 2026. Reviewed as tagged at round4-conf-C2. What stands now: docs/round04/README.md. Corrected since the tag.*
+
 # Round 4, conformal track: report at gate C2 (C1 and C2 together)
 
 Branch `round4-conformal`, tag `round4-conf-C2`. Written 1 to 2 October 2026. Plan
 `docs/round04/tracks/conformal/round4_conf_plan.md`, sections 1 to 11; the instruction is
-`docs/round04/i01/conformal/round4_conformal_track.md` on `main`; addendum 1 is plan section 10.
+`round4_conformal_track.md` (at tag `record-full-2026-11`; its content now in `docs/round04/round04_methods_note.md`) on `main`; addendum 1 is plan section 10.
 
 ## 1. Stage and status
 
@@ -115,7 +117,7 @@ directions.
 
 The C1 methods are as in plan section 6 and `round4_conf_sim.py`'s docstrings. The four
 candidates' definitions, written before their runs, are reproduced unchanged in
-`docs/round04/i01/conformal/round4_conf_candidate_definitions.md`. In brief:
+`results/round4/conformal/C2_candidates/frag_<K>/candidate_definition_<K>.md`. In brief:
 
 - **K1, smoothed HCP.** HCP at a randomised level, between the two donor-block quantile levels
   adjacent to $(1-\alpha)(K+1)$, with $U \sim \text{Unif}(0, 1)$. Guarantee finite-sample under

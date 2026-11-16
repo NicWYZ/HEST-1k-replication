@@ -1,3 +1,5 @@
+*28 to 30 September 2026. Reviewed as tagged at round4-data-v2. What stands now: docs/round04/README.md.*
+
 # Round 4, stage P, operating plan (the data pull)
 
 Transcribed on 28 September 2026 from `docs/round04/i01/data/round4_data_pull.md` (the oversight chat's
@@ -245,7 +247,7 @@ Checked against `results/round3/D0_inventory/hest_inventory.csv` before anything
 
 ## 8. The P1 decision, transcribed before P1's download starts
 
-From `docs/round04/i01/data/round4_data_P1_decision.md` (28 September 2026, the oversight chat's answer to
+From `round4_data_P1_decision.md` (at tag `record-full-2026-11`) (28 September 2026, the oversight chat's answer to
 `results/round4/data/P1_selection/STOP_NOTE.md` at `c31e36e`). Where it and the sections above differ,
 it governs.
 

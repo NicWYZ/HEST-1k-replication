@@ -1,3 +1,5 @@
+*2 October 2026. Reviewed as tagged at round4-conf-final. What stands now: docs/round04/README.md. Corrected since the tag.*
+
 # Round 4, conformal track: final report at gate C4 (C1 to C3)
 
 Branch `round4-conformal`, tag `round4-conf-final`. Written 2 October 2026. Plan
@@ -203,7 +205,9 @@ The paper's prediction-set section should say five things.
   remark with proofs in an appendix (`docs/round04/i01/conformal/round4_conf_lower_bound.md`). For $K + 1 \ge 1/\alpha$
   the question is open.
 - On these data, fewer than about 25 labelled spots per test slide buy nothing for the
-  prediction set, and from 25 on the within-donor split is the cheapest valid choice.
+  prediction set, and from 25 on the within-donor split is the cheapest valid choice. The C4
+  decision memo (plan section 13.2) puts this figure at about ten, because `within_plain` is
+  finite from $o = 10$ and covers 0.90 to 0.92 there on every task.
 - The released GHCP code's pool is one group larger than the paper's equation (8), and the
   published tables were produced under the code's rule.
 - This track uses the standard tie convention, under which the threshold is the

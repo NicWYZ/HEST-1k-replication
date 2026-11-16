@@ -1,8 +1,10 @@
+*22 September 2026. Reviewed as tagged at round3-A1. What stands now: docs/round03/README.md.*
+
 # Round 3, A1 stage report
 
 22 September 2026. Covers interval 1: S0, A0, A1 and D0. Written against
 `docs/round03/tracks/exec/round3_execution_plan.md`, which is this session's transcription of
-`docs/round03/i01/exec/round3_execution_handoff.md`. Report-and-wait gate. Nothing after A1 has been
+`round3_execution_handoff.md` (at tag `record-full-2026-11`; its content now in `docs/round03/tracks/exec/round3_execution_plan.md`). Report-and-wait gate. Nothing after A1 has been
 started, set up, staged or piloted, and nothing will be until the decision comes back.
 
 Numbers are quoted at the precision the comparison needs and every one of them was read back from
@@ -281,14 +283,14 @@ Handled under the decision boundaries and recorded here rather than interrupting
 5. **The numeric-claim sweep command printed in `WAYS_OF_WORKING.md` does not reproduce the gate.**
    It omits `--derived .verify-derived` and `--always results/summary/deck_numbers.csv`, which
    `code/scripts/sweep_table.py` passes. Run as printed over the README and `docs/**/*.md` it reports
-   65 unresolved claims; run correctly it reports 46, of which 41 sit in `docs/round02/i03/exec/r5_idc_provenance.md`.
+   65 unresolved claims; run correctly it reports 46, of which 41 sit in `r5_idc_provenance.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`).
    Reported rather than fixed, per the instruction to flag rather than change silently.
 6. **A derived-claim formula that cites a gitignored parquet cannot resolve in a clone**, so the
    gate is only fully reproducible where the working files exist. One such formula exists, in
    `round2_R3_stage_report.md`.
 7. **The round-3 handoff's premise about the memos was overtaken.** All six round-2 decision memos
    are present, including `round2_R1_decisions.md`, which the handoff recorded as never saved.
-   Nothing was reconstructed. The companion `round3_oversight_handoff.md` is also in the repository
+   Nothing was reconstructed. The companion `round3_oversight_handoff.md` (at tag `record-full-2026-11`; its content now in `docs/round03/tracks/exec/round3_execution_plan.md`) is also in the repository
    and its action items are transcribed into the operating plan.
 
 ## 8. What was not checked

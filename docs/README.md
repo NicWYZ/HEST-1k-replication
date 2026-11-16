@@ -1,60 +1,46 @@
-# `docs/`, a reading guide
+# `docs/`, the reading guide
 
-This is the map of the project's documents. Since 9 October 2026 they are filed in time order, by round, then by interval, then by track, so reading the folders in order is reading the project in the order it happened. Each round folder has its own reading guide, and this file points to them. The current state of the project is not kept here. It is in `CLAUDE.md` at the repository root.
+The record of the project. The project's status lives only in `CLAUDE.md`'s state block, and a running track's in its plan's state block. Each closed round's `README.md` is its summary and the authority on what the round established. Git history and tags hold what happened, and the full record as it stood before it was reduced is at tag `record-full-2026-11`.
 
 ## Start here
 
-1. `CLAUDE.md`, the oversight chat's operating file. Its `state` block is the one place that says where the project stands, and nothing here repeats it.
-2. The reading guide of the round in hand, and of the last closed round, from the table below. For the PPI paper, the latest account is round 9's track fewcluster, read with round 8's positioning note for what was already in print.
-3. `docs/progress-log.md`, what happened at each step and why the project moved, newest first.
-
-For the methods themselves, derived from scratch, read `docs/reference/methods_and_state_of_play.md` and `docs/reference/concepts_explained_round4.md`.
+1. `CLAUDE.md`, in full, for the state block, the session start, the working rules and the hard rules.
+2. The summary of the last closed round (`round10/README.md`), then earlier summaries as the work needs them. `round10/00_prep/round10_findings_survey.md` lists what rounds 1 to 9 established, by the question each finding answers.
 
 ## How the folders work
 
-- Each `docs/round05`-style folder holds one round. `round00` holds what came before round 1.
-- A round's `00_prep` folder holds what was written after the previous round closed and before this one started, such as a change of direction, an oversight handoff or advisor-deck preparation.
-- `iKK/<track>/` is interval KK of one track. Interval 1 opens with the track's instruction, or from round 9 its brief. Each later interval opens with the decision that answered the previous gate report (an oversight memo through round 7, a decision file written by the session from round 9), and ends with the next gate report. A track's closing memo sits alone in its last interval folder. Intervals are numbered per track, so the gate table in each round's guide gives the order across tracks.
-- `tracks/<track>/` holds the documents a track kept updating across intervals, such as its execution plan, theory and definitions. They are frozen once the round closes.
-- A round's `oversight` folder holds oversight documents written during a round and not tied to one track.
-- `masterplan.md` is the round's plan. Rounds 1 to 5 have none from the time, so each has a short note written at migration that points to the documents that served as its plan.
-- **Names.** Tracks and stages are named per round (`round5_ppi_*`, stages E0 to E5; `round5_conf_*`, stages W0 to W5; `round06_cheatsheet_*` documents and `round6_cheatsheet_*.py` scripts, stages C0 to C7, now in `NicWYZ/textual-st-histology`; `round07_fedlearn_*` documents and `round7_fedlearn_*.py` scripts, stages F0 to F4; `round07_ppi_*` documents and `round7_ppi_*.py` scripts, stages S0 to S5 with S2b and S4b; `round08_positioning_*` documents, stages P0 to P3, results in `results/round8/positioning/`; `round09_fewcluster_*` and `round09_newtopic_*` documents and `round9_<track>_*.py` scripts, results in `results/round9/<track>/`, with the preparation's scripts `round9_*.py` and results in `results/round9/scan/`, `results/round9/diagnostics/`, `results/round9/between/`, `results/round9/stud/`, `results/round9/norm/` and `results/round9/probe/`). Tags mark each gate (`round5-ppi-E2`, `round6-cheatsheet-C1`, `round7-fedlearn-F2`).
-- `[proposed]` marks what the oversight chat proposed and Nicolas has not accepted, and `[verify]` a statement written from memory.
-- The numeric-claim sweep, `code/scripts/verify_numeric_claims.py`, runs as `docs/WAYS_OF_WORKING.md` shows, with each track's exceptions in its own `.verify-exceptions-<round>-<track>` file. The oversight chat sweeps `README.md`.
-- New file names carry the full prefix (`round06_ppi_E2_report.md`). Every document kept its file name when it moved, and every name is unique, so a bare file name still finds its file. `docs/moved.md` lists each old path with its new one.
+**New rounds, by track (from round 11).**
 
-From round 2 to round 7 each stage of work produced the same chain. A coordinating chat (called the oversight chat in the record) wrote an instruction or a decision memo. The session that ran the work (an execution session) transcribed it into its operating plan before running anything, flagged what looked wrong rather than changing it, and wrote a gate report. The next memo answered that report. Reports are written once and not edited, and corrections go in the next memo or report. Tags mark the state of the repository at each gate.
+- `round<NN>/README.md` is the round's summary once it closes, and `round<NN>/masterplan.md` its plan, with the oversight session's expectations.
+- `round<NN>/00_prep/` holds what was written after the previous round closed and before the masterplan, such as the literature survey.
+- `round<NN>/<track>/` holds one track: its brief, its plan (which opens with a state block and records each gate's decisions), its gate reports and its notes, such as a literature check, a theory note or a methods note. File names carry the full prefix (`round11_<track>_G1_report.md`).
+- `round<NN>/oversight/` holds the oversight session's documents of the round that belong to no single track.
+
+**Closed rounds 0 to 10, as they were filed.** `round<NN>/iKK/<track>/` holds one interval of one track, ending with its gate report. `round<NN>/tracks/<track>/` holds the track's plan, theory notes, definitions and other living documents. The prep and oversight folders are as above, and `round<NN>/round<NN>_methods_note.md`, where there is one, quotes the definitions and decisions of documents that were removed. Each kept report, survey and plan opens with a line naming its date, the tag that holds it as reviewed and the summary that says what stands. Gate tags are `round<N>-<track>-<gate>` (`git tag -l 'round5-*'`).
+
+**Elsewhere.** `round00/` holds what came before round 1, and `reference/` holds material consulted across rounds. Results follow the rounds under `results/round<N>/`.
 
 ## Standing documents
 
-| Document | What it is |
+| Document | Role |
 |---|---|
-| `docs/progress-log.md` | what happened and why, newest first, with an entry for every memo, gate review and decision |
-| `docs/WAYS_OF_WORKING.md` | the oversight chat's sample audit, the literature and novelty check, the document rules, the numeric-claim sweep and the deck conventions. Cut to these on 6 November 2026, when its Longleaf notes and data quirks moved to `docs/environment.md` |
-| `docs/EXECUTION_RULES.md` | the one standing document for execution sessions, from 13 October 2026, revised for the project-record round layout on 6 November. Briefs cite it instead of restating it |
-| `docs/environment.md` | machines, clones, accounts, Longleaf scheduler notes, the HEST patient-label quirk, and what a new account must recreate (6 November 2026) |
-| `docs/project_instructions.md` | the texts pasted into the claude.ai project and the Claude Science project, verbatim (6 November 2026) |
-| `docs/moved.md` | each old path and its new path, from the move on 9 October 2026 |
-| `docs/reference/methods_and_state_of_play.md` | every method derived from scratch, every round-3 result with how and why, what has not been tried, and what the rest of HEST-1k holds (27 September) |
-| `docs/reference/concepts_explained_round4.md` | the nineteen concepts Nicolas asked about, with the regime B correction in its section 4 (28 to 29 September) |
-| `docs/superseded/` | working documents a later document replaced, each bannered with what replaced it. It holds the round-3 park note (`round3_park_note.md`) and the flat index this guide replaced on 30 September (`README_index_2026-09-30.md`) |
+| `EXECUTION_RULES.md` | how an execution session starts, works and hands over, with the gate rule |
+| `WAYS_OF_WORKING.md` | procedures, each tied to the failure behind it: checks, literature, documents, the numeric-claim sweep, decks |
+| `environment.md` | people, the Longleaf trees and scheduler notes, data quirks, and what a session needs |
+| `reference/methods_and_state_of_play.md` | every method the project derived from scratch up to round 3, with its derivation (27 September 2026) |
 
 ## Rounds
 
-| Round | Dates | Folder | In one line | Summary |
+| Round | Dates | What it found | Summary | Full record |
 |---|---|---|---|---|
-| 0 | early September | `docs/round00/` | the proposal and the literature landscape that produced Topics A and B | `docs/round00/README.md` |
-| 1 | 12 to 16 September | `docs/round01/` | a faithful replication of the HEST-1k benchmark and its instrumentation | `docs/round01/README.md` |
-| 2 | 16 to 21 September | `docs/round02/` | from replication to project motivation, stages R0 to R8, then the first advisor deck and its numeric-claim gate | `docs/round02/README.md` |
-| 3 | 22 to 24 September | `docs/round03/` | the first experiments for both topics, after which Topics A and B as framed were retired | `docs/round03/README.md` |
-| 4 | 28 September to 3 October | `docs/round04/` | after the change of direction to labelling budgets for prediction-powered inference with clustered data, a data pull and two tracks (inference and prediction sets) | `docs/round04/README.md` |
-| 5 | 7 to 9 October | `docs/round05/` | the inference track's final interval, regime B, regression form and cluster selection, and the prediction-set map above 10 calibration donors | `docs/round05/README.md` |
-| 6 | 11 to 13 October, reopened 12 October | `docs/round06/` | David's cheatsheet experiment. With a size-limited cheatsheet, Opus did not beat a pathology foundation model on unseen spots, and reached 0.8 on seen spots only by copying. Reopened for an extension on held-out CCRCC patients with rubric-bound cheatsheets, where any cheatsheet helped, size did not, and none reached the pathology model. Moved on 19 October to the private repository `NicWYZ/textual-st-histology` | `docs/round06/README.md`, a pointer |
-| 7 | 13 to 15 October | `docs/round07/` | Two tracks. Federated learning: a literature review and scoping experiments found a one-round head exact and cheap, no clear gain across real sources, and measurable costs from privacy and from centers measuring different genes. The PPI paper: repositioned against Broska and Howes, weighting under rejective selection fails, rejective selection with `rej_t` is narrowest on census and a cube design with bounded probabilities matches it on tissue, k-center fails, and a corrected Broska and Howes interval is strong at four labelled clusters | `docs/round07/README.md`, "What the round established" |
-| 8 | 19 October to 6 November, closed after round 9 | `docs/round08/` | the PPI paper's positioning against the survey-sampling literature and newer PPI work, then its plan and the runs it needs. The positioning note (gate P3, its pull request merged on 22 October) finds every formula the paper would display classical or in print, and round 5's cross-fitted estimator a known estimator missing one factor. No track of its own followed. Round 9 carried out its recommendation in effect, and Nicolas closed the round on 6 November | `docs/round08/README.md`, "What the round established" |
-| 9 | 24 October to 6 November | `docs/round09/` | preparation on branch `claude-science` found no methodological core that survives the literature check, and found that on Visium a shared technical factor dominates between-donor variation and one technical-outlier donor breaks few-cluster intervals. Two independent tracks followed on their own branches. Track `fewcluster` proved three frontier theorems for finite-sample valid inference with few labelled clusters (not found in print, provisionally), compared labelling whole clusters with a few units in every cluster under them, recommended `[proposed]` Williams' form in place of round 5's estimator and wrote a first paper draft. Track `newtopic` found no open direction outside clustered PPI and hierarchical conformal prediction. The three branches were merged into `main` at the close | `docs/round09/README.md`, "What the round established" |
-| 10 | from 6 November | `docs/round10/` | after Nicolas reframed the objective toward answering the proposal's two questions with existing methods where they apply, the applied paper. A survey of nine rounds and the reframing are in `docs/round10/00_prep/`; the round runs as track `ledger` (a methods ledger by the oversight chat), then `final-runs` (a Claude Science session on Longleaf with the cited methods), then `paper` | `docs/round10/README.md` |
-
-## Superseded and withdrawn
-
-Withdrawn readings that live inside frozen documents are listed in the round guides under "Corrections and withdrawn readings", in `docs/round04/oversight/round4_oversight_handoff.md` section 12 and `docs/round05/00_prep/round5_oversight_handoff.md` section 14 (dead ends), and in the root README's known limitations. The most important are the IDC one-donor reading (withdrawn by round 3's D3), the round-1 "institution shift" scalar, and the D4 probe's 31% to 34% morphology share (quarantined by the P7 decisions).
+| 0 | September 2026 | the proposal and the literature landscape that produced Topics A and B | `round00/README.md` | `record-full-2026-11` |
+| 1 | 12 to 16 Sep | a faithful replication of the HEST-1k benchmark on Longleaf and its instrumentation | `round01/README.md` | `record-full-2026-11` |
+| 2 | 16 to 21 Sep | which of the benchmark's apparent problems are real (HEST's patient labels are wrong in both directions), the first advisor deck and the numeric-claim sweep | `round02/README.md` | `record-full-2026-11` |
+| 3 | 22 to 24 Sep | the first experiments for both topics, after which Topics A and B as framed were retired | `round03/README.md` | `record-full-2026-11` |
+| 4 | 28 Sep to 3 Oct | PPI read as the survey-sampling difference estimator; a data pull and two tracks, inference with few labelled donors and prediction sets for a new donor | `round04/README.md` | `record-full-2026-11` |
+| 5 | 7 to 9 Oct | the inference track's regime B, regression form and cluster selection, round 5's estimator defined once, and the prediction-set map above 10 calibration donors | `round05/README.md` | `record-full-2026-11` |
+| 6 | 11 to 13 Oct | David's cheatsheet experiment, now in `NicWYZ/textual-st-histology` | `round06/README.md` | `record-full-2026-11` |
+| 7 | 13 to 15 Oct | federated learning scoped and moved to `NicWYZ/ST-Fed-Learn`; few-cluster selection designs for the PPI paper, some of whose claims round 8 withdrew | `round07/README.md` | `record-full-2026-11` |
+| 8 | 19 Oct to 6 Nov | every formula the PPI paper would display is classical or in print, and round 5's estimator is a known one missing one factor | `round08/README.md` | `record-full-2026-11` |
+| 9 | 24 Oct to 6 Nov | no methodological core survives the literature check; three provisional frontier theorems for few labelled clusters; a shared technical factor dominates between-donor variation on Visium | `round09/README.md` | `record-full-2026-11` |
+| 10 | 6 to 15 Nov | the reframing to an applied paper with cited methods; the methods ledger, and final runs with a fixed coefficient of 1 on HEST, ACS and six corpus tasks, giving the paper's numbers table | `round10/README.md` | `record-full-2026-11` |

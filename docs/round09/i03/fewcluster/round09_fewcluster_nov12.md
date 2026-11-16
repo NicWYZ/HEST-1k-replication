@@ -1,3 +1,5 @@
+*27 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round09/README.md.*
+
 # Round 9, track fewcluster, NOV12 on the critical-value certificate
 
 *27 October 2026, late evening. Written by the fewcluster session. NOV12 was pending when `round09_fewcluster_critical_value.md` was committed, and it reported after Nicolas approved its access cards. Its record is `results/round9/fewcluster/novelty/novelty_NOV12_structured.json`, with the queries and candidates CSVs beside it (38 queries).*

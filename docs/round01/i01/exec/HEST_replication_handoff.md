@@ -1,4 +1,4 @@
-> **Closed record, dated 2026-09-12.** This handoff is not maintained; numbers in it may have been superseded by round 1, round 2, and later work.
+*12 September 2026. Reviewed as tagged at `round2-final`. What stands now: `docs/round01/README.md`.*
 
 # Handoff: HEST-1k Benchmark Replication and First-Year Spatial Transcriptomics Project
 

@@ -1,3 +1,5 @@
+*26 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round09/README.md.*
+
 # Round 9, track fewcluster, the frontier with a tuned coefficient, and the real tasks
 
 *26 October 2026. Written by the fewcluster session, interval 2, steps I2-2 and I2-4. It extends `docs/round09/i01/fewcluster/round09_fewcluster_frontier.md` to PPI whose coefficient is fitted on the labelled clusters, and places the project's tasks against both frontiers. The statements were proved by the session and again by a fresh agent from the statements alone, with exact enumeration at small sizes (`results/round9/fewcluster/verify_tuned/verify_tuned_report.md`). That agent's corrections are taken in below. One of them corrects a remark in `results/round9/fewcluster/tuned/predictions_scored.md` (section 4). The novelty of the tuned statements has not yet been checked. NOV6 covered the fixed-coefficient statements only. Recommendations are `[proposed]`.*

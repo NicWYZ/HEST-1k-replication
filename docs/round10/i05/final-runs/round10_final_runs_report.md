@@ -1,3 +1,5 @@
+*15 November 2026. Reviewed as tagged at round10-final-runs-F4. What stands now: docs/round10/README.md. Corrected since the tag.*
+
 # Round 10, track `final-runs`, the final report (gate F4)
 
 *Written on 15 November 2026 by the ninth session of track `final-runs` (frame `3f5eb01e-aa12-4f67-84ac-45c28e10831d`). F4's methods are the plan's section 5e (`docs/round10/tracks/final-runs/round10_final_runs_plan.md`), written by the eighth session (frame `bdb361de-6630-44e8-b0f8-8bd63dae9ad3`) before any F4 job, which also ran F4's first part. The decisions in force are the F1, F2 and F3 decision files in `docs/round10/i03/`, `i04/` and `i05/final-runs/`. Paths that begin `F2/`, `F3/` or `F4/` are relative to `results/round10/final_runs/`, and "the numbers table" is `results/round10/final_runs/F4/paper_numbers.csv`, whose `key` column names the row a number is read from. The pull request is NicWYZ/HEST-1k-replication#39 (`https://github.com/NicWYZ/HEST-1k-replication/pull/39`).*

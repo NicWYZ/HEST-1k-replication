@@ -1,3 +1,5 @@
+*14 October 2026. Reviewed as tagged at round7-ppi-S4. What stands now: docs/round07/README.md.*
+
 # Round 7, the inference track, the S4 report (S2b, S3 and S4)
 
 Written on 14 October 2026 by the execution session (frame `89b5f4ed-6180-409e-831d-0fecc6ce5f4e`) under `docs/round07/i02/ppi/round07_ppi_S2_decisions.md` and `docs/EXECUTION_RULES.md` (revision of 14 October). Paths are relative to the repository root unless they start with `/work`. On Longleaf every result directory named here sits under `/work/users/w/e/weiyang/hest_replication/` at the same relative path.

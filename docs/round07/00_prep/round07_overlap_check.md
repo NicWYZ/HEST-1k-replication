@@ -1,3 +1,5 @@
+*13 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round07/README.md.*
+
 # Overlap check before round 7, a lab manuscript on slide selection and three newer PPI papers
 
 13 October 2026. Written by the oversight chat for Nicolas, before round 7's PPI and conformal work builds on round 5. Nicolas asked whether a group member's manuscript overlaps the paper "Labelling budgets for prediction-powered inference with clustered data" closely enough to change its direction.
@@ -9,7 +11,7 @@ The recommendations in sections 2, 4 and 5 are `[proposed]` until Nicolas decide
 ## 1. What was read
 
 - **The manuscript,** shared by Nicolas on 13 October and read in full, appendix included. Two searches on 13 October found no public version.
-- **Our side.** The paper's estimator (`docs/round05/tracks/ppi/round5_ppi_estimator_definition.md`), the readings for the paper and the open question in the two round-5 closing memos (`docs/round05/i04/ppi/round5_ppi_E5_decisions.md` sections 3 and 5, `docs/round05/i03/conformal/round5_conformal_W5_decisions.md` section 3), the originality check of 28 September (`docs/round04/00_prep/round4_originality_check.md`) and the deck-2 literature check of 4 October (`docs/round05/00_prep/deck2/deck2_literature_check.md`).
+- **Our side.** The paper's estimator (`docs/round05/tracks/ppi/round5_ppi_estimator_definition.md`), the readings for the paper and the open question in the two round-5 closing memos (`docs/round05/i04/ppi/round5_ppi_E5_decisions.md` sections 3 and 5, `round5_conformal_W5_decisions.md` section 3 (at tag `record-full-2026-11`)), the originality check of 28 September (`docs/round04/00_prep/round4_originality_check.md`) and the deck-2 literature check of 4 October (`docs/round05/00_prep/deck2/deck2_literature_check.md`).
 - **The literature since those checks.** Two search agents looked for papers on active or adaptive label selection with valid inference, PPI with clustered data, slide selection for spatial omics, and budget design for PPI. The oversight chat opened the abstract pages of the four closest papers itself. For the closest one, Broska and Howes, it put a list of questions to the full PDF through a question-answering pass. That is not a line-by-line reading, and section 4 says what still needs one.
 
 ## 2. Verdict on the manuscript

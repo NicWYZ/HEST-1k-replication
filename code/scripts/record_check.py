@@ -7,11 +7,11 @@ documentation commit. Python 3.8+, standard library only.
 The state block is a fenced block with the info string `state` in CLAUDE.md:
 
     ```state
-    updated: 2026-11-04 (oversight chat, personal account)
+    updated: 2026-11-04 (oversight session)
     unit: round02
     status: running
     next: Close round 2 once all three tracks have merged.
-    branch round2-harmonize: running | docs/round02/tracks/harmonize/round02_harmonize_plan.md
+    branch round2-harmonize: running | docs/round02/harmonize/round02_harmonize_plan.md
     branch round2-borrow: to-merge | PR #21
     waiting: Q2 | since 2026-10-26 | venue, dates and authorship
     ```
@@ -22,10 +22,14 @@ path there is checked on that branch.
 
 Flags: no state block or an invalid one; live branches the block does not name;
 branches the block names that are no longer live; commits on main after CLAUDE.md last
-changed; open pull requests from unnamed branches; CLAUDE.md over its line limit; paths
-in CLAUDE.md and the index files that do not exist. Notes: items waiting longer than
---stale-days, plan paths not yet on their branch, [proposed] and [verify] tags.
-Exit status is 0 unless --strict is given and something was flagged.
+changed; open pull requests from unnamed branches; CLAUDE.md over its line or word limit;
+backticked paths (with a slash and a file extension) in CLAUDE.md and the index files
+that do not exist. Notes: items waiting longer than
+--stale-days, plan paths not yet on their branch, [proposed] and [verify] tags, and
+three signs that the record is turning into a journal: state block lines longer than
+--line-words, standing files (CLAUDE.md and the .md files beside the index) that carry
+more than --max-dates dates outside the state block, and merged branches still on the
+remote, which are the user's to delete. Exit status is 0 unless --strict is given and something was flagged.
 """
 import argparse
 import datetime as dt
@@ -39,6 +43,9 @@ UNIT_STATUS = {"open", "running", "waiting", "closing", "closed"}
 BRANCH_STATUS = {"running", "waiting", "to-merge", "abandoned"}
 PATH_EXT = (".md", ".py", ".sh", ".R", ".csv", ".json", ".yaml", ".yml", ".toml", ".txt", ".tex", ".tsv")
 DATE = re.compile(r"\d{4}-\d{2}-\d{2}")
+DATED = re.compile(r"\b\d{4}-\d{2}-\d{2}\b|\b\d{1,2} (?:January|February|March|April|May|June|July|August"
+                   r"|September|October|November|December)\b")
+STATE_BLOCK = re.compile(r"^```state.*?^```", re.S | re.M)
 
 
 def git(*args):
@@ -72,6 +79,9 @@ def main():
     ap.add_argument("--index", nargs="*", default=None,
                     help="index files whose paths are checked (default: docs/README.md and planning/README.md if present)")
     ap.add_argument("--max-lines", type=int, default=200, help="line limit for the state file (default 200)")
+    ap.add_argument("--max-words", type=int, default=1500, help="word limit for the state file (default 1500)")
+    ap.add_argument("--line-words", type=int, default=40, help="note state block lines longer than this (default 40 words)")
+    ap.add_argument("--max-dates", type=int, default=2, help="note standing files with more dates than this (default 2)")
     ap.add_argument("--stale-days", type=int, default=14, help="note waiting items older than this (default 14)")
     ap.add_argument("--no-remote", action="store_true", help="skip the pull-request lookup")
     ap.add_argument("--strict", action="store_true", help="exit 1 when anything is flagged")
@@ -106,12 +116,18 @@ def main():
         for w in block["waiting"]:
             d = DATE.search(w)
             if d and (today - dt.date.fromisoformat(d.group())).days > a.stale_days:
-                notes.append(f"waiting more than {a.stale_days} days: {w}")
+                notes.append(f"waiting more than {a.stale_days} days: {w[:80]}")
+        long = [l.split(":", 1)[0] + ": " + l.split(":", 1)[1].strip()[:50] + "..."
+                for l in STATE_BLOCK.search(text).group().splitlines() if len(l.split()) > a.line_words]
+        if long:
+            notes.append(f"state block lines over {a.line_words} words (a line says what a session needs in order "
+                         "to act, not how things came about):\n    " + "\n    ".join(long))
 
     # Length.
-    n = len(text.splitlines())
-    if n > a.max_lines:
-        flags.append(f"{a.state} has {n} lines (limit {a.max_lines}); move finished work to the log and facts to the record")
+    n, k = len(text.split()), len(text.splitlines())
+    if n > a.max_words or k > a.max_lines:
+        flags.append(f"{a.state} has {k} lines and {n} words (limits {a.max_lines} and {a.max_words}); delete what is no "
+                     "longer true and point to facts instead of holding them")
 
     if not main_ref:
         flags.append("no main branch found; fetch first or pass --main")
@@ -135,6 +151,12 @@ def main():
         if unnamed:
             flags.append("live branches the state block does not name (add a `branch <name>:` line with its status):\n    "
                          + "\n    ".join(unnamed))
+        merged = [l.strip() for l in git("branch", "-r", "--merged", main_ref, "--format=%(refname:short)").splitlines()
+                  if l.strip() and "/HEAD" not in l and l.strip() != main_ref and l.strip() != remote.rstrip("/")]
+        if merged:
+            notes.append(f"{len(merged)} merged branches still on the remote (their commits are on {main_ref}; "
+                         "the user can delete them): "
+                         + ", ".join(b[len(remote):] if b.startswith(remote) else b for b in merged))
         for name, parts in block["branches"].items():
             if name not in live and parts[0] != "abandoned":
                 flags.append(f"branch {name} is named as {parts[0]} but has no commits off main (merged or deleted); update the state")
@@ -175,6 +197,18 @@ def main():
             missing.add(tok)
         if missing:
             flags.append(f"paths in {f} not found: " + ", ".join(sorted(missing)))
+
+    # Standing files that carry history. A rule says what holds now; git says when it changed.
+    standing = [state] + sorted(q for i in index for q in Path(i).parent.glob("*.md") if q != Path(i))
+    dated = []
+    for q in standing:
+        body = STATE_BLOCK.sub("", q.read_text(encoding="utf-8", errors="ignore"))
+        k = len(DATED.findall(body))
+        if k > a.max_dates:
+            dated.append(f"{q} ({k} dates)")
+    if dated:
+        notes.append("standing files that carry dates outside the state block (state each rule as it now stands, "
+                     "and leave when and who to the commit message):\n    " + "\n    ".join(dated))
 
     # Tags still open.
     for tag in ("[proposed]", "[verify]"):

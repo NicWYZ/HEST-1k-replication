@@ -1,3 +1,5 @@
+*15 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round07/README.md.*
+
 # Round 7, the inference track, decisions at the closing gate
 
 15 October 2026. Written by the oversight chat after reviewing the final report (`docs/round07/i03/ppi/round07_ppi_final_report.md`, pull request #32, tag `round7-ppi-final`). The track ends at this gate, so this memo opens no interval. It lives on `main` only. Nothing further is committed or pushed on branch `round7-ppi`.

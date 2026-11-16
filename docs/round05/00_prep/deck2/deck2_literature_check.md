@@ -1,3 +1,5 @@
+*4 October 2026. Reviewed as tagged at `record-full-2026-11`. What stands now: docs/round05/README.md.*
+
 # Literature check before the second presentation
 
 4 October 2026. Written by the oversight chat for Nicolas. It answers three questions about the work. Is it original, is it relevant, and is it important. Three searches ran in parallel, about 280 web queries and page reads in total, covering 2023 to October 2026. I then opened the four papers that matter most myself.

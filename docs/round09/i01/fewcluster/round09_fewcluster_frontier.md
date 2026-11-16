@@ -1,3 +1,5 @@
+*26 October 2026. Reviewed as tagged at record-full-2026-11. What stands now: docs/round09/README.md.*
+
 # Round 9, track fewcluster, the max-share frontier
 
 *26 October 2026. Written by the fewcluster session. The statements were proved by the session, then proved again independently by a fresh agent that had seen only the statements, with brute-force checks at small sizes (`results/round9/fewcluster/verify/verify_frontier_report.md` and the scripts and CSV files beside it). That agent found one error, an off-by-one in where the frontier lies, and several missing hypotheses. All are corrected below. The literature position is in section 6 and is provisional until the precise-statement check (NOV6) returns. Recommendations are `[proposed]`.*

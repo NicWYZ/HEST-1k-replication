@@ -1,6 +1,8 @@
+*9 October 2026. Reviewed as tagged at `round5-ppi-final`. What stands now: docs/round05/README.md. Corrected since the tag.*
+
 # Round 5 PPI track, the final report (E1 to E5, with E4b)
 
-9 October 2026. Written by the execution session for the oversight chat at the E5 gate, the track's last, under `docs/round05/i01/ppi/round5_ppi_track.md` and the decision memos `docs/round05/i02/ppi/round5_ppi_E2_decisions.md` and `docs/round05/i03/ppi/round5_ppi_E4_decisions.md`, as transcribed in `docs/round05/tracks/ppi/round5_ppi_plan.md` sections 7 and 8. The two gate reports `docs/round05/i01/ppi/round5_ppi_E2_report.md` and `docs/round05/i02/ppi/round5_ppi_E4_report.md` stay as written, and this report gives each stage's result in brief with the file it comes from. Every number below is read from the file named beside it. Paths are relative to the repository root unless they start with `/work`. Shorthand is `E1/` for `results/round5/ppi/E1_interval/`, `E2/` for `results/round5/ppi/E2_regimeB/`, `E3a/` for `results/round5/ppi/E3a_crossfit/`, `E3/` for `results/round5/ppi/E3_twolevel/`, `E4/` for `results/round5/ppi/E4_selection/`, `E4b/` for `results/round5/ppi/E4b_rejective/` and `E5/` for `results/round5/ppi/E5_joint/`.
+9 October 2026. Written by the execution session for the oversight chat at the E5 gate, the track's last, under `round5_ppi_track.md` (at tag `record-full-2026-11`; its content now in `docs/round05/round05_methods_note.md`) and the decision memos `docs/round05/i02/ppi/round5_ppi_E2_decisions.md` and `docs/round05/i03/ppi/round5_ppi_E4_decisions.md`, as transcribed in `docs/round05/tracks/ppi/round5_ppi_plan.md` sections 7 and 8. The two gate reports `docs/round05/i01/ppi/round5_ppi_E2_report.md` and `docs/round05/i02/ppi/round5_ppi_E4_report.md` stay as written, and this report gives each stage's result in brief with the file it comes from. Every number below is read from the file named beside it. Paths are relative to the repository root unless they start with `/work`. Shorthand is `E1/` for `results/round5/ppi/E1_interval/`, `E2/` for `results/round5/ppi/E2_regimeB/`, `E3a/` for `results/round5/ppi/E3a_crossfit/`, `E3/` for `results/round5/ppi/E3_twolevel/`, `E4/` for `results/round5/ppi/E4_selection/`, `E4b/` for `results/round5/ppi/E4b_rejective/` and `E5/` for `results/round5/ppi/E5_joint/`.
 
 ## 1. Stage and status
 
@@ -171,7 +173,7 @@ $$
 9. **The allocation formula and the fitted curve disagree.** Section 6.6. Which value the paper uses for $m^\star_{\text{PP}}$ on lung and census is open.
 10. **Delivery 8's size.** Its bundle carried the E4 results commit with the code, so it was far larger than the code-only bundles 9 to 11. Its md5 is in `results/round5/ppi/code_deliveries.csv`.
 11. **Fuller (2009) was read only in abstract.** The publisher refused access to the full text. Morgan and Rubin (2012) was read in full from arXiv 1207.5625.
-12. **`pcF2` equals `own` on the census tasks.** Census tasks have one outcome, so the leading components of all genes' $\bar f_g$ are the outcome's own $\bar f_g$, and the `pcF2` rows repeat the `own` rows with $k = 2$.
+12. **`pcF2` equals `own` on the census tasks.** Census tasks have one outcome, so the leading components of all genes' $\bar f_g$ are the outcome's own $\bar f_g$, and the `pcF2` rows repeat the `own` rows with $k = 1$, which `E4b/e4b_d2_diagnostics.csv` records for census `pcF2`. They are not reported separately.
 13. **E4's dropped $\theta_2$ draws were not rerun**, as the memo allowed (section 6.5).
 
 ### Discrepancies and records

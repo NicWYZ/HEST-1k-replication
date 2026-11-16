@@ -1,7 +1,9 @@
+*2 October 2026. Reviewed as tagged at round4-ppi-Q3. What stands now: docs/round04/README.md. Corrected since the tag.*
+
 # Round 4, the PPI track, Q3 report (covering Q2, Q3, Q1b and the theorem check)
 
 Instruction: `docs/round04/i01/ppi/round4_ppi_track.md`, with addendum 1 and the Q1 decision memo
-(`docs/round04/i02/ppi/round4_ppi_Q1_decisions.md`), all transcribed in `docs/round04/tracks/ppi/round4_ppi_plan.md`
+(`round4_ppi_Q1_decisions.md` (at tag `record-full-2026-11`; its content now in `docs/round04/tracks/ppi/round4_ppi_plan.md`)), all transcribed in `docs/round04/tracks/ppi/round4_ppi_plan.md`
 (sections 1 to 13). Format: the instruction's section 8, as in the Q1 report. Branch `round4-ppi`.
 Date: 2 October 2026.
 
@@ -605,7 +607,8 @@ Three proposals the memo asked for (plan section 13.9), then the next stage.
 
 1. **The $\lambda$ rule. Rule (d2), with rule (c) reported beside it.** In the simulation (d2) keeps
    the width ratio at $r = 0$ within 0.04 of 1 from $G_L = 6$ and within 0.02 from $G_L = 8$, where
-   (c) is 0.02 to 0.32 wider across $G_L = 4$ to 20 (section 6.4). It gives up 0.03 to 0.09 of
+   (c) is 0.02 to 0.32 wider across $G_L = 4$ to 20 (section 6.4; the numeric-claim sweep did not
+   trace 0.32 to a results file, `results/round4/ppi/final_gate_sweep.tsv`). It gives up 0.03 to 0.09 of
    width at $r \ge 0.5$ against (c). On the real HEST tasks, where the donor-weighted gain is negative, (d2) is the rule
    closest to the classical estimator (table in section 6.1), so it does the least harm when the
    predictor is uninformative. Rule (d1) passes neither half of Q1b.1 at $G_L = 6$ and is not

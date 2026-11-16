@@ -1,3 +1,5 @@
+*24 September 2026. Reviewed as tagged at round3-final-r2. What stands now: docs/round03/README.md. Corrected since the tag.*
+
 # Round 3, end-of-round report
 
 24 September 2026. Covers interval 3: H1, A4 (A4a and A4b), B1, B2 and D4. Written against
@@ -340,9 +342,9 @@ panel and pixel size run three weeks apart, the session signature of finding 3 i
 R5c's $+0.0652$ is kept and renamed as the value of a same-laboratory, same-instrument slide in the
 training pool across donors; READ's $+0.0901$ is the only same-specimen replicate figure. Property 11
 records the D2 layout difference and, from this report, the layout anchor's outcome (section 6.5).
-Known limitations 14 to 18 are added. `docs/round02/i05/exec/hest_bench_issue_draft.md` has its IDC item struck with a
+Known limitations 14 to 18 are added. `hest_bench_issue_draft.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`) has its IDC item struck with a
 dated note and stays unsent. `docs/WAYS_OF_WORKING.md` gains the three notes of plan section 13.4 item
-5. `docs/round02/i03/exec/r5_idc_provenance.md` gains a one-line banner and is otherwise unedited.
+5. `r5_idc_provenance.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`) gains a one-line banner and is otherwise unedited.
 
 The two reading items settled less than hoped. The Immunity paper (Meylan et al. 2022, doi
 10.1016/j.immuni.2022.02.001) is not reachable by any open route tried, so no patient table was read.
@@ -511,7 +513,7 @@ Trained on the Cordeliers ccRCC samples and tested on Indiana's non-tumour sampl
 0.2543 against 0.0425 below. The asymmetry is the finding. The population probe separates the two at
 balanced accuracy 0.99997 under slide hold-out and under spatial blocks. The eight morphology
 covariates bring it to 0.8288 and 0.8443, removing 34% and 31% of the above-chance signal, a majority
-in none of the three encoders. The two populations differ in nine ways at once (section 4), and the
+in none of the three encoders. [Quarantined since this report: the probe's patch geometry used the full extent where half was meant, and the probe was not rerun, so the 31% to 34% does not stand; `docs/round03/README.md`.] The two populations differ in nine ways at once (section 4), and the
 probe's ceiling is a statement about all nine together.
 
 **Breast Xenium, one laboratory, two instrument generations.** `donor` covers 0.8861 and `random`
@@ -669,7 +671,7 @@ about one point of coverage, 0.8883 against 0.8778, with a third of CCRCC's fold
 
 The kidney population-and-source shift is asymmetric. Training on ccRCC and testing on non-tumour
 kidney covers 0.9053, the reverse 0.7032, and morphology explains about a third of a perfectly
-separable probe signal (`results/round3/D4_expansion/d4_pooled_numbers.csv`). No laboratory term can
+separable probe signal (`results/round3/D4_expansion/d4_pooled_numbers.csv`). [Quarantined since this report: the probe's patch geometry used the full extent where half was meant, and the probe was not rerun, so the 31% to 34% does not stand; `docs/round03/README.md`.] No laboratory term can
 be measured in HEST-1k with disease held fixed (`README.md` known limitation 14).
 
 Instrument generation is a session-like axis. On breast Xenium from one laboratory, prototype-instrument
