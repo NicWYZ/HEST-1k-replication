@@ -8,9 +8,8 @@ The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at U
 updated: 2026-11-15 (oversight session)
 unit: round10
 status: closing
-next: once Nicolas has pushed tag record-full-2026-11 and approved the removal list, remove the files in one commit naming the tag, have a fresh agent check the reduced record, then plan round 11 (draft v1) with him.
+next: once Nicolas has approved the removal list (tag record-full-2026-11 is on the remote), remove the files in one commit naming the tag, have a fresh agent check the reduced record, then plan round 11 (draft v1) with him.
 branch claude/festive-meitner-ewn9ev: to-merge | the record reduction, one pull request into main
-waiting: TAG | since 2026-11-15 | Nicolas pushes tag record-full-2026-11 on commit 6c11d307; nothing is removed before it is on the remote (default wait)
 waiting: REDUCE | since 2026-11-15 | Nicolas approves the files the reduction removes and answers its questions (default nothing removed)
 waiting: D5 | since 2026-10-26 | which scale the paper calls primary; both are in the numbers table (Nicolas with David; default report both)
 waiting: O5 | since 2026-11-08 | which of round 9's three theorems the paper keeps (Nicolas; default candidates, not claimed)
@@ -25,7 +24,7 @@ Round 10 closed on 15 November without track `paper`. What the project has estab
 
 1. `git fetch origin --prune --tags`, then `python3 code/scripts/record_check.py`. Read every commit and branch it lists, the open pull requests, and the plan named on each live branch. Bring the state block up to date before any other work. Run the check again before every documentation commit.
 2. A running track is read through its branch on `origin`, read only. Longleaf is reached through execution sessions or Nicolas.
-3. Read `docs/README.md` the first time you need the record, then the last closed round's summary, the current round's `README.md` and `docs/round01/README.md` (formerly `docs/round02/README.md` (formerly `docs/round03/README.md` (formerly `docs/round04/README.md` (formerly `masterplan.md`, at tag `record-full-2026-11`), at tag `record-full-2026-11`), at tag `record-full-2026-11`), at tag `record-full-2026-11`), and only what the work in hand needs. For how something came to be, read `git log` on the file or the tag named in the round's index row.
+3. Read `docs/README.md` the first time you need the record, then the last closed round's summary, the current round's `README.md` and `masterplan.md`, and only what the work in hand needs. For how something came to be, read `git log` on the file or the tag named in the round's index row.
 
 Before stopping, or before a long or risky step, update the state block and commit. That is the handoff. There is no progress log: the commit that does the work updates the state block, and its message says what was found or decided and who decided it. A decision, rule or preference Nicolas states goes into the file it belongs in (a rule, the state block, a brief) in the same session.
 
