@@ -5,12 +5,11 @@
 The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at UNC, in Dr. Hongtu Zhu's lab and supervised by Dr. Daiwei (David) Zhang, toward a submittable paper by spring 2027. The paper answers the proposal's two questions, calibrated uncertainty for histology-predicted gene expression and valid inference with it, on HEST-1k spatial transcriptomics with ACS PUMS 2018 income as a second domain. Existing or classical methods are applied wherever they serve, and the project's own method or theory arises only where a problem met in practice has no existing solution after a literature search (`docs/round10/00_prep/round10_reframing.md`, section 1). Reading this as an applied statistics paper is `[proposed]`.
 
 ```state
-updated: 2026-11-15 (oversight session)
+updated: 2026-11-16 (oversight session)
 unit: round10
 status: closing
-next: once Nicolas has approved the removal list (tag record-full-2026-11 is on the remote), remove the files in one commit naming the tag, have a fresh agent check the reduced record, then plan round 11 (draft v1) with him.
+next: a fresh agent checks the reduced record (procedure step 10); then Nicolas merges the pull request of branch claude/festive-meitner-ewn9ev, and round 11 (draft v1) is planned with him.
 branch claude/festive-meitner-ewn9ev: to-merge | the record reduction, one pull request into main
-waiting: REDUCE | since 2026-11-15 | Nicolas approves the files the reduction removes and answers its questions (default nothing removed)
 waiting: D5 | since 2026-10-26 | which scale the paper calls primary; both are in the numbers table (Nicolas with David; default report both)
 waiting: O5 | since 2026-11-08 | which of round 9's three theorems the paper keeps (Nicolas; default candidates, not claimed)
 waiting: Q1 | since 2026-10-09 | whether regime B can be bought on a spatial platform, and at what cost (Nicolas with the advisors; default no cost claim)
