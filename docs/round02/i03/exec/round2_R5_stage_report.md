@@ -385,8 +385,8 @@ benchmark issue of the same kind as COAD's labels, and it is the one I would rai
 authors first, because unlike COAD it comes with a measured cost. HEST's metadata gives the two
 samples distinct patient labels; 10x's own dataset page states `donorCount: 1` and describes them
 as 5 µm sections of one resected tumour mass. The measured consequence is +0.0651 within-slide
-Pearson, 54% of IDC's reported patient gap (§ 6.1). Evidence: `r5_idc_provenance.md` § 1–2,
- (at tag `record-full-2026-11`)`r5_idc_replicate_leak.csv`, and the page's own metadata, which I re-verified in the fetched copy.
+Pearson, 54% of IDC's reported patient gap (§ 6.1). Evidence: `r5_idc_provenance.md` § 1–2 (at tag `record-full-2026-11`),
+`r5_idc_replicate_leak.csv`, and the page's own metadata, which I re-verified in the fetched copy.
 
 Note what this does **not** affect: the IDC *task* remains a valid prediction task, and the shipped
 50 genes are unaffected. What is affected is the interpretation of IDC's patient-split score as

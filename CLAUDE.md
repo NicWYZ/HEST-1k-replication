@@ -8,7 +8,7 @@ The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at U
 updated: 2026-11-16 (oversight session)
 unit: round10
 status: closing
-next: a fresh agent checks the reduced record (procedure step 10); then Nicolas merges the pull request of branch claude/festive-meitner-ewn9ev, and round 11 (draft v1) is planned with him.
+next: Nicolas merges the pull request of branch claude/festive-meitner-ewn9ev (the record reduction, checked by a fresh agent) with a merge commit; then round 11, draft v1 of the applied paper, is planned with him from docs/round10/README.md.
 branch claude/festive-meitner-ewn9ev: to-merge | the record reduction, one pull request into main
 waiting: D5 | since 2026-10-26 | which scale the paper calls primary; both are in the numbers table (Nicolas with David; default report both)
 waiting: O5 | since 2026-11-08 | which of round 9's three theorems the paper keeps (Nicolas; default candidates, not claimed)

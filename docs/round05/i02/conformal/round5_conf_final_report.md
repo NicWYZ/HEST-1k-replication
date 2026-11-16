@@ -2,7 +2,7 @@
 
 # Round 5, prediction-set track: closing report at W5 (W3, W4 and W5, with W1 and W2 carried from the W2 gate)
 
-Written by the lead at the end of interval 2, under `round5_conformal_track.md` sections 6 to 8 and the W2 decisions memo ( (at tag `record-full-2026-11`)`round5_conformal_W2_decisions.md` (at tag `record-full-2026-11`; its content now in `docs/round05/tracks/conformal/round5_conf_plan.md`), transcribed as plan section 6). W1 and W2 were reported at the W2 gate (`docs/round05/i01/conformal/round5_conf_W2_report.md`, tag `round5-conf-W2`, pull request #16, merged). Their results are not repeated here beyond the predictions table and the closing page.
+Written by the lead at the end of interval 2, under `round5_conformal_track.md` sections 6 to 8 and the W2 decisions memo (`round5_conformal_W2_decisions.md` (at tag `record-full-2026-11`; its content now in `docs/round05/tracks/conformal/round5_conf_plan.md`), transcribed as plan section 6). W1 and W2 were reported at the W2 gate (`docs/round05/i01/conformal/round5_conf_W2_report.md`, tag `round5-conf-W2`, pull request #16, merged). Their results are not repeated here beyond the predictions table and the closing page.
 
 ## 1. Stage and status
 

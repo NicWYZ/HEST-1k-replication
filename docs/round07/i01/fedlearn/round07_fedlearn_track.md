@@ -103,7 +103,7 @@ From the oversight chat's memory, marked `[verify]`. FedAvg (McMahan et al., AIS
 | round 4's embeddings and tasks | `results/round4/data/P2_embeddings/`, `results/round4/data/P5_task/` | the lung task and its embeddings for `uni_v2`, `hoptimus0` and `resnet50` |
 | round 3's extra embeddings | `results/round3/D2_embeddings/`, `results/round3/D4_expansion/` | embeddings for two sets beyond the benchmark, `institution_breast_xenium` (breast Xenium from several institutions, with different gene panels) and `kidney_visium_cell`, for the same three encoders |
 | round 1's heads | `results/faithful/`, `results/tailored/` | the replicated HEST-bench heads, the anchor for any refit |
-| round 4's prediction tables, Longleaf only | the parquets listed in `round5_ppi_track.md`, section 3 | per spot outcome, prediction and donor for  (at tag `record-full-2026-11`)`CCRCC`, `INDIANA_KIDNEY` and `LUNG_XENIUM` |
+| round 4's prediction tables, Longleaf only | the parquets listed in `round5_ppi_track.md`, section 3 (at tag `record-full-2026-11`) | per spot outcome, prediction and donor for `CCRCC`, `INDIANA_KIDNEY` and `LUNG_XENIUM` |
 | what the archive holds | `docs/reference/methods_and_state_of_play.md`, sections 21 to 24 | what has been used and what the rest of HEST-1k holds |
 
 Where the embeddings of the `CCRCC` and `INDIANA_KIDNEY` tasks live on Longleaf is not recorded in this document. The inventory of F2 establishes which assets are on disk, for which samples and encoders. Do not assume any of them from this table.
