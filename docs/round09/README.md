@@ -76,8 +76,8 @@ Nothing of round 9 was presented to the advisors. Their second meeting (7 Octobe
 
 ## Open threads
 
-- **D1, the venue and lead result** (now Q3/D1), and **V**, how the paper states regime B without a finite-sample share bound in print, both wait on Nicolas after round 10.
-- **D2, prediction sets in the paper.** Nicolas kept them in round 10; the joint design (E8) is waiting.
+- **D1, the venue and lead result** (now Q3), waits on Nicolas. **V**, how the paper states regime B without a finite-sample share bound in print, was settled at round 10's F3 (`docs/round10/README.md`).
+- **D2, prediction sets in the paper.** Nicolas kept them in round 10, and the joint design (E8) was settled at F3 (`docs/round10/README.md`).
 - **D5, normalization of the estimands.** Round 10 carries both scales and reports the difference.
 - **Open technical items** from fewcluster: a sharp computable critical value in realistic classes, a tuned-coefficient Theorem 3, and the exact tuned frontier for ACS.
 - **Sources.** Nine paywalled sources for the critical-value check, and the classical sources read only from abstracts, keep the novelty verdicts provisional.

@@ -3,7 +3,7 @@
 # Round 4, the PPI track, Q3 report (covering Q2, Q3, Q1b and the theorem check)
 
 Instruction: `docs/round04/i01/ppi/round4_ppi_track.md`, with addendum 1 and the Q1 decision memo
-(`docs/round04/tracks/ppi/round4_ppi_plan.md` (formerly `round4_ppi_Q1_decisions.md`, at tag `record-full-2026-11`)), all transcribed in `docs/round04/tracks/ppi/round4_ppi_plan.md`
+(`round4_ppi_Q1_decisions.md` (at tag `record-full-2026-11`; its content now in `docs/round04/tracks/ppi/round4_ppi_plan.md`)), all transcribed in `docs/round04/tracks/ppi/round4_ppi_plan.md`
 (sections 1 to 13). Format: the instruction's section 8, as in the Q1 report. Branch `round4-ppi`.
 Date: 2 October 2026.
 

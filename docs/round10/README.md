@@ -101,7 +101,7 @@ Two scorings rest on readings decided after the run, both recorded at F2 (method
 
 ## What was presented outside the project
 
-Nothing from round 10 was presented to the advisors or anyone outside the project. Nicolas decided on 6 November that there is no outside contact for now, and question Q1 was deferred to the next advisor deck, whose time is not set. The second advisor meeting stopped before the results of rounds 4 and later (`docs/round05/round05_methods_note.md` (formerly `round5_ppi_track.md`, at tag `record-full-2026-11`), section 2.1), and the meeting of 12 October discussed round 6, so the record shows no result the advisors saw that this round changes.
+Nothing from round 10 was presented to the advisors or anyone outside the project. Nicolas decided on 6 November that there is no outside contact for now, and question Q1 was deferred to the next advisor deck, whose time is not set. The second advisor meeting stopped before the results of rounds 4 and later (`round5_ppi_track.md`, section 2.1 (at tag `record-full-2026-11`)), and the meeting of 12 October discussed round 6, so the record shows no result the advisors saw that this round changes.
 
 ## The open questions of the masterplan, at the close
 

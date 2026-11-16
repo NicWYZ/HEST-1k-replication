@@ -52,4 +52,4 @@ From `round10_final_runs_F2_decisions.md` (at tag `record-full-2026-11`), sectio
 
 ## 4. Gates F3 and F4
 
-The F3 decisions are kept whole in `i05/final-runs/round10_final_runs_F3_decisions.md`. Nicolas's reply at F4, recorded in `docs/round10/README.md` (formerly `round10_final_runs_F4_decisions.md`, at tag `record-full-2026-11`) on 15 November, was "Gate approved, close the track, leave any open items in the report." The final report's proposal of a further tag on the citation-fix commit was not taken up, so the gate tag stays on `fad48334` and the branch head carries the fix.
+The F3 decisions are kept whole in `i05/final-runs/round10_final_runs_F3_decisions.md`. Nicolas's reply at F4, recorded in `round10_final_runs_F4_decisions.md` (at tag `record-full-2026-11`; summarised in `docs/round10/README.md`) on 15 November, was "Gate approved, close the track, leave any open items in the report." The final report's proposal of a further tag on the citation-fix commit was not taken up, so the gate tag stays on `fad48334` and the branch head carries the fix.

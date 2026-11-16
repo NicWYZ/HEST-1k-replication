@@ -4,7 +4,7 @@
 
 23 September 2026. Covers interval 2: H0, A2, A3, D1, D2 and D3. Written against
 `docs/round03/tracks/exec/round3_execution_plan.md`, whose section 12 is this session's transcription of
-`docs/round03/tracks/exec/round3_execution_plan.md` (formerly `round3_A1_decisions.md`, at tag `record-full-2026-11`). Report-and-wait gate. Nothing in interval 3 has been
+`round3_A1_decisions.md` (at tag `record-full-2026-11`; its content now in `docs/round03/tracks/exec/round3_execution_plan.md`). Report-and-wait gate. Nothing in interval 3 has been
 started, set up, staged or piloted, and nothing will be until the decision comes back.
 
 **Revision 2, 23 September 2026 (tag `round3-A3-r2`).** The first version (tag `round3-A3`) was
@@ -527,14 +527,14 @@ the corrected command.
 | `docs/round02/00_prep/HEST_replication_review.md` | 112 | 112 | 0 | 0 | 0 | 0 |
 | `docs/README.md` | 6 | 6 | 0 | 0 | 0 | 0 |
 | `docs/WAYS_OF_WORKING.md` | 38 | 38 | 0 | 0 | 0 | 0 |
-| `docs/round02/README.md` (formerly `closeout_gate_report.md`, at tag `record-full-2026-11`) | 41 | 41 | 0 | 0 | 0 | 0 |
-| `docs/round02/README.md` (formerly `deck_master_outline.md`, at tag `record-full-2026-11`) | 162 | 162 | 0 | 0 | 0 | 0 |
-| `docs/round02/README.md` (formerly `deck_speaker_scripts.md`, at tag `record-full-2026-11`) | 98 | 93 | 5 | 0 | 0 | 0 |
-| `docs/round02/README.md` (formerly `docs_clean_report.md`, at tag `record-full-2026-11`) | 62 | 62 | 0 | 0 | 0 | 0 |
+| `closeout_gate_report.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`) | 41 | 41 | 0 | 0 | 0 | 0 |
+| `deck_master_outline.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`) | 162 | 162 | 0 | 0 | 0 | 0 |
+| `deck_speaker_scripts.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`) | 98 | 93 | 5 | 0 | 0 | 0 |
+| `docs_clean_report.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`) | 62 | 62 | 0 | 0 | 0 | 0 |
 | `docs/round00/first_year_ST_project_proposal.md` | 21 | 16 | 5 | 0 | 0 | 0 |
-| `docs/round02/README.md` (formerly `hest_bench_issue_draft.md`, at tag `record-full-2026-11`) | 56 | 56 | 0 | 0 | 0 | 0 |
+| `hest_bench_issue_draft.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`) | 56 | 56 | 0 | 0 | 0 | 0 |
 | `docs/round00/literature_landscape.md` | 20 | 20 | 0 | 0 | 0 | 0 |
-| `docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`) | 60 | 60 | 0 | 0 | 0 | 0 |
+| `r5_idc_provenance.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`) | 60 | 60 | 0 | 0 | 0 | 0 |
 | `docs/round01/i01/exec/round1_final_stage_report.md` | 169 | 169 | 0 | 0 | 0 | 0 |
 | `docs/round02/i01/exec/round2_R0_R1_stage_report.md` | 275 | 275 | 0 | 0 | 0 | 0 |
 | `docs/round02/i02/exec/round2_R3_stage_report.md` | 266 | 265 | 0 | 0 | 0 | 1 |
@@ -554,7 +554,7 @@ cites a gitignored parquet, now listed in the README's known limitations. Sectio
 over the README and `docs/round0[34]/**/round3_*.md` including this report, is run at commit time; its result is
 in the commit message.
 
-`docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`) now shows 60 of 60 verified, but that is partly spurious: 41 of its
+`r5_idc_provenance.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`) now shows 60 of 60 verified, but that is partly spurious: 41 of its
 claims were unresolved before this interval and pass now only because the release tables they cite
 were committed, and the checker confirms that a number is present in a cited file, not that it is
 the right quantity. Its line 47 carries the `TENX95` misassignment D3 found. Section 7, item 7.
@@ -564,10 +564,10 @@ AnnData's 6,138 rows (`results/round3/H0_housekeeping/tenx111_spot_count.md`).
 ## 7. Discrepancies, open questions and escalations
 
 1. **The IDC `audited` label set rests on a contradicted merge.** D3 finds `TENX95` misassigned in
-   `docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`) and round 2's merge of `TENX95` with `TENX99` contradicted by HEST's
+   `r5_idc_provenance.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`) and round 2's merge of `TENX95` with `TENX99` contradicted by HEST's
    own metadata in all five releases. `donor_audit.csv` is frozen per section 12.7. Until decided,
    everything built on IDC `audited` groups two donors as one: A1's and A2's IDC `audited` rows, round
-   2's R5c figure of +0.0652, and `docs/round02/README.md` (formerly `hest_bench_issue_draft.md`, at tag `record-full-2026-11`). A2b's largest per-task deficit,
+   2's R5c figure of +0.0652, and `hest_bench_issue_draft.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`). A2b's largest per-task deficit,
    0.283, is on IDC `audited`. Decision needed: supersede `donor_audit.csv` with a round-3 audit file,
    or not.
 2. **CCRCC's donor labels are unsourced.** Round 2 records them `verified` against a GEO series
@@ -586,7 +586,7 @@ AnnData's 6,138 rows (`results/round3/H0_housekeeping/tenx111_spot_count.md`).
 6. **Kidney is Indiana against Cordeliers, not Washington University against Indiana,** and the
    contrast is confounded with tumour status and partly with preservation.
 7. **The numeric-claim checker passes spuriously** when a cited file happens to contain the number.
-   `docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`) is the live case.
+   `r5_idc_provenance.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`) is the live case.
 8. **The Mechanisms hand-back named the block-calibrated folds as HCC, LUNG and SKCM;** they also
    include COAD `patient`, 3 of the 39. No number changes; sections 4 and 6 above use the corrected
    list.

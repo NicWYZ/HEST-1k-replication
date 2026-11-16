@@ -1,3 +1,5 @@
+*9 October 2026. Reviewed as tagged at `record-full-2026-11`. What stands now: docs/round05/README.md.*
+
 # Round 5, plan note
 
 No masterplan was written for round 5. It went ahead on the plan of round 4's closing memos, written into two track instructions of 7 October 2026 that the track plans transcribe. The round's expectations are the predictions written there before the runs.

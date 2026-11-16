@@ -3,7 +3,7 @@
 # Round 4 PPI track, the theory for Q2 and Q3
 
 Written before the Q2 and Q3 experiments run, as the instruction (`docs/round04/i01/ppi/round4_ppi_track.md`,
-Q2 and Q3) and the Q1 decision memo (`docs/round04/tracks/ppi/round4_ppi_plan.md` (formerly `round4_ppi_Q1_decisions.md`, at tag `record-full-2026-11`), sections 2 and 5)
+Q2 and Q3) and the Q1 decision memo (`round4_ppi_Q1_decisions.md`, sections 2 and 5 (at tag `record-full-2026-11`))
 require. Transcribed in `docs/round04/tracks/ppi/round4_ppi_plan.md`, sections 3 and 13. None of the results below is
 new. They are the difference estimator's variance in the one-way random-effects model (Särndal,
 Swensson and Wretman 1992, chapter 8; Cochran 1977, chapter 10 for two-stage sampling), written in

@@ -191,7 +191,7 @@ document and into the session's operating plan. Only then does the interval begi
    swept with the `historical` class. `round2_R1_decisions.md` was not saved, is listed in
    `docs/README.md` as not in the repository, and is not reconstructed.
 3. Update `docs/README.md`. It omits five documents that are present, and it lists
-   `docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`) as absent when the file is in the directory.
+   `r5_idc_provenance.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`) as absent when the file is in the directory.
 4. Check the README headline table shows H-Optimus-1's `raw_ridge` average now that
    `results/summary/results_encoder.csv` carries it.
 5. Create `results/round3/` and the `round3_` script convention, and commit this document.
@@ -678,7 +678,7 @@ since nothing downstream is interpretable.
 
 **Escalated to Nicolas.** The D0 proposal, meaning which sets and how much storage, before any
 download; any download beyond the approved sets, including whole-slide images; anything that would
-be sent to the HEST authors, so `docs/round02/README.md` (formerly `hest_bench_issue_draft.md`, at tag `record-full-2026-11`) stays unsent; anything touching the
+be sent to the HEST authors, so `hest_bench_issue_draft.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`) stays unsent; anything touching the
 scientific framing of the two topics; and STFlow, which stays deferred.
 
 ---
@@ -856,7 +856,7 @@ B1 and B2 position against both by name.
 
 1. Fix the sweep command printed in `docs/WAYS_OF_WORKING.md` to the one
    `code/scripts/sweep_table.py` runs. Fifteen minutes.
-2. `docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`): two hours of triage, then stop. Fix what that allows, banner the
+2. `r5_idc_provenance.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`): two hours of triage, then stop. Fix what that allows, banner the
    document as a closed record of a reading task, sweep it under the `historical` class, and put the
    per-document sweep table for the whole docs tree into the A3 report.
 3. README known limitations gain two lines: the derived-claim formula in `round2_R3_stage_report.md`
@@ -1024,7 +1024,7 @@ Per Nicolas's standing rule, parallel work goes to sub-agents. The cut, and why 
 
 | track | stages | writes |
 |---|---|---|
-| Housekeeping | H0 items 1 to 4 | `docs/WAYS_OF_WORKING.md`, `docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`), `README.md`, the per-document sweep table |
+| Housekeeping | H0 items 1 to 4 | `docs/WAYS_OF_WORKING.md`, `r5_idc_provenance.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`), `README.md`, the per-document sweep table |
 | Anatomy | the parts of A2 answerable from A1's committed outputs: A2a's slide, session, resolution, calibration-sharing, gene, `donor_label_status`, $K$, `random` `abs`-against-`scaled` and PRAD-by-fold strata; A2d's paired within-PRAD comparison; A2e; the R7 per-gene join | `a2_by_stratum__anatomy.csv`, `a2_prad_donor_sharing__paired.csv`, `a2_width_by_encoder.csv`, `a2_pergene_join.csv` |
 | Mechanisms | H0 item 5, then the parts of A2 that need a harness rerun: A2a's predicted-value decile and neoplastic-fraction strata; A2b; A2c; A2d's new arm; A2f; both A2 figures. Then A3 | the harness, `a2_by_stratum__spot.csv`, `a2_prad_donor_sharing__arm.csv`, and every other A2 and A3 output |
 | Expansion | the set-member additions, D1, then D2 with its anchor check | `expansion_set_members.csv`, `hest_ext/`, `embeddings_ext/` |
@@ -1105,14 +1105,14 @@ instruction; those sections are left as they were, as the record of what earlier
    rows; then the 76 rows of `donor_lab_audit_ext.csv` appended. `donor_audit.csv` stays frozen, its
    provenance saying it is superseded. Every round-3 table carrying an IDC `audited` row keeps the row,
    tagged `superseded_label_set`; no further stage runs IDC `audited`.
-   `docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`) stays frozen, gains a one-line banner pointing to D3 and the memo, and
+   `r5_idc_provenance.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`) stays frozen, gains a one-line banner pointing to D3 and the memo, and
    its line 47 is not edited. README consequences are H1's (§ 13.4): property 1 withdrawn; the 96%
    `TENX95`/`TENX99` partner confusion re-read as two donors from one laboratory, instrument, panel and
    pixel size three weeks apart, the session signature of finding 3 in a second task; R5c's
    $+0.0652$ kept as a measurement and renamed as the value of a same-laboratory, same-instrument
    slide in the training pool across donors, with IDC's `leak_realised_in_shipped_split` set to
    `False`; READ's $+0.0901$ remaining the only same-specimen replicate figure.
-   `docs/round02/README.md` (formerly `hest_bench_issue_draft.md`, at tag `record-full-2026-11`) has its IDC item struck and stays unsent. The deck's `issue1`
+   `hest_bench_issue_draft.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`) has its IDC item struck and stays unsent. The deck's `issue1`
    slide is on Nicolas's running list, not this session's.
 2. **The D2 layout finding is a property of the public data; no re-embedding.** The 28 anchor
    samples are already embedded from HEST-1k patches, so the expansion is internally consistent. Whether
@@ -1159,7 +1159,7 @@ Recorded here; it adds no action beyond what the stage sections below carry.
 2. README: property 1 withdrawn and rewritten per § 13.2 item 1; property 11 added; known limitations
    updated for the D2 layout, the subset relation, the CCRCC labels and the determinism note; the
    `raw_ridge` sentence and everything else untouched.
-3. `docs/round02/README.md` (formerly `hest_bench_issue_draft.md`, at tag `record-full-2026-11`): IDC item struck with a dated note; stays unsent.
+3. `hest_bench_issue_draft.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`): IDC item struck with a dated note; stays unsent.
 4. Two reading items, one hour each: the Immunity paper's patient table for CCRCC's donor count and
    any per-sample donor mapping, and `INT5`'s source record. Recorded in `donor_audit_r3.csv`.
 5. `docs/WAYS_OF_WORKING.md` gains three notes: (i) with fairshare near 0.007 jobs start through
@@ -1280,7 +1280,7 @@ fans out once it exists.
 | track | stages | writes |
 |---|---|---|
 | lead, before fan-out | § 13.4 item 1's audit file; this transcription | `results/round3/D3_audit/donor_audit_r3.csv`, `docs/round03/tracks/exec/round3_execution_plan.md` |
-| Housekeeping | H1 items 1 (the `superseded_label_set` tags), 2 to 5 | the tag column on committed round-3 tables, `README.md`, `docs/round02/README.md` (formerly `hest_bench_issue_draft.md`, at tag `record-full-2026-11`), `docs/WAYS_OF_WORKING.md`, the banner on `docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`), and only the status, citation and notes columns of `donor_audit_r3.csv`, never `donor_id` |
+| Housekeeping | H1 items 1 (the `superseded_label_set` tags), 2 to 5 | the tag column on committed round-3 tables, `README.md`, `hest_bench_issue_draft.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`), `docs/WAYS_OF_WORKING.md`, the banner on `r5_idc_provenance.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`), and only the status, citation and notes columns of `donor_audit_r3.csv`, never `donor_id` |
 | Scores | A4a | `code/scripts/round3_a4_scores.py`, `results/round3/A4_scores/` except `a4b_*` |
 | HCP | A4b | `code/scripts/round3_a4b_hcp.py`, `results/round3/A4_scores/a4b_*` |
 | Inference | B1, then B2 | `code/scripts/round3_b1_ppi.py`, `code/scripts/round3_b2_semisynthetic.py`, `results/round3/B1_ppi/`, `results/round3/B2_semisynthetic/` |

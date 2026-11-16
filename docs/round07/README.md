@@ -97,7 +97,6 @@ The advisor meeting of 12 October set the federated learning assignment. The rec
 - **Federated learning,** in `NicWYZ/ST-Fed-Learn`: R7-2, R7-3 and R7-4 (framing, venue and whether it becomes a paper), the three cheap checks of the closing report's section 10 (the privacy cost split between noise and penalty, partial overlap gene by gene, the intercept loss against center size), and a metric that pools test centers or mean squared error.
 - **Advisor direction of 12 October** (`round07_advisor_directions.md`, at tag `record-full-2026-11`): Dr. Zhu's proposal of a federated learning methods paper, preliminary and a proof of concept. It is carried by `NicWYZ/ST-Fed-Learn`, not by this project.
 - **Not established** (`i03/ppi/round07_ppi_final_report.md`, sections 7 and 8): the superpopulation target for the cube designs and the mixture; every cube or mixture result beyond one score, one $\tau$, one $\epsilon$ and one skewed law; a landing that keeps the constant; why balancing the constant also helps on tissue; the Monte Carlo error of the simulated pair probabilities; the lung $\theta_2$ ties; and why Broska and Howes's variance estimate is less conservative for the design target than its derivation says, read as the noise of $\hat\lambda$ and not derived. Round 8's candidate runs of Yang, Qu and Li's quantile for `rej_t` and Aronow and Samii's conservative variance were not run.
-- **Housekeeping.** The numeric checker misses comma-grouped integers in free-text CSV cells (step R7.6, carried in the state block).
 
 ## Documents kept
 

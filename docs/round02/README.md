@@ -59,19 +59,19 @@ The plan of record is `i01/exec/round2_execution_plan.md`, revised by the decisi
 
 ## What reached the advisors and has changed since
 
-The deck was presented on 21 September through slide 6 of 14 (`docs/round03/tracks/exec/round3_execution_plan.md` (formerly `round3_oversight_handoff.md`, at tag `record-full-2026-11`), section 1.2). Its figures are the seven files in `figures/deck/`, each drawn by a script in `code/figures/` from committed results files that `figures/deck/README.md` lists, with every annotated number in `results/summary/deck_numbers.csv`; the specification is `i01/deck/deck_figures_and_repo_update.md`, section 1.2. The deck itself, its outline and speaker scripts are at tag `record-full-2026-11` under `docs/round02/tracks/deck/`.
+The deck was presented on 21 September through slide 6 of 14 (`round3_oversight_handoff.md`, section 1.2 (at tag `record-full-2026-11`)). Its figures are the seven files in `figures/deck/`, each drawn by a script in `code/figures/` from committed results files that `figures/deck/README.md` lists, with every annotated number in `results/summary/deck_numbers.csv`; the specification is `i01/deck/deck_figures_and_repo_update.md`, section 1.2. The deck itself, its outline and speaker scripts are at tag `record-full-2026-11` under `docs/round02/tracks/deck/`.
 
 - **Slide 3, the faithful replication**, stands, except that it said 12 encoders on 3 heads; H-Optimus-1 has no `raw_xgb` cell.
 - **Slide 4, the patient split**, said that IDC's two 10x samples are probably two sections of one tumour, that the partner section is worth +0.065 and 54% of IDC's gap, that READ's +0.090 is a second estimate of the same effect, and that the unit carrying shared information is the tumour. IDC has four donors, the +0.065 is a same-laboratory slide from another donor, READ's is the only same-specimen figure, and the unit is the donor (findings 1 to 3). Nicolas was to correct this at the next presentation (`docs/round03/i03/exec/round3_A3_decisions.md`, section 2.1); the record does not show that he did. The COAD part stands.
 - **Slide 5, split design**, stands, with the caveat of finding 3 that its "novel patient 0.136" mean includes COAD's multi-donor holdout and READ's same-specimen term.
 - **Slide 6, Table A13**, stands.
-- **Slides 7 to 14** (the field, the two topics, the $R^2$ ladder, the session signature, $\theta_1$ and the variance components, next steps, two backups) were not presented. The second deck of 7 October opened with a refreshed slide 7 (`docs/round05/README.md` (formerly `deck2_outline.md`, at tag `record-full-2026-11`)); this round's record does not show whether the rest reached the advisors. Backup slide 14 also carried the IDC partner confusion as same-pair evidence.
+- **Slides 7 to 14** (the field, the two topics, the $R^2$ ladder, the session signature, $\theta_1$ and the variance components, next steps, two backups) were not presented. The second deck of 7 October opened with a refreshed slide 7 (`deck2_outline.md` (at tag `record-full-2026-11`; summarised in `docs/round05/README.md`)); this round's record does not show whether the rest reached the advisors. Backup slide 14 also carried the IDC partner confusion as same-pair evidence.
 
 The deck asked the advisors two things, what to do with the benchmark findings and whether to pull full HEST-1k for an institution axis. Neither was answered on 21 September. Nicolas decided to expand beyond the benchmark regardless, which round 3 did, and the draft issue stays unsent.
 
 ## Open threads
 
-- **The benchmark findings.** Whether they become an issue to the HEST authors, a note or a section of a paper is Nicolas's decision with David; contact with anyone outside the project is his alone, and on 6 November he decided there is none for now. The draft `hest_bench_issue_draft.md` (at tag `record-full-2026-11`) has its IDC item struck and is unsent.
+- **The benchmark findings.** The unsent draft issue is `docs/round02/i05/exec/hest_bench_issue_draft.md` at tag `record-full-2026-11`. Whether they become an issue to the HEST authors, a note or a section of a paper is Nicolas's decision with David; contact with anyone outside the project is his alone, and on 6 November he decided there is none for now. The draft `hest_bench_issue_draft.md` (at tag `record-full-2026-11`) has its IDC item struck and is unsent.
 - **Questions for the HEST authors, unresolved:** NCBI785's add-on panel has 33 real genes in the panel-designer file and 41 in HEST's files; why NCBI784 is excluded from the IDC task; Table A4's four Janesick samples against three in GEO; no H&E scan provenance for any IDC sample (R5 report, section 8).
 - **Not checked:** donor identity for the nine unverifiable samples; bootstrap intervals on the variance components; diagnostics for the nested ANOVA; whether the session result holds beyond PRAD patient 2 (R8 report, section 10).
 - **Produced and not reported:** `results/round2/R6_theta/nuclear_area_by_resolution.csv`, `area_resolution_correlation.csv` and `variance_components.csv` have no report that reads them.
@@ -92,7 +92,6 @@ The deck asked the advisors two things, what to do with the benchmark findings a
 | `i05/exec/round2_closeout_decisions.md` | the closeout rulings and the specification of the numeric-claim sweep |
 | `i05/exec/round2_closeout_report.md` | the freeze at `round2-final` and the first sweep |
 | `i05/exec/round2_results_synthesis.md` | every result of rounds 1 and 2 ranked, with how each was obtained |
-| `hest_bench_issue_draft.md` (at tag `record-full-2026-11`) | the unsent draft issue to the HEST authors, kept while its fate is undecided |
 | `i01/deck/deck_figures_and_repo_update.md` | the specification of the seven deck figures, `deck_numbers.csv` and the repository refresh, which the figure scripts cite |
 | `i02/deck/post_deck_repo_instructions.md` | the triage policy for the numeric-claim gate and the donor-audit regeneration, which ten scripts cite |
 | `round02_methods_note.md` | the numeric-claim checker's exception classes |

@@ -84,7 +84,7 @@ The predictions were written before the runs in the plan's sections 4.3 to 4.10 
 
 ## Presented outside the project
 
-The first advisor deck, presented on 21 September, called the IDC pair probably one donor (A3 memo section 2.1). The second deck's slide 4 carries the correction, and its slides 5 and 6 present round 3's coverage by design, the AUC and effective-size result, the absence of an institution axis, the 0.04 and 0.91 coverages and HCP at $K = 10$ (`docs/round05/README.md` (formerly `deck2_outline.md`, at tag `record-full-2026-11`)). Those figures stand. The A1 memo asked that the advisors be told the expansion selection and the limitation of the archive; the record does not show whether that was done apart from the second deck. The round 2 benchmark issue draft for the HEST authors stays unsent, with its IDC item struck.
+The first advisor deck, presented on 21 September, called the IDC pair probably one donor (A3 memo section 2.1). The second deck's slide 4 carries the correction, and its slides 5 and 6 present round 3's coverage by design, the AUC and effective-size result, the absence of an institution axis, the 0.04 and 0.91 coverages and HCP at $K = 10$ (`deck2_outline.md` (at tag `record-full-2026-11`; summarised in `docs/round05/README.md`)). Those figures stand. The A1 memo asked that the advisors be told the expansion selection and the limitation of the archive; the record does not show whether that was done apart from the second deck. The round 2 benchmark issue draft for the HEST authors stays unsent, with its IDC item struck.
 
 ## Open threads
 

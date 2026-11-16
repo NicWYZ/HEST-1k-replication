@@ -342,9 +342,9 @@ panel and pixel size run three weeks apart, the session signature of finding 3 i
 R5c's $+0.0652$ is kept and renamed as the value of a same-laboratory, same-instrument slide in the
 training pool across donors; READ's $+0.0901$ is the only same-specimen replicate figure. Property 11
 records the D2 layout difference and, from this report, the layout anchor's outcome (section 6.5).
-Known limitations 14 to 18 are added. `docs/round02/README.md` (formerly `hest_bench_issue_draft.md`, at tag `record-full-2026-11`) has its IDC item struck with a
+Known limitations 14 to 18 are added. `hest_bench_issue_draft.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`) has its IDC item struck with a
 dated note and stays unsent. `docs/WAYS_OF_WORKING.md` gains the three notes of plan section 13.4 item
-5. `docs/round02/README.md` (formerly `r5_idc_provenance.md`, at tag `record-full-2026-11`) gains a one-line banner and is otherwise unedited.
+5. `r5_idc_provenance.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`) gains a one-line banner and is otherwise unedited.
 
 The two reading items settled less than hoped. The Immunity paper (Meylan et al. 2022, doi
 10.1016/j.immuni.2022.02.001) is not reachable by any open route tried, so no patient table was read.

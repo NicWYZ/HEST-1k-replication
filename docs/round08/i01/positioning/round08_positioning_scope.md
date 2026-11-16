@@ -10,7 +10,7 @@ Which of the PPI paper's remaining claims are already in print, on the survey-sa
 
 ## 2. The claims to check
 
-Taken from `docs/round07/README.md` (formerly `round07_ppi_results_explained.md`, at tag `record-full-2026-11`) (Parts A to C) and `docs/round07/oversight/round07_ppi_positioning.md` (sections 2.2 and 5), in the terms round 7 left them. Each claim keeps its ID through the round.
+Taken from `round07_ppi_results_explained.md` (at tag `record-full-2026-11`; summarised in `docs/round07/README.md`) (Parts A to C) and `docs/round07/oversight/round07_ppi_positioning.md` (sections 2.2 and 5), in the terms round 7 left them. Each claim keeps its ID through the round.
 
 | ID | Claim the paper would make | Where it was established |
 |---|---|---|

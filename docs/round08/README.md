@@ -39,8 +39,8 @@ Nothing, as far as the record shows. The masterplan recorded on 19 October that 
 
 ## Open threads
 
-- **Decided since.** The note's recommendation (section 6.5) was carried out by round 9: its run 6.4.1 is `docs/round09/i03/fewcluster/round09_fewcluster_williams.md`, and the search for a core was round 9's preparation and tracks. R7-5, R7-6, R7-7 and O5 were decided in round 10 (`docs/round10/round10_methods_note.md`), and R8-1 was decided for keeping prediction sets in the paper, with the joint design deferred as E8 in the state block.
-- **Open.** Q3, which result the paper leads with, in the state block. E8, the joint design (C11).
+- **Decided since.** The note's recommendation (section 6.5) was carried out by round 9: its run 6.4.1 is `docs/round09/i03/fewcluster/round09_fewcluster_williams.md`, and the search for a core was round 9's preparation and tracks. R7-5, R7-6, R7-7 and O5 were decided in round 10 (`docs/round10/round10_methods_note.md`), and R8-1 was decided for keeping prediction sets in the paper, with the joint design settled at round 10's F3 as E8 (`docs/round10/README.md`).
+- **Open.** Q3, which result the paper leads with, in the state block.
 - **Candidate runs not made** (note, section 6.4): `rej_t` with Yang, Qu and Li's quantile in place of $t_{n_L - k - 1}$, and Aronow and Samii's conservative variance under rejective selection.
 - **Sources** (note, section 7). Of the ten, round 10's ledger read Cochran, Särndal et al., Mickey and Fuller. Breidt and Chauvet (2011) and the JASA text of Yang, Qu and Li remain unread, Fattorini is read from the abstract, and Valliant, Dever and Kreuter, Broska, Howes and van Loon, and Moerbeek (2006) are not in the ledger's sources.
 

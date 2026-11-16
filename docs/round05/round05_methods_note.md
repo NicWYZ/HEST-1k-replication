@@ -119,7 +119,7 @@ Rejective selection uses only label-free quantities, so each cluster's inclusion
 
 ## 6. Dead ends recorded at the start of the round
 
-From `round5_oversight_handoff.md` (at tag `record-full-2026-11`), section 14, written on 4 October 2026 at the close of round 4. "The previous handoff" is `docs/round04/round04_methods_note.md` (formerly `round4_oversight_handoff.md`, at tag `record-full-2026-11`), and "section 13" is the handoff's list of what to pursue, which round 5's prediction-set track took up as stage W4 (summary, findings 10 and 11).
+From `round5_oversight_handoff.md` (at tag `record-full-2026-11`), section 14, written on 4 October 2026 at the close of round 4. "The previous handoff" is `round4_oversight_handoff.md` (at tag `record-full-2026-11`; its content now in `docs/round04/round04_methods_note.md`), and "section 13" is the handoff's list of what to pursue, which round 5's prediction-set track took up as stage W4 (summary, findings 10 and 11).
 
 The previous handoff's section 12 stands. Round 4 added these.
 

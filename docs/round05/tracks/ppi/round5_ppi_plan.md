@@ -2,7 +2,7 @@
 
 # Round 5 PPI track, the operating plan
 
-This is the session's transcription of `docs/round05/round05_methods_note.md` (formerly `round5_ppi_track.md`, at tag `record-full-2026-11`) (md5 `65976a7f8e3b18e0bab5ebd459fd467f`), written before any job runs, as section 6 item E0.1 of that brief requires. The brief governs where this plan and the brief differ, except where a numbered extension in section 6 below records a decision Nicolas made in chat.
+This is the session's transcription of `round5_ppi_track.md` (at tag `record-full-2026-11`; its content now in `docs/round05/round05_methods_note.md`) (md5 `65976a7f8e3b18e0bab5ebd459fd467f`), written before any job runs, as section 6 item E0.1 of that brief requires. The brief governs where this plan and the brief differ, except where a numbered extension in section 6 below records a decision Nicolas made in chat.
 
 ## 1. Starting point and working copies
 
@@ -22,7 +22,7 @@ Five stages of analysis and one closing stage. Gates at E2, E4 and E5.
 
 #### E0. Setup and anchors (half a day, capped at one day)
 
-1. Read this document, `docs/WAYS_OF_WORKING.md`, `docs/round04/tracks/ppi/round4_ppi_estimator_definition.md`, `docs/round04/tracks/ppi/round4_ppi_theory.md`, the closing page and section 10 of `docs/round04/i03/ppi/round4_ppi_final_report.md`, `docs/round04/round04_methods_note.md` (formerly `round4_ppi_Q5a_closing.md`, at tag `record-full-2026-11`) and part A4 of `docs/round05/README.md` (formerly `deck2_new_results_explained.md`, at tag `record-full-2026-11`). Transcribe section 6 into `docs/round05/tracks/ppi/round5_ppi_plan.md` with the predictions of section 7. List anything in this document that looks wrong in a numbered section of the plan and in the E2 report. Do not change it.
+1. Read this document, `docs/WAYS_OF_WORKING.md`, `docs/round04/tracks/ppi/round4_ppi_estimator_definition.md`, `docs/round04/tracks/ppi/round4_ppi_theory.md`, the closing page and section 10 of `docs/round04/i03/ppi/round4_ppi_final_report.md`, `round4_ppi_Q5a_closing.md` (at tag `record-full-2026-11`; its content now in `docs/round04/round04_methods_note.md`) and part A4 of `deck2_new_results_explained.md` (at tag `record-full-2026-11`; summarised in `docs/round05/README.md`). Transcribe section 6 into `docs/round05/tracks/ppi/round5_ppi_plan.md` with the predictions of section 7. List anything in this document that looks wrong in a numbered section of the plan and in the E2 report. Do not change it.
 2. Create the branch in the reused local clone as section 5 says, and make the Longleaf clone. Confirm the four md5s of section 3 in the Longleaf clone. Read the project tree's HEAD with `git --no-optional-locks rev-parse HEAD` and record it. If it is not `9d7277d`, record that as an escalation and change nothing. Run `whose()` on `results/round4/`. Confirm that every prediction parquet of section 3 exists on Longleaf and that the tissue files match `q5_input_md5.json`. Record the md5s of the two ACS parquets.
 3. **Anchors, all on Longleaf.** Round 4's last runs were local, so this is also the first run of the final code there.
    - `round4_ppi_q4a_tests.py` passes 13 of 13 and `round4_ppi_q1b_tests.py` passes 135 of 135.

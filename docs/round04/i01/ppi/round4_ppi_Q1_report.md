@@ -3,7 +3,7 @@
 # Round 4, the PPI track, Q1 report (covering Q0 and Q1)
 
 Instruction: `docs/round04/i01/ppi/round4_ppi_track.md`, with addendum 1
-(`docs/round04/tracks/ppi/round4_ppi_plan.md` (formerly `round4_ppi_addendum1.md`, at tag `record-full-2026-11`)) and the oversight notes on working copies and version
+(`round4_ppi_addendum1.md` (at tag `record-full-2026-11`; its content now in `docs/round04/tracks/ppi/round4_ppi_plan.md`)) and the oversight notes on working copies and version
 management. All of it is transcribed in `docs/round04/tracks/ppi/round4_ppi_plan.md`, sections 1 to 12. Format: the
 instruction's section 8. Branch `round4-ppi`. Date: 1 October 2026.
 
@@ -315,7 +315,7 @@ unlabelled age-and-sex array, and no state, PUMA or year
 
 - The full numeric-claim gate of `docs/WAYS_OF_WORKING.md` passes on every `docs/round04/**/round4_ppi_*.md`
   file and on the deck outline. It still exits non-zero on ten claims in
-  `docs/round02/README.md` (formerly `deck_speaker_scripts.md`, at tag `record-full-2026-11`) and `docs/round00/first_year_ST_project_proposal.md`. This branch does
+  `deck_speaker_scripts.md` (at tag `record-full-2026-11`; summarised in `docs/round02/README.md`) and `docs/round00/first_year_ST_project_proposal.md`. This branch does
   not touch those files, so the claims come from `main` and are left for the oversight chat.
   Five exceptions were added to `.verify-exceptions`, each with its source: one rounding of a
   stored value, one Monte Carlo standard error, and three queue-snapshot figures with no file.
