@@ -5,10 +5,10 @@ updated: 2026-11-16, evening (first session of track closeout)
 unit: closeout
 project_id: proj_8450e231133d
 frame_id: c9016697-c909-435e-82fc-ebfb9daaa857
-step: A0 (inventory) and A1 (literature search) in hand; no Longleaf job submitted yet
-last_run: none
-jobs: none
-next: finish the inventory of embeddings, prediction files and task definitions on Longleaf with whose() verdicts (results/round11/closeout/inventory/); log the literature search (results/round11/closeout/lit/); then the anchors (A2) and the designation of the primary predictor (A3) in this plan before any held-out result of a new predictor is read
+step: A1 done (results/round11/closeout/lit/); A3 primary predictor designated (section 4, arm P) with predictions A2.1 to A5.4 written; A0 inventory, B3, B6, B7 jobs submitted and pending on spill
+last_run: none completed yet
+jobs: 9469547 (A0 inventory/inv_v1), 9469936 (B7 b7/ledger_v1), 9470327 (B3 b3/s0006_v1), 9470328 (B6 b6/stored_v1); outputs under /work/users/w/e/weiyang/hest_replication/results/round11/closeout/
+next: read the four jobs' outputs; then the predictor self-test and the anchors (A2: arm R10 on kidney Visium donor and center, CCRCC through the corpus), then arms H, C, P, V, E on kidney Visium, bowel Visium and LUNG_XENIUM (A5), then gate G2
 waiting: none
 ```
 
@@ -46,6 +46,35 @@ Part B items that need no new predictor (1, 3, 5, 6, 7) may run before G2 and ar
 - [ ] **A1. Literature.** Sub-agents search published benchmarks of histology-to-expression prediction for the strongest approaches, and any report of donor-level accuracy; the queries and verdicts logged in `results/round11/closeout/lit/`. Read levels and identifiers per `docs/EXECUTION_RULES.md`, section 4.
 - [ ] **A2. Anchors.** Refit round 10's `uni_v2` ridge head and reproduce the brief's three anchor cells (section 4, standard 1) within the stated tolerances. Predictions for this stage written here before it runs.
 - [ ] **A3. The primary predictor,** with its tuning rule, designated here before any held-out result of a new predictor is read.
+
+### A3. The predictors, and the primary one (written 16 November, before any job of a new predictor)
+
+The literature logs (`results/round11/closeout/lit/lit_A_stronger_predictor.md`, `lit_B_donor_level_accuracy.md`) find spatial context the best-supported direction under patient-held-out evaluation (about +0.01 to +0.03 Pearson over a linear probe on frozen foundation-model features), the encoders on Longleaf within about 0.01 of the best published one, gradient boosting and random forests below PCA + ridge, no controlled evidence that more donors help at these sizes, and pooling across cancer types often harmful. So the track does not add donors from other organs or platforms, does not fit boosting, and does not repeat round 9's donor-mean head. Round 10's head penalises at $\alpha = 100/(256 \cdot 50)$, close to no shrinkage, so a tuned penalty is a cheap second change.
+
+Every arm is run by `code/scripts/round11_closeout_predict.py` (its docstring defines the arms exactly) on the same samples, donor labels, genes, folds and scales as round 10's prediction files.
+
+| arm | encoders | context | head | role |
+|---|---|---|---|---|
+| `R10` | `uni_v2` | none | `r10` | round 10's predictor refitted; the anchor and the reference |
+| `H` | `uni_v2` | none | `ridgecv` | the head alone changed |
+| `C` | `uni_v2` | `ring1` | `r10` | the inputs alone changed, under round 10's head (standard 4's ridge arm on the same inputs) |
+| **`P`** | `uni_v2` | `ring1` | `ridgecv` | **the primary predictor** |
+| `V` | `virchow2` | none | `r10` | another encoder alone |
+| `E` | `uni_v2+hoptimus0+virchow2` | `ring1` | `r10` | encoders combined with context, under round 10's head |
+
+**The primary predictor `P`**: a ridge with intercept on the standardised concatenation of the spot's `uni_v2` embedding and the mean `uni_v2` embedding of its neighbours in the same sample (patches within 1.5 times the sample's median nearest-neighbour distance), without PCA. **Its tuning rule**: per gene and scale, the penalty $\alpha = n_{\text{fit}} \cdot 10^{k}$, $k \in \{-6, -5.5, \ldots, 1\}$, with the smallest summed squared error over inner folds that group the outer training data by donor (5 folds, donors dealt in order of `zlib.crc32` of the donor id) or, in the center design, by center; the standardisation is fitted on the data each fit sees, and the chosen $\alpha$ is refitted on the whole outer training fold. Nothing about the held-out unit enters the fit or the choice.
+
+The masterplan's P11.1 to P11.4 are scored on `P`. Every arm that is run is reported.
+
+### A2 and A5, predictions (written 16 November, before any job of this stage)
+
+- **A2.1.** `R10` on kidney Visium reproduces round 10's median Pearson on $\log(1 + y)$, 0.4713 held out by donor and 0.123 held out by center, within $10^{-6}$ (same code path for the head, same inputs).
+- **A2.2.** `R10` on CCRCC through the corpus with round 3's genes gives the leave-one-donor-out median $R^2$ of the donor mean against the leave-one-out constant within 0.005 of 0.021 (round 10's corpus anchor gave 0.0237, `results/round10/final_runs/F1/diagnostics/d12_lodo_r2_medians__corpus_CCRCC_uni_v2.csv`), and $\theta_3$ at 8 labelled donors gives a median width ratio of `fix1` to `classical` within 0.02 of 0.878 and a median `fix1` coverage within two Monte Carlo standard errors of 0.8965.
+- **A2.3.** The self-test of the sufficient-statistics ridge agrees with sklearn within $10^{-8}$.
+- **A5.1.** `P` raises the donor-held-out median spot-level Pearson on $\log(1 + y)$ over `R10` on the same inputs by 0.02 to 0.05 on kidney Visium and bowel Visium and by 0.01 to 0.03 on LUNG_XENIUM; so P11.1 holds.
+- **A5.2.** `H` changes it by less than 0.01 on each of the three tasks, and `C` gains at least half of `P`'s gain: the context, not the head, carries the gain.
+- **A5.3.** `V` is within 0.02 of `R10` on each task, and `E` is at most 0.01 above `C`.
+- **A5.4.** Held out by center on kidney Visium, `P`'s median Pearson stays below 0.20.
 - [ ] **A4. Stage predictions** with numbers, here, before the first run of each stage.
 - [ ] **A5. Strength.** Donor-held-out median spot-level Pearson with fold spread for every predictor run, beside the ridge on the same inputs (standard 4). Scores P11.1. Gate G2.
 - [ ] **A6. The same quantities** (standard 6) for each new predictor, after G2 if P11.1 holds.
