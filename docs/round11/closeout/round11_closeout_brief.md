@@ -87,6 +87,7 @@ Not in this track: the paper full texts saved outside the repository (they wait 
 
 ## 6. Gates and the final report
 
+- **Who replies.** For this round the oversight session reviews each gate and relays the reply, under `../masterplan.md`, "Who decides the gates". A substantive issue still goes to Nicolas, so the report's section 7 marks which of its items it considers substantive.
 - **G1** only if section 4's no-download rule stops the work.
 - Other intermediate gates are the session's to set, at significant results or roadblocks.
 - **The final gate** is `G-final`, tag `round11-closeout-G-final`, with one pull request into `main`. The final report is `docs/round11/closeout/round11_closeout_report.md`. It opens with the headline table, one row per result H1 to H5: the number as recomputed (for H4, that the files were re-read), its file, the value under the primary predictor where Part A applies, and a verdict. The verdict is "stood" where the masterplan's matching prediction held (P11.4 for H1(b), P11.3 for H2, P11.2 for H3), "changed" with the new number where it was refuted, and "not tested" otherwise. The report then follows `docs/EXECUTION_RULES.md`, section 7, and states each prediction in full as written before its run.

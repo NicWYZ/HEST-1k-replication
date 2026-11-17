@@ -19,6 +19,10 @@ The headline results of the project stated on final numbers, tested against a st
 
 The outline follows `docs/WAYS_OF_WORKING.md`, "Decks". It presents the project as a whole and puts to the advisors the decisions that wait on them (D5, Q1, and the framing and venue of the paper).
 
+## Who decides the gates
+
+For this round Nicolas has the oversight session review each gate of track `closeout` and reply so that the track goes on, and relay a summary to him. The track stops for Nicolas himself only on a substantive issue or problem: a headline result that changes, a request for a download, a failed anchor, a doubt about the correctness of a number, or anything `docs/EXECUTION_RULES.md` lists as never the session's decision. Pull requests remain his to merge.
+
 ## Expectations
 
 Written before any run of the round, and scored on the predictor the track designates as primary before it reads that predictor's held-out results (brief, section 4). Unless a line says otherwise the reference is round 10's `uni_v2` ridge head, the scale $\log(1 + y)$, the estimand $\theta_3$ and the nominal level 0.90.
