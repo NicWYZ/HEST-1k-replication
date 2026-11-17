@@ -1,0 +1,11 @@
+claim,file,selector,value
+"ACS regime B persons per state (box class, lambda 1)",results/round9/fewcluster/strat/i32_acs_box.csv,"lambda==1.0, column m_min_B",5.0
+"ACS regime A states of 51 (box class, lambda 1)",results/round9/fewcluster/strat/i32_acs_box.csv,"lambda==1.0, column n_min_A",11.0
+"CCRCC regime B median spots per donor (box, lambda 1)",results/round9/fewcluster/strat/i32_hest_box_summary.csv,"task==CCRCC, lambda==1.0, column m_min_B_median",6.0
+"CCRCC regime A median donors (box, lambda 1)",results/round9/fewcluster/strat/i32_hest_box_summary.csv,"task==CCRCC, lambda==1.0, column n_min_A_median",17.0
+"INDIANA_KIDNEY regime B median spots per donor (box, lambda 1)",results/round9/fewcluster/strat/i32_hest_box_summary.csv,"task==INDIANA_KIDNEY, lambda==1.0, column m_min_B_median",8.0
+"INDIANA_KIDNEY regime A median donors (box, lambda 1)",results/round9/fewcluster/strat/i32_hest_box_summary.csv,"task==INDIANA_KIDNEY, lambda==1.0, column n_min_A_median",13.0
+"LUNG_XENIUM regime B median spots per donor (box, lambda 1)",results/round9/fewcluster/strat/i32_hest_box_summary.csv,"task==LUNG_XENIUM, lambda==1.0, column m_min_B_median",8.0
+"LUNG_XENIUM regime A median donors (box, lambda 1)",results/round9/fewcluster/strat/i32_hest_box_summary.csv,"task==LUNG_XENIUM, lambda==1.0, column n_min_A_median",8.0
+"units per cluster without a share bound (v0 1, N 2000, Lambda0 3)",results/round9/fewcluster/strat/i32_required_m_B.csv,"N==2000, v0==1.0, Lambda0==3, column m_min_B",22.0
+"units per cluster without a share bound (v0 1, N 2000, Lambda0 8)",results/round9/fewcluster/strat/i32_required_m_B.csv,"N==2000, v0==1.0, Lambda0==8, column m_min_B",143.0

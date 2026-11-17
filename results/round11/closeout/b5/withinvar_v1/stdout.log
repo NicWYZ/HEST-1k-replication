@@ -1,0 +1,16 @@
+[b5] CCRCC done; round 10 factor 1.2796
+[b5] CCRCC_merged done; round 10 factor 1.2881
+[b5] INDIANA_KIDNEY done; round 10 factor 1.7059
+[b5] LUNG_XENIUM done; round 10 factor 1.3244
+[b5] ACS_STATES done; round 10 factor 2.6557
+             task encoder       scale estimand   G  genes  factor_equal_var  factor_measured_median  factor_measured_q10  factor_measured_q90  ratio_median  cv_V_median  max_over_min_V_median  spearman_V_M_median  share_bf_p_lt_001
+0      ACS_STATES     pkg  log_income       mu  51      1          2.655671                2.685166             2.685166             2.685166      1.011106     0.068373               1.468308             0.059910                1.0
+1      ACS_STATES     pkg  log_income   theta3  51      1          2.655671                2.636428             2.636428             2.636428      0.992754     0.100200               1.700886             0.332489                1.0
+2           CCRCC  uni_v2       log1p       mu  24     50          1.279604                1.343524             1.269058             1.455934      1.049953     0.415542               5.099634            -0.273478                1.0
+3           CCRCC  uni_v2       log1p   theta3  24     50          1.279604                1.525405             1.358515             1.590070      1.192092     0.826824              23.501820            -0.439130                1.0
+4    CCRCC_merged  uni_v2       log1p       mu  23     50          1.288131                1.364529             1.293460             1.479114      1.059309     0.409717               4.907771            -0.332510                1.0
+5    CCRCC_merged  uni_v2       log1p   theta3  23     50          1.288131                1.568250             1.412582             1.640034      1.217462     0.834679              23.501820            -0.479249                1.0
+6  INDIANA_KIDNEY  uni_v2       log1p       mu  25     50          1.705939                1.817336             1.687923             1.937762      1.065300     0.399651               5.042272            -0.360385                1.0
+7  INDIANA_KIDNEY  uni_v2       log1p   theta3  25     50          1.705939                1.659755             1.506002             1.892202      0.972928     0.692818              19.064941            -0.006923                1.0
+8     LUNG_XENIUM  uni_v2       log1p       mu  15    343          1.324365                1.329769             1.222728             1.524807      1.004080     0.316110               2.993620             0.089286                1.0
+9     LUNG_XENIUM  uni_v2       log1p   theta3  15    343          1.324365                1.775413             1.618222             1.931032      1.340577     0.910098              14.840283            -0.489286                1.0

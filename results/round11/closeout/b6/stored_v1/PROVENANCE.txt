@@ -1,0 +1,33 @@
+platform: Longleaf
+slurm_job_id: 9470328
+slurm_job_partition: spill
+slurm_job_account: rc_tengfei_pi
+slurm_cpus_on_node: 1
+slurm_mem_per_node: 4096
+node: c0409
+track: closeout (round 11)
+stage: B6
+unit: b6/stored_v1
+project_id: proj_8450e231133d
+frame_id: c9016697-c909-435e-82fc-ebfb9daaa857
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1 sklearn 1.9.1
+snapshot_commit: e09a9cf4d27cf22996293cdf5acb2e10c128a4f5
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round11/closeout/_snapshots/e09a9cf4d27cf22996293cdf5acb2e10c128a4f5
+command: round11_closeout_b6_stored.py /work/users/w/e/weiyang/hest_code/round11-closeout /work/users/w/e/weiyang/hest_replication/results/round10/final_runs
+config: {"commit":"e09a9cf4d27cf22996293cdf5acb2e10c128a4f5","stage":"B6","unit":"b6/stored_v1"}
+config_sha256: 3f951336895e533020a36265840f1b3b4ef6bfb2bc5210c3e211597c734681d2
+start: 2026-11-16T23:07:26-05:00
+end: 2026-11-16T23:07:41-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  4db4cbf30833ac5c610421eca881b0ba  code/scripts/round11_closeout_b6_stored.py
+  69321b9e328c901c38843cc40fdc256f  code/scripts/round11_closeout_prov.py
+  7235dd4b80e210c01bbb23b7824a96f0  code/scripts/round11_closeout_run.sh
+inputs (md5, path):
+  d4b9a7484a65c453f00a5e44e65cca53  /work/users/w/e/weiyang/hest_code/round11-closeout/results/round9/between/between_head_by_gene.csv
+  51e8b800b1fe5c29b760a221195de718  /work/users/w/e/weiyang/hest_code/round11-closeout/results/round9/fewcluster/strat/i32_acs_box.csv
+  3d9cc7ca166f0c4cc638a835b0d3d216  /work/users/w/e/weiyang/hest_code/round11-closeout/results/round9/fewcluster/strat/i32_hest_box_summary.csv
+  6fdea85a7512ac4278be7583b7c6d8a7  /work/users/w/e/weiyang/hest_code/round11-closeout/results/round9/fewcluster/strat/i32_required_m_B.csv
