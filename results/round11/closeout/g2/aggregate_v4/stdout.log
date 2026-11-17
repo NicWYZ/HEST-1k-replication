@@ -1,0 +1,87 @@
+/work/users/w/e/weiyang/hest_replication/results/round11/closeout/_snapshots/6bef22b298570d2be9bd6f2c4c6afe20a8868e41/code/scripts/round11_closeout_g2_aggregate.py:88: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  r2 = C.groupby(['estimand', 'gene']).apply(
+/work/users/w/e/weiyang/hest_replication/results/round11/closeout/_snapshots/6bef22b298570d2be9bd6f2c4c6afe20a8868e41/code/scripts/round11_closeout_g2_aggregate.py:88: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  r2 = C.groupby(['estimand', 'gene']).apply(
+/work/users/w/e/weiyang/hest_replication/results/round11/closeout/_snapshots/6bef22b298570d2be9bd6f2c4c6afe20a8868e41/code/scripts/round11_closeout_g2_aggregate.py:88: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  r2 = C.groupby(['estimand', 'gene']).apply(
+{
+ "p111": {
+  "rule": "arm P gains >= 0.02 over the reference on at least two of three tasks, log1p, donor design",
+  "tasks": {
+   "kidney__Visium": {
+    "reference": 0.471,
+    "P": 0.48161038782630816,
+    "gain_vs_reference": 0.010610387826308187,
+    "R10_this_track": 0.4713316492580511,
+    "gain_vs_R10": 0.010278738568257062,
+    "meets": false
+   },
+   "bowel__Visium": {
+    "reference": 0.511,
+    "P": 0.5296118603558748,
+    "gain_vs_reference": 0.01861186035587481,
+    "R10_this_track": 0.5112966322464221,
+    "gain_vs_R10": 0.01831522810945274,
+    "meets": false
+   },
+   "LUNG_XENIUM": {
+    "reference": 0.619,
+    "P": 0.6293379125311848,
+    "gain_vs_reference": 0.010337912531184767,
+    "R10_this_track": 0.6189380949102621,
+    "gain_vs_R10": 0.01039981762092268,
+    "meets": false
+   }
+  },
+  "tasks_meeting": 0,
+  "verdict": "refuted"
+ },
+ "anchor_ccrcc_theta3": {
+  "round11 R10 (corpus, 73,813 spots)": {
+   "median_wr_fix1": 0.8948557743062902,
+   "median_cov_fix1": 0.89665,
+   "median_mcse_fix1": 0.0021525417162034143,
+   "median_R2c": 0.429019031833912
+  },
+  "round10 (round 3 file, 74,220 spots)": {
+   "median_wr_fix1": 0.8782720286011843,
+   "median_cov_fix1": 0.896525,
+   "median_mcse_fix1": 0.0021536850000670607,
+   "median_R2c": 0.4387262423085522
+  },
+  "control: round 10 steps rerun here on round 3 file": {
+   "median_wr_fix1": 0.8782720286011843,
+   "median_cov_fix1": 0.896525,
+   "median_mcse_fix1": 0.0021536850000670607,
+   "median_R2c": 0.4387262423085522
+  }
+ }
+}
+              task  arm  design   spots  folds  n_features  seconds_per_fold  median_pearson_log1p  fold_q25_log1p  fold_median_log1p  fold_q75_log1p  median_pearson_lognorm  fold_q25_lognorm  fold_median_lognorm  fold_q75_lognorm  gain_vs_R10_log1p  paired_fold_diff_median_log1p  paired_fold_diff_q25_log1p  paired_fold_diff_q75_log1p  share_folds_higher_log1p  gain_vs_R10_lognorm  paired_fold_diff_median_lognorm  paired_fold_diff_q25_lognorm  paired_fold_diff_q75_lognorm  share_folds_higher_lognorm
+0      LUNG_XENIUM    C   donor   19083     15        3072         12.772315              0.615242        0.585187           0.633520        0.688002                0.507401          0.351318             0.453171          0.540343          -0.003696                       0.005673                    0.000203                    0.013098                  0.733333             0.010749                         0.004766                      0.000663                      0.010179                    0.800000
+1      LUNG_XENIUM    E   donor   19083     15       11264         20.346349              0.635849        0.611361           0.639318        0.707583                0.519221          0.380018             0.452655          0.552319           0.016911                       0.025231                    0.020201                    0.033565                  0.933333             0.022569                         0.023493                      0.017388                      0.031724                    0.933333
+2      LUNG_XENIUM    H   donor   19083     15        1536         17.727837              0.626301        0.592121           0.649730        0.697687                0.505473          0.350324             0.455638          0.541347           0.007363                       0.016869                    0.011912                    0.019317                  1.000000             0.008822                         0.013303                      0.011953                      0.015277                    1.000000
+3      LUNG_XENIUM    P   donor   19083     15        3072         30.152629              0.629338        0.609209           0.647751        0.701849                0.515153          0.362413             0.468406          0.546953           0.010400                       0.023424                    0.016290                    0.029047                  1.000000             0.018502                         0.019232                      0.015742                      0.023074                    1.000000
+4      LUNG_XENIUM  R10   donor   19083     15        1536         13.088951              0.618938        0.573663           0.631238        0.681972                0.496652          0.341782             0.445223          0.529052           0.000000                       0.000000                    0.000000                    0.000000                  0.000000             0.000000                         0.000000                      0.000000                      0.000000                    0.000000
+5      LUNG_XENIUM    V   donor   19083     15        2560          7.826025              0.625309        0.598454           0.640035        0.690167                0.495325          0.363502             0.443666          0.531313           0.006371                       0.002921                   -0.002283                    0.018224                  0.666667            -0.001327                         0.002766                     -0.002416                      0.008400                    0.600000
+6    bowel__Visium    C   donor   93733     18        3072         63.618613              0.547022        0.312086           0.388498        0.521177                0.390431          0.138864             0.187970          0.225731           0.035725                       0.027921                    0.017624                    0.035951                  0.944444            -0.007179                         0.016786                      0.006959                      0.022378                    0.888889
+7    bowel__Visium    E   donor   93733     18       11264        109.902150              0.594277        0.337131           0.420460        0.537088                0.403204          0.156826             0.212474          0.238450           0.082980                       0.049131                    0.035506                    0.076454                  1.000000             0.005594                         0.023054                      0.011083                      0.038410                    1.000000
+8    bowel__Visium    H   donor   93733     18        1536         14.266637              0.495350        0.317186           0.382075        0.497005                0.409532          0.127994             0.196644          0.261414          -0.015946                       0.021212                    0.001036                    0.038790                  0.777778             0.011922                         0.011470                     -0.002335                      0.032636                    0.666667
+9    bowel__Visium    P   donor   93733     18        3072         47.228490              0.529612        0.332491           0.421228        0.528310                0.411474          0.154972             0.213025          0.267675           0.018315                       0.040517                    0.018632                    0.080186                  0.888889             0.013864                         0.036789                      0.018022                      0.053765                    0.944444
+10   bowel__Visium  R10   donor   93733     18        1536         91.779262              0.511297        0.300834           0.350516        0.475011                0.397610          0.120158             0.175555          0.220327           0.000000                       0.000000                    0.000000                    0.000000                  0.000000             0.000000                         0.000000                      0.000000                      0.000000                    0.000000
+11   bowel__Visium    V   donor   93733     18        2560         58.546947              0.548209        0.273082           0.387086        0.474220                0.367336          0.132203             0.176765          0.248363           0.036912                       0.000700                   -0.031448                    0.027987                  0.500000            -0.030274                        -0.000403                     -0.007701                      0.023716                    0.444444
+12  kidney__Visium    C   donor  114137     51        3072         77.637167              0.488106        0.188401           0.314161        0.400072                0.404511          0.117076             0.158984          0.215636           0.016775                       0.011850                   -0.007895                    0.039918                  0.666667             0.012953                         0.011605                      0.002463                      0.022531                    0.803922
+13  kidney__Visium    E   donor  114137     51       11264        165.296229              0.502269        0.140763           0.332832        0.412258                0.420948          0.119255             0.176119          0.227629           0.030937                       0.030187                   -0.012061                    0.063378                  0.686275             0.029390                         0.022921                      0.008851                      0.036520                    0.843137
+14  kidney__Visium    H   donor  114137     51        1536         16.974628              0.484183        0.140292           0.316188        0.383860                0.394758          0.114469             0.155197          0.199062           0.012852                       0.006996                   -0.006563                    0.032591                  0.607843             0.003200                         0.006753                     -0.005340                      0.018299                    0.627451
+15  kidney__Visium    P  center  114137      5        3072         42.026653              0.106845        0.145430           0.155436        0.331064                0.060270          0.075557             0.173245          0.180223          -0.016274                       0.039732                    0.038824                    0.088238                  1.000000            -0.028482                         0.019089                      0.010962                      0.043448                    0.800000
+16  kidney__Visium    P   donor  114137     51        3072         51.998676              0.481610        0.155268           0.329030        0.412028                0.412241          0.116058             0.169418          0.223395           0.010279                       0.029112                    0.000371                    0.051428                  0.745098             0.020683                         0.024649                      0.012132                      0.035998                    0.921569
+17  kidney__Visium  R10  center  114137      5        1536         64.740271              0.123119        0.032647           0.132470        0.292240                0.088752          0.108175             0.136305          0.154155           0.000000                       0.000000                    0.000000                    0.000000                  0.000000             0.000000                         0.000000                      0.000000                      0.000000                    0.000000
+18  kidney__Visium  R10   donor  114137     51        1536         30.274079              0.471332        0.160740           0.309350        0.370024                0.391558          0.113056             0.152326          0.187290           0.000000                       0.000000                    0.000000                    0.000000                  0.000000             0.000000                         0.000000                      0.000000                      0.000000                    0.000000
+19  kidney__Visium    V   donor  114137     51        2560         64.600091              0.468596        0.170262           0.306910        0.392345                0.390448          0.107403             0.136806          0.179575          -0.002735                      -0.004442                   -0.053541                    0.036305                  0.450980            -0.001110                        -0.010677                     -0.031754                      0.009582                    0.372549
+    task encoder  scale estimand  genes  median_wr_fix1  median_cov_fix1  median_cov_cl  median_mcse_fix1  median_R2c                                              source
+0  CCRCC  uni_v2  log1p       mu     50        0.989787         0.857600       0.833300          0.002471    0.110205                  round11 R10 (corpus, 73,813 spots)
+1  CCRCC  uni_v2  log1p   theta3     50        0.894856         0.896650       0.849325          0.002153    0.429019                  round11 R10 (corpus, 73,813 spots)
+2  CCRCC  uni_v2  log1p       mu     50        0.981789         0.857825       0.835150          0.002469    0.127053                round10 (round 3 file, 74,220 spots)
+3  CCRCC  uni_v2  log1p   theta3     50        0.878272         0.896525       0.849025          0.002154    0.438726                round10 (round 3 file, 74,220 spots)
+4  CCRCC  uni_v2  log1p       mu     50        0.981789         0.857825       0.835150          0.002469    0.127053  control: round 10 steps rerun here on round 3 file
+5  CCRCC  uni_v2  log1p   theta3     50        0.878272         0.896525       0.849025          0.002154    0.438726  control: round 10 steps rerun here on round 3 file
