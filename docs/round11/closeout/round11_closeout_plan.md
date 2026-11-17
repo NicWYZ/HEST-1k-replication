@@ -5,10 +5,10 @@ updated: 2026-11-17, morning (second session of track closeout)
 unit: closeout
 project_id: proj_8450e231133d
 frame_id: c9016697-c909-435e-82fc-ebfb9daaa857
-step: A6 pilot running (predictions in section 4 written at 307670c4, code at 1fbbcd97)
-last_run: g2/sweep_v4 (Slurm 9528178); gate G2 tagged round11-closeout-G2
-jobs: A6 pilot from 1fbbcd97: 9529112 (a6/conformal/selftest_v1), 9529113 (a6/conformal/anchor_CCRCC_round3), 9529114 (a6/conformal/LUNG_XENIUM__R10__donor), 9529115 (a6/donor/LUNG_XENIUM__R10), 9529116 (a6/donor/CCRCC__R10)
-next: when the pilot passes (A6.0 a to c), submit phases donor, center and conformal of code/scripts/round11_closeout_submit_a6.sh; write the A6 aggregator meanwhile; then A7, G-final
+step: A6 running (predictions in section 4 written at 307670c4, code at 1fbbcd97); pilot passed A6.0b (selftests 5.4e-15, 2.0e-15) and A6.0c (CCRCC R10 refit equal to the A2 anchor, difference 0.0); A7 done (results/round11/closeout/lit/lit_A7_pretraining.md)
+last_run: A6 pilot 9529112 to 9529116, all COMPLETED except the round 3 conformal anchor 9529113, still running at submission of the rest
+jobs: 9529113 (a6/conformal/anchor_CCRCC_round3); 9530242 to 9530308 from 1fbbcd97, phases donor, center (institution 9530261 after the four center predictions) and conformal, one per unit, list in the session's submit output and in the job ledger at the gate
+next: when every job has finished, run code/scripts/round11_closeout_a6_aggregate.py as a job, score A6.0 to A6.4 and B2, then the final report, the fresh check, the sweep and G-final
 waiting: none
 ```
 
@@ -110,7 +110,7 @@ Job sizes: `E` from kidney Visium's `E` donor run (Slurm 9518165: 2 h 22 min for
 - **A6.3, H2 under `P` and `E`.** (a) Held out by center, the median Pearson on `log1p` is below 0.20 on kidney Visium and below 0.10 on brain Visium under both arms. (b) On kidney Visium at nominal 0.80, donor-level HCP pooled across centers covers center S0006 below 0.75 under both, and HCP over centers covers 1.0 at the median center under both.
 - **A6.4, H1(b) under `P` and `E`.** On every task, scale and arm, (a) `random` covers within 0.01 of 0.90; (b) `donor` covers at least 0.02 below `random`; (c) `donor` coverage under `P` and under `E` is within 0.02 of `R10`'s on the same task and scale; (d) on kidney Visium and bowel Visium the center design covers less than `donor`.
 - **B2, the `R10` arm under round 3's designs.** (a) On CCRCC through the corpus, `random` covers within 0.005 of round 3's 0.881 and `donor` within 0.015 of 0.864. (b) `donor` covers between 0.80 and 0.88 on kidney Visium, between 0.78 and 0.88 on bowel Visium and between 0.80 and 0.89 on LUNG_XENIUM, on `log1p`. (c) `slide_out` lies between `donor` and `random` on bowel Visium and LUNG_XENIUM. (d) The center design covers at least 0.03 below `donor` on kidney and bowel Visium.
-- [ ] **A7. Pretraining overlap** statements for each encoder used.
+- [x] **A7. Pretraining overlap** statements for each encoder used. Done 17 November: `results/round11/closeout/lit/lit_A7_pretraining.md`. None of the three descriptions (UNI2-h, H-optimus-0, Virchow2) names a public dataset among its pretraining sources or says anything about the HEST cohorts used here; overlap is not stated, which is weaker than ruled out.
 
 ## 5. Part B, tasks
 
