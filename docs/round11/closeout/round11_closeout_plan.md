@@ -27,7 +27,7 @@ As round 10's final runs did (`docs/round10/tracks/final-runs/round10_final_runs
 - **Code.** Scripts `code/scripts/round11_closeout_*.py` are written in this worktree, committed on `round11-closeout`, pushed, and fetched into the clone `/work/users/w/e/weiyang/hest_code/round11-closeout/` (created by this track). Round 10's scripts are imported read only from the same snapshot.
 - **Snapshot.** Each job runs from a read-only `git archive <commit> code` under `/work/users/w/e/weiyang/hest_replication/results/round11/closeout/_snapshots/<commit>/`, with that `code/` on `PYTHONPATH`, from its own output directory, with the project's Python by absolute path. Each delivery is a row of `results/round11/closeout/code_deliveries.csv`.
 - **Provenance.** On the node each job writes `PROVENANCE.txt` (Slurm id, `$SLURM_JOB_PARTITION`, node, date, snapshot commit, command line, config with its sha256, `PYTHONHASHSEED=0`, md5 of every script and input) and the `_provenance.json` stamp from `provenance_shell_snippet()` with the project and frame ids of the state block, track `closeout`. Seeds from `zlib.crc32`, explicit `pa.schema`, summaries before bulk tables.
-- **Inputs.** Every input not made by this track gets a `whose()` verdict in `results/round11/closeout/inputs_whose.csv`. Round 10's outputs carry project `proj_8450e231133d` under other frames, so they read `foreign_session`; reading them as inputs the brief names needs no question, and nothing of theirs is rebuilt or overwritten.
+- **Inputs.** Every input not made by this track gets a `whose()` verdict in `results/round11/closeout/inputs_whose.csv`. Round 10's outputs carry project `proj_8450e231133d` under other frames, so they read `sibling` under the skill's rule; reading them as inputs the brief names needs no question, and nothing of theirs is rebuilt or overwritten.
 - **Job ledger.** `results/round11/closeout/job_ledger.csv`, one row per Slurm job, with `sacct` wall and MaxRSS. Time limits at about three times a sibling's measured runtime, memory from a sibling's `sacct`. Four hours pending is reported to Nicolas, and the job keeps waiting.
 - **Repository.** Only aggregates under `results/round11/closeout/`. Staged files listed and checked before every commit; the two round 1 directories with `::` in their names are never staged.
 - **Numbers.** `code/scripts/verify_numeric_claims.py` over every report, exceptions in `.verify-exceptions-round11-closeout`. Before each gate a fresh sub-agent recomputes the report's table numbers.
@@ -59,7 +59,8 @@ Part B items that need no new predictor (1, 3, 5, 6, 7) may run before G2 and ar
 - [ ] **B4.** Equal allocation for regime B on ACS by state.
 - [ ] **B5.** Within-cluster variance equality on ACS by state and the HEST tasks.
 - [ ] **B6.** D12's share and round 9's E1 box numbers stored, or declared unquotable.
-- [ ] **B7.** Round 10 jobs without a provenance file, from `sacct`.
+- [ ] **B7.** Round 10 jobs without a provenance file, from `sacct`. Method in the docstring of `code/scripts/round11_closeout_b7_ledger.py`: a job is round 10's when the batch script its `SubmitLine` names (the harness keeps it under `.claude-science-scratch/.claude-science/jobs/<id>/job.sh`) or its work directory names round 10's tree; it is then looked up in round 10's job ledger, and for a job not in the ledger its output directories are checked for `PROVENANCE.txt`.
+  - *Prediction, written 16 November before the run.* Between 10 and 300 attributed round 10 jobs are absent from the ledger, most of them FAILED, CANCELLED or TIMEOUT, and fewer than 20 of those that COMPLETED lack a `PROVENANCE.txt` in every output directory they name.
 
 ## 6. Decisions
 
