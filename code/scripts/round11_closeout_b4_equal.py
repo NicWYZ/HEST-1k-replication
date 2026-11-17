@@ -53,9 +53,9 @@ def pairs(D):
     B['n_L_A'] = B.cost.str.extract(r'nL(\d+)_B')[0].astype(int)
     B['budget_A'] = B.cost.str.extract(r'_B(\d+)$')[0].astype(float)
     B = B[B.c == 10.0]
-    a = A.rename(columns={'budget': 'budget_A', 'n_L': 'n_L_A'})[['gene', 'budget_A', 'n_L_A', 'mean_width', 'coverage', 'coverage_se']]
-    j = a.merge(B[['gene', 'budget_A', 'n_L_A', 'budget', 'm_median', 'mean_width', 'coverage', 'coverage_se']],
-                on=['gene', 'budget_A', 'n_L_A'], suffixes=('_A', '_B'))
+    a = A.rename(columns={'budget': 'budget_A', 'n_L': 'n_L_A'})[['estimand', 'gene', 'budget_A', 'n_L_A', 'mean_width', 'coverage', 'coverage_se']]
+    j = a.merge(B[['estimand', 'gene', 'budget_A', 'n_L_A', 'budget', 'm_median', 'mean_width', 'coverage', 'coverage_se']],
+                on=['estimand', 'gene', 'budget_A', 'n_L_A'], suffixes=('_A', '_B'))
     j['ratio_mean_width'] = j.mean_width_B / j.mean_width_A
     return j
 
@@ -81,7 +81,7 @@ def main():
         print(f'[b4] {alloc}: {len(G)} gene rows', flush=True)
     # anchor: the proportional rows against round 10's
     ref = pd.concat([pd.read_parquet(f'{src}/regcomp__pk_ACS_STATES__pkg__log_income__{p}/regcomp_genes.parquet') for p in ('p00', 'p01')])
-    KC = ['regime', 'budget', 'cost', 'n_L', 'form', 'interval', 'gene']
+    KC = ['regime', 'budget', 'cost', 'n_L', 'form', 'interval', 'estimand', 'gene']
     m = out['prop'].merge(ref, on=KC, suffixes=('', '_r10'), how='left', indicator=True)
     num = ['mean_width', 'median_width', 'coverage']
     m['max_abs_diff'] = np.max([np.abs(m[c] - m[c + '_r10']) for c in num], axis=0)
@@ -93,10 +93,12 @@ def main():
     for alloc in ('prop', 'equal'):
         D = pd.concat([A, out[alloc][out[alloc].regime == 'B']])
         j = pairs(D); j['alloc'] = alloc; rows.append(j)
-        summ[alloc] = dict(n=int(len(j)), B_narrower=int((j.ratio_mean_width < 1).sum()),
-                           median_ratio=float(j.ratio_mean_width.median()),
-                           cov_B_min=float(j.coverage_B.min()), cov_B_max=float(j.coverage_B.max()),
-                           cov_B_median=float(j.coverage_B.median()), mcse_cov_B_median=float(j.coverage_se_B.median()))
+        for est, je in j.groupby('estimand'):
+            summ[f'{alloc}|{est}'] = dict(n=int(len(je)), B_narrower=int((je.ratio_mean_width < 1).sum()),
+                                          median_ratio=float(je.ratio_mean_width.median()),
+                                          cov_B_min=float(je.coverage_B.min()), cov_B_max=float(je.coverage_B.max()),
+                                          cov_B_median=float(je.coverage_B.median()),
+                                          mcse_cov_B_median=float(je.coverage_se_B.median()))
     J = pd.concat(rows); J.to_csv('b4_comparisons.csv', index=False)
     pd.DataFrame(STATE['sizes']).drop_duplicates().to_csv('b4_alloc_sizes.csv', index=False)
     json.dump(summ, open('b4_summary.json', 'w'), indent=1)

@@ -1,0 +1,238 @@
+{
+ "registry_columns": {
+  "sample_id": "object",
+  "center_id": "object",
+  "vendor_lab": "object",
+  "kept_from": "object",
+  "platform": "object",
+  "panel_id": "object",
+  "organ": "object",
+  "organ_status": "object",
+  "tissue": "object",
+  "disease": "object",
+  "disease_status": "object",
+  "oncotree": "object",
+  "donor_id": "object",
+  "donor_status": "object",
+  "preservation": "object",
+  "magnification": "object",
+  "scanner": "object",
+  "scanner_status": "object",
+  "um_per_px": "float64",
+  "um_per_px_status": "object",
+  "n_spots": "int64",
+  "n_patches": "int64",
+  "n_genes_measured": "int64",
+  "n_genes_mapped": "int64",
+  "frac_mapped": "float64",
+  "n_unmapped": "float64",
+  "n_dup_ensembl_dropped": "float64",
+  "n_control_features_dropped": "float64",
+  "counts_integer": "bool",
+  "license": "object",
+  "dataset_title": "object",
+  "download_page": "object",
+  "expr_path": "object",
+  "patch_path": "object",
+  "wsi_path": "object",
+  "pretrain_uni_v2": "object",
+  "pretrain_hoptimus0": "object",
+  "pretrain_virchow2": "object",
+  "pretrain_phikon_v2": "object",
+  "pretrain_resnet50": "object",
+  "emb_path_uni_v2": "object",
+  "emb_path_hoptimus0": "object",
+  "emb_path_resnet50": "object",
+  "emb_path_virchow2": "object",
+  "emb_path_phikon_v2": "object"
+ },
+ "registry_rows": 691,
+ "registry_small_columns": {
+  "vendor_lab": {
+   "": 581,
+   "10x Genomics": 110
+  },
+  "kept_from": {
+   "hest": 689,
+   "stimage": 2
+  },
+  "platform": {
+   "Visium": 423,
+   "Spatial Transcriptomics": 163,
+   "Xenium": 73,
+   "Visium HD": 21,
+   "Xenium 5k": 7,
+   "Visium HD 3'": 4
+  },
+  "organ": {
+   "breast": 142,
+   "bowel": 84,
+   "skin": 80,
+   "lung": 70,
+   "kidney": 65,
+   "heart": 62,
+   "prostate": 61,
+   "brain": 43,
+   "uterus": 17,
+   "liver": 16,
+   "ovary": 10,
+   "pancreas": 9,
+   "lymphoid": 8,
+   "cervix": 6,
+   "eye": 6,
+   "bladder": 6,
+   "lymph node": 5,
+   "bone": 1
+  },
+  "organ_status": {
+   "source": 689,
+   "inferred": 2
+  },
+  "tissue": {
+   "Breast": 140,
+   "Skin": 76,
+   "Kidney": 62,
+   "Colon": 57,
+   "Lung": 39,
+   "Prostate": 33,
+   "prostate": 28,
+   "Brain": 23,
+   "Heart": 21,
+   "Placenta": 15,
+   "dorsolateral prefrontal cortex": 12,
+   "lung": 11,
+   "Ovary": 10,
+   "sinoatrial node": 10,
+   "Bronchi": 10,
+   "Pancreas": 9,
+   "atrioventricular node": 8,
+   "Liver": 8,
+   "Parenchyma": 7,
+   "brain": 6,
+   "Bladder": 5,
+   "heart left ventricle": 5,
+   "colon": 5,
+   "Spanning retina/Choroid/Sclera": 5,
+   "Lymph node": 5,
+   "skin": 4,
+   "ileum": 4,
+   "Rectum": 4,
+   "Tonsil": 4,
+   "interventricular septum": 4,
+   "left cardiac atrium": 4,
+   "right cardiac atrium": 4,
+   "Cervical tissue": 4,
+   "Colon (right)": 4,
+   "heart right ventricle": 3,
+   "apical region of left ventricle": 3,
+   "kidney": 3,
+   "Trachea": 3,
+   "APAP liver explant": 3,
+   "Healthy liver explant": 3
+  },
+  "disease": {
+   "Cancer": 379,
+   "Healthy": 144,
+   "Diseased": 133,
+   "Treated": 26,
+   "Tumor": 7,
+   "": 2
+  },
+  "disease_status": {
+   "source": 689,
+   "unknown": 2
+  },
+  "oncotree": {
+   "IDC": 139,
+   "COAD": 58,
+   "SCCRCC": 24,
+   "EPM": 14,
+   "CSCC": 12,
+   "PRAD": 9,
+   "LUAD": 9,
+   "PAAD": 7,
+   "BLCA": 6,
+   "SOC": 5,
+   "HGSOC": 4,
+   "ILC": 4,
+   "READ": 4,
+   "GBM": 4,
+   "HCC": 3,
+   "SKCM": 3,
+   "UNKNOWN": 2,
+   "COADREAD": 2,
+   "ACYC": 1,
+   "CCOV": 1,
+   "ALL": 1,
+   "PRCC": 1,
+   "PDAC": 1,
+   "TODO": 1,
+   "CESC": 1,
+   "LUSC": 1,
+   "LNET": 1
+  },
+  "donor_status": {
+   "source": 689,
+   "unknown": 2
+  },
+  "preservation": {
+   "Fresh Frozen": 342,
+   "FFPE": 178,
+   "Snap Frozen": 19,
+   "PFA fixed": 7,
+   "PFA": 7,
+   "Fixed Frozen": 2
+  },
+  "magnification": {
+   "40x": 348,
+   "20x": 310,
+   "10x": 10
+  },
+  "scanner": {
+   "": 691
+  },
+  "scanner_status": {
+   "unknown": 691
+  },
+  "um_per_px_status": {
+   "source": 689,
+   "inferred": 2
+  },
+  "license": {
+   "CC BY 4.0": 211,
+   "Creative Commons Attribution": 110,
+   "Creative Commons Attribution 4.0 International": 103,
+   "CC BY-NC-ND 4.0": 41,
+   "Internal": 29,
+   "CC BY NC 3.0": 23,
+   "Creative Commons Attribution 4.0": 23,
+   "Creative Commons Attribution 4.0 International License": 20,
+   "CC BY": 7,
+   "CC BY-NC-ND 4.0 DEED": 5,
+   "CC BY-NC 4.0": 2,
+   "see STimage-1K4M README and source study": 2
+  },
+  "pretrain_uni_v2": {
+   "unknown": 691
+  },
+  "pretrain_hoptimus0": {
+   "unknown": 691
+  },
+  "pretrain_virchow2": {
+   "unknown": 691
+  },
+  "pretrain_phikon_v2": {
+   "unlikely": 691
+  },
+  "pretrain_resnet50": {
+   "no": 691
+  }
+ },
+ "encoder_file_counts": {
+  "uni_v2": 689,
+  "hoptimus0": 689,
+  "resnet50": 689,
+  "virchow2": 689,
+  "phikon_v2": 689
+ }
+}

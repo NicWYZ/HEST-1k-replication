@@ -9,7 +9,9 @@ the order of the new summary's gene_symbols (round11_closeout_predict.py with --
 written to <out>.join.json before the parquet: every row of the file of record finds exactly one row of the new file;
 y__<symbol> equals y_log1p__<id> within 1e-6 on every matched row; the donor partition of the samples agrees. If a
 check fails, nothing is written but the JSON, and the script exits non-zero.
-With --scale lognorm, the checks are the same (on log(1 + y)) and both y__<symbol> and f__<symbol> are then taken from
+With --max-unmatched s, up to a share s of the record's rows may lack a new prediction (on CCRCC 407 of 74,220 spots
+have no corpus embedding, results/round11/closeout/inventory/inv_v1/inv_hest_map.csv); those rows are dropped from the
+output and counted in the JSON, so every predictor compared on the task sees the same subset. With --scale lognorm, the checks are the same (on log(1 + y)) and both y__<symbol> and f__<symbol> are then taken from
 the new file's y_lognorm__<id> and f_lognorm__<id> (log(1 + 1e4 y / n), n the spot's total over its full measured
 panel, as round 10's corpus files define it), so the output is that task's file on the normalised scale.
 Usage: round11_closeout_hest_join.py <record.parquet> <new_pred.parquet> <new_summary.json> <out.parquet> [--scale lognorm]
@@ -35,7 +37,13 @@ def main():
     m = R[key + ['_i']].merge(new[key + ['_j']], on=key, how='left')
     rep['matched'] = int(m['_j'].notna().sum()); rep['unmatched'] = int(m['_j'].isna().sum())
     rep['unmatched_by_sample'] = m[m['_j'].isna()].sample_id.value_counts().to_dict()
-    ok = dup == 0 and rep['unmatched'] == 0 and len(m) == len(R)
+    max_un = float(sys.argv[sys.argv.index('--max-unmatched') + 1]) if '--max-unmatched' in sys.argv else 0.0
+    rep['max_unmatched_share'] = max_un; rep['unmatched_share'] = rep['unmatched'] / max(len(R), 1)
+    ok = dup == 0 and rep['unmatched_share'] <= max_un and len(m) == len(R)
+    keep = m['_j'].notna().to_numpy()
+    if ok and not keep.all():   # the record's rows without a new prediction are dropped, and reported
+        R = R[keep].reset_index(drop=True); m = m[keep].reset_index(drop=True)
+        rep['rows_written'] = int(len(R))
     worst = np.nan
     if ok:
         j = m['_j'].astype(int).to_numpy()
@@ -57,6 +65,7 @@ def main():
     if not ok:
         sys.exit(2)
     j = m['_j'].astype(int).to_numpy()
+    rec = rec.take(pa.array(R['_i'].to_numpy()))
     cols = {}
     for f in rec.schema:
         if f.name[:3] in ('f__', 'y__') and f.name[3:] in syms and (f.name[0] == 'f' or scale != 'log1p'):

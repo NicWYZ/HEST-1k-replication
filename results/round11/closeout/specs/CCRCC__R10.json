@@ -12,7 +12,7 @@
    "args": ["/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
             "{OUT}/predict/pred__CCRCC__uni_v2__none__r10__donor.parquet",
             "{OUT}/predict/pred_summary__CCRCC__uni_v2__none__r10__donor.json",
-            "{OUT}/join/b1_predictions__CCRCC__uni_v2.parquet"]},
+            "{OUT}/join/b1_predictions__CCRCC__uni_v2.parquet", "--max-unmatched", "0.01"]},
   {"name": "d12", "script": "round10_final_runs_f1_donor_diag.py",
    "args": ["{OUT}/join/b1_predictions__CCRCC__uni_v2.parquet", "R10_CCRCC_uni_v2", "."]},
   {"name": "cv", "script": "round10_final_runs_f2_cluster_values.py", "args": ["{CONFIG}", "."],
