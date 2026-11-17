@@ -5,11 +5,11 @@
 The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at UNC, in Dr. Hongtu Zhu's lab and supervised by Dr. Daiwei (David) Zhang, toward a submittable paper by spring 2027. The paper answers the proposal's two questions, calibrated uncertainty for histology-predicted gene expression and valid inference with it, on HEST-1k spatial transcriptomics with ACS PUMS 2018 income as a second domain. Existing or classical methods are applied wherever they serve, and the project's own method or theory arises only where a problem met in practice has no existing solution after a literature search (`docs/round10/00_prep/round10_reframing.md`, section 1). Reading this as an applied statistics paper is `[proposed]`.
 
 ```state
-updated: 2026-11-16, later (oversight session; pull request #41 merged, none open, no track running)
-unit: round10
-status: closed
-next: Nicolas decides the project's direction (DIRECTION) before round 11 is planned; draft v1 of the applied paper, if it goes on, starts from docs/round10/README.md and the writing plan; the record was reduced at tag record-full-2026-11.
-waiting: DIRECTION | since 2026-11-16 | whether the project goes on to draft v1 as planned, goes on under another framing, or stops and wraps up (Nicolas; default round 11 not opened)
+updated: 2026-11-16, evening (oversight session; round 11 opened)
+unit: round11
+status: running
+next: track closeout runs on branch round11-closeout from docs/round11/closeout/round11_closeout_brief.md; relay its gates to Nicolas; once G-final is merged, draft the advisor outline in docs/round11/oversight/ (docs/round11/masterplan.md).
+waiting: FRAMING | since 2026-11-16 | whether the paper is round 10's applied paper or one paper on the headline results of the closeout brief, section 3 (Nicolas with the advisors; default not decided, the outline presents both)
 waiting: D5 | since 2026-10-26 | which scale the paper calls primary; both are in the numbers table (Nicolas with David; default report both)
 waiting: O5 | since 2026-11-08 | which of round 9's three theorems the paper keeps (Nicolas; default candidates, not claimed)
 waiting: Q1 | since 2026-10-09 | whether regime B can be bought on a spatial platform, and at what cost (Nicolas with the advisors; default no cost claim)
@@ -17,7 +17,7 @@ waiting: Q3 | since 2026-10-09 | venue and lead result, once the paper's content
 waiting: PAPERS | since 2026-11-07 | paper full texts round 9's checkers saved outside the repository are not yet deleted (Nicolas; default left)
 ```
 
-Round 10 closed on 15 November without track `paper`. What the project has established, and the open threads draft v1 starts from, are in `docs/round10/README.md`, with the paper's numbers in `results/round10/final_runs/F4/paper_numbers.csv` and the plan for the draft in `docs/round10/tracks/ledger/round10_writing_plan.md`.
+What the project has established is in `docs/round10/README.md`, with the paper's numbers in `results/round10/final_runs/F4/paper_numbers.csv` and a plan for a draft in `docs/round10/tracks/ledger/round10_writing_plan.md`. Round 11 tests the headline results against a stronger predictor, closes round 10's open threads and prepares the presentation to the advisors (`docs/round11/masterplan.md`).
 
 ## Session start
 
@@ -49,7 +49,7 @@ These are not preferences. Breaking one invalidates the work.
 
 ## Working rules (Nicolas's)
 
-- **Aims.** Minimal biology by design. Expression is a signal to predict, calibrate and use for inference. His career goal is quantitative research in finance, so directions are judged by how well their skills transfer. He prefers ML venues (NeurIPS, ICML, AISTATS) or top statistics journals, wants the paper's scope broad and useful beyond spatial transcriptomics, and decides the venue once the paper's content is known.
+- **Aims.** Minimal biology by design. Expression is a signal to predict, calibrate and use for inference. His career goal is quantitative research in finance, so directions are judged by how well their skills transfer. He prefers ML venues (NeurIPS, ICML, AISTATS) or top statistics journals, wants the paper's scope broad and useful beyond spatial transcriptomics, and decides the venue once the paper's content is known. The project is also what he presents in his search for a summer 2027 internship, quantitative research first, then ML or AI roles, then data science or statistics.
 - **Literature first.** Whenever the work meets a problem, the literature is searched first for the existing method or theory to apply, and the project devises its own only where that search finds a genuine gap, which Nicolas agrees to before a derivation starts. New method and theory arise from problems met in practice and are never the main goal.
 - **Data.** Use as much of the existing data as possible, including the federated project's corpus on Longleaf, read only. Longleaf storage is not a constraint.
 - **Autonomy.** A research session explores, derives and validates on its own, and reports to Nicolas only at significant results or roadblocks, which are where its plan puts its gates.
