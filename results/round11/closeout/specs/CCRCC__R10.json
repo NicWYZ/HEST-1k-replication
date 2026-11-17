@@ -1,0 +1,27 @@
+{
+ "note": "A2.2: arm R10 on CCRCC through the corpus with round 3's genes, joined onto round 3's file, then D12, cluster values and regime A with round 10's population labels (same seeds as round 10's CCRCC uni_v2 cells)",
+ "steps": [
+  {"name": "predict", "script": "round11_closeout_predict.py",
+   "args": ["/work/users/w/e/weiyang/st_fed_learn/data/tasks/kidney__Visium.json",
+            "/work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/data_registry/f1_data_hest_match.csv",
+            "donor", ".", "--arm", "uni_v2:none:r10", "--map-task", "CCRCC",
+            "--samples", "INT1,INT2,INT3,INT4,INT5,INT6,INT7,INT8,INT9,INT10,INT11,INT12,INT13,INT14,INT15,INT16,INT17,INT18,INT19,INT20,INT21,INT22,INT23,INT24",
+            "--tag", "CCRCC",
+            "--genes-from-parquet", "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet"]},
+  {"name": "join", "script": "round11_closeout_hest_join.py",
+   "args": ["/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+            "{OUT}/predict/pred__CCRCC__uni_v2__none__r10__donor.parquet",
+            "{OUT}/predict/pred_summary__CCRCC__uni_v2__none__r10__donor.json",
+            "{OUT}/join/b1_predictions__CCRCC__uni_v2.parquet"]},
+  {"name": "d12", "script": "round10_final_runs_f1_donor_diag.py",
+   "args": ["{OUT}/join/b1_predictions__CCRCC__uni_v2.parquet", "R10_CCRCC_uni_v2", "."]},
+  {"name": "cv", "script": "round10_final_runs_f2_cluster_values.py", "args": ["{CONFIG}", "."],
+   "config": {"stage": "A2", "unit": "cluster_values_CCRCC_R10", "repo_root": "/work/users/w/e/weiyang/hest_replication",
+              "populations": [{"task": "CCRCC", "encoder": "uni_v2", "path": "{OUT}/join/b1_predictions__CCRCC__uni_v2.parquet",
+                               "lib_task": "CCRCC", "scales": [{"name": "log1p", "y_prefix": "y__", "f_prefix": "f__"}]}]}},
+  {"name": "regimeA", "script": "round10_final_runs_f2_regimeA.py", "args": ["{CONFIG}", "."],
+   "config": {"stage": "A2", "unit": "regimeA_CCRCC_R10", "cluster_values": ["{OUT}/cv/cluster_values__CCRCC.parquet"],
+              "select": {"task": ["CCRCC"], "encoder": ["uni_v2"]}, "n_grid": [4, 6, 8, 10, 12, 16], "extra_n": {},
+              "R": 20000, "R_boot": 0, "B": 999, "boot_select": {}}}
+ ]
+}
