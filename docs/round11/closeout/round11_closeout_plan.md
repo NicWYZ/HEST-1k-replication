@@ -5,10 +5,10 @@ updated: 2026-11-17, morning (second session of track closeout)
 unit: closeout
 project_id: proj_8450e231133d
 frame_id: c9016697-c909-435e-82fc-ebfb9daaa857
-step: G2 decided (section 6); A6 for P and E beside R10 being set up, its predictions written in section 4 before any A6 job
+step: A6 pilot running (predictions in section 4 written at 307670c4, code at 1fbbcd97)
 last_run: g2/sweep_v4 (Slurm 9528178); gate G2 tagged round11-closeout-G2
-jobs: none
-next: write A6's predictions, extend the chain to P and E and the center design, submit; then B2, A7, G-final
+jobs: A6 pilot from 1fbbcd97: 9529112 (a6/conformal/selftest_v1), 9529113 (a6/conformal/anchor_CCRCC_round3), 9529114 (a6/conformal/LUNG_XENIUM__R10__donor), 9529115 (a6/donor/LUNG_XENIUM__R10), 9529116 (a6/donor/CCRCC__R10)
+next: when the pilot passes (A6.0 a to c), submit phases donor, center and conformal of code/scripts/round11_closeout_submit_a6.sh; write the A6 aggregator meanwhile; then A7, G-final
 waiting: none
 ```
 
