@@ -17,7 +17,7 @@
 Writes g2_summary.json first, then the tables.
 Usage: round11_closeout_g2_aggregate.py <closeout_root> <round10_final_runs_root>
 """
-import glob, json, os, sys
+import glob, json, os, re, sys
 import numpy as np, pandas as pd
 
 REF = {'kidney__Visium': 0.471, 'bowel__Visium': 0.511, 'LUNG_XENIUM': 0.619}
@@ -28,6 +28,7 @@ def strength(root):
     rows, folds = [], {}
     for p in sorted(glob.glob(f'{root}/predict/*__*__*/pred_summary__*.json')):
         d = os.path.basename(os.path.dirname(p)); task, arm, design = d.rsplit('__', 2)
+        design = re.sub(r'_v\d+$', '', design)   # a rerun's unit directory carries a version suffix
         s = json.load(open(p))
         fp = glob.glob(os.path.join(os.path.dirname(p), 'pred_folds__*.csv'))
         F = pd.read_csv(fp[0]) if fp else None
