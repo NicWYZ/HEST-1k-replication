@@ -1,14 +1,14 @@
 # Round 11, track `closeout`, the plan
 
 ```state
-updated: 2026-11-16, evening (first session of track closeout)
+updated: 2026-11-16, 23:55 (first session of track closeout)
 unit: closeout
 project_id: proj_8450e231133d
 frame_id: c9016697-c909-435e-82fc-ebfb9daaa857
-step: A1 done (results/round11/closeout/lit/); A3 primary predictor designated (section 4, arm P) with predictions A2.1 to A5.4 written; A0 inventory, B3, B6, B7 jobs submitted and pending on spill
-last_run: none completed yet
-jobs: 9469547 (A0 inventory/inv_v1), 9469936 (B7 b7/ledger_v1), 9470327 (B3 b3/s0006_v1), 9470328 (B6 b6/stored_v1), 9471137 (A2 predict/selftest_v1), 9471138 and 9471139 (A2 predict/kidney__Visium__R10__donor, __center), 9471874 (B4 b4/equal_v1), 9471875 (B5 b5/withinvar_v1), 9472778 (A2 anchor/CCRCC__R10); all pending on spill at 20:47; outputs under /work/users/w/e/weiyang/hest_replication/results/round11/closeout/; sub-agent b1 (B1) running
-next: read the four jobs' outputs; then the predictor self-test and the anchors (A2: arm R10 on kidney Visium donor and center, CCRCC through the corpus), then arms H, C, P, V, E on kidney Visium, bowel Visium and LUNG_XENIUM (A5), then gate G2
+step: A0, A1, A3 done; A2.1 and A2.3 held; B3, B5, B6, B7 scored (section 5); A5 strength runs, B4 v2 and the CCRCC anchor v2 submitted
+last_run: B7 v2 (Slurm 9495763) and the kidney anchors (9471138, 9471139); aggregates committed under results/round11/closeout/
+jobs: A5 predict/<task>__<arm>__<design> on Longleaf: kidney H 9503517, C 9503518, P 9503519, V 9503520, E 9503521, P center 9503522; bowel R10 9503523, H 9503524, C 9503525, P 9503526, V 9503527, E 9503528; LUNG_XENIUM R10 9503529, H 9503530, C 9503531, P 9503532, V 9503533, E 9503534; B4 b4/equal_v2 9503535; A2 anchor/CCRCC__R10_v2 9503536; B1 sub-agent's jobs b1/h1a 9474416, b1/h2 9474417, b1/h3 9474418 (its probe, h1b_h4 and h5 completed); all under /work/users/w/e/weiyang/hest_replication/results/round11/closeout/
+next: when the jobs finish, score A2.2 (CCRCC anchor), B4 and A5.1 to A5.4 (P11.1); read the B1 sub-agent's outputs (b1/*/) and verify them; then the G2 report (docs/round11/closeout/round11_closeout_G2_report.md), tag round11-closeout-G2, push, stop
 waiting: none
 ```
 
