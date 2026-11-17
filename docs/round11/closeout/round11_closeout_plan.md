@@ -1,15 +1,15 @@
 # Round 11, track `closeout`, the plan
 
 ```state
-updated: 2026-11-17, 05:00 (first session of track closeout)
+updated: 2026-11-17, morning (second session of track closeout)
 unit: closeout
 project_id: proj_8450e231133d
 frame_id: c9016697-c909-435e-82fc-ebfb9daaa857
-step: gate G2 reached and tagged round11-closeout-G2; report docs/round11/closeout/round11_closeout_G2_report.md; stopped for the reviewer
-last_run: g2/sweep_v4 (Slurm 9528178): report 296 of 296 claims verified, plan 132 of 132; fresh check g2check agrees with every table number; gate bookkeeping g2/gate_v2
+step: G2 decided (section 6); A6 for P and E beside R10 being set up, its predictions written in section 4 before any A6 job
+last_run: g2/sweep_v4 (Slurm 9528178); gate G2 tagged round11-closeout-G2
 jobs: none
-next: the session that continues writes the reviewer's decisions under "G2" in section 6 of this plan, as close to the words as it can and with the gate's commit, then acts on them; the default under the brief, if item 2 is answered "end Part A", is Part B item 2 (H1(b) refits), A7 (pretraining statements), then G-final
-waiting: G2 | since 2026-11-17 | report section 7, item 1 (accept the corpus route for CCRCC with its stated width-ratio difference, or rebuild round 3's and round 4's route) and item 2 (end Part A, or run A6 for P, or for E labelled post hoc; the session recommends A6 for P) (the reviewer; items 1 and 2 are marked substantive for Nicolas)
+next: write A6's predictions, extend the chain to P and E and the center design, submit; then B2, A7, G-final
+waiting: none
 ```
 
 *Written on 16 November 2026 by the first session of track `closeout` (frame above). The brief is `docs/round11/closeout/round11_closeout_brief.md` on `main`, read at `7ff4e2fc`, with `docs/round11/masterplan.md` at the same commit and `docs/EXECUTION_RULES.md` as it stands there. The branch starts from `7ff4e2fc`. This plan links the brief and does not copy it.*
@@ -118,7 +118,18 @@ Every Slurm id in this section is a row of `results/round11/closeout/g2/gate_v2/
 
 ## 6. Decisions
 
-None yet.
+### G2 (gate commit `d42dace3`, tag `round11-closeout-G2`)
+
+Decided by the oversight session under `docs/round11/masterplan.md`, "Who decides the gates", relayed to the second session on 17 November; the brief on `main` was revised to carry them (`182138c8`). In the reviewer's words, as closely as the plan can hold them:
+
+1. **Section 7, item 1 (the CCRCC anchor). Accepted: keep the corpus route for CCRCC.** Round 3's or round 4's route is not rebuilt. Every comparison on CCRCC is made against this track's own `R10` arm on the corpus's embeddings, never against round 10's file, and the final report states the difference (width ratio 0.8949 against 0.8783, $R^2_c$ 0.4290 against 0.4387) and its cause as G2 found it.
+2. **Section 7, item 2 (what Part A does now). Run the A6 quantities, as section 9 of the G2 report lists them, for `P` and for `E`, each beside `R10` on the same inputs.** `P` is the predictor named in advance. `E` is labelled, wherever it appears, as chosen after its results were seen. The scores stay as they are: P11.1 refuted, P11.2 to P11.4 "not tested". In the final report's headline table the verdict column keeps those formal verdicts, and the A6 values under `P` and under `E` are given beside them as supplementary evidence, so that a reader sees what a predictor stronger per donor (`P`) and one stronger on the pooled measure (`E`) do to H1(b), H2 and H3. `E` is included held out by center on kidney Visium and brain Visium. The session writes its own predictions for A6 before its runs.
+3. **Check the mechanism of the G2 report's section 6.1** (a narrower spread of donors' predicted levels explaining a per-fold gain with a smaller pooled gain), since A6's donor-level quantities show it.
+4. **Section 7, item 3.** The brief's section 3 now carries the four points (36 cells for `slide_out`, IDC counted twice, the two file paths).
+5. **Then Part B item 2, task A7 and G-final,** as this plan has them.
+6. **Size `E`'s jobs from the kidney Visium `E` run that needed the longer limit** (Slurm 9518165), and keep few sub-agents running at once, since the machine the session works from ran low on memory.
+
+If A6 changes a headline result, the final report says so plainly at its top; that goes to Nicolas.
 
 ## 7. Tried and failed
 
