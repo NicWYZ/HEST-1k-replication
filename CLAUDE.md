@@ -2,10 +2,10 @@
 
 **If you are an execution session** (a session working on a track branch), your rules are `docs/EXECUTION_RULES.md` and your goals are your track's brief and every gate decision recorded in your plan. This file is the oversight session's, so do not edit it or act on its plan. The hard rules below apply to you as well.
 
-The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at UNC, in Dr. Hongtu Zhu's lab and supervised by Dr. Daiwei (David) Zhang, toward a submittable paper by spring 2027. The paper answers the proposal's two questions, calibrated uncertainty for histology-predicted gene expression and valid inference with it, on HEST-1k spatial transcriptomics with ACS PUMS 2018 income as a second domain. Existing or classical methods are applied wherever they serve, and the project's own method or theory arises only where a problem met in practice has no existing solution after a literature search (`docs/round10/00_prep/round10_reframing.md`, section 1). Reading this as an applied statistics paper is `[proposed]`.
+The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at UNC, in Dr. Hongtu Zhu's lab and supervised by Dr. Daiwei (David) Zhang, toward a submittable paper by spring 2027. The paper answers the proposal's two questions, calibrated uncertainty for histology-predicted gene expression and valid inference with it, on HEST-1k spatial transcriptomics with ACS PUMS 2018 income as a second domain. Existing or classical methods are applied wherever they serve, and the project's own method or theory arises only where a problem met in practice has no existing solution after a literature search (`docs/round10/00_prep/round10_reframing.md`, section 1). 
 
 ```state
-updated: 2026-11-16, evening (oversight session; track closeout's first session started)
+updated: 2026-11-17 (oversight session; gate G2 of track closeout answered)
 unit: round11
 status: running
 next: track closeout runs on branch round11-closeout from docs/round11/closeout/round11_closeout_brief.md; the oversight session reviews its gates and relays summaries to Nicolas (docs/round11/masterplan.md, "Who decides the gates"); once G-final is merged, draft the advisor outline in docs/round11/oversight/ (docs/round11/masterplan.md).

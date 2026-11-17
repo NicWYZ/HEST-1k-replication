@@ -34,6 +34,8 @@ Each is quoted from the file named, read on 16 November. Unless a row says other
 
 **Two baselines for the donor-mean $R^2$.** Round 9's values (`results/round9/between/between_head_medians.csv`, $-0.066$ on CCRCC) are against the full-sample mean, under which a constant scores $-0.089$. Round 10's are against the leave-one-out constant. Every $R^2$ of a donor mean in this track names its baseline, and the leave-one-out constant is the primary one.
 
+**Notes on the table, from gate G2.** `slide_out`'s mean is over 36 cells, not 132. The 132 cells count IDC twice, under its shipped and its audited labels; with IDC once, `donor` is 0.800 and `random` 0.895. H4's encoder spread is in `results/round3/A1_coverage/a1_vs_benchmark_pearson.csv`. H5's Broska and Howes values come from `results/round10/final_runs/F2/report_tables/r02_regimeA_grid_ranges.csv`. The recomputed values are in `round11_closeout_G2_report.md`, section 6.3, on the branch.
+
 The definitions of every quantity (the estimands, `fix1`, `classical`, HCP, the designs, the scales) are in `docs/round10/round10_methods_note.md`, `docs/round10/i05/final-runs/round10_final_runs_report.md`, `docs/round10/tracks/final-runs/round10_final_runs_plan.md` and `docs/round03/i01/exec/round3_A1_stage_report.md`. Kidney Visium contains the samples of CCRCC and INDIANA_KIDNEY, so those three tasks are not independent.
 
 ## 4. Part A, a stronger predictor
@@ -56,7 +58,7 @@ An inventory of the embeddings, prediction files and task definitions on Longlea
 1. **Anchors first.** Before any new predictor, the pipeline refits round 10's `uni_v2` ridge head and reproduces these cells, from the prediction files and task definitions on Longleaf:
    - kidney Visium, median Pearson held out by donor 0.471 and by center 0.123 (`f1_predictions.csv`), within 0.005;
    - CCRCC, the leave-one-donor-out median $R^2$ of the donor mean against the leave-one-out constant, 0.021, within 0.005;
-   - CCRCC, $\theta_3$ at 8 labelled donors, the median width ratio 0.878 and the median coverage of `fix1` 0.8965 (`paper_numbers.csv`, key `B8.CCRCC.fix1`), within the Monte Carlo error of round 10's design simulation, which the report states.
+   - CCRCC, $\theta_3$ at 8 labelled donors, the median width ratio 0.878 and the median coverage of `fix1` 0.8965 (`paper_numbers.csv`, key `B8.CCRCC.fix1`), within the Monte Carlo error of round 10's design simulation, which the report states. At gate G2 the width ratio came to 0.8949 on the corpus's embeddings while a control on round 3's own file reproduced 0.878 exactly, so the difference is the inputs. The corpus route is accepted, and every comparison on CCRCC is made against the track's own ridge arm on the corpus's embeddings.
 2. **The primary predictor is named before its results are seen.** The plan designates one predictor as primary, with its tuning rule, before any held-out result of a new predictor is read. Every predictor that is run is reported. The masterplan's predictions are scored on the primary one.
 3. **No leakage.** Every prediction is held out by donor, and by center for H2. Every tuning choice (hyperparameters, early stopping, model selection, any normalisation fitted on data) is made inside the training fold, with inner splits grouped by donor, and by center for H2. When donors are added from the corpus, they are matched to the task's donors across identifier schemes first (center S0006 of kidney Visium is CCRCC's donors), a held-out donor never appears in training under another identifier, and a held-out center contributes no donor to training. The gene lists are round 10's.
 4. **One change at a time.** For any predictor that changes the inputs (more donors, spatial context, another encoder), a ridge arm on the same inputs and folds is run beside it, so that the head and the inputs are separated.
@@ -68,6 +70,8 @@ An inventory of the embeddings, prediction files and task definitions on Longlea
    - split conformal coverage with the absolute score under round 3's designs `random`, `slide_out` and `donor`, and under a center design where the task has centers.
 7. **The grid before the headline.** Each conclusion is checked in every task, scale and estimand cell it claims, and a difference is called a change only beside its fold-to-fold or Monte Carlo spread.
 8. **Pretraining overlap.** The report says what each encoder's published description states about pretraining on these cohorts, or that it states nothing.
+
+**After gate G2.** The primary predictor did not meet P11.1, so P11.2 to P11.4 are scored "not tested". The quantities of standard 6 are still run for the primary predictor and for the three-encoder arm with context, the latter labelled as chosen after its results were seen, and the final report gives them beside the formal verdicts as supplementary evidence.
 
 **Predictions.** The masterplan's P11.1 to P11.4 are the oversight session's. The session writes its own, with numbers, into its plan before the first run of each stage.
 
