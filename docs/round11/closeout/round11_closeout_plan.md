@@ -101,6 +101,7 @@ The masterplan's P11.1 to P11.4 are scored on `P`. Every arm that is run is repo
 - [x] B6 done.
 - [ ] **B7.** Round 10 jobs without a provenance file, from `sacct`. Method in the docstring of `code/scripts/round11_closeout_b7_ledger.py`: a job is round 10's when the batch script its `SubmitLine` names (the harness keeps it under `.claude-science-scratch/.claude-science/jobs/<id>/job.sh`) or its work directory names round 10's tree; it is then looked up in round 10's job ledger, and for a job not in the ledger its output directories are checked for `PROVENANCE.txt`.
   - *Prediction, written 16 November before the run.* Between 10 and 300 attributed round 10 jobs are absent from the ledger, most of them FAILED, CANCELLED or TIMEOUT, and fewer than 20 of those that COMPLETED lack a `PROVENANCE.txt` in every output directory they name.
+  - 2026-11-16, 23:12. **v1 (Slurm 9469936, `b7/ledger_v1/` on Longleaf) attributed too few jobs**: 226 of 2877 in the window, while round 10's ledger has 2987 rows, because the harness's `job.sh` only runs a `cmd.sh` beside it and v1 read `job.sh` alone. Not scored. v2 reads `cmd.sh` and the scripts it names (commit below); the prediction above stands unchanged and is scored on v2.
 
 ## 6. Decisions
 

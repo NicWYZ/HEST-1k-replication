@@ -3,7 +3,8 @@
 Method. sacct lists every job of user weiyang submitted in round 10's window (2026-11-08 to 2026-11-16T12:00). A job
 is attributed to round 10's track final-runs when its batch script names the track's tree
 (`results/round10/final_runs` or `hest_code/round10-final-runs`): the script is the file its SubmitLine names (the
-submission harness keeps it under .claude-science-scratch/.claude-science/jobs/<id>/job.sh), or, for jobs submitted
+submission harness keeps it under .claude-science-scratch/.claude-science/jobs/<id>/job.sh, which runs the command
+file cmd.sh beside it; both are read, and any .sh or .sbatch file they name by absolute path, up to six files), or, for jobs submitted
 with a plain sbatch from a work directory under the tree, the work directory itself. Each attributed job is looked up
 in round 10's job ledger (results/round10/final_runs/job_ledger.csv, column slurm_job_id). For a job not in the ledger,
 the output directories its script names (paths under results/round10/final_runs that follow OUT= or are passed as an
@@ -37,10 +38,19 @@ def main():
             script = os.path.join(r['workdir'], script)
         text = ''
         if script and os.path.isfile(script):
-            try:
-                text = open(script, errors='replace').read()
-            except Exception:
-                text = ''
+            files = [script, os.path.join(os.path.dirname(script), 'cmd.sh')]
+            seen = set()
+            while files:
+                f = files.pop(0)
+                if f in seen or not os.path.isfile(f):
+                    continue
+                seen.add(f)
+                try:
+                    t = open(f, errors='replace').read()
+                except Exception:
+                    continue
+                text += '\n' + t
+                files += [p for p in re.findall(r'(/[^\s"\';|&]+\.(?:sh|sbatch))', t) if len(seen) < 6]
         hit = any(t in text for t in TREE) or any(t in r['workdir'] for t in TREE)
         if not text and not any(t in r['workdir'] for t in TREE):
             unatt.append(dict(job_id=r['job_id'], name=r['name'], state=r['state'], submit=r['submit'],
@@ -48,6 +58,7 @@ def main():
             continue
         if not hit:
             continue
+        text = text.replace('${BASE}', BASE).replace('$BASE', BASE)
         outs = sorted(set(re.findall(r'OUT=("?)(' + re.escape(BASE) + r'[^\s"]*)\1', text)))
         outs = sorted({o[1] for o in outs})
         if not outs:
