@@ -8,7 +8,8 @@ The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at U
 updated: 2026-11-17 (oversight session; gate G2 of track closeout answered)
 unit: round11
 status: running
-next: track closeout runs on branch round11-closeout from docs/round11/closeout/round11_closeout_brief.md; the oversight session reviews its gates and relays summaries to Nicolas (docs/round11/masterplan.md, "Who decides the gates"); once G-final is merged, draft the advisor outline in docs/round11/oversight/ (docs/round11/masterplan.md).
+next: track closeout runs from docs/round11/closeout/round11_closeout_brief.md; the oversight session reviews its gates and relays summaries to Nicolas (docs/round11/masterplan.md, "Who decides the gates"); once G-final is merged, draft the advisor outline in docs/round11/oversight/ (docs/round11/masterplan.md).
+branch round11-closeout: running | docs/round11/closeout/round11_closeout_plan.md
 waiting: FRAMING | since 2026-11-16 | whether the paper is round 10's applied paper or one paper on the headline results of the closeout brief, section 3 (Nicolas with the advisors; default not decided, the outline presents both)
 waiting: D5 | since 2026-10-26 | which scale the paper calls primary; both are in the numbers table (Nicolas with David; default report both)
 waiting: O5 | since 2026-11-08 | which of round 9's three theorems the paper keeps (Nicolas; default candidates, not claimed)
