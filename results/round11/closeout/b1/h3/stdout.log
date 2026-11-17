@@ -1,0 +1,88 @@
+CCRCC {"morph": "in file", "spots": 74220, "genes": 50, "donors": 24, "donors_theta3": 24, "spots_with_morph": 67673, "median_R2c": 0.4387262423085522, "lodo_R2_loo_const_median": 0.021266383883104034, "lodo_R2_full_mean_median": -0.06569104514807589}
+INDIANA_KIDNEY {"morph": "in file", "spots": 31425, "genes": 50, "donors": 25, "donors_theta3": 25, "spots_with_morph": 31400, "median_R2c": 0.13896681743966047, "lodo_R2_loo_const_median": 0.04252329294923046, "lodo_R2_full_mean_median": -0.03892871858807456}
+kidney__Visium {"morph": "joined", "join_rate": 0.9433224984010443, "spots": 114137, "genes": 50, "donors": 51, "donors_theta3": 51, "spots_with_morph": 107668, "median_R2c": 0.19860545785094189, "lodo_R2_loo_const_median": 0.38152165703227353, "lodo_R2_full_mean_median": 0.35653513197637765}
+bowel__Visium {"morph": "joined", "join_rate": 0.9672900685991059, "spots": 93733, "genes": 50, "donors": 18, "donors_theta3": 18, "spots_with_morph": 90667, "median_R2c": 0.625844769292021, "lodo_R2_loo_const_median": 0.22178363760706105, "lodo_R2_full_mean_median": 0.12753598126189558}
+LUNG_XENIUM {"morph": "in file", "spots": 19083, "genes": 343, "donors": 15, "donors_theta3": 15, "spots_with_morph": 18973, "median_R2c": 0.713514199908262, "lodo_R2_loo_const_median": 0.10674412804374767, "lodo_R2_full_mean_median": -0.025421281582432398}
+{
+ "width_rows": 1086,
+ "width_dups": 0,
+ "width_ratio": {
+  "CCRCC": {
+   "genes": 50,
+   "median": 0.8782720286011843
+  },
+  "INDIANA_KIDNEY": {
+   "genes": 50,
+   "median": 0.957354955559757
+  },
+  "LUNG_XENIUM": {
+   "genes": 343,
+   "median": 0.5854580162130402
+  },
+  "bowel__Visium": {
+   "genes": 50,
+   "median": 0.6690551447436934
+  },
+  "kidney__Visium": {
+   "genes": 50,
+   "median": 0.9367495541789166
+  }
+ },
+ "CCRCC": {
+  "morph": "in file",
+  "spots": 74220,
+  "genes": 50,
+  "donors": 24,
+  "donors_theta3": 24,
+  "spots_with_morph": 67673,
+  "median_R2c": 0.4387262423085522,
+  "lodo_R2_loo_const_median": 0.021266383883104034,
+  "lodo_R2_full_mean_median": -0.06569104514807589
+ },
+ "INDIANA_KIDNEY": {
+  "morph": "in file",
+  "spots": 31425,
+  "genes": 50,
+  "donors": 25,
+  "donors_theta3": 25,
+  "spots_with_morph": 31400,
+  "median_R2c": 0.13896681743966047,
+  "lodo_R2_loo_const_median": 0.04252329294923046,
+  "lodo_R2_full_mean_median": -0.03892871858807456
+ },
+ "kidney__Visium": {
+  "morph": "joined",
+  "join_rate": 0.9433224984010443,
+  "spots": 114137,
+  "genes": 50,
+  "donors": 51,
+  "donors_theta3": 51,
+  "spots_with_morph": 107668,
+  "median_R2c": 0.19860545785094189,
+  "lodo_R2_loo_const_median": 0.38152165703227353,
+  "lodo_R2_full_mean_median": 0.35653513197637765
+ },
+ "bowel__Visium": {
+  "morph": "joined",
+  "join_rate": 0.9672900685991059,
+  "spots": 93733,
+  "genes": 50,
+  "donors": 18,
+  "donors_theta3": 18,
+  "spots_with_morph": 90667,
+  "median_R2c": 0.625844769292021,
+  "lodo_R2_loo_const_median": 0.22178363760706105,
+  "lodo_R2_full_mean_median": 0.12753598126189558
+ },
+ "LUNG_XENIUM": {
+  "morph": "in file",
+  "spots": 19083,
+  "genes": 343,
+  "donors": 15,
+  "donors_theta3": 15,
+  "spots_with_morph": 18973,
+  "median_R2c": 0.713514199908262,
+  "lodo_R2_loo_const_median": 0.10674412804374767,
+  "lodo_R2_full_mean_median": -0.025421281582432398
+ }
+}

@@ -1,14 +1,14 @@
 # Round 11, track `closeout`, the plan
 
 ```state
-updated: 2026-11-16, 23:55 (first session of track closeout)
+updated: 2026-11-17, 02:10 (first session of track closeout)
 unit: closeout
 project_id: proj_8450e231133d
 frame_id: c9016697-c909-435e-82fc-ebfb9daaa857
-step: A0, A1, A3 done; A2.1 and A2.3 held; B3, B5, B6, B7 scored (section 5); A5 strength runs, B4 v2 and the CCRCC anchor v2 submitted
-last_run: B7 v2 (Slurm 9495763) and the kidney anchors (9471138, 9471139); aggregates committed under results/round11/closeout/
-jobs: A5 predict/<task>__<arm>__<design> on Longleaf: kidney H 9503517, C 9503518, P 9503519, V 9503520, E 9503521, P center 9503522; bowel R10 9503523, H 9503524, C 9503525, P 9503526, V 9503527, E 9503528; LUNG_XENIUM R10 9503529, H 9503530, C 9503531, P 9503532, V 9503533, E 9503534; B4 b4/equal_v2 9503535; A2 anchor/CCRCC__R10_v2 9503536; B1 sub-agent's jobs b1/h1a 9474416, b1/h2 9474417, b1/h3 9474418 (its probe, h1b_h4 and h5 completed); all under /work/users/w/e/weiyang/hest_replication/results/round11/closeout/
-next: when the jobs finish, score A2.2 (CCRCC anchor), B4 and A5.1 to A5.4 (P11.1); read the B1 sub-agent's outputs (b1/*/) and verify them; then the G2 report (docs/round11/closeout/round11_closeout_G2_report.md), tag round11-closeout-G2, push, stop
+step: G2 report drafted (docs/round11/closeout/round11_closeout_G2_report.md, placeholders in capitals for kidney E, the gate job and commits); P11.1 refuted for the primary, P11.5 held; A2 anchors and Part B items 1, 3 to 7 done
+last_run: g2/aggregate_v2 (Slurm 9518889) and the CCRCC control anchor/CCRCC__record (9518341), which reproduces round 10 exactly; aggregates committed under results/round11/closeout/
+jobs: 9518165 (A5 predict/kidney__Visium__E__donor_v2, about 3.5 h from 01:42); 9503521 (the first kidney E run, will time out at 3 h, not used)
+next: when 9518165 finishes, rerun the G2 aggregation (g2/aggregate_v3), run round11_closeout_gate.py into g2/gate, fill the report's placeholders, run verify_numeric_claims.py, have a fresh sub-agent recompute the report's table numbers, then tag round11-closeout-G2, push branch and tag, stop
 waiting: none
 ```
 

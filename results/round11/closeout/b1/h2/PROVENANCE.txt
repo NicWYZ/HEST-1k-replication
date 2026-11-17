@@ -1,0 +1,21 @@
+platform: Longleaf
+slurm_job_id: 9474417
+slurm_job_partition: spill
+slurm_job_account: rc_htzhu_pi
+node: c0924.ll.unc.edu
+frame_id: c9016697-c909-435e-82fc-ebfb9daaa857/b1
+track: closeout (round 11), sub-agent b1 (brief Part B item 1)
+PYTHONHASHSEED: 0
+python: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+start: 2026-11-16T23:10:25-05:00
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python /work/users/w/e/weiyang/hest_replication/results/round11/closeout/b1/scripts/b1_h2.py /work/users/w/e/weiyang/hest_replication/results/round11/closeout/b1/h2 
+snapshot_commit: none (b1 scripts are sub-agent verification scripts, not repository code; md5s below)
+scripts (md5):
+  37e6e26ebd67ed334831f95176e9385a  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/b1/scripts/b1_h2.py
+  d561eeebe3d245966c06d90184843e6b  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/b1/scripts/b1_provenance_kernel.py
+  516e966896e92d58d4e1bc2fdeb5b754  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/b1/scripts/b1_job.sh
+inputs (md5):
+input_files_read_by_script (md5): see inputs_md5.txt if written
+end: 2026-11-16T23:10:54-05:00
+exit_code: 0
+status: COMPLETED

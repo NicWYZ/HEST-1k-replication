@@ -1,0 +1,38 @@
+{
+ "config": {
+  "stage": "A2",
+  "unit": "regimeA_CCRCC_record",
+  "cluster_values": [
+   "/work/users/w/e/weiyang/hest_replication/results/round11/closeout/anchor/CCRCC__record/cv/cluster_values__CCRCC.parquet"
+  ],
+  "select": {
+   "task": [
+    "CCRCC"
+   ],
+   "encoder": [
+    "uni_v2"
+   ]
+  },
+  "n_grid": [
+   4,
+   6,
+   8,
+   10,
+   12,
+   16
+  ],
+  "extra_n": {},
+  "R": 20000,
+  "R_boot": 0,
+  "B": 999,
+  "boot_select": {}
+ },
+ "started": "2026-11-17T01:43:44",
+ "n_populations": 200,
+ "n_skipped": 0,
+ "skipped": [],
+ "n_rows": 31200,
+ "max_const_identity_dev": 8.881784197001252e-16,
+ "seconds": 242.4,
+ "finished": "2026-11-17T01:47:47"
+}
