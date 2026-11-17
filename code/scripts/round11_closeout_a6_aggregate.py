@@ -19,7 +19,8 @@
 5. a6_conformal.csv: round 3's a1_by_task rows per (task, arm, scale, design), the center design relabelled from the
    harness's `donor`, with the difference to R10 on the same task, scale and design.
 6. a6_anchors.json: the checks of prediction A6.0.
-Writes a6_summary.json first. Usage: round11_closeout_a6_aggregate.py <closeout_root> <round10_final_runs_root>
+Writes a6_summary.json first. Usage: round11_closeout_a6_aggregate.py <closeout_root> <round10_final_runs_root>, the latter
+the repository's results/round10/final_runs (round 10's committed tables: r10_buy, f1_predictions, inst_by_center).
 """
 import glob, json, os, re, sys
 import numpy as np, pandas as pd
@@ -54,7 +55,7 @@ def pred_summary(root, task, arm):
 def r2c_table(cv):
     C = pd.read_parquet(cv)
     g = C.groupby(['scale', 'estimand', 'gene'])
-    r = g.apply(lambda x: float(np.corrcoef(x.z, x.f)[0, 1] ** 2) if x.z.std() > 0 and x.f.std() > 0 else np.nan).rename('R2c')
+    r = g[['z', 'f']].apply(lambda x: float(np.corrcoef(x.z, x.f)[0, 1] ** 2) if x.z.std() > 0 and x.f.std() > 0 else np.nan).rename('R2c')
     sdf = g.f.std(ddof=1).rename('sd_f'); sdz = g.z.std(ddof=1).rename('sd_z')
     return pd.concat([r, sdf, sdz], axis=1).reset_index()
 
