@@ -98,4 +98,32 @@ conformal)
     for t in kidney__Visium bowel__Visium; do confc $t $a; done
   done
   ;;
+split)
+  # Plan section 6, QUEUE: kidney Visium E donor (10 pieces) and slide_out (8 pieces), split by fold. The check splits
+  # LUNG_XENIUM R10 donor and slide_out (9529114, 9530268, same commit of the conformal code) in 3, merges them and
+  # compares every table with the unsplit run; each E merge runs only after its pieces and both checks succeeded.
+  BASE_R=$ROOT/results/round11/closeout; S=$BASE_R/a6/conformal_shards; SJ=$(mktemp)
+  # subj: sub in the calling shell, so that acc's account counter advances; prints "unit jobid", sets JID
+  subj() { sub "$@" > $SJ; cat $SJ; JID=$(awk '{print $2}' $SJ); }
+  CHK=""
+  for d in donor slide_out; do
+    M=check_LUNG_XENIUM__R10__${d}; J=""
+    for k in 0 1 2; do
+      subj chk${d:0:3}$k a6/conformal_shards/${M}__s${k}of3 4 32G 60 "$SC" "$(cins LUNG_XENIUM)" -- round11_closeout_conformal.py run --arm R10 $(cargs LUNG_XENIUM) --fit-designs $d --fold-shard $k/3
+      J="$J:$JID"
+    done
+    subj chkm${d:0:3} a6/conformal_shards/${M}__merged 2 16G 30 "$SC" "" --dependency=afterok$J -- round11_closeout_conformal.py merge $S/${M}__s0of3 $S/${M}__s1of3 $S/${M}__s2of3
+    subj chkc${d:0:3} a6/conformal_shards/${M}__compare 2 8G 20 "$SC" "" --dependency=afterok:$JID -- round11_closeout_conformal.py compare $S/${M}__merged $BASE_R/a6/conformal/LUNG_XENIUM__R10__${d}
+    CHK="$CHK:$JID"
+  done
+  for x in "donor 10 360" "slide_out 8 240"; do
+    set -- $x; d=$1; K=$2; T=$3; J=""; L=""
+    for k in $(seq 0 $((K-1))); do
+      subj cEkid${d:0:3}$k a6/conformal_shards/kidney__Visium__E__${d}__s${k}of$K 8 72G $T "$SC" "$(cins kidney__Visium)" -- round11_closeout_conformal.py run --arm E $(cargs kidney__Visium) --fit-designs $d --fold-shard $k/$K
+      J="$J:$JID"; L="$L $S/kidney__Visium__E__${d}__s${k}of$K"
+    done
+    subj cEkid${d:0:3}m a6/conformal/kidney__Visium__E__${d} 2 32G 60 "$SC" "" --dependency=afterok$J$CHK -- round11_closeout_conformal.py merge $L
+  done
+  rm -f $SJ
+  ;;
 esac

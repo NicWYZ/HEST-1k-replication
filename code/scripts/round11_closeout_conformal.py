@@ -34,12 +34,24 @@ where some donor has more than one slide; `random` takes the test sizes of the `
 `patient` folds) with --n-repeats repeats each. The center design is the harness's `donor` design on a task definition
 whose donor label is the sample's center (--unit center), run in its own invocation.
 
+Split by fold (added 17 November under the QUEUE reply, plan section 6). With --fold-shard k/K a run enumerates every
+cell exactly as an unsplit run does, so the harness's size match (one n_match per task, the minimum over every cell
+enumerated) is the same, and then keeps only the cells whose fold of the fitted design is the k-th of every K in
+the sorted list of that design's folds (k counted from 0); the cells of designs enumerated but not fitted are kept
+in shard 0 only, so that the merged calibration-unit file has each once. Seeds are keyed by fold, design, repeat
+and draw, never by a cell's position, so a cell's fit is the one the unsplit run makes. A shard also writes its
+per-gene rows at float64 (pergene_f64<suffix>.parquet) and shard.json (the order of every enumerated cell, its
+folds, n_match). `merge` joins the shards in the original cell order and writes the harness's tables through the
+same summary code, so the merged directory holds what the unsplit run would have written.
+
 Usage:
   round11_closeout_conformal.py selftest
   round11_closeout_conformal.py anchor <round3_task_def.json> <encoder>
   round11_closeout_conformal.py run --arm R10|P|E --task-json T --donor-map M --designs D1,D2 --fit-designs D
         [--map-task T] [--samples a,b] [--only-mapped] [--genes-from-parquet p] [--round3-td p] [--unit donor|center]
-        [--n-repeats 1] [--tag NAME]
+        [--n-repeats 1] [--tag NAME] [--fold-shard k/K]
+  round11_closeout_conformal.py merge <shard_dir> [<shard_dir> ...]     (run inside the merged output directory)
+  round11_closeout_conformal.py compare <dir_a> <dir_b>                  (every table of two runs, cell by cell)
 Outputs are the harness's, in the job's directory (its --out-dir is the job directory relative to the project root).
 """
 import argparse, json, os, sys, zlib
@@ -50,9 +62,10 @@ import round11_closeout_predict as P
 
 ARMS = {'R10': ('uni_v2', 'none', 'r10'), 'P': ('uni_v2', 'ring1', 'ridgecv'),
         'E': ('uni_v2+hoptimus0+virchow2', 'ring1', 'r10')}
-STATE = dict(groups=None, last_T=None, head='r10', inner='donor', g_per_scale=None, checked=False, chosen=[])
+STATE = dict(groups=None, last_T=None, head='r10', inner='donor', g_per_scale=None, checked=False, chosen=[], shard=None)
 _orig = dict(fit_base=H.fit_base, scaler=H.scaler_pca_saw_only_T, summaries=H._summaries,
-             apply_size_match=H.apply_size_match, load_task=H.load_task)
+             apply_size_match=H.apply_size_match, load_task=H.load_task,
+             size_match_groups=H.size_match_groups)
 
 
 # ------------------------------------------------------------------------------------------------ heads
@@ -144,7 +157,49 @@ def apply_size_match(spec, task):
     return T
 
 
+def cell_key(design, fold, repeat, cal_draw):
+    return f'{design}\t{fold}\t{int(repeat)}\t{int(cal_draw)}'
+
+
+def size_match_groups_shard(specs, mode):
+    """The harness's size match over every enumerated cell, then the cells of this shard only (in place)."""
+    _orig['size_match_groups'](specs, mode)
+    k, K, fit = STATE['shard']
+    order = [cell_key(s['design'], s['fold'], s['repeat'], s['cal_draw']) for s in specs]
+    assert len(set(order)) == len(order), 'cell keys are not unique'
+    folds = sorted({str(s['fold']) for s in specs if s['design'] in fit})
+    mine = {f for i, f in enumerate(folds) if i % K == k}
+    keep = [s for s in specs if (s['design'] in fit and str(s['fold']) in mine) or (s['design'] not in fit and k == 0)]
+    json.dump(dict(k=k, K=K, fit_designs=sorted(fit), cell_order=order, folds_all=folds, folds_mine=sorted(mine),
+                   n_match=sorted({-1 if s['n_match'] is None else int(s['n_match']) for s in specs}),
+                   n_cells_enumerated=len(specs), n_cells_kept=len(keep)), open('shard.json', 'w'), indent=1)
+    print(f'[shard] {k}/{K}: {len(mine)} of {len(folds)} folds of {sorted(fit)}, {len(keep)} of {len(specs)} cells kept', flush=True)
+    specs[:] = keep
+
+
+def pg_schema64():
+    import pyarrow as pa
+    t = {'repeat': pa.int64(), 'cal_draw': pa.int64(), 'n_test': pa.int64(), 'n_covered': pa.int64(),
+         'slide_ge_min_spots': pa.bool_(), 'quantile_infinite': pa.bool_()}
+    flt = {'coverage', 'width_mean', 'interval_score', 'miss_above', 'miss_below', 'q_alpha_reported', 'q_alpha_stored'}
+    return pa.schema([(c, t.get(c, pa.float64() if c in flt else pa.string())) for c in H.PG_COLS])
+
+
+def write_pg64(out, suf, pg):
+    import pyarrow as pa, pyarrow.parquet as pq
+    sch = pg_schema64(); d = pg[H.PG_COLS].copy()
+    for f in sch:
+        if f.type == pa.string():
+            if not d[f.name].map(lambda v: v is None or isinstance(v, str)).all():
+                print(f'[warn] pergene_f64: {f.name} has values that are neither strings nor None; stored as str', flush=True)
+                d[f.name] = d[f.name].map(lambda v: v if v is None else str(v))
+    pq.write_table(pa.Table.from_pandas(d, schema=sch, preserve_index=False), f'{out}/pergene_f64{suf}.parquet')
+    print(f'[write] pergene_f64{suf}.parquet ({len(d):,} rows, float64, explicit schema)', flush=True)
+
+
 def summaries_by_scale(out, suf, pg, cal, args):
+    if STATE['shard'] is not None and len(pg):
+        write_pg64(out, suf, pg)
     if not len(pg) or not pg['gene'].astype(str).str.contains('|', regex=False).any():
         return _orig['summaries'](out, suf, pg, cal, args)
     sc = pg['gene'].astype(str).str.split('|', n=1).str[0]
@@ -245,7 +300,7 @@ def run(argv):
     ap.add_argument('--samples', default=''); ap.add_argument('--only-mapped', action='store_true')
     ap.add_argument('--genes-from-parquet', default=''); ap.add_argument('--round3-td', default='')
     ap.add_argument('--unit', default='donor', choices=['donor', 'center']); ap.add_argument('--n-repeats', type=int, default=1)
-    ap.add_argument('--tag', default='')
+    ap.add_argument('--tag', default=''); ap.add_argument('--fold-shard', default='')
     a = ap.parse_args(argv)
     td = build_td(a)
     designs = a.designs.split(',')
@@ -261,6 +316,9 @@ def run(argv):
     STATE.update(head=td['_r11']['head'], inner='center' if a.unit == 'center' else 'donor')
     H.load_task = load_corpus; H.fit_base = fit_base_arm; H.scaler_pca_saw_only_T = scaler_check
     H.apply_size_match = apply_size_match; H._summaries = summaries_by_scale
+    if a.fold_shard:
+        k, K = (int(x) for x in a.fold_shard.split('/')); assert 0 <= k < K, a.fold_shard
+        STATE['shard'] = (k, K, set(fit)); H.size_match_groups = size_match_groups_shard
     os.environ['GIT_OPTIONAL_LOCKS'] = '0'
     label = f"{a.arm}{'_center' if a.unit == 'center' else ''}"
     argv_h = [label, '--task-def', tdp, '--out-dir', os.path.relpath(os.getcwd(), H.ROOT), '--designs', ','.join(designs),
@@ -310,10 +368,92 @@ def selftest():
     return 0
 
 
+def _order_by_cells(df, pos):
+    key = [cell_key(*r) for r in df[['design', 'fold', 'repeat', 'cal_draw']].itertuples(index=False)]
+    idx = np.array([pos[x] for x in key])
+    return df.iloc[np.argsort(idx, kind='mergesort')].reset_index(drop=True)
+
+
+def merge(dirs):
+    """Join the shards of one split run into the cwd, as the unsplit run would have written it."""
+    import glob, hashlib
+    import pyarrow.parquet as pq
+    sh = [json.load(open(f'{d}/shard.json')) for d in dirs]
+    K = sh[0]['K']
+    assert sorted(s['k'] for s in sh) == list(range(K)) and all(s['K'] == K for s in sh), 'shards incomplete or repeated'
+    for s in sh[1:]:
+        for f in ('cell_order', 'folds_all', 'n_match', 'fit_designs'):
+            assert s[f] == sh[0][f], f'shards disagree on {f}'
+    mine = [f for s in sh for f in s['folds_mine']]
+    assert sorted(mine) == sh[0]['folds_all'] and len(set(mine)) == len(mine), 'folds not partitioned'
+    f64 = [glob.glob(f'{d}/pergene_f64*.parquet') for d in dirs]
+    assert all(len(x) == 1 for x in f64), f64
+    names = {os.path.basename(x[0]) for x in f64}; assert len(names) == 1, names
+    suf = names.pop()[len('pergene_f64'):-len('.parquet')]
+    pos = {c: i for i, c in enumerate(sh[0]['cell_order'])}
+    pg = _order_by_cells(pd.concat([pq.read_table(x[0]).to_pandas() for x in f64], ignore_index=True), pos)
+    rd = lambda p: pd.read_csv(p, dtype={'fold': str})
+    cal = _order_by_cells(pd.concat([rd(f'{d}/a1_calibration_units{suf}.csv') for d in dirs], ignore_index=True), pos)
+    h3 = _order_by_cells(pd.concat([rd(f'{d}/h3_disjointness{suf}.csv') for d in dirs], ignore_index=True), pos)
+    assert len(cal) == len(pos), (len(cal), len(pos))
+    out = os.getcwd()
+    cal.to_csv(f'{out}/a1_calibration_units{suf}.csv', index=False)
+    h3.to_csv(f'{out}/h3_disjointness{suf}.csv', index=False)
+    print(f'[merge] {K} shards, {len(pg):,} per-gene rows, {len(cal)} cells, {len(h3)} fits; suffix {suf}', flush=True)
+    summaries_by_scale(out, suf, pg, cal, None)
+    H._parquet(out, suf, pg, H.PG_COLS)
+    md5 = lambda p: hashlib.md5(open(p, 'rb').read()).hexdigest()
+    rec = []
+    for d, s in zip(dirs, sh):
+        runs = open(f'{d}/runs.txt').read().strip() if os.path.exists(f'{d}/runs.txt') else ''
+        rec.append(dict(dir=d, k=s['k'], runs=runs, files={os.path.basename(p): md5(p) for p in sorted(glob.glob(f'{d}/*'))
+                                                         if os.path.isfile(p)}))
+    json.dump(dict(K=K, suffix=suf, shards=rec), open(f'{out}/merge.json', 'w'), indent=1)
+    print('[merge] done', flush=True)
+    return 0
+
+
+def compare(a, b):
+    """Every a1_*, h3_* and calibration-unit table, and the per-gene parquet, of two runs: identical up to 1e-12."""
+    import glob
+    import pyarrow.parquet as pq
+    fa = sorted(os.path.basename(p) for p in glob.glob(f'{a}/a1_*.csv') + glob.glob(f'{a}/h3_*.csv') + glob.glob(f'{a}/pergene__*.parquet'))
+    fb = sorted(os.path.basename(p) for p in glob.glob(f'{b}/a1_*.csv') + glob.glob(f'{b}/h3_*.csv') + glob.glob(f'{b}/pergene__*.parquet'))
+    assert fa == fb and fa, (fa, fb)
+    worst, bad = 0.0, []
+    for n in fa:
+        if n.endswith('.parquet'):
+            x, y = pq.read_table(f'{a}/{n}').to_pandas(), pq.read_table(f'{b}/{n}').to_pandas()
+        else:
+            x, y = pd.read_csv(f'{a}/{n}', dtype={'fold': str}), pd.read_csv(f'{b}/{n}', dtype={'fold': str})
+        if list(x.columns) != list(y.columns) or len(x) != len(y):
+            bad.append(f'{n}: shape or columns differ'); continue
+        dmax = 0.0
+        for c in x.columns:
+            if pd.api.types.is_numeric_dtype(x[c]) and pd.api.types.is_numeric_dtype(y[c]) and not pd.api.types.is_bool_dtype(x[c]):
+                u, v = x[c].to_numpy(float), y[c].to_numpy(float)
+                if not np.array_equal(np.isnan(u), np.isnan(v)):
+                    bad.append(f'{n}.{c}: missing values differ'); continue
+                m = ~np.isnan(u)
+                dmax = max(dmax, float(np.abs(u[m] - v[m]).max()) if m.any() else 0.0)
+            elif not (x[c].astype(str) == y[c].astype(str)).all():
+                bad.append(f'{n}.{c}: values differ')
+        worst = max(worst, dmax)
+        print(f'[compare] {n}: {len(x)} rows, max abs numeric difference {dmax:.3e}', flush=True)
+    print(f'[compare] {len(fa)} files; worst {worst:.3e}; {len(bad)} mismatches', flush=True)
+    for x in bad:
+        print('  ', x, flush=True)
+    return 0 if (not bad and worst <= 1e-12) else 1
+
+
 if __name__ == '__main__':
     cmd = sys.argv[1]
     if cmd == 'selftest':
         sys.exit(selftest())
     if cmd == 'anchor':
         sys.exit(anchor(sys.argv[2], sys.argv[3]))
+    if cmd == 'merge':
+        sys.exit(merge(sys.argv[2:]))
+    if cmd == 'compare':
+        sys.exit(compare(sys.argv[2], sys.argv[3]))
     sys.exit(run(sys.argv[2:]))
