@@ -1,0 +1,23 @@
+=== join y check
+new y columns (first 5) ['y_log1p__ENSG00000105127', 'y_log1p__ENSG00000090013', 'y_log1p__ENSG00000145741', 'y_log1p__ENSG00000156535', 'y_log1p__ENSG00000170458'] n 50 ; gene_symbols n 50 ['AKAP8', 'BLVRB', 'BTF3', 'CD109', 'CD14']
+pearson keys sample ['log1p', 'lognorm']
+record genes 50 all in symbols: True
+matched rows 73813 max |y diff| 2.49912521788076e-07 median per-gene max 1.663821223019113e-07 genes over 1e-6 0
+=== R2c (theta3) from round 10 cluster values
+cluster_values__CCRCC.parquet tasks ['CCRCC'] encoders ['uni_v2', 'hoptimus0', 'resnet50'] scales ['log1p', 'norm_r9pair'] estimands ['mu', 'theta3', 'theta2', 'theta1']
+CCRCC {'rows': 1200, 'donors': 24, 'genes': 50, 'median_corr2': 0.4387262423085522}
+cluster_values__INDIANA_KIDNEY.parquet tasks ['INDIANA_KIDNEY'] encoders ['uni_v2', 'hoptimus0', 'resnet50'] scales ['log1p', 'norm_r9pair'] estimands ['mu', 'theta3', 'theta2', 'theta1']
+INDIANA_KIDNEY {'rows': 1250, 'donors': 25, 'genes': 50, 'median_corr2': 0.13896681743966047}
+cluster_values__kidney__Visium.parquet tasks ['kidney__Visium'] encoders ['uni_v2', 'hoptimus0', 'resnet50'] scales ['log1p', 'lognorm'] estimands ['mu']
+kidney__Visium {'rows': 0, 'donors': 0, 'genes': 0, 'median_corr2': None}
+cluster_values__bowel__Visium.parquet tasks ['bowel__Visium'] encoders ['uni_v2', 'hoptimus0', 'resnet50'] scales ['log1p', 'lognorm'] estimands ['mu']
+bowel__Visium {'rows': 0, 'donors': 0, 'genes': 0, 'median_corr2': None}
+cluster_values__LUNG_XENIUM.parquet tasks ['LUNG_XENIUM'] encoders ['uni_v2', 'hoptimus0', 'resnet50'] scales ['log1p', 'norm_r9pair'] estimands ['mu', 'theta3', 'theta1', 'theta2']
+LUNG_XENIUM {'rows': 5145, 'donors': 15, 'genes': 343, 'median_corr2': 0.713514199908262}
+=== H2 kidney Pearson from round 10 F1 spot predictions
+uni_v2 donor spots 114137 genes 50 median pearson 0.4713316492580511
+uni_v2 center spots 114137 genes 50 median pearson 0.12311852127066651
+hoptimus0 donor spots 114137 genes 50 median pearson 0.48331988310776225
+hoptimus0 center spots 114137 genes 50 median pearson 0.10808974352594258
+resnet50 donor spots 114137 genes 50 median pearson 0.4120555047341406
+resnet50 center spots 114137 genes 50 median pearson 0.0038622549143151083

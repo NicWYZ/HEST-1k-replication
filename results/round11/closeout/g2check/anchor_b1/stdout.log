@@ -1,0 +1,35 @@
+=== A2.2 CCRCC anchor, theta3, n=8
+R11_R10_corpus {'genes': 50, 'median_wr': 0.8948557743062902, 'median_cov_fix1': 0.89665, 'median_cov_classical': 0.849325, 'median_mcse_fix1': 0.0021525417162034143, 'R': [20000]}
+R11_R10_corpus mu: {'genes': 50, 'median_wr': 0.9897870461527883, 'median_cov_fix1': 0.8576, 'median_cov_classical': 0.8332999999999999, 'median_mcse_fix1': 0.0024710543694907317, 'R': [20000]}
+R11_control_record {'genes': 50, 'median_wr': 0.8782720286011843, 'median_cov_fix1': 0.896525, 'median_cov_classical': 0.849025, 'median_mcse_fix1': 0.0021536850000670607, 'R': [20000]}
+R11_control_record mu: {'genes': 50, 'median_wr': 0.981789034108099, 'median_cov_fix1': 0.8578250000000001, 'median_cov_classical': 0.8351500000000001, 'median_mcse_fix1': 0.0024694257236638597, 'R': [20000]}
+round10_F2 {'genes': 50, 'median_wr': 0.8782720286011843, 'median_cov_fix1': 0.896525, 'median_cov_classical': 0.849025, 'median_mcse_fix1': 0.0021536850000670607, 'R': [20000]}
+round10_F2 mu: {'genes': 50, 'median_wr': 0.981789034108099, 'median_cov_fix1': 0.8578250000000001, 'median_cov_classical': 0.8351500000000001, 'median_mcse_fix1': 0.0024694257236638597, 'R': [20000]}
+diff corpus - round10 width ratio: 0.0165837457051059
+=== R2c (theta3) candidate definitions
+R11_R10_corpus {'donors': 24, 'genes': 50, 'median_corr2': 0.429019031833912, 'median_1mSSEoverSST': 0.37248143125017463}
+R11_control_record {'donors': 24, 'genes': 50, 'median_corr2': 0.4387262423085522, 'median_1mSSEoverSST': 0.37454787775009935}
+round10_F2 {'donors': 24, 'genes': 50, 'median_corr2': 0.4387262423085522, 'median_1mSSEoverSST': 0.37454787775009935}
+=== D12: median over genes of per-gene files
+d12_lodo_r2__R10_CCRCC_uni_v2.csv genes 50 rows 50 median R2_loo_const 0.023708037078798552 median R2_rawpred_loo_const 0.172669825
+d12_lodo_r2__r3_CCRCC_uni_v2.csv genes 50 rows 50 median R2_loo_const 0.02126635278856795 median R2_rawpred_loo_const 0.183823585
+d12_lodo_r2__kidney__Visium__uni_v2.csv genes 50 rows 50 median R2_loo_const 0.3815216570322675 median R2_rawpred_loo_const 0.43321473665015586
+=== D12 raw-prediction LODO R2 recomputed from spot predictions (CCRCC corpus R10, log1p)
+spots 73813 donors 24 median raw-pred LOO-const R2 0.17266994947804049
+=== join check: record (round 3) vs corpus R10 predictions
+record rows 74220 new rows 73813
+dup keys record 0 new 0
+unmatched 407 share 0.00548369711668014
+new rows not in record 0
+summary keys ['task', 'arm', 'encoders', 'context', 'head', 'design', 'spots', 'spots_predicted', 'samples', 'donors', 'centers', 'folds', 'n_features', 'n_genes', 'seconds_per_fold', 'gene_symbols', 'kgrid', 'chosen_log10_alpha_over_n', 'neighbours', 'pearson', 'median_pearson_log1p', 'fold_median_pearson_log1p', 'median_pearson_lognorm', 'fold_median_pearson_lognorm']
+max |y_record - y_new| over 50 genes: None
+donor partition: max new ids per record donor 1 ; max record ids per new donor 1
+=== B1 H3 width ratio from round 10 regime A cells, theta3 n=8
+CCRCC {'genes': 50, 'median_wr': 0.8782720286011843, 'median_cov_fix1': 0.896525, 'median_cov_classical': 0.849025, 'median_mcse_fix1': 0.0021536850000670607, 'R': [20000]}
+INDIANA_KIDNEY {'genes': 50, 'median_wr': 0.957354955559757, 'median_cov_fix1': 0.89745, 'median_cov_classical': 0.89635, 'median_mcse_fix1': 0.002145151401521511, 'R': [20000]}
+kidney__Visium {'genes': 50, 'median_wr': 0.9367495541789166, 'median_cov_fix1': 0.8948499999999999, 'median_cov_classical': 0.90645, 'median_mcse_fix1': 0.0021690167562019498, 'R': [20000]}
+bowel__Visium {'genes': 50, 'median_wr': 0.6690551447436934, 'median_cov_fix1': 0.8878250000000001, 'median_cov_classical': 0.89635, 'median_mcse_fix1': 0.0022314989945645958, 'R': [20000]}
+LUNG_XENIUM {'genes': 343, 'median_wr': 0.5854580162130402, 'median_cov_fix1': 0.8874, 'median_cov_classical': 0.87955, 'median_mcse_fix1': 0.002235187240478972, 'R': [20000]}
+=== B1 H3 R2c from round 10 cluster values (theta3)
+CCRCC {'donors': 24, 'genes': 50, 'median_corr2': 0.4387262423085522, 'median_1mSSEoverSST': 0.37454787775009935}
+INDIANA_KIDNEY {'donors': 25, 'genes': 50, 'median_corr2': 0.13896681743966047, 'median_1mSSEoverSST': 0.042233294491595574}

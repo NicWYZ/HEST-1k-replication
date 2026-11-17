@@ -1,0 +1,13 @@
+slurm_job_id: 9528096
+partition: spill
+node: c1104.ll.unc.edu
+start: 2026-11-17T09:22:42Z
+end: 2026-11-17T09:22:45Z
+exit: 0
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python -I /work/users/w/e/weiyang/hest_replication/results/round11/closeout/g2check/scripts/h1b_h2.py
+PYTHONHASHSEED=0
+script md5: bb621c94177b7bd25d7d64082460df69  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/g2check/scripts/h1b_h2.py
+wrapper md5: cfda4fa89d5f9c4ef4d1787763ca9dc1  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/g2check/scripts/common.sh
+inputs md5:
+029f7056d884d55129b17b944fe83df8  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/b1/h1b_h4/b1_h1b_by_task.csv
+6593559422d16b342555e69303971c94  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F3/institution/production/inst_by_center.csv
