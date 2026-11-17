@@ -1,15 +1,15 @@
 # Round 11, track `closeout`, the plan
 
 ```state
-updated: 2026-11-17, 04:40 (first session of track closeout)
+updated: 2026-11-17, 05:00 (first session of track closeout)
 unit: closeout
 project_id: proj_8450e231133d
 frame_id: c9016697-c909-435e-82fc-ebfb9daaa857
-step: G2 report complete (docs/round11/closeout/round11_closeout_G2_report.md); numeric sweep g2/sweep_v2 passes the report (284 of 284) and the plan but for two claims since corrected; gate bookkeeping g2/gate_v2 passes (no md5 mismatch; the six non-ancestor rows are the b1 sub-agent's snapshot-free jobs)
-last_run: g2/aggregate_v4 (Slurm 9527059), g2/gate_v2 (9527777), g2/sweep_v2 (9527776's successor); all aggregates committed under results/round11/closeout/
-jobs: none of the lead's; sub-agent g2check (frame c9016697-c909-435e-82fc-ebfb9daaa857/g2check) recomputing the report's tables under results/round11/closeout/g2check/ on Longleaf
-next: read g2check's hand-back, correct the report in place where it disagrees, add what it verified to section 8, rerun the sweep, then tag round11-closeout-G2, push branch and tag, and stop for the reviewer's decisions on report section 7, items 1 and 2
-waiting: none
+step: gate G2 reached and tagged round11-closeout-G2; report docs/round11/closeout/round11_closeout_G2_report.md; stopped for the reviewer
+last_run: g2/sweep_v4 (Slurm 9528178): report 296 of 296 claims verified, plan 132 of 132; fresh check g2check agrees with every table number; gate bookkeeping g2/gate_v2
+jobs: none
+next: the session that continues writes the reviewer's decisions under "G2" in section 6 of this plan, as close to the words as it can and with the gate's commit, then acts on them; the default under the brief, if item 2 is answered "end Part A", is Part B item 2 (H1(b) refits), A7 (pretraining statements), then G-final
+waiting: G2 | since 2026-11-17 | report section 7, item 1 (accept the corpus route for CCRCC with its stated width-ratio difference, or rebuild round 3's and round 4's route) and item 2 (end Part A, or run A6 for P, or for E labelled post hoc; the session recommends A6 for P) (the reviewer; items 1 and 2 are marked substantive for Nicolas)
 ```
 
 *Written on 16 November 2026 by the first session of track `closeout` (frame above). The brief is `docs/round11/closeout/round11_closeout_brief.md` on `main`, read at `7ff4e2fc`, with `docs/round11/masterplan.md` at the same commit and `docs/EXECUTION_RULES.md` as it stands there. The branch starts from `7ff4e2fc`. This plan links the brief and does not copy it.*
