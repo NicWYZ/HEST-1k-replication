@@ -1,15 +1,15 @@
 # Round 11, track `closeout`, the plan
 
 ```state
-updated: 2026-11-17, morning (second session of track closeout)
+updated: 2026-11-17, 15:40 (third session of track closeout)
 unit: closeout
 project_id: proj_8450e231133d
 frame_id: c9016697-c909-435e-82fc-ebfb9daaa857
-step: A6 nearly done: all but the 16 kidney and bowel Visium P and E conformal jobs finished; A6.0 to A6.3 and B2 scored in section 4 and 5; A7 done
+step: A6 nearly done: of the 16 kidney and bowel Visium P and E conformal jobs, bowel P random, slide_out and center finished (9530288, 9530290, 9530292), kidney P donor running (9530286), 12 pending; A6.0 to A6.3 and B2 scored in section 4 and 5; A7 done
 last_run: A6 pilot 9529112 to 9529116, all COMPLETED except the round 3 conformal anchor 9529113, still running at submission of the rest
-jobs: 9530242 to 9530308 (9530278 cancelled and rerun as 9544479, section 7) from 1fbbcd97, phases donor, center (institution 9530261 after the four center predictions) and conformal, one per unit, list in the session's submit output and in the job ledger at the gate
-next: check the 16 jobs with sacct (12:05 on 17 November: 9530286 running, the other 15 pending; the local watcher was stopped by the machine's low memory and is not restarted without Nicolas); when every job has finished, run code/scripts/round11_closeout_a6_aggregate.py as a job (provisional run a6/aggregate_v3 holds everything else), score A6.4, then the final report, the fresh check, the sweep and G-final
-waiting: QUEUE | since 2026-11-17 09:49 | 16 A6 conformal jobs (P and E on kidney and bowel Visium; 9530300 started at the notice) pending on priority over four hours since 05:29; half moved to rc_tengfei_pi and P memory cut to 32 GB from siblings; they keep waiting (Nicolas, for information)
+jobs: 9530242 to 9530308 (9530278 cancelled and rerun as 9544479, section 7) from 1fbbcd97, phases donor, center (institution 9530261 after the four center predictions) and conformal, one per unit, list in the session's submit output and in the job ledger at the gate; at 15:31 on 17 November 9530286 (kidney P donor) running, 12 pending: 10 with limits lowered and E memory cut (section 6, QUEUE), 9530302 and 9530303 to be split
+next: kidney E donor (9530302) and slide_out (9530303) still at 25 h, to be split by fold (section 6, QUEUE): add a fold-shard option and a merge step to round11_closeout_conformal.py, check that a split run reproduces an unsplit sibling exactly, then cancel those two and submit the pieces together; check the queue with single squeue calls well apart, no watcher; if still pending at 17:31 (two hours after the limits were lowered), update this block, push and stop; when every job has finished, run code/scripts/round11_closeout_a6_aggregate.py as a job (provisional run a6/aggregate_v3 holds everything else), score A6.4, then the final report, the fresh check, the sweep and G-final
+waiting: none (QUEUE answered 17 November 15:25, section 6; ten pending limits lowered at 15:31)
 ```
 
 *Written on 16 November 2026 by the first session of track `closeout` (frame above). The brief is `docs/round11/closeout/round11_closeout_brief.md` on `main`, read at `7ff4e2fc`, with `docs/round11/masterplan.md` at the same commit and `docs/EXECUTION_RULES.md` as it stands there. The branch starts from `7ff4e2fc`. This plan links the brief and does not copy it.*
@@ -156,6 +156,36 @@ Decided by the oversight session under `docs/round11/masterplan.md`, "Who decide
 6. **Size `E`'s jobs from the kidney Visium `E` run that needed the longer limit** (Slurm 9518165), and keep few sub-agents running at once, since the machine the session works from ran low on memory.
 
 If A6 changes a headline result, the final report says so plainly at its top; that goes to Nicolas.
+
+### QUEUE (the four-hour queue notice of 17 November, 09:49; not a gate; reply relayed at 15:25)
+
+The oversight session's reply under `docs/round11/masterplan.md`, "Who decides the gates", relayed to the third session on 17 November, as closely as the plan can hold it. At 15:25, 12 of the 16 kidney and bowel Visium conformal jobs for `P` and `E` were still pending on priority ten hours after submission, with limits of 15 h (`P`) and 25 h (`E`); the siblings that finished ran far below their limits.
+
+1. **Read `sacct` for the completed siblings and the running job, and lower each pending job's time limit in place with `scontrol` to about three times the expected runtime from its nearest sibling** (same arm, same design, scaled by the task's folds and spots if at all). Do not cancel and resubmit. If a job's work cannot fit a limit short enough to backfill, split it by fold into pieces submitted together, as the scheduler notes say.
+2. **No local watcher**: the machine is short of memory and runs other sessions. Check the queue with single `sacct` or `squeue` calls spaced well apart, and keep sub-agents to one at a time.
+3. **When every job has finished, go on as this plan says**: aggregate, score A6.4, the final report, the fresh check, the sweep and G-final.
+4. **If the jobs are still pending two hours after their limits are lowered,** update the state block, push, and stop; the oversight session restarts the track when the queue clears.
+
+**Done, 17 November 15:31.** Sizing, all runtimes from `sacct` (elapsed) and the jobs' `stdout.log` (`[done]` seconds) on Longleaf:
+
+- *Ratio `P`/`R10`, same task and design, from bowel Visium conformal:* random 1225/288 = 4.25, slide_out 4376/1298 = 3.37, center 1263/466 = 2.71. Donor design, from the running kidney `P` donor job (9530286): 62 of its 153 donor fits done in 12,301 s, the last ones about 58 s each against `R10`'s 35 s (153 fits in 5,362 s), so a total between about 17,600 s (current pace) and 30,300 s (mean pace so far, 198 s per fit), ratio 3.3 to 5.6; 5.6 is used for the donor design. The running job fits its 15 h limit either way and is left alone.
+- *Ratio `E`/`P`, same task and design, from the A5 prediction jobs:* kidney donor 8,512 s (9518165) / 2,721 s (9503519) = 3.13; bowel donor 2,042 s (9503528) / 913 s (9503526) = 2.24; kidney center 690 s (9530257) / 271 s (9503522) = 2.55. The conformal runs of `E` on the other three tasks give `E`/`P` between 0.4 and 6.6, too spread to use.
+- *Memory of `E`:* kidney `E` predictions peaked at 54.8 GB (9530257) and 51.6 GB (9518165), bowel `E` at 45.6 GB (9503528); the requests were cut from 80 GB to 72 GB (kidney) and 60 GB (bowel). `P` stays at 32 GB (the running job is at 14.3 GB).
+
+| job | unit | expected runtime | new limit (was) |
+|---|---|---|---|
+| 9530285 | kidney `P` random | 1078 × 4.25 = 4,580 s | 4:00 (15:00) |
+| 9530287 | kidney `P` slide_out | 2928 × 3.37 to 4.25 = 9,870 to 12,440 s | 10:00 (15:00) |
+| 9530291 | kidney `P` center | 200 × 4.25 = 850 s | 1:00 (15:00) |
+| 9530289 | bowel `P` donor | 724 × 5.6 = 4,050 s | 3:30 (15:00) |
+| 9530304 | bowel `E` random | 1225 × 2.24 = 2,740 s | 2:30 (25:00) |
+| 9530306 | bowel `E` slide_out | 4376 × 2.24 = 9,800 s | 8:15 (25:00) |
+| 9530308 | bowel `E` center | 1263 × 2.55 = 3,220 s | 2:45 (25:00) |
+| 9530305 | bowel `E` donor | 4,050 × 2.24 = 9,070 s | 7:30 (25:00) |
+| 9530307 | kidney `E` center | 850 × 2.55 = 2,170 s | 2:00 (25:00) |
+| 9530301 | kidney `E` random | 4,580 × 3.13 = 14,340 s | 12:00 (25:00) |
+
+Within a minute the ten moved from reason `Priority` to `None`. **Not lowered, to be split by fold:** kidney `E` donor (9530302; 153 fits at 3.13 times `P`'s 58 to 198 s per fit, about 7.7 to 26 h, so three times that is 23 h or more) and kidney `E` slide_out (9530303; 9,870 × 3.13 = 30,900 s, three times that 26 h). Splitting needs a fold-shard option in `round11_closeout_conformal.py` and a merge step, and the split is checked by reproducing an unsplit sibling exactly before either job is cancelled.
 
 ## 7. Tried and failed
 
