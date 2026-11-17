@@ -7,7 +7,7 @@ project_id: proj_8450e231133d
 frame_id: c9016697-c909-435e-82fc-ebfb9daaa857
 step: A6 running (predictions in section 4 written at 307670c4, code at 1fbbcd97); pilot passed A6.0b (selftests 5.4e-15, 2.0e-15) and A6.0c (CCRCC R10 refit equal to the A2 anchor, difference 0.0); A7 done (results/round11/closeout/lit/lit_A7_pretraining.md)
 last_run: A6 pilot 9529112 to 9529116, all COMPLETED except the round 3 conformal anchor 9529113, still running at submission of the rest
-jobs: 9529113 (a6/conformal/anchor_CCRCC_round3); 9530242 to 9530308 from 1fbbcd97, phases donor, center (institution 9530261 after the four center predictions) and conformal, one per unit, list in the session's submit output and in the job ledger at the gate
+jobs: 9530242 to 9530308 (9530278 cancelled and rerun as 9544479, section 7) from 1fbbcd97, phases donor, center (institution 9530261 after the four center predictions) and conformal, one per unit, list in the session's submit output and in the job ledger at the gate
 next: when every job has finished, run code/scripts/round11_closeout_a6_aggregate.py as a job, score A6.0 to A6.4 and B2, then the final report, the fresh check, the sweep and G-final
 waiting: none
 ```
@@ -155,4 +155,4 @@ If A6 changes a headline result, the final report says so plainly at its top; th
 
 ## 7. Tried and failed
 
-None yet.
+- **A6, `a6/conformal/CCRCC__P__donor` (Slurm 9530278), cancelled by the lead on 17 November at 09:10.** Its fits took about 680 s each on node c151408 from the first fit (`stdout.log`), against about 35 s per fit for the same head and training size in `CCRCC__P__random` and about 19 s and 24 s per fit in the `P` donor-design jobs of INDIANA_KIDNEY and LUNG_XENIUM, so it would have run past its 8-hour limit with 18 of 72 fits done. The node was not overloaded (load 205 of 384 cores) and the job used about 4.3 cores and 9 GB; the cause was not found. Rerun unchanged as `a6/conformal/CCRCC__P__donor_v2` (Slurm 9544479) with that node excluded. The cancelled directory wrote no summary and is not read.
