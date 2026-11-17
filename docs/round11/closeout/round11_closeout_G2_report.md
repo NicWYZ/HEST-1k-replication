@@ -166,6 +166,8 @@ Kidney Visium reproduces exactly. On CCRCC, the D12 and the `fix1` coverage at 8
 - Whether `P`'s per-fold gain and its smaller pooled gain come from a narrower spread of donors' predicted levels (section 6.1): the A6 donor-level quantities would show it and were not run.
 - 184 of round 10's ledger ids are not among the jobs `sacct` lists in round 10's window (`b7/ledger_v2/b7_summary.json`); not explained.
 - Arms `V` and `E` were not run held out by center, and no arm other than `P` and `R10` was.
+- Standard 8 of the brief (what each encoder's published description states about pretraining on these cohorts, task A7) is not done; it belongs in the final report and is done before G-final.
+- Part B item 2 (H1(b) refitted under round 3's designs) has not started; it follows this gate.
 - The normalised scale: every arm's file carries it (`g2_strength.csv`, columns `*_lognorm`), but no prediction concerns it and it was not read for this report.
 - The numbers in this report's tables were recomputed by a fresh sub-agent before the gate; what it covered is in section 9's last paragraph. VERIFY_NOTE
 
