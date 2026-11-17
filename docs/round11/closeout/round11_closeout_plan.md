@@ -7,7 +7,7 @@ project_id: proj_8450e231133d
 frame_id: c9016697-c909-435e-82fc-ebfb9daaa857
 step: A1 done (results/round11/closeout/lit/); A3 primary predictor designated (section 4, arm P) with predictions A2.1 to A5.4 written; A0 inventory, B3, B6, B7 jobs submitted and pending on spill
 last_run: none completed yet
-jobs: 9469547 (A0 inventory/inv_v1), 9469936 (B7 b7/ledger_v1), 9470327 (B3 b3/s0006_v1), 9470328 (B6 b6/stored_v1); outputs under /work/users/w/e/weiyang/hest_replication/results/round11/closeout/
+jobs: 9469547 (A0 inventory/inv_v1), 9469936 (B7 b7/ledger_v1), 9470327 (B3 b3/s0006_v1), 9470328 (B6 b6/stored_v1), 9471137 (A2 predict/selftest_v1), 9471138 and 9471139 (A2 predict/kidney__Visium__R10__donor, __center), 9471874 (B4 b4/equal_v1), 9471875 (B5 b5/withinvar_v1), 9472778 (A2 anchor/CCRCC__R10); all pending on spill at 20:47; outputs under /work/users/w/e/weiyang/hest_replication/results/round11/closeout/; sub-agent b1 (B1) running
 next: read the four jobs' outputs; then the predictor self-test and the anchors (A2: arm R10 on kidney Visium donor and center, CCRCC through the corpus), then arms H, C, P, V, E on kidney Visium, bowel Visium and LUNG_XENIUM (A5), then gate G2
 waiting: none
 ```
