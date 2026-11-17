@@ -1,0 +1,28 @@
+{
+ "stage": "A2",
+ "unit": "regimeA_CCRCC_R10",
+ "cluster_values": [
+  "/work/users/w/e/weiyang/hest_replication/results/round11/closeout/anchor/CCRCC__R10_v2/cv/cluster_values__CCRCC.parquet"
+ ],
+ "select": {
+  "task": [
+   "CCRCC"
+  ],
+  "encoder": [
+   "uni_v2"
+  ]
+ },
+ "n_grid": [
+  4,
+  6,
+  8,
+  10,
+  12,
+  16
+ ],
+ "extra_n": {},
+ "R": 20000,
+ "R_boot": 0,
+ "B": 999,
+ "boot_select": {}
+}

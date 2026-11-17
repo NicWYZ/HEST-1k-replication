@@ -1,0 +1,47 @@
+{
+ "p111": {
+  "rule": "arm P gains >= 0.02 over the reference on at least two of three tasks, log1p, donor design",
+  "tasks": {
+   "kidney__Visium": {
+    "reference": 0.471,
+    "P": 0.48161038782630816,
+    "gain_vs_reference": 0.010610387826308187,
+    "R10_this_track": 0.4713316492580511,
+    "gain_vs_R10": 0.010278738568257062,
+    "meets": false
+   },
+   "bowel__Visium": {
+    "reference": 0.511,
+    "P": 0.5296118603558748,
+    "gain_vs_reference": 0.01861186035587481,
+    "R10_this_track": 0.5112966322464221,
+    "gain_vs_R10": 0.01831522810945274,
+    "meets": false
+   },
+   "LUNG_XENIUM": {
+    "reference": 0.619,
+    "P": 0.6293379125311848,
+    "gain_vs_reference": 0.010337912531184767,
+    "R10_this_track": 0.6189380949102621,
+    "gain_vs_R10": 0.01039981762092268,
+    "meets": false
+   }
+  },
+  "tasks_meeting": 0,
+  "verdict": "refuted"
+ },
+ "anchor_ccrcc_theta3": {
+  "round11 R10 (corpus, 73,813 spots)": {
+   "median_wr_fix1": 0.8948557743062902,
+   "median_cov_fix1": 0.89665,
+   "median_mcse_fix1": 0.0021525417162034143,
+   "median_R2c": 0.429019031833912
+  },
+  "round10 (round 3 file, 74,220 spots)": {
+   "median_wr_fix1": 0.8782720286011843,
+   "median_cov_fix1": 0.896525,
+   "median_mcse_fix1": 0.0021536850000670607,
+   "median_R2c": 0.4387262423085522
+  }
+ }
+}

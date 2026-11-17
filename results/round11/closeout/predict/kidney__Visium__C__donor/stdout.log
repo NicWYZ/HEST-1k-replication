@@ -1,0 +1,103 @@
+[load] 52 samples, 114137 spots x 3072 features, 58s
+fold S0006:INT1: train 113105 test 1032 99.1s
+fold S0006:INT10: train 112166 test 1971 97.5s
+fold S0006:INT11: train 112737 test 1400 98.7s
+fold S0006:INT12: train 112687 test 1450 93.7s
+fold S0006:INT13: train 109778 test 4359 88.9s
+fold S0006:INT14: train 109578 test 4559 83.6s
+fold S0006:INT15: train 109197 test 4940 76.2s
+fold S0006:INT16: train 110935 test 3202 62.1s
+fold S0006:INT17: train 110553 test 3584 79.8s
+fold S0006:INT18: train 109223 test 4914 74.0s
+fold S0006:INT19: train 109189 test 4948 64.9s
+fold S0006:INT2: train 111596 test 2541 70.3s
+fold S0006:INT20: train 109277 test 4860 69.0s
+fold S0006:INT21: train 109177 test 4960 65.9s
+fold S0006:INT22: train 110311 test 3826 66.9s
+fold S0006:INT23: train 109382 test 4755 67.5s
+fold S0006:INT24: train 109654 test 4483 68.0s
+fold S0006:INT3: train 112164 test 1973 66.5s
+fold S0006:INT4: train 112882 test 1255 69.6s
+fold S0006:INT5: train 112979 test 1158 68.2s
+fold S0006:INT6: train 112470 test 1667 71.9s
+fold S0006:INT7: train 111776 test 2361 70.8s
+fold S0006:INT8: train 112213 test 1924 69.7s
+fold S0006:INT9: train 112446 test 1691 70.9s
+fold S0014:kidVis_papilla_20-0034: train 111746 test 2391 68.6s
+fold S0014:kidVis_papilla_KRP428: train 113332 test 805 70.1s
+fold S0014:kidVis_papilla_M50: train 111704 test 2433 68.2s
+fold S0171:BBCI_reference_nephrectomy_F59: train 111134 test 3003 68.0s
+fold S0175:kidVis_atlas_21-015: train 113186 test 951 67.6s
+fold S0175:kidVis_atlas_21-019: train 113108 test 1029 73.5s
+fold S0175:kidVis_atlas_27-10066: train 113732 test 405 53.5s
+fold S0175:kidVis_atlas_28-12265: train 112776 test 1361 55.3s
+fold S0175:kidVis_atlas_29-10012: train 113473 test 664 69.3s
+fold S0175:kidVis_atlas_29-10013: train 113464 test 673 78.4s
+fold S0175:kidVis_atlas_29-10280: train 113586 test 551 84.9s
+fold S0175:kidVis_atlas_29-10282: train 113350 test 787 86.8s
+fold S0175:kidVis_atlas_29-10404: train 113687 test 450 91.9s
+fold S0175:kidVis_atlas_30-10125: train 113492 test 645 93.0s
+fold S0175:kidVis_atlas_30-10631: train 113497 test 640 94.0s
+fold S0175:kidVis_atlas_30-10929: train 113635 test 502 92.5s
+fold S0175:kidVis_atlas_31-10042: train 113536 test 601 90.0s
+fold S0175:kidVis_atlas_31-10221: train 113613 test 524 89.7s
+fold S0175:kidVis_atlas_32-10003: train 113780 test 357 90.6s
+fold S0175:kidVis_atlas_32-10074: train 113834 test 303 90.7s
+fold S0175:kidVis_atlas_33-10331: train 113466 test 671 88.2s
+fold S0175:kidVis_atlas_IU-13437: train 112861 test 1276 84.2s
+fold S0175:kidVis_atlas_IU-F52: train 110515 test 3622 74.2s
+fold S0175:kidVis_atlas_IU-F59: train 111134 test 3003 79.6s
+fold S0175:kidVis_atlas_IU-M32: train 111515 test 2622 82.6s
+fold S0175:kidVis_atlas_IU-M61: train 109978 test 4159 78.9s
+fold S0249:Avaden_kidney_FFPE_block: train 108241 test 5896 81.4s
+{
+ "task": "kidney__Visium",
+ "arm": "uni_v2:ring1:r10",
+ "encoders": [
+  "uni_v2"
+ ],
+ "context": "ring1",
+ "head": "r10",
+ "design": "donor",
+ "spots": 114137,
+ "spots_predicted": 114137,
+ "samples": 52,
+ "donors": 51,
+ "centers": 5,
+ "folds": 51,
+ "n_features": 3072,
+ "n_genes": 50,
+ "seconds_per_fold": 77.6371669068056,
+ "gene_symbols": null,
+ "kgrid": [
+  -6.0,
+  -5.5,
+  -5.0,
+  -4.5,
+  -4.0,
+  -3.5,
+  -3.0,
+  -2.5,
+  -2.0,
+  -1.5,
+  -1.0,
+  -0.5,
+  0.0,
+  0.5,
+  1.0
+ ],
+ "median_pearson_log1p": 0.4881063417165692,
+ "fold_median_pearson_log1p": {
+  "median": 0.31416112206809493,
+  "q25": 0.1884012295209056,
+  "q75": 0.40007187181348247,
+  "sd": 0.18946722359306792
+ },
+ "median_pearson_lognorm": 0.4045106608539253,
+ "fold_median_pearson_lognorm": {
+  "median": 0.1589835108419398,
+  "q25": 0.11707599389627955,
+  "q75": 0.21563616162892485,
+  "sd": 0.07102523885026336
+ }
+}

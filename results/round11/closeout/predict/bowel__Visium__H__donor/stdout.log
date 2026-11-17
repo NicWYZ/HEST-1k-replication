@@ -1,0 +1,70 @@
+[load] 34 samples, 93733 spots x 1536 features, 22s
+fold S0135:ileum_donor: train 81908 test 11825 12.0s
+fold S0137:CLN1: train 89989 test 3744 14.0s
+fold S0137:CLN2: train 86635 test 7098 13.7s
+fold S0138:HTA11_7862: train 92911 test 822 14.3s
+fold S0138:HTA11_9999991974: train 90348 test 3385 13.6s
+fold S0138:HTA11_99999933430: train 90347 test 3386 14.4s
+fold S0205:P2: train 89637 test 4096 13.2s
+fold S0232_S0233:BioIVT_CRC_T4aN0M0: train 90599 test 3134 14.9s
+fold S0240:Block_1281585B: train 91076 test 2657 14.1s
+fold S0248:DLS_CRC_IIA: train 84771 test 8962 13.3s
+fold S0252:colon_FFPE_block: train 69842 test 23891 12.0s
+fold S0256:A120838: train 92357 test 1376 15.7s
+fold S0256:A121573: train 89145 test 4588 15.0s
+fold S0256:A416371: train 89613 test 4120 14.9s
+fold S0256:A551763: train 91823 test 1910 15.9s
+fold S0256:A595688: train 92154 test 1579 15.6s
+fold S0256:A798015: train 90392 test 3341 15.2s
+fold S0256:A938797: train 89914 test 3819 15.0s
+{
+ "task": "bowel__Visium",
+ "arm": "uni_v2:none:ridgecv",
+ "encoders": [
+  "uni_v2"
+ ],
+ "context": "none",
+ "head": "ridgecv",
+ "design": "donor",
+ "spots": 93733,
+ "spots_predicted": 93733,
+ "samples": 34,
+ "donors": 18,
+ "centers": 9,
+ "folds": 18,
+ "n_features": 1536,
+ "n_genes": 50,
+ "seconds_per_fold": 14.26663703388638,
+ "gene_symbols": null,
+ "kgrid": [
+  -6.0,
+  -5.5,
+  -5.0,
+  -4.5,
+  -4.0,
+  -3.5,
+  -3.0,
+  -2.5,
+  -2.0,
+  -1.5,
+  -1.0,
+  -0.5,
+  0.0,
+  0.5,
+  1.0
+ ],
+ "median_pearson_log1p": 0.4953501837564497,
+ "fold_median_pearson_log1p": {
+  "median": 0.3820746703400063,
+  "q25": 0.3171860889938256,
+  "q75": 0.49700470156214366,
+  "sd": 0.1943121098129832
+ },
+ "median_pearson_lognorm": 0.40953190695496977,
+ "fold_median_pearson_lognorm": {
+  "median": 0.19664405676453284,
+  "q25": 0.12799392401996668,
+  "q75": 0.26141380551556787,
+  "sd": 0.11320602505402669
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "n_populations": 54,
+ "R": 2000,
+ "anchor": {
+  "rows": 210,
+  "matched": 210,
+  "max_abs_diff": 0.0
+ },
+ "prop|mu": {
+  "n": 12,
+  "B_narrower": 12,
+  "median_ratio": 0.4702040941520452,
+  "cov_B_min": 0.8915,
+  "cov_B_max": 0.906,
+  "cov_B_median": 0.9007499999999999,
+  "mcse_cov_B_median": 0.006685726007164265
+ },
+ "prop|theta3": {
+  "n": 12,
+  "B_narrower": 3,
+  "median_ratio": 1.1592032273374442,
+  "cov_B_min": 0.8785,
+  "cov_B_max": 0.9045,
+  "cov_B_median": 0.89225,
+  "mcse_cov_B_median": 0.006933245090732114
+ },
+ "equal|mu": {
+  "n": 12,
+  "B_narrower": 12,
+  "median_ratio": 0.2860748108314025,
+  "cov_B_min": 0.8875,
+  "cov_B_max": 0.9115,
+  "cov_B_median": 0.89775,
+  "mcse_cov_B_median": 0.00677425821268054
+ },
+ "equal|theta3": {
+  "n": 12,
+  "B_narrower": 12,
+  "median_ratio": 0.6994572896908651,
+  "cov_B_min": 0.8915,
+  "cov_B_max": 0.9085,
+  "cov_B_median": 0.9005000000000001,
+  "mcse_cov_B_median": 0.0066932448203366425
+ }
+}
