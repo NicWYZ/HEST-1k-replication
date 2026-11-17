@@ -1,14 +1,14 @@
 # Round 11, track `closeout`, the plan
 
 ```state
-updated: 2026-11-17, 15:45 (third session of track closeout)
+updated: 2026-11-17, 16:25 (third session of track closeout)
 unit: closeout
 project_id: proj_8450e231133d
 frame_id: c9016697-c909-435e-82fc-ebfb9daaa857
 step: A6 nearly done: of the 16 kidney and bowel Visium P and E conformal jobs, bowel P random, slide_out and center finished; kidney P donor (9530286) and seven whose limits were lowered at 15:31 running since 15:33 to 15:35; bowel P donor, E slide_out, E center pending; kidney E donor and slide_out split by fold (section 6, QUEUE); A6.0 to A6.3 and B2 scored in section 4 and 5; A7 done
 last_run: A6 pilot 9529112 to 9529116, all COMPLETED except the round 3 conformal anchor 9529113, still running at submission of the rest
 jobs: A6 9530242 to 9530308 from 1fbbcd97 (9530278 rerun as 9544479; 9530302 and 9530303 cancelled for the split, section 6 and 7), list in a6_submitted_jobs.txt; split from 02b16d24: check 9609677 to 9609686 (LUNG_XENIUM R10 donor and slide_out in 3 pieces, merge, compare), kidney E donor pieces 9609687 to 9609696 and merge 9609697, kidney E slide_out pieces 9609698 to 9609705 and merge 9609706, list in _slurm/a6_split_submitted_02b16d24.txt on Longleaf
-next: check the queue with single squeue or sacct calls well apart (no watcher, one sub-agent at most); read the two check comparisons (9609681, 9609686; stdout.log of a6/conformal_shards/check_*__compare) when they finish; if jobs are still pending at 17:31 (two hours after the limits were lowered), update this block, push and stop, the oversight session restarts the track; when every job has finished, add the split jobs to the job ledger, run code/scripts/round11_closeout_a6_aggregate.py as a job (provisional run a6/aggregate_v3 holds everything else), score A6.4, then the final report, the fresh check, the sweep and G-final
+next: the split check passed (section 6, QUEUE); at 16:17 every A6 job was running or finished except kidney E slide_out piece 9609705 (pending) and the two merges (waiting on their pieces); check the queue with single squeue or sacct calls well apart (no watcher, one sub-agent at most); if jobs are still pending at 17:31 (two hours after the limits were lowered), update this block, push and stop, the oversight session restarts the track; when every job has finished, add the split jobs to the job ledger, run code/scripts/round11_closeout_a6_aggregate.py as a job (provisional run a6/aggregate_v3 holds everything else), score A6.4, then the final report, the fresh check, the sweep and G-final
 waiting: none (QUEUE answered 17 November 15:25, section 6; ten pending limits lowered at 15:31)
 ```
 
@@ -192,6 +192,7 @@ Within a minute the ten moved from reason `Priority` to `None`. **Not lowered, t
 - *Check:* LUNG_XENIUM `R10` donor and slide_out (unsplit 9529114 and 9530268, both from `1fbbcd97`, whose harness, predictor and conformal code `02b16d24` leaves unchanged except for the new options), each in 3 pieces (9609677 to 9609679, 9609682 to 9609684), merged (9609680, 9609685) and compared table by table with the unsplit run (9609681, 9609686); it passes when every table has the same rows and columns and numbers agree within 1e-12. Prediction: identical to the last digit.
 - *Kidney `E` donor:* 10 pieces of 5 or 6 donor folds (9609687 to 9609696, 6 h, 72 GB), merged into `a6/conformal/kidney__Visium__E__donor` (9609697). *Kidney `E` slide_out:* 8 pieces of 6 or 7 slide folds (9609698 to 9609705, 4 h, 72 GB), merged into `a6/conformal/kidney__Visium__E__slide_out` (9609706). Each merge waits on its pieces and on both checks' comparisons (`afterok`).
 - *Then:* 9530302 and 9530303 cancelled at 15:36 (section 7 on the second). At 15:36, seven of the ten lowered jobs were running (9530285, 9530287, 9530291, 9530301, 9530304, 9530305, 9530307, all started at 15:35 or 15:33), three pending on priority (9530289, 9530306, 9530308).
+- *Check scored, 17 November 16:20:* **partly held**, and the check **passes**. Every table has the same rows and columns as the unsplit run; the per-gene parquet, the calibration-unit file and the disjointness file are identical (difference 0), and the summary tables differ by at most 7.1e-15 (donor) and 8.9e-15 (slide_out), so not "to the last digit" but within the 1e-12 criterion (`a6/conformal_shards/check_LUNG_XENIUM__R10__{donor,slide_out}__compare/stdout.log`, 11 files each, 0 mismatches). Since the per-gene inputs are equal, the differences come from the order of floating-point sums inside the summary step, not from the fits; this was not traced further. The shards kept 5, 5, 5 of the 15 donor folds and 7, 7, 6 of the 20 slide folds. The first kidney `E` donor pieces finished in 15 to 23 minutes (9609688, 9609690, 9609692), far below the 6 h limit.
 
 ## 7. Tried and failed
 
