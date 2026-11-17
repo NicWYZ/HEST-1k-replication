@@ -8,7 +8,7 @@
 2. g2_p111.json: P11.1 scored on arm P, as the masterplan writes it (a gain of at least 0.02 over the reference on at
    least two of kidney Visium, bowel Visium and LUNG_XENIUM; references 0.471, 0.511, 0.619), with the gain over this
    track's own R10 on the same inputs beside it.
-3. g2_anchor_ccrcc.csv: A2.2 on CCRCC, theta3 and mu, log1p, n_L 8. For the anchor's regime A cells and for round 10's
+3. g2_anchor_ccrcc.csv: A2.2 on CCRCC, theta3 and mu, log1p, n_L 8. For the anchor's regime A cells, the control run on round 3's file (anchor/CCRCC__record, when present) and round 10's
    (F2/regimeA/CCRCC__uni_v2), computed the same way as round10_final_runs_f2_diagnostics.py's f2_buy: per gene the
    ratio of fix1 (variance fpc) to classical (fpc) median width, then the median over genes; the median over genes of
    fix1's coverage and of its Monte Carlo standard error; and R2_c, the squared correlation over donors of z_g with
@@ -100,7 +100,12 @@ def main():
     A = buy(f'{an}/regimeA/regimeA_cells.parquet', f'{an}/cv/cluster_values__CCRCC.parquet'); A['source'] = 'round11 R10 (corpus, 73,813 spots)'
     B = buy(f'{r10}/F2/regimeA/CCRCC__uni_v2/regimeA_cells.parquet', f'{r10}/F2/cluster_values_v1/cluster_values__CCRCC.parquet')
     B = B[B.encoder == 'uni_v2']; B['source'] = 'round10 (round 3 file, 74,220 spots)'
-    AN = pd.concat([A, B], ignore_index=True)
+    parts = [A, B]
+    ctl = f'{root}/anchor/CCRCC__record'
+    if os.path.exists(f'{ctl}/regimeA/regimeA_cells.parquet'):   # control: round 10's steps rerun on round 3's file
+        K = buy(f'{ctl}/regimeA/regimeA_cells.parquet', f'{ctl}/cv/cluster_values__CCRCC.parquet')
+        K['source'] = 'control: round 10 steps rerun here on round 3 file'; parts.append(K)
+    AN = pd.concat(parts, ignore_index=True)
     t3 = AN[AN.estimand == 'theta3'].set_index('source')
     summ = dict(p111=P, anchor_ccrcc_theta3=t3[['median_wr_fix1', 'median_cov_fix1', 'median_mcse_fix1', 'median_R2c']].to_dict('index'))
     json.dump(summ, open('g2_summary.json', 'w'), indent=1, default=float)
