@@ -202,7 +202,7 @@ def anchors(root, r10, DL, C, I):
         rr = pd.read_csv(f'{r10}/F3/institution/production/inst_by_center.csv')
         k = ['task', 'encoder', 'scale', 'arm', 'alpha', 'center_unit']
         m = o.merge(rr[rr.task.isin(o.task.unique())], on=k, suffixes=('', '_ref'))
-        num = [c for c in o.columns if c not in k and pd.api.types.is_numeric_dtype(o[c]) and c + '_ref' in m.columns]
+        num = [c for c in o.columns if c not in k and pd.api.types.is_numeric_dtype(o[c]) and not pd.api.types.is_bool_dtype(o[c]) and c + '_ref' in m.columns]
         e.append(dict(inst_rows_matched=len(m), inst_rows_ours=len(o),
                       inst_max_abs_diff=float(max(np.nanmax(np.abs(m[c] - m[c + '_ref'])) for c in num)) if len(m) else np.nan))
     A['A6.0e'] = e
