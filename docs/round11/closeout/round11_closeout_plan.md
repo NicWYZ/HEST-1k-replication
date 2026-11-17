@@ -8,7 +8,7 @@ frame_id: c9016697-c909-435e-82fc-ebfb9daaa857
 step: A6 nearly done: all but the 16 kidney and bowel Visium P and E conformal jobs finished; A6.0 to A6.3 and B2 scored in section 4 and 5; A7 done
 last_run: A6 pilot 9529112 to 9529116, all COMPLETED except the round 3 conformal anchor 9529113, still running at submission of the rest
 jobs: 9530242 to 9530308 (9530278 cancelled and rerun as 9544479, section 7) from 1fbbcd97, phases donor, center (institution 9530261 after the four center predictions) and conformal, one per unit, list in the session's submit output and in the job ledger at the gate
-next: when every job has finished, run code/scripts/round11_closeout_a6_aggregate.py as a job, score A6.0 to A6.4 and B2, then the final report, the fresh check, the sweep and G-final
+next: check the 16 jobs with sacct (12:05 on 17 November: 9530286 running, the other 15 pending; the local watcher was stopped by the machine's low memory and is not restarted without Nicolas); when every job has finished, run code/scripts/round11_closeout_a6_aggregate.py as a job (provisional run a6/aggregate_v3 holds everything else), score A6.4, then the final report, the fresh check, the sweep and G-final
 waiting: QUEUE | since 2026-11-17 09:49 | 16 A6 conformal jobs (P and E on kidney and bowel Visium; 9530300 started at the notice) pending on priority over four hours since 05:29; half moved to rc_tengfei_pi and P memory cut to 32 GB from siblings; they keep waiting (Nicolas, for information)
 ```
 
