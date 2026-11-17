@@ -5,10 +5,11 @@
 The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at UNC, in Dr. Hongtu Zhu's lab and supervised by Dr. Daiwei (David) Zhang, toward a submittable paper by spring 2027. The paper answers the proposal's two questions, calibrated uncertainty for histology-predicted gene expression and valid inference with it, on HEST-1k spatial transcriptomics with ACS PUMS 2018 income as a second domain. Existing or classical methods are applied wherever they serve, and the project's own method or theory arises only where a problem met in practice has no existing solution after a literature search (`docs/round10/00_prep/round10_reframing.md`, section 1). Reading this as an applied statistics paper is `[proposed]`.
 
 ```state
-updated: 2026-11-16 (oversight session)
+updated: 2026-11-16, later (oversight session; pull request #41 merged, none open, no track running)
 unit: round10
 status: closed
-next: plan round 11, draft v1 of the applied paper, with Nicolas from docs/round10/README.md and the writing plan; the record was reduced at tag record-full-2026-11.
+next: Nicolas decides the project's direction (DIRECTION) before round 11 is planned; draft v1 of the applied paper, if it goes on, starts from docs/round10/README.md and the writing plan; the record was reduced at tag record-full-2026-11.
+waiting: DIRECTION | since 2026-11-16 | whether the project goes on to draft v1 as planned, goes on under another framing, or stops and wraps up (Nicolas; default round 11 not opened)
 waiting: D5 | since 2026-10-26 | which scale the paper calls primary; both are in the numbers table (Nicolas with David; default report both)
 waiting: O5 | since 2026-11-08 | which of round 9's three theorems the paper keeps (Nicolas; default candidates, not claimed)
 waiting: Q1 | since 2026-10-09 | whether regime B can be bought on a spatial platform, and at what cost (Nicolas with the advisors; default no cost claim)
