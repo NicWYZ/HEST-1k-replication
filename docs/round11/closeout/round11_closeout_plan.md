@@ -9,7 +9,7 @@ step: A6 running (predictions in section 4 written at 307670c4, code at 1fbbcd97
 last_run: A6 pilot 9529112 to 9529116, all COMPLETED except the round 3 conformal anchor 9529113, still running at submission of the rest
 jobs: 9530242 to 9530308 (9530278 cancelled and rerun as 9544479, section 7) from 1fbbcd97, phases donor, center (institution 9530261 after the four center predictions) and conformal, one per unit, list in the session's submit output and in the job ledger at the gate
 next: when every job has finished, run code/scripts/round11_closeout_a6_aggregate.py as a job, score A6.0 to A6.4 and B2, then the final report, the fresh check, the sweep and G-final
-waiting: none
+waiting: QUEUE | since 2026-11-17 09:49 | 16 A6 conformal jobs (P and E on kidney and bowel Visium; 9530300 started at the notice) pending on priority over four hours since 05:29; half moved to rc_tengfei_pi and P memory cut to 32 GB from siblings; they keep waiting (Nicolas, for information)
 ```
 
 *Written on 16 November 2026 by the first session of track `closeout` (frame above). The brief is `docs/round11/closeout/round11_closeout_brief.md` on `main`, read at `7ff4e2fc`, with `docs/round11/masterplan.md` at the same commit and `docs/EXECUTION_RULES.md` as it stands there. The branch starts from `7ff4e2fc`. This plan links the brief and does not copy it.*

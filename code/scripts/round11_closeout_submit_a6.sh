@@ -24,13 +24,15 @@ CB=$ROOT/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet
 R3TD=$ROOT/results/round3/task_defs/CCRCC.json
 cd $ROOT/results/round11/closeout/_slurm
 N=0
-acc() { N=$((N+1)); [ $((N%2)) = 0 ] && echo rc_tengfei_pi || echo rc_htzhu_pi; }
+# acc runs in the caller (not in a $(...) subshell), so the counter advances; A6 of 17 November ran every job on
+# rc_htzhu_pi because the first version was called as $(acc)
+acc() { N=$((N+1)); [ $((N%2)) = 0 ] && ACC=rc_tengfei_pi || ACC=rc_htzhu_pi; }
 # sub <name> <unit> <cpus> <mem> <minutes> <scripts> <inputs> [--dependency=..] -- <script> <args...>
 sub() {
   local n=$1 u=$2 c=$3 m=$4 t=$5 s=$6 in=$7; shift 7; local dep=""
   if [ "${1#--dependency}" != "$1" ]; then dep=$1; shift; fi
   shift
-  echo "$u $(sbatch --parsable $dep -J r11c_$n -p general -A $(acc) -c $c --mem=$m -t $t -o a6_%j.out $W $C A6 $u "A6 $u" "$s" "$in" -- "$@")"
+  acc; echo "$u $(sbatch --parsable $dep -J r11c_$n -p general -A $ACC -c $c --mem=$m -t $t -o a6_%j.out $W $C A6 $u "A6 $u" "$s" "$in" -- "$@")"
 }
 SC="code/scripts/round11_closeout_conformal.py code/scripts/round3_a0_harness.py code/scripts/round11_closeout_predict.py"
 SD="code/scripts/round11_closeout_a6_donor.py code/scripts/round11_closeout_chain.py code/scripts/round11_closeout_predict.py code/scripts/round11_closeout_hest_join.py code/scripts/round10_final_runs_f1_donor_diag.py code/scripts/round10_final_runs_f2_cluster_values.py code/scripts/round10_final_runs_f2_regimeA.py code/scripts/round10_final_runs_estimators.py code/scripts/round3_a0_harness.py"
