@@ -5,12 +5,10 @@
 The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at UNC, in Dr. Hongtu Zhu's lab and supervised by Dr. Daiwei (David) Zhang, toward a submittable paper by spring 2027. The paper answers the proposal's two questions, calibrated uncertainty for histology-predicted gene expression and valid inference with it, on HEST-1k spatial transcriptomics with ACS PUMS 2018 income as a second domain. Existing or classical methods are applied wherever they serve, and the project's own method or theory arises only where a problem met in practice has no existing solution after a literature search (`docs/round10/00_prep/round10_reframing.md`, section 1). 
 
 ```state
-updated: 2026-11-17, night (oversight session; track closeout at G-final, pull request #42 open)
+updated: 2026-11-18 (oversight session; pull request #42 merged, advisor outline drafted)
 unit: round11
 status: running
-next: Nicolas merges pull request #42 and decides H1B; then the oversight session drafts the advisor outline in docs/round11/oversight/ (docs/round11/masterplan.md) from docs/round11/closeout/round11_closeout_report.md.
-branch round11-closeout: to-merge | PR #42
-waiting: H1B | since 2026-11-17 | how the new-donor conformal headline is stated, since its shortfall is 0.006 to 0.029 on tasks with 15 to 51 donors (final report, section 7, item 1) (Nicolas; default per task with its donor count)
+next: Nicolas reviews docs/round11/oversight/round11_advisor_outline.md; then the oversight session closes round 11 through the project-record skill (docs/round11/masterplan.md, "What closes the round").
 waiting: FRAMING | since 2026-11-16 | whether the paper is round 10's applied paper or one paper on the headline results of the closeout brief, section 3 (Nicolas with the advisors; default not decided, the outline presents both)
 waiting: D5 | since 2026-10-26 | which scale the paper calls primary; both are in the numbers table (Nicolas with David; default report both)
 waiting: O5 | since 2026-11-08 | which of round 9's three theorems the paper keeps (Nicolas; default candidates, not claimed)
