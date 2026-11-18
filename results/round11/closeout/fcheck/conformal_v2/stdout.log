@@ -1,0 +1,202 @@
+cells 96 dirs 48
+max |mean - by_task| 2.220446049250313e-16  max |sd(ddof1) - by_task| 1.3877787807814457e-16  max |sd(ddof0) - by_task| 0.014421734604614225
+n_folds equal by_task: True
+slide>=50 n_test-weighted reconstruction: max |diff| 0.0195598199371656
+duplicated cells: {('bowel__Visium', 'E', 'log1p', 'donor'): 2, ('bowel__Visium', 'E', 'lognorm', 'donor'): 2, ('bowel__Visium', 'P', 'log1p', 'donor'): 2, ('bowel__Visium', 'P', 'lognorm', 'donor'): 2, ('bowel__Visium', 'R10', 'log1p', 'donor'): 2, ('bowel__Visium', 'R10', 'lognorm', 'donor'): 2, ('kidney__Visium', 'E', 'log1p', 'donor'): 2, ('kidney__Visium', 'E', 'lognorm', 'donor'): 2, ('kidney__Visium', 'P', 'log1p', 'donor'): 2, ('kidney__Visium', 'P', 'lognorm', 'donor'): 2, ('kidney__Visium', 'R10', 'log1p', 'donor'): 2, ('kidney__Visium', 'R10', 'lognorm', 'donor'): 2}
+D                             center     donor    random  slide_out
+task           arm scale                                           
+CCRCC          E   log1p         NaN  0.861273  0.886849        NaN
+                   lognorm       NaN  0.876751  0.894418        NaN
+               P   log1p         NaN  0.864874  0.880260        NaN
+                   lognorm       NaN  0.875490  0.892234        NaN
+               R10 log1p         NaN  0.863983  0.882391        NaN
+                   lognorm       NaN  0.876599  0.893307        NaN
+INDIANA_KIDNEY E   log1p         NaN  0.877092  0.906581   0.878065
+                   lognorm       NaN  0.902194  0.892361   0.904986
+               P   log1p         NaN  0.874674  0.906929   0.875673
+                   lognorm       NaN  0.901758  0.892703   0.904584
+               R10 log1p         NaN  0.877583  0.907040   0.879006
+                   lognorm       NaN  0.902043  0.892924   0.905332
+LUNG_XENIUM    E   log1p         NaN  0.885031  0.900669   0.898842
+                   lognorm       NaN  0.884180  0.901917   0.894278
+               P   log1p         NaN  0.887409  0.900026   0.898436
+                   lognorm       NaN  0.885088  0.901350   0.894682
+               R10 log1p         NaN  0.887155  0.900641   0.897030
+                   lognorm       NaN  0.885998  0.901696   0.894908
+bowel__Visium  E   log1p    0.838612  0.886975  0.898573   0.889194
+                   lognorm  0.868497  0.878156  0.896028   0.875058
+               P   log1p    0.827423  0.888124  0.897717   0.892463
+                   lognorm  0.865076  0.872814  0.896578   0.875123
+               R10 log1p    0.834350  0.892113  0.898428   0.894056
+                   lognorm  0.870002  0.876439  0.896413   0.877155
+kidney__Visium E   log1p    0.877545  0.894148  0.908853   0.902372
+                   lognorm  0.847450  0.899651  0.906126   0.900354
+               P   log1p    0.871356  0.892281  0.908386   0.897890
+                   lognorm  0.848146  0.901040  0.905836   0.900234
+               R10 log1p    0.877657  0.894023  0.907263   0.899860
+                   lognorm  0.852405  0.900255  0.906286   0.900037
+D                             center     donor    random  slide_out
+task           arm scale                                           
+CCRCC          E   log1p         NaN  0.143443  0.000539        NaN
+                   lognorm       NaN  0.066345  0.000584        NaN
+               P   log1p         NaN  0.146575  0.000858        NaN
+                   lognorm       NaN  0.070667  0.000500        NaN
+               R10 log1p         NaN  0.144220  0.000856        NaN
+                   lognorm       NaN  0.067154  0.000545        NaN
+INDIANA_KIDNEY E   log1p         NaN  0.043486  0.012367   0.043290
+                   lognorm       NaN  0.031596  0.013085   0.033325
+               P   log1p         NaN  0.047241  0.013434   0.048263
+                   lognorm       NaN  0.030369  0.012789   0.032651
+               R10 log1p         NaN  0.044218  0.013041   0.046318
+                   lognorm       NaN  0.029857  0.012852   0.031854
+LUNG_XENIUM    E   log1p         NaN  0.038756  0.006265   0.038112
+                   lognorm       NaN  0.036196  0.008954   0.037277
+               P   log1p         NaN  0.036735  0.005877   0.039238
+                   lognorm       NaN  0.035231  0.008268   0.037071
+               R10 log1p         NaN  0.037580  0.005554   0.040355
+                   lognorm       NaN  0.033850  0.008271   0.035834
+bowel__Visium  E   log1p    0.115364  0.122068  0.005849   0.128311
+                   lognorm  0.084978  0.082255  0.008243   0.099255
+               P   log1p    0.143266  0.126570  0.006483   0.139565
+                   lognorm  0.094018  0.083787  0.008064   0.096289
+               R10 log1p    0.135137  0.126121  0.005483   0.135157
+                   lognorm  0.090392  0.083339  0.007888   0.093781
+kidney__Visium E   log1p    0.123070  0.078116  0.011625   0.062149
+                   lognorm  0.134152  0.063519  0.013542   0.063338
+               P   log1p    0.123517  0.084242  0.012904   0.076640
+                   lognorm  0.136605  0.066747  0.013230   0.065773
+               R10 log1p    0.109576  0.078718  0.011382   0.067278
+                   lognorm  0.132632  0.066060  0.013081   0.065637
+D                           center  donor  random  slide_out
+task           arm scale                                    
+CCRCC          E   log1p       NaN   24.0     6.0        NaN
+                   lognorm     NaN   24.0     6.0        NaN
+               P   log1p       NaN   24.0     6.0        NaN
+                   lognorm     NaN   24.0     6.0        NaN
+               R10 log1p       NaN   24.0     6.0        NaN
+                   lognorm     NaN   24.0     6.0        NaN
+INDIANA_KIDNEY E   log1p       NaN   25.0    24.0       26.0
+                   lognorm     NaN   25.0    24.0       26.0
+               P   log1p       NaN   25.0    24.0       26.0
+                   lognorm     NaN   25.0    24.0       26.0
+               R10 log1p       NaN   25.0    24.0       26.0
+                   lognorm     NaN   25.0    24.0       26.0
+LUNG_XENIUM    E   log1p       NaN   15.0    15.0       20.0
+                   lognorm     NaN   15.0    15.0       20.0
+               P   log1p       NaN   15.0    15.0       20.0
+                   lognorm     NaN   15.0    15.0       20.0
+               R10 log1p       NaN   15.0    15.0       20.0
+                   lognorm     NaN   15.0    15.0       20.0
+bowel__Visium  E   log1p       9.0   18.0    18.0       34.0
+                   lognorm     9.0   18.0    18.0       34.0
+               P   log1p       9.0   18.0    18.0       34.0
+                   lognorm     9.0   18.0    18.0       34.0
+               R10 log1p       9.0   18.0    18.0       34.0
+                   lognorm     9.0   18.0    18.0       34.0
+kidney__Visium E   log1p       5.0   51.0    35.0       52.0
+                   lognorm     5.0   51.0    35.0       52.0
+               P   log1p       5.0   51.0    35.0       52.0
+                   lognorm     5.0   51.0    35.0       52.0
+               R10 log1p       5.0   51.0    35.0       52.0
+                   lognorm     5.0   51.0    35.0       52.0
+(a) random within 0.01 of 0.90: 27 of 30
+D   task  arm  scale    random
+0  CCRCC    E  log1p  0.886849
+2  CCRCC    P  log1p  0.880260
+4  CCRCC  R10  log1p  0.882391
+(b) donor >= 0.02 below random: 5 of 30
+D             task  arm    scale    random     donor     short
+7   INDIANA_KIDNEY    E  lognorm  0.892361  0.902194 -0.009833
+11  INDIANA_KIDNEY  R10  lognorm  0.892924  0.902043 -0.009119
+9   INDIANA_KIDNEY    P  lognorm  0.892703  0.901758 -0.009055
+27  kidney__Visium    P  lognorm  0.905836  0.901040  0.004795
+29  kidney__Visium  R10  lognorm  0.906286  0.900255  0.006031
+22   bowel__Visium  R10    log1p  0.898428  0.892113  0.006315
+25  kidney__Visium    E  lognorm  0.906126  0.899651  0.006475
+20   bowel__Visium    P    log1p  0.897717  0.888124  0.009593
+18   bowel__Visium    E    log1p  0.898573  0.886975  0.011598
+14     LUNG_XENIUM    P    log1p  0.900026  0.887409  0.012617
+28  kidney__Visium  R10    log1p  0.907263  0.894023  0.013239
+16     LUNG_XENIUM  R10    log1p  0.900641  0.887155  0.013486
+24  kidney__Visium    E    log1p  0.908853  0.894148  0.014705
+2            CCRCC    P    log1p  0.880260  0.864874  0.015386
+12     LUNG_XENIUM    E    log1p  0.900669  0.885031  0.015638
+17     LUNG_XENIUM  R10  lognorm  0.901696  0.885998  0.015698
+26  kidney__Visium    P    log1p  0.908386  0.892281  0.016105
+15     LUNG_XENIUM    P  lognorm  0.901350  0.885088  0.016262
+5            CCRCC  R10  lognorm  0.893307  0.876599  0.016708
+3            CCRCC    P  lognorm  0.892234  0.875490  0.016744
+1            CCRCC    E  lognorm  0.894418  0.876751  0.017668
+13     LUNG_XENIUM    E  lognorm  0.901917  0.884180  0.017737
+19   bowel__Visium    E  lognorm  0.896028  0.878156  0.017872
+4            CCRCC  R10    log1p  0.882391  0.863983  0.018408
+23   bowel__Visium  R10  lognorm  0.896413  0.876439  0.019974
+21   bowel__Visium    P  lognorm  0.896578  0.872814  0.023765
+0            CCRCC    E    log1p  0.886849  0.861273  0.025576
+10  INDIANA_KIDNEY  R10    log1p  0.907040  0.877583  0.029457
+6   INDIANA_KIDNEY    E    log1p  0.906581  0.877092  0.029488
+8   INDIANA_KIDNEY    P    log1p  0.906929  0.874674  0.032255
+   cells with 0 < short < 0.02: 22 range 0.004795382575779827 0.01997356038886089
+   cells with donor above random: 3 D             task  arm    scale     short
+7   INDIANA_KIDNEY    E  lognorm -0.009833
+9   INDIANA_KIDNEY    P  lognorm -0.009055
+11  INDIANA_KIDNEY  R10  lognorm -0.009119
+(c) |donor(P/E) - donor(R10)| max 0.00513803980819072 cells 20
+D             task arm    scale     donor  d_vs_R10
+0            CCRCC   E    log1p  0.861273 -0.002711
+1            CCRCC   E  lognorm  0.876751  0.000152
+2            CCRCC   P    log1p  0.864874  0.000891
+3            CCRCC   P  lognorm  0.875490 -0.001109
+6   INDIANA_KIDNEY   E    log1p  0.877092 -0.000491
+7   INDIANA_KIDNEY   E  lognorm  0.902194  0.000151
+8   INDIANA_KIDNEY   P    log1p  0.874674 -0.002909
+9   INDIANA_KIDNEY   P  lognorm  0.901758 -0.000285
+12     LUNG_XENIUM   E    log1p  0.885031 -0.002124
+13     LUNG_XENIUM   E  lognorm  0.884180 -0.001818
+14     LUNG_XENIUM   P    log1p  0.887409  0.000253
+15     LUNG_XENIUM   P  lognorm  0.885088 -0.000909
+18   bowel__Visium   E    log1p  0.886975 -0.005138
+19   bowel__Visium   E  lognorm  0.878156  0.001717
+20   bowel__Visium   P    log1p  0.888124 -0.003989
+21   bowel__Visium   P  lognorm  0.872814 -0.003625
+24  kidney__Visium   E    log1p  0.894148  0.000125
+25  kidney__Visium   E  lognorm  0.899651 -0.000605
+26  kidney__Visium   P    log1p  0.892281 -0.001742
+27  kidney__Visium   P  lognorm  0.901040  0.000785
+donor coverage_sd range over all 30 cells: 0.029856829710575655 0.14657525838406696
+donor coverage_sd range over P/E 20 cells: 0.030368679813969707 0.14657525838406696
+(d) center < donor in 12 of 12
+D             task  arm    scale     donor    center  donor_minus_center
+18   bowel__Visium    E    log1p  0.886975  0.838612            0.048363
+19   bowel__Visium    E  lognorm  0.878156  0.868497            0.009659
+20   bowel__Visium    P    log1p  0.888124  0.827423            0.060702
+21   bowel__Visium    P  lognorm  0.872814  0.865076            0.007738
+22   bowel__Visium  R10    log1p  0.892113  0.834350            0.057763
+23   bowel__Visium  R10  lognorm  0.876439  0.870002            0.006437
+24  kidney__Visium    E    log1p  0.894148  0.877545            0.016603
+25  kidney__Visium    E  lognorm  0.899651  0.847450            0.052201
+26  kidney__Visium    P    log1p  0.892281  0.871356            0.020925
+27  kidney__Visium    P  lognorm  0.901040  0.848146            0.052894
+28  kidney__Visium  R10    log1p  0.894023  0.877657            0.016366
+29  kidney__Visium  R10  lognorm  0.900255  0.852405            0.047850
+R10 log1p donor shortfall range 0.006314640168219587 0.029457109458468467
+slide_out between donor and random (R10 log1p):
+D             task     donor  slide_out    random
+4            CCRCC  0.863983        NaN  0.882391
+10  INDIANA_KIDNEY  0.877583   0.879006  0.907040
+16     LUNG_XENIUM  0.887155   0.897030  0.900641
+22   bowel__Visium  0.892113   0.894056  0.898428
+28  kidney__Visium  0.894023   0.899860  0.907263
+design                  donor   patient    random  donors  shortfall
+task      label_set                                                 
+CCRCC     shipped    0.865373  0.859064  0.883018      24   0.017645
+COAD      shipped    0.872092  0.745601  0.896467       4   0.024375
+HCC       shipped    0.762564  0.766838  0.902783       2   0.140220
+IDC       audited    0.827491  0.820402  0.879686       3   0.052195
+          shipped    0.831408  0.820035  0.880172       4   0.048764
+LUNG      shipped    0.617702  0.622861  0.899244       2   0.281542
+LYMPH_IDC shipped    0.815830  0.804637  0.900338       4   0.084508
+PAAD      shipped    0.895300  0.868320  0.892967       3  -0.002333
+PRAD      shipped    0.883309  0.886993  0.904082       2   0.020773
+READ      shipped    0.832383  0.830780  0.897812       2   0.065429
+SKCM      shipped    0.680142  0.686264  0.899887       2   0.219745

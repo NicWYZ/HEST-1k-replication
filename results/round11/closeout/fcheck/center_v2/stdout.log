@@ -1,0 +1,75 @@
+brain__Visium__E__center meta cols: ['sample_id', 'barcode', 'donor_id', 'center_id', 'fold', 'lib_size', 'n_detected']
+brain__Visium__P__center meta cols: ['sample_id', 'barcode', 'donor_id', 'center_id', 'fold', 'lib_size', 'n_detected']
+brain__Visium__R10__center meta cols: ['sample_id', 'barcode', 'donor_id', 'center_id', 'fold', 'lib_size', 'n_detected']
+kidney__Visium__E__center meta cols: ['sample_id', 'barcode', 'donor_id', 'center_id', 'fold', 'lib_size', 'n_detected']
+kidney__Visium__E__donor_v2 meta cols: ['sample_id', 'barcode', 'donor_id', 'center_id', 'fold', 'lib_size', 'n_detected']
+kidney__Visium__P__center meta cols: ['sample_id', 'barcode', 'donor_id', 'center_id', 'fold', 'lib_size', 'n_detected']
+kidney__Visium__P__donor meta cols: ['sample_id', 'barcode', 'donor_id', 'center_id', 'fold', 'lib_size', 'n_detected']
+kidney__Visium__R10__center meta cols: ['sample_id', 'barcode', 'donor_id', 'center_id', 'fold', 'lib_size', 'n_detected']
+kidney__Visium__R10__donor meta cols: ['sample_id', 'barcode', 'donor_id', 'center_id', 'fold', 'lib_size', 'n_detected']
+                           dir   spots  genes  median_pearson_log1p   foldcol  n_folds  fold_median  fold_q25  fold_q75                                                                                                                                         nan_genes_per_fold
+0     brain__Visium__E__center  123048     50              0.117688  ['fold']        6     0.115339  0.041986  0.162988                                                                                                                                         [0, 0, 0, 1, 0, 0]
+1     brain__Visium__P__center  123048     50              0.064288  ['fold']        6     0.126391  0.037948  0.234666                                                                                                                                         [0, 0, 0, 1, 0, 0]
+2   brain__Visium__R10__center  123048     50              0.021531  ['fold']        6     0.121263  0.013041  0.191379                                                                                                                                         [0, 0, 0, 1, 0, 0]
+3    kidney__Visium__E__center  114137     50              0.135983  ['fold']        5     0.178367  0.009638  0.357417                                                                                                                                            [0, 0, 0, 0, 0]
+4  kidney__Visium__E__donor_v2  114137     50              0.502269  ['fold']       51     0.332832  0.140763  0.412258  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+5    kidney__Visium__P__center  114137     50              0.106845  ['fold']        5     0.155436  0.145430  0.331064                                                                                                                                            [0, 0, 0, 0, 0]
+6     kidney__Visium__P__donor  114137     50              0.481610  ['fold']       51     0.329030  0.155268  0.412028  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+7  kidney__Visium__R10__center  114137     50              0.123119  ['fold']        5     0.132470  0.032647  0.292240                                                                                                                                            [0, 0, 0, 0, 0]
+8   kidney__Visium__R10__donor  114137     50              0.471332  ['fold']       51     0.309350  0.160740  0.370024  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+inst_by_center task ['brain__Visium', 'kidney__Visium']
+inst_by_center encoder ['E_posthoc', 'P', 'uni_v2']
+inst_by_center scale ['log1p', 'lognorm']
+inst_by_center arm ['hcp_center', 'hcp_donor']
+inst_by_center alpha ['0.1666666666666666', '0.2', '0.25']
+inst_by_gene cols ['task', 'encoder', 'scale', 'arm', 'alpha', 'center_unit', 'gene', 'K', 'n_spots', 'coverage', 'width', 'finite']
+   task ['brain__Visium', 'kidney__Visium']
+   encoder ['E_posthoc', 'P', 'uni_v2']
+   scale ['log1p', 'lognorm']
+   arm ['hcp_center', 'hcp_donor']
+   alpha ['0.16666666666666666', '0.2', '0.25']
+   center_unit ['S0006', 'S0014', 'S0032', 'S0166', 'S0171', 'S0173', 'S0175', 'S0231', 'S0235', 'S0249', 'S0251']
+   gene ['ENSG00000002330', 'ENSG00000010810', 'ENSG00000019582', 'ENSG00000026025', 'ENSG00000041982', 'ENSG00000043355', 'ENSG00000067560', 'ENSG00000068078', 'ENSG00000072110', 'ENSG00000074800', 'ENSG00000075624', 'ENSG00000080824', 'ENSG00000085224', 'ENSG00000087086', 'ENSG00000100030']
+   K ['15', '17', '27', '29', '4', '48', '5', '50', '7']
+   n_spots ['10857', '23307', '25796', '3003', '32890', '3453', '47554', '4987', '5629', '5896', '73813']
+   finite ['True']
+coverage cols ['coverage']
+by-gene recompute vs inst_by_center: max abs diff 1.1102230246251565e-16 rows 336 unmatched 72
+             task    encoder  scale         arm  alpha  median_center  n_centers     S0006
+0  kidney__Visium  E_posthoc  log1p  hcp_center    0.2       1.000000          5  0.996803
+1  kidney__Visium  E_posthoc  log1p   hcp_donor    0.2       0.932581          5  0.629571
+2  kidney__Visium          P  log1p  hcp_center    0.2       1.000000          5  0.997920
+3  kidney__Visium          P  log1p   hcp_donor    0.2       0.928051          5  0.581889
+4  kidney__Visium     uni_v2  log1p  hcp_center    0.2       1.000000          5  0.998937
+5  kidney__Visium     uni_v2  log1p   hcp_donor    0.2       0.905667          5  0.655210
+               task    encoder  scale         arm  alpha center_unit  cov_median_gene
+216  kidney__Visium  E_posthoc  log1p  hcp_center    0.2       S0006         0.996803
+217  kidney__Visium  E_posthoc  log1p  hcp_center    0.2       S0014         1.000000
+218  kidney__Visium  E_posthoc  log1p  hcp_center    0.2       S0171         1.000000
+219  kidney__Visium  E_posthoc  log1p  hcp_center    0.2       S0175         1.000000
+220  kidney__Visium  E_posthoc  log1p  hcp_center    0.2       S0249         1.000000
+226  kidney__Visium  E_posthoc  log1p   hcp_donor    0.2       S0006         0.629571
+227  kidney__Visium  E_posthoc  log1p   hcp_donor    0.2       S0014         0.932581
+228  kidney__Visium  E_posthoc  log1p   hcp_donor    0.2       S0171         0.976856
+229  kidney__Visium  E_posthoc  log1p   hcp_donor    0.2       S0175         0.963677
+230  kidney__Visium  E_posthoc  log1p   hcp_donor    0.2       S0249         0.891706
+256  kidney__Visium          P  log1p  hcp_center    0.2       S0006         0.997920
+257  kidney__Visium          P  log1p  hcp_center    0.2       S0014         1.000000
+258  kidney__Visium          P  log1p  hcp_center    0.2       S0171         1.000000
+259  kidney__Visium          P  log1p  hcp_center    0.2       S0175         1.000000
+260  kidney__Visium          P  log1p  hcp_center    0.2       S0249         1.000000
+266  kidney__Visium          P  log1p   hcp_donor    0.2       S0006         0.581889
+267  kidney__Visium          P  log1p   hcp_donor    0.2       S0014         0.928051
+268  kidney__Visium          P  log1p   hcp_donor    0.2       S0171         0.971029
+269  kidney__Visium          P  log1p   hcp_donor    0.2       S0175         0.951775
+270  kidney__Visium          P  log1p   hcp_donor    0.2       S0249         0.870251
+296  kidney__Visium     uni_v2  log1p  hcp_center    0.2       S0006         0.998937
+297  kidney__Visium     uni_v2  log1p  hcp_center    0.2       S0014         1.000000
+298  kidney__Visium     uni_v2  log1p  hcp_center    0.2       S0171         1.000000
+299  kidney__Visium     uni_v2  log1p  hcp_center    0.2       S0175         1.000000
+300  kidney__Visium     uni_v2  log1p  hcp_center    0.2       S0249         1.000000
+306  kidney__Visium     uni_v2  log1p   hcp_donor    0.2       S0006         0.655210
+307  kidney__Visium     uni_v2  log1p   hcp_donor    0.2       S0014         0.905667
+308  kidney__Visium     uni_v2  log1p   hcp_donor    0.2       S0171         0.964868
+309  kidney__Visium     uni_v2  log1p   hcp_donor    0.2       S0175         0.939467
+310  kidney__Visium     uni_v2  log1p   hcp_donor    0.2       S0249         0.845573

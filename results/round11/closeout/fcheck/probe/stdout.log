@@ -1,0 +1,202 @@
+== /work/users/w/e/weiyang/hest_replication/results/round11/closeout/a6/donor/kidney__Visium__P/regimeA/regimeA_cells.parquet rows 15600 ncols 23
+cols (first 40): ['task', 'encoder', 'scale', 'estimand', 'gene', 'G', 'n', 'arm', 'variance', 'R', 'theta', 'bias', 'mcse_bias', 'sd', 'rmse', 'coverage', 'coverage_se', 'coverage_formed', 'frac_no_interval', 'mean_width', 'median_width', 'ev_over_var', 'frac_v_neg']
+cols (last 10): ['sd', 'rmse', 'coverage', 'coverage_se', 'coverage_formed', 'frac_no_interval', 'mean_width', 'median_width', 'ev_over_var', 'frac_v_neg']
+             task encoder  scale estimand             gene   G  n              arm variance      R     theta      bias  mcse_bias        sd      rmse  coverage  coverage_se  coverage_formed  frac_no_interval  mean_width  median_width  ev_over_var  \
+0  kidney__Visium  uni_v2  log1p       mu  ENSG00000019582  51  4        classical      fpc  20000  2.732885 -0.008199   0.003281  0.464054  0.464126   0.89430     0.002174          0.89430               0.0    1.994327      1.865037     0.993891   
+1  kidney__Visium  uni_v2  log1p       mu  ENSG00000019582  51  4  classical_nofpc    nofpc  20000  2.732885 -0.008199   0.003281  0.464054  0.464126   0.90090     0.002113          0.90090               0.0    2.077460      1.942780     1.078477   
+2  kidney__Visium  uni_v2  log1p       mu  ENSG00000019582  51  4             fix1      fpc  20000  2.732885 -0.002895   0.002246  0.317578  0.317591   0.90665     0.002057          0.90665               0.0    1.365355      1.287626     0.992499   
+
+   frac_v_neg  
+0         0.0  
+1         0.0  
+2         0.0  
+== /work/users/w/e/weiyang/hest_replication/results/round11/closeout/a6/donor/CCRCC__P/regimeA/regimeA_cells.parquet rows 15600 ncols 23
+cols (first 40): ['task', 'encoder', 'scale', 'estimand', 'gene', 'G', 'n', 'arm', 'variance', 'R', 'theta', 'bias', 'mcse_bias', 'sd', 'rmse', 'coverage', 'coverage_se', 'coverage_formed', 'frac_no_interval', 'mean_width', 'median_width', 'ev_over_var', 'frac_v_neg']
+cols (last 10): ['sd', 'rmse', 'coverage', 'coverage_se', 'coverage_formed', 'frac_no_interval', 'mean_width', 'median_width', 'ev_over_var', 'frac_v_neg']
+    task encoder  scale estimand   gene   G  n              arm variance      R     theta      bias  mcse_bias        sd      rmse  coverage  coverage_se  coverage_formed  frac_no_interval  mean_width  median_width  ev_over_var  frac_v_neg
+0  CCRCC  uni_v2  log1p       mu  AKAP8  24  4        classical      fpc  20000  0.392247 -0.000229   0.001059  0.149736  0.149736   0.84575     0.002554          0.84575               0.0    0.522177      0.350906     1.002794         0.0
+1  CCRCC  uni_v2  log1p       mu  AKAP8  24  4  classical_nofpc    nofpc  20000  0.392247 -0.000229   0.001059  0.149736  0.149736   0.87005     0.002378          0.87005               0.0    0.572016      0.384398     1.203353         0.0
+2  CCRCC  uni_v2  log1p       mu  AKAP8  24  4             fix1      fpc  20000  0.392247 -0.000340   0.001042  0.147337  0.147337   0.89910     0.002130          0.89910               0.0    0.536079      0.377264     1.019328         0.0
+== /work/users/w/e/weiyang/hest_replication/results/round11/closeout/a6/donor/kidney__Visium__P/cv/cluster_values__kidney__Visium.parquet rows 19800 ncols 11
+cols (first 40): ['task', 'encoder', 'scale', 'estimand', 'gene', 'donor', 'n_spots', 'n_a', 'n_b', 'z', 'f']
+cols (last 10): ['encoder', 'scale', 'estimand', 'gene', 'donor', 'n_spots', 'n_a', 'n_b', 'z', 'f']
+             task encoder  scale estimand             gene       donor  n_spots   n_a  n_b         z         f
+0  kidney__Visium  uni_v2  log1p       mu  ENSG00000087086  S0006:INT1     1032  1032    0  3.433431  3.337853
+1  kidney__Visium  uni_v2  log1p       mu  ENSG00000075624  S0006:INT1     1032  1032    0  2.492672  3.006047
+2  kidney__Visium  uni_v2  log1p       mu  ENSG00000166710  S0006:INT1     1032  1032    0  2.928919  3.434653
+== /work/users/w/e/weiyang/hest_replication/results/round11/closeout/a6/donor/CCRCC__P/cv/cluster_values__CCRCC.parquet rows 9500 ncols 11
+cols (first 40): ['task', 'encoder', 'scale', 'estimand', 'gene', 'donor', 'n_spots', 'n_a', 'n_b', 'z', 'f']
+cols (last 10): ['encoder', 'scale', 'estimand', 'gene', 'donor', 'n_spots', 'n_a', 'n_b', 'z', 'f']
+    task encoder  scale estimand   gene donor  n_spots   n_a  n_b         z         f
+0  CCRCC  uni_v2  log1p       mu  AKAP8  INT1     1032  1032    0  0.158207  0.449023
+1  CCRCC  uni_v2  log1p       mu  BLVRB  INT1     1032  1032    0  0.602557  0.476890
+2  CCRCC  uni_v2  log1p       mu   BTF3  INT1     1032  1032    0  0.987908  0.868813
+== /work/users/w/e/weiyang/hest_replication/results/round11/closeout/a6/donor/CCRCC__P/join_log1p/b1_predictions__CCRCC__uni_v2.parquet rows 73813 ncols 109
+cols (first 40): ['sample_id', 'barcode', 'donor_id', 'donor_id_audit', 'fold', 'joined', 'area_mean', 'm_std', 'frac_neoplastic', 'y__AKAP8', 'f__AKAP8', 'y__BLVRB', 'f__BLVRB', 'y__BTF3', 'f__BTF3', 'y__CD109', 'f__CD109', 'y__CD14', 'f__CD14', 'y__CHST15', 'f__CHST15', 'y__CIB1', 'f__CIB1', 'y__CKB', 'f__CKB', 'y__CPD', 'f__CPD', 'y__CPE', 'f__CPE', 'y__DERL1', 'f__DERL1', 'y__DNAJB12', 'f__DNAJB12', 'y__EGFL7', 'f__EGFL7', 'y__FLNB', 'f__FLNB', 'y__GADD45B', 'f__GADD45B', 'y__GPNMB']
+cols (last 10): ['y__TMEM91', 'f__TMEM91', 'y__TP53INP1', 'f__TP53INP1', 'y__TRBC1', 'f__TRBC1', 'y__VMP1', 'f__VMP1', 'y__YWHAE', 'f__YWHAE']
+  sample_id             barcode donor_id donor_id_audit  fold  joined   area_mean     m_std  frac_neoplastic
+0      INT1  AAACAGAGCGACTCCT-1     INT1           INT1  INT1    True  178.294922 -0.219440         0.507246
+1      INT1  AAACCACTACACAGAT-1     INT1           INT1  INT1    True  145.309570 -0.673614         0.089286
+2      INT1  AAACGACAGTCTTGCC-1     INT1           INT1  INT1    True  156.809431 -0.515273         0.190476
+== /work/users/w/e/weiyang/hest_replication/results/round11/closeout/predict/kidney__Visium__P__donor/pred__kidney__Visium__uni_v2__ring1__ridgecv__donor.parquet rows 114137 ncols 207
+cols (first 40): ['sample_id', 'barcode', 'donor_id', 'center_id', 'fold', 'lib_size', 'n_detected', 'y_log1p__ENSG00000087086', 'f_log1p__ENSG00000087086', 'y_log1p__ENSG00000075624', 'f_log1p__ENSG00000075624', 'y_log1p__ENSG00000166710', 'f_log1p__ENSG00000166710', 'y_log1p__ENSG00000163453', 'f_log1p__ENSG00000163453', 'y_log1p__ENSG00000205542', 'f_log1p__ENSG00000205542', 'y_log1p__ENSG00000167996', 'f_log1p__ENSG00000167996', 'y_log1p__ENSG00000136156', 'f_log1p__ENSG00000136156', 'y_log1p__ENSG00000019582', 'f_log1p__ENSG00000019582', 'y_log1p__ENSG00000150991', 'f_log1p__ENSG00000150991', 'y_log1p__ENSG00000197956', 'f_log1p__ENSG00000197956', 'y_log1p__ENSG00000137731', 'f_log1p__ENSG00000137731', 'y_log1p__ENSG00000026025', 'f_log1p__ENSG00000026025', 'y_log1p__ENSG00000117984', 'f_log1p__ENSG00000117984', 'y_log1p__ENSG00000221983', 'f_log1p__ENSG00000221983', 'y_log1p__ENSG00000197746', 'f_log1p__ENSG00000197746', 'y_log1p__ENSG00000167658', 'f_log1p__ENSG00000167658', 'y_log1p__ENSG00000118785']
+cols (last 10): ['y_lognorm__ENSG00000120885', 'f_lognorm__ENSG00000120885', 'y_lognorm__ENSG00000163191', 'f_lognorm__ENSG00000163191', 'y_lognorm__ENSG00000110955', 'f_lognorm__ENSG00000110955', 'y_lognorm__ENSG00000080824', 'f_lognorm__ENSG00000080824', 'y_lognorm__ENSG00000164692', 'f_lognorm__ENSG00000164692']
+  sample_id             barcode    donor_id center_id        fold  lib_size  n_detected
+0      INT1  AAACAGAGCGACTCCT-1  S0006:INT1     S0006  S0006:INT1    9904.0        3638
+1      INT1  AAACCACTACACAGAT-1  S0006:INT1     S0006  S0006:INT1    4568.0        1926
+2      INT1  AAACGACAGTCTTGCC-1  S0006:INT1     S0006  S0006:INT1    2169.0        1122
+== /work/users/w/e/weiyang/hest_replication/results/round11/closeout/predict/kidney__Visium__P__center/pred__kidney__Visium__uni_v2__ring1__ridgecv__center.parquet rows 114137 ncols 207
+cols (first 40): ['sample_id', 'barcode', 'donor_id', 'center_id', 'fold', 'lib_size', 'n_detected', 'y_log1p__ENSG00000087086', 'f_log1p__ENSG00000087086', 'y_log1p__ENSG00000075624', 'f_log1p__ENSG00000075624', 'y_log1p__ENSG00000166710', 'f_log1p__ENSG00000166710', 'y_log1p__ENSG00000163453', 'f_log1p__ENSG00000163453', 'y_log1p__ENSG00000205542', 'f_log1p__ENSG00000205542', 'y_log1p__ENSG00000167996', 'f_log1p__ENSG00000167996', 'y_log1p__ENSG00000136156', 'f_log1p__ENSG00000136156', 'y_log1p__ENSG00000019582', 'f_log1p__ENSG00000019582', 'y_log1p__ENSG00000150991', 'f_log1p__ENSG00000150991', 'y_log1p__ENSG00000197956', 'f_log1p__ENSG00000197956', 'y_log1p__ENSG00000137731', 'f_log1p__ENSG00000137731', 'y_log1p__ENSG00000026025', 'f_log1p__ENSG00000026025', 'y_log1p__ENSG00000117984', 'f_log1p__ENSG00000117984', 'y_log1p__ENSG00000221983', 'f_log1p__ENSG00000221983', 'y_log1p__ENSG00000197746', 'f_log1p__ENSG00000197746', 'y_log1p__ENSG00000167658', 'f_log1p__ENSG00000167658', 'y_log1p__ENSG00000118785']
+cols (last 10): ['y_lognorm__ENSG00000120885', 'f_lognorm__ENSG00000120885', 'y_lognorm__ENSG00000163191', 'f_lognorm__ENSG00000163191', 'y_lognorm__ENSG00000110955', 'f_lognorm__ENSG00000110955', 'y_lognorm__ENSG00000080824', 'f_lognorm__ENSG00000080824', 'y_lognorm__ENSG00000164692', 'f_lognorm__ENSG00000164692']
+  sample_id             barcode    donor_id center_id   fold  lib_size  n_detected
+0      INT1  AAACAGAGCGACTCCT-1  S0006:INT1     S0006  S0006    9904.0        3638
+1      INT1  AAACCACTACACAGAT-1  S0006:INT1     S0006  S0006    4568.0        1926
+2      INT1  AAACGACAGTCTTGCC-1  S0006:INT1     S0006  S0006    2169.0        1122
+== /work/users/w/e/weiyang/hest_replication/results/round11/closeout/a6/inst/center_v1/inst_by_gene.parquet rows 16800 ncols 12
+cols (first 40): ['task', 'encoder', 'scale', 'arm', 'alpha', 'center_unit', 'gene', 'K', 'n_spots', 'coverage', 'width', 'finite']
+cols (last 10): ['scale', 'arm', 'alpha', 'center_unit', 'gene', 'K', 'n_spots', 'coverage', 'width', 'finite']
+             task encoder  scale         arm  alpha center_unit             gene  K  n_spots  coverage     width  finite
+0  kidney__Visium  uni_v2  log1p  hcp_center    0.2       S0006  ENSG00000087086  4    73813  0.994689  8.902780    True
+1  kidney__Visium  uni_v2  log1p  hcp_center    0.2       S0006  ENSG00000075624  4    73813  0.999770  7.993779    True
+2  kidney__Visium  uni_v2  log1p  hcp_center    0.2       S0006  ENSG00000166710  4    73813  0.993876  8.104023    True
+== /work/users/w/e/weiyang/hest_replication/results/round11/closeout/a6/conformal/kidney__Visium__P__donor/pergene__P__kidney__Visium.parquet rows 15600 ncols 22
+cols (first 40): ['task', 'label_set', 'encoder', 'design', 'fold', 'repeat', 'cal_draw', 'score', 'calibration_unit', 'slide', 'gene', 'n_test', 'n_covered', 'coverage', 'width_mean', 'interval_score', 'miss_above', 'miss_below', 'q_alpha_reported', 'q_alpha_stored', 'slide_ge_min_spots', 'quantile_infinite']
+cols (last 10): ['n_covered', 'coverage', 'width_mean', 'interval_score', 'miss_above', 'miss_below', 'q_alpha_reported', 'q_alpha_stored', 'slide_ge_min_spots', 'quantile_infinite']
+             task       label_set encoder design        fold  repeat  cal_draw score calibration_unit slide                   gene  n_test  n_covered  coverage  width_mean  interval_score  miss_above  miss_below  q_alpha_reported  q_alpha_stored  \
+0  kidney__Visium  corpus_donor_P       P  donor  S0006:INT1      -1         0   abs            donor  INT1  log1p|ENSG00000087086    1032       1001  0.969961    3.129367        3.356666         0.0    0.030039          1.564684        1.195106   
+1  kidney__Visium  corpus_donor_P       P  donor  S0006:INT1      -1         0   abs            donor  INT1  log1p|ENSG00000075624    1032        911  0.882752    3.118349        4.092763         0.0    0.117248          1.559174        1.157877   
+2  kidney__Visium  corpus_donor_P       P  donor  S0006:INT1      -1         0   abs            donor  INT1  log1p|ENSG00000166710    1032        968  0.937984    4.067145        4.637854         0.0    0.062016          2.033572        1.399359   
+
+   slide_ge_min_spots  quantile_infinite  
+0                True              False  
+1                True              False  
+2                True              False  
+task ['kidney__Visium']
+encoder ['uni_v2']
+scale ['log1p', 'lognorm']
+estimand ['mu', 'theta3']
+gene ['ENSG00000019582', 'ENSG00000026025', 'ENSG00000074800', 'ENSG00000075624', 'ENSG00000080824', 'ENSG00000087086', 'ENSG00000101439', 'ENSG00000106211', 'ENSG00000108518', 'ENSG00000110651', 'ENSG00000110955', 'ENSG00000111341', 'ENSG00000113140', 'ENSG00000115461', 'ENSG00000117984', 'ENSG00000118785', 'ENSG00000120885', 'ENSG00000124172', 'ENSG00000125148', 'ENSG00000127184', 'ENSG00000135404', 'ENSG00000136156', 'ENSG00000137731', 'ENSG00000139644', 'ENSG00000140264', 'ENSG00000142089', 'ENSG00000142192', 'ENSG00000143153', 'ENSG00000150991', 'ENSG00000163191']
+G ['51']
+n ['16', '4', '8']
+arm ['bh', 'bh_t', 'bh_t_fpc', 'classical', 'classical_nofpc', 'ctrl_const_fix1', 'ctrl_perm_fix1', 'ctrl_perm_xf2_r5', 'fix1', 'fix1_nofpc', 'xf2_fix1', 'xf2_ols', 'xf2_r5', 'xf2_r5_nofpc']
+variance ['V', 'V_cons', 'V_max', 'V_w', 'fpc', 'nofpc', 'own']
+R ['20000']
+cv task 1 ['kidney__Visium']
+cv encoder 1 ['uni_v2']
+cv scale 2 ['log1p', 'lognorm']
+cv estimand 4 ['mu', 'theta1', 'theta2', 'theta3']
+cv gene 50 ['ENSG00000019582', 'ENSG00000026025', 'ENSG00000074800', 'ENSG00000075624', 'ENSG00000080824', 'ENSG00000087086', 'ENSG00000101439', 'ENSG00000106211', 'ENSG00000108518', 'ENSG00000110651']
+cv donor 51 ['S0006:INT1', 'S0006:INT10', 'S0006:INT11', 'S0006:INT12', 'S0006:INT13', 'S0006:INT14', 'S0006:INT15', 'S0006:INT16', 'S0006:INT17', 'S0006:INT18']
+inst task ['brain__Visium', 'kidney__Visium']
+inst encoder ['E_posthoc', 'P', 'uni_v2']
+inst scale ['log1p', 'lognorm']
+inst arm ['hcp_center', 'hcp_donor']
+inst alpha ['0.16666666666666666', '0.2', '0.25']
+inst center_unit ['S0006', 'S0014', 'S0032', 'S0166', 'S0171', 'S0173', 'S0175', 'S0231', 'S0235', 'S0249', 'S0251']
+inst gene ['ENSG00000002330', 'ENSG00000010810', 'ENSG00000019582', 'ENSG00000026025', 'ENSG00000041982', 'ENSG00000043355', 'ENSG00000067560', 'ENSG00000068078', 'ENSG00000072110', 'ENSG00000074800', 'ENSG00000075624', 'ENSG00000080824']
+inst K ['15', '17', '27', '29', '4', '48', '5', '50', '7']
+inst n_spots ['10857', '23307', '25796', '3003', '32890', '3453', '47554', '4987', '5629', '5896', '73813']
+inst finite ['True']
+ibc task ['brain__Visium', 'kidney__Visium']
+ibc encoder ['E_posthoc', 'P', 'uni_v2']
+ibc scale ['log1p', 'lognorm']
+ibc arm ['hcp_center', 'hcp_donor']
+ibc alpha ['0.1666666666666666', '0.2', '0.25']
+ibc center_unit ['S0006', 'S0014', 'S0032', 'S0166', 'S0171', 'S0173', 'S0175', 'S0231', 'S0235', 'S0249', 'S0251']
+CCRCC__E__donor/a1_by_task__E__CCRCC__log1p.csv
+CCRCC__E__donor/a1_by_task__E__CCRCC__lognorm.csv
+CCRCC__E__random/a1_by_task__E__CCRCC__log1p.csv
+CCRCC__E__random/a1_by_task__E__CCRCC__lognorm.csv
+CCRCC__P__donor_v2/a1_by_task__P__CCRCC__log1p.csv
+CCRCC__P__donor_v2/a1_by_task__P__CCRCC__lognorm.csv
+CCRCC__P__random/a1_by_task__P__CCRCC__log1p.csv
+CCRCC__P__random/a1_by_task__P__CCRCC__lognorm.csv
+CCRCC__R10__donor/a1_by_task__R10__CCRCC__log1p.csv
+CCRCC__R10__donor/a1_by_task__R10__CCRCC__lognorm.csv
+CCRCC__R10__random/a1_by_task__R10__CCRCC__log1p.csv
+CCRCC__R10__random/a1_by_task__R10__CCRCC__lognorm.csv
+INDIANA_KIDNEY__E__donor/a1_by_task__E__INDIANA_KIDNEY__log1p.csv
+INDIANA_KIDNEY__E__donor/a1_by_task__E__INDIANA_KIDNEY__lognorm.csv
+INDIANA_KIDNEY__E__random/a1_by_task__E__INDIANA_KIDNEY__log1p.csv
+INDIANA_KIDNEY__E__random/a1_by_task__E__INDIANA_KIDNEY__lognorm.csv
+INDIANA_KIDNEY__E__slide_out/a1_by_task__E__INDIANA_KIDNEY__log1p.csv
+INDIANA_KIDNEY__E__slide_out/a1_by_task__E__INDIANA_KIDNEY__lognorm.csv
+INDIANA_KIDNEY__P__donor/a1_by_task__P__INDIANA_KIDNEY__log1p.csv
+INDIANA_KIDNEY__P__donor/a1_by_task__P__INDIANA_KIDNEY__lognorm.csv
+INDIANA_KIDNEY__P__random/a1_by_task__P__INDIANA_KIDNEY__log1p.csv
+INDIANA_KIDNEY__P__random/a1_by_task__P__INDIANA_KIDNEY__lognorm.csv
+INDIANA_KIDNEY__P__slide_out/a1_by_task__P__INDIANA_KIDNEY__log1p.csv
+INDIANA_KIDNEY__P__slide_out/a1_by_task__P__INDIANA_KIDNEY__lognorm.csv
+INDIANA_KIDNEY__R10__donor/a1_by_task__R10__INDIANA_KIDNEY__log1p.csv
+INDIANA_KIDNEY__R10__donor/a1_by_task__R10__INDIANA_KIDNEY__lognorm.csv
+INDIANA_KIDNEY__R10__random/a1_by_task__R10__INDIANA_KIDNEY__log1p.csv
+INDIANA_KIDNEY__R10__random/a1_by_task__R10__INDIANA_KIDNEY__lognorm.csv
+INDIANA_KIDNEY__R10__slide_out/a1_by_task__R10__INDIANA_KIDNEY__log1p.csv
+INDIANA_KIDNEY__R10__slide_out/a1_by_task__R10__INDIANA_KIDNEY__lognorm.csv
+LUNG_XENIUM__E__donor/a1_by_task__E__LUNG_XENIUM__log1p.csv
+LUNG_XENIUM__E__donor/a1_by_task__E__LUNG_XENIUM__lognorm.csv
+LUNG_XENIUM__E__random/a1_by_task__E__LUNG_XENIUM__log1p.csv
+LUNG_XENIUM__E__random/a1_by_task__E__LUNG_XENIUM__lognorm.csv
+LUNG_XENIUM__E__slide_out/a1_by_task__E__LUNG_XENIUM__log1p.csv
+LUNG_XENIUM__E__slide_out/a1_by_task__E__LUNG_XENIUM__lognorm.csv
+LUNG_XENIUM__P__donor/a1_by_task__P__LUNG_XENIUM__log1p.csv
+LUNG_XENIUM__P__donor/a1_by_task__P__LUNG_XENIUM__lognorm.csv
+LUNG_XENIUM__P__random/a1_by_task__P__LUNG_XENIUM__log1p.csv
+LUNG_XENIUM__P__random/a1_by_task__P__LUNG_XENIUM__lognorm.csv
+LUNG_XENIUM__P__slide_out/a1_by_task__P__LUNG_XENIUM__log1p.csv
+LUNG_XENIUM__P__slide_out/a1_by_task__P__LUNG_XENIUM__lognorm.csv
+LUNG_XENIUM__R10__donor/a1_by_task__R10__LUNG_XENIUM__log1p.csv
+LUNG_XENIUM__R10__donor/a1_by_task__R10__LUNG_XENIUM__lognorm.csv
+LUNG_XENIUM__R10__random/a1_by_task__R10__LUNG_XENIUM__log1p.csv
+LUNG_XENIUM__R10__random/a1_by_task__R10__LUNG_XENIUM__lognorm.csv
+LUNG_XENIUM__R10__slide_out/a1_by_task__R10__LUNG_XENIUM__log1p.csv
+LUNG_XENIUM__R10__slide_out/a1_by_task__R10__LUNG_XENIUM__lognorm.csv
+anchor_CCRCC_round3/a1_by_task__uni_v2__anchor.csv
+bowel__Visium__E__center/a1_by_task__E_center__bowel__Visium__log1p.csv
+bowel__Visium__E__center/a1_by_task__E_center__bowel__Visium__lognorm.csv
+bowel__Visium__E__donor/a1_by_task__E__bowel__Visium__log1p.csv
+bowel__Visium__E__donor/a1_by_task__E__bowel__Visium__lognorm.csv
+bowel__Visium__E__random/a1_by_task__E__bowel__Visium__log1p.csv
+bowel__Visium__E__random/a1_by_task__E__bowel__Visium__lognorm.csv
+bowel__Visium__E__slide_out/a1_by_task__E__bowel__Visium__log1p.csv
+bowel__Visium__E__slide_out/a1_by_task__E__bowel__Visium__lognorm.csv
+bowel__Visium__P__center/a1_by_task__P_center__bowel__Visium__log1p.csv
+bowel__Visium__P__center/a1_by_task__P_center__bowel__Visium__lognorm.csv
+bowel__Visium__P__donor/a1_by_task__P__bowel__Visium__log1p.csv
+bowel__Visium__P__donor/a1_by_task__P__bowel__Visium__lognorm.csv
+bowel__Visium__P__random/a1_by_task__P__bowel__Visium__log1p.csv
+bowel__Visium__P__random/a1_by_task__P__bowel__Visium__lognorm.csv
+bowel__Visium__P__slide_out/a1_by_task__P__bowel__Visium__log1p.csv
+bowel__Visium__P__slide_out/a1_by_task__P__bowel__Visium__lognorm.csv
+bowel__Visium__R10__center/a1_by_task__R10_center__bowel__Visium__log1p.csv
+bowel__Visium__R10__center/a1_by_task__R10_center__bowel__Visium__lognorm.csv
+bowel__Visium__R10__donor/a1_by_task__R10__bowel__Visium__log1p.csv
+bowel__Visium__R10__donor/a1_by_task__R10__bowel__Visium__lognorm.csv
+bowel__Visium__R10__random/a1_by_task__R10__bowel__Visium__log1p.csv
+bowel__Visium__R10__random/a1_by_task__R10__bowel__Visium__lognorm.csv
+bowel__Visium__R10__slide_out/a1_by_task__R10__bowel__Visium__log1p.csv
+bowel__Visium__R10__slide_out/a1_by_task__R10__bowel__Visium__lognorm.csv
+kidney__Visium__E__center/a1_by_task__E_center__kidney__Visium__log1p.csv
+kidney__Visium__E__center/a1_by_task__E_center__kidney__Visium__lognorm.csv
+kidney__Visium__E__donor/a1_by_task__E__kidney__Visium__log1p.csv
+kidney__Visium__E__donor/a1_by_task__E__kidney__Visium__lognorm.csv
+kidney__Visium__E__random/a1_by_task__E__kidney__Visium__log1p.csv
+kidney__Visium__E__random/a1_by_task__E__kidney__Visium__lognorm.csv
+kidney__Visium__E__slide_out/a1_by_task__E__kidney__Visium__log1p.csv
+kidney__Visium__E__slide_out/a1_by_task__E__kidney__Visium__lognorm.csv
+kidney__Visium__P__center/a1_by_task__P_center__kidney__Visium__log1p.csv
+kidney__Visium__P__center/a1_by_task__P_center__kidney__Visium__lognorm.csv
+kidney__Visium__P__donor/a1_by_task__P__kidney__Visium__log1p.csv
+kidney__Visium__P__donor/a1_by_task__P__kidney__Visium__lognorm.csv
+kidney__Visium__P__random/a1_by_task__P__kidney__Visium__log1p.csv
+kidney__Visium__P__random/a1_by_task__P__kidney__Visium__lognorm.csv
+kidney__Visium__P__slide_out/a1_by_task__P__kidney__Visium__log1p.csv
+kidney__Visium__P__slide_out/a1_by_task__P__kidney__Visium__lognorm.csv
+kidney__Visium__R10__center/a1_by_task__R10_center__kidney__Visium__log1p.csv
+kidney__Visium__R10__center/a1_by_task__R10_center__kidney__Visium__lognorm.csv
+kidney__Visium__R10__donor/a1_by_task__R10__kidney__Visium__log1p.csv
+kidney__Visium__R10__donor/a1_by_task__R10__kidney__Visium__lognorm.csv
+kidney__Visium__R10__random/a1_by_task__R10__kidney__Visium__log1p.csv
+kidney__Visium__R10__random/a1_by_task__R10__kidney__Visium__lognorm.csv
+kidney__Visium__R10__slide_out/a1_by_task__R10__kidney__Visium__log1p.csv
+kidney__Visium__R10__slide_out/a1_by_task__R10__kidney__Visium__lognorm.csv

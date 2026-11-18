@@ -1,0 +1,12 @@
+group,jobs,states,wall_min_s,wall_max_s,peak_rss_gb,partitions
+A6 pilot,5,{'COMPLETED': np.int64(5)},20,990,8.29,spill
+donor chains,13,{'COMPLETED': np.int64(13)},129,3881,35.88,"hov,spill"
+center predictions,4,{'COMPLETED': np.int64(4)},275,1683,57.88,"hov,spill"
+institution,1,{'COMPLETED': np.int64(1)},133,133,1.91,spill
+conformal R10,15,{'COMPLETED': np.int64(15)},96,5380,7.73,spill
+conformal P,17,"{'COMPLETED': np.int64(16), 'CANCELLED by 375767': np.int64(1)}",726,20875,14.26,"hov,spill"
+conformal E,15,"{'COMPLETED': np.int64(14), 'CANCELLED by 375767': np.int64(1)}",44,9150,32.76,"hov,spill"
+split check,10,{'COMPLETED': np.int64(10)},10,892,1.83,spill
+kidney E pieces+merges,20,{'COMPLETED': np.int64(20)},15,4699,32.54,"hov,spill"
+aggregation v4,1,{'COMPLETED': np.int64(1)},17,17,0.22,spill
+gate bookkeeping,1,{'RUNNING': np.int64(1)},25,25,,spill

@@ -1,0 +1,17 @@
+slurm_job_id: 9670448
+partition: spill
+node: c151401.ll.unc.edu
+start: 2026-11-18T03:30:16Z
+end: 2026-11-18T03:30:19Z
+exit: 0
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python -I /work/users/w/e/weiyang/hest_replication/results/round11/closeout/fcheck/scripts/assemble.py
+PYTHONHASHSEED=0
+script md5: 943d1c4c51b6e1c8cd1939f03e92a2c2  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/fcheck/scripts/assemble.py
+wrapper md5: 6abd0d912b975ee60732ad4a8f81c2cc  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/fcheck/scripts/common.sh
+inputs md5:
+c44da3ffdc14d9ae4297b8a5384cb8b5  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/fcheck/center_v2/fcheck_center_hcp.csv
+e38e2db124250de9f22dc439f37e5a5e  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/fcheck/center_v2/fcheck_center_pearson.csv
+8173d3965e13c27ce8c348a5ed7145bc  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/fcheck/conformal_v2/fcheck_conformal_cells.csv
+6aca63cab96630679e4caf5926dd7a4f  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/fcheck/conformal_v2/fcheck_round3_uni_v2_shortfalls.csv
+2f4c0ad460e0731ee40886c12435d364  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/fcheck/donor/fcheck_d12.csv
+a384962e7130f4adf5cddf1472137a72  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/fcheck/donor/fcheck_donor_cells.csv

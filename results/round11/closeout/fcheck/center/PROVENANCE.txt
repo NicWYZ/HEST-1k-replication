@@ -1,0 +1,22 @@
+slurm_job_id: 9669759
+partition: spill
+node: c151409.ll.unc.edu
+start: 2026-11-18T03:25:58Z
+end: 2026-11-18T03:26:03Z
+exit: 0
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python -I /work/users/w/e/weiyang/hest_replication/results/round11/closeout/fcheck/scripts/center.py
+PYTHONHASHSEED=0
+script md5: 2f89394ef36de747d82676921a5a3d26  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/fcheck/scripts/center.py
+wrapper md5: 6abd0d912b975ee60732ad4a8f81c2cc  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/fcheck/scripts/common.sh
+inputs md5:
+a5f59664091fd893f946ebec00decc8d  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/a6/inst/center_v1/inst_by_center.csv
+ca6e916344ebe186743c89535ec3135b  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/a6/inst/center_v1/inst_by_gene.parquet
+72d685f1c8cbe2785ff4623559e7bb00  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/predict/brain__Visium__E__center/pred__brain__Visium__uni_v2-hoptimus0-virchow2__ring1__r10__center.parquet
+d21c5277f2ac498c70ff2c1613f81d98  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/predict/brain__Visium__P__center/pred__brain__Visium__uni_v2__ring1__ridgecv__center.parquet
+ce824427f16b57d234f9c5a46b2e6ae8  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/predict/brain__Visium__R10__center/pred__brain__Visium__uni_v2__none__r10__center.parquet
+5b1084098452dfe2bdfa17f7e67eaf48  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/predict/kidney__Visium__E__center/pred__kidney__Visium__uni_v2-hoptimus0-virchow2__ring1__r10__center.parquet
+c2437b14ef69065cb83e5b04032bbee4  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/predict/kidney__Visium__E__donor_v2/pred__kidney__Visium__uni_v2-hoptimus0-virchow2__ring1__r10__donor.parquet
+2860436d268c11e934d2937c1f0ff3da  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/predict/kidney__Visium__P__center/pred__kidney__Visium__uni_v2__ring1__ridgecv__center.parquet
+0f1ed90c581e4b31ec725227e884e5f3  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/predict/kidney__Visium__P__donor/pred__kidney__Visium__uni_v2__ring1__ridgecv__donor.parquet
+094b52848570e5bf5543d9cdffb2ca83  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/predict/kidney__Visium__R10__center/pred__kidney__Visium__uni_v2__none__r10__center.parquet
+4a01ead5d905f4bbc52c90647b6d9741  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/predict/kidney__Visium__R10__donor/pred__kidney__Visium__uni_v2__none__r10__donor.parquet

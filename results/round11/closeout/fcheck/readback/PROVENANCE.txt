@@ -1,0 +1,23 @@
+slurm_job_id: 9670428
+partition: spill
+node: c130405.ll.unc.edu
+start: 2026-11-18T03:29:26Z
+end: 2026-11-18T03:29:28Z
+exit: 0
+command: /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python -I /work/users/w/e/weiyang/hest_replication/results/round11/closeout/fcheck/scripts/readback.py
+PYTHONHASHSEED=0
+script md5: ea99cd0a1de3a54d87fd50237d66c799  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/fcheck/scripts/readback.py
+wrapper md5: 6abd0d912b975ee60732ad4a8f81c2cc  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/fcheck/scripts/common.sh
+inputs md5:
+b8cfdeab797abc1f3cfbdd07cb2eb4f9  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/a6/aggregate_v4/a6_anchors.json
+35cc921f2dac1af2601125256ab2f724  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/b1/h1a/b1_h1a_summary.json
+f5b8ffc15c3a3076602d79029c5dc956  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/b1/h1b_h4/b1_h1b_h4_summary.json
+72e54c36014b3f29a32daa1be3ff9bc1  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/b1/h2/b1_h2_summary.json
+5c945ce671e4020a1a5f5bda47fa7181  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/b1/h3/b1_h3_summary.json
+303a563e08488a3a225c96215bb5adc5  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/b1/h5/b1_h5_summary.json
+70f9629016d61b7e296a3afb962ebce0  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/b4/equal_v2/b4_summary.json
+e5bf8a0d0f91d7465a5f18789f8d6569  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/fcheck/ledger/fcheck_ledger_groups.csv
+79e697301c7dabf6f56a46ad74aed0be  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/final/gate_v1/gate_summary.json
+4ebfd5326e3c74f8bb129fb1e28524cd  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/g2/aggregate_v4/g2_p111.json
+d2e6e4469dbf9a0f355994f55991bcb9  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/g2/aggregate_v4/g2_strength.csv
+614d8fceee37cb8bfdb59139e9f23c92  /work/users/w/e/weiyang/hest_replication/results/round11/closeout/g2/gate_v2/b1_width_ratio_medians.csv
