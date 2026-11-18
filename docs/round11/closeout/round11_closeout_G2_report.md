@@ -25,7 +25,7 @@ Every job ran on Longleaf from a read-only `git archive` snapshot of a commit on
 | B5 | `b5/withinvar_v1` | `round11_closeout_b5_withinvar.py` | 9471875 | `cd54e3a9` |
 | B6 | `b6/stored_v1` | `round11_closeout_b6_stored.py` | 9470328 | `e09a9cf4` |
 | B7 | `b7/ledger_v2` | `round11_closeout_b7_ledger.py` | 9495763 | `5d7985b0` |
-| G2 | `g2/aggregate_v4`, `g2/gate_v2` | `round11_closeout_g2_aggregate.py`, `round11_closeout_gate.py` | 9527059, GATE_JOB | `6bef22b2`, GATE_COMMIT |
+| G2 | `g2/aggregate_v4`, `g2/gate_v2` | `round11_closeout_g2_aggregate.py`, `round11_closeout_gate.py` | 9527059, 9527777 | `6bef22b2`, `b915b76d` |
 
 Script md5s are in each `PROVENANCE.txt` and are checked against their commits in `provenance_index.csv`. Two runs were superseded and are not scored: B4 v1 (Slurm 9471874), whose keys left out `estimand`, and B7 v1 (9469936), which read the harness's `job.sh` but not its `cmd.sh` (plan, section 5). The first kidney `E` run (9503521) was too slow for its limit and was rerun as 9518165. The CCRCC chain's first submission (9472778) was cancelled by the session before its join step, which would have refused the 407 spots without a corpus embedding.
 

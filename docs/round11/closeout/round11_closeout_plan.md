@@ -1,15 +1,15 @@
 # Round 11, track `closeout`, the plan
 
 ```state
-updated: 2026-11-17, 16:35 (third session of track closeout; stopped, see next)
+updated: 2026-11-17, 22:25 (fourth session of track closeout)
 unit: closeout
 project_id: proj_8450e231133d
 frame_id: c9016697-c909-435e-82fc-ebfb9daaa857
-step: A6 nearly done: at 16:29 on 17 November every A6 conformal job was running or finished, none pending on priority; running: kidney P donor 9530286 (4 h 26 min of 15 h), kidney P slide_out 9530287, kidney E random 9530301, bowel E donor 9530305 and slide_out 9530306, kidney E donor pieces 9609687, 9609689, 9609691, 9609693, 9609696 and all eight kidney E slide_out pieces 9609698 to 9609705; merges 9609697 and 9609706 waiting on their pieces; the split check passed (section 6, QUEUE); A6.0 to A6.3 and B2 scored in section 4 and 5; A7 done
-last_run: A6 pilot 9529112 to 9529116, all COMPLETED except the round 3 conformal anchor 9529113, still running at submission of the rest
-jobs: A6 9530242 to 9530308 from 1fbbcd97 (9530278 rerun as 9544479; 9530302 and 9530303 cancelled for the split, section 6 and 7), list in a6_submitted_jobs.txt; split from 02b16d24: check 9609677 to 9609686 (LUNG_XENIUM R10 donor and slide_out in 3 pieces, merge, compare), kidney E donor pieces 9609687 to 9609696 and merge 9609697, kidney E slide_out pieces 9609698 to 9609705 and merge 9609706, list in _slurm/a6_split_submitted_02b16d24.txt on Longleaf
-next: the session stopped at 16:35 because the machine it works from ran low on memory and its delayed queue read was stopped by Claude Code; nothing on Longleaf is affected. The next session reads the queue once (squeue -u weiyang; sacct from 2026-11-17T15:30), and when every job has finished checks the two merges (a6/conformal/kidney__Visium__E__{donor,slide_out}/stdout.log, [merge] done and 153 and 156 fits), adds the split jobs to the job ledger, runs code/scripts/round11_closeout_a6_aggregate.py as a job (provisional run a6/aggregate_v3 holds everything else), scores A6.4, then the final report, the fresh check, the sweep and G-final; no watcher, one sub-agent at most
-waiting: none (QUEUE answered 17 November 15:25, section 6; ten pending limits lowered at 15:31)
+step: A6 runs finished. At 22:03 on 17 November every A6 job had COMPLETED (sacct), apart from the three cancellations of section 7; both merges wrote "[merge] done" with 153 (kidney E donor) and 156 (kidney E slide_out) fits. The final aggregation a6/aggregate_v4 (Slurm 9665851, snapshot 02b16d24, whose aggregator equals 108870f8's) was submitted at 22:05 and its limits lowered in place to 10 min and 8 GB (sibling 9572837: 21 s, 320 MB)
+last_run: every A6 conformal job, and the split check, which passed (section 6, QUEUE)
+jobs: aggregation 9665851, pending; A6 9530242 to 9530308 and 9544479 (list in results/round11/closeout/a6_submitted_jobs.txt) and split 9609677 to 9609706, all finished
+next: when 9665851 finishes, check that v4's donor-level, center and D12 tables agree with v3's, commit v4's tables under results/round11/closeout/a6/aggregate_v4/, score A6.0 (d) and (e) and A6.4, then the gate bookkeeping job (it takes the split jobs into the ledger), the final report, the fresh check, the sweep and G-final
+waiting: none
 ```
 
 *Written on 16 November 2026 by the first session of track `closeout` (frame above). The brief is `docs/round11/closeout/round11_closeout_brief.md` on `main`, read at `7ff4e2fc`, with `docs/round11/masterplan.md` at the same commit and `docs/EXECUTION_RULES.md` as it stands there. The branch starts from `7ff4e2fc`. This plan links the brief and does not copy it.*
