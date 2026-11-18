@@ -1,0 +1,87 @@
+{
+ "A6.0a": {
+  "random": {
+   "value": 0.8830176250299325,
+   "ref": 0.8809874361442861,
+   "diff": 0.0020301888856464334
+  },
+  "donor": {
+   "value": 0.8653727123020528,
+   "ref": 0.8642708075597048,
+   "diff": 0.0011019047423480588
+  }
+ },
+ "A6.0b": [
+  "selftest ridgecv head against predict.ridgecv_fold: 5.440e-15",
+  "selftest two-scale r10 head against harness fit_base: 1.998e-15",
+  "selftest passed"
+ ],
+ "A6.0c": {
+  "a": "/work/users/w/e/weiyang/hest_replication/results/round11/closeout/a6/donor/CCRCC__R10/predict/pred__CCRCC__uni_v2__none__r10__donor.parquet",
+  "b": "/work/users/w/e/weiyang/hest_replication/results/round11/closeout/anchor/CCRCC__R10_v2/predict/pred__CCRCC__uni_v2__none__r10__donor.parquet",
+  "rows_a": 73813,
+  "rows_b": 73813,
+  "rows_matched": 73813,
+  "f_columns": 100,
+  "max_abs_diff": 0.0,
+  "tol": 1e-10,
+  "passed": true
+ },
+ "A6.0d": [
+  {
+   "task": "kidney__Visium",
+   "estimand": "theta3",
+   "wr": 0.9367495541789168,
+   "wr_ref": 0.9367495541789166,
+   "R2c": 0.19860545785094189,
+   "R2c_ref": 0.1986054578509419,
+   "max_abs_diff": 2.220446049250313e-16
+  },
+  {
+   "task": "kidney__Visium",
+   "estimand": "mu",
+   "wr": 0.763952454643235,
+   "wr_ref": 0.763952454643235,
+   "R2c": 0.41120178760778653,
+   "R2c_ref": 0.4112017876077865,
+   "max_abs_diff": 5.551115123125783e-17
+  },
+  {
+   "task": "bowel__Visium",
+   "estimand": "theta3",
+   "wr": 0.6690551447436934,
+   "wr_ref": 0.6690551447436934,
+   "R2c": 0.6258447692920209,
+   "R2c_ref": 0.6258447692920208,
+   "max_abs_diff": 1.1102230246251565e-16
+  },
+  {
+   "task": "bowel__Visium",
+   "estimand": "mu",
+   "wr": 0.7982082642871589,
+   "wr_ref": 0.7982082642871589,
+   "R2c": 0.37773159385342114,
+   "R2c_ref": 0.3777315938534211,
+   "max_abs_diff": 5.551115123125783e-17
+  }
+ ],
+ "A6.0e": [
+  {
+   "task": "brain__Visium",
+   "median_pearson_log1p": 0.02153111589443147,
+   "ref": 0.0215311158944302,
+   "diff": 1.2698175844150228e-15
+  },
+  {
+   "task": "kidney__Visium",
+   "median_pearson_log1p": 0.12311852127066947,
+   "ref": 0.1231185212706665,
+   "diff": 2.9698465908722937e-15
+  },
+  {
+   "inst_rows_matched": 112,
+   "inst_rows_ours": 112,
+   "inst_max_abs_diff": 5.46229728115577e-14
+  }
+ ]
+}
