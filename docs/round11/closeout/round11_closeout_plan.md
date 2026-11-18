@@ -1,15 +1,15 @@
 # Round 11, track `closeout`, the plan
 
 ```state
-updated: 2026-11-18, 00:40 (fourth session of track closeout)
+updated: 2026-11-18, 01:30 (fourth session of track closeout)
 unit: closeout
 project_id: proj_8450e231133d
 frame_id: c9016697-c909-435e-82fc-ebfb9daaa857
-step: G-final in preparation. The fresh check (frame .../fcheck, Slurm 9669504 to 9670947) recomputed the report's tables: everything agrees at the quoted precision but six slips, all corrected in place; its outputs are in results/round11/closeout/fcheck/. The first sweep (final/sweep_v1, Slurm 9668619) was worked in, with declared exceptions
-last_run: fcheck jobs, all finished
-jobs: the second sweep, final/sweep_v2
-next: when the sweep is clean, fill the report's sweep and pull-request lines, commit, tag round11-closeout-G-final, push branch and tag, open the pull request (gh needs Nicolas to log in: `! gh auth login`), confirm it on GitHub and stop
-waiting: gh login | since 2026-11-18 | the pull request cannot be opened from this session until gh is authenticated (Nicolas)
+step: G-final ready except the pull request. The final report is complete but for its pull-request number (section 9); the fresh check is worked in; the last sweep (final/sweep_v4, Slurm 9671527) verified all 500 claims of the report and 423 of the plan; the gate bookkeeping was rerun as final/gate_v2 (Slurm 9671660; 0 md5 mismatches, 179 jobs)
+last_run: final/gate_v2, Slurm 9671660, COMPLETED
+jobs: none running
+next: once gh is logged in, open the pull request from round11-closeout into main with the body in the session's tmp (or the report's summary), write its number into the report's section 9, sweep once more, commit, tag round11-closeout-G-final, push branch and tag together, confirm the pull request on GitHub, and stop
+waiting: gh login | since 2026-11-18 | gh in the session's machine is not authenticated and the GitHub connector failed, so the pull request cannot be opened (Nicolas: `! gh auth login`, or open it himself)
 ```
 
 *Written on 16 November 2026 by the first session of track `closeout` (frame above). The brief is `docs/round11/closeout/round11_closeout_brief.md` on `main`, read at `7ff4e2fc`, with `docs/round11/masterplan.md` at the same commit and `docs/EXECUTION_RULES.md` as it stands there. The branch starts from `7ff4e2fc`. This plan links the brief and does not copy it.*

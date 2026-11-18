@@ -66,6 +66,8 @@ Wall times are the ledger's `elapsed` and peak memory its largest `max_rss` in t
 
 **Sub-agents.** In this interval, `a7` (frame `c9016697-…/a7`) for the pretraining statements (A7), and the fresh check `fcheck` before this gate (section 8). Before G2: `lit-A`, `lit-B`, `b1` and `g2check` (G2 report, section 2).
 
+**The bookkeeping rerun after the check.** The fresh check's 11 jobs and the four sweeps came after `final/gate_v1`, so the gate script was run again at `6fdb694a` as `final/gate_v2` (Slurm 9671660; `results/round11/closeout/final/gate_v2/gate_summary.json`): 174 provenance files, every snapshot commit an ancestor of `6fdb694a` except the `b1` sub-agent's 6, 0 md5 mismatches, and 179 jobs in its ledger. Its three FAILED jobs beyond `gate_v1`'s eight are the sweeps 9668619, 9671341 and 9671441, which exit 1 while any claim is unresolved; the last sweep (9671527) completed with none. The pull request's commit and the tag descend from `6fdb694a`.
+
 ## 3. Acceptance checks and exit items
 
 | check | criterion | value | file | verdict |
