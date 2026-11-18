@@ -1,14 +1,14 @@
 # Round 11, track `closeout`, the plan
 
 ```state
-updated: 2026-11-17, 22:50 (fourth session of track closeout)
+updated: 2026-11-17, 23:40 (fourth session of track closeout)
 unit: closeout
 project_id: proj_8450e231133d
 frame_id: c9016697-c909-435e-82fc-ebfb9daaa857
-step: Part A and Part B done. Every A6 job finished; the final aggregation a6/aggregate_v4 (Slurm 9665851) is committed under results/round11/closeout/a6/aggregate_v4/ and equals the provisional v3 on every table but the conformal one, which only adds rows; A6.0 to A6.4 and B2 are scored (section 4, 5); A6.4 partly held: the arms do not move conformal coverage, and the donor shortfall is small on these five tasks
-last_run: a6/aggregate_v4, Slurm 9665851, COMPLETED in 17 s
+step: G-final in preparation. Part A and Part B done and scored (section 4, 5); the final report docs/round11/closeout/round11_closeout_report.md is drafted, with placeholders for the fresh check, the sweep and the pull request in its sections 8 and 9; the gate bookkeeping ran as final/gate_v1 (Slurm 9667100, gate commit 1bbbc480; 158 provenance files, 0 md5 mismatches, 164 jobs), committed under results/round11/closeout/final/gate_v1/
+last_run: final/gate_v1, Slurm 9667100, COMPLETED in 31 s
 jobs: none running
-next: the gate bookkeeping job (round11_closeout_gate.py into final/gate_v1, which takes the split jobs into the ledger), the final report docs/round11/closeout/round11_closeout_report.md, the fresh check by one sub-agent, the sweep job, then tag round11-closeout-G-final, push and open the pull request
+next: the fresh check by one sub-agent (frame c9016697-c909-435e-82fc-ebfb9daaa857/fcheck, outputs under fcheck/ on Longleaf) over the report's tables, the sweep as a job over the report and the plan, then fill the placeholders, tag round11-closeout-G-final, push and open the pull request
 waiting: none
 ```
 

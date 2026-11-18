@@ -1,0 +1,24 @@
+{
+ "gate_commit": "1bbbc480df5093c0cb323d5c913b6328bee2f5c1",
+ "provenance_files": 158,
+ "commits_not_ancestor": 6,
+ "files_with_md5_mismatch": 0,
+ "jobs": 163,
+ "jobs_by_state": {
+  "COMPLETED": 150,
+  "FAILED": 8,
+  "CANCELLED": 3,
+  "TIMEOUT": 1,
+  "RUNNING": 1
+ },
+ "snapshots": 24
+}
+Empty DataFrame
+Columns: [provenance, slurm_job_id, partition, status, commit, commit_is_ancestor, scripts, scripts_md5_mismatch]
+Index: []
+             task  genes  median_wr
+0           CCRCC     50   0.878272
+1  INDIANA_KIDNEY     50   0.957355
+2     LUNG_XENIUM    343   0.585458
+3   bowel__Visium     50   0.669055
+4  kidney__Visium     50   0.936750

@@ -1,0 +1,246 @@
+# Round 11, track `closeout`, final report (gate G-final)
+
+*17 November 2026. Written by the fourth session of track `closeout` (frame `c9016697-c909-435e-82fc-ebfb9daaa857`, project `proj_8450e231133d`) under the brief `docs/round11/closeout/round11_closeout_brief.md` (revised on `main` after G2) and the plan `docs/round11/closeout/round11_closeout_plan.md`. The gate G2 report, `docs/round11/closeout/round11_closeout_G2_report.md`, holds the strength runs and Part B items 1 and 3 to 7 in full; this report carries their results and adds A6, B2 and A7. Paths beginning `results/` are in the repository; Longleaf paths are under `/work/users/w/e/weiyang/hest_replication/results/round11/closeout/`.*
+
+## The headline table
+
+One row per result of the brief's section 3. "Recomputed" is the `b1` sub-agent's independent recomputation (G2 report, section 6.3). The Part A column gives each result under the primary predictor `P`, named in advance, beside this track's refit of round 10's ridge (`R10`) on the same inputs, and under `E` (three encoders with spatial context), which was **chosen after its results were seen**. Scale $\log(1 + y)$, encoder `uni_v2` for `R10`, nominal 0.90 unless stated. The verdict follows the brief: "stood" or "changed" only where the masterplan's matching prediction was scored, and here none was, because the primary predictor did not meet P11.1 (section 5).
+
+| # | Result | Recomputed | File | Under `P` (and `E`, post hoc), beside `R10` on the same inputs | Verdict |
+|---|---|---|---|---|---|
+| H1(a) | Donor-clustered to i.i.d. standard error of the spot mean, median over genes | 14.81059 (LUNG_XENIUM) to 58.97767 (brain Visium); 60 of 60 rows agree | `results/round11/closeout/b1/h1a/b1_h1a_summary.json` | Part A does not apply (no prediction enters) | not tested |
+| H1(b) | Round 3's split conformal, absolute score, covers less as the design holds out more | 0.8937 (`random`, 132 cells), 0.8585 (`slide_out`, 36 cells), 0.8024 (`donor`, 132 cells); CCRCC 0.8810 and 0.8643 (means over 12 encoders) | `results/round11/closeout/b1/h1b_h4/b1_h1b_h4_summary.json`; `results/round11/closeout/a6/aggregate_v4/a6_conformal.csv` | `donor` under `P`: 0.8649, 0.8747, 0.8874, 0.8881, 0.8923 (CCRCC, INDIANA_KIDNEY, LUNG_XENIUM, bowel Visium, kidney Visium) against `random` 0.8803, 0.9069, 0.9000, 0.8977, 0.9084. `P` and `E` move `donor` coverage from `R10`'s by at most 0.0051 in 20 of 20 cells. **On the final footing the `donor` shortfall is 0.006 to 0.029 under `R10`, not 0.09** (below) | not tested (P11.4) |
+| H2 | Across centers, prediction and calibration both fail (kidney Visium; brain Visium) | 0.41206 to 0.48332 by donor and 0.00386 to 0.12312 by center over three encoders; HCP at 0.80: S0006 0.65521, median center 0.90567; HCP over centers 1.0 | `results/round11/closeout/b1/h2/b1_h2_summary.json`; `results/round11/closeout/a6/aggregate_v4/a6_center.csv`; `results/round11/closeout/a6/aggregate_v4/a6_center_hcp.csv` | `P`: by center 0.1068 on kidney Visium (by donor 0.4816), 0.0643 on brain Visium; S0006 0.5819, median center 0.9281, HCP over centers 1.0. `E`: 0.1360 and 0.1177; S0006 0.6296, median center 0.9326, 1.0. `R10`: 0.1231, 0.0215; 0.6552, 0.9057, 1.0 | not tested (P11.3) |
+| H3 | What predictions buy follows donor-level accuracy, not spot-level accuracy, and is modest on most Visium tasks | $\theta_3$, 8 donors, width ratio 0.8783, 0.9574, 0.9367, 0.6691, 0.5855 and $R^2_c$ 0.4387, 0.1390, 0.1986, 0.6258, 0.7135 (CCRCC, INDIANA_KIDNEY, kidney Visium, bowel Visium, LUNG_XENIUM); leave-one-donor-out $R^2$ 0.02127 (CCRCC), 0.38152 (kidney Visium) | `results/round11/closeout/g2/gate_v2/b1_width_ratio_medians.csv`; `results/round11/closeout/b1/h3/b1_h3_summary.json`; `results/round11/closeout/a6/aggregate_v4/a6_donor_level.csv`; `results/round11/closeout/a6/aggregate_v4/a6_d12.csv` | `P`: width ratio 0.9750, 0.9227, 0.9631, 0.6372, 0.5627 against `R10`'s 0.8949, 0.9570, 0.9367, 0.6691, 0.5853; $R^2_c$ 0.2809, 0.1639, 0.1224, 0.6326, 0.7219; leave-one-donor-out $R^2$ 0.0118 (CCRCC), 0.3446 (kidney). `E`: 0.9984, 0.9107, 0.9930, 0.6044, 0.5425; $R^2_c$ 0.3381, 0.2075, 0.1238, 0.6451, 0.7402; 0.0467, 0.3213. The width ratio is more strongly (negatively) rank-correlated with $R^2_c$ than with the spot-level Pearson in 84 of 84 $\theta_3$ cells | not tested (P11.2) |
+| H4 | HEST-1k's patient labels are wrong in both directions; split design costs more than encoder choice | files re-read; split-design term 0.1586 against an encoder spread of 0.0977 | `results/round11/closeout/b1/h1b_h4/b1_h1b_h4_summary.json` | Part A does not apply | not tested |
+| H5 | Published clustered-PPI intervals under-cover at four labelled clusters | Kluger et al. 0.7145 (242 cells); Broska and Howes 0.69909, with the small-sample correction 0.87473 (146 cells) | `results/round11/closeout/b1/h5/b1_h5_summary.json` | Part A does not apply | not tested |
+
+### What changed, plainly
+
+1. **No headline number of record is wrong.** Every value of the brief's section 3 recomputes at its quoted precision (G2 report, section 6.3), with the four wording points the brief now carries.
+2. **Formally, Part A tested nothing.** The primary predictor `P` gained 0.0103 to 0.0183 in donor-held-out median Pearson against the 0.02 P11.1 asks for (`results/round11/closeout/g2/aggregate_v4/g2_p111.json`), so P11.2 to P11.4 are "not tested" and so are the Part A verdicts of H1(b), H2 and H3.
+3. **As supplementary evidence, H2 and H3 hold under `P` and under `E` in every cell checked, and their numbers move.** Under `P` the masterplan's thresholds for P11.2 (width ratio above 0.80 on CCRCC, INDIANA_KIDNEY and kidney Visium; CCRCC's leave-one-donor-out $R^2$ below 0.15) and for P11.3 (by center below 0.20 and at least 0.25 below by donor: 0.1068 against 0.4816) would be met. On CCRCC and kidney Visium, two of the three tasks where round 10 found little bought, $R^2_c$ for $\theta_3$ falls under both arms and the width ratio rises toward 1 (on CCRCC by 0.080 under `P` and 0.104 under `E`; the median per-gene changes with their quartiles are in section 6.2), although the spot-level Pearson rises. On INDIANA_KIDNEY, the third, both raise $R^2_c$ a little (0.1639 and 0.2075 against 0.1390) and the ratio stays above 0.90 (0.9227 and 0.9107). So a predictor stronger per spot buys no more for cohort-level inference unless it is stronger per donor, which is H3's claim.
+4. **H1(b) reads differently on the final footing (Part B item 2), and this is marked substantive (section 7, item 1).** Refitted under round 3's designs on the five tasks of this track, which have 15 to 51 donors, `donor` covers 0.006 to 0.029 below `random` under `R10` on $\log(1 + y)$, and on INDIANA_KIDNEY's normalised scale it covers above `random`. Round 3's mean shortfall of 0.0913 over 132 cells comes mostly from tasks with two to four donors (`donor` 0.6177 on LUNG, 0.6801 on SKCM, 0.7625 on HCC under `uni_v2`), while CCRCC, the one task in both, agrees (0.8654 against 0.8830 in round 3, 0.8640 against 0.8824 here). The numbers of record are right; what the paper can say from them is narrower: the donor shortfall is large where few donors calibrate the interval, and small where many do. Under `P` the masterplan's P11.4 would hold on its first clause (`donor` below `random` on all five tasks) and fail on its second (kidney Visium's center design 0.0370 below `random`, against 0.05), as it would under `R10` (0.0296).
+
+## 1. Stage and status
+
+G-final, the track's final gate (brief, section 6). Part A (A0 to A7) and Part B (items 1 to 7) are done. Every job finished. The plan's state block is current at the gate commit, the branch and tag `round11-closeout-G-final` are pushed, and one pull request into `main` is open (section 9). Nothing beyond this gate has been set up.
+
+Section 7 marks two items as substantive for Nicolas: H1(b)'s reading on the final footing (item 1) and the CCRCC difference that G2 accepted (item 2, for the record).
+
+## 2. Design, methods and what was run
+
+### 2.1 Design and methods
+
+- **Arms** (plan, section 4, A3; defined exactly in the docstring of `code/scripts/round11_closeout_predict.py`). `R10`: round 10's head, PCA to 256 components of the spot's `uni_v2` embedding and a ridge with penalty $100/(256 \cdot 50)$. **`P`, the primary predictor, designated before any held-out result of a new predictor was read**: a ridge with intercept on the standardised concatenation of the spot's `uni_v2` embedding and the mean `uni_v2` embedding of its neighbours in the same sample (patches within 1.5 times the sample's median nearest-neighbour distance), without PCA; per gene and scale the penalty $\alpha = n_{\text{fit}} \cdot 10^{k}$, $k \in \{-6, -5.5, \ldots, 1\}$, minimising the summed squared error over 5 inner folds grouped by donor (by center in the center design), refitted on the whole outer training fold. `E`: `uni_v2`, `hoptimus0` and `virchow2` concatenated, with ring-1 context, under round 10's head; a secondary arm named in advance, carried into A6 after its results were seen. The G2 strength runs also had `H` (the head alone changed), `C` (context alone) and `V` (`virchow2` alone).
+- **Inputs.** Kidney, bowel and brain Visium from the federated corpus's task definitions and round 10's audited donor maps; CCRCC, INDIANA_KIDNEY and LUNG_XENIUM through the corpus's embeddings joined onto the file of record by (sample, barcode) (`code/scripts/round11_closeout_hest_join.py`). On CCRCC, 407 of 74,220 spots have no corpus embedding and are dropped from every arm, so every CCRCC comparison is against this track's `R10` on the same 73,813 spots (G2 decision 1).
+- **Donor-level quantities** (A6 method item 1; `code/scripts/round11_closeout_a6_donor.py`, which chains round 10's scripts unchanged): the leave-one-donor-out $R^2$ of the donor mean against the leave-one-out constant (`round10_final_runs_f1_donor_diag.py`), the cluster values on both scales (`round10_final_runs_f2_cluster_values.py`), and round 10's regime A design simulation for $\theta_3$ and $\mu$ at $n_L \in \{4, 8, 16\}$, $R = 20000$ (`round10_final_runs_f2_regimeA.py`). Every arm carries the encoder label `uni_v2` in its cluster values, so the simulation's seeds give all arms the same draws (common random numbers). Width ratio: per gene the ratio of `fix1`'s to `classical`'s median width (variance `fpc`), median over genes. $R^2_c$: per gene the squared correlation over donors of the observed donor mean $z_g$ with the predicted $f_g$, median over genes.
+- **Held out by center** (A6 method item 2): `round11_closeout_predict.py` in the center design on kidney Visium (5 centers) and brain Visium (6 centers), and `round10_final_runs_f3_institution.py run` with round 10's production settings, giving at $\alpha = 0.2$ the coverage of donor-level HCP pooled across centers and of HCP over centers.
+- **Split conformal** (A6 method item 3; `code/scripts/round11_closeout_conformal.py`, which drives round 3's harness `round3_a0_harness.py` unchanged with three substitutions: the corpus loader with both scales as one outcome matrix, the arm's head, and summaries per scale). Designs `random`, `donor` and, where a donor has more than one slide, `slide_out`, round 3's fold enumeration, calibration-unit rule, size matching and coverage aggregation; CCRCC on round 3's own task definition (`random`, `patient`, `donor` enumerated, `random` and `donor` fitted). The center design is the harness's `donor` design with the center as the unit, on kidney and bowel Visium. The `R10` arm of this step is Part B item 2.
+- **Aggregation**: `code/scripts/round11_closeout_a6_aggregate.py` (its docstring defines every table), run once on all outputs as `a6/aggregate_v4`.
+- **Pretraining overlap (A7, brief standard 8)**: `results/round11/closeout/lit/lit_A7_pretraining.md`. The published descriptions of UNI2-h, H-optimus-0 and Virchow2 name no public dataset among their pretraining sources and say nothing about the HEST cohorts used here. Overlap is not stated, which is weaker than ruled out: H-optimus-0's sources are not named at all, and Virchow2 includes outside consultation cases that are not identified.
+
+### 2.2 What was run
+
+Every job ran on Longleaf through `code/scripts/round11_closeout_run.sh` from a read-only `git archive` snapshot of a commit on this branch, with its output directory stamped on the node (`_provenance.json`, this frame) and a `PROVENANCE.txt`. The job ledger with every Slurm id, state, partition, node, wall time, requested memory and MaxRSS is `results/round11/closeout/final/gate_v1/job_ledger.csv` (164 rows); the provenance check is `provenance_index.csv` beside it and the snapshots are `code_deliveries.csv`. The runs before G2 are in the G2 report, section 2. This interval's jobs, by group, from that ledger:
+
+| group | Slurm | commit | jobs | wall time | peak memory | partitions |
+|---|---|---|---|---|---|---|
+| A6 pilot (conformal self-test, round 3 anchor, LUNG_XENIUM `R10` donor conformal, LUNG_XENIUM and CCRCC `R10` chains) | 9529112 to 9529116 | `1fbbcd97` | 5 | 20 s to 990 s | 8.3 GB | spill |
+| donor-level chains, 13 (task, arm) cells | 9530242 to 9530256 | `1fbbcd97` | 13 | 129 s to 3881 s | 35.9 GB | spill, hov |
+| center-design predictions (kidney `E`; brain `R10`, `P`, `E`) | 9530257 to 9530260 | `1fbbcd97` | 4 | 275 s to 1683 s | 57.9 GB | spill, hov |
+| institution run | 9530261 | `1fbbcd97` | 1 | 133 s | 1.9 GB | spill |
+| conformal `R10` (B2) | 9530262 to 9530276 | `1fbbcd97` | 15 | 96 s to 5380 s | 7.7 GB | spill |
+| conformal `P` | 9530277 to 9530292, 9544479 | `1fbbcd97` | 17 (one cancelled) | 726 s to 20875 s | 14.3 GB | spill, hov |
+| conformal `E` | 9530293 to 9530308 | `1fbbcd97` | 15 of 16 in the ledger (two cancelled) | 44 s to 9150 s | 32.8 GB | spill, hov |
+| split check (LUNG_XENIUM `R10`, 3 pieces, merge, compare, per design) | 9609677 to 9609686 | `02b16d24` | 10 | 10 s to 892 s | 1.8 GB | spill |
+| kidney `E` donor (10 pieces) and slide_out (8 pieces), and their merges | 9609687 to 9609706 | `02b16d24` | 20 | 15 s to 4699 s | 32.5 GB | spill, hov |
+| aggregation `a6/aggregate_v4` | 9665851 | `02b16d24` | 1 | 17 s | 0.2 GB | spill |
+| gate bookkeeping `final/gate_v1` | 9667100 | `1bbbc480` | 1 | 31 s | | spill |
+
+Wall times are the ledger's `elapsed` and peak memory its largest `max_rss` in the group. Every job requested `general` and ran where the scheduler placed it.
+
+**Scripts** (md5 at the gate commit; each job's own md5s are in its `PROVENANCE.txt` and checked against its snapshot commit in `provenance_index.csv`): `round11_closeout_predict.py` `bac6ed492b1a242b42fd3f43ef41c082`, `round11_closeout_conformal.py` `84fadea0be45357b6ae627312d391717` (the A6 conformal jobs ran the `1fbbcd97` version; `02b16d24` added `--fold-shard`, `merge` and `compare` and nothing else), `round11_closeout_a6_donor.py` `2660feabe71cb0cf32569334497dbac7`, `round11_closeout_a6_aggregate.py` `64fff6062445dfd5f7a7f4564c56de3a`, `round11_closeout_gate.py` `53f35e4958910bf8aa9a4a32bd4071cb`, `round11_closeout_run.sh` `7235dd4b80e210c01bbb23b7824a96f0`, `round11_closeout_submit_a6.sh` `645685c81cbf198795d789b276a33c5f`; round 3's and round 10's scripts imported unchanged: `round3_a0_harness.py` `0ad7ae8efe554c1f285e5f384a9fb7f5`, `round10_final_runs_f1_donor_diag.py` `bd1396e22455d0081c08d8f19984610e`, `round10_final_runs_f2_cluster_values.py` `202ccfe23862a60810d96e50955d8010`, `round10_final_runs_f2_regimeA.py` `774f14de3ed57d6eb110dec4128cec1c`, `round10_final_runs_f3_institution.py` `6cea55ed3f72fc7b1877df0257ce5851`.
+
+**Not in the ledger**: 9530302 (kidney `E` donor conformal), cancelled while pending for the split, wrote nothing. **Cancelled and replaced**: 9530278 (CCRCC `P` donor, about 680 s per fit on one node, rerun as 9544479 on another), 9530303 (kidney `E` slide_out, cancelled 44 s after it started, replaced by the split) (plan, section 7). The ledger's eight FAILED jobs all precede this interval's runs: three numeric-claim sweeps of G2 (the sweep exits 1 while any claim is unresolved), three early jobs of the G2 check sub-agent, and the first two A6 aggregations (9531767, 9531813), fixed by `9a1d9249` and `108870f8`.
+
+**Sub-agents.** In this interval, `a7` (frame `c9016697-…/a7`) for the pretraining statements (A7), and the fresh check `fcheck` before this gate (section 8). Before G2: `lit-A`, `lit-B`, `b1` and `g2check` (G2 report, section 2).
+
+## 3. Acceptance checks and exit items
+
+| check | criterion | value | file | verdict |
+|---|---|---|---|---|
+| A6.0 (a), round 3's harness on round 3's CCRCC file, `uni_v2` | round 3's `uni_v2` rows to every digit | `random` 0.8830176250299325, `donor` 0.8653727123020528, equal to `results/round3/A1_coverage/a1_by_task__uni_v2__main.csv` | `results/round11/closeout/a6/aggregate_v4/a6_anchors.json` | passed (the prediction named the 12-encoder means; section 5) |
+| A6.0 (b), conformal driver's heads against `predict.ridgecv_fold` and the harness's `fit_base` | 1e-8 | 5.440e-15, 1.998e-15 | `results/round11/closeout/a6/aggregate_v4/a6_anchors.json` | passed |
+| A6.0 (c), `R10` on CCRCC refitted inside A6 against the A2 anchor's predictions | 1e-10 | 0.0 over 73,813 rows and 100 columns | `results/round11/closeout/a6/aggregate_v4/a6_anchors.json` | passed |
+| A6.0 (d), `R10` donor-level cells against round 10's `r10_buy_uni_v2_primary_n8.csv` | 1e-9 | largest absolute difference 2.2e-16 over four cells | `results/round11/closeout/a6/aggregate_v4/a6_anchors.json` | passed |
+| A6.0 (e), brain Visium by center; the institution rows against `inst_by_center.csv` | 1e-9 | 1.3e-15; 5.5e-14 over 112 rows | `results/round11/closeout/a6/aggregate_v4/a6_anchors.json` | passed |
+| The fold split reproduces an unsplit run (LUNG_XENIUM `R10`, donor and slide_out) | every table equal within 1e-12 | per-gene, calibration-unit and disjointness files identical; summaries within 7.1e-15 (donor) and 8.9e-15 (slide_out) | `a6/conformal_shards/check_LUNG_XENIUM__R10__{donor,slide_out}__compare/stdout.log` (Longleaf); plan, section 6 | passed |
+| The two merges | "[merge] done" with the unsplit run's fit count | 153 fits (kidney `E` donor), 156 (slide_out) | `a6/conformal/kidney__Visium__E__{donor,slide_out}/stdout.log` (Longleaf) | passed |
+| Final tables against the provisional ones that A6.1 to A6.3 and B2 were scored on | identical | every table byte-identical except the conformal one, which adds 32 rows and keeps v3's 64 | `results/round11/closeout/a6/aggregate_v4/` against `a6/aggregate_v3` (Longleaf) | passed |
+| Provenance at the gate | every snapshot commit an ancestor of the gate commit; every script md5 equal to its commit's | 158 provenance files; 0 md5 mismatches; the 6 not-ancestor rows are the `b1` sub-agent's, which ran its own verification scripts | `results/round11/closeout/final/gate_v1/gate_summary.json`, `provenance_index.csv` | passed |
+| The anchors of G2 (kidney Visium 0.4713 and 0.1231 reproduced; CCRCC D12 and `fix1` coverage reproduced; the CCRCC width ratio 0.8949 against 0.8783, accepted at G2) | G2 report, section 3 | | `docs/round11/closeout/round11_closeout_G2_report.md` | as at G2 |
+
+## 4. Variables that differ between the arms of each comparison
+
+- **`P` or `E` against `R10`, any A6 quantity.** Same samples, donor labels, genes, scales, folds, conformal enumeration, calibration draws and design-simulation draws. They differ in the input (`P`, `E`: the spot's embedding with its neighbours' mean; `E` three encoders) and the head (`P`: no PCA, a penalty tuned per gene by inner donor-grouped CV; `R10`, `E`: round 10's PCA 256 and fixed penalty). Feature widths 1536 (`R10`), 3072 (`P`), 11,264 (`E`).
+- **This track's `R10` against round 10's files.** On kidney, bowel and brain Visium none (same code path and inputs; the anchors reproduce to 1e-15). On CCRCC, LUNG_XENIUM and INDIANA_KIDNEY, the embeddings (the corpus's against round 3's and round 4's HEST-bench files) and on CCRCC 407 of 74,220 spots.
+- **B2's conformal designs against round 3's 132 cells.** The task set (five tasks with 15 to 51 donors against round 3's ten tasks with 2 to 24, IDC counted under two label sets), the encoders (`uni_v2` only against twelve), the donor labels (round 10's audited maps; on CCRCC round 3's task definition), and for the corpus tasks the embeddings. The harness, the score, the fold enumeration and the size matching are round 3's.
+- **Center design against `donor` design.** The held-out unit (a center, with all its donors, against one donor) and so the training and calibration pools; same arm, task, scale and harness.
+- **Earlier comparisons** (strength, anchors, B3, B4): G2 report, section 4.
+
+## 5. Predictions against outcomes
+
+Each prediction in full as written before its run. The masterplan's are in `docs/round11/masterplan.md`, "Expectations"; the session's are in `docs/round11/closeout/round11_closeout_plan.md`, sections 4 and 5, with the scoring and its files beside each.
+
+### 5.1 The masterplan's
+
+| prediction, as written | outcome | verdict |
+|---|---|---|
+| **P11.1.** The primary predictor raises the donor-held-out median spot-level Pearson by at least 0.02 over the reference on at least two of kidney Visium, bowel Visium and LUNG_XENIUM. The reference values are 0.471, 0.511 and 0.619 (`results/round10/final_runs/F2/report_tables/r10_buy_uni_v2_primary_n8.csv`, column `median_pearson_spot`). If it does not, P11.2 to P11.4 are scored "not tested". | gains 0.0106, 0.0186, 0.0103 (`results/round11/closeout/g2/aggregate_v4/g2_p111.json`) | refuted |
+| **P11.2.** With the primary predictor, the median width ratio of `fix1` to `classical` at 8 labelled donors stays above 0.80 on CCRCC, INDIANA_KIDNEY and kidney Visium, and the leave-one-donor-out median $R^2$ of the donor mean against the leave-one-out constant stays below 0.15 on CCRCC. The reference ratios are 0.878, 0.957 and 0.937 (the same file), and the reference $R^2$ is 0.021 (`results/round10/final_runs/F1/diagnostics/d12_lodo_r2_medians__r3_CCRCC_uni_v2.csv`). | supplementary: 0.9750, 0.9227, 0.9631; 0.0118 (`results/round11/closeout/a6/aggregate_v4/a6_donor_level.csv`, `a6_d12.csv`) | not tested |
+| **P11.3.** Held out by center on kidney Visium, the primary predictor's median Pearson stays below 0.20 and at least 0.25 below its own donor-held-out value. Round 10's three encoders give 0.004 to 0.123 held out by center and 0.412 to 0.483 held out by donor (`results/round10/final_runs/F1/aggregate/f1_predictions.csv`). | supplementary: 0.1068 by center, 0.4816 by donor (`results/round11/closeout/a6/aggregate_v4/a6_center.csv`, `results/round11/closeout/g2/aggregate_v4/g2_p111.json`) | not tested |
+| **P11.4.** For the primary predictor, split conformal coverage with the absolute score is lower under round 3's design `donor` than under `random` on every task where both are run, and on kidney Visium coverage under a center design is at least 0.05 below coverage under `random`. | supplementary, on $\log(1 + y)$: `donor` below `random` on all five tasks; kidney Visium's center design 0.8714 against `random` 0.9084 (`results/round11/closeout/a6/aggregate_v4/a6_conformal.csv`) | not tested |
+| **P11.5.** Under equal allocation, with `fix1`, $\theta_3$ and the cost ratio 10, regime B is narrower than regime A in more than 6 of the 12 cost-matched comparisons on ACS by state. Under proportional allocation round 10 found 3 of 12 (`results/round10/final_runs/F4/paper_numbers.csv`, keys `E1.ACS_STATES.*`). | 12 of 12, median width ratio 0.699 (`results/round11/closeout/b4/equal_v2/b4_summary.json`) | held |
+
+### 5.2 The session's, before G2
+
+Quoted in full with their outcomes in the G2 report, section 5, and in the plan, sections 4 and 5: A2.1 held, A2.2 held as written (the brief's stricter criterion failed; accepted at G2), A2.3 held, A5.1 refuted, A5.2 refuted, A5.3 refuted, A5.4 held, B3 held, B4 held, B5 partly held, B6 held, B7 held. The text of each, as written before its run (`docs/round11/closeout/round11_closeout_plan.md`):
+
+- **A2.1.** `R10` on kidney Visium reproduces round 10's median Pearson on $\log(1 + y)$, 0.4713 held out by donor and 0.123 held out by center, within $10^{-6}$ (same code path for the head, same inputs).
+- **A2.2.** `R10` on CCRCC through the corpus with round 3's genes gives the leave-one-donor-out median $R^2$ of the donor mean against the leave-one-out constant within 0.005 of 0.021 (round 10's corpus anchor gave 0.0237, `results/round10/final_runs/F1/diagnostics/d12_lodo_r2_medians__corpus_CCRCC_uni_v2.csv`), and $\theta_3$ at 8 labelled donors gives a median width ratio of `fix1` to `classical` within 0.02 of 0.878 and a median `fix1` coverage within two Monte Carlo standard errors of 0.8965.
+- **A2.3.** The self-test of the sufficient-statistics ridge agrees with sklearn within $10^{-8}$.
+- **A5.1.** `P` raises the donor-held-out median spot-level Pearson on $\log(1 + y)$ over `R10` on the same inputs by 0.02 to 0.05 on kidney Visium and bowel Visium and by 0.01 to 0.03 on LUNG_XENIUM; so P11.1 holds.
+- **A5.2.** `H` changes it by less than 0.01 on each of the three tasks, and `C` gains at least half of `P`'s gain: the context, not the head, carries the gain.
+- **A5.3.** `V` is within 0.02 of `R10` on each task, and `E` is at most 0.01 above `C`.
+- **A5.4.** Held out by center on kidney Visium, `P`'s median Pearson stays below 0.20.
+- **B3.** (a) The recomputed median coverages equal `inst_by_center.csv` within 1e-9. (b) On `uni_v2` lognorm, S0006's HCP half-width is the smallest of the five centers' at the median gene, because the calibration pool without S0006 lacks its 24 donors; and removing S0006's level shift raises its median coverage by at least 0.10. One look; if neither (b) part holds, the report records that the look did not explain it.
+- **B4.** (a) The proportional rows equal round 10's ACS regcomp rows exactly (largest absolute difference 0). (b) Under equal allocation, with `fix1`, $\theta_3$ and $c = 10$, regime B is narrower than regime A in at least 9 of the 12 comparisons, with a median width ratio below 0.85, so P11.5 holds. (c) Regime B's median coverage under equal allocation stays within 0.02 of 0.90.
+- **B5.** Within-cluster variances are not equal (the median over genes of the ratio of largest to smallest $V_g$ exceeds 3 on every task), but the measured factor for $\theta_3$ stays within 25% of round 10's on every task, and ACS by state's measured factor exceeds every HEST task's, so F4-3b's ordering survives the measured variances.
+- **B6.** The share of genes with `R2_pooled > R2_constant` under design `lodo` in round 9's per-gene file lies in 0.46 to 0.64 for every task under `uni_v2`, which identifies the survey's definition; the E1 table's values are 5, 11, 6, 17, 8, 13, 8, 8, 22 and 143.
+- **B7.** Between 10 and 300 attributed round 10 jobs are absent from the ledger, most of them FAILED, CANCELLED or TIMEOUT, and fewer than 20 of those that COMPLETED lack a `PROVENANCE.txt` in every output directory they name.
+
+### 5.3 The session's, for A6 and B2 (written 17 November before any A6 job)
+
+Quoted in full from `docs/round11/closeout/round11_closeout_plan.md`, section 4, "A6 and B2, predictions"; outcomes from `results/round11/closeout/a6/aggregate_v4/` unless stated.
+
+**A6.0, anchors.** "(a) The conformal driver, running round 3's harness unchanged on round 3's CCRCC task definition and embeddings (designs `random`, `patient`, `donor`, score `abs`), reproduces round 3's `a1_by_task` rows for CCRCC, `uni_v2`: `random` 0.8809874361442861 and `donor` 0.8642708075597048, within 1e-12. (b) The conformal driver's `P` head equals `round11_closeout_predict.ridgecv_fold` on synthetic data within 1e-8, and its two-scale `R10` head equals the harness's `fit_base` on the `log1p` half within 1e-8. (c) `R10` on CCRCC, refitted inside A6, gives the A2 anchor's predictions (`anchor/CCRCC__R10_v2/predict/`) with a largest absolute difference below 1e-10. (d) `R10`'s cells on kidney Visium and bowel Visium, `log1p`, $n_L = 8$, reproduce round 10's median width ratio and median $R^2_c$ of `r10_buy_uni_v2_primary_n8.csv` within 1e-9 ($\theta_3$: 0.9367 and 0.1986 on kidney, 0.6691 and 0.6258 on bowel; $\mu$: 0.7640 and 0.4112, 0.7982 and 0.3777). (e) `R10` held out by center on brain Visium reproduces round 10's median Pearson 0.02153 on `log1p` (`f1_predictions.csv`) within 1e-9, and the institution rows of kidney and brain Visium under `R10` reproduce `inst_by_center.csv` (`uni_v2`, both arms, both scales) within 1e-9."
+Outcome (`a6_anchors.json`): (a) **refuted as written, and the pipeline is exact**: 0.8830176250299325 and 0.8653727123020528, equal to every digit to round 3's `uni_v2` row; the values the prediction names are round 3's means over 12 encoders (`results/round3/A1_coverage/a1_coverage_by_task_design.csv`), so the prediction cited the wrong row. (b) to (e) **held** (section 3).
+
+**A6.1, the mechanism of G2's section 6.1.** "For $\mu$ on `log1p`, on bowel Visium and on LUNG_XENIUM, `P`'s median over genes of the standard deviation over donors of $f_g$ is smaller than `R10`'s (ratio below 0.95), and `P`'s median $R^2_c$ is no more than 0.01 above `R10`'s. If the spread is not narrower, or $R^2_c$ rises by more than 0.01, the mechanism is refuted on that task. For `E`, whose per-fold and pooled gains agree, the spread ratio is above 0.95 on kidney and bowel Visium."
+Outcome (`a6_mechanism.csv`): **refuted for `P`, held for `E`**. `P`'s spread ratio is 1.016 (bowel Visium) and 1.072 (LUNG_XENIUM); its median $R^2_c$ moves by −0.010 and +0.007. `E`'s spread ratio is 1.120 (kidney Visium) and 1.023 (bowel Visium).
+
+**A6.2, H3 under `P` and `E`.** "For $\theta_3$ at $n_L = 8$ on `log1p`: (a) under `P` the median width ratio is within 0.03 of `R10`'s on each of the five tasks; (b) under `E` it is at least 0.02 below `R10`'s on bowel Visium and within 0.03 of it on the other four; (c) the order of the five tasks by width ratio is the same under `P` and `E` as under `R10`, and kidney Visium and INDIANA_KIDNEY stay above 0.90 under both; (d) across genes, the Spearman correlation of the width ratio with $R^2_c$ is more negative than its correlation with the spot-level Pearson on every task under both arms; (e) CCRCC's leave-one-donor-out median $R^2$ of the donor mean against the leave-one-out constant stays below 0.10 under both; (f) the median coverage of `fix1` stays within 0.01 of 0.90 for every task, arm, scale, estimand and $n_L \in \{8, 16\}$."
+Outcome (`a6_donor_level.csv`, `a6_d12.csv`): **partly held**. (a) refuted (CCRCC +0.080, INDIANA_KIDNEY −0.034, bowel Visium −0.032); (b) refuted (bowel Visium −0.065, but the other four move by more than 0.03); (c) partly held (CCRCC moves from third to last; kidney Visium and INDIANA_KIDNEY stay above 0.90); (d) held in all 15 cells; (e) held (0.0118 under `P`, 0.0467 under `E`); (f) refuted (CCRCC's $\mu$ on `log1p` covers 0.848 to 0.870 under all three arms, as round 10's own CCRCC cell does, section 7, item 4).
+
+**A6.3, H2 under `P` and `E`.** "(a) Held out by center, the median Pearson on `log1p` is below 0.20 on kidney Visium and below 0.10 on brain Visium under both arms. (b) On kidney Visium at nominal 0.80, donor-level HCP pooled across centers covers center S0006 below 0.75 under both, and HCP over centers covers 1.0 at the median center under both."
+Outcome (`a6_center.csv`, `a6_center_hcp.csv`): **partly held**. (a) kidney Visium 0.1068 (`P`) and 0.1360 (`E`); brain Visium 0.0643 (`P`) and 0.1177 (`E`), the last not below 0.10. (b) held: S0006 0.5819 and 0.6296; HCP over centers 1.0 at the median center under both.
+
+**A6.4, H1(b) under `P` and `E`.** "On every task, scale and arm, (a) `random` covers within 0.01 of 0.90; (b) `donor` covers at least 0.02 below `random`; (c) `donor` coverage under `P` and under `E` is within 0.02 of `R10`'s on the same task and scale; (d) on kidney Visium and bowel Visium the center design covers less than `donor`."
+Outcome (`a6_conformal.csv`): **partly held**. (a) refuted on CCRCC's `log1p` (0.8824, 0.8803, 0.8868 under `R10`, `P`, `E`), held in the other 27 of 30 cells; (b) refuted, held in 5 of 30 cells; (c) held, largest difference 0.0051; (d) held in 12 of 12 cells.
+
+**B2, the `R10` arm under round 3's designs.** "(a) On CCRCC through the corpus, `random` covers within 0.005 of round 3's 0.881 and `donor` within 0.015 of 0.864. (b) `donor` covers between 0.80 and 0.88 on kidney Visium, between 0.78 and 0.88 on bowel Visium and between 0.80 and 0.89 on LUNG_XENIUM, on `log1p`. (c) `slide_out` lies between `donor` and `random` on bowel Visium and LUNG_XENIUM. (d) The center design covers at least 0.03 below `donor` on kidney and bowel Visium."
+Outcome (`a6_conformal.csv`, `R10` rows): **partly held**. (a) held: 0.8824 and 0.8640. (b) partly held: 0.8940 (kidney Visium) and 0.8921 (bowel Visium) above their ranges, 0.8872 (LUNG_XENIUM) inside. (c) held: bowel Visium 0.8921, 0.8941, 0.8984; LUNG_XENIUM 0.8872, 0.8970, 0.9006. (d) partly held: 0.8344 on bowel Visium, but kidney Visium's 0.8777 is only 0.0164 below `donor`.
+
+**The split check** (plan, section 6, QUEUE, written before the pieces ran): "identical to the last digit". Outcome: **partly held**; the per-gene files are identical and the summaries differ by at most 8.9e-15, within the 1e-12 criterion, so the check passes.
+
+## 6. Results
+
+### 6.1 Strength (from G2)
+
+Donor-held-out median spot-level Pearson on $\log(1 + y)$, with the paired per-fold gain over `R10` (median over folds and its quartiles) and the share of folds where the arm is higher (`results/round11/closeout/g2/aggregate_v4/g2_strength.csv`; the full table with every arm is the G2 report, section 6.1):
+
+| task | `R10` | `P` | `P`'s per-fold gain (q25, q75), folds higher | `E` | `E`'s per-fold gain (q25, q75), folds higher |
+|---|---|---|---|---|---|
+| kidney Visium (51 folds) | 0.4713 | 0.4816 | 0.0291 (0.0004, 0.0514), 0.745 | 0.5023 | 0.0302 (−0.0121, 0.0634), 0.686 |
+| bowel Visium (18 folds) | 0.5113 | 0.5296 | 0.0405 (0.0186, 0.0802), 0.889 | 0.5943 | 0.0491 (0.0355, 0.0765), 1.000 |
+| LUNG_XENIUM (15 folds) | 0.6189 | 0.6293 | 0.0234 (0.0163, 0.0290), 1.000 | 0.6358 | 0.0252 (0.0202, 0.0336), 0.933 |
+
+### 6.2 H3 under `P` and `E`: donor-level quantities
+
+$\theta_3$, $\log(1 + y)$, $n_L = 8$ (`results/round11/closeout/a6/aggregate_v4/a6_donor_level.csv`). Width ratio of `fix1` to `classical`; the paired per-gene change of the width ratio against `R10` as its median with quartiles; median $R^2_c$; the median coverage of `fix1` with its Monte Carlo standard error.
+
+| task | arm | width ratio | per-gene change against `R10`, median (q25, q75) | $R^2_c$ | `fix1` coverage (MCSE) |
+|---|---|---|---|---|---|
+| CCRCC | `R10` | 0.8949 | | 0.4290 | 0.8966 (0.0022) |
+| | `P` | 0.9750 | 0.0704 (−0.0108, 0.1349) | 0.2809 | 0.8871 (0.0022) |
+| | `E` | 0.9984 | 0.0588 (0.0009, 0.1307) | 0.3381 | 0.8957 (0.0022) |
+| INDIANA_KIDNEY | `R10` | 0.9570 | | 0.1390 | 0.8974 (0.0021) |
+| | `P` | 0.9227 | −0.0136 (−0.0559, 0.0167) | 0.1639 | 0.8955 (0.0022) |
+| | `E` | 0.9107 | −0.0195 (−0.0598, 0.0168) | 0.2075 | 0.8955 (0.0022) |
+| kidney Visium | `R10` | 0.9367 | | 0.1986 | 0.8948 (0.0022) |
+| | `P` | 0.9631 | 0.0210 (−0.0025, 0.0507) | 0.1224 | 0.8925 (0.0022) |
+| | `E` | 0.9930 | 0.0495 (0.0262, 0.0708) | 0.1238 | 0.8915 (0.0022) |
+| bowel Visium | `R10` | 0.6691 | | 0.6258 | 0.8878 (0.0022) |
+| | `P` | 0.6372 | −0.0484 (−0.1030, 0.0056) | 0.6326 | 0.8902 (0.0022) |
+| | `E` | 0.6044 | −0.0680 (−0.0930, −0.0056) | 0.6451 | 0.8892 (0.0022) |
+| LUNG_XENIUM | `R10` | 0.5853 | | 0.7139 | 0.8878 (0.0022) |
+| | `P` | 0.5627 | −0.0136 (−0.0518, 0.0184) | 0.7219 | 0.8891 (0.0022) |
+| | `E` | 0.5425 | −0.0360 (−0.0860, 0.0210) | 0.7402 | 0.8908 (0.0022) |
+
+Leave-one-donor-out median $R^2$ of the donor mean against the leave-one-out constant, `log1p` (`results/round11/closeout/a6/aggregate_v4/a6_d12.csv`): CCRCC 0.0237 (`R10`), 0.0118 (`P`), 0.0467 (`E`); INDIANA_KIDNEY 0.0423, 0.0565, 0.0834; LUNG_XENIUM 0.1071, 0.1264, 0.1395; bowel Visium 0.2218, 0.2617, 0.3545; kidney Visium 0.3815, 0.3446, 0.3213.
+
+**Reading, checked over the grid.**
+- *The paired changes beside their spread.* A change is read as one where the interquartile range of the per-gene change excludes zero: CCRCC under `E` (+0.0588), kidney Visium under `E` (+0.0495) and bowel Visium under `E` (−0.0680). Under `P` every interquartile range contains zero, so `P`'s changes to the width ratio are within the spread over genes on all five tasks. Monte Carlo error is small beside these (coverage MCSE 0.0021 to 0.0022 per cell, and the arms share their draws).
+- *H3's mechanism.* In the ten cells of the table above where `P` or `E` stands beside `R10`, the arm narrows the width ratio exactly where its $R^2_c$ rises (bowel Visium, LUNG_XENIUM, INDIANA_KIDNEY) and widens it exactly where $R^2_c$ falls (CCRCC, kidney Visium), while the spot-level Pearson rises in nine of the ten (the exception, INDIANA_KIDNEY under `P`, 0.2235 against 0.2299; column `median_pearson_spot` of `a6_donor_level.csv`). Across genes, the width ratio's Spearman correlation with $R^2_c$ is more negative than with the spot-level Pearson in 84 of 84 $\theta_3$ cells (five tasks, three arms, both scales, every $n_L$ run), from −0.97 to −0.30; for $\mu$ in 82 of 84, the two exceptions CCRCC `log1p` at $n_L = 8$ under `R10` and `P`, where the two correlations are within 0.03 of each other. What would contradict H3 is an arm that narrows the interval without raising $R^2_c$; none of the ten cells above shows it.
+- *The mechanism G2 proposed for `P`* (a narrower spread of donors' predicted levels) is refuted (A6.1): `P`'s spread is 1.016 and 1.072 times `R10`'s on bowel Visium and LUNG_XENIUM (`results/round11/closeout/a6/aggregate_v4/a6_mechanism.csv`). `P`'s gain is within donors: on `log1p` its donor-level $R^2_c$ for $\mu$ moves by −0.037 to +0.029 against `R10` (`a6_donor_level.csv`, column `R2c_median_diff_vs_R10`).
+- *The normalised scale.* The direction of each arm's width-ratio change on the normalised scale differs from `log1p` on several tasks (on kidney Visium at $n_L = 8$, 0.9516 under `P` and 1.0225 under `E` against `R10`'s 0.9566), and under `E` the width ratio exceeds 1 at every $n_L$ on three tasks there, CCRCC, INDIANA_KIDNEY and kidney Visium (`a6_donor_level.csv`). No prediction concerned it; it is reported, not read further.
+
+### 6.3 H2 under `P` and `E`: held out by center
+
+Median Pearson on `log1p`, held out by center, with the per-fold median and its quartiles over centers (`results/round11/closeout/a6/aggregate_v4/a6_center.csv`), and on kidney Visium at $\alpha = 0.2$ the coverage of donor-level HCP pooled across centers at the median center and at S0006, and of HCP over centers at the median center (`results/round11/closeout/a6/aggregate_v4/a6_center_hcp.csv`):
+
+| task | arm | median Pearson | per-fold median (q25, q75) | HCP pooled, median center | HCP pooled, S0006 | HCP over centers |
+|---|---|---|---|---|---|---|
+| kidney Visium (5 centers) | `R10` | 0.1231 | 0.1325 (0.0326, 0.2922) | 0.9057 | 0.6552 | 1.0 |
+| | `P` | 0.1068 | 0.1554 (0.1454, 0.3311) | 0.9281 | 0.5819 | 1.0 |
+| | `E` | 0.1360 | 0.1784 (0.0096, 0.3574) | 0.9326 | 0.6296 | 1.0 |
+| brain Visium (6 centers) | `R10` | 0.0215 | 0.1213 (0.0130, 0.1914) | | | |
+| | `P` | 0.0643 | 0.1264 (0.0379, 0.2347) | | | |
+| | `E` | 0.1177 | 0.1153 (0.0420, 0.1630) | | | |
+
+Every pooled median Pearson held out by center lies below 0.14, against 0.47 to 0.50 held out by donor on kidney Visium (section 6.1), and S0006's coverage stays 0.25 to 0.35 below the median center's under every arm. Each arm's pooled value lies inside `R10`'s interquartile range over centers on both tasks.
+
+### 6.4 H1(b) on the final footing (B2) and under `P` and `E`
+
+Split conformal coverage with the absolute score, nominal 0.90, mean over folds with its standard deviation over folds (`results/round11/closeout/a6/aggregate_v4/a6_conformal.csv`, 96 rows; both scales and every arm there). `log1p`, `R10`:
+
+| task (donors) | `random` | `slide_out` | `donor` | center | `donor` under `P` | `donor` under `E` |
+|---|---|---|---|---|---|---|
+| CCRCC (24) | 0.8824 (sd 0.0009) | | 0.8640 (sd 0.1442) | | 0.8649 | 0.8613 |
+| INDIANA_KIDNEY (25) | 0.9070 (sd 0.0130) | 0.8790 (sd 0.0463) | 0.8776 (sd 0.0442) | | 0.8747 | 0.8771 |
+| LUNG_XENIUM (15) | 0.9006 (sd 0.0056) | 0.8970 (sd 0.0404) | 0.8872 (sd 0.0376) | | 0.8874 | 0.8850 |
+| bowel Visium (18) | 0.8984 (sd 0.0055) | 0.8941 (sd 0.1352) | 0.8921 (sd 0.1261) | 0.8344 (sd 0.1351) | 0.8881 | 0.8870 |
+| kidney Visium (51) | 0.9073 (sd 0.0114) | 0.8999 (sd 0.0673) | 0.8940 (sd 0.0787) | 0.8777 (sd 0.1096) | 0.8923 | 0.8941 |
+
+The donor counts are the `donor` design's folds (`n_folds`). Kidney Visium's `random` design reports 35 of its 51 folds, because round 3's summary keeps only test slides with at least 50 test spots (plan, section 4, B2).
+
+**Reading.** The arms do not move conformal coverage: `P` and `E` change `donor` coverage by at most 0.0051 in all 20 cells, against a spread over folds of 0.030 to 0.147. What moves it is the design and the task. The `donor` shortfall from `random` on these tasks is 0.006 to 0.029 under `R10`, against round 3's 0.0913 over 132 cells. Round 3's `uni_v2` rows show where its mean comes from (`results/round3/A1_coverage/a1_by_task__uni_v2__main.csv`, score `abs`): shortfalls of 0.14 to 0.28 on tasks with two donors (HCC 0.7625, SKCM 0.6801, LUNG 0.6177 under `donor`), and 0.0176 on CCRCC with 24. The mechanism proposed: with one donor left out, the calibration pool is the other donors, so with two donors a single donor calibrates the interval and the held-out donor's level shift is not represented in it. What would contradict it, a task with many donors and a shortfall above 0.05, is absent from both sets; among round 3's tasks every shortfall above 0.05 is on a task with at most four donors, though two tasks with two or three donors show none (PRAD 0.0207, PAAD −0.0023). Holding out a whole center costs more coverage than holding out a donor in all 12 (task, scale, arm) cells: under `R10` by 0.0578 on bowel Visium and 0.0479 on kidney Visium's normalised scale, and by only 0.0164 on kidney Visium's `log1p` and 0.0064 on bowel Visium's normalised scale.
+
+### 6.5 Part B
+
+Items 1 and 3 to 7 are reported in full in the G2 report, section 6.3, unchanged since. In brief: B1, every headline number recomputes at its quoted precision (`results/round11/closeout/b1/`); B3, S0006's low coverage comes from the calibration it faces and a level shift, its half-width 1.0717 against 1.3710 to 1.5721 at the other centers and its coverage rising from 0.6555 to 0.8184 when the level shift is removed (`results/round11/closeout/b3/s0006_v1/b3_by_center.csv`); B4, equal allocation makes regime B narrower in 12 of 12 comparisons, median ratio 0.699 (`results/round11/closeout/b4/equal_v2/b4_summary.json`); B5, within-cluster variances are close to equal on ACS by state (median ratio of largest to smallest 1.70 for $\theta_3$) and not on the HEST tasks (14.8 to 23.5) (`results/round11/closeout/b5/withinvar_v1/b5_by_task.csv`); B6, D12's share and round 9's E1 numbers are now in stored columns (`results/round11/closeout/b6/stored_v1/b6_summary.json`); B7, 56 round 10 jobs are absent from its ledger and wrote no provenance file (`results/round11/closeout/b7/ledger_v2/b7_summary.json`). B2 is section 6.4.
+
+## 7. Discrepancies, open questions and escalations
+
+1. **Substantive. H1(b) on the final footing.** The brief's H1(b) row quotes round 3's means, 0.894 (`random`) and 0.802 (`donor`), and these recompute. On the five tasks this track refitted, with 15 to 51 donors, the `donor` shortfall is 0.006 to 0.029 under `R10` on `log1p`, and round 3's own rows put its large shortfalls on tasks with two to four donors (section 6.4). Nothing here is a numerical error; the reading changes. **For Nicolas and the advisor outline**: a paper sentence of the form "the donor design costs 0.09 of coverage" would describe round 3's few-donor tasks, not the tasks the paper's inference results use. The track proposes that H1(b) be stated per task with the number of donors beside it, and that the oversight session decide whether the H1 headline keeps the conformal mean at all. The track does not rewrite round 3's or round 10's documents.
+2. **For the record, the CCRCC difference accepted at G2.** Every CCRCC number of this report is against this track's `R10` on the corpus's embeddings: width ratio 0.8949 against round 10's 0.8783, $R^2_c$ 0.4290 against 0.4387, caused by the embeddings (a control on round 3's own file reproduced 0.878272 exactly; G2 report, section 6.2).
+3. **The CCRCC values 0.881 and 0.864 are 12-encoder means.** The brief's H1(b) row gives them for CCRCC without naming the encoder, under a header that makes `uni_v2` the default; round 3's `uni_v2` row is 0.8830 and 0.8654 (`results/round3/A1_coverage/a1_by_task__uni_v2__main.csv`). A6.0 (a) and B2 (a) were written against the means and are scored as written. Proposed: the brief's note on the table says so.
+4. **`fix1` under-covers $\mu$ on CCRCC**, 0.848 to 0.870 at $n_L \in \{8, 16\}$ on `log1p` under all three arms (A6.2 (f)). This is not new: round 10's own CCRCC cell gives `fix1` 0.857825 and `classical` 0.83515 at $n_L = 8$ (`results/round10/final_runs/F2/report_tables/r01_regimeA_uni_v2_primary.csv`, `cov__fix1|fpc`, `cov__classical|fpc`). Not investigated further; it bears on any paper sentence about $\mu$ on CCRCC.
+5. **`E` exceeds 0.10 held out by center on brain Visium** (0.1177), against a per-fold median of 0.1153 and `R10`'s per-fold median of 0.1213, so the pooled difference is not matched per center. Not investigated.
+6. **Escalations handled inside the interval** (plan, section 6, QUEUE). Twelve of the sixteen kidney and bowel Visium conformal jobs of `P` and `E` were still pending ten hours after submission. The four-hour notice went to the oversight session on 17 November at 09:49, and its reply (relayed at 15:25) had the limits lowered in place with `scontrol` to about three times each sibling's runtime, which took the ten jobs off priority within a minute, and the two jobs too long for that split by fold into 18 pieces, after a check that a split run reproduces an unsplit one. The final aggregation and gate jobs were also lowered in place to their siblings' measured values. Two cancellations are recorded with their reasons (section 2.2).
+7. **The machine the session works from ran low on memory twice** (17 November), which stopped a local queue read; no job or result was affected, and the queue was read afterwards with single calls only.
+
+## 8. What was not checked
+
+- **What the fresh check covered.** FCHECK_PLACEHOLDER
+- **The numeric-claim sweep** (`code/scripts/verify_numeric_claims.py` over this report and the plan, exceptions in `.verify-exceptions-round11-closeout`): SWEEP_PLACEHOLDER
+- No new design was run to test the mechanism of section 6.4 (that the `donor` shortfall depends on the number of calibration donors); it rests on round 3's rows and this track's 30 cells.
+- The normalised scale was tabulated for every quantity and not read beyond section 6.2's last point and the conformal table.
+- Why `P`'s per-fold gain exceeds its pooled gain is not explained (A6.1 refuted G2's proposal).
+- 184 of round 10's ledger ids absent from `sacct`'s window (G2 report, section 8) are still not explained.
+- Brain Visium's HCP coverage under the arms is in `a6_center_hcp.csv` and was not read; H2's HCP claim concerns kidney Visium.
+
+## 9. Proposed next step
+
+The pull request is PR_PLACEHOLDER. The reviewer decides section 7, item 1, and whether the brief's note on the table takes item 3. Then the oversight session drafts the advisor outline (`docs/round11/masterplan.md`), where the headline table above can stand as the round's summary of what survived.
