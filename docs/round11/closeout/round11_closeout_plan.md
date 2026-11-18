@@ -5,11 +5,11 @@ updated: 2026-11-17, 23:05 (fifth session of track closeout)
 unit: closeout
 project_id: proj_8450e231133d
 frame_id: c9016697-c909-435e-82fc-ebfb9daaa857
-step: G-final. The oversight session opened pull request 42 from round11-closeout into main (section 6, PR), and its number is in the report's section 9. The fifth sweep (final/sweep_v5, Slurm 9673068) left two claims of the report unresolved, the fresh check's first and last Slurm ids, which earlier sweeps had found only in this block's former text; the report now cites the ledger that holds them, and a sixth sweep (final/sweep_v6) runs before the tag. Before it: final/sweep_v4 (Slurm 9671527) verified all 500 claims of the report and 423 of the plan, and final/gate_v2 (Slurm 9671660) found 0 md5 mismatches over 179 jobs
-last_run: final/gate_v2, Slurm 9671660, COMPLETED
-jobs: final/sweep_v6, the last numeric-claim sweep
-next: once final/sweep_v6 leaves every claim verified or declared, commit its output, tag round11-closeout-G-final, push the branch and the tag together, and stop
-waiting: none
+step: G-final. The oversight session opened pull request 42 from round11-closeout into main (section 6, PR), and its number is in the report's section 9. The fifth sweep (final/sweep_v5, Slurm 9673068) left two claims of the report unresolved, the fresh check's first and last Slurm ids, which earlier sweeps had found only in this block's former text; the report now cites the ledger that holds them. The sixth sweep (final/sweep_v6, Slurm 9673213, at 63afe7fc) verified all 504 claims of the report and 423 of the plan. Tagged round11-closeout-G-final; the track stops here until Nicolas decides G-final. Before it: final/sweep_v4 (Slurm 9671527) verified all 500 claims of the report and 423 of the plan, and final/gate_v2 (Slurm 9671660) found 0 md5 mismatches over 179 jobs
+last_run: final/sweep_v6, Slurm 9673213, COMPLETED
+jobs: none running
+next: none until G-final is decided; pull request 42 is open
+waiting: G-final | since 2026-11-17 | the final gate's decisions (Nicolas, through the oversight session)
 ```
 
 *Written on 16 November 2026 by the first session of track `closeout` (frame above). The brief is `docs/round11/closeout/round11_closeout_brief.md` on `main`, read at `7ff4e2fc`, with `docs/round11/masterplan.md` at the same commit and `docs/EXECUTION_RULES.md` as it stands there. The branch starts from `7ff4e2fc`. This plan links the brief and does not copy it.*
