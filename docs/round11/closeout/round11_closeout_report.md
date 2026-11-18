@@ -24,7 +24,7 @@ One row per result of the brief's section 3. "Recomputed" is the `b1` sub-agent'
 
 ## 1. Stage and status
 
-G-final, the track's final gate (brief, section 6). Part A (A0 to A7) and Part B (items 1 to 7) are done. Every job finished. The plan's state block is current at the gate commit, the branch and tag `round11-closeout-G-final` are pushed, and one pull request into `main` is open (section 9). Nothing beyond this gate has been set up.
+G-final, the track's final gate (brief, section 6). Part A (A0 to A7) and Part B (items 1 to 7) are done. Every job finished. The plan's state block is current at the gate commit, the branch and tag `round11-closeout-G-final` are pushed, and one pull request into `main` is open, opened by the oversight session (section 9). Nothing beyond this gate has been set up.
 
 Section 7 marks two items as substantive for Nicolas: H1(b)'s reading on the final footing (item 1) and the CCRCC difference that G2 accepted (item 2, for the record).
 
@@ -246,4 +246,4 @@ Items 1 and 3 to 7 are reported in full in the G2 report, section 6.3, unchanged
 
 ## 9. Proposed next step
 
-The pull request is PR_PLACEHOLDER. The reviewer decides section 7, item 1, and whether the brief's note on the table takes item 3. Then the oversight session drafts the advisor outline (`docs/round11/masterplan.md`), where the headline table above can stand as the round's summary of what survived.
+The pull request is number 42, https://github.com/NicWYZ/HEST-1k-replication/pull/42, from `round11-closeout` into `main`. The oversight session opened it, because gh on this session's machine had an invalid token and the GitHub connector failed to connect (plan, section 6, PR); this session did not open another. It could not be confirmed with gh, so it was confirmed with `git ls-remote origin refs/pull/42/head`, which returned `6263b878`, then the head of `origin/round11-closeout`; a pull request follows its branch, so it carries the gate commit once the branch and tag are pushed. The reviewer decides section 7, item 1, and whether the brief's note on the table takes item 3. Then the oversight session drafts the advisor outline (`docs/round11/masterplan.md`), where the headline table above can stand as the round's summary of what survived.

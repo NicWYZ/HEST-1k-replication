@@ -1,15 +1,15 @@
 # Round 11, track `closeout`, the plan
 
 ```state
-updated: 2026-11-18, 01:30 (fourth session of track closeout)
+updated: 2026-11-17, 23:05 (fifth session of track closeout)
 unit: closeout
 project_id: proj_8450e231133d
 frame_id: c9016697-c909-435e-82fc-ebfb9daaa857
-step: G-final ready except the pull request. The final report is complete but for its pull-request number (section 9); the fresh check is worked in; the last sweep (final/sweep_v4, Slurm 9671527) verified all 500 claims of the report and 423 of the plan; the gate bookkeeping was rerun as final/gate_v2 (Slurm 9671660; 0 md5 mismatches, 179 jobs)
+step: G-final. The oversight session opened pull request 42 from round11-closeout into main (section 6, PR), and its number is in the report's section 9; a fifth numeric-claim sweep (final/sweep_v5) runs over this text before the tag. Before it: final/sweep_v4 (Slurm 9671527) verified all 500 claims of the report and 423 of the plan, and final/gate_v2 (Slurm 9671660) found 0 md5 mismatches over 179 jobs
 last_run: final/gate_v2, Slurm 9671660, COMPLETED
-jobs: none running
-next: once gh is logged in, open the pull request from round11-closeout into main with the body in the session's tmp (or the report's summary), write its number into the report's section 9, sweep once more, commit, tag round11-closeout-G-final, push branch and tag together, confirm the pull request on GitHub, and stop
-waiting: gh login | since 2026-11-18 | gh in the session's machine is not authenticated and the GitHub connector failed, so the pull request cannot be opened (Nicolas: `! gh auth login`, or open it himself)
+jobs: final/sweep_v5, the last numeric-claim sweep
+next: once final/sweep_v5 leaves every claim verified or declared, commit its output, tag round11-closeout-G-final, push the branch and the tag together, and stop
+waiting: none
 ```
 
 *Written on 16 November 2026 by the first session of track `closeout` (frame above). The brief is `docs/round11/closeout/round11_closeout_brief.md` on `main`, read at `7ff4e2fc`, with `docs/round11/masterplan.md` at the same commit and `docs/EXECUTION_RULES.md` as it stands there. The branch starts from `7ff4e2fc`. This plan links the brief and does not copy it.*
@@ -197,6 +197,16 @@ Within a minute the ten moved from reason `Priority` to `None`. **Not lowered, t
 - *Kidney `E` donor:* 10 pieces of 5 or 6 donor folds (9609687 to 9609696, 6 h, 72 GB), merged into `a6/conformal/kidney__Visium__E__donor` (9609697). *Kidney `E` slide_out:* 8 pieces of 6 or 7 slide folds (9609698 to 9609705, 4 h, 72 GB), merged into `a6/conformal/kidney__Visium__E__slide_out` (9609706). Each merge waits on its pieces and on both checks' comparisons (`afterok`).
 - *Then:* 9530302 and 9530303 cancelled at 15:36 (section 7 on the second). At 15:36, seven of the ten lowered jobs were running (9530285, 9530287, 9530291, 9530301, 9530304, 9530305, 9530307, all started at 15:35 or 15:33), three pending on priority (9530289, 9530306, 9530308).
 - *Check scored, 17 November 16:20:* **partly held**, and the check **passes**. Every table has the same rows and columns as the unsplit run; the per-gene parquet, the calibration-unit file and the disjointness file are identical (difference 0), and the summary tables differ by at most 7.1e-15 (donor) and 8.9e-15 (slide_out), so not "to the last digit" but within the 1e-12 criterion (`a6/conformal_shards/check_LUNG_XENIUM__R10__{donor,slide_out}__compare/stdout.log`, 11 files each, 0 mismatches). Since the per-gene inputs are equal, the differences come from the order of floating-point sums inside the summary step, not from the fits; this was not traced further. The shards kept 5, 5, 5 of the 15 donor folds and 7, 7, 6 of the 20 slide folds. The first kidney `E` donor pieces finished in 15 to 23 minutes (9609688, 9609690, 9609692), far below the 6 h limit.
+
+### PR (the plan's waiting line "gh login"; not a gate; reply relayed on 17 November)
+
+The oversight session's reply under `docs/round11/masterplan.md`, "Who decides the gates", relayed to the fifth session, as closely as the plan can hold it. It is not a gate decision.
+
+1. gh on the session's machine has an invalid token, which is Nicolas's to fix, so **the oversight session opened the pull request for the track: number 42, from `round11-closeout` into `main`** (https://github.com/NicWYZ/HEST-1k-replication/pull/42). **Do not open another.**
+2. **Go on as the state block says:** write the number 42 into the report's section 9, sweep once more, commit, tag `round11-closeout-G-final`, push the branch and the tag together, and stop.
+3. **The pull request cannot be confirmed with gh; confirm it instead with `git ls-remote origin refs/pull/42/head`**, that it exists and points at the branch, and say in the report that the oversight session opened it.
+
+**Done, 17 November.** `git ls-remote origin refs/pull/42/head` returned `6263b878f8867eb964f89b198c718078cf28150c`, the head of `origin/round11-closeout` at the time. The state block before this one was dated 18 November, 01:30, a slip for 17 November.
 
 ## 7. Tried and failed
 
