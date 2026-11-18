@@ -1,0 +1,78 @@
+{
+ "alpha": 0.2,
+ "checks": [
+  {
+   "check": "reproduces inst_by_center hcp_donor alpha 0.2 coverage_median_gene",
+   "rows": 30,
+   "max_abs_diff": 1.1102230246251565e-16
+  }
+ ],
+ "s0006": [
+  {
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "cov_median": 0.6552097868939075,
+   "q_median": 1.197234735336575,
+   "q_own_median": 1.678401876003207,
+   "med_abs_median": 0.9753324557957268,
+   "abs_bias_over_q_median": 0.5128165140774115,
+   "cov_centered_median": 0.7581794534838037,
+   "cov_q_other_median": 0.6001314131657025
+  },
+  {
+   "encoder": "uni_v2",
+   "scale": "lognorm",
+   "cov_median": 0.6555078373728205,
+   "q_median": 1.0716899032899792,
+   "q_own_median": 1.505130521812832,
+   "med_abs_median": 0.8834143876438527,
+   "abs_bias_over_q_median": 0.6432085008043893,
+   "cov_centered_median": 0.8183991979732568,
+   "cov_q_other_median": 0.5830951187460203
+  },
+  {
+   "encoder": "hoptimus0",
+   "scale": "log1p",
+   "cov_median": 0.608354896833891,
+   "q_median": 1.2135187230367408,
+   "q_own_median": 1.8619154242606046,
+   "med_abs_median": 1.0666846385512287,
+   "abs_bias_over_q_median": 0.5484931098524506,
+   "cov_centered_median": 0.7318561770961755,
+   "cov_q_other_median": 0.5574966469321122
+  },
+  {
+   "encoder": "hoptimus0",
+   "scale": "lognorm",
+   "cov_median": 0.5576456721715687,
+   "q_median": 1.0421469213669605,
+   "q_own_median": 1.6909285748860943,
+   "med_abs_median": 1.0162093511380101,
+   "abs_bias_over_q_median": 0.7200935712457674,
+   "cov_centered_median": 0.7850310920840502,
+   "cov_q_other_median": 0.5287550973405769
+  },
+  {
+   "encoder": "resnet50",
+   "scale": "log1p",
+   "cov_median": 0.5132632463116253,
+   "q_median": 1.2380868763731536,
+   "q_own_median": 2.3170126029708396,
+   "med_abs_median": 1.3026240273029859,
+   "abs_bias_over_q_median": 0.8484642292897258,
+   "cov_centered_median": 0.6599650468074729,
+   "cov_q_other_median": 0.4784861745221032
+  },
+  {
+   "encoder": "resnet50",
+   "scale": "lognorm",
+   "cov_median": 0.5349464186525409,
+   "q_median": 1.0648955934732558,
+   "q_own_median": 1.9120303850139821,
+   "med_abs_median": 1.1829107930731437,
+   "abs_bias_over_q_median": 0.807856672520652,
+   "cov_centered_median": 0.7356834162003983,
+   "cov_q_other_median": 0.4573110427702437
+  }
+ ]
+}

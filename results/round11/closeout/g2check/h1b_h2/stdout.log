@@ -1,0 +1,14 @@
+H1(b) all rows donor rows 11 task-labelsets 11 cells 132 mean 0.8024485509175474
+H1(b) all rows patient rows 11 task-labelsets 11 cells 132 mean 0.7862392719231862
+H1(b) all rows random rows 11 task-labelsets 11 cells 132 mean 0.8937327863316652
+H1(b) all rows slide_out rows 3 task-labelsets 3 cells 36 mean 0.8584947281319253
+   label_set     design  coverage_mean
+3    audited     random       0.877326
+4    shipped     random       0.878158
+11   audited  slide_out       0.834151
+17   audited      donor       0.832674
+18   shipped      donor       0.827525
+28   audited    patient       0.820673
+29   shipped    patient       0.819540
+H2 uni_v2 hcp_donor {'S0006': '0.6552097868939075', 'S0014': '0.9056670811867116', 'S0171': '0.9648684648684648', 'S0175': '0.9394673592805084', 'S0249': '0.8455732700135685'} median over 5 centers 0.9056670811867116
+H2 uni_v2 hcp_center {'S0006': '0.9989365017002424', 'S0014': '1.0', 'S0171': '1.0', 'S0175': '1.0', 'S0249': '1.0'} median over 5 centers 1.0

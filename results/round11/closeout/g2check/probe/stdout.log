@@ -1,0 +1,265 @@
+== /work/users/w/e/weiyang/hest_replication/results/round11/closeout/anchor/CCRCC__R10_v2/regimeA/regimeA_cells.parquet 31200
+['task', 'encoder', 'scale', 'estimand', 'gene', 'G', 'n', 'arm', 'variance', 'R', 'theta', 'bias', 'mcse_bias', 'sd', 'rmse', 'coverage', 'coverage_se', 'coverage_formed', 'frac_no_interval', 'mean_width', 'median_width', 'ev_over_var', 'frac_v_neg'] 23
+== /work/users/w/e/weiyang/hest_replication/results/round11/closeout/anchor/CCRCC__R10_v2/cv/cluster_values__CCRCC.parquet 4750
+['task', 'encoder', 'scale', 'estimand', 'gene', 'donor', 'n_spots', 'n_a', 'n_b', 'z', 'f'] 11
+== /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeA/CCRCC__uni_v2/regimeA_cells.parquet 67800
+['task', 'encoder', 'scale', 'estimand', 'gene', 'G', 'n', 'arm', 'variance', 'R', 'theta', 'bias', 'mcse_bias', 'sd', 'rmse', 'coverage', 'coverage_se', 'coverage_formed', 'frac_no_interval', 'mean_width', 'median_width', 'ev_over_var', 'frac_v_neg'] 23
+== /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet 28500
+['task', 'encoder', 'scale', 'estimand', 'gene', 'donor', 'n_spots', 'n_a', 'n_b', 'z', 'f'] 11
+== /work/users/w/e/weiyang/hest_replication/results/round11/closeout/anchor/CCRCC__record/regimeA/regimeA_cells.parquet 31200
+['task', 'encoder', 'scale', 'estimand', 'gene', 'G', 'n', 'arm', 'variance', 'R', 'theta', 'bias', 'mcse_bias', 'sd', 'rmse', 'coverage', 'coverage_se', 'coverage_formed', 'frac_no_interval', 'mean_width', 'median_width', 'ev_over_var', 'frac_v_neg'] 23
+== /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet 74220
+['sample_id', 'barcode', 'donor_id', 'donor_id_audit', 'fold', 'joined', 'area_mean', 'm_std', 'frac_neoplastic', 'y__AKAP8', 'f__AKAP8', 'y__BLVRB', 'f__BLVRB', 'y__BTF3', 'f__BTF3', 'y__CD109', 'f__CD109', 'y__CD14', 'f__CD14', 'y__CHST15', 'f__CHST15', 'y__CIB1', 'f__CIB1', 'y__CKB', 'f__CKB', 'y__CPD', 'f__CPD', 'y__CPE', 'f__CPE', 'y__DERL1'] 109
+== /work/users/w/e/weiyang/hest_replication/results/round11/closeout/predict/LUNG_XENIUM__P__donor/pred__LUNG_XENIUM__uni_v2__ring1__ridgecv__donor.parquet 19083
+['sample_id', 'barcode', 'donor_id', 'center_id', 'fold', 'lib_size', 'n_detected', 'y_log1p__ENSG00000023839', 'f_log1p__ENSG00000023839', 'y_log1p__ENSG00000213088', 'f_log1p__ENSG00000213088', 'y_log1p__ENSG00000107796', 'f_log1p__ENSG00000107796', 'y_log1p__ENSG00000204305', 'f_log1p__ENSG00000204305', 'y_log1p__ENSG00000173467', 'f_log1p__ENSG00000173467', 'y_log1p__ENSG00000204472', 'f_log1p__ENSG00000204472', 'y_log1p__ENSG00000198074', 'f_log1p__ENSG00000198074', 'y_log1p__ENSG00000187134', 'f_log1p__ENSG00000187134', 'y_log1p__ENSG00000151632', 'f_log1p__ENSG00000151632', 'y_log1p__ENSG00000206560', 'f_log1p__ENSG00000206560', 'y_log1p__ENSG00000171388', 'f_log1p__ENSG00000171388', 'y_log1p__ENSG00000134817'] 1379
+== /work/users/w/e/weiyang/hest_replication/results/round11/closeout/anchor/CCRCC__R10_v2/regimeA/regimeA_cells.parquet
+                          0                1         2
+task                  CCRCC            CCRCC     CCRCC
+encoder              uni_v2           uni_v2    uni_v2
+scale                 log1p            log1p     log1p
+estimand                 mu               mu        mu
+gene                  AKAP8            AKAP8     AKAP8
+G                        24               24        24
+n                         4                4         4
+arm               classical  classical_nofpc      fix1
+variance                fpc            nofpc       fpc
+R                     20000            20000     20000
+theta              0.392247         0.392247  0.392247
+bias              -0.000229        -0.000229 -0.000302
+mcse_bias          0.001059         0.001059  0.001016
+sd                 0.149736         0.149736  0.143697
+rmse               0.149736         0.149736  0.143697
+coverage            0.84575          0.87005    0.8849
+coverage_se        0.002554         0.002378  0.002257
+coverage_formed     0.84575          0.87005    0.8849
+frac_no_interval        0.0              0.0       0.0
+mean_width         0.522177         0.572016   0.52091
+median_width       0.350906         0.384398  0.361484
+ev_over_var        1.002794         1.203353  1.019332
+frac_v_neg              0.0              0.0       0.0
+task ['CCRCC']
+encoder ['uni_v2']
+scale ['log1p']
+estimand ['mu', 'theta1', 'theta2', 'theta3']
+n [4, 6, 8, 10, 12, 16]
+arm ['bh', 'bh_t', 'bh_t_fpc', 'classical', 'classical_nofpc', 'ctrl_const_fix1', 'ctrl_perm_fix1', 'ctrl_perm_xf2_r5', 'fix1', 'fix1_nofpc', 'xf2_fix1', 'xf2_ols', 'xf2_r5', 'xf2_r5_nofpc']
+variance ['V', 'V_cons', 'V_max', 'V_w', 'fpc', 'nofpc', 'own']
+R [20000]
+== /work/users/w/e/weiyang/hest_replication/results/round11/closeout/anchor/CCRCC__R10_v2/cv/cluster_values__CCRCC.parquet
+                 0         1         2
+task         CCRCC     CCRCC     CCRCC
+encoder     uni_v2    uni_v2    uni_v2
+scale        log1p     log1p     log1p
+estimand        mu        mu        mu
+gene         AKAP8     BLVRB      BTF3
+donor         INT1      INT1      INT1
+n_spots       1032      1032      1032
+n_a           1032      1032      1032
+n_b              0         0         0
+z         0.158207  0.602557  0.987908
+f         0.475994  0.421761  0.867791
+task ['CCRCC']
+encoder ['uni_v2']
+scale ['log1p']
+estimand ['mu', 'theta1', 'theta2', 'theta3']
+donor ['INT1', 'INT10', 'INT11', 'INT12', 'INT13', 'INT14', 'INT15', 'INT16', 'INT17', 'INT18', 'INT19', 'INT2', 'INT20', 'INT21', 'INT22', 'INT23', 'INT24', 'INT3', 'INT4', 'INT5', 'INT6', 'INT7', 'INT8', 'INT9']
+== /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/regimeA/CCRCC__uni_v2/regimeA_cells.parquet
+                          0                1         2
+task                  CCRCC            CCRCC     CCRCC
+encoder              uni_v2           uni_v2    uni_v2
+scale                 log1p            log1p     log1p
+estimand                 mu               mu        mu
+gene                  AKAP8            AKAP8     AKAP8
+G                        24               24        24
+n                         4                4         4
+arm               classical  classical_nofpc      fix1
+variance                fpc            nofpc       fpc
+R                     20000            20000     20000
+theta              0.389891         0.389891  0.389891
+bias              -0.000237        -0.000237 -0.000319
+mcse_bias          0.001044         0.001044  0.000999
+sd                 0.147631         0.147631  0.141303
+rmse               0.147631         0.147631  0.141304
+coverage              0.851           0.8727   0.88655
+coverage_se        0.002518         0.002357  0.002243
+coverage_formed       0.851           0.8727   0.88655
+frac_no_interval        0.0              0.0       0.0
+mean_width         0.518198         0.567657  0.515494
+median_width       0.351537          0.38509   0.36428
+ev_over_var        1.002906         1.203487  1.019777
+frac_v_neg              0.0              0.0       0.0
+task ['CCRCC']
+encoder ['uni_v2']
+scale ['log1p', 'norm_r9pair']
+estimand ['mu', 'theta1', 'theta2', 'theta3']
+n [4, 6, 8, 10, 12, 16]
+arm ['bh', 'bh_t', 'bh_t_fpc', 'boot_pairs_pct', 'boot_raowu_t', 'boot_wild_webb_t', 'classical', 'classical_nofpc', 'ctrl_const_fix1', 'ctrl_perm_fix1', 'ctrl_perm_xf2_r5', 'fix1', 'fix1_nofpc', 'xf2_fix1', 'xf2_ols', 'xf2_r5', 'xf2_r5_nofpc']
+variance ['V', 'V_cons', 'V_max', 'V_w', 'boot', 'fpc', 'nofpc', 'own']
+R [2000, 20000]
+== /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F2/cluster_values_v1/cluster_values__CCRCC.parquet
+                 0         1         2
+task         CCRCC     CCRCC     CCRCC
+encoder     uni_v2    uni_v2    uni_v2
+scale        log1p     log1p     log1p
+estimand        mu        mu        mu
+gene         AKAP8     BLVRB      BTF3
+donor         INT1      INT1      INT1
+n_spots       1084      1084      1084
+n_a           1084      1084      1084
+n_b              0         0         0
+z         0.153176  0.587877  0.968584
+f         0.463519  0.430447  0.877955
+task ['CCRCC']
+encoder ['hoptimus0', 'resnet50', 'uni_v2']
+scale ['log1p', 'norm_r9pair']
+estimand ['mu', 'theta1', 'theta2', 'theta3']
+donor ['INT1', 'INT10', 'INT11', 'INT12', 'INT13', 'INT14', 'INT15', 'INT16', 'INT17', 'INT18', 'INT19', 'INT2', 'INT20', 'INT21', 'INT22', 'INT23', 'INT24', 'INT3', 'INT4', 'INT5', 'INT6', 'INT7', 'INT8', 'INT9']
+== /work/users/w/e/weiyang/hest_replication/results/round11/closeout/anchor/CCRCC__record/regimeA/regimeA_cells.parquet
+                          0                1         2
+task                  CCRCC            CCRCC     CCRCC
+encoder              uni_v2           uni_v2    uni_v2
+scale                 log1p            log1p     log1p
+estimand                 mu               mu        mu
+gene                  AKAP8            AKAP8     AKAP8
+G                        24               24        24
+n                         4                4         4
+arm               classical  classical_nofpc      fix1
+variance                fpc            nofpc       fpc
+R                     20000            20000     20000
+theta              0.389891         0.389891  0.389891
+bias              -0.000237        -0.000237 -0.000319
+mcse_bias          0.001044         0.001044  0.000999
+sd                 0.147631         0.147631  0.141303
+rmse               0.147631         0.147631  0.141304
+coverage              0.851           0.8727   0.88655
+coverage_se        0.002518         0.002357  0.002243
+coverage_formed       0.851           0.8727   0.88655
+frac_no_interval        0.0              0.0       0.0
+mean_width         0.518198         0.567657  0.515494
+median_width       0.351537          0.38509   0.36428
+ev_over_var        1.002906         1.203487  1.019777
+frac_v_neg              0.0              0.0       0.0
+task ['CCRCC']
+encoder ['uni_v2']
+scale ['log1p']
+estimand ['mu', 'theta1', 'theta2', 'theta3']
+n [4, 6, 8, 10, 12, 16]
+arm ['bh', 'bh_t', 'bh_t_fpc', 'classical', 'classical_nofpc', 'ctrl_const_fix1', 'ctrl_perm_fix1', 'ctrl_perm_xf2_r5', 'fix1', 'fix1_nofpc', 'xf2_fix1', 'xf2_ols', 'xf2_r5', 'xf2_r5_nofpc']
+variance ['V', 'V_cons', 'V_max', 'V_w', 'fpc', 'nofpc', 'own']
+R [20000]
+== /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet
+                                 0                   1                   2
+sample_id                     INT1                INT1                INT1
+barcode         AAACAGAGCGACTCCT-1  AAACCACTACACAGAT-1  AAACGACAGTCTTGCC-1
+donor_id                      INT1                INT1                INT1
+donor_id_audit                INT1                INT1                INT1
+fold                          INT1                INT1                INT1
+...                            ...                 ...                 ...
+f__TRBC1                  0.420017            0.373361            0.173146
+y__VMP1                   2.197225            2.079442            0.693147
+f__VMP1                   1.333218            1.133188             0.86336
+y__YWHAE                  1.098612            1.098612            1.098612
+f__YWHAE                  1.125279            1.115924            0.808849
+
+[109 rows x 3 columns]
+sample_id ['INT1']
+barcode ['AAACAGAGCGACTCCT-1', 'AAACCACTACACAGAT-1', 'AAACGACAGTCTTGCC-1']
+donor_id ['INT1']
+donor_id_audit ['INT1']
+fold ['INT1']
+/work/users/w/e/weiyang/hest_replication/results/round11/closeout/anchor/CCRCC__R10_v2/regimeA/config.json {
+ "stage": "A2",
+ "unit": "regimeA_CCRCC_R10",
+ "cluster_values": [
+  "/work/users/w/e/weiyang/hest_replication/results/round11/closeout/anchor/CCRCC__R10_v2/cv/cluster_values__CCRCC.parquet"
+ ],
+ "select": {
+  "task": [
+   "CCRCC"
+  ],
+  "encoder": [
+   "uni_v2"
+  ]
+ },
+ "n_grid": [
+  4,
+  6,
+  8,
+  10,
+  12,
+  16
+ ],
+ "extra_n": {},
+ "R": 20000,
+ "R_boot": 0,
+ "B": 999,
+ "boot_select": {}
+}
+/work/users/w/e/weiyang/hest_replication/results/round11/closeout/anchor/CCRCC__record/regimeA/config.json {
+ "stage": "A2",
+ "unit": "regimeA_CCRCC_record",
+ "cluster_values": [
+  "/work/users/w/e/weiyang/hest_replication/results/round11/closeout/anchor/CCRCC__record/cv/cluster_values__CCRCC.parquet"
+ ],
+ "select": {
+  "task": [
+   "CCRCC"
+  ],
+  "encoder": [
+   "uni_v2"
+  ]
+ },
+ "n_grid": [
+  4,
+  6,
+  8,
+  10,
+  12,
+  16
+ ],
+ "extra_n": {},
+ "R": 20000,
+ "R_boot": 0,
+ "B": 999,
+ "boot_select": {}
+}
+/work/users/w/e/weiyang/hest_replication/results/round11/closeout/anchor/CCRCC__R10_v2/cv/config.json {
+ "stage": "A2",
+ "unit": "cluster_values_CCRCC_R10",
+ "repo_root": "/work/users/w/e/weiyang/hest_replication",
+ "populations": [
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round11/closeout/anchor/CCRCC__R10_v2/join/b1_predictions__CCRCC__uni_v2.parquet",
+   "lib_task": "CCRCC",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  }
+ ]
+}
+/work/users/w/e/weiyang/hest_replication/results/round11/closeout/anchor/CCRCC__record/cv/config.json {
+ "stage": "A2",
+ "unit": "cluster_values_CCRCC_record",
+ "repo_root": "/work/users/w/e/weiyang/hest_replication",
+ "populations": [
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+   "lib_task": "CCRCC",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  }
+ ]
+}

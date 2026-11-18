@@ -1,0 +1,29 @@
+platform: Longleaf
+slurm_job_id: 9527777
+slurm_job_partition: spill
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 1
+slurm_mem_per_node: 8192
+node: c0404
+track: closeout (round 11)
+stage: G2
+unit: g2/gate_v2
+project_id: proj_8450e231133d
+frame_id: c9016697-c909-435e-82fc-ebfb9daaa857
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1 sklearn 1.9.1
+snapshot_commit: b915b76d6abd8f5d254106e786ca0877eb8af14c
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round11/closeout/_snapshots/b915b76d6abd8f5d254106e786ca0877eb8af14c
+command: round11_closeout_gate.py /work/users/w/e/weiyang/hest_replication/results/round11/closeout /work/users/w/e/weiyang/hest_code/round11-closeout b915b76d6abd8f5d254106e786ca0877eb8af14c
+config: {"commit":"b915b76d6abd8f5d254106e786ca0877eb8af14c","stage":"G2","unit":"g2/gate_v2"}
+config_sha256: 249f692421a3a91bca50a4ecb25203110bc929bf16fc9a871fa20fb42c2fe6fd
+start: 2026-11-17T04:10:03-05:00
+end: 2026-11-17T04:10:18-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  53f35e4958910bf8aa9a4a32bd4071cb  code/scripts/round11_closeout_gate.py
+  69321b9e328c901c38843cc40fdc256f  code/scripts/round11_closeout_prov.py
+  7235dd4b80e210c01bbb23b7824a96f0  code/scripts/round11_closeout_run.sh
+inputs (md5, path):

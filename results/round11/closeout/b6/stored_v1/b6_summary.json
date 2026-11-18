@@ -1,0 +1,66 @@
+{
+ "d12_round9_uni_v2": [
+  {
+   "task": "CCRCC",
+   "share_pooled_gt_constant": 0.64,
+   "share_pooled_gt_0": 0.42
+  },
+  {
+   "task": "INDIANA_KIDNEY",
+   "share_pooled_gt_constant": 0.64,
+   "share_pooled_gt_0": 0.42
+  },
+  {
+   "task": "LUNG_XENIUM",
+   "share_pooled_gt_constant": 0.6268221574344023,
+   "share_pooled_gt_0": 0.46938775510204084
+  }
+ ],
+ "d12_round9_range_all_encoders": [
+  0.46,
+  0.64
+ ],
+ "e1": [
+  {
+   "claim": "ACS regime B persons per state (box class, lambda 1)",
+   "value": 5.0
+  },
+  {
+   "claim": "ACS regime A states of 51 (box class, lambda 1)",
+   "value": 11.0
+  },
+  {
+   "claim": "CCRCC regime B median spots per donor (box, lambda 1)",
+   "value": 6.0
+  },
+  {
+   "claim": "CCRCC regime A median donors (box, lambda 1)",
+   "value": 17.0
+  },
+  {
+   "claim": "INDIANA_KIDNEY regime B median spots per donor (box, lambda 1)",
+   "value": 8.0
+  },
+  {
+   "claim": "INDIANA_KIDNEY regime A median donors (box, lambda 1)",
+   "value": 13.0
+  },
+  {
+   "claim": "LUNG_XENIUM regime B median spots per donor (box, lambda 1)",
+   "value": 8.0
+  },
+  {
+   "claim": "LUNG_XENIUM regime A median donors (box, lambda 1)",
+   "value": 8.0
+  },
+  {
+   "claim": "units per cluster without a share bound (v0 1, N 2000, Lambda0 3)",
+   "value": 22.0
+  },
+  {
+   "claim": "units per cluster without a share bound (v0 1, N 2000, Lambda0 8)",
+   "value": 143.0
+  }
+ ],
+ "r10_files": 20
+}

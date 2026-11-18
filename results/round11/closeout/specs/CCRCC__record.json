@@ -1,0 +1,13 @@
+{
+ "note": "A2.2 control: round 10's cluster-value and regime A steps run by this track's chain on round 3's own CCRCC uni_v2 file (no new prediction, no join). Must reproduce round 10's theta3 width ratio 0.878 and fix1 coverage 0.8965 at n_L 8 exactly, isolating the pipeline from the inputs.",
+ "steps": [
+  {"name": "cv", "script": "round10_final_runs_f2_cluster_values.py", "args": ["{CONFIG}", "."],
+   "config": {"stage": "A2", "unit": "cluster_values_CCRCC_record", "repo_root": "/work/users/w/e/weiyang/hest_replication",
+              "populations": [{"task": "CCRCC", "encoder": "uni_v2", "path": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+                               "lib_task": "CCRCC", "scales": [{"name": "log1p", "y_prefix": "y__", "f_prefix": "f__"}]}]}},
+  {"name": "regimeA", "script": "round10_final_runs_f2_regimeA.py", "args": ["{CONFIG}", "."],
+   "config": {"stage": "A2", "unit": "regimeA_CCRCC_record", "cluster_values": ["{OUT}/cv/cluster_values__CCRCC.parquet"],
+              "select": {"task": ["CCRCC"], "encoder": ["uni_v2"]}, "n_grid": [4, 6, 8, 10, 12, 16], "extra_n": {},
+              "R": 20000, "R_boot": 0, "B": 999, "boot_select": {}}}
+ ]
+}

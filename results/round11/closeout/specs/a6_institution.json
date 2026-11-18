@@ -1,0 +1,16 @@
+{
+ "stage": "A6",
+ "item": "A6 held out by center: round 10's institution axis (F3.2) on this track's center-design files, arms R10 (label uni_v2, so FR8 is scored on it), P and E (E chosen after its results were seen)",
+ "scales": ["log1p", "lognorm"],
+ "arms": ["hcp_center", "hcp_donor"],
+ "levels_rule": "alpha in {0.2,0.25} where 1/units <= alpha, plus 1/units",
+ "score_fr8": true,
+ "cells": [
+  {"task": "kidney__Visium", "encoder": "uni_v2", "pred": "/work/users/w/e/weiyang/hest_replication/results/round11/closeout/predict/kidney__Visium__R10__center/pred__kidney__Visium__uni_v2__none__r10__center.parquet"},
+  {"task": "kidney__Visium", "encoder": "P", "pred": "/work/users/w/e/weiyang/hest_replication/results/round11/closeout/predict/kidney__Visium__P__center/pred__kidney__Visium__uni_v2__ring1__ridgecv__center.parquet"},
+  {"task": "kidney__Visium", "encoder": "E_posthoc", "pred": "/work/users/w/e/weiyang/hest_replication/results/round11/closeout/predict/kidney__Visium__E__center/pred__kidney__Visium__uni_v2-hoptimus0-virchow2__ring1__r10__center.parquet"},
+  {"task": "brain__Visium", "encoder": "uni_v2", "pred": "/work/users/w/e/weiyang/hest_replication/results/round11/closeout/predict/brain__Visium__R10__center/pred__brain__Visium__uni_v2__none__r10__center.parquet"},
+  {"task": "brain__Visium", "encoder": "P", "pred": "/work/users/w/e/weiyang/hest_replication/results/round11/closeout/predict/brain__Visium__P__center/pred__brain__Visium__uni_v2__ring1__ridgecv__center.parquet"},
+  {"task": "brain__Visium", "encoder": "E_posthoc", "pred": "/work/users/w/e/weiyang/hest_replication/results/round11/closeout/predict/brain__Visium__E__center/pred__brain__Visium__uni_v2-hoptimus0-virchow2__ring1__r10__center.parquet"}
+ ]
+}

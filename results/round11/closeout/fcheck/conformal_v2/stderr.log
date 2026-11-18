@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/work/users/w/e/weiyang/hest_replication/results/round11/closeout/fcheck/scripts/conformal_v2.py", line 99, in <module>
+    m = bf.merge(v, on=["design", "fold"], how="left")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/lib/python3.11/site-packages/pandas/core/frame.py", line 10859, in merge
+    return merge(
+           ^^^^^^
+  File "/work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/lib/python3.11/site-packages/pandas/core/reshape/merge.py", line 170, in merge
+    op = _MergeOperation(
+         ^^^^^^^^^^^^^^^^
+  File "/work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/lib/python3.11/site-packages/pandas/core/reshape/merge.py", line 807, in __init__
+    self._maybe_coerce_merge_keys()
+  File "/work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/lib/python3.11/site-packages/pandas/core/reshape/merge.py", line 1509, in _maybe_coerce_merge_keys
+    raise ValueError(msg)
+ValueError: You are trying to merge on int64 and object columns for key 'fold'. If you wish to proceed you should use pd.concat

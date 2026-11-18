@@ -1,0 +1,31 @@
+platform: Longleaf
+slurm_job_id: 9671441
+slurm_job_partition: spill
+slurm_job_account: rc_tengfei_pi
+slurm_cpus_on_node: 1
+slurm_mem_per_node: 2048
+node: c0928
+track: closeout (round 11)
+stage: GATE
+unit: final/sweep_v3
+project_id: proj_8450e231133d
+frame_id: c9016697-c909-435e-82fc-ebfb9daaa857
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-687.66.1.el9_8.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1 sklearn 1.9.1
+snapshot_commit: 1985ada9
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round11/closeout/_snapshots/1985ada9
+command: verify_numeric_claims.py /work/users/w/e/weiyang/hest_code/round11-closeout/docs/round11/closeout/round11_closeout_report.md /work/users/w/e/weiyang/hest_code/round11-closeout/docs/round11/closeout/round11_closeout_plan.md --search-dir /work/users/w/e/weiyang/hest_code/round11-closeout --exceptions /work/users/w/e/weiyang/hest_code/round11-closeout/.verify-exceptions-round11-closeout --derived /work/users/w/e/weiyang/hest_code/round11-closeout/.verify-derived --tsv /work/users/w/e/weiyang/hest_replication/results/round11/closeout/final/sweep_v3/sweep.tsv
+config: {"commit":"1985ada9","stage":"GATE","unit":"final/sweep_v3"}
+config_sha256: 293867e2190bd2bccf53434adfb814702e72770665a2339706887856d9279445
+start: 2026-11-17T22:41:18-05:00
+end: 2026-11-17T22:42:21-05:00
+status: FAILED
+scripts_executed (md5, path relative to snapshot):
+  10c7ea21abee5fd44b583df0affc320e  code/scripts/verify_numeric_claims.py
+  69321b9e328c901c38843cc40fdc256f  code/scripts/round11_closeout_prov.py
+  7235dd4b80e210c01bbb23b7824a96f0  code/scripts/round11_closeout_run.sh
+  10c7ea21abee5fd44b583df0affc320e  code/scripts/verify_numeric_claims.py
+  7235dd4b80e210c01bbb23b7824a96f0  code/scripts/round11_closeout_run.sh
+inputs (md5, path):

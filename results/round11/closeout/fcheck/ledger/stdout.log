@@ -1,0 +1,31 @@
+ledger rows (excluding header) 163 unique ids 163
+                     group  jobs                                       states  wall_min_s  wall_max_s  peak_rss_gb partitions
+0                 A6 pilot     5                             {'COMPLETED': 5}          20         990         8.29      spill
+1             donor chains    13                            {'COMPLETED': 13}         129        3881        35.88  hov,spill
+2       center predictions     4                             {'COMPLETED': 4}         275        1683        57.88  hov,spill
+3              institution     1                             {'COMPLETED': 1}         133         133         1.91      spill
+4            conformal R10    15                            {'COMPLETED': 15}          96        5380         7.73      spill
+5              conformal P    17  {'COMPLETED': 16, 'CANCELLED by 375767': 1}         726       20875        14.26  hov,spill
+6              conformal E    15  {'COMPLETED': 14, 'CANCELLED by 375767': 1}          44        9150        32.76  hov,spill
+7              split check    10                            {'COMPLETED': 10}          10         892         1.83      spill
+8   kidney E pieces+merges    20                            {'COMPLETED': 20}          15        4699        32.54  hov,spill
+9           aggregation v4     1                             {'COMPLETED': 1}          17          17         0.22      spill
+10        gate bookkeeping     1                               {'RUNNING': 1}          25          25          NaN      spill
+FAILED:      slurm_job_id         name
+44        9527776   r11c_sweep
+46        9527921  r11c_sweep2
+47        9528006    g2c_probe
+49        9528038   g2c_anchor
+50        9528055    g2c_partb
+55        9528140  r11c_sweep3
+126       9531767  r11c_a6agg0
+127       9531813  r11c_a6agg1
+CANCELLED:      slurm_job_id           name    sec
+9         9472778   r11c_A2ccrcc    280
+96        9530278  r11c_cPCCRdon  12427
+120       9530303  r11c_cEkidsli     44
+missing from ledger 9530302: True
+{'sibling': 93, 'unstamped': 2}
+                                                                    dir    verdict frame_id
+66                                                              a6/inst  unstamped     None
+94  /work/users/w/e/weiyang/hest_replication/results/round3/A1_coverage  unstamped     None

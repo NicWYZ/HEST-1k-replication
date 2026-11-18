@@ -1,0 +1,30 @@
+platform: Longleaf
+slurm_job_id: 9495763
+slurm_job_partition: spill
+slurm_job_account: rc_tengfei_pi
+slurm_cpus_on_node: 1
+slurm_mem_per_node: 4096
+node: c151402
+track: closeout (round 11)
+stage: B7
+unit: b7/ledger_v2
+project_id: proj_8450e231133d
+frame_id: c9016697-c909-435e-82fc-ebfb9daaa857
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1 sklearn 1.9.1
+snapshot_commit: 5d7985b076ebe8fa4dcd2c0a04464fe77f7a4b82
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round11/closeout/_snapshots/5d7985b076ebe8fa4dcd2c0a04464fe77f7a4b82
+command: round11_closeout_b7_ledger.py /work/users/w/e/weiyang/hest_code/round11-closeout/results/round10/final_runs/job_ledger.csv
+config: {"commit":"5d7985b076ebe8fa4dcd2c0a04464fe77f7a4b82","stage":"B7","unit":"b7/ledger_v2"}
+config_sha256: c9f322b5995cbdada26c2dad988d67eb7cc7e8b6fd702ccec773e54dfaf4e8ad
+start: 2026-11-16T23:12:14-05:00
+end: 2026-11-16T23:12:49-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  cb1e57a30ede83abd13a5e038465dbbb  code/scripts/round11_closeout_b7_ledger.py
+  69321b9e328c901c38843cc40fdc256f  code/scripts/round11_closeout_prov.py
+  7235dd4b80e210c01bbb23b7824a96f0  code/scripts/round11_closeout_run.sh
+inputs (md5, path):
+  4e8fbed41cf1c8ada734471a5a211a04  /work/users/w/e/weiyang/hest_code/round11-closeout/results/round10/final_runs/job_ledger.csv

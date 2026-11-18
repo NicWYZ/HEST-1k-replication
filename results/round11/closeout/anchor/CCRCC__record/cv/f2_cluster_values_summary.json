@@ -1,0 +1,46 @@
+{
+ "config": {
+  "stage": "A2",
+  "unit": "cluster_values_CCRCC_record",
+  "repo_root": "/work/users/w/e/weiyang/hest_replication",
+  "populations": [
+   {
+    "task": "CCRCC",
+    "encoder": "uni_v2",
+    "path": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+    "lib_task": "CCRCC",
+    "scales": [
+     {
+      "name": "log1p",
+      "y_prefix": "y__",
+      "f_prefix": "f__"
+     }
+    ]
+   }
+  ]
+ },
+ "populations": [
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "scale": "log1p",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet",
+   "n_spots": 74220,
+   "n_genes": 50,
+   "n_donors": 24,
+   "morphology": true,
+   "morph_info": null,
+   "n_rows": 4750,
+   "seconds": 0.5,
+   "estimands": [
+    "mu",
+    "theta1",
+    "theta2",
+    "theta3"
+   ]
+  }
+ ],
+ "started": "2026-11-17T01:43:40",
+ "anchors": {},
+ "finished": "2026-11-17T01:43:41"
+}

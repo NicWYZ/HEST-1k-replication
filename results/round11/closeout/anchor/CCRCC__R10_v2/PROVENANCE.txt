@@ -1,0 +1,38 @@
+platform: Longleaf
+slurm_job_id: 9503536
+slurm_job_partition: spill
+slurm_job_account: rc_htzhu_pi
+slurm_cpus_on_node: 4
+slurm_mem_per_node: 32768
+node: c0502
+track: closeout (round 11)
+stage: A2
+unit: anchor/CCRCC__R10_v2
+project_id: proj_8450e231133d
+frame_id: c9016697-c909-435e-82fc-ebfb9daaa857
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1 sklearn 1.9.1
+snapshot_commit: b9142ddc75286c21bee8b7f27363cd9c21ebf690
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round11/closeout/_snapshots/b9142ddc75286c21bee8b7f27363cd9c21ebf690
+command: round11_closeout_chain.py /work/users/w/e/weiyang/hest_code/round11-closeout/results/round11/closeout/specs/CCRCC__R10.json
+config: {"commit":"b9142ddc75286c21bee8b7f27363cd9c21ebf690","stage":"A2","unit":"anchor/CCRCC__R10_v2"}
+config_sha256: 4f93a2915f58f2ff2856f8d2099045c9ff0045ba8388d0a1263c3609f1692edc
+start: 2026-11-16T23:40:34-05:00
+end: 2026-11-16T23:57:35-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  86f8d06fc40f020c9c1cda9d331e471e  code/scripts/round11_closeout_chain.py
+  69321b9e328c901c38843cc40fdc256f  code/scripts/round11_closeout_prov.py
+  7235dd4b80e210c01bbb23b7824a96f0  code/scripts/round11_closeout_run.sh
+  bac6ed492b1a242b42fd3f43ef41c082  code/scripts/round11_closeout_predict.py
+  dd504bedac22a82b21bbb510489acf57  code/scripts/round11_closeout_hest_join.py
+  bd1396e22455d0081c08d8f19984610e  code/scripts/round10_final_runs_f1_donor_diag.py
+  202ccfe23862a60810d96e50955d8010  code/scripts/round10_final_runs_f2_cluster_values.py
+  774f14de3ed57d6eb110dec4128cec1c  code/scripts/round10_final_runs_f2_regimeA.py
+  9580a38223ad46f5e141626572254fea  code/scripts/round10_final_runs_estimators.py
+  0ad7ae8efe554c1f285e5f384a9fb7f5  code/scripts/round3_a0_harness.py
+inputs (md5, path):
+  575f8eb87c0f3a08d027c2ddd2bda7fe  /work/users/w/e/weiyang/hest_code/round11-closeout/results/round11/closeout/specs/CCRCC__R10.json
+  0cc62c5e600cc3811168b71ca7e2c1ab  /work/users/w/e/weiyang/hest_replication/results/round3/B1_ppi/b1_predictions__CCRCC__uni_v2.parquet

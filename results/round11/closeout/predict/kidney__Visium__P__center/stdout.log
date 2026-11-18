@@ -1,0 +1,57 @@
+[load] 52 samples, 114137 spots x 3072 features, 35s
+fold S0006: train 40324 test 73813 33.4s
+fold S0014: train 108508 test 5629 44.7s
+fold S0171: train 111134 test 3003 45.4s
+fold S0175: train 88341 test 25796 41.6s
+fold S0249: train 108241 test 5896 45.0s
+{
+ "task": "kidney__Visium",
+ "arm": "uni_v2:ring1:ridgecv",
+ "encoders": [
+  "uni_v2"
+ ],
+ "context": "ring1",
+ "head": "ridgecv",
+ "design": "center",
+ "spots": 114137,
+ "spots_predicted": 114137,
+ "samples": 52,
+ "donors": 51,
+ "centers": 5,
+ "folds": 5,
+ "n_features": 3072,
+ "n_genes": 50,
+ "seconds_per_fold": 42.026653337478635,
+ "gene_symbols": null,
+ "kgrid": [
+  -6.0,
+  -5.5,
+  -5.0,
+  -4.5,
+  -4.0,
+  -3.5,
+  -3.0,
+  -2.5,
+  -2.0,
+  -1.5,
+  -1.0,
+  -0.5,
+  0.0,
+  0.5,
+  1.0
+ ],
+ "median_pearson_log1p": 0.10684494395722799,
+ "fold_median_pearson_log1p": {
+  "median": 0.1554361325366754,
+  "q25": 0.1454295403324155,
+  "q75": 0.33106379809730924,
+  "sd": 0.19661679049930683
+ },
+ "median_pearson_lognorm": 0.06026996336218136,
+ "fold_median_pearson_lognorm": {
+  "median": 0.17324466554057322,
+  "q25": 0.07555655562122943,
+  "q75": 0.1802233889251807,
+  "sd": 0.09197267461690534
+ }
+}

@@ -1,0 +1,149 @@
+{
+ "files": 24,
+ "fold_rows": 3576,
+ "cells": 864,
+ "by_design": [
+  {
+   "design": "random",
+   "score": "abs",
+   "cells": 132,
+   "encoders": 12,
+   "tasks": 11,
+   "coverage_mean": 0.8937327863316654,
+   "sd_across_cells": 0.009734927910239888,
+   "mean_without_IDC_audited": 0.8953734666904635,
+   "cells_without_IDC_audited": 120,
+   "mean_without_IDC_shipped": 0.895290215448177,
+   "cells_without_IDC_shipped": 120
+  },
+  {
+   "design": "random",
+   "score": "scaled",
+   "cells": 132,
+   "encoders": 12,
+   "tasks": 11,
+   "coverage_mean": 0.8992968684768207,
+   "sd_across_cells": 0.002753882802663067,
+   "mean_without_IDC_audited": 0.8999053766882755,
+   "cells_without_IDC_audited": 120,
+   "mean_without_IDC_shipped": 0.8995903085935536,
+   "cells_without_IDC_shipped": 120
+  },
+  {
+   "design": "slide_out",
+   "score": "abs",
+   "cells": 36,
+   "encoders": 12,
+   "tasks": 3,
+   "coverage_mean": 0.8584947281319253,
+   "sd_across_cells": 0.029400517843025567,
+   "mean_without_IDC_audited": 0.870666446857696,
+   "cells_without_IDC_audited": 24,
+   "mean_without_IDC_shipped": 0.8584947281319253,
+   "cells_without_IDC_shipped": 36
+  },
+  {
+   "design": "slide_out",
+   "score": "scaled",
+   "cells": 36,
+   "encoders": 12,
+   "tasks": 3,
+   "coverage_mean": 0.8711142423114718,
+   "sd_across_cells": 0.026027829026562588,
+   "mean_without_IDC_audited": 0.8864881744829903,
+   "cells_without_IDC_audited": 24,
+   "mean_without_IDC_shipped": 0.8711142423114718,
+   "cells_without_IDC_shipped": 36
+  },
+  {
+   "design": "donor",
+   "score": "abs",
+   "cells": 132,
+   "encoders": 12,
+   "tasks": 11,
+   "coverage_mean": 0.8024485509175472,
+   "sd_across_cells": 0.08447594203458182,
+   "mean_without_IDC_audited": 0.7994259762272411,
+   "cells_without_IDC_audited": 120,
+   "mean_without_IDC_shipped": 0.799940944318989,
+   "cells_without_IDC_shipped": 120
+  },
+  {
+   "design": "donor",
+   "score": "scaled",
+   "cells": 132,
+   "encoders": 12,
+   "tasks": 11,
+   "coverage_mean": 0.8040498182760293,
+   "sd_across_cells": 0.07347820636029197,
+   "mean_without_IDC_audited": 0.8022819199784317,
+   "cells_without_IDC_audited": 120,
+   "mean_without_IDC_shipped": 0.8013627184596664,
+   "cells_without_IDC_shipped": 120
+  },
+  {
+   "design": "patient",
+   "score": "abs",
+   "cells": 132,
+   "encoders": 12,
+   "tasks": 11,
+   "coverage_mean": 0.7862392719231861,
+   "sd_across_cells": 0.07692928690410425,
+   "mean_without_IDC_audited": 0.7827959481237421,
+   "cells_without_IDC_audited": 120,
+   "mean_without_IDC_shipped": 0.7829091524784079,
+   "cells_without_IDC_shipped": 120
+  },
+  {
+   "design": "patient",
+   "score": "scaled",
+   "cells": 132,
+   "encoders": 12,
+   "tasks": 11,
+   "coverage_mean": 0.7894590928274045,
+   "sd_across_cells": 0.07380557907344207,
+   "mean_without_IDC_audited": 0.785720269203292,
+   "cells_without_IDC_audited": 120,
+   "mean_without_IDC_shipped": 0.7863013256930752,
+   "cells_without_IDC_shipped": 120
+  }
+ ],
+ "CCRCC": [
+  {
+   "task": "CCRCC",
+   "label_set": "shipped",
+   "design": "random",
+   "score": "abs",
+   "encoders": 12,
+   "coverage_mean": 0.8809874361442861
+  },
+  {
+   "task": "CCRCC",
+   "label_set": "shipped",
+   "design": "donor",
+   "score": "abs",
+   "encoders": 12,
+   "coverage_mean": 0.8642708075597048
+  },
+  {
+   "task": "CCRCC",
+   "label_set": "shipped",
+   "design": "patient",
+   "score": "abs",
+   "encoders": 12,
+   "coverage_mean": 0.8562755815761779
+  }
+ ],
+ "H4": {
+  "encoders": 12,
+  "best": "hoptimus1",
+  "best_value": 0.4229,
+  "worst": "resnet50",
+  "worst_value": 0.3252,
+  "encoder_spread": 0.09770000000000001,
+  "total_random_minus_patient": 0.1586,
+  "ratio_total_over_spread": 1.623336745138178,
+  "same_patient_other_slide": 0.1357,
+  "sum_of_four_first_terms": 0.0568
+ }
+}

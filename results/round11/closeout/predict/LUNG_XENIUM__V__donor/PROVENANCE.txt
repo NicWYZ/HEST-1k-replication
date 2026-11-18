@@ -1,0 +1,33 @@
+platform: Longleaf
+slurm_job_id: 9503533
+slurm_job_partition: spill
+slurm_job_account: rc_tengfei_pi
+slurm_cpus_on_node: 4
+slurm_mem_per_node: 32768
+node: c0502
+track: closeout (round 11)
+stage: A5
+unit: predict/LUNG_XENIUM__V__donor
+project_id: proj_8450e231133d
+frame_id: c9016697-c909-435e-82fc-ebfb9daaa857
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1 sklearn 1.9.1
+snapshot_commit: b9142ddc75286c21bee8b7f27363cd9c21ebf690
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round11/closeout/_snapshots/b9142ddc75286c21bee8b7f27363cd9c21ebf690
+command: round11_closeout_predict.py /work/users/w/e/weiyang/st_fed_learn/data/tasks/lung__Xenium.json /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/data_registry/f1_data_hest_match.csv donor . --arm virchow2:none:r10 --map-task LUNG_XENIUM --only-mapped --tag LUNG_XENIUM --genes-from-parquet /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__uni_v2.parquet
+config: {"commit":"b9142ddc75286c21bee8b7f27363cd9c21ebf690","stage":"A5","unit":"predict/LUNG_XENIUM__V__donor"}
+config_sha256: ac7330f7f592513300383fcb0068bdd3ac732b87c72593605b175f417428a625
+start: 2026-11-16T23:40:33-05:00
+end: 2026-11-16T23:42:54-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  bac6ed492b1a242b42fd3f43ef41c082  code/scripts/round11_closeout_predict.py
+  69321b9e328c901c38843cc40fdc256f  code/scripts/round11_closeout_prov.py
+  7235dd4b80e210c01bbb23b7824a96f0  code/scripts/round11_closeout_run.sh
+  0ad7ae8efe554c1f285e5f384a9fb7f5  code/scripts/round3_a0_harness.py
+inputs (md5, path):
+  1a99987f5843f28e839649252e939ade  /work/users/w/e/weiyang/st_fed_learn/data/tasks/lung__Xenium.json
+  9456f5c9f226e618648e654c6aab277b  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/data_registry/f1_data_hest_match.csv
+  6aa0dbc8e957a236d09d112649db0352  /work/users/w/e/weiyang/hest_replication/results/round4/ppi/Q2_theory/predictions/b1_predictions__LUNG_XENIUM__uni_v2.parquet

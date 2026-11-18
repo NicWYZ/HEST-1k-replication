@@ -1,0 +1,442 @@
+location,quantity,reported,recomputed,abs_diff,verdict,job,file
+"6.2 table, CCRCC R10",width ratio fix1/classical (theta3 log1p nL=8),0.8949,0.8948557743062902,4.42e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, CCRCC R10",median R2c,0.429,0.429019031833912,1.9e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, CCRCC R10",fix1 coverage median,0.8966,0.89665,5e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, CCRCC R10",fix1 coverage MCSE (median over genes),0.0022,0.0021525417162034,4.75e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, CCRCC P",width ratio fix1/classical (theta3 log1p nL=8),0.975,0.9750130914474474,1.31e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, CCRCC P","per-gene change vs R10, median",0.0704,0.0703756761420274,2.43e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, CCRCC P","per-gene change vs R10, q25",-0.0108,-0.010774869341586,2.51e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, CCRCC P","per-gene change vs R10, q75",0.1349,0.1348543797324873,4.56e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, CCRCC P",median R2c,0.2809,0.2808791177867908,2.09e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, CCRCC P",fix1 coverage median,0.8871,0.8871249999999999,2.5e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, CCRCC P",fix1 coverage MCSE (median over genes),0.0022,0.0022374990602939,3.75e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, CCRCC E",width ratio fix1/classical (theta3 log1p nL=8),0.9984,0.9983573600765444,4.26e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, CCRCC E","per-gene change vs R10, median",0.0588,0.0588037906193849,3.79e-06,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, CCRCC E","per-gene change vs R10, q25",0.0009,0.0009067715070692,6.77e-06,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, CCRCC E","per-gene change vs R10, q75",0.1307,0.1307496494372551,4.96e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, CCRCC E",median R2c,0.3381,0.3381338378889251,3.38e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, CCRCC E",fix1 coverage median,0.8957,0.8956500000000001,5e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, CCRCC E",fix1 coverage MCSE (median over genes),0.0022,0.0021617235080313,3.83e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, INDIANA_KIDNEY R10",width ratio fix1/classical (theta3 log1p nL=8),0.957,0.9570161806110302,1.62e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, INDIANA_KIDNEY R10",median R2c,0.139,0.1390130844467643,1.31e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, INDIANA_KIDNEY R10",fix1 coverage median,0.8974,0.8974249999999999,2.5e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, INDIANA_KIDNEY R10",fix1 coverage MCSE (median over genes),0.0021,0.002145382564257,4.54e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, INDIANA_KIDNEY P",width ratio fix1/classical (theta3 log1p nL=8),0.9227,0.9227001093302404,1.09e-07,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, INDIANA_KIDNEY P","per-gene change vs R10, median",-0.0136,-0.013565873590138,3.41e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, INDIANA_KIDNEY P","per-gene change vs R10, q25",-0.0559,-0.0559186552629244,1.87e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, INDIANA_KIDNEY P","per-gene change vs R10, q75",0.0167,0.0167079426243073,7.94e-06,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, INDIANA_KIDNEY P",median R2c,0.1639,0.1639465175899752,4.65e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, INDIANA_KIDNEY P",fix1 coverage median,0.8955,0.8955,0.0,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, INDIANA_KIDNEY P",fix1 coverage MCSE (median over genes),0.0022,0.002163092956143,3.69e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, INDIANA_KIDNEY E",width ratio fix1/classical (theta3 log1p nL=8),0.9107,0.9107289637806524,2.9e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, INDIANA_KIDNEY E","per-gene change vs R10, median",-0.0195,-0.0194923407371274,7.66e-06,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, INDIANA_KIDNEY E","per-gene change vs R10, q25",-0.0598,-0.0598318154253722,3.18e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, INDIANA_KIDNEY E","per-gene change vs R10, q75",0.0168,0.0167527469741162,4.73e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, INDIANA_KIDNEY E",median R2c,0.2075,0.20747648735603,2.35e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, INDIANA_KIDNEY E",fix1 coverage median,0.8955,0.8955,0.0,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, INDIANA_KIDNEY E",fix1 coverage MCSE (median over genes),0.0022,0.0021630964297138,3.69e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, kidney Visium R10",width ratio fix1/classical (theta3 log1p nL=8),0.9367,0.9367495541789168,4.96e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, kidney Visium R10",median R2c,0.1986,0.1986054578509418,5.46e-06,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, kidney Visium R10",fix1 coverage median,0.8948,0.8948499999999999,5e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, kidney Visium R10",fix1 coverage MCSE (median over genes),0.0022,0.0021690167562019,3.1e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, kidney Visium P",width ratio fix1/classical (theta3 log1p nL=8),0.9631,0.9631224553623292,2.25e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, kidney Visium P","per-gene change vs R10, median",0.021,0.0210269797454484,2.7e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, kidney Visium P","per-gene change vs R10, q25",-0.0025,-0.0025442660477441,4.43e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, kidney Visium P","per-gene change vs R10, q75",0.0507,0.050716530463498,1.65e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, kidney Visium P",median R2c,0.1224,0.1223557704683236,4.42e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, kidney Visium P",fix1 coverage median,0.8925,0.892525,2.5e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, kidney Visium P",fix1 coverage MCSE (median over genes),0.0022,0.0021900242321274,9.98e-06,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, kidney Visium E",width ratio fix1/classical (theta3 log1p nL=8),0.993,0.9930190872609532,1.91e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, kidney Visium E","per-gene change vs R10, median",0.0495,0.0494956965311794,4.3e-06,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, kidney Visium E","per-gene change vs R10, q25",0.0262,0.0262356228758284,3.56e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, kidney Visium E","per-gene change vs R10, q75",0.0708,0.070811131726461,1.11e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, kidney Visium E",median R2c,0.1238,0.1237708158281517,2.92e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, kidney Visium E",fix1 coverage median,0.8915,0.8915,0.0,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, kidney Visium E",fix1 coverage MCSE (median over genes),0.0022,0.0021991781629403,8.22e-07,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, bowel Visium R10",width ratio fix1/classical (theta3 log1p nL=8),0.6691,0.6690551447436934,4.49e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, bowel Visium R10",median R2c,0.6258,0.6258447692920209,4.48e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, bowel Visium R10",fix1 coverage median,0.8878,0.8878250000000001,2.5e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, bowel Visium R10",fix1 coverage MCSE (median over genes),0.0022,0.0022314989945645,3.15e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, bowel Visium P",width ratio fix1/classical (theta3 log1p nL=8),0.6372,0.6372384918024939,3.85e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, bowel Visium P","per-gene change vs R10, median",-0.0484,-0.0484337873808519,3.38e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, bowel Visium P","per-gene change vs R10, q25",-0.103,-0.1029875717652963,1.24e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, bowel Visium P","per-gene change vs R10, q75",0.0056,0.0055938469499969,6.15e-06,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, bowel Visium P",median R2c,0.6326,0.6326312340116087,3.12e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, bowel Visium P",fix1 coverage median,0.8902,0.890175,2.5e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, bowel Visium P",fix1 coverage MCSE (median over genes),0.0022,0.0022109148831014,1.09e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, bowel Visium E",width ratio fix1/classical (theta3 log1p nL=8),0.6044,0.6044344568660032,3.45e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, bowel Visium E","per-gene change vs R10, median",-0.068,-0.0680004467938644,4.47e-07,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, bowel Visium E","per-gene change vs R10, q25",-0.093,-0.0929920315815332,7.97e-06,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, bowel Visium E","per-gene change vs R10, q75",-0.0056,-0.0056146259158406,1.46e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, bowel Visium E",median R2c,0.6451,0.6451015024810436,1.5e-06,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, bowel Visium E",fix1 coverage median,0.8892,0.88925,5e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, bowel Visium E",fix1 coverage MCSE (median over genes),0.0022,0.0022190426944617,1.9e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, LUNG_XENIUM R10",width ratio fix1/classical (theta3 log1p nL=8),0.5853,0.5852840028814117,1.6e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, LUNG_XENIUM R10",median R2c,0.7139,0.7139037015287624,3.7e-06,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, LUNG_XENIUM R10",fix1 coverage median,0.8878,0.8878,0.0,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, LUNG_XENIUM R10",fix1 coverage MCSE (median over genes),0.0022,0.0022317163798296,3.17e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, LUNG_XENIUM P",width ratio fix1/classical (theta3 log1p nL=8),0.5627,0.5626890461331859,1.1e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, LUNG_XENIUM P","per-gene change vs R10, median",-0.0136,-0.0136025557954856,2.56e-06,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, LUNG_XENIUM P","per-gene change vs R10, q25",-0.0518,-0.051821241075501,2.12e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, LUNG_XENIUM P","per-gene change vs R10, q75",0.0184,0.0184068311284656,6.83e-06,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, LUNG_XENIUM P",median R2c,0.7219,0.7218994282857356,5.72e-07,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, LUNG_XENIUM P",fix1 coverage median,0.8891,0.88915,5e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, LUNG_XENIUM P",fix1 coverage MCSE (median over genes),0.0022,0.002219935556497,1.99e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, LUNG_XENIUM E",width ratio fix1/classical (theta3 log1p nL=8),0.5425,0.5424863714713671,1.36e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, LUNG_XENIUM E","per-gene change vs R10, median",-0.036,-0.0359715698863541,2.84e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, LUNG_XENIUM E","per-gene change vs R10, q25",-0.086,-0.086042207177157,4.22e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, LUNG_XENIUM E","per-gene change vs R10, q75",0.021,0.0210304192777402,3.04e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, LUNG_XENIUM E",median R2c,0.7402,0.7402470402005527,4.7e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, LUNG_XENIUM E",fix1 coverage median,0.8908,0.8908,0.0,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 table, LUNG_XENIUM E",fix1 coverage MCSE (median over genes),0.0022,0.0022053952026791,5.4e-06,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"headline H3 Part A, CCRCC P",width ratio,0.975,0.9750130914474474,1.31e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"headline H3 Part A, CCRCC P",median R2c,0.2809,0.2808791177867908,2.09e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"headline H3 Part A, INDIANA_KIDNEY P",width ratio,0.9227,0.9227001093302404,1.09e-07,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"headline H3 Part A, INDIANA_KIDNEY P",median R2c,0.1639,0.1639465175899752,4.65e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"headline H3 Part A, kidney Visium P",width ratio,0.9631,0.9631224553623292,2.25e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"headline H3 Part A, kidney Visium P",median R2c,0.1224,0.1223557704683236,4.42e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"headline H3 Part A, bowel Visium P",width ratio,0.6372,0.6372384918024939,3.85e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"headline H3 Part A, bowel Visium P",median R2c,0.6326,0.6326312340116087,3.12e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"headline H3 Part A, LUNG_XENIUM P",width ratio,0.5627,0.5626890461331859,1.1e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"headline H3 Part A, LUNG_XENIUM P",median R2c,0.7219,0.7218994282857356,5.72e-07,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"headline H3 Part A, CCRCC E",width ratio,0.9984,0.9983573600765444,4.26e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"headline H3 Part A, CCRCC E",median R2c,0.3381,0.3381338378889251,3.38e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"headline H3 Part A, INDIANA_KIDNEY E",width ratio,0.9107,0.9107289637806524,2.9e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"headline H3 Part A, INDIANA_KIDNEY E",median R2c,0.2075,0.20747648735603,2.35e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"headline H3 Part A, kidney Visium E",width ratio,0.993,0.9930190872609532,1.91e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"headline H3 Part A, kidney Visium E",median R2c,0.1238,0.1237708158281517,2.92e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"headline H3 Part A, bowel Visium E",width ratio,0.6044,0.6044344568660032,3.45e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"headline H3 Part A, bowel Visium E",median R2c,0.6451,0.6451015024810436,1.5e-06,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"headline H3 Part A, LUNG_XENIUM E",width ratio,0.5425,0.5424863714713671,1.36e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"headline H3 Part A, LUNG_XENIUM E",median R2c,0.7402,0.7402470402005527,4.7e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"headline H3 Part A, CCRCC R10",width ratio,0.8949,0.8948557743062902,4.42e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"headline H3 Part A, INDIANA_KIDNEY R10",width ratio,0.957,0.9570161806110302,1.62e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"headline H3 Part A, kidney Visium R10",width ratio,0.9367,0.9367495541789168,4.96e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"headline H3 Part A, bowel Visium R10",width ratio,0.6691,0.6690551447436934,4.49e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"headline H3 Part A, LUNG_XENIUM R10",width ratio,0.5853,0.5852840028814117,1.6e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+headline item 3,CCRCC width ratio rise under P,0.08,0.08015731714115726,0.000157,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+headline item 3,CCRCC width ratio rise under E,0.104,0.10350158577025426,0.000498,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.2 LODO list, CCRCC R10",LODO median R2 vs LOO constant (log1p),0.0237,0.0237080370787985,8.04e-06,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/d12*/d12_lodo_r2__*.csv
+"6.2 LODO list, CCRCC P",LODO median R2 vs LOO constant (log1p),0.0118,0.01184778663581,4.78e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/d12*/d12_lodo_r2__*.csv
+"6.2 LODO list, CCRCC E",LODO median R2 vs LOO constant (log1p),0.0467,0.0466574729003119,4.25e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/d12*/d12_lodo_r2__*.csv
+"6.2 LODO list, INDIANA_KIDNEY R10",LODO median R2 vs LOO constant (log1p),0.0423,0.04232745684925,2.75e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/d12*/d12_lodo_r2__*.csv
+"6.2 LODO list, INDIANA_KIDNEY P",LODO median R2 vs LOO constant (log1p),0.0565,0.0565421798909437,4.22e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/d12*/d12_lodo_r2__*.csv
+"6.2 LODO list, INDIANA_KIDNEY E",LODO median R2 vs LOO constant (log1p),0.0834,0.0833878342523415,1.22e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/d12*/d12_lodo_r2__*.csv
+"6.2 LODO list, LUNG_XENIUM R10",LODO median R2 vs LOO constant (log1p),0.1071,0.1071125815905436,1.26e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/d12*/d12_lodo_r2__*.csv
+"6.2 LODO list, LUNG_XENIUM P",LODO median R2 vs LOO constant (log1p),0.1264,0.1263760890262434,2.39e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/d12*/d12_lodo_r2__*.csv
+"6.2 LODO list, LUNG_XENIUM E",LODO median R2 vs LOO constant (log1p),0.1395,0.1395499778411444,5e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/d12*/d12_lodo_r2__*.csv
+"6.2 LODO list, bowel Visium R10",LODO median R2 vs LOO constant (log1p),0.2218,0.2217836376070593,1.64e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/d12*/d12_lodo_r2__*.csv
+"6.2 LODO list, bowel Visium P",LODO median R2 vs LOO constant (log1p),0.2617,0.2616834452936359,1.66e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/d12*/d12_lodo_r2__*.csv
+"6.2 LODO list, bowel Visium E",LODO median R2 vs LOO constant (log1p),0.3545,0.3545431333989399,4.31e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/d12*/d12_lodo_r2__*.csv
+"6.2 LODO list, kidney Visium R10",LODO median R2 vs LOO constant (log1p),0.3815,0.3815216570322675,2.17e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/d12*/d12_lodo_r2__*.csv
+"6.2 LODO list, kidney Visium P",LODO median R2 vs LOO constant (log1p),0.3446,0.3446173280690325,1.73e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/d12*/d12_lodo_r2__*.csv
+"6.2 LODO list, kidney Visium E",LODO median R2 vs LOO constant (log1p),0.3213,0.3213416085215327,4.16e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/d12*/d12_lodo_r2__*.csv
+"headline H3 Part A, CCRCC P",LODO R2,0.0118,0.01184778663581,4.78e-05,agrees at quoted precision,9669716,d12_lodo_r2__*.csv
+"headline H3 Part A, kidney Visium P",LODO R2,0.3446,0.3446173280690325,1.73e-05,agrees at quoted precision,9669716,d12_lodo_r2__*.csv
+"headline H3 Part A, CCRCC E",LODO R2,0.0467,0.0466574729003119,4.25e-05,agrees at quoted precision,9669716,d12_lodo_r2__*.csv
+"headline H3 Part A, kidney Visium E",LODO R2,0.3213,0.3213416085215327,4.16e-05,agrees at quoted precision,9669716,d12_lodo_r2__*.csv
+6.2 reading / headline H3,"theta3 cells where rho(wr,R2c) < rho(wr,pearson)",84,84.0,0.0,agrees at quoted precision,9669716,fcheck_donor_cells.csv
+6.2 reading / headline H3,theta3 cells (count),84,84.0,0.0,agrees at quoted precision,9669716,fcheck_donor_cells.csv
+6.2 reading,"theta3 rho(wr,R2c) minimum",-0.97,-0.973685474189676,0.00369,agrees at quoted precision,9669716,fcheck_donor_cells.csv
+6.2 reading,"theta3 rho(wr,R2c) maximum",-0.3,-0.3019927971188474,0.00199,agrees at quoted precision,9669716,fcheck_donor_cells.csv
+6.2 reading,"mu cells where rho(wr,R2c) < rho(wr,pearson)",82,82.0,0.0,agrees at quoted precision,9669716,fcheck_donor_cells.csv
+6.2 reading,mu cells (count),84,84.0,0.0,agrees at quoted precision,9669716,fcheck_donor_cells.csv
+6.2 reading,mu exceptions,CCRCC log1p nL=8 under R10 and P; within 0.03,CCRCC log1p n=8 P: -0.8337 vs -0.8414; CCRCC log1p n=8 R10: -0.8261 vs -0.8485,,see recomputed,9669716,fcheck_donor_cells.csv
+5.3 A6.2(d),cells held of 15,15,15.0,0.0,agrees at quoted precision,9669716,fcheck_donor_cells.csv
+6.2 reading,INDIANA_KIDNEY P median spot Pearson,0.2235,0.223459968284625,4e-05,agrees at quoted precision,9669716,"join_log1p parquet (y__, f__)"
+6.2 reading,INDIANA_KIDNEY R10 median spot Pearson,0.2299,0.2298594843128739,4.05e-05,agrees at quoted precision,9669716,"join_log1p parquet (y__, f__)"
+6.2 reading,cells (of 10) where spot Pearson rises vs R10,9,9.0,0.0,agrees at quoted precision,9669716,fcheck_donor_cells.csv
+6.2 normalised scale,kidney Visium theta3 lognorm nL=8 wr P,0.9516,0.9515657874854252,3.42e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+6.2 normalised scale,kidney Visium theta3 lognorm nL=8 wr E,1.0225,1.0224810836021627,1.89e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+6.2 normalised scale,kidney Visium theta3 lognorm nL=8 wr R10,0.9566,0.9566026858295452,2.69e-06,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"5.3 A6.1 / 6.2 spread of f_g, mu log1p [median of per-gene ratios]",bowel Visium P,1.016,1.0159768526353896,2.31e-05,agrees at quoted precision,9669716,cv/cluster_values__*.parquet
+"5.3 A6.1 / 6.2 spread of f_g, mu log1p [median of per-gene ratios]",LUNG_XENIUM P,1.072,1.0722828602325405,0.000283,agrees at quoted precision,9669716,cv/cluster_values__*.parquet
+"5.3 A6.1 / 6.2 spread of f_g, mu log1p [median of per-gene ratios]",kidney Visium E,1.12,1.1195037465412043,0.000496,agrees at quoted precision,9669716,cv/cluster_values__*.parquet
+"5.3 A6.1 / 6.2 spread of f_g, mu log1p [median of per-gene ratios]",bowel Visium E,1.023,1.0230597239282058,5.97e-05,agrees at quoted precision,9669716,cv/cluster_values__*.parquet
+"5.3 A6.1 / 6.2 spread of f_g, mu log1p [ratio of medians]",bowel Visium P,1.016,1.0168180580573885,0.000818,"alternative definition (ratio of medians), shown for contrast; the report uses the median of per-gene ratios, which agrees",9669716,cv/cluster_values__*.parquet
+"5.3 A6.1 / 6.2 spread of f_g, mu log1p [ratio of medians]",LUNG_XENIUM P,1.072,1.103829417481061,0.0318,"alternative definition (ratio of medians), shown for contrast; the report uses the median of per-gene ratios, which agrees",9669716,cv/cluster_values__*.parquet
+"5.3 A6.1 / 6.2 spread of f_g, mu log1p [ratio of medians]",kidney Visium E,1.12,1.1093610616164022,0.0106,"alternative definition (ratio of medians), shown for contrast; the report uses the median of per-gene ratios, which agrees",9669716,cv/cluster_values__*.parquet
+"5.3 A6.1 / 6.2 spread of f_g, mu log1p [ratio of medians]",bowel Visium E,1.023,1.0594190646417283,0.0364,"alternative definition (ratio of medians), shown for contrast; the report uses the median of per-gene ratios, which agrees",9669716,cv/cluster_values__*.parquet
+6.2 / plan A6.1,"P mu log1p R2c change vs R10, min",-0.037,-0.036993963392913276,6.04e-06,agrees at quoted precision,9669716,cv/cluster_values__*.parquet
+6.2 / plan A6.1,"P mu log1p R2c change vs R10, max",0.029,0.029193265431535692,0.000193,agrees at quoted precision,9669716,cv/cluster_values__*.parquet
+5.3 A6.1,bowel P mu R2c change,-0.01,-0.01040593315219529,0.000406,agrees at quoted precision,9669716,cluster_values
+5.3 A6.1,LUNG_XENIUM P mu R2c change,0.007,0.007329889981204013,0.00033,agrees at quoted precision,9669716,cluster_values
+5.3 A6.2(f) / 7 item 4,"CCRCC mu log1p fix1 coverage min (nL 8,16, 3 arms)",0.848,0.848025,2.5e-05,agrees at quoted precision,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+5.3 A6.2(f) / 7 item 4,"CCRCC mu log1p fix1 coverage max (nL 8,16, 3 arms)",0.87,0.8694,0.0006,DISAGREES,9669716,a6/donor/<task>__<arm>/regimeA/regimeA_cells.parquet; cv/cluster_values__*.parquet
+"6.3 table, kidney Visium R10",median Pearson held out by center,0.1231,0.1231185212706694,1.85e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"6.3 table, kidney Visium R10","per-fold median, median over folds",0.1325,0.1324703918506242,2.96e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"6.3 table, kidney Visium R10","per-fold median, q25",0.0326,0.0326469571793958,4.7e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"6.3 table, kidney Visium R10","per-fold median, q75",0.2922,0.2922401695318951,4.02e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"headline H2 Part A, kidney Visium R10",by center,0.1231,0.1231185212706694,1.85e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"6.3 table, kidney Visium P",median Pearson held out by center,0.1068,0.1068449439572279,4.49e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"6.3 table, kidney Visium P","per-fold median, median over folds",0.1554,0.1554361325366754,3.61e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"6.3 table, kidney Visium P","per-fold median, q25",0.1454,0.1454295403324155,2.95e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"6.3 table, kidney Visium P","per-fold median, q75",0.3311,0.3310637980973092,3.62e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"headline H2 Part A, kidney Visium P",by center,0.1068,0.1068449439572279,4.49e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"6.3 table, kidney Visium E",median Pearson held out by center,0.136,0.1359825470644462,1.75e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"6.3 table, kidney Visium E","per-fold median, median over folds",0.1784,0.1783667188980546,3.33e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"6.3 table, kidney Visium E","per-fold median, q25",0.0096,0.009638314759145,3.83e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"6.3 table, kidney Visium E","per-fold median, q75",0.3574,0.357416885350153,1.69e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"headline H2 Part A, kidney Visium E",by center,0.136,0.1359825470644462,1.75e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"6.3 table, brain Visium R10",median Pearson held out by center,0.0215,0.0215311158944314,3.11e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"6.3 table, brain Visium R10","per-fold median, median over folds",0.1213,0.1212625610010713,3.74e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"6.3 table, brain Visium R10","per-fold median, q25",0.013,0.0130409876542972,4.1e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"6.3 table, brain Visium R10","per-fold median, q75",0.1914,0.1913792864475688,2.07e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"headline H2 Part A, brain Visium R10",by center,0.0215,0.0215311158944314,3.11e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"6.3 table, brain Visium P",median Pearson held out by center,0.0643,0.064287942581607,1.21e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"6.3 table, brain Visium P","per-fold median, median over folds",0.1264,0.1263905684589916,9.43e-06,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"6.3 table, brain Visium P","per-fold median, q25",0.0379,0.0379475165850499,4.75e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"6.3 table, brain Visium P","per-fold median, q75",0.2347,0.2346663530646639,3.36e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"headline H2 Part A, brain Visium P",by center,0.0643,0.064287942581607,1.21e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"6.3 table, brain Visium E",median Pearson held out by center,0.1177,0.1176877495935548,1.23e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"6.3 table, brain Visium E","per-fold median, median over folds",0.1153,0.1153385818693171,3.86e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"6.3 table, brain Visium E","per-fold median, q25",0.042,0.0419861474029122,1.39e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"6.3 table, brain Visium E","per-fold median, q75",0.163,0.162987521202752,1.25e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+"headline H2 Part A, brain Visium E",by center,0.1177,0.1176877495935548,1.23e-05,agrees at quoted precision,9670331,predict/<task>__<arm>__center/pred__*.parquet
+headline H2 / 5.1 P11.3,kidney P by donor,0.4816,0.4816103878263081,1.04e-05,agrees at quoted precision,9670331,predict/kidney__Visium__P__donor/pred__*.parquet
+6.3 text,"kidney R10 by donor (0.47, lower end)",0.47,0.4713316492580511,0.00133,agrees at quoted precision,9670331,predict/kidney__Visium__R10__donor/pred__*.parquet
+6.3 text,"kidney E by donor (0.50, upper end)",0.5,0.5022689002717357,0.00227,agrees at quoted precision,9670331,predict/kidney__Visium__E__donor_v2/pred__*.parquet
+"6.3 table, kidney Visium R10","HCP pooled (donor-level), median center, alpha 0.2",0.9057,0.9056670811867116,3.29e-05,agrees at quoted precision,9670331,a6/inst/center_v1/inst_by_gene.parquet
+"6.3 table, kidney Visium R10","HCP pooled (donor-level), S0006",0.6552,0.6552097868939075,9.79e-06,agrees at quoted precision,9670331,a6/inst/center_v1/inst_by_gene.parquet
+"6.3 table, kidney Visium R10","HCP over centers, median center",1.0,1.0,0.0,agrees at quoted precision,9670331,a6/inst/center_v1/inst_by_gene.parquet
+"headline H2 Part A, kidney R10",S0006,0.6552,0.6552097868939075,9.79e-06,agrees at quoted precision,9670331,a6/inst/center_v1/inst_by_gene.parquet
+"headline H2 Part A, kidney R10",median center,0.9057,0.9056670811867116,3.29e-05,agrees at quoted precision,9670331,a6/inst/center_v1/inst_by_gene.parquet
+"6.3 table, kidney Visium P","HCP pooled (donor-level), median center, alpha 0.2",0.9281,0.9280511636169836,4.88e-05,agrees at quoted precision,9670331,a6/inst/center_v1/inst_by_gene.parquet
+"6.3 table, kidney Visium P","HCP pooled (donor-level), S0006",0.5819,0.5818893690813272,1.06e-05,agrees at quoted precision,9670331,a6/inst/center_v1/inst_by_gene.parquet
+"6.3 table, kidney Visium P","HCP over centers, median center",1.0,1.0,0.0,agrees at quoted precision,9670331,a6/inst/center_v1/inst_by_gene.parquet
+"headline H2 Part A, kidney P",S0006,0.5819,0.5818893690813272,1.06e-05,agrees at quoted precision,9670331,a6/inst/center_v1/inst_by_gene.parquet
+"headline H2 Part A, kidney P",median center,0.9281,0.9280511636169836,4.88e-05,agrees at quoted precision,9670331,a6/inst/center_v1/inst_by_gene.parquet
+"6.3 table, kidney Visium E","HCP pooled (donor-level), median center, alpha 0.2",0.9326,0.9325812755373956,1.87e-05,agrees at quoted precision,9670331,a6/inst/center_v1/inst_by_gene.parquet
+"6.3 table, kidney Visium E","HCP pooled (donor-level), S0006",0.6296,0.6295706718328751,2.93e-05,agrees at quoted precision,9670331,a6/inst/center_v1/inst_by_gene.parquet
+"6.3 table, kidney Visium E","HCP over centers, median center",1.0,1.0,0.0,agrees at quoted precision,9670331,a6/inst/center_v1/inst_by_gene.parquet
+"headline H2 Part A, kidney E",S0006,0.6296,0.6295706718328751,2.93e-05,agrees at quoted precision,9670331,a6/inst/center_v1/inst_by_gene.parquet
+"headline H2 Part A, kidney E",median center,0.9326,0.9325812755373956,1.87e-05,agrees at quoted precision,9670331,a6/inst/center_v1/inst_by_gene.parquet
+"6.4 table, CCRCC",donors (donor design n_folds),24,24.0,0.0,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, CCRCC",R10 random coverage mean,0.8824,0.8823910407633694,8.96e-06,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, CCRCC",R10 random coverage sd over folds,0.0009,0.0008560239937324,4.4e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, CCRCC",R10 donor coverage mean,0.864,0.8639834467446232,1.66e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, CCRCC",R10 donor coverage sd over folds,0.1442,0.1442197937458633,1.98e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, CCRCC",donor under P,0.8649,0.8648741286823652,2.59e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, CCRCC",donor under E,0.8613,0.8612729050946518,2.71e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"headline H1(b) Part A, CCRCC",donor under P,0.8649,0.8648741286823652,2.59e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, INDIANA_KIDNEY",donors (donor design n_folds),25,25.0,0.0,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, INDIANA_KIDNEY",R10 random coverage mean,0.907,0.90704012087713,4.01e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, INDIANA_KIDNEY",R10 random coverage sd over folds,0.013,0.0130407940957239,4.08e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, INDIANA_KIDNEY",R10 slide_out coverage mean,0.879,0.8790056889704372,5.69e-06,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, INDIANA_KIDNEY",R10 slide_out coverage sd over folds,0.0463,0.0463182154387596,1.82e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, INDIANA_KIDNEY",R10 donor coverage mean,0.8776,0.8775830114186616,1.7e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, INDIANA_KIDNEY",R10 donor coverage sd over folds,0.0442,0.0442177828236688,1.78e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, INDIANA_KIDNEY",donor under P,0.8747,0.8746744313394434,2.56e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, INDIANA_KIDNEY",donor under E,0.8771,0.8770924733283811,7.53e-06,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"headline H1(b) Part A, INDIANA_KIDNEY",donor under P,0.8747,0.8746744313394434,2.56e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, LUNG_XENIUM",donors (donor design n_folds),15,15.0,0.0,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, LUNG_XENIUM",R10 random coverage mean,0.9006,0.9006410623301023,4.11e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, LUNG_XENIUM",R10 random coverage sd over folds,0.0056,0.0055537493495814,4.63e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, LUNG_XENIUM",R10 slide_out coverage mean,0.897,0.8970304582095345,3.05e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, LUNG_XENIUM",R10 slide_out coverage sd over folds,0.0404,0.0403549850896393,4.5e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, LUNG_XENIUM",R10 donor coverage mean,0.8872,0.8871551273774376,4.49e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, LUNG_XENIUM",R10 donor coverage sd over folds,0.0376,0.0375800688631268,1.99e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, LUNG_XENIUM",donor under P,0.8874,0.8874085426719541,8.54e-06,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, LUNG_XENIUM",donor under E,0.885,0.8850306612309616,3.07e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"headline H1(b) Part A, LUNG_XENIUM",donor under P,0.8874,0.8874085426719541,8.54e-06,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, bowel Visium",donors (donor design n_folds),18,18.0,0.0,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, bowel Visium",R10 random coverage mean,0.8984,0.8984277125580492,2.77e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, bowel Visium",R10 random coverage sd over folds,0.0055,0.0054825203085662,1.75e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, bowel Visium",R10 slide_out coverage mean,0.8941,0.8940564970951183,4.35e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, bowel Visium",R10 slide_out coverage sd over folds,0.1352,0.1351565388956802,4.35e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, bowel Visium",R10 donor coverage mean,0.8921,0.8921130723898296,1.31e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, bowel Visium",R10 donor coverage sd over folds,0.1261,0.1261211277613854,2.11e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, bowel Visium",R10 center coverage mean,0.8344,0.834350207363308,4.98e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, bowel Visium",R10 center coverage sd over folds,0.1351,0.1351368510791879,3.69e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, bowel Visium",donor under P,0.8881,0.8881244019046055,2.44e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, bowel Visium",donor under E,0.887,0.8869750325816389,2.5e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"headline H1(b) Part A, bowel Visium",donor under P,0.8881,0.8881244019046055,2.44e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, kidney Visium",donors (donor design n_folds),51,51.0,0.0,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, kidney Visium",R10 random coverage mean,0.9073,0.9072625499515412,3.75e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, kidney Visium",R10 random coverage sd over folds,0.0114,0.0113823067300627,1.77e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, kidney Visium",R10 slide_out coverage mean,0.8999,0.8998599856598506,4e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, kidney Visium",R10 slide_out coverage sd over folds,0.0673,0.0672778644683155,2.21e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, kidney Visium",R10 donor coverage mean,0.894,0.8940230551576787,2.31e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, kidney Visium",R10 donor coverage sd over folds,0.0787,0.0787184566447377,1.85e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, kidney Visium",R10 center coverage mean,0.8777,0.877657028432135,4.3e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, kidney Visium",R10 center coverage sd over folds,0.1096,0.1095759644103429,2.4e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, kidney Visium",donor under P,0.8923,0.8922810018372054,1.9e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"6.4 table, kidney Visium",donor under E,0.8941,0.8941482492663035,4.82e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"headline H1(b) Part A, kidney Visium",donor under P,0.8923,0.8922810018372054,1.9e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+6.4 note,kidney Visium random folds reported,35,35.0,0.0,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"headline H1(b) Part A, CCRCC",random under P,0.8803,0.8802603860207247,3.96e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"headline H1(b) Part A, INDIANA_KIDNEY",random under P,0.9069,0.9069291544869742,2.92e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"headline H1(b) Part A, LUNG_XENIUM",random under P,0.9,0.9000255056764,2.55e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"headline H1(b) Part A, bowel Visium",random under P,0.8977,0.8977173208446404,1.73e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+"headline H1(b) Part A, kidney Visium",random under P,0.9084,0.9083858371092554,1.42e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+headline / 5.1 P11.4,kidney center under P,0.8714,0.871356040693073,4.4e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+headline item 4,kidney P random - center,0.037,0.037029796416182315,2.98e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+headline item 4,kidney R10 random - center,0.0296,0.029605521519406208,5.52e-06,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+5.3 A6.4(a),cells with random within 0.01 of 0.90,27,27.0,0.0,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+5.3 A6.4,"(task, scale, arm) cells",30,30.0,0.0,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+5.3 A6.4(a),CCRCC log1p random under R10,0.8824,0.8823910407633694,8.96e-06,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+5.3 A6.4(a),CCRCC log1p random under P,0.8803,0.8802603860207247,3.96e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+5.3 A6.4(a),CCRCC log1p random under E,0.8868,0.8868493868972981,4.94e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+5.3 A6.4(b),cells with donor >= 0.02 below random,5,5.0,0.0,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+5.3 A6.4(c) / 6.4,"max |donor(P,E) - donor(R10)| over 20 cells",0.0051,0.00513803980819072,3.8e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+5.3 A6.4(c),cells compared,20,20.0,0.0,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+6.4 reading,"donor coverage sd over folds, min (30 cells)",0.03,0.0298568297105756,0.000143,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+6.4 reading,"donor coverage sd over folds, max (30 cells)",0.147,0.1465752583840669,0.000425,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+5.3 A6.4(d) / 6.4,cells with center below donor,12,12.0,0.0,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+5.3 A6.4(d),center cells (count),12,12.0,0.0,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+6.4 reading / 5.3 B2(d),R10 bowel log1p donor - center,0.0578,0.057762865026521615,3.71e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+6.4 reading,R10 kidney lognorm donor - center,0.0479,0.04785022266516559,4.98e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+6.4 reading / 5.3 B2(d),R10 kidney log1p donor - center,0.0164,0.01636602672554366,3.4e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+6.4 reading,R10 bowel lognorm donor - center,0.0064,0.006437038603208545,3.7e-05,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+6.4 / headline H1(b),R10 log1p donor shortfall min,0.006,0.006314640168219587,0.000315,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+6.4 / headline H1(b),R10 log1p donor shortfall max,0.029,0.029457109458468467,0.000457,agrees at quoted precision,9670332,a6/conformal/<task>__<arm>__<design>/a1_by_fold__*.csv
+6.4 reading / headline item 4 (round 3),HCC donor coverage,0.7625,0.762563676498083,6.37e-05,DISAGREES,9670332,results/round3/A1_coverage/a1_by_task__uni_v2__main.csv (score abs)
+6.4 reading / headline item 4 (round 3),SKCM donor coverage,0.6801,0.6801415122208436,4.15e-05,agrees at quoted precision,9670332,results/round3/A1_coverage/a1_by_task__uni_v2__main.csv (score abs)
+6.4 reading / headline item 4 (round 3),LUNG donor coverage,0.6177,0.6177021931893971,2.19e-06,agrees at quoted precision,9670332,results/round3/A1_coverage/a1_by_task__uni_v2__main.csv (score abs)
+6.4 reading (round 3),shortfall min over HCC/SKCM/LUNG,0.14,0.1402196377062557,0.00022,agrees at quoted precision,9670332,results/round3/A1_coverage/a1_by_task__uni_v2__main.csv (score abs)
+6.4 reading (round 3),shortfall max over HCC/SKCM/LUNG,0.28,0.2815418042272664,0.00154,agrees at quoted precision,9670332,results/round3/A1_coverage/a1_by_task__uni_v2__main.csv (score abs)
+6.4 reading (round 3),CCRCC shortfall,0.0176,0.0176449127278797,4.49e-05,agrees at quoted precision,9670332,results/round3/A1_coverage/a1_by_task__uni_v2__main.csv (score abs)
+6.4 reading (round 3),PRAD shortfall,0.0207,0.0207730987921137,7.31e-05,DISAGREES,9670332,results/round3/A1_coverage/a1_by_task__uni_v2__main.csv (score abs)
+6.4 reading (round 3),PAAD shortfall,-0.0023,-0.002332564617169,3.26e-05,agrees at quoted precision,9670332,results/round3/A1_coverage/a1_by_task__uni_v2__main.csv (score abs)
+plan A6.4 reading (round 3),LYMPH_IDC shortfall,0.0845,0.0845079093032734,7.91e-06,agrees at quoted precision,9670332,results/round3/A1_coverage/a1_by_task__uni_v2__main.csv (score abs)
+plan A6.4 reading (round 3),READ shortfall,0.0655,0.0654290414114189,7.1e-05,DISAGREES,9670332,results/round3/A1_coverage/a1_by_task__uni_v2__main.csv (score abs)
+headline item 4 / 6.4 (round 3),CCRCC donor,0.8654,0.8653727123020528,2.73e-05,agrees at quoted precision,9670332,results/round3/A1_coverage/a1_by_task__uni_v2__main.csv (score abs)
+headline item 4 / 6.4 (round 3),CCRCC random,0.883,0.8830176250299325,1.76e-05,agrees at quoted precision,9670332,results/round3/A1_coverage/a1_by_task__uni_v2__main.csv (score abs)
+6.4 reading (round 3),every shortfall > 0.05 on a task with at most four donors,true,max donors among shortfall>0.05: 4; HCC/shipped 2d 0.1402; IDC/audited 3d 0.0522; LUNG/shipped 2d 0.2815; LYMPH_IDC/shipped 4d 0.0845; READ/shipped 2d 0.0654; SKCM/shipped 2d 0.2197,,agrees,9670332,results/round3/A1_coverage/a1_by_task__uni_v2__main.csv (score abs)
+"6.1 table, kidney__Visium R10",median Pearson log1p,0.4713,0.4713316492580511,3.16e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, kidney__Visium P",median Pearson log1p,0.4816,0.4816103878263081,1.04e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, kidney__Visium P",paired per-fold gain median,0.0291,0.0291117502346155,1.18e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, kidney__Visium P",gain q25,0.0004,0.0003706931939312,2.93e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, kidney__Visium P",gain q75,0.0514,0.0514276748188946,2.77e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, kidney__Visium P",share folds higher,0.745,0.7450980392156863,9.8e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, kidney__Visium E",median Pearson log1p,0.5023,0.5022689002717357,3.11e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, kidney__Visium E",paired per-fold gain median,0.0302,0.0301873525601534,1.26e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, kidney__Visium E",gain q25,-0.0121,-0.01206135168675,3.86e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, kidney__Visium E",gain q75,0.0634,0.0633781444598167,2.19e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, kidney__Visium E",share folds higher,0.686,0.6862745098039216,0.000275,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, bowel__Visium R10",median Pearson log1p,0.5113,0.5112966322464221,3.37e-06,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, bowel__Visium P",median Pearson log1p,0.5296,0.5296118603558748,1.19e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, bowel__Visium P",paired per-fold gain median,0.0405,0.0405169174432225,1.69e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, bowel__Visium P",gain q25,0.0186,0.0186320339265034,3.2e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, bowel__Visium P",gain q75,0.0802,0.0801856501817155,1.43e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, bowel__Visium P",share folds higher,0.889,0.8888888888888888,0.000111,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, bowel__Visium E",median Pearson log1p,0.5943,0.594276680620726,2.33e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, bowel__Visium E",paired per-fold gain median,0.0491,0.0491309354284107,3.09e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, bowel__Visium E",gain q25,0.0355,0.0355060647652244,6.06e-06,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, bowel__Visium E",gain q75,0.0765,0.0764537082627446,4.63e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, bowel__Visium E",share folds higher,1.0,1.0,0.0,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, LUNG_XENIUM R10",median Pearson log1p,0.6189,0.6189380949102621,3.81e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, LUNG_XENIUM P",median Pearson log1p,0.6293,0.6293379125311848,3.79e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, LUNG_XENIUM P",paired per-fold gain median,0.0234,0.0234243202576217,2.43e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, LUNG_XENIUM P",gain q25,0.0163,0.0162896989970067,1.03e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, LUNG_XENIUM P",gain q75,0.029,0.029047381951055,4.74e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, LUNG_XENIUM P",share folds higher,1.0,1.0,0.0,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, LUNG_XENIUM E",median Pearson log1p,0.6358,0.6358493589750723,4.94e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, LUNG_XENIUM E",paired per-fold gain median,0.0252,0.0252309469481183,3.09e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, LUNG_XENIUM E",gain q25,0.0202,0.0202005810848942,5.81e-07,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, LUNG_XENIUM E",gain q75,0.0336,0.0335650555134003,3.49e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, LUNG_XENIUM E",share folds higher,0.933,0.9333333333333332,0.000333,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, kidney__Visium",folds,51,51.0,0.0,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, bowel__Visium",folds,18,18.0,0.0,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+"6.1 table, LUNG_XENIUM",folds,15,15.0,0.0,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_strength.csv
+5.1 P11.1 outcome,kidney__Visium gain vs reference,0.0106,0.010610387826308187,1.04e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_p111.json
+5.1 P11.1 outcome,bowel__Visium gain vs reference,0.0186,0.01861186035587481,1.19e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_p111.json
+5.1 P11.1 outcome,LUNG_XENIUM gain vs reference,0.0103,0.010337912531184767,3.79e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_p111.json
+headline item 2,"P gain vs R10, min",0.0103,0.010278738568257062,2.13e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_p111.json
+headline item 2,"P gain vs R10, max",0.0183,0.01831522810945274,1.52e-05,"read back only, not recomputed; agrees",(stored file),g2/aggregate_v4/g2_p111.json
+5.1 P11.5 outcome,"12 of 12, median width ratio 0.699",12 of 12; 0.699,"{""n_populations"": 54, ""R"": 2000, ""anchor"": {""rows"": 210, ""matched"": 210, ""max_abs_diff"": 0.0}, ""prop|mu"": {""n"": 12, ""B_narrower"": 12, ""median_ratio"": 0.4702040941520452, ""cov_B_min"": 0.8915, ""cov_B_max"": 0.906, ""cov_B_median"": 0.9007499999999999, ""mcse_cov_B_median"": 0.006685726007164265}, ""prop|theta3"": {""n"": 12, ""B_narrower"": 3, ""median_ratio"": 1.1592032273374442, ""cov_B_min"": 0.8785, ""cov_B_max"": 0.9045, ""cov_B_median"": 0.89225, ""mcse_cov_B_median"": 0.006933245090732114}, ""equal|mu"": {""n"": 12, ""B_narrower"": 12, ""median_ratio"": 0.2860748108314025, ""cov_B_min"": 0.8875, ""cov_B_max"": 0.9115, ""c",,"read back only, see recomputed text",(stored file),b4/equal_v2/b4_summary.json
+headline H1(a) Recomputed,min (LUNG_XENIUM),14.81059,14.81059495585047,4.96e-06,"read back only, not recomputed; agrees",(stored file),b1/h1a/b1_h1a_summary.json
+headline H1(a) Recomputed,max (brain Visium),58.97767,58.97767378458416,3.78e-06,"read back only, not recomputed; agrees",(stored file),b1/h1a/b1_h1a_summary.json
+headline H1(a) Recomputed,rows agree,60,60.0,0.0,"read back only, not recomputed; agrees",(stored file),b1/h1a/b1_h1a_summary.json
+headline H1(b) Recomputed,random mean,0.8937,0.8937327863316654,3.28e-05,"read back only, not recomputed; agrees",(stored file),b1/h1b_h4/b1_h1b_h4_summary.json
+headline H1(b) Recomputed,random cells,132,132.0,0.0,"read back only, not recomputed; agrees",(stored file),b1/h1b_h4/b1_h1b_h4_summary.json
+headline H1(b) Recomputed,slide_out mean,0.8585,0.8584947281319253,5.27e-06,"read back only, not recomputed; agrees",(stored file),b1/h1b_h4/b1_h1b_h4_summary.json
+headline H1(b) Recomputed,slide_out cells,36,36.0,0.0,"read back only, not recomputed; agrees",(stored file),b1/h1b_h4/b1_h1b_h4_summary.json
+headline H1(b) Recomputed,donor mean,0.8024,0.8024485509175472,4.86e-05,"read back only, not recomputed; agrees",(stored file),b1/h1b_h4/b1_h1b_h4_summary.json
+headline H1(b) Recomputed,donor cells,132,132.0,0.0,"read back only, not recomputed; agrees",(stored file),b1/h1b_h4/b1_h1b_h4_summary.json
+headline H1(b) Recomputed,CCRCC random (12 encoders),0.881,0.8809874361442861,1.26e-05,"read back only, not recomputed; agrees",(stored file),b1/h1b_h4/b1_h1b_h4_summary.json
+headline H1(b) Recomputed,CCRCC donor (12 encoders),0.8643,0.8642708075597048,2.92e-05,"read back only, not recomputed; agrees",(stored file),b1/h1b_h4/b1_h1b_h4_summary.json
+headline item 4 / 7 item 1,round 3 donor shortfall 0.0913,0.0913,0.09128423541411823,1.58e-05,"read back only, not recomputed; agrees",(stored file),b1/h1b_h4/b1_h1b_h4_summary.json
+headline H4 Recomputed,split-design term,0.1586,0.1586,0.0,"read back only, not recomputed; agrees",(stored file),b1/h1b_h4/b1_h1b_h4_summary.json
+headline H4 Recomputed,encoder spread,0.0977,0.09770000000000001,1.39e-17,"read back only, not recomputed; agrees",(stored file),b1/h1b_h4/b1_h1b_h4_summary.json
+headline H2 Recomputed,by donor min,0.41206,0.41205550473414304,4.5e-06,"read back only, not recomputed; agrees",(stored file),b1/h2/b1_h2_summary.json
+headline H2 Recomputed,by donor max,0.48332,0.4833198831077638,1.17e-07,"read back only, not recomputed; agrees",(stored file),b1/h2/b1_h2_summary.json
+headline H2 Recomputed,by center min,0.00386,0.003862254914315143,2.25e-06,"read back only, not recomputed; agrees",(stored file),b1/h2/b1_h2_summary.json
+headline H2 Recomputed,by center max,0.12312,0.12311852127066666,1.48e-06,"read back only, not recomputed; agrees",(stored file),b1/h2/b1_h2_summary.json
+headline H2 Recomputed,S0006 HCP at 0.80,0.65521,0.6552097868939075,2.13e-07,"read back only, not recomputed; agrees",(stored file),b1/h2/b1_h2_summary.json
+headline H2 Recomputed,median center HCP,0.90567,0.9056670811867117,2.92e-06,"read back only, not recomputed; agrees",(stored file),b1/h2/b1_h2_summary.json
+headline H2 Recomputed,HCP over centers,1.0,1.0,0.0,"read back only, not recomputed; agrees",(stored file),b1/h2/b1_h2_summary.json
+headline H3 Recomputed,CCRCC width ratio,0.8783,0.8782720286011843,2.8e-05,"read back only, not recomputed; agrees",(stored file),g2/gate_v2/b1_width_ratio_medians.csv
+headline H3 Recomputed,CCRCC R2c,0.4387,0.4387262423085522,2.62e-05,"read back only, not recomputed; agrees",(stored file),b1/h3/b1_h3_summary.json
+headline H3 Recomputed,INDIANA_KIDNEY width ratio,0.9574,0.9573549555597568,4.5e-05,"read back only, not recomputed; agrees",(stored file),g2/gate_v2/b1_width_ratio_medians.csv
+headline H3 Recomputed,INDIANA_KIDNEY R2c,0.139,0.13896681743966047,3.32e-05,"read back only, not recomputed; agrees",(stored file),b1/h3/b1_h3_summary.json
+headline H3 Recomputed,kidney__Visium width ratio,0.9367,0.9367495541789168,4.96e-05,"read back only, not recomputed; agrees",(stored file),g2/gate_v2/b1_width_ratio_medians.csv
+headline H3 Recomputed,kidney__Visium R2c,0.1986,0.19860545785094189,5.46e-06,"read back only, not recomputed; agrees",(stored file),b1/h3/b1_h3_summary.json
+headline H3 Recomputed,bowel__Visium width ratio,0.6691,0.6690551447436934,4.49e-05,"read back only, not recomputed; agrees",(stored file),g2/gate_v2/b1_width_ratio_medians.csv
+headline H3 Recomputed,bowel__Visium R2c,0.6258,0.625844769292021,4.48e-05,"read back only, not recomputed; agrees",(stored file),b1/h3/b1_h3_summary.json
+headline H3 Recomputed,LUNG_XENIUM width ratio,0.5855,0.5854580162130402,4.2e-05,"read back only, not recomputed; agrees",(stored file),g2/gate_v2/b1_width_ratio_medians.csv
+headline H3 Recomputed,LUNG_XENIUM R2c,0.7135,0.713514199908262,1.42e-05,"read back only, not recomputed; agrees",(stored file),b1/h3/b1_h3_summary.json
+headline H3 Recomputed,CCRCC LODO R2,0.02127,0.021266383883104034,3.62e-06,"read back only, not recomputed; agrees",(stored file),b1/h3/b1_h3_summary.json
+headline H3 Recomputed,kidney LODO R2,0.38152,0.38152165703227353,1.66e-06,"read back only, not recomputed; agrees",(stored file),b1/h3/b1_h3_summary.json
+headline H5 Recomputed,Kluger n4 median,0.7145,0.7145,0.0,"read back only, not recomputed; agrees",(stored file),b1/h5/b1_h5_summary.json
+headline H5 Recomputed,Kluger cells,242,242.0,0.0,"read back only, not recomputed; agrees",(stored file),b1/h5/b1_h5_summary.json
+headline H5 Recomputed,Broska-Howes n4,0.69909,0.6990875,2.5e-06,"read back only, not recomputed; agrees",(stored file),b1/h5/b1_h5_summary.json
+headline H5 Recomputed,Broska-Howes small-sample n4,0.87473,0.874725,5e-06,"read back only, not recomputed; agrees",(stored file),b1/h5/b1_h5_summary.json
+headline H5 Recomputed,BH cells,146,146.0,0.0,"read back only, not recomputed; agrees",(stored file),b1/h5/b1_h5_summary.json
+3 A6.0(a),random,0.8830176250299325,0.8830176250299325,0.0,"read back only, not recomputed; agrees",(stored file),a6/aggregate_v4/a6_anchors.json
+3 A6.0(a),donor,0.8653727123020528,0.8653727123020528,0.0,"read back only, not recomputed; agrees",(stored file),a6/aggregate_v4/a6_anchors.json
+3 A6.0(b),selftest,"5.440e-15, 1.998e-15",selftest ridgecv head against predict.ridgecv_fold: 5.440e-15; selftest two-scale r10 head against harness fit_base: 1.998e-15; selftest passed,,read back only; agrees,(stored file),a6/aggregate_v4/a6_anchors.json
+3 A6.0(c),max abs diff,0.0,0.0,0.0,"read back only, not recomputed; agrees",(stored file),a6/aggregate_v4/a6_anchors.json
+3 A6.0(c),rows,73813,73813.0,0.0,"read back only, not recomputed; agrees",(stored file),a6/aggregate_v4/a6_anchors.json
+3 A6.0(c),f columns,100,100.0,0.0,"read back only, not recomputed; agrees",(stored file),a6/aggregate_v4/a6_anchors.json
+3 A6.0(d),largest abs diff,2.2e-16,2.220446049250313e-16,2.04e-18,"read back only, not recomputed; agrees",(stored file),a6/aggregate_v4/a6_anchors.json
+3 A6.0(e),brain diff,1.3e-15,1.2698175844150228e-15,3.02e-17,"read back only, not recomputed; agrees",(stored file),a6/aggregate_v4/a6_anchors.json
+3 A6.0(e),inst max diff,5.5e-14,5.46229728115577e-14,3.77e-16,"read back only, not recomputed; agrees",(stored file),a6/aggregate_v4/a6_anchors.json
+3 A6.0(e),inst rows,112,112.0,0.0,"read back only, not recomputed; agrees",(stored file),a6/aggregate_v4/a6_anchors.json
+3 provenance,provenance files,158,158.0,0.0,"read back only, not recomputed; agrees",(stored file),final/gate_v1/gate_summary.json
+3 provenance,md5 mismatches,0,0.0,0.0,"read back only, not recomputed; agrees",(stored file),final/gate_v1/gate_summary.json
+3 provenance,not-ancestor rows,6,6.0,0.0,"read back only, not recomputed; agrees",(stored file),final/gate_v1/gate_summary.json
+2.2 text,ledger rows,164,163.0,1.0,"read back only, not recomputed; DISAGREES",(stored file),final/gate_v1/gate_summary.json
+"2.2 table, A6 pilot",jobs,5,5.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, A6 pilot",wall min (s),20,20.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, A6 pilot",wall max (s),990,990.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, A6 pilot","peak memory (GB, K/1024^2)",8.3,8.29,0.01,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, donor chains",jobs,13,13.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, donor chains",wall min (s),129,129.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, donor chains",wall max (s),3881,3881.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, donor chains","peak memory (GB, K/1024^2)",35.9,35.88,0.02,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, center predictions",jobs,4,4.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, center predictions",wall min (s),275,275.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, center predictions",wall max (s),1683,1683.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, center predictions","peak memory (GB, K/1024^2)",57.9,57.88,0.02,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, institution",jobs,1,1.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, institution",wall min (s),133,133.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, institution",wall max (s),133,133.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, institution","peak memory (GB, K/1024^2)",1.9,1.91,0.01,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, conformal R10",jobs,15,15.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, conformal R10",wall min (s),96,96.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, conformal R10",wall max (s),5380,5380.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, conformal R10","peak memory (GB, K/1024^2)",7.7,7.73,0.03,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, conformal P",jobs,17,17.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, conformal P",wall min (s),726,726.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, conformal P",wall max (s),20875,20875.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, conformal P","peak memory (GB, K/1024^2)",14.3,14.26,0.04,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, conformal E",jobs,15,15.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, conformal E",wall min (s),44,44.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, conformal E",wall max (s),9150,9150.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, conformal E","peak memory (GB, K/1024^2)",32.8,32.76,0.04,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, split check",jobs,10,10.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, split check",wall min (s),10,10.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, split check",wall max (s),892,892.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, split check","peak memory (GB, K/1024^2)",1.8,1.83,0.03,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, kidney E pieces+merges",jobs,20,20.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, kidney E pieces+merges",wall min (s),15,15.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, kidney E pieces+merges",wall max (s),4699,4699.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, kidney E pieces+merges","peak memory (GB, K/1024^2)",32.5,32.54,0.04,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, aggregation v4",jobs,1,1.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, aggregation v4",wall min (s),17,17.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, aggregation v4",wall max (s),17,17.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, aggregation v4","peak memory (GB, K/1024^2)",0.2,0.22,0.02,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, gate bookkeeping",jobs,1,1.0,0.0,recomputed from ledger; agrees,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, gate bookkeeping",wall min (s),31,25.0,6.0,recomputed from ledger; DISAGREES,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)
+"2.2 table, gate bookkeeping",wall max (s),31,25.0,6.0,recomputed from ledger; DISAGREES,(stored file),fcheck/ledger/fcheck_ledger_groups.csv (from final/gate_v1/job_ledger.csv)

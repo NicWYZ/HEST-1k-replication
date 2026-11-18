@@ -1,0 +1,20 @@
+{
+ "stage": "A2",
+ "unit": "cluster_values_CCRCC_R10",
+ "repo_root": "/work/users/w/e/weiyang/hest_replication",
+ "populations": [
+  {
+   "task": "CCRCC",
+   "encoder": "uni_v2",
+   "path": "/work/users/w/e/weiyang/hest_replication/results/round11/closeout/anchor/CCRCC__R10_v2/join/b1_predictions__CCRCC__uni_v2.parquet",
+   "lib_task": "CCRCC",
+   "scales": [
+    {
+     "name": "log1p",
+     "y_prefix": "y__",
+     "f_prefix": "f__"
+    }
+   ]
+  }
+ ]
+}

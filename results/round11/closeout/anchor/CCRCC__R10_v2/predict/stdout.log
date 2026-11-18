@@ -1,0 +1,127 @@
+[load] 24 samples, 73813 spots x 1536 features, 16s
+fold INT1: train 72781 test 1032 19.4s
+fold INT10: train 71842 test 1971 19.2s
+fold INT11: train 72413 test 1400 19.5s
+fold INT12: train 72363 test 1450 19.5s
+fold INT13: train 69454 test 4359 25.1s
+fold INT14: train 69254 test 4559 25.7s
+fold INT15: train 68873 test 4940 18.5s
+fold INT16: train 70611 test 3202 18.9s
+fold INT17: train 70229 test 3584 18.8s
+fold INT18: train 68899 test 4914 26.7s
+fold INT19: train 68865 test 4948 33.8s
+fold INT2: train 71272 test 2541 18.1s
+fold INT20: train 68953 test 4860 17.6s
+fold INT21: train 68853 test 4960 17.9s
+fold INT22: train 69987 test 3826 18.2s
+fold INT23: train 69058 test 4755 27.6s
+fold INT24: train 69330 test 4483 18.8s
+fold INT3: train 71840 test 1973 18.7s
+fold INT4: train 72558 test 1255 18.4s
+fold INT5: train 72655 test 1158 21.1s
+fold INT6: train 72146 test 1667 107.1s
+fold INT7: train 71452 test 2361 124.0s
+fold INT8: train 71889 test 1924 51.9s
+fold INT9: train 72122 test 1691 32.1s
+{
+ "task": "CCRCC",
+ "arm": "uni_v2:none:r10",
+ "encoders": [
+  "uni_v2"
+ ],
+ "context": "none",
+ "head": "r10",
+ "design": "donor",
+ "spots": 73813,
+ "spots_predicted": 73813,
+ "samples": 24,
+ "donors": 24,
+ "centers": 1,
+ "folds": 24,
+ "n_features": 1536,
+ "n_genes": 50,
+ "seconds_per_fold": 30.692963749170303,
+ "gene_symbols": [
+  "AKAP8",
+  "BLVRB",
+  "BTF3",
+  "CD109",
+  "CD14",
+  "CHST15",
+  "CIB1",
+  "CKB",
+  "CPD",
+  "CPE",
+  "DERL1",
+  "DNAJB12",
+  "EGFL7",
+  "FLNB",
+  "GADD45B",
+  "GPNMB",
+  "H3F3A",
+  "HMOX1",
+  "HNRNPK",
+  "HSPA1A",
+  "HTRA1",
+  "IFI27",
+  "IFI6",
+  "IRF7",
+  "ISG15",
+  "KRTCAP2",
+  "LAPTM4B",
+  "LRRC41",
+  "LY6E",
+  "NAMPT",
+  "NOL3",
+  "NOTCH3",
+  "NT5DC2",
+  "PARP10",
+  "PTGS1",
+  "PXN",
+  "RXRA",
+  "S100A9",
+  "SCARB1",
+  "SEMA4B",
+  "SLC15A4",
+  "SLC39A14",
+  "STK39",
+  "TFRC",
+  "TM2D3",
+  "TMEM91",
+  "TP53INP1",
+  "TRBC1",
+  "VMP1",
+  "YWHAE"
+ ],
+ "kgrid": [
+  -6.0,
+  -5.5,
+  -5.0,
+  -4.5,
+  -4.0,
+  -3.5,
+  -3.0,
+  -2.5,
+  -2.0,
+  -1.5,
+  -1.0,
+  -0.5,
+  0.0,
+  0.5,
+  1.0
+ ],
+ "median_pearson_log1p": 0.2894847110530731,
+ "fold_median_pearson_log1p": {
+  "median": 0.15843660973147194,
+  "q25": 0.10097369112474613,
+  "q75": 0.21924861490818937,
+  "sd": 0.14383406402670584
+ },
+ "median_pearson_lognorm": 0.20197290003388316,
+ "fold_median_pearson_lognorm": {
+  "median": 0.08422206704680624,
+  "q25": 0.05376964327212745,
+  "q75": 0.09857652586168549,
+  "sd": 0.05331058494705557
+ }
+}

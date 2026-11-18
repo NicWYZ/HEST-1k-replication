@@ -1,0 +1,32 @@
+platform: Longleaf
+slurm_job_id: 9518165
+slurm_job_partition: hov
+slurm_job_account: rc_tengfei_pi
+slurm_cpus_on_node: 8
+slurm_mem_per_node: 98304
+node: c151405
+track: closeout (round 11)
+stage: A5
+unit: predict/kidney__Visium__E__donor_v2
+project_id: proj_8450e231133d
+frame_id: c9016697-c909-435e-82fc-ebfb9daaa857
+PYTHONHASHSEED: 0
+host: Linux-5.14.0-611.16.1.el9_7.x86_64-x86_64-with-glibc2.34
+python: 3.11.16 at /work/users/w/e/weiyang/hest_replication/env/miniforge3/envs/hest/bin/python
+versions: numpy 2.4.6 pandas 2.3.3 scipy 1.17.1 pyarrow 25.0.1 sklearn 1.9.1
+snapshot_commit: 78ad361c28b8b4a2f805f0c7487384c34c678474
+snapshot: /work/users/w/e/weiyang/hest_replication/results/round11/closeout/_snapshots/78ad361c28b8b4a2f805f0c7487384c34c678474
+command: round11_closeout_predict.py /work/users/w/e/weiyang/st_fed_learn/data/tasks/kidney__Visium.json /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/audit_verdicts/donor_map__kidney__Visium.csv donor . --arm uni_v2+hoptimus0+virchow2:ring1:r10 --only-mapped
+config: {"commit":"78ad361c28b8b4a2f805f0c7487384c34c678474","stage":"A5","unit":"predict/kidney__Visium__E__donor_v2"}
+config_sha256: 58a73b8cecb5f0ac0efbdf32cf96cbde6cc3d5b4edf55bd06ad25862e3b2eb12
+start: 2026-11-17T01:42:19-05:00
+end: 2026-11-17T04:04:09-05:00
+status: COMPLETED
+scripts_executed (md5, path relative to snapshot):
+  bac6ed492b1a242b42fd3f43ef41c082  code/scripts/round11_closeout_predict.py
+  69321b9e328c901c38843cc40fdc256f  code/scripts/round11_closeout_prov.py
+  7235dd4b80e210c01bbb23b7824a96f0  code/scripts/round11_closeout_run.sh
+  0ad7ae8efe554c1f285e5f384a9fb7f5  code/scripts/round3_a0_harness.py
+inputs (md5, path):
+  ab7f574a88906062dcb48f7fe8c5accd  /work/users/w/e/weiyang/st_fed_learn/data/tasks/kidney__Visium.json
+  e0440e216fcfbc0289b25d1802f9bb68  /work/users/w/e/weiyang/hest_replication/results/round10/final_runs/F1/audit_verdicts/donor_map__kidney__Visium.csv
