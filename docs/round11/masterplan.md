@@ -2,7 +2,7 @@
 
 # Round 11, masterplan
 
-*Written on 16 November 2026 by the oversight session through the `project-record` skill. Living while the round runs.*
+*Written on 16 November 2026 by the oversight session through the `project-record` skill. The round is closed; the track's brief cited below is at tag `round11-record`.*
 
 ## Why this round
 
