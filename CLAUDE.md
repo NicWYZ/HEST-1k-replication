@@ -5,11 +5,11 @@
 The project is Nicolas Weiyang Zhang's first-year biostatistics PhD project at UNC, in Dr. Hongtu Zhu's lab and supervised by Dr. Daiwei (David) Zhang, toward a submittable paper by spring 2027. The paper answers the proposal's two questions, calibrated uncertainty for histology-predicted gene expression and valid inference with it, on HEST-1k spatial transcriptomics with ACS PUMS 2018 income as a second domain. Existing or classical methods are applied wherever they serve, and the project's own method or theory arises only where a problem met in practice has no existing solution after a literature search (`docs/round10/00_prep/round10_reframing.md`, section 1). 
 
 ```state
-updated: 2026-11-18 (oversight session; pull request #42 merged, advisor outline drafted)
+updated: 2026-11-20 (oversight session; round 11 closed, tag round11-record)
 unit: round11
-status: running
-next: Nicolas reviews docs/round11/oversight/round11_advisor_outline.md; then the oversight session closes round 11 through the project-record skill (docs/round11/masterplan.md, "What closes the round").
-waiting: FRAMING | since 2026-11-16 | whether the paper is round 10's applied paper or one paper on the headline results of the closeout brief, section 3 (Nicolas with the advisors; default not decided, the outline presents both)
+status: closed
+next: build the figures and the advisor deck from docs/round11/oversight/round11_advisor_outline.md (docs/WAYS_OF_WORKING.md, "Decks"); figure scripts are code and go through a pull request. Nicolas asked for this on 20 November.
+waiting: FRAMING | since 2026-11-16 | whether the paper is round 10's applied paper or one paper on the headline results of docs/round11/README.md (Nicolas with the advisors; default not decided, the deck presents both)
 waiting: D5 | since 2026-10-26 | which scale the paper calls primary; both are in the numbers table (Nicolas with David; default report both)
 waiting: O5 | since 2026-11-08 | which of round 9's three theorems the paper keeps (Nicolas; default candidates, not claimed)
 waiting: Q1 | since 2026-10-09 | whether regime B can be bought on a spatial platform, and at what cost (Nicolas with the advisors; default no cost claim)
@@ -17,7 +17,7 @@ waiting: Q3 | since 2026-10-09 | venue and lead result, once the paper's content
 waiting: PAPERS | since 2026-11-07 | paper full texts round 9's checkers saved outside the repository are not yet deleted (Nicolas; default left)
 ```
 
-What the project has established is in `docs/round10/README.md`, with the paper's numbers in `results/round10/final_runs/F4/paper_numbers.csv` and a plan for a draft in `docs/round10/tracks/ledger/round10_writing_plan.md`. Round 11 tests the headline results against a stronger predictor, closes round 10's open threads and prepares the presentation to the advisors (`docs/round11/masterplan.md`).
+What the project has established is in `docs/round11/README.md` (the headline results as they stand) and `docs/round10/README.md`, with the paper's numbers in `results/round10/final_runs/F4/paper_numbers.csv` and a plan for a draft in `docs/round10/tracks/ledger/round10_writing_plan.md`. No result has reached the advisors since round 3.
 
 ## Session start
 
