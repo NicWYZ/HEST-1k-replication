@@ -1,3 +1,5 @@
+*17 November 2026. Reviewed as tagged at round11-closeout-G-final. What stands now: docs/round11/README.md.*
+
 # Round 11, track `closeout`, final report (gate G-final)
 
 *17 November 2026. Written by the fourth session of track `closeout` (frame `c9016697-c909-435e-82fc-ebfb9daaa857`, project `proj_8450e231133d`) under the brief `docs/round11/closeout/round11_closeout_brief.md` (revised on `main` after G2) and the plan `docs/round11/closeout/round11_closeout_plan.md`. The gate G2 report, `docs/round11/closeout/round11_closeout_G2_report.md`, holds the strength runs and Part B items 1 and 3 to 7 in full; this report carries their results and adds A6, B2 and A7. Paths beginning `results/` are in the repository; Longleaf paths are under `/work/users/w/e/weiyang/hest_replication/results/round11/closeout/`.*

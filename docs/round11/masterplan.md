@@ -1,3 +1,5 @@
+*16 November 2026. Reviewed as tagged at round11-record. What stands now: docs/round11/README.md.*
+
 # Round 11, masterplan
 
 *Written on 16 November 2026 by the oversight session through the `project-record` skill. Living while the round runs.*

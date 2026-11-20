@@ -5,7 +5,7 @@ The record of the project. The project's status lives only in `CLAUDE.md`'s stat
 ## Start here
 
 1. `CLAUDE.md`, in full, for the state block, the session start, the working rules and the hard rules.
-2. The summary of the last closed round (`round10/README.md`), then earlier summaries as the work needs them. `round10/00_prep/round10_findings_survey.md` lists what rounds 1 to 9 established, by the question each finding answers.
+2. The summary of the last closed round (`round11/README.md`), then `round10/README.md` and earlier summaries as the work needs them. `round10/00_prep/round10_findings_survey.md` lists what rounds 1 to 9 established, by the question each finding answers.
 
 ## How the folders work
 
@@ -44,3 +44,4 @@ The record of the project. The project's status lives only in `CLAUDE.md`'s stat
 | 8 | 19 Oct to 6 Nov | every formula the PPI paper would display is classical or in print, and round 5's estimator is a known one missing one factor | `round08/README.md` | `record-full-2026-11` |
 | 9 | 24 Oct to 6 Nov | no methodological core survives the literature check; three provisional frontier theorems for few labelled clusters; a shared technical factor dominates between-donor variation on Visium | `round09/README.md` | `record-full-2026-11` |
 | 10 | 6 to 15 Nov | the reframing to an applied paper with cited methods; the methods ledger, and final runs with a fixed coefficient of 1 on HEST, ACS and six corpus tasks, giving the paper's numbers table | `round10/README.md` | `record-full-2026-11` |
+| 11 | 16 to 20 Nov | the headline results recompute and hold under two stronger predictors as supporting evidence; the new-donor conformal shortfall is small with 15 or more donors; round 10's open threads closed; an outline for the advisors | `round11/README.md` | `round11-record` |

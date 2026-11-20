@@ -1,3 +1,5 @@
+*17 November 2026. Reviewed as tagged at round11-closeout-G2. What stands now: docs/round11/README.md.*
+
 # Round 11, track `closeout`, gate G2 report: the stronger predictor
 
 *17 November 2026. Written by the first session of track `closeout` (frame `c9016697-c909-435e-82fc-ebfb9daaa857`) under the brief `docs/round11/closeout/round11_closeout_brief.md` and the plan `docs/round11/closeout/round11_closeout_plan.md`, whose section 4 defines the arms and section 3 the gates. Paths beginning `results/` are in the repository. Longleaf paths are under `/work/users/w/e/weiyang/hest_replication/results/round11/closeout/`.*
